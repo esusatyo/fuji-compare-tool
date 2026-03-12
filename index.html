@@ -136,8 +136,8 @@
     }
 
     .cam-image-wrap {
-      width: 88px;
-      height: 62px;
+      width: 100px;
+      height: 80px;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -148,6 +148,13 @@
       max-width: 100%;
       max-height: 100%;
       object-fit: contain;
+    }
+
+    .cam-photo {
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: contain;
+      display: block;
     }
 
     .cam-placeholder {
@@ -369,7 +376,7 @@
       :root { --label-w: 120px; --num-slots: 2; }
       .slot-3-hide { display: none !important; }
       .hero-title { font-size: 22px; }
-      .cam-image-wrap { width: 68px; height: 50px; }
+      .cam-image-wrap { width: 80px; height: 64px; }
       .slot-price { font-size: 13px; }
     }
 
@@ -480,6 +487,7 @@ const CAMERAS = {
     name:'X Half', series:'X Half', year:2025, discontinued:false,
     tagline:'Half-Frame Creative Compact',
     productUrl:'https://www.fujifilm-x.com/global/products/cameras/x-half/',
+    imageUrl:'https://fujifilm-x.b-cdn.net/wp-content/uploads/2025/04/x-hf1-placeholder-thumbnail-charcoal-73646e81-8615-4f61-a627-cc1354e44101.jpg',
     prices:{USD:599,AUD:949,EUR:559,GBP:479,JPY:89900,CAD:829,SGD:799},
     sensorMP:17.7, sensorType:'1" Primary Color CMOS', processor:'X-Processor 5',
     width:105.8, height:64.3, depth:45.8, weight:240, weatherSealed:false,
@@ -498,6 +506,7 @@ const CAMERAS = {
     name:'X-E5', series:'X-E', year:2025, discontinued:false,
     tagline:'Rangefinder, 40MP + IBIS',
     productUrl:'https://www.fujifilm-x.com/global/products/cameras/x-e5/',
+    imageUrl:'https://fujifilm-x.b-cdn.net/wp-content/uploads/2025/06/thum_X-E5-1.jpg',
     prices:{USD:1699,AUD:2649,EUR:1649,GBP:1449,JPY:259000,CAD:2299,SGD:2299},
     sensorMP:40.2, sensorType:'X-Trans CMOS 5 HR', processor:'X-Processor 5',
     width:124.9, height:72.9, depth:39.1, weight:445, weatherSealed:false,
@@ -515,6 +524,7 @@ const CAMERAS = {
     name:'X-E4', series:'X-E', year:2021, discontinued:false,
     tagline:'Ultra-Slim Rangefinder',
     productUrl:'https://www.fujifilm-x.com/global/products/cameras/x-e4/',
+    imageUrl:'https://fujifilm-x.b-cdn.net/wp-content/uploads/2021/01/x-e4_thumbnail_gkac.jpg',
     prices:{USD:849,AUD:1349,EUR:849,GBP:749,JPY:119000,CAD:1149,SGD:1149},
     sensorMP:26.1, sensorType:'X-Trans CMOS 4 BSI', processor:'X-Processor 4',
     width:121.3, height:72.9, depth:32.7, weight:364, weatherSealed:false,
@@ -532,6 +542,7 @@ const CAMERAS = {
     name:'X-E3', series:'X-E', year:2017, discontinued:true,
     tagline:'Slim Touchscreen Rangefinder',
     productUrl:'https://www.fujifilm-x.com/global/products/cameras/',
+    imageUrl:'https://fujifilm-x.b-cdn.net/wp-content/uploads/2017/09/7_thum_x-e3.jpg',
     prices:{USD:849,AUD:null,EUR:null,GBP:null,JPY:null,CAD:null,SGD:null},
     sensorMP:24.3, sensorType:'X-Trans CMOS III', processor:'X-Processor 3',
     width:121.3, height:73.9, depth:42.7, weight:337, weatherSealed:false,
@@ -549,6 +560,7 @@ const CAMERAS = {
     name:'X-E2S', series:'X-E', year:2016, discontinued:true,
     tagline:'Refined Compact Rangefinder',
     productUrl:'https://www.fujifilm-x.com/global/products/cameras/',
+    imageUrl:'https://fujifilm-x.b-cdn.net/wp-content/uploads/2016/01/480xcom_MH0409_X_E2S.jpg',
     prices:{USD:699,AUD:null,EUR:null,GBP:null,JPY:null,CAD:null,SGD:null},
     sensorMP:16.3, sensorType:'X-Trans CMOS II', processor:'EXR Processor II',
     width:129.5, height:74.9, depth:37.2, weight:350, weatherSealed:false,
@@ -566,6 +578,7 @@ const CAMERAS = {
     name:'X-E2', series:'X-E', year:2013, discontinued:true,
     tagline:'Second-Gen Compact Rangefinder',
     productUrl:'https://www.fujifilm-x.com/global/products/cameras/',
+    imageUrl:'https://fujifilm-x.b-cdn.net/wp-content/uploads/2017/09/480xcom_MH0409_X_E2.jpg',
     prices:{USD:699,AUD:null,EUR:null,GBP:null,JPY:null,CAD:null,SGD:null},
     sensorMP:16.3, sensorType:'X-Trans CMOS II', processor:'EXR Processor II',
     width:129.5, height:74.9, depth:37.2, weight:350, weatherSealed:false,
@@ -583,6 +596,7 @@ const CAMERAS = {
     name:'X-E1', series:'X-E', year:2012, discontinued:true,
     tagline:'Original X-E Rangefinder',
     productUrl:'https://www.fujifilm-x.com/global/products/cameras/',
+    imageUrl:'https://fujifilm-x.b-cdn.net/wp-content/uploads/2019/04/480xcom_MH0409_X_E1.jpg',
     prices:{USD:699,AUD:null,EUR:null,GBP:null,JPY:null,CAD:null,SGD:null},
     sensorMP:16.3, sensorType:'X-Trans CMOS', processor:'EXR Processor II',
     width:129, height:75, depth:38, weight:350, weatherSealed:false,
@@ -601,6 +615,7 @@ const CAMERAS = {
     name:'X100VI', series:'X100', year:2024, discontinued:false,
     tagline:'40MP Fixed-Lens Compact + IBIS',
     productUrl:'https://www.fujifilm-x.com/global/products/cameras/x100vi/',
+    imageUrl:'https://fujifilm-x.b-cdn.net/wp-content/uploads/2024/02/stjw_x100vi_thum.jpg',
     prices:{USD:1599,AUD:2499,EUR:1599,GBP:1349,JPY:229000,CAD:2199,SGD:2199},
     sensorMP:40.2, sensorType:'X-Trans CMOS 5 HR', processor:'X-Processor 5',
     width:128, height:74.8, depth:55.3, weight:521, weatherSealed:true,
@@ -618,6 +633,7 @@ const CAMERAS = {
     name:'X100V', series:'X100', year:2020, discontinued:false,
     tagline:'26MP Fixed-Lens + Weather Seal',
     productUrl:'https://www.fujifilm-x.com/global/products/cameras/x100v/',
+    imageUrl:'https://fujifilm-x.b-cdn.net/wp-content/uploads/2020/02/x100v_thum.jpg',
     prices:{USD:1399,AUD:2199,EUR:1399,GBP:1199,JPY:189000,CAD:1899,SGD:1899},
     sensorMP:26.1, sensorType:'X-Trans CMOS 4 BSI', processor:'X-Processor 4',
     width:128, height:74.8, depth:53.3, weight:478, weatherSealed:true,
@@ -635,6 +651,7 @@ const CAMERAS = {
     name:'X100F', series:'X100', year:2017, discontinued:true,
     tagline:'24MP Fixed-Lens Enthusiast',
     productUrl:'https://www.fujifilm-x.com/global/products/cameras/',
+    imageUrl:'https://fujifilm-x.b-cdn.net/wp-content/uploads/2017/01/1_thum_x100f.jpg',
     prices:{USD:1299,AUD:null,EUR:null,GBP:null,JPY:null,CAD:null,SGD:null},
     sensorMP:24.3, sensorType:'X-Trans CMOS III', processor:'X-Processor 3',
     width:126.5, height:74.8, depth:52.4, weight:469, weatherSealed:false,
@@ -652,6 +669,7 @@ const CAMERAS = {
     name:'X100T', series:'X100', year:2014, discontinued:true,
     tagline:'Refined 16MP Fixed-Lens Compact',
     productUrl:'https://www.fujifilm-x.com/global/products/cameras/',
+    imageUrl:'https://fujifilm-x.b-cdn.net/wp-content/uploads/2017/09/480xcom_MH0409_X100T.jpg',
     prices:{USD:1299,AUD:null,EUR:null,GBP:null,JPY:null,CAD:null,SGD:null},
     sensorMP:16.3, sensorType:'X-Trans CMOS II', processor:'EXR Processor II',
     width:126.5, height:74.4, depth:52.9, weight:440, weatherSealed:false,
@@ -669,6 +687,7 @@ const CAMERAS = {
     name:'X100S', series:'X100', year:2013, discontinued:true,
     tagline:'First X-Trans Fixed-Lens',
     productUrl:'https://www.fujifilm-x.com/global/products/cameras/',
+    imageUrl:'https://fujifilm-x.b-cdn.net/wp-content/uploads/2019/04/480xcom_MH0409_X100S.jpg',
     prices:{USD:1299,AUD:null,EUR:null,GBP:null,JPY:null,CAD:null,SGD:null},
     sensorMP:16.3, sensorType:'X-Trans CMOS II', processor:'EXR Processor II',
     width:126.5, height:74.4, depth:52.9, weight:445, weatherSealed:false,
@@ -686,6 +705,7 @@ const CAMERAS = {
     name:'X100', series:'X100', year:2011, discontinued:true,
     tagline:'The Original X100',
     productUrl:'https://www.fujifilm-x.com/global/products/cameras/',
+    imageUrl:'https://fujifilm-x.b-cdn.net/wp-content/uploads/2019/04/480xcom_MH0409_X100.jpg',
     prices:{USD:1199,AUD:null,EUR:null,GBP:null,JPY:null,CAD:null,SGD:null},
     sensorMP:12.3, sensorType:'Bayer CMOS EXR', processor:'EXR Processor',
     width:126.5, height:74.4, depth:53.9, weight:405, weatherSealed:false,
@@ -704,6 +724,7 @@ const CAMERAS = {
     name:'X-Pro3', series:'X-Pro', year:2019, discontinued:false,
     tagline:'Rangefinder with Hidden LCD',
     productUrl:'https://www.fujifilm-x.com/global/products/cameras/x-pro3/',
+    imageUrl:'https://fujifilm-x.b-cdn.net/wp-content/uploads/2019/10/xpro3_thum.jpg',
     prices:{USD:1799,AUD:2799,EUR:1799,GBP:1549,JPY:249000,CAD:2449,SGD:2449},
     sensorMP:26.1, sensorType:'X-Trans CMOS 4', processor:'X-Processor 4',
     width:140.5, height:82.8, depth:46.1, weight:497, weatherSealed:true,
@@ -721,6 +742,7 @@ const CAMERAS = {
     name:'X-Pro2', series:'X-Pro', year:2016, discontinued:true,
     tagline:'Pro Rangefinder, Weather Sealed',
     productUrl:'https://www.fujifilm-x.com/global/products/cameras/',
+    imageUrl:'https://fujifilm-x.b-cdn.net/wp-content/uploads/2016/10/2_thum_x-pro2.jpg',
     prices:{USD:1699,AUD:null,EUR:null,GBP:null,JPY:null,CAD:null,SGD:null},
     sensorMP:24.3, sensorType:'X-Trans CMOS III', processor:'X-Processor Pro',
     width:140.5, height:82.8, depth:45.9, weight:495, weatherSealed:true,
@@ -738,6 +760,7 @@ const CAMERAS = {
     name:'X-Pro1', series:'X-Pro', year:2012, discontinued:true,
     tagline:'First X-Series Interchangeable',
     productUrl:'https://www.fujifilm-x.com/global/products/cameras/',
+    imageUrl:'https://fujifilm-x.b-cdn.net/wp-content/uploads/2019/04/480xcom_MH0409_X_Pro1.jpg',
     prices:{USD:1699,AUD:null,EUR:null,GBP:null,JPY:null,CAD:null,SGD:null},
     sensorMP:16.3, sensorType:'X-Trans CMOS', processor:'EXR Processor II',
     width:139.5, height:81.8, depth:42.5, weight:450, weatherSealed:false,
@@ -756,6 +779,7 @@ const CAMERAS = {
     name:'X-H2S', series:'X-H', year:2022, discontinued:false,
     tagline:'Pro Speed — Stacked Sensor',
     productUrl:'https://www.fujifilm-x.com/global/products/cameras/x-h2s/',
+    imageUrl:'https://fujifilm-x.b-cdn.net/wp-content/uploads/2022/05/sgew_x-h2s_thum-1.png',
     prices:{USD:2499,AUD:3849,EUR:2499,GBP:2149,JPY:349000,CAD:3399,SGD:3399},
     sensorMP:26.1, sensorType:'X-Trans CMOS 5 HS (Stacked BSI)', processor:'X-Processor 5',
     width:136.3, height:92.9, depth:84.6, weight:673, weatherSealed:true,
@@ -773,6 +797,7 @@ const CAMERAS = {
     name:'X-H2', series:'X-H', year:2022, discontinued:false,
     tagline:'40MP + 8K Video Flagship',
     productUrl:'https://www.fujifilm-x.com/global/products/cameras/x-h2/',
+    imageUrl:'https://fujifilm-x.b-cdn.net/wp-content/uploads/2022/09/ajgz_x-h2_thum.png',
     prices:{USD:1999,AUD:3099,EUR:1999,GBP:1749,JPY:279000,CAD:2699,SGD:2699},
     sensorMP:40.2, sensorType:'X-Trans CMOS 5 HR', processor:'X-Processor 5',
     width:136.3, height:92.9, depth:94.2, weight:660, weatherSealed:true,
@@ -790,6 +815,7 @@ const CAMERAS = {
     name:'X-H1', series:'X-H', year:2018, discontinued:true,
     tagline:'First X-H, First X-Series IBIS',
     productUrl:'https://www.fujifilm-x.com/global/products/cameras/',
+    imageUrl:'https://fujifilm-x.b-cdn.net/wp-content/uploads/2018/06/1_thum_x-h1.jpg',
     prices:{USD:1899,AUD:null,EUR:null,GBP:null,JPY:null,CAD:null,SGD:null},
     sensorMP:24.3, sensorType:'X-Trans CMOS III', processor:'X-Processor Pro',
     width:139.8, height:97.3, depth:85.5, weight:623, weatherSealed:true,
@@ -808,6 +834,7 @@ const CAMERAS = {
     name:'X-T5', series:'X-T', year:2022, discontinued:false,
     tagline:'40MP Stills-First Mirrorless',
     productUrl:'https://www.fujifilm-x.com/global/products/cameras/x-t5/',
+    imageUrl:'https://fujifilm-x.b-cdn.net/wp-content/uploads/2022/10/koes_x-t5_thum.jpg',
     prices:{USD:1699,AUD:2649,EUR:1699,GBP:1449,JPY:239000,CAD:2299,SGD:2299},
     sensorMP:40.2, sensorType:'X-Trans CMOS 5 HR', processor:'X-Processor 5',
     width:129.5, height:91.0, depth:63.8, weight:557, weatherSealed:true,
@@ -825,6 +852,7 @@ const CAMERAS = {
     name:'X-T4', series:'X-T', year:2020, discontinued:false,
     tagline:'First X-T with IBIS + Vari-angle',
     productUrl:'https://www.fujifilm-x.com/global/products/cameras/x-t4/',
+    imageUrl:'https://fujifilm-x.b-cdn.net/wp-content/uploads/2020/02/x-t4_thum.jpg',
     prices:{USD:1699,AUD:2649,EUR:1699,GBP:1449,JPY:219000,CAD:2299,SGD:2299},
     sensorMP:26.1, sensorType:'X-Trans CMOS 4 BSI', processor:'X-Processor 4',
     width:134.6, height:92.8, depth:63.8, weight:607, weatherSealed:true,
@@ -842,6 +870,7 @@ const CAMERAS = {
     name:'X-T3', series:'X-T', year:2018, discontinued:true,
     tagline:'4K/60P, No IBIS',
     productUrl:'https://www.fujifilm-x.com/global/products/cameras/',
+    imageUrl:'https://fujifilm-x.b-cdn.net/wp-content/uploads/2018/09/3_thum_x-t3.jpg',
     prices:{USD:1499,AUD:null,EUR:null,GBP:null,JPY:null,CAD:null,SGD:null},
     sensorMP:26.1, sensorType:'X-Trans CMOS 4', processor:'X-Processor 4',
     width:132.5, height:92.8, depth:58.8, weight:539, weatherSealed:true,
@@ -859,6 +888,7 @@ const CAMERAS = {
     name:'X-T2', series:'X-T', year:2016, discontinued:true,
     tagline:'24MP, 4K, Dual Card',
     productUrl:'https://www.fujifilm-x.com/global/products/cameras/',
+    imageUrl:'https://fujifilm-x.b-cdn.net/wp-content/uploads/2018/09/thum_x-t2.jpg',
     prices:{USD:1599,AUD:null,EUR:null,GBP:null,JPY:null,CAD:null,SGD:null},
     sensorMP:24.3, sensorType:'X-Trans CMOS III', processor:'X-Processor Pro',
     width:132.5, height:91.8, depth:49.0, weight:507, weatherSealed:true,
@@ -876,6 +906,7 @@ const CAMERAS = {
     name:'X-T1', series:'X-T', year:2014, discontinued:true,
     tagline:'First Weather-Sealed X-T',
     productUrl:'https://www.fujifilm-x.com/global/products/cameras/',
+    imageUrl:'https://fujifilm-x.b-cdn.net/wp-content/uploads/2018/05/480xcom_MH0409_X_T1.jpg',
     prices:{USD:1299,AUD:null,EUR:null,GBP:null,JPY:null,CAD:null,SGD:null},
     sensorMP:16.3, sensorType:'X-Trans CMOS II', processor:'EXR Processor II',
     width:129.5, height:90.0, depth:46.7, weight:440, weatherSealed:true,
@@ -894,6 +925,7 @@ const CAMERAS = {
     name:'X-T50', series:'X-T', year:2024, discontinued:false,
     tagline:'40MP Compact + Film Sim Dial',
     productUrl:'https://www.fujifilm-x.com/global/products/cameras/x-t50/',
+    imageUrl:'https://fujifilm-x.b-cdn.net/wp-content/uploads/2024/05/product-list_X-T50_front_16-50_silver.jpg',
     prices:{USD:1399,AUD:2199,EUR:1399,GBP:1199,JPY:199000,CAD:1899,SGD:1899},
     sensorMP:40.2, sensorType:'X-Trans CMOS 5 HR', processor:'X-Processor 5',
     width:123.8, height:84.0, depth:49.0, weight:438, weatherSealed:true,
@@ -911,6 +943,7 @@ const CAMERAS = {
     name:'X-T30 II', series:'X-T', year:2021, discontinued:false,
     tagline:'Compact 26MP Enthusiast',
     productUrl:'https://www.fujifilm-x.com/global/products/cameras/x-t30-ii/',
+    imageUrl:'https://fujifilm-x.b-cdn.net/wp-content/uploads/2021/09/x-t30-ii_thum_bxyg.jpg',
     prices:{USD:899,AUD:1399,EUR:899,GBP:799,JPY:129000,CAD:1249,SGD:1249},
     sensorMP:26.1, sensorType:'X-Trans CMOS 4', processor:'X-Processor 4',
     width:118.4, height:82.8, depth:46.8, weight:383, weatherSealed:false,
@@ -928,6 +961,7 @@ const CAMERAS = {
     name:'X-T30', series:'X-T', year:2019, discontinued:true,
     tagline:'Budget X-Trans 4 Compact',
     productUrl:'https://www.fujifilm-x.com/global/products/cameras/',
+    imageUrl:'https://fujifilm-x.b-cdn.net/wp-content/uploads/2019/02/X-T30_480x480.jpg',
     prices:{USD:899,AUD:null,EUR:null,GBP:null,JPY:null,CAD:null,SGD:null},
     sensorMP:26.1, sensorType:'X-Trans CMOS 4', processor:'X-Processor 4',
     width:118.4, height:82.8, depth:46.8, weight:383, weatherSealed:false,
@@ -945,6 +979,7 @@ const CAMERAS = {
     name:'X-T20', series:'X-T', year:2017, discontinued:true,
     tagline:'24MP Compact with Touchscreen',
     productUrl:'https://www.fujifilm-x.com/global/products/cameras/',
+    imageUrl:'https://fujifilm-x.b-cdn.net/wp-content/uploads/2017/01/5_thum_x-t20.jpg',
     prices:{USD:799,AUD:null,EUR:null,GBP:null,JPY:null,CAD:null,SGD:null},
     sensorMP:24.3, sensorType:'X-Trans CMOS III', processor:'X-Processor 3',
     width:118.4, height:82.8, depth:41.4, weight:383, weatherSealed:false,
@@ -962,6 +997,7 @@ const CAMERAS = {
     name:'X-T10', series:'X-T', year:2015, discontinued:true,
     tagline:'Compact SLR-Style Enthusiast',
     productUrl:'https://www.fujifilm-x.com/global/products/cameras/',
+    imageUrl:'https://fujifilm-x.b-cdn.net/wp-content/uploads/2015/05/480xcom_MH0409_X_T10.jpg',
     prices:{USD:699,AUD:null,EUR:null,GBP:null,JPY:null,CAD:null,SGD:null},
     sensorMP:16.3, sensorType:'X-Trans CMOS II', processor:'X-Processor Pro',
     width:117.9, height:82.5, depth:40.3, weight:381, weatherSealed:false,
@@ -979,6 +1015,7 @@ const CAMERAS = {
     name:'X-T100', series:'X-T', year:2018, discontinued:true,
     tagline:'Budget Entry with 3-Way Tilt',
     productUrl:'https://www.fujifilm-x.com/global/products/cameras/',
+    imageUrl:'https://fujifilm-x.b-cdn.net/wp-content/uploads/2018/05/6_thum_x-t100.jpg',
     prices:{USD:599,AUD:null,EUR:null,GBP:null,JPY:null,CAD:null,SGD:null},
     sensorMP:24.2, sensorType:'Bayer CMOS', processor:'X-Processor 3',
     width:121.0, height:83.0, depth:47.4, weight:394, weatherSealed:false,
@@ -996,6 +1033,7 @@ const CAMERAS = {
     name:'X-T200', series:'X-T', year:2020, discontinued:true,
     tagline:'Budget Vlogger with Articulating Screen',
     productUrl:'https://www.fujifilm-x.com/global/products/cameras/',
+    imageUrl:'https://fujifilm-x.b-cdn.net/wp-content/uploads/2020/01/x-t200_thum.jpg',
     prices:{USD:699,AUD:null,EUR:null,GBP:null,JPY:null,CAD:null,SGD:null},
     sensorMP:24.2, sensorType:'Bayer CMOS', processor:'X-Processor 4',
     width:121.2, height:83.7, depth:56.2, weight:370, weatherSealed:false,
@@ -1014,6 +1052,7 @@ const CAMERAS = {
     name:'X-S20', series:'X-S', year:2023, discontinued:false,
     tagline:'Best Value Hybrid All-Rounder',
     productUrl:'https://www.fujifilm-x.com/global/products/cameras/x-s20/',
+    imageUrl:'https://fujifilm-x.b-cdn.net/wp-content/uploads/2023/05/dwga_x-s20_thum.jpg',
     prices:{USD:1299,AUD:1999,EUR:1299,GBP:1099,JPY:179000,CAD:1749,SGD:1749},
     sensorMP:26.1, sensorType:'X-Trans CMOS 4', processor:'X-Processor 5',
     width:128.0, height:84.5, depth:65.5, weight:491, weatherSealed:false,
@@ -1031,6 +1070,7 @@ const CAMERAS = {
     name:'X-S10', series:'X-S', year:2020, discontinued:false,
     tagline:'Compact IBIS for Budget Buyers',
     productUrl:'https://www.fujifilm-x.com/global/products/cameras/x-s10/',
+    imageUrl:'https://fujifilm-x.b-cdn.net/wp-content/uploads/2020/10/x-s10_product_list-poiu.jpg',
     prices:{USD:999,AUD:1549,EUR:999,GBP:899,JPY:139000,CAD:1399,SGD:1349},
     sensorMP:26.1, sensorType:'X-Trans CMOS 4 BSI', processor:'X-Processor 4',
     width:126.0, height:85.1, depth:65.4, weight:465, weatherSealed:false,
@@ -1049,6 +1089,7 @@ const CAMERAS = {
     name:'X-M5', series:'X-M', year:2024, discontinued:false,
     tagline:'Smallest X Series, Content Creator',
     productUrl:'https://www.fujifilm-x.com/global/products/cameras/x-m5/',
+    imageUrl:'https://fujifilm-x.b-cdn.net/wp-content/uploads/2024/10/product_thumb_x-m5.jpg',
     prices:{USD:799,AUD:1299,EUR:799,GBP:699,JPY:119000,CAD:1099,SGD:1099},
     sensorMP:26.1, sensorType:'X-Trans CMOS 4', processor:'X-Processor 5',
     width:111.9, height:66.6, depth:38.0, weight:355, weatherSealed:false,
@@ -1066,6 +1107,7 @@ const CAMERAS = {
     name:'X-M1', series:'X-M', year:2013, discontinued:true,
     tagline:'Original Budget X-Trans Compact',
     productUrl:'https://www.fujifilm-x.com/global/products/cameras/',
+    imageUrl:'https://fujifilm-x.b-cdn.net/wp-content/uploads/2019/04/480xcom_MH0409_X_M1.jpg',
     prices:{USD:599,AUD:null,EUR:null,GBP:null,JPY:null,CAD:null,SGD:null},
     sensorMP:16.3, sensorType:'X-Trans CMOS', processor:'EXR Processor II',
     width:116.9, height:66.5, depth:38.8, weight:280, weatherSealed:false,
@@ -1217,16 +1259,12 @@ function getNumSlots() {
 // ─────────────────────────────────────────────
 function buildPlaceholder(cam) {
   const c = seriesColor(cam.series);
-  return `<div class="cam-placeholder" style="background:${c.bg}">
-    <svg width="28" height="20" viewBox="0 0 28 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <rect x="1" y="5" width="26" height="14" rx="2.5" fill="${c.text}" opacity="0.35"/>
-      <rect x="8" y="1" width="12" height="5" rx="2" fill="${c.text}" opacity="0.35"/>
-      <circle cx="14" cy="12" r="5" fill="${c.text}" opacity="0.5"/>
-      <circle cx="14" cy="12" r="3" fill="${c.text}" opacity="0.7"/>
-      <circle cx="21" cy="8" r="1.5" fill="${c.text}" opacity="0.5"/>
-    </svg>
-    <span style="font-size:9px;font-weight:700;color:${c.text};letter-spacing:0.04em;opacity:0.9">${cam.name}</span>
-  </div>`;
+  const svgHtml = `<div class="cam-placeholder" style="background:${c.bg}"><svg width="28" height="20" viewBox="0 0 28 20" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="1" y="5" width="26" height="14" rx="2.5" fill="${c.text}" opacity="0.35"/><rect x="8" y="1" width="12" height="5" rx="2" fill="${c.text}" opacity="0.35"/><circle cx="14" cy="12" r="5" fill="${c.text}" opacity="0.5"/><circle cx="14" cy="12" r="3" fill="${c.text}" opacity="0.7"/><circle cx="21" cy="8" r="1.5" fill="${c.text}" opacity="0.5"/></svg><span style="font-size:9px;font-weight:700;color:${c.text};letter-spacing:0.04em;opacity:0.9">${cam.name}</span></div>`;
+  if (cam.imageUrl) {
+    const fallback = svgHtml.replace(/'/g, '&#39;').replace(/"/g, '&quot;');
+    return `<img src="${cam.imageUrl}" alt="${cam.name}" class="cam-photo" onerror="this.outerHTML='${fallback}'">`;
+  }
+  return svgHtml;
 }
 
 // ─────────────────────────────────────────────
