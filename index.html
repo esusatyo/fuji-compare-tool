@@ -1,0 +1,1410 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fujifilm Camera Comparison</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --fuji-red: #cc0000;
+      --fuji-dark: #1a1a1a;
+      --bg: #f5f5f7;
+      --white: #ffffff;
+      --gray-1: #f2f2f4;
+      --gray-2: #e2e2e6;
+      --gray-3: #6e6e73;
+      --gray-4: #1d1d1f;
+      --green-bg: #e6f4ea;
+      --green-text: #137333;
+      --border: rgba(0,0,0,0.09);
+      --shadow: 0 2px 16px rgba(0,0,0,0.08);
+      --header-h: 54px;
+      --compare-h: 196px;
+      --label-w: 190px;
+      --num-slots: 3;
+      --radius: 12px;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, sans-serif;
+      background: var(--bg);
+      color: var(--gray-4);
+      font-size: 14px;
+      line-height: 1.5;
+      min-height: 100vh;
+    }
+
+    /* ─── SITE HEADER ─── */
+    #site-header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: var(--fuji-dark);
+      color: white;
+      height: var(--header-h);
+      display: flex;
+      align-items: center;
+      padding: 0 20px;
+      gap: 12px;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .header-brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex: 1;
+      min-width: 0;
+    }
+
+    .fuji-logo {
+      font-size: 16px;
+      font-weight: 800;
+      color: white;
+      letter-spacing: 0.04em;
+      white-space: nowrap;
+    }
+
+    .fuji-logo span { color: var(--fuji-red); }
+
+    .header-sep { color: rgba(255,255,255,0.25); font-size: 18px; }
+
+    .header-title {
+      font-size: 13px;
+      color: rgba(255,255,255,0.65);
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .header-controls { display: flex; align-items: center; gap: 10px; flex-shrink: 0; }
+
+    .ctrl-label { font-size: 12px; color: rgba(255,255,255,0.55); white-space: nowrap; }
+
+    .header-select {
+      background: rgba(255,255,255,0.1);
+      border: 1px solid rgba(255,255,255,0.18);
+      color: white;
+      padding: 5px 10px;
+      border-radius: 7px;
+      font-size: 13px;
+      cursor: pointer;
+      outline: none;
+      transition: background 0.15s;
+    }
+
+    .header-select:hover { background: rgba(255,255,255,0.17); }
+    .header-select option { background: #2a2a2a; color: white; }
+
+    /* ─── COMPARE STICKY HEADER ─── */
+    #compare-header {
+      position: sticky;
+      top: var(--header-h);
+      z-index: 90;
+      background: var(--white);
+      border-bottom: 1px solid var(--border);
+      box-shadow: var(--shadow);
+    }
+
+    .compare-grid {
+      display: grid;
+      grid-template-columns: var(--label-w) repeat(var(--num-slots), 1fr);
+    }
+
+    .compare-label-cell {
+      padding: 14px 16px 16px;
+      display: flex;
+      align-items: flex-end;
+      font-size: 11px;
+      color: var(--gray-3);
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      border-right: 1px solid var(--border);
+    }
+
+    .compare-slot {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 12px 10px 14px;
+      border-left: 1px solid var(--border);
+      gap: 6px;
+      min-width: 0;
+    }
+
+    .cam-image-wrap {
+      width: 88px;
+      height: 62px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .cam-image-wrap img {
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: contain;
+    }
+
+    .cam-placeholder {
+      width: 78px;
+      height: 52px;
+      border-radius: 8px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 3px;
+    }
+
+    .cam-placeholder svg { opacity: 0.7; }
+
+    .slot-select {
+      width: 100%;
+      max-width: 170px;
+      padding: 5px 8px;
+      border: 1.5px solid var(--gray-2);
+      border-radius: 8px;
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--gray-4);
+      background: white;
+      cursor: pointer;
+      outline: none;
+      transition: border-color 0.15s;
+    }
+
+    .slot-select:focus, .slot-select:hover { border-color: var(--fuji-red); }
+
+    .slot-price {
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--gray-4);
+      line-height: 1;
+    }
+
+    .slot-price.discontinued {
+      font-size: 11px;
+      color: var(--gray-3);
+      font-weight: 400;
+      text-align: center;
+    }
+
+    .slot-link {
+      font-size: 11px;
+      color: var(--fuji-red);
+      text-decoration: none;
+      border: 1px solid var(--fuji-red);
+      padding: 2px 9px;
+      border-radius: 20px;
+      transition: all 0.15s;
+      white-space: nowrap;
+    }
+
+    .slot-link:hover { background: var(--fuji-red); color: white; }
+    .slot-link.na { color: var(--gray-3); border-color: var(--gray-3); pointer-events: none; }
+
+    /* ─── COMPARE TABLE ─── */
+    #compare-table {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 24px 16px 80px;
+    }
+
+    .spec-section {
+      margin-bottom: 20px;
+      border-radius: var(--radius);
+      overflow: hidden;
+      border: 1px solid var(--border);
+      background: white;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.04);
+    }
+
+    .section-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 11px 20px;
+      background: var(--gray-1);
+      border-bottom: 1px solid var(--border);
+      cursor: pointer;
+      user-select: none;
+      transition: background 0.12s;
+    }
+
+    .section-header:hover { background: #eaeaec; }
+
+    .section-title {
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--gray-3);
+    }
+
+    .section-toggle {
+      font-size: 16px;
+      color: var(--gray-3);
+      transition: transform 0.2s;
+      line-height: 1;
+    }
+
+    .section-toggle.open { transform: rotate(180deg); }
+
+    .section-body { overflow: hidden; }
+    .section-body.collapsed { display: none; }
+
+    .spec-row {
+      display: grid;
+      grid-template-columns: var(--label-w) repeat(var(--num-slots), 1fr);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .spec-row:last-child { border-bottom: none; }
+    .spec-row:nth-child(odd) { background: #fafafa; }
+    .spec-row:nth-child(even) { background: white; }
+
+    .spec-label {
+      padding: 12px 16px;
+      font-size: 12px;
+      color: var(--gray-3);
+      font-weight: 500;
+      display: flex;
+      align-items: center;
+      border-right: 1px solid var(--border);
+    }
+
+    .spec-value {
+      padding: 12px 8px;
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--gray-4);
+      text-align: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-left: 1px solid var(--border);
+      transition: background 0.12s;
+    }
+
+    .spec-value.winner {
+      background: var(--green-bg) !important;
+      color: var(--green-text);
+      font-weight: 600;
+    }
+
+    .check { color: #22aa44; font-size: 15px; }
+    .cross { color: #bbb; font-size: 15px; }
+    .badge-disc {
+      display: inline-block;
+      font-size: 10px;
+      padding: 1px 6px;
+      border-radius: 10px;
+      background: #f0e0e0;
+      color: #993333;
+      font-weight: 600;
+      margin-left: 4px;
+    }
+
+    /* Series color chips */
+    .series-chip {
+      display: inline-block;
+      font-size: 10px;
+      padding: 1px 7px;
+      border-radius: 10px;
+      font-weight: 700;
+      letter-spacing: 0.03em;
+    }
+
+    /* ─── HERO ─── */
+    .page-hero {
+      background: linear-gradient(135deg, #1a1a1a 0%, #2d0000 100%);
+      color: white;
+      text-align: center;
+      padding: 40px 20px 32px;
+    }
+
+    .hero-eyebrow {
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.5);
+      margin-bottom: 10px;
+    }
+
+    .hero-title {
+      font-size: clamp(26px, 4vw, 42px);
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      margin-bottom: 8px;
+    }
+
+    .hero-title span { color: var(--fuji-red); }
+
+    .hero-subtitle {
+      font-size: 15px;
+      color: rgba(255,255,255,0.6);
+    }
+
+    /* ─── FOOTER ─── */
+    footer {
+      text-align: center;
+      padding: 32px 20px;
+      color: var(--gray-3);
+      font-size: 12px;
+      line-height: 1.7;
+      border-top: 1px solid var(--border);
+    }
+
+    footer a { color: var(--fuji-red); text-decoration: none; }
+    footer a:hover { text-decoration: underline; }
+
+    /* ─── RESPONSIVE ─── */
+    @media (max-width: 599px) {
+      :root { --label-w: 120px; --num-slots: 2; }
+      .slot-3-hide { display: none !important; }
+      .hero-title { font-size: 22px; }
+      .cam-image-wrap { width: 68px; height: 50px; }
+      .slot-price { font-size: 13px; }
+    }
+
+    @media (max-width: 400px) {
+      :root { --label-w: 100px; }
+      .header-title { display: none; }
+      .header-sep { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ─── SITE HEADER ─── -->
+<header id="site-header">
+  <div class="header-brand">
+    <span class="fuji-logo">FUJI<span>FILM</span></span>
+    <span class="header-sep">|</span>
+    <span class="header-title">Camera Compare</span>
+  </div>
+  <div class="header-controls">
+    <span class="ctrl-label">Currency</span>
+    <select id="currency-select" class="header-select">
+      <option value="USD">USD ($)</option>
+      <option value="AUD" selected>AUD (A$)</option>
+      <option value="EUR">EUR (€)</option>
+      <option value="GBP">GBP (£)</option>
+      <option value="JPY">JPY (¥)</option>
+      <option value="CAD">CAD (C$)</option>
+      <option value="SGD">SGD (S$)</option>
+    </select>
+  </div>
+</header>
+
+<!-- ─── HERO ─── -->
+<div class="page-hero">
+  <div class="hero-eyebrow">X Series &amp; GFX</div>
+  <h1 class="hero-title"><span>Fujifilm</span> Camera Comparison</h1>
+  <p class="hero-subtitle">Compare up to 3 cameras side-by-side across all generations</p>
+</div>
+
+<!-- ─── STICKY COMPARE HEADER ─── -->
+<div id="compare-header">
+  <div class="compare-grid" id="compare-grid-header">
+    <div class="compare-label-cell">Compare</div>
+    <div class="compare-slot" id="slot-0"></div>
+    <div class="compare-slot" id="slot-1"></div>
+    <div class="compare-slot slot-3-hide" id="slot-2"></div>
+  </div>
+</div>
+
+<!-- ─── SPEC TABLE ─── -->
+<main id="compare-table"></main>
+
+<footer>
+  <p>Fujifilm Camera Comparison &mdash; For informational purposes only.</p>
+  <p>Prices shown are approximate launch prices. Actual retail prices may vary by region and retailer.</p>
+  <p>Specs sourced from <a href="https://www.fujifilm-x.com" target="_blank" rel="noopener">FUJIFILM X Series</a>,
+    <a href="https://www.dpreview.com" target="_blank" rel="noopener">DPReview</a>, and
+    <a href="https://www.kenrockwell.com/fuji/compared.htm" target="_blank" rel="noopener">Ken Rockwell</a>.</p>
+</footer>
+
+<script>
+// ─────────────────────────────────────────────
+// CURRENCY CONFIG
+// ─────────────────────────────────────────────
+const CURRENCY = {
+  USD: { symbol: '$',   locale: 'en-US', code: 'USD' },
+  AUD: { symbol: 'A$',  locale: 'en-AU', code: 'AUD' },
+  EUR: { symbol: '€',   locale: 'de-DE', code: 'EUR' },
+  GBP: { symbol: '£',   locale: 'en-GB', code: 'GBP' },
+  JPY: { symbol: '¥',   locale: 'ja-JP', code: 'JPY' },
+  CAD: { symbol: 'C$',  locale: 'en-CA', code: 'CAD' },
+  SGD: { symbol: 'S$',  locale: 'en-SG', code: 'SGD' },
+};
+
+function formatPrice(amount, cur) {
+  if (!amount) return null;
+  const c = CURRENCY[cur];
+  if (cur === 'JPY') return c.symbol + amount.toLocaleString('ja-JP');
+  return c.symbol + amount.toLocaleString('en-US');
+}
+
+// ─────────────────────────────────────────────
+// SERIES COLORS (for camera placeholder cards)
+// ─────────────────────────────────────────────
+const SERIES_COLORS = {
+  'X100':   { bg: '#3d1a1a', text: '#f4a0a0' },
+  'X-Pro':  { bg: '#2a2416', text: '#d4b870' },
+  'X-H':    { bg: '#162238', text: '#80b4e0' },
+  'X-T':    { bg: '#1e1e2e', text: '#a0a8e0' },
+  'X-S':    { bg: '#162a1e', text: '#80d0a0' },
+  'X-E':    { bg: '#162424', text: '#80c8c0' },
+  'X-M':    { bg: '#201c2e', text: '#b0a0e0' },
+  'X Half': { bg: '#2e1828', text: '#e0a0d0' },
+};
+
+function seriesColor(series) {
+  return SERIES_COLORS[series] || { bg: '#222', text: '#ccc' };
+}
+
+// ─────────────────────────────────────────────
+// CAMERA DATABASE
+// ─────────────────────────────────────────────
+const CAMERAS = {
+
+  /* ── X Half ── */
+  'x-half': {
+    name:'X Half', series:'X Half', year:2025, discontinued:false,
+    tagline:'Half-Frame Creative Compact',
+    productUrl:'https://www.fujifilm-x.com/global/products/cameras/x-half/',
+    prices:{USD:599,AUD:949,EUR:559,GBP:479,JPY:89900,CAD:829,SGD:799},
+    sensorMP:17.7, sensorType:'1" Primary Color CMOS', processor:'X-Processor 5',
+    width:105.8, height:64.3, depth:45.8, weight:240, weatherSealed:false,
+    lcdSize:'2.8"', lcdDots:null, lcdType:'Fixed',
+    evfType:null, evfDots:null, evfMag:null,
+    faceDetection:false, subjectDetection:null,
+    ibis:false, ibisStops:null, maxBurst:10,
+    maxVideoRes:'1080p (9:16 vertical)', logVideo:false,
+    xApp:false, bluetooth:'4.2 LE', wifi:true,
+    cardSlots:'1× SD UHS-I', batteryLife:260, usbCharging:true,
+    lensType:'Fixed', lensSpec:'32mm f/2.8 equiv.', filmSims:20,
+  },
+
+  /* ── X-E Series ── */
+  'x-e5': {
+    name:'X-E5', series:'X-E', year:2025, discontinued:false,
+    tagline:'Rangefinder, 40MP + IBIS',
+    productUrl:'https://www.fujifilm-x.com/global/products/cameras/x-e5/',
+    prices:{USD:1699,AUD:2649,EUR:1649,GBP:1449,JPY:259000,CAD:2299,SGD:2299},
+    sensorMP:40.2, sensorType:'X-Trans CMOS 5 HR', processor:'X-Processor 5',
+    width:124.9, height:72.9, depth:39.1, weight:445, weatherSealed:false,
+    lcdSize:'3.0"', lcdDots:1840, lcdType:'Tilt',
+    evfType:'EVF', evfDots:2.36, evfMag:0.62,
+    faceDetection:true, subjectDetection:'Animal / Bird / Vehicle / Plane / Train',
+    ibis:true, ibisStops:7.0, maxBurst:8,
+    maxVideoRes:'6.2K / 30P', logVideo:true,
+    xApp:true, bluetooth:'4.2 LE', wifi:true,
+    cardSlots:'1× SD UHS-I', batteryLife:440, usbCharging:true,
+    lensType:'Interchangeable', lensSpec:null, filmSims:20,
+  },
+
+  'x-e4': {
+    name:'X-E4', series:'X-E', year:2021, discontinued:false,
+    tagline:'Ultra-Slim Rangefinder',
+    productUrl:'https://www.fujifilm-x.com/global/products/cameras/x-e4/',
+    prices:{USD:849,AUD:1349,EUR:849,GBP:749,JPY:119000,CAD:1149,SGD:1149},
+    sensorMP:26.1, sensorType:'X-Trans CMOS 4 BSI', processor:'X-Processor 4',
+    width:121.3, height:72.9, depth:32.7, weight:364, weatherSealed:false,
+    lcdSize:'3.0"', lcdDots:1040, lcdType:'Tilt (180° selfie)',
+    evfType:'EVF', evfDots:2.36, evfMag:0.62,
+    faceDetection:true, subjectDetection:'Animal / Bird',
+    ibis:false, ibisStops:null, maxBurst:8,
+    maxVideoRes:'4K / 30P', logVideo:true,
+    xApp:'firmware', bluetooth:'4.2 LE', wifi:true,
+    cardSlots:'1× SD UHS-I', batteryLife:460, usbCharging:true,
+    lensType:'Interchangeable', lensSpec:null, filmSims:18,
+  },
+
+  'x-e3': {
+    name:'X-E3', series:'X-E', year:2017, discontinued:true,
+    tagline:'Slim Touchscreen Rangefinder',
+    productUrl:'https://www.fujifilm-x.com/global/products/cameras/',
+    prices:{USD:849,AUD:null,EUR:null,GBP:null,JPY:null,CAD:null,SGD:null},
+    sensorMP:24.3, sensorType:'X-Trans CMOS III', processor:'X-Processor 3',
+    width:121.3, height:73.9, depth:42.7, weight:337, weatherSealed:false,
+    lcdSize:'3.0"', lcdDots:1040, lcdType:'Fixed (Touch)',
+    evfType:'EVF', evfDots:2.36, evfMag:0.62,
+    faceDetection:false, subjectDetection:null,
+    ibis:false, ibisStops:null, maxBurst:8,
+    maxVideoRes:'4K / 15P', logVideo:false,
+    xApp:false, bluetooth:'4.0 LE', wifi:true,
+    cardSlots:'1× SD', batteryLife:350, usbCharging:false,
+    lensType:'Interchangeable', lensSpec:null, filmSims:15,
+  },
+
+  'x-e2s': {
+    name:'X-E2S', series:'X-E', year:2016, discontinued:true,
+    tagline:'Refined Compact Rangefinder',
+    productUrl:'https://www.fujifilm-x.com/global/products/cameras/',
+    prices:{USD:699,AUD:null,EUR:null,GBP:null,JPY:null,CAD:null,SGD:null},
+    sensorMP:16.3, sensorType:'X-Trans CMOS II', processor:'EXR Processor II',
+    width:129.5, height:74.9, depth:37.2, weight:350, weatherSealed:false,
+    lcdSize:'3.0"', lcdDots:1040, lcdType:'Fixed',
+    evfType:'EVF', evfDots:2.36, evfMag:0.62,
+    faceDetection:false, subjectDetection:null,
+    ibis:false, ibisStops:null, maxBurst:7,
+    maxVideoRes:'1080P / 60fps', logVideo:false,
+    xApp:false, bluetooth:false, wifi:true,
+    cardSlots:'1× SD', batteryLife:350, usbCharging:false,
+    lensType:'Interchangeable', lensSpec:null, filmSims:14,
+  },
+
+  'x-e2': {
+    name:'X-E2', series:'X-E', year:2013, discontinued:true,
+    tagline:'Second-Gen Compact Rangefinder',
+    productUrl:'https://www.fujifilm-x.com/global/products/cameras/',
+    prices:{USD:699,AUD:null,EUR:null,GBP:null,JPY:null,CAD:null,SGD:null},
+    sensorMP:16.3, sensorType:'X-Trans CMOS II', processor:'EXR Processor II',
+    width:129.5, height:74.9, depth:37.2, weight:350, weatherSealed:false,
+    lcdSize:'3.0"', lcdDots:1040, lcdType:'Fixed',
+    evfType:'EVF', evfDots:2.36, evfMag:0.62,
+    faceDetection:false, subjectDetection:null,
+    ibis:false, ibisStops:null, maxBurst:7,
+    maxVideoRes:'1080P / 60fps', logVideo:false,
+    xApp:false, bluetooth:false, wifi:true,
+    cardSlots:'1× SD', batteryLife:350, usbCharging:false,
+    lensType:'Interchangeable', lensSpec:null, filmSims:14,
+  },
+
+  'x-e1': {
+    name:'X-E1', series:'X-E', year:2012, discontinued:true,
+    tagline:'Original X-E Rangefinder',
+    productUrl:'https://www.fujifilm-x.com/global/products/cameras/',
+    prices:{USD:699,AUD:null,EUR:null,GBP:null,JPY:null,CAD:null,SGD:null},
+    sensorMP:16.3, sensorType:'X-Trans CMOS', processor:'EXR Processor II',
+    width:129, height:75, depth:38, weight:350, weatherSealed:false,
+    lcdSize:'2.8"', lcdDots:460, lcdType:'Fixed',
+    evfType:'EVF', evfDots:2.36, evfMag:0.62,
+    faceDetection:false, subjectDetection:null,
+    ibis:false, ibisStops:null, maxBurst:6,
+    maxVideoRes:'1080P / 24fps', logVideo:false,
+    xApp:false, bluetooth:false, wifi:false,
+    cardSlots:'1× SD', batteryLife:300, usbCharging:false,
+    lensType:'Interchangeable', lensSpec:null, filmSims:11,
+  },
+
+  /* ── X100 Series ── */
+  'x100vi': {
+    name:'X100VI', series:'X100', year:2024, discontinued:false,
+    tagline:'40MP Fixed-Lens Compact + IBIS',
+    productUrl:'https://www.fujifilm-x.com/global/products/cameras/x100vi/',
+    prices:{USD:1599,AUD:2499,EUR:1599,GBP:1349,JPY:229000,CAD:2199,SGD:2199},
+    sensorMP:40.2, sensorType:'X-Trans CMOS 5 HR', processor:'X-Processor 5',
+    width:128, height:74.8, depth:55.3, weight:521, weatherSealed:true,
+    lcdSize:'3.0"', lcdDots:1620, lcdType:'Tilt',
+    evfType:'Hybrid OVF/EVF', evfDots:3.69, evfMag:0.52,
+    faceDetection:true, subjectDetection:'Animal / Bird / Vehicle / Plane / Train',
+    ibis:true, ibisStops:6.0, maxBurst:20,
+    maxVideoRes:'6.2K / 30P', logVideo:true,
+    xApp:true, bluetooth:'4.2 LE', wifi:true,
+    cardSlots:'1× SD UHS-I', batteryLife:430, usbCharging:true,
+    lensType:'Fixed', lensSpec:'23mm f/2 (35mm equiv.)', filmSims:20,
+  },
+
+  'x100v': {
+    name:'X100V', series:'X100', year:2020, discontinued:false,
+    tagline:'26MP Fixed-Lens + Weather Seal',
+    productUrl:'https://www.fujifilm-x.com/global/products/cameras/x100v/',
+    prices:{USD:1399,AUD:2199,EUR:1399,GBP:1199,JPY:189000,CAD:1899,SGD:1899},
+    sensorMP:26.1, sensorType:'X-Trans CMOS 4 BSI', processor:'X-Processor 4',
+    width:128, height:74.8, depth:53.3, weight:478, weatherSealed:true,
+    lcdSize:'3.0"', lcdDots:1620, lcdType:'Tilt',
+    evfType:'Hybrid OVF/EVF', evfDots:3.69, evfMag:0.52,
+    faceDetection:true, subjectDetection:'Animal / Bird',
+    ibis:false, ibisStops:null, maxBurst:20,
+    maxVideoRes:'4K / 30P', logVideo:true,
+    xApp:'firmware', bluetooth:'4.2 LE', wifi:true,
+    cardSlots:'1× SD UHS-I', batteryLife:420, usbCharging:true,
+    lensType:'Fixed', lensSpec:'23mm f/2 (35mm equiv.)', filmSims:18,
+  },
+
+  'x100f': {
+    name:'X100F', series:'X100', year:2017, discontinued:true,
+    tagline:'24MP Fixed-Lens Enthusiast',
+    productUrl:'https://www.fujifilm-x.com/global/products/cameras/',
+    prices:{USD:1299,AUD:null,EUR:null,GBP:null,JPY:null,CAD:null,SGD:null},
+    sensorMP:24.3, sensorType:'X-Trans CMOS III', processor:'X-Processor 3',
+    width:126.5, height:74.8, depth:52.4, weight:469, weatherSealed:false,
+    lcdSize:'3.0"', lcdDots:1040, lcdType:'Fixed',
+    evfType:'Hybrid OVF/EVF', evfDots:2.36, evfMag:0.5,
+    faceDetection:false, subjectDetection:null,
+    ibis:false, ibisStops:null, maxBurst:8,
+    maxVideoRes:'1080P / 60fps', logVideo:false,
+    xApp:'firmware', bluetooth:'4.0 LE', wifi:true,
+    cardSlots:'1× SD', batteryLife:390, usbCharging:false,
+    lensType:'Fixed', lensSpec:'23mm f/2 (35mm equiv.)', filmSims:15,
+  },
+
+  'x100t': {
+    name:'X100T', series:'X100', year:2014, discontinued:true,
+    tagline:'Refined 16MP Fixed-Lens Compact',
+    productUrl:'https://www.fujifilm-x.com/global/products/cameras/',
+    prices:{USD:1299,AUD:null,EUR:null,GBP:null,JPY:null,CAD:null,SGD:null},
+    sensorMP:16.3, sensorType:'X-Trans CMOS II', processor:'EXR Processor II',
+    width:126.5, height:74.4, depth:52.9, weight:440, weatherSealed:false,
+    lcdSize:'2.8"', lcdDots:1040, lcdType:'Fixed',
+    evfType:'Hybrid OVF/EVF', evfDots:2.36, evfMag:0.5,
+    faceDetection:false, subjectDetection:null,
+    ibis:false, ibisStops:null, maxBurst:6,
+    maxVideoRes:'1080P / 60fps', logVideo:false,
+    xApp:false, bluetooth:false, wifi:true,
+    cardSlots:'1× SD', batteryLife:330, usbCharging:false,
+    lensType:'Fixed', lensSpec:'23mm f/2 (35mm equiv.)', filmSims:14,
+  },
+
+  'x100s': {
+    name:'X100S', series:'X100', year:2013, discontinued:true,
+    tagline:'First X-Trans Fixed-Lens',
+    productUrl:'https://www.fujifilm-x.com/global/products/cameras/',
+    prices:{USD:1299,AUD:null,EUR:null,GBP:null,JPY:null,CAD:null,SGD:null},
+    sensorMP:16.3, sensorType:'X-Trans CMOS II', processor:'EXR Processor II',
+    width:126.5, height:74.4, depth:52.9, weight:445, weatherSealed:false,
+    lcdSize:'2.8"', lcdDots:460, lcdType:'Fixed',
+    evfType:'Hybrid OVF/EVF', evfDots:null, evfMag:0.5,
+    faceDetection:false, subjectDetection:null,
+    ibis:false, ibisStops:null, maxBurst:6,
+    maxVideoRes:'1080P / 60fps', logVideo:false,
+    xApp:false, bluetooth:false, wifi:false,
+    cardSlots:'1× SD', batteryLife:300, usbCharging:false,
+    lensType:'Fixed', lensSpec:'23mm f/2 (35mm equiv.)', filmSims:11,
+  },
+
+  'x100': {
+    name:'X100', series:'X100', year:2011, discontinued:true,
+    tagline:'The Original X100',
+    productUrl:'https://www.fujifilm-x.com/global/products/cameras/',
+    prices:{USD:1199,AUD:null,EUR:null,GBP:null,JPY:null,CAD:null,SGD:null},
+    sensorMP:12.3, sensorType:'Bayer CMOS EXR', processor:'EXR Processor',
+    width:126.5, height:74.4, depth:53.9, weight:405, weatherSealed:false,
+    lcdSize:'2.8"', lcdDots:460, lcdType:'Fixed',
+    evfType:'Hybrid OVF/EVF', evfDots:null, evfMag:null,
+    faceDetection:false, subjectDetection:null,
+    ibis:false, ibisStops:null, maxBurst:5,
+    maxVideoRes:'720P', logVideo:false,
+    xApp:false, bluetooth:false, wifi:false,
+    cardSlots:'1× SD', batteryLife:300, usbCharging:false,
+    lensType:'Fixed', lensSpec:'23mm f/2 (35mm equiv.)', filmSims:7,
+  },
+
+  /* ── X-Pro Series ── */
+  'x-pro3': {
+    name:'X-Pro3', series:'X-Pro', year:2019, discontinued:false,
+    tagline:'Rangefinder with Hidden LCD',
+    productUrl:'https://www.fujifilm-x.com/global/products/cameras/x-pro3/',
+    prices:{USD:1799,AUD:2799,EUR:1799,GBP:1549,JPY:249000,CAD:2449,SGD:2449},
+    sensorMP:26.1, sensorType:'X-Trans CMOS 4', processor:'X-Processor 4',
+    width:140.5, height:82.8, depth:46.1, weight:497, weatherSealed:true,
+    lcdSize:'1.28"', lcdDots:null, lcdType:'Hidden sub-LCD (flip-down)',
+    evfType:'Hybrid OVF/EVF', evfDots:3.69, evfMag:0.52,
+    faceDetection:true, subjectDetection:'Animal / Bird',
+    ibis:false, ibisStops:null, maxBurst:11,
+    maxVideoRes:'4K / 30P', logVideo:true,
+    xApp:'firmware', bluetooth:'4.2 LE', wifi:true,
+    cardSlots:'2× SD UHS-I', batteryLife:440, usbCharging:true,
+    lensType:'Interchangeable', lensSpec:null, filmSims:18,
+  },
+
+  'x-pro2': {
+    name:'X-Pro2', series:'X-Pro', year:2016, discontinued:true,
+    tagline:'Pro Rangefinder, Weather Sealed',
+    productUrl:'https://www.fujifilm-x.com/global/products/cameras/',
+    prices:{USD:1699,AUD:null,EUR:null,GBP:null,JPY:null,CAD:null,SGD:null},
+    sensorMP:24.3, sensorType:'X-Trans CMOS III', processor:'X-Processor Pro',
+    width:140.5, height:82.8, depth:45.9, weight:495, weatherSealed:true,
+    lcdSize:'3.0"', lcdDots:1620, lcdType:'Fixed',
+    evfType:'Hybrid OVF/EVF', evfDots:2.36, evfMag:0.59,
+    faceDetection:false, subjectDetection:null,
+    ibis:false, ibisStops:null, maxBurst:8,
+    maxVideoRes:'1080P / 60fps', logVideo:false,
+    xApp:false, bluetooth:false, wifi:true,
+    cardSlots:'2× SD UHS-II', batteryLife:350, usbCharging:false,
+    lensType:'Interchangeable', lensSpec:null, filmSims:15,
+  },
+
+  'x-pro1': {
+    name:'X-Pro1', series:'X-Pro', year:2012, discontinued:true,
+    tagline:'First X-Series Interchangeable',
+    productUrl:'https://www.fujifilm-x.com/global/products/cameras/',
+    prices:{USD:1699,AUD:null,EUR:null,GBP:null,JPY:null,CAD:null,SGD:null},
+    sensorMP:16.3, sensorType:'X-Trans CMOS', processor:'EXR Processor II',
+    width:139.5, height:81.8, depth:42.5, weight:450, weatherSealed:false,
+    lcdSize:'3.0"', lcdDots:460, lcdType:'Fixed',
+    evfType:'Hybrid OVF/EVF', evfDots:null, evfMag:0.37,
+    faceDetection:false, subjectDetection:null,
+    ibis:false, ibisStops:null, maxBurst:6,
+    maxVideoRes:'1080P', logVideo:false,
+    xApp:false, bluetooth:false, wifi:false,
+    cardSlots:'1× SD', batteryLife:300, usbCharging:false,
+    lensType:'Interchangeable', lensSpec:null, filmSims:7,
+  },
+
+  /* ── X-H Series ── */
+  'x-h2s': {
+    name:'X-H2S', series:'X-H', year:2022, discontinued:false,
+    tagline:'Pro Speed — Stacked Sensor',
+    productUrl:'https://www.fujifilm-x.com/global/products/cameras/x-h2s/',
+    prices:{USD:2499,AUD:3849,EUR:2499,GBP:2149,JPY:349000,CAD:3399,SGD:3399},
+    sensorMP:26.1, sensorType:'X-Trans CMOS 5 HS (Stacked BSI)', processor:'X-Processor 5',
+    width:136.3, height:92.9, depth:84.6, weight:673, weatherSealed:true,
+    lcdSize:'3.0"', lcdDots:1620, lcdType:'Vari-angle',
+    evfType:'EVF', evfDots:5.76, evfMag:0.8,
+    faceDetection:true, subjectDetection:'Animal / Bird / Vehicle / Plane / Train / Human',
+    ibis:true, ibisStops:7.0, maxBurst:40,
+    maxVideoRes:'6.2K / 30P', logVideo:true,
+    xApp:true, bluetooth:'5.0 LE', wifi:true,
+    cardSlots:'2× SD UHS-II + CFexpress B', batteryLife:580, usbCharging:true,
+    lensType:'Interchangeable', lensSpec:null, filmSims:20,
+  },
+
+  'x-h2': {
+    name:'X-H2', series:'X-H', year:2022, discontinued:false,
+    tagline:'40MP + 8K Video Flagship',
+    productUrl:'https://www.fujifilm-x.com/global/products/cameras/x-h2/',
+    prices:{USD:1999,AUD:3099,EUR:1999,GBP:1749,JPY:279000,CAD:2699,SGD:2699},
+    sensorMP:40.2, sensorType:'X-Trans CMOS 5 HR', processor:'X-Processor 5',
+    width:136.3, height:92.9, depth:94.2, weight:660, weatherSealed:true,
+    lcdSize:'3.0"', lcdDots:1840, lcdType:'Vari-angle',
+    evfType:'EVF', evfDots:5.76, evfMag:0.8,
+    faceDetection:true, subjectDetection:'Animal / Bird / Vehicle / Plane / Train',
+    ibis:true, ibisStops:7.0, maxBurst:20,
+    maxVideoRes:'8K / 30P', logVideo:true,
+    xApp:true, bluetooth:'5.0 LE', wifi:true,
+    cardSlots:'2× SD UHS-II + CFexpress B', batteryLife:560, usbCharging:true,
+    lensType:'Interchangeable', lensSpec:null, filmSims:20,
+  },
+
+  'x-h1': {
+    name:'X-H1', series:'X-H', year:2018, discontinued:true,
+    tagline:'First X-H, First X-Series IBIS',
+    productUrl:'https://www.fujifilm-x.com/global/products/cameras/',
+    prices:{USD:1899,AUD:null,EUR:null,GBP:null,JPY:null,CAD:null,SGD:null},
+    sensorMP:24.3, sensorType:'X-Trans CMOS III', processor:'X-Processor Pro',
+    width:139.8, height:97.3, depth:85.5, weight:623, weatherSealed:true,
+    lcdSize:'3.0"', lcdDots:1040, lcdType:'Tilt (Touch)',
+    evfType:'EVF', evfDots:3.69, evfMag:0.75,
+    faceDetection:false, subjectDetection:null,
+    ibis:true, ibisStops:5.5, maxBurst:8,
+    maxVideoRes:'4K / 30P', logVideo:true,
+    xApp:'firmware', bluetooth:'4.0 LE', wifi:true,
+    cardSlots:'2× SD UHS-II', batteryLife:310, usbCharging:false,
+    lensType:'Interchangeable', lensSpec:null, filmSims:16,
+  },
+
+  /* ── X-T Series (Pro) ── */
+  'x-t5': {
+    name:'X-T5', series:'X-T', year:2022, discontinued:false,
+    tagline:'40MP Stills-First Mirrorless',
+    productUrl:'https://www.fujifilm-x.com/global/products/cameras/x-t5/',
+    prices:{USD:1699,AUD:2649,EUR:1699,GBP:1449,JPY:239000,CAD:2299,SGD:2299},
+    sensorMP:40.2, sensorType:'X-Trans CMOS 5 HR', processor:'X-Processor 5',
+    width:129.5, height:91.0, depth:63.8, weight:557, weatherSealed:true,
+    lcdSize:'3.0"', lcdDots:1840, lcdType:'3-way Tilt',
+    evfType:'EVF', evfDots:3.69, evfMag:0.8,
+    faceDetection:true, subjectDetection:'Animal / Bird / Vehicle / Plane / Train',
+    ibis:true, ibisStops:7.0, maxBurst:20,
+    maxVideoRes:'6.2K / 30P', logVideo:true,
+    xApp:true, bluetooth:'4.2 LE', wifi:true,
+    cardSlots:'2× SD UHS-II', batteryLife:580, usbCharging:true,
+    lensType:'Interchangeable', lensSpec:null, filmSims:20,
+  },
+
+  'x-t4': {
+    name:'X-T4', series:'X-T', year:2020, discontinued:false,
+    tagline:'First X-T with IBIS + Vari-angle',
+    productUrl:'https://www.fujifilm-x.com/global/products/cameras/x-t4/',
+    prices:{USD:1699,AUD:2649,EUR:1699,GBP:1449,JPY:219000,CAD:2299,SGD:2299},
+    sensorMP:26.1, sensorType:'X-Trans CMOS 4 BSI', processor:'X-Processor 4',
+    width:134.6, height:92.8, depth:63.8, weight:607, weatherSealed:true,
+    lcdSize:'3.0"', lcdDots:1620, lcdType:'Vari-angle',
+    evfType:'EVF', evfDots:3.69, evfMag:0.75,
+    faceDetection:true, subjectDetection:'Animal / Bird',
+    ibis:true, ibisStops:6.5, maxBurst:20,
+    maxVideoRes:'4K / 60P', logVideo:true,
+    xApp:'firmware', bluetooth:'4.2 LE', wifi:true,
+    cardSlots:'2× SD UHS-I', batteryLife:500, usbCharging:true,
+    lensType:'Interchangeable', lensSpec:null, filmSims:18,
+  },
+
+  'x-t3': {
+    name:'X-T3', series:'X-T', year:2018, discontinued:true,
+    tagline:'4K/60P, No IBIS',
+    productUrl:'https://www.fujifilm-x.com/global/products/cameras/',
+    prices:{USD:1499,AUD:null,EUR:null,GBP:null,JPY:null,CAD:null,SGD:null},
+    sensorMP:26.1, sensorType:'X-Trans CMOS 4', processor:'X-Processor 4',
+    width:132.5, height:92.8, depth:58.8, weight:539, weatherSealed:true,
+    lcdSize:'3.0"', lcdDots:1040, lcdType:'Tilt (Touch)',
+    evfType:'EVF', evfDots:3.69, evfMag:0.75,
+    faceDetection:true, subjectDetection:null,
+    ibis:false, ibisStops:null, maxBurst:11,
+    maxVideoRes:'4K / 60P', logVideo:true,
+    xApp:'firmware', bluetooth:'4.2 LE', wifi:true,
+    cardSlots:'2× SD UHS-II', batteryLife:390, usbCharging:true,
+    lensType:'Interchangeable', lensSpec:null, filmSims:16,
+  },
+
+  'x-t2': {
+    name:'X-T2', series:'X-T', year:2016, discontinued:true,
+    tagline:'24MP, 4K, Dual Card',
+    productUrl:'https://www.fujifilm-x.com/global/products/cameras/',
+    prices:{USD:1599,AUD:null,EUR:null,GBP:null,JPY:null,CAD:null,SGD:null},
+    sensorMP:24.3, sensorType:'X-Trans CMOS III', processor:'X-Processor Pro',
+    width:132.5, height:91.8, depth:49.0, weight:507, weatherSealed:true,
+    lcdSize:'3.0"', lcdDots:1040, lcdType:'Tilt',
+    evfType:'EVF', evfDots:2.36, evfMag:0.77,
+    faceDetection:false, subjectDetection:null,
+    ibis:false, ibisStops:null, maxBurst:8,
+    maxVideoRes:'4K / 30P', logVideo:false,
+    xApp:'firmware', bluetooth:false, wifi:true,
+    cardSlots:'2× SD UHS-II', batteryLife:350, usbCharging:false,
+    lensType:'Interchangeable', lensSpec:null, filmSims:15,
+  },
+
+  'x-t1': {
+    name:'X-T1', series:'X-T', year:2014, discontinued:true,
+    tagline:'First Weather-Sealed X-T',
+    productUrl:'https://www.fujifilm-x.com/global/products/cameras/',
+    prices:{USD:1299,AUD:null,EUR:null,GBP:null,JPY:null,CAD:null,SGD:null},
+    sensorMP:16.3, sensorType:'X-Trans CMOS II', processor:'EXR Processor II',
+    width:129.5, height:90.0, depth:46.7, weight:440, weatherSealed:true,
+    lcdSize:'3.0"', lcdDots:1040, lcdType:'Tilt',
+    evfType:'EVF', evfDots:2.36, evfMag:0.77,
+    faceDetection:false, subjectDetection:null,
+    ibis:false, ibisStops:null, maxBurst:8,
+    maxVideoRes:'1080P / 60fps', logVideo:false,
+    xApp:false, bluetooth:false, wifi:true,
+    cardSlots:'1× SD', batteryLife:350, usbCharging:false,
+    lensType:'Interchangeable', lensSpec:null, filmSims:14,
+  },
+
+  /* ── X-T Series (Compact) ── */
+  'x-t50': {
+    name:'X-T50', series:'X-T', year:2024, discontinued:false,
+    tagline:'40MP Compact + Film Sim Dial',
+    productUrl:'https://www.fujifilm-x.com/global/products/cameras/x-t50/',
+    prices:{USD:1399,AUD:2199,EUR:1399,GBP:1199,JPY:199000,CAD:1899,SGD:1899},
+    sensorMP:40.2, sensorType:'X-Trans CMOS 5 HR', processor:'X-Processor 5',
+    width:123.8, height:84.0, depth:49.0, weight:438, weatherSealed:true,
+    lcdSize:'3.0"', lcdDots:1840, lcdType:'Tilt',
+    evfType:'EVF', evfDots:2.36, evfMag:0.62,
+    faceDetection:true, subjectDetection:'Animal / Bird / Vehicle / Plane / Train',
+    ibis:true, ibisStops:7.0, maxBurst:20,
+    maxVideoRes:'6.2K / 30P', logVideo:true,
+    xApp:true, bluetooth:'4.2 LE', wifi:true,
+    cardSlots:'1× SD UHS-I', batteryLife:460, usbCharging:true,
+    lensType:'Interchangeable', lensSpec:null, filmSims:20,
+  },
+
+  'x-t30ii': {
+    name:'X-T30 II', series:'X-T', year:2021, discontinued:false,
+    tagline:'Compact 26MP Enthusiast',
+    productUrl:'https://www.fujifilm-x.com/global/products/cameras/x-t30-ii/',
+    prices:{USD:899,AUD:1399,EUR:899,GBP:799,JPY:129000,CAD:1249,SGD:1249},
+    sensorMP:26.1, sensorType:'X-Trans CMOS 4', processor:'X-Processor 4',
+    width:118.4, height:82.8, depth:46.8, weight:383, weatherSealed:false,
+    lcdSize:'3.0"', lcdDots:1040, lcdType:'Tilt',
+    evfType:'EVF', evfDots:2.36, evfMag:0.62,
+    faceDetection:true, subjectDetection:'Animal / Bird',
+    ibis:false, ibisStops:null, maxBurst:8,
+    maxVideoRes:'4K / 30P', logVideo:true,
+    xApp:'firmware', bluetooth:'4.2 LE', wifi:true,
+    cardSlots:'1× SD UHS-I', batteryLife:380, usbCharging:true,
+    lensType:'Interchangeable', lensSpec:null, filmSims:18,
+  },
+
+  'x-t30': {
+    name:'X-T30', series:'X-T', year:2019, discontinued:true,
+    tagline:'Budget X-Trans 4 Compact',
+    productUrl:'https://www.fujifilm-x.com/global/products/cameras/',
+    prices:{USD:899,AUD:null,EUR:null,GBP:null,JPY:null,CAD:null,SGD:null},
+    sensorMP:26.1, sensorType:'X-Trans CMOS 4', processor:'X-Processor 4',
+    width:118.4, height:82.8, depth:46.8, weight:383, weatherSealed:false,
+    lcdSize:'3.0"', lcdDots:1040, lcdType:'Tilt',
+    evfType:'EVF', evfDots:2.36, evfMag:0.62,
+    faceDetection:true, subjectDetection:null,
+    ibis:false, ibisStops:null, maxBurst:8,
+    maxVideoRes:'4K / 30P', logVideo:true,
+    xApp:'firmware', bluetooth:'4.2 LE', wifi:true,
+    cardSlots:'1× SD', batteryLife:380, usbCharging:false,
+    lensType:'Interchangeable', lensSpec:null, filmSims:16,
+  },
+
+  'x-t20': {
+    name:'X-T20', series:'X-T', year:2017, discontinued:true,
+    tagline:'24MP Compact with Touchscreen',
+    productUrl:'https://www.fujifilm-x.com/global/products/cameras/',
+    prices:{USD:799,AUD:null,EUR:null,GBP:null,JPY:null,CAD:null,SGD:null},
+    sensorMP:24.3, sensorType:'X-Trans CMOS III', processor:'X-Processor 3',
+    width:118.4, height:82.8, depth:41.4, weight:383, weatherSealed:false,
+    lcdSize:'3.0"', lcdDots:1040, lcdType:'Tilt (Touch)',
+    evfType:'EVF', evfDots:2.36, evfMag:0.62,
+    faceDetection:false, subjectDetection:null,
+    ibis:false, ibisStops:null, maxBurst:8,
+    maxVideoRes:'4K / 15P', logVideo:false,
+    xApp:false, bluetooth:false, wifi:true,
+    cardSlots:'1× SD', batteryLife:350, usbCharging:false,
+    lensType:'Interchangeable', lensSpec:null, filmSims:15,
+  },
+
+  'x-t10': {
+    name:'X-T10', series:'X-T', year:2015, discontinued:true,
+    tagline:'Compact SLR-Style Enthusiast',
+    productUrl:'https://www.fujifilm-x.com/global/products/cameras/',
+    prices:{USD:699,AUD:null,EUR:null,GBP:null,JPY:null,CAD:null,SGD:null},
+    sensorMP:16.3, sensorType:'X-Trans CMOS II', processor:'X-Processor Pro',
+    width:117.9, height:82.5, depth:40.3, weight:381, weatherSealed:false,
+    lcdSize:'3.0"', lcdDots:920, lcdType:'Tilt',
+    evfType:'EVF', evfDots:2.36, evfMag:0.62,
+    faceDetection:false, subjectDetection:null,
+    ibis:false, ibisStops:null, maxBurst:8,
+    maxVideoRes:'1080P / 60fps', logVideo:false,
+    xApp:false, bluetooth:false, wifi:true,
+    cardSlots:'1× SD', batteryLife:350, usbCharging:false,
+    lensType:'Interchangeable', lensSpec:null, filmSims:14,
+  },
+
+  'x-t100': {
+    name:'X-T100', series:'X-T', year:2018, discontinued:true,
+    tagline:'Budget Entry with 3-Way Tilt',
+    productUrl:'https://www.fujifilm-x.com/global/products/cameras/',
+    prices:{USD:599,AUD:null,EUR:null,GBP:null,JPY:null,CAD:null,SGD:null},
+    sensorMP:24.2, sensorType:'Bayer CMOS', processor:'X-Processor 3',
+    width:121.0, height:83.0, depth:47.4, weight:394, weatherSealed:false,
+    lcdSize:'3.0"', lcdDots:920, lcdType:'3-way Tilt',
+    evfType:null, evfDots:null, evfMag:null,
+    faceDetection:false, subjectDetection:null,
+    ibis:false, ibisStops:null, maxBurst:6,
+    maxVideoRes:'4K / 15P', logVideo:false,
+    xApp:false, bluetooth:false, wifi:true,
+    cardSlots:'1× SD', batteryLife:430, usbCharging:false,
+    lensType:'Interchangeable', lensSpec:null, filmSims:10,
+  },
+
+  'x-t200': {
+    name:'X-T200', series:'X-T', year:2020, discontinued:true,
+    tagline:'Budget Vlogger with Articulating Screen',
+    productUrl:'https://www.fujifilm-x.com/global/products/cameras/',
+    prices:{USD:699,AUD:null,EUR:null,GBP:null,JPY:null,CAD:null,SGD:null},
+    sensorMP:24.2, sensorType:'Bayer CMOS', processor:'X-Processor 4',
+    width:121.2, height:83.7, depth:56.2, weight:370, weatherSealed:false,
+    lcdSize:'3.5"', lcdDots:2760, lcdType:'Vari-angle',
+    evfType:null, evfDots:null, evfMag:null,
+    faceDetection:true, subjectDetection:null,
+    ibis:false, ibisStops:null, maxBurst:8,
+    maxVideoRes:'4K / 30P', logVideo:false,
+    xApp:'firmware', bluetooth:'4.1 LE', wifi:true,
+    cardSlots:'1× SD', batteryLife:430, usbCharging:true,
+    lensType:'Interchangeable', lensSpec:null, filmSims:10,
+  },
+
+  /* ── X-S Series ── */
+  'x-s20': {
+    name:'X-S20', series:'X-S', year:2023, discontinued:false,
+    tagline:'Best Value Hybrid All-Rounder',
+    productUrl:'https://www.fujifilm-x.com/global/products/cameras/x-s20/',
+    prices:{USD:1299,AUD:1999,EUR:1299,GBP:1099,JPY:179000,CAD:1749,SGD:1749},
+    sensorMP:26.1, sensorType:'X-Trans CMOS 4', processor:'X-Processor 5',
+    width:128.0, height:84.5, depth:65.5, weight:491, weatherSealed:false,
+    lcdSize:'3.0"', lcdDots:1840, lcdType:'Vari-angle',
+    evfType:'EVF', evfDots:2.36, evfMag:0.62,
+    faceDetection:true, subjectDetection:'Animal / Bird / Vehicle / Plane / Train',
+    ibis:true, ibisStops:7.0, maxBurst:8,
+    maxVideoRes:'6.2K / 30P', logVideo:true,
+    xApp:true, bluetooth:'4.2 LE', wifi:true,
+    cardSlots:'1× SD UHS-I', batteryLife:800, usbCharging:true,
+    lensType:'Interchangeable', lensSpec:null, filmSims:19,
+  },
+
+  'x-s10': {
+    name:'X-S10', series:'X-S', year:2020, discontinued:false,
+    tagline:'Compact IBIS for Budget Buyers',
+    productUrl:'https://www.fujifilm-x.com/global/products/cameras/x-s10/',
+    prices:{USD:999,AUD:1549,EUR:999,GBP:899,JPY:139000,CAD:1399,SGD:1349},
+    sensorMP:26.1, sensorType:'X-Trans CMOS 4 BSI', processor:'X-Processor 4',
+    width:126.0, height:85.1, depth:65.4, weight:465, weatherSealed:false,
+    lcdSize:'3.0"', lcdDots:1040, lcdType:'Vari-angle',
+    evfType:'EVF', evfDots:2.36, evfMag:0.62,
+    faceDetection:true, subjectDetection:null,
+    ibis:true, ibisStops:6.0, maxBurst:8,
+    maxVideoRes:'4K / 30P', logVideo:true,
+    xApp:'firmware', bluetooth:'4.2 LE', wifi:true,
+    cardSlots:'1× SD UHS-I', batteryLife:325, usbCharging:true,
+    lensType:'Interchangeable', lensSpec:null, filmSims:18,
+  },
+
+  /* ── X-M Series ── */
+  'x-m5': {
+    name:'X-M5', series:'X-M', year:2024, discontinued:false,
+    tagline:'Smallest X Series, Content Creator',
+    productUrl:'https://www.fujifilm-x.com/global/products/cameras/x-m5/',
+    prices:{USD:799,AUD:1299,EUR:799,GBP:699,JPY:119000,CAD:1099,SGD:1099},
+    sensorMP:26.1, sensorType:'X-Trans CMOS 4', processor:'X-Processor 5',
+    width:111.9, height:66.6, depth:38.0, weight:355, weatherSealed:false,
+    lcdSize:'3.0"', lcdDots:1040, lcdType:'Vari-angle',
+    evfType:null, evfDots:null, evfMag:null,
+    faceDetection:true, subjectDetection:'Animal / Bird / Vehicle / Plane / Train',
+    ibis:false, ibisStops:null, maxBurst:8,
+    maxVideoRes:'6.2K / 30P', logVideo:true,
+    xApp:true, bluetooth:'4.2 LE', wifi:true,
+    cardSlots:'1× SD UHS-I', batteryLife:440, usbCharging:true,
+    lensType:'Interchangeable', lensSpec:null, filmSims:20,
+  },
+
+  'x-m1': {
+    name:'X-M1', series:'X-M', year:2013, discontinued:true,
+    tagline:'Original Budget X-Trans Compact',
+    productUrl:'https://www.fujifilm-x.com/global/products/cameras/',
+    prices:{USD:599,AUD:null,EUR:null,GBP:null,JPY:null,CAD:null,SGD:null},
+    sensorMP:16.3, sensorType:'X-Trans CMOS', processor:'EXR Processor II',
+    width:116.9, height:66.5, depth:38.8, weight:280, weatherSealed:false,
+    lcdSize:'3.0"', lcdDots:460, lcdType:'Tilt',
+    evfType:null, evfDots:null, evfMag:null,
+    faceDetection:false, subjectDetection:null,
+    ibis:false, ibisStops:null, maxBurst:5,
+    maxVideoRes:'1080P', logVideo:false,
+    xApp:false, bluetooth:false, wifi:true,
+    cardSlots:'1× SD', batteryLife:350, usbCharging:false,
+    lensType:'Interchangeable', lensSpec:null, filmSims:11,
+  },
+
+};
+
+// Ordered list of camera IDs for dropdowns
+const CAMERA_ORDER = [
+  'x-half','x-e5','x-m5','x100vi','x-t50','x-s20','x-h2s','x-h2','x-t5',
+  'x-pro3','x-t30ii','x-e4','x100v','x-t4','x-s10','x-t200',
+  'x-t30','x-h1','x-t3','x-t100','x-e3','x100f','x-t20','x-pro2',
+  'x-t10','x-t2','x-e2s','x100t','x-t1','x-e2','x100s','x-m1','x-e1',
+  'x-pro1','x100',
+];
+
+const DROPDOWN_GROUPS = [
+  { label: '── Current (2022–2025) ──',     ids: ['x-half','x-e5','x-m5','x100vi','x-t50','x-s20','x-h2s','x-h2','x-t5'] },
+  { label: '── Recent (2019–2021) ──',       ids: ['x-pro3','x-t30ii','x-e4','x100v','x-t4','x-s10','x-t200'] },
+  { label: '── Mid-Generation (2017–2019) ──', ids: ['x-t30','x-h1','x-t3','x-t100','x-e3','x100f','x-t20','x-pro2'] },
+  { label: '── Classic (2013–2016) ──',      ids: ['x-t10','x-t2','x-e2s','x100t','x-t1','x-e2','x100s','x-m1','x-e1'] },
+  { label: '── Originals (2011–2012) ──',    ids: ['x-pro1','x100'] },
+];
+
+// ─────────────────────────────────────────────
+// SPEC SECTION DEFINITIONS
+// ─────────────────────────────────────────────
+const SPEC_SECTIONS = [
+  {
+    id: 'overview', label: 'Overview',
+    specs: [
+      { key: 'year',         label: 'Year Introduced',  type: 'text',    fn: c => c.year },
+      { key: 'status',       label: 'Status',           type: 'text',    fn: c => c.discontinued ? '🔴 Discontinued' : '🟢 Current' },
+      { key: 'series',       label: 'Camera Series',    type: 'text',    fn: c => c.series },
+      { key: 'tagline',      label: 'Best For',         type: 'text',    fn: c => c.tagline },
+    ]
+  },
+  {
+    id: 'lens', label: 'Lens System',
+    specs: [
+      { key: 'lensType',     label: 'Lens Type',        type: 'text',    fn: c => c.lensType },
+      { key: 'lensSpec',     label: 'Fixed Lens',       type: 'text',    fn: c => c.lensSpec || '—' },
+    ]
+  },
+  {
+    id: 'sensor', label: 'Sensor & Processor',
+    specs: [
+      { key: 'sensorMP',     label: 'Resolution',       type: 'number',  higherBetter: true,  fn: c => c.sensorMP,     fmt: v => v + ' MP' },
+      { key: 'sensorType',   label: 'Sensor Type',      type: 'text',    fn: c => c.sensorType },
+      { key: 'processor',    label: 'Processor',        type: 'text',    fn: c => c.processor },
+    ]
+  },
+  {
+    id: 'body', label: 'Body & Build',
+    specs: [
+      { key: 'dimensions',   label: 'Dimensions (W×H×D)', type: 'text', fn: c => `${c.width} × ${c.height} × ${c.depth} mm` },
+      { key: 'weight',       label: 'Weight',           type: 'number',  lowerBetter: true,   fn: c => c.weight,       fmt: v => v + ' g' },
+      { key: 'weatherSealed',label: 'Weather Sealed',   type: 'boolean', fn: c => c.weatherSealed },
+    ]
+  },
+  {
+    id: 'display', label: 'Display & Viewfinder',
+    specs: [
+      { key: 'lcdSize',      label: 'LCD Size',         type: 'text',    fn: c => c.lcdSize },
+      { key: 'lcdDots',      label: 'LCD Resolution',   type: 'number',  higherBetter: true,  fn: c => c.lcdDots,      fmt: v => v ? v.toLocaleString() + 'K dots' : '—' },
+      { key: 'lcdType',      label: 'LCD Type',         type: 'text',    fn: c => c.lcdType },
+      { key: 'evfType',      label: 'Viewfinder',       type: 'text',    fn: c => c.evfType || 'None' },
+      { key: 'evfDots',      label: 'EVF Resolution',   type: 'number',  higherBetter: true,  fn: c => c.evfDots,      fmt: v => v ? v + 'M dots' : '—' },
+      { key: 'evfMag',       label: 'EVF Magnification',type: 'text',    fn: c => c.evfMag ? c.evfMag + '×' : '—' },
+    ]
+  },
+  {
+    id: 'af', label: 'Autofocus',
+    specs: [
+      { key: 'faceDetect',   label: 'Face / Eye Detection', type: 'boolean', fn: c => c.faceDetection },
+      { key: 'subjectDet',   label: 'Subject Detection', type: 'text',   fn: c => c.subjectDetection || '—' },
+      { key: 'maxBurst',     label: 'Max Burst Speed',   type: 'number', higherBetter: true,  fn: c => c.maxBurst,     fmt: v => v + ' fps' },
+    ]
+  },
+  {
+    id: 'stabilization', label: 'Image Stabilization',
+    specs: [
+      { key: 'ibis',         label: 'In-Body IS (IBIS)', type: 'boolean', fn: c => c.ibis },
+      { key: 'ibisStops',    label: 'Compensation',      type: 'number', higherBetter: true,  fn: c => c.ibisStops,    fmt: v => v ? v + ' stops' : '—' },
+    ]
+  },
+  {
+    id: 'video', label: 'Video',
+    specs: [
+      { key: 'maxVideoRes',  label: 'Max Video Resolution', type: 'text', fn: c => c.maxVideoRes },
+      { key: 'logVideo',     label: 'F-Log / Log Video', type: 'boolean', fn: c => c.logVideo },
+    ]
+  },
+  {
+    id: 'connectivity', label: 'Connectivity',
+    specs: [
+      { key: 'xApp',         label: 'X App Compatible', type: 'text',   fn: c => {
+          if (c.xApp === true) return '✓ Yes (native)';
+          if (c.xApp === 'firmware') return '✓ Yes (firmware)';
+          return '—';
+        }
+      },
+      { key: 'bluetooth',    label: 'Bluetooth',        type: 'text',   fn: c => c.bluetooth || '—' },
+      { key: 'wifi',         label: 'Wi-Fi',            type: 'boolean', fn: c => c.wifi },
+    ]
+  },
+  {
+    id: 'storage', label: 'Storage',
+    specs: [
+      { key: 'cardSlots',    label: 'Memory Card Slots', type: 'text',  fn: c => c.cardSlots },
+    ]
+  },
+  {
+    id: 'power', label: 'Power',
+    specs: [
+      { key: 'batteryLife',  label: 'Battery Life (CIPA)', type: 'number', higherBetter: true, fn: c => c.batteryLife, fmt: v => v + ' shots' },
+      { key: 'usbCharging',  label: 'USB Charging',      type: 'boolean', fn: c => c.usbCharging },
+    ]
+  },
+  {
+    id: 'film', label: 'Film Simulations',
+    specs: [
+      { key: 'filmSims',     label: 'Film Simulation Modes', type: 'number', higherBetter: true, fn: c => c.filmSims, fmt: v => v + ' modes' },
+    ]
+  },
+];
+
+// ─────────────────────────────────────────────
+// STATE
+// ─────────────────────────────────────────────
+let selectedIds = ['x-s20', 'x-t50', 'x100vi'];
+let currentCurrency = 'AUD';
+let numSlots = 3;
+
+function getNumSlots() {
+  return window.innerWidth >= 600 ? 3 : 2;
+}
+
+// ─────────────────────────────────────────────
+// CAMERA PLACEHOLDER
+// ─────────────────────────────────────────────
+function buildPlaceholder(cam) {
+  const c = seriesColor(cam.series);
+  return `<div class="cam-placeholder" style="background:${c.bg}">
+    <svg width="28" height="20" viewBox="0 0 28 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <rect x="1" y="5" width="26" height="14" rx="2.5" fill="${c.text}" opacity="0.35"/>
+      <rect x="8" y="1" width="12" height="5" rx="2" fill="${c.text}" opacity="0.35"/>
+      <circle cx="14" cy="12" r="5" fill="${c.text}" opacity="0.5"/>
+      <circle cx="14" cy="12" r="3" fill="${c.text}" opacity="0.7"/>
+      <circle cx="21" cy="8" r="1.5" fill="${c.text}" opacity="0.5"/>
+    </svg>
+    <span style="font-size:9px;font-weight:700;color:${c.text};letter-spacing:0.04em;opacity:0.9">${cam.name}</span>
+  </div>`;
+}
+
+// ─────────────────────────────────────────────
+// BUILD DROPDOWN HTML
+// ─────────────────────────────────────────────
+function buildSelectHTML(currentId, slotIndex) {
+  const otherIds = selectedIds.filter((_, i) => i !== slotIndex);
+  let html = `<select class="slot-select" data-slot="${slotIndex}">`;
+  for (const grp of DROPDOWN_GROUPS) {
+    html += `<optgroup label="${grp.label}">`;
+    for (const id of grp.ids) {
+      const cam = CAMERAS[id];
+      if (!cam) continue;
+      const disabled = otherIds.includes(id) ? 'disabled' : '';
+      const selected = id === currentId ? 'selected' : '';
+      html += `<option value="${id}" ${selected} ${disabled}>${cam.name} (${cam.year})</option>`;
+    }
+    html += `</optgroup>`;
+  }
+  html += `</select>`;
+  return html;
+}
+
+// ─────────────────────────────────────────────
+// RENDER SLOT HEADER
+// ─────────────────────────────────────────────
+function renderSlot(slotIndex) {
+  const el = document.getElementById(`slot-${slotIndex}`);
+  if (!el) return;
+  const id = selectedIds[slotIndex];
+  const cam = CAMERAS[id];
+  if (!cam) return;
+
+  const price = cam.prices[currentCurrency];
+  const sym = CURRENCY[currentCurrency].symbol;
+  let priceHTML;
+  if (price) {
+    priceHTML = `<div class="slot-price">${sym}${price.toLocaleString()}</div>`;
+  } else {
+    priceHTML = `<div class="slot-price discontinued">Discontinued<br><small>Launch: $${cam.prices.USD?.toLocaleString()}</small></div>`;
+  }
+
+  const linkURL = (cam.productUrl && !cam.productUrl.endsWith('/cameras/'))
+    ? cam.productUrl : null;
+  const linkHTML = linkURL
+    ? `<a href="${linkURL}" target="_blank" rel="noopener" class="slot-link">View at Fujifilm ↗</a>`
+    : `<span class="slot-link na">Discontinued</span>`;
+
+  el.innerHTML = `
+    <div class="cam-image-wrap">${buildPlaceholder(cam)}</div>
+    ${buildSelectHTML(id, slotIndex)}
+    ${priceHTML}
+    ${linkHTML}
+  `;
+}
+
+// ─────────────────────────────────────────────
+// COMPUTE WINNERS PER SPEC ROW
+// ─────────────────────────────────────────────
+function computeWinners(spec) {
+  const vals = selectedIds.slice(0, numSlots).map(id => spec.fn(CAMERAS[id]));
+  if (!spec.higherBetter && !spec.lowerBetter) return vals.map(() => false);
+  const nums = vals.map(v => typeof v === 'number' ? v : null);
+  if (nums.every(v => v === null)) return vals.map(() => false);
+  const valid = nums.filter(v => v !== null);
+  const best = spec.higherBetter ? Math.max(...valid) : Math.min(...valid);
+  return nums.map(v => v !== null && v === best);
+}
+
+// ─────────────────────────────────────────────
+// FORMAT SPEC VALUE
+// ─────────────────────────────────────────────
+function formatVal(spec, cam) {
+  const raw = spec.fn(cam);
+  if (spec.type === 'boolean') {
+    return raw
+      ? `<span class="check">✓</span>`
+      : `<span class="cross">—</span>`;
+  }
+  if (raw === null || raw === undefined) return '<span class="cross">—</span>';
+  if (spec.fmt && typeof raw === 'number') return spec.fmt(raw);
+  return raw;
+}
+
+// ─────────────────────────────────────────────
+// RENDER COMPARE TABLE
+// ─────────────────────────────────────────────
+function renderTable() {
+  const table = document.getElementById('compare-table');
+  let html = '';
+
+  for (const section of SPEC_SECTIONS) {
+    html += `<div class="spec-section">
+      <div class="section-header" data-section="${section.id}">
+        <span class="section-title">${section.label}</span>
+        <span class="section-toggle open">▾</span>
+      </div>
+      <div class="section-body" id="body-${section.id}">`;
+
+    for (const spec of section.specs) {
+      const winners = computeWinners(spec);
+      html += `<div class="spec-row">
+        <div class="spec-label">${spec.label}</div>`;
+      for (let i = 0; i < numSlots; i++) {
+        const cam = CAMERAS[selectedIds[i]];
+        const winClass = winners[i] ? ' winner' : '';
+        const slotHide = (i === 2 && numSlots < 3) ? ' slot-3-hide' : '';
+        html += `<div class="spec-value${winClass}${slotHide}">${formatVal(spec, cam)}</div>`;
+      }
+      html += `</div>`;
+    }
+
+    html += `</div></div>`;
+  }
+
+  table.innerHTML = html;
+
+  // Section collapse/expand
+  document.querySelectorAll('.section-header').forEach(hdr => {
+    hdr.addEventListener('click', () => {
+      const id = hdr.dataset.section;
+      const body = document.getElementById(`body-${id}`);
+      const toggle = hdr.querySelector('.section-toggle');
+      body.classList.toggle('collapsed');
+      toggle.classList.toggle('open');
+    });
+  });
+}
+
+// ─────────────────────────────────────────────
+// FULL RE-RENDER
+// ─────────────────────────────────────────────
+function renderAll() {
+  // Update CSS variable
+  document.documentElement.style.setProperty('--num-slots', numSlots);
+
+  // Show/hide slot-3 container
+  const slot2el = document.getElementById('slot-2');
+  if (slot2el) {
+    slot2el.style.display = numSlots < 3 ? 'none' : '';
+  }
+
+  for (let i = 0; i < 3; i++) renderSlot(i);
+  renderTable();
+  attachSlotListeners();
+}
+
+// ─────────────────────────────────────────────
+// EVENT LISTENERS
+// ─────────────────────────────────────────────
+function attachSlotListeners() {
+  document.querySelectorAll('.slot-select').forEach(sel => {
+    sel.addEventListener('change', e => {
+      const slotIdx = parseInt(e.target.dataset.slot);
+      selectedIds[slotIdx] = e.target.value;
+      renderAll();
+    });
+  });
+}
+
+document.getElementById('currency-select').addEventListener('change', e => {
+  currentCurrency = e.target.value;
+  for (let i = 0; i < 3; i++) renderSlot(i);
+});
+
+window.addEventListener('resize', () => {
+  const n = getNumSlots();
+  if (n !== numSlots) {
+    numSlots = n;
+    renderAll();
+  }
+});
+
+// ─────────────────────────────────────────────
+// INIT
+// ─────────────────────────────────────────────
+numSlots = getNumSlots();
+renderAll();
+</script>
+</body>
+</html>
