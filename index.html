@@ -99,6 +99,29 @@
     .header-select:hover { background: rgba(255,255,255,0.17); }
     .header-select option { background: #2a2a2a; color: white; }
 
+    /* ─── MODE TOGGLE ─── */
+    .mode-toggle {
+      display: flex;
+      background: rgba(255,255,255,0.1);
+      border-radius: 8px;
+      overflow: hidden;
+      border: 1px solid rgba(255,255,255,0.15);
+      flex-shrink: 0;
+    }
+    .mode-btn {
+      padding: 5px 14px;
+      font-size: 12px;
+      font-weight: 600;
+      color: rgba(255,255,255,0.6);
+      background: transparent;
+      border: none;
+      cursor: pointer;
+      transition: all 0.15s;
+      white-space: nowrap;
+    }
+    .mode-btn.active { background: var(--fuji-red); color: white; }
+    .mode-btn:hover:not(.active) { color: rgba(255,255,255,0.85); }
+
     /* ─── COMPARE STICKY HEADER ─── */
     #compare-header {
       position: sticky;
@@ -396,6 +419,10 @@
     <span class="fuji-logo">FUJI<span>FILM</span></span>
     <span class="header-sep">|</span>
     <span class="header-title">Camera Compare</span>
+  </div>
+  <div class="mode-toggle" id="mode-toggle">
+    <button class="mode-btn active" data-mode="cameras">Cameras</button>
+    <button class="mode-btn" data-mode="lenses">Lenses</button>
   </div>
   <div class="header-controls">
     <span class="ctrl-label">Currency</span>
@@ -1149,6 +1176,528 @@ const DROPDOWN_GROUPS = [
 ];
 
 // ─────────────────────────────────────────────
+// LENS DATA
+// ─────────────────────────────────────────────
+const LENSES = {
+
+  /* ── Fujifilm XF Primes ── */
+  'xf-8mm-f35': {
+    name:'XF 8mm f/3.5 R WR', manufacturer:'Fujifilm', line:'XF', type:'Prime',
+    focalLength:8, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'12mm',
+    maxAperture:3.5, minAperture:22, weight:215, length:63.4, diameter:71.7,
+    filterThread:62, minFocusDist:20, maxMagnification:0.12,
+    elements:11, groups:8, blades:7, afType:'Stepping Motor',
+    weatherSealed:true, ois:false, oisStops:null, year:2022, discontinued:false,
+    priceUSD:799,
+    productUrl:'https://www.fujifilm-x.com/global/products/lenses/xf8mmf35-r-wr/',
+  },
+  'xf-14mm-f28': {
+    name:'XF 14mm f/2.8 R', manufacturer:'Fujifilm', line:'XF', type:'Prime',
+    focalLength:14, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'21mm',
+    maxAperture:2.8, minAperture:22, weight:235, length:58.4, diameter:65,
+    filterThread:null, minFocusDist:18, maxMagnification:0.1,
+    elements:10, groups:7, blades:7, afType:'DC Motor',
+    weatherSealed:false, ois:false, oisStops:null, year:2012, discontinued:false,
+    priceUSD:899,
+    productUrl:'https://www.fujifilm-x.com/global/products/lenses/xf14mmf28-r/',
+  },
+  'xf-16mm-f14': {
+    name:'XF 16mm f/1.4 R WR', manufacturer:'Fujifilm', line:'XF', type:'Prime',
+    focalLength:16, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'24mm',
+    maxAperture:1.4, minAperture:16, weight:375, length:73.5, diameter:73,
+    filterThread:67, minFocusDist:15, maxMagnification:0.21,
+    elements:13, groups:11, blades:9, afType:'DC Motor',
+    weatherSealed:true, ois:false, oisStops:null, year:2015, discontinued:false,
+    priceUSD:999,
+    productUrl:'https://www.fujifilm-x.com/global/products/lenses/xf16mmf14-r-wr/',
+  },
+  'xf-18mm-f14': {
+    name:'XF 18mm f/1.4 R LM WR', manufacturer:'Fujifilm', line:'XF', type:'Prime',
+    focalLength:18, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'27mm',
+    maxAperture:1.4, minAperture:16, weight:370, length:81, diameter:73,
+    filterThread:62, minFocusDist:20, maxMagnification:0.15,
+    elements:12, groups:8, blades:9, afType:'Linear Motor',
+    weatherSealed:true, ois:false, oisStops:null, year:2021, discontinued:false,
+    priceUSD:999,
+    productUrl:'https://www.fujifilm-x.com/global/products/lenses/xf18mmf14-r-lm-wr/',
+  },
+  'xf-23mm-f14-lm-wr': {
+    name:'XF 23mm f/1.4 R LM WR', manufacturer:'Fujifilm', line:'XF', type:'Prime',
+    focalLength:23, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'35mm',
+    maxAperture:1.4, minAperture:16, weight:375, length:77.8, diameter:67,
+    filterThread:58, minFocusDist:19, maxMagnification:0.1,
+    elements:15, groups:10, blades:9, afType:'Linear Motor',
+    weatherSealed:true, ois:false, oisStops:null, year:2022, discontinued:false,
+    priceUSD:899,
+    productUrl:'https://www.fujifilm-x.com/global/products/lenses/xf23mmf14-r-lm-wr/',
+  },
+  'xf-23mm-f2': {
+    name:'XF 23mm f/2 R WR', manufacturer:'Fujifilm', line:'XF', type:'Prime',
+    focalLength:23, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'35mm',
+    maxAperture:2.0, minAperture:16, weight:180, length:56.2, diameter:60,
+    filterThread:43, minFocusDist:22, maxMagnification:0.1,
+    elements:8, groups:6, blades:9, afType:'DC Motor',
+    weatherSealed:true, ois:false, oisStops:null, year:2016, discontinued:false,
+    priceUSD:449,
+    productUrl:'https://www.fujifilm-x.com/global/products/lenses/xf23mmf2-r-wr/',
+  },
+  'xf-27mm-f28': {
+    name:'XF 27mm f/2.8 R WR', manufacturer:'Fujifilm', line:'XF', type:'Prime',
+    focalLength:27, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'41mm',
+    maxAperture:2.8, minAperture:16, weight:84, length:23, diameter:60,
+    filterThread:39, minFocusDist:34, maxMagnification:0.1,
+    elements:8, groups:7, blades:7, afType:'DC Motor',
+    weatherSealed:true, ois:false, oisStops:null, year:2021, discontinued:false,
+    priceUSD:399,
+    productUrl:'https://www.fujifilm-x.com/global/products/lenses/xf27mmf28-r-wr/',
+  },
+  'xf-33mm-f14': {
+    name:'XF 33mm f/1.4 R LM WR', manufacturer:'Fujifilm', line:'XF', type:'Prime',
+    focalLength:33, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'50mm',
+    maxAperture:1.4, minAperture:16, weight:360, length:73.5, diameter:67,
+    filterThread:58, minFocusDist:30, maxMagnification:0.1,
+    elements:11, groups:8, blades:9, afType:'Linear Motor',
+    weatherSealed:true, ois:false, oisStops:null, year:2021, discontinued:false,
+    priceUSD:799,
+    productUrl:'https://www.fujifilm-x.com/global/products/lenses/xf33mmf14-r-lm-wr/',
+  },
+  'xf-35mm-f14': {
+    name:'XF 35mm f/1.4 R', manufacturer:'Fujifilm', line:'XF', type:'Prime',
+    focalLength:35, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'53mm',
+    maxAperture:1.4, minAperture:16, weight:187, length:54.9, diameter:65,
+    filterThread:52, minFocusDist:28, maxMagnification:0.17,
+    elements:8, groups:6, blades:7, afType:'DC Motor',
+    weatherSealed:false, ois:false, oisStops:null, year:2012, discontinued:false,
+    priceUSD:599,
+    productUrl:'https://www.fujifilm-x.com/global/products/lenses/xf35mmf14-r/',
+  },
+  'xf-35mm-f2': {
+    name:'XF 35mm f/2 R WR', manufacturer:'Fujifilm', line:'XF', type:'Prime',
+    focalLength:35, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'53mm',
+    maxAperture:2.0, minAperture:16, weight:170, length:45.9, diameter:60,
+    filterThread:43, minFocusDist:35, maxMagnification:0.12,
+    elements:9, groups:6, blades:9, afType:'DC Motor',
+    weatherSealed:true, ois:false, oisStops:null, year:2015, discontinued:false,
+    priceUSD:399,
+    productUrl:'https://www.fujifilm-x.com/global/products/lenses/xf35mmf2-r-wr/',
+  },
+  'xf-50mm-f2': {
+    name:'XF 50mm f/2 R WR', manufacturer:'Fujifilm', line:'XF', type:'Prime',
+    focalLength:50, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'76mm',
+    maxAperture:2.0, minAperture:16, weight:200, length:59.4, diameter:60,
+    filterThread:46, minFocusDist:39, maxMagnification:0.12,
+    elements:10, groups:6, blades:9, afType:'DC Motor',
+    weatherSealed:true, ois:false, oisStops:null, year:2017, discontinued:false,
+    priceUSD:449,
+    productUrl:'https://www.fujifilm-x.com/global/products/lenses/xf50mmf2-r-wr/',
+  },
+  'xf-56mm-f12-wr': {
+    name:'XF 56mm f/1.2 R WR', manufacturer:'Fujifilm', line:'XF', type:'Prime',
+    focalLength:56, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'85mm',
+    maxAperture:1.2, minAperture:16, weight:445, length:77.1, diameter:73,
+    filterThread:62, minFocusDist:50, maxMagnification:0.09,
+    elements:13, groups:11, blades:9, afType:'DC Motor',
+    weatherSealed:true, ois:false, oisStops:null, year:2022, discontinued:false,
+    priceUSD:1099,
+    productUrl:'https://www.fujifilm-x.com/global/products/lenses/xf56mmf12-r-wr/',
+  },
+  'xf-90mm-f2': {
+    name:'XF 90mm f/2 R LM WR', manufacturer:'Fujifilm', line:'XF', type:'Prime',
+    focalLength:90, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'137mm',
+    maxAperture:2.0, minAperture:16, weight:540, length:105.1, diameter:72,
+    filterThread:62, minFocusDist:60, maxMagnification:0.2,
+    elements:11, groups:8, blades:9, afType:'Linear Motor',
+    weatherSealed:true, ois:false, oisStops:null, year:2015, discontinued:false,
+    priceUSD:999,
+    productUrl:'https://www.fujifilm-x.com/global/products/lenses/xf90mmf2-r-lm-wr/',
+  },
+
+  /* ── Fujifilm XF Zooms ── */
+  'xf-10-24mm-f4': {
+    name:'XF 10-24mm f/4 R OIS WR', manufacturer:'Fujifilm', line:'XF', type:'Zoom',
+    focalLength:null, focalLengthMin:10, focalLengthMax:24, focalLengthEquiv:'15-36mm',
+    maxAperture:4.0, minAperture:22, weight:410, length:87.1, diameter:78,
+    filterThread:72, minFocusDist:24, maxMagnification:0.16,
+    elements:14, groups:10, blades:7, afType:'DC Motor',
+    weatherSealed:true, ois:true, oisStops:4, year:2022, discontinued:false,
+    priceUSD:899,
+    productUrl:'https://www.fujifilm-x.com/global/products/lenses/xf10-24mmf4-r-ois-wr/',
+  },
+  'xf-16-55mm-f28-ii': {
+    name:'XF 16-55mm f/2.8 R LM WR II', manufacturer:'Fujifilm', line:'XF', type:'Zoom',
+    focalLength:null, focalLengthMin:16, focalLengthMax:55, focalLengthEquiv:'24-84mm',
+    maxAperture:2.8, minAperture:22, weight:655, length:106, diameter:85,
+    filterThread:77, minFocusDist:30, maxMagnification:0.16,
+    elements:19, groups:13, blades:9, afType:'Linear Motor',
+    weatherSealed:true, ois:false, oisStops:null, year:2023, discontinued:false,
+    priceUSD:1299,
+    productUrl:'https://www.fujifilm-x.com/global/products/lenses/xf16-55mmf28-r-lm-wr-ii/',
+  },
+  'xf-18-55mm-f28-4': {
+    name:'XF 18-55mm f/2.8-4 R LM OIS', manufacturer:'Fujifilm', line:'XF', type:'Zoom',
+    focalLength:null, focalLengthMin:18, focalLengthMax:55, focalLengthEquiv:'27-84mm',
+    maxAperture:2.8, minAperture:22, weight:310, length:70.4, diameter:65,
+    filterThread:58, minFocusDist:30, maxMagnification:0.15,
+    elements:14, groups:10, blades:7, afType:'Linear Motor',
+    weatherSealed:false, ois:true, oisStops:4, year:2012, discontinued:false,
+    priceUSD:699,
+    productUrl:'https://www.fujifilm-x.com/global/products/lenses/xf18-55mmf28-4-r-lm-ois/',
+  },
+  'xf-50-140mm-f28': {
+    name:'XF 50-140mm f/2.8 R LM OIS WR', manufacturer:'Fujifilm', line:'XF', type:'Zoom',
+    focalLength:null, focalLengthMin:50, focalLengthMax:140, focalLengthEquiv:'76-213mm',
+    maxAperture:2.8, minAperture:22, weight:995, length:175.9, diameter:83.5,
+    filterThread:72, minFocusDist:100, maxMagnification:0.12,
+    elements:23, groups:16, blades:9, afType:'Linear Motor',
+    weatherSealed:true, ois:true, oisStops:5, year:2014, discontinued:false,
+    priceUSD:1599,
+    productUrl:'https://www.fujifilm-x.com/global/products/lenses/xf50-140mmf28-r-lm-ois-wr/',
+  },
+  'xf-55-200mm-f35-48': {
+    name:'XF 55-200mm f/3.5-4.8 R LM OIS', manufacturer:'Fujifilm', line:'XF', type:'Zoom',
+    focalLength:null, focalLengthMin:55, focalLengthMax:200, focalLengthEquiv:'84-305mm',
+    maxAperture:3.5, minAperture:22, weight:580, length:175, diameter:75,
+    filterThread:72, minFocusDist:110, maxMagnification:0.18,
+    elements:18, groups:14, blades:7, afType:'Linear Motor',
+    weatherSealed:false, ois:true, oisStops:4.5, year:2013, discontinued:false,
+    priceUSD:699,
+    productUrl:'https://www.fujifilm-x.com/global/products/lenses/xf55-200mmf35-48-r-lm-ois/',
+  },
+  'xf-70-300mm-f4-56': {
+    name:'XF 70-300mm f/4-5.6 R LM OIS WR', manufacturer:'Fujifilm', line:'XF', type:'Zoom',
+    focalLength:null, focalLengthMin:70, focalLengthMax:300, focalLengthEquiv:'107-457mm',
+    maxAperture:4.0, minAperture:22, weight:580, length:132.5, diameter:75,
+    filterThread:67, minFocusDist:83, maxMagnification:0.3,
+    elements:17, groups:12, blades:9, afType:'Linear Motor',
+    weatherSealed:true, ois:true, oisStops:5, year:2021, discontinued:false,
+    priceUSD:799,
+    productUrl:'https://www.fujifilm-x.com/global/products/lenses/xf70-300mmf4-56-r-lm-ois-wr/',
+  },
+  'xf-100-400mm-f45-56': {
+    name:'XF 100-400mm f/4.5-5.6 R LM OIS WR', manufacturer:'Fujifilm', line:'XF', type:'Zoom',
+    focalLength:null, focalLengthMin:100, focalLengthMax:400, focalLengthEquiv:'152-609mm',
+    maxAperture:4.5, minAperture:22, weight:1375, length:209.8, diameter:95,
+    filterThread:77, minFocusDist:175, maxMagnification:0.19,
+    elements:21, groups:14, blades:9, afType:'Linear Motor',
+    weatherSealed:true, ois:true, oisStops:5, year:2016, discontinued:false,
+    priceUSD:1899,
+    productUrl:'https://www.fujifilm-x.com/global/products/lenses/xf100-400mmf45-56-r-lm-ois-wr/',
+  },
+  'xf-150-600mm-f56-8': {
+    name:'XF 150-600mm f/5.6-8 R LM OIS WR', manufacturer:'Fujifilm', line:'XF', type:'Zoom',
+    focalLength:null, focalLengthMin:150, focalLengthMax:600, focalLengthEquiv:'229-914mm',
+    maxAperture:5.6, minAperture:22, weight:1605, length:313.5, diameter:107,
+    filterThread:82, minFocusDist:240, maxMagnification:0.25,
+    elements:24, groups:17, blades:9, afType:'Linear Motor',
+    weatherSealed:true, ois:true, oisStops:5, year:2022, discontinued:false,
+    priceUSD:1999,
+    productUrl:'https://www.fujifilm-x.com/global/products/lenses/xf150-600mmf56-8-r-lm-ois-wr/',
+  },
+
+  /* ── Fujifilm XC ── */
+  'xc-15-45mm-f35-56': {
+    name:'XC 15-45mm f/3.5-5.6 OIS PZ', manufacturer:'Fujifilm', line:'XC', type:'Zoom',
+    focalLength:null, focalLengthMin:15, focalLengthMax:45, focalLengthEquiv:'23-69mm',
+    maxAperture:3.5, minAperture:22, weight:135, length:44, diameter:61,
+    filterThread:52, minFocusDist:25, maxMagnification:0.2,
+    elements:10, groups:8, blades:7, afType:'Stepping Motor',
+    weatherSealed:false, ois:true, oisStops:3.5, year:2018, discontinued:false,
+    priceUSD:299,
+    productUrl:'https://www.fujifilm-x.com/global/products/lenses/xc15-45mmf35-56-ois-pz/',
+  },
+  'xc-16-50mm-f35-56': {
+    name:'XC 16-50mm f/3.5-5.6 OIS II', manufacturer:'Fujifilm', line:'XC', type:'Zoom',
+    focalLength:null, focalLengthMin:16, focalLengthMax:50, focalLengthEquiv:'24-76mm',
+    maxAperture:3.5, minAperture:22, weight:195, length:62.6, diameter:65,
+    filterThread:58, minFocusDist:30, maxMagnification:0.15,
+    elements:12, groups:10, blades:7, afType:'Stepping Motor',
+    weatherSealed:false, ois:true, oisStops:3.5, year:2012, discontinued:false,
+    priceUSD:299,
+    productUrl:'https://www.fujifilm-x.com/global/products/lenses/',
+  },
+  'xc-35mm-f2': {
+    name:'XC 35mm f/2', manufacturer:'Fujifilm', line:'XC', type:'Prime',
+    focalLength:35, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'53mm',
+    maxAperture:2.0, minAperture:16, weight:130, length:49.4, diameter:60,
+    filterThread:43, minFocusDist:35, maxMagnification:0.12,
+    elements:8, groups:7, blades:7, afType:'Stepping Motor',
+    weatherSealed:false, ois:false, oisStops:null, year:2023, discontinued:false,
+    priceUSD:299,
+    productUrl:'https://www.fujifilm-x.com/global/products/lenses/xc35mmf2/',
+  },
+
+  /* ── Sigma ── */
+  'sigma-16mm-f14': {
+    name:'Sigma 16mm f/1.4 DC DN', manufacturer:'Sigma', line:'Contemporary', type:'Prime',
+    focalLength:16, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'24mm',
+    maxAperture:1.4, minAperture:16, weight:405, length:91.9, diameter:72.6,
+    filterThread:67, minFocusDist:25, maxMagnification:0.1,
+    elements:16, groups:13, blades:9, afType:'Stepping Motor',
+    weatherSealed:false, ois:false, oisStops:null, year:2019, discontinued:false,
+    priceUSD:449,
+    productUrl:'https://www.sigma-global.com/en/lenses/c016_16_14/',
+  },
+  'sigma-23mm-f14': {
+    name:'Sigma 23mm f/1.4 DC DN', manufacturer:'Sigma', line:'Contemporary', type:'Prime',
+    focalLength:23, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'35mm',
+    maxAperture:1.4, minAperture:16, weight:372, length:78.3, diameter:70.4,
+    filterThread:58, minFocusDist:24, maxMagnification:0.15,
+    elements:15, groups:10, blades:9, afType:'Stepping Motor',
+    weatherSealed:false, ois:false, oisStops:null, year:2022, discontinued:false,
+    priceUSD:549,
+    productUrl:'https://www.sigma-global.com/en/lenses/c022_23_14/',
+  },
+  'sigma-30mm-f14': {
+    name:'Sigma 30mm f/1.4 DC DN', manufacturer:'Sigma', line:'Contemporary', type:'Prime',
+    focalLength:30, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'45mm',
+    maxAperture:1.4, minAperture:16, weight:265, length:73.3, diameter:63.8,
+    filterThread:52, minFocusDist:30, maxMagnification:0.1,
+    elements:9, groups:7, blades:9, afType:'Stepping Motor',
+    weatherSealed:false, ois:false, oisStops:null, year:2019, discontinued:false,
+    priceUSD:339,
+    productUrl:'https://www.sigma-global.com/en/lenses/c016_30_14/',
+  },
+  'sigma-56mm-f14': {
+    name:'Sigma 56mm f/1.4 DC DN', manufacturer:'Sigma', line:'Contemporary', type:'Prime',
+    focalLength:56, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'85mm',
+    maxAperture:1.4, minAperture:16, weight:280, length:59.5, diameter:67.2,
+    filterThread:55, minFocusDist:50, maxMagnification:0.1,
+    elements:10, groups:8, blades:9, afType:'Stepping Motor',
+    weatherSealed:false, ois:false, oisStops:null, year:2019, discontinued:false,
+    priceUSD:429,
+    productUrl:'https://www.sigma-global.com/en/lenses/c018_56_14/',
+  },
+  'sigma-10-18mm-f28': {
+    name:'Sigma 10-18mm f/2.8 DC DN', manufacturer:'Sigma', line:'Contemporary', type:'Zoom',
+    focalLength:null, focalLengthMin:10, focalLengthMax:18, focalLengthEquiv:'15-27mm',
+    maxAperture:2.8, minAperture:22, weight:465, length:74.8, diameter:74.8,
+    filterThread:67, minFocusDist:11.6, maxMagnification:0.24,
+    elements:17, groups:13, blades:7, afType:'Stepping Motor',
+    weatherSealed:false, ois:false, oisStops:null, year:2022, discontinued:false,
+    priceUSD:699,
+    productUrl:'https://www.sigma-global.com/en/lenses/c022_10-18_28/',
+  },
+  'sigma-18-50mm-f28': {
+    name:'Sigma 18-50mm f/2.8 DC DN', manufacturer:'Sigma', line:'Contemporary', type:'Zoom',
+    focalLength:null, focalLengthMin:18, focalLengthMax:50, focalLengthEquiv:'27-76mm',
+    maxAperture:2.8, minAperture:22, weight:290, length:76.7, diameter:65.4,
+    filterThread:58, minFocusDist:12.1, maxMagnification:0.2,
+    elements:17, groups:13, blades:7, afType:'Stepping Motor',
+    weatherSealed:false, ois:false, oisStops:null, year:2022, discontinued:false,
+    priceUSD:589,
+    productUrl:'https://www.sigma-global.com/en/lenses/c021_18-50_28/',
+  },
+  'sigma-100-400mm-f5-63': {
+    name:'Sigma 100-400mm f/5-6.3 DG DN OS', manufacturer:'Sigma', line:'Contemporary', type:'Zoom',
+    focalLength:null, focalLengthMin:100, focalLengthMax:400, focalLengthEquiv:'152-609mm',
+    maxAperture:5.0, minAperture:22, weight:1140, length:199.2, diameter:86.4,
+    filterThread:77, minFocusDist:112, maxMagnification:0.24,
+    elements:21, groups:15, blades:9, afType:'Stepping Motor',
+    weatherSealed:true, ois:true, oisStops:5, year:2021, discontinued:false,
+    priceUSD:999,
+    productUrl:'https://www.sigma-global.com/en/lenses/c021_100-400_5-63/',
+  },
+
+  /* ── Tamron ── */
+  'tamron-11-20mm-f28': {
+    name:'Tamron 11-20mm f/2.8 Di III-A RXD', manufacturer:'Tamron', line:'Di III-A', type:'Zoom',
+    focalLength:null, focalLengthMin:11, focalLengthMax:20, focalLengthEquiv:'17-30mm',
+    maxAperture:2.8, minAperture:22, weight:335, length:86.2, diameter:73,
+    filterThread:67, minFocusDist:15, maxMagnification:0.25,
+    elements:12, groups:10, blades:7, afType:'Stepping Motor',
+    weatherSealed:true, ois:false, oisStops:null, year:2021, discontinued:false,
+    priceUSD:679,
+    productUrl:'https://www.tamron.com/en/consumer/lenses/b060/',
+  },
+  'tamron-17-70mm-f28': {
+    name:'Tamron 17-70mm f/2.8 Di III-A VC RXD', manufacturer:'Tamron', line:'Di III-A', type:'Zoom',
+    focalLength:null, focalLengthMin:17, focalLengthMax:70, focalLengthEquiv:'26-107mm',
+    maxAperture:2.8, minAperture:22, weight:525, length:119.3, diameter:75,
+    filterThread:67, minFocusDist:19, maxMagnification:0.19,
+    elements:16, groups:12, blades:7, afType:'Stepping Motor',
+    weatherSealed:true, ois:true, oisStops:4, year:2021, discontinued:false,
+    priceUSD:799,
+    productUrl:'https://www.tamron.com/en/consumer/lenses/b070/',
+  },
+  'tamron-18-300mm-f35-63': {
+    name:'Tamron 18-300mm f/3.5-6.3 Di III-A VC VXD', manufacturer:'Tamron', line:'Di III-A', type:'Zoom',
+    focalLength:null, focalLengthMin:18, focalLengthMax:300, focalLengthEquiv:'27-457mm',
+    maxAperture:3.5, minAperture:22, weight:620, length:125.6, diameter:75,
+    filterThread:67, minFocusDist:15, maxMagnification:0.5,
+    elements:19, groups:15, blades:7, afType:'Linear Motor',
+    weatherSealed:true, ois:true, oisStops:4, year:2022, discontinued:false,
+    priceUSD:829,
+    productUrl:'https://www.tamron.com/en/consumer/lenses/b061/',
+  },
+  'tamron-150-500mm-f5-67': {
+    name:'Tamron 150-500mm f/5-6.7 Di III VC VXD', manufacturer:'Tamron', line:'Di III', type:'Zoom',
+    focalLength:null, focalLengthMin:150, focalLengthMax:500, focalLengthEquiv:'229-762mm',
+    maxAperture:5.0, minAperture:22, weight:1725, length:209.6, diameter:88,
+    filterThread:82, minFocusDist:150, maxMagnification:0.33,
+    elements:25, groups:18, blades:9, afType:'Linear Motor',
+    weatherSealed:true, ois:true, oisStops:5, year:2021, discontinued:false,
+    priceUSD:1399,
+    productUrl:'https://www.tamron.com/en/consumer/lenses/a057/',
+  },
+
+  /* ── Viltrox ── */
+  'viltrox-13mm-f14': {
+    name:'Viltrox AF 13mm f/1.4', manufacturer:'Viltrox', line:'AF', type:'Prime',
+    focalLength:13, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'20mm',
+    maxAperture:1.4, minAperture:16, weight:512, length:88.5, diameter:75,
+    filterThread:72, minFocusDist:15, maxMagnification:0.1,
+    elements:14, groups:10, blades:9, afType:'Stepping Motor',
+    weatherSealed:false, ois:false, oisStops:null, year:2023, discontinued:false,
+    priceUSD:569,
+    productUrl:'https://viltrox.com/products/af-13mm-f1-4-xf/',
+  },
+  'viltrox-23mm-f14': {
+    name:'Viltrox AF 23mm f/1.4', manufacturer:'Viltrox', line:'AF', type:'Prime',
+    focalLength:23, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'35mm',
+    maxAperture:1.4, minAperture:16, weight:298, length:74.6, diameter:66.5,
+    filterThread:52, minFocusDist:22, maxMagnification:0.1,
+    elements:10, groups:7, blades:9, afType:'Stepping Motor',
+    weatherSealed:false, ois:false, oisStops:null, year:2020, discontinued:false,
+    priceUSD:429,
+    productUrl:'https://viltrox.com/products/af-23mm-f1-4-xf/',
+  },
+  'viltrox-33mm-f14': {
+    name:'Viltrox AF 33mm f/1.4', manufacturer:'Viltrox', line:'AF', type:'Prime',
+    focalLength:33, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'50mm',
+    maxAperture:1.4, minAperture:16, weight:266, length:73.3, diameter:66,
+    filterThread:52, minFocusDist:40, maxMagnification:0.1,
+    elements:10, groups:7, blades:9, afType:'Stepping Motor',
+    weatherSealed:false, ois:false, oisStops:null, year:2020, discontinued:false,
+    priceUSD:399,
+    productUrl:'https://viltrox.com/products/af-33mm-f1-4-xf/',
+  },
+  'viltrox-56mm-f14': {
+    name:'Viltrox AF 56mm f/1.4', manufacturer:'Viltrox', line:'AF', type:'Prime',
+    focalLength:56, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'85mm',
+    maxAperture:1.4, minAperture:16, weight:327, length:75.5, diameter:65,
+    filterThread:52, minFocusDist:50, maxMagnification:0.1,
+    elements:11, groups:8, blades:9, afType:'Stepping Motor',
+    weatherSealed:false, ois:false, oisStops:null, year:2019, discontinued:false,
+    priceUSD:479,
+    productUrl:'https://viltrox.com/products/af-56mm-f1-4-xf/',
+  },
+  'viltrox-85mm-f18': {
+    name:'Viltrox AF 85mm f/1.8', manufacturer:'Viltrox', line:'AF', type:'Prime',
+    focalLength:85, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'130mm',
+    maxAperture:1.8, minAperture:16, weight:432, length:96.5, diameter:74,
+    filterThread:67, minFocusDist:85, maxMagnification:0.1,
+    elements:10, groups:9, blades:9, afType:'Stepping Motor',
+    weatherSealed:false, ois:false, oisStops:null, year:2020, discontinued:false,
+    priceUSD:469,
+    productUrl:'https://viltrox.com/products/af-85mm-f1-8-xf/',
+  },
+  'viltrox-75mm-f12': {
+    name:'Viltrox AF 75mm f/1.2 PRO', manufacturer:'Viltrox', line:'AF PRO', type:'Prime',
+    focalLength:75, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'114mm',
+    maxAperture:1.2, minAperture:16, weight:710, length:94, diameter:84,
+    filterThread:82, minFocusDist:70, maxMagnification:0.1,
+    elements:15, groups:11, blades:13, afType:'Stepping Motor',
+    weatherSealed:false, ois:false, oisStops:null, year:2024, discontinued:false,
+    priceUSD:649,
+    productUrl:'https://viltrox.com/products/af-75mm-f1-2-xf-pro/',
+  },
+
+  /* ── TTArtisan ── */
+  'ttartisan-27mm-f28': {
+    name:'TTArtisan AF 27mm f/2.8', manufacturer:'TTArtisan', line:'AF', type:'Prime',
+    focalLength:27, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'41mm',
+    maxAperture:2.8, minAperture:16, weight:170, length:50, diameter:61,
+    filterThread:49, minFocusDist:35, maxMagnification:0.1,
+    elements:9, groups:7, blades:7, afType:'Stepping Motor',
+    weatherSealed:false, ois:false, oisStops:null, year:2023, discontinued:false,
+    priceUSD:179,
+    productUrl:'https://ttartisan.com/',
+  },
+  'ttartisan-35mm-f18': {
+    name:'TTArtisan AF 35mm f/1.8', manufacturer:'TTArtisan', line:'AF', type:'Prime',
+    focalLength:35, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'53mm',
+    maxAperture:1.8, minAperture:16, weight:208, length:56, diameter:65,
+    filterThread:52, minFocusDist:35, maxMagnification:0.1,
+    elements:9, groups:7, blades:9, afType:'Stepping Motor',
+    weatherSealed:false, ois:false, oisStops:null, year:2023, discontinued:false,
+    priceUSD:199,
+    productUrl:'https://ttartisan.com/',
+  },
+
+  /* ── 7Artisans ── */
+  '7artisans-35mm-f14': {
+    name:'7Artisans AF 35mm f/1.4', manufacturer:'7Artisans', line:'AF', type:'Prime',
+    focalLength:35, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'53mm',
+    maxAperture:1.4, minAperture:16, weight:220, length:58, diameter:65,
+    filterThread:52, minFocusDist:35, maxMagnification:0.12,
+    elements:9, groups:7, blades:9, afType:'Stepping Motor',
+    weatherSealed:false, ois:false, oisStops:null, year:2023, discontinued:false,
+    priceUSD:189,
+    productUrl:'https://7artisans.store/',
+  },
+
+  /* ── Samyang ── */
+  'samyang-12mm-f2': {
+    name:'Samyang AF 12mm f/2.0', manufacturer:'Samyang', line:'AF', type:'Prime',
+    focalLength:12, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'18mm',
+    maxAperture:2.0, minAperture:22, weight:167, length:60.5, diameter:67.8,
+    filterThread:62, minFocusDist:20, maxMagnification:0.1,
+    elements:11, groups:8, blades:7, afType:'Stepping Motor',
+    weatherSealed:false, ois:false, oisStops:null, year:2022, discontinued:false,
+    priceUSD:499,
+    productUrl:'https://www.samyang.com/',
+  },
+
+  /* ── Voigtländer ── */
+  'voigtlander-nokton-35mm-f09': {
+    name:'Voigtländer NOKTON 35mm f/0.9', manufacturer:'Voigtländer', line:'NOKTON', type:'Prime',
+    focalLength:35, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'53mm',
+    maxAperture:0.9, minAperture:16, weight:564, length:76.2, diameter:67.5,
+    filterThread:58, minFocusDist:35, maxMagnification:0.14,
+    elements:10, groups:8, blades:10, afType:'Manual',
+    weatherSealed:false, ois:false, oisStops:null, year:2023, discontinued:false,
+    priceUSD:1199,
+    productUrl:'https://www.cosina.co.jp/voigtlander/',
+  },
+  'voigtlander-ultron-27mm-f2': {
+    name:'Voigtländer ULTRON 27mm f/2', manufacturer:'Voigtländer', line:'ULTRON', type:'Prime',
+    focalLength:27, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'41mm',
+    maxAperture:2.0, minAperture:16, weight:232, length:49.4, diameter:62,
+    filterThread:49, minFocusDist:30, maxMagnification:0.13,
+    elements:7, groups:5, blades:10, afType:'Manual',
+    weatherSealed:false, ois:false, oisStops:null, year:2022, discontinued:false,
+    priceUSD:649,
+    productUrl:'https://www.cosina.co.jp/voigtlander/',
+  },
+};
+
+const LENS_ORDER = [
+  'xf-8mm-f35','xf-14mm-f28','xf-16mm-f14','xf-18mm-f14','xf-23mm-f14-lm-wr','xf-23mm-f2',
+  'xf-27mm-f28','xf-33mm-f14','xf-35mm-f14','xf-35mm-f2','xf-50mm-f2','xf-56mm-f12-wr','xf-90mm-f2',
+  'xf-10-24mm-f4','xf-16-55mm-f28-ii','xf-18-55mm-f28-4','xf-50-140mm-f28',
+  'xf-55-200mm-f35-48','xf-70-300mm-f4-56','xf-100-400mm-f45-56','xf-150-600mm-f56-8',
+  'xc-15-45mm-f35-56','xc-16-50mm-f35-56','xc-35mm-f2',
+  'sigma-16mm-f14','sigma-23mm-f14','sigma-30mm-f14','sigma-56mm-f14',
+  'sigma-10-18mm-f28','sigma-18-50mm-f28','sigma-100-400mm-f5-63',
+  'tamron-11-20mm-f28','tamron-17-70mm-f28','tamron-18-300mm-f35-63','tamron-150-500mm-f5-67',
+  'viltrox-13mm-f14','viltrox-23mm-f14','viltrox-33mm-f14','viltrox-56mm-f14','viltrox-85mm-f18','viltrox-75mm-f12',
+  'ttartisan-27mm-f28','ttartisan-35mm-f18',
+  '7artisans-35mm-f14',
+  'samyang-12mm-f2',
+  'voigtlander-nokton-35mm-f09','voigtlander-ultron-27mm-f2',
+];
+
+const LENS_DROPDOWN_GROUPS = [
+  { label: '── Fujifilm XF Primes ──',  ids: ['xf-8mm-f35','xf-14mm-f28','xf-16mm-f14','xf-18mm-f14','xf-23mm-f14-lm-wr','xf-23mm-f2','xf-27mm-f28','xf-33mm-f14','xf-35mm-f14','xf-35mm-f2','xf-50mm-f2','xf-56mm-f12-wr','xf-90mm-f2'] },
+  { label: '── Fujifilm XF Zooms ──',   ids: ['xf-10-24mm-f4','xf-16-55mm-f28-ii','xf-18-55mm-f28-4','xf-50-140mm-f28','xf-55-200mm-f35-48','xf-70-300mm-f4-56','xf-100-400mm-f45-56','xf-150-600mm-f56-8'] },
+  { label: '── Fujifilm XC ──',         ids: ['xc-15-45mm-f35-56','xc-16-50mm-f35-56','xc-35mm-f2'] },
+  { label: '── Sigma ──',               ids: ['sigma-16mm-f14','sigma-23mm-f14','sigma-30mm-f14','sigma-56mm-f14','sigma-10-18mm-f28','sigma-18-50mm-f28','sigma-100-400mm-f5-63'] },
+  { label: '── Tamron ──',              ids: ['tamron-11-20mm-f28','tamron-17-70mm-f28','tamron-18-300mm-f35-63','tamron-150-500mm-f5-67'] },
+  { label: '── Viltrox ──',             ids: ['viltrox-13mm-f14','viltrox-23mm-f14','viltrox-33mm-f14','viltrox-56mm-f14','viltrox-85mm-f18','viltrox-75mm-f12'] },
+  { label: '── Other ──',               ids: ['ttartisan-27mm-f28','ttartisan-35mm-f18','7artisans-35mm-f14','samyang-12mm-f2','voigtlander-nokton-35mm-f09','voigtlander-ultron-27mm-f2'] },
+];
+
+// ─────────────────────────────────────────────
 // SPEC SECTION DEFINITIONS
 // ─────────────────────────────────────────────
 const SPEC_SECTIONS = [
@@ -1252,9 +1801,105 @@ const SPEC_SECTIONS = [
 ];
 
 // ─────────────────────────────────────────────
+// LENS SPEC SECTIONS
+// ─────────────────────────────────────────────
+const LENS_SPEC_SECTIONS = [
+  {
+    id: 'lens-overview', label: 'Overview',
+    specs: [
+      { key: 'manufacturer', label: 'Manufacturer',    type: 'text',   fn: l => l.manufacturer },
+      { key: 'line',         label: 'Lens Line',       type: 'text',   fn: l => l.line },
+      { key: 'lensType',     label: 'Type',            type: 'text',   fn: l => l.type },
+      { key: 'year',         label: 'Year Introduced', type: 'text',   fn: l => l.year },
+      { key: 'status',       label: 'Status',          type: 'text',   fn: l => l.discontinued ? '🔴 Discontinued' : '🟢 Current' },
+    ]
+  },
+  {
+    id: 'lens-optical', label: 'Optical Design',
+    specs: [
+      { key: 'focalLength',     label: 'Focal Length',            type: 'text',   fn: l => l.type === 'Prime' ? l.focalLength + 'mm' : `${l.focalLengthMin}–${l.focalLengthMax}mm` },
+      { key: 'focalEquiv',      label: 'Focal Length (35mm eq.)', type: 'text',   fn: l => l.focalLengthEquiv },
+      { key: 'maxAperture',     label: 'Max Aperture',            type: 'number', lowerBetter: true,  fn: l => l.maxAperture, fmt: v => 'f/' + v },
+      { key: 'minAperture',     label: 'Min Aperture',            type: 'text',   fn: l => 'f/' + l.minAperture },
+      { key: 'elements',        label: 'Elements',                type: 'text',   fn: l => l.elements },
+      { key: 'groups',          label: 'Groups',                  type: 'text',   fn: l => l.groups },
+      { key: 'blades',          label: 'Diaphragm Blades',        type: 'number', higherBetter: true, fn: l => l.blades, fmt: v => v + ' blades' },
+    ]
+  },
+  {
+    id: 'lens-focus', label: 'Focus & Stabilization',
+    specs: [
+      { key: 'minFocusDist',    label: 'Min. Focus Distance',     type: 'number', lowerBetter: true,  fn: l => l.minFocusDist,      fmt: v => v + ' cm' },
+      { key: 'maxMag',          label: 'Max Magnification',       type: 'number', higherBetter: true, fn: l => l.maxMagnification,  fmt: v => v.toFixed(2) + '×' },
+      { key: 'afType',          label: 'AF Motor Type',           type: 'text',   fn: l => l.afType },
+      { key: 'ois',             label: 'Optical Image Stab.',     type: 'boolean', fn: l => l.ois },
+      { key: 'oisStops',        label: 'OIS Compensation',        type: 'number', higherBetter: true, fn: l => l.oisStops, fmt: v => v + ' stops' },
+    ]
+  },
+  {
+    id: 'lens-physical', label: 'Physical & Price',
+    specs: [
+      { key: 'weight',          label: 'Weight',                  type: 'number', lowerBetter: true,  fn: l => l.weight,         fmt: v => v + ' g' },
+      { key: 'length',          label: 'Length',                  type: 'number', lowerBetter: true,  fn: l => l.length,         fmt: v => v + ' mm' },
+      { key: 'diameter',        label: 'Diameter',                type: 'number', lowerBetter: true,  fn: l => l.diameter,       fmt: v => v + ' mm' },
+      { key: 'filterThread',    label: 'Filter Thread',           type: 'text',   fn: l => l.filterThread ? l.filterThread + 'mm' : 'Built-in hood' },
+      { key: 'weatherSealed',   label: 'Weather Sealed',          type: 'boolean', fn: l => l.weatherSealed },
+      { key: 'priceUSD',        label: 'Price (USD)',             type: 'number', lowerBetter: true,  fn: l => l.priceUSD,       fmt: v => '$' + v.toLocaleString() },
+    ]
+  },
+];
+
+// ─────────────────────────────────────────────
+// MANUFACTURER COLORS (for lens placeholders)
+// ─────────────────────────────────────────────
+const MANUFACTURER_COLORS = {
+  'Fujifilm':     { bg: '#1a2a1a', text: '#80c080' },
+  'Sigma':        { bg: '#1a1a2a', text: '#8080c0' },
+  'Tamron':       { bg: '#2a1a1a', text: '#c08080' },
+  'Viltrox':      { bg: '#2a2a1a', text: '#c0c080' },
+  'TTArtisan':    { bg: '#1a2a2a', text: '#80c0c0' },
+  'Samyang':      { bg: '#2a1a2a', text: '#c080c0' },
+  'Voigtländer':  { bg: '#252518', text: '#c0b880' },
+  '7Artisans':    { bg: '#1e2a20', text: '#90c8a0' },
+};
+
+// ─────────────────────────────────────────────
+// MODE CONFIG
+// ─────────────────────────────────────────────
+const MODE_CONFIG = {
+  cameras: {
+    items: CAMERAS,
+    dropdownGroups: DROPDOWN_GROUPS,
+    specSections: SPEC_SECTIONS,
+    selectedIds: () => selectedCameraIds,
+    setSelectedId: (i, v) => { selectedCameraIds[i] = v; },
+    heroEyebrow: 'X Series & GFX',
+    heroTitle: '<span>Fujifilm</span> Camera Comparison',
+    heroSubtitle: 'Compare up to 3 cameras side-by-side across all generations',
+    headerTitle: 'Camera Compare',
+    supportsCurrency: true,
+  },
+  lenses: {
+    items: LENSES,
+    dropdownGroups: LENS_DROPDOWN_GROUPS,
+    specSections: LENS_SPEC_SECTIONS,
+    selectedIds: () => selectedLensIds,
+    setSelectedId: (i, v) => { selectedLensIds[i] = v; },
+    heroEyebrow: 'X Mount Lenses',
+    heroTitle: '<span>Fujifilm</span> Lens Comparison',
+    heroSubtitle: 'Compare X-mount lenses from Fujifilm, Sigma, Tamron, Viltrox & more',
+    headerTitle: 'Lens Compare',
+    supportsCurrency: false,
+  },
+};
+function cfg() { return MODE_CONFIG[currentMode]; }
+
+// ─────────────────────────────────────────────
 // STATE
 // ─────────────────────────────────────────────
-let selectedIds = ['x-s20', 'x-t50', 'x100vi'];
+let currentMode = 'cameras';
+let selectedCameraIds = ['x-s20', 'x-t50', 'x100vi'];
+let selectedLensIds = ['xf-23mm-f14-lm-wr', 'xf-35mm-f14', 'sigma-56mm-f14'];
 let currentCurrency = 'AUD';
 let numSlots = 3;
 
@@ -1263,14 +1908,20 @@ function getNumSlots() {
 }
 
 // ─────────────────────────────────────────────
-// CAMERA PLACEHOLDER
+// ITEM PLACEHOLDER (camera or lens)
 // ─────────────────────────────────────────────
-function buildPlaceholder(cam) {
-  const c = seriesColor(cam.series);
-  const svgHtml = `<div class="cam-placeholder" style="background:${c.bg}"><svg width="28" height="20" viewBox="0 0 28 20" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="1" y="5" width="26" height="14" rx="2.5" fill="${c.text}" opacity="0.35"/><rect x="8" y="1" width="12" height="5" rx="2" fill="${c.text}" opacity="0.35"/><circle cx="14" cy="12" r="5" fill="${c.text}" opacity="0.5"/><circle cx="14" cy="12" r="3" fill="${c.text}" opacity="0.7"/><circle cx="21" cy="8" r="1.5" fill="${c.text}" opacity="0.5"/></svg><span style="font-size:9px;font-weight:700;color:${c.text};letter-spacing:0.04em;opacity:0.9">${cam.name}</span></div>`;
-  if (cam.imageUrl) {
+function buildPlaceholder(item) {
+  if (currentMode === 'lenses') {
+    const c = MANUFACTURER_COLORS[item.manufacturer] || { bg: '#1a1a2a', text: '#8080c0' };
+    const label = item.name.length > 22 ? item.name.slice(0, 22) + '…' : item.name;
+    const svgHtml = `<div class="cam-placeholder" style="background:${c.bg}"><svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="11" y="1" width="6" height="26" rx="3" fill="${c.text}" opacity="0.3"/><circle cx="14" cy="14" r="9" stroke="${c.text}" stroke-width="2" opacity="0.5" fill="none"/><circle cx="14" cy="14" r="5" fill="${c.text}" opacity="0.6"/><circle cx="14" cy="14" r="2" fill="${c.text}" opacity="0.9"/></svg><span style="font-size:8px;font-weight:700;color:${c.text};letter-spacing:0.03em;opacity:0.9;text-align:center;line-height:1.2">${label}</span></div>`;
+    return svgHtml;
+  }
+  const c = seriesColor(item.series);
+  const svgHtml = `<div class="cam-placeholder" style="background:${c.bg}"><svg width="28" height="20" viewBox="0 0 28 20" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="1" y="5" width="26" height="14" rx="2.5" fill="${c.text}" opacity="0.35"/><rect x="8" y="1" width="12" height="5" rx="2" fill="${c.text}" opacity="0.35"/><circle cx="14" cy="12" r="5" fill="${c.text}" opacity="0.5"/><circle cx="14" cy="12" r="3" fill="${c.text}" opacity="0.7"/><circle cx="21" cy="8" r="1.5" fill="${c.text}" opacity="0.5"/></svg><span style="font-size:9px;font-weight:700;color:${c.text};letter-spacing:0.04em;opacity:0.9">${item.name}</span></div>`;
+  if (item.imageUrl) {
     const fallback = svgHtml.replace(/'/g, '&#39;').replace(/"/g, '&quot;');
-    return `<img src="${cam.imageUrl}" alt="${cam.name}" class="cam-photo" onerror="this.outerHTML='${fallback}'">`;
+    return `<img src="${item.imageUrl}" alt="${item.name}" class="cam-photo" onerror="this.outerHTML='${fallback}'">`;
   }
   return svgHtml;
 }
@@ -1279,16 +1930,16 @@ function buildPlaceholder(cam) {
 // BUILD DROPDOWN HTML
 // ─────────────────────────────────────────────
 function buildSelectHTML(currentId, slotIndex) {
-  const otherIds = selectedIds.filter((_, i) => i !== slotIndex);
+  const otherIds = cfg().selectedIds().filter((_, i) => i !== slotIndex);
   let html = `<select class="slot-select" data-slot="${slotIndex}">`;
-  for (const grp of DROPDOWN_GROUPS) {
+  for (const grp of cfg().dropdownGroups) {
     html += `<optgroup label="${grp.label}">`;
     for (const id of grp.ids) {
-      const cam = CAMERAS[id];
-      if (!cam) continue;
+      const item = cfg().items[id];
+      if (!item) continue;
       const disabled = otherIds.includes(id) ? 'disabled' : '';
       const selected = id === currentId ? 'selected' : '';
-      html += `<option value="${id}" ${selected} ${disabled}>${cam.name} (${cam.year})</option>`;
+      html += `<option value="${id}" ${selected} ${disabled}>${item.name} (${item.year})</option>`;
     }
     html += `</optgroup>`;
   }
@@ -1302,27 +1953,34 @@ function buildSelectHTML(currentId, slotIndex) {
 function renderSlot(slotIndex) {
   const el = document.getElementById(`slot-${slotIndex}`);
   if (!el) return;
-  const id = selectedIds[slotIndex];
-  const cam = CAMERAS[id];
-  if (!cam) return;
+  const id = cfg().selectedIds()[slotIndex];
+  const item = cfg().items[id];
+  if (!item) return;
 
-  const price = cam.prices[currentCurrency];
-  const sym = CURRENCY[currentCurrency].symbol;
-  let priceHTML;
-  if (price) {
-    priceHTML = `<div class="slot-price">${sym}${price.toLocaleString()}</div>`;
+  let priceHTML, linkHTML;
+
+  if (currentMode === 'lenses') {
+    priceHTML = `<div class="slot-price">$${item.priceUSD.toLocaleString()}</div>`;
+    linkHTML = item.productUrl
+      ? `<a href="${item.productUrl}" target="_blank" rel="noopener" class="slot-link">View Product ↗</a>`
+      : `<span class="slot-link na">No Link</span>`;
   } else {
-    priceHTML = `<div class="slot-price discontinued">Discontinued<br><small>Launch: $${cam.prices.USD?.toLocaleString()}</small></div>`;
+    const price = item.prices[currentCurrency];
+    const sym = CURRENCY[currentCurrency].symbol;
+    if (price) {
+      priceHTML = `<div class="slot-price">${sym}${price.toLocaleString()}</div>`;
+    } else {
+      priceHTML = `<div class="slot-price discontinued">Discontinued<br><small>Launch: $${item.prices.USD?.toLocaleString()}</small></div>`;
+    }
+    const linkURL = (item.productUrl && !item.productUrl.endsWith('/cameras/'))
+      ? item.productUrl : null;
+    linkHTML = linkURL
+      ? `<a href="${linkURL}" target="_blank" rel="noopener" class="slot-link">View at Fujifilm ↗</a>`
+      : `<span class="slot-link na">Discontinued</span>`;
   }
 
-  const linkURL = (cam.productUrl && !cam.productUrl.endsWith('/cameras/'))
-    ? cam.productUrl : null;
-  const linkHTML = linkURL
-    ? `<a href="${linkURL}" target="_blank" rel="noopener" class="slot-link">View at Fujifilm ↗</a>`
-    : `<span class="slot-link na">Discontinued</span>`;
-
   el.innerHTML = `
-    <div class="cam-image-wrap">${buildPlaceholder(cam)}</div>
+    <div class="cam-image-wrap">${buildPlaceholder(item)}</div>
     ${buildSelectHTML(id, slotIndex)}
     ${priceHTML}
     ${linkHTML}
@@ -1333,7 +1991,7 @@ function renderSlot(slotIndex) {
 // COMPUTE WINNERS PER SPEC ROW
 // ─────────────────────────────────────────────
 function computeWinners(spec) {
-  const vals = selectedIds.slice(0, numSlots).map(id => spec.fn(CAMERAS[id]));
+  const vals = cfg().selectedIds().slice(0, numSlots).map(id => spec.fn(cfg().items[id]));
   if (!spec.higherBetter && !spec.lowerBetter) return vals.map(() => false);
   const nums = vals.map(v => typeof v === 'number' ? v : null);
   if (nums.every(v => v === null)) return vals.map(() => false);
@@ -1345,8 +2003,8 @@ function computeWinners(spec) {
 // ─────────────────────────────────────────────
 // FORMAT SPEC VALUE
 // ─────────────────────────────────────────────
-function formatVal(spec, cam) {
-  const raw = spec.fn(cam);
+function formatVal(spec, item) {
+  const raw = spec.fn(item);
   if (spec.type === 'boolean') {
     return raw
       ? `<span class="check">✓</span>`
@@ -1364,7 +2022,7 @@ function renderTable() {
   const table = document.getElementById('compare-table');
   let html = '';
 
-  for (const section of SPEC_SECTIONS) {
+  for (const section of cfg().specSections) {
     html += `<div class="spec-section">
       <div class="section-header" data-section="${section.id}">
         <span class="section-title">${section.label}</span>
@@ -1377,10 +2035,10 @@ function renderTable() {
       html += `<div class="spec-row">
         <div class="spec-label">${spec.label}</div>`;
       for (let i = 0; i < numSlots; i++) {
-        const cam = CAMERAS[selectedIds[i]];
+        const item = cfg().items[cfg().selectedIds()[i]];
         const winClass = winners[i] ? ' winner' : '';
         const slotHide = (i === 2 && numSlots < 3) ? ' slot-3-hide' : '';
-        html += `<div class="spec-value${winClass}${slotHide}">${formatVal(spec, cam)}</div>`;
+        html += `<div class="spec-value${winClass}${slotHide}">${formatVal(spec, item)}</div>`;
       }
       html += `</div>`;
     }
@@ -1406,14 +2064,10 @@ function renderTable() {
 // FULL RE-RENDER
 // ─────────────────────────────────────────────
 function renderAll() {
-  // Update CSS variable
   document.documentElement.style.setProperty('--num-slots', numSlots);
 
-  // Show/hide slot-3 container
   const slot2el = document.getElementById('slot-2');
-  if (slot2el) {
-    slot2el.style.display = numSlots < 3 ? 'none' : '';
-  }
+  if (slot2el) slot2el.style.display = numSlots < 3 ? 'none' : '';
 
   for (let i = 0; i < 3; i++) renderSlot(i);
   renderTable();
@@ -1427,7 +2081,7 @@ function attachSlotListeners() {
   document.querySelectorAll('.slot-select').forEach(sel => {
     sel.addEventListener('change', e => {
       const slotIdx = parseInt(e.target.dataset.slot);
-      selectedIds[slotIdx] = e.target.value;
+      cfg().setSelectedId(slotIdx, e.target.value);
       renderAll();
     });
   });
@@ -1436,6 +2090,21 @@ function attachSlotListeners() {
 document.getElementById('currency-select').addEventListener('change', e => {
   currentCurrency = e.target.value;
   for (let i = 0; i < 3; i++) renderSlot(i);
+});
+
+document.getElementById('mode-toggle').addEventListener('click', e => {
+  const btn = e.target.closest('.mode-btn');
+  if (!btn || btn.dataset.mode === currentMode) return;
+  currentMode = btn.dataset.mode;
+  document.querySelectorAll('.mode-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  document.querySelector('.hero-eyebrow').textContent = cfg().heroEyebrow;
+  document.querySelector('.hero-title').innerHTML = cfg().heroTitle;
+  document.querySelector('.hero-subtitle').textContent = cfg().heroSubtitle;
+  document.querySelector('.header-title').textContent = cfg().headerTitle;
+  document.querySelector('.header-controls').style.display = cfg().supportsCurrency ? '' : 'none';
+  history.replaceState(null, '', `#${currentMode}`);
+  renderAll();
 });
 
 window.addEventListener('resize', () => {
@@ -1449,6 +2118,17 @@ window.addEventListener('resize', () => {
 // ─────────────────────────────────────────────
 // INIT
 // ─────────────────────────────────────────────
+if (location.hash === '#lenses') {
+  currentMode = 'lenses';
+  document.querySelectorAll('.mode-btn').forEach(b => {
+    b.classList.toggle('active', b.dataset.mode === 'lenses');
+  });
+  document.querySelector('.hero-eyebrow').textContent = cfg().heroEyebrow;
+  document.querySelector('.hero-title').innerHTML = cfg().heroTitle;
+  document.querySelector('.hero-subtitle').textContent = cfg().heroSubtitle;
+  document.querySelector('.header-title').textContent = cfg().headerTitle;
+  document.querySelector('.header-controls').style.display = 'none';
+}
 numSlots = getNumSlots();
 renderAll();
 </script>
