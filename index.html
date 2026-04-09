@@ -1915,7 +1915,22 @@ function buildPlaceholder(item) {
   if (currentMode === 'lenses') {
     const c = MANUFACTURER_COLORS[item.manufacturer] || { bg: '#1a1a2a', text: '#8080c0' };
     const label = item.name.length > 22 ? item.name.slice(0, 22) + '…' : item.name;
-    svgHtml = `<div class="cam-placeholder" style="background:${c.bg}"><svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="11" y="1" width="6" height="26" rx="3" fill="${c.text}" opacity="0.3"/><circle cx="14" cy="14" r="9" stroke="${c.text}" stroke-width="2" opacity="0.5" fill="none"/><circle cx="14" cy="14" r="5" fill="${c.text}" opacity="0.6"/><circle cx="14" cy="14" r="2" fill="${c.text}" opacity="0.9"/></svg><span style="font-size:8px;font-weight:700;color:${c.text};letter-spacing:0.03em;opacity:0.9;text-align:center;line-height:1.2">${label}</span></div>`;
+    // Side-profile silhouette scaled to physical dimensions (28×28 canvas)
+    // Barrel width from length (10–22px), barrel height from diameter (10–20px)
+    const len = item.length || 70;
+    const dia = item.diameter || 65;
+    const bW = Math.max(10, Math.min(22, Math.round(10 + (len - 20) / 300 * 12)));
+    const bH = Math.max(10, Math.min(20, Math.round(10 + (dia - 60) / 47 * 10)));
+    const bX = Math.round((28 - bW) / 2);
+    const bY = Math.round((28 - bH) / 2);
+    // Front element: slightly taller than barrel, 3px wide, on the right
+    const feH = Math.min(bH + 4, 24);
+    const feX = bX + bW - 2;
+    const feY = Math.round((28 - feH) / 2);
+    // Front glass circle: larger for faster lenses (f/1.2→5px, f/2.8→2px, f/5.6→2px)
+    const gR = Math.max(2, Math.min(5, Math.round(6 / item.maxAperture)));
+    const gcx = feX + 1.5;
+    svgHtml = `<div class="cam-placeholder" style="background:${c.bg}"><svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="${bX}" y="${bY}" width="${bW}" height="${bH}" rx="1.5" fill="${c.text}" opacity="0.28"/><rect x="${feX}" y="${feY}" width="3" height="${feH}" rx="1.5" fill="${c.text}" opacity="0.55"/><circle cx="${gcx}" cy="14" r="${gR}" fill="${c.text}" opacity="0.75"/>${gR > 2 ? `<circle cx="${gcx}" cy="14" r="${gR - 1.5}" fill="${c.text}" opacity="0.4"/>` : ''}</svg><span style="font-size:8px;font-weight:700;color:${c.text};letter-spacing:0.03em;opacity:0.9;text-align:center;line-height:1.2">${label}</span></div>`;
   } else {
     const c = seriesColor(item.series);
     svgHtml = `<div class="cam-placeholder" style="background:${c.bg}"><svg width="28" height="20" viewBox="0 0 28 20" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="1" y="5" width="26" height="14" rx="2.5" fill="${c.text}" opacity="0.35"/><rect x="8" y="1" width="12" height="5" rx="2" fill="${c.text}" opacity="0.35"/><circle cx="14" cy="12" r="5" fill="${c.text}" opacity="0.5"/><circle cx="14" cy="12" r="3" fill="${c.text}" opacity="0.7"/><circle cx="21" cy="8" r="1.5" fill="${c.text}" opacity="0.5"/></svg><span style="font-size:9px;font-weight:700;color:${c.text};letter-spacing:0.04em;opacity:0.9">${item.name}</span></div>`;
