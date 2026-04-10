@@ -1992,7 +1992,7 @@ function buildPlaceholder(item) {
 // BUILD DROPDOWN HTML
 // ─────────────────────────────────────────────
 function buildSelectHTML(currentId, slotIndex) {
-  const otherIds = cfg().selectedIds().filter((_, i) => i !== slotIndex);
+  const otherIds = cfg().selectedIds().filter((_, i) => i !== slotIndex && i < numSlots);
   let html = `<select class="slot-select" data-slot="${slotIndex}">`;
   for (const grp of cfg().dropdownGroups) {
     html += `<optgroup label="${grp.label}">`;
