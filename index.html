@@ -239,6 +239,19 @@
     .slot-link:hover { background: var(--fuji-red); color: white; }
     .slot-link.na { color: var(--gray-3); border-color: var(--gray-3); pointer-events: none; }
 
+    .slot-buy {
+      font-size: 11px;
+      color: #e07b00;
+      text-decoration: none;
+      border: 1px solid #e07b00;
+      padding: 2px 9px;
+      border-radius: 20px;
+      transition: all 0.15s;
+      white-space: nowrap;
+    }
+    .slot-buy:hover { background: #e07b00; color: white; }
+    .slot-links { display: flex; gap: 6px; justify-content: center; flex-wrap: wrap; }
+
     /* ─── COMPARE TABLE ─── */
     #compare-table {
       max-width: 1100px;
@@ -1223,7 +1236,8 @@ const LENSES = {
     elements:10, groups:8, blades:9, afType:'Stepping Motor',
     weatherSealed:true, ois:false, oisStops:null, year:2019, discontinued:false,
     imageUrl:null,
-    prices:{USD:399,AUD:null,EUR:null,GBP:null,JPY:null,CAD:null,SGD:null},
+    prices:{USD:399,AUD:609,EUR:null,GBP:319,JPY:null,CAD:null,SGD:null},
+    buyUrl:'https://www.amazon.com.au/Fujifilm-XF-16mm-F2-8-WR/dp/B07NQWFDJB',
     productUrl:'https://www.fujifilm-x.com/global/products/lenses/xf16mmf28-r-wr/',
   },
   'xf-18mm-f14': {
@@ -1245,7 +1259,8 @@ const LENSES = {
     elements:8, groups:7, blades:7, afType:'DC Motor',
     weatherSealed:false, ois:false, oisStops:null, year:2012, discontinued:false,
     imageUrl:'https://fujifilm-x.b-cdn.net/wp-content/uploads/2016/10/3_thum_xf18mmf2-r.jpg',
-    prices:{USD:599,AUD:null,EUR:null,GBP:null,JPY:null,CAD:null,SGD:null},
+    prices:{USD:599,AUD:742,EUR:null,GBP:380,JPY:null,CAD:null,SGD:null},
+    buyUrl:'https://www.amazon.com.au/Fujifilm-X-Lens-XF18mmF2-R/dp/B006ZSNRWO',
     productUrl:'https://www.fujifilm-x.com/global/products/lenses/xf18mmf2-r/',
   },
   'xf-23mm-f14-lm-wr': {
@@ -1278,7 +1293,8 @@ const LENSES = {
     elements:8, groups:6, blades:11, afType:'DC Motor',
     weatherSealed:true, ois:false, oisStops:null, year:2025, discontinued:false,
     imageUrl:null,
-    prices:{USD:null,AUD:null,EUR:null,GBP:null,JPY:null,CAD:null,SGD:null},
+    prices:{USD:499,AUD:583,EUR:449,GBP:399,JPY:null,CAD:560,SGD:null},
+    buyUrl:'https://www.amazon.com.au/Fujifilm-XF23mm-F2-8-Lens-Black/dp/B0FHZFTX94',
     productUrl:'https://www.fujifilm-x.com/global/products/lenses/xf23mmf28-r-wr/',
   },
   'xf-27mm-f28': {
@@ -1300,7 +1316,8 @@ const LENSES = {
     elements:11, groups:9, blades:9, afType:'Linear Motor',
     weatherSealed:true, ois:false, oisStops:null, year:2022, discontinued:false,
     imageUrl:null,
-    prices:{USD:600,AUD:null,EUR:null,GBP:600,JPY:null,CAD:null,SGD:null},
+    prices:{USD:600,AUD:899,EUR:null,GBP:600,JPY:null,CAD:810,SGD:null},
+    buyUrl:'https://www.amazon.com.au/Fujifilm-30mm-Macro-Fujinon-X-Mount/dp/B0BKGNBRX5',
     productUrl:'https://www.fujifilm-x.com/global/products/lenses/xf30mmf28-r-lm-wr-macro/',
   },
   'xf-33mm-f14': {
@@ -1344,7 +1361,8 @@ const LENSES = {
     elements:12, groups:9, blades:9, afType:'DC Motor',
     weatherSealed:true, ois:false, oisStops:null, year:2020, discontinued:false,
     imageUrl:null,
-    prices:{USD:1499,AUD:null,EUR:1599,GBP:1499,JPY:null,CAD:null,SGD:null},
+    prices:{USD:1499,AUD:null,EUR:1599,GBP:1499,JPY:261800,CAD:2000,SGD:null},
+    buyUrl:'https://www.amazon.com.au/Fujifilm-XF-50mm-F1-0-Lens/dp/B08GX7RYD3',
     productUrl:'https://www.fujifilm-x.com/global/products/lenses/xf50mmf1-r-wr/',
   },
   'xf-50mm-f2': {
@@ -1378,6 +1396,7 @@ const LENSES = {
     weatherSealed:false, ois:false, oisStops:null, year:2012, discontinued:false,
     imageUrl:null,
     prices:{USD:650,AUD:null,EUR:null,GBP:null,JPY:null,CAD:null,SGD:null},
+    buyUrl:'https://www.amazon.com.au/Fuji-X-Pro1-60mm-F2-4-Macro/dp/B006ZSNU4O',
     productUrl:'https://www.fujifilm-x.com/global/products/lenses/xf60mmf24-r-macro/',
   },
   'xf-80mm-f28-macro': {
@@ -1388,7 +1407,8 @@ const LENSES = {
     elements:16, groups:12, blades:9, afType:'Linear Motor',
     weatherSealed:true, ois:true, oisStops:5.0, year:2017, discontinued:false,
     imageUrl:null,
-    prices:{USD:1199,AUD:null,EUR:null,GBP:null,JPY:null,CAD:null,SGD:null},
+    prices:{USD:1199,AUD:1304,EUR:null,GBP:1249,JPY:null,CAD:null,SGD:null},
+    buyUrl:'https://www.amazon.com.au/XF80mmF2-8-LM-OIS-WR-Lens/dp/B0759GMLVP',
     productUrl:'https://www.fujifilm-x.com/global/products/lenses/xf80mmf28-r-lm-ois-wr-macro/',
   },
   'xf-90mm-f2': {
@@ -1410,7 +1430,8 @@ const LENSES = {
     elements:19, groups:14, blades:9, afType:'Linear Motor',
     weatherSealed:true, ois:true, oisStops:5.0, year:2018, discontinued:false,
     imageUrl:null,
-    prices:{USD:6000,AUD:null,EUR:5699,GBP:null,JPY:null,CAD:null,SGD:null},
+    prices:{USD:6000,AUD:6571,EUR:5699,GBP:null,JPY:null,CAD:null,SGD:null},
+    buyUrl:'https://www.amazon.com.au/Fujifilm-XF-Lens-Mirrorless-Grey/dp/B07H3G3P8P',
     productUrl:'https://www.fujifilm-x.com/global/products/lenses/xf200mmf2-r-lm-ois-wr/',
   },
   'xf-500mm-f56': {
@@ -1421,7 +1442,8 @@ const LENSES = {
     elements:21, groups:14, blades:9, afType:'Linear Motor',
     weatherSealed:true, ois:true, oisStops:5.5, year:2024, discontinued:false,
     imageUrl:null,
-    prices:{USD:2999,AUD:null,EUR:null,GBP:null,JPY:null,CAD:4050,SGD:null},
+    prices:{USD:2999,AUD:4888,EUR:null,GBP:2899,JPY:null,CAD:4050,SGD:null},
+    buyUrl:'https://www.amazon.com.au/Fujinon-XF500mmF5-6-LM-OIS-Lens/dp/B0DJQ1NB2H',
     productUrl:'https://www.fujifilm-x.com/global/products/lenses/xf500mmf56-r-lm-ois-wr/',
   },
 
@@ -1435,6 +1457,7 @@ const LENSES = {
     weatherSealed:true, ois:false, oisStops:null, year:2018, discontinued:false,
     imageUrl:null,
     prices:{USD:1999,AUD:null,EUR:null,GBP:null,JPY:null,CAD:null,SGD:null},
+    buyUrl:'https://www.amazon.com.au/Fujinon-XF8-16mmF2-8R-LM-WR-Lens/dp/B07FQ83W5W',
     productUrl:'https://www.fujifilm-x.com/global/products/lenses/xf8-16mmf28-r-lm-wr/',
   },
   'xf-10-24mm-f4': {
@@ -1456,7 +1479,8 @@ const LENSES = {
     elements:null, groups:null, blades:9, afType:'Linear Motor',
     weatherSealed:true, ois:false, oisStops:null, year:2024, discontinued:false,
     imageUrl:null,
-    prices:{USD:700,AUD:null,EUR:null,GBP:700,JPY:null,CAD:950,SGD:null},
+    prices:{USD:700,AUD:1099,EUR:null,GBP:700,JPY:null,CAD:950,SGD:null},
+    buyUrl:'https://www.amazon.com.au/Fujifilm-XF-16-50mm-F2-8-4-8-Lens/dp/B0D45MY4MM',
     productUrl:'https://www.fujifilm-x.com/global/products/lenses/xf16-50mmf28-48-r-lm-wr/',
   },
   'xf-16-55mm-f28-ii': {
@@ -1478,7 +1502,8 @@ const LENSES = {
     elements:16, groups:12, blades:9, afType:'Stepping Motor',
     weatherSealed:true, ois:true, oisStops:6.0, year:2019, discontinued:false,
     imageUrl:null,
-    prices:{USD:799,AUD:null,EUR:null,GBP:null,JPY:null,CAD:1050,SGD:null},
+    prices:{USD:799,AUD:842,EUR:null,GBP:549,JPY:null,CAD:1050,SGD:null},
+    buyUrl:'https://www.amazon.com.au/Fujinon-XF16-80mm-F4-OIS-WR/dp/B07TWYSHYB',
     productUrl:'https://www.fujifilm-x.com/global/products/lenses/xf16-80mmf4-r-ois-wr/',
   },
   'xf-18-55mm-f28-4': {
@@ -1500,7 +1525,8 @@ const LENSES = {
     elements:15, groups:12, blades:7, afType:'Linear Motor',
     weatherSealed:true, ois:false, oisStops:null, year:2022, discontinued:false,
     imageUrl:null,
-    prices:{USD:899,AUD:null,EUR:null,GBP:null,JPY:null,CAD:1150,SGD:null},
+    prices:{USD:899,AUD:null,EUR:null,GBP:899,JPY:null,CAD:1150,SGD:null},
+    buyUrl:'https://www.bhphotovideo.com/c/product/1708270-REG/fujifilm_16759598_xf_18_120mm_f_4_r.html',
     productUrl:'https://www.fujifilm-x.com/global/products/lenses/xf18-120mmf4-lm-pz-wr/',
   },
   'xf-18-135mm-f35-56': {
@@ -1512,6 +1538,7 @@ const LENSES = {
     weatherSealed:true, ois:true, oisStops:5.0, year:2014, discontinued:false,
     imageUrl:null,
     prices:{USD:799,AUD:null,EUR:null,GBP:null,JPY:null,CAD:null,SGD:null},
+    buyUrl:'https://www.amazon.com.au/Fujifilm-Lens-XF18-135mmF3-5-5-6-Weather-Resistant/dp/B00L05ZUR2',
     productUrl:'https://www.fujifilm-x.com/global/products/lenses/xf18-135mmf35-56-r-lm-ois-wr/',
   },
   'xf-50-140mm-f28': {
@@ -2186,9 +2213,13 @@ function renderSlot(slotIndex) {
     priceHTML = lensPrice != null
       ? `<div class="slot-price">${lensSym}${lensPrice.toLocaleString()}</div>`
       : `<div class="slot-price discontinued">Price unavailable</div>`;
-    linkHTML = item.productUrl
+    const viewBtn = item.productUrl
       ? `<a href="${item.productUrl}" target="_blank" rel="noopener" class="slot-link">View Product ↗</a>`
       : `<span class="slot-link na">No Link</span>`;
+    const buyBtn = item.buyUrl
+      ? `<a href="${item.buyUrl}" target="_blank" rel="noopener" class="slot-buy">Buy ↗</a>`
+      : '';
+    linkHTML = `<div class="slot-links">${viewBtn}${buyBtn}</div>`;
   } else {
     const price = item.prices[currentCurrency];
     const sym = CURRENCY[currentCurrency].symbol;
