@@ -2181,9 +2181,11 @@ function renderSlot(slotIndex) {
   let priceHTML, linkHTML;
 
   if (currentMode === 'lenses') {
-    const lensPrice = item.prices ? item.prices[currentCurrency] || item.prices.USD : item.priceUSD;
+    const lensPrice = item.prices ? (item.prices[currentCurrency] ?? item.prices.USD) : item.priceUSD;
     const lensSym = item.prices ? CURRENCY[currentCurrency].symbol : '$';
-    priceHTML = `<div class="slot-price">${lensSym}${lensPrice.toLocaleString()}</div>`;
+    priceHTML = lensPrice != null
+      ? `<div class="slot-price">${lensSym}${lensPrice.toLocaleString()}</div>`
+      : `<div class="slot-price discontinued">Price unavailable</div>`;
     linkHTML = item.productUrl
       ? `<a href="${item.productUrl}" target="_blank" rel="noopener" class="slot-link">View Product ↗</a>`
       : `<span class="slot-link na">No Link</span>`;
