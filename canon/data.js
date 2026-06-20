@@ -98,6 +98,49 @@ const CAMERAS = {
     lensType:'Interchangeable', lensSpec:null,
   },
 
+  /* ── EOS R – 2025/2026 ── */
+  'eos-r6-iii': {
+    name:'EOS R6 Mark III', series:'EOS R (Full-frame)', year:2025, discontinued:false,
+    tagline:'32.5MP 7K Hybrid Workhorse',
+    productUrl:'https://www.usa.canon.com/cameras/eos-r6-mark-iii',
+    buyUrl:'https://www.usa.canon.com/shop/p/eos-r6-mark-iii',
+    imageUrl:'https://upload.wikimedia.org/wikipedia/commons/thumb/3/38/Canon_EOS_R6_Mark_III_26_nov_2025g.jpg/500px-Canon_EOS_R6_Mark_III_26_nov_2025g.jpg',
+    prices:{USD:2799,AUD:4399,EUR:3199,GBP:2499,JPY:431000,CAD:3599,SGD:4099},
+    sensorMP:32.5, sensorType:'Full-frame CMOS', processor:'DIGIC X',
+    width:138.4, height:98.4, depth:88.4, weight:699, weatherSealed:true,
+    lcdSize:'3.0"', lcdDots:1620, lcdType:'Vari-angle',
+    evfType:'EVF', evfDots:3.69, evfMag:0.76,
+    faceDetection:true, subjectDetection:'Animal / Bird / Vehicle / Aircraft',
+    ibis:true, ibisStops:8.5, maxBurst:40,
+    maxVideoRes:'7K / 60P RAW',
+    logVideo:true,
+    dpafPoints:null, clogTiers:'C-Log 2 / C-Log 3',
+    bluetooth:null, wifi:true,
+    cardSlots:'1× CFexpress Type B + 1× SD UHS-II', batteryLife:510, usbCharging:true,
+    lensType:'Interchangeable', lensSpec:null,
+  },
+
+  'eos-r6-v': {
+    name:'EOS R6 V', series:'EOS R (Full-frame)', year:2026, discontinued:false,
+    tagline:'32.5MP 7K Video Body, No EVF',
+    productUrl:'https://www.usa.canon.com/cameras/eos-r6-v',
+    buyUrl:'https://www.bhphotovideo.com/c/product/1970465-REG/canon_7250c002_eos_r6_v_mirrorless.html',
+    imageUrl:'https://upload.wikimedia.org/wikipedia/commons/thumb/a/a6/Canon_EOS_R6_V_with_RF_20-50mm_F4L_IS_USM_PZ_20260516100729.jpg/1280px-Canon_EOS_R6_V_with_RF_20-50mm_F4L_IS_USM_PZ_20260516100729.jpg',
+    prices:{USD:2499,AUD:3899,EUR:2899,GBP:2199,JPY:375000,CAD:3199,SGD:3599},
+    sensorMP:32.5, sensorType:'Full-frame CMOS', processor:'DIGIC X',
+    width:141.8, height:83.3, depth:79.8, weight:688, weatherSealed:true,
+    lcdSize:'3.0"', lcdDots:1620, lcdType:'Vari-angle',
+    evfType:null, evfDots:null, evfMag:null,
+    faceDetection:true, subjectDetection:'Animal / Bird / Vehicle / Aircraft',
+    ibis:true, ibisStops:7.5, maxBurst:40,
+    maxVideoRes:'7K / 60P RAW',
+    logVideo:true,
+    dpafPoints:null, clogTiers:'C-Log 2 / C-Log 3',
+    bluetooth:null, wifi:true,
+    cardSlots:'1× CFexpress Type B + 1× SD UHS-II', batteryLife:null, usbCharging:true,
+    lensType:'Interchangeable', lensSpec:null,
+  },
+
   /* ── EOS R – 2023 ── */
   'eos-r8': {
     name:'EOS R8', series:'EOS R (Full-frame)', year:2023, discontinued:false,
@@ -382,6 +425,7 @@ const CAMERAS = {
 
 // Ordered list of camera IDs for dropdowns (newest first)
 const CAMERA_ORDER = [
+  'eos-r6-v','eos-r6-iii',
   'eos-r1','eos-r5-ii',
   'eos-r8','eos-r50','eos-r100',
   'eos-r6-ii','eos-r7','eos-r10','eos-r5c',
@@ -393,6 +437,7 @@ const CAMERA_ORDER = [
 ];
 
 const DROPDOWN_GROUPS = [
+  { label: '── Current 2025–2026 ──',      ids: ['eos-r6-v','eos-r6-iii'] },
   { label: '── Current 2024–2025 ──',      ids: ['eos-r1','eos-r5-ii','eos-r50v'] },
   { label: '── Current 2023 ──',            ids: ['eos-r8','eos-r50','eos-r100'] },
   { label: '── Current 2022 ──',            ids: ['eos-r6-ii','eos-r7','eos-r10','eos-r5c'] },
@@ -409,6 +454,45 @@ const DROPDOWN_GROUPS = [
 const LENSES = {
 
   /* ── Canon RF Prime Lenses ── */
+  'rf-14mm-f14-l-vcm': {
+    name:'RF 14mm f/1.4 L VCM', manufacturer:'Canon', line:'RF L', type:'Prime',
+    focalLength:14, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'14mm',
+    maxAperture:1.4, minAperture:16, weight:578, length:112.0, diameter:76.5,
+    filterThread:null, minFocusDist:24, maxMagnification:0.11,
+    elements:18, groups:13, blades:11, afType:'VCM',
+    weatherSealed:true, ois:false, oisStops:null, year:2026, discontinued:false,
+    imageUrl:null,
+    prices:{USD:2600,AUD:null,EUR:null,GBP:null,JPY:null,CAD:null,SGD:null},
+    buyUrl:'https://www.bhphotovideo.com/c/product/1947744-REG/canon_rf_14mm_f_1_4_l.html',
+    productUrl:'https://www.usa.canon.com/shop/p/rf14mm-f1-4-l-vcm',
+  },
+
+  'rf-20mm-f14-l-vcm': {
+    name:'RF 20mm f/1.4 L VCM', manufacturer:'Canon', line:'RF L', type:'Prime',
+    focalLength:20, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'20mm',
+    maxAperture:1.4, minAperture:16, weight:519, length:99.3, diameter:76.5,
+    filterThread:67, minFocusDist:20, maxMagnification:0.19,
+    elements:15, groups:11, blades:11, afType:'VCM',
+    weatherSealed:true, ois:false, oisStops:null, year:2025, discontinued:false,
+    imageUrl:null,
+    prices:{USD:1699,AUD:null,EUR:null,GBP:null,JPY:null,CAD:null,SGD:null},
+    buyUrl:'https://www.bhphotovideo.com/c/product/1887734-REG/canon_7023c002_rf_20mm_f_1_4_l.html',
+    productUrl:'https://www.usa.canon.com/shop/p/rf20mm-f-1-4-l-vcm',
+  },
+
+  'rf-45mm-f12-stm': {
+    name:'RF 45mm f/1.2 STM', manufacturer:'Canon', line:'RF', type:'Prime',
+    focalLength:45, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'45mm',
+    maxAperture:1.2, minAperture:16, weight:346, length:75.0, diameter:78.0,
+    filterThread:67, minFocusDist:35, maxMagnification:0.13,
+    elements:9, groups:7, blades:9, afType:'STM',
+    weatherSealed:false, ois:false, oisStops:null, year:2025, discontinued:false,
+    imageUrl:null,
+    prices:{USD:470,AUD:null,EUR:null,GBP:null,JPY:null,CAD:null,SGD:null},
+    buyUrl:null,
+    productUrl:null,
+  },
+
   'rf-16mm-f28-stm': {
     name:'RF 16mm f/2.8 STM', manufacturer:'Canon', line:'RF', type:'Prime',
     focalLength:16, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'16mm',
@@ -566,6 +650,58 @@ const LENSES = {
   },
 
   /* ── Canon RF Zoom Lenses ── */
+  'rf-20-50mm-f4-l-is-usm-pz': {
+    name:'RF 20-50mm f/4 L IS USM PZ', manufacturer:'Canon', line:'RF L', type:'Zoom',
+    focalLength:null, focalLengthMin:20, focalLengthMax:50, focalLengthEquiv:'20–50mm',
+    maxAperture:4.0, minAperture:22, weight:408, length:99.0, diameter:81.2,
+    filterThread:67, minFocusDist:24, maxMagnification:0.33,
+    elements:13, groups:11, blades:9, afType:'USM',
+    weatherSealed:true, ois:true, oisStops:6.0, year:2026, discontinued:false,
+    imageUrl:null,
+    prices:{USD:1399,AUD:null,EUR:null,GBP:null,JPY:null,CAD:null,SGD:null},
+    buyUrl:'https://www.bhphotovideo.com/c/product/1970924-REG/canon_rf_20_50mm_f_4_is.html',
+    productUrl:null,
+  },
+
+  'rf-7-14mm-f28-35-l-fisheye-stm': {
+    name:'RF 7-14mm f/2.8-3.5 L Fisheye STM', manufacturer:'Canon', line:'RF L', type:'Zoom',
+    focalLength:null, focalLengthMin:7, focalLengthMax:14, focalLengthEquiv:'7–14mm',
+    maxAperture:2.8, minAperture:22, weight:476, length:109.4, diameter:76.5,
+    filterThread:null, minFocusDist:15, maxMagnification:0.35,
+    elements:null, groups:null, blades:9, afType:'STM',
+    weatherSealed:true, ois:false, oisStops:null, year:2026, discontinued:false,
+    imageUrl:null,
+    prices:{USD:1899,AUD:null,EUR:null,GBP:null,JPY:null,CAD:null,SGD:null},
+    buyUrl:'https://www.bhphotovideo.com/c/product/1947745-REG/canon_rf_7_14mm_f_2_8_3_5_l.html',
+    productUrl:'https://www.usa.canon.com/shop/p/rf7-14mm-f2-8-3-5-l-fisheye-stm',
+  },
+
+  'rf-16-28mm-f28-is-stm': {
+    name:'RF 16-28mm f/2.8 IS STM', manufacturer:'Canon', line:'RF', type:'Zoom',
+    focalLength:null, focalLengthMin:16, focalLengthMax:28, focalLengthEquiv:'16–28mm',
+    maxAperture:2.8, minAperture:16, weight:445, length:91.0, diameter:77.0,
+    filterThread:67, minFocusDist:20, maxMagnification:0.26,
+    elements:16, groups:13, blades:9, afType:'STM',
+    weatherSealed:false, ois:true, oisStops:5.0, year:2025, discontinued:false,
+    imageUrl:null,
+    prices:{USD:1149,AUD:null,EUR:null,GBP:null,JPY:null,CAD:null,SGD:null},
+    buyUrl:'https://www.bhphotovideo.com/c/product/1875412-REG/canon_6906c002_rf_16_28mm_f_2_8_is.html',
+    productUrl:null,
+  },
+
+  'rf-75-300mm-f4-56': {
+    name:'RF 75-300mm f/4-5.6', manufacturer:'Canon', line:'RF', type:'Zoom',
+    focalLength:null, focalLengthMin:75, focalLengthMax:300, focalLengthEquiv:'75–300mm',
+    maxAperture:4.0, minAperture:32, weight:507, length:146.1, diameter:71.2,
+    filterThread:58, minFocusDist:150, maxMagnification:0.25,
+    elements:13, groups:9, blades:7, afType:'DC',
+    weatherSealed:false, ois:false, oisStops:null, year:2025, discontinued:false,
+    imageUrl:null,
+    prices:{USD:220,AUD:null,EUR:null,GBP:null,JPY:null,CAD:null,SGD:null},
+    buyUrl:'https://www.bhphotovideo.com/c/product/1893569-REG/canon_rf_75_300mm_f_4_5_6_lens.html',
+    productUrl:'https://www.usa.canon.com/shop/p/rf75-300mm-f4-5-6',
+  },
+
   'rf-14-35mm-f4-l-is-usm': {
     name:'RF 14-35mm f/4 L IS USM', manufacturer:'Canon', line:'RF L', type:'Zoom',
     focalLength:null, focalLengthMin:14, focalLengthMax:35, focalLengthEquiv:'14–35mm',
@@ -697,6 +833,19 @@ const LENSES = {
   },
 
   /* ── Canon RF-S Lenses (APS-C) ── */
+  'rfs-14-30mm-f4-63-is-stm-pz': {
+    name:'RF-S 14-30mm f/4-6.3 IS STM PZ', manufacturer:'Canon', line:'RF-S', type:'Zoom',
+    focalLength:null, focalLengthMin:14, focalLengthMax:30, focalLengthEquiv:'22–48mm',
+    maxAperture:4.0, minAperture:22, weight:181, length:62.0, diameter:69.6,
+    filterThread:58, minFocusDist:15, maxMagnification:0.38,
+    elements:10, groups:9, blades:7, afType:'STM',
+    weatherSealed:false, ois:true, oisStops:5.0, year:2025, discontinued:false,
+    imageUrl:null,
+    prices:{USD:330,AUD:null,EUR:null,GBP:null,JPY:null,CAD:null,SGD:null},
+    buyUrl:'https://www.bhphotovideo.com/c/product/1887733-REG/canon_6916c002_rf_s_14_30mm_f_4_6_3_is.html',
+    productUrl:'https://www.usa.canon.com/shop/p/rf-s14-30mm-f4-6-3-is-stm-pz',
+  },
+
   'rfs-10-18mm-f45-63-is-stm': {
     name:'RF-S 10-18mm f/4.5-6.3 IS STM', manufacturer:'Canon', line:'RF-S', type:'Zoom',
     focalLength:null, focalLengthMin:10, focalLengthMax:18, focalLengthEquiv:'16–29mm',
@@ -752,7 +901,7 @@ const LENSES = {
 };
 
 const LENS_DROPDOWN_GROUPS = [
-  { label: '── Canon RF Primes ──',   ids: ['rf-16mm-f28-stm','rf-24mm-f18-macro-is-stm','rf-28mm-f28-stm','rf-35mm-f18-macro-is-stm','rf-50mm-f18-stm','rf-50mm-f12-l-usm','rf-85mm-f2-macro-is-stm','rf-85mm-f12-l-usm','rf-85mm-f14-l-vcm','rf-100mm-f28-l-macro-is-usm','rf-135mm-f18-l-is-usm','rf-800mm-f11-is-stm'] },
-  { label: '── Canon RF Zooms ──',    ids: ['rf-14-35mm-f4-l-is-usm','rf-15-35mm-f28-l-is-usm','rf-24-50mm-f45-63-is-stm','rf-24-70mm-f28-l-is-usm','rf-24-105mm-f4-l-is-usm','rf-24-105mm-f4-71-is-stm','rf-70-200mm-f28-l-is-usm','rf-70-200mm-f4-l-is-usm','rf-100-400mm-f56-8-is-usm','rf-100-500mm-f45-71-l-is-usm'] },
-  { label: '── Canon RF-S (APS-C) ──', ids: ['rfs-10-18mm-f45-63-is-stm','rfs-18-45mm-f45-63-is-stm','rfs-18-150mm-f35-63-is-stm','rfs-55-210mm-f5-71-is-stm'] },
+  { label: '── Canon RF Primes ──',   ids: ['rf-14mm-f14-l-vcm','rf-16mm-f28-stm','rf-20mm-f14-l-vcm','rf-24mm-f18-macro-is-stm','rf-28mm-f28-stm','rf-35mm-f18-macro-is-stm','rf-45mm-f12-stm','rf-50mm-f18-stm','rf-50mm-f12-l-usm','rf-85mm-f2-macro-is-stm','rf-85mm-f12-l-usm','rf-85mm-f14-l-vcm','rf-100mm-f28-l-macro-is-usm','rf-135mm-f18-l-is-usm','rf-800mm-f11-is-stm'] },
+  { label: '── Canon RF Zooms ──',    ids: ['rf-7-14mm-f28-35-l-fisheye-stm','rf-14-35mm-f4-l-is-usm','rf-15-35mm-f28-l-is-usm','rf-16-28mm-f28-is-stm','rf-20-50mm-f4-l-is-usm-pz','rf-24-50mm-f45-63-is-stm','rf-24-70mm-f28-l-is-usm','rf-24-105mm-f4-l-is-usm','rf-24-105mm-f4-71-is-stm','rf-70-200mm-f28-l-is-usm','rf-70-200mm-f4-l-is-usm','rf-75-300mm-f4-56','rf-100-400mm-f56-8-is-usm','rf-100-500mm-f45-71-l-is-usm'] },
+  { label: '── Canon RF-S (APS-C) ──', ids: ['rfs-10-18mm-f45-63-is-stm','rfs-14-30mm-f4-63-is-stm-pz','rfs-18-45mm-f45-63-is-stm','rfs-18-150mm-f35-63-is-stm','rfs-55-210mm-f5-71-is-stm'] },
 ];

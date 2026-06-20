@@ -13,6 +13,15 @@ const KNOWN_IMAGE_GAPS = {
   canon: new Set([
     'eos-r50v',          // 2025 vlogging body — no Wikimedia/Commons image yet
     'rf-85mm-f14-l-vcm', // RF 85mm f/1.4 L VCM — no Commons image yet
+    // 2025–2026 RF/RF-S lenses — no freely-licensed Commons image yet
+    'rf-14mm-f14-l-vcm',
+    'rf-20mm-f14-l-vcm',
+    'rf-45mm-f12-stm',
+    'rf-20-50mm-f4-l-is-usm-pz',
+    'rf-7-14mm-f28-35-l-fisheye-stm',
+    'rf-16-28mm-f28-is-stm',
+    'rf-75-300mm-f4-56',
+    'rfs-14-30mm-f4-63-is-stm-pz',
   ]),
   fujifilm: new Set([
     'xc-16-50mm-f35-56', // no freely-licensed product image found
