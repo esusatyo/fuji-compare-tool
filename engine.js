@@ -298,8 +298,7 @@ function injectBody() {
   </div>
   ${buildBrandSwitcher()}
   <div class="header-controls">
-    <span class="ctrl-label">Currency</span>
-    <select id="currency-select" class="header-select">
+    <select id="currency-select" class="header-select" aria-label="Currency">
       <option value="USD">USD ($)</option>
       <option value="AUD" selected>AUD (A$)</option>
       <option value="EUR">EUR (€)</option>
