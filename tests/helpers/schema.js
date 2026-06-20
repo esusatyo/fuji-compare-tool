@@ -1,0 +1,211 @@
+// ─────────────────────────────────────────────
+// FIELD SCHEMAS for camera & lens data objects.
+//
+// Each validator returns an array of human-readable problem strings
+// (empty array = valid). Tests assert the array is empty.
+// ─────────────────────────────────────────────
+
+const HTTPS_URL = /^https:\/\/[^\s]+$/;
+const HEX_COLOR = /^#[0-9a-fA-F]{6}$/;
+
+/** Validate one field of `obj` against a spec. Returns string[] of problems. */
+function checkField(obj, key, spec) {
+  const { type, required = true, nullable = false, min, max, oneOf } = spec;
+  const has = Object.prototype.hasOwnProperty.call(obj, key);
+  if (!has) return required ? [`missing "${key}"`] : [];
+
+  const v = obj[key];
+  if (v === null || v === undefined) {
+    return nullable ? [] : [`"${key}" is ${v} (not nullable)`];
+  }
+
+  const errs = [];
+  switch (type) {
+    case 'number':
+      if (typeof v !== 'number' || Number.isNaN(v)) {
+        errs.push(`"${key}" should be a number, got ${JSON.stringify(v)}`);
+      } else {
+        if (min != null && v < min) errs.push(`"${key}" = ${v} below min ${min}`);
+        if (max != null && v > max) errs.push(`"${key}" = ${v} above max ${max}`);
+      }
+      break;
+    case 'string':
+      if (typeof v !== 'string') errs.push(`"${key}" should be a string, got ${JSON.stringify(v)}`);
+      else if (required && v.trim() === '') errs.push(`"${key}" is empty`);
+      break;
+    case 'boolean':
+      if (typeof v !== 'boolean') errs.push(`"${key}" should be a boolean, got ${JSON.stringify(v)}`);
+      break;
+    case 'url':
+      if (typeof v !== 'string' || !HTTPS_URL.test(v)) errs.push(`"${key}" is not a valid https URL: ${JSON.stringify(v)}`);
+      break;
+    case 'object':
+      if (typeof v !== 'object' || Array.isArray(v)) errs.push(`"${key}" should be an object`);
+      break;
+    default:
+      errs.push(`"${key}" has unknown schema type "${type}"`);
+  }
+  if (oneOf && !oneOf.includes(v)) errs.push(`"${key}" = ${JSON.stringify(v)} not one of ${JSON.stringify(oneOf)}`);
+  return errs;
+}
+
+const CURRENCIES = ['USD', 'AUD', 'EUR', 'GBP', 'JPY', 'CAD', 'SGD'];
+
+/**
+ * Validate a `prices` object.
+ * A `null` currency value is allowed — it means "unavailable" (e.g. a
+ * discontinued body, or a lens with no regional pricing). `requireAll`
+ * (current cameras) additionally requires every currency to be non-null.
+ */
+function checkPrices(obj, { requireAll = false } = {}) {
+  const errs = [];
+  const p = obj.prices;
+  if (typeof p !== 'object' || p === null) return ['"prices" missing or not an object'];
+  if (typeof p.USD !== 'number' || p.USD <= 0) errs.push('"prices.USD" must be a positive number');
+  for (const cur of CURRENCIES) {
+    const present = Object.prototype.hasOwnProperty.call(p, cur);
+    if (!present) {
+      if (requireAll) errs.push(`"prices.${cur}" missing (required for current items)`);
+      continue;
+    }
+    const val = p[cur];
+    if (val === null) {
+      if (requireAll) errs.push(`"prices.${cur}" is null (required for current items)`);
+      continue; // null = unavailable, allowed for discontinued / region-gapped items
+    }
+    if (typeof val !== 'number' || val <= 0) errs.push(`"prices.${cur}" must be a positive number or null`);
+  }
+  for (const cur of Object.keys(p)) {
+    if (!CURRENCIES.includes(cur)) errs.push(`"prices.${cur}" is not a recognised currency`);
+  }
+  return errs;
+}
+
+// ── CAMERA ──────────────────────────────────
+function validateCamera(id, cam, brandSections = []) {
+  const e = [];
+  const add = (arr) => arr.forEach(m => e.push(m));
+
+  add(checkField(cam, 'name', { type: 'string' }));
+  add(checkField(cam, 'series', { type: 'string' }));
+  add(checkField(cam, 'tagline', { type: 'string' }));
+  add(checkField(cam, 'year', { type: 'number', min: 2010, max: 2027 }));
+  add(checkField(cam, 'discontinued', { type: 'boolean' }));
+
+  add(checkField(cam, 'sensorMP', { type: 'number', min: 1, max: 200 }));
+  add(checkField(cam, 'sensorType', { type: 'string' }));
+  add(checkField(cam, 'processor', { type: 'string' }));
+
+  add(checkField(cam, 'width', { type: 'number', min: 1, max: 300 }));
+  add(checkField(cam, 'height', { type: 'number', min: 1, max: 300 }));
+  add(checkField(cam, 'depth', { type: 'number', min: 1, max: 300 }));
+  add(checkField(cam, 'weight', { type: 'number', min: 1, max: 3000 }));
+  add(checkField(cam, 'weatherSealed', { type: 'boolean' }));
+
+  add(checkField(cam, 'lcdSize', { type: 'string' }));
+  add(checkField(cam, 'lcdDots', { type: 'number', nullable: true, min: 1 }));
+  add(checkField(cam, 'lcdType', { type: 'string' }));
+  add(checkField(cam, 'evfType', { type: 'string', nullable: true }));
+  add(checkField(cam, 'evfDots', { type: 'number', nullable: true, min: 0 }));
+  add(checkField(cam, 'evfMag', { type: 'number', nullable: true, min: 0 }));
+
+  add(checkField(cam, 'faceDetection', { type: 'boolean' }));
+  add(checkField(cam, 'subjectDetection', { type: 'string', nullable: true }));
+  add(checkField(cam, 'maxBurst', { type: 'number', min: 0 }));
+
+  add(checkField(cam, 'ibis', { type: 'boolean' }));
+  add(checkField(cam, 'ibisStops', { type: 'number', nullable: true, min: 0 }));
+
+  add(checkField(cam, 'maxVideoRes', { type: 'string' }));
+  add(checkField(cam, 'logVideo', { type: 'boolean' }));
+
+  // bluetooth: a version string, or `false`/null meaning "none".
+  if (!(typeof cam.bluetooth === 'string' || cam.bluetooth === false || cam.bluetooth == null)) {
+    e.push(`"bluetooth" = ${JSON.stringify(cam.bluetooth)} should be a version string, false, or null`);
+  }
+  add(checkField(cam, 'wifi', { type: 'boolean' }));
+  add(checkField(cam, 'cardSlots', { type: 'string' }));
+  add(checkField(cam, 'batteryLife', { type: 'number', nullable: true, min: 0 }));
+  add(checkField(cam, 'usbCharging', { type: 'boolean' }));
+  add(checkField(cam, 'lensType', { type: 'string' }));
+
+  // Links: optional (absent == null == "none"); when present must be https.
+  add(checkField(cam, 'productUrl', { type: 'url', nullable: true, required: false }));
+  add(checkField(cam, 'buyUrl', { type: 'url', nullable: true, required: false }));
+  add(checkField(cam, 'imageUrl', { type: 'url', nullable: true, required: false }));
+
+  // Prices: USD required & positive; other currencies may be null
+  // (the UI falls back to the USD launch price for those).
+  add(checkPrices(cam));
+
+  // Brand-specific fields.
+  if (brandSections.includes('fujifilm')) {
+    add(checkField(cam, 'filmSims', { type: 'number', min: 0 }));
+    if (![true, false, 'firmware'].includes(cam.xApp)) {
+      e.push(`"xApp" = ${JSON.stringify(cam.xApp)} not one of [true, false, "firmware"]`);
+    }
+  }
+  if (brandSections.includes('canon')) {
+    add(checkField(cam, 'dpafPoints', { type: 'number', nullable: true, min: 0 }));
+    add(checkField(cam, 'clogTiers', { type: 'string', nullable: true }));
+  }
+
+  return e.map(m => `${id}: ${m}`);
+}
+
+// ── LENS ────────────────────────────────────
+function validateLens(id, lens) {
+  const e = [];
+  const add = (arr) => arr.forEach(m => e.push(m));
+
+  add(checkField(lens, 'name', { type: 'string' }));
+  add(checkField(lens, 'manufacturer', { type: 'string' }));
+  add(checkField(lens, 'line', { type: 'string' }));
+  add(checkField(lens, 'type', { type: 'string', oneOf: ['Prime', 'Zoom'] }));
+  add(checkField(lens, 'focalLengthEquiv', { type: 'string' }));
+
+  if (lens.type === 'Prime') {
+    add(checkField(lens, 'focalLength', { type: 'number', min: 1, max: 2000 }));
+  } else if (lens.type === 'Zoom') {
+    add(checkField(lens, 'focalLengthMin', { type: 'number', min: 1, max: 2000 }));
+    add(checkField(lens, 'focalLengthMax', { type: 'number', min: 1, max: 2000 }));
+    if (typeof lens.focalLengthMin === 'number' && typeof lens.focalLengthMax === 'number'
+        && lens.focalLengthMin >= lens.focalLengthMax) {
+      e.push(`focalLengthMin (${lens.focalLengthMin}) must be < focalLengthMax (${lens.focalLengthMax})`);
+    }
+  }
+
+  add(checkField(lens, 'maxAperture', { type: 'number', min: 0.7, max: 45 }));
+  add(checkField(lens, 'minAperture', { type: 'number', min: 1, max: 99 }));
+  add(checkField(lens, 'elements', { type: 'number', nullable: true, min: 1 }));
+  add(checkField(lens, 'groups', { type: 'number', nullable: true, min: 1 }));
+  add(checkField(lens, 'blades', { type: 'number', min: 1, max: 20 }));
+
+  add(checkField(lens, 'minFocusDist', { type: 'number', min: 0 }));
+  add(checkField(lens, 'maxMagnification', { type: 'number', min: 0 }));
+  add(checkField(lens, 'afType', { type: 'string' }));
+  add(checkField(lens, 'weatherSealed', { type: 'boolean' }));
+  add(checkField(lens, 'ois', { type: 'boolean' }));
+  add(checkField(lens, 'oisStops', { type: 'number', nullable: true, min: 0 }));
+
+  add(checkField(lens, 'weight', { type: 'number', min: 1, max: 5000 }));
+  add(checkField(lens, 'length', { type: 'number', min: 1, max: 500 }));
+  add(checkField(lens, 'diameter', { type: 'number', min: 1, max: 300 }));
+  add(checkField(lens, 'filterThread', { type: 'number', nullable: true, min: 1 }));
+
+  add(checkField(lens, 'year', { type: 'number', min: 2010, max: 2027 }));
+  add(checkField(lens, 'discontinued', { type: 'boolean' }));
+
+  add(checkField(lens, 'productUrl', { type: 'url', nullable: true, required: false }));
+  add(checkField(lens, 'buyUrl', { type: 'url', nullable: true, required: false }));
+  add(checkField(lens, 'imageUrl', { type: 'url', nullable: true, required: false }));
+
+  add(checkPrices(lens));
+
+  return e.map(m => `${id}: ${m}`);
+}
+
+module.exports = {
+  validateCamera, validateLens, checkField, checkPrices,
+  CURRENCIES, HTTPS_URL, HEX_COLOR,
+};

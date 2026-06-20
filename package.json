@@ -1,0 +1,16 @@
+{
+  "name": "fuji-compare-tool",
+  "version": "1.0.0",
+  "description": "Multi-brand camera & lens comparison tool",
+  "private": true,
+  "scripts": {
+    "test": "node --test tests/data/*.test.js tests/logic/*.test.js",
+    "test:data": "node --test tests/data/*.test.js",
+    "test:logic": "node --test tests/logic/*.test.js",
+    "test:links": "RUN_LINK_TESTS=1 node --test --test-concurrency=1 tests/links/*.test.js",
+    "test:all": "npm test && npm run test:links"
+  },
+  "devDependencies": {
+    "jsdom": "^24.1.0"
+  }
+}
