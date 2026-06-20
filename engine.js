@@ -271,11 +271,11 @@ function getNumSlots() {
 function buildBrandSwitcher() {
   const brands = typeof REGISTERED_BRANDS !== 'undefined' ? REGISTERED_BRANDS : null;
   if (!brands || brands.length <= 1) return '';
-  const items = brands.map(b => {
-    const cls = b.slug === BRAND_CONFIG.slug ? 'brand-sw-btn active' : 'brand-sw-btn';
-    return `<button class="${cls}" data-brand="${b.slug}">${b.name}</button>`;
+  const options = brands.map(b => {
+    const sel = b.slug === BRAND_CONFIG.slug ? ' selected' : '';
+    return `<option value="${b.slug}"${sel}>${b.name}</option>`;
   }).join('');
-  return `<div class="brand-switcher" id="brand-switcher">${items}</div>`;
+  return `<select class="brand-switcher header-select" id="brand-switcher" aria-label="Brand">${options}</select>`;
 }
 
 function buildFooterLinks() {
@@ -573,12 +573,12 @@ function attachEventListeners() {
     renderAll();
   });
 
-  document.getElementById('brand-switcher')?.addEventListener('click', e => {
-    const btn = e.target.closest('.brand-sw-btn');
-    if (!btn || btn.dataset.brand === BRAND_CONFIG.slug) return;
+  document.getElementById('brand-switcher')?.addEventListener('change', e => {
+    const slug = e.target.value;
+    if (!slug || slug === BRAND_CONFIG.slug) return;
     const hash = location.hash || '';
-    localStorage.setItem('brand', btn.dataset.brand);
-    location.href = `../${btn.dataset.brand}/${hash}`;
+    localStorage.setItem('brand', slug);
+    location.href = `../${slug}/${hash}`;
   });
 
   window.addEventListener('resize', () => {

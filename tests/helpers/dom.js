@@ -24,10 +24,12 @@ function clickMode(window, mode) {
   btn.dispatchEvent(new window.Event('click', { bubbles: true }));
 }
 
-/** Click a brand switcher button by slug. */
-function clickBrand(window, slug) {
-  const btn = window.document.querySelector(`.brand-sw-btn[data-brand="${slug}"]`);
-  btn.dispatchEvent(new window.Event('click', { bubbles: true }));
+/** Select a brand from the header brand-switcher dropdown by slug. */
+function selectBrand(window, slug) {
+  const sel = window.document.getElementById('brand-switcher');
+  if (!sel) throw new Error('brand-switcher dropdown not found');
+  sel.value = slug;
+  sel.dispatchEvent(new window.Event('change', { bubbles: true }));
 }
 
 /** The <select> for a slot, with its <option> elements. */
@@ -35,4 +37,4 @@ function slotSelect(window, slotIndex) {
   return window.document.querySelector(`.slot-select[data-slot="${slotIndex}"]`);
 }
 
-module.exports = { setSlot, setCurrency, clickMode, clickBrand, slotSelect };
+module.exports = { setSlot, setCurrency, clickMode, selectBrand, slotSelect };

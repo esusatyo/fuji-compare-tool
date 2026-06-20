@@ -5,112 +5,18 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Camera &amp; Lens Comparison</title>
   <script defer src="https://cloud.umami.is/script.js" data-website-id="365e9ee6-1fb5-4a0d-9c74-f6255522a196"></script>
-  <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    body {
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, sans-serif;
-      background: #1a1a1a;
-      color: white;
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      padding: 40px 20px;
-      gap: 48px;
-    }
-    .picker-header { text-align: center; }
-    .picker-eyebrow {
-      font-size: 11px;
-      font-weight: 600;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      color: rgba(255,255,255,0.4);
-      margin-bottom: 12px;
-    }
-    .picker-title {
-      font-size: clamp(28px, 5vw, 48px);
-      font-weight: 700;
-      letter-spacing: -0.02em;
-      color: white;
-    }
-    .picker-subtitle {
-      margin-top: 10px;
-      font-size: 15px;
-      color: rgba(255,255,255,0.5);
-    }
-    .brand-grid {
-      display: flex;
-      gap: 20px;
-      flex-wrap: wrap;
-      justify-content: center;
-    }
-    .brand-card {
-      background: rgba(255,255,255,0.06);
-      border: 1px solid rgba(255,255,255,0.12);
-      border-radius: 16px;
-      padding: 32px 40px;
-      text-align: center;
-      cursor: pointer;
-      text-decoration: none;
-      color: white;
-      transition: background 0.15s, border-color 0.15s, transform 0.15s;
-      min-width: 180px;
-    }
-    .brand-card:hover {
-      background: rgba(255,255,255,0.11);
-      border-color: rgba(255,255,255,0.25);
-      transform: translateY(-2px);
-    }
-    .brand-card-logo {
-      font-size: 22px;
-      font-weight: 800;
-      letter-spacing: 0.04em;
-      margin-bottom: 8px;
-    }
-    .brand-card-sub {
-      font-size: 12px;
-      color: rgba(255,255,255,0.45);
-    }
-    .fujifilm-card .brand-card-logo { color: #cc0000; }
-    .canon-card    .brand-card-logo { color: #cc0000; }
-    .picker-footer {
-      font-size: 12px;
-      color: rgba(255,255,255,0.25);
-      text-align: center;
-    }
-  </style>
-</head>
-<body>
-  <div class="picker-header">
-    <div class="picker-eyebrow">Interchangeable Lens Cameras</div>
-    <h1 class="picker-title">Camera Compare</h1>
-    <p class="picker-subtitle">Choose a brand to start comparing cameras and lenses</p>
-  </div>
-
-  <div class="brand-grid" id="brand-grid">
-    <a class="brand-card fujifilm-card" href="./fujifilm/">
-      <div class="brand-card-logo">FUJIFILM</div>
-      <div class="brand-card-sub">X Series · GFX</div>
-    </a>
-    <a class="brand-card canon-card" href="./canon/">
-      <div class="brand-card-logo">Canon</div>
-      <div class="brand-card-sub">EOS R System · RF Mount</div>
-    </a>
-  </div>
-
-  <p class="picker-footer">More brands coming soon</p>
-
   <script>
-    // Redirect returning visitors to their last-used brand, preserving hash
+    // Pure redirector: send visitors straight to a brand compare page.
+    // First-time visitors default to Canon; returning visitors go to their
+    // last-used brand (localStorage['brand']). The URL hash is preserved.
     (function() {
+      const VALID_BRANDS = ['canon', 'fujifilm'];
+      const DEFAULT_BRAND = 'canon';
       const stored = localStorage.getItem('brand');
-      const validBrands = ['fujifilm', 'canon'];
-      if (stored && validBrands.includes(stored)) {
-        const hash = location.hash || '';
-        location.replace('./' + stored + '/' + hash);
-      }
+      const brand = VALID_BRANDS.includes(stored) ? stored : DEFAULT_BRAND;
+      location.replace('./' + brand + '/' + (location.hash || ''));
     })();
   </script>
-</body>
+</head>
+<body></body>
 </html>

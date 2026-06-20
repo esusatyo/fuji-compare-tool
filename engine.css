@@ -116,27 +116,8 @@ body {
 .mode-btn:hover:not(.active) { color: rgba(255,255,255,0.85); }
 
 /* ─── BRAND SWITCHER ─── */
-.brand-switcher {
-  display: flex;
-  background: rgba(255,255,255,0.1);
-  border-radius: 8px;
-  overflow: hidden;
-  border: 1px solid rgba(255,255,255,0.15);
-  flex-shrink: 0;
-}
-.brand-sw-btn {
-  padding: 5px 14px;
-  font-size: 12px;
-  font-weight: 600;
-  color: rgba(255,255,255,0.6);
-  background: transparent;
-  border: none;
-  cursor: pointer;
-  transition: all 0.15s;
-  white-space: nowrap;
-}
-.brand-sw-btn.active { background: var(--accent-color); color: white; }
-.brand-sw-btn:hover:not(.active) { color: rgba(255,255,255,0.85); }
+/* Brand switcher reuses .header-select styling; just keep it from shrinking. */
+.brand-switcher { flex-shrink: 0; }
 
 /* ─── COMPARE STICKY HEADER ─── */
 #compare-header {
@@ -435,7 +416,6 @@ footer a:hover { text-decoration: underline; }
   .brand-logo { display: none; }
   .header-sep { display: none; }
   .header-title { display: none; }
-  .brand-switcher { display: none; }
 }
 
 @media (max-width: 400px) {

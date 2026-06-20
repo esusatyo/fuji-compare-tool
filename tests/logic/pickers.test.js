@@ -2,7 +2,7 @@
 const { test } = require('node:test');
 const assert = require('node:assert/strict');
 const { loadBrand, brandDirs } = require('../helpers/load-brand');
-const { setSlot, clickMode, clickBrand, slotSelect } = require('../helpers/dom');
+const { setSlot, clickMode, selectBrand, slotSelect } = require('../helpers/dom');
 
 function optionsOf(select) {
   return [...select.querySelectorAll('option')];
@@ -78,16 +78,29 @@ for (const brand of brandDirs()) {
     }
   });
 
+  test(`[${brand}] brand switcher is a dropdown listing every registered brand`, () => {
+    const { window, data } = loadBrand(brand, { engine: true });
+    const sel = window.document.getElementById('brand-switcher');
+    if (data.REGISTERED_BRANDS.length <= 1) {
+      assert.equal(sel, null, 'single-brand build should not render a switcher');
+      return;
+    }
+    assert.ok(sel, 'brand-switcher dropdown missing');
+    assert.equal(sel.tagName, 'SELECT');
+    const optVals = optionsOf(sel).map(o => o.value).sort();
+    const expected = data.REGISTERED_BRANDS.map(b => b.slug).sort();
+    assert.deepEqual(optVals, expected, 'dropdown should list every registered brand');
+    assert.equal(sel.value, brand, 'current brand should be pre-selected');
+  });
+
   test(`[${brand}] brand switcher persists choice and targets the right path`, () => {
     const { window, data } = loadBrand(brand, { engine: true });
     const other = data.REGISTERED_BRANDS.map(b => b.slug).find(s => s !== brand);
     if (!other) return; // single-brand build, nothing to switch to
 
-    const btn = window.document.querySelector(`.brand-sw-btn[data-brand="${other}"]`);
-    assert.ok(btn, `brand switcher button for "${other}" missing`);
-    // Clicking sets localStorage before attempting navigation (which jsdom
+    // Selecting sets localStorage before attempting navigation (which jsdom
     // can't perform — that error is filtered by the loader).
-    clickBrand(window, other);
+    selectBrand(window, other);
     assert.equal(window.localStorage.getItem('brand'), other);
   });
 }
