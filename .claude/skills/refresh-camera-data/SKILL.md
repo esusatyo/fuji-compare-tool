@@ -42,10 +42,15 @@ skill touches:
 }
 ```
 
-Pricing convention (see header comment in each `data.js` and `scripts/compute-prices.js`):
-**USD is the exact launch RRP**; non-USD figures are approximate, derived from USD by
-regional ratios unless a real local RRP is confirmed. Preserve this convention — only
-overwrite a non-USD figure when you have a confirmed local RRP, and note it.
+Pricing convention (see also `scripts/compute-prices.js` and the
+[`check-prices-and-buy-links`](../check-prices-and-buy-links/SKILL.md) skill):
+**USD tracks the current US list price (RRP/MSRP)** — not transient street/sale prices;
+non-USD figures are approximate, derived from USD by regional ratios unless a real local
+RRP is confirmed. US-only changes (e.g. tariff hikes) change USD only. Only overwrite a
+non-USD figure when you have a confirmed local RRP, and note it.
+
+Buy links are **generated per-currency** by the engine (`amazonBuyUrl`) — there are no
+`buyUrl` fields to maintain; don't reintroduce them.
 
 ---
 

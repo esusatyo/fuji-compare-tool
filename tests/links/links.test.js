@@ -26,9 +26,10 @@ function collectUrls() {
   };
   for (const brand of brandDirs()) {
     const { data } = loadBrand(brand);
+    // Buy links are generated per-currency at render time (Amazon search
+    // URLs), not stored on items, so there's nothing to sweep for 'buy'.
     const sweep = (collection, type) => {
       for (const [id, item] of Object.entries(collection)) {
-        addUrl(item.buyUrl, 'buy', `${brand}/${type}/${id}`);
         addUrl(item.productUrl, 'product', `${brand}/${type}/${id}`);
         addUrl(item.imageUrl, 'image', `${brand}/${type}/${id}`);
       }

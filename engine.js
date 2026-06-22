@@ -27,6 +27,35 @@ function formatPrice(amount, cur) {
 }
 
 // ─────────────────────────────────────────────
+// AMAZON BUY LINKS (currency-aware, generated at render time)
+//
+// Each currency maps to its regional Amazon marketplace. When an item
+// has an `asin`, the buy button links straight to that product page on
+// the selected marketplace (/dp/<asin>) so the shopper lands on the real
+// listing with live pricing. Items without an asin fall back to a product
+// *search* on that marketplace (brand + model name), which always resolves
+// — so links never break while ASINs are being filled in. EUR uses
+// amazon.de (largest Eurozone marketplace); anything unmapped falls back
+// to amazon.com.
+// ─────────────────────────────────────────────
+const AMAZON_MARKETPLACE = {
+  USD: 'www.amazon.com',
+  AUD: 'www.amazon.com.au',
+  EUR: 'www.amazon.de',
+  GBP: 'www.amazon.co.uk',
+  JPY: 'www.amazon.co.jp',
+  CAD: 'www.amazon.ca',
+  SGD: 'www.amazon.sg',
+};
+
+function amazonBuyUrl(item, cur = currentCurrency) {
+  const domain = AMAZON_MARKETPLACE[cur] || AMAZON_MARKETPLACE.USD;
+  if (item.asin) return `https://${domain}/dp/${item.asin}`;
+  const query = encodeURIComponent(`${BRAND_CONFIG.name} ${item.name}`);
+  return `https://${domain}/s?k=${query}`;
+}
+
+// ─────────────────────────────────────────────
 // SERIES COLOR LOOKUP (reads brand's SERIES_COLORS global)
 // ─────────────────────────────────────────────
 function seriesColor(series) {
@@ -414,9 +443,7 @@ function renderSlot(slotIndex) {
     const viewBtn = item.productUrl
       ? `<a href="${item.productUrl}" target="_blank" rel="noopener" class="slot-link">View Product ↗</a>`
       : `<span class="slot-link na">No Link</span>`;
-    const buyBtn = item.buyUrl
-      ? `<a href="${item.buyUrl}" target="_blank" rel="noopener" class="slot-buy">Buy ↗</a>`
-      : `<span class="slot-buy na">Buy</span>`;
+    const buyBtn = `<a href="${amazonBuyUrl(item)}" target="_blank" rel="noopener" class="slot-buy">Buy ↗</a>`;
     linkHTML = `<div class="slot-links">${viewBtn}${buyBtn}</div>`;
   } else {
     const price = item.prices[currentCurrency];
@@ -436,9 +463,7 @@ function renderSlot(slotIndex) {
     const viewBtn = linkURL
       ? `<a href="${linkURL}" target="_blank" rel="noopener" class="slot-link">View Product ↗</a>`
       : `<span class="slot-link na">Discontinued</span>`;
-    const buyBtn = item.buyUrl
-      ? `<a href="${item.buyUrl}" target="_blank" rel="noopener" class="slot-buy">Buy ↗</a>`
-      : `<span class="slot-buy na">Buy</span>`;
+    const buyBtn = `<a href="${amazonBuyUrl(item)}" target="_blank" rel="noopener" class="slot-buy">Buy ↗</a>`;
     linkHTML = `<div class="slot-links">${viewBtn}${buyBtn}</div>`;
   }
 

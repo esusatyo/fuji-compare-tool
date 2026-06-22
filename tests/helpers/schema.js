@@ -81,6 +81,21 @@ function checkPrices(obj, { requireAll = false } = {}) {
   return errs;
 }
 
+const ASIN_RE = /^[A-Z0-9]{10}$/;
+
+/**
+ * Validate an optional `asin` (Amazon Standard Identification Number).
+ * Absent/null = "no product link yet" (engine falls back to a search URL).
+ * When present it must be a 10-char uppercase alphanumeric ASIN.
+ */
+function checkAsin(obj) {
+  if (!Object.prototype.hasOwnProperty.call(obj, 'asin') || obj.asin == null) return [];
+  if (typeof obj.asin !== 'string' || !ASIN_RE.test(obj.asin)) {
+    return [`"asin" must be a 10-char ASIN (A-Z0-9), got ${JSON.stringify(obj.asin)}`];
+  }
+  return [];
+}
+
 // ── CAMERA ──────────────────────────────────
 function validateCamera(id, cam, brandSections = []) {
   const e = [];
@@ -130,9 +145,11 @@ function validateCamera(id, cam, brandSections = []) {
   add(checkField(cam, 'lensType', { type: 'string' }));
 
   // Links: optional (absent == null == "none"); when present must be https.
+  // (buyUrl is no longer stored — buy links are generated per-currency by
+  // the engine's amazonBuyUrl() from `asin`; see tests/logic/buy-links.test.js.)
   add(checkField(cam, 'productUrl', { type: 'url', nullable: true, required: false }));
-  add(checkField(cam, 'buyUrl', { type: 'url', nullable: true, required: false }));
   add(checkField(cam, 'imageUrl', { type: 'url', nullable: true, required: false }));
+  add(checkAsin(cam));
 
   // Prices: USD required & positive; other currencies may be null
   // (the UI falls back to the USD launch price for those).
@@ -197,8 +214,8 @@ function validateLens(id, lens) {
   add(checkField(lens, 'discontinued', { type: 'boolean' }));
 
   add(checkField(lens, 'productUrl', { type: 'url', nullable: true, required: false }));
-  add(checkField(lens, 'buyUrl', { type: 'url', nullable: true, required: false }));
   add(checkField(lens, 'imageUrl', { type: 'url', nullable: true, required: false }));
+  add(checkAsin(lens));
 
   add(checkPrices(lens));
 
@@ -206,6 +223,6 @@ function validateLens(id, lens) {
 }
 
 module.exports = {
-  validateCamera, validateLens, checkField, checkPrices,
+  validateCamera, validateLens, checkField, checkPrices, checkAsin,
   CURRENCIES, HTTPS_URL, HEX_COLOR,
 };
