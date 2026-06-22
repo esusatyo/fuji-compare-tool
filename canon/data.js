@@ -456,7 +456,8 @@ const LENSES = {
     elements:18, groups:13, blades:11, afType:'VCM',
     weatherSealed:true, ois:false, oisStops:null, year:2026, discontinued:false,
     imageUrl:null,
-    prices:{USD:2600,AUD:null,EUR:null,GBP:null,JPY:null,CAD:null,SGD:null},
+    prices:{USD:2600,AUD:3899,EUR:null,GBP:null,JPY:null,CAD:3200,SGD:null},
+    priceIncomplete:true,
     productUrl:'https://www.usa.canon.com/shop/p/rf14mm-f1-4-l-vcm',
   },
 
@@ -468,7 +469,8 @@ const LENSES = {
     elements:15, groups:11, blades:11, afType:'VCM',
     weatherSealed:true, ois:false, oisStops:null, year:2025, discontinued:false,
     imageUrl:null,
-    prices:{USD:1699,AUD:null,EUR:null,GBP:null,JPY:null,CAD:null,SGD:null},
+    prices:{USD:1699,AUD:2699,EUR:null,GBP:null,JPY:null,CAD:2500,SGD:null},
+    priceIncomplete:true,
     productUrl:'https://www.usa.canon.com/shop/p/rf20mm-f-1-4-l-vcm',
   },
 
@@ -480,7 +482,8 @@ const LENSES = {
     elements:9, groups:7, blades:9, afType:'STM',
     weatherSealed:false, ois:false, oisStops:null, year:2025, discontinued:false,
     imageUrl:null,
-    prices:{USD:470,AUD:null,EUR:null,GBP:null,JPY:null,CAD:null,SGD:null},
+    prices:{USD:470,AUD:699,EUR:null,GBP:null,JPY:null,CAD:570,SGD:null},
+    priceIncomplete:true,
     productUrl:null,
   },
 
@@ -493,7 +496,7 @@ const LENSES = {
     weatherSealed:false, ois:false, oisStops:null, year:2021, discontinued:false,
     imageUrl:'https://upload.wikimedia.org/wikipedia/commons/thumb/d/d8/Canon_RF_16mm_F2.8_STM.jpg/1280px-Canon_RF_16mm_F2.8_STM.jpg',
     asin:'B09FFTB9V6',
-    prices:{USD:299,AUD:null,EUR:null,GBP:null,JPY:null,CAD:null,SGD:null},
+    prices:{USD:299,AUD:519,EUR:299,GBP:259,JPY:33000,CAD:430,SGD:449},
     productUrl:'https://www.usa.canon.com/shop/p/rf16mmf28stm',
   },
 
@@ -506,7 +509,7 @@ const LENSES = {
     weatherSealed:false, ois:true, oisStops:5.0, year:2022, discontinued:false,
     imageUrl:'https://upload.wikimedia.org/wikipedia/commons/thumb/7/77/Canon_RF_24mm_F1.8_MACRO_IS_STM.jpg/1280px-Canon_RF_24mm_F1.8_MACRO_IS_STM.jpg',
     asin:'B0B69QZ1DJ',
-    prices:{USD:599,AUD:null,EUR:null,GBP:null,JPY:null,CAD:null,SGD:null},
+    prices:{USD:599,AUD:999,EUR:599,GBP:519,JPY:80300,CAD:850,SGD:869},
     productUrl:'https://www.usa.canon.com/shop/p/rf24mmf18macroisstm',
   },
 
@@ -519,7 +522,7 @@ const LENSES = {
     weatherSealed:false, ois:false, oisStops:null, year:2022, discontinued:false,
     imageUrl:'https://upload.wikimedia.org/wikipedia/commons/f/f3/Canon_RF_28mm_F2.8-8795.jpg',
     asin:'B0C66JMX91',
-    prices:{USD:299,AUD:null,EUR:null,GBP:null,JPY:null,CAD:null,SGD:null},
+    prices:{USD:299,AUD:529,EUR:279,GBP:249,JPY:36300,CAD:430,SGD:449},
     productUrl:'https://www.usa.canon.com/shop/p/rf28mmf28stm',
   },
 
@@ -532,7 +535,7 @@ const LENSES = {
     weatherSealed:false, ois:true, oisStops:5.0, year:2018, discontinued:false,
     imageUrl:'https://upload.wikimedia.org/wikipedia/commons/a/ab/Canon_R5_R%C3%BCck_mit_RF_35_1.8-8053.jpg',
     asin:'B07H4SFG4G',
-    prices:{USD:499,AUD:null,EUR:null,GBP:null,JPY:null,CAD:null,SGD:null},
+    prices:{USD:499,AUD:989,EUR:479,GBP:419,JPY:58300,CAD:700,SGD:729},
     productUrl:'https://www.usa.canon.com/shop/p/rf35mmf18macroisstm',
   },
 
@@ -545,7 +548,7 @@ const LENSES = {
     weatherSealed:true, ois:false, oisStops:null, year:2018, discontinued:false,
     imageUrl:'https://upload.wikimedia.org/wikipedia/commons/a/a0/Canon_RF_50mm_F1.2L_USM%2C_with_lens_hood.jpg',
     asin:'B07H4G9ZKW',
-    prices:{USD:2299,AUD:null,EUR:null,GBP:null,JPY:null,CAD:null,SGD:null},
+    prices:{USD:2299,AUD:3799,EUR:2699,GBP:2299,JPY:303600,CAD:3199,SGD:3599},
     productUrl:'https://www.usa.canon.com/shop/p/rf50mmf12lusm',
   },
 
@@ -558,7 +561,7 @@ const LENSES = {
     weatherSealed:false, ois:false, oisStops:null, year:2020, discontinued:false,
     imageUrl:'https://upload.wikimedia.org/wikipedia/commons/8/80/Canon_RF_50mm_F1.8_STM.jpg',
     asin:'B08MFVH7SV',
-    prices:{USD:249,AUD:null,EUR:null,GBP:null,JPY:null,CAD:null,SGD:null},
+    prices:{USD:249,AUD:389,EUR:229,GBP:199,JPY:27500,CAD:290,SGD:349},
     productUrl:'https://www.usa.canon.com/shop/p/rf50mmf18stm',
   },
 
@@ -571,7 +574,7 @@ const LENSES = {
     weatherSealed:true, ois:false, oisStops:null, year:2019, discontinued:false,
     imageUrl:'https://upload.wikimedia.org/wikipedia/commons/9/93/Canon_R5_mit_RF_85_1.2-8049.jpg',
     asin:'B07RB7SHD7',
-    prices:{USD:2799,AUD:null,EUR:null,GBP:null,JPY:null,CAD:null,SGD:null},
+    prices:{USD:2799,AUD:4499,EUR:3399,GBP:2999,JPY:374000,CAD:4000,SGD:4399},
     productUrl:'https://www.usa.canon.com/shop/p/rf85mmf12lusm',
   },
 
@@ -583,7 +586,8 @@ const LENSES = {
     elements:14, groups:10, blades:11, afType:'VCM',
     weatherSealed:true, ois:false, oisStops:null, year:2024, discontinued:false,
     imageUrl:null,
-    prices:{USD:2999,AUD:null,EUR:null,GBP:null,JPY:null,CAD:null,SGD:null},
+    prices:{USD:2999,AUD:2699,EUR:null,GBP:null,JPY:null,CAD:2100,SGD:null},
+    priceIncomplete:true,
     productUrl:'https://www.usa.canon.com/shop/p/rf85mmf14lisusm',
   },
 
@@ -596,7 +600,7 @@ const LENSES = {
     weatherSealed:false, ois:true, oisStops:5.0, year:2020, discontinued:false,
     imageUrl:'https://upload.wikimedia.org/wikipedia/commons/e/e6/Canon_R6_und_RF_85_2%2C0-8067.jpg',
     asin:'B08C6Y8KS3',
-    prices:{USD:599,AUD:null,EUR:null,GBP:null,JPY:null,CAD:null,SGD:null},
+    prices:{USD:599,AUD:1029,EUR:699,GBP:629,JPY:84700,CAD:870,SGD:959},
     productUrl:'https://www.usa.canon.com/shop/p/rf85mmf2macroisstm',
   },
 
@@ -609,7 +613,7 @@ const LENSES = {
     weatherSealed:true, ois:true, oisStops:5.0, year:2021, discontinued:false,
     imageUrl:'https://upload.wikimedia.org/wikipedia/commons/thumb/e/ec/Canon_RF_100mm.jpg/1280px-Canon_RF_100mm.jpg',
     asin:'B08M91FQW6',
-    prices:{USD:1599,AUD:null,EUR:null,GBP:null,JPY:null,CAD:null,SGD:null},
+    prices:{USD:1599,AUD:2199,EUR:1899,GBP:1599,JPY:231000,CAD:1800,SGD:2499},
     productUrl:'https://www.usa.canon.com/shop/p/rf100mmf28lmacroisusm',
   },
 
@@ -622,7 +626,7 @@ const LENSES = {
     weatherSealed:true, ois:true, oisStops:5.5, year:2022, discontinued:false,
     imageUrl:'https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/Canon_RF_135mm_f1.8L_IS_USM.jpg/1280px-Canon_RF_135mm_f1.8L_IS_USM.jpg',
     asin:'B0BL7XX45D',
-    prices:{USD:2699,AUD:null,EUR:null,GBP:null,JPY:null,CAD:null,SGD:null},
+    prices:{USD:2699,AUD:3699,EUR:3499,GBP:2999,JPY:407000,CAD:3000,SGD:4299},
     productUrl:'https://www.usa.canon.com/shop/p/rf135mmf18lisusm',
   },
 
@@ -635,7 +639,7 @@ const LENSES = {
     weatherSealed:true, ois:true, oisStops:4.0, year:2020, discontinued:false,
     imageUrl:'https://upload.wikimedia.org/wikipedia/commons/f/f8/Canon_R5_und_RF_800_11-8061.jpg',
     asin:'B08CL2KWCC',
-    prices:{USD:999,AUD:null,EUR:null,GBP:null,JPY:null,CAD:null,SGD:null},
+    prices:{USD:999,AUD:1649,EUR:999,GBP:899,JPY:121000,CAD:1400,SGD:1559},
     productUrl:'https://www.usa.canon.com/shop/p/rf800mmf11isstm',
   },
 
@@ -648,7 +652,8 @@ const LENSES = {
     elements:13, groups:11, blades:9, afType:'USM',
     weatherSealed:true, ois:true, oisStops:6.0, year:2026, discontinued:false,
     imageUrl:null,
-    prices:{USD:1399,AUD:null,EUR:null,GBP:null,JPY:null,CAD:null,SGD:null},
+    prices:{USD:1399,AUD:2099,EUR:null,GBP:null,JPY:null,CAD:1799,SGD:null},
+    priceIncomplete:true,
     productUrl:null,
   },
 
@@ -660,7 +665,8 @@ const LENSES = {
     elements:null, groups:null, blades:9, afType:'STM',
     weatherSealed:true, ois:false, oisStops:null, year:2026, discontinued:false,
     imageUrl:null,
-    prices:{USD:1899,AUD:null,EUR:null,GBP:null,JPY:null,CAD:null,SGD:null},
+    prices:{USD:1899,AUD:2799,EUR:null,GBP:null,JPY:null,CAD:2300,SGD:null},
+    priceIncomplete:true,
     productUrl:'https://www.usa.canon.com/shop/p/rf7-14mm-f2-8-3-5-l-fisheye-stm',
   },
 
@@ -672,7 +678,8 @@ const LENSES = {
     elements:16, groups:13, blades:9, afType:'STM',
     weatherSealed:false, ois:true, oisStops:5.0, year:2025, discontinued:false,
     imageUrl:null,
-    prices:{USD:1149,AUD:null,EUR:null,GBP:null,JPY:null,CAD:null,SGD:null},
+    prices:{USD:1149,AUD:1879,EUR:null,GBP:null,JPY:null,CAD:1700,SGD:null},
+    priceIncomplete:true,
     productUrl:null,
   },
 
@@ -684,7 +691,8 @@ const LENSES = {
     elements:13, groups:9, blades:7, afType:'DC',
     weatherSealed:false, ois:false, oisStops:null, year:2025, discontinued:false,
     imageUrl:null,
-    prices:{USD:220,AUD:null,EUR:null,GBP:null,JPY:null,CAD:null,SGD:null},
+    prices:{USD:220,AUD:399,EUR:null,GBP:null,JPY:null,CAD:310,SGD:null},
+    priceIncomplete:true,
     productUrl:'https://www.usa.canon.com/shop/p/rf75-300mm-f4-5-6',
   },
 
@@ -697,7 +705,7 @@ const LENSES = {
     weatherSealed:true, ois:true, oisStops:5.5, year:2021, discontinued:false,
     imageUrl:'https://upload.wikimedia.org/wikipedia/commons/a/a5/Canon_RF_14-35mm_F4L_IS_USM.jpg',
     asin:'B097Z21LGH',
-    prices:{USD:1699,AUD:null,EUR:null,GBP:null,JPY:null,CAD:null,SGD:null},
+    prices:{USD:1699,AUD:2549,EUR:1999,GBP:1699,JPY:242000,CAD:2000,SGD:2699},
     productUrl:'https://www.usa.canon.com/shop/p/rf14-35mmf4lisusm',
   },
 
@@ -710,7 +718,7 @@ const LENSES = {
     weatherSealed:true, ois:true, oisStops:5.0, year:2019, discontinued:false,
     imageUrl:'https://upload.wikimedia.org/wikipedia/commons/2/22/Canon_RF_15-35mm_F2.8L_IS_USM.jpg',
     asin:'B07WFQYJYP',
-    prices:{USD:2299,AUD:null,EUR:null,GBP:null,JPY:null,CAD:null,SGD:null},
+    prices:{USD:2299,AUD:3899,EUR:2799,GBP:2499,JPY:352000,CAD:3400,SGD:3699},
     productUrl:'https://www.usa.canon.com/shop/p/rf15-35mmf28lisusm',
   },
 
@@ -723,7 +731,7 @@ const LENSES = {
     weatherSealed:false, ois:true, oisStops:4.5, year:2022, discontinued:false,
     imageUrl:'https://upload.wikimedia.org/wikipedia/commons/1/16/Canon_RF_24-50mm_F4.5-6.3_IS_STM_(52853984559).jpg',
     asin:'B0BTTVKVBW',
-    prices:{USD:349,AUD:null,EUR:null,GBP:null,JPY:null,CAD:null,SGD:null},
+    prices:{USD:349,AUD:549,EUR:349,GBP:299,JPY:44000,CAD:420,SGD:549},
     productUrl:'https://www.usa.canon.com/shop/p/rf24-50mmf45-63isstm',
   },
 
@@ -736,7 +744,7 @@ const LENSES = {
     weatherSealed:true, ois:true, oisStops:5.0, year:2019, discontinued:false,
     imageUrl:'https://upload.wikimedia.org/wikipedia/commons/3/31/Canon_EOS_R5_with_Canon_RF_24-70mm_F2.8L_IS_USM_(50170662581).jpg',
     asin:'B07WQ54BL8',
-    prices:{USD:2299,AUD:null,EUR:null,GBP:null,JPY:null,CAD:null,SGD:null},
+    prices:{USD:2299,AUD:3899,EUR:3199,GBP:2799,JPY:396000,CAD:3400,SGD:3699},
     productUrl:'https://www.usa.canon.com/shop/p/rf24-70mmf28lisusm',
   },
 
@@ -749,7 +757,7 @@ const LENSES = {
     weatherSealed:true, ois:true, oisStops:5.0, year:2018, discontinued:false,
     imageUrl:'https://upload.wikimedia.org/wikipedia/commons/3/35/CanonR5_24-105.jpg',
     asin:'B07H489XDQ',
-    prices:{USD:1199,AUD:null,EUR:null,GBP:null,JPY:null,CAD:null,SGD:null},
+    prices:{USD:1199,AUD:1999,EUR:1299,GBP:1199,JPY:165000,CAD:1900,SGD:1899},
     productUrl:'https://www.usa.canon.com/shop/p/rf24-105mmf4lisusm',
   },
 
@@ -762,7 +770,7 @@ const LENSES = {
     weatherSealed:false, ois:true, oisStops:5.0, year:2021, discontinued:false,
     imageUrl:'https://upload.wikimedia.org/wikipedia/commons/a/a5/Canon_RF_24-105mm_f4-7.1_IS_STM.jpg',
     asin:'B084BKXDLD',
-    prices:{USD:449,AUD:null,EUR:null,GBP:null,JPY:null,CAD:null,SGD:null},
+    prices:{USD:449,AUD:769,EUR:479,GBP:429,JPY:55000,CAD:580,SGD:699},
     productUrl:'https://www.usa.canon.com/shop/p/rf24-105mmf4-71isstm',
   },
 
@@ -775,7 +783,7 @@ const LENSES = {
     weatherSealed:true, ois:true, oisStops:5.0, year:2019, discontinued:false,
     imageUrl:'https://upload.wikimedia.org/wikipedia/commons/f/f0/Canon_RF_70-200_2%2C8-8063.jpg',
     asin:'B07Z5M9M7M',
-    prices:{USD:2699,AUD:null,EUR:null,GBP:null,JPY:null,CAD:null,SGD:null},
+    prices:{USD:2699,AUD:4599,EUR:3499,GBP:3099,JPY:407000,CAD:4000,SGD:4299},
     productUrl:'https://www.usa.canon.com/shop/p/rf70-200mmf28lisusm',
   },
 
@@ -788,7 +796,7 @@ const LENSES = {
     weatherSealed:true, ois:true, oisStops:5.0, year:2020, discontinued:false,
     imageUrl:'https://upload.wikimedia.org/wikipedia/commons/1/13/Canon_RF_70-200mm_F4L_IS_USM_-_by_Henry_S%C3%B6derlund_(50914145648).jpg',
     asin:'B08M8QPS1V',
-    prices:{USD:1599,AUD:null,EUR:null,GBP:null,JPY:null,CAD:null,SGD:null},
+    prices:{USD:1599,AUD:2699,EUR:2099,GBP:1799,JPY:231000,CAD:2300,SGD:2499},
     productUrl:'https://www.usa.canon.com/shop/p/rf70-200mmf4lisusm',
   },
 
@@ -801,7 +809,7 @@ const LENSES = {
     weatherSealed:false, ois:true, oisStops:5.0, year:2022, discontinued:false,
     imageUrl:'https://upload.wikimedia.org/wikipedia/commons/thumb/c/c8/Canon_RF_100%E2%80%93400mm_F5.6%E2%80%938_IS_USM.jpg/1280px-Canon_RF_100%E2%80%93400mm_F5.6%E2%80%938_IS_USM.jpg',
     asin:'B09FFV6WF5',
-    prices:{USD:799,AUD:null,EUR:null,GBP:null,JPY:null,CAD:null,SGD:null},
+    prices:{USD:799,AUD:1319,EUR:879,GBP:749,JPY:110000,CAD:950,SGD:1199},
     productUrl:'https://www.usa.canon.com/shop/p/rf100-400mmf56-8isusm',
   },
 
@@ -814,7 +822,7 @@ const LENSES = {
     weatherSealed:true, ois:true, oisStops:5.0, year:2020, discontinued:false,
     imageUrl:'https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/Canon_EOS_R5%2BRF_100-500mm_f4.5-7.1L_IS_USM%282%29.jpg/1280px-Canon_EOS_R5%2BRF_100-500mm_f4.5-7.1L_IS_USM%282%29.jpg',
     asin:'B08C6ZRVC5',
-    prices:{USD:2799,AUD:null,EUR:null,GBP:null,JPY:null,CAD:null,SGD:null},
+    prices:{USD:2799,AUD:4799,EUR:3699,GBP:3199,JPY:462000,CAD:4199,SGD:4399},
     productUrl:'https://www.usa.canon.com/shop/p/rf100-500mmf45-71lisusm',
   },
 
@@ -827,7 +835,8 @@ const LENSES = {
     elements:10, groups:9, blades:7, afType:'STM',
     weatherSealed:false, ois:true, oisStops:5.0, year:2025, discontinued:false,
     imageUrl:null,
-    prices:{USD:330,AUD:null,EUR:null,GBP:null,JPY:null,CAD:null,SGD:null},
+    prices:{USD:330,AUD:579,EUR:null,GBP:null,JPY:null,CAD:500,SGD:null},
+    priceIncomplete:true,
     productUrl:'https://www.usa.canon.com/shop/p/rf-s14-30mm-f4-6-3-is-stm-pz',
   },
 
@@ -840,7 +849,7 @@ const LENSES = {
     weatherSealed:false, ois:true, oisStops:4.5, year:2023, discontinued:false,
     imageUrl:'https://upload.wikimedia.org/wikipedia/commons/5/54/Canon_RF-S_10-18mm_F4.5-6.3_IS_STM_by_Henry_S%C3%B6derlund.jpg',
     asin:'B0CMDC61MZ',
-    prices:{USD:299,AUD:null,EUR:null,GBP:null,JPY:null,CAD:null,SGD:null},
+    prices:{USD:299,AUD:599,EUR:329,GBP:289,JPY:40700,CAD:480,SGD:499},
     productUrl:'https://www.usa.canon.com/shop/p/rfs10-18mmf45-63isstm',
   },
 
@@ -853,7 +862,7 @@ const LENSES = {
     weatherSealed:false, ois:true, oisStops:3.5, year:2022, discontinued:false,
     imageUrl:'https://upload.wikimedia.org/wikipedia/commons/a/a2/Canon_RF-S18-45mm_F4.5-6.3_IS_STM_Lens.jpg',
     asin:'B0B2KTYBPM',
-    prices:{USD:299,AUD:null,EUR:null,GBP:null,JPY:null,CAD:null,SGD:null},
+    prices:{USD:299,AUD:549,EUR:329,GBP:289,JPY:40700,CAD:430,SGD:449},
     productUrl:'https://www.usa.canon.com/shop/p/rfs18-45mmf45-63isstm',
   },
 
@@ -866,7 +875,7 @@ const LENSES = {
     weatherSealed:false, ois:true, oisStops:5.0, year:2022, discontinued:false,
     imageUrl:'https://upload.wikimedia.org/wikipedia/commons/4/4b/Canon_EOS_R7%2BRF-S_18-150mm_f3.5-6.3_IS_STM.jpg',
     asin:'B0B2KSJBR4',
-    prices:{USD:449,AUD:null,EUR:null,GBP:null,JPY:null,CAD:null,SGD:null},
+    prices:{USD:449,AUD:879,EUR:479,GBP:419,JPY:58300,CAD:700,SGD:699},
     productUrl:'https://www.usa.canon.com/shop/p/rfs18-150mmf35-63isstm',
   },
 
@@ -879,7 +888,7 @@ const LENSES = {
     weatherSealed:false, ois:true, oisStops:4.0, year:2022, discontinued:false,
     imageUrl:'https://upload.wikimedia.org/wikipedia/commons/e/e0/Canon_RF-S_55-210mm_F5-7.1_IS_STM_(52792902905).jpg',
     asin:'B0BTTTHPXS',
-    prices:{USD:349,AUD:null,EUR:null,GBP:null,JPY:null,CAD:null,SGD:null},
+    prices:{USD:349,AUD:619,EUR:379,GBP:329,JPY:46200,CAD:500,SGD:549},
     productUrl:'https://www.usa.canon.com/shop/p/rfs55-210mmf5-71isstm',
   },
 

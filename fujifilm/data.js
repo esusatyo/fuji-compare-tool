@@ -779,7 +779,7 @@ const LENSES = {
     weatherSealed:true, ois:false, oisStops:null, year:2019, discontinued:false,
     imageUrl:'https://fujifilm-x.b-cdn.net/wp-content/uploads/2019/02/XF16mmF2.8_480x480.jpg',
     asin:'B07NQDKBDL',
-    prices:{USD:399,AUD:609,EUR:null,GBP:319,JPY:null,CAD:null,SGD:null},
+    prices:{USD:399,AUD:609,EUR:369,GBP:319,JPY:59900,CAD:549,SGD:549},
     productUrl:'https://www.fujifilm-x.com/global/products/lenses/xf16mmf28-r-wr/',
   },
   'xf-18mm-f14': {
@@ -804,6 +804,7 @@ const LENSES = {
     imageUrl:'https://fujifilm-x.b-cdn.net/wp-content/uploads/2016/10/3_thum_xf18mmf2-r.jpg',
     asin:'B006ZSNRWO',
     prices:{USD:599,AUD:742,EUR:null,GBP:380,JPY:null,CAD:null,SGD:null},
+    priceIncomplete:true,
     productUrl:'https://www.fujifilm-x.com/global/products/lenses/xf18mmf2-r/',
   },
   'xf-23mm-f14-lm-wr': {
@@ -840,6 +841,7 @@ const LENSES = {
     imageUrl:'https://fujifilm-x.b-cdn.net/wp-content/uploads/2025/06/thum_XF23mmF2.8-1.jpg',
     asin:'B0FD1P65Z3',
     prices:{USD:499,AUD:583,EUR:449,GBP:399,JPY:null,CAD:560,SGD:null},
+    priceIncomplete:true,
     productUrl:'https://www.fujifilm-x.com/global/products/lenses/xf23mmf28-r-wr/',
   },
   'xf-27mm-f28': {
@@ -864,6 +866,7 @@ const LENSES = {
     imageUrl:'https://fujifilm-x.b-cdn.net/wp-content/uploads/2022/10/1_thum_xf30mmf28-r-lm-wr-macro_zxcv.jpg',
     asin:'B0BK2P7PNK',
     prices:{USD:600,AUD:899,EUR:null,GBP:600,JPY:null,CAD:810,SGD:null},
+    priceIncomplete:true,
     productUrl:'https://www.fujifilm-x.com/global/products/lenses/xf30mmf28-r-lm-wr-macro/',
   },
   'xf-33mm-f14': {
@@ -911,7 +914,7 @@ const LENSES = {
     weatherSealed:true, ois:false, oisStops:null, year:2020, discontinued:false,
     imageUrl:'https://fujifilm-x.b-cdn.net/wp-content/uploads/2020/09/xf50mmf1-r-wr_feature-ahaf.jpg',
     asin:'B08GX7RYD3',
-    prices:{USD:1499,AUD:null,EUR:1599,GBP:1499,JPY:261800,CAD:2000,SGD:null},
+    prices:{USD:1499,AUD:2499,EUR:1599,GBP:1499,JPY:261800,CAD:2000,SGD:2099},
     productUrl:'https://www.fujifilm-x.com/global/products/lenses/xf50mmf1-r-wr/',
   },
   'xf-50mm-f2': {
@@ -947,7 +950,8 @@ const LENSES = {
     weatherSealed:false, ois:false, oisStops:null, year:2012, discontinued:false,
     imageUrl:'https://fujifilm-x.b-cdn.net/wp-content/uploads/2016/10/12_thum_xf60mmf2-4-r-macro.jpg',
     asin:'B006ZSNU4O',
-    prices:{USD:650,AUD:null,EUR:null,GBP:null,JPY:null,CAD:null,SGD:null},
+    prices:{USD:650,AUD:899,EUR:null,GBP:null,JPY:null,CAD:null,SGD:null},
+    priceIncomplete:true,
     productUrl:'https://www.fujifilm-x.com/global/products/lenses/xf60mmf24-r-macro/',
   },
   'xf-80mm-f28-macro': {
@@ -960,6 +964,7 @@ const LENSES = {
     imageUrl:'https://fujifilm-x.b-cdn.net/wp-content/uploads/2017/09/13_thum_xf80mmf2-8macro.jpg',
     asin:'B0759GMLVP',
     prices:{USD:1199,AUD:1304,EUR:null,GBP:1249,JPY:null,CAD:null,SGD:null},
+    priceIncomplete:true,
     productUrl:'https://www.fujifilm-x.com/global/products/lenses/xf80mmf28-r-lm-ois-wr-macro/',
   },
   'xf-90mm-f2': {
@@ -984,6 +989,7 @@ const LENSES = {
     imageUrl:'https://fujifilm-x.b-cdn.net/wp-content/uploads/2018/07/15_thum_xf200mmf2-r-lm-ois-wr_.jpg',
     asin:'B07FQB2T4F',
     prices:{USD:6000,AUD:6571,EUR:5699,GBP:null,JPY:null,CAD:null,SGD:null},
+    priceIncomplete:true,
     productUrl:'https://www.fujifilm-x.com/global/products/lenses/xf200mmf2-r-lm-ois-wr/',
   },
   'xf-500mm-f56': {
@@ -995,7 +1001,7 @@ const LENSES = {
     weatherSealed:true, ois:true, oisStops:5.5, year:2024, discontinued:false,
     imageUrl:'https://fujifilm-x.b-cdn.net/wp-content/uploads/2024/10/product-thumb_xf500mmf56-1.jpg',
     asin:'B0DJQ1NB2H',
-    prices:{USD:2999,AUD:4888,EUR:null,GBP:2899,JPY:null,CAD:4050,SGD:null},
+    prices:{USD:2999,AUD:4888,EUR:2799,GBP:2899,JPY:449900,CAD:4050,SGD:4149},
     productUrl:'https://www.fujifilm-x.com/global/products/lenses/xf500mmf56-r-lm-ois-wr/',
   },
 
@@ -1009,7 +1015,7 @@ const LENSES = {
     weatherSealed:true, ois:false, oisStops:null, year:2018, discontinued:false,
     imageUrl:'https://fujifilm-x.b-cdn.net/wp-content/uploads/2018/07/1_thum_xf8-16mmf2_8-r-lm-wr.jpg',
     asin:'B07FQ83W5W',
-    prices:{USD:1999,AUD:null,EUR:null,GBP:null,JPY:null,CAD:null,SGD:null},
+    prices:{USD:1999,AUD:2999,EUR:1869,GBP:1599,JPY:299900,CAD:2749,SGD:2749},
     productUrl:'https://www.fujifilm-x.com/global/products/lenses/xf8-16mmf28-r-lm-wr/',
   },
   'xf-10-24mm-f4': {
@@ -1033,7 +1039,7 @@ const LENSES = {
     weatherSealed:true, ois:false, oisStops:null, year:2024, discontinued:false,
     imageUrl:'https://fujifilm-x.b-cdn.net/wp-content/uploads/2024/05/XF16-50mm_lens_feature-image-2.jpg',
     asin:'B0D3WSY8W9',
-    prices:{USD:700,AUD:1099,EUR:null,GBP:700,JPY:null,CAD:950,SGD:null},
+    prices:{USD:700,AUD:1099,EUR:649,GBP:700,JPY:104900,CAD:950,SGD:969},
     productUrl:'https://www.fujifilm-x.com/global/products/lenses/xf16-50mmf28-48-r-lm-wr/',
   },
   'xf-16-55mm-f28-ii': {
@@ -1058,6 +1064,7 @@ const LENSES = {
     imageUrl:'https://fujifilm-x.b-cdn.net/wp-content/uploads/2019/10/xf16-80mmf4-r-ois-wr_thum.jpg',
     asin:'B07TWYSHYB',
     prices:{USD:799,AUD:842,EUR:null,GBP:549,JPY:null,CAD:1050,SGD:null},
+    priceIncomplete:true,
     productUrl:'https://www.fujifilm-x.com/global/products/lenses/xf16-80mmf4-r-ois-wr/',
   },
   'xf-18-55mm-f28-4': {
@@ -1081,7 +1088,7 @@ const LENSES = {
     weatherSealed:true, ois:false, oisStops:null, year:2022, discontinued:false,
     imageUrl:'https://fujifilm-x.b-cdn.net/wp-content/uploads/2022/05/1_thum_xf18-120mmf4-lm-pz-wr_fgrt.jpg',
     asin:'B0B2HWW749',
-    prices:{USD:899,AUD:null,EUR:null,GBP:899,JPY:null,CAD:1150,SGD:null},
+    prices:{USD:899,AUD:1499,EUR:849,GBP:899,JPY:134900,CAD:1150,SGD:1249},
     productUrl:'https://www.fujifilm-x.com/global/products/lenses/xf18-120mmf4-lm-pz-wr/',
   },
   'xf-18-135mm-f35-56': {
@@ -1093,7 +1100,7 @@ const LENSES = {
     weatherSealed:true, ois:true, oisStops:5.0, year:2014, discontinued:false,
     imageUrl:'https://fujifilm-x.b-cdn.net/wp-content/uploads/2019/10/xf18-135mmf35-56-r-lm-ois-wr_main-3.png',
     asin:'B00KZHOYSW',
-    prices:{USD:799,AUD:null,EUR:null,GBP:null,JPY:null,CAD:null,SGD:null},
+    prices:{USD:799,AUD:1249,EUR:749,GBP:649,JPY:119900,CAD:1099,SGD:1099},
     productUrl:'https://www.fujifilm-x.com/global/products/lenses/xf18-135mmf35-56-r-lm-ois-wr/',
   },
   'xf-50-140mm-f28': {

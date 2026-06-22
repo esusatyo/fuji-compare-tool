@@ -1,6 +1,11 @@
 // Tier 1 — Data completeness rules (distinct from structural schema validity).
 // These enforce business expectations: every product has an image, and every
-// current camera is priced in all supported currencies.
+// current camera/lens is priced in all supported currencies.
+//
+// `priceIncomplete: true` on a lens item is an explicit acknowledgement that
+// a regional RRP is genuinely unavailable (e.g. no official distribution).
+// Items with this flag skip the currency-completeness check but still require
+// a valid USD price. Remove the flag once the price is filled in.
 const { test } = require('node:test');
 const assert = require('node:assert/strict');
 const { loadBrand, brandDirs } = require('../helpers/load-brand');
@@ -57,5 +62,17 @@ for (const brand of brandDirs()) {
       }
     }
     assert.deepEqual(gaps, [], `\n${gaps.length} current-camera price gap(s):\n${gaps.join('\n')}`);
+  });
+
+  test(`[${brand}] every current lens is priced in all currencies`, () => {
+    const gaps = [];
+    for (const [id, l] of Object.entries(data.LENSES)) {
+      if (l.discontinued) continue;   // discontinued lenses show USD only
+      if (l.priceIncomplete) continue; // explicit acknowledgement — no regional RRP available
+      for (const cur of CURRENCIES) {
+        if (l.prices[cur] == null) gaps.push(`${id}: missing ${cur}`);
+      }
+    }
+    assert.deepEqual(gaps, [], `\n${gaps.length} current-lens price gap(s):\n${gaps.join('\n')}`);
   });
 }

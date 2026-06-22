@@ -245,7 +245,7 @@ const LENS_SPEC_SECTIONS = [
       { key: 'diameter',        label: 'Diameter',                type: 'number', lowerBetter: true,  fn: l => l.diameter,       fmt: v => v + ' mm' },
       { key: 'filterThread',    label: 'Filter Thread',           type: 'text',   fn: l => l.filterThread ? l.filterThread + 'mm' : 'Built-in hood' },
       { key: 'weatherSealed',   label: 'Weather Sealed',          type: 'boolean', fn: l => l.weatherSealed },
-      { key: 'price',           label: 'Price',                   type: 'number', lowerBetter: true,  fn: l => l.prices ? (l.prices[currentCurrency] || l.prices.USD) : l.priceUSD, fmt: v => CURRENCY[currentCurrency].symbol + v.toLocaleString() },
+      { key: 'price',           label: 'RRP (list price)',         type: 'number', lowerBetter: true,  fn: l => l.prices ? (l.prices[currentCurrency] ?? null) : null, fmt: v => CURRENCY[currentCurrency].symbol + v.toLocaleString() },
     ]
   },
 ];
@@ -358,7 +358,7 @@ function injectBody() {
 
 <footer>
   <p>${BRAND_CONFIG.name} Camera &amp; Lens Comparison &mdash; For informational purposes only.</p>
-  <p>Prices shown are approximate launch prices. Actual retail prices may vary by region and retailer.</p>
+  <p>Prices shown are approximate manufacturer list prices (RRP) and may differ from live retail prices. Use the Buy link for current pricing.</p>
   <p>Specs sourced from ${buildFooterLinks()}.</p>
   <p>
     Created by <a href="https://esusatyo.net" target="_blank" rel="noopener">Enrico Susatyo</a>
@@ -423,6 +423,31 @@ function buildSelectHTML(currentId, slotIndex) {
 }
 
 // ─────────────────────────────────────────────
+// RENDER PRICE (shared by slot and table)
+// Rules:
+//   1. Local-currency price available → show with local symbol + RRP label
+//   2. Discontinued → show "Discontinued / Launch: $X" (no RRP label)
+//   3. Live item, no local price but USD exists → show tagged "USD $X" + RRP label
+//   4. No price at all → "Price unavailable"
+// ─────────────────────────────────────────────
+function renderPriceHTML(item) {
+  const prices = item.prices;
+  if (!prices) return `<div class="slot-price discontinued">Price unavailable</div>`;
+  const localPrice = prices[currentCurrency];
+  const sym = CURRENCY[currentCurrency].symbol;
+  if (localPrice != null) {
+    return `<div class="slot-price"><span class="price-rrp-label">RRP</span> ${sym}${localPrice.toLocaleString()}</div>`;
+  }
+  if (item.discontinued) {
+    return `<div class="slot-price discontinued">Discontinued<br><small>Launch: $${prices.USD?.toLocaleString() ?? 'N/A'}</small></div>`;
+  }
+  if (prices.USD != null) {
+    return `<div class="slot-price"><span class="price-rrp-label">RRP</span> <small>USD</small> $${prices.USD.toLocaleString()}</div>`;
+  }
+  return `<div class="slot-price discontinued">Price unavailable</div>`;
+}
+
+// ─────────────────────────────────────────────
 // RENDER SLOT HEADER
 // ─────────────────────────────────────────────
 function renderSlot(slotIndex) {
@@ -432,32 +457,16 @@ function renderSlot(slotIndex) {
   const item = cfg().items[id];
   if (!item) return;
 
-  let priceHTML, linkHTML;
+  const priceHTML = renderPriceHTML(item);
+  let linkHTML;
 
   if (currentMode === 'lenses') {
-    const lensPrice = item.prices ? (item.prices[currentCurrency] ?? item.prices.USD) : item.priceUSD;
-    const lensSym = item.prices ? CURRENCY[currentCurrency].symbol : '$';
-    priceHTML = lensPrice != null
-      ? `<div class="slot-price">${lensSym}${lensPrice.toLocaleString()}</div>`
-      : `<div class="slot-price discontinued">Price unavailable</div>`;
     const viewBtn = item.productUrl
       ? `<a href="${item.productUrl}" target="_blank" rel="noopener" class="slot-link">View Product ↗</a>`
       : `<span class="slot-link na">No Link</span>`;
     const buyBtn = `<a href="${amazonBuyUrl(item)}" target="_blank" rel="noopener" class="slot-buy">Buy ↗</a>`;
     linkHTML = `<div class="slot-links">${viewBtn}${buyBtn}</div>`;
   } else {
-    const price = item.prices[currentCurrency];
-    const sym = CURRENCY[currentCurrency].symbol;
-    if (price) {
-      priceHTML = `<div class="slot-price">${sym}${price.toLocaleString()}</div>`;
-    } else if (item.discontinued) {
-      priceHTML = `<div class="slot-price discontinued">Discontinued<br><small>Launch: $${item.prices.USD?.toLocaleString()}</small></div>`;
-    } else {
-      // Current camera with no local-currency price — show USD fallback
-      priceHTML = item.prices.USD
-        ? `<div class="slot-price"><small>USD</small> $${item.prices.USD.toLocaleString()}</div>`
-        : `<div class="slot-price discontinued">Price unavailable</div>`;
-    }
     const linkURL = (item.productUrl && !item.productUrl.endsWith('/cameras/'))
       ? item.productUrl : null;
     const viewBtn = linkURL
