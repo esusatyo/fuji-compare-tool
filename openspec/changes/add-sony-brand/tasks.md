@@ -121,12 +121,19 @@
 
 ## 9. Images & pricing finalisation
 
-- [ ] 9.1 Run `scripts/fetch-images.js` / `apply-images.js` to source Sony
-  `imageUrl`s; run `scripts/verify-images.js` and fix/null any broken ones.
-- [ ] 9.2 Run `scripts/compute-prices.js` to backfill/derive missing regional
-  RRPs; flag still-unconfirmed regional prices `priceIncomplete: true`.
+- [~] 9.1 Ran `scripts/fetch-images.js sony all`: its **fuzzy name-matching is
+  unreliable for Sony** — most "found" URLs were wrong subjects (Audi A1 for
+  a1-ii, a jet for a7-v, a beetle for e-20mm, a Panasonic for fx30). Only
+  applied the 3 whose Commons filenames unambiguously name the right product
+  (a7-iii, a7-ii, zv-e10-ii) + the a7-iv seed; all 4 pass `verify-images.js`.
+  **REMAINING:** the other ~95 items still need a hand-curated Commons File-title
+  MAP (the `apply-images.js` approach) — automated fetch can't be trusted here.
+- [x] 9.2 Regional pricing: current cameras already carry all 7 currencies (hand-
+  entered at data time); discontinued = USD-only; lenses use `priceIncomplete`.
+  `compute-prices.js` is Canon-hardcoded and not needed for current Sony cameras.
+  ASIN backfill for lenses → `check-prices-and-buy-links` skill (separate pass).
 - [ ] 9.3 Spot-check a sample of product/buy/image URLs with
-  `RUN_LINK_TESTS=1 npm run test:links` (opt-in; network).
+  `RUN_LINK_TESTS=1 npm run test:links` (opt-in; network) — pending.
 
 ## 10. Final verification
 
