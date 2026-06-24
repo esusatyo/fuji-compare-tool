@@ -139,15 +139,15 @@
 
 ## 11. Reusable add-camera-brand skill
 
-- [ ] 11.1 Create `.claude/skills/add-camera-brand/SKILL.md` — brand-agnostic,
-  parameterised by brand name/slug, capturing the procedure used here
-  (research → scaffold → wire → engine section + schema → scripts → verify).
-- [ ] 11.2 Include the full wiring checklist (new dir, all brands'
+- [x] 11.1 Created `.claude/skills/add-camera-brand/SKILL.md` — brand-agnostic,
+  parameterised by brand name/slug, 8-step procedure (research → scaffold → wire
+  → engine section + schema → camera/lens batches → images/pricing → verify).
+- [x] 11.2 Includes the full wiring checklist (new dir, all brands'
   `REGISTERED_BRANDS`, root `VALID_BRANDS`, `MANUFACTURER_COLORS`, optional
-  engine section + `schema.js` branch) and the batched/checkpointed,
-  source-validated, resumable workflow guidance.
-- [ ] 11.3 Sanity-check the skill by dry-reading it against the Sony work to
-  confirm a future brand (e.g. Nikon) could be added by following it verbatim.
+  engine section + `schema.js` branch) + batched/checkpointed/≥2-source/resumable
+  guidance, plus gotchas (numSlots=3 + dedup → ≥4 seed cameras; KNOWN_IMAGE_GAPS).
+- [x] 11.3 Dry-checked against the Sony work — references `add-sony-brand` as the
+  worked example; a future brand (Nikon/OM/Panasonic) can follow it verbatim.
 
 ## 12. Archive
 
