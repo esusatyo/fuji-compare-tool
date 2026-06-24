@@ -31,6 +31,29 @@ const KNOWN_IMAGE_GAPS = {
   fujifilm: new Set([
     'xc-16-50mm-f35-56', // no freely-licensed product image found
   ]),
+  sony: new Set([
+    // Images sourced in the dedicated image batch (Group 9). a7-iv already has one.
+    'a1-ii',
+    'a9-iii',
+    'a7-v',
+    'a7r-v',
+    'a7cr',
+    'a7c-ii',
+    'a7s-iii',
+    'a1',
+    'a7c',
+    'a9-ii', 'a7r-iv', 'a7-iii', 'a9', 'a7r-iii',
+    'a7r-ii', 'a7s-ii', 'a7-ii', 'a7r', 'a7', 'a7s',
+    'a6700', 'a6400', 'a6600', 'a6500', 'a6300', 'a6100', 'a6000',
+    'fx3', 'fx30',
+    'zv-e1', 'zv-e10-ii', 'zv-e10',
+    'fe-14mm-f18-gm', 'fe-24mm-f14-gm', 'fe-35mm-f14-gm', 'fe-50mm-f12-gm',
+    'fe-85mm-f14-gm-ii', 'fe-85mm-f14-gm', 'fe-100mm-f28-stf-gm', 'fe-135mm-f18-gm',
+    'fe-300mm-f28-gm', 'fe-400mm-f28-gm', 'fe-600mm-f4-gm',
+    'fe-50mm-f14-gm',
+    'fe-24-70mm-f28-gm-ii',
+    'fe-70-200mm-f28-gm-oss-ii',
+  ]),
 };
 
 for (const brand of brandDirs()) {

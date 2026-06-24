@@ -34,6 +34,7 @@ const BRAND_CONFIG = {
 const REGISTERED_BRANDS = [
   { slug: 'fujifilm', name: 'Fujifilm' },
   { slug: 'canon',    name: 'Canon' },
+  { slug: 'sony',     name: 'Sony' },
 ];
 
 // ─────────────────────────────────────────────

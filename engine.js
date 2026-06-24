@@ -69,6 +69,7 @@ function seriesColor(series) {
 const MANUFACTURER_COLORS = {
   'Fujifilm':     { bg: '#1a2a1a', text: '#80c080' },
   'Canon':        { bg: '#1a0a0a', text: '#e08080' },
+  'Sony':         { bg: '#1a1408', text: '#ffae66' },
   'Sigma':        { bg: '#1a1a2a', text: '#8080c0' },
   'Tamron':       { bg: '#2a1a1a', text: '#c08080' },
   'Viltrox':      { bg: '#2a2a1a', text: '#c0c080' },
@@ -197,6 +198,16 @@ const SPEC_SECTIONS = [
     brand: 'canon',
     specs: [
       { key: 'clogTiers',    label: 'C-Log Support',     type: 'text',   fn: c => c.clogTiers || '—' },
+    ]
+  },
+  // ── Sony-specific ──
+  {
+    id: 'sony', label: 'Color Science & AI AF',
+    brand: 'sony',
+    specs: [
+      { key: 'logProfile',      label: 'Log / Color Profile', type: 'text',    fn: c => c.logProfile || '—' },
+      { key: 'aiAf',            label: 'AI Processing Unit',  type: 'boolean', fn: c => c.aiAf },
+      { key: 'realtimeTracking',label: 'Real-time Tracking',  type: 'boolean', fn: c => c.realtimeTracking },
     ]
   },
 ];
