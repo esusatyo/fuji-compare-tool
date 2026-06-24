@@ -98,19 +98,26 @@
   85/1.4 (disc), 100 STF, 135/1.8, 300/2.8, 400/2.8, 600/4. `asin:null`
   (search-link fallback) + `priceIncomplete` USD+AUD+CAD — ASIN/regional-price
   backfill deferred to Group 9 / `check-prices-and-buy-links` skill.
-- [ ] 7.2 FE G + standard FE primes (16/1.8 G, 20/1.8 G, 24/2.8 G, 40/2.5 G,
-  50/2.5 G, 28/2, 35/1.8, 50/1.8, 50 Macro, ZA: 35/1.4, 35/2.8, 50/1.4, 55/1.8;
-  90 Macro G). NOTE: defer "100mm F2.8 Macro GM (2025)" — existence unverified.
-- [ ] 7.3 E-mount APS-C primes (11/1.8, 15/1.4 G, 16/2.8, 20/2.8, 24/1.8 ZA,
-  30/3.5 Macro, 35/1.8 OSS, 50/1.8 OSS).
-- [ ] 7.4 After each batch: update `LENS_DROPDOWN_GROUPS`; `npm run test:data`.
+- [x] 7.2 FE G + standard + ZA primes added (16/1.8 G, 20/1.8 G, 24/2.8 G,
+  40/2.5 G, 50/2.5 G, 90 Macro G, 28/2, 35/1.8, 50/1.8, 50 Macro; ZA 35/1.4,
+  35/2.8, 50/1.4, 55/1.8). 100mm Macro GM (2025) deferred — unverified.
+- [x] 7.3 E APS-C primes added (11/1.8, 15/1.4 G, 16/2.8, 20/2.8, 24/1.8 ZA,
+  30/3.5 Macro, 35/1.8 OSS, 50/1.8 OSS) with `focalLengthEquiv` (1.5× crop).
+- [x] 7.4 `LENS_DROPDOWN_GROUPS` updated (FE Primes group + new E APS-C Primes
+  group); `npm test` green. **36 lenses total** (26 FE primes, 8 E primes, 2 zooms).
 
 ## 8. Lens data — zooms in batches by line
 
-- [ ] 8.1 FE GM zooms (16-35, 24-70, 70-200, 100-400, …).
-- [ ] 8.2 FE G + standard FE zooms.
-- [ ] 8.3 E-mount APS-C zooms.
-- [ ] 8.4 After each batch: update `LENS_DROPDOWN_GROUPS`; `npm run test:data`.
+- [x] 8.1 FE GM zooms: 12-24/2.8, 16-35/2.8 II, 16-35/2.8 (disc), 24-70/2.8 II
+  (seed), 28-70/2, 50-150/2, 70-200/2.8 II (seed), 100-400.
+- [x] 8.2 FE G + standard + ZA zooms: 12-24/4 G, 16-25/2.8 G, 16-35/4 PZ G,
+  20-70/4 G, 24-50/2.8 G, 24-105/4 G, 70-200/4 G (disc), 70-200/4 Macro G II,
+  70-300 G, 200-600 G, 400-800 G; ZA 16-35/4, 24-70/4; FE 24-240, 28-60,
+  28-70 OSS (disc), 28-70 OSS II.
+- [x] 8.3 E APS-C zooms: 10-18 OSS, 10-20 PZ G, 16-50 PZ (disc), 16-50 PZ II,
+  16-55/2.8 G, 16-70/4 ZA (disc), 18-105 G PZ, 18-135, 55-210, 70-350 G.
+- [x] 8.4 `LENS_DROPDOWN_GROUPS` updated (FE Zooms + new E Zooms group);
+  `npm test` green. **TOTAL: 69 lenses** (34 primes, 35 zooms; 51 FE, 18 E).
 
 ## 9. Images & pricing finalisation
 
