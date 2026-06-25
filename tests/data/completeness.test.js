@@ -32,12 +32,11 @@ const KNOWN_IMAGE_GAPS = {
     'xc-16-50mm-f35-56', // no freely-licensed product image found
   ]),
   sony: new Set([
-    // 30 of 33 cameras now have curated product images (Wikipedia infobox +
-    // Wikimedia Commons category lookups, each model-confirmed + verify-images'd).
-    // Only these 3 lack a Commons category / clean photo and stay on the
-    // placeholder card: a7-v (2025), a9-ii, a6100.
+    // 31 of 33 cameras now have curated product images (Wikipedia infobox +
+    // Wikimedia Commons category/file lookups, each model-confirmed — a9-ii was
+    // visually verified — and verify-images'd). Only a7-v (2025) and a6100 lack
+    // any clean Commons product photo and stay on the placeholder card.
     'a7-v',
-    'a9-ii',
     'a6100',
     'fe-14mm-f18-gm', 'fe-24mm-f14-gm', 'fe-35mm-f14-gm', 'fe-50mm-f12-gm',
     'fe-85mm-f14-gm-ii', 'fe-85mm-f14-gm', 'fe-100mm-f28-stf-gm', 'fe-135mm-f18-gm',
