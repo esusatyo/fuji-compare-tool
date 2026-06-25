@@ -759,7 +759,7 @@ const LENSES = {
   },
 
   'fe-14mm-f18-gm': {
-    name:'FE 14mm F1.8 GM', manufacturer:'Sony', line:'FE GM', type:'Prime', asin:null,
+    name:'FE 14mm F1.8 GM', manufacturer:'Sony', line:'FE GM', type:'Prime', asin:'B09316YPCH',
     focalLength:14, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'14mm',
     maxAperture:1.8, minAperture:16, weight:460, length:99.8, diameter:83.0,
     filterThread:null, minFocusDist:25, maxMagnification:0.10,
@@ -772,7 +772,7 @@ const LENSES = {
   },
 
   'fe-24mm-f14-gm': {
-    name:'FE 24mm F1.4 GM', manufacturer:'Sony', line:'FE GM', type:'Prime', asin:null,
+    name:'FE 24mm F1.4 GM', manufacturer:'Sony', line:'FE GM', type:'Prime', asin:'B07HJXVHSS',
     focalLength:24, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'24mm',
     maxAperture:1.4, minAperture:16, weight:445, length:92.4, diameter:75.4,
     filterThread:67, minFocusDist:24, maxMagnification:0.17,
@@ -785,7 +785,7 @@ const LENSES = {
   },
 
   'fe-35mm-f14-gm': {
-    name:'FE 35mm F1.4 GM', manufacturer:'Sony', line:'FE GM', type:'Prime', asin:null,
+    name:'FE 35mm F1.4 GM', manufacturer:'Sony', line:'FE GM', type:'Prime', asin:'B08SWMH186',
     focalLength:35, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'35mm',
     maxAperture:1.4, minAperture:16, weight:524, length:96.0, diameter:76.0,
     filterThread:67, minFocusDist:25, maxMagnification:0.26,
@@ -811,7 +811,7 @@ const LENSES = {
   },
 
   'fe-85mm-f14-gm-ii': {
-    name:'FE 85mm F1.4 GM II', manufacturer:'Sony', line:'FE GM', type:'Prime', asin:null,
+    name:'FE 85mm F1.4 GM II', manufacturer:'Sony', line:'FE GM', type:'Prime', asin:'B0DFHSFL7L',
     focalLength:85, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'85mm',
     maxAperture:1.4, minAperture:16, weight:642, length:107.3, diameter:84.7,
     filterThread:77, minFocusDist:80, maxMagnification:0.12,
@@ -836,7 +836,7 @@ const LENSES = {
   },
 
   'fe-100mm-f28-stf-gm': {
-    name:'FE 100mm F2.8 STF GM OSS', manufacturer:'Sony', line:'FE GM', type:'Prime', asin:null,
+    name:'FE 100mm F2.8 STF GM OSS', manufacturer:'Sony', line:'FE GM', type:'Prime', asin:'B06WRMXVKK',
     focalLength:100, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'100mm',
     maxAperture:2.8, minAperture:20, weight:700, length:118.1, diameter:85.2,
     filterThread:72, minFocusDist:57, maxMagnification:0.25,
@@ -849,7 +849,7 @@ const LENSES = {
   },
 
   'fe-135mm-f18-gm': {
-    name:'FE 135mm F1.8 GM', manufacturer:'Sony', line:'FE GM', type:'Prime', asin:null,
+    name:'FE 135mm F1.8 GM', manufacturer:'Sony', line:'FE GM', type:'Prime', asin:'B07P6MNC3R',
     focalLength:135, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'135mm',
     maxAperture:1.8, minAperture:22, weight:950, length:127.0, diameter:89.5,
     filterThread:82, minFocusDist:70, maxMagnification:0.25,
@@ -862,7 +862,7 @@ const LENSES = {
   },
 
   'fe-300mm-f28-gm': {
-    name:'FE 300mm F2.8 GM OSS', manufacturer:'Sony', line:'FE GM', type:'Prime', asin:null,
+    name:'FE 300mm F2.8 GM OSS', manufacturer:'Sony', line:'FE GM', type:'Prime', asin:'B0CMV75475',
     focalLength:300, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'300mm',
     maxAperture:2.8, minAperture:22, weight:1470, length:265.0, diameter:124.0,
     filterThread:40.5, minFocusDist:200, maxMagnification:0.16,
@@ -875,7 +875,7 @@ const LENSES = {
   },
 
   'fe-400mm-f28-gm': {
-    name:'FE 400mm F2.8 GM OSS', manufacturer:'Sony', line:'FE GM', type:'Prime', asin:null,
+    name:'FE 400mm F2.8 GM OSS', manufacturer:'Sony', line:'FE GM', type:'Prime', asin:'B07FHDZ3Z6',
     focalLength:400, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'400mm',
     maxAperture:2.8, minAperture:22, weight:2895, length:359.0, diameter:158.1,
     filterThread:40.5, minFocusDist:270, maxMagnification:0.16,
@@ -888,7 +888,7 @@ const LENSES = {
   },
 
   'fe-600mm-f4-gm': {
-    name:'FE 600mm F4 GM OSS', manufacturer:'Sony', line:'FE GM', type:'Prime', asin:null,
+    name:'FE 600mm F4 GM OSS', manufacturer:'Sony', line:'FE GM', type:'Prime', asin:'B07SZVGKMD',
     focalLength:600, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'600mm',
     maxAperture:4.0, minAperture:22, weight:3040, length:449.0, diameter:163.6,
     filterThread:40.5, minFocusDist:450, maxMagnification:0.14,
@@ -902,7 +902,7 @@ const LENSES = {
 
   /* ── Sony FE G + standard primes ── */
   'fe-16mm-f18-g': {
-    name:'FE 16mm F1.8 G', manufacturer:'Sony', line:'FE G', type:'Prime', asin:null,
+    name:'FE 16mm F1.8 G', manufacturer:'Sony', line:'FE G', type:'Prime', asin:'B0DYK97L9M',
     focalLength:16, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'16mm',
     maxAperture:1.8, minAperture:22, weight:304, length:73.8, diameter:73.8,
     filterThread:67, minFocusDist:15, maxMagnification:0.25,
@@ -915,7 +915,7 @@ const LENSES = {
   },
 
   'fe-20mm-f18-g': {
-    name:'FE 20mm F1.8 G', manufacturer:'Sony', line:'FE G', type:'Prime', asin:null,
+    name:'FE 20mm F1.8 G', manufacturer:'Sony', line:'FE G', type:'Prime', asin:'B08556WW56',
     focalLength:20, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'20mm',
     maxAperture:1.8, minAperture:22, weight:373, length:84.7, diameter:73.5,
     filterThread:67, minFocusDist:18, maxMagnification:0.20,
@@ -928,7 +928,7 @@ const LENSES = {
   },
 
   'fe-24mm-f28-g': {
-    name:'FE 24mm F2.8 G', manufacturer:'Sony', line:'FE G', type:'Prime', asin:null,
+    name:'FE 24mm F2.8 G', manufacturer:'Sony', line:'FE G', type:'Prime', asin:'B08ZSWL58M',
     focalLength:24, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'24mm',
     maxAperture:2.8, minAperture:22, weight:162, length:45.0, diameter:68.0,
     filterThread:49, minFocusDist:24, maxMagnification:0.13,
@@ -941,7 +941,7 @@ const LENSES = {
   },
 
   'fe-40mm-f25-g': {
-    name:'FE 40mm F2.5 G', manufacturer:'Sony', line:'FE G', type:'Prime', asin:null,
+    name:'FE 40mm F2.5 G', manufacturer:'Sony', line:'FE G', type:'Prime', asin:'B08ZSW1PHB',
     focalLength:40, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'40mm',
     maxAperture:2.5, minAperture:22, weight:173, length:45.0, diameter:68.0,
     filterThread:49, minFocusDist:28, maxMagnification:0.20,
@@ -954,7 +954,7 @@ const LENSES = {
   },
 
   'fe-50mm-f25-g': {
-    name:'FE 50mm F2.5 G', manufacturer:'Sony', line:'FE G', type:'Prime', asin:null,
+    name:'FE 50mm F2.5 G', manufacturer:'Sony', line:'FE G', type:'Prime', asin:'B08ZSYM3K1',
     focalLength:50, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'50mm',
     maxAperture:2.5, minAperture:22, weight:174, length:45.0, diameter:68.0,
     filterThread:49, minFocusDist:31, maxMagnification:0.18,
@@ -967,7 +967,7 @@ const LENSES = {
   },
 
   'fe-90mm-f28-macro-g': {
-    name:'FE 90mm F2.8 Macro G OSS', manufacturer:'Sony', line:'FE G', type:'Prime', asin:null,
+    name:'FE 90mm F2.8 Macro G OSS', manufacturer:'Sony', line:'FE G', type:'Prime', asin:'B00U29GNEG',
     focalLength:90, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'90mm',
     maxAperture:2.8, minAperture:22, weight:602, length:130.5, diameter:79.0,
     filterThread:62, minFocusDist:28, maxMagnification:1.0,
@@ -980,7 +980,7 @@ const LENSES = {
   },
 
   'fe-28mm-f2': {
-    name:'FE 28mm F2', manufacturer:'Sony', line:'FE', type:'Prime', asin:null,
+    name:'FE 28mm F2', manufacturer:'Sony', line:'FE', type:'Prime', asin:'B00U29GN6O',
     focalLength:28, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'28mm',
     maxAperture:2.0, minAperture:22, weight:200, length:60.0, diameter:64.0,
     filterThread:49, minFocusDist:29, maxMagnification:0.13,
@@ -993,7 +993,7 @@ const LENSES = {
   },
 
   'fe-35mm-f18': {
-    name:'FE 35mm F1.8', manufacturer:'Sony', line:'FE', type:'Prime', asin:null,
+    name:'FE 35mm F1.8', manufacturer:'Sony', line:'FE', type:'Prime', asin:'B07V8X4KGG',
     focalLength:35, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'35mm',
     maxAperture:1.8, minAperture:22, weight:280, length:73.0, diameter:65.6,
     filterThread:55, minFocusDist:22, maxMagnification:0.24,
@@ -1006,7 +1006,7 @@ const LENSES = {
   },
 
   'fe-50mm-f18': {
-    name:'FE 50mm F1.8', manufacturer:'Sony', line:'FE', type:'Prime', asin:null,
+    name:'FE 50mm F1.8', manufacturer:'Sony', line:'FE', type:'Prime', asin:'B01DLMD5O6',
     focalLength:50, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'50mm',
     maxAperture:1.8, minAperture:22, weight:186, length:59.5, diameter:68.6,
     filterThread:49, minFocusDist:45, maxMagnification:0.14,
@@ -1019,7 +1019,7 @@ const LENSES = {
   },
 
   'fe-50mm-f28-macro': {
-    name:'FE 50mm F2.8 Macro', manufacturer:'Sony', line:'FE', type:'Prime', asin:null,
+    name:'FE 50mm F2.8 Macro', manufacturer:'Sony', line:'FE', type:'Prime', asin:'B01LC8GMV4',
     focalLength:50, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'50mm',
     maxAperture:2.8, minAperture:16, weight:236, length:71.0, diameter:70.8,
     filterThread:55, minFocusDist:16, maxMagnification:1.0,
@@ -1069,7 +1069,7 @@ const LENSES = {
   },
 
   'fe-55mm-f18-za': {
-    name:'FE 55mm F1.8 ZA Sonnar', manufacturer:'Sony', line:'FE ZA', type:'Prime', asin:null,
+    name:'FE 55mm F1.8 ZA Sonnar', manufacturer:'Sony', line:'FE ZA', type:'Prime', asin:'B00FSB799Q',
     focalLength:55, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'55mm',
     maxAperture:1.8, minAperture:22, weight:281, length:70.5, diameter:64.4,
     filterThread:49, minFocusDist:50, maxMagnification:0.14,
@@ -1109,7 +1109,7 @@ const LENSES = {
   },
 
   'fe-12-24mm-f28-gm': {
-    name:'FE 12-24mm F2.8 GM', manufacturer:'Sony', line:'FE GM', type:'Zoom', asin:null,
+    name:'FE 12-24mm F2.8 GM', manufacturer:'Sony', line:'FE GM', type:'Zoom', asin:'B08CHN22SJ',
     focalLength:null, focalLengthMin:12, focalLengthMax:24, focalLengthEquiv:'12-24mm',
     maxAperture:2.8, minAperture:22, weight:847, length:137.0, diameter:97.6,
     filterThread:null, minFocusDist:28, maxMagnification:0.14,
@@ -1122,7 +1122,7 @@ const LENSES = {
   },
 
   'fe-16-35mm-f28-gm-ii': {
-    name:'FE 16-35mm F2.8 GM II', manufacturer:'Sony', line:'FE GM', type:'Zoom', asin:null,
+    name:'FE 16-35mm F2.8 GM II', manufacturer:'Sony', line:'FE GM', type:'Zoom', asin:'B0CGTW24VF',
     focalLength:null, focalLengthMin:16, focalLengthMax:35, focalLengthEquiv:'16-35mm',
     maxAperture:2.8, minAperture:22, weight:547, length:121.6, diameter:87.8,
     filterThread:82, minFocusDist:22, maxMagnification:0.32,
@@ -1147,7 +1147,7 @@ const LENSES = {
   },
 
   'fe-28-70mm-f2-gm': {
-    name:'FE 28-70mm F2 GM', manufacturer:'Sony', line:'FE GM', type:'Zoom', asin:null,
+    name:'FE 28-70mm F2 GM', manufacturer:'Sony', line:'FE GM', type:'Zoom', asin:'B0DNKVBCYL',
     focalLength:null, focalLengthMin:28, focalLengthMax:70, focalLengthEquiv:'28-70mm',
     maxAperture:2.0, minAperture:22, weight:918, length:139.8, diameter:92.9,
     filterThread:86, minFocusDist:38, maxMagnification:0.23,
@@ -1160,7 +1160,7 @@ const LENSES = {
   },
 
   'fe-50-150mm-f2-gm': {
-    name:'FE 50-150mm F2 GM', manufacturer:'Sony', line:'FE GM', type:'Zoom', asin:null,
+    name:'FE 50-150mm F2 GM', manufacturer:'Sony', line:'FE GM', type:'Zoom', asin:'B0F5X657S5',
     focalLength:null, focalLengthMin:50, focalLengthMax:150, focalLengthEquiv:'50-150mm',
     maxAperture:2.0, minAperture:22, weight:1340, length:200.0, diameter:102.8,
     filterThread:95, minFocusDist:40, maxMagnification:0.20,
@@ -1173,7 +1173,7 @@ const LENSES = {
   },
 
   'fe-100-400mm-f45-63-gm-oss': {
-    name:'FE 100-400mm F4.5-5.6 GM OSS', manufacturer:'Sony', line:'FE GM', type:'Zoom', asin:null,
+    name:'FE 100-400mm F4.5-5.6 GM OSS', manufacturer:'Sony', line:'FE GM', type:'Zoom', asin:'B071RFR318',
     focalLength:null, focalLengthMin:100, focalLengthMax:400, focalLengthEquiv:'100-400mm',
     maxAperture:4.5, minAperture:32, weight:1395, length:205.0, diameter:93.9,
     filterThread:77, minFocusDist:98, maxMagnification:0.35,
@@ -1186,7 +1186,7 @@ const LENSES = {
   },
 
   'fe-12-24mm-f4-g': {
-    name:'FE 12-24mm F4 G', manufacturer:'Sony', line:'FE G', type:'Zoom', asin:null,
+    name:'FE 12-24mm F4 G', manufacturer:'Sony', line:'FE G', type:'Zoom', asin:'B072J4B6WS',
     focalLength:null, focalLengthMin:12, focalLengthMax:24, focalLengthEquiv:'12-24mm',
     maxAperture:4.0, minAperture:22, weight:565, length:117.4, diameter:87.0,
     filterThread:null, minFocusDist:28, maxMagnification:0.14,
@@ -1199,7 +1199,7 @@ const LENSES = {
   },
 
   'fe-16-25mm-f28-g': {
-    name:'FE 16-25mm F2.8 G', manufacturer:'Sony', line:'FE G', type:'Zoom', asin:null,
+    name:'FE 16-25mm F2.8 G', manufacturer:'Sony', line:'FE G', type:'Zoom', asin:'B0D1VWRW46',
     focalLength:null, focalLengthMin:16, focalLengthMax:25, focalLengthEquiv:'16-25mm',
     maxAperture:2.8, minAperture:22, weight:409, length:91.4, diameter:74.8,
     filterThread:67, minFocusDist:18, maxMagnification:0.20,
@@ -1212,7 +1212,7 @@ const LENSES = {
   },
 
   'fe-16-35mm-f4-pz-g': {
-    name:'FE 16-35mm F4 PZ G', manufacturer:'Sony', line:'FE G', type:'Zoom', asin:null,
+    name:'FE 16-35mm F4 PZ G', manufacturer:'Sony', line:'FE G', type:'Zoom', asin:'B09W6CG368',
     focalLength:null, focalLengthMin:16, focalLengthMax:35, focalLengthEquiv:'16-35mm',
     maxAperture:4.0, minAperture:22, weight:353, length:88.1, diameter:80.5,
     filterThread:72, minFocusDist:24, maxMagnification:0.23,
@@ -1225,7 +1225,7 @@ const LENSES = {
   },
 
   'fe-20-70mm-f4-g': {
-    name:'FE 20-70mm F4 G', manufacturer:'Sony', line:'FE G', type:'Zoom', asin:null,
+    name:'FE 20-70mm F4 G', manufacturer:'Sony', line:'FE G', type:'Zoom', asin:'B0BSHFF5WX',
     focalLength:null, focalLengthMin:20, focalLengthMax:70, focalLengthEquiv:'20-70mm',
     maxAperture:4.0, minAperture:22, weight:488, length:99.0, diameter:78.7,
     filterThread:72, minFocusDist:25, maxMagnification:0.39,
@@ -1238,7 +1238,7 @@ const LENSES = {
   },
 
   'fe-24-50mm-f28-g': {
-    name:'FE 24-50mm F2.8 G', manufacturer:'Sony', line:'FE G', type:'Zoom', asin:null,
+    name:'FE 24-50mm F2.8 G', manufacturer:'Sony', line:'FE G', type:'Zoom', asin:'B0CVSLTYLK',
     focalLength:null, focalLengthMin:24, focalLengthMax:50, focalLengthEquiv:'24-50mm',
     maxAperture:2.8, minAperture:22, weight:440, length:92.3, diameter:74.8,
     filterThread:67, minFocusDist:19, maxMagnification:0.33,
@@ -1251,7 +1251,7 @@ const LENSES = {
   },
 
   'fe-24-105mm-f4-g-oss': {
-    name:'FE 24-105mm F4 G OSS', manufacturer:'Sony', line:'FE G', type:'Zoom', asin:null,
+    name:'FE 24-105mm F4 G OSS', manufacturer:'Sony', line:'FE G', type:'Zoom', asin:'B076V9P58R',
     focalLength:null, focalLengthMin:24, focalLengthMax:105, focalLengthEquiv:'24-105mm',
     maxAperture:4.0, minAperture:22, weight:663, length:113.3, diameter:83.4,
     filterThread:77, minFocusDist:38, maxMagnification:0.31,
@@ -1276,7 +1276,7 @@ const LENSES = {
   },
 
   'fe-70-200mm-f4-macro-g-oss-ii': {
-    name:'FE 70-200mm F4 Macro G OSS II', manufacturer:'Sony', line:'FE G', type:'Zoom', asin:null,
+    name:'FE 70-200mm F4 Macro G OSS II', manufacturer:'Sony', line:'FE G', type:'Zoom', asin:'B0CBNBDVMZ',
     focalLength:null, focalLengthMin:70, focalLengthMax:200, focalLengthEquiv:'70-200mm',
     maxAperture:4.0, minAperture:22, weight:794, length:149.0, diameter:82.2,
     filterThread:72, minFocusDist:26, maxMagnification:0.50,
@@ -1289,7 +1289,7 @@ const LENSES = {
   },
 
   'fe-70-300mm-f45-56-g-oss': {
-    name:'FE 70-300mm F4.5-5.6 G OSS', manufacturer:'Sony', line:'FE G', type:'Zoom', asin:null,
+    name:'FE 70-300mm F4.5-5.6 G OSS', manufacturer:'Sony', line:'FE G', type:'Zoom', asin:'B01DLMD7DK',
     focalLength:null, focalLengthMin:70, focalLengthMax:300, focalLengthEquiv:'70-300mm',
     maxAperture:4.5, minAperture:32, weight:854, length:143.5, diameter:84.0,
     filterThread:72, minFocusDist:90, maxMagnification:0.31,
@@ -1302,7 +1302,7 @@ const LENSES = {
   },
 
   'fe-200-600mm-f56-63-g-oss': {
-    name:'FE 200-600mm F5.6-6.3 G OSS', manufacturer:'Sony', line:'FE G', type:'Zoom', asin:null,
+    name:'FE 200-600mm F5.6-6.3 G OSS', manufacturer:'Sony', line:'FE G', type:'Zoom', asin:'B07SZXDN9X',
     focalLength:null, focalLengthMin:200, focalLengthMax:600, focalLengthEquiv:'200-600mm',
     maxAperture:5.6, minAperture:36, weight:2115, length:318.0, diameter:111.5,
     filterThread:95, minFocusDist:240, maxMagnification:0.20,
@@ -1315,7 +1315,7 @@ const LENSES = {
   },
 
   'fe-400-800mm-f63-8-g-oss': {
-    name:'FE 400-800mm F6.3-8 G OSS', manufacturer:'Sony', line:'FE G', type:'Zoom', asin:null,
+    name:'FE 400-800mm F6.3-8 G OSS', manufacturer:'Sony', line:'FE G', type:'Zoom', asin:'B0DYKB9RY9',
     focalLength:null, focalLengthMin:400, focalLengthMax:800, focalLengthEquiv:'400-800mm',
     maxAperture:6.3, minAperture:51, weight:2475, length:348.0, diameter:119.8,
     filterThread:105, minFocusDist:170, maxMagnification:0.23,
@@ -1352,7 +1352,7 @@ const LENSES = {
   },
 
   'fe-24-240mm-f35-63-oss': {
-    name:'FE 24-240mm F3.5-6.3 OSS', manufacturer:'Sony', line:'FE', type:'Zoom', asin:null,
+    name:'FE 24-240mm F3.5-6.3 OSS', manufacturer:'Sony', line:'FE', type:'Zoom', asin:'B00U29GNC8',
     focalLength:null, focalLengthMin:24, focalLengthMax:240, focalLengthEquiv:'24-240mm',
     maxAperture:3.5, minAperture:40, weight:780, length:118.5, diameter:80.5,
     filterThread:72, minFocusDist:50, maxMagnification:0.27,
@@ -1365,7 +1365,7 @@ const LENSES = {
   },
 
   'fe-28-60mm-f4-56': {
-    name:'FE 28-60mm F4-5.6', manufacturer:'Sony', line:'FE', type:'Zoom', asin:null,
+    name:'FE 28-60mm F4-5.6', manufacturer:'Sony', line:'FE', type:'Zoom', asin:'B08J3HTGQX',
     focalLength:null, focalLengthMin:28, focalLengthMax:60, focalLengthEquiv:'28-60mm',
     maxAperture:4.0, minAperture:22, weight:167, length:45.0, diameter:66.6,
     filterThread:40.5, minFocusDist:30, maxMagnification:0.16,
@@ -1390,7 +1390,7 @@ const LENSES = {
   },
 
   'fe-28-70mm-f35-56-oss-ii': {
-    name:'FE 28-70mm F3.5-5.6 OSS II', manufacturer:'Sony', line:'FE', type:'Zoom', asin:null,
+    name:'FE 28-70mm F3.5-5.6 OSS II', manufacturer:'Sony', line:'FE', type:'Zoom', asin:'B0G4SC388G',
     focalLength:null, focalLengthMin:28, focalLengthMax:70, focalLengthEquiv:'28-70mm',
     maxAperture:3.5, minAperture:22, weight:290, length:83.0, diameter:72.5,
     filterThread:55, minFocusDist:30, maxMagnification:0.19,
@@ -1404,7 +1404,7 @@ const LENSES = {
 
   /* ── Sony E (APS-C) Primes ── */
   'e-11mm-f18': {
-    name:'E 11mm F1.8', manufacturer:'Sony', line:'E', type:'Prime', asin:null,
+    name:'E 11mm F1.8', manufacturer:'Sony', line:'E', type:'Prime', asin:'B0B2RZZBPN',
     focalLength:11, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'16.5mm',
     maxAperture:1.8, minAperture:16, weight:181, length:57.5, diameter:66.0,
     filterThread:55, minFocusDist:12, maxMagnification:0.20,
@@ -1417,7 +1417,7 @@ const LENSES = {
   },
 
   'e-15mm-f14-g': {
-    name:'E 15mm F1.4 G', manufacturer:'Sony', line:'E G', type:'Prime', asin:null,
+    name:'E 15mm F1.4 G', manufacturer:'Sony', line:'E G', type:'Prime', asin:'B0B2X335XB',
     focalLength:15, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'22.5mm',
     maxAperture:1.4, minAperture:16, weight:219, length:69.5, diameter:66.0,
     filterThread:55, minFocusDist:17, maxMagnification:0.17,
@@ -1442,7 +1442,7 @@ const LENSES = {
   },
 
   'e-20mm-f28': {
-    name:'E 20mm F2.8', manufacturer:'Sony', line:'E', type:'Prime', asin:null,
+    name:'E 20mm F2.8', manufacturer:'Sony', line:'E', type:'Prime', asin:'B00B20OYUO',
     focalLength:20, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'30mm',
     maxAperture:2.8, minAperture:22, weight:69, length:20.4, diameter:62.6,
     filterThread:49, minFocusDist:20, maxMagnification:0.12,
@@ -1479,7 +1479,7 @@ const LENSES = {
   },
 
   'e-35mm-f18-oss': {
-    name:'E 35mm F1.8 OSS', manufacturer:'Sony', line:'E', type:'Prime', asin:null,
+    name:'E 35mm F1.8 OSS', manufacturer:'Sony', line:'E', type:'Prime', asin:'B0096W1P5W',
     focalLength:35, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'52.5mm',
     maxAperture:1.8, minAperture:22, weight:154, length:45.0, diameter:63.0,
     filterThread:49, minFocusDist:30, maxMagnification:0.15,
@@ -1492,7 +1492,7 @@ const LENSES = {
   },
 
   'e-50mm-f18-oss': {
-    name:'E 50mm F1.8 OSS', manufacturer:'Sony', line:'E', type:'Prime', asin:null,
+    name:'E 50mm F1.8 OSS', manufacturer:'Sony', line:'E', type:'Prime', asin:'B00EPWC30O',
     focalLength:50, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'75mm',
     maxAperture:1.8, minAperture:22, weight:202, length:62.0, diameter:62.0,
     filterThread:49, minFocusDist:39, maxMagnification:0.16,
@@ -1506,7 +1506,7 @@ const LENSES = {
 
   /* ── Sony E (APS-C) Zooms ── */
   'e-10-18mm-f4-oss': {
-    name:'E 10-18mm F4 OSS', manufacturer:'Sony', line:'E', type:'Zoom', asin:null,
+    name:'E 10-18mm F4 OSS', manufacturer:'Sony', line:'E', type:'Zoom', asin:'B0096W1ONK',
     focalLength:null, focalLengthMin:10, focalLengthMax:18, focalLengthEquiv:'15-27mm',
     maxAperture:4.0, minAperture:22, weight:225, length:63.5, diameter:70.0,
     filterThread:62, minFocusDist:25, maxMagnification:0.10,
@@ -1519,7 +1519,7 @@ const LENSES = {
   },
 
   'e-10-20mm-f4-pz-g': {
-    name:'E 10-20mm F4 PZ G', manufacturer:'Sony', line:'E G', type:'Zoom', asin:null,
+    name:'E 10-20mm F4 PZ G', manufacturer:'Sony', line:'E G', type:'Zoom', asin:'B0B2RYSS32',
     focalLength:null, focalLengthMin:10, focalLengthMax:20, focalLengthEquiv:'15-30mm',
     maxAperture:4.0, minAperture:22, weight:178, length:55.0, diameter:69.8,
     filterThread:62, minFocusDist:18, maxMagnification:0.18,
@@ -1544,7 +1544,7 @@ const LENSES = {
   },
 
   'e-16-50mm-f35-56-pz-oss-ii': {
-    name:'E 16-50mm F3.5-5.6 PZ OSS II', manufacturer:'Sony', line:'E', type:'Zoom', asin:null,
+    name:'E 16-50mm F3.5-5.6 PZ OSS II', manufacturer:'Sony', line:'E', type:'Zoom', asin:'B0771TQZP8',
     focalLength:null, focalLengthMin:16, focalLengthMax:50, focalLengthEquiv:'24-75mm',
     maxAperture:3.5, minAperture:22, weight:107, length:31.3, diameter:64.7,
     filterThread:40.5, minFocusDist:25, maxMagnification:0.22,
@@ -1557,7 +1557,7 @@ const LENSES = {
   },
 
   'e-16-55mm-f28-g': {
-    name:'E 16-55mm F2.8 G', manufacturer:'Sony', line:'E G', type:'Zoom', asin:null,
+    name:'E 16-55mm F2.8 G', manufacturer:'Sony', line:'E G', type:'Zoom', asin:'B07WZVKZHK',
     focalLength:null, focalLengthMin:16, focalLengthMax:55, focalLengthEquiv:'24-82.5mm',
     maxAperture:2.8, minAperture:22, weight:494, length:100.0, diameter:73.0,
     filterThread:67, minFocusDist:33, maxMagnification:0.20,
@@ -1582,7 +1582,7 @@ const LENSES = {
   },
 
   'e-18-105mm-f4-g-oss-pz': {
-    name:'E 18-105mm F4 G OSS PZ', manufacturer:'Sony', line:'E G', type:'Zoom', asin:null,
+    name:'E 18-105mm F4 G OSS PZ', manufacturer:'Sony', line:'E G', type:'Zoom', asin:'B00ENZRQH8',
     focalLength:null, focalLengthMin:18, focalLengthMax:105, focalLengthEquiv:'27-157.5mm',
     maxAperture:4.0, minAperture:22, weight:427, length:110.0, diameter:78.0,
     filterThread:72, minFocusDist:45, maxMagnification:0.11,
@@ -1595,7 +1595,7 @@ const LENSES = {
   },
 
   'e-18-135mm-f35-56-oss': {
-    name:'E 18-135mm F3.5-5.6 OSS', manufacturer:'Sony', line:'E', type:'Zoom', asin:null,
+    name:'E 18-135mm F3.5-5.6 OSS', manufacturer:'Sony', line:'E', type:'Zoom', asin:'B078VPM6WM',
     focalLength:null, focalLengthMin:18, focalLengthMax:135, focalLengthEquiv:'27-202.5mm',
     maxAperture:3.5, minAperture:22, weight:325, length:88.0, diameter:67.2,
     filterThread:55, minFocusDist:45, maxMagnification:0.29,
@@ -1608,7 +1608,7 @@ const LENSES = {
   },
 
   'e-55-210mm-f45-63-oss': {
-    name:'E 55-210mm F4.5-6.3 OSS', manufacturer:'Sony', line:'E', type:'Zoom', asin:null,
+    name:'E 55-210mm F4.5-6.3 OSS', manufacturer:'Sony', line:'E', type:'Zoom', asin:'B00HNJWSDS',
     focalLength:null, focalLengthMin:55, focalLengthMax:210, focalLengthEquiv:'82.5-315mm',
     maxAperture:4.5, minAperture:32, weight:345, length:108.0, diameter:63.8,
     filterThread:49, minFocusDist:100, maxMagnification:0.225,
@@ -1621,7 +1621,7 @@ const LENSES = {
   },
 
   'e-70-350mm-f45-63-g-oss': {
-    name:'E 70-350mm F4.5-6.3 G OSS', manufacturer:'Sony', line:'E G', type:'Zoom', asin:null,
+    name:'E 70-350mm F4.5-6.3 G OSS', manufacturer:'Sony', line:'E G', type:'Zoom', asin:'B07X72DMLC',
     focalLength:null, focalLengthMin:70, focalLengthMax:350, focalLengthEquiv:'105-525mm',
     maxAperture:4.5, minAperture:32, weight:625, length:142.0, diameter:77.0,
     filterThread:67, minFocusDist:110, maxMagnification:0.23,

@@ -131,7 +131,11 @@
 - [x] 9.2 Regional pricing: current cameras already carry all 7 currencies (hand-
   entered at data time); discontinued = USD-only; lenses use `priceIncomplete`.
   `compute-prices.js` is Canon-hardcoded and not needed for current Sony cameras.
-  ASIN backfill for lenses → `check-prices-and-buy-links` skill (separate pass).
+- [x] 9.2b ASIN backfill (via `check-prices-and-buy-links`): filled all **51
+  current Sony lenses** with web-verified plain-product ASINs (searched by Sony
+  SEL… model code; excluded bundles/Renewed/International). Now 55/69 lenses have
+  ASINs → product-page Buy links; 14 discontinued lenses keep the search fallback.
+  All cameras already had ASINs (current) or null (discontinued). `npm test` green.
 - [ ] 9.3 Spot-check a sample of product/buy/image URLs with
   `RUN_LINK_TESTS=1 npm run test:links` (opt-in; network) — pending.
 
