@@ -32,17 +32,18 @@ const KNOWN_IMAGE_GAPS = {
     'xc-16-50mm-f35-56', // no freely-licensed product image found
   ]),
   sony: new Set([
-    // Curated images applied for: a7-iv, a7-iii, a7-ii, zv-e10-ii, a7r-v, a9-iii,
-    // a1-ii, a7s-iii, a6700, fx3, a7r-iv. The rest still need a curated Commons
-    // File title (the auto-fetcher is unreliable for these).
+    // Curated images applied (17 cameras): a7-iv, a7-iii, a7-ii, zv-e10-ii,
+    // a7r-v, a9-iii, a1-ii, a7s-iii, a6700, fx3, a7r-iv, a7r-iii, a6000, a6400,
+    // a6600, a7r-ii, a9. The rest still need a curated Commons File title
+    // (the auto-fetcher is unreliable for these).
     'a7-v',
     'a7cr',
     'a7c-ii',
     'a1',
     'a7c',
-    'a9-ii', 'a9', 'a7r-iii',
-    'a7r-ii', 'a7s-ii', 'a7r', 'a7', 'a7s',
-    'a6400', 'a6600', 'a6500', 'a6300', 'a6100', 'a6000',
+    'a9-ii', 'a7s-ii',
+    'a7', 'a7s', 'a7r',
+    'a6500', 'a6300', 'a6100',
     'fx30',
     'zv-e1', 'zv-e10',
     'fe-14mm-f18-gm', 'fe-24mm-f14-gm', 'fe-35mm-f14-gm', 'fe-50mm-f12-gm',
