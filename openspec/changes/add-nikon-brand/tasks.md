@@ -103,10 +103,18 @@
   cameras incl. z8/z9/zf with no clean Commons photo yet; 26 lenses). The 3
   URLs `verify-images.js` flagged were transient Wikimedia 429s — re-checked
   directly, all HTTP 200 (live). `npm test` green.
-- [ ] 9.2 Regional pricing: current cameras carry all 7 currencies; discontinued
-  USD-only; lenses use `priceIncomplete` where regional RRP unconfirmed.
-- [ ] 9.3 ASIN backfill via `check-prices-and-buy-links` for current lenses/bodies
-  (search Amazon by Nikon model code; plain product listing). `npm test` green.
+- [x] 9.2 Regional pricing: 8 current cameras carry all 7 currencies (USD exact,
+  regional derived/approx per the documented convention); 6 discontinued bodies
+  USD-only; all 43 lenses ship `priceIncomplete` (USD+AUD+CAD), with 50/1.4
+  USD-best-known pending verification. `compute-prices.js` is Canon-hardcoded so
+  not used; regional refinement is a later maintenance pass.
+- [x] 9.3 ASINs: backfilled all **8 current cameras** with web-verified plain
+  USA-model body-only Amazon ASINs (z9 B09KHC4XCT, z8 B0C4Q71JBY, z6-iii
+  B0D77SL8CY, z5-ii B0F3HJD64Y, zf B0CJDHSFTN, zfc B09883MWLL, z50-ii B0DMJBLQGP,
+  z30 B0B527JD1C) — excluded bundles/Renewed/International. 6 discontinued bodies
+  keep `asin:null` (Amazon search fallback). **Lens ASINs deferred** to the
+  `check-prices-and-buy-links` skill (43 lenses → search fallback meanwhile;
+  Buy buttons still work). `npm test` green.
 
 ## 10. Final verification
 
