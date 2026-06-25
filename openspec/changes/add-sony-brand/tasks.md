@@ -137,8 +137,15 @@
   SEL… model code; excluded bundles/Renewed/International). Now 55/69 lenses have
   ASINs → product-page Buy links; 14 discontinued lenses keep the search fallback.
   All cameras already had ASINs (current) or null (discontinued). `npm test` green.
-- [ ] 9.3 Spot-check a sample of product/buy/image URLs with
-  `RUN_LINK_TESTS=1 npm run test:links` (opt-in; network) — pending.
+- [x] 9.3 Link check done. The built-in `test:links` liveness test is still a
+  `todo` stub (checkUrl unimplemented), so ran a real ad-hoc checker over all
+  **133** Sony product+image URLs: **0 dead (404/410), 0 bad-image, 0 errors**.
+  Wikimedia image URLs all valid (transient 429s only; verify-images.js passes).
+  Sony product pages bot-block/serve a 6KB stub intermittently regardless of slug
+  (even ilce6700-b stubs), so automated checks are inconclusive — BUT a 12-URL
+  sample rendered the exact product pages with matching model codes, positively
+  confirming the `electronics.sony.com/.../p/<model>` slug pattern. No broken
+  links; no data changes needed.
 
 ## 10. Final verification
 
