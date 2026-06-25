@@ -45,6 +45,13 @@ const KNOWN_IMAGE_GAPS = {
     'z-40mm-f2', 'z-40mm-f2-se', 'z-50mm-f1-4', 'z-50mm-f2-8-mc',
     'z-dx-24mm-f1-7',
     'z-24-70mm-f2-8-s', 'z-70-200mm-f2-8-vr-s',
+    'z-14-24mm-f2-8-s', 'z-14-30mm-f4-s', 'z-24-70mm-f4-s', 'z-24-120mm-f4-s',
+    'z-100-400mm-f4-5-5-6-vr-s', 'z-17-28mm-f2-8', 'z-24-50mm-f4-6-3',
+    'z-24-200mm-f4-6-3-vr', 'z-28-75mm-f2-8', 'z-28-400mm-f4-8-vr',
+    'z-70-180mm-f2-8', 'z-180-600mm-f5-6-6-3-vr', 'z-400mm-f4-5-vr-s',
+    'z-400mm-f2-8-tc-vr-s', 'z-600mm-f6-3-vr-s-pf', 'z-600mm-f4-tc-vr-s',
+    'z-800mm-f6-3-vr-s-pf', 'z-dx-12-28mm-pz-vr', 'z-dx-16-50mm-vr',
+    'z-dx-18-140mm-vr', 'z-dx-50-250mm-vr',
   ]),
   sony: new Set([
     // 31 of 33 cameras now have curated product images (Wikipedia infobox +

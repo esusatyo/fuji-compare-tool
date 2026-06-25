@@ -85,9 +85,15 @@
 
 ## 8. Lens data — zooms in batches by line
 
-- [ ] 8.1 S-Line zooms (trinity f/2.8, f/4 zooms, super-telephoto primes/zooms).
-- [ ] 8.2 Non-S FX zooms (f/4-6.3, 180-600, 28-400) + DX zooms.
-- [ ] 8.3 `LENS_DROPDOWN_GROUPS` updated; `npm test` green.
+- [x] 8.1 S-Line zooms: 14-24/2.8, 24-70/2.8 (seed), 24-70/4, 14-30/4, 24-120/4,
+  70-200/2.8 VR (seed), 100-400 VR. Super-tele S primes: 400/4.5, 400/2.8 TC,
+  600/6.3 PF, 600/4 TC, 800/6.3 PF. DEFERRED (recency/round-price risk, Wikipedia-
+  spine only): 24-70/2.8 S II, 70-200/2.8 VR S II.
+- [x] 8.2 Non-S FX zooms (17-28/2.8, 24-50, 24-200 VR, 28-75/2.8, 28-400 VR) +
+  tele zooms (70-180/2.8, 180-600 VR) + DX zooms (12-28 PZ, 16-50 VR, 18-140 VR,
+  50-250 VR). DEFERRED: DX 16-50/2.8 VR (2025, unconfirmed).
+- [x] 8.3 `LENS_DROPDOWN_GROUPS` updated (6 groups). `npm test` green — **151/151**.
+  **TOTAL: 43 lenses** (25 primes, 18 zooms).
 
 ## 9. Images & pricing finalisation
 
