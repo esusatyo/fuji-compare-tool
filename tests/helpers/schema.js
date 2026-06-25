@@ -166,6 +166,11 @@ function validateCamera(id, cam, brandSections = []) {
     add(checkField(cam, 'dpafPoints', { type: 'number', nullable: true, min: 0 }));
     add(checkField(cam, 'clogTiers', { type: 'string', nullable: true }));
   }
+  if (brandSections.includes('sony')) {
+    add(checkField(cam, 'logProfile', { type: 'string', nullable: true }));
+    add(checkField(cam, 'aiAf', { type: 'boolean' }));
+    add(checkField(cam, 'realtimeTracking', { type: 'boolean' }));
+  }
 
   return e.map(m => `${id}: ${m}`);
 }

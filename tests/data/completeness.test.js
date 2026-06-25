@@ -31,6 +31,38 @@ const KNOWN_IMAGE_GAPS = {
   fujifilm: new Set([
     'xc-16-50mm-f35-56', // no freely-licensed product image found
   ]),
+  sony: new Set([
+    // 31 of 33 cameras now have curated product images (Wikipedia infobox +
+    // Wikimedia Commons category/file lookups, each model-confirmed — a9-ii was
+    // visually verified — and verify-images'd). Only a7-v (2025) and a6100 lack
+    // any clean Commons product photo and stay on the placeholder card.
+    'a7-v',
+    'a6100',
+    'fe-14mm-f18-gm', 'fe-24mm-f14-gm', 'fe-35mm-f14-gm', 'fe-50mm-f12-gm',
+    'fe-85mm-f14-gm-ii', 'fe-85mm-f14-gm', 'fe-100mm-f28-stf-gm', 'fe-135mm-f18-gm',
+    'fe-300mm-f28-gm', 'fe-400mm-f28-gm', 'fe-600mm-f4-gm',
+    'fe-16mm-f18-g', 'fe-20mm-f18-g', 'fe-24mm-f28-g', 'fe-40mm-f25-g',
+    'fe-50mm-f25-g', 'fe-90mm-f28-macro-g', 'fe-28mm-f2', 'fe-35mm-f18',
+    'fe-50mm-f18', 'fe-50mm-f28-macro', 'fe-35mm-f14-za', 'fe-35mm-f28-za',
+    'fe-50mm-f14-za', 'fe-55mm-f18-za',
+    'e-11mm-f18', 'e-15mm-f14-g', 'e-16mm-f28', 'e-20mm-f28', 'e-24mm-f18-za',
+    'e-30mm-f35-macro', 'e-35mm-f18-oss', 'e-50mm-f18-oss',
+    'fe-50mm-f14-gm',
+    'fe-24-70mm-f28-gm-ii',
+    'fe-70-200mm-f28-gm-oss-ii',
+    'fe-12-24mm-f28-gm', 'fe-12-24mm-f4-g', 'fe-16-25mm-f28-g', 'fe-16-35mm-f28-gm-ii',
+    'fe-16-35mm-f28-gm', 'fe-16-35mm-f4-pz-g', 'fe-16-35mm-f4-za-oss', 'fe-20-70mm-f4-g',
+    'fe-24-50mm-f28-g', 'fe-24-70mm-f4-za-oss', 'fe-24-105mm-f4-g-oss',
+    'fe-24-240mm-f35-63-oss', 'fe-28-60mm-f4-56', 'fe-28-70mm-f2-gm',
+    'fe-28-70mm-f35-56-oss-ii', 'fe-28-70mm-f35-56-oss', 'fe-50-150mm-f2-gm',
+    'fe-70-200mm-f4-macro-g-oss-ii', 'fe-70-200mm-f4-g-oss',
+    'fe-70-300mm-f45-56-g-oss', 'fe-100-400mm-f45-63-gm-oss', 'fe-200-600mm-f56-63-g-oss',
+    'fe-400-800mm-f63-8-g-oss',
+    'e-10-18mm-f4-oss', 'e-10-20mm-f4-pz-g', 'e-16-50mm-f35-56-pz-oss-ii',
+    'e-16-50mm-f35-56-pz-oss', 'e-16-55mm-f28-g', 'e-16-70mm-f4-za-oss',
+    'e-18-105mm-f4-g-oss-pz', 'e-18-135mm-f35-56-oss', 'e-55-210mm-f45-63-oss',
+    'e-70-350mm-f45-63-g-oss',
+  ]),
 };
 
 for (const brand of brandDirs()) {
