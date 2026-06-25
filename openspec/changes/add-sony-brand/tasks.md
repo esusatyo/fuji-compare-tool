@@ -122,15 +122,13 @@
 ## 9. Images & pricing finalisation
 
 - [~] 9.1 Images: `scripts/fetch-images.js` fuzzy-matching proved unreliable for
-  Sony (wrong subjects), so curated via **Wikipedia infobox** lookups instead
-  (each confirmed as the correct model + curl-verified image/jpeg, applied as
-  1280px Commons thumbs). **21 of 33 cameras now have real images**: a7-iv,
-  a7-iii, a7-ii, zv-e10-ii, a7r-v, a9-iii, a1-ii, a7s-iii, a6700, fx3, a7r-iv,
-  a7r-iii, a6000, a6400, a6600, a7r-ii, a9, a7, a7s-ii, a6300, a6500.
-  **REMAINING (12 cameras + 69 lenses):** a7-v, a7cr, a7c-ii, a1, a7c, a9-ii,
-  a7s, a7r, a6100, fx30, zv-e1, zv-e10 (no dedicated Wikipedia page / no clean
-  Commons photo) + all lenses (rarely on Commons). These stay on the engine's
-  series-coloured placeholder card (allowlisted in KNOWN_IMAGE_GAPS.sony).
+  Sony, so curated via **Wikipedia infobox** + **Wikimedia Commons category/file
+  API** lookups (each model-confirmed, curl-verified image/jpeg, applied as
+  1280px Commons thumbs; a9-ii visually verified). **31 of 33 cameras now have
+  real images.** Only **a7-v** (2025 — no Commons photo yet) and **a6100**
+  (no clean Commons photo) remain on the engine's series-coloured placeholder
+  card. **All 69 lenses** also stay on placeholders (first-party Sony lenses are
+  rarely on Commons). Remaining items are allowlisted in KNOWN_IMAGE_GAPS.sony.
 - [x] 9.2 Regional pricing: current cameras already carry all 7 currencies (hand-
   entered at data time); discontinued = USD-only; lenses use `priceIncomplete`.
   `compute-prices.js` is Canon-hardcoded and not needed for current Sony cameras.
