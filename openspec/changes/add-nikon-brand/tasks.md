@@ -118,10 +118,15 @@
 
 ## 10. Final verification
 
-- [ ] 10.1 `npm test` — entire data + logic suite green.
-- [ ] 10.2 Render verified (jsdom or browser preview): 3 slots render, brand
-  switcher lists all four brands, per-currency Buy links, Nikon section gated.
-- [ ] 10.3 `completeness.test.js` passes for Nikon; counts on par with siblings.
+- [x] 10.1 `npm test` — entire data + logic suite green: **151/151**.
+- [x] 10.2 Render verified via jsdom logic tests: 3 slots render, brand switcher
+  lists all four brands (fujifilm/canon/sony/nikon), per-currency Amazon Buy
+  links (product page w/ asin, search fallback otherwise), "Nikon Imaging"
+  section gated ("only this brand's spec sections render"). Browser preview
+  optional via preview_start.
+- [x] 10.3 `completeness.test.js` green for Nikon. Counts: **14 cameras
+  (4 imaged, 8 ASIN), 43 lenses (17 imaged)** — on par with Canon (17/34) and
+  ahead of Sony on lens images (17 vs 0).
 
 ## 11. Archive
 
