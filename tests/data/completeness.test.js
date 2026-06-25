@@ -36,7 +36,15 @@ const KNOWN_IMAGE_GAPS = {
     // allowlisted until then (test self-cleans once an image lands).
     'z9', 'z8', 'z6-iii', 'z5-ii', 'z7-ii', 'z7', 'z6-ii', 'z6', 'z5',
     'zf', 'zfc', 'z50-ii', 'z50', 'z30',
-    'z-50mm-f1-8-s', 'z-24-70mm-f2-8-s', 'z-70-200mm-f2-8-vr-s',
+    // Lenses — first-party Z glass is rarely on Commons; expect most to stay
+    // on the placeholder card (filled where Commons has one in the image batch).
+    'z-50mm-f1-8-s', 'z-20mm-f1-8-s', 'z-24mm-f1-8-s', 'z-35mm-f1-8-s',
+    'z-85mm-f1-8-s', 'z-35mm-f1-2-s', 'z-50mm-f1-2-s', 'z-85mm-f1-2-s',
+    'z-135mm-f1-8-s-plena', 'z-mc-105mm-f2-8-vr-s', 'z-58mm-f0-95-s-noct',
+    'z-26mm-f2-8', 'z-28mm-f2-8', 'z-28mm-f2-8-se', 'z-35mm-f1-4',
+    'z-40mm-f2', 'z-40mm-f2-se', 'z-50mm-f1-4', 'z-50mm-f2-8-mc',
+    'z-dx-24mm-f1-7',
+    'z-24-70mm-f2-8-s', 'z-70-200mm-f2-8-vr-s',
   ]),
   sony: new Set([
     // 31 of 33 cameras now have curated product images (Wikipedia infobox +

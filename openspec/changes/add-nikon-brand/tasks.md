@@ -75,9 +75,13 @@
 
 ## 7. Lens data — primes in batches by line
 
-- [ ] 7.1 S-Line primes (f/1.2 set, f/1.8 set, Noct, MC macros).
-- [ ] 7.2 Non-S FX primes + DX primes (incl. `focalLengthEquiv` 1.5× crop).
-- [ ] 7.3 `LENS_DROPDOWN_GROUPS` updated; `npm test` green.
+- [x] 7.1 S-Line primes: 20/1.8, 24/1.8, 35/1.8, 50/1.8 (seed), 85/1.8, 35/1.2,
+  50/1.2, 85/1.2, 135/1.8 Plena, MC 105/2.8 VR, 58/0.95 Noct (MF). **11.**
+- [x] 7.2 Non-S FX primes (26/2.8, 28/2.8, 28/2.8 SE, 35/1.4, 40/2, 40/2 SE,
+  50/1.4, MC 50/2.8) + DX 24/1.7 (`focalLengthEquiv` 36mm). **9.**
+  DEFERRED (2025, unconfirmed specs/price): DX 35/1.7 MC.
+- [x] 7.3 `LENS_DROPDOWN_GROUPS` updated (S-Line Primes / Standard Primes / DX
+  Lenses groups added); `npm run test:data` green. **20 primes total.**
 
 ## 8. Lens data — zooms in batches by line
 
