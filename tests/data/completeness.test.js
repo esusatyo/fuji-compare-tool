@@ -31,6 +31,12 @@ const KNOWN_IMAGE_GAPS = {
   fujifilm: new Set([
     'xc-16-50mm-f35-56', // no freely-licensed product image found
   ]),
+  nikon: new Set([
+    // Images sourced in a later batch via scripts/fetch-images-commons.js;
+    // allowlisted until then (test self-cleans once an image lands).
+    'z8', 'z6-iii', 'z5-ii', 'z50-ii',
+    'z-50mm-f1-8-s', 'z-24-70mm-f2-8-s', 'z-70-200mm-f2-8-vr-s',
+  ]),
   sony: new Set([
     // 31 of 33 cameras now have curated product images (Wikipedia infobox +
     // Wikimedia Commons category/file lookups, each model-confirmed — a9-ii was

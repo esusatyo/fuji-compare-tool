@@ -36,6 +36,7 @@ const REGISTERED_BRANDS = [
   { slug: 'fujifilm', name: 'Fujifilm' },
   { slug: 'canon',    name: 'Canon' },
   { slug: 'sony',     name: 'Sony' },
+  { slug: 'nikon',    name: 'Nikon' },
 ];
 
 // ─────────────────────────────────────────────
