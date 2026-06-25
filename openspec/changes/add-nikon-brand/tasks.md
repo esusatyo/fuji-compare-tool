@@ -60,15 +60,18 @@
 
 ## 5. Camera data — full-frame (FX) in batches
 
-- [ ] 5.1 Batch A: remaining current FX bodies (z9, z7-ii, z6-ii, z5, zf …).
-- [ ] 5.2 Batch B: discontinued FX bodies (z7, z6 — USD-only, asin null OK).
-- [ ] 5.3 After each batch: ids added to `CAMERA_ORDER`/`DROPDOWN_GROUPS`;
-  `npm run test:data` green each time.
+- [x] 5.1 Batch A: z9 (current flagship) added with full specs + 7 currencies.
+- [x] 5.2 Batch B: discontinued FX z7-ii, z7, z6-ii, z6, z5 (USD-only, asin null
+  → search fallback; EXPEED 6, no nRaw/pixelShift/preCapture).
+- [x] 5.3 `CAMERA_ORDER`/`DROPDOWN_GROUPS` updated; `npm run test:data` green.
+  **9 FX bodies.**
 
 ## 6. Camera data — APS-C (DX) & Retro in batches
 
-- [ ] 6.1 DX: z50-ii (seed), z50, z30, zfc.
-- [ ] 6.2 Orders/groups updated; `npm test` green.
+- [x] 6.1 DX: z50-ii (seed), z50 (disc), z30 (current vlog, no EVF); Retro group
+  added with zf (current FX) + zfc (current DX).
+- [x] 6.2 Orders/groups updated (Retro group added); `npm test` green —
+  **151/151**. **Total cameras: 14** (9 FX, 3 DX, 2 Retro).
 
 ## 7. Lens data — primes in batches by line
 

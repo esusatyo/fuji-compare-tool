@@ -34,7 +34,8 @@ const KNOWN_IMAGE_GAPS = {
   nikon: new Set([
     // Images sourced in a later batch via scripts/fetch-images-commons.js;
     // allowlisted until then (test self-cleans once an image lands).
-    'z8', 'z6-iii', 'z5-ii', 'z50-ii',
+    'z9', 'z8', 'z6-iii', 'z5-ii', 'z7-ii', 'z7', 'z6-ii', 'z6', 'z5',
+    'zf', 'zfc', 'z50-ii', 'z50', 'z30',
     'z-50mm-f1-8-s', 'z-24-70mm-f2-8-s', 'z-70-200mm-f2-8-vr-s',
   ]),
   sony: new Set([
