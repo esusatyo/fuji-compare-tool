@@ -122,15 +122,30 @@ group) and `npm run test:data`.
 
 ## Step 7 — Images & pricing finalisation
 
-- Every camera/lens needs a non-null `imageUrl` **or** an entry in
+- **Images** — every camera/lens needs a non-null `imageUrl` **or** an entry in
   `KNOWN_IMAGE_GAPS[<slug>]` in `tests/data/completeness.test.js` (the documented
   "no freely-licensed image yet" escape; it self-cleans — the test fails if an
   allowlisted item later gains an image). Prefer Wikimedia Commons (stable https).
-  Use `scripts/fetch-images.js` / `apply-images.js` / `verify-images.js`.
-- Use `scripts/compute-prices.js` to derive missing regional RRPs from USD;
-  flag still-unconfirmed lens regional prices `priceIncomplete: true`.
-- Fill missing `asin`s with the **check-prices-and-buy-links** skill so Buy
-  buttons hit the product page, not a search.
+  - **Use `scripts/fetch-images-commons.js <brand> [cameras|lenses|all] [--apply]`.**
+    It sources from curated Commons **category members** + strict model-token
+    file-search, so it's reliable (cameras especially). Run it **without**
+    `--apply` first and eyeball the printed `id -> url` map; a model code that only
+    appears in a trailing `(...)` is usually the *capture* camera, not the subject
+    — the tool already rejects those, but sanity-check anything surprising
+    (download + view a thumbnail when unsure). Then re-run with `--apply`, remove
+    the filled ids from `KNOWN_IMAGE_GAPS`, and run `scripts/verify-images.js <brand>`.
+  - Do **not** rely on the older `scripts/fetch-images.js` (fuzzy name-match —
+    returns wrong subjects). Lenses are rarely on Commons; expect most to stay on
+    the placeholder card (allowlisted), which is fine.
+- **Pricing** — `scripts/compute-prices.js <brand> [cameras|lenses]` derives
+  missing regional RRPs from USD (approximate; skips discontinued and
+  `priceIncomplete` items). Put any confirmed regional figures in
+  `scripts/price-overrides/<brand>.json`. Flag unconfirmable lens regional prices
+  `priceIncomplete: true`.
+- **ASINs** — fill missing `asin`s with the **check-prices-and-buy-links** skill
+  (search amazon.com by the brand's model code, e.g. Sony `SEL…`, and pick the
+  plain product listing — not a bundle/Renewed/International) so Buy buttons hit
+  the product page, not a search.
 
 ## Step 8 — Verify
 
