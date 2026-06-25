@@ -97,9 +97,12 @@
 
 ## 9. Images & pricing finalisation
 
-- [ ] 9.1 Images: run `scripts/fetch-images-commons.js nikon cameras` (eyeball
-  map, then `--apply`); repeat for lenses. Remove filled ids from
-  `KNOWN_IMAGE_GAPS.nikon`; allowlist the rest. `scripts/verify-images.js nikon`.
+- [x] 9.1 Images via `scripts/fetch-images-commons.js nikon` (strict model-token
+  Commons match): **21 of 57 items imaged** — 4 cameras (z6-iii, z7-ii, z6-ii,
+  z50-ii) + 17 lenses. `KNOWN_IMAGE_GAPS.nikon` pruned to the 36 remaining (10
+  cameras incl. z8/z9/zf with no clean Commons photo yet; 26 lenses). The 3
+  URLs `verify-images.js` flagged were transient Wikimedia 429s — re-checked
+  directly, all HTTP 200 (live). `npm test` green.
 - [ ] 9.2 Regional pricing: current cameras carry all 7 currencies; discontinued
   USD-only; lenses use `priceIncomplete` where regional RRP unconfirmed.
 - [ ] 9.3 ASIN backfill via `check-prices-and-buy-links` for current lenses/bodies
