@@ -824,7 +824,7 @@ const LENSES = {
   },
 
   'fe-85mm-f14-gm': {
-    name:'FE 85mm F1.4 GM', manufacturer:'Sony', line:'FE GM', type:'Prime', asin:null,
+    name:'FE 85mm F1.4 GM', manufacturer:'Sony', line:'FE GM', type:'Prime', asin:'B01BESR5KO',
     focalLength:85, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'85mm',
     maxAperture:1.4, minAperture:16, weight:820, length:107.5, diameter:89.5,
     filterThread:77, minFocusDist:80, maxMagnification:0.12,
@@ -1033,7 +1033,7 @@ const LENSES = {
 
   /* ── Sony-Zeiss (ZA) FE primes ── */
   'fe-35mm-f14-za': {
-    name:'FE 35mm F1.4 ZA Distagon', manufacturer:'Sony', line:'FE ZA', type:'Prime', asin:null,
+    name:'FE 35mm F1.4 ZA Distagon', manufacturer:'Sony', line:'FE ZA', type:'Prime', asin:'B00U29GNBO',
     focalLength:35, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'35mm',
     maxAperture:1.4, minAperture:16, weight:630, length:112.0, diameter:78.5,
     filterThread:72, minFocusDist:30, maxMagnification:0.18,
@@ -1045,7 +1045,7 @@ const LENSES = {
   },
 
   'fe-35mm-f28-za': {
-    name:'FE 35mm F2.8 ZA Sonnar', manufacturer:'Sony', line:'FE ZA', type:'Prime', asin:null,
+    name:'FE 35mm F2.8 ZA Sonnar', manufacturer:'Sony', line:'FE ZA', type:'Prime', asin:'B00FSB79KU',
     focalLength:35, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'35mm',
     maxAperture:2.8, minAperture:22, weight:120, length:36.5, diameter:61.5,
     filterThread:49, minFocusDist:35, maxMagnification:0.12,
@@ -1057,7 +1057,7 @@ const LENSES = {
   },
 
   'fe-50mm-f14-za': {
-    name:'FE 50mm F1.4 ZA Planar', manufacturer:'Sony', line:'FE ZA', type:'Prime', asin:null,
+    name:'FE 50mm F1.4 ZA Planar', manufacturer:'Sony', line:'FE ZA', type:'Prime', asin:'B01IALYGU0',
     focalLength:50, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'50mm',
     maxAperture:1.4, minAperture:16, weight:778, length:108.0, diameter:83.5,
     filterThread:72, minFocusDist:45, maxMagnification:0.15,
@@ -1135,7 +1135,7 @@ const LENSES = {
   },
 
   'fe-16-35mm-f28-gm': {
-    name:'FE 16-35mm F2.8 GM', manufacturer:'Sony', line:'FE GM', type:'Zoom', asin:null,
+    name:'FE 16-35mm F2.8 GM', manufacturer:'Sony', line:'FE GM', type:'Zoom', asin:'B071LHLS11',
     focalLength:null, focalLengthMin:16, focalLengthMax:35, focalLengthEquiv:'16-35mm',
     maxAperture:2.8, minAperture:22, weight:680, length:121.6, diameter:88.5,
     filterThread:82, minFocusDist:28, maxMagnification:0.19,
@@ -1264,7 +1264,7 @@ const LENSES = {
   },
 
   'fe-70-200mm-f4-g-oss': {
-    name:'FE 70-200mm F4 G OSS', manufacturer:'Sony', line:'FE G', type:'Zoom', asin:null,
+    name:'FE 70-200mm F4 G OSS', manufacturer:'Sony', line:'FE G', type:'Zoom', asin:'B00I8BICEO',
     focalLength:null, focalLengthMin:70, focalLengthMax:200, focalLengthEquiv:'70-200mm',
     maxAperture:4.0, minAperture:22, weight:840, length:175.0, diameter:80.0,
     filterThread:72, minFocusDist:100, maxMagnification:0.13,
@@ -1328,7 +1328,7 @@ const LENSES = {
   },
 
   'fe-16-35mm-f4-za-oss': {
-    name:'FE 16-35mm F4 ZA OSS Vario-Tessar', manufacturer:'Sony', line:'FE ZA', type:'Zoom', asin:null,
+    name:'FE 16-35mm F4 ZA OSS Vario-Tessar', manufacturer:'Sony', line:'FE ZA', type:'Zoom', asin:'B00NN6J3AG',
     focalLength:null, focalLengthMin:16, focalLengthMax:35, focalLengthEquiv:'16-35mm',
     maxAperture:4.0, minAperture:22, weight:518, length:98.5, diameter:78.5,
     filterThread:72, minFocusDist:28, maxMagnification:0.19,
@@ -1340,7 +1340,7 @@ const LENSES = {
   },
 
   'fe-24-70mm-f4-za-oss': {
-    name:'FE 24-70mm F4 ZA OSS Vario-Tessar', manufacturer:'Sony', line:'FE ZA', type:'Zoom', asin:null,
+    name:'FE 24-70mm F4 ZA OSS Vario-Tessar', manufacturer:'Sony', line:'FE ZA', type:'Zoom', asin:'B00FSB79FU',
     focalLength:null, focalLengthMin:24, focalLengthMax:70, focalLengthEquiv:'24-70mm',
     maxAperture:4.0, minAperture:22, weight:426, length:94.5, diameter:73.0,
     filterThread:67, minFocusDist:40, maxMagnification:0.20,
@@ -1378,7 +1378,7 @@ const LENSES = {
   },
 
   'fe-28-70mm-f35-56-oss': {
-    name:'FE 28-70mm F3.5-5.6 OSS', manufacturer:'Sony', line:'FE', type:'Zoom', asin:null,
+    name:'FE 28-70mm F3.5-5.6 OSS', manufacturer:'Sony', line:'FE', type:'Zoom', asin:'B00GTXHQ8Q',
     focalLength:null, focalLengthMin:28, focalLengthMax:70, focalLengthEquiv:'28-70mm',
     maxAperture:3.5, minAperture:22, weight:295, length:83.0, diameter:72.5,
     filterThread:55, minFocusDist:30, maxMagnification:0.19,
@@ -1430,7 +1430,7 @@ const LENSES = {
   },
 
   'e-16mm-f28': {
-    name:'E 16mm F2.8', manufacturer:'Sony', line:'E', type:'Prime', asin:null,
+    name:'E 16mm F2.8', manufacturer:'Sony', line:'E', type:'Prime', asin:'B003OUX6MW',
     focalLength:16, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'24mm',
     maxAperture:2.8, minAperture:22, weight:67, length:22.5, diameter:62.0,
     filterThread:49, minFocusDist:24, maxMagnification:0.078,
@@ -1455,7 +1455,7 @@ const LENSES = {
   },
 
   'e-24mm-f18-za': {
-    name:'E 24mm F1.8 ZA Sonnar', manufacturer:'Sony', line:'E ZA', type:'Prime', asin:null,
+    name:'E 24mm F1.8 ZA Sonnar', manufacturer:'Sony', line:'E ZA', type:'Prime', asin:'B005LLIEO2',
     focalLength:24, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'36mm',
     maxAperture:1.8, minAperture:22, weight:225, length:65.5, diameter:63.0,
     filterThread:49, minFocusDist:16, maxMagnification:0.25,
@@ -1467,7 +1467,7 @@ const LENSES = {
   },
 
   'e-30mm-f35-macro': {
-    name:'E 30mm F3.5 Macro', manufacturer:'Sony', line:'E', type:'Prime', asin:null,
+    name:'E 30mm F3.5 Macro', manufacturer:'Sony', line:'E', type:'Prime', asin:'B0054I54JU',
     focalLength:30, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'45mm',
     maxAperture:3.5, minAperture:22, weight:138, length:55.5, diameter:62.0,
     filterThread:49, minFocusDist:9.5, maxMagnification:1.0,
@@ -1532,7 +1532,7 @@ const LENSES = {
   },
 
   'e-16-50mm-f35-56-pz-oss': {
-    name:'E 16-50mm F3.5-5.6 PZ OSS', manufacturer:'Sony', line:'E', type:'Zoom', asin:null,
+    name:'E 16-50mm F3.5-5.6 PZ OSS', manufacturer:'Sony', line:'E', type:'Zoom', asin:'B0096W1PG6',
     focalLength:null, focalLengthMin:16, focalLengthMax:50, focalLengthEquiv:'24-75mm',
     maxAperture:3.5, minAperture:22, weight:116, length:29.9, diameter:64.7,
     filterThread:40.5, minFocusDist:25, maxMagnification:0.215,
@@ -1570,7 +1570,7 @@ const LENSES = {
   },
 
   'e-16-70mm-f4-za-oss': {
-    name:'E 16-70mm F4 ZA OSS Vario-Tessar', manufacturer:'Sony', line:'E ZA', type:'Zoom', asin:null,
+    name:'E 16-70mm F4 ZA OSS Vario-Tessar', manufacturer:'Sony', line:'E ZA', type:'Zoom', asin:'B00ENZRPG0',
     focalLength:null, focalLengthMin:16, focalLengthMax:70, focalLengthEquiv:'24-105mm',
     maxAperture:4.0, minAperture:22, weight:308, length:75.0, diameter:66.6,
     filterThread:55, minFocusDist:35, maxMagnification:0.23,
