@@ -112,9 +112,11 @@
   USA-model body-only Amazon ASINs (z9 B09KHC4XCT, z8 B0C4Q71JBY, z6-iii
   B0D77SL8CY, z5-ii B0F3HJD64Y, zf B0CJDHSFTN, zfc B09883MWLL, z50-ii B0DMJBLQGP,
   z30 B0B527JD1C) — excluded bundles/Renewed/International. 6 discontinued bodies
-  keep `asin:null` (Amazon search fallback). **Lens ASINs deferred** to the
-  `check-prices-and-buy-links` skill (43 lenses → search fallback meanwhile;
-  Buy buttons still work). `npm test` green.
+  keep `asin:null` (Amazon search fallback). **Lens ASINs backfilled** via the
+  `check-prices-and-buy-links` skill — all **43 lenses** now have web-verified
+  plain lens-only ASINs (no kit/Renewed/International). **100% ASIN coverage for
+  current items** (8 cameras + 43 lenses = 51 product-page Buy links).
+  `npm test` green (151/151).
 
 ## 10. Final verification
 

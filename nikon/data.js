@@ -372,7 +372,7 @@ const LENSES = {
 
   /* ── S-Line Primes ── */
   'z-50mm-f1-8-s': {
-    name:'NIKKOR Z 50mm f/1.8 S', manufacturer:'Nikon', line:'S-Line', type:'Prime', asin:null,
+    name:'NIKKOR Z 50mm f/1.8 S', manufacturer:'Nikon', line:'S-Line', type:'Prime', asin:'B07GQ6FR5F',
     focalLength:50, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'50mm',
     maxAperture:1.8, minAperture:16, weight:415, length:86.5, diameter:76.0,
     filterThread:62, minFocusDist:40, maxMagnification:0.15,
@@ -385,7 +385,7 @@ const LENSES = {
   },
 
   'z-20mm-f1-8-s': {
-    name:'NIKKOR Z 20mm f/1.8 S', manufacturer:'Nikon', line:'S-Line', type:'Prime', asin:null,
+    name:'NIKKOR Z 20mm f/1.8 S', manufacturer:'Nikon', line:'S-Line', type:'Prime', asin:'B084QPDT1H',
     focalLength:20, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'20mm',
     maxAperture:1.8, minAperture:16, weight:505, length:108.5, diameter:84.5,
     filterThread:77, minFocusDist:20, maxMagnification:0.19,
@@ -398,7 +398,7 @@ const LENSES = {
   },
 
   'z-24mm-f1-8-s': {
-    name:'NIKKOR Z 24mm f/1.8 S', manufacturer:'Nikon', line:'S-Line', type:'Prime', asin:null,
+    name:'NIKKOR Z 24mm f/1.8 S', manufacturer:'Nikon', line:'S-Line', type:'Prime', asin:'B07W86M8FG',
     focalLength:24, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'24mm',
     maxAperture:1.8, minAperture:16, weight:450, length:96.5, diameter:78.0,
     filterThread:72, minFocusDist:25, maxMagnification:0.15,
@@ -411,7 +411,7 @@ const LENSES = {
   },
 
   'z-35mm-f1-8-s': {
-    name:'NIKKOR Z 35mm f/1.8 S', manufacturer:'Nikon', line:'S-Line', type:'Prime', asin:null,
+    name:'NIKKOR Z 35mm f/1.8 S', manufacturer:'Nikon', line:'S-Line', type:'Prime', asin:'B07GPVJ6HG',
     focalLength:35, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'35mm',
     maxAperture:1.8, minAperture:16, weight:370, length:86.0, diameter:73.0,
     filterThread:62, minFocusDist:25, maxMagnification:0.19,
@@ -424,7 +424,7 @@ const LENSES = {
   },
 
   'z-85mm-f1-8-s': {
-    name:'NIKKOR Z 85mm f/1.8 S', manufacturer:'Nikon', line:'S-Line', type:'Prime', asin:null,
+    name:'NIKKOR Z 85mm f/1.8 S', manufacturer:'Nikon', line:'S-Line', type:'Prime', asin:'B07VQWGNHR',
     focalLength:85, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'85mm',
     maxAperture:1.8, minAperture:16, weight:470, length:99.0, diameter:75.0,
     filterThread:67, minFocusDist:80, maxMagnification:0.12,
@@ -437,7 +437,7 @@ const LENSES = {
   },
 
   'z-35mm-f1-2-s': {
-    name:'NIKKOR Z 35mm f/1.2 S', manufacturer:'Nikon', line:'S-Line', type:'Prime', asin:null,
+    name:'NIKKOR Z 35mm f/1.2 S', manufacturer:'Nikon', line:'S-Line', type:'Prime', asin:'B0DVZRWJSG',
     focalLength:35, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'35mm',
     maxAperture:1.2, minAperture:16, weight:1060, length:150.0, diameter:90.0,
     filterThread:82, minFocusDist:30, maxMagnification:0.17,
@@ -450,7 +450,7 @@ const LENSES = {
   },
 
   'z-50mm-f1-2-s': {
-    name:'NIKKOR Z 50mm f/1.2 S', manufacturer:'Nikon', line:'S-Line', type:'Prime', asin:null,
+    name:'NIKKOR Z 50mm f/1.2 S', manufacturer:'Nikon', line:'S-Line', type:'Prime', asin:'B08J7FDF6G',
     focalLength:50, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'50mm',
     maxAperture:1.2, minAperture:16, weight:1090, length:150.0, diameter:89.5,
     filterThread:82, minFocusDist:45, maxMagnification:0.15,
@@ -463,7 +463,7 @@ const LENSES = {
   },
 
   'z-85mm-f1-2-s': {
-    name:'NIKKOR Z 85mm f/1.2 S', manufacturer:'Nikon', line:'S-Line', type:'Prime', asin:null,
+    name:'NIKKOR Z 85mm f/1.2 S', manufacturer:'Nikon', line:'S-Line', type:'Prime', asin:'B0BTZZTTRH',
     focalLength:85, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'85mm',
     maxAperture:1.2, minAperture:16, weight:1160, length:141.5, diameter:102.5,
     filterThread:82, minFocusDist:85, maxMagnification:0.11,
@@ -476,7 +476,7 @@ const LENSES = {
   },
 
   'z-135mm-f1-8-s-plena': {
-    name:'NIKKOR Z 135mm f/1.8 S Plena', manufacturer:'Nikon', line:'S-Line', type:'Prime', asin:null,
+    name:'NIKKOR Z 135mm f/1.8 S Plena', manufacturer:'Nikon', line:'S-Line', type:'Prime', asin:'B0CJWJ2PMY',
     focalLength:135, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'135mm',
     maxAperture:1.8, minAperture:16, weight:995, length:139.5, diameter:98.0,
     filterThread:82, minFocusDist:82, maxMagnification:0.19,
@@ -489,7 +489,7 @@ const LENSES = {
   },
 
   'z-mc-105mm-f2-8-vr-s': {
-    name:'NIKKOR Z MC 105mm f/2.8 VR S', manufacturer:'Nikon', line:'S-Line', type:'Prime', asin:null,
+    name:'NIKKOR Z MC 105mm f/2.8 VR S', manufacturer:'Nikon', line:'S-Line', type:'Prime', asin:'B096DHS1BF',
     focalLength:105, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'105mm',
     maxAperture:2.8, minAperture:32, weight:630, length:140.0, diameter:85.0,
     filterThread:62, minFocusDist:29, maxMagnification:1.0,
@@ -502,7 +502,7 @@ const LENSES = {
   },
 
   'z-58mm-f0-95-s-noct': {
-    name:'NIKKOR Z 58mm f/0.95 S Noct', manufacturer:'Nikon', line:'S-Line', type:'Prime', asin:null,
+    name:'NIKKOR Z 58mm f/0.95 S Noct', manufacturer:'Nikon', line:'S-Line', type:'Prime', asin:'B07YXBWK3W',
     focalLength:58, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'58mm',
     maxAperture:0.95, minAperture:16, weight:2000, length:153.0, diameter:102.0,
     filterThread:82, minFocusDist:50, maxMagnification:0.19,
@@ -516,7 +516,7 @@ const LENSES = {
 
   /* ── S-Line Zooms ── */
   'z-24-70mm-f2-8-s': {
-    name:'NIKKOR Z 24-70mm f/2.8 S', manufacturer:'Nikon', line:'S-Line', type:'Zoom', asin:null,
+    name:'NIKKOR Z 24-70mm f/2.8 S', manufacturer:'Nikon', line:'S-Line', type:'Zoom', asin:'B07NLQ46M2',
     focalLength:null, focalLengthMin:24, focalLengthMax:70, focalLengthEquiv:'24-70mm',
     maxAperture:2.8, minAperture:22, weight:805, length:126.0, diameter:89.0,
     filterThread:82, minFocusDist:38, maxMagnification:0.22,
@@ -529,7 +529,7 @@ const LENSES = {
   },
 
   'z-70-200mm-f2-8-vr-s': {
-    name:'NIKKOR Z 70-200mm f/2.8 VR S', manufacturer:'Nikon', line:'S-Line', type:'Zoom', asin:null,
+    name:'NIKKOR Z 70-200mm f/2.8 VR S', manufacturer:'Nikon', line:'S-Line', type:'Zoom', asin:'B083K3C5P2',
     focalLength:null, focalLengthMin:70, focalLengthMax:200, focalLengthEquiv:'70-200mm',
     maxAperture:2.8, minAperture:22, weight:1440, length:220.0, diameter:89.0,
     filterThread:77, minFocusDist:50, maxMagnification:0.20,
@@ -543,7 +543,7 @@ const LENSES = {
 
   /* ── Standard Primes (non-S, FX) ── */
   'z-26mm-f2-8': {
-    name:'NIKKOR Z 26mm f/2.8', manufacturer:'Nikon', line:'NIKKOR Z', type:'Prime', asin:null,
+    name:'NIKKOR Z 26mm f/2.8', manufacturer:'Nikon', line:'NIKKOR Z', type:'Prime', asin:'B0BV11Z35L',
     focalLength:26, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'26mm',
     maxAperture:2.8, minAperture:16, weight:125, length:23.5, diameter:70.0,
     filterThread:52, minFocusDist:20, maxMagnification:0.19,
@@ -556,7 +556,7 @@ const LENSES = {
   },
 
   'z-28mm-f2-8': {
-    name:'NIKKOR Z 28mm f/2.8', manufacturer:'Nikon', line:'NIKKOR Z', type:'Prime', asin:null,
+    name:'NIKKOR Z 28mm f/2.8', manufacturer:'Nikon', line:'NIKKOR Z', type:'Prime', asin:'B09M62RJK2',
     focalLength:28, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'28mm',
     maxAperture:2.8, minAperture:16, weight:155, length:43.0, diameter:70.0,
     filterThread:52, minFocusDist:19, maxMagnification:0.20,
@@ -569,7 +569,7 @@ const LENSES = {
   },
 
   'z-28mm-f2-8-se': {
-    name:'NIKKOR Z 28mm f/2.8 (SE)', manufacturer:'Nikon', line:'NIKKOR Z', type:'Prime', asin:null,
+    name:'NIKKOR Z 28mm f/2.8 (SE)', manufacturer:'Nikon', line:'NIKKOR Z', type:'Prime', asin:'B0982T5T68',
     focalLength:28, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'28mm',
     maxAperture:2.8, minAperture:16, weight:160, length:43.0, diameter:71.5,
     filterThread:52, minFocusDist:19, maxMagnification:0.20,
@@ -582,7 +582,7 @@ const LENSES = {
   },
 
   'z-35mm-f1-4': {
-    name:'NIKKOR Z 35mm f/1.4', manufacturer:'Nikon', line:'NIKKOR Z', type:'Prime', asin:null,
+    name:'NIKKOR Z 35mm f/1.4', manufacturer:'Nikon', line:'NIKKOR Z', type:'Prime', asin:'B0D83PR5SQ',
     focalLength:35, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'35mm',
     maxAperture:1.4, minAperture:16, weight:415, length:86.5, diameter:74.5,
     filterThread:62, minFocusDist:27, maxMagnification:0.18,
@@ -595,7 +595,7 @@ const LENSES = {
   },
 
   'z-40mm-f2': {
-    name:'NIKKOR Z 40mm f/2', manufacturer:'Nikon', line:'NIKKOR Z', type:'Prime', asin:null,
+    name:'NIKKOR Z 40mm f/2', manufacturer:'Nikon', line:'NIKKOR Z', type:'Prime', asin:'B09G57BXZ4',
     focalLength:40, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'40mm',
     maxAperture:2.0, minAperture:16, weight:170, length:45.5, diameter:70.0,
     filterThread:52, minFocusDist:29, maxMagnification:0.17,
@@ -608,7 +608,7 @@ const LENSES = {
   },
 
   'z-40mm-f2-se': {
-    name:'NIKKOR Z 40mm f/2 (SE)', manufacturer:'Nikon', line:'NIKKOR Z', type:'Prime', asin:null,
+    name:'NIKKOR Z 40mm f/2 (SE)', manufacturer:'Nikon', line:'NIKKOR Z', type:'Prime', asin:'B0BLTDSVM2',
     focalLength:40, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'40mm',
     maxAperture:2.0, minAperture:16, weight:170, length:45.5, diameter:71.5,
     filterThread:52, minFocusDist:29, maxMagnification:0.17,
@@ -621,7 +621,7 @@ const LENSES = {
   },
 
   'z-50mm-f1-4': {
-    name:'NIKKOR Z 50mm f/1.4', manufacturer:'Nikon', line:'NIKKOR Z', type:'Prime', asin:null,
+    name:'NIKKOR Z 50mm f/1.4', manufacturer:'Nikon', line:'NIKKOR Z', type:'Prime', asin:'B0DGHTDNY7',
     focalLength:50, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'50mm',
     maxAperture:1.4, minAperture:16, weight:420, length:86.5, diameter:74.5,
     filterThread:62, minFocusDist:37, maxMagnification:0.18,
@@ -634,7 +634,7 @@ const LENSES = {
   },
 
   'z-50mm-f2-8-mc': {
-    name:'NIKKOR Z MC 50mm f/2.8', manufacturer:'Nikon', line:'NIKKOR Z', type:'Prime', asin:null,
+    name:'NIKKOR Z MC 50mm f/2.8', manufacturer:'Nikon', line:'NIKKOR Z', type:'Prime', asin:'B096DVRX22',
     focalLength:50, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'50mm',
     maxAperture:2.8, minAperture:22, weight:260, length:66.0, diameter:74.5,
     filterThread:46, minFocusDist:16, maxMagnification:1.0,
@@ -648,7 +648,7 @@ const LENSES = {
 
   /* ── DX Primes ── */
   'z-dx-24mm-f1-7': {
-    name:'NIKKOR Z DX 24mm f/1.7', manufacturer:'Nikon', line:'DX', type:'Prime', asin:null,
+    name:'NIKKOR Z DX 24mm f/1.7', manufacturer:'Nikon', line:'DX', type:'Prime', asin:'B0C6P4CTTT',
     focalLength:24, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'36mm',
     maxAperture:1.7, minAperture:16, weight:135, length:40.0, diameter:70.0,
     filterThread:46, minFocusDist:18, maxMagnification:0.20,
@@ -662,7 +662,7 @@ const LENSES = {
 
   /* ── S-Line Zooms (cont.) ── */
   'z-14-24mm-f2-8-s': {
-    name:'NIKKOR Z 14-24mm f/2.8 S', manufacturer:'Nikon', line:'S-Line', type:'Zoom', asin:null,
+    name:'NIKKOR Z 14-24mm f/2.8 S', manufacturer:'Nikon', line:'S-Line', type:'Zoom', asin:'B08J7FHHWX',
     focalLength:null, focalLengthMin:14, focalLengthMax:24, focalLengthEquiv:'14-24mm',
     maxAperture:2.8, minAperture:22, weight:650, length:124.5, diameter:88.5,
     filterThread:112, minFocusDist:28, maxMagnification:0.13,
@@ -675,7 +675,7 @@ const LENSES = {
   },
 
   'z-14-30mm-f4-s': {
-    name:'NIKKOR Z 14-30mm f/4 S', manufacturer:'Nikon', line:'S-Line', type:'Zoom', asin:null,
+    name:'NIKKOR Z 14-30mm f/4 S', manufacturer:'Nikon', line:'S-Line', type:'Zoom', asin:'B07MS6299X',
     focalLength:null, focalLengthMin:14, focalLengthMax:30, focalLengthEquiv:'14-30mm',
     maxAperture:4.0, minAperture:22, weight:485, length:85.0, diameter:89.0,
     filterThread:82, minFocusDist:28, maxMagnification:0.16,
@@ -688,7 +688,7 @@ const LENSES = {
   },
 
   'z-24-70mm-f4-s': {
-    name:'NIKKOR Z 24-70mm f/4 S', manufacturer:'Nikon', line:'S-Line', type:'Zoom', asin:null,
+    name:'NIKKOR Z 24-70mm f/4 S', manufacturer:'Nikon', line:'S-Line', type:'Zoom', asin:'B07GPX4HK5',
     focalLength:null, focalLengthMin:24, focalLengthMax:70, focalLengthEquiv:'24-70mm',
     maxAperture:4.0, minAperture:22, weight:500, length:88.5, diameter:77.5,
     filterThread:72, minFocusDist:30, maxMagnification:0.30,
@@ -701,7 +701,7 @@ const LENSES = {
   },
 
   'z-24-120mm-f4-s': {
-    name:'NIKKOR Z 24-120mm f/4 S', manufacturer:'Nikon', line:'S-Line', type:'Zoom', asin:null,
+    name:'NIKKOR Z 24-120mm f/4 S', manufacturer:'Nikon', line:'S-Line', type:'Zoom', asin:'B09KHB76TP',
     focalLength:null, focalLengthMin:24, focalLengthMax:120, focalLengthEquiv:'24-120mm',
     maxAperture:4.0, minAperture:22, weight:630, length:118.0, diameter:84.0,
     filterThread:77, minFocusDist:35, maxMagnification:0.39,
@@ -714,7 +714,7 @@ const LENSES = {
   },
 
   'z-100-400mm-f4-5-5-6-vr-s': {
-    name:'NIKKOR Z 100-400mm f/4.5-5.6 VR S', manufacturer:'Nikon', line:'S-Line', type:'Zoom', asin:null,
+    name:'NIKKOR Z 100-400mm f/4.5-5.6 VR S', manufacturer:'Nikon', line:'S-Line', type:'Zoom', asin:'B09KH9X5DL',
     focalLength:null, focalLengthMin:100, focalLengthMax:400, focalLengthEquiv:'100-400mm',
     maxAperture:4.5, minAperture:32, weight:1435, length:222.0, diameter:98.0,
     filterThread:77, minFocusDist:75, maxMagnification:0.38,
@@ -728,7 +728,7 @@ const LENSES = {
 
   /* ── Standard / Travel Zooms (non-S, FX) ── */
   'z-17-28mm-f2-8': {
-    name:'NIKKOR Z 17-28mm f/2.8', manufacturer:'Nikon', line:'NIKKOR Z', type:'Zoom', asin:null,
+    name:'NIKKOR Z 17-28mm f/2.8', manufacturer:'Nikon', line:'NIKKOR Z', type:'Zoom', asin:'B0BFTX4DS7',
     focalLength:null, focalLengthMin:17, focalLengthMax:28, focalLengthEquiv:'17-28mm',
     maxAperture:2.8, minAperture:22, weight:450, length:101.0, diameter:75.0,
     filterThread:67, minFocusDist:19, maxMagnification:0.19,
@@ -741,7 +741,7 @@ const LENSES = {
   },
 
   'z-24-50mm-f4-6-3': {
-    name:'NIKKOR Z 24-50mm f/4-6.3', manufacturer:'Nikon', line:'NIKKOR Z', type:'Zoom', asin:null,
+    name:'NIKKOR Z 24-50mm f/4-6.3', manufacturer:'Nikon', line:'NIKKOR Z', type:'Zoom', asin:'B08D8QK5LP',
     focalLength:null, focalLengthMin:24, focalLengthMax:50, focalLengthEquiv:'24-50mm',
     maxAperture:4.0, minAperture:22, weight:195, length:51.0, diameter:73.5,
     filterThread:52, minFocusDist:35, maxMagnification:0.17,
@@ -754,7 +754,7 @@ const LENSES = {
   },
 
   'z-24-200mm-f4-6-3-vr': {
-    name:'NIKKOR Z 24-200mm f/4-6.3 VR', manufacturer:'Nikon', line:'NIKKOR Z', type:'Zoom', asin:null,
+    name:'NIKKOR Z 24-200mm f/4-6.3 VR', manufacturer:'Nikon', line:'NIKKOR Z', type:'Zoom', asin:'B084QP747Q',
     focalLength:null, focalLengthMin:24, focalLengthMax:200, focalLengthEquiv:'24-200mm',
     maxAperture:4.0, minAperture:22, weight:570, length:114.0, diameter:76.5,
     filterThread:67, minFocusDist:50, maxMagnification:0.28,
@@ -767,7 +767,7 @@ const LENSES = {
   },
 
   'z-28-75mm-f2-8': {
-    name:'NIKKOR Z 28-75mm f/2.8', manufacturer:'Nikon', line:'NIKKOR Z', type:'Zoom', asin:null,
+    name:'NIKKOR Z 28-75mm f/2.8', manufacturer:'Nikon', line:'NIKKOR Z', type:'Zoom', asin:'B09NLBL2F1',
     focalLength:null, focalLengthMin:28, focalLengthMax:75, focalLengthEquiv:'28-75mm',
     maxAperture:2.8, minAperture:22, weight:565, length:120.5, diameter:75.0,
     filterThread:67, minFocusDist:19, maxMagnification:0.34,
@@ -780,7 +780,7 @@ const LENSES = {
   },
 
   'z-28-400mm-f4-8-vr': {
-    name:'NIKKOR Z 28-400mm f/4-8 VR', manufacturer:'Nikon', line:'NIKKOR Z', type:'Zoom', asin:null,
+    name:'NIKKOR Z 28-400mm f/4-8 VR', manufacturer:'Nikon', line:'NIKKOR Z', type:'Zoom', asin:'B0CZ4JX9JW',
     focalLength:null, focalLengthMin:28, focalLengthMax:400, focalLengthEquiv:'28-400mm',
     maxAperture:4.0, minAperture:32, weight:725, length:142.0, diameter:85.0,
     filterThread:77, minFocusDist:20, maxMagnification:0.35,
@@ -794,7 +794,7 @@ const LENSES = {
 
   /* ── Telephoto / Super-Telephoto ── */
   'z-70-180mm-f2-8': {
-    name:'NIKKOR Z 70-180mm f/2.8', manufacturer:'Nikon', line:'NIKKOR Z', type:'Zoom', asin:null,
+    name:'NIKKOR Z 70-180mm f/2.8', manufacturer:'Nikon', line:'NIKKOR Z', type:'Zoom', asin:'B0C8QL89L5',
     focalLength:null, focalLengthMin:70, focalLengthMax:180, focalLengthEquiv:'70-180mm',
     maxAperture:2.8, minAperture:22, weight:795, length:151.0, diameter:83.5,
     filterThread:67, minFocusDist:27, maxMagnification:0.48,
@@ -807,7 +807,7 @@ const LENSES = {
   },
 
   'z-180-600mm-f5-6-6-3-vr': {
-    name:'NIKKOR Z 180-600mm f/5.6-6.3 VR', manufacturer:'Nikon', line:'NIKKOR Z', type:'Zoom', asin:null,
+    name:'NIKKOR Z 180-600mm f/5.6-6.3 VR', manufacturer:'Nikon', line:'NIKKOR Z', type:'Zoom', asin:'B0C8QFSPFQ',
     focalLength:null, focalLengthMin:180, focalLengthMax:600, focalLengthEquiv:'180-600mm',
     maxAperture:5.6, minAperture:32, weight:2140, length:315.5, diameter:110.0,
     filterThread:95, minFocusDist:130, maxMagnification:0.25,
@@ -820,7 +820,7 @@ const LENSES = {
   },
 
   'z-400mm-f4-5-vr-s': {
-    name:'NIKKOR Z 400mm f/4.5 VR S', manufacturer:'Nikon', line:'S-Line', type:'Prime', asin:null,
+    name:'NIKKOR Z 400mm f/4.5 VR S', manufacturer:'Nikon', line:'S-Line', type:'Prime', asin:'B0B52C7Z7D',
     focalLength:400, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'400mm',
     maxAperture:4.5, minAperture:32, weight:1245, length:234.5, diameter:104.0,
     filterThread:95, minFocusDist:250, maxMagnification:0.16,
@@ -833,7 +833,7 @@ const LENSES = {
   },
 
   'z-400mm-f2-8-tc-vr-s': {
-    name:'NIKKOR Z 400mm f/2.8 TC VR S', manufacturer:'Nikon', line:'S-Line', type:'Prime', asin:null,
+    name:'NIKKOR Z 400mm f/2.8 TC VR S', manufacturer:'Nikon', line:'S-Line', type:'Prime', asin:'B09QP4SSYW',
     focalLength:400, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'400mm (560mm w/ TC)',
     maxAperture:2.8, minAperture:22, weight:2950, length:380.0, diameter:156.0,
     filterThread:46, minFocusDist:250, maxMagnification:0.16,
@@ -846,7 +846,7 @@ const LENSES = {
   },
 
   'z-600mm-f6-3-vr-s-pf': {
-    name:'NIKKOR Z 600mm f/6.3 VR S (PF)', manufacturer:'Nikon', line:'S-Line', type:'Prime', asin:null,
+    name:'NIKKOR Z 600mm f/6.3 VR S (PF)', manufacturer:'Nikon', line:'S-Line', type:'Prime', asin:'B0CKTYF2ZZ',
     focalLength:600, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'600mm',
     maxAperture:6.3, minAperture:32, weight:1470, length:278.0, diameter:106.5,
     filterThread:95, minFocusDist:400, maxMagnification:0.16,
@@ -859,7 +859,7 @@ const LENSES = {
   },
 
   'z-600mm-f4-tc-vr-s': {
-    name:'NIKKOR Z 600mm f/4 TC VR S', manufacturer:'Nikon', line:'S-Line', type:'Prime', asin:null,
+    name:'NIKKOR Z 600mm f/4 TC VR S', manufacturer:'Nikon', line:'S-Line', type:'Prime', asin:'B0BL5FKJF7',
     focalLength:600, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'600mm (840mm w/ TC)',
     maxAperture:4.0, minAperture:22, weight:3260, length:437.0, diameter:165.0,
     filterThread:46, minFocusDist:440, maxMagnification:0.14,
@@ -872,7 +872,7 @@ const LENSES = {
   },
 
   'z-800mm-f6-3-vr-s-pf': {
-    name:'NIKKOR Z 800mm f/6.3 VR S (PF)', manufacturer:'Nikon', line:'S-Line', type:'Prime', asin:null,
+    name:'NIKKOR Z 800mm f/6.3 VR S (PF)', manufacturer:'Nikon', line:'S-Line', type:'Prime', asin:'B09X8TBSFZ',
     focalLength:800, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'800mm',
     maxAperture:6.3, minAperture:32, weight:2385, length:385.0, diameter:140.0,
     filterThread:46, minFocusDist:500, maxMagnification:0.16,
@@ -886,7 +886,7 @@ const LENSES = {
 
   /* ── DX Zooms ── */
   'z-dx-12-28mm-pz-vr': {
-    name:'NIKKOR Z DX 12-28mm f/3.5-5.6 PZ VR', manufacturer:'Nikon', line:'DX', type:'Zoom', asin:null,
+    name:'NIKKOR Z DX 12-28mm f/3.5-5.6 PZ VR', manufacturer:'Nikon', line:'DX', type:'Zoom', asin:'B0C2RHKLDK',
     focalLength:null, focalLengthMin:12, focalLengthMax:28, focalLengthEquiv:'18-42mm',
     maxAperture:3.5, minAperture:22, weight:205, length:63.5, diameter:72.0,
     filterThread:67, minFocusDist:19, maxMagnification:0.21,
@@ -899,7 +899,7 @@ const LENSES = {
   },
 
   'z-dx-16-50mm-vr': {
-    name:'NIKKOR Z DX 16-50mm f/3.5-6.3 VR', manufacturer:'Nikon', line:'DX', type:'Zoom', asin:null,
+    name:'NIKKOR Z DX 16-50mm f/3.5-6.3 VR', manufacturer:'Nikon', line:'DX', type:'Zoom', asin:'B07YX95XJL',
     focalLength:null, focalLengthMin:16, focalLengthMax:50, focalLengthEquiv:'24-75mm',
     maxAperture:3.5, minAperture:22, weight:135, length:32.0, diameter:70.0,
     filterThread:46, minFocusDist:20, maxMagnification:0.20,
@@ -912,7 +912,7 @@ const LENSES = {
   },
 
   'z-dx-18-140mm-vr': {
-    name:'NIKKOR Z DX 18-140mm f/3.5-6.3 VR', manufacturer:'Nikon', line:'DX', type:'Zoom', asin:null,
+    name:'NIKKOR Z DX 18-140mm f/3.5-6.3 VR', manufacturer:'Nikon', line:'DX', type:'Zoom', asin:'B09JBJKRBZ',
     focalLength:null, focalLengthMin:18, focalLengthMax:140, focalLengthEquiv:'27-210mm',
     maxAperture:3.5, minAperture:22, weight:315, length:90.0, diameter:73.0,
     filterThread:62, minFocusDist:20, maxMagnification:0.33,
@@ -925,7 +925,7 @@ const LENSES = {
   },
 
   'z-dx-50-250mm-vr': {
-    name:'NIKKOR Z DX 50-250mm f/4.5-6.3 VR', manufacturer:'Nikon', line:'DX', type:'Zoom', asin:null,
+    name:'NIKKOR Z DX 50-250mm f/4.5-6.3 VR', manufacturer:'Nikon', line:'DX', type:'Zoom', asin:'B07YX9KYQZ',
     focalLength:null, focalLengthMin:50, focalLengthMax:250, focalLengthEquiv:'75-375mm',
     maxAperture:4.5, minAperture:22, weight:405, length:110.0, diameter:74.0,
     filterThread:62, minFocusDist:50, maxMagnification:0.23,
