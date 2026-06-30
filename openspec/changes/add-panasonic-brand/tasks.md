@@ -89,7 +89,7 @@
 
 ## 9. Images & pricing finalisation
 
-- [ ] 9.1 Images via `scripts/fetch-images-commons.js panasonic` (strict
+- [x] 9.1 Images via `scripts/fetch-images-commons.js panasonic` (strict
   model-token Commons match); prune `KNOWN_IMAGE_GAPS.panasonic` to the
   remaining gaps; run `scripts/verify-images.js panasonic`. `npm test` green.
 - [ ] 9.2 Regional pricing: current cameras carry all 7 currencies (USD exact,

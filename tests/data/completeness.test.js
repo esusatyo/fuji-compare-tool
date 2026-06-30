@@ -49,23 +49,25 @@ const KNOWN_IMAGE_GAPS = {
     'z-dx-18-140mm-vr', 'z-dx-50-250mm-vr',
   ]),
   panasonic: new Set([
-    // Images sourced via scripts/fetch-images-commons.js in a later group;
-    // entries self-clean as Commons photos land. Cameras:
-    's1r-ii', 's1-ii', 's5-ii', 's5-iix', 's9', 's1h', 's1', 's1r', 's5',
-    'gh7', 'gh6', 'gh5-ii', 'gh5',
-    'g9-ii', 'g100d', 'g9', 'gx9', 'g95',
+    // Curated via scripts/fetch-images-commons.js. 12 of 57 items carry real
+    // Commons images (6 cameras: s5-ii, s9, gh7, gh6, gh5-ii, g9-ii; 6 lenses:
+    // S 35/1.8, S 24-105/4, S PRO 70-200/4, S 70-300, G 25/1.7, Nocticron 42.5/1.2).
+    // The s5/g9 search hits returned the newer-model photo (S5 II / G9 II) and
+    // were rejected. The rest stay on the placeholder until a freely-licensed
+    // Commons photo exists; the test self-cleans once one lands. Cameras (12):
+    's1r-ii', 's1-ii', 's5-iix', 's1h', 's1', 's1r', 's5',
+    'gh5',
+    'g100d', 'g9', 'gx9', 'g95',
     // Lenses — LUMIX S primes:
-    'lumix-s-18mm-f1-8', 'lumix-s-24mm-f1-8', 'lumix-s-35mm-f1-8', 'lumix-s-40mm-f2',
+    'lumix-s-18mm-f1-8', 'lumix-s-24mm-f1-8', 'lumix-s-40mm-f2',
     'lumix-s-50mm-f1-8', 'lumix-s-pro-50mm-f1-4', 'lumix-s-85mm-f1-8', 'lumix-s-100mm-f2-8-macro',
     // LUMIX G primes:
     'leica-dg-9mm-f1-7', 'leica-dg-12mm-f1-4', 'leica-dg-15mm-f1-7', 'lumix-g-20mm-f1-7-ii',
-    'leica-dg-25mm-f1-4-ii', 'lumix-g-25mm-f1-7', 'leica-dg-42-5mm-f1-2-nocticron',
-    'lumix-g-42-5mm-f1-7', 'leica-dg-200mm-f2-8',
+    'leica-dg-25mm-f1-4-ii', 'lumix-g-42-5mm-f1-7', 'leica-dg-200mm-f2-8',
     // LUMIX S zooms:
     'lumix-s-14-28mm-f4-5-6-macro', 'lumix-s-pro-16-35mm-f4', 'lumix-s-20-60mm-f3-5-5-6',
-    'lumix-s-24-60mm-f2-8', 'lumix-s-24-70mm-f2-8-pro', 'lumix-s-24-105mm-f4-macro',
-    'lumix-s-28-200mm-f4-7-1-macro', 'lumix-s-pro-70-200mm-f2-8', 'lumix-s-pro-70-200mm-f4',
-    'lumix-s-70-300mm-f4-5-5-6-macro',
+    'lumix-s-24-60mm-f2-8', 'lumix-s-24-70mm-f2-8-pro',
+    'lumix-s-28-200mm-f4-7-1-macro', 'lumix-s-pro-70-200mm-f2-8',
     // LUMIX G zooms:
     'leica-dg-8-18mm-f2-8-4', 'leica-dg-10-25mm-f1-7', 'lumix-g-12-32mm-f3-5-5-6',
     'leica-dg-12-60mm-f2-8-4', 'lumix-g-12-60mm-f3-5-5-6', 'lumix-g-12-35mm-f2-8-ii',
