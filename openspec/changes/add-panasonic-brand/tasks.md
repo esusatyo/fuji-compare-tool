@@ -67,9 +67,9 @@
 
 ## 6. Camera data — Micro Four Thirds (Lumix G/GH) in batches
 
-- [ ] 6.1 Current MFT: gh7 (seed), g9-ii (seed), gh6, g100-ii/g100, gx9, etc.
-- [ ] 6.2 Notable discontinued MFT (gh5-ii, gh5, g9, gx85, etc.).
-- [ ] 6.3 Orders/groups updated; `npm test` green.
+- [x] 6.1 Current MFT: gh7 (seed), g9-ii (seed), gh6, g100-ii/g100, gx9, etc.
+- [x] 6.2 Notable discontinued MFT (gh5-ii, gh5, g9, gx85, etc.).
+- [x] 6.3 Orders/groups updated; `npm test` green.
 
 ## 7. Lens data — primes in batches by mount/line
 
