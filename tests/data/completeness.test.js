@@ -67,7 +67,10 @@ const KNOWN_IMAGE_GAPS = {
     'lumix-s-28-200mm-f4-7-1-macro', 'lumix-s-pro-70-200mm-f2-8', 'lumix-s-pro-70-200mm-f4',
     'lumix-s-70-300mm-f4-5-5-6-macro',
     // LUMIX G zooms:
-    'lumix-g-12-35mm-f2-8-ii',
+    'leica-dg-8-18mm-f2-8-4', 'leica-dg-10-25mm-f1-7', 'lumix-g-12-32mm-f3-5-5-6',
+    'leica-dg-12-60mm-f2-8-4', 'lumix-g-12-60mm-f3-5-5-6', 'lumix-g-12-35mm-f2-8-ii',
+    'leica-dg-25-50mm-f1-7', 'lumix-g-35-100mm-f2-8-ii', 'leica-dg-50-200mm-f2-8-4',
+    'lumix-g-14-140mm-f3-5-5-6-ii', 'lumix-g-100-300mm-f4-5-6-ii', 'leica-dg-100-400mm-f4-6-3-ii',
   ]),
   sony: new Set([
     // 31 of 33 cameras now have curated product images (Wikipedia infobox +
