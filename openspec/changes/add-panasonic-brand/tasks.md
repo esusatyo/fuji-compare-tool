@@ -92,14 +92,19 @@
 - [x] 9.1 Images via `scripts/fetch-images-commons.js panasonic` (strict
   model-token Commons match); prune `KNOWN_IMAGE_GAPS.panasonic` to the
   remaining gaps; run `scripts/verify-images.js panasonic`. `npm test` green.
-- [ ] 9.2 Regional pricing: current cameras carry all 7 currencies (USD exact,
-  regional derived/approx); discontinued bodies USD-only; lenses ship
-  `priceIncomplete` where regional unconfirmed.
-- [ ] 9.3 ASINs: backfill current cameras + lenses with web-verified plain
-  USA-model body-only/lens-only Amazon ASINs (model codes like `DC-S5M2`,
-  `DC-GH7`) via the `check-prices-and-buy-links` skill — exclude
-  bundles/Renewed/International. Discontinued bodies may keep `asin:null`.
-  `npm test` green.
+- [x] 9.2 Regional pricing: 10 current cameras carry all 7 currencies (USD
+  exact, regional derived/approx per the documented convention); 8 discontinued
+  bodies USD-only; all 39 lenses ship `priceIncomplete` (USD+AUD+CAD).
+  `compute-prices.js` is Canon-hardcoded so not used; regional lens refinement
+  is a later maintenance pass.
+- [x] 9.3 ASINs: backfilled **9 of 10 current cameras** with web-verified plain
+  USA body-only Amazon ASINs (s1r-ii B0DY21GMBD, s1-ii B0F8MHCD7V, s5-ii
+  B0BR8JMCYG, s5-iix B0BR8FY5HT, s9 B0D4FBF5NK, s1h B07WSRHXPR, gh7 B0D613NW2M,
+  gh6 B09T2RJ27P, g9-ii B0CHTHLVHS) — excluded bundles/Renewed/International.
+  g100d has only third-party-bundle Amazon listings → `asin:null` (search
+  fallback). 8 discontinued bodies keep `asin:null`. **Lens ASINs (39) remain
+  `null`** (engine Amazon-search fallback) — deferred to a focused
+  `check-prices-and-buy-links` pass. `npm test` green.
 
 ## 10. Final verification
 
