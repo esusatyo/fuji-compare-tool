@@ -54,8 +54,15 @@ const KNOWN_IMAGE_GAPS = {
     's1r-ii', 's1-ii', 's5-ii', 's5-iix', 's9', 's1h', 's1', 's1r', 's5',
     'gh7', 'gh6', 'gh5-ii', 'gh5',
     'g9-ii', 'g100d', 'g9', 'gx9', 'g95',
-    // Lenses:
-    'lumix-s-50mm-f1-8', 'lumix-s-24-70mm-f2-8-pro', 'lumix-g-12-35mm-f2-8-ii',
+    // Lenses — LUMIX S primes:
+    'lumix-s-18mm-f1-8', 'lumix-s-24mm-f1-8', 'lumix-s-35mm-f1-8', 'lumix-s-40mm-f2',
+    'lumix-s-50mm-f1-8', 'lumix-s-pro-50mm-f1-4', 'lumix-s-85mm-f1-8', 'lumix-s-100mm-f2-8-macro',
+    // LUMIX G primes:
+    'leica-dg-9mm-f1-7', 'leica-dg-12mm-f1-4', 'leica-dg-15mm-f1-7', 'lumix-g-20mm-f1-7-ii',
+    'leica-dg-25mm-f1-4-ii', 'lumix-g-25mm-f1-7', 'leica-dg-42-5mm-f1-2-nocticron',
+    'lumix-g-42-5mm-f1-7', 'leica-dg-200mm-f2-8',
+    // Zooms:
+    'lumix-s-24-70mm-f2-8-pro', 'lumix-g-12-35mm-f2-8-ii',
   ]),
   sony: new Set([
     // 31 of 33 cameras now have curated product images (Wikipedia infobox +

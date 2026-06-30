@@ -73,11 +73,11 @@
 
 ## 7. Lens data — primes in batches by mount/line
 
-- [ ] 7.1 LUMIX S (L-mount) primes (e.g. 18/1.8, 24/1.8, 35/1.8, 50/1.8, 85/1.8,
+- [x] 7.1 LUMIX S (L-mount) primes (e.g. 18/1.8, 24/1.8, 35/1.8, 50/1.8, 85/1.8,
   S PRO 50/1.4, 100/2.8 Macro).
-- [ ] 7.2 LUMIX G (MFT) primes (e.g. Leica 15/1.7, 25/1.4, 42.5/1.7, 12-32 etc.;
+- [x] 7.2 LUMIX G (MFT) primes (e.g. Leica 15/1.7, 25/1.4, 42.5/1.7, 12-32 etc.;
   `focalLengthEquiv` 2.0× crop).
-- [ ] 7.3 `LENS_DROPDOWN_GROUPS` updated; `npm run test:data` green.
+- [x] 7.3 `LENS_DROPDOWN_GROUPS` updated; `npm run test:data` green.
 
 ## 8. Lens data — zooms in batches by mount/line
 
