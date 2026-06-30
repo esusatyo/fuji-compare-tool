@@ -586,6 +586,123 @@ const LENSES = {
     productUrl:'https://shop.panasonic.com/products/lumix-s-pro-24-70mm-f2-8-l-mount-lens-s-e2470',
   },
 
+  'lumix-s-pro-16-35mm-f4': {
+    name:'LUMIX S PRO 16-35mm F4', manufacturer:'Panasonic', line:'LUMIX S', type:'Zoom', asin:null,
+    focalLength:null, focalLengthMin:16, focalLengthMax:35, focalLengthEquiv:'16-35mm',
+    maxAperture:4.0, minAperture:22, weight:500, length:100.0, diameter:84.6,
+    filterThread:77, minFocusDist:25, maxMagnification:0.23,
+    elements:12, groups:9, blades:9, afType:'Linear Motor',
+    weatherSealed:true, ois:false, oisStops:null, year:2020, discontinued:false,
+    imageUrl:null,
+    prices:{USD:1497,AUD:2299,EUR:null,GBP:null,JPY:null,CAD:1999,SGD:null},
+    priceIncomplete:true,
+    productUrl:'https://shop.panasonic.com/products/lumix-s-pro-16-35mm-f4-l-mount-lens-s-r1635',
+  },
+
+  'lumix-s-14-28mm-f4-5-6-macro': {
+    name:'LUMIX S 14-28mm F4-5.6 MACRO', manufacturer:'Panasonic', line:'LUMIX S', type:'Zoom', asin:null,
+    focalLength:null, focalLengthMin:14, focalLengthMax:28, focalLengthEquiv:'14-28mm',
+    maxAperture:4.0, minAperture:22, weight:345, length:89.6, diameter:84.0,
+    filterThread:77, minFocusDist:15, maxMagnification:0.50,
+    elements:14, groups:10, blades:9, afType:'Stepping Motor',
+    weatherSealed:true, ois:false, oisStops:null, year:2022, discontinued:false,
+    imageUrl:null,
+    prices:{USD:897,AUD:1399,EUR:null,GBP:null,JPY:null,CAD:1199,SGD:null},
+    priceIncomplete:true,
+    productUrl:'https://shop.panasonic.com/products/lumix-s-14-28mm-f4-5-6-macro-l-mount-lens-s-r1428',
+  },
+
+  'lumix-s-20-60mm-f3-5-5-6': {
+    name:'LUMIX S 20-60mm F3.5-5.6', manufacturer:'Panasonic', line:'LUMIX S', type:'Zoom', asin:null,
+    focalLength:null, focalLengthMin:20, focalLengthMax:60, focalLengthEquiv:'20-60mm',
+    maxAperture:3.5, minAperture:22, weight:350, length:87.2, diameter:77.4,
+    filterThread:67, minFocusDist:15, maxMagnification:0.43,
+    elements:11, groups:9, blades:9, afType:'Stepping Motor',
+    weatherSealed:true, ois:false, oisStops:null, year:2020, discontinued:false,
+    imageUrl:null,
+    prices:{USD:599,AUD:949,EUR:null,GBP:null,JPY:null,CAD:799,SGD:null},
+    priceIncomplete:true,
+    productUrl:'https://shop.panasonic.com/products/lumix-s-20-60mm-f3-5-5-6-l-mount-lens-s-r2060',
+  },
+
+  'lumix-s-24-60mm-f2-8': {
+    name:'LUMIX S 24-60mm F2.8', manufacturer:'Panasonic', line:'LUMIX S', type:'Zoom', asin:null,
+    focalLength:null, focalLengthMin:24, focalLengthMax:60, focalLengthEquiv:'24-60mm',
+    maxAperture:2.8, minAperture:22, weight:544, length:99.7, diameter:77.5,
+    filterThread:67, minFocusDist:30, maxMagnification:0.20,
+    elements:13, groups:12, blades:9, afType:'Linear Motor',
+    weatherSealed:true, ois:false, oisStops:null, year:2024, discontinued:false,
+    imageUrl:null,
+    prices:{USD:1099,AUD:1699,EUR:null,GBP:null,JPY:null,CAD:1479,SGD:null},
+    priceIncomplete:true,
+    productUrl:'https://shop.panasonic.com/products/lumix-s-24-60mm-f2-8-l-mount-lens-s-e2460',
+  },
+
+  'lumix-s-24-105mm-f4-macro': {
+    name:'LUMIX S 24-105mm F4 MACRO O.I.S.', manufacturer:'Panasonic', line:'LUMIX S', type:'Zoom', asin:null,
+    focalLength:null, focalLengthMin:24, focalLengthMax:105, focalLengthEquiv:'24-105mm',
+    maxAperture:4.0, minAperture:22, weight:680, length:118.0, diameter:84.0,
+    filterThread:77, minFocusDist:30, maxMagnification:0.50,
+    elements:16, groups:13, blades:9, afType:'Linear Motor',
+    weatherSealed:true, ois:true, oisStops:null, year:2019, discontinued:false,
+    imageUrl:null,
+    prices:{USD:1297,AUD:1999,EUR:null,GBP:null,JPY:null,CAD:1749,SGD:null},
+    priceIncomplete:true,
+    productUrl:'https://shop.panasonic.com/products/lumix-s-24-105mm-f4-macro-ois-l-mount-lens-s-r24105',
+  },
+
+  'lumix-s-28-200mm-f4-7-1-macro': {
+    name:'LUMIX S 28-200mm F4-7.1 MACRO O.I.S.', manufacturer:'Panasonic', line:'LUMIX S', type:'Zoom', asin:null,
+    focalLength:null, focalLengthMin:28, focalLengthMax:200, focalLengthEquiv:'28-200mm',
+    maxAperture:4.0, minAperture:22, weight:413, length:93.4, diameter:77.3,
+    filterThread:67, minFocusDist:14, maxMagnification:0.50,
+    elements:17, groups:13, blades:7, afType:'Stepping Motor',
+    weatherSealed:true, ois:true, oisStops:null, year:2023, discontinued:false,
+    imageUrl:null,
+    prices:{USD:897,AUD:1399,EUR:null,GBP:null,JPY:null,CAD:1199,SGD:null},
+    priceIncomplete:true,
+    productUrl:'https://shop.panasonic.com/products/lumix-s-28-200mm-f4-7-1-macro-ois-l-mount-lens-s-r28200',
+  },
+
+  'lumix-s-pro-70-200mm-f2-8': {
+    name:'LUMIX S PRO 70-200mm F2.8 O.I.S.', manufacturer:'Panasonic', line:'LUMIX S', type:'Zoom', asin:null,
+    focalLength:null, focalLengthMin:70, focalLengthMax:200, focalLengthEquiv:'70-200mm',
+    maxAperture:2.8, minAperture:22, weight:1570, length:208.6, diameter:94.4,
+    filterThread:82, minFocusDist:95, maxMagnification:0.21,
+    elements:22, groups:17, blades:11, afType:'Linear Motor',
+    weatherSealed:true, ois:true, oisStops:null, year:2019, discontinued:false,
+    imageUrl:null,
+    prices:{USD:2597,AUD:3999,EUR:null,GBP:null,JPY:null,CAD:3499,SGD:null},
+    priceIncomplete:true,
+    productUrl:'https://shop.panasonic.com/products/lumix-s-pro-70-200mm-f2-8-ois-l-mount-lens-s-e70200',
+  },
+
+  'lumix-s-pro-70-200mm-f4': {
+    name:'LUMIX S PRO 70-200mm F4 O.I.S.', manufacturer:'Panasonic', line:'LUMIX S', type:'Zoom', asin:null,
+    focalLength:null, focalLengthMin:70, focalLengthMax:200, focalLengthEquiv:'70-200mm',
+    maxAperture:4.0, minAperture:22, weight:985, length:179.0, diameter:84.4,
+    filterThread:77, minFocusDist:92, maxMagnification:0.25,
+    elements:23, groups:17, blades:9, afType:'Linear Motor',
+    weatherSealed:true, ois:true, oisStops:null, year:2019, discontinued:false,
+    imageUrl:null,
+    prices:{USD:1697,AUD:2599,EUR:null,GBP:null,JPY:null,CAD:2299,SGD:null},
+    priceIncomplete:true,
+    productUrl:'https://shop.panasonic.com/products/lumix-s-pro-70-200mm-f4-ois-l-mount-lens-s-r70200',
+  },
+
+  'lumix-s-70-300mm-f4-5-5-6-macro': {
+    name:'LUMIX S 70-300mm F4.5-5.6 MACRO O.I.S.', manufacturer:'Panasonic', line:'LUMIX S', type:'Zoom', asin:null,
+    focalLength:null, focalLengthMin:70, focalLengthMax:300, focalLengthEquiv:'70-300mm',
+    maxAperture:4.5, minAperture:22, weight:790, length:148.0, diameter:84.0,
+    filterThread:77, minFocusDist:54, maxMagnification:0.50,
+    elements:17, groups:11, blades:9, afType:'Linear Motor',
+    weatherSealed:true, ois:true, oisStops:null, year:2021, discontinued:false,
+    imageUrl:null,
+    prices:{USD:1147,AUD:1799,EUR:null,GBP:null,JPY:null,CAD:1549,SGD:null},
+    priceIncomplete:true,
+    productUrl:'https://shop.panasonic.com/products/lumix-s-70-300mm-f4-5-5-6-macro-ois-l-mount-lens-s-r70300',
+  },
+
   /* ── LUMIX G Primes (Micro Four Thirds, 2.0× crop equiv) ── */
   'leica-dg-9mm-f1-7': {
     name:'LEICA DG SUMMILUX 9mm F1.7', manufacturer:'Panasonic', line:'LUMIX G', type:'Prime', asin:null,
@@ -722,7 +839,7 @@ const LENSES = {
 
 const LENS_DROPDOWN_GROUPS = [
   { label: '── LUMIX S Primes (L-Mount) ──', ids: ['lumix-s-18mm-f1-8', 'lumix-s-24mm-f1-8', 'lumix-s-35mm-f1-8', 'lumix-s-40mm-f2', 'lumix-s-50mm-f1-8', 'lumix-s-pro-50mm-f1-4', 'lumix-s-85mm-f1-8', 'lumix-s-100mm-f2-8-macro'] },
-  { label: '── LUMIX S Zooms (L-Mount) ──',  ids: ['lumix-s-24-70mm-f2-8-pro'] },
+  { label: '── LUMIX S Zooms (L-Mount) ──',  ids: ['lumix-s-14-28mm-f4-5-6-macro', 'lumix-s-pro-16-35mm-f4', 'lumix-s-20-60mm-f3-5-5-6', 'lumix-s-24-60mm-f2-8', 'lumix-s-24-70mm-f2-8-pro', 'lumix-s-24-105mm-f4-macro', 'lumix-s-28-200mm-f4-7-1-macro', 'lumix-s-pro-70-200mm-f2-8', 'lumix-s-pro-70-200mm-f4', 'lumix-s-70-300mm-f4-5-5-6-macro'] },
   { label: '── LUMIX G Primes (MFT) ──',     ids: ['leica-dg-9mm-f1-7', 'leica-dg-12mm-f1-4', 'leica-dg-15mm-f1-7', 'lumix-g-20mm-f1-7-ii', 'leica-dg-25mm-f1-4-ii', 'lumix-g-25mm-f1-7', 'leica-dg-42-5mm-f1-2-nocticron', 'lumix-g-42-5mm-f1-7', 'leica-dg-200mm-f2-8'] },
   { label: '── LUMIX G Zooms (MFT) ──',      ids: ['lumix-g-12-35mm-f2-8-ii'] },
 ];

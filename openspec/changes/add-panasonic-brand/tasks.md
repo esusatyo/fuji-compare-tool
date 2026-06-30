@@ -81,7 +81,7 @@
 
 ## 8. Lens data — zooms in batches by mount/line
 
-- [ ] 8.1 LUMIX S (L-mount) zooms (e.g. 16-35/4, 20-60, 24-60/2.8, 24-105/4,
+- [x] 8.1 LUMIX S (L-mount) zooms (e.g. 16-35/4, 20-60, 24-60/2.8, 24-105/4,
   70-200/4, 70-200/2.8, 100-400).
 - [ ] 8.2 LUMIX G (MFT) zooms (e.g. 8-18, 12-35/2.8, 12-60, 35-100/2.8,
   45-175, 100-300, Leica 50-200).
