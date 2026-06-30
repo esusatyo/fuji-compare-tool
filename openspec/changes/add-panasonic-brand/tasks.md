@@ -108,12 +108,15 @@
 
 ## 10. Final verification
 
-- [ ] 10.1 `npm test` — entire data + logic suite green.
-- [ ] 10.2 Verify render via jsdom logic tests: 3 slots render, brand switcher
+- [x] 10.1 `npm test` — entire data + logic suite green: **188/188**.
+- [x] 10.2 Render verified via jsdom logic tests: 3 slots render, brand switcher
   lists all five brands (fujifilm/canon/sony/nikon/panasonic), per-currency
-  Amazon Buy links, "Panasonic Video" section gated to Panasonic only. Browser
-  preview optional via preview_start.
-- [ ] 10.3 `completeness.test.js` green for Panasonic; record final counts.
+  Amazon Buy links (product page w/ asin, search fallback otherwise), and the
+  "Panasonic Video" section (V-Log / Dual Native ISO / Open Gate / Internal
+  ProRes) gated ("only this brand's spec sections render"). Browser preview
+  optional.
+- [x] 10.3 `completeness.test.js` green for Panasonic. Counts: **18 cameras**
+  (10 current, 6 imaged, 9 ASIN), **39 lenses** (17 primes, 22 zooms; 6 imaged).
 
 ## 11. Archive
 
