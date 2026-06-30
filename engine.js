@@ -71,6 +71,7 @@ const MANUFACTURER_COLORS = {
   'Canon':        { bg: '#1a0a0a', text: '#e08080' },
   'Sony':         { bg: '#1a1408', text: '#ffae66' },
   'Nikon':        { bg: '#1a1700', text: '#ffd54a' },
+  'Panasonic':    { bg: '#0a1228', text: '#6fa8ff' },
   'Sigma':        { bg: '#1a1a2a', text: '#8080c0' },
   'Tamron':       { bg: '#2a1a1a', text: '#c08080' },
   'Viltrox':      { bg: '#2a2a1a', text: '#c0c080' },
@@ -220,6 +221,18 @@ const SPEC_SECTIONS = [
       { key: 'nRaw',       label: 'N-RAW Internal',      type: 'text', fn: c => c.nRaw || '—' },
       { key: 'pixelShift', label: 'Pixel Shift High-Res',type: 'text', fn: c => c.pixelShift || '—' },
       { key: 'preCapture', label: 'Pre-Release Capture', type: 'boolean', fn: c => c.preCapture },
+    ]
+  },
+
+  // ── Panasonic-specific ──
+  {
+    id: 'panasonic', label: 'Panasonic Video',
+    brand: 'panasonic',
+    specs: [
+      { key: 'vLog',           label: 'V-Log Gamma',      type: 'text',    fn: c => c.vLog || '—' },
+      { key: 'dualNativeIso',  label: 'Dual Native ISO',  type: 'boolean', fn: c => c.dualNativeIso },
+      { key: 'openGate',       label: 'Open Gate Capture',type: 'text',    fn: c => c.openGate || '—' },
+      { key: 'proResInternal', label: 'Internal ProRes',  type: 'boolean', fn: c => c.proResInternal },
     ]
   },
 ];

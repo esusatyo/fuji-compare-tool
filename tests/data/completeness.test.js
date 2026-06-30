@@ -48,6 +48,13 @@ const KNOWN_IMAGE_GAPS = {
     'z-800mm-f6-3-vr-s-pf', 'z-dx-12-28mm-pz-vr', 'z-dx-16-50mm-vr',
     'z-dx-18-140mm-vr', 'z-dx-50-250mm-vr',
   ]),
+  panasonic: new Set([
+    // Seed batch — images sourced via scripts/fetch-images-commons.js in a later
+    // group; entries self-clean as Commons photos land. Cameras:
+    's1r-ii', 's5-ii', 'gh7', 'g9-ii',
+    // Lenses:
+    'lumix-s-50mm-f1-8', 'lumix-s-24-70mm-f2-8-pro', 'lumix-g-12-35mm-f2-8-ii',
+  ]),
   sony: new Set([
     // 31 of 33 cameras now have curated product images (Wikipedia infobox +
     // Wikimedia Commons category/file lookups, each model-confirmed — a9-ii was
