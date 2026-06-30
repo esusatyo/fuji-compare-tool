@@ -70,6 +70,7 @@ const MANUFACTURER_COLORS = {
   'Fujifilm':     { bg: '#1a2a1a', text: '#80c080' },
   'Canon':        { bg: '#1a0a0a', text: '#e08080' },
   'Sony':         { bg: '#1a1408', text: '#ffae66' },
+  'Nikon':        { bg: '#1a1700', text: '#ffd54a' },
   'Sigma':        { bg: '#1a1a2a', text: '#8080c0' },
   'Tamron':       { bg: '#2a1a1a', text: '#c08080' },
   'Viltrox':      { bg: '#2a2a1a', text: '#c0c080' },
@@ -208,6 +209,17 @@ const SPEC_SECTIONS = [
       { key: 'logProfile',      label: 'Log / Color Profile', type: 'text',    fn: c => c.logProfile || '—' },
       { key: 'aiAf',            label: 'AI Processing Unit',  type: 'boolean', fn: c => c.aiAf },
       { key: 'realtimeTracking',label: 'Real-time Tracking',  type: 'boolean', fn: c => c.realtimeTracking },
+    ]
+  },
+  // ── Nikon-specific ──
+  {
+    id: 'nikon', label: 'Nikon Imaging',
+    brand: 'nikon',
+    specs: [
+      { key: 'expeed',     label: 'EXPEED Generation',   type: 'text', fn: c => c.expeed || '—' },
+      { key: 'nRaw',       label: 'N-RAW Internal',      type: 'text', fn: c => c.nRaw || '—' },
+      { key: 'pixelShift', label: 'Pixel Shift High-Res',type: 'text', fn: c => c.pixelShift || '—' },
+      { key: 'preCapture', label: 'Pre-Release Capture', type: 'boolean', fn: c => c.preCapture },
     ]
   },
 ];

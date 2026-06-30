@@ -10,7 +10,7 @@
     // First-time visitors default to Canon; returning visitors go to their
     // last-used brand (localStorage['brand']). The URL hash is preserved.
     (function() {
-      const VALID_BRANDS = ['canon', 'fujifilm', 'sony'];
+      const VALID_BRANDS = ['canon', 'fujifilm', 'sony', 'nikon'];
       const DEFAULT_BRAND = 'canon';
       const stored = localStorage.getItem('brand');
       const brand = VALID_BRANDS.includes(stored) ? stored : DEFAULT_BRAND;

@@ -31,6 +31,23 @@ const KNOWN_IMAGE_GAPS = {
   fujifilm: new Set([
     'xc-16-50mm-f35-56', // no freely-licensed product image found
   ]),
+  nikon: new Set([
+    // Curated via scripts/fetch-images-commons.js (strict model-token match).
+    // 21 of 57 items carry real Commons images (4 cameras + 17 lenses); the
+    // rest stay on the engine's series-coloured placeholder until a freely-
+    // licensed Commons photo exists. The test self-cleans once one lands.
+    // Cameras (10) — no clean Commons photo found yet:
+    'z9', 'z8', 'z5-ii', 'z7', 'z6', 'z5', 'z50', 'z30', 'zf', 'zfc',
+    // Lenses (26):
+    'z-24mm-f1-8-s', 'z-35mm-f1-8-s', 'z-85mm-f1-8-s', 'z-35mm-f1-2-s',
+    'z-135mm-f1-8-s-plena', 'z-mc-105mm-f2-8-vr-s', 'z-58mm-f0-95-s-noct',
+    'z-26mm-f2-8', 'z-28mm-f2-8', 'z-40mm-f2-se', 'z-50mm-f1-4',
+    'z-dx-24mm-f1-7', 'z-14-24mm-f2-8-s', 'z-14-30mm-f4-s', 'z-24-70mm-f4-s',
+    'z-24-50mm-f4-6-3', 'z-24-200mm-f4-6-3-vr', 'z-180-600mm-f5-6-6-3-vr',
+    'z-400mm-f4-5-vr-s', 'z-400mm-f2-8-tc-vr-s', 'z-600mm-f6-3-vr-s-pf',
+    'z-800mm-f6-3-vr-s-pf', 'z-dx-12-28mm-pz-vr', 'z-dx-16-50mm-vr',
+    'z-dx-18-140mm-vr', 'z-dx-50-250mm-vr',
+  ]),
   sony: new Set([
     // 31 of 33 cameras now have curated product images (Wikipedia infobox +
     // Wikimedia Commons category/file lookups, each model-confirmed — a9-ii was

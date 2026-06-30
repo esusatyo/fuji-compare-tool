@@ -171,6 +171,12 @@ function validateCamera(id, cam, brandSections = []) {
     add(checkField(cam, 'aiAf', { type: 'boolean' }));
     add(checkField(cam, 'realtimeTracking', { type: 'boolean' }));
   }
+  if (brandSections.includes('nikon')) {
+    add(checkField(cam, 'expeed', { type: 'string', nullable: true }));
+    add(checkField(cam, 'nRaw', { type: 'string', nullable: true }));
+    add(checkField(cam, 'pixelShift', { type: 'string', nullable: true }));
+    add(checkField(cam, 'preCapture', { type: 'boolean' }));
+  }
 
   return e.map(m => `${id}: ${m}`);
 }
