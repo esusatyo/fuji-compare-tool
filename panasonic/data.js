@@ -469,7 +469,7 @@ const LENSES = {
 
   /* ── LUMIX S Primes (L-Mount, full-frame) ── */
   'lumix-s-50mm-f1-8': {
-    name:'LUMIX S 50mm F1.8', manufacturer:'Panasonic', line:'LUMIX S', type:'Prime', asin:null,
+    name:'LUMIX S 50mm F1.8', manufacturer:'Panasonic', line:'LUMIX S', type:'Prime', asin:'B093NKZCR4',
     focalLength:50, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'50mm',
     maxAperture:1.8, minAperture:22, weight:300, length:82.0, diameter:73.6,
     filterThread:67, minFocusDist:45, maxMagnification:0.14,
@@ -482,7 +482,7 @@ const LENSES = {
   },
 
   'lumix-s-18mm-f1-8': {
-    name:'LUMIX S 18mm F1.8', manufacturer:'Panasonic', line:'LUMIX S', type:'Prime', asin:null,
+    name:'LUMIX S 18mm F1.8', manufacturer:'Panasonic', line:'LUMIX S', type:'Prime', asin:'B0BDGGZ7NS',
     focalLength:18, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'18mm',
     maxAperture:1.8, minAperture:22, weight:340, length:82.0, diameter:73.6,
     filterThread:67, minFocusDist:18, maxMagnification:0.08,
@@ -495,7 +495,7 @@ const LENSES = {
   },
 
   'lumix-s-24mm-f1-8': {
-    name:'LUMIX S 24mm F1.8', manufacturer:'Panasonic', line:'LUMIX S', type:'Prime', asin:null,
+    name:'LUMIX S 24mm F1.8', manufacturer:'Panasonic', line:'LUMIX S', type:'Prime', asin:'B09F6WGXHM',
     focalLength:24, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'24mm',
     maxAperture:1.8, minAperture:22, weight:310, length:82.0, diameter:73.6,
     filterThread:67, minFocusDist:24, maxMagnification:0.15,
@@ -508,7 +508,7 @@ const LENSES = {
   },
 
   'lumix-s-35mm-f1-8': {
-    name:'LUMIX S 35mm F1.8', manufacturer:'Panasonic', line:'LUMIX S', type:'Prime', asin:null,
+    name:'LUMIX S 35mm F1.8', manufacturer:'Panasonic', line:'LUMIX S', type:'Prime', asin:'B09LD9DQG5',
     focalLength:35, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'35mm',
     maxAperture:1.8, minAperture:22, weight:295, length:82.0, diameter:73.6,
     filterThread:67, minFocusDist:24, maxMagnification:0.15,
@@ -521,7 +521,7 @@ const LENSES = {
   },
 
   'lumix-s-85mm-f1-8': {
-    name:'LUMIX S 85mm F1.8', manufacturer:'Panasonic', line:'LUMIX S', type:'Prime', asin:null,
+    name:'LUMIX S 85mm F1.8', manufacturer:'Panasonic', line:'LUMIX S', type:'Prime', asin:'B08M24BV12',
     focalLength:85, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'85mm',
     maxAperture:1.8, minAperture:22, weight:355, length:82.0, diameter:73.6,
     filterThread:67, minFocusDist:80, maxMagnification:0.13,
@@ -534,7 +534,7 @@ const LENSES = {
   },
 
   'lumix-s-40mm-f2': {
-    name:'LUMIX S 40mm F2', manufacturer:'Panasonic', line:'LUMIX S', type:'Prime', asin:null,
+    name:'LUMIX S 40mm F2', manufacturer:'Panasonic', line:'LUMIX S', type:'Prime', asin:'B0GY21YLS2',
     focalLength:40, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'40mm',
     maxAperture:2.0, minAperture:22, weight:300, length:82.0, diameter:73.6,
     filterThread:67, minFocusDist:23, maxMagnification:0.15,
@@ -547,7 +547,7 @@ const LENSES = {
   },
 
   'lumix-s-pro-50mm-f1-4': {
-    name:'LUMIX S PRO 50mm F1.4', manufacturer:'Panasonic', line:'LUMIX S', type:'Prime', asin:null,
+    name:'LUMIX S PRO 50mm F1.4', manufacturer:'Panasonic', line:'LUMIX S', type:'Prime', asin:'B07N84VZ4Z',
     focalLength:50, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'50mm',
     maxAperture:1.4, minAperture:16, weight:955, length:130.0, diameter:90.0,
     filterThread:77, minFocusDist:44, maxMagnification:0.15,
@@ -560,7 +560,7 @@ const LENSES = {
   },
 
   'lumix-s-100mm-f2-8-macro': {
-    name:'LUMIX S 100mm F2.8 MACRO', manufacturer:'Panasonic', line:'LUMIX S', type:'Prime', asin:null,
+    name:'LUMIX S 100mm F2.8 MACRO', manufacturer:'Panasonic', line:'LUMIX S', type:'Prime', asin:'B0CRSNV73W',
     focalLength:100, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'100mm',
     maxAperture:2.8, minAperture:22, weight:298, length:82.0, diameter:73.6,
     filterThread:67, minFocusDist:20, maxMagnification:1.0,
@@ -574,7 +574,7 @@ const LENSES = {
 
   /* ── LUMIX S Zooms (L-Mount, full-frame) ── */
   'lumix-s-24-70mm-f2-8-pro': {
-    name:'LUMIX S PRO 24-70mm F2.8', manufacturer:'Panasonic', line:'LUMIX S', type:'Zoom', asin:null,
+    name:'LUMIX S PRO 24-70mm F2.8', manufacturer:'Panasonic', line:'LUMIX S', type:'Zoom', asin:'B07WRMBFF3',
     focalLength:null, focalLengthMin:24, focalLengthMax:70, focalLengthEquiv:'24-70mm',
     maxAperture:2.8, minAperture:22, weight:935, length:140.0, diameter:90.9,
     filterThread:82, minFocusDist:37, maxMagnification:0.25,
@@ -587,7 +587,7 @@ const LENSES = {
   },
 
   'lumix-s-pro-16-35mm-f4': {
-    name:'LUMIX S PRO 16-35mm F4', manufacturer:'Panasonic', line:'LUMIX S', type:'Zoom', asin:null,
+    name:'LUMIX S PRO 16-35mm F4', manufacturer:'Panasonic', line:'LUMIX S', type:'Zoom', asin:'B00JEZ0OFS',
     focalLength:null, focalLengthMin:16, focalLengthMax:35, focalLengthEquiv:'16-35mm',
     maxAperture:4.0, minAperture:22, weight:500, length:100.0, diameter:84.6,
     filterThread:77, minFocusDist:25, maxMagnification:0.23,
@@ -600,7 +600,7 @@ const LENSES = {
   },
 
   'lumix-s-14-28mm-f4-5-6-macro': {
-    name:'LUMIX S 14-28mm F4-5.6 MACRO', manufacturer:'Panasonic', line:'LUMIX S', type:'Zoom', asin:null,
+    name:'LUMIX S 14-28mm F4-5.6 MACRO', manufacturer:'Panasonic', line:'LUMIX S', type:'Zoom', asin:'B0BR8GF76K',
     focalLength:null, focalLengthMin:14, focalLengthMax:28, focalLengthEquiv:'14-28mm',
     maxAperture:4.0, minAperture:22, weight:345, length:89.6, diameter:84.0,
     filterThread:77, minFocusDist:15, maxMagnification:0.50,
@@ -613,7 +613,7 @@ const LENSES = {
   },
 
   'lumix-s-20-60mm-f3-5-5-6': {
-    name:'LUMIX S 20-60mm F3.5-5.6', manufacturer:'Panasonic', line:'LUMIX S', type:'Zoom', asin:null,
+    name:'LUMIX S 20-60mm F3.5-5.6', manufacturer:'Panasonic', line:'LUMIX S', type:'Zoom', asin:'B088VSF94W',
     focalLength:null, focalLengthMin:20, focalLengthMax:60, focalLengthEquiv:'20-60mm',
     maxAperture:3.5, minAperture:22, weight:350, length:87.2, diameter:77.4,
     filterThread:67, minFocusDist:15, maxMagnification:0.43,
@@ -626,7 +626,7 @@ const LENSES = {
   },
 
   'lumix-s-24-60mm-f2-8': {
-    name:'LUMIX S 24-60mm F2.8', manufacturer:'Panasonic', line:'LUMIX S', type:'Zoom', asin:null,
+    name:'LUMIX S 24-60mm F2.8', manufacturer:'Panasonic', line:'LUMIX S', type:'Zoom', asin:'B0F8P9V67L',
     focalLength:null, focalLengthMin:24, focalLengthMax:60, focalLengthEquiv:'24-60mm',
     maxAperture:2.8, minAperture:22, weight:544, length:99.7, diameter:77.5,
     filterThread:67, minFocusDist:30, maxMagnification:0.20,
@@ -639,7 +639,7 @@ const LENSES = {
   },
 
   'lumix-s-24-105mm-f4-macro': {
-    name:'LUMIX S 24-105mm F4 MACRO O.I.S.', manufacturer:'Panasonic', line:'LUMIX S', type:'Zoom', asin:null,
+    name:'LUMIX S 24-105mm F4 MACRO O.I.S.', manufacturer:'Panasonic', line:'LUMIX S', type:'Zoom', asin:'B07N83WBTF',
     focalLength:null, focalLengthMin:24, focalLengthMax:105, focalLengthEquiv:'24-105mm',
     maxAperture:4.0, minAperture:22, weight:680, length:118.0, diameter:84.0,
     filterThread:77, minFocusDist:30, maxMagnification:0.50,
@@ -652,7 +652,7 @@ const LENSES = {
   },
 
   'lumix-s-28-200mm-f4-7-1-macro': {
-    name:'LUMIX S 28-200mm F4-7.1 MACRO O.I.S.', manufacturer:'Panasonic', line:'LUMIX S', type:'Zoom', asin:null,
+    name:'LUMIX S 28-200mm F4-7.1 MACRO O.I.S.', manufacturer:'Panasonic', line:'LUMIX S', type:'Zoom', asin:'B0CW8722BG',
     focalLength:null, focalLengthMin:28, focalLengthMax:200, focalLengthEquiv:'28-200mm',
     maxAperture:4.0, minAperture:22, weight:413, length:93.4, diameter:77.3,
     filterThread:67, minFocusDist:14, maxMagnification:0.50,
@@ -665,7 +665,7 @@ const LENSES = {
   },
 
   'lumix-s-pro-70-200mm-f2-8': {
-    name:'LUMIX S PRO 70-200mm F2.8 O.I.S.', manufacturer:'Panasonic', line:'LUMIX S', type:'Zoom', asin:null,
+    name:'LUMIX S PRO 70-200mm F2.8 O.I.S.', manufacturer:'Panasonic', line:'LUMIX S', type:'Zoom', asin:'B07ZZQ3DCC',
     focalLength:null, focalLengthMin:70, focalLengthMax:200, focalLengthEquiv:'70-200mm',
     maxAperture:2.8, minAperture:22, weight:1570, length:208.6, diameter:94.4,
     filterThread:82, minFocusDist:95, maxMagnification:0.21,
@@ -678,7 +678,7 @@ const LENSES = {
   },
 
   'lumix-s-pro-70-200mm-f4': {
-    name:'LUMIX S PRO 70-200mm F4 O.I.S.', manufacturer:'Panasonic', line:'LUMIX S', type:'Zoom', asin:null,
+    name:'LUMIX S PRO 70-200mm F4 O.I.S.', manufacturer:'Panasonic', line:'LUMIX S', type:'Zoom', asin:'B07N844X8Q',
     focalLength:null, focalLengthMin:70, focalLengthMax:200, focalLengthEquiv:'70-200mm',
     maxAperture:4.0, minAperture:22, weight:985, length:179.0, diameter:84.4,
     filterThread:77, minFocusDist:92, maxMagnification:0.25,
@@ -691,7 +691,7 @@ const LENSES = {
   },
 
   'lumix-s-70-300mm-f4-5-5-6-macro': {
-    name:'LUMIX S 70-300mm F4.5-5.6 MACRO O.I.S.', manufacturer:'Panasonic', line:'LUMIX S', type:'Zoom', asin:null,
+    name:'LUMIX S 70-300mm F4.5-5.6 MACRO O.I.S.', manufacturer:'Panasonic', line:'LUMIX S', type:'Zoom', asin:'B08XX5GTQZ',
     focalLength:null, focalLengthMin:70, focalLengthMax:300, focalLengthEquiv:'70-300mm',
     maxAperture:4.5, minAperture:22, weight:790, length:148.0, diameter:84.0,
     filterThread:77, minFocusDist:54, maxMagnification:0.50,
@@ -705,7 +705,7 @@ const LENSES = {
 
   /* ── LUMIX G Primes (Micro Four Thirds, 2.0× crop equiv) ── */
   'leica-dg-9mm-f1-7': {
-    name:'LEICA DG SUMMILUX 9mm F1.7', manufacturer:'Panasonic', line:'LUMIX G', type:'Prime', asin:null,
+    name:'LEICA DG SUMMILUX 9mm F1.7', manufacturer:'Panasonic', line:'LUMIX G', type:'Prime', asin:'B0B1K7ZCDF',
     focalLength:9, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'18mm',
     maxAperture:1.7, minAperture:16, weight:130, length:52.0, diameter:60.3,
     filterThread:55, minFocusDist:9.5, maxMagnification:0.25,
@@ -718,7 +718,7 @@ const LENSES = {
   },
 
   'leica-dg-12mm-f1-4': {
-    name:'LEICA DG SUMMILUX 12mm F1.4', manufacturer:'Panasonic', line:'LUMIX G', type:'Prime', asin:null,
+    name:'LEICA DG SUMMILUX 12mm F1.4', manufacturer:'Panasonic', line:'LUMIX G', type:'Prime', asin:'B01H1MNW68',
     focalLength:12, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'24mm',
     maxAperture:1.4, minAperture:16, weight:335, length:70.0, diameter:70.0,
     filterThread:62, minFocusDist:20, maxMagnification:0.10,
@@ -731,7 +731,7 @@ const LENSES = {
   },
 
   'leica-dg-15mm-f1-7': {
-    name:'LEICA DG SUMMILUX 15mm F1.7', manufacturer:'Panasonic', line:'LUMIX G', type:'Prime', asin:null,
+    name:'LEICA DG SUMMILUX 15mm F1.7', manufacturer:'Panasonic', line:'LUMIX G', type:'Prime', asin:'B00J8HV6DG',
     focalLength:15, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'30mm',
     maxAperture:1.7, minAperture:16, weight:115, length:36.0, diameter:57.5,
     filterThread:46, minFocusDist:20, maxMagnification:0.10,
@@ -744,7 +744,7 @@ const LENSES = {
   },
 
   'lumix-g-20mm-f1-7-ii': {
-    name:'LUMIX G 20mm F1.7 II ASPH.', manufacturer:'Panasonic', line:'LUMIX G', type:'Prime', asin:null,
+    name:'LUMIX G 20mm F1.7 II ASPH.', manufacturer:'Panasonic', line:'LUMIX G', type:'Prime', asin:'B00DJS830Y',
     focalLength:20, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'40mm',
     maxAperture:1.7, minAperture:16, weight:87, length:25.5, diameter:63.0,
     filterThread:46, minFocusDist:20, maxMagnification:0.13,
@@ -757,7 +757,7 @@ const LENSES = {
   },
 
   'leica-dg-25mm-f1-4-ii': {
-    name:'LEICA DG SUMMILUX 25mm F1.4 II', manufacturer:'Panasonic', line:'LUMIX G', type:'Prime', asin:null,
+    name:'LEICA DG SUMMILUX 25mm F1.4 II', manufacturer:'Panasonic', line:'LUMIX G', type:'Prime', asin:'B07X76CG5S',
     focalLength:25, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'50mm',
     maxAperture:1.4, minAperture:16, weight:200, length:54.5, diameter:63.0,
     filterThread:46, minFocusDist:30, maxMagnification:0.11,
@@ -770,7 +770,7 @@ const LENSES = {
   },
 
   'lumix-g-25mm-f1-7': {
-    name:'LUMIX G 25mm F1.7 ASPH.', manufacturer:'Panasonic', line:'LUMIX G', type:'Prime', asin:null,
+    name:'LUMIX G 25mm F1.7 ASPH.', manufacturer:'Panasonic', line:'LUMIX G', type:'Prime', asin:'B014RD6RC0',
     focalLength:25, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'50mm',
     maxAperture:1.7, minAperture:22, weight:125, length:52.0, diameter:60.8,
     filterThread:46, minFocusDist:25, maxMagnification:0.14,
@@ -783,7 +783,7 @@ const LENSES = {
   },
 
   'leica-dg-42-5mm-f1-2-nocticron': {
-    name:'LEICA DG NOCTICRON 42.5mm F1.2', manufacturer:'Panasonic', line:'LUMIX G', type:'Prime', asin:null,
+    name:'LEICA DG NOCTICRON 42.5mm F1.2', manufacturer:'Panasonic', line:'LUMIX G', type:'Prime', asin:'B00HXE4GZQ',
     focalLength:42.5, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'85mm',
     maxAperture:1.2, minAperture:16, weight:425, length:76.8, diameter:74.0,
     filterThread:67, minFocusDist:50, maxMagnification:0.20,
@@ -796,7 +796,7 @@ const LENSES = {
   },
 
   'lumix-g-42-5mm-f1-7': {
-    name:'LUMIX G 42.5mm F1.7 ASPH.', manufacturer:'Panasonic', line:'LUMIX G', type:'Prime', asin:null,
+    name:'LUMIX G 42.5mm F1.7 ASPH.', manufacturer:'Panasonic', line:'LUMIX G', type:'Prime', asin:'B00H36U69Y',
     focalLength:42.5, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'85mm',
     maxAperture:1.7, minAperture:22, weight:130, length:50.0, diameter:55.0,
     filterThread:37, minFocusDist:31, maxMagnification:0.20,
@@ -809,7 +809,7 @@ const LENSES = {
   },
 
   'leica-dg-200mm-f2-8': {
-    name:'LEICA DG ELMARIT 200mm F2.8', manufacturer:'Panasonic', line:'LUMIX G', type:'Prime', asin:null,
+    name:'LEICA DG ELMARIT 200mm F2.8', manufacturer:'Panasonic', line:'LUMIX G', type:'Prime', asin:'B0776C5KQH',
     focalLength:200, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'400mm',
     maxAperture:2.8, minAperture:22, weight:1245, length:174.0, diameter:87.5,
     filterThread:77, minFocusDist:115, maxMagnification:0.20,
@@ -823,7 +823,7 @@ const LENSES = {
 
   /* ── LUMIX G Zooms (Micro Four Thirds) ── */
   'lumix-g-12-35mm-f2-8-ii': {
-    name:'LUMIX G X Vario 12-35mm F2.8 II O.I.S.', manufacturer:'Panasonic', line:'LUMIX G', type:'Zoom', asin:null,
+    name:'LUMIX G X Vario 12-35mm F2.8 II O.I.S.', manufacturer:'Panasonic', line:'LUMIX G', type:'Zoom', asin:'B01MY1ICID',
     focalLength:null, focalLengthMin:12, focalLengthMax:35, focalLengthEquiv:'24-70mm',
     maxAperture:2.8, minAperture:22, weight:305, length:73.8, diameter:67.6,
     filterThread:58, minFocusDist:25, maxMagnification:0.17,
@@ -836,7 +836,7 @@ const LENSES = {
   },
 
   'lumix-g-35-100mm-f2-8-ii': {
-    name:'LUMIX G X Vario 35-100mm F2.8 II O.I.S.', manufacturer:'Panasonic', line:'LUMIX G', type:'Zoom', asin:null,
+    name:'LUMIX G X Vario 35-100mm F2.8 II O.I.S.', manufacturer:'Panasonic', line:'LUMIX G', type:'Zoom', asin:'B01MU3WOVP',
     focalLength:null, focalLengthMin:35, focalLengthMax:100, focalLengthEquiv:'70-200mm',
     maxAperture:2.8, minAperture:22, weight:360, length:100.0, diameter:67.4,
     filterThread:58, minFocusDist:85, maxMagnification:0.10,
@@ -849,7 +849,7 @@ const LENSES = {
   },
 
   'leica-dg-8-18mm-f2-8-4': {
-    name:'LEICA DG VARIO-ELMARIT 8-18mm F2.8-4', manufacturer:'Panasonic', line:'LUMIX G', type:'Zoom', asin:null,
+    name:'LEICA DG VARIO-ELMARIT 8-18mm F2.8-4', manufacturer:'Panasonic', line:'LUMIX G', type:'Zoom', asin:'B071QWM469',
     focalLength:null, focalLengthMin:8, focalLengthMax:18, focalLengthEquiv:'16-36mm',
     maxAperture:2.8, minAperture:22, weight:315, length:88.0, diameter:73.4,
     filterThread:67, minFocusDist:23, maxMagnification:0.12,
@@ -862,7 +862,7 @@ const LENSES = {
   },
 
   'leica-dg-10-25mm-f1-7': {
-    name:'LEICA DG VARIO-SUMMILUX 10-25mm F1.7', manufacturer:'Panasonic', line:'LUMIX G', type:'Zoom', asin:null,
+    name:'LEICA DG VARIO-SUMMILUX 10-25mm F1.7', manufacturer:'Panasonic', line:'LUMIX G', type:'Zoom', asin:'B07RS4VRL7',
     focalLength:null, focalLengthMin:10, focalLengthMax:25, focalLengthEquiv:'20-50mm',
     maxAperture:1.7, minAperture:16, weight:690, length:128.0, diameter:87.6,
     filterThread:77, minFocusDist:28, maxMagnification:0.14,
@@ -875,7 +875,7 @@ const LENSES = {
   },
 
   'leica-dg-25-50mm-f1-7': {
-    name:'LEICA DG VARIO-SUMMILUX 25-50mm F1.7', manufacturer:'Panasonic', line:'LUMIX G', type:'Zoom', asin:null,
+    name:'LEICA DG VARIO-SUMMILUX 25-50mm F1.7', manufacturer:'Panasonic', line:'LUMIX G', type:'Zoom', asin:'B098R6QB2C',
     focalLength:null, focalLengthMin:25, focalLengthMax:50, focalLengthEquiv:'50-100mm',
     maxAperture:1.7, minAperture:16, weight:654, length:128.0, diameter:87.6,
     filterThread:77, minFocusDist:28, maxMagnification:0.18,
@@ -888,7 +888,7 @@ const LENSES = {
   },
 
   'leica-dg-12-60mm-f2-8-4': {
-    name:'LEICA DG VARIO-ELMARIT 12-60mm F2.8-4', manufacturer:'Panasonic', line:'LUMIX G', type:'Zoom', asin:null,
+    name:'LEICA DG VARIO-ELMARIT 12-60mm F2.8-4', manufacturer:'Panasonic', line:'LUMIX G', type:'Zoom', asin:'B01N7LGSZO',
     focalLength:null, focalLengthMin:12, focalLengthMax:60, focalLengthEquiv:'24-120mm',
     maxAperture:2.8, minAperture:22, weight:320, length:86.0, diameter:68.4,
     filterThread:62, minFocusDist:20, maxMagnification:0.30,
@@ -901,7 +901,7 @@ const LENSES = {
   },
 
   'lumix-g-12-60mm-f3-5-5-6': {
-    name:'LUMIX G Vario 12-60mm F3.5-5.6 O.I.S.', manufacturer:'Panasonic', line:'LUMIX G', type:'Zoom', asin:null,
+    name:'LUMIX G Vario 12-60mm F3.5-5.6 O.I.S.', manufacturer:'Panasonic', line:'LUMIX G', type:'Zoom', asin:'B01C56V72Q',
     focalLength:null, focalLengthMin:12, focalLengthMax:60, focalLengthEquiv:'24-120mm',
     maxAperture:3.5, minAperture:22, weight:210, length:71.0, diameter:66.0,
     filterThread:58, minFocusDist:20, maxMagnification:0.27,
@@ -914,7 +914,7 @@ const LENSES = {
   },
 
   'lumix-g-12-32mm-f3-5-5-6': {
-    name:'LUMIX G Vario 12-32mm F3.5-5.6 O.I.S.', manufacturer:'Panasonic', line:'LUMIX G', type:'Zoom', asin:null,
+    name:'LUMIX G Vario 12-32mm F3.5-5.6 O.I.S.', manufacturer:'Panasonic', line:'LUMIX G', type:'Zoom', asin:'B00FYK2LE4',
     focalLength:null, focalLengthMin:12, focalLengthMax:32, focalLengthEquiv:'24-64mm',
     maxAperture:3.5, minAperture:22, weight:70, length:24.0, diameter:55.5,
     filterThread:37, minFocusDist:20, maxMagnification:0.13,
@@ -927,7 +927,7 @@ const LENSES = {
   },
 
   'leica-dg-50-200mm-f2-8-4': {
-    name:'LEICA DG VARIO-ELMARIT 50-200mm F2.8-4', manufacturer:'Panasonic', line:'LUMIX G', type:'Zoom', asin:null,
+    name:'LEICA DG VARIO-ELMARIT 50-200mm F2.8-4', manufacturer:'Panasonic', line:'LUMIX G', type:'Zoom', asin:'B07B49V8QF',
     focalLength:null, focalLengthMin:50, focalLengthMax:200, focalLengthEquiv:'100-400mm',
     maxAperture:2.8, minAperture:22, weight:655, length:132.0, diameter:76.0,
     filterThread:67, minFocusDist:75, maxMagnification:0.21,
@@ -940,7 +940,7 @@ const LENSES = {
   },
 
   'lumix-g-14-140mm-f3-5-5-6-ii': {
-    name:'LUMIX G Vario 14-140mm F3.5-5.6 II O.I.S.', manufacturer:'Panasonic', line:'LUMIX G', type:'Zoom', asin:null,
+    name:'LUMIX G Vario 14-140mm F3.5-5.6 II O.I.S.', manufacturer:'Panasonic', line:'LUMIX G', type:'Zoom', asin:'B07PZB3YKH',
     focalLength:null, focalLengthMin:14, focalLengthMax:140, focalLengthEquiv:'28-280mm',
     maxAperture:3.5, minAperture:22, weight:265, length:75.0, diameter:67.0,
     filterThread:58, minFocusDist:30, maxMagnification:0.25,
@@ -953,7 +953,7 @@ const LENSES = {
   },
 
   'lumix-g-100-300mm-f4-5-6-ii': {
-    name:'LUMIX G Vario 100-300mm F4-5.6 II O.I.S.', manufacturer:'Panasonic', line:'LUMIX G', type:'Zoom', asin:null,
+    name:'LUMIX G Vario 100-300mm F4-5.6 II O.I.S.', manufacturer:'Panasonic', line:'LUMIX G', type:'Zoom', asin:'B01N0U4BY2',
     focalLength:null, focalLengthMin:100, focalLengthMax:300, focalLengthEquiv:'200-600mm',
     maxAperture:4.0, minAperture:22, weight:520, length:126.0, diameter:73.6,
     filterThread:67, minFocusDist:150, maxMagnification:0.21,
@@ -966,7 +966,7 @@ const LENSES = {
   },
 
   'leica-dg-100-400mm-f4-6-3-ii': {
-    name:'LEICA DG VARIO-ELMAR 100-400mm F4-6.3 II', manufacturer:'Panasonic', line:'LUMIX G', type:'Zoom', asin:null,
+    name:'LEICA DG VARIO-ELMAR 100-400mm F4-6.3 II', manufacturer:'Panasonic', line:'LUMIX G', type:'Zoom', asin:'B0CHT96YC2',
     focalLength:null, focalLengthMin:100, focalLengthMax:400, focalLengthEquiv:'200-800mm',
     maxAperture:4.0, minAperture:22, weight:985, length:172.0, diameter:83.0,
     filterThread:72, minFocusDist:130, maxMagnification:0.25,

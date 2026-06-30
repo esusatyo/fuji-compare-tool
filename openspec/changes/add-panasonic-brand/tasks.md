@@ -102,9 +102,10 @@
   B0BR8JMCYG, s5-iix B0BR8FY5HT, s9 B0D4FBF5NK, s1h B07WSRHXPR, gh7 B0D613NW2M,
   gh6 B09T2RJ27P, g9-ii B0CHTHLVHS) — excluded bundles/Renewed/International.
   g100d has only third-party-bundle Amazon listings → `asin:null` (search
-  fallback). 8 discontinued bodies keep `asin:null`. **Lens ASINs (39) remain
-  `null`** (engine Amazon-search fallback) — deferred to a focused
-  `check-prices-and-buy-links` pass. `npm test` green.
+  fallback). 8 discontinued bodies keep `asin:null`. **All 39 lenses backfilled**
+  with web-verified plain lens-only USA ASINs (no kit/Renewed/International) —
+  100% lens ASIN coverage. **48 product-page Buy links** total (9 cameras +
+  39 lenses). `npm test` green (188/188).
 
 ## 10. Final verification
 
@@ -116,7 +117,8 @@
   ProRes) gated ("only this brand's spec sections render"). Browser preview
   optional.
 - [x] 10.3 `completeness.test.js` green for Panasonic. Counts: **18 cameras**
-  (10 current, 6 imaged, 9 ASIN), **39 lenses** (17 primes, 22 zooms; 6 imaged).
+  (10 current, 6 imaged, 9 ASIN), **39 lenses** (17 primes, 22 zooms; 6 imaged,
+  39 ASIN) — **48 product-page Buy links** total.
 
 ## 11. Archive
 
