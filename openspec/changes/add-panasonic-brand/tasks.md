@@ -60,10 +60,10 @@
 
 ## 5. Camera data — full-frame L-mount (Lumix S) in batches
 
-- [ ] 5.1 Batch A: remaining current S bodies (e.g. s9, s5-iix, s1r-ii flagship).
-- [ ] 5.2 Batch B: discontinued/older S bodies (s1, s1r, s1h, s5) — USD-only
+- [x] 5.1 Batch A: remaining current S bodies (e.g. s9, s5-iix, s1r-ii flagship).
+- [x] 5.2 Batch B: discontinued/older S bodies (s1, s1r, s1h, s5) — USD-only
   where regional unconfirmed, asin null → search fallback.
-- [ ] 5.3 `CAMERA_ORDER`/`DROPDOWN_GROUPS` updated; `npm run test:data` green.
+- [x] 5.3 `CAMERA_ORDER`/`DROPDOWN_GROUPS` updated; `npm run test:data` green.
 
 ## 6. Camera data — Micro Four Thirds (Lumix G/GH) in batches
 

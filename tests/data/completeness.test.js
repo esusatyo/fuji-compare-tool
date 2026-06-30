@@ -49,9 +49,10 @@ const KNOWN_IMAGE_GAPS = {
     'z-dx-18-140mm-vr', 'z-dx-50-250mm-vr',
   ]),
   panasonic: new Set([
-    // Seed batch — images sourced via scripts/fetch-images-commons.js in a later
-    // group; entries self-clean as Commons photos land. Cameras:
-    's1r-ii', 's5-ii', 'gh7', 'g9-ii',
+    // Images sourced via scripts/fetch-images-commons.js in a later group;
+    // entries self-clean as Commons photos land. Cameras:
+    's1r-ii', 's1-ii', 's5-ii', 's5-iix', 's9', 's1h', 's1', 's1r', 's5',
+    'gh7', 'g9-ii',
     // Lenses:
     'lumix-s-50mm-f1-8', 'lumix-s-24-70mm-f2-8-pro', 'lumix-g-12-35mm-f2-8-ii',
   ]),
