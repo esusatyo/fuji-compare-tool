@@ -37,6 +37,7 @@ const REGISTERED_BRANDS = [
   { slug: 'canon',    name: 'Canon' },
   { slug: 'sony',     name: 'Sony' },
   { slug: 'nikon',    name: 'Nikon' },
+  { slug: 'panasonic', name: 'Panasonic' },
 ];
 
 // ─────────────────────────────────────────────
@@ -104,13 +105,34 @@ const CAMERAS = {
     logProfile:'S-Log3 / S-Cinetone', aiAf:true, realtimeTracking:true,
   },
 
+  'a7r-vi': {
+    name:'A7R VI', series:'Alpha (Full-frame)', year:2026, discontinued:false,
+    tagline:'66.8MP Stacked + 8K',
+    productUrl:'https://electronics.sony.com/imaging/interchangeable-lens-cameras/full-frame/p/ilce7rm6-b',
+    imageUrl:null,
+    asin:'B0H1NB7D3W',
+    prices:{USD:4498,AUD:6499,EUR:5099,GBP:4399,JPY:700000,CAD:5998,SGD:5999},
+    sensorMP:66.8, sensorType:'Full-frame Stacked BSI CMOS', processor:'BIONZ XR2',
+    width:132.7, height:96.9, depth:82.9, weight:713, weatherSealed:true,
+    lcdSize:'3.2"', lcdDots:2100, lcdType:'4-axis Multi-angle Touchscreen',
+    evfType:'EVF (OLED)', evfDots:9.44, evfMag:0.90,
+    faceDetection:true, subjectDetection:'Human / Animal / Bird / Insect / Car / Train / Plane',
+    ibis:true, ibisStops:8.5, maxBurst:30,
+    maxVideoRes:'8K / 30P',
+    logVideo:true,
+    bluetooth:'5.0', wifi:true,
+    cardSlots:'2× CFexpress Type A / SD UHS-II', batteryLife:600, usbCharging:true,
+    lensType:'Interchangeable', lensSpec:null,
+    logProfile:'S-Log3 / S-Cinetone', aiAf:true, realtimeTracking:true,
+  },
+
   'a7r-v': {
     name:'A7R V', series:'Alpha (Full-frame)', year:2022, discontinued:false,
     tagline:'61MP Resolution + AI AF + 8K',
     productUrl:'https://electronics.sony.com/imaging/interchangeable-lens-cameras/full-frame/p/ilce7rm5-b',
     imageUrl:'https://upload.wikimedia.org/wikipedia/commons/thumb/2/21/Sony_a7R_V_20230616_162554.jpg/1280px-Sony_a7R_V_20230616_162554.jpg',
     asin:'B0BKLQFFSF',
-    prices:{USD:3898,AUD:5999,EUR:4500,GBP:4000,JPY:560000,CAD:5200,SGD:5400},
+    prices:{USD:4198,AUD:5999,EUR:4500,GBP:4000,JPY:560000,CAD:5200,SGD:5400},
     sensorMP:61.0, sensorType:'Full-frame BSI CMOS', processor:'BIONZ XR',
     width:131.3, height:96.9, depth:82.4, weight:723, weatherSealed:true,
     lcdSize:'3.2"', lcdDots:2095, lcdType:'4-axis Multi-angle Touchscreen',
@@ -131,7 +153,7 @@ const CAMERAS = {
     productUrl:'https://electronics.sony.com/imaging/interchangeable-lens-cameras/full-frame/p/ilce1m2-b',
     imageUrl:'https://upload.wikimedia.org/wikipedia/commons/thumb/a/ad/Sony_a1_II.jpg/1280px-Sony_a1_II.jpg',
     asin:'B0DNLVHJ74',
-    prices:{USD:6499,AUD:9999,EUR:7300,GBP:6300,JPY:990000,CAD:8500,SGD:8800},
+    prices:{USD:6998,AUD:9999,EUR:7300,GBP:6300,JPY:990000,CAD:8500,SGD:8800},
     sensorMP:50.1, sensorType:'Full-frame Stacked Exmor RS CMOS', processor:'BIONZ XR',
     width:136.1, height:96.9, depth:82.9, weight:743, weatherSealed:true,
     lcdSize:'3.2"', lcdDots:2095, lcdType:'4-axis Multi-angle Touchscreen',
@@ -152,7 +174,7 @@ const CAMERAS = {
     productUrl:'https://electronics.sony.com/imaging/interchangeable-lens-cameras/full-frame/p/ilce9m3-b',
     imageUrl:'https://upload.wikimedia.org/wikipedia/commons/thumb/1/13/Sony_ILCE-9M3_9_mar_2024a.jpg/1280px-Sony_ILCE-9M3_9_mar_2024a.jpg',
     asin:'B0CMV98DP2',
-    prices:{USD:5998,AUD:9499,EUR:6999,GBP:6100,JPY:880000,CAD:7900,SGD:8200},
+    prices:{USD:6798,AUD:9499,EUR:6999,GBP:6100,JPY:880000,CAD:7900,SGD:8200},
     sensorMP:24.6, sensorType:'Full-frame Global Shutter Exmor RS CMOS', processor:'BIONZ XR',
     width:136.1, height:96.9, depth:82.9, weight:703, weatherSealed:true,
     lcdSize:'3.2"', lcdDots:2095, lcdType:'4-axis Multi-angle Touchscreen',
@@ -172,7 +194,7 @@ const CAMERAS = {
     tagline:'Partially-stacked 33MP Hybrid + BIONZ XR2',
     productUrl:'https://electronics.sony.com/imaging/interchangeable-lens-cameras/full-frame/p/ilce7m5-b',
     imageUrl:null,
-    asin:null,
+    asin:'B0G4SC4R2P',
     prices:{USD:2899,AUD:4999,EUR:3299,GBP:2899,JPY:430000,CAD:3699,SGD:3899},
     sensorMP:33.0, sensorType:'Full-frame Partially-stacked Exmor RS BSI CMOS', processor:'BIONZ XR2',
     width:130.3, height:96.4, depth:82.4, weight:695, weatherSealed:true,
@@ -717,7 +739,7 @@ const CAMERAS = {
 };
 
 const CAMERA_ORDER = [
-  'a7-v', 'a9-iii', 'a1-ii',
+  'a7r-vi', 'a7-v', 'a9-iii', 'a1-ii',
   'a7r-v', 'a7cr', 'a7c-ii', 'a7s-iii', 'a7-iv',
   'a1', 'a7c', 'a9-ii', 'a7r-iv', 'a7-iii', 'a9', 'a7r-iii',
   'a7r-ii', 'a7s-ii', 'a7-ii', 'a7r', 'a7', 'a7s',
@@ -727,7 +749,7 @@ const CAMERA_ORDER = [
 ];
 
 const DROPDOWN_GROUPS = [
-  { label: '── Alpha Full-frame (2024–2025) ──', ids: ['a7-v', 'a9-iii', 'a1-ii'] },
+  { label: '── Alpha Full-frame (2024–2026) ──', ids: ['a7r-vi', 'a7-v', 'a9-iii', 'a1-ii'] },
   { label: '── Alpha Full-frame (2021–2023) ──', ids: ['a7r-v', 'a7cr', 'a7c-ii', 'a7s-iii', 'a7-iv'] },
   { label: '── Alpha Full-frame (2017–2020) ──', ids: ['a1', 'a7c', 'a9-ii', 'a7r-iv', 'a7-iii', 'a9', 'a7r-iii'] },
   { label: '── Alpha Full-frame (2013–2015) ──', ids: ['a7r-ii', 'a7s-ii', 'a7-ii', 'a7r', 'a7', 'a7s'] },

@@ -53,6 +53,11 @@ test('[root] valid stored brand "nikon" is honored', () => {
   assert.equal(runRedirect({ stored: 'nikon', hash: '#lenses' }), './nikon/#lenses');
 });
 
+test('[root] valid stored brand "panasonic" is honored', () => {
+  assert.equal(runRedirect({ stored: 'panasonic' }), './panasonic/');
+  assert.equal(runRedirect({ stored: 'panasonic', hash: '#lenses' }), './panasonic/#lenses');
+});
+
 test('[root] hash fragment is preserved through the redirect', () => {
   assert.equal(runRedirect({ stored: null, hash: '#lenses' }), './canon/#lenses');
   assert.equal(runRedirect({ stored: 'fujifilm', hash: '#lenses' }), './fujifilm/#lenses');

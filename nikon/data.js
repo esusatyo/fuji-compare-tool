@@ -36,6 +36,7 @@ const REGISTERED_BRANDS = [
   { slug: 'canon',    name: 'Canon' },
   { slug: 'sony',     name: 'Sony' },
   { slug: 'nikon',    name: 'Nikon' },
+  { slug: 'panasonic', name: 'Panasonic' },
 ];
 
 // ─────────────────────────────────────────────
@@ -45,6 +46,7 @@ const SERIES_COLORS = {
   'Z (Full-frame)': { bg: '#1a1700', text: '#ffd54a' },
   'Z (APS-C)':      { bg: '#171400', text: '#e6c64a' },
   'Z (Retro)':      { bg: '#1f1a08', text: '#f0d27a' },
+  'Z Cinema (Full-frame)': { bg: '#160f00', text: '#ffcf4a' },
 };
 
 // ─────────────────────────────────────────────
@@ -65,7 +67,7 @@ const CAMERAS = {
     productUrl:'https://www.nikonusa.com/en/nikon-products/product/mirrorless-cameras/z-9.html',
     imageUrl:null,
     asin:'B09KHC4XCT',
-    prices:{USD:5499,AUD:8799,EUR:6399,GBP:5299,JPY:900000,CAD:7599,SGD:7799},
+    prices:{USD:5900,AUD:8799,EUR:6399,GBP:5299,JPY:900000,CAD:7599,SGD:7799},
     sensorMP:45.7, sensorType:'Full-frame Stacked BSI CMOS', processor:'EXPEED 7',
     width:149.0, height:149.5, depth:90.5, weight:1340, weatherSealed:true,
     lcdSize:'3.2"', lcdDots:2089, lcdType:'4-axis Tilting',
@@ -86,7 +88,7 @@ const CAMERAS = {
     productUrl:'https://www.nikonusa.com/en/nikon-products/product/mirrorless-cameras/z-8.html',
     imageUrl:null,
     asin:'B0C4Q71JBY',
-    prices:{USD:3999,AUD:6399,EUR:4649,GBP:3799,JPY:660000,CAD:5499,SGD:5699},
+    prices:{USD:4300,AUD:6399,EUR:4649,GBP:3799,JPY:660000,CAD:5499,SGD:5699},
     sensorMP:45.7, sensorType:'Full-frame Stacked BSI CMOS', processor:'EXPEED 7',
     width:144.0, height:118.5, depth:83.0, weight:910, weatherSealed:true,
     lcdSize:'3.2"', lcdDots:2089, lcdType:'4-axis Tilting',
@@ -107,7 +109,7 @@ const CAMERAS = {
     productUrl:'https://www.nikonusa.com/en/nikon-products/product/mirrorless-cameras/z-6iii.html',
     imageUrl:'https://upload.wikimedia.org/wikipedia/commons/thumb/3/39/Nikon_Z6III_%28by_Henry_S%C3%B6derlund%29.jpg/1280px-Nikon_Z6III_%28by_Henry_S%C3%B6derlund%29.jpg',
     asin:'B0D77SL8CY',
-    prices:{USD:2499,AUD:3999,EUR:2899,GBP:2399,JPY:412000,CAD:3399,SGD:3549},
+    prices:{USD:2700,AUD:3999,EUR:2899,GBP:2399,JPY:412000,CAD:3399,SGD:3549},
     sensorMP:24.5, sensorType:'Full-frame Partially-Stacked BSI CMOS', processor:'EXPEED 7',
     width:138.5, height:101.5, depth:74.0, weight:760, weatherSealed:true,
     lcdSize:'3.2"', lcdDots:2100, lcdType:'Vari-angle',
@@ -128,7 +130,7 @@ const CAMERAS = {
     productUrl:'https://www.nikonusa.com/en/nikon-products/product/mirrorless-cameras/z5-ii.html',
     imageUrl:null,
     asin:'B0F3HJD64Y',
-    prices:{USD:1697,AUD:2699,EUR:1999,GBP:1599,JPY:280000,CAD:2299,SGD:2399},
+    prices:{USD:1850,AUD:2699,EUR:1999,GBP:1599,JPY:280000,CAD:2299,SGD:2399},
     sensorMP:24.5, sensorType:'Full-frame BSI CMOS', processor:'EXPEED 7',
     width:134.0, height:100.5, depth:72.0, weight:700, weatherSealed:true,
     lcdSize:'3.2"', lcdDots:2100, lcdType:'Vari-angle',
@@ -140,6 +142,28 @@ const CAMERAS = {
     expeed:'EXPEED 7', nRaw:null, pixelShift:'96MP', preCapture:true,
     bluetooth:'5.0', wifi:true,
     cardSlots:'2× SD UHS-II', batteryLife:330, usbCharging:true,
+    lensType:'Interchangeable', lensSpec:null,
+  },
+
+  /* ── Z Cinema ── */
+  'zr': {
+    name:'ZR', series:'Z Cinema (Full-frame)', year:2025, discontinued:false,
+    tagline:'RED-Powered Full-Frame Cinema',
+    productUrl:'https://imaging.nikon.com/imaging/lineup/z_cinema/z_r/',
+    imageUrl:null,
+    asin:'B0FPXLG8X7',
+    prices:{USD:2199,AUD:3499,EUR:2549,GBP:2099,JPY:363000,CAD:2999,SGD:3149},
+    sensorMP:24.5, sensorType:'Full-frame Partially-Stacked BSI CMOS', processor:'EXPEED 7',
+    width:134.0, height:80.5, depth:49.0, weight:630, weatherSealed:true,
+    lcdSize:'4.0"', lcdDots:3070, lcdType:'Fully-Articulating Touch',
+    evfType:null, evfDots:null, evfMag:null,
+    faceDetection:true, subjectDetection:'9 types (People / Animals / Birds / Vehicles / Aircraft)',
+    ibis:true, ibisStops:7.5, maxBurst:15,
+    maxVideoRes:'6K / 60P R3D RAW',
+    logVideo:true,
+    expeed:'EXPEED 7', nRaw:'6K', pixelShift:null, preCapture:false,
+    bluetooth:'5.0', wifi:true,
+    cardSlots:'1× CFexpress Type B + 1× microSD', batteryLife:null, usbCharging:true,
     lensType:'Interchangeable', lensSpec:null,
   },
 
@@ -251,7 +275,7 @@ const CAMERAS = {
     productUrl:'https://www.nikonusa.com/en/nikon-products/product/mirrorless-cameras/z50-ii.html',
     imageUrl:'https://upload.wikimedia.org/wikipedia/commons/thumb/c/cb/Nikon_Z50II_28_nov_2024a.jpg/1280px-Nikon_Z50II_28_nov_2024a.jpg',
     asin:'B0DMJBLQGP',
-    prices:{USD:907,AUD:1449,EUR:1049,GBP:849,JPY:150000,CAD:1249,SGD:1299},
+    prices:{USD:1007,AUD:1449,EUR:1049,GBP:849,JPY:150000,CAD:1249,SGD:1299},
     sensorMP:20.9, sensorType:'APS-C (DX) CMOS', processor:'EXPEED 7',
     width:127.0, height:96.8, depth:66.5, weight:550, weatherSealed:false,
     lcdSize:'3.2"', lcdDots:1040, lcdType:'Vari-angle',
@@ -291,7 +315,7 @@ const CAMERAS = {
     tagline:'Vlogging DX, No Viewfinder',
     productUrl:'https://www.nikonusa.com/en/nikon-products/product/mirrorless-cameras/z30.html',
     imageUrl:null, asin:'B0B527JD1C',
-    prices:{USD:710,AUD:1099,EUR:799,GBP:649,JPY:117000,CAD:949,SGD:999},
+    prices:{USD:810,AUD:1099,EUR:799,GBP:649,JPY:117000,CAD:949,SGD:999},
     sensorMP:20.9, sensorType:'APS-C (DX) CMOS', processor:'EXPEED 6',
     width:128.0, height:73.5, depth:60.0, weight:405, weatherSealed:false,
     lcdSize:'3.0"', lcdDots:1040, lcdType:'Vari-angle',
@@ -312,7 +336,7 @@ const CAMERAS = {
     tagline:'Retro Full-Frame, Modern Guts',
     productUrl:'https://www.nikonusa.com/en/nikon-products/product/mirrorless-cameras/z-f.html',
     imageUrl:null, asin:'B0CJDHSFTN',
-    prices:{USD:1999,AUD:3199,EUR:2299,GBP:1899,JPY:330000,CAD:2749,SGD:2849},
+    prices:{USD:2200,AUD:3199,EUR:2299,GBP:1899,JPY:330000,CAD:2749,SGD:2849},
     sensorMP:24.5, sensorType:'Full-frame BSI CMOS', processor:'EXPEED 7',
     width:144.0, height:103.0, depth:49.0, weight:710, weatherSealed:true,
     lcdSize:'3.2"', lcdDots:2100, lcdType:'Vari-angle',
@@ -332,7 +356,7 @@ const CAMERAS = {
     tagline:'Retro DX Crowd-Pleaser',
     productUrl:'https://www.nikonusa.com/en/nikon-products/product/mirrorless-cameras/z-fc.html',
     imageUrl:null, asin:'B09883MWLL',
-    prices:{USD:960,AUD:1499,EUR:1099,GBP:899,JPY:158000,CAD:1299,SGD:1349},
+    prices:{USD:1060,AUD:1499,EUR:1099,GBP:899,JPY:158000,CAD:1299,SGD:1349},
     sensorMP:20.9, sensorType:'APS-C (DX) CMOS', processor:'EXPEED 6',
     width:134.5, height:93.5, depth:43.5, weight:445, weatherSealed:false,
     lcdSize:'3.0"', lcdDots:1040, lcdType:'Vari-angle',
@@ -352,12 +376,14 @@ const CAMERAS = {
 const CAMERA_ORDER = [
   'z9', 'z8', 'z6-iii', 'z5-ii',
   'z7-ii', 'z7', 'z6-ii', 'z6', 'z5',
+  'zr',
   'zf', 'zfc',
   'z50-ii', 'z50', 'z30',
 ];
 
 const DROPDOWN_GROUPS = [
   { label: '── Z Full-Frame ──', ids: ['z9', 'z8', 'z6-iii', 'z5-ii', 'z7-ii', 'z7', 'z6-ii', 'z6', 'z5'] },
+  { label: '── Z Cinema ──',     ids: ['zr'] },
   { label: '── Z Retro ──',      ids: ['zf', 'zfc'] },
   { label: '── Z APS-C (DX) ──', ids: ['z50-ii', 'z50', 'z30'] },
 ];

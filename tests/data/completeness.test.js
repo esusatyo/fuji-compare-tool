@@ -37,7 +37,7 @@ const KNOWN_IMAGE_GAPS = {
     // rest stay on the engine's series-coloured placeholder until a freely-
     // licensed Commons photo exists. The test self-cleans once one lands.
     // Cameras (10) — no clean Commons photo found yet:
-    'z9', 'z8', 'z5-ii', 'z7', 'z6', 'z5', 'z50', 'z30', 'zf', 'zfc',
+    'z9', 'z8', 'z5-ii', 'z7', 'z6', 'z5', 'z50', 'z30', 'zf', 'zfc', 'zr',
     // Lenses (26):
     'z-24mm-f1-8-s', 'z-35mm-f1-8-s', 'z-85mm-f1-8-s', 'z-35mm-f1-2-s',
     'z-135mm-f1-8-s-plena', 'z-mc-105mm-f2-8-vr-s', 'z-58mm-f0-95-s-noct',
@@ -48,12 +48,39 @@ const KNOWN_IMAGE_GAPS = {
     'z-800mm-f6-3-vr-s-pf', 'z-dx-12-28mm-pz-vr', 'z-dx-16-50mm-vr',
     'z-dx-18-140mm-vr', 'z-dx-50-250mm-vr',
   ]),
+  panasonic: new Set([
+    // Curated via scripts/fetch-images-commons.js. 12 of 57 items carry real
+    // Commons images (6 cameras: s5-ii, s9, gh7, gh6, gh5-ii, g9-ii; 6 lenses:
+    // S 35/1.8, S 24-105/4, S PRO 70-200/4, S 70-300, G 25/1.7, Nocticron 42.5/1.2).
+    // The s5/g9 search hits returned the newer-model photo (S5 II / G9 II) and
+    // were rejected. The rest stay on the placeholder until a freely-licensed
+    // Commons photo exists; the test self-cleans once one lands. Cameras (12):
+    's1r-ii', 's1-ii', 's5-iix', 's1h', 's1', 's1r', 's5',
+    'gh5',
+    'g100d', 'g9', 'gx9', 'g95', 'l10',
+    // Lenses — LUMIX S primes:
+    'lumix-s-18mm-f1-8', 'lumix-s-24mm-f1-8', 'lumix-s-40mm-f2',
+    'lumix-s-50mm-f1-8', 'lumix-s-pro-50mm-f1-4', 'lumix-s-85mm-f1-8', 'lumix-s-100mm-f2-8-macro',
+    // LUMIX G primes:
+    'leica-dg-9mm-f1-7', 'leica-dg-12mm-f1-4', 'leica-dg-15mm-f1-7', 'lumix-g-20mm-f1-7-ii',
+    'leica-dg-25mm-f1-4-ii', 'lumix-g-42-5mm-f1-7', 'leica-dg-200mm-f2-8',
+    // LUMIX S zooms:
+    'lumix-s-14-28mm-f4-5-6-macro', 'lumix-s-pro-16-35mm-f4', 'lumix-s-20-60mm-f3-5-5-6',
+    'lumix-s-24-60mm-f2-8', 'lumix-s-24-70mm-f2-8-pro',
+    'lumix-s-28-200mm-f4-7-1-macro', 'lumix-s-pro-70-200mm-f2-8',
+    // LUMIX G zooms:
+    'leica-dg-8-18mm-f2-8-4', 'leica-dg-10-25mm-f1-7', 'lumix-g-12-32mm-f3-5-5-6',
+    'leica-dg-12-60mm-f2-8-4', 'lumix-g-12-60mm-f3-5-5-6', 'lumix-g-12-35mm-f2-8-ii',
+    'leica-dg-25-50mm-f1-7', 'lumix-g-35-100mm-f2-8-ii', 'leica-dg-50-200mm-f2-8-4',
+    'lumix-g-14-140mm-f3-5-5-6-ii', 'lumix-g-100-300mm-f4-5-6-ii', 'leica-dg-100-400mm-f4-6-3-ii',
+  ]),
   sony: new Set([
     // 31 of 33 cameras now have curated product images (Wikipedia infobox +
     // Wikimedia Commons category/file lookups, each model-confirmed — a9-ii was
     // visually verified — and verify-images'd). Only a7-v (2025) and a6100 lack
     // any clean Commons product photo and stay on the placeholder card.
     'a7-v',
+    'a7r-vi',
     'a6100',
     'fe-14mm-f18-gm', 'fe-24mm-f14-gm', 'fe-35mm-f14-gm', 'fe-50mm-f12-gm',
     'fe-85mm-f14-gm-ii', 'fe-85mm-f14-gm', 'fe-100mm-f28-stf-gm', 'fe-135mm-f18-gm',

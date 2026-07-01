@@ -177,6 +177,12 @@ function validateCamera(id, cam, brandSections = []) {
     add(checkField(cam, 'pixelShift', { type: 'string', nullable: true }));
     add(checkField(cam, 'preCapture', { type: 'boolean' }));
   }
+  if (brandSections.includes('panasonic')) {
+    add(checkField(cam, 'vLog', { type: 'string', nullable: true }));
+    add(checkField(cam, 'openGate', { type: 'string', nullable: true }));
+    add(checkField(cam, 'dualNativeIso', { type: 'boolean' }));
+    add(checkField(cam, 'proResInternal', { type: 'boolean' }));
+  }
 
   return e.map(m => `${id}: ${m}`);
 }
