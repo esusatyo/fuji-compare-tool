@@ -364,7 +364,7 @@ const CAMERAS = {
     tagline:'Compact Vlogging MFT',
     productUrl:'https://shop.panasonic.com/products/g100d-mirrorless-camera-12-32mm-f3-5-5-6-lens',
     imageUrl:null,
-    asin:null,
+    asin:'B0CQCDTT82',
     prices:{USD:597,AUD:999,EUR:699,GBP:599,JPY:99000,CAD:829,SGD:869},
     sensorMP:20.3, sensorType:'Micro Four Thirds CMOS', processor:'Venus Engine',
     width:115.6, height:82.5, depth:54.2, weight:412, weatherSealed:false,
