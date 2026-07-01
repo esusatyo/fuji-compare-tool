@@ -37,7 +37,7 @@ const KNOWN_IMAGE_GAPS = {
     // rest stay on the engine's series-coloured placeholder until a freely-
     // licensed Commons photo exists. The test self-cleans once one lands.
     // Cameras (10) — no clean Commons photo found yet:
-    'z9', 'z8', 'z5-ii', 'z7', 'z6', 'z5', 'z50', 'z30', 'zf', 'zfc',
+    'z9', 'z8', 'z5-ii', 'z7', 'z6', 'z5', 'z50', 'z30', 'zf', 'zfc', 'zr',
     // Lenses (26):
     'z-24mm-f1-8-s', 'z-35mm-f1-8-s', 'z-85mm-f1-8-s', 'z-35mm-f1-2-s',
     'z-135mm-f1-8-s-plena', 'z-mc-105mm-f2-8-vr-s', 'z-58mm-f0-95-s-noct',
@@ -57,7 +57,7 @@ const KNOWN_IMAGE_GAPS = {
     // Commons photo exists; the test self-cleans once one lands. Cameras (12):
     's1r-ii', 's1-ii', 's5-iix', 's1h', 's1', 's1r', 's5',
     'gh5',
-    'g100d', 'g9', 'gx9', 'g95',
+    'g100d', 'g9', 'gx9', 'g95', 'l10',
     // Lenses — LUMIX S primes:
     'lumix-s-18mm-f1-8', 'lumix-s-24mm-f1-8', 'lumix-s-40mm-f2',
     'lumix-s-50mm-f1-8', 'lumix-s-pro-50mm-f1-4', 'lumix-s-85mm-f1-8', 'lumix-s-100mm-f2-8-macro',
@@ -80,6 +80,7 @@ const KNOWN_IMAGE_GAPS = {
     // visually verified — and verify-images'd). Only a7-v (2025) and a6100 lack
     // any clean Commons product photo and stay on the placeholder card.
     'a7-v',
+    'a7r-vi',
     'a6100',
     'fe-14mm-f18-gm', 'fe-24mm-f14-gm', 'fe-35mm-f14-gm', 'fe-50mm-f12-gm',
     'fe-85mm-f14-gm-ii', 'fe-85mm-f14-gm', 'fe-100mm-f28-stf-gm', 'fe-135mm-f18-gm',

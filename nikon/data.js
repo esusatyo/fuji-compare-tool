@@ -46,6 +46,7 @@ const SERIES_COLORS = {
   'Z (Full-frame)': { bg: '#1a1700', text: '#ffd54a' },
   'Z (APS-C)':      { bg: '#171400', text: '#e6c64a' },
   'Z (Retro)':      { bg: '#1f1a08', text: '#f0d27a' },
+  'Z Cinema (Full-frame)': { bg: '#160f00', text: '#ffcf4a' },
 };
 
 // ─────────────────────────────────────────────
@@ -141,6 +142,28 @@ const CAMERAS = {
     expeed:'EXPEED 7', nRaw:null, pixelShift:'96MP', preCapture:true,
     bluetooth:'5.0', wifi:true,
     cardSlots:'2× SD UHS-II', batteryLife:330, usbCharging:true,
+    lensType:'Interchangeable', lensSpec:null,
+  },
+
+  /* ── Z Cinema ── */
+  'zr': {
+    name:'ZR', series:'Z Cinema (Full-frame)', year:2025, discontinued:false,
+    tagline:'RED-Powered Full-Frame Cinema',
+    productUrl:'https://imaging.nikon.com/imaging/lineup/z_cinema/z_r/',
+    imageUrl:null,
+    asin:null,
+    prices:{USD:2199,AUD:3499,EUR:2549,GBP:2099,JPY:363000,CAD:2999,SGD:3149},
+    sensorMP:24.5, sensorType:'Full-frame Partially-Stacked BSI CMOS', processor:'EXPEED 7',
+    width:134.0, height:80.5, depth:49.0, weight:630, weatherSealed:true,
+    lcdSize:'4.0"', lcdDots:3070, lcdType:'Fully-Articulating Touch',
+    evfType:null, evfDots:null, evfMag:null,
+    faceDetection:true, subjectDetection:'9 types (People / Animals / Birds / Vehicles / Aircraft)',
+    ibis:true, ibisStops:7.5, maxBurst:15,
+    maxVideoRes:'6K / 60P R3D RAW',
+    logVideo:true,
+    expeed:'EXPEED 7', nRaw:'6K', pixelShift:null, preCapture:false,
+    bluetooth:'5.0', wifi:true,
+    cardSlots:'1× CFexpress Type B + 1× microSD', batteryLife:null, usbCharging:true,
     lensType:'Interchangeable', lensSpec:null,
   },
 
@@ -353,12 +376,14 @@ const CAMERAS = {
 const CAMERA_ORDER = [
   'z9', 'z8', 'z6-iii', 'z5-ii',
   'z7-ii', 'z7', 'z6-ii', 'z6', 'z5',
+  'zr',
   'zf', 'zfc',
   'z50-ii', 'z50', 'z30',
 ];
 
 const DROPDOWN_GROUPS = [
   { label: '── Z Full-Frame ──', ids: ['z9', 'z8', 'z6-iii', 'z5-ii', 'z7-ii', 'z7', 'z6-ii', 'z6', 'z5'] },
+  { label: '── Z Cinema ──',     ids: ['zr'] },
   { label: '── Z Retro ──',      ids: ['zf', 'zfc'] },
   { label: '── Z APS-C (DX) ──', ids: ['z50-ii', 'z50', 'z30'] },
 ];

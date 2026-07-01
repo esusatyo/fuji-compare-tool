@@ -46,6 +46,7 @@ const SERIES_COLORS = {
   'Lumix S (Full-frame)': { bg: '#0a1530', text: '#6fa8ff' },
   'Lumix GH (MFT)':       { bg: '#0a1228', text: '#7fb0ff' },
   'Lumix G (MFT)':        { bg: '#0c1426', text: '#8ab4ff' },
+  'Lumix Compact':        { bg: '#0e1832', text: '#9ec2ff' },
 };
 
 // ─────────────────────────────────────────────
@@ -444,18 +445,42 @@ const CAMERAS = {
     lensType:'Interchangeable', lensSpec:null,
   },
 
+  /* ── Lumix Compact (fixed-lens) ── */
+  'l10': {
+    name:'Lumix L10', series:'Lumix Compact', year:2026, discontinued:false,
+    tagline:'Premium Fixed-Lens Compact',
+    productUrl:'https://shop.panasonic.com/products/lumix-l10-premium-point-shoot-digital-camera-24-75mm-zoom-lens',
+    imageUrl:null,
+    asin:null,
+    prices:{USD:1499,AUD:2399,EUR:1749,GBP:1499,JPY:247000,CAD:2049,SGD:2149},
+    sensorMP:20.4, sensorType:'Micro Four Thirds BSI CMOS', processor:'Venus Engine',
+    width:127.1, height:73.9, depth:66.9, weight:508, weatherSealed:false,
+    lcdSize:'3.0"', lcdDots:1840, lcdType:'Free-angle Touch',
+    evfType:'EVF (OLED)', evfDots:2.36, evfMag:null,
+    faceDetection:true, subjectDetection:'Human / Animal (face / eye)',
+    ibis:false, ibisStops:null, maxBurst:30,
+    maxVideoRes:'5.6K / 60P (Open Gate)',
+    logVideo:true,
+    vLog:'V-Log', dualNativeIso:true, openGate:'5.6K', proResInternal:false,
+    bluetooth:'5.0', wifi:true,
+    cardSlots:'1× SD UHS-II', batteryLife:null, usbCharging:true,
+    lensType:'Fixed', lensSpec:'24-75mm equiv. f/1.7-2.8',
+  },
+
 };
 
 const CAMERA_ORDER = [
   's1r-ii', 's1-ii', 's5-ii', 's5-iix', 's9', 's1h', 's1', 's1r', 's5',
   'gh7', 'gh6', 'gh5-ii', 'gh5',
   'g9-ii', 'g100d', 'g9', 'gx9', 'g95',
+  'l10',
 ];
 
 const DROPDOWN_GROUPS = [
   { label: '── Lumix S — Full-Frame (L-Mount) ──', ids: ['s1r-ii', 's1-ii', 's5-ii', 's5-iix', 's9', 's1h', 's1', 's1r', 's5'] },
   { label: '── Lumix GH — Micro Four Thirds ──',   ids: ['gh7', 'gh6', 'gh5-ii', 'gh5'] },
   { label: '── Lumix G — Micro Four Thirds ──',    ids: ['g9-ii', 'g100d', 'g9', 'gx9', 'g95'] },
+  { label: '── Lumix Compact (fixed-lens) ──',     ids: ['l10'] },
 ];
 
 // ─────────────────────────────────────────────

@@ -105,6 +105,27 @@ const CAMERAS = {
     logProfile:'S-Log3 / S-Cinetone', aiAf:true, realtimeTracking:true,
   },
 
+  'a7r-vi': {
+    name:'A7R VI', series:'Alpha (Full-frame)', year:2026, discontinued:false,
+    tagline:'66.8MP Stacked + 8K',
+    productUrl:'https://electronics.sony.com/imaging/interchangeable-lens-cameras/full-frame/p/ilce7rm6-b',
+    imageUrl:null,
+    asin:null,
+    prices:{USD:4498,AUD:6499,EUR:5099,GBP:4399,JPY:700000,CAD:5998,SGD:5999},
+    sensorMP:66.8, sensorType:'Full-frame Stacked BSI CMOS', processor:'BIONZ XR2',
+    width:132.7, height:96.9, depth:82.9, weight:713, weatherSealed:true,
+    lcdSize:'3.2"', lcdDots:2100, lcdType:'4-axis Multi-angle Touchscreen',
+    evfType:'EVF (OLED)', evfDots:9.44, evfMag:0.90,
+    faceDetection:true, subjectDetection:'Human / Animal / Bird / Insect / Car / Train / Plane',
+    ibis:true, ibisStops:8.5, maxBurst:30,
+    maxVideoRes:'8K / 30P',
+    logVideo:true,
+    bluetooth:'5.0', wifi:true,
+    cardSlots:'2× CFexpress Type A / SD UHS-II', batteryLife:600, usbCharging:true,
+    lensType:'Interchangeable', lensSpec:null,
+    logProfile:'S-Log3 / S-Cinetone', aiAf:true, realtimeTracking:true,
+  },
+
   'a7r-v': {
     name:'A7R V', series:'Alpha (Full-frame)', year:2022, discontinued:false,
     tagline:'61MP Resolution + AI AF + 8K',
@@ -718,7 +739,7 @@ const CAMERAS = {
 };
 
 const CAMERA_ORDER = [
-  'a7-v', 'a9-iii', 'a1-ii',
+  'a7r-vi', 'a7-v', 'a9-iii', 'a1-ii',
   'a7r-v', 'a7cr', 'a7c-ii', 'a7s-iii', 'a7-iv',
   'a1', 'a7c', 'a9-ii', 'a7r-iv', 'a7-iii', 'a9', 'a7r-iii',
   'a7r-ii', 'a7s-ii', 'a7-ii', 'a7r', 'a7', 'a7s',
@@ -728,7 +749,7 @@ const CAMERA_ORDER = [
 ];
 
 const DROPDOWN_GROUPS = [
-  { label: '── Alpha Full-frame (2024–2025) ──', ids: ['a7-v', 'a9-iii', 'a1-ii'] },
+  { label: '── Alpha Full-frame (2024–2026) ──', ids: ['a7r-vi', 'a7-v', 'a9-iii', 'a1-ii'] },
   { label: '── Alpha Full-frame (2021–2023) ──', ids: ['a7r-v', 'a7cr', 'a7c-ii', 'a7s-iii', 'a7-iv'] },
   { label: '── Alpha Full-frame (2017–2020) ──', ids: ['a1', 'a7c', 'a9-ii', 'a7r-iv', 'a7-iii', 'a9', 'a7r-iii'] },
   { label: '── Alpha Full-frame (2013–2015) ──', ids: ['a7r-ii', 'a7s-ii', 'a7-ii', 'a7r', 'a7', 'a7s'] },
