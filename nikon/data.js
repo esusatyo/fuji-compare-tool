@@ -151,7 +151,7 @@ const CAMERAS = {
     tagline:'RED-Powered Full-Frame Cinema',
     productUrl:'https://imaging.nikon.com/imaging/lineup/z_cinema/z_r/',
     imageUrl:null,
-    asin:null,
+    asin:'B0FPXLG8X7',
     prices:{USD:2199,AUD:3499,EUR:2549,GBP:2099,JPY:363000,CAD:2999,SGD:3149},
     sensorMP:24.5, sensorType:'Full-frame Partially-Stacked BSI CMOS', processor:'EXPEED 7',
     width:134.0, height:80.5, depth:49.0, weight:630, weatherSealed:true,

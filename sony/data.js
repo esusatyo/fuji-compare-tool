@@ -110,7 +110,7 @@ const CAMERAS = {
     tagline:'66.8MP Stacked + 8K',
     productUrl:'https://electronics.sony.com/imaging/interchangeable-lens-cameras/full-frame/p/ilce7rm6-b',
     imageUrl:null,
-    asin:null,
+    asin:'B0H1NB7D3W',
     prices:{USD:4498,AUD:6499,EUR:5099,GBP:4399,JPY:700000,CAD:5998,SGD:5999},
     sensorMP:66.8, sensorType:'Full-frame Stacked BSI CMOS', processor:'BIONZ XR2',
     width:132.7, height:96.9, depth:82.9, weight:713, weatherSealed:true,
