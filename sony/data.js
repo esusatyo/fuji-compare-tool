@@ -1655,6 +1655,151 @@ const LENSES = {
     priceIncomplete:true,
     productUrl:'https://electronics.sony.com/imaging/lenses/aps-c-e-mount/p/sel70350g',
   },
+
+  /* ── Sigma (E-mount, APS-C DC DN) ── */
+  /* Sony APS-C crop = 1.5×. Weights/lengths are the Sony E-mount values from
+     Sigma official spec pages; optical design shared across mounts. */
+  'sigma-16mm-f14': {
+    name:'Sigma 16mm f/1.4 DC DN', manufacturer:'Sigma', line:'Contemporary', type:'Prime',
+    focalLength:16, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'24mm',
+    maxAperture:1.4, minAperture:16, weight:405, length:92.3, diameter:72.2,
+    filterThread:67, minFocusDist:25, maxMagnification:0.1,
+    elements:16, groups:13, blades:9, afType:'Stepping Motor',
+    weatherSealed:false, ois:false, oisStops:null, year:2017, discontinued:false,
+    imageUrl:'https://www.sigma-global.com/lenses/c017_16_14_product_img01.png',
+    asin:'B077BWD2BB',
+    prices:{USD:449,AUD:null,EUR:null,GBP:null,JPY:null,CAD:null,SGD:null},
+    priceIncomplete:true,
+    productUrl:'https://www.sigma-global.com/en/lenses/c017_16_14/',
+  },
+
+  'sigma-23mm-f14': {
+    name:'Sigma 23mm f/1.4 DC DN', manufacturer:'Sigma', line:'Contemporary', type:'Prime',
+    focalLength:23, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'35mm',
+    maxAperture:1.4, minAperture:16, weight:330, length:78.9, diameter:65.8,
+    filterThread:52, minFocusDist:25, maxMagnification:0.14,
+    elements:13, groups:10, blades:9, afType:'Stepping Motor',
+    weatherSealed:false, ois:false, oisStops:null, year:2023, discontinued:false,
+    imageUrl:'https://www.sigma-global.com/lenses/c023_23_14_product_img01.png',
+    asin:null,
+    prices:{USD:549,AUD:null,EUR:null,GBP:null,JPY:null,CAD:null,SGD:null},
+    priceIncomplete:true,
+    productUrl:'https://www.sigma-global.com/en/lenses/c023_23_14/',
+  },
+
+  'sigma-30mm-f14': {
+    name:'Sigma 30mm f/1.4 DC DN', manufacturer:'Sigma', line:'Contemporary', type:'Prime',
+    focalLength:30, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'45mm',
+    maxAperture:1.4, minAperture:16, weight:265, length:73.3, diameter:64.8,
+    filterThread:52, minFocusDist:30, maxMagnification:0.14,
+    elements:9, groups:7, blades:9, afType:'Stepping Motor',
+    weatherSealed:false, ois:false, oisStops:null, year:2016, discontinued:false,
+    imageUrl:'https://www.sigma-global.com/lenses/c016_30_14_product_img01.png',
+    asin:null,
+    prices:{USD:339,AUD:null,EUR:null,GBP:null,JPY:null,CAD:null,SGD:null},
+    priceIncomplete:true,
+    productUrl:'https://www.sigma-global.com/en/lenses/c016_30_14/',
+  },
+
+  'sigma-56mm-f14': {
+    name:'Sigma 56mm f/1.4 DC DN', manufacturer:'Sigma', line:'Contemporary', type:'Prime',
+    focalLength:56, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'84mm',
+    maxAperture:1.4, minAperture:16, weight:280, length:59.5, diameter:66.5,
+    filterThread:55, minFocusDist:50, maxMagnification:0.14,
+    elements:10, groups:6, blades:9, afType:'Stepping Motor',
+    weatherSealed:false, ois:false, oisStops:null, year:2018, discontinued:false,
+    imageUrl:'https://www.sigma-global.com/lenses/c018_56_14_product_img01.png',
+    asin:'B07JZVP6R8',
+    prices:{USD:479,AUD:null,EUR:null,GBP:null,JPY:null,CAD:null,SGD:null},
+    priceIncomplete:true,
+    productUrl:'https://www.sigma-global.com/en/lenses/c018_56_14/',
+  },
+
+  'sigma-10-18mm-f28': {
+    name:'Sigma 10-18mm f/2.8 DC DN', manufacturer:'Sigma', line:'Contemporary', type:'Zoom',
+    focalLength:null, focalLengthMin:10, focalLengthMax:18, focalLengthEquiv:'15-27mm',
+    maxAperture:2.8, minAperture:22, weight:255, length:64.0, diameter:72.2,
+    filterThread:67, minFocusDist:11.6, maxMagnification:0.25,
+    elements:13, groups:10, blades:7, afType:'Stepping Motor',
+    weatherSealed:false, ois:false, oisStops:null, year:2023, discontinued:false,
+    imageUrl:'https://www.sigma-global.com/lenses/c023_10_18_28_product_img01.png',
+    asin:null,
+    prices:{USD:659,AUD:null,EUR:null,GBP:null,JPY:null,CAD:null,SGD:null},
+    priceIncomplete:true,
+    productUrl:'https://www.sigma-global.com/en/lenses/c023_10_18_28/',
+  },
+
+  'sigma-18-50mm-f28': {
+    name:'Sigma 18-50mm f/2.8 DC DN', manufacturer:'Sigma', line:'Contemporary', type:'Zoom',
+    focalLength:null, focalLengthMin:18, focalLengthMax:50, focalLengthEquiv:'27-75mm',
+    maxAperture:2.8, minAperture:22, weight:290, length:76.5, diameter:61.6,
+    filterThread:55, minFocusDist:12.1, maxMagnification:0.36,
+    elements:13, groups:10, blades:7, afType:'Stepping Motor',
+    weatherSealed:false, ois:false, oisStops:null, year:2021, discontinued:false,
+    imageUrl:'https://www.sigma-global.com/lenses/c021_18_50_28_product_img01.png',
+    asin:null,
+    prices:{USD:549,AUD:null,EUR:null,GBP:null,JPY:null,CAD:null,SGD:null},
+    priceIncomplete:true,
+    productUrl:'https://www.sigma-global.com/en/lenses/c021_18_50_28/',
+  },
+
+  /* ── Sigma (FE, full-frame DG DN Art) ── */
+  /* Full-frame E-mount; specs from Sigma official spec pages (Sony E values). */
+  'sigma-24mm-f14-dg': {
+    name:'Sigma 24mm f/1.4 DG DN Art', manufacturer:'Sigma', line:'Art', type:'Prime',
+    focalLength:24, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'24mm',
+    maxAperture:1.4, minAperture:16, weight:510, length:97.5, diameter:75.7,
+    filterThread:72, minFocusDist:25, maxMagnification:0.14,
+    elements:17, groups:14, blades:11, afType:'Stepping Motor',
+    weatherSealed:true, ois:false, oisStops:null, year:2022, discontinued:false,
+    imageUrl:'https://www.sigma-global.com/lenses/a022_24_14_product_img01.png',
+    asin:null,
+    prices:{USD:799,AUD:null,EUR:null,GBP:null,JPY:null,CAD:null,SGD:null},
+    priceIncomplete:true,
+    productUrl:'https://www.sigma-global.com/en/lenses/a022_24_14/',
+  },
+
+  'sigma-35mm-f14-dg': {
+    name:'Sigma 35mm f/1.4 DG DN Art', manufacturer:'Sigma', line:'Art', type:'Prime',
+    focalLength:35, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'35mm',
+    maxAperture:1.4, minAperture:16, weight:640, length:111.5, diameter:75.5,
+    filterThread:67, minFocusDist:30, maxMagnification:0.19,
+    elements:15, groups:11, blades:11, afType:'Stepping Motor',
+    weatherSealed:true, ois:false, oisStops:null, year:2021, discontinued:false,
+    imageUrl:'https://www.sigma-global.com/lenses/a021_35_14_product_img01.png',
+    asin:null,
+    prices:{USD:799,AUD:null,EUR:null,GBP:null,JPY:null,CAD:null,SGD:null},
+    priceIncomplete:true,
+    productUrl:'https://www.sigma-global.com/en/lenses/a021_35_14/',
+  },
+
+  'sigma-50mm-f14-dg': {
+    name:'Sigma 50mm f/1.4 DG DN Art', manufacturer:'Sigma', line:'Art', type:'Prime',
+    focalLength:50, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'50mm',
+    maxAperture:1.4, minAperture:16, weight:660, length:111.5, diameter:78.2,
+    filterThread:72, minFocusDist:45, maxMagnification:0.15,
+    elements:14, groups:11, blades:11, afType:'HLA Linear',
+    weatherSealed:true, ois:false, oisStops:null, year:2023, discontinued:false,
+    imageUrl:'https://www.sigma-global.com/lenses/a023_50_14_product_img01.png',
+    asin:null,
+    prices:{USD:849,AUD:null,EUR:null,GBP:null,JPY:null,CAD:null,SGD:null},
+    priceIncomplete:true,
+    productUrl:'https://www.sigma-global.com/en/lenses/a023_50_14/',
+  },
+
+  'sigma-85mm-f14-dg': {
+    name:'Sigma 85mm f/1.4 DG DN Art', manufacturer:'Sigma', line:'Art', type:'Prime',
+    focalLength:85, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'85mm',
+    maxAperture:1.4, minAperture:16, weight:625, length:96.1, diameter:82.8,
+    filterThread:77, minFocusDist:85, maxMagnification:0.12,
+    elements:15, groups:11, blades:11, afType:'Stepping Motor',
+    weatherSealed:true, ois:false, oisStops:null, year:2020, discontinued:false,
+    imageUrl:'https://www.sigma-global.com/lenses/a020_85_14_product_img01.png',
+    asin:null,
+    prices:{USD:1199,AUD:null,EUR:null,GBP:null,JPY:null,CAD:null,SGD:null},
+    priceIncomplete:true,
+    productUrl:'https://www.sigma-global.com/en/lenses/a020_85_14/',
+  },
 };
 
 const LENS_DROPDOWN_GROUPS = [
@@ -1686,5 +1831,12 @@ const LENS_DROPDOWN_GROUPS = [
     'e-16-50mm-f35-56-pz-oss', 'e-16-55mm-f28-g', 'e-16-70mm-f4-za-oss',
     'e-18-105mm-f4-g-oss-pz', 'e-18-135mm-f35-56-oss', 'e-55-210mm-f45-63-oss',
     'e-70-350mm-f45-63-g-oss',
+  ] },
+  { label: '── Sigma (APS-C) ──', ids: [
+    'sigma-16mm-f14', 'sigma-23mm-f14', 'sigma-30mm-f14', 'sigma-56mm-f14',
+    'sigma-10-18mm-f28', 'sigma-18-50mm-f28',
+  ] },
+  { label: '── Sigma (Full-Frame) ──', ids: [
+    'sigma-24mm-f14-dg', 'sigma-35mm-f14-dg', 'sigma-50mm-f14-dg', 'sigma-85mm-f14-dg',
   ] },
 ];
