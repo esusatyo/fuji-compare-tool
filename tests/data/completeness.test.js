@@ -86,6 +86,8 @@ const KNOWN_IMAGE_GAPS = {
     'samyang-35mm-f18', 'samyang-75mm-f18', 'samyang-135mm-f18',
     // Laowa — Venus Optics image URLs pending backfill
     'laowa-90mm-f28-macro', 'laowa-15mm-f2', 'laowa-10mm-f4-cookie',
+    // Zeiss — discontinued; manufacturer image URLs unavailable
+    'zeiss-batis-25mm-f2', 'zeiss-batis-85mm-f18', 'zeiss-loxia-35mm-f2',
     // 31 of 33 cameras now have curated product images (Wikipedia infobox +
     // Wikimedia Commons category/file lookups, each model-confirmed — a9-ii was
     // visually verified — and verify-images'd). Only a7-v (2025) and a6100 lack

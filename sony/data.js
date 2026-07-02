@@ -2114,6 +2114,46 @@ const LENSES = {
     priceIncomplete:true,
     productUrl:'https://www.venuslens.net/product/laowa-10mm-f-4-cookie/',
   },
+
+  /* ── Zeiss (FE) — Batis (AF) + Loxia (MF), discontinued but iconic ── */
+  'zeiss-batis-25mm-f2': {
+    name:'Zeiss Batis 25mm f/2', manufacturer:'Zeiss', line:'Batis', type:'Prime',
+    focalLength:25, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'25mm',
+    maxAperture:2.0, minAperture:22, weight:335, length:78, diameter:81,
+    filterThread:67, minFocusDist:20, maxMagnification:0.19,
+    elements:10, groups:8, blades:9, afType:'Autofocus',
+    weatherSealed:true, ois:false, oisStops:null, year:2015, discontinued:true,
+    imageUrl:null,
+    asin:null,
+    prices:{USD:1299,AUD:null,EUR:null,GBP:null,JPY:null,CAD:null,SGD:null},
+    productUrl:null,
+  },
+
+  'zeiss-batis-85mm-f18': {
+    name:'Zeiss Batis 85mm f/1.8', manufacturer:'Zeiss', line:'Batis', type:'Prime',
+    focalLength:85, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'85mm',
+    maxAperture:1.8, minAperture:22, weight:475, length:105, diameter:78,
+    filterThread:67, minFocusDist:80, maxMagnification:0.13,
+    elements:11, groups:8, blades:9, afType:'Autofocus',
+    weatherSealed:true, ois:true, oisStops:null, year:2015, discontinued:true,
+    imageUrl:null,
+    asin:null,
+    prices:{USD:1199,AUD:null,EUR:null,GBP:null,JPY:null,CAD:null,SGD:null},
+    productUrl:null,
+  },
+
+  'zeiss-loxia-35mm-f2': {
+    name:'Zeiss Loxia 35mm f/2 Biogon', manufacturer:'Zeiss', line:'Loxia', type:'Prime',
+    focalLength:35, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'35mm',
+    maxAperture:2.0, minAperture:22, weight:340, length:62.1, diameter:66,
+    filterThread:52, minFocusDist:30, maxMagnification:0.14,
+    elements:9, groups:6, blades:10, afType:'Manual',
+    weatherSealed:true, ois:false, oisStops:null, year:2014, discontinued:true,
+    imageUrl:null,
+    asin:'B00Q2QAHOU',
+    prices:{USD:1299,AUD:null,EUR:null,GBP:null,JPY:null,CAD:null,SGD:null},
+    productUrl:null,
+  },
 };
 
 const LENS_DROPDOWN_GROUPS = [
@@ -2170,5 +2210,8 @@ const LENS_DROPDOWN_GROUPS = [
   ] },
   { label: '── Laowa ──', ids: [
     'laowa-10mm-f4-cookie', 'laowa-15mm-f2', 'laowa-90mm-f28-macro',
+  ] },
+  { label: '── Zeiss ──', ids: [
+    'zeiss-batis-25mm-f2', 'zeiss-batis-85mm-f18', 'zeiss-loxia-35mm-f2',
   ] },
 ];
