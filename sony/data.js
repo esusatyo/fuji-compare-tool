@@ -2227,6 +2227,49 @@ const LENSES = {
     productUrl:'https://www.venuslens.net/product/laowa-10mm-f-4-cookie/',
   },
 
+  /* ── Voigtländer (E-mount manual-focus) ── */
+  'voigtlander-apo-lanthar-35mm-f2': {
+    name:'Voigtländer APO-Lanthar 35mm f/2 Aspherical', manufacturer:'Voigtländer', line:'APO-Lanthar', type:'Prime',
+    focalLength:35, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'35mm',
+    maxAperture:2.0, minAperture:16, weight:352, length:67.3, diameter:62.6,
+    filterThread:49, minFocusDist:35, maxMagnification:0.19,
+    elements:11, groups:9, blades:12, afType:'Manual',
+    weatherSealed:false, ois:false, oisStops:null, year:2021, discontinued:false,
+    imageUrl:null,
+    asin:'B09236KDDX',
+    prices:{USD:1149,AUD:null,EUR:null,GBP:null,JPY:null,CAD:null,SGD:null},
+    priceIncomplete:true,
+    productUrl:'https://www.voigtlaender.de/lenses/e-mount/35-mm-120-apo-lanthar-e/?lang=en',
+  },
+
+  'voigtlander-apo-lanthar-50mm-f2': {
+    name:'Voigtländer APO-Lanthar 50mm f/2 Aspherical', manufacturer:'Voigtländer', line:'APO-Lanthar', type:'Prime',
+    focalLength:50, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'50mm',
+    maxAperture:2.0, minAperture:16, weight:364, length:61, diameter:63,
+    filterThread:49, minFocusDist:45, maxMagnification:0.15,
+    elements:10, groups:8, blades:12, afType:'Manual',
+    weatherSealed:false, ois:false, oisStops:null, year:2020, discontinued:false,
+    imageUrl:null,
+    asin:'B082NM7LRM',
+    prices:{USD:1049,AUD:null,EUR:null,GBP:null,JPY:null,CAD:null,SGD:null},
+    priceIncomplete:true,
+    productUrl:'https://www.voigtlaender.de/lenses/e-mount/50-mm-120-apo-lanthar-e/?lang=en',
+  },
+
+  'voigtlander-nokton-40mm-f12': {
+    name:'Voigtländer Nokton 40mm f/1.2 Aspherical', manufacturer:'Voigtländer', line:'Nokton', type:'Prime',
+    focalLength:40, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'40mm',
+    maxAperture:1.2, minAperture:22, weight:383, length:51.9, diameter:66.5,
+    filterThread:58, minFocusDist:35, maxMagnification:0.09,
+    elements:8, groups:6, blades:10, afType:'Manual',
+    weatherSealed:false, ois:false, oisStops:null, year:2018, discontinued:false,
+    imageUrl:null,
+    asin:'B0767ZVJL3',
+    prices:{USD:799,AUD:null,EUR:null,GBP:null,JPY:null,CAD:null,SGD:null},
+    priceIncomplete:true,
+    productUrl:'https://www.voigtlaender.de/lenses/e-mount/40-mm-112-nokton-se/?lang=en',
+  },
+
   /* ── Zeiss (FE) — Batis (AF) + Loxia (MF), discontinued but iconic ── */
   'zeiss-batis-25mm-f2': {
     name:'Zeiss Batis 25mm f/2', manufacturer:'Zeiss', line:'Batis', type:'Prime',
@@ -2322,6 +2365,10 @@ const LENS_DROPDOWN_GROUPS = [
   ] },
   { label: '── Samyang ──', ids: [
     'samyang-35mm-f18', 'samyang-75mm-f18', 'samyang-135mm-f18',
+  ] },
+  { label: '── Voigtländer ──', ids: [
+    'voigtlander-apo-lanthar-35mm-f2', 'voigtlander-apo-lanthar-50mm-f2',
+    'voigtlander-nokton-40mm-f12',
   ] },
   { label: '── Laowa ──', ids: [
     'laowa-10mm-f4-cookie', 'laowa-15mm-f2', 'laowa-90mm-f28-macro',

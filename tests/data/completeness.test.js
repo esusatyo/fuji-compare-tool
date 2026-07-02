@@ -86,6 +86,8 @@ const KNOWN_IMAGE_GAPS = {
     'viltrox-16mm-f18', 'viltrox-27mm-f12', 'viltrox-56mm-f14',
     // Samyang — product image URLs pending backfill
     'samyang-35mm-f18', 'samyang-75mm-f18', 'samyang-135mm-f18',
+    // Voigtländer — manufacturer image URLs pending backfill
+    'voigtlander-apo-lanthar-35mm-f2', 'voigtlander-apo-lanthar-50mm-f2', 'voigtlander-nokton-40mm-f12',
     // Laowa — Venus Optics image URLs pending backfill
     'laowa-90mm-f28-macro', 'laowa-15mm-f2', 'laowa-10mm-f4-cookie',
     // Zeiss — discontinued; manufacturer image URLs unavailable
