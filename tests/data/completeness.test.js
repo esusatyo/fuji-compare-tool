@@ -77,6 +77,9 @@ const KNOWN_IMAGE_GAPS = {
   sony: new Set([
     'sigma-90mm-f28-dg', // discontinued I-series; Sigma image URL not available
     'sigma-28-70mm-f28-dg', // Sigma product image URL not available (404)
+    // Tamron FE zooms — Tamron image URLs vary by model/mount; pending backfill
+    'tamron-16-30mm-f28-g2', 'tamron-20-40mm-f28', 'tamron-28-75mm-f28-g2',
+    'tamron-35-150mm-f2-28', 'tamron-50-400mm-f45-63',
     // 31 of 33 cameras now have curated product images (Wikipedia infobox +
     // Wikimedia Commons category/file lookups, each model-confirmed — a9-ii was
     // visually verified — and verify-images'd). Only a7-v (2025) and a6100 lack

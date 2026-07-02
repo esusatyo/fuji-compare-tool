@@ -1911,6 +1911,79 @@ const LENSES = {
     priceIncomplete:true,
     productUrl:'https://www.sigma-global.com/en/lenses/s023_70_200_28/',
   },
+
+  /* ── Tamron (FE, full-frame Di III) ── */
+  /* Specs from Tamron Americas spec tables (Sony E values). Tamron image URLs
+     vary by model/mount and are recorded as gaps pending verification. */
+  'tamron-16-30mm-f28-g2': {
+    name:'Tamron 16-30mm f/2.8 Di III VXD G2', manufacturer:'Tamron', line:'Di III', type:'Zoom',
+    focalLength:null, focalLengthMin:16, focalLengthMax:30, focalLengthEquiv:'16-30mm',
+    maxAperture:2.8, minAperture:16, weight:440, length:101.8, diameter:74.8,
+    filterThread:67, minFocusDist:19, maxMagnification:0.19,
+    elements:16, groups:12, blades:9, afType:'Linear Motor',
+    weatherSealed:true, ois:false, oisStops:null, year:2024, discontinued:false,
+    imageUrl:null,
+    asin:null,
+    prices:{USD:929,AUD:null,EUR:null,GBP:null,JPY:null,CAD:null,SGD:null},
+    priceIncomplete:true,
+    productUrl:'https://tamron-americas.com/product/16-30mm-f-2-8-di-iii-vxd-g2/',
+  },
+
+  'tamron-20-40mm-f28': {
+    name:'Tamron 20-40mm f/2.8 Di III VXD', manufacturer:'Tamron', line:'Di III', type:'Zoom',
+    focalLength:null, focalLengthMin:20, focalLengthMax:40, focalLengthEquiv:'20-40mm',
+    maxAperture:2.8, minAperture:22, weight:365, length:86.5, diameter:74.4,
+    filterThread:67, minFocusDist:17, maxMagnification:0.26,
+    elements:12, groups:11, blades:9, afType:'Linear Motor',
+    weatherSealed:true, ois:false, oisStops:null, year:2022, discontinued:false,
+    imageUrl:null,
+    asin:null,
+    prices:{USD:699,AUD:null,EUR:null,GBP:null,JPY:null,CAD:null,SGD:null},
+    priceIncomplete:true,
+    productUrl:'https://tamron-americas.com/product/20-40mm-f-2-8-di-iii-vxd/',
+  },
+
+  'tamron-28-75mm-f28-g2': {
+    name:'Tamron 28-75mm f/2.8 Di III VXD G2', manufacturer:'Tamron', line:'Di III', type:'Zoom',
+    focalLength:null, focalLengthMin:28, focalLengthMax:75, focalLengthEquiv:'28-75mm',
+    maxAperture:2.8, minAperture:22, weight:540, length:117.6, diameter:75.8,
+    filterThread:67, minFocusDist:18, maxMagnification:0.37,
+    elements:17, groups:15, blades:9, afType:'Linear Motor',
+    weatherSealed:true, ois:false, oisStops:null, year:2021, discontinued:false,
+    imageUrl:null,
+    asin:null,
+    prices:{USD:899,AUD:null,EUR:null,GBP:null,JPY:null,CAD:null,SGD:null},
+    priceIncomplete:true,
+    productUrl:'https://tamron-americas.com/product/28-75mm-f-2-8-di-iii-vxd-g2/',
+  },
+
+  'tamron-35-150mm-f2-28': {
+    name:'Tamron 35-150mm f/2-2.8 Di III VXD', manufacturer:'Tamron', line:'Di III', type:'Zoom',
+    focalLength:null, focalLengthMin:35, focalLengthMax:150, focalLengthEquiv:'35-150mm',
+    maxAperture:2.0, minAperture:22, weight:1165, length:158, diameter:89.2,
+    filterThread:82, minFocusDist:33, maxMagnification:0.18,
+    elements:21, groups:15, blades:9, afType:'Linear Motor',
+    weatherSealed:true, ois:false, oisStops:null, year:2021, discontinued:false,
+    imageUrl:null,
+    asin:null,
+    prices:{USD:1799,AUD:null,EUR:null,GBP:null,JPY:null,CAD:null,SGD:null},
+    priceIncomplete:true,
+    productUrl:'https://tamron-americas.com/product/35-150mm-f-2-2-8-di-iii-vxd/',
+  },
+
+  'tamron-50-400mm-f45-63': {
+    name:'Tamron 50-400mm f/4.5-6.3 Di III VC VXD', manufacturer:'Tamron', line:'Di III', type:'Zoom',
+    focalLength:null, focalLengthMin:50, focalLengthMax:400, focalLengthEquiv:'50-400mm',
+    maxAperture:4.5, minAperture:22, weight:1155, length:183.4, diameter:88.5,
+    filterThread:67, minFocusDist:25, maxMagnification:0.5,
+    elements:24, groups:18, blades:9, afType:'Linear Motor',
+    weatherSealed:true, ois:true, oisStops:null, year:2022, discontinued:false,
+    imageUrl:null,
+    asin:null,
+    prices:{USD:1399,AUD:null,EUR:null,GBP:null,JPY:null,CAD:null,SGD:null},
+    priceIncomplete:true,
+    productUrl:'https://tamron-americas.com/product/50-400mm-f-4-5-6-3-di-iii-vc-vxd/',
+  },
 };
 
 const LENS_DROPDOWN_GROUPS = [
@@ -1954,5 +2027,9 @@ const LENS_DROPDOWN_GROUPS = [
   ] },
   { label: '── Sigma (FF Zooms) ──', ids: [
     'sigma-28-45mm-f18-dg', 'sigma-28-70mm-f28-dg', 'sigma-70-200mm-f28-dg',
+  ] },
+  { label: '── Tamron ──', ids: [
+    'tamron-16-30mm-f28-g2', 'tamron-20-40mm-f28', 'tamron-28-75mm-f28-g2',
+    'tamron-35-150mm-f2-28', 'tamron-50-400mm-f45-63',
   ] },
 ];
