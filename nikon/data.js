@@ -1082,6 +1082,100 @@ const LENSES = {
     priceIncomplete:true, productUrl:null,
   },
 
+  /* ── Tamron (Z mount Di III) — excludes 17-28/28-75/70-180 (sold as Nikkor Z) ── */
+  /* APS-C = 1.5× crop. Weights: 18-300 & 150-500 are Nikon-Z values; the others
+     reuse the verified cross-mount weight (mount delta ~10-15g). */
+  'tamron-11-20mm-f28': {
+    name:'Tamron 11-20mm f/2.8 Di III-A RXD', manufacturer:'Tamron', line:'Di III-A', type:'Zoom',
+    focalLength:null, focalLengthMin:11, focalLengthMax:20, focalLengthEquiv:'17-30mm',
+    maxAperture:2.8, minAperture:16, weight:335, length:86.2, diameter:73,
+    filterThread:67, minFocusDist:15, maxMagnification:0.25,
+    elements:12, groups:10, blades:7, afType:'Stepping Motor',
+    weatherSealed:true, ois:false, oisStops:null, year:2023, discontinued:false,
+    imageUrl:null, asin:null,
+    prices:{USD:659,AUD:null,EUR:null,GBP:null,JPY:null,CAD:null,SGD:null},
+    priceIncomplete:true,
+    productUrl:'https://tamron-americas.com/product/11-20mm-f-2-8-di-iii-a-rxd/',
+  },
+
+  'tamron-17-70mm-f28': {
+    name:'Tamron 17-70mm f/2.8 Di III-A VC RXD', manufacturer:'Tamron', line:'Di III-A', type:'Zoom',
+    focalLength:null, focalLengthMin:17, focalLengthMax:70, focalLengthEquiv:'26-105mm',
+    maxAperture:2.8, minAperture:22, weight:525, length:119.3, diameter:74.6,
+    filterThread:67, minFocusDist:19, maxMagnification:0.21,
+    elements:16, groups:12, blades:9, afType:'Stepping Motor',
+    weatherSealed:true, ois:true, oisStops:null, year:2023, discontinued:false,
+    imageUrl:null, asin:null,
+    prices:{USD:799,AUD:null,EUR:null,GBP:null,JPY:null,CAD:null,SGD:null},
+    priceIncomplete:true,
+    productUrl:'https://tamron-americas.com/product/17-70mm-f-2-8-di-iii-a-vc-rxd/',
+  },
+
+  'tamron-18-300mm-f35-63': {
+    name:'Tamron 18-300mm f/3.5-6.3 Di III-A VC VXD', manufacturer:'Tamron', line:'Di III-A', type:'Zoom',
+    focalLength:null, focalLengthMin:18, focalLengthMax:300, focalLengthEquiv:'27-450mm',
+    maxAperture:3.5, minAperture:22, weight:635, length:127.6, diameter:75.5,
+    filterThread:67, minFocusDist:15, maxMagnification:0.5,
+    elements:19, groups:15, blades:7, afType:'Linear Motor',
+    weatherSealed:true, ois:true, oisStops:null, year:2023, discontinued:false,
+    imageUrl:null, asin:null,
+    prices:{USD:699,AUD:null,EUR:null,GBP:null,JPY:null,CAD:null,SGD:null},
+    priceIncomplete:true,
+    productUrl:'https://tamron-americas.com/product/18-300mm-f-3-5-6-3-di-iii-a-vc-vxd/',
+  },
+
+  'tamron-35-150mm-f2-28': {
+    name:'Tamron 35-150mm f/2-2.8 Di III VXD', manufacturer:'Tamron', line:'Di III', type:'Zoom',
+    focalLength:null, focalLengthMin:35, focalLengthMax:150, focalLengthEquiv:'35-150mm',
+    maxAperture:2.0, minAperture:22, weight:1165, length:158, diameter:89.2,
+    filterThread:82, minFocusDist:33, maxMagnification:0.18,
+    elements:21, groups:15, blades:9, afType:'Linear Motor',
+    weatherSealed:true, ois:false, oisStops:null, year:2022, discontinued:false,
+    imageUrl:null, asin:null,
+    prices:{USD:1799,AUD:null,EUR:null,GBP:null,JPY:null,CAD:null,SGD:null},
+    priceIncomplete:true,
+    productUrl:'https://tamron-americas.com/product/35-150mm-f-2-2-8-di-iii-vxd/',
+  },
+
+  'tamron-50-400mm-f45-63': {
+    name:'Tamron 50-400mm f/4.5-6.3 Di III VC VXD', manufacturer:'Tamron', line:'Di III', type:'Zoom',
+    focalLength:null, focalLengthMin:50, focalLengthMax:400, focalLengthEquiv:'50-400mm',
+    maxAperture:4.5, minAperture:22, weight:1155, length:183.4, diameter:88.5,
+    filterThread:67, minFocusDist:25, maxMagnification:0.5,
+    elements:24, groups:18, blades:9, afType:'Linear Motor',
+    weatherSealed:true, ois:true, oisStops:null, year:2023, discontinued:false,
+    imageUrl:null, asin:null,
+    prices:{USD:1399,AUD:null,EUR:null,GBP:null,JPY:null,CAD:null,SGD:null},
+    priceIncomplete:true,
+    productUrl:'https://tamron-americas.com/product/50-400mm-f-4-5-6-3-di-iii-vc-vxd/',
+  },
+
+  'tamron-70-300mm-f45-63': {
+    name:'Tamron 70-300mm f/4.5-6.3 Di III RXD', manufacturer:'Tamron', line:'Di III', type:'Zoom',
+    focalLength:null, focalLengthMin:70, focalLengthMax:300, focalLengthEquiv:'70-300mm',
+    maxAperture:4.5, minAperture:22, weight:545, length:148, diameter:77,
+    filterThread:67, minFocusDist:80, maxMagnification:0.11,
+    elements:15, groups:10, blades:7, afType:'Stepping Motor',
+    weatherSealed:true, ois:false, oisStops:null, year:2023, discontinued:false,
+    imageUrl:null, asin:null,
+    prices:{USD:549,AUD:null,EUR:null,GBP:null,JPY:null,CAD:null,SGD:null},
+    priceIncomplete:true,
+    productUrl:'https://tamron-americas.com/product/70-300mm-f-4-5-6-3-di-iii-rxd/',
+  },
+
+  'tamron-150-500mm-f5-67': {
+    name:'Tamron 150-500mm f/5-6.7 Di III VC VXD', manufacturer:'Tamron', line:'Di III', type:'Zoom',
+    focalLength:null, focalLengthMin:150, focalLengthMax:500, focalLengthEquiv:'150-500mm',
+    maxAperture:5.0, minAperture:22, weight:1720, length:212.3, diameter:93,
+    filterThread:82, minFocusDist:60, maxMagnification:0.32,
+    elements:25, groups:16, blades:7, afType:'Linear Motor',
+    weatherSealed:true, ois:true, oisStops:null, year:2023, discontinued:false,
+    imageUrl:null, asin:null,
+    prices:{USD:1399,AUD:null,EUR:null,GBP:null,JPY:null,CAD:null,SGD:null},
+    priceIncomplete:true,
+    productUrl:'https://tamron-americas.com/product/150-500mm-f-5-6-7-di-iii-vc-vxd/',
+  },
+
   /* ── Laowa (Z mount manual-focus specialty) ── */
   'laowa-90mm-f28-macro': {
     name:'Laowa 90mm f/2.8 2x Ultra Macro APO', manufacturer:'Laowa', line:'Ultra Macro APO', type:'Prime',
@@ -1133,5 +1227,6 @@ const LENS_DROPDOWN_GROUPS = [
   { label: '── DX Lenses ──',     ids: ['z-dx-24mm-f1-7', 'z-dx-12-28mm-pz-vr', 'z-dx-16-50mm-vr', 'z-dx-18-140mm-vr', 'z-dx-50-250mm-vr'] },
   { label: '── Sigma ──', ids: ['sigma-16mm-f14', 'sigma-30mm-f14', 'sigma-56mm-f14'] },
   { label: '── Viltrox ──', ids: ['viltrox-13mm-f14', 'viltrox-16mm-f18', 'viltrox-27mm-f12', 'viltrox-33mm-f14', 'viltrox-56mm-f14', 'viltrox-85mm-f18-ii'] },
+  { label: '── Tamron ──', ids: ['tamron-11-20mm-f28', 'tamron-17-70mm-f28', 'tamron-18-300mm-f35-63', 'tamron-35-150mm-f2-28', 'tamron-50-400mm-f45-63', 'tamron-70-300mm-f45-63', 'tamron-150-500mm-f5-67'] },
   { label: '── Laowa ──', ids: ['laowa-10mm-f4-cookie', 'laowa-15mm-f2', 'laowa-90mm-f28-macro'] },
 ];
