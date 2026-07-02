@@ -2027,6 +2027,49 @@ const LENSES = {
     priceIncomplete:true,
     productUrl:'https://viltrox.com/products/viltrox-autofocus-56mm-f1-4-e-mount-prime-lens',
   },
+
+  /* ── Samyang (FE AF) ── */
+  'samyang-35mm-f18': {
+    name:'Samyang AF 35mm f/1.8 FE', manufacturer:'Samyang', line:'AF', type:'Prime',
+    focalLength:35, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'35mm',
+    maxAperture:1.8, minAperture:22, weight:210, length:65, diameter:63.5,
+    filterThread:58, minFocusDist:29, maxMagnification:0.17,
+    elements:10, groups:8, blades:9, afType:'Linear STM',
+    weatherSealed:false, ois:false, oisStops:null, year:2020, discontinued:false,
+    imageUrl:null,
+    asin:null,
+    prices:{USD:399,AUD:null,EUR:null,GBP:null,JPY:null,CAD:null,SGD:null},
+    priceIncomplete:true,
+    productUrl:'https://samyangus.com/products/35mm-f1-8-af-compact-full-frame-wide-angle-sony-e',
+  },
+
+  'samyang-75mm-f18': {
+    name:'Samyang AF 75mm f/1.8 FE', manufacturer:'Samyang', line:'AF', type:'Prime',
+    focalLength:75, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'75mm',
+    maxAperture:1.8, minAperture:22, weight:230, length:69, diameter:65,
+    filterThread:58, minFocusDist:69, maxMagnification:0.13,
+    elements:10, groups:9, blades:9, afType:'Linear STM',
+    weatherSealed:false, ois:false, oisStops:null, year:2020, discontinued:false,
+    imageUrl:null,
+    asin:null,
+    prices:{USD:399,AUD:null,EUR:null,GBP:null,JPY:null,CAD:null,SGD:null},
+    priceIncomplete:true,
+    productUrl:'https://www.lksamyang.com/en/product/product-view.php?seq=470',
+  },
+
+  'samyang-135mm-f18': {
+    name:'Samyang AF 135mm f/1.8 FE', manufacturer:'Samyang', line:'AF', type:'Prime',
+    focalLength:135, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'135mm',
+    maxAperture:1.8, minAperture:22, weight:772, length:129.6, diameter:93,
+    filterThread:82, minFocusDist:69, maxMagnification:0.24,
+    elements:13, groups:11, blades:11, afType:'Linear STM',
+    weatherSealed:true, ois:false, oisStops:null, year:2022, discontinued:false,
+    imageUrl:null,
+    asin:null,
+    prices:{USD:799,AUD:null,EUR:null,GBP:null,JPY:null,CAD:null,SGD:null},
+    priceIncomplete:true,
+    productUrl:'https://samyangus.com/products/135mm-f1-8-af-full-frame-telephoto-sony-e',
+  },
 };
 
 const LENS_DROPDOWN_GROUPS = [
@@ -2077,5 +2120,8 @@ const LENS_DROPDOWN_GROUPS = [
   ] },
   { label: '── Viltrox ──', ids: [
     'viltrox-16mm-f18', 'viltrox-27mm-f12', 'viltrox-56mm-f14',
+  ] },
+  { label: '── Samyang ──', ids: [
+    'samyang-35mm-f18', 'samyang-75mm-f18', 'samyang-135mm-f18',
   ] },
 ];
