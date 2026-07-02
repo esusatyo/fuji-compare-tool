@@ -1216,6 +1216,105 @@ const LENSES = {
     productUrl:'https://www.venuslens.net/product/laowa-10mm-f-4-cookie/',
   },
 
+  /* ── Viltrox full-frame Z primes ── */
+  'viltrox-24mm-f18': {
+    name:'Viltrox AF 24mm f/1.8', manufacturer:'Viltrox', line:'AF', type:'Prime',
+    focalLength:24, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'24mm',
+    maxAperture:1.8, minAperture:16, weight:370, length:92, diameter:65,
+    filterThread:55, minFocusDist:30, maxMagnification:0.1,
+    elements:11, groups:9, blades:9, afType:'STM',
+    weatherSealed:false, ois:false, oisStops:null, year:2022, discontinued:false,
+    imageUrl:null, asin:'B09CPDBWJY',
+    prices:{USD:380,AUD:null,EUR:null,GBP:null,JPY:null,CAD:null,SGD:null},
+    priceIncomplete:true, productUrl:'https://viltrox.com/products/viltrox-af-24mm-f18-z-mount-full-frame-prime-lens',
+  },
+
+  'viltrox-35mm-f18-evo': {
+    name:'Viltrox AF 35mm f/1.8 EVO', manufacturer:'Viltrox', line:'EVO', type:'Prime',
+    focalLength:35, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'35mm',
+    maxAperture:1.8, minAperture:16, weight:375, length:78, diameter:69,
+    filterThread:58, minFocusDist:34, maxMagnification:0.1,
+    elements:13, groups:10, blades:9, afType:'STM',
+    weatherSealed:false, ois:false, oisStops:null, year:2023, discontinued:false,
+    imageUrl:null, asin:null,
+    prices:{USD:395,AUD:null,EUR:null,GBP:null,JPY:null,CAD:null,SGD:null},
+    priceIncomplete:true, productUrl:'https://viltrox.com/products/af-35mm-f1-8-z',
+  },
+
+  /* ── Voigtländer (native Z manual-focus) ── */
+  'voigtlander-nokton-40mm-f12': {
+    name:'Voigtländer Nokton 40mm f/1.2 Z', manufacturer:'Voigtländer', line:'Nokton', type:'Prime',
+    focalLength:40, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'40mm',
+    maxAperture:1.2, minAperture:22, weight:315, length:53.9, diameter:67.6,
+    filterThread:58, minFocusDist:35, maxMagnification:0.1,
+    elements:8, groups:6, blades:10, afType:'Manual',
+    weatherSealed:false, ois:false, oisStops:null, year:2022, discontinued:false,
+    imageUrl:null, asin:'B0BMWKQ1WP',
+    prices:{USD:899,AUD:null,EUR:null,GBP:null,JPY:null,CAD:null,SGD:null},
+    priceIncomplete:true, productUrl:'https://www.voigtlaender.de/z-mount/40-mm-11-2-nokton/?lang=en',
+  },
+
+  /* ── Other (Yongnuo AF + budget makers) ── */
+  'yongnuo-35mm-f2': {
+    name:'Yongnuo YN35mm f/2Z DF DSM', manufacturer:'Yongnuo', line:'DF DSM', type:'Prime',
+    focalLength:35, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'35mm',
+    maxAperture:2.0, minAperture:16, weight:290, length:73, diameter:68,
+    filterThread:52, minFocusDist:35, maxMagnification:0.13,
+    elements:9, groups:8, blades:7, afType:'Stepping Motor (DSM)',
+    weatherSealed:false, ois:false, oisStops:null, year:2023, discontinued:false,
+    imageUrl:null, asin:null,
+    prices:{USD:250,AUD:null,EUR:null,GBP:null,JPY:null,CAD:null,SGD:null},
+    priceIncomplete:true, productUrl:'https://yongnuo.eu/lenses/nikon-z-f/yn35mm-f2z-df-dsm/',
+  },
+
+  'yongnuo-50mm-f18': {
+    name:'Yongnuo YN50mm f/1.8Z DF DSM', manufacturer:'Yongnuo', line:'DF DSM', type:'Prime',
+    focalLength:50, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'50mm',
+    maxAperture:1.8, minAperture:16, weight:417, length:87, diameter:68,
+    filterThread:58, minFocusDist:45, maxMagnification:0.14,
+    elements:11, groups:8, blades:9, afType:'Stepping Motor (DSM)',
+    weatherSealed:false, ois:false, oisStops:null, year:2022, discontinued:false,
+    imageUrl:null, asin:null,
+    prices:{USD:130,AUD:null,EUR:null,GBP:null,JPY:null,CAD:null,SGD:null},
+    priceIncomplete:true, productUrl:'https://th.hkyongnuo.com/products/yn50mm-f18z-df-dsm',
+  },
+
+  'ttartisan-27mm-f28': {
+    name:'TTArtisan AF 27mm f/2.8', manufacturer:'TTArtisan', line:'AF', type:'Prime',
+    focalLength:27, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'41mm',
+    maxAperture:2.8, minAperture:16, weight:93, length:41, diameter:64,
+    filterThread:39, minFocusDist:35, maxMagnification:0.1,
+    elements:6, groups:5, blades:7, afType:'STM',
+    weatherSealed:false, ois:false, oisStops:null, year:2023, discontinued:false,
+    imageUrl:null, asin:null,
+    prices:{USD:149,AUD:null,EUR:null,GBP:null,JPY:null,CAD:null,SGD:null},
+    priceIncomplete:true, productUrl:'https://ttartisan.store/products/af27',
+  },
+
+  '7artisans-27mm-f28': {
+    name:'7Artisans AF 27mm f/2.8', manufacturer:'7Artisans', line:'AF', type:'Prime',
+    focalLength:27, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'41mm',
+    maxAperture:2.8, minAperture:16, weight:172, length:48, diameter:64,
+    filterThread:52, minFocusDist:30, maxMagnification:0.1,
+    elements:6, groups:5, blades:6, afType:'STM',
+    weatherSealed:false, ois:false, oisStops:null, year:2024, discontinued:false,
+    imageUrl:null, asin:null,
+    prices:{USD:129,AUD:null,EUR:null,GBP:null,JPY:null,CAD:null,SGD:null},
+    priceIncomplete:true, productUrl:'https://7artisans.store/products/27mm-f2-8-af-aps-c-lens-for-e',
+  },
+
+  'meike-85mm-f18': {
+    name:'Meike 85mm f/1.8 Full Frame AF', manufacturer:'Meike', line:'AF', type:'Prime',
+    focalLength:85, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'85mm',
+    maxAperture:1.8, minAperture:22, weight:386, length:92, diameter:80,
+    filterThread:67, minFocusDist:85, maxMagnification:0.12,
+    elements:null, groups:null, blades:9, afType:'STM',
+    weatherSealed:false, ois:false, oisStops:null, year:2021, discontinued:false,
+    imageUrl:null, asin:null,
+    prices:{USD:219,AUD:null,EUR:null,GBP:null,JPY:null,CAD:null,SGD:null},
+    priceIncomplete:true, productUrl:'https://meikeglobal.com/products/85mm-f1-8-full-frame-auto-focus-stm-lens-for-nikon-z-mount-cameras',
+  },
+
 };
 
 const LENS_DROPDOWN_GROUPS = [
@@ -1226,7 +1325,9 @@ const LENS_DROPDOWN_GROUPS = [
   { label: '── Telephoto / Super-Telephoto ──', ids: ['z-70-180mm-f2-8', 'z-180-600mm-f5-6-6-3-vr', 'z-400mm-f4-5-vr-s', 'z-400mm-f2-8-tc-vr-s', 'z-600mm-f6-3-vr-s-pf', 'z-600mm-f4-tc-vr-s', 'z-800mm-f6-3-vr-s-pf'] },
   { label: '── DX Lenses ──',     ids: ['z-dx-24mm-f1-7', 'z-dx-12-28mm-pz-vr', 'z-dx-16-50mm-vr', 'z-dx-18-140mm-vr', 'z-dx-50-250mm-vr'] },
   { label: '── Sigma ──', ids: ['sigma-16mm-f14', 'sigma-30mm-f14', 'sigma-56mm-f14'] },
-  { label: '── Viltrox ──', ids: ['viltrox-13mm-f14', 'viltrox-16mm-f18', 'viltrox-27mm-f12', 'viltrox-33mm-f14', 'viltrox-56mm-f14', 'viltrox-85mm-f18-ii'] },
+  { label: '── Viltrox ──', ids: ['viltrox-13mm-f14', 'viltrox-16mm-f18', 'viltrox-27mm-f12', 'viltrox-33mm-f14', 'viltrox-56mm-f14', 'viltrox-85mm-f18-ii', 'viltrox-24mm-f18', 'viltrox-35mm-f18-evo'] },
   { label: '── Tamron ──', ids: ['tamron-11-20mm-f28', 'tamron-17-70mm-f28', 'tamron-18-300mm-f35-63', 'tamron-35-150mm-f2-28', 'tamron-50-400mm-f45-63', 'tamron-70-300mm-f45-63', 'tamron-150-500mm-f5-67'] },
+  { label: '── Voigtländer ──', ids: ['voigtlander-nokton-40mm-f12'] },
   { label: '── Laowa ──', ids: ['laowa-10mm-f4-cookie', 'laowa-15mm-f2', 'laowa-90mm-f28-macro'] },
+  { label: '── Other ──', ids: ['yongnuo-35mm-f2', 'yongnuo-50mm-f18', 'ttartisan-27mm-f28', '7artisans-27mm-f28', 'meike-85mm-f18'] },
 ];

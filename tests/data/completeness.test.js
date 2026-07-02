@@ -38,6 +38,8 @@ const KNOWN_IMAGE_GAPS = {
     'laowa-90mm-f28-macro', 'laowa-15mm-f2', 'laowa-10mm-f4-cookie',
     'tamron-11-20mm-f28', 'tamron-17-70mm-f28', 'tamron-18-300mm-f35-63', 'tamron-35-150mm-f2-28',
     'tamron-50-400mm-f45-63', 'tamron-70-300mm-f45-63', 'tamron-150-500mm-f5-67',
+    'viltrox-24mm-f18', 'viltrox-35mm-f18-evo', 'voigtlander-nokton-40mm-f12',
+    'yongnuo-35mm-f2', 'yongnuo-50mm-f18', 'ttartisan-27mm-f28', '7artisans-27mm-f28', 'meike-85mm-f18',
     // Curated via scripts/fetch-images-commons.js (strict model-token match).
     // 21 of 57 items carry real Commons images (4 cameras + 17 lenses); the
     // rest stay on the engine's series-coloured placeholder until a freely-
