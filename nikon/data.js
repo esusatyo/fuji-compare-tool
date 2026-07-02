@@ -1241,7 +1241,44 @@ const LENSES = {
     priceIncomplete:true, productUrl:'https://viltrox.com/products/af-35mm-f1-8-z',
   },
 
+  'viltrox-40mm-f25-air': {
+    name:'Viltrox AF 40mm f/2.5 Air', manufacturer:'Viltrox', line:'Air', type:'Prime',
+    focalLength:40, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'40mm',
+    maxAperture:2.5, minAperture:16, weight:180, length:55.9, diameter:68,
+    filterThread:52, minFocusDist:34, maxMagnification:0.1,
+    elements:10, groups:6, blades:7, afType:'STM',
+    weatherSealed:false, ois:false, oisStops:null, year:2024, discontinued:false,
+    imageUrl:null, asin:null,
+    prices:{USD:158,AUD:null,EUR:null,GBP:null,JPY:null,CAD:null,SGD:null},
+    priceIncomplete:true, productUrl:'https://viltrox.com/products/viltrox-af-40mm-f2-5-z',
+  },
+
+  /* ── Samyang (Z AF) ── */
+  'samyang-135mm-f18': {
+    name:'Samyang AF 135mm f/1.8 Z', manufacturer:'Samyang', line:'AF', type:'Prime',
+    focalLength:135, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'135mm',
+    maxAperture:1.8, minAperture:22, weight:772, length:129.6, diameter:93,
+    filterThread:82, minFocusDist:69, maxMagnification:0.24,
+    elements:13, groups:11, blades:11, afType:'Linear STM',
+    weatherSealed:true, ois:false, oisStops:null, year:2023, discontinued:false,
+    imageUrl:null, asin:null,
+    prices:{USD:799,AUD:null,EUR:null,GBP:null,JPY:null,CAD:null,SGD:null},
+    priceIncomplete:true, productUrl:'https://samyangus.com/products/135mm-f1-8-af-full-frame-telephoto-nikon-z',
+  },
+
   /* ── Voigtländer (native Z manual-focus) ── */
+  'voigtlander-apo-lanthar-50mm-f2': {
+    name:'Voigtländer APO-Lanthar 50mm f/2 Z', manufacturer:'Voigtländer', line:'APO-Lanthar', type:'Prime',
+    focalLength:50, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'50mm',
+    maxAperture:2.0, minAperture:16, weight:370, length:64.3, diameter:63,
+    filterThread:58, minFocusDist:45, maxMagnification:0.15,
+    elements:10, groups:8, blades:12, afType:'Manual',
+    weatherSealed:false, ois:false, oisStops:null, year:2023, discontinued:false,
+    imageUrl:null, asin:'B09Z2NNDY4',
+    prices:{USD:1049,AUD:null,EUR:null,GBP:null,JPY:null,CAD:null,SGD:null},
+    priceIncomplete:true, productUrl:'https://www.voigtlaender.de/z-mount/50-mm-12-0-apo-lanthar/?lang=en',
+  },
+
   'voigtlander-nokton-40mm-f12': {
     name:'Voigtländer Nokton 40mm f/1.2 Z', manufacturer:'Voigtländer', line:'Nokton', type:'Prime',
     focalLength:40, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'40mm',
@@ -1325,9 +1362,10 @@ const LENS_DROPDOWN_GROUPS = [
   { label: '── Telephoto / Super-Telephoto ──', ids: ['z-70-180mm-f2-8', 'z-180-600mm-f5-6-6-3-vr', 'z-400mm-f4-5-vr-s', 'z-400mm-f2-8-tc-vr-s', 'z-600mm-f6-3-vr-s-pf', 'z-600mm-f4-tc-vr-s', 'z-800mm-f6-3-vr-s-pf'] },
   { label: '── DX Lenses ──',     ids: ['z-dx-24mm-f1-7', 'z-dx-12-28mm-pz-vr', 'z-dx-16-50mm-vr', 'z-dx-18-140mm-vr', 'z-dx-50-250mm-vr'] },
   { label: '── Sigma ──', ids: ['sigma-16mm-f14', 'sigma-30mm-f14', 'sigma-56mm-f14'] },
-  { label: '── Viltrox ──', ids: ['viltrox-13mm-f14', 'viltrox-16mm-f18', 'viltrox-27mm-f12', 'viltrox-33mm-f14', 'viltrox-56mm-f14', 'viltrox-85mm-f18-ii', 'viltrox-24mm-f18', 'viltrox-35mm-f18-evo'] },
+  { label: '── Viltrox ──', ids: ['viltrox-13mm-f14', 'viltrox-16mm-f18', 'viltrox-27mm-f12', 'viltrox-33mm-f14', 'viltrox-56mm-f14', 'viltrox-85mm-f18-ii', 'viltrox-24mm-f18', 'viltrox-35mm-f18-evo', 'viltrox-40mm-f25-air'] },
   { label: '── Tamron ──', ids: ['tamron-11-20mm-f28', 'tamron-17-70mm-f28', 'tamron-18-300mm-f35-63', 'tamron-35-150mm-f2-28', 'tamron-50-400mm-f45-63', 'tamron-70-300mm-f45-63', 'tamron-150-500mm-f5-67'] },
-  { label: '── Voigtländer ──', ids: ['voigtlander-nokton-40mm-f12'] },
+  { label: '── Samyang ──', ids: ['samyang-135mm-f18'] },
+  { label: '── Voigtländer ──', ids: ['voigtlander-apo-lanthar-50mm-f2', 'voigtlander-nokton-40mm-f12'] },
   { label: '── Laowa ──', ids: ['laowa-10mm-f4-cookie', 'laowa-15mm-f2', 'laowa-90mm-f28-macro'] },
   { label: '── Other ──', ids: ['yongnuo-35mm-f2', 'yongnuo-50mm-f18', 'ttartisan-27mm-f28', '7artisans-27mm-f28', 'meike-85mm-f18'] },
 ];
