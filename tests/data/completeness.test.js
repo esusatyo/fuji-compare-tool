@@ -49,6 +49,7 @@ const KNOWN_IMAGE_GAPS = {
     'z-dx-18-140mm-vr', 'z-dx-50-250mm-vr',
   ]),
   panasonic: new Set([
+    'voigtlander-nokton-25mm-f095', 'laowa-7-5mm-f2-mft',
     // OM System M.Zuiko — manufacturer image URLs pending backfill
     'omsystem-12-40mm-f28-pro', 'omsystem-40-150mm-f4-pro', 'omsystem-12-100mm-f4-pro', 'omsystem-17mm-f12-pro', 'omsystem-25mm-f12-pro', 'omsystem-45mm-f12-pro', 'omsystem-60mm-f28-macro', 'omsystem-17mm-f18', 'omsystem-25mm-f18', 'omsystem-45mm-f18',
     // Sigma L-mount product images unavailable (404): 90/2.8, 28-70, 100-400

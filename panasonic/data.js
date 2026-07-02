@@ -1492,6 +1492,31 @@ const LENSES = {
     priceIncomplete:true,
     productUrl:'https://www.sigma-global.com/en/lenses/c018_56_14/',
   },
+
+  /* ── Voigtländer & Laowa (MFT manual-focus specialty) ── */
+  'voigtlander-nokton-25mm-f095': {
+    name:'Voigtländer Nokton 25mm f/0.95', manufacturer:'Voigtländer', line:'Nokton', type:'Prime',
+    focalLength:25, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'50mm',
+    maxAperture:0.95, minAperture:16, weight:435, length:70, diameter:60.6,
+    filterThread:52, minFocusDist:17, maxMagnification:0.11,
+    elements:11, groups:8, blades:10, afType:'Manual',
+    weatherSealed:false, ois:false, oisStops:null, year:2017, discontinued:false,
+    imageUrl:null, asin:null,
+    prices:{USD:999,AUD:null,EUR:null,GBP:null,JPY:null,CAD:null,SGD:null},
+    priceIncomplete:true, productUrl:'https://www.voigtlaender.de/mft/25-mm-10-95-nokton/?lang=en',
+  },
+
+  'laowa-7-5mm-f2-mft': {
+    name:'Laowa 7.5mm f/2 MFT', manufacturer:'Laowa', line:'Zero-D', type:'Prime',
+    focalLength:7.5, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'15mm',
+    maxAperture:2.0, minAperture:22, weight:170, length:55, diameter:55,
+    filterThread:46, minFocusDist:12, maxMagnification:0.11,
+    elements:13, groups:9, blades:7, afType:'Manual',
+    weatherSealed:false, ois:false, oisStops:null, year:2017, discontinued:false,
+    imageUrl:null, asin:null,
+    prices:{USD:499,AUD:null,EUR:null,GBP:null,JPY:null,CAD:null,SGD:null},
+    priceIncomplete:true, productUrl:'https://www.venuslens.net/product/laowa-7-5mm-f2/',
+  },
 };
 
 const LENS_DROPDOWN_GROUPS = [
@@ -1506,4 +1531,5 @@ const LENS_DROPDOWN_GROUPS = [
   { label: '── OM System Primes (MFT) ──', ids: ['omsystem-17mm-f12-pro', 'omsystem-25mm-f12-pro', 'omsystem-45mm-f12-pro', 'omsystem-60mm-f28-macro', 'omsystem-17mm-f18', 'omsystem-25mm-f18', 'omsystem-45mm-f18'] },
   { label: '── OM System Zooms (MFT) ──', ids: ['omsystem-12-40mm-f28-pro', 'omsystem-40-150mm-f4-pro', 'omsystem-12-100mm-f4-pro'] },
   { label: '── Sigma (MFT) ──', ids: ['sigma-16mm-f14-mft', 'sigma-30mm-f14-mft', 'sigma-56mm-f14-mft'] },
+  { label: '── Voigtländer & Laowa (MFT) ──', ids: ['voigtlander-nokton-25mm-f095', 'laowa-7-5mm-f2-mft'] },
 ];
