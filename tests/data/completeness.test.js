@@ -32,6 +32,10 @@ const KNOWN_IMAGE_GAPS = {
     'xc-16-50mm-f35-56', // no freely-licensed product image found
   ]),
   nikon: new Set([
+    // Third-party (Viltrox AF / Laowa MF) — manufacturer image URLs pending backfill
+    'viltrox-13mm-f14', 'viltrox-16mm-f18', 'viltrox-27mm-f12', 'viltrox-33mm-f14',
+    'viltrox-56mm-f14', 'viltrox-85mm-f18-ii',
+    'laowa-90mm-f28-macro', 'laowa-15mm-f2', 'laowa-10mm-f4-cookie',
     // Curated via scripts/fetch-images-commons.js (strict model-token match).
     // 21 of 57 items carry real Commons images (4 cameras + 17 lenses); the
     // rest stay on the engine's series-coloured placeholder until a freely-

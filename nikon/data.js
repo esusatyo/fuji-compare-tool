@@ -963,6 +963,165 @@ const LENSES = {
     productUrl:'https://www.nikonusa.com/en/nikon-products/product/camera-lenses/nikkor-z-dx-50-250mm-f%2f4.5-6.3-vr.html',
   },
 
+  /* ── Sigma (Z DX, APS-C DC DN) ── */
+  /* Nikon Z APS-C crop = 1.5×. Sigma's official Z lineup is only these 3 DC DN
+     primes (Nikon licenses no full-frame Sigma). Z-mount weights from Sigma. */
+  'sigma-16mm-f14': {
+    name:'Sigma 16mm f/1.4 DC DN', manufacturer:'Sigma', line:'Contemporary', type:'Prime',
+    focalLength:16, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'24mm',
+    maxAperture:1.4, minAperture:16, weight:420, length:94.3, diameter:72.2,
+    filterThread:67, minFocusDist:25, maxMagnification:0.1,
+    elements:16, groups:13, blades:9, afType:'Stepping Motor',
+    weatherSealed:false, ois:false, oisStops:null, year:2023, discontinued:false,
+    imageUrl:'https://www.sigma-global.com/lenses/c017_16_14_product_img01.png',
+    asin:null,
+    prices:{USD:459,AUD:null,EUR:null,GBP:null,JPY:null,CAD:null,SGD:null},
+    priceIncomplete:true,
+    productUrl:'https://www.sigma-global.com/en/lenses/c017_16_14/',
+  },
+
+  'sigma-30mm-f14': {
+    name:'Sigma 30mm f/1.4 DC DN', manufacturer:'Sigma', line:'Contemporary', type:'Prime',
+    focalLength:30, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'45mm',
+    maxAperture:1.4, minAperture:16, weight:285, length:75.3, diameter:70,
+    filterThread:52, minFocusDist:30, maxMagnification:0.14,
+    elements:9, groups:7, blades:9, afType:'Stepping Motor',
+    weatherSealed:false, ois:false, oisStops:null, year:2023, discontinued:false,
+    imageUrl:'https://www.sigma-global.com/lenses/c016_30_14_product_img01.png',
+    asin:null,
+    prices:{USD:339,AUD:null,EUR:null,GBP:null,JPY:null,CAD:null,SGD:null},
+    priceIncomplete:true,
+    productUrl:'https://www.sigma-global.com/en/lenses/c016_30_14/',
+  },
+
+  'sigma-56mm-f14': {
+    name:'Sigma 56mm f/1.4 DC DN', manufacturer:'Sigma', line:'Contemporary', type:'Prime',
+    focalLength:56, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'84mm',
+    maxAperture:1.4, minAperture:16, weight:295, length:61.5, diameter:70,
+    filterThread:55, minFocusDist:50, maxMagnification:0.14,
+    elements:10, groups:6, blades:9, afType:'Stepping Motor',
+    weatherSealed:false, ois:false, oisStops:null, year:2023, discontinued:false,
+    imageUrl:'https://www.sigma-global.com/lenses/c018_56_14_product_img01.png',
+    asin:null,
+    prices:{USD:479,AUD:null,EUR:null,GBP:null,JPY:null,CAD:null,SGD:null},
+    priceIncomplete:true,
+    productUrl:'https://www.sigma-global.com/en/lenses/c018_56_14/',
+  },
+
+  /* ── Viltrox (Z mount AF) — largest third-party line on Z ── */
+  /* Optical specs shared with the E-mount versions (verified); Z APS-C = 1.5×. */
+  'viltrox-13mm-f14': {
+    name:'Viltrox AF 13mm f/1.4', manufacturer:'Viltrox', line:'AF', type:'Prime',
+    focalLength:13, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'20mm',
+    maxAperture:1.4, minAperture:16, weight:420, length:90, diameter:74,
+    filterThread:67, minFocusDist:22, maxMagnification:0.1,
+    elements:14, groups:11, blades:9, afType:'STM',
+    weatherSealed:false, ois:false, oisStops:null, year:2022, discontinued:false,
+    imageUrl:null, asin:null,
+    prices:{USD:429,AUD:null,EUR:null,GBP:null,JPY:null,CAD:null,SGD:null},
+    priceIncomplete:true, productUrl:null,
+  },
+
+  'viltrox-16mm-f18': {
+    name:'Viltrox AF 16mm f/1.8', manufacturer:'Viltrox', line:'Pro', type:'Prime',
+    focalLength:16, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'16mm',
+    maxAperture:1.8, minAperture:22, weight:550, length:101, diameter:85.2,
+    filterThread:77, minFocusDist:27, maxMagnification:0.1,
+    elements:15, groups:12, blades:9, afType:'STM',
+    weatherSealed:false, ois:false, oisStops:null, year:2023, discontinued:false,
+    imageUrl:null, asin:null,
+    prices:{USD:549,AUD:null,EUR:null,GBP:null,JPY:null,CAD:null,SGD:null},
+    priceIncomplete:true, productUrl:null,
+  },
+
+  'viltrox-27mm-f12': {
+    name:'Viltrox AF 27mm f/1.2 Pro', manufacturer:'Viltrox', line:'Pro', type:'Prime',
+    focalLength:27, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'41mm',
+    maxAperture:1.2, minAperture:16, weight:560, length:92, diameter:82,
+    filterThread:67, minFocusDist:28, maxMagnification:0.15,
+    elements:15, groups:11, blades:11, afType:'STM',
+    weatherSealed:false, ois:false, oisStops:null, year:2024, discontinued:false,
+    imageUrl:null, asin:null,
+    prices:{USD:549,AUD:null,EUR:null,GBP:null,JPY:null,CAD:null,SGD:null},
+    priceIncomplete:true, productUrl:null,
+  },
+
+  'viltrox-33mm-f14': {
+    name:'Viltrox AF 33mm f/1.4', manufacturer:'Viltrox', line:'AF', type:'Prime',
+    focalLength:33, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'50mm',
+    maxAperture:1.4, minAperture:16, weight:270, length:72, diameter:65,
+    filterThread:52, minFocusDist:40, maxMagnification:0.1,
+    elements:10, groups:9, blades:9, afType:'STM',
+    weatherSealed:false, ois:false, oisStops:null, year:2021, discontinued:false,
+    imageUrl:null, asin:null,
+    prices:{USD:279,AUD:null,EUR:null,GBP:null,JPY:null,CAD:null,SGD:null},
+    priceIncomplete:true, productUrl:null,
+  },
+
+  'viltrox-56mm-f14': {
+    name:'Viltrox AF 56mm f/1.4', manufacturer:'Viltrox', line:'AF', type:'Prime',
+    focalLength:56, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'84mm',
+    maxAperture:1.4, minAperture:16, weight:320, length:72, diameter:65,
+    filterThread:52, minFocusDist:60, maxMagnification:0.1,
+    elements:10, groups:9, blades:9, afType:'STM',
+    weatherSealed:false, ois:false, oisStops:null, year:2021, discontinued:false,
+    imageUrl:null, asin:null,
+    prices:{USD:329,AUD:null,EUR:null,GBP:null,JPY:null,CAD:null,SGD:null},
+    priceIncomplete:true, productUrl:null,
+  },
+
+  'viltrox-85mm-f18-ii': {
+    name:'Viltrox AF 85mm f/1.8 II', manufacturer:'Viltrox', line:'AF', type:'Prime',
+    focalLength:85, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'85mm',
+    maxAperture:1.8, minAperture:16, weight:371, length:92, diameter:80,
+    filterThread:72, minFocusDist:80, maxMagnification:0.12,
+    elements:10, groups:7, blades:9, afType:'STM',
+    weatherSealed:false, ois:false, oisStops:null, year:2020, discontinued:false,
+    imageUrl:null, asin:null,
+    prices:{USD:399,AUD:null,EUR:null,GBP:null,JPY:null,CAD:null,SGD:null},
+    priceIncomplete:true, productUrl:null,
+  },
+
+  /* ── Laowa (Z mount manual-focus specialty) ── */
+  'laowa-90mm-f28-macro': {
+    name:'Laowa 90mm f/2.8 2x Ultra Macro APO', manufacturer:'Laowa', line:'Ultra Macro APO', type:'Prime',
+    focalLength:90, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'90mm',
+    maxAperture:2.8, minAperture:22, weight:619, length:120, diameter:74,
+    filterThread:67, minFocusDist:20.5, maxMagnification:2.0,
+    elements:13, groups:10, blades:13, afType:'Manual',
+    weatherSealed:false, ois:false, oisStops:null, year:2022, discontinued:false,
+    imageUrl:null, asin:null,
+    prices:{USD:499,AUD:null,EUR:null,GBP:null,JPY:null,CAD:null,SGD:null},
+    priceIncomplete:true,
+    productUrl:'https://www.venuslens.net/product/laowa-90mm-f-2-8-2x-macro-apo/',
+  },
+
+  'laowa-15mm-f2': {
+    name:'Laowa 15mm f/2 Zero-D', manufacturer:'Laowa', line:'Zero-D', type:'Prime',
+    focalLength:15, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'15mm',
+    maxAperture:2.0, minAperture:22, weight:500, length:82, diameter:66,
+    filterThread:72, minFocusDist:15, maxMagnification:0.1,
+    elements:12, groups:9, blades:5, afType:'Manual',
+    weatherSealed:false, ois:false, oisStops:null, year:2021, discontinued:false,
+    imageUrl:null, asin:null,
+    prices:{USD:849,AUD:null,EUR:null,GBP:null,JPY:null,CAD:null,SGD:null},
+    priceIncomplete:true,
+    productUrl:'https://www.venuslens.net/product/laowa-15mm-f2/',
+  },
+
+  'laowa-10mm-f4-cookie': {
+    name:'Laowa 10mm f/4 Cookie', manufacturer:'Laowa', line:'Cookie', type:'Prime',
+    focalLength:10, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'15mm',
+    maxAperture:4.0, minAperture:22, weight:130, length:25, diameter:54,
+    filterThread:37, minFocusDist:10, maxMagnification:0.1,
+    elements:12, groups:8, blades:5, afType:'Manual',
+    weatherSealed:false, ois:false, oisStops:null, year:2022, discontinued:false,
+    imageUrl:null, asin:null,
+    prices:{USD:299,AUD:null,EUR:null,GBP:null,JPY:null,CAD:null,SGD:null},
+    priceIncomplete:true,
+    productUrl:'https://www.venuslens.net/product/laowa-10mm-f-4-cookie/',
+  },
+
 };
 
 const LENS_DROPDOWN_GROUPS = [
@@ -972,4 +1131,7 @@ const LENS_DROPDOWN_GROUPS = [
   { label: '── Standard / Travel Zooms ──', ids: ['z-17-28mm-f2-8', 'z-24-50mm-f4-6-3', 'z-28-75mm-f2-8', 'z-24-200mm-f4-6-3-vr', 'z-28-400mm-f4-8-vr'] },
   { label: '── Telephoto / Super-Telephoto ──', ids: ['z-70-180mm-f2-8', 'z-180-600mm-f5-6-6-3-vr', 'z-400mm-f4-5-vr-s', 'z-400mm-f2-8-tc-vr-s', 'z-600mm-f6-3-vr-s-pf', 'z-600mm-f4-tc-vr-s', 'z-800mm-f6-3-vr-s-pf'] },
   { label: '── DX Lenses ──',     ids: ['z-dx-24mm-f1-7', 'z-dx-12-28mm-pz-vr', 'z-dx-16-50mm-vr', 'z-dx-18-140mm-vr', 'z-dx-50-250mm-vr'] },
+  { label: '── Sigma ──', ids: ['sigma-16mm-f14', 'sigma-30mm-f14', 'sigma-56mm-f14'] },
+  { label: '── Viltrox ──', ids: ['viltrox-13mm-f14', 'viltrox-16mm-f18', 'viltrox-27mm-f12', 'viltrox-33mm-f14', 'viltrox-56mm-f14', 'viltrox-85mm-f18-ii'] },
+  { label: '── Laowa ──', ids: ['laowa-10mm-f4-cookie', 'laowa-15mm-f2', 'laowa-90mm-f28-macro'] },
 ];
