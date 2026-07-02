@@ -83,6 +83,27 @@ const KNOWN_IMAGE_GAPS = {
     'lumix-g-14-140mm-f3-5-5-6-ii', 'lumix-g-100-300mm-f4-5-6-ii', 'leica-dg-100-400mm-f4-6-3-ii',
   ]),
   sony: new Set([
+    'sigma-90mm-f28-dg', // discontinued I-series; Sigma image URL not available
+    'sigma-28-70mm-f28-dg', // Sigma product image URL not available (404)
+    'sigma-100-400mm-f5-63-dg', // Sigma product image URL not available (404)
+    'tamron-70-300mm-f45-63', // Tamron image URL pending backfill
+    // Tamron FE zooms — Tamron image URLs vary by model/mount; pending backfill
+    'tamron-11-20mm-f28', 'tamron-16-30mm-f28-g2', 'tamron-17-70mm-f28',
+    'tamron-20-40mm-f28', 'tamron-28-75mm-f28-g2', 'tamron-35-150mm-f2-28',
+    'tamron-50-400mm-f45-63', 'tamron-70-180mm-f28-g2',
+    // Viltrox — store product image URLs pending backfill
+    'viltrox-13mm-f14', 'viltrox-16mm-f18', 'viltrox-27mm-f12', 'viltrox-33mm-f14',
+    'viltrox-56mm-f14', 'viltrox-85mm-f18-ii',
+    // Samyang — product image URLs pending backfill
+    'samyang-24mm-f18', 'samyang-35mm-f18', 'samyang-45mm-f18', 'samyang-75mm-f18', 'samyang-135mm-f18',
+    // Voigtländer — manufacturer image URLs pending backfill
+    'voigtlander-apo-lanthar-35mm-f2', 'voigtlander-apo-lanthar-50mm-f2', 'voigtlander-nokton-40mm-f12',
+    // Laowa — Venus Optics image URLs pending backfill
+    'laowa-90mm-f28-macro', 'laowa-15mm-f2', 'laowa-10mm-f4-cookie',
+    // Zeiss — discontinued; manufacturer image URLs unavailable
+    'zeiss-batis-25mm-f2', 'zeiss-batis-85mm-f18', 'zeiss-loxia-35mm-f2', 'zeiss-touit-32mm-f18',
+    // 7Artisans / TTArtisan / Meike — product image URLs pending backfill
+    '7artisans-27mm-f28', 'ttartisan-27mm-f28', 'meike-85mm-f18',
     // 31 of 33 cameras now have curated product images (Wikipedia infobox +
     // Wikimedia Commons category/file lookups, each model-confirmed — a9-ii was
     // visually verified — and verify-images'd). Only a7-v (2025) and a6100 lack

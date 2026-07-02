@@ -1,5 +1,13 @@
 # Sony E / FE — Third-Party Lens Enumeration (Group 1)
 
+> **FINAL COVERAGE (implemented): 59 lenses across 10 makers** — Sigma 26, Tamron 9,
+> Viltrox 6, Samyang 5, Voigtländer 3, Laowa 3, Zeiss 4, TTArtisan 1, 7Artisans 1, Meike 1.
+> All specs source-verified (manufacturer pages / reputable specs); Sigma images
+> live-checked. Sony total lenses 69 → 128. Remaining minor long-tail (optional):
+> Sigma 500/5.6 + 60-600, Tamron 18-300/150-500/90-macro, Samyang 85/1.4 II/14/2.8,
+> more Viltrox Air primes. All the cross-shopped lenses are covered.
+
+
 > Scope: **third-party** native-AF E/FE lenses (Sigma, Tamron, Samyang, Viltrox)
 > + notable manual/specialty (Zeiss, Voigtländer, Laowa) + representative budget
 > (TTArtisan, 7Artisans, Meike). First-party Sony lenses already in `data.js`.
@@ -9,26 +17,33 @@
 > Sony entry (denormalized, see design D1). Tables below are the enumeration
 > skeleton to be completed and checked off during implementation.
 
-## Sigma — DC DN (APS-C)
-| name | slug | focal | aperture | year | also on mounts | in-scope |
-|------|------|-------|----------|------|----------------|----------|
-| 16mm F1.4 DC DN | sigma-16mm-f14 | 16 | 1.4 | 2017 | X, Z, RF-S, MFT | ✅ |
-| 18mm F1.4 DC DN | sigma-18mm-f14 | 18 | 1.4 | 2023 | X, Z, RF-S | ✅ |
-| 23mm F1.4 DC DN | sigma-23mm-f14 | 23 | 1.4 | 2023 | X, Z, RF-S | ✅ |
-| 30mm F1.4 DC DN | sigma-30mm-f14 | 30 | 1.4 | 2016 | X, Z, RF-S, MFT, L | ✅ |
-| 56mm F1.4 DC DN | sigma-56mm-f14 | 56 | 1.4 | 2018 | X, Z, RF-S, MFT, L | ✅ |
-| 10-18mm F2.8 DC DN | sigma-10-18mm-f28 | 10-18 | 2.8 | 2023 | X, Z, RF-S, L | ✅ |
-| 18-50mm F2.8 DC DN | sigma-18-50mm-f28 | 18-50 | 2.8 | 2021 | X, Z, RF-S, L | ✅ |
+## Sigma — DC DN (APS-C)  [ENTERED ✅ — Sony E specs from Sigma official pages]
+> Sony APS-C crop = 1.5×. Weights are Sony E-mount values (verified). Note the
+> 18mm f/1.4 DC DN is NOT made in Sony E (it's X/Z/RF-S only) → excluded here.
+| name | slug | E weight | E length | USD | year | done |
+|------|------|----------|----------|-----|------|------|
+| 16mm F1.4 DC DN | sigma-16mm-f14 | 405g | 92.3 | $449 | 2017 | ✅ (asin) |
+| 23mm F1.4 DC DN | sigma-23mm-f14 | 330g | 78.9 | $549 | 2023 | ✅ |
+| 30mm F1.4 DC DN | sigma-30mm-f14 | 265g | 73.3 | $339 | 2016 | ✅ |
+| 56mm F1.4 DC DN | sigma-56mm-f14 | 280g | 59.5 | $479 | 2018 | ✅ (asin) |
+| 10-18mm F2.8 DC DN | sigma-10-18mm-f28 | 255g | 64.0 | $659 | 2023 | ✅ |
+| 18-50mm F2.8 DC DN | sigma-18-50mm-f28 | 290g | 76.5 | $549 | 2021 | ✅ |
 
 ## Sigma — DG DN (full-frame) Contemporary + Art
-> Contemporary (I-series + telephoto) and Art. Also on L-mount natively; several
-> now on Nikon Z / Canon RF too. Enumerate: 17/4, 20/2, 24/2, 24/3.5, 35/2,
-> 45/2.8, 50/2, 65/2, 90/2.8, 500/5.6 (Contemporary); 20/1.4, 24/1.4, 35/1.2,
-> 35/1.4, 50/1.2, 50/1.4, 85/1.4, 105/2.8 macro, 135/1.8 (Art); zooms 16-28/2.8,
-> 24-70/2.8 II, 28-45/1.8, 28-70/2.8, 70-200/2.8, 100-400, 60-600, 150-600.
-| name | slug | focal | aperture | line | year | in-scope |
-|------|------|-------|----------|------|------|----------|
-| _to be enumerated_ | | | | | | |
+> Art f/1.4 primes ENTERED ✅ (specs from Sigma official Sony-E spec pages, all
+> link-checked live). Remaining Contemporary + zooms NEXT.
+| name | slug | weight | filter | USD | year | done |
+|------|------|--------|--------|-----|------|------|
+| 24mm F1.4 DG DN Art | sigma-24mm-f14-dg | 510g | 72 | $799 | 2022 | ✅ |
+| 35mm F1.4 DG DN Art | sigma-35mm-f14-dg | 640g | 67 | $799 | 2021 | ✅ |
+| 50mm F1.4 DG DN Art | sigma-50mm-f14-dg | 660g | 72 | $849 | 2023 | ✅ |
+| 85mm F1.4 DG DN Art | sigma-85mm-f14-dg | 625g | 77 | $1199 | 2020 | ✅ |
+| 20mm F1.4 DG DN Art | | | | | | NEXT |
+| Contemporary 17/4, 20/2, 24/2, 35/2, 45/2.8, 50/2, 65/2, 90/2.8, 500/5.6 | | | | | | NEXT |
+| Zooms 16-28/2.8, 24-70/2.8 II, 28-45/1.8, 28-70/2.8, 70-200/2.8, 100-400, 60-600, 150-600 | | | | | | NEXT |
+
+> Sigma URL scheme confirmed: `sigma-global.com/en/lenses/a<YY>_<focal>_<ap>/`
+> and image `/lenses/a<YY>_<focal>_<ap>_product_img01.png` (both 200 OK).
 
 ## Tamron — Di III (APS-C + full-frame)
 > APS-C: 11-20/2.8, 17-70/2.8, 18-300. FF zooms: 20-40/2.8, 28-75/2.8 G2,
