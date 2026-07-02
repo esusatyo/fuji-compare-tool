@@ -1801,6 +1801,20 @@ const LENSES = {
     productUrl:'https://www.sigma-global.com/en/lenses/a020_85_14/',
   },
 
+  'sigma-20mm-f14-dg': {
+    name:'Sigma 20mm f/1.4 DG DN Art', manufacturer:'Sigma', line:'Art', type:'Prime',
+    focalLength:20, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'20mm',
+    maxAperture:1.4, minAperture:16, weight:630, length:113.2, diameter:87.8,
+    filterThread:82, minFocusDist:23, maxMagnification:0.16,
+    elements:17, groups:15, blades:11, afType:'Stepping Motor',
+    weatherSealed:true, ois:false, oisStops:null, year:2022, discontinued:false,
+    imageUrl:'https://www.sigma-global.com/lenses/a022_20_14_product_img01.png',
+    asin:null,
+    prices:{USD:899,AUD:null,EUR:null,GBP:null,JPY:null,CAD:null,SGD:null},
+    priceIncomplete:true,
+    productUrl:'https://www.sigma-global.com/en/lenses/a022_20_14/',
+  },
+
   /* ── Sigma (FE, full-frame DG DN Contemporary "I-series") ── */
   /* Compact metal-body primes. All four f/2 primes + the 90 f/2.8 are now
      discontinued on Sigma's site but remain widely sold; marked discontinued. */
@@ -1870,6 +1884,20 @@ const LENSES = {
   },
 
   /* ── Sigma (FE, full-frame DG DN zooms) ── */
+  'sigma-16-28mm-f28-dg': {
+    name:'Sigma 16-28mm f/2.8 DG DN Contemporary', manufacturer:'Sigma', line:'Contemporary', type:'Zoom',
+    focalLength:null, focalLengthMin:16, focalLengthMax:28, focalLengthEquiv:'16-28mm',
+    maxAperture:2.8, minAperture:22, weight:450, length:102.6, diameter:77.2,
+    filterThread:72, minFocusDist:25, maxMagnification:0.18,
+    elements:16, groups:11, blades:9, afType:'Stepping Motor',
+    weatherSealed:true, ois:false, oisStops:null, year:2022, discontinued:false,
+    imageUrl:'https://www.sigma-global.com/lenses/c022_16_28_28_product_img01.png',
+    asin:null,
+    prices:{USD:899,AUD:null,EUR:null,GBP:null,JPY:null,CAD:null,SGD:null},
+    priceIncomplete:true,
+    productUrl:'https://www.sigma-global.com/en/lenses/c022_16_28_28/',
+  },
+
   'sigma-28-70mm-f28-dg': {
     name:'Sigma 28-70mm f/2.8 DG DN Contemporary', manufacturer:'Sigma', line:'Contemporary', type:'Zoom',
     focalLength:null, focalLengthMin:28, focalLengthMax:70, focalLengthEquiv:'28-70mm',
@@ -1910,6 +1938,48 @@ const LENSES = {
     prices:{USD:1499,AUD:null,EUR:null,GBP:null,JPY:null,CAD:null,SGD:null},
     priceIncomplete:true,
     productUrl:'https://www.sigma-global.com/en/lenses/s023_70_200_28/',
+  },
+
+  'sigma-24-70mm-f28-dg-ii': {
+    name:'Sigma 24-70mm f/2.8 DG DN II Art', manufacturer:'Sigma', line:'Art', type:'Zoom',
+    focalLength:null, focalLengthMin:24, focalLengthMax:70, focalLengthEquiv:'24-70mm',
+    maxAperture:2.8, minAperture:22, weight:735, length:122.2, diameter:87.8,
+    filterThread:82, minFocusDist:17, maxMagnification:0.34,
+    elements:19, groups:15, blades:11, afType:'HLA Linear',
+    weatherSealed:true, ois:false, oisStops:null, year:2024, discontinued:false,
+    imageUrl:'https://www.sigma-global.com/lenses/a024_24_70_28_ii_product_img01.png',
+    asin:null,
+    prices:{USD:1199,AUD:null,EUR:null,GBP:null,JPY:null,CAD:null,SGD:null},
+    priceIncomplete:true,
+    productUrl:'https://www.sigma-global.com/en/lenses/a024_24_70_28_ii/',
+  },
+
+  'sigma-100-400mm-f5-63-dg': {
+    name:'Sigma 100-400mm f/5-6.3 DG DN OS Contemporary', manufacturer:'Sigma', line:'Contemporary', type:'Zoom',
+    focalLength:null, focalLengthMin:100, focalLengthMax:400, focalLengthEquiv:'100-400mm',
+    maxAperture:5.0, minAperture:22, weight:1140, length:199.2, diameter:86,
+    filterThread:67, minFocusDist:112, maxMagnification:0.24,
+    elements:22, groups:16, blades:9, afType:'Stepping Motor',
+    weatherSealed:true, ois:true, oisStops:4, year:2020, discontinued:false,
+    imageUrl:null,
+    asin:null,
+    prices:{USD:949,AUD:null,EUR:null,GBP:null,JPY:null,CAD:null,SGD:null},
+    priceIncomplete:true,
+    productUrl:'https://www.sigma-global.com/en/lenses/c021_100_400_5_63/',
+  },
+
+  'sigma-150-600mm-f5-63-dg': {
+    name:'Sigma 150-600mm f/5-6.3 DG DN OS Sports', manufacturer:'Sigma', line:'Sports', type:'Zoom',
+    focalLength:null, focalLengthMin:150, focalLengthMax:600, focalLengthEquiv:'150-600mm',
+    maxAperture:5.0, minAperture:22, weight:2100, length:263.6, diameter:109.4,
+    filterThread:95, minFocusDist:58, maxMagnification:0.34,
+    elements:25, groups:15, blades:9, afType:'Stepping Motor',
+    weatherSealed:true, ois:true, oisStops:6.5, year:2021, discontinued:false,
+    imageUrl:'https://www.sigma-global.com/lenses/s021_150_600_5_63_product_img01.png',
+    asin:null,
+    prices:{USD:1499,AUD:null,EUR:null,GBP:null,JPY:null,CAD:null,SGD:null},
+    priceIncomplete:true,
+    productUrl:'https://www.sigma-global.com/en/lenses/s021_150_600_5_63/',
   },
 
   /* ── Tamron (FE, full-frame Di III) ── */
@@ -2191,12 +2261,14 @@ const LENS_DROPDOWN_GROUPS = [
     'sigma-10-18mm-f28', 'sigma-18-50mm-f28',
   ] },
   { label: '── Sigma (FF Primes) ──', ids: [
-    'sigma-20mm-f2-dg', 'sigma-24mm-f2-dg', 'sigma-24mm-f14-dg', 'sigma-35mm-f2-dg',
+    'sigma-20mm-f2-dg', 'sigma-20mm-f14-dg', 'sigma-24mm-f2-dg', 'sigma-24mm-f14-dg', 'sigma-35mm-f2-dg',
     'sigma-35mm-f14-dg', 'sigma-50mm-f14-dg', 'sigma-65mm-f2-dg', 'sigma-85mm-f14-dg',
     'sigma-90mm-f28-dg',
   ] },
   { label: '── Sigma (FF Zooms) ──', ids: [
-    'sigma-28-45mm-f18-dg', 'sigma-28-70mm-f28-dg', 'sigma-70-200mm-f28-dg',
+    'sigma-16-28mm-f28-dg', 'sigma-28-45mm-f18-dg', 'sigma-28-70mm-f28-dg',
+    'sigma-24-70mm-f28-dg-ii', 'sigma-70-200mm-f28-dg',
+    'sigma-100-400mm-f5-63-dg', 'sigma-150-600mm-f5-63-dg',
   ] },
   { label: '── Tamron ──', ids: [
     'tamron-16-30mm-f28-g2', 'tamron-20-40mm-f28', 'tamron-28-75mm-f28-g2',
