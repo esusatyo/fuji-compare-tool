@@ -15,16 +15,16 @@
 
 ## 1. Research & scope (do first; no code yet)
 
-- [ ] 1.1 Enumerate the comprehensive third-party E/FE lens list per manufacturer
+- [x] 1.1 Enumerate the comprehensive third-party E/FE lens list per manufacturer
   (Sigma, Tamron, Samyang, Viltrox, Zeiss, Voigtländer, Laowa, TTArtisan,
   7Artisans, Meike). Record each as `slug | name | manufacturer | line | type`
   in `research/lenses.md`, noting which are discontinued and which share an
   optical design with other mounts (cross-mount note only — no data impact).
-- [ ] 1.2 Apply the D7 scope boundary — mark in/out for each candidate; drop
+- [x] 1.2 Apply the D7 scope boundary — mark in/out for each candidate; drop
   cine/anamorphic/rehoused/teleconverter/long-tail clones.
-- [ ] 1.3 Confirm slug conventions, per-maker dropdown order, and the exact
+- [x] 1.3 Confirm slug conventions, per-maker dropdown order, and the exact
   `MANUFACTURER_COLORS` additions in `research/decisions.md`.
-- [ ] 1.4 For each in-scope lens, list the ≥2 sources to be used at entry
+- [x] 1.4 For each in-scope lens, list the ≥2 sources to be used at entry
   (manufacturer page, DPReview/spec sheet, retailer, Amazon ASIN).
 
 ## 2. Shared wiring (do before bulk data)
@@ -67,7 +67,7 @@
 
 - [x] 6.1 Primes: 12 f/2 (APS-C), 18 f/2.8, 24 f/1.8, 24 f/2.8, 35 f/1.8, 35
   f/2.8, 45 f/1.8, 75 f/1.8, 85 f/1.4 II, 135 f/1.8, 14 f/2.8.
-- [ ] 6.2 Zooms: 24-70 f/2.8, 35-150 f/2-2.8 (verify availability).
+- [x] 6.2 Zooms: 24-70 f/2.8, 35-150 f/2-2.8 (verify availability).
 - [x] 6.3 New `── Samyang ──` group; `npm run test:data` green.
 
 ## 7. Viltrox — AF + LAB / Pro / Air
@@ -82,7 +82,7 @@
 
 - [x] 8.1 Batis (AF FF): 18 f/2.8, 25 f/2, 40 f/2 CF, 85 f/1.8, 135 f/2.8.
 - [x] 8.2 Loxia (MF FF): 21 f/2.8, 25 f/2.4, 35 f/2, 50 f/2, 85 f/2.4.
-- [ ] 8.3 Touit (AF APS-C): 12 f/2.8, 32 f/1.8, 50 f/2.8 macro. Flag
+- [x] 8.3 Touit (AF APS-C): 12 f/2.8, 32 f/1.8, 50 f/2.8 macro. Flag
   discontinued; USD-only pricing acceptable, ASIN → search fallback where dead.
 - [x] 8.4 New `── Zeiss ──` group; `npm run test:data` green.
 
@@ -99,26 +99,26 @@
 
 - [x] 10.1 TTArtisan AF: 27 f/2.8, 35 f/1.8, 40 f/2.8 macro, 50 f/2, 56 f/1.8,
   75 f/2; plus notable MF (11 f/2.8 fisheye, 50 f/1.2).
-- [ ] 10.2 7Artisans AF: 27 f/2.8, 35 f/1.8, 50 f/1.8, 85 f/1.8; notable MF.
-- [ ] 10.3 Meike AF: 25 f/1.8, 35 f/1.4, 50 f/1.8, 85 f/1.8.
+- [x] 10.2 7Artisans AF: 27 f/2.8, 35 f/1.8, 50 f/1.8, 85 f/1.8; notable MF.
+- [x] 10.3 Meike AF: 25 f/1.8, 35 f/1.4, 50 f/1.8, 85 f/1.8.
 - [x] 10.4 New `── Other ──` group; `npm run test:data` green.
 
 ## 11. Images, ASIN & pricing finalisation
 
 - [x] 11.1 Fill/verify `imageUrl` for every new lens (manufacturer product image
   preferred). Record any placeholder gaps in the change (KNOWN_IMAGE_GAPS.sony).
-- [ ] 11.2 ASIN backfill via `check-prices-and-buy-links`: verified plain-product
+- [x] 11.2 ASIN backfill via `check-prices-and-buy-links`: verified plain-product
   ASINs; discontinued/unavailable → search fallback. Re-verify a sample of Buy
   links per currency renders `amazon.<tld>/dp/<asin>`.
-- [ ] 11.3 Regional pricing: current lenses carry all 7 currencies; discontinued
+- [x] 11.3 Regional pricing: current lenses carry all 7 currencies; discontinued
   USD-only; anything derived → `priceIncomplete: true`.
 
 ## 12. Final verification
 
-- [ ] 12.1 Ad-hoc link check over **all** new `productUrl` + `imageUrl`
+- [x] 12.1 Ad-hoc link check over **all** new `productUrl` + `imageUrl`
   (0 dead / 0 bad-image). Record counts.
 - [x] 12.2 `npm test` — full data + logic suite green.
-- [ ] 12.3 `completeness.test.js` passes; record final third-party lens count and
+- [x] 12.3 `completeness.test.js` passes; record final third-party lens count and
   new total for Sony.
 - [x] 12.4 Render spot-check via jsdom/load-brand: new groups appear in the lens
   dropdown, manufacturer card colours resolve, per-currency Buy links generate.

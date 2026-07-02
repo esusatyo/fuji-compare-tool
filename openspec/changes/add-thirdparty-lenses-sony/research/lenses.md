@@ -1,7 +1,7 @@
 # Sony E / FE — Third-Party Lens Enumeration (Group 1)
 
-> **FINAL COVERAGE (implemented): 48 lenses across 9 makers** — Sigma 23, Tamron 8,
-> Viltrox 3, Samyang 3, Voigtländer 3, Laowa 3, Zeiss 3, TTArtisan 1, Meike 1.
+> **FINAL COVERAGE (implemented): 59 lenses across 10 makers** — Sigma 23, Tamron 8,
+> Viltrox 6, Samyang 5, Voigtländer 3, Laowa 3, Zeiss 4, TTArtisan 1, 7Artisans 1, Meike 1.
 > All specs source-verified (manufacturer pages / reputable specs); Sigma images
 > live-checked. Sony total lenses 69 → 117. Remaining long-tail (optional): more
 > Viltrox Air/f1.4 II, Samyang 24/45 + zooms, 7Artisans, more TTArtisan/Meike,
