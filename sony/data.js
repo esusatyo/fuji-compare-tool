@@ -2055,6 +2055,48 @@ const LENSES = {
     productUrl:'https://tamron-americas.com/product/50-400mm-f-4-5-6-3-di-iii-vc-vxd/',
   },
 
+  'tamron-70-180mm-f28-g2': {
+    name:'Tamron 70-180mm f/2.8 Di III VC VXD G2', manufacturer:'Tamron', line:'Di III', type:'Zoom',
+    focalLength:null, focalLengthMin:70, focalLengthMax:180, focalLengthEquiv:'70-180mm',
+    maxAperture:2.8, minAperture:22, weight:855, length:156.5, diameter:83,
+    filterThread:67, minFocusDist:30, maxMagnification:0.38,
+    elements:20, groups:15, blades:9, afType:'Linear Motor',
+    weatherSealed:true, ois:true, oisStops:null, year:2023, discontinued:false,
+    imageUrl:null,
+    asin:null,
+    prices:{USD:1299,AUD:null,EUR:null,GBP:null,JPY:null,CAD:null,SGD:null},
+    priceIncomplete:true,
+    productUrl:'https://tamron-americas.com/product/70-180mm-f-2-8-di-iii-vc-vxd-g2/',
+  },
+
+  'tamron-17-70mm-f28': {
+    name:'Tamron 17-70mm f/2.8 Di III-A VC RXD', manufacturer:'Tamron', line:'Di III-A', type:'Zoom',
+    focalLength:null, focalLengthMin:17, focalLengthMax:70, focalLengthEquiv:'26-105mm',
+    maxAperture:2.8, minAperture:22, weight:525, length:119.3, diameter:74.6,
+    filterThread:67, minFocusDist:19, maxMagnification:0.21,
+    elements:16, groups:12, blades:9, afType:'Stepping Motor',
+    weatherSealed:true, ois:true, oisStops:null, year:2021, discontinued:false,
+    imageUrl:null,
+    asin:null,
+    prices:{USD:799,AUD:null,EUR:null,GBP:null,JPY:null,CAD:null,SGD:null},
+    priceIncomplete:true,
+    productUrl:'https://tamron-americas.com/product/17-70mm-f-2-8-di-iii-a-vc-rxd/',
+  },
+
+  'tamron-11-20mm-f28': {
+    name:'Tamron 11-20mm f/2.8 Di III-A RXD', manufacturer:'Tamron', line:'Di III-A', type:'Zoom',
+    focalLength:null, focalLengthMin:11, focalLengthMax:20, focalLengthEquiv:'17-30mm',
+    maxAperture:2.8, minAperture:16, weight:335, length:86.2, diameter:73,
+    filterThread:67, minFocusDist:15, maxMagnification:0.25,
+    elements:12, groups:10, blades:7, afType:'Stepping Motor',
+    weatherSealed:true, ois:false, oisStops:null, year:2021, discontinued:false,
+    imageUrl:null,
+    asin:null,
+    prices:{USD:659,AUD:null,EUR:null,GBP:null,JPY:null,CAD:null,SGD:null},
+    priceIncomplete:true,
+    productUrl:'https://tamron-americas.com/product/11-20mm-f-2-8-di-iii-a-rxd/',
+  },
+
   /* ── Viltrox (E-mount AF) ── */
   'viltrox-16mm-f18': {
     name:'Viltrox AF 16mm f/1.8 FE', manufacturer:'Viltrox', line:'Pro', type:'Prime',
@@ -2271,8 +2313,9 @@ const LENS_DROPDOWN_GROUPS = [
     'sigma-100-400mm-f5-63-dg', 'sigma-150-600mm-f5-63-dg',
   ] },
   { label: '── Tamron ──', ids: [
-    'tamron-16-30mm-f28-g2', 'tamron-20-40mm-f28', 'tamron-28-75mm-f28-g2',
-    'tamron-35-150mm-f2-28', 'tamron-50-400mm-f45-63',
+    'tamron-11-20mm-f28', 'tamron-16-30mm-f28-g2', 'tamron-17-70mm-f28',
+    'tamron-20-40mm-f28', 'tamron-28-75mm-f28-g2', 'tamron-35-150mm-f2-28',
+    'tamron-50-400mm-f45-63', 'tamron-70-180mm-f28-g2',
   ] },
   { label: '── Viltrox ──', ids: [
     'viltrox-16mm-f18', 'viltrox-27mm-f12', 'viltrox-56mm-f14',
