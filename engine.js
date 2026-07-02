@@ -80,6 +80,7 @@ const MANUFACTURER_COLORS = {
   'Voigtländer':  { bg: '#252518', text: '#c0b880' },
   '7Artisans':    { bg: '#1e2a20', text: '#90c8a0' },
   'Zeiss':        { bg: '#0f1a24', text: '#6ea8d0' },
+  'Yongnuo':      { bg: '#101c26', text: '#7ab0d8' },
   'Laowa':        { bg: '#241014', text: '#d88a92' },
   'Meike':        { bg: '#14220f', text: '#9cc878' },
 };

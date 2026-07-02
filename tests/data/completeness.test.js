@@ -27,6 +27,14 @@ const KNOWN_IMAGE_GAPS = {
     'rf-16-28mm-f28-is-stm',
     'rf-75-300mm-f4-56',
     'rfs-14-30mm-f4-63-is-stm-pz',
+    // Third-party RF AF lenses — no freely-licensed Commons image; manufacturer
+    // image pending backfill (Viltrox 85 RF II B&H page blocks fetch; Yongnuo).
+    'viltrox-85mm-f18',
+    'yongnuo-35mm-f2',
+    'yongnuo-85mm-f18',
+    'laowa-90mm-f28-macro',
+    'laowa-15mm-f2',
+    'laowa-10mm-f4-cookie',
   ]),
   fujifilm: new Set([
     'xc-16-50mm-f35-56', // no freely-licensed product image found
