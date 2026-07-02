@@ -2140,6 +2140,48 @@ const LENSES = {
     productUrl:'https://viltrox.com/products/viltrox-autofocus-56mm-f1-4-e-mount-prime-lens',
   },
 
+  'viltrox-13mm-f14': {
+    name:'Viltrox AF 13mm f/1.4', manufacturer:'Viltrox', line:'AF', type:'Prime',
+    focalLength:13, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'20mm',
+    maxAperture:1.4, minAperture:16, weight:420, length:90, diameter:74,
+    filterThread:67, minFocusDist:22, maxMagnification:0.1,
+    elements:14, groups:11, blades:9, afType:'STM',
+    weatherSealed:false, ois:false, oisStops:null, year:2022, discontinued:false,
+    imageUrl:null,
+    asin:'B0B5KKFMW6',
+    prices:{USD:429,AUD:null,EUR:null,GBP:null,JPY:null,CAD:null,SGD:null},
+    priceIncomplete:true,
+    productUrl:'https://viltrox.com/products/auto-focus-13mmf14-e-mount-aps-c-prime-lens',
+  },
+
+  'viltrox-33mm-f14': {
+    name:'Viltrox AF 33mm f/1.4', manufacturer:'Viltrox', line:'AF', type:'Prime',
+    focalLength:33, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'50mm',
+    maxAperture:1.4, minAperture:16, weight:270, length:72, diameter:65,
+    filterThread:52, minFocusDist:40, maxMagnification:0.1,
+    elements:10, groups:9, blades:9, afType:'STM',
+    weatherSealed:false, ois:false, oisStops:null, year:2020, discontinued:false,
+    imageUrl:null,
+    asin:null,
+    prices:{USD:279,AUD:null,EUR:null,GBP:null,JPY:null,CAD:null,SGD:null},
+    priceIncomplete:true,
+    productUrl:'https://viltrox.com/products/viltrox-33mm-f1-4-e-mount-autofocus-prime-lens',
+  },
+
+  'viltrox-85mm-f18-ii': {
+    name:'Viltrox AF 85mm f/1.8 FE II', manufacturer:'Viltrox', line:'AF', type:'Prime',
+    focalLength:85, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'85mm',
+    maxAperture:1.8, minAperture:16, weight:371, length:92, diameter:80,
+    filterThread:72, minFocusDist:80, maxMagnification:0.12,
+    elements:10, groups:7, blades:9, afType:'STM',
+    weatherSealed:false, ois:false, oisStops:null, year:2020, discontinued:false,
+    imageUrl:null,
+    asin:'B07VCQWDNT',
+    prices:{USD:399,AUD:null,EUR:null,GBP:null,JPY:null,CAD:null,SGD:null},
+    priceIncomplete:true,
+    productUrl:'https://viltrox.com/products/viltrox-85mm-f18-e-mount-sony-markii',
+  },
+
   /* ── Samyang (FE AF) ── */
   'samyang-35mm-f18': {
     name:'Samyang AF 35mm f/1.8 FE', manufacturer:'Samyang', line:'AF', type:'Prime',
@@ -2390,7 +2432,8 @@ const LENS_DROPDOWN_GROUPS = [
     'tamron-50-400mm-f45-63', 'tamron-70-180mm-f28-g2',
   ] },
   { label: '── Viltrox ──', ids: [
-    'viltrox-16mm-f18', 'viltrox-27mm-f12', 'viltrox-56mm-f14',
+    'viltrox-13mm-f14', 'viltrox-16mm-f18', 'viltrox-27mm-f12', 'viltrox-33mm-f14',
+    'viltrox-56mm-f14', 'viltrox-85mm-f18-ii',
   ] },
   { label: '── Samyang ──', ids: [
     'samyang-35mm-f18', 'samyang-75mm-f18', 'samyang-135mm-f18',

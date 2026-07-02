@@ -83,7 +83,8 @@ const KNOWN_IMAGE_GAPS = {
     'tamron-20-40mm-f28', 'tamron-28-75mm-f28-g2', 'tamron-35-150mm-f2-28',
     'tamron-50-400mm-f45-63', 'tamron-70-180mm-f28-g2',
     // Viltrox — store product image URLs pending backfill
-    'viltrox-16mm-f18', 'viltrox-27mm-f12', 'viltrox-56mm-f14',
+    'viltrox-13mm-f14', 'viltrox-16mm-f18', 'viltrox-27mm-f12', 'viltrox-33mm-f14',
+    'viltrox-56mm-f14', 'viltrox-85mm-f18-ii',
     // Samyang — product image URLs pending backfill
     'samyang-35mm-f18', 'samyang-75mm-f18', 'samyang-135mm-f18',
     // Voigtländer — manufacturer image URLs pending backfill
