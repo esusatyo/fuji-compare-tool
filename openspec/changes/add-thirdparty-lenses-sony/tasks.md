@@ -47,28 +47,28 @@
 
 ## 4. Sigma — DG DN (full-frame) Contemporary & Art
 
-- [ ] 4.1 Contemporary primes: 17mm f/4, 20mm f/2, 24mm f/2, 24mm f/3.5, 35mm
+- [x] 4.1 Contemporary primes: 17mm f/4, 20mm f/2, 24mm f/2, 24mm f/3.5, 35mm
   f/2, 45mm f/2.8, 50mm f/2, 65mm f/2, 90mm f/2.8, 500mm f/5.6.
 - [x] 4.2 Art primes: 20mm f/1.4, 24mm f/1.4, 35mm f/1.2, 35mm f/1.4, 50mm f/1.2,
   50mm f/1.4, 85mm f/1.4, 105mm f/2.8 macro, 135mm f/1.8, 300-600? (verify).
 - [ ] 4.3 Zooms: 16-28 f/2.8, 24-70 f/2.8 II, 28-45 f/1.8, 28-70 f/2.8, 70-200
   f/2.8, 100-400, 60-600, 150-600.
-- [ ] 4.4 Append to the `── Sigma ──` group; `npm run test:data` green.
+- [x] 4.4 Append to the `── Sigma ──` group; `npm run test:data` green.
 
 ## 5. Tamron — Di III (APS-C + full-frame)
 
 - [ ] 5.1 APS-C: 11-20mm f/2.8, 17-70mm f/2.8, 18-300mm.
-- [ ] 5.2 Full-frame zooms: 20-40 f/2.8, 28-75 f/2.8 G2, 35-150 f/2-2.8,
+- [x] 5.2 Full-frame zooms: 20-40 f/2.8, 28-75 f/2.8 G2, 35-150 f/2-2.8,
   50-300, 70-180 f/2.8 G2, 70-300, 150-500, 17-28 f/2.8, 50-400.
 - [ ] 5.3 Full-frame primes: 20 f/2.8, 24 f/2.8, 35 f/2.8, 90 f/2.8 macro.
-- [ ] 5.4 New `── Tamron ──` group; `npm run test:data` green.
+- [x] 5.4 New `── Tamron ──` group; `npm run test:data` green.
 
 ## 6. Samyang / Rokinon — AF line
 
-- [ ] 6.1 Primes: 12 f/2 (APS-C), 18 f/2.8, 24 f/1.8, 24 f/2.8, 35 f/1.8, 35
+- [x] 6.1 Primes: 12 f/2 (APS-C), 18 f/2.8, 24 f/1.8, 24 f/2.8, 35 f/1.8, 35
   f/2.8, 45 f/1.8, 75 f/1.8, 85 f/1.4 II, 135 f/1.8, 14 f/2.8.
 - [ ] 6.2 Zooms: 24-70 f/2.8, 35-150 f/2-2.8 (verify availability).
-- [ ] 6.3 New `── Samyang ──` group; `npm run test:data` green.
+- [x] 6.3 New `── Samyang ──` group; `npm run test:data` green.
 
 ## 7. Viltrox — AF + LAB / Pro / Air
 
@@ -76,24 +76,24 @@
   25 f/1.7, 35 f/1.7, 40 f/2.5, 56 f/1.7.
 - [ ] 7.2 Full-frame: 16 f/1.8 FE, 20 f/2.8, 24 f/1.8, 28 f/4.5, 35 f/1.8,
   50 f/1.8, 85 f/1.8 II, 135 f/1.8 LAB.
-- [ ] 7.3 New `── Viltrox ──` group; `npm run test:data` green.
+- [x] 7.3 New `── Viltrox ──` group; `npm run test:data` green.
 
 ## 8. Zeiss — Batis / Loxia / Touit (mostly discontinued)
 
-- [ ] 8.1 Batis (AF FF): 18 f/2.8, 25 f/2, 40 f/2 CF, 85 f/1.8, 135 f/2.8.
-- [ ] 8.2 Loxia (MF FF): 21 f/2.8, 25 f/2.4, 35 f/2, 50 f/2, 85 f/2.4.
+- [x] 8.1 Batis (AF FF): 18 f/2.8, 25 f/2, 40 f/2 CF, 85 f/1.8, 135 f/2.8.
+- [x] 8.2 Loxia (MF FF): 21 f/2.8, 25 f/2.4, 35 f/2, 50 f/2, 85 f/2.4.
 - [ ] 8.3 Touit (AF APS-C): 12 f/2.8, 32 f/1.8, 50 f/2.8 macro. Flag
   discontinued; USD-only pricing acceptable, ASIN → search fallback where dead.
-- [ ] 8.4 New `── Zeiss ──` group; `npm run test:data` green.
+- [x] 8.4 New `── Zeiss ──` group; `npm run test:data` green.
 
 ## 9. Voigtländer & Laowa (manual / specialty)
 
 - [ ] 9.1 Voigtländer: Nokton 21 f/1.4, 35 f/1.2, 40 f/1.2, 50 f/1.2;
   APO-Lanthar 35 f/2, 50 f/2, 65 f/2 macro, 110 f/2.5. New `── Voigtländer ──`.
-- [ ] 9.2 Laowa: 9 f/5.6, 10 f/4, 12 f/2.8, 15 f/2 FE, 15 f/4 macro, 25 f/2.8
+- [x] 9.2 Laowa: 9 f/5.6, 10 f/4, 12 f/2.8, 15 f/2 FE, 15 f/4 macro, 25 f/2.8
   macro, 33 f/0.95 (APS-C), 58 f/2.8, 65 f/2.8 macro (APS-C), 90 f/2.8 macro,
   100 f/2.8 macro. New `── Laowa ──`.
-- [ ] 9.3 `npm run test:data` green.
+- [x] 9.3 `npm run test:data` green.
 
 ## 10. Budget makers (TTArtisan / 7Artisans / Meike) — representative set
 
