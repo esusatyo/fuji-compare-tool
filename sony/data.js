@@ -2435,6 +2435,60 @@ const LENSES = {
     prices:{USD:720,AUD:null,EUR:null,GBP:null,JPY:null,CAD:null,SGD:null},
     productUrl:null,
   },
+
+  /* ── Sigma I-series primes (17/4, 45/2.8, 50/2) — discontinued, still sold ── */
+  'sigma-17mm-f4-dg': {
+    name:'Sigma 17mm f/4 DG DN Contemporary', manufacturer:'Sigma', line:'Contemporary', type:'Prime',
+    focalLength:17, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'17mm',
+    maxAperture:4.0, minAperture:22, weight:220, length:50.8, diameter:64,
+    filterThread:55, minFocusDist:12, maxMagnification:0.28,
+    elements:9, groups:8, blades:7, afType:'Stepping Motor',
+    weatherSealed:false, ois:false, oisStops:null, year:2023, discontinued:true,
+    imageUrl:'https://www.sigma-global.com/lenses/c023_17_4_product_img01.png',
+    asin:null,
+    prices:{USD:599,AUD:null,EUR:null,GBP:null,JPY:null,CAD:null,SGD:null},
+    productUrl:'https://www.sigma-global.com/en/lenses/c023_17_4/',
+  },
+
+  'sigma-45mm-f28-dg': {
+    name:'Sigma 45mm f/2.8 DG DN Contemporary', manufacturer:'Sigma', line:'Contemporary', type:'Prime',
+    focalLength:45, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'45mm',
+    maxAperture:2.8, minAperture:22, weight:230, length:48.2, diameter:64,
+    filterThread:55, minFocusDist:24, maxMagnification:0.25,
+    elements:8, groups:7, blades:7, afType:'Stepping Motor',
+    weatherSealed:false, ois:false, oisStops:null, year:2019, discontinued:true,
+    imageUrl:'https://www.sigma-global.com/lenses/c019_45_28_product_img01.png',
+    asin:null,
+    prices:{USD:549,AUD:null,EUR:null,GBP:null,JPY:null,CAD:null,SGD:null},
+    productUrl:'https://www.sigma-global.com/en/lenses/c019_45_28/',
+  },
+
+  'sigma-50mm-f2-dg': {
+    name:'Sigma 50mm f/2 DG DN Contemporary', manufacturer:'Sigma', line:'Contemporary', type:'Prime',
+    focalLength:50, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'50mm',
+    maxAperture:2.0, minAperture:22, weight:345, length:70, diameter:70,
+    filterThread:58, minFocusDist:45, maxMagnification:0.14,
+    elements:11, groups:9, blades:9, afType:'Stepping Motor',
+    weatherSealed:false, ois:false, oisStops:null, year:2023, discontinued:true,
+    imageUrl:'https://www.sigma-global.com/lenses/c023_50_2_product_img01.png',
+    asin:null,
+    prices:{USD:639,AUD:null,EUR:null,GBP:null,JPY:null,CAD:null,SGD:null},
+    productUrl:'https://www.sigma-global.com/en/lenses/c023_50_2/',
+  },
+
+  'tamron-70-300mm-f45-63': {
+    name:'Tamron 70-300mm f/4.5-6.3 Di III RXD', manufacturer:'Tamron', line:'Di III', type:'Zoom',
+    focalLength:null, focalLengthMin:70, focalLengthMax:300, focalLengthEquiv:'70-300mm',
+    maxAperture:4.5, minAperture:22, weight:545, length:148, diameter:77,
+    filterThread:67, minFocusDist:80, maxMagnification:0.11,
+    elements:15, groups:10, blades:7, afType:'Stepping Motor',
+    weatherSealed:true, ois:false, oisStops:null, year:2020, discontinued:false,
+    imageUrl:null,
+    asin:null,
+    prices:{USD:549,AUD:null,EUR:null,GBP:null,JPY:null,CAD:null,SGD:null},
+    priceIncomplete:true,
+    productUrl:'https://tamron-americas.com/product/70-300mm-f-4-5-6-3-di-iii-rxd/',
+  },
 };
 
 const LENS_DROPDOWN_GROUPS = [
@@ -2473,8 +2527,8 @@ const LENS_DROPDOWN_GROUPS = [
   ] },
   { label: '── Sigma (FF Primes) ──', ids: [
     'sigma-20mm-f2-dg', 'sigma-20mm-f14-dg', 'sigma-24mm-f2-dg', 'sigma-24mm-f14-dg', 'sigma-35mm-f2-dg',
-    'sigma-35mm-f14-dg', 'sigma-50mm-f14-dg', 'sigma-65mm-f2-dg', 'sigma-85mm-f14-dg',
-    'sigma-90mm-f28-dg',
+    'sigma-35mm-f14-dg', 'sigma-45mm-f28-dg', 'sigma-50mm-f2-dg', 'sigma-50mm-f14-dg',
+    'sigma-65mm-f2-dg', 'sigma-85mm-f14-dg', 'sigma-90mm-f28-dg', 'sigma-17mm-f4-dg',
   ] },
   { label: '── Sigma (FF Zooms) ──', ids: [
     'sigma-16-28mm-f28-dg', 'sigma-28-45mm-f18-dg', 'sigma-28-70mm-f28-dg',
@@ -2484,7 +2538,7 @@ const LENS_DROPDOWN_GROUPS = [
   { label: '── Tamron ──', ids: [
     'tamron-11-20mm-f28', 'tamron-16-30mm-f28-g2', 'tamron-17-70mm-f28',
     'tamron-20-40mm-f28', 'tamron-28-75mm-f28-g2', 'tamron-35-150mm-f2-28',
-    'tamron-50-400mm-f45-63', 'tamron-70-180mm-f28-g2',
+    'tamron-50-400mm-f45-63', 'tamron-70-180mm-f28-g2', 'tamron-70-300mm-f45-63',
   ] },
   { label: '── Viltrox ──', ids: [
     'viltrox-13mm-f14', 'viltrox-16mm-f18', 'viltrox-27mm-f12', 'viltrox-33mm-f14',
