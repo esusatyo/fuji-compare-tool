@@ -2380,6 +2380,61 @@ const LENSES = {
     priceIncomplete:true,
     productUrl:'https://meikeglobal.com/products/85mm-f1-8-full-frame-auto-focus-stm-lens-for-sony-e-mount-cameras',
   },
+
+  '7artisans-27mm-f28': {
+    name:'7Artisans AF 27mm f/2.8', manufacturer:'7Artisans', line:'AF', type:'Prime',
+    focalLength:27, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'41mm',
+    maxAperture:2.8, minAperture:16, weight:172, length:48, diameter:64,
+    filterThread:52, minFocusDist:30, maxMagnification:0.1,
+    elements:6, groups:5, blades:6, afType:'STM',
+    weatherSealed:false, ois:false, oisStops:null, year:2024, discontinued:false,
+    imageUrl:null,
+    asin:null,
+    prices:{USD:129,AUD:null,EUR:null,GBP:null,JPY:null,CAD:null,SGD:null},
+    priceIncomplete:true,
+    productUrl:'https://7artisans.store/products/27mm-f2-8-af-aps-c-lens-for-e',
+  },
+
+  'samyang-24mm-f18': {
+    name:'Samyang AF 24mm f/1.8 FE', manufacturer:'Samyang', line:'AF', type:'Prime',
+    focalLength:24, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'24mm',
+    maxAperture:1.8, minAperture:22, weight:230, length:71.5, diameter:65,
+    filterThread:58, minFocusDist:19, maxMagnification:0.12,
+    elements:11, groups:8, blades:9, afType:'Linear STM',
+    weatherSealed:false, ois:false, oisStops:null, year:2021, discontinued:false,
+    imageUrl:null,
+    asin:'B09234JQP1',
+    prices:{USD:499,AUD:null,EUR:null,GBP:null,JPY:null,CAD:null,SGD:null},
+    priceIncomplete:true,
+    productUrl:'https://samyangus.com/products/24mm-f1-8-af-compact-full-frame-wide-angle-sony-e',
+  },
+
+  'samyang-45mm-f18': {
+    name:'Samyang AF 45mm f/1.8 FE', manufacturer:'Samyang', line:'AF', type:'Prime',
+    focalLength:45, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'45mm',
+    maxAperture:1.8, minAperture:22, weight:162, length:56.1, diameter:62,
+    filterThread:49, minFocusDist:45, maxMagnification:0.11,
+    elements:7, groups:6, blades:9, afType:'Linear STM',
+    weatherSealed:false, ois:false, oisStops:null, year:2019, discontinued:false,
+    imageUrl:null,
+    asin:null,
+    prices:{USD:399,AUD:null,EUR:null,GBP:null,JPY:null,CAD:null,SGD:null},
+    priceIncomplete:true,
+    productUrl:'https://samyangus.com/products/45mm-f1-8-af-compact-full-frame-sony-e',
+  },
+
+  'zeiss-touit-32mm-f18': {
+    name:'Zeiss Touit 32mm f/1.8', manufacturer:'Zeiss', line:'Touit', type:'Prime',
+    focalLength:32, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'48mm',
+    maxAperture:1.8, minAperture:22, weight:200, length:76, diameter:65,
+    filterThread:52, minFocusDist:30, maxMagnification:0.11,
+    elements:8, groups:5, blades:9, afType:'Autofocus',
+    weatherSealed:false, ois:false, oisStops:null, year:2013, discontinued:true,
+    imageUrl:null,
+    asin:null,
+    prices:{USD:720,AUD:null,EUR:null,GBP:null,JPY:null,CAD:null,SGD:null},
+    productUrl:null,
+  },
 };
 
 const LENS_DROPDOWN_GROUPS = [
@@ -2436,7 +2491,7 @@ const LENS_DROPDOWN_GROUPS = [
     'viltrox-56mm-f14', 'viltrox-85mm-f18-ii',
   ] },
   { label: '── Samyang ──', ids: [
-    'samyang-35mm-f18', 'samyang-75mm-f18', 'samyang-135mm-f18',
+    'samyang-24mm-f18', 'samyang-35mm-f18', 'samyang-45mm-f18', 'samyang-75mm-f18', 'samyang-135mm-f18',
   ] },
   { label: '── Voigtländer ──', ids: [
     'voigtlander-apo-lanthar-35mm-f2', 'voigtlander-apo-lanthar-50mm-f2',
@@ -2446,9 +2501,9 @@ const LENS_DROPDOWN_GROUPS = [
     'laowa-10mm-f4-cookie', 'laowa-15mm-f2', 'laowa-90mm-f28-macro',
   ] },
   { label: '── Zeiss ──', ids: [
-    'zeiss-batis-25mm-f2', 'zeiss-batis-85mm-f18', 'zeiss-loxia-35mm-f2',
+    'zeiss-batis-25mm-f2', 'zeiss-batis-85mm-f18', 'zeiss-loxia-35mm-f2', 'zeiss-touit-32mm-f18',
   ] },
   { label: '── Other ──', ids: [
-    'ttartisan-27mm-f28', 'meike-85mm-f18',
+    '7artisans-27mm-f28', 'ttartisan-27mm-f28', 'meike-85mm-f18',
   ] },
 ];
