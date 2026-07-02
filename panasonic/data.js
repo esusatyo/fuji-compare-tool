@@ -1451,6 +1451,47 @@ const LENSES = {
     priceIncomplete:true,
     productUrl:'https://explore.omsystem.com/us/en/m-zuiko-45mm-f1-8',
   },
+
+  /* ── Sigma (MFT, APS-C DC DN, 2.0× crop) ── */
+  'sigma-16mm-f14-mft': {
+    name:'Sigma 16mm f/1.4 DC DN', manufacturer:'Sigma', line:'Contemporary', type:'Prime',
+    focalLength:16, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'32mm',
+    maxAperture:1.4, minAperture:16, weight:405, length:92.3, diameter:72.2,
+    filterThread:67, minFocusDist:25, maxMagnification:0.1,
+    elements:16, groups:13, blades:9, afType:'Stepping Motor',
+    weatherSealed:false, ois:false, oisStops:null, year:2017, discontinued:false,
+    imageUrl:'https://www.sigma-global.com/lenses/c017_16_14_product_img01.png',
+    asin:null,
+    prices:{USD:449,AUD:null,EUR:null,GBP:null,JPY:null,CAD:null,SGD:null},
+    priceIncomplete:true,
+    productUrl:'https://www.sigma-global.com/en/lenses/c017_16_14/',
+  },
+  'sigma-30mm-f14-mft': {
+    name:'Sigma 30mm f/1.4 DC DN', manufacturer:'Sigma', line:'Contemporary', type:'Prime',
+    focalLength:30, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'60mm',
+    maxAperture:1.4, minAperture:16, weight:265, length:73.3, diameter:64.8,
+    filterThread:52, minFocusDist:30, maxMagnification:0.14,
+    elements:9, groups:7, blades:9, afType:'Stepping Motor',
+    weatherSealed:false, ois:false, oisStops:null, year:2016, discontinued:false,
+    imageUrl:'https://www.sigma-global.com/lenses/c016_30_14_product_img01.png',
+    asin:null,
+    prices:{USD:339,AUD:null,EUR:null,GBP:null,JPY:null,CAD:null,SGD:null},
+    priceIncomplete:true,
+    productUrl:'https://www.sigma-global.com/en/lenses/c016_30_14/',
+  },
+  'sigma-56mm-f14-mft': {
+    name:'Sigma 56mm f/1.4 DC DN', manufacturer:'Sigma', line:'Contemporary', type:'Prime',
+    focalLength:56, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'112mm',
+    maxAperture:1.4, minAperture:16, weight:280, length:59.5, diameter:66.5,
+    filterThread:55, minFocusDist:50, maxMagnification:0.14,
+    elements:10, groups:6, blades:9, afType:'Stepping Motor',
+    weatherSealed:false, ois:false, oisStops:null, year:2018, discontinued:false,
+    imageUrl:'https://www.sigma-global.com/lenses/c018_56_14_product_img01.png',
+    asin:null,
+    prices:{USD:479,AUD:null,EUR:null,GBP:null,JPY:null,CAD:null,SGD:null},
+    priceIncomplete:true,
+    productUrl:'https://www.sigma-global.com/en/lenses/c018_56_14/',
+  },
 };
 
 const LENS_DROPDOWN_GROUPS = [
@@ -1464,4 +1505,5 @@ const LENS_DROPDOWN_GROUPS = [
   { label: '── Laowa (L-Mount) ──', ids: ['laowa-90mm-f28-macro-l', 'laowa-15mm-f2-l'] },
   { label: '── OM System Primes (MFT) ──', ids: ['omsystem-17mm-f12-pro', 'omsystem-25mm-f12-pro', 'omsystem-45mm-f12-pro', 'omsystem-60mm-f28-macro', 'omsystem-17mm-f18', 'omsystem-25mm-f18', 'omsystem-45mm-f18'] },
   { label: '── OM System Zooms (MFT) ──', ids: ['omsystem-12-40mm-f28-pro', 'omsystem-40-150mm-f4-pro', 'omsystem-12-100mm-f4-pro'] },
+  { label: '── Sigma (MFT) ──', ids: ['sigma-16mm-f14-mft', 'sigma-30mm-f14-mft', 'sigma-56mm-f14-mft'] },
 ];
