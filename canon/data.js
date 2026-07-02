@@ -895,10 +895,222 @@ const LENSES = {
     productUrl:'https://www.usa.canon.com/shop/p/rfs55-210mmf5-71isstm',
   },
 
+  /* ── Sigma (RF-S, APS-C AF) ── */
+  /* Canon APS-C crop = 1.6×. Specs from Sigma official Canon RF spec pages;
+     optical design shared across mounts, weights are the RF-mount values. */
+  'sigma-16mm-f14': {
+    name:'Sigma 16mm f/1.4 DC DN', manufacturer:'Sigma', line:'Contemporary', type:'Prime',
+    focalLength:16, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'26mm',
+    maxAperture:1.4, minAperture:16, weight:415, length:90.3, diameter:72.2,
+    filterThread:67, minFocusDist:25, maxMagnification:0.1,
+    elements:16, groups:13, blades:9, afType:'Stepping Motor',
+    weatherSealed:false, ois:false, oisStops:null, year:2025, discontinued:false,
+    imageUrl:'https://www.sigma-global.com/lenses/c017_16_14_product_img01.png',
+    asin:null,
+    prices:{USD:489,AUD:null,EUR:null,GBP:null,JPY:null,CAD:null,SGD:null},
+    priceIncomplete:true,
+    productUrl:'https://www.sigma-global.com/en/lenses/c017_16_14/',
+  },
+
+  'sigma-23mm-f14': {
+    name:'Sigma 23mm f/1.4 DC DN', manufacturer:'Sigma', line:'Contemporary', type:'Prime',
+    focalLength:23, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'37mm',
+    maxAperture:1.4, minAperture:16, weight:345, length:76.9, diameter:69.0,
+    filterThread:52, minFocusDist:25, maxMagnification:0.14,
+    elements:13, groups:10, blades:9, afType:'Stepping Motor',
+    weatherSealed:false, ois:false, oisStops:null, year:2025, discontinued:false,
+    imageUrl:'https://www.sigma-global.com/lenses/c023_23_14_product_img01.png',
+    asin:null,
+    prices:{USD:599,AUD:null,EUR:null,GBP:null,JPY:null,CAD:null,SGD:null},
+    priceIncomplete:true,
+    productUrl:'https://www.sigma-global.com/en/lenses/c023_23_14/',
+  },
+
+  'sigma-30mm-f14': {
+    name:'Sigma 30mm f/1.4 DC DN', manufacturer:'Sigma', line:'Contemporary', type:'Prime',
+    focalLength:30, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'48mm',
+    maxAperture:1.4, minAperture:16, weight:285, length:71.3, diameter:69.0,
+    filterThread:52, minFocusDist:30, maxMagnification:0.14,
+    elements:9, groups:7, blades:9, afType:'Stepping Motor',
+    weatherSealed:false, ois:false, oisStops:null, year:2024, discontinued:false,
+    imageUrl:'https://www.sigma-global.com/lenses/c016_30_14_product_img01.png',
+    asin:null,
+    prices:{USD:369,AUD:null,EUR:null,GBP:null,JPY:null,CAD:null,SGD:null},
+    priceIncomplete:true,
+    productUrl:'https://www.sigma-global.com/en/lenses/c016_30_14/',
+  },
+
+  'sigma-56mm-f14': {
+    name:'Sigma 56mm f/1.4 DC DN', manufacturer:'Sigma', line:'Contemporary', type:'Prime',
+    focalLength:56, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'90mm',
+    maxAperture:1.4, minAperture:16, weight:290, length:57.5, diameter:69.0,
+    filterThread:55, minFocusDist:50, maxMagnification:0.14,
+    elements:10, groups:6, blades:9, afType:'Stepping Motor',
+    weatherSealed:false, ois:false, oisStops:null, year:2024, discontinued:false,
+    imageUrl:'https://www.sigma-global.com/lenses/c018_56_14_product_img01.png',
+    asin:null,
+    prices:{USD:529,AUD:null,EUR:null,GBP:null,JPY:null,CAD:null,SGD:null},
+    priceIncomplete:true,
+    productUrl:'https://www.sigma-global.com/en/lenses/c018_56_14/',
+  },
+
+  'sigma-10-18mm-f28': {
+    name:'Sigma 10-18mm f/2.8 DC DN', manufacturer:'Sigma', line:'Contemporary', type:'Zoom',
+    focalLength:null, focalLengthMin:10, focalLengthMax:18, focalLengthEquiv:'16-29mm',
+    maxAperture:2.8, minAperture:22, weight:270, length:62.0, diameter:72.2,
+    filterThread:67, minFocusDist:11.6, maxMagnification:0.25,
+    elements:13, groups:10, blades:7, afType:'Stepping Motor',
+    weatherSealed:false, ois:false, oisStops:null, year:2024, discontinued:false,
+    imageUrl:'https://www.sigma-global.com/lenses/c023_10_18_28_product_img01.png',
+    asin:null,
+    prices:{USD:659,AUD:null,EUR:null,GBP:null,JPY:null,CAD:null,SGD:null},
+    priceIncomplete:true,
+    productUrl:'https://www.sigma-global.com/en/lenses/c023_10_18_28/',
+  },
+
+  'sigma-18-50mm-f28': {
+    name:'Sigma 18-50mm f/2.8 DC DN', manufacturer:'Sigma', line:'Contemporary', type:'Zoom',
+    focalLength:null, focalLengthMin:18, focalLengthMax:50, focalLengthEquiv:'29-80mm',
+    maxAperture:2.8, minAperture:22, weight:300, length:74.5, diameter:69.2,
+    filterThread:55, minFocusDist:12.1, maxMagnification:0.36,
+    elements:13, groups:10, blades:7, afType:'Stepping Motor',
+    weatherSealed:false, ois:false, oisStops:null, year:2024, discontinued:false,
+    imageUrl:'https://www.sigma-global.com/lenses/c021_18_50_28_product_img01.png',
+    asin:null,
+    prices:{USD:599,AUD:null,EUR:null,GBP:null,JPY:null,CAD:null,SGD:null},
+    priceIncomplete:true,
+    productUrl:'https://www.sigma-global.com/en/lenses/c021_18_50_28/',
+  },
+
+  /* ── Tamron (RF-S, APS-C AF) ── */
+  /* Specs from Tamron Americas spec tables; weights/lengths are RF-mount values. */
+  'tamron-11-20mm-f28': {
+    name:'Tamron 11-20mm f/2.8 Di III-A RXD', manufacturer:'Tamron', line:'Di III-A', type:'Zoom',
+    focalLength:null, focalLengthMin:11, focalLengthMax:20, focalLengthEquiv:'18-32mm',
+    maxAperture:2.8, minAperture:16, weight:340, length:84.2, diameter:73,
+    filterThread:67, minFocusDist:15, maxMagnification:0.25,
+    elements:12, groups:10, blades:7, afType:'Stepping Motor',
+    weatherSealed:true, ois:false, oisStops:null, year:2024, discontinued:false,
+    imageUrl:'https://www.tamron.com/global/consumer/pc_file/file/b060rf_ogp.webp',
+    asin:'B0DPLL4P3Q',
+    prices:{USD:659,AUD:null,EUR:null,GBP:null,JPY:null,CAD:null,SGD:null},
+    priceIncomplete:true,
+    productUrl:'https://www.tamron.com/global/consumer/lenses/b060/',
+  },
+
+  'tamron-18-300mm-f35-63': {
+    name:'Tamron 18-300mm f/3.5-6.3 Di III-A VC VXD', manufacturer:'Tamron', line:'Di III-A', type:'Zoom',
+    focalLength:null, focalLengthMin:18, focalLengthMax:300, focalLengthEquiv:'29-480mm',
+    maxAperture:3.5, minAperture:22, weight:625, length:123.6, diameter:75.5,
+    filterThread:67, minFocusDist:15, maxMagnification:0.5,
+    elements:19, groups:15, blades:7, afType:'Linear Motor',
+    weatherSealed:true, ois:true, oisStops:null, year:2025, discontinued:false,
+    imageUrl:'https://www.tamron.com/global/consumer/pc_file/file/b061_ogp_new.jpg',
+    asin:null,
+    prices:{USD:629,AUD:null,EUR:null,GBP:null,JPY:null,CAD:null,SGD:null},
+    priceIncomplete:true,
+    productUrl:'https://www.tamron.com/global/consumer/lenses/b061/',
+  },
+
+  /* ── Viltrox (full-frame RF AF) ── */
+  /* Canon's licensing blocked Viltrox's APS-C RF AF primes (13/23/33/56 f/1.4
+     discontinued for RF). The 85mm f/1.8 RF II is its current native RF AF lens. */
+  'viltrox-85mm-f18': {
+    name:'Viltrox AF 85mm f/1.8 RF II', manufacturer:'Viltrox', line:'RF II', type:'Prime',
+    focalLength:85, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'85mm',
+    maxAperture:1.8, minAperture:22, weight:484, length:92, diameter:80,
+    filterThread:72, minFocusDist:80, maxMagnification:0.125,
+    elements:10, groups:7, blades:9, afType:'STM',
+    weatherSealed:false, ois:false, oisStops:null, year:2021, discontinued:false,
+    imageUrl:null,
+    asin:null,
+    prices:{USD:399,AUD:null,EUR:null,GBP:null,JPY:null,CAD:null,SGD:null},
+    priceIncomplete:true,
+    productUrl:null,
+  },
+
+  /* ── Yongnuo (full-frame RF AF) ── */
+  'yongnuo-35mm-f2': {
+    name:'Yongnuo YN35mm f/2R DF DSM', manufacturer:'Yongnuo', line:'DF DSM', type:'Prime',
+    focalLength:35, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'35mm',
+    maxAperture:2.0, minAperture:22, weight:280, length:72, diameter:67,
+    filterThread:52, minFocusDist:35, maxMagnification:0.13,
+    elements:9, groups:8, blades:7, afType:'Stepping Motor (DSM)',
+    weatherSealed:false, ois:false, oisStops:null, year:2021, discontinued:false,
+    imageUrl:null,
+    asin:null,
+    prices:{USD:289,AUD:null,EUR:null,GBP:null,JPY:null,CAD:null,SGD:null},
+    priceIncomplete:true,
+    productUrl:'https://yongnuo.eu/lenses/eos-rf-ef/yn35mm-f2r-df-dsm/',
+  },
+
+  'yongnuo-85mm-f18': {
+    name:'Yongnuo YN85mm f/1.8R DF DSM', manufacturer:'Yongnuo', line:'DF DSM', type:'Prime',
+    focalLength:85, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'85mm',
+    maxAperture:1.8, minAperture:22, weight:346, length:88, diameter:67,
+    filterThread:58, minFocusDist:85, maxMagnification:0.11,
+    elements:9, groups:8, blades:7, afType:'Stepping Motor (DSM)',
+    weatherSealed:false, ois:false, oisStops:null, year:2021, discontinued:false,
+    imageUrl:null,
+    asin:null,
+    prices:{USD:398,AUD:null,EUR:null,GBP:null,JPY:null,CAD:null,SGD:null},
+    priceIncomplete:true,
+    productUrl:null,
+  },
+
+  /* ── Laowa (native RF manual-focus specialty) ── */
+  /* Canon blocks third-party AF, so specialty makers ship native RF as MF only.
+     Specs from Venus Optics + retailer spec tables; ASINs are Canon RF listings. */
+  'laowa-90mm-f28-macro': {
+    name:'Laowa 90mm f/2.8 2x Ultra Macro APO', manufacturer:'Laowa', line:'Ultra Macro APO', type:'Prime',
+    focalLength:90, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'90mm',
+    maxAperture:2.8, minAperture:22, weight:619, length:120, diameter:74,
+    filterThread:67, minFocusDist:20.5, maxMagnification:2.0,
+    elements:13, groups:10, blades:13, afType:'Manual',
+    weatherSealed:false, ois:false, oisStops:null, year:2022, discontinued:false,
+    imageUrl:null,
+    asin:'B0B347B7CJ',
+    prices:{USD:499,AUD:null,EUR:null,GBP:null,JPY:null,CAD:null,SGD:null},
+    priceIncomplete:true,
+    productUrl:'https://www.venuslens.net/product/laowa-90mm-f-2-8-2x-macro-apo/',
+  },
+
+  'laowa-15mm-f2': {
+    name:'Laowa 15mm f/2 FE Zero-D', manufacturer:'Laowa', line:'Zero-D', type:'Prime',
+    focalLength:15, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'15mm',
+    maxAperture:2.0, minAperture:22, weight:500, length:82, diameter:66,
+    filterThread:72, minFocusDist:15, maxMagnification:0.1,
+    elements:12, groups:9, blades:5, afType:'Manual',
+    weatherSealed:false, ois:false, oisStops:null, year:2021, discontinued:false,
+    imageUrl:null,
+    asin:'B09SJ23319',
+    prices:{USD:849,AUD:null,EUR:null,GBP:null,JPY:null,CAD:null,SGD:null},
+    priceIncomplete:true,
+    productUrl:'https://www.venuslens.net/product/laowa-15mm-f2/',
+  },
+
+  'laowa-10mm-f4-cookie': {
+    name:'Laowa 10mm f/4 Cookie', manufacturer:'Laowa', line:'Cookie', type:'Prime',
+    focalLength:10, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'16mm',
+    maxAperture:4.0, minAperture:22, weight:130, length:25, diameter:54,
+    filterThread:37, minFocusDist:10, maxMagnification:0.1,
+    elements:12, groups:8, blades:5, afType:'Manual',
+    weatherSealed:false, ois:false, oisStops:null, year:2022, discontinued:false,
+    imageUrl:null,
+    asin:'B0B7BG44XP',
+    prices:{USD:299,AUD:null,EUR:null,GBP:null,JPY:null,CAD:null,SGD:null},
+    priceIncomplete:true,
+    productUrl:'https://www.venuslens.net/product/laowa-10mm-f-4-cookie/',
+  },
+
 };
 
 const LENS_DROPDOWN_GROUPS = [
   { label: '── Canon RF Primes ──',   ids: ['rf-14mm-f14-l-vcm','rf-16mm-f28-stm','rf-20mm-f14-l-vcm','rf-24mm-f18-macro-is-stm','rf-28mm-f28-stm','rf-35mm-f18-macro-is-stm','rf-45mm-f12-stm','rf-50mm-f18-stm','rf-50mm-f12-l-usm','rf-85mm-f2-macro-is-stm','rf-85mm-f12-l-usm','rf-85mm-f14-l-vcm','rf-100mm-f28-l-macro-is-usm','rf-135mm-f18-l-is-usm','rf-800mm-f11-is-stm'] },
   { label: '── Canon RF Zooms ──',    ids: ['rf-7-14mm-f28-35-l-fisheye-stm','rf-14-35mm-f4-l-is-usm','rf-15-35mm-f28-l-is-usm','rf-16-28mm-f28-is-stm','rf-20-50mm-f4-l-is-usm-pz','rf-24-50mm-f45-63-is-stm','rf-24-70mm-f28-l-is-usm','rf-24-105mm-f4-l-is-usm','rf-24-105mm-f4-71-is-stm','rf-70-200mm-f28-l-is-usm','rf-70-200mm-f4-l-is-usm','rf-75-300mm-f4-56','rf-100-400mm-f56-8-is-usm','rf-100-500mm-f45-71-l-is-usm'] },
   { label: '── Canon RF-S (APS-C) ──', ids: ['rfs-10-18mm-f45-63-is-stm','rfs-14-30mm-f4-63-is-stm-pz','rfs-18-45mm-f45-63-is-stm','rfs-18-150mm-f35-63-is-stm','rfs-55-210mm-f5-71-is-stm'] },
+  { label: '── Sigma ──',              ids: ['sigma-16mm-f14','sigma-23mm-f14','sigma-30mm-f14','sigma-56mm-f14','sigma-10-18mm-f28','sigma-18-50mm-f28'] },
+  { label: '── Tamron ──',             ids: ['tamron-11-20mm-f28','tamron-18-300mm-f35-63'] },
+  { label: '── Viltrox ──',            ids: ['viltrox-85mm-f18'] },
+  { label: '── Other ──',              ids: ['yongnuo-35mm-f2','yongnuo-85mm-f18','laowa-15mm-f2','laowa-90mm-f28-macro','laowa-10mm-f4-cookie'] },
 ];
