@@ -75,6 +75,8 @@ const KNOWN_IMAGE_GAPS = {
     'lumix-g-14-140mm-f3-5-5-6-ii', 'lumix-g-100-300mm-f4-5-6-ii', 'leica-dg-100-400mm-f4-6-3-ii',
   ]),
   sony: new Set([
+    'sigma-90mm-f28-dg', // discontinued I-series; Sigma image URL not available
+    'sigma-28-70mm-f28-dg', // Sigma product image URL not available (404)
     // 31 of 33 cameras now have curated product images (Wikipedia infobox +
     // Wikimedia Commons category/file lookups, each model-confirmed — a9-ii was
     // visually verified — and verify-images'd). Only a7-v (2025) and a6100 lack
