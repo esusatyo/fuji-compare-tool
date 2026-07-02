@@ -49,6 +49,8 @@ const KNOWN_IMAGE_GAPS = {
     'z-dx-18-140mm-vr', 'z-dx-50-250mm-vr',
   ]),
   panasonic: new Set([
+    // Sigma L-mount product images unavailable (404): 90/2.8, 28-70, 100-400
+    'sigma-90mm-f28-dg', 'sigma-28-70mm-f28-dg', 'sigma-100-400mm-f5-63-dg',
     // Curated via scripts/fetch-images-commons.js. 12 of 57 items carry real
     // Commons images (6 cameras: s5-ii, s9, gh7, gh6, gh5-ii, g9-ii; 6 lenses:
     // S 35/1.8, S 24-105/4, S PRO 70-200/4, S 70-300, G 25/1.7, Nocticron 42.5/1.2).

@@ -79,6 +79,11 @@ const MANUFACTURER_COLORS = {
   'Samyang':      { bg: '#2a1a2a', text: '#c080c0' },
   'Voigtländer':  { bg: '#252518', text: '#c0b880' },
   '7Artisans':    { bg: '#1e2a20', text: '#90c8a0' },
+  'OM System':    { bg: '#0a1f26', text: '#5fd0c8' },
+  'Leica':        { bg: '#2a0d0d', text: '#e06666' },
+  'Laowa':        { bg: '#241014', text: '#d88a92' },
+  'Sirui':        { bg: '#1c1426', text: '#a98ad8' },
+  'Meike':        { bg: '#14220f', text: '#9cc878' },
 };
 
 // ─────────────────────────────────────────────
