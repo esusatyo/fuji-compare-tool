@@ -2309,6 +2309,35 @@ const LENSES = {
     prices:{USD:1299,AUD:null,EUR:null,GBP:null,JPY:null,CAD:null,SGD:null},
     productUrl:null,
   },
+
+  /* ── Other budget makers (TTArtisan, Meike) ── */
+  'ttartisan-27mm-f28': {
+    name:'TTArtisan AF 27mm f/2.8', manufacturer:'TTArtisan', line:'AF', type:'Prime',
+    focalLength:27, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'41mm',
+    maxAperture:2.8, minAperture:16, weight:93, length:41, diameter:64,
+    filterThread:39, minFocusDist:35, maxMagnification:0.1,
+    elements:6, groups:5, blades:7, afType:'STM',
+    weatherSealed:false, ois:false, oisStops:null, year:2023, discontinued:false,
+    imageUrl:null,
+    asin:null,
+    prices:{USD:149,AUD:null,EUR:null,GBP:null,JPY:null,CAD:null,SGD:null},
+    priceIncomplete:true,
+    productUrl:'https://ttartisan.store/products/af27',
+  },
+
+  'meike-85mm-f18': {
+    name:'Meike 85mm f/1.8 Full Frame AF', manufacturer:'Meike', line:'AF', type:'Prime',
+    focalLength:85, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'85mm',
+    maxAperture:1.8, minAperture:22, weight:386, length:92, diameter:80,
+    filterThread:67, minFocusDist:85, maxMagnification:0.12,
+    elements:null, groups:null, blades:9, afType:'STM',
+    weatherSealed:false, ois:false, oisStops:null, year:2021, discontinued:false,
+    imageUrl:null,
+    asin:null,
+    prices:{USD:219,AUD:null,EUR:null,GBP:null,JPY:null,CAD:null,SGD:null},
+    priceIncomplete:true,
+    productUrl:'https://meikeglobal.com/products/85mm-f1-8-full-frame-auto-focus-stm-lens-for-sony-e-mount-cameras',
+  },
 };
 
 const LENS_DROPDOWN_GROUPS = [
@@ -2375,5 +2404,8 @@ const LENS_DROPDOWN_GROUPS = [
   ] },
   { label: '── Zeiss ──', ids: [
     'zeiss-batis-25mm-f2', 'zeiss-batis-85mm-f18', 'zeiss-loxia-35mm-f2',
+  ] },
+  { label: '── Other ──', ids: [
+    'ttartisan-27mm-f28', 'meike-85mm-f18',
   ] },
 ];
