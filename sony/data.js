@@ -1984,6 +1984,49 @@ const LENSES = {
     priceIncomplete:true,
     productUrl:'https://tamron-americas.com/product/50-400mm-f-4-5-6-3-di-iii-vc-vxd/',
   },
+
+  /* ── Viltrox (E-mount AF) ── */
+  'viltrox-16mm-f18': {
+    name:'Viltrox AF 16mm f/1.8 FE', manufacturer:'Viltrox', line:'Pro', type:'Prime',
+    focalLength:16, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'16mm',
+    maxAperture:1.8, minAperture:22, weight:550, length:101, diameter:85.2,
+    filterThread:77, minFocusDist:27, maxMagnification:0.1,
+    elements:15, groups:12, blades:9, afType:'STM',
+    weatherSealed:false, ois:false, oisStops:null, year:2023, discontinued:false,
+    imageUrl:null,
+    asin:null,
+    prices:{USD:549,AUD:null,EUR:null,GBP:null,JPY:null,CAD:null,SGD:null},
+    priceIncomplete:true,
+    productUrl:'https://viltrox.com/products/viltrox-af-16mm-f1-8-fe',
+  },
+
+  'viltrox-27mm-f12': {
+    name:'Viltrox AF 27mm f/1.2 Pro', manufacturer:'Viltrox', line:'Pro', type:'Prime',
+    focalLength:27, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'41mm',
+    maxAperture:1.2, minAperture:16, weight:560, length:92, diameter:82,
+    filterThread:67, minFocusDist:28, maxMagnification:0.15,
+    elements:15, groups:11, blades:11, afType:'STM',
+    weatherSealed:false, ois:false, oisStops:null, year:2024, discontinued:false,
+    imageUrl:null,
+    asin:null,
+    prices:{USD:549,AUD:null,EUR:null,GBP:null,JPY:null,CAD:null,SGD:null},
+    priceIncomplete:true,
+    productUrl:'https://viltrox.com/products/viltrox-27mm-f1-2-e-z',
+  },
+
+  'viltrox-56mm-f14': {
+    name:'Viltrox AF 56mm f/1.4', manufacturer:'Viltrox', line:'AF', type:'Prime',
+    focalLength:56, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'84mm',
+    maxAperture:1.4, minAperture:16, weight:320, length:72, diameter:65,
+    filterThread:52, minFocusDist:60, maxMagnification:0.1,
+    elements:10, groups:9, blades:9, afType:'STM',
+    weatherSealed:false, ois:false, oisStops:null, year:2020, discontinued:false,
+    imageUrl:null,
+    asin:'B0995J38HY',
+    prices:{USD:329,AUD:null,EUR:null,GBP:null,JPY:null,CAD:null,SGD:null},
+    priceIncomplete:true,
+    productUrl:'https://viltrox.com/products/viltrox-autofocus-56mm-f1-4-e-mount-prime-lens',
+  },
 };
 
 const LENS_DROPDOWN_GROUPS = [
@@ -2031,5 +2074,8 @@ const LENS_DROPDOWN_GROUPS = [
   { label: '── Tamron ──', ids: [
     'tamron-16-30mm-f28-g2', 'tamron-20-40mm-f28', 'tamron-28-75mm-f28-g2',
     'tamron-35-150mm-f2-28', 'tamron-50-400mm-f45-63',
+  ] },
+  { label: '── Viltrox ──', ids: [
+    'viltrox-16mm-f18', 'viltrox-27mm-f12', 'viltrox-56mm-f14',
   ] },
 ];
