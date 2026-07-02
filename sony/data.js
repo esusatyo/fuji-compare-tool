@@ -2070,6 +2070,50 @@ const LENSES = {
     priceIncomplete:true,
     productUrl:'https://samyangus.com/products/135mm-f1-8-af-full-frame-telephoto-sony-e',
   },
+
+  /* ── Laowa (E-mount manual-focus specialty) ── */
+  /* Optical specs shared across mounts (verified from Venus Optics). */
+  'laowa-90mm-f28-macro': {
+    name:'Laowa 90mm f/2.8 2x Ultra Macro APO', manufacturer:'Laowa', line:'Ultra Macro APO', type:'Prime',
+    focalLength:90, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'90mm',
+    maxAperture:2.8, minAperture:22, weight:619, length:120, diameter:74,
+    filterThread:67, minFocusDist:20.5, maxMagnification:2.0,
+    elements:13, groups:10, blades:13, afType:'Manual',
+    weatherSealed:false, ois:false, oisStops:null, year:2022, discontinued:false,
+    imageUrl:null,
+    asin:null,
+    prices:{USD:499,AUD:null,EUR:null,GBP:null,JPY:null,CAD:null,SGD:null},
+    priceIncomplete:true,
+    productUrl:'https://www.venuslens.net/product/laowa-90mm-f-2-8-2x-macro-apo/',
+  },
+
+  'laowa-15mm-f2': {
+    name:'Laowa 15mm f/2 FE Zero-D', manufacturer:'Laowa', line:'Zero-D', type:'Prime',
+    focalLength:15, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'15mm',
+    maxAperture:2.0, minAperture:22, weight:500, length:82, diameter:66,
+    filterThread:72, minFocusDist:15, maxMagnification:0.1,
+    elements:12, groups:9, blades:5, afType:'Manual',
+    weatherSealed:false, ois:false, oisStops:null, year:2018, discontinued:false,
+    imageUrl:null,
+    asin:null,
+    prices:{USD:849,AUD:null,EUR:null,GBP:null,JPY:null,CAD:null,SGD:null},
+    priceIncomplete:true,
+    productUrl:'https://www.venuslens.net/product/laowa-15mm-f2/',
+  },
+
+  'laowa-10mm-f4-cookie': {
+    name:'Laowa 10mm f/4 Cookie', manufacturer:'Laowa', line:'Cookie', type:'Prime',
+    focalLength:10, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'15mm',
+    maxAperture:4.0, minAperture:22, weight:130, length:25, diameter:54,
+    filterThread:37, minFocusDist:10, maxMagnification:0.1,
+    elements:12, groups:8, blades:5, afType:'Manual',
+    weatherSealed:false, ois:false, oisStops:null, year:2022, discontinued:false,
+    imageUrl:null,
+    asin:null,
+    prices:{USD:299,AUD:null,EUR:null,GBP:null,JPY:null,CAD:null,SGD:null},
+    priceIncomplete:true,
+    productUrl:'https://www.venuslens.net/product/laowa-10mm-f-4-cookie/',
+  },
 };
 
 const LENS_DROPDOWN_GROUPS = [
@@ -2123,5 +2167,8 @@ const LENS_DROPDOWN_GROUPS = [
   ] },
   { label: '── Samyang ──', ids: [
     'samyang-35mm-f18', 'samyang-75mm-f18', 'samyang-135mm-f18',
+  ] },
+  { label: '── Laowa ──', ids: [
+    'laowa-10mm-f4-cookie', 'laowa-15mm-f2', 'laowa-90mm-f28-macro',
   ] },
 ];
