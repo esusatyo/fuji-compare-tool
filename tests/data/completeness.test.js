@@ -50,6 +50,8 @@ const KNOWN_IMAGE_GAPS = {
   ]),
   panasonic: new Set([
     // Sigma L-mount product images unavailable (404): 90/2.8, 28-70, 100-400
+    'voigtlander-apo-lanthar-35mm-f2-l', 'voigtlander-apo-lanthar-50mm-f2-l', 'voigtlander-nokton-40mm-f12-l',
+    'laowa-90mm-f28-macro-l', 'laowa-15mm-f2-l',
     'sigma-90mm-f28-dg', 'sigma-28-70mm-f28-dg', 'sigma-100-400mm-f5-63-dg',
     // Curated via scripts/fetch-images-commons.js. 12 of 57 items carry real
     // Commons images (6 cameras: s5-ii, s9, gh7, gh6, gh5-ii, g9-ii; 6 lenses:
