@@ -1,5 +1,13 @@
 # Nikon Z — Third-Party Lens Enumeration (Group 1)
 
+> **FINAL COVERAGE (implemented): 30 lenses across 10 makers** — Viltrox 9, Tamron 7,
+> Sigma 3, Laowa 3, Yongnuo 2, Voigtländer 2, Samyang 1, TTArtisan 1, 7Artisans 1, Meike 1.
+> Nikon Z restricts third-party AF (like Canon): Sigma ships only 16/30/56 f/1.4 DC DN;
+> NO Zeiss on Z; Tamron 17-28/28-75/70-180 excluded (Nikon sells them as Nikkor).
+> Viltrox is the largest Z third-party line. Nikon total lenses 43 -> 73. Specs
+> source-verified; shared-design specs reuse verified E-mount values. 188 green.
+
+
 > Scope: **currently-shipping** third-party Z-mount lenses. Third-party AF on Z
 > opened up in 2023 (Sigma licensing), so the catalogue is smaller than Sony's
 > but growing — enumerate what actually ships for Z at entry time. APS-C (DX)
