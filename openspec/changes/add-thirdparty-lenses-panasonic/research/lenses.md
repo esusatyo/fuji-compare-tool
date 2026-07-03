@@ -1,3 +1,10 @@
+> **FINAL COVERAGE (implemented): 40 lenses across both mounts** — L-mount: Sigma 20
+> (full DG DN line, native), Voigtländer 3, Laowa 2. MFT (2.0× crop): OM System 10
+> (M.Zuiko PRO+Premium), Sigma 3 (DC DN), Voigtländer 1, Laowa 1. Panasonic total
+> 39 -> 79 lenses. Sigma L specs = verified cross-mount values (Sigma's native mount);
+> OM System + MFT specialty source-verified. Minor optional tail: Leica SL, Sirui Sniper
+> AF, more Voigtländer Nokton f/0.95, Laowa MFT wides, budget MFT (7Artisans/TTArtisan).
+
 # Panasonic — Third-Party Lens Enumeration (Group 1)
 
 > Scope: **third-party** lenses for BOTH Panasonic mounts:

@@ -66,6 +66,13 @@ const KNOWN_IMAGE_GAPS = {
     'z-dx-18-140mm-vr', 'z-dx-50-250mm-vr',
   ]),
   panasonic: new Set([
+    'voigtlander-nokton-25mm-f095', 'laowa-7-5mm-f2-mft',
+    // OM System M.Zuiko — manufacturer image URLs pending backfill
+    'omsystem-12-40mm-f28-pro', 'omsystem-40-150mm-f4-pro', 'omsystem-12-100mm-f4-pro', 'omsystem-17mm-f12-pro', 'omsystem-25mm-f12-pro', 'omsystem-45mm-f12-pro', 'omsystem-60mm-f28-macro', 'omsystem-17mm-f18', 'omsystem-25mm-f18', 'omsystem-45mm-f18',
+    // Sigma L-mount product images unavailable (404): 90/2.8, 28-70, 100-400
+    'voigtlander-apo-lanthar-35mm-f2-l', 'voigtlander-apo-lanthar-50mm-f2-l', 'voigtlander-nokton-40mm-f12-l',
+    'laowa-90mm-f28-macro-l', 'laowa-15mm-f2-l',
+    'sigma-90mm-f28-dg', 'sigma-28-70mm-f28-dg', 'sigma-100-400mm-f5-63-dg',
     // Curated via scripts/fetch-images-commons.js. 12 of 57 items carry real
     // Commons images (6 cameras: s5-ii, s9, gh7, gh6, gh5-ii, g9-ii; 6 lenses:
     // S 35/1.8, S 24-105/4, S PRO 70-200/4, S 70-300, G 25/1.7, Nocticron 42.5/1.2).

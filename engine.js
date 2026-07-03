@@ -81,7 +81,10 @@ const MANUFACTURER_COLORS = {
   '7Artisans':    { bg: '#1e2a20', text: '#90c8a0' },
   'Zeiss':        { bg: '#0f1a24', text: '#6ea8d0' },
   'Yongnuo':      { bg: '#101c26', text: '#7ab0d8' },
+  'OM System':    { bg: '#0a1f26', text: '#5fd0c8' },
+  'Leica':        { bg: '#2a0d0d', text: '#e06666' },
   'Laowa':        { bg: '#241014', text: '#d88a92' },
+  'Sirui':        { bg: '#1c1426', text: '#a98ad8' },
   'Meike':        { bg: '#14220f', text: '#9cc878' },
 };
 
