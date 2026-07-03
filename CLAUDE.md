@@ -70,3 +70,18 @@ python3 -m http.server 3456   # then open http://localhost:3456/<brand>/
 - **Planning uses OpenSpec** (`openspec/changes/<name>/` with proposal/design/tasks/spec + research). `openspec validate <name> --strict` should pass; archive a change after its PR merges.
 - **Git**: branch off `main` for changes; one logical change per PR. Because `engine.js` (`MANUFACTURER_COLORS`) is shared, parallel brand branches will conflict there — resolve by taking the **union** of color entries.
 - Keep changes minimal and match surrounding style (the data files are hand-formatted, aligned `const` object literals).
+
+## Effort policy
+- Medium by default.
+- High only for: hard debugging, multi-file refactors,
+  architecture calls.
+- Low for: formatting, renames, boilerplate.
+
+## Model routing
+- Default to Sonnet 5 for everything.
+- Escalate to Opus 4.8 only after two failed Sonnet attempts,
+  or for the deepest reasoning tasks.
+
+## Cost note
+- Intro pricing ($2/$10) ends Aug 31, 2026. Run large batch
+  jobs before then where possible.
