@@ -38,6 +38,12 @@ const KNOWN_IMAGE_GAPS = {
   ]),
   fujifilm: new Set([
     'xc-16-50mm-f35-56', // no freely-licensed product image found
+    // Zeiss Touit trio — discontinued, manufacturer/retailer pages block automated fetch
+    'zeiss-touit-12mm-f28', 'zeiss-touit-32mm-f18', 'zeiss-touit-50mm-f28',
+    // Meike — meikeglobal.com blocks automated fetch, no other direct image URL found
+    'meike-33mm-f14', 'meike-55mm-f18', 'meike-85mm-f18',
+    // 7Artisans — no direct manufacturer/retailer image URL found yet
+    '7artisans-50mm-f18', '7artisans-25mm-f18',
   ]),
   nikon: new Set([
     // Third-party (Viltrox AF / Laowa MF) — manufacturer image URLs pending backfill
