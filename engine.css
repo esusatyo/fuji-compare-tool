@@ -21,6 +21,10 @@
   --radius: 12px;
 }
 
+html, body {
+  overflow-x: hidden;
+}
+
 body {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, sans-serif;
   background: var(--bg);
@@ -425,9 +429,10 @@ footer a:hover { text-decoration: underline; }
   .hero-title { font-size: 22px; }
   .cam-image-wrap { width: 80px; height: 64px; }
   .slot-price { font-size: 13px; }
-  .brand-logo { display: none; }
-  .header-sep { display: none; }
-  .header-title { display: none; }
+  .header-brand { display: none; }
+  #site-header { padding: 0 10px; gap: 6px; justify-content: center; }
+  .mode-btn { padding: 5px 9px; font-size: 11px; }
+  .header-select { padding: 5px 6px; font-size: 11px; }
 }
 
 @media (max-width: 400px) {
