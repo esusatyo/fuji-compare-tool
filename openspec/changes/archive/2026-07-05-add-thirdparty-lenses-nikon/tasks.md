@@ -96,4 +96,4 @@
 
 ## 11. Archive
 
-- [ ] 11.1 Run the OpenSpec archive flow for `add-thirdparty-lenses-nikon`.
+- [x] 11.1 Run the OpenSpec archive flow for `add-thirdparty-lenses-nikon`.

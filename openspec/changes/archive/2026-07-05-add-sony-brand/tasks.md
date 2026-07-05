@@ -171,5 +171,5 @@
 
 ## 12. Archive
 
-- [ ] 12.1 When all above are checked and tests pass, run the OpenSpec archive
+- [x] 12.1 When all above are checked and tests pass, run the OpenSpec archive
   flow for `add-sony-brand`.

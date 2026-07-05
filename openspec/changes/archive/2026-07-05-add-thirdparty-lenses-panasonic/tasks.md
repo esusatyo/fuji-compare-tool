@@ -122,4 +122,4 @@
 
 ## 14. Archive
 
-- [ ] 14.1 Run the OpenSpec archive flow for `add-thirdparty-lenses-panasonic`.
+- [x] 14.1 Run the OpenSpec archive flow for `add-thirdparty-lenses-panasonic`.
