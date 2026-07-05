@@ -3,7 +3,7 @@ name: check-prices-and-buy-links
 description: Periodically verify the camera/lens dataset's Buy links and prices. Confirms the currency-aware Amazon buy-link wiring is intact, fills in missing per-item Amazon ASINs so Buy buttons hit the product page (not search), and checks current real-world prices for every live camera and lens — proposing/applying updates plus test runs. Use when the user wants to re-check prices and buy links, fill in ASINs, refresh pricing, or run the periodic price/link audit.
 metadata:
   author: fuji-compare-tool
-  version: "1.1"
+  version: "1.2"
 ---
 
 Verify the **Buy links** and **prices** in the brand data files against current
@@ -44,8 +44,9 @@ There are **no `buyUrl` fields** — don't reintroduce them.
 
 ## Scope (defaults)
 
-- **Brands**: ALL registered brands (`REGISTERED_BRANDS` in each `*/data.js`;
-  currently `fujifilm`, `canon`). Each brand's data is `<slug>/data.js`.
+- **Brands**: ALL registered brands. Don't hardcode the list — discover it:
+  every top-level directory containing a `data.js` is a brand (`REGISTERED_BRANDS`
+  inside any of them lists the same set). Each brand's data is `<slug>/data.js`.
 - **Currencies**: the keys of any `prices:` object — `USD, AUD, EUR, GBP, JPY, CAD, SGD`.
 - **Categories**: both `CAMERAS` and `LENSES`.
 - **Items**: only `discontinued:false` items have live prices worth checking.
@@ -71,7 +72,8 @@ If the user narrows scope ("just Fujifilm", "only cameras", "USD only"), respect
    ```bash
    node -e '
    const {JSDOM}=require("jsdom");const fs=require("fs");
-   for(const b of ["fujifilm","canon"]){
+   const brands=fs.readdirSync(".").filter(d=>fs.existsSync(d+"/data.js"));
+   for(const b of brands){
      const dom=new JSDOM("<!doctype html>",{runScripts:"dangerously"});
      const s=dom.window.document.createElement("script");
      s.textContent=fs.readFileSync(b+"/data.js","utf8")+";window.C=CAMERAS;window.L=LENSES;";
@@ -115,7 +117,8 @@ so they stay in lockstep.
    ```bash
    node -e '
    const {JSDOM}=require("jsdom");const fs=require("fs");
-   for(const b of ["fujifilm","canon"]){
+   const brands=fs.readdirSync(".").filter(d=>fs.existsSync(d+"/data.js"));
+   for(const b of brands){
      const dom=new JSDOM("<!doctype html>",{runScripts:"dangerously"});
      const s=dom.window.document.createElement("script");
      s.textContent=fs.readFileSync(b+"/data.js","utf8")+";window.C=CAMERAS;window.L=LENSES;";
@@ -162,7 +165,7 @@ so they stay in lockstep.
    - Change only the currencies you confirmed (usually just `USD`).
    - Each `prices:{…}` line is unique, so a targeted Edit is safe.
    - For a brand-new model where only USD is known, you may run
-     `node scripts/compute-prices.js` (Canon) or hand-fill ratio-derived
+     `node scripts/compute-prices.js <brand>` or hand-fill ratio-derived
      non-USD figures following neighbouring magnitudes. Note what's derived.
 
 5. **Update tests if needed.** The data tests assert *shape*, not specific price

@@ -3,7 +3,7 @@ name: add-camera-brand
 description: Add a brand-new camera brand (e.g. Nikon, OM System, Panasonic) to the multi-brand comparison tool end-to-end — research and validate the brand's cameras and lenses, scaffold the brand directory, wire it into the shared engine, add any brand-specific spec section, and verify the test suite. Use when the user wants to add/onboard a new camera brand.
 metadata:
   author: fuji-compare-tool
-  version: "1.0"
+  version: "1.1"
 ---
 
 Add a new camera brand to this repo end-to-end. This skill is **brand-agnostic** —
@@ -149,12 +149,24 @@ group) and `npm run test:data`.
 
 ## Step 8 — Verify
 
-- `npm test` must be 114-style green (data + logic; logic tests auto-cover the
+- `npm test` must be fully green (data + logic; logic tests auto-cover the
   new brand — winners, currency, pickers, buy-links, spec-section gating, switcher).
 - Optionally `RUN_LINK_TESTS=1 npm run test:links` to spot-check live URLs.
 - Manually open `<brand>/index.html` (preview server): confirm dropdown groups,
   brand switch in/out, currency switching, winner highlighting, the brand-specific
   section, and Buy links for both cameras and lenses.
+
+## Step 9 — Merge & close out
+
+- Open the PR; after it merges, **archive the OpenSpec change**
+  (`/opsx:archive`) so its delta specs sync into `openspec/specs/` and
+  `openspec/changes/` stays a list of genuinely open work.
+- **Third-party lenses are a follow-up change**, not part of onboarding: propose
+  a separate `add-thirdparty-lenses-<brand>` OpenSpec change following the
+  conventions in CLAUDE.md (denormalized per brand, no `mount` field,
+  `── <Maker> ──` dropdown groups, every `manufacturer` in
+  `MANUFACTURER_COLORS`). The archived `add-thirdparty-lenses-*` changes are
+  worked examples.
 
 ---
 
@@ -168,6 +180,7 @@ group) and `npm run test:data`.
 - [ ] `tests/logic/root-redirect.test.js` honours `<slug>`
 - [ ] new items in `KNOWN_IMAGE_GAPS[<slug>]` until images land
 - [ ] `npm test` green
+- [ ] OpenSpec change archived after the PR merges
 
 ## Resumability
 

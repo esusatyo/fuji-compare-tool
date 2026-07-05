@@ -1,9 +1,9 @@
 ---
 name: refresh-camera-data
-description: Research live camera/lens data from the web and propose updates to brand data files — price changes, product/buy/image URL changes, and newly released cameras and lenses. Use when the user wants to refresh, update, or check for new camera data, prices, or releases across brands.
+description: Research live camera/lens data from the web and propose updates to brand data files — price changes, product/image URL changes, and newly released cameras and lenses. Use when the user wants to refresh, update, or check for new camera data, prices, or releases across brands.
 metadata:
   author: fuji-compare-tool
-  version: "1.0"
+  version: "1.1"
 ---
 
 Refresh the brand data files in this repo against current real-world data.
@@ -15,9 +15,10 @@ against the committed data, present a review, and apply approved updates.
 
 ## Scope (defaults)
 
-- **Brands**: ALL registered brands unless the user names one.
-  Registered brands live in `REGISTERED_BRANDS` inside each `*/data.js`
-  (currently `fujifilm`, `canon`). Each brand's data is `<slug>/data.js`.
+- **Brands**: ALL registered brands unless the user names one. Don't hardcode
+  the list — every top-level directory containing a `data.js` is a brand
+  (`REGISTERED_BRANDS` inside any of them lists the same set). Each brand's
+  data is `<slug>/data.js`.
 - **Currencies**: ALL of them unless the user names one.
   The currency set is the keys of any `prices:` object: `USD, AUD, EUR, GBP, JPY, CAD, SGD`.
 - **Categories**: both `CAMERAS` and `LENSES` unless the user narrows it.
@@ -35,8 +36,8 @@ skill touches:
 'eos-r5-ii': {
   name:'EOS R5 Mark II', year:2024, discontinued:false,
   productUrl:'https://...',   // official brand product page
-  buyUrl:'https://...',       // retailer (usually B&H)
   imageUrl:'https://...',     // usually a Wikimedia Commons file
+  asin:'B0D3J1XYZ1',          // 10-char Amazon id (or null → search fallback)
   prices:{USD:4299,AUD:6699,EUR:4899,GBP:3899,JPY:648000,CAD:5599,SGD:6199},
   // ...many spec fields...
 }
@@ -64,7 +65,7 @@ one line before doing heavy research.
 
 ### 2. Load current data
 For each in-scope brand, read `<slug>/data.js`. Build an in-memory list of every
-camera and lens slug with its current `name`, `year`, `prices`, `productUrl`, `buyUrl`,
+camera and lens slug with its current `name`, `year`, `prices`, `productUrl`, `asin`,
 and `imageUrl`. This is the baseline to diff against.
 
 ### 3. Research (web)
@@ -79,9 +80,10 @@ Use **WebSearch** and **WebFetch**. Work brand by brand. For each brand:
   current RRP. Anchor on the official store / a major retailer. Flag any USD delta;
   for non-USD currencies in scope, update only where a confirmed local RRP exists,
   otherwise note that it stays ratio-derived.
-- **URL changes** — verify `productUrl` still resolves to the right page and `buyUrl`
-  still points at the live product. Note dead links and redirects. Don't churn
-  `imageUrl` unless the current one is broken.
+- **URL changes** — verify `productUrl` still resolves to the right page. Note dead
+  links and redirects. Don't churn `imageUrl` unless the current one is broken.
+  (Buy links are generated from `asin` — missing/wrong ASINs are the
+  [`check-prices-and-buy-links`](../check-prices-and-buy-links/SKILL.md) skill's job.)
 
 Cite the source URL for every proposed change. Prefer official/manufacturer sources,
 then major retailers (B&H), then reputable press; treat rumor sites as leads to verify,
@@ -113,7 +115,7 @@ Ask which changes to apply (default: all confirmed ones; uncertain ones excluded
 the user opts in). Then edit the relevant `<slug>/data.js`:
 
 - **Price update**: edit the `prices:{…}` object for that slug, in-scope currencies only.
-- **URL update**: replace `productUrl` / `buyUrl` / `imageUrl` string.
+- **URL update**: replace the `productUrl` / `imageUrl` string.
 - **New camera/lens**: add a full entry to `CAMERAS`/`LENSES` matching the exact field
   shape of neighbouring entries (same keys, same order, same formatting/indentation).
   Use `null` for any spec you can't source — do not invent values. New entries also need

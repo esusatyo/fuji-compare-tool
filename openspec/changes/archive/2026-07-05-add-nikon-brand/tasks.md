@@ -132,5 +132,5 @@
 
 ## 11. Archive
 
-- [ ] 11.1 When all above are checked and tests pass, run the OpenSpec archive
+- [x] 11.1 When all above are checked and tests pass, run the OpenSpec archive
   flow for `add-nikon-brand`.

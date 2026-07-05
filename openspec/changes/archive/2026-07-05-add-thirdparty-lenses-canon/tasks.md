@@ -80,4 +80,4 @@
 
 ## 9. Archive
 
-- [ ] 9.1 Run the OpenSpec archive flow for `add-thirdparty-lenses-canon`.
+- [x] 9.1 Run the OpenSpec archive flow for `add-thirdparty-lenses-canon`.

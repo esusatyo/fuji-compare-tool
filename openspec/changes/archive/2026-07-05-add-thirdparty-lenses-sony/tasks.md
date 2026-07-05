@@ -125,5 +125,5 @@
 
 ## 13. Archive
 
-- [ ] 13.1 When all above are checked and tests pass, run the OpenSpec archive
+- [x] 13.1 When all above are checked and tests pass, run the OpenSpec archive
   flow for `add-thirdparty-lenses-sony`.
