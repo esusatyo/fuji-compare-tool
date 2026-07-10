@@ -387,6 +387,14 @@ function buildFooterLinks() {
   return links.map(l => `<a href="${l.url}" target="_blank" rel="noopener">${l.label}</a>`).join(', ');
 }
 
+// The verified date is a claim about when data was last audited
+// (SITE_CONFIG.dataVerified), never the render date. Pages loaded
+// without site-config.js simply omit the line.
+function buildVerifiedLine() {
+  if (typeof SITE_CONFIG === 'undefined' || !SITE_CONFIG.dataVerified) return '';
+  return `<p>Specs &amp; prices last verified: ${SITE_CONFIG.dataVerified}</p>`;
+}
+
 function injectBody() {
   document.body.innerHTML = `
 <header id="site-header">
@@ -434,12 +442,16 @@ function injectBody() {
   <p>${BRAND_CONFIG.name} Camera &amp; Lens Comparison &mdash; For informational purposes only.</p>
   <p>Prices shown are approximate manufacturer list prices (RRP) and may differ from live retail prices. Use the Buy link for current pricing.</p>
   <p>Specs sourced from ${buildFooterLinks()}.</p>
+  ${buildVerifiedLine()}
+  <div id="affiliate-disclosure"></div>
   <p>
+    <a href="../about.html">About</a>
+    &middot;
+    <a href="../privacy.html">Privacy</a>
+    &middot;
     Created by <a href="https://esusatyo.net" target="_blank" rel="noopener">Enrico Susatyo</a>
     &middot;
     Assisted by <a href="https://claude.ai" target="_blank" rel="noopener">Claude</a>
-    &middot;
-    Data last updated: April 2026
   </p>
 </footer>`;
 }
