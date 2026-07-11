@@ -1,14 +1,14 @@
 // ─────────────────────────────────────────────
-// Tier 3 — Link & image liveness (STUB / opt-in).
+// Tier 3 — Link & image liveness (opt-in).
 //
 // Slow and inherently flaky (retailers rate-limit and bot-block), so this
 // suite is SKIPPED unless RUN_LINK_TESTS is set:
 //
 //     npm run test:links
 //
-// The URL collector below is real and shared with whatever checker we
-// flesh out next. The actual network checks are stubbed with the intended
-// status-handling policy documented inline.
+// Dead links (404/410, DNS failures) fail; anti-bot responses
+// (403/429/503) and timeouts only warn, since they say nothing about
+// whether the link works for a human.
 // ─────────────────────────────────────────────
 const { test } = require('node:test');
 const assert = require('node:assert/strict');
@@ -40,20 +40,56 @@ function collectUrls() {
   return urls;
 }
 
-// Status policy (to implement when wiring real fetch):
+// Status policy:
 //   200, 3xx            -> PASS
 //   404, 410            -> FAIL (dead link)
 //   403, 429, 503       -> WARN, not fail (anti-bot blocking, esp. Amazon)
+//   timeout             -> WARN (reported as 503)
 //   images: must also return Content-Type image/*
 const FAIL_STATUSES = new Set([404, 410]);
 const WARN_STATUSES = new Set([403, 429, 503]);
 
-async function checkUrl(/* url, kind */) {
-  // TODO: implement with global fetch:
-  //   - HEAD first, GET fallback; realistic User-Agent; ~5s timeout
-  //   - concurrency limit (~5); cache results in fixtures/link-cache.json
-  //   - classify via FAIL_STATUSES / WARN_STATUSES; verify image Content-Type
-  throw new Error('link checker not yet implemented');
+const UA = 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 ' +
+           '(KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36';
+
+async function fetchStatus(url, method) {
+  const ctrl = new AbortController();
+  const timer = setTimeout(() => ctrl.abort(), 5000);
+  try {
+    const res = await fetch(url, {
+      method, redirect: 'follow', signal: ctrl.signal,
+      headers: { 'User-Agent': UA, Accept: '*/*' },
+    });
+    const contentType = res.headers.get('content-type');
+    // Drain/cancel the body so sockets are released promptly.
+    if (res.body) await res.body.cancel().catch(() => {});
+    return { status: res.status, contentType };
+  } finally {
+    clearTimeout(timer);
+  }
+}
+
+async function checkUrl(url, kind) {
+  try {
+    let r = await fetchStatus(url, 'HEAD');
+    // Many servers reject or mishandle HEAD — confirm any non-OK with GET.
+    if (r.status >= 400 || (kind === 'image' && !/^image\//.test(r.contentType || ''))) {
+      r = await fetchStatus(url, 'GET');
+    }
+    return r;
+  } catch (err) {
+    // Timeouts and resets say nothing about the link for a human: warn.
+    if (err.name === 'AbortError' || err.name === 'TimeoutError') return { status: 503, contentType: null };
+    throw err; // DNS failure, TLS error → genuine dead link, let it fail
+  }
+}
+
+/** Run `worker` over items with a fixed concurrency limit. */
+async function runPool(items, worker, limit = 5) {
+  const queue = [...items];
+  await Promise.all(Array.from({ length: limit }, async () => {
+    while (queue.length) await worker(queue.shift());
+  }));
 }
 
 test('URL collector finds links across all brands', () => {
@@ -63,25 +99,23 @@ test('URL collector finds links across all brands', () => {
   assert.ok(kinds.has('buy') || kinds.has('image'), 'expected buy/image URLs');
 });
 
-// Skipped unless RUN_LINK_TESTS=1; marked `todo` until checkUrl() is wired,
-// so enabling the suite reports it as pending rather than a hard failure.
-test('all buy/product/image links are reachable', { skip: !ENABLED, todo: ENABLED }, async () => {
+test('all product/image links are reachable', { skip: !ENABLED }, async () => {
   const urls = collectUrls();
   const failures = [];
   const warnings = [];
-  for (const [url, meta] of urls) {
+  await runPool([...urls.entries()], async ([url, meta]) => {
     try {
       const { status, contentType } = await checkUrl(url, meta.kind);
       if (FAIL_STATUSES.has(status)) failures.push(`${status} ${url} (${meta.refs.join(', ')})`);
       else if (WARN_STATUSES.has(status)) warnings.push(`${status} ${url}`);
       else if (meta.kind === 'image' && !/^image\//.test(contentType || '')) {
-        failures.push(`non-image content-type for ${url}`);
+        failures.push(`non-image content-type (${contentType}) for ${url} (${meta.refs.join(', ')})`);
       }
     } catch (err) {
-      failures.push(`error ${url}: ${err.message}`);
+      failures.push(`error ${url}: ${err.cause ? err.cause.code || err.cause.message : err.message} (${meta.refs.join(', ')})`);
     }
-  }
-  if (warnings.length) console.warn(`Link warnings (bot-blocked, not failed):\n${warnings.join('\n')}`);
+  });
+  if (warnings.length) console.warn(`Link warnings (bot-blocked/timeout, not failed):\n${warnings.join('\n')}`);
   assert.deepEqual(failures, [], `\nDead links:\n${failures.join('\n')}`);
 });
 
