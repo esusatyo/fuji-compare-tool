@@ -47,12 +47,13 @@ function shimFor(varName, names) {
  * Load a brand into a jsdom window.
  * @param {string} brand      directory name, e.g. 'fujifilm'
  * @param {object} [opts]
- * @param {boolean} [opts.engine=false]  also evaluate engine.js (runs init/render)
- * @param {string}  [opts.hash='']       initial location hash (e.g. '#lenses')
+ * @param {boolean} [opts.engine=false]      also evaluate engine.js (runs init/render)
+ * @param {string}  [opts.hash='']           initial location hash (e.g. '#lenses')
+ * @param {boolean} [opts.siteConfig=true]   also evaluate site-config.js (as the real pages do)
  * @returns {{ window, data, engine, errors, dom }}
  */
 function loadBrand(brand, opts = {}) {
-  const { engine = false, hash = '' } = opts;
+  const { engine = false, hash = '', siteConfig = true } = opts;
   const dataSrc = fs.readFileSync(path.join(ROOT, brand, 'data.js'), 'utf8');
 
   const errors = [];
@@ -67,6 +68,10 @@ function loadBrand(brand, opts = {}) {
   });
   const { window } = dom;
 
+  if (siteConfig) {
+    const siteSrc = fs.readFileSync(path.join(ROOT, 'site-config.js'), 'utf8');
+    run(window, siteSrc + shimFor('__SITE__', ['SITE_CONFIG']));
+  }
   run(window, dataSrc + shimFor('__BRAND__', DATA_GLOBALS));
   if (engine) {
     const engineSrc = fs.readFileSync(path.join(ROOT, 'engine.js'), 'utf8');

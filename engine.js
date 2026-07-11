@@ -338,6 +338,37 @@ function getNumSlots() {
 }
 
 // ─────────────────────────────────────────────
+// URL STATE (shareable comparison hashes)
+//
+// Grammar: #<mode> or #<mode>=<slug>,<slug>,<slug>. Bare-mode and empty
+// hashes keep their legacy meaning — mode only, default selection — and
+// the hash is never written until the user first interacts, so a plain
+// visit keeps a clean URL. Unknown slugs fall back per-slot to the
+// brand's defaults rather than rejecting the whole hash.
+// ─────────────────────────────────────────────
+function parseHash(hash) {
+  const m = /^#(cameras|lenses)(?:=(.*))?$/.exec(hash || '');
+  if (!m) return { mode: 'cameras', ids: null };
+  const mode = m[1];
+  if (m[2] === undefined) return { mode, ids: null };
+  const items = MODE_CONFIG[mode].items;
+  const given = m[2].split(',');
+  const ids = BRAND_CONFIG[mode].defaultSelected.map(
+    (def, i) => (items[given[i]] ? given[i] : def)
+  );
+  return { mode, ids };
+}
+
+function updateHash() {
+  history.replaceState(null, '', `#${currentMode}=${cfg().selectedIds().join(',')}`);
+}
+
+// Selection slugs are brand-specific — carry only the mode across brands.
+function brandSwitchHash() {
+  return location.hash ? `#${currentMode}` : '';
+}
+
+// ─────────────────────────────────────────────
 // BODY HTML GENERATION
 // ─────────────────────────────────────────────
 function buildBrandSwitcher() {
@@ -354,6 +385,14 @@ function buildFooterLinks() {
   const links = BRAND_CONFIG.footerLinks;
   if (!links || !links.length) return 'manufacturer documentation';
   return links.map(l => `<a href="${l.url}" target="_blank" rel="noopener">${l.label}</a>`).join(', ');
+}
+
+// The verified date is a claim about when data was last audited
+// (SITE_CONFIG.dataVerified), never the render date. Pages loaded
+// without site-config.js simply omit the line.
+function buildVerifiedLine() {
+  if (typeof SITE_CONFIG === 'undefined' || !SITE_CONFIG.dataVerified) return '';
+  return `<p>Specs &amp; prices last verified: ${SITE_CONFIG.dataVerified}</p>`;
 }
 
 function injectBody() {
@@ -403,12 +442,16 @@ function injectBody() {
   <p>${BRAND_CONFIG.name} Camera &amp; Lens Comparison &mdash; For informational purposes only.</p>
   <p>Prices shown are approximate manufacturer list prices (RRP) and may differ from live retail prices. Use the Buy link for current pricing.</p>
   <p>Specs sourced from ${buildFooterLinks()}.</p>
+  ${buildVerifiedLine()}
+  <div id="affiliate-disclosure"></div>
   <p>
+    <a href="../about.html">About</a>
+    &middot;
+    <a href="../privacy.html">Privacy</a>
+    &middot;
     Created by <a href="https://esusatyo.net" target="_blank" rel="noopener">Enrico Susatyo</a>
     &middot;
     Assisted by <a href="https://claude.ai" target="_blank" rel="noopener">Claude</a>
-    &middot;
-    Data last updated: April 2026
   </p>
 </footer>`;
 }
@@ -624,6 +667,7 @@ function attachSlotListeners() {
     sel.addEventListener('change', e => {
       const slotIdx = parseInt(e.target.dataset.slot);
       cfg().setSelectedId(slotIdx, e.target.value);
+      updateHash();
       renderAll();
     });
   });
@@ -645,16 +689,15 @@ function attachEventListeners() {
     document.getElementById('hero-title').innerHTML = cfg().heroTitle;
     document.getElementById('hero-subtitle').textContent = cfg().heroSubtitle;
     document.getElementById('header-title').textContent = cfg().headerTitle;
-    history.replaceState(null, '', `#${currentMode}`);
+    updateHash();
     renderAll();
   });
 
   document.getElementById('brand-switcher')?.addEventListener('change', e => {
     const slug = e.target.value;
     if (!slug || slug === BRAND_CONFIG.slug) return;
-    const hash = location.hash || '';
     localStorage.setItem('brand', slug);
-    location.href = `../${slug}/${hash}`;
+    location.href = `../${slug}/${brandSwitchHash()}`;
   });
 
   window.addEventListener('resize', () => {
@@ -683,8 +726,13 @@ function attachEventListeners() {
   // Generate body HTML
   injectBody();
 
-  // Handle initial hash for lenses mode
-  if (location.hash === '#lenses') {
+  // Restore mode + selection from the hash (never rewrites it on load)
+  const initial = parseHash(location.hash);
+  if (initial.ids) {
+    if (initial.mode === 'cameras') selectedCameraIds = initial.ids;
+    else selectedLensIds = initial.ids;
+  }
+  if (initial.mode === 'lenses') {
     currentMode = 'lenses';
     document.querySelectorAll('.mode-btn').forEach(b => {
       b.classList.toggle('active', b.dataset.mode === 'lenses');

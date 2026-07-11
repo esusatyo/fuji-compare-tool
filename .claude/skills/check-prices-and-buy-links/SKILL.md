@@ -1,17 +1,19 @@
 ---
 name: check-prices-and-buy-links
-description: Periodically verify the camera/lens dataset's Buy links and prices. Confirms the currency-aware Amazon buy-link wiring is intact, fills in missing per-item Amazon ASINs so Buy buttons hit the product page (not search), and checks current real-world prices for every live camera and lens — proposing/applying updates plus test runs. Use when the user wants to re-check prices and buy links, fill in ASINs, refresh pricing, or run the periodic price/link audit.
+description: Periodically verify the camera/lens dataset's Buy links and prices. Confirms the currency-aware Amazon buy-link wiring is intact, fills in missing per-item Amazon ASINs so Buy buttons hit the product page (not search), checks current real-world prices for every live camera and lens, and runs the live link checker to catch dead product/image URLs — proposing/applying updates plus test runs. Use when the user wants to re-check prices and buy links, fill in ASINs, refresh pricing, or run the periodic price/link audit.
 metadata:
   author: fuji-compare-tool
-  version: "1.2"
+  version: "1.3"
 ---
 
-Verify the **Buy links** and **prices** in the brand data files against current
-real-world data, then apply approved updates and run the tests.
+Verify the **Buy links**, **prices**, and **link liveness** in the brand data
+files against current real-world data, then apply approved updates and run the
+tests.
 
-This is a maintenance audit meant to be run periodically. It has two parts:
-**(A) buy-link integrity** (cheap, mostly a sanity check) and
-**(B) price refresh** (the real work — web research, brand by brand).
+This is a maintenance audit meant to be run periodically. It has three parts:
+**(A) buy-link integrity** (cheap, mostly a sanity check),
+**(B) price refresh** (the real work — web research, brand by brand), and
+**(C) link liveness** (run the Tier 3 checker; fix dead product/image URLs).
 
 > Related: [`refresh-camera-data`](../refresh-camera-data/SKILL.md) is the broader
 > skill that also handles new releases, product/image URLs, and full spec fields.
@@ -177,12 +179,50 @@ so they stay in lockstep.
    ```bash
    npm test
    ```
-   Fix any malformed entry rather than loosening a test. (`npm run test:links`
-   is optional and network-bound; buy links are generated so it only checks
-   product/image URLs.)
+   Fix any malformed entry rather than loosening a test. Note: prices appear in
+   the generated vs-pages, so any price edit requires
+   `node scripts/generate-seo.js` (the Tier 1 staleness test enforces this).
 
 7. **Summarize**: counts of price updates per brand, the test result, and any
    items left under "Needs confirmation".
+
+---
+
+## Part C — Link liveness (productUrl / imageUrl)
+
+`productUrl` renders as the "View Product ↗" button on every comparison slot,
+and `imageUrl` is the item photo — dead ones are user-visible. The Tier 3
+checker (`tests/links/links.test.js`) does real network checks:
+
+```bash
+npm run test:links     # RUN_LINK_TESTS=1; ~2–3 min at 5-way concurrency
+```
+
+- **404/410 and DNS/TLS failures FAIL**, listing every referencing
+  `brand/type/slug`. **403/429/503 and timeouts only WARN** — bot-blocking says
+  nothing about whether the link works for a human; don't "fix" warned links.
+- Fix dead `productUrl`s via WebSearch on the manufacturer's site. Retailer
+  404s tend to be **systematic site restructures** — find the new URL scheme
+  once, then remap every affected entry (2026-07 run: 44× nikonusa.com and
+  12× shop.panasonic.com had changed their path schemes site-wide; see
+  memory `launch-roadmap` for the full list).
+- A dead `imageUrl` with no free replacement: set it `null` and add the item to
+  `KNOWN_IMAGE_GAPS[<brand>]` in `tests/data/completeness.test.js` (the
+  documented-exception mechanism), never a made-up URL.
+- Re-run `npm run test:links` after fixes to confirm.
+
+---
+
+## Wrap-up (after any applied updates)
+
+Update **`dataVerified`** in `site-config.js` to today's date — the footer and
+vs-pages advertise this as "Specs & prices last verified", and it must state
+when an audit actually ran (this skill is what keeps it honest). Then:
+
+```bash
+node scripts/generate-seo.js   # re-embeds prices + verified date in generated pages
+npm test
+```
 
 ---
 
