@@ -106,7 +106,7 @@ const CAMERAS = {
   'z6-iii': {
     name:'Z6 III', series:'Z (Full-frame)', year:2024, discontinued:false,
     tagline:'World-First Partially-Stacked Sensor',
-    productUrl:'https://www.nikonusa.com/en/nikon-products/product/mirrorless-cameras/z-6iii.html',
+    productUrl:'https://www.nikonusa.com/p/z6iii/1890/overview',
     imageUrl:'https://upload.wikimedia.org/wikipedia/commons/thumb/3/39/Nikon_Z6III_%28by_Henry_S%C3%B6derlund%29.jpg/1280px-Nikon_Z6III_%28by_Henry_S%C3%B6derlund%29.jpg',
     asin:'B0D77SL8CY',
     prices:{USD:2700,AUD:3999,EUR:2899,GBP:2399,JPY:412000,CAD:3399,SGD:3549},
@@ -127,7 +127,7 @@ const CAMERAS = {
   'z5-ii': {
     name:'Z5 II', series:'Z (Full-frame)', year:2025, discontinued:false,
     tagline:'EXPEED 7 Full-Frame Entry Point',
-    productUrl:'https://www.nikonusa.com/en/nikon-products/product/mirrorless-cameras/z5-ii.html',
+    productUrl:'https://www.nikonusa.com/p/z5ii/1680/overview',
     imageUrl:null,
     asin:'B0F3HJD64Y',
     prices:{USD:1850,AUD:2699,EUR:1999,GBP:1599,JPY:280000,CAD:2299,SGD:2399},
@@ -272,7 +272,7 @@ const CAMERAS = {
   'z50-ii': {
     name:'Z50 II', series:'Z (APS-C)', year:2024, discontinued:false,
     tagline:'EXPEED 7 Comes to DX',
-    productUrl:'https://www.nikonusa.com/en/nikon-products/product/mirrorless-cameras/z50-ii.html',
+    productUrl:'https://www.nikonusa.com/p/z50ii/1784/overview',
     imageUrl:'https://upload.wikimedia.org/wikipedia/commons/thumb/c/cb/Nikon_Z50II_28_nov_2024a.jpg/1280px-Nikon_Z50II_28_nov_2024a.jpg',
     asin:'B0DMJBLQGP',
     prices:{USD:1007,AUD:1449,EUR:1049,GBP:849,JPY:150000,CAD:1249,SGD:1299},
@@ -313,7 +313,7 @@ const CAMERAS = {
   'z30': {
     name:'Z30', series:'Z (APS-C)', year:2022, discontinued:false,
     tagline:'Vlogging DX, No Viewfinder',
-    productUrl:'https://www.nikonusa.com/en/nikon-products/product/mirrorless-cameras/z30.html',
+    productUrl:'https://www.nikonusa.com/p/z-30/1737/overview',
     imageUrl:null, asin:'B0B527JD1C',
     prices:{USD:810,AUD:1099,EUR:799,GBP:649,JPY:117000,CAD:949,SGD:999},
     sensorMP:20.9, sensorType:'APS-C (DX) CMOS', processor:'EXPEED 6',
@@ -407,7 +407,7 @@ const LENSES = {
     imageUrl:'https://upload.wikimedia.org/wikipedia/commons/thumb/1/1c/Nikon_NIKKOR_Z_50mm_f_1.8_S_%2849288626406%29.jpg/1280px-Nikon_NIKKOR_Z_50mm_f_1.8_S_%2849288626406%29.jpg',
     prices:{USD:597,AUD:899,EUR:null,GBP:null,JPY:null,CAD:799,SGD:null},
     priceIncomplete:true,
-    productUrl:'https://www.nikonusa.com/en/nikon-products/product/camera-lenses/nikkor-z-50mm-f%2f1.8-s.html',
+    productUrl:'https://www.nikonusa.com/p/nikkor-z-50mm-f18-s/20083/overview',
   },
 
   'z-20mm-f1-8-s': {
@@ -420,7 +420,7 @@ const LENSES = {
     imageUrl:'https://upload.wikimedia.org/wikipedia/commons/thumb/e/e8/Nikon_NIKKOR_Z_20mm_f_1.8_S_%2852044601591%29.jpg/1280px-Nikon_NIKKOR_Z_20mm_f_1.8_S_%2852044601591%29.jpg',
     prices:{USD:1047,AUD:1599,EUR:null,GBP:null,JPY:null,CAD:1399,SGD:null},
     priceIncomplete:true,
-    productUrl:'https://www.nikonusa.com/en/nikon-products/product/camera-lenses/nikkor-z-20mm-f%2f1.8-s.html',
+    productUrl:'https://www.nikonusa.com/p/nikkor-z-20mm-f18-s/20093/overview',
   },
 
   'z-24mm-f1-8-s': {
@@ -433,7 +433,7 @@ const LENSES = {
     imageUrl:null,
     prices:{USD:997,AUD:1499,EUR:null,GBP:null,JPY:null,CAD:1349,SGD:null},
     priceIncomplete:true,
-    productUrl:'https://www.nikonusa.com/en/nikon-products/product/camera-lenses/nikkor-z-24mm-f%2f1.8-s.html',
+    productUrl:'https://www.nikonusa.com/p/nikkor-z-24mm-f18-s/20080/overview',
   },
 
   'z-35mm-f1-8-s': {
@@ -446,7 +446,7 @@ const LENSES = {
     imageUrl:null,
     prices:{USD:847,AUD:1299,EUR:null,GBP:null,JPY:null,CAD:1149,SGD:null},
     priceIncomplete:true,
-    productUrl:'https://www.nikonusa.com/en/nikon-products/product/camera-lenses/nikkor-z-35mm-f%2f1.8-s.html',
+    productUrl:'https://www.nikonusa.com/p/nikkor-z-35mm-f18-s/20081/overview',
   },
 
   'z-85mm-f1-8-s': {
@@ -459,7 +459,7 @@ const LENSES = {
     imageUrl:null,
     prices:{USD:797,AUD:1199,EUR:null,GBP:null,JPY:null,CAD:1099,SGD:null},
     priceIncomplete:true,
-    productUrl:'https://www.nikonusa.com/en/nikon-products/product/camera-lenses/nikkor-z-85mm-f%2f1.8-s.html',
+    productUrl:'https://www.nikonusa.com/p/nikkor-z-85mm-f18-s/20090/overview',
   },
 
   'z-35mm-f1-2-s': {
@@ -472,7 +472,7 @@ const LENSES = {
     imageUrl:null,
     prices:{USD:2797,AUD:4299,EUR:null,GBP:null,JPY:null,CAD:3799,SGD:null},
     priceIncomplete:true,
-    productUrl:'https://www.nikonusa.com/en/nikon-products/product/camera-lenses/nikkor-z-35mm-f%2f1.2-s.html',
+    productUrl:'https://www.nikonusa.com/p/nikkor-z-35mm-f12-s/20124/overview',
   },
 
   'z-50mm-f1-2-s': {
@@ -485,7 +485,7 @@ const LENSES = {
     imageUrl:'https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/Nikon_NIKKOR_Z_50mm_f_1.2_S_%2851602295538%29.jpg/1280px-Nikon_NIKKOR_Z_50mm_f_1.2_S_%2851602295538%29.jpg',
     prices:{USD:2097,AUD:3199,EUR:null,GBP:null,JPY:null,CAD:2849,SGD:null},
     priceIncomplete:true,
-    productUrl:'https://www.nikonusa.com/en/nikon-products/product/camera-lenses/nikkor-z-50mm-f%2f1.2-s.html',
+    productUrl:'https://www.nikonusa.com/p/nikkor-z-50mm-f12-s/20095/overview',
   },
 
   'z-85mm-f1-2-s': {
@@ -498,7 +498,7 @@ const LENSES = {
     imageUrl:'https://upload.wikimedia.org/wikipedia/commons/thumb/6/68/Nikon_Nikkor_Z_85mm_f_1.2_S_by_Henry_S%C3%B6derlund.jpg/1280px-Nikon_Nikkor_Z_85mm_f_1.2_S_by_Henry_S%C3%B6derlund.jpg',
     prices:{USD:2797,AUD:4299,EUR:null,GBP:null,JPY:null,CAD:3799,SGD:null},
     priceIncomplete:true,
-    productUrl:'https://www.nikonusa.com/en/nikon-products/product/camera-lenses/nikkor-z-85mm-f%2f1.2-s.html',
+    productUrl:'https://www.nikonusa.com/p/nikkor-z-85mm-f12-s/20114/overview',
   },
 
   'z-135mm-f1-8-s-plena': {
@@ -511,7 +511,7 @@ const LENSES = {
     imageUrl:null,
     prices:{USD:2497,AUD:3799,EUR:null,GBP:null,JPY:null,CAD:3399,SGD:null},
     priceIncomplete:true,
-    productUrl:'https://www.nikonusa.com/en/nikon-products/product/camera-lenses/nikkor-z-135mm-f%2f1.8-s-plena.html',
+    productUrl:'https://www.nikonusa.com/p/nikkor-z-135mm-f18-s-plena/20123/overview',
   },
 
   'z-mc-105mm-f2-8-vr-s': {
@@ -524,7 +524,7 @@ const LENSES = {
     imageUrl:null,
     prices:{USD:997,AUD:1499,EUR:null,GBP:null,JPY:null,CAD:1349,SGD:null},
     priceIncomplete:true,
-    productUrl:'https://www.nikonusa.com/en/nikon-products/product/camera-lenses/nikkor-z-mc-105mm-f%2f2.8-vr-s.html',
+    productUrl:'https://www.nikonusa.com/p/nikkor-z-mc-105mm-f28-vr-s/20100/overview',
   },
 
   'z-58mm-f0-95-s-noct': {
@@ -537,7 +537,7 @@ const LENSES = {
     imageUrl:null,
     prices:{USD:7997,AUD:11999,EUR:null,GBP:null,JPY:null,CAD:10999,SGD:null},
     priceIncomplete:true,
-    productUrl:'https://www.nikonusa.com/en/nikon-products/product/camera-lenses/nikkor-z-58mm-f%2f0.95-s-noct.html',
+    productUrl:'https://www.nikonusa.com/p/nikkor-z-58mm-f095-s-noct/20086/overview',
   },
 
   /* ── S-Line Zooms ── */
@@ -551,7 +551,7 @@ const LENSES = {
     imageUrl:'https://upload.wikimedia.org/wikipedia/commons/thumb/4/48/Nikon_Z7ii_%2B_nikkor_z_24-70mm_f2.8_s.jpg/1280px-Nikon_Z7ii_%2B_nikkor_z_24-70mm_f2.8_s.jpg',
     prices:{USD:2297,AUD:3499,EUR:null,GBP:null,JPY:null,CAD:3099,SGD:null},
     priceIncomplete:true,
-    productUrl:'https://www.nikonusa.com/en/nikon-products/product/camera-lenses/nikkor-z-24-70mm-f%2f2.8-s.html',
+    productUrl:'https://www.nikonusa.com/p/nikkor-z-24-70mm-f28-s/20089/overview',
   },
 
   'z-70-200mm-f2-8-vr-s': {
@@ -564,7 +564,7 @@ const LENSES = {
     imageUrl:'https://upload.wikimedia.org/wikipedia/commons/thumb/0/0f/Nikon_NIKKOR_Z_70-200mm_f_2.8_VR_S_%2850342502711%29.jpg/1280px-Nikon_NIKKOR_Z_70-200mm_f_2.8_VR_S_%2850342502711%29.jpg',
     prices:{USD:2597,AUD:3999,EUR:null,GBP:null,JPY:null,CAD:3499,SGD:null},
     priceIncomplete:true,
-    productUrl:'https://www.nikonusa.com/en/nikon-products/product/camera-lenses/nikkor-z-70-200mm-f%2f2.8-vr-s.html',
+    productUrl:'https://www.nikonusa.com/p/nikkor-z-70-200mm-f28-vr-s/20091/overview',
   },
 
   /* ── Standard Primes (non-S, FX) ── */
@@ -578,7 +578,7 @@ const LENSES = {
     imageUrl:null,
     prices:{USD:497,AUD:749,EUR:null,GBP:null,JPY:null,CAD:679,SGD:null},
     priceIncomplete:true,
-    productUrl:'https://www.nikonusa.com/en/nikon-products/product/camera-lenses/nikkor-z-26mm-f%2f2.8.html',
+    productUrl:'https://www.nikonusa.com/p/nikkor-z-26mm-f28/20116/overview',
   },
 
   'z-28mm-f2-8': {
@@ -591,7 +591,7 @@ const LENSES = {
     imageUrl:null,
     prices:{USD:297,AUD:449,EUR:null,GBP:null,JPY:null,CAD:399,SGD:null},
     priceIncomplete:true,
-    productUrl:'https://www.nikonusa.com/en/nikon-products/product/camera-lenses/nikkor-z-28mm-f%2f2.8.html',
+    productUrl:'https://www.nikonusa.com/p/nikkor-z-28mm-f28/20101/overview',
   },
 
   'z-28mm-f2-8-se': {
@@ -604,7 +604,7 @@ const LENSES = {
     imageUrl:'https://upload.wikimedia.org/wikipedia/commons/thumb/c/c1/Nikon_Z_fc_with_Nikkor_Z_28mm_F2.8_SE_-_by_Henry_S%C3%B6derlund_%2851675302954%29.jpg/1280px-Nikon_Z_fc_with_Nikkor_Z_28mm_F2.8_SE_-_by_Henry_S%C3%B6derlund_%2851675302954%29.jpg',
     prices:{USD:297,AUD:449,EUR:null,GBP:null,JPY:null,CAD:399,SGD:null},
     priceIncomplete:true,
-    productUrl:'https://www.nikonusa.com/en/nikon-products/product/camera-lenses/nikkor-z-28mm-f%2f2.8-se.html',
+    productUrl:'https://www.nikonusa.com/p/nikkor-z-28mm-f28-se/20110/overview',
   },
 
   'z-35mm-f1-4': {
@@ -617,7 +617,7 @@ const LENSES = {
     imageUrl:'https://upload.wikimedia.org/wikipedia/commons/thumb/8/89/Nikon_NIKKOR_Z_35mm_f_1.4_%2853868344792%29.jpg/1280px-Nikon_NIKKOR_Z_35mm_f_1.4_%2853868344792%29.jpg',
     prices:{USD:597,AUD:899,EUR:null,GBP:null,JPY:null,CAD:799,SGD:null},
     priceIncomplete:true,
-    productUrl:'https://www.nikonusa.com/en/nikon-products/product/camera-lenses/nikkor-z-35mm-f%2f1.4.html',
+    productUrl:'https://www.nikonusa.com/p/nikkor-z-35mm-f14/20126/overview',
   },
 
   'z-40mm-f2': {
@@ -630,7 +630,7 @@ const LENSES = {
     imageUrl:'https://upload.wikimedia.org/wikipedia/commons/thumb/4/47/Nikon_Nikkor_Z_40mm_F2_%2851607832457%29.jpg/1280px-Nikon_Nikkor_Z_40mm_F2_%2851607832457%29.jpg',
     prices:{USD:297,AUD:449,EUR:null,GBP:null,JPY:null,CAD:399,SGD:null},
     priceIncomplete:true,
-    productUrl:'https://www.nikonusa.com/en/nikon-products/product/camera-lenses/nikkor-z-40mm-f%2f2.html',
+    productUrl:'https://www.nikonusa.com/p/nikkor-z-40mm-f2/20102/overview',
   },
 
   'z-40mm-f2-se': {
@@ -643,7 +643,7 @@ const LENSES = {
     imageUrl:null,
     prices:{USD:307,AUD:469,EUR:null,GBP:null,JPY:null,CAD:419,SGD:null},
     priceIncomplete:true,
-    productUrl:'https://www.nikonusa.com/en/nikon-products/product/camera-lenses/nikkor-z-40mm-f%2f2-se.html',
+    productUrl:'https://www.nikonusa.com/p/nikkor-z-40mm-f2-se/20121/overview',
   },
 
   'z-50mm-f1-4': {
@@ -656,7 +656,7 @@ const LENSES = {
     imageUrl:null,
     prices:{USD:497,AUD:749,EUR:null,GBP:null,JPY:null,CAD:679,SGD:null},
     priceIncomplete:true,
-    productUrl:'https://www.nikonusa.com/en/nikon-products/product/camera-lenses/nikkor-z-50mm-f%2f1.4.html',
+    productUrl:'https://www.nikonusa.com/p/nikkor-z-50mm-f14/20128/overview',
   },
 
   'z-50mm-f2-8-mc': {
@@ -669,7 +669,7 @@ const LENSES = {
     imageUrl:'https://upload.wikimedia.org/wikipedia/commons/thumb/e/e2/Nikon_NIKKOR_Z_MC_50mm_f_2.8_%2851378200761%29.jpg/1280px-Nikon_NIKKOR_Z_MC_50mm_f_2.8_%2851378200761%29.jpg',
     prices:{USD:647,AUD:999,EUR:null,GBP:null,JPY:null,CAD:879,SGD:null},
     priceIncomplete:true,
-    productUrl:'https://www.nikonusa.com/en/nikon-products/product/camera-lenses/nikkor-z-mc-50mm-f%2f2.8.html',
+    productUrl:'https://www.nikonusa.com/p/nikkor-z-mc-50mm-f28/20103/overview',
   },
 
   /* ── DX Primes ── */
@@ -683,7 +683,7 @@ const LENSES = {
     imageUrl:null,
     prices:{USD:277,AUD:429,EUR:null,GBP:null,JPY:null,CAD:379,SGD:null},
     priceIncomplete:true,
-    productUrl:'https://www.nikonusa.com/en/nikon-products/product/camera-lenses/nikkor-z-dx-24mm-f%2f1.7.html',
+    productUrl:'https://www.nikonusa.com/p/nikkor-z-dx-24mm-f17/20119/overview',
   },
 
   /* ── S-Line Zooms (cont.) ── */
@@ -697,7 +697,7 @@ const LENSES = {
     imageUrl:null,
     prices:{USD:2399,AUD:3699,EUR:null,GBP:null,JPY:null,CAD:3299,SGD:null},
     priceIncomplete:true,
-    productUrl:'https://www.nikonusa.com/en/nikon-products/product/camera-lenses/nikkor-z-14-24mm-f%2f2.8-s.html',
+    productUrl:'https://www.nikonusa.com/p/nikkor-z-14-24mm-f28-s/20097/overview',
   },
 
   'z-14-30mm-f4-s': {
@@ -710,7 +710,7 @@ const LENSES = {
     imageUrl:null,
     prices:{USD:1297,AUD:1999,EUR:null,GBP:null,JPY:null,CAD:1749,SGD:null},
     priceIncomplete:true,
-    productUrl:'https://www.nikonusa.com/en/nikon-products/product/camera-lenses/nikkor-z-14-30mm-f%2f4-s.html',
+    productUrl:'https://www.nikonusa.com/p/nikkor-z-14-30mm-f4-s/20070/overview',
   },
 
   'z-24-70mm-f4-s': {
@@ -723,7 +723,7 @@ const LENSES = {
     imageUrl:null,
     prices:{USD:997,AUD:1499,EUR:null,GBP:null,JPY:null,CAD:1349,SGD:null},
     priceIncomplete:true,
-    productUrl:'https://www.nikonusa.com/en/nikon-products/product/camera-lenses/nikkor-z-24-70mm-f%2f4-s.html',
+    productUrl:'https://www.nikonusa.com/p/nikkor-z-24-70mm-f4-s/20072/overview',
   },
 
   'z-24-120mm-f4-s': {
@@ -736,7 +736,7 @@ const LENSES = {
     imageUrl:'https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/Nikon_NIKKOR_Z_24-120mm_f_4_S_%2851793292337%29.jpg/1280px-Nikon_NIKKOR_Z_24-120mm_f_4_S_%2851793292337%29.jpg',
     prices:{USD:1097,AUD:1699,EUR:null,GBP:null,JPY:null,CAD:1499,SGD:null},
     priceIncomplete:true,
-    productUrl:'https://www.nikonusa.com/en/nikon-products/product/camera-lenses/nikkor-z-24-120mm-f%2f4-s.html',
+    productUrl:'https://www.nikonusa.com/p/nikkor-z-24-120mm-f4-s/20105/overview',
   },
 
   'z-100-400mm-f4-5-5-6-vr-s': {
@@ -749,7 +749,7 @@ const LENSES = {
     imageUrl:'https://upload.wikimedia.org/wikipedia/commons/thumb/5/57/Nikon_Nikkor_Z_100-400mm_F4.5-5.6_VR_S_-_by_Henry_S%C3%B6derlund_%2852457041193%29.jpg/1280px-Nikon_Nikkor_Z_100-400mm_F4.5-5.6_VR_S_-_by_Henry_S%C3%B6derlund_%2852457041193%29.jpg',
     prices:{USD:2697,AUD:4199,EUR:null,GBP:null,JPY:null,CAD:3699,SGD:null},
     priceIncomplete:true,
-    productUrl:'https://www.nikonusa.com/en/nikon-products/product/camera-lenses/nikkor-z-100-400mm-f%2f4.5-5.6-vr-s.html',
+    productUrl:'https://www.nikonusa.com/p/nikkor-z-100-400mm-f45-56-vr-s/20106/overview',
   },
 
   /* ── Standard / Travel Zooms (non-S, FX) ── */
@@ -763,7 +763,7 @@ const LENSES = {
     imageUrl:'https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Nikon_NIKKOR_Z_17-28mm_f_2.8_%2852474327801%29.jpg/1280px-Nikon_NIKKOR_Z_17-28mm_f_2.8_%2852474327801%29.jpg',
     prices:{USD:1197,AUD:1849,EUR:null,GBP:null,JPY:null,CAD:1649,SGD:null},
     priceIncomplete:true,
-    productUrl:'https://www.nikonusa.com/en/nikon-products/product/camera-lenses/nikkor-z-17-28mm-f%2f2.8.html',
+    productUrl:'https://www.nikonusa.com/p/nikkor-z-17-28mm-f28/20115/overview',
   },
 
   'z-24-50mm-f4-6-3': {
@@ -776,7 +776,7 @@ const LENSES = {
     imageUrl:null,
     prices:{USD:397,AUD:599,EUR:null,GBP:null,JPY:null,CAD:529,SGD:null},
     priceIncomplete:true,
-    productUrl:'https://www.nikonusa.com/en/nikon-products/product/camera-lenses/nikkor-z-24-50mm-f%2f4-6.3.html',
+    productUrl:'https://www.nikonusa.com/p/nikkor-z-24-50mm-f4-63/20096/overview',
   },
 
   'z-24-200mm-f4-6-3-vr': {
@@ -789,7 +789,7 @@ const LENSES = {
     imageUrl:null,
     prices:{USD:897,AUD:1399,EUR:null,GBP:null,JPY:null,CAD:1229,SGD:null},
     priceIncomplete:true,
-    productUrl:'https://www.nikonusa.com/en/nikon-products/product/camera-lenses/nikkor-z-24-200mm-f%2f4-6.3-vr.html',
+    productUrl:'https://www.nikonusa.com/p/nikkor-z-24-200mm-f4-63-vr/20092/overview',
   },
 
   'z-28-75mm-f2-8': {
@@ -802,7 +802,7 @@ const LENSES = {
     imageUrl:'https://upload.wikimedia.org/wikipedia/commons/thumb/e/e4/Nikon_NIKKOR_Z_28-75mm_f_2.8_%2851832796897%29.jpg/1280px-Nikon_NIKKOR_Z_28-75mm_f_2.8_%2851832796897%29.jpg',
     prices:{USD:1197,AUD:1849,EUR:null,GBP:null,JPY:null,CAD:1649,SGD:null},
     priceIncomplete:true,
-    productUrl:'https://www.nikonusa.com/en/nikon-products/product/camera-lenses/nikkor-z-28-75mm-f%2f2.8.html',
+    productUrl:'https://www.nikonusa.com/p/nikkor-z-28-75mm-f28/20107/overview',
   },
 
   'z-28-400mm-f4-8-vr': {
@@ -815,7 +815,7 @@ const LENSES = {
     imageUrl:'https://upload.wikimedia.org/wikipedia/commons/thumb/a/a4/Nikon_NIKKOR_Z_28-400mm_f_4-8_VR_by_Henry_S%C3%B6derlund.jpg/1280px-Nikon_NIKKOR_Z_28-400mm_f_4-8_VR_by_Henry_S%C3%B6derlund.jpg',
     prices:{USD:1297,AUD:1999,EUR:null,GBP:null,JPY:null,CAD:1749,SGD:null},
     priceIncomplete:true,
-    productUrl:'https://www.nikonusa.com/en/nikon-products/product/camera-lenses/nikkor-z-28-400mm-f%2f4-8-vr.html',
+    productUrl:'https://www.nikonusa.com/p/nikkor-z-28-400mm-f4-8-vr/20125/overview',
   },
 
   /* ── Telephoto / Super-Telephoto ── */
@@ -829,7 +829,7 @@ const LENSES = {
     imageUrl:'https://upload.wikimedia.org/wikipedia/commons/thumb/a/a1/Nikon_NIKKOR_Z_70-180mm_F2.8_%2853061678724%29.jpg/1280px-Nikon_NIKKOR_Z_70-180mm_F2.8_%2853061678724%29.jpg',
     prices:{USD:1247,AUD:1899,EUR:null,GBP:null,JPY:null,CAD:1699,SGD:null},
     priceIncomplete:true,
-    productUrl:'https://www.nikonusa.com/en/nikon-products/product/camera-lenses/nikkor-z-70-180mm-f%2f2.8.html',
+    productUrl:'https://www.nikonusa.com/p/nikkor-z-70-180mm-f28/20120/overview',
   },
 
   'z-180-600mm-f5-6-6-3-vr': {
@@ -842,7 +842,7 @@ const LENSES = {
     imageUrl:null,
     prices:{USD:1697,AUD:2599,EUR:null,GBP:null,JPY:null,CAD:2299,SGD:null},
     priceIncomplete:true,
-    productUrl:'https://www.nikonusa.com/en/nikon-products/product/camera-lenses/nikkor-z-180-600mm-f%2f5.6-6.3-vr.html',
+    productUrl:'https://www.nikonusa.com/p/nikkor-z-180-600mm-f56-63-vr/20117/overview',
   },
 
   'z-400mm-f4-5-vr-s': {
@@ -855,7 +855,7 @@ const LENSES = {
     imageUrl:null,
     prices:{USD:3247,AUD:4999,EUR:null,GBP:null,JPY:null,CAD:4399,SGD:null},
     priceIncomplete:true,
-    productUrl:'https://www.nikonusa.com/en/nikon-products/product/camera-lenses/nikkor-z-400mm-f%2f4.5-vr-s.html',
+    productUrl:'https://www.nikonusa.com/p/nikkor-z-400mm-f45-vr-s/20112/overview',
   },
 
   'z-400mm-f2-8-tc-vr-s': {
@@ -868,7 +868,7 @@ const LENSES = {
     imageUrl:null,
     prices:{USD:13997,AUD:21499,EUR:null,GBP:null,JPY:null,CAD:18999,SGD:null},
     priceIncomplete:true,
-    productUrl:'https://www.nikonusa.com/en/nikon-products/product/camera-lenses/nikkor-z-400mm-f%2f2.8-tc-vr-s.html',
+    productUrl:'https://www.nikonusa.com/p/nikkor-z-400mm-f28-tc-vr-s/20111/overview',
   },
 
   'z-600mm-f6-3-vr-s-pf': {
@@ -881,7 +881,7 @@ const LENSES = {
     imageUrl:null,
     prices:{USD:4797,AUD:7399,EUR:null,GBP:null,JPY:null,CAD:6499,SGD:null},
     priceIncomplete:true,
-    productUrl:'https://www.nikonusa.com/en/nikon-products/product/camera-lenses/nikkor-z-600mm-f%2f6.3-vr-s.html',
+    productUrl:'https://www.nikonusa.com/p/nikkor-z-600mm-f63-vr-s/20122/overview',
   },
 
   'z-600mm-f4-tc-vr-s': {
@@ -894,7 +894,7 @@ const LENSES = {
     imageUrl:'https://upload.wikimedia.org/wikipedia/commons/thumb/3/32/Nikon_Nikkor_Z_600mm_F4_TC_VR_S_20260516113641.jpg/1280px-Nikon_Nikkor_Z_600mm_F4_TC_VR_S_20260516113641.jpg',
     prices:{USD:15497,AUD:23999,EUR:null,GBP:null,JPY:null,CAD:20999,SGD:null},
     priceIncomplete:true,
-    productUrl:'https://www.nikonusa.com/en/nikon-products/product/camera-lenses/nikkor-z-600mm-f%2f4-tc-vr-s.html',
+    productUrl:'https://www.nikonusa.com/p/nikkor-z-600mm-f4-tc-vr-s/20113/overview',
   },
 
   'z-800mm-f6-3-vr-s-pf': {
@@ -907,7 +907,7 @@ const LENSES = {
     imageUrl:null,
     prices:{USD:6497,AUD:9999,EUR:null,GBP:null,JPY:null,CAD:8799,SGD:null},
     priceIncomplete:true,
-    productUrl:'https://www.nikonusa.com/en/nikon-products/product/camera-lenses/nikkor-z-800mm-f%2f6.3-vr-s.html',
+    productUrl:'https://www.nikonusa.com/p/nikkor-z-800mm-f63-vr-s/20108/overview',
   },
 
   /* ── DX Zooms ── */
@@ -921,7 +921,7 @@ const LENSES = {
     imageUrl:null,
     prices:{USD:357,AUD:549,EUR:null,GBP:null,JPY:null,CAD:479,SGD:null},
     priceIncomplete:true,
-    productUrl:'https://www.nikonusa.com/en/nikon-products/product/camera-lenses/nikkor-z-dx-12-28mm-f%2f3.5-5.6-pz-vr.html',
+    productUrl:'https://www.nikonusa.com/p/nikkor-z-dx-12-28mm-f35-56-pz-vr/20118/overview',
   },
 
   'z-dx-16-50mm-vr': {
@@ -934,7 +934,7 @@ const LENSES = {
     imageUrl:null,
     prices:{USD:307,AUD:469,EUR:null,GBP:null,JPY:null,CAD:419,SGD:null},
     priceIncomplete:true,
-    productUrl:'https://www.nikonusa.com/en/nikon-products/product/camera-lenses/nikkor-z-dx-16-50mm-f%2f3.5-6.3-vr.html',
+    productUrl:'https://www.nikonusa.com/p/nikkor-z-dx-16-50mm-f35-63-vr/20084/overview',
   },
 
   'z-dx-18-140mm-vr': {
@@ -947,7 +947,7 @@ const LENSES = {
     imageUrl:null,
     prices:{USD:397,AUD:599,EUR:null,GBP:null,JPY:null,CAD:529,SGD:null},
     priceIncomplete:true,
-    productUrl:'https://www.nikonusa.com/en/nikon-products/product/camera-lenses/nikkor-z-dx-18-140mm-f%2f3.5-6.3-vr.html',
+    productUrl:'https://www.nikonusa.com/p/nikkor-z-dx-18-140mm-f35-63-vr/20104/overview',
   },
 
   'z-dx-50-250mm-vr': {
@@ -960,7 +960,7 @@ const LENSES = {
     imageUrl:null,
     prices:{USD:357,AUD:549,EUR:null,GBP:null,JPY:null,CAD:479,SGD:null},
     priceIncomplete:true,
-    productUrl:'https://www.nikonusa.com/en/nikon-products/product/camera-lenses/nikkor-z-dx-50-250mm-f%2f4.5-6.3-vr.html',
+    productUrl:'https://www.nikonusa.com/p/nikkor-z-dx-50-250mm-f45-63-vr/20085/overview',
   },
 
   /* ── Sigma (Z DX, APS-C DC DN) ── */
@@ -1253,19 +1253,6 @@ const LENSES = {
     priceIncomplete:true, productUrl:'https://viltrox.com/products/viltrox-af-40mm-f2-5-z',
   },
 
-  /* ── Samyang (Z AF) ── */
-  'samyang-135mm-f18': {
-    name:'Samyang AF 135mm f/1.8 Z', manufacturer:'Samyang', line:'AF', type:'Prime',
-    focalLength:135, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'135mm',
-    maxAperture:1.8, minAperture:22, weight:772, length:129.6, diameter:93,
-    filterThread:82, minFocusDist:69, maxMagnification:0.24,
-    elements:13, groups:11, blades:11, afType:'Linear STM',
-    weatherSealed:true, ois:false, oisStops:null, year:2023, discontinued:false,
-    imageUrl:null, asin:null,
-    prices:{USD:799,AUD:null,EUR:null,GBP:null,JPY:null,CAD:null,SGD:null},
-    priceIncomplete:true, productUrl:'https://samyangus.com/products/135mm-f1-8-af-full-frame-telephoto-nikon-z',
-  },
-
   /* ── Voigtländer (native Z manual-focus) ── */
   'voigtlander-apo-lanthar-50mm-f2': {
     name:'Voigtländer APO-Lanthar 50mm f/2 Z', manufacturer:'Voigtländer', line:'APO-Lanthar', type:'Prime',
@@ -1349,7 +1336,7 @@ const LENSES = {
     weatherSealed:false, ois:false, oisStops:null, year:2021, discontinued:false,
     imageUrl:null, asin:null,
     prices:{USD:219,AUD:null,EUR:null,GBP:null,JPY:null,CAD:null,SGD:null},
-    priceIncomplete:true, productUrl:'https://meikeglobal.com/products/85mm-f1-8-full-frame-auto-focus-stm-lens-for-nikon-z-mount-cameras',
+    priceIncomplete:true, productUrl:'https://meikeglobal.com/products/85mm-f1-8z',
   },
 
 };
@@ -1364,7 +1351,6 @@ const LENS_DROPDOWN_GROUPS = [
   { label: '── Sigma ──', ids: ['sigma-16mm-f14', 'sigma-30mm-f14', 'sigma-56mm-f14'] },
   { label: '── Viltrox ──', ids: ['viltrox-13mm-f14', 'viltrox-16mm-f18', 'viltrox-27mm-f12', 'viltrox-33mm-f14', 'viltrox-56mm-f14', 'viltrox-85mm-f18-ii', 'viltrox-24mm-f18', 'viltrox-35mm-f18-evo', 'viltrox-40mm-f25-air'] },
   { label: '── Tamron ──', ids: ['tamron-11-20mm-f28', 'tamron-17-70mm-f28', 'tamron-18-300mm-f35-63', 'tamron-35-150mm-f2-28', 'tamron-50-400mm-f45-63', 'tamron-70-300mm-f45-63', 'tamron-150-500mm-f5-67'] },
-  { label: '── Samyang ──', ids: ['samyang-135mm-f18'] },
   { label: '── Voigtländer ──', ids: ['voigtlander-apo-lanthar-50mm-f2', 'voigtlander-nokton-40mm-f12'] },
   { label: '── Laowa ──', ids: ['laowa-10mm-f4-cookie', 'laowa-15mm-f2', 'laowa-90mm-f28-macro'] },
   { label: '── Other ──', ids: ['yongnuo-35mm-f2', 'yongnuo-50mm-f18', 'ttartisan-27mm-f28', '7artisans-27mm-f28', 'meike-85mm-f18'] },

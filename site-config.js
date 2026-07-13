@@ -14,5 +14,5 @@ const SITE_CONFIG = {
   siteName: 'Camera Compare',
   // Date the specs/prices were last audited (kept current by the
   // periodic price/link audit) — a verification claim, never "today".
-  dataVerified: '2026-07-03',
+  dataVerified: '2026-07-13',
 };

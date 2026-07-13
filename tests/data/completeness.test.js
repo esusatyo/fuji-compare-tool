@@ -54,7 +54,7 @@ const KNOWN_IMAGE_GAPS = {
     'tamron-50-400mm-f45-63', 'tamron-70-300mm-f45-63', 'tamron-150-500mm-f5-67',
     'viltrox-24mm-f18', 'viltrox-35mm-f18-evo', 'voigtlander-nokton-40mm-f12',
     'yongnuo-35mm-f2', 'yongnuo-50mm-f18', 'ttartisan-27mm-f28', '7artisans-27mm-f28', 'meike-85mm-f18',
-    'viltrox-40mm-f25-air', 'samyang-135mm-f18', 'voigtlander-apo-lanthar-50mm-f2',
+    'viltrox-40mm-f25-air', 'voigtlander-apo-lanthar-50mm-f2',
     // Curated via scripts/fetch-images-commons.js (strict model-token match).
     // 21 of 57 items carry real Commons images (4 cameras + 17 lenses); the
     // rest stay on the engine's series-coloured placeholder until a freely-
@@ -76,7 +76,7 @@ const KNOWN_IMAGE_GAPS = {
     // OM System M.Zuiko — manufacturer image URLs pending backfill
     'omsystem-12-40mm-f28-pro', 'omsystem-40-150mm-f4-pro', 'omsystem-12-100mm-f4-pro', 'omsystem-17mm-f12-pro', 'omsystem-25mm-f12-pro', 'omsystem-45mm-f12-pro', 'omsystem-60mm-f28-macro', 'omsystem-17mm-f18', 'omsystem-25mm-f18', 'omsystem-45mm-f18',
     // Sigma L-mount product images unavailable (404): 90/2.8, 28-70, 100-400
-    'voigtlander-apo-lanthar-35mm-f2-l', 'voigtlander-apo-lanthar-50mm-f2-l', 'voigtlander-nokton-40mm-f12-l',
+    'voigtlander-apo-lanthar-35mm-f2-l', 'voigtlander-apo-lanthar-50mm-f2-l',
     'laowa-90mm-f28-macro-l', 'laowa-15mm-f2-l',
     'sigma-90mm-f28-dg', 'sigma-28-70mm-f28-dg', 'sigma-100-400mm-f5-63-dg',
     // Curated via scripts/fetch-images-commons.js. 12 of 57 items carry real

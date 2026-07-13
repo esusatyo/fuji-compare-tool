@@ -86,7 +86,7 @@ const CAMERAS = {
   's5-ii': {
     name:'Lumix S5 II', series:'Lumix S (Full-frame)', year:2023, discontinued:false,
     tagline:'Phase-Detect Hybrid Full-Frame',
-    productUrl:'https://shop.panasonic.com/products/full-frame-mirrorless-camera-s5m2',
+    productUrl:'https://shop.panasonic.com/products/s5m2-full-frame-mirrorless-camera-body',
     imageUrl:'https://upload.wikimedia.org/wikipedia/commons/thumb/7/79/Panasonic_LUMIX_S5_II_%2852682131682%29.jpg/1280px-Panasonic_LUMIX_S5_II_%2852682131682%29.jpg',
     asin:'B0BR8JMCYG',
     prices:{USD:1999,AUD:3199,EUR:2299,GBP:1899,JPY:330000,CAD:2749,SGD:2849},
@@ -128,7 +128,7 @@ const CAMERAS = {
   's5-iix': {
     name:'Lumix S5 IIX', series:'Lumix S (Full-frame)', year:2023, discontinued:false,
     tagline:'All-Black Pro Video S5 II',
-    productUrl:'https://shop.panasonic.com/products/lumix-s5iix-mirrorless-camera-dc-s5m2x',
+    productUrl:'https://shop.panasonic.com/products/s5m2x-full-frame-mirrorless-camera-body',
     imageUrl:null,
     asin:'B0BR8FY5HT',
     prices:{USD:2199,AUD:3499,EUR:2549,GBP:2099,JPY:363000,CAD:3049,SGD:3149},
@@ -342,7 +342,7 @@ const CAMERAS = {
   'g9-ii': {
     name:'Lumix G9 II', series:'Lumix G (MFT)', year:2023, discontinued:false,
     tagline:'Phase-Detect MFT Photo Flagship',
-    productUrl:'https://shop.panasonic.com/products/lumix-g9ii-micro-four-thirds-camera-dc-g9m2',
+    productUrl:'https://shop.panasonic.com/products/g9m2-mirrorless-camera-body',
     imageUrl:'https://upload.wikimedia.org/wikipedia/commons/thumb/a/a6/Panasonic_Lumix_G9_II.jpg/1280px-Panasonic_Lumix_G9_II.jpg',
     asin:'B0CHTHLVHS',
     prices:{USD:1899,AUD:2999,EUR:2199,GBP:1799,JPY:313000,CAD:2599,SGD:2699},
@@ -503,7 +503,7 @@ const LENSES = {
     imageUrl:null,
     prices:{USD:447,AUD:699,EUR:null,GBP:null,JPY:null,CAD:599,SGD:null},
     priceIncomplete:true,
-    productUrl:'https://shop.panasonic.com/products/lumix-s-50mm-f1-8-l-mount-interchangeable-lens-s-s50',
+    productUrl:'https://shop.panasonic.com/products/s-series-50mm-f1-8-l-mount-lens',
   },
 
   'lumix-s-18mm-f1-8': {
@@ -516,7 +516,7 @@ const LENSES = {
     imageUrl:null,
     prices:{USD:747,AUD:1199,EUR:null,GBP:null,JPY:null,CAD:999,SGD:null},
     priceIncomplete:true,
-    productUrl:'https://shop.panasonic.com/products/lumix-s-18mm-f1-8-l-mount-lens-s-s18',
+    productUrl:'https://shop.panasonic.com/products/s-series-18mm-f1-8-l-mount-lens',
   },
 
   'lumix-s-24mm-f1-8': {
@@ -529,7 +529,7 @@ const LENSES = {
     imageUrl:null,
     prices:{USD:897,AUD:1399,EUR:null,GBP:null,JPY:null,CAD:1199,SGD:null},
     priceIncomplete:true,
-    productUrl:'https://shop.panasonic.com/products/lumix-s-24mm-f1-8-l-mount-lens-s-s24',
+    productUrl:'https://shop.panasonic.com/products/s-series-24mm-f1-8-l-mount-lens',
   },
 
   'lumix-s-35mm-f1-8': {
@@ -542,7 +542,7 @@ const LENSES = {
     imageUrl:'https://upload.wikimedia.org/wikipedia/commons/thumb/7/76/Panasonic_Lumix_S_35mm_F1.8_%2852972339626%29.jpg/1280px-Panasonic_Lumix_S_35mm_F1.8_%2852972339626%29.jpg',
     prices:{USD:697,AUD:1099,EUR:null,GBP:null,JPY:null,CAD:949,SGD:null},
     priceIncomplete:true,
-    productUrl:'https://shop.panasonic.com/products/lumix-s-35mm-f1-8-l-mount-lens-s-s35',
+    productUrl:'https://shop.panasonic.com/products/s-series-35mm-f1-8-l-mount',
   },
 
   'lumix-s-85mm-f1-8': {
@@ -555,7 +555,7 @@ const LENSES = {
     imageUrl:null,
     prices:{USD:597,AUD:949,EUR:null,GBP:null,JPY:null,CAD:799,SGD:null},
     priceIncomplete:true,
-    productUrl:'https://shop.panasonic.com/products/lumix-s-85mm-f1-8-l-mount-lens-s-s85',
+    productUrl:'https://shop.panasonic.com/products/s-series-85mm-f1-8-l-mount-lens',
   },
 
   'lumix-s-40mm-f2': {
@@ -568,7 +568,7 @@ const LENSES = {
     imageUrl:null,
     prices:{USD:597,AUD:949,EUR:null,GBP:null,JPY:null,CAD:799,SGD:null},
     priceIncomplete:true,
-    productUrl:'https://shop.panasonic.com/products/lumix-s-40mm-f2-l-mount-lens-s-s40',
+    productUrl:'https://shop.panasonic.com/products/lumix-s-series-40mm-f2-l-mount-camera-lens',
   },
 
   'lumix-s-pro-50mm-f1-4': {
@@ -581,7 +581,7 @@ const LENSES = {
     imageUrl:null,
     prices:{USD:2297,AUD:3599,EUR:null,GBP:null,JPY:null,CAD:3099,SGD:null},
     priceIncomplete:true,
-    productUrl:'https://shop.panasonic.com/products/lumix-s-pro-50mm-f1-4-l-mount-lens-s-x50',
+    productUrl:'https://shop.panasonic.com/products/s-series-50mm-f1-4-l-mount-lens',
   },
 
   'lumix-s-100mm-f2-8-macro': {
@@ -594,7 +594,7 @@ const LENSES = {
     imageUrl:null,
     prices:{USD:997,AUD:1599,EUR:null,GBP:null,JPY:null,CAD:1349,SGD:null},
     priceIncomplete:true,
-    productUrl:'https://shop.panasonic.com/products/lumix-s-100mm-f2-8-macro-l-mount-lens-s-e100',
+    productUrl:'https://shop.panasonic.com/products/s-series-100mm-l-mount-lens',
   },
 
   /* ── LUMIX S Zooms (L-Mount, full-frame) ── */
@@ -608,7 +608,7 @@ const LENSES = {
     imageUrl:null,
     prices:{USD:2197,AUD:3399,EUR:null,GBP:null,JPY:null,CAD:2899,SGD:null},
     priceIncomplete:true,
-    productUrl:'https://shop.panasonic.com/products/lumix-s-pro-24-70mm-f2-8-l-mount-lens-s-e2470',
+    productUrl:'https://shop.panasonic.com/products/s-series-pro-24-70mm-f2-8-l-mount-lens',
   },
 
   'lumix-s-pro-16-35mm-f4': {
@@ -621,7 +621,7 @@ const LENSES = {
     imageUrl:null,
     prices:{USD:1497,AUD:2299,EUR:null,GBP:null,JPY:null,CAD:1999,SGD:null},
     priceIncomplete:true,
-    productUrl:'https://shop.panasonic.com/products/lumix-s-pro-16-35mm-f4-l-mount-lens-s-r1635',
+    productUrl:'https://shop.panasonic.com/products/s-series-pro-16-35mm-f4-l-mount-lens',
   },
 
   'lumix-s-14-28mm-f4-5-6-macro': {
@@ -634,7 +634,7 @@ const LENSES = {
     imageUrl:null,
     prices:{USD:897,AUD:1399,EUR:null,GBP:null,JPY:null,CAD:1199,SGD:null},
     priceIncomplete:true,
-    productUrl:'https://shop.panasonic.com/products/lumix-s-14-28mm-f4-5-6-macro-l-mount-lens-s-r1428',
+    productUrl:'https://shop.panasonic.com/products/s-series-14-28mm-f4-5-6-l-mount-lens',
   },
 
   'lumix-s-20-60mm-f3-5-5-6': {
@@ -647,7 +647,7 @@ const LENSES = {
     imageUrl:null,
     prices:{USD:599,AUD:949,EUR:null,GBP:null,JPY:null,CAD:799,SGD:null},
     priceIncomplete:true,
-    productUrl:'https://shop.panasonic.com/products/lumix-s-20-60mm-f3-5-5-6-l-mount-lens-s-r2060',
+    productUrl:'https://shop.panasonic.com/products/s-series-20-60mm-f3-5-5-6-asph-lens',
   },
 
   'lumix-s-24-60mm-f2-8': {
@@ -660,7 +660,7 @@ const LENSES = {
     imageUrl:null,
     prices:{USD:1099,AUD:1699,EUR:null,GBP:null,JPY:null,CAD:1479,SGD:null},
     priceIncomplete:true,
-    productUrl:'https://shop.panasonic.com/products/lumix-s-24-60mm-f2-8-l-mount-lens-s-e2460',
+    productUrl:'https://shop.panasonic.com/products/s-series-24-60mm-f2-8-l-mount-lens-s-e2460',
   },
 
   'lumix-s-24-105mm-f4-macro': {
@@ -673,7 +673,7 @@ const LENSES = {
     imageUrl:'https://upload.wikimedia.org/wikipedia/commons/thumb/9/94/Panasonic_Lumix_S_24-105mm_F4_Macro_O.I.S._20260621150950.jpg/1280px-Panasonic_Lumix_S_24-105mm_F4_Macro_O.I.S._20260621150950.jpg',
     prices:{USD:1297,AUD:1999,EUR:null,GBP:null,JPY:null,CAD:1749,SGD:null},
     priceIncomplete:true,
-    productUrl:'https://shop.panasonic.com/products/lumix-s-24-105mm-f4-macro-ois-l-mount-lens-s-r24105',
+    productUrl:'https://shop.panasonic.com/products/s-series-r24105-24-105mm-f4-l-mount-lens',
   },
 
   'lumix-s-28-200mm-f4-7-1-macro': {
@@ -686,7 +686,7 @@ const LENSES = {
     imageUrl:null,
     prices:{USD:897,AUD:1399,EUR:null,GBP:null,JPY:null,CAD:1199,SGD:null},
     priceIncomplete:true,
-    productUrl:'https://shop.panasonic.com/products/lumix-s-28-200mm-f4-7-1-macro-ois-l-mount-lens-s-r28200',
+    productUrl:'https://shop.panasonic.com/products/s-series-28-200mm-l-mount-lens',
   },
 
   'lumix-s-pro-70-200mm-f2-8': {
@@ -699,7 +699,7 @@ const LENSES = {
     imageUrl:null,
     prices:{USD:2597,AUD:3999,EUR:null,GBP:null,JPY:null,CAD:3499,SGD:null},
     priceIncomplete:true,
-    productUrl:'https://shop.panasonic.com/products/lumix-s-pro-70-200mm-f2-8-ois-l-mount-lens-s-e70200',
+    productUrl:'https://shop.panasonic.com/products/s-series-pro-70-200mm-f2-8-l-mount-lens',
   },
 
   'lumix-s-pro-70-200mm-f4': {
@@ -712,7 +712,7 @@ const LENSES = {
     imageUrl:'https://upload.wikimedia.org/wikipedia/commons/thumb/1/15/Panasonic_Lumix_S_PRO_70-200mm_F4_O.I.S._%2851248180327%29.jpg/1280px-Panasonic_Lumix_S_PRO_70-200mm_F4_O.I.S._%2851248180327%29.jpg',
     prices:{USD:1697,AUD:2599,EUR:null,GBP:null,JPY:null,CAD:2299,SGD:null},
     priceIncomplete:true,
-    productUrl:'https://shop.panasonic.com/products/lumix-s-pro-70-200mm-f4-ois-l-mount-lens-s-r70200',
+    productUrl:'https://shop.panasonic.com/products/s-series-pro-70-200mm-f4-l-mount-lens',
   },
 
   'lumix-s-70-300mm-f4-5-5-6-macro': {
@@ -725,7 +725,7 @@ const LENSES = {
     imageUrl:'https://upload.wikimedia.org/wikipedia/commons/thumb/6/60/Panasonic_Lumix_S_70-300mm_F4.5-5.6_Macro_O.I.S._20260621143312.jpg/1280px-Panasonic_Lumix_S_70-300mm_F4.5-5.6_Macro_O.I.S._20260621143312.jpg',
     prices:{USD:1147,AUD:1799,EUR:null,GBP:null,JPY:null,CAD:1549,SGD:null},
     priceIncomplete:true,
-    productUrl:'https://shop.panasonic.com/products/lumix-s-70-300mm-f4-5-5-6-macro-ois-l-mount-lens-s-r70300',
+    productUrl:'https://shop.panasonic.com/products/s-series-70-300mm-f4-5-5-6-l-mount-lens',
   },
 
   /* ── LUMIX G Primes (Micro Four Thirds, 2.0× crop equiv) ── */
@@ -739,7 +739,7 @@ const LENSES = {
     imageUrl:null,
     prices:{USD:497,AUD:799,EUR:null,GBP:null,JPY:null,CAD:679,SGD:null},
     priceIncomplete:true,
-    productUrl:'https://shop.panasonic.com/products/leica-dg-summilux-9mm-f1-7-lens-h-x09',
+    productUrl:'https://shop.panasonic.com/products/g-series-9mm-f1-7-asph-leica-lens',
   },
 
   'leica-dg-12mm-f1-4': {
@@ -752,7 +752,7 @@ const LENSES = {
     imageUrl:null,
     prices:{USD:1297,AUD:1999,EUR:null,GBP:null,JPY:null,CAD:1749,SGD:null},
     priceIncomplete:true,
-    productUrl:'https://shop.panasonic.com/products/leica-dg-summilux-12mm-f1-4-asph-lens-h-x012',
+    productUrl:'https://shop.panasonic.com/products/g-series-12mm-f1-4-asph-leica-lens',
   },
 
   'leica-dg-15mm-f1-7': {
@@ -765,7 +765,7 @@ const LENSES = {
     imageUrl:null,
     prices:{USD:597,AUD:949,EUR:null,GBP:null,JPY:null,CAD:799,SGD:null},
     priceIncomplete:true,
-    productUrl:'https://shop.panasonic.com/products/leica-dg-summilux-15mm-f1-7-asph-lens-h-x015',
+    productUrl:'https://shop.panasonic.com/products/g-series-15mm-f1-7-asph-leica-lens',
   },
 
   'lumix-g-20mm-f1-7-ii': {
@@ -778,7 +778,7 @@ const LENSES = {
     imageUrl:null,
     prices:{USD:397,AUD:649,EUR:null,GBP:null,JPY:null,CAD:549,SGD:null},
     priceIncomplete:true,
-    productUrl:'https://shop.panasonic.com/products/lumix-g-20mm-f1-7-ii-asph-lens-h-h020a',
+    productUrl:'https://shop.panasonic.com/products/g-series-20mm-f1-7-asph-lens',
   },
 
   'leica-dg-25mm-f1-4-ii': {
@@ -791,7 +791,7 @@ const LENSES = {
     imageUrl:null,
     prices:{USD:597,AUD:949,EUR:null,GBP:null,JPY:null,CAD:799,SGD:null},
     priceIncomplete:true,
-    productUrl:'https://shop.panasonic.com/products/leica-dg-summilux-25mm-f1-4-ii-asph-lens-h-xa025',
+    productUrl:'https://shop.panasonic.com/products/g-series-25mm-f1-4-aph-leica-lens',
   },
 
   'lumix-g-25mm-f1-7': {
@@ -804,7 +804,7 @@ const LENSES = {
     imageUrl:'https://upload.wikimedia.org/wikipedia/commons/thumb/d/de/Panasonic_Lumix_G_25mm_F1.7_ASPH_lens.jpg/1280px-Panasonic_Lumix_G_25mm_F1.7_ASPH_lens.jpg',
     prices:{USD:247,AUD:399,EUR:null,GBP:null,JPY:null,CAD:329,SGD:null},
     priceIncomplete:true,
-    productUrl:'https://shop.panasonic.com/products/lumix-g-25mm-f1-7-asph-lens-h-h025',
+    productUrl:'https://shop.panasonic.com/products/g-series-25mm-f1-7-asph-lens',
   },
 
   'leica-dg-42-5mm-f1-2-nocticron': {
@@ -817,7 +817,7 @@ const LENSES = {
     imageUrl:'https://upload.wikimedia.org/wikipedia/commons/thumb/e/e3/Leica_DG_Nocticron_42.5mm_F1.2_01.jpg/1280px-Leica_DG_Nocticron_42.5mm_F1.2_01.jpg',
     prices:{USD:1597,AUD:2499,EUR:null,GBP:null,JPY:null,CAD:2149,SGD:null},
     priceIncomplete:true,
-    productUrl:'https://shop.panasonic.com/products/leica-dg-nocticron-42-5mm-f1-2-asph-lens-h-ns043',
+    productUrl:'https://shop.panasonic.com/products/g-series-42-5mm-f1-2-asph-leica-lens',
   },
 
   'lumix-g-42-5mm-f1-7': {
@@ -830,7 +830,7 @@ const LENSES = {
     imageUrl:null,
     prices:{USD:397,AUD:649,EUR:null,GBP:null,JPY:null,CAD:549,SGD:null},
     priceIncomplete:true,
-    productUrl:'https://shop.panasonic.com/products/lumix-g-42-5mm-f1-7-asph-power-ois-lens-h-hs043',
+    productUrl:'https://shop.panasonic.com/products/g-series-42-5mm-f1-7-asph-lens',
   },
 
   'leica-dg-200mm-f2-8': {
@@ -843,7 +843,7 @@ const LENSES = {
     imageUrl:null,
     prices:{USD:2997,AUD:4699,EUR:null,GBP:null,JPY:null,CAD:4049,SGD:null},
     priceIncomplete:true,
-    productUrl:'https://shop.panasonic.com/products/leica-dg-elmarit-200mm-f2-8-power-ois-lens-h-es200',
+    productUrl:'https://shop.panasonic.com/products/g-series-200mm-f2-8-asph-leica-1-4x-teleconverter',
   },
 
   /* ── LUMIX G Zooms (Micro Four Thirds) ── */
@@ -857,7 +857,7 @@ const LENSES = {
     imageUrl:null,
     prices:{USD:799,AUD:1299,EUR:null,GBP:null,JPY:null,CAD:1099,SGD:null},
     priceIncomplete:true,
-    productUrl:'https://shop.panasonic.com/products/lumix-g-x-vario-12-35mm-f2-8-ii-lens-h-hsa12035',
+    productUrl:'https://shop.panasonic.com/products/g-series-12-35mm-f2-8-asph-leica-lens',
   },
 
   'lumix-g-35-100mm-f2-8-ii': {
@@ -870,7 +870,7 @@ const LENSES = {
     imageUrl:null,
     prices:{USD:1097,AUD:1699,EUR:null,GBP:null,JPY:null,CAD:1479,SGD:null},
     priceIncomplete:true,
-    productUrl:'https://shop.panasonic.com/products/lumix-g-x-vario-35-100mm-f2-8-ii-lens-h-hsa35100',
+    productUrl:'https://shop.panasonic.com/products/g-series-35-100mm-f2-8-asph-lens-1',
   },
 
   'leica-dg-8-18mm-f2-8-4': {
@@ -883,7 +883,7 @@ const LENSES = {
     imageUrl:null,
     prices:{USD:1097,AUD:1699,EUR:null,GBP:null,JPY:null,CAD:1479,SGD:null},
     priceIncomplete:true,
-    productUrl:'https://shop.panasonic.com/products/leica-dg-vario-elmarit-8-18mm-f2-8-4-asph-lens-h-e08018',
+    productUrl:'https://shop.panasonic.com/products/g-series-8-18mm-f2-8-4-0-leica-lens',
   },
 
   'leica-dg-10-25mm-f1-7': {
@@ -896,7 +896,7 @@ const LENSES = {
     imageUrl:null,
     prices:{USD:1797,AUD:2799,EUR:null,GBP:null,JPY:null,CAD:2399,SGD:null},
     priceIncomplete:true,
-    productUrl:'https://shop.panasonic.com/products/leica-dg-vario-summilux-10-25mm-f1-7-asph-lens-h-x1025',
+    productUrl:'https://shop.panasonic.com/products/g-series-10-25mm-f1-7-asph-leica-lens',
   },
 
   'leica-dg-25-50mm-f1-7': {
@@ -909,7 +909,7 @@ const LENSES = {
     imageUrl:null,
     prices:{USD:1797,AUD:2799,EUR:null,GBP:null,JPY:null,CAD:2399,SGD:null},
     priceIncomplete:true,
-    productUrl:'https://shop.panasonic.com/products/leica-dg-vario-summilux-25-50mm-f1-7-asph-lens-h-x2550',
+    productUrl:'https://shop.panasonic.com/products/g-series-25-50mm-f1-7-asph-leica-lens',
   },
 
   'leica-dg-12-60mm-f2-8-4': {
@@ -922,7 +922,7 @@ const LENSES = {
     imageUrl:null,
     prices:{USD:997,AUD:1549,EUR:null,GBP:null,JPY:null,CAD:1349,SGD:null},
     priceIncomplete:true,
-    productUrl:'https://shop.panasonic.com/products/leica-dg-vario-elmarit-12-60mm-f2-8-4-asph-power-ois-lens-h-es12060',
+    productUrl:'https://shop.panasonic.com/products/g-series-12-60mm-f2-8-4-0-asph-leica-lens',
   },
 
   'lumix-g-12-60mm-f3-5-5-6': {
@@ -935,7 +935,7 @@ const LENSES = {
     imageUrl:null,
     prices:{USD:497,AUD:799,EUR:null,GBP:null,JPY:null,CAD:679,SGD:null},
     priceIncomplete:true,
-    productUrl:'https://shop.panasonic.com/products/lumix-g-vario-12-60mm-f3-5-5-6-asph-power-ois-lens-h-fs12060',
+    productUrl:'https://shop.panasonic.com/products/g-series-12-60mm-f3-5-5-6-asph-lens',
   },
 
   'lumix-g-12-32mm-f3-5-5-6': {
@@ -961,7 +961,7 @@ const LENSES = {
     imageUrl:null,
     prices:{USD:1697,AUD:2599,EUR:null,GBP:null,JPY:null,CAD:2299,SGD:null},
     priceIncomplete:true,
-    productUrl:'https://shop.panasonic.com/products/leica-dg-vario-elmarit-50-200mm-f2-8-4-asph-power-ois-lens-h-es50200',
+    productUrl:'https://shop.panasonic.com/products/g-series-50-200mm-f2-8-4-0-leica-lens',
   },
 
   'lumix-g-14-140mm-f3-5-5-6-ii': {
@@ -974,7 +974,7 @@ const LENSES = {
     imageUrl:null,
     prices:{USD:597,AUD:949,EUR:null,GBP:null,JPY:null,CAD:799,SGD:null},
     priceIncomplete:true,
-    productUrl:'https://shop.panasonic.com/products/lumix-g-vario-14-140mm-f3-5-5-6-ii-asph-power-ois-lens-h-fsa14140',
+    productUrl:'https://shop.panasonic.com/products/g-series-14-140mm-f4-0-5-6-asph-lens',
   },
 
   'lumix-g-100-300mm-f4-5-6-ii': {
@@ -987,7 +987,7 @@ const LENSES = {
     imageUrl:null,
     prices:{USD:597,AUD:949,EUR:null,GBP:null,JPY:null,CAD:799,SGD:null},
     priceIncomplete:true,
-    productUrl:'https://shop.panasonic.com/products/lumix-g-vario-100-300mm-f4-5-6-ii-power-ois-lens-h-fsa100300',
+    productUrl:'https://shop.panasonic.com/products/g-series-100-300mm-f4-0-5-6-asph-lens',
   },
 
   'leica-dg-100-400mm-f4-6-3-ii': {
@@ -1000,7 +1000,7 @@ const LENSES = {
     imageUrl:null,
     prices:{USD:1797,AUD:2799,EUR:null,GBP:null,JPY:null,CAD:2399,SGD:null},
     priceIncomplete:true,
-    productUrl:'https://shop.panasonic.com/products/leica-dg-vario-elmar-100-400mm-f4-6-3-ii-asph-power-ois-lens-h-rsa100400',
+    productUrl:'https://shop.panasonic.com/products/g-series-100-400mm-f4-0-6-3-asph-leica-lens',
   },
 
 
@@ -1242,7 +1242,7 @@ const LENSES = {
     asin:null,
     prices:{USD:949,AUD:null,EUR:null,GBP:null,JPY:null,CAD:null,SGD:null},
     priceIncomplete:true,
-    productUrl:'https://www.sigma-global.com/en/lenses/c021_100_400_5_63/',
+    productUrl:'https://www.sigma-global.com/en/lenses/c020_100_400_5_63/',
   },
   'sigma-150-600mm-f5-63-dg': {
     name:'Sigma 150-600mm f/5-6.3 DG DN OS Sports', manufacturer:'Sigma', line:'Sports', type:'Zoom',
@@ -1281,18 +1281,6 @@ const LENSES = {
     imageUrl:null, asin:null,
     prices:{USD:1049,AUD:null,EUR:null,GBP:null,JPY:null,CAD:null,SGD:null},
     priceIncomplete:true, productUrl:'https://www.voigtlaender.de/l-mount/50-mm-12-0-apo-lanthar/?lang=en',
-  },
-
-  'voigtlander-nokton-40mm-f12-l': {
-    name:'Voigtländer Nokton 40mm f/1.2 Aspherical', manufacturer:'Voigtländer', line:'Nokton', type:'Prime',
-    focalLength:40, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'40mm',
-    maxAperture:1.2, minAperture:22, weight:420, length:59.3, diameter:66.8,
-    filterThread:62, minFocusDist:35, maxMagnification:0.09,
-    elements:8, groups:6, blades:10, afType:'Manual',
-    weatherSealed:false, ois:false, oisStops:null, year:2021, discontinued:false,
-    imageUrl:null, asin:null,
-    prices:{USD:799,AUD:null,EUR:null,GBP:null,JPY:null,CAD:null,SGD:null},
-    priceIncomplete:true, productUrl:'https://www.voigtlaender.de/l-mount/40-mm-11-2-nokton/?lang=en',
   },
 
   /* ── Laowa (L-Mount full-frame manual-focus specialty) ── */
@@ -1436,7 +1424,7 @@ const LENSES = {
     asin:null,
     prices:{USD:399,AUD:null,EUR:null,GBP:null,JPY:null,CAD:null,SGD:null},
     priceIncomplete:true,
-    productUrl:'https://explore.omsystem.com/us/en/m-zuiko-25mm-f1-8',
+    productUrl:'https://explore.omsystem.com/us/en/m-zuiko-25mm-f1-8-black',
   },
   'omsystem-45mm-f18': {
     name:'OM System M.Zuiko 45mm f/1.8', manufacturer:'OM System', line:'Premium', type:'Prime',
@@ -1526,7 +1514,7 @@ const LENS_DROPDOWN_GROUPS = [
   { label: '── LUMIX G Zooms (MFT) ──',      ids: ['leica-dg-8-18mm-f2-8-4', 'leica-dg-10-25mm-f1-7', 'lumix-g-12-32mm-f3-5-5-6', 'leica-dg-12-60mm-f2-8-4', 'lumix-g-12-60mm-f3-5-5-6', 'lumix-g-12-35mm-f2-8-ii', 'leica-dg-25-50mm-f1-7', 'lumix-g-35-100mm-f2-8-ii', 'leica-dg-50-200mm-f2-8-4', 'lumix-g-14-140mm-f3-5-5-6-ii', 'lumix-g-100-300mm-f4-5-6-ii', 'leica-dg-100-400mm-f4-6-3-ii'] },
   { label: '── Sigma Primes (L-Mount) ──', ids: ['sigma-20mm-f14-dg', 'sigma-24mm-f14-dg', 'sigma-35mm-f14-dg', 'sigma-50mm-f14-dg', 'sigma-85mm-f14-dg', 'sigma-20mm-f2-dg', 'sigma-24mm-f2-dg', 'sigma-35mm-f2-dg', 'sigma-45mm-f28-dg', 'sigma-50mm-f2-dg', 'sigma-65mm-f2-dg', 'sigma-90mm-f28-dg', 'sigma-17mm-f4-dg'] },
   { label: '── Sigma Zooms (L-Mount) ──', ids: ['sigma-16-28mm-f28-dg', 'sigma-28-70mm-f28-dg', 'sigma-24-70mm-f28-dg-ii', 'sigma-28-45mm-f18-dg', 'sigma-70-200mm-f28-dg', 'sigma-100-400mm-f5-63-dg', 'sigma-150-600mm-f5-63-dg'] },
-  { label: '── Voigtländer (L-Mount) ──', ids: ['voigtlander-apo-lanthar-35mm-f2-l', 'voigtlander-apo-lanthar-50mm-f2-l', 'voigtlander-nokton-40mm-f12-l'] },
+  { label: '── Voigtländer (L-Mount) ──', ids: ['voigtlander-apo-lanthar-35mm-f2-l', 'voigtlander-apo-lanthar-50mm-f2-l'] },
   { label: '── Laowa (L-Mount) ──', ids: ['laowa-90mm-f28-macro-l', 'laowa-15mm-f2-l'] },
   { label: '── OM System Primes (MFT) ──', ids: ['omsystem-17mm-f12-pro', 'omsystem-25mm-f12-pro', 'omsystem-45mm-f12-pro', 'omsystem-60mm-f28-macro', 'omsystem-17mm-f18', 'omsystem-25mm-f18', 'omsystem-45mm-f18'] },
   { label: '── OM System Zooms (MFT) ──', ids: ['omsystem-12-40mm-f28-pro', 'omsystem-40-150mm-f4-pro', 'omsystem-12-100mm-f4-pro'] },

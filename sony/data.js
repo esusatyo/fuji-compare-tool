@@ -1965,7 +1965,7 @@ const LENSES = {
     asin:null,
     prices:{USD:949,AUD:null,EUR:null,GBP:null,JPY:null,CAD:null,SGD:null},
     priceIncomplete:true,
-    productUrl:'https://www.sigma-global.com/en/lenses/c021_100_400_5_63/',
+    productUrl:'https://www.sigma-global.com/en/lenses/c020_100_400_5_63/',
   },
 
   'sigma-150-600mm-f5-63-dg': {
@@ -2281,7 +2281,7 @@ const LENSES = {
     asin:'B09236KDDX',
     prices:{USD:1149,AUD:null,EUR:null,GBP:null,JPY:null,CAD:null,SGD:null},
     priceIncomplete:true,
-    productUrl:'https://www.voigtlaender.de/lenses/e-mount/35-mm-120-apo-lanthar-e/?lang=en',
+    productUrl:'https://www.voigtlaender.de/lenses/e-mount/35-mm-12-0-apo-lanthar-aspherical/?lang=en',
   },
 
   'voigtlander-apo-lanthar-50mm-f2': {
