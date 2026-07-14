@@ -9,9 +9,12 @@
     "test:data": "node --test tests/data/*.test.js",
     "test:logic": "node --test tests/logic/*.test.js",
     "test:links": "RUN_LINK_TESTS=1 node --test --test-concurrency=1 tests/links/*.test.js",
-    "test:all": "npm test && npm run test:links"
+    "test:all": "npm test && npm run test:links",
+    "deploy": "wrangler deploy",
+    "preview": "wrangler dev"
   },
   "devDependencies": {
-    "jsdom": "^24.1.0"
+    "jsdom": "^24.1.0",
+    "wrangler": "^4.110.0"
   }
 }

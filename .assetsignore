@@ -1,0 +1,22 @@
+# Files/directories excluded from the Cloudflare Workers static-asset
+# upload. Unlike classic Cloudflare Pages, Workers assets deploys don't
+# auto-exclude node_modules/.git/etc — this file does that job.
+# Format is .gitignore-style, relative to this file's directory
+# (the assets directory, which is the repo root — see wrangler.jsonc).
+
+node_modules/
+.git/
+.claude/
+.agents/
+tests/
+scripts/
+openspec/
+docs/
+
+package.json
+package-lock.json
+wrangler.jsonc
+.assetsignore
+.gitignore
+.DS_Store
+CLAUDE.md
