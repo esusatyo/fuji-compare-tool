@@ -181,7 +181,9 @@ function vsPageHTML(brand, data, site, aId, bId) {
   <meta property="og:url" content="${url}">
   <meta name="twitter:card" content="summary">
   <script type="application/ld+json">${JSON.stringify(ld)}</script>
-  <script defer src="https://cloud.umami.is/script.js" data-website-id="365e9ee6-1fb5-4a0d-9c74-f6255522a196"></script>
+  <!-- Umami analytics — temporarily disabled, kept for re-enabling.
+  <script defer src="https://cloud.umami.is/script.js" data-website-id="365e9ee6-1fb5-4a0d-9c74-f6255522a196"></script> -->
+  <script data-goatcounter="https://esusatyo.goatcounter.com/count" defer src="https://gc.zgo.at/count.js"></script>
   <style>${VS_CSS}</style>
 </head>
 <body>
