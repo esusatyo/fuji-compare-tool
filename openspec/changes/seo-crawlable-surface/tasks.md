@@ -55,11 +55,11 @@
 
 - [x] 8.1 Regenerate everything: `node scripts/generate-seo.js`
 - [x] 8.2 `npm test` — full suite green, including the anti-staleness test proving committed output matches the generator
-- [ ] 8.3 `RUN_LINK_TESTS=1 npm run test:links` — the new internal links are relative, but confirm nothing broke
+- [x] 8.3 `RUN_LINK_TESTS=1 npm run test:links` — the new internal links are relative, but confirm nothing broke
 - [x] 8.4 Browser pass at `http://localhost:3456/`: fresh profile → landing page renders; click into a brand; reload `/` → now redirects (localStorage set); clear storage → landing page again
 - [x] 8.5 Fetch a page with JS disabled (or `curl`) and confirm the root and brand pages contain real body content and links in the served HTML
 - [x] 8.6 `openspec validate seo-crawlable-surface --strict`
-- [ ] 8.7 Branch, commit, PR (omit the session link per repo convention)
+- [x] 8.7 Branch, commit, PR (omit the session link per repo convention)
 
 ## 9. After merge (measurement — the point of the exercise)
 
