@@ -129,18 +129,42 @@ const VS_ROWS = [
   ['Lens mount', c => c.lensType],
 ];
 
+// Complements engine.css (loaded alongside): header/hero/footer/tokens come
+// from there, this styles the vs-specific CTA, spec-table card and related list.
 const VS_CSS = `
-  :root { color-scheme: light dark; }
-  body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-         max-width: 720px; margin: 0 auto; padding: 24px 16px; line-height: 1.55; }
-  h1 { font-size: 1.5rem; }
-  h2 { font-size: 1.15rem; margin-top: 28px; }
-  ul.related { line-height: 1.9; padding-left: 20px; }
-  table { border-collapse: collapse; width: 100%; margin: 20px 0; }
-  th, td { text-align: left; padding: 8px 10px; border-bottom: 1px solid rgba(128,128,128,.35); }
-  th { font-weight: 600; }
-  .cta { display: inline-block; margin: 8px 0 16px; font-weight: 600; }
-  footer { margin-top: 32px; font-size: .85rem; opacity: .75; }
+  .header-back { font-size: 13px; color: rgba(255,255,255,.65); text-decoration: none; white-space: nowrap;
+                 overflow: hidden; text-overflow: ellipsis; }
+  .header-back:hover { color: #fff; }
+
+  .vs-main { max-width: 840px; margin: 0 auto; padding: 8px 20px 40px; }
+  .vs-cta { display: inline-flex; align-items: center; gap: 9px; background: var(--gray-4); color: #fff;
+            text-decoration: none; padding: 12px 22px; border-radius: 999px; font-weight: 600; font-size: 14px;
+            margin: 24px 0 20px; box-shadow: var(--shadow); transition: transform .12s ease, box-shadow .12s ease; }
+  .vs-cta:hover { transform: translateY(-1px); box-shadow: 0 6px 18px rgba(0,0,0,.18); }
+  .vs-cta .play { color: var(--accent-color); font-size: 11px; }
+
+  .vs-card { background: var(--white); border: 1px solid var(--border); border-radius: var(--radius);
+             box-shadow: var(--shadow); overflow: hidden; }
+  .vs-card table { border-collapse: collapse; width: 100%; }
+  .vs-card thead th { background: var(--gray-4); color: #fff; font-weight: 600; font-size: 14px;
+                      padding: 14px 12px; text-align: center; }
+  .vs-card thead th:first-child { text-align: left; font-weight: 500; color: rgba(255,255,255,.55); font-size: 12px; }
+  .vs-card th[scope="row"] { text-align: left; font-weight: 500; color: var(--gray-3); font-size: 12px;
+                             padding: 11px 16px; width: 34%; }
+  .vs-card td { text-align: center; font-size: 13px; color: var(--gray-4); padding: 11px 12px; font-weight: 500; }
+  .vs-card tbody tr { border-top: 1px solid var(--border); }
+  .vs-card tbody tr:nth-child(odd) { background: #fafafa; }
+
+  .vs-note { color: var(--gray-3); font-size: 12px; margin: 16px 2px 0; }
+
+  .vs-related { margin-top: 36px; }
+  .vs-related h2 { font-size: 15px; text-transform: uppercase; letter-spacing: .06em; color: var(--gray-3);
+                   margin-bottom: 14px; font-weight: 700; }
+  .vs-related ul { list-style: none; display: grid; gap: 8px 24px;
+                   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); }
+  .vs-related a { color: var(--gray-4); text-decoration: none; font-size: 14px; display: inline-block;
+                  padding: 3px 0; border-bottom: 1px solid transparent; }
+  .vs-related a:hover { color: var(--accent-color); border-bottom-color: var(--accent-color); }
 `.trim();
 
 function productLd(brandName, cam) {
@@ -174,6 +198,8 @@ function relatedPairs(allPairs, cams, aId, bId) {
 function vsPageHTML(brand, data, site, aId, bId, allPairs) {
   const cams = data.CAMERAS;
   const brandName = data.BRAND_CONFIG.name;
+  const accent = data.BRAND_CONFIG.accentColor;
+  const heroDark = data.BRAND_CONFIG.heroDark || '#2d0000';
   const [a, b] = [cams[aId], cams[bId]];
   const title = `${brandName} ${a.name} vs ${b.name}: Spec Comparison`;
   const desc = `Compare the ${brandName} ${a.name} (${a.year}) and ${b.name} (${b.year}) side by side — price, sensor, stabilization, video, weight and more.`;
@@ -191,11 +217,13 @@ function vsPageHTML(brand, data, site, aId, bId, allPairs) {
 
   const related = relatedPairs(allPairs || [], cams, aId, bId);
   const relatedHTML = related.length ? `
-  <h2>Related comparisons</h2>
-  <ul class="related">
+    <section class="vs-related">
+      <h2>Related comparisons</h2>
+      <ul>
 ${related.map(([x, y]) =>
-    `    <li><a href="${x}-vs-${y}.html">${esc(brandName)} ${esc(cams[x].name)} vs ${esc(cams[y].name)}</a></li>`).join('\n')}
-  </ul>` : '';
+    `        <li><a href="${x}-vs-${y}.html">${esc(brandName)} ${esc(cams[x].name)} vs ${esc(cams[y].name)}</a></li>`).join('\n')}
+      </ul>
+    </section>` : '';
 
   return `<!DOCTYPE html>
 <html lang="en">
@@ -215,28 +243,56 @@ ${related.map(([x, y]) =>
   <!-- Umami analytics — temporarily disabled, kept for re-enabling.
   <script defer src="https://cloud.umami.is/script.js" data-website-id="365e9ee6-1fb5-4a0d-9c74-f6255522a196"></script> -->
   <script data-goatcounter="https://esusatyo.goatcounter.com/count" defer src="https://gc.zgo.at/count.js"></script>
-  <style>${VS_CSS}</style>
+  <link rel="stylesheet" href="../../engine.css">
+  <style>
+    :root { --accent-color: ${esc(accent)}; --hero-dark: ${esc(heroDark)}; }
+    ${VS_CSS}
+  </style>
 </head>
 <body>
-  <h1>${esc(brandName)} ${esc(a.name)} vs ${esc(b.name)}</h1>
-  <p>The ${esc(brandName)} <strong>${esc(a.name)}</strong> (${a.year}) and <strong>${esc(b.name)}</strong> (${b.year}) compared side by side.
-     Key specifications are below; the interactive tool adds the full spec sheet, winner highlighting,
-     seven currencies and a third comparison slot.</p>
-  <a class="cta" href="../index.html#cameras=${aId},${bId}">Open this comparison in the interactive tool &rarr;</a>
-  <table>
-    <thead>
-      <tr><th scope="col">Spec</th><th scope="col">${esc(a.name)}</th><th scope="col">${esc(b.name)}</th></tr>
-    </thead>
-    <tbody>
+  <header id="site-header">
+    <div class="header-brand">
+      <span class="brand-logo">Compare<span class="accent">CameraSpecs</span></span>
+      <span class="header-sep">|</span>
+      <a class="header-back" href="../index.html">All ${esc(brandName)} cameras</a>
+    </div>
+  </header>
+  <div class="page-hero">
+    <div class="hero-eyebrow">${esc(brandName)} &middot; Head-to-head</div>
+    <h1 class="hero-title">${esc(a.name)} vs ${esc(b.name)}</h1>
+    <p class="hero-subtitle">${esc(brandName)} ${esc(a.name)} (${a.year}) and ${esc(b.name)} (${b.year}) compared side by side.</p>
+  </div>
+  <main class="vs-main">
+    <a class="vs-cta" href="../index.html#cameras=${aId},${bId}"><span class="play">&#9654;</span> Compare these interactively</a>
+    <div class="vs-card">
+      <table>
+        <thead>
+          <tr><th scope="col">Spec</th><th scope="col">${esc(a.name)}</th><th scope="col">${esc(b.name)}</th></tr>
+        </thead>
+        <tbody>
 ${rows}
-    </tbody>
-  </table>
-  <p>Prices shown are approximate manufacturer list prices (RRP) in USD and may differ from live retail prices.</p>${relatedHTML}
+        </tbody>
+      </table>
+    </div>
+    <p class="vs-note">Prices shown are approximate manufacturer list prices (RRP) in USD and may differ from live retail prices.</p>${relatedHTML}
+  </main>
   <footer>
-    <a href="../index.html">All ${esc(brandName)} cameras &amp; lenses</a> &middot;
-    <a href="../../about.html">About</a> &middot;
-    <a href="../../privacy.html">Privacy</a><br>
-    Specs &amp; prices last verified: ${esc(site.dataVerified)}
+    <p>${esc(site.siteName)} &mdash; For informational purposes only.</p>
+    <p>Prices shown are approximate manufacturer list prices (RRP) and may differ from live retail prices. Use the Buy link for current pricing.</p>
+    <p>Specs sourced from manufacturer documentation.</p>
+    <p>Specs &amp; prices last verified: ${esc(site.dataVerified)}</p>
+    <div id="affiliate-disclosure"></div>
+    <p>
+      <a href="../index.html">All ${esc(brandName)} cameras &amp; lenses</a>
+      &middot;
+      <a href="../../about.html">About</a>
+      &middot;
+      <a href="../../privacy.html">Privacy</a>
+      &middot;
+      Created by <a href="https://esusatyo.net" target="_blank" rel="noopener">Enrico Susatyo</a>
+      &middot;
+      Assisted by <a href="https://claude.ai" target="_blank" rel="noopener">Claude</a>
+    </p>
   </footer>
 </body>
 </html>
