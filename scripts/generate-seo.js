@@ -345,9 +345,21 @@ ${cluster}
       </ul>
     </section>
   </main>
-  <footer class="landing-footer">
-    Manufacturer list prices (RRP) for reference; use each Buy link for live pricing.
-    &middot; <a href="./about.html">About</a> &middot; <a href="./privacy.html">Privacy</a>
+  <footer>
+    <p>${esc(site.siteName)} &mdash; For informational purposes only.</p>
+    <p>Prices shown are approximate manufacturer list prices (RRP) and may differ from live retail prices. Use the Buy link for current pricing.</p>
+    <p>Specs sourced from manufacturer documentation.</p>
+    <p>Specs &amp; prices last verified: ${esc(site.dataVerified)}</p>
+    <div id="affiliate-disclosure"></div>
+    <p>
+      <a href="./about.html">About</a>
+      &middot;
+      <a href="./privacy.html">Privacy</a>
+      &middot;
+      Created by <a href="https://esusatyo.net" target="_blank" rel="noopener">Enrico Susatyo</a>
+      &middot;
+      Assisted by <a href="https://claude.ai" target="_blank" rel="noopener">Claude</a>
+    </p>
   </footer>
   ${SEO_BODY_END}`;
 }
