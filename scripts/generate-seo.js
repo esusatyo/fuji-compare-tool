@@ -306,25 +306,49 @@ ${items}
 // Crawlable landing content for the root page: brand cards with live counts
 // plus a sample of vs-pages, so the root passes authority into the cluster.
 function rootBodyBlock(site, brands) {
+  const eyebrow = brands.map(b => esc(b.name).toUpperCase()).join(' · ');
   const cards = brands.map(br =>
-    `      <li class="brand-card"><a href="./${br.slug}/"><strong>${esc(br.name)}</strong></a> <span>${br.nCams} cameras · ${br.nLenses} lenses</span></li>`
+    `        <li class="brand-card" style="--card-accent: ${esc(br.accent)}">
+          <a href="./${br.slug}/">
+            <div class="brand-name">${esc(br.name)}</div>
+            <div class="brand-count">${br.nCams} cameras · ${br.nLenses} lenses</div>
+            <div class="brand-go">Compare &rarr;</div>
+          </a>
+        </li>`
   ).join('\n');
   const cluster = brands.flatMap(br =>
     br.samplePairs.map(p =>
-      `      <li><a href="./${br.slug}/vs/${p.a}-vs-${p.b}.html">${esc(br.name)} ${esc(p.aName)} vs ${esc(p.bName)}</a></li>`)
+      `        <li><a href="./${br.slug}/vs/${p.a}-vs-${p.b}.html">${esc(br.name)} ${esc(p.aName)} vs ${esc(p.bName)}</a></li>`)
   ).join('\n');
   return `${SEO_BODY_BEGIN}
+  <header id="site-header">
+    <div class="header-brand">
+      <span class="brand-logo">Compare<span class="accent">CameraSpecs</span></span>
+    </div>
+  </header>
+  <div class="page-hero">
+    <div class="hero-eyebrow">${eyebrow}</div>
+    <h1 class="hero-title">${esc(site.siteName)}</h1>
+    <p class="hero-subtitle">Side-by-side camera &amp; lens comparisons — specs, prices and buy links in seven currencies.</p>
+  </div>
   <main class="landing">
-    <h1>${esc(site.siteName)}</h1>
-    <p>Side-by-side camera and lens comparisons for ${brands.map(b => esc(b.name)).join(', ')} — specs, prices and buy links in seven currencies. Pick a brand to start comparing.</p>
-    <ul class="brand-grid">
+    <section>
+      <h2>Choose a brand</h2>
+      <ul class="brand-grid">
 ${cards}
-    </ul>
-    <h2>Popular comparisons</h2>
-    <ul class="cluster">
+      </ul>
+    </section>
+    <section>
+      <h2>Popular comparisons</h2>
+      <ul class="cluster">
 ${cluster}
-    </ul>
+      </ul>
+    </section>
   </main>
+  <footer class="landing-footer">
+    Manufacturer list prices (RRP) for reference; use each Buy link for live pricing.
+    &middot; <a href="./about.html">About</a> &middot; <a href="./privacy.html">Privacy</a>
+  </footer>
   ${SEO_BODY_END}`;
 }
 
@@ -396,6 +420,7 @@ function buildAll() {
     brandInfo.push({
       slug: brand,
       name,
+      accent: data.BRAND_CONFIG.accentColor,
       nCams: Object.keys(cams).length,
       nLenses: Object.keys(data.LENSES).length,
       samplePairs: pairs.slice(0, 3).map(([a, b]) => ({ a, b, aName: cams[a].name, bName: cams[b].name })),

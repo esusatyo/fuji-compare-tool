@@ -71,7 +71,7 @@ test('[root] hash fragment is preserved through the redirect (returning visitor 
 
 test('[root] served HTML contains crawlable landing content (present without JS)', () => {
   const html = fs.readFileSync(path.join(ROOT, 'index.html'), 'utf8');
-  assert.match(html, /<h1>[^<]*Compare Camera Specs[^<]*<\/h1>/, 'landing h1 missing');
+  assert.match(html, /<h1[^>]*>[^<]*Compare Camera Specs[^<]*<\/h1>/, 'landing h1 missing');
   // One brand card link per registered brand.
   for (const brand of ['canon', 'fujifilm', 'nikon', 'panasonic', 'sony']) {
     assert.match(html, new RegExp(`href="\\./${brand}/"`), `landing missing link to ${brand}`);
