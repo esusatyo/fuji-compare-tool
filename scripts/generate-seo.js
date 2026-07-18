@@ -137,6 +137,25 @@ const VS_CSS = `
   .header-back:hover { color: #fff; }
 
   .vs-main { max-width: 840px; margin: 0 auto; padding: 8px 20px 40px; }
+
+  .vs-products { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 24px 0 8px; }
+  .vs-product { background: var(--white); border: 1px solid var(--border); border-radius: var(--radius);
+                box-shadow: var(--shadow); padding: 18px; display: flex; flex-direction: column;
+                align-items: center; gap: 10px; text-align: center; }
+  .vs-photo { width: 100%; height: 160px; display: flex; align-items: center; justify-content: center; }
+  .vs-img { max-width: 100%; max-height: 160px; object-fit: contain; }
+  .vs-ph { width: 100%; height: 100%; border-radius: 8px; align-items: center; justify-content: center;
+           font-weight: 700; font-size: 14px; padding: 10px; text-align: center; }
+  .vs-pname { font-weight: 700; font-size: 16px; color: var(--gray-4); }
+  .vs-pprice { font-weight: 700; font-size: 18px; color: var(--gray-4); }
+  .vs-plinks { display: flex; gap: 8px; flex-wrap: wrap; justify-content: center; margin-top: 2px; }
+  .vs-view { font-size: 12px; color: var(--accent-color); text-decoration: none; border: 1px solid var(--accent-color);
+             padding: 5px 14px; border-radius: 999px; transition: all .15s; }
+  .vs-view:hover { background: var(--accent-color); color: #fff; }
+  .vs-view.na { color: var(--gray-3); border-color: var(--gray-3); }
+  .vs-buy { font-size: 12px; color: #e07b00; text-decoration: none; border: 1px solid #e07b00;
+            padding: 5px 14px; border-radius: 999px; transition: all .15s; }
+  .vs-buy:hover { background: #e07b00; color: #fff; }
   .vs-cta { display: inline-flex; align-items: center; gap: 9px; background: var(--gray-4); color: #fff;
             text-decoration: none; padding: 12px 22px; border-radius: 999px; font-weight: 600; font-size: 14px;
             margin: 24px 0 20px; box-shadow: var(--shadow); transition: transform .12s ease, box-shadow .12s ease; }
@@ -195,6 +214,14 @@ function relatedPairs(allPairs, cams, aId, bId) {
     .slice(0, 6);
 }
 
+// Static vs-pages default to the USD marketplace (amazon.com); the interactive
+// tool offers all seven currencies. ASIN → the product page, else a search that
+// always resolves. Mirrors engine.js amazonBuyUrl (no affiliate tag yet).
+function amazonBuyUrlUSD(brandName, cam) {
+  if (cam.asin) return `https://www.amazon.com/dp/${cam.asin}`;
+  return `https://www.amazon.com/s?k=${encodeURIComponent(`${brandName} ${cam.name}`)}`;
+}
+
 function vsPageHTML(brand, data, site, aId, bId, allPairs) {
   const cams = data.CAMERAS;
   const brandName = data.BRAND_CONFIG.name;
@@ -214,6 +241,32 @@ function vsPageHTML(brand, data, site, aId, bId, allPairs) {
     const [va, vb] = [fn(a), fn(b)];
     return `      <tr><th scope="row">${esc(label)}</th><td>${va == null ? '—' : esc(va)}</td><td>${vb == null ? '—' : esc(vb)}</td></tr>`;
   }).join('\n');
+
+  // Product cards: photo (with placeholder fallback), USD price, View + Buy.
+  const usdPrice = c => (c.prices && c.prices.USD != null) ? `$${c.prices.USD.toLocaleString('en-US')}` : '—';
+  const productCard = (c) => {
+    const sc = (data.SERIES_COLORS && data.SERIES_COLORS[c.series]) || { bg: '#222', text: '#ccc' };
+    const phStyle = `background:${esc(sc.bg)};color:${esc(sc.text)}`;
+    const photo = c.imageUrl
+      ? `<img src="${esc(c.imageUrl)}" alt="${esc(brandName)} ${esc(c.name)}" class="vs-img" onerror="this.style.display='none';this.parentNode.querySelector('.vs-ph').style.display='flex'">
+          <div class="vs-ph" style="display:none;${phStyle}">${esc(c.name)}</div>`
+      : `<div class="vs-ph" style="${phStyle}">${esc(c.name)}</div>`;
+    const viewURL = (c.productUrl && !c.productUrl.endsWith('/cameras/')) ? c.productUrl : null;
+    const viewBtn = viewURL
+      ? `<a class="vs-view" href="${esc(viewURL)}" target="_blank" rel="noopener">View &#8599;</a>`
+      : `<span class="vs-view na">Discontinued</span>`;
+    const buyBtn = `<a class="vs-buy" href="${esc(amazonBuyUrlUSD(brandName, c))}" target="_blank" rel="noopener">Buy &#8599;</a>`;
+    return `        <div class="vs-product">
+          <div class="vs-photo">${photo}</div>
+          <div class="vs-pname">${esc(c.name)}</div>
+          <div class="vs-pprice">${usdPrice(c)}</div>
+          <div class="vs-plinks">${viewBtn}${buyBtn}</div>
+        </div>`;
+  };
+  const productsHTML = `      <div class="vs-products">
+${productCard(a)}
+${productCard(b)}
+      </div>`;
 
   const related = relatedPairs(allPairs || [], cams, aId, bId);
   const relatedHTML = related.length ? `
@@ -263,6 +316,7 @@ ${related.map(([x, y]) =>
     <p class="hero-subtitle">${esc(brandName)} ${esc(a.name)} (${a.year}) and ${esc(b.name)} (${b.year}) compared side by side.</p>
   </div>
   <main class="vs-main">
+${productsHTML}
     <a class="vs-cta" href="../index.html#cameras=${aId},${bId}"><span class="play">&#9654;</span> Compare these interactively</a>
     <div class="vs-card">
       <table>

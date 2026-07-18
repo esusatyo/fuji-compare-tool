@@ -24,6 +24,25 @@
   .header-back:hover { color: #fff; }
 
   .vs-main { max-width: 840px; margin: 0 auto; padding: 8px 20px 40px; }
+
+  .vs-products { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 24px 0 8px; }
+  .vs-product { background: var(--white); border: 1px solid var(--border); border-radius: var(--radius);
+                box-shadow: var(--shadow); padding: 18px; display: flex; flex-direction: column;
+                align-items: center; gap: 10px; text-align: center; }
+  .vs-photo { width: 100%; height: 160px; display: flex; align-items: center; justify-content: center; }
+  .vs-img { max-width: 100%; max-height: 160px; object-fit: contain; }
+  .vs-ph { width: 100%; height: 100%; border-radius: 8px; align-items: center; justify-content: center;
+           font-weight: 700; font-size: 14px; padding: 10px; text-align: center; }
+  .vs-pname { font-weight: 700; font-size: 16px; color: var(--gray-4); }
+  .vs-pprice { font-weight: 700; font-size: 18px; color: var(--gray-4); }
+  .vs-plinks { display: flex; gap: 8px; flex-wrap: wrap; justify-content: center; margin-top: 2px; }
+  .vs-view { font-size: 12px; color: var(--accent-color); text-decoration: none; border: 1px solid var(--accent-color);
+             padding: 5px 14px; border-radius: 999px; transition: all .15s; }
+  .vs-view:hover { background: var(--accent-color); color: #fff; }
+  .vs-view.na { color: var(--gray-3); border-color: var(--gray-3); }
+  .vs-buy { font-size: 12px; color: #e07b00; text-decoration: none; border: 1px solid #e07b00;
+            padding: 5px 14px; border-radius: 999px; transition: all .15s; }
+  .vs-buy:hover { background: #e07b00; color: #fff; }
   .vs-cta { display: inline-flex; align-items: center; gap: 9px; background: var(--gray-4); color: #fff;
             text-decoration: none; padding: 12px 22px; border-radius: 999px; font-weight: 600; font-size: 14px;
             margin: 24px 0 20px; box-shadow: var(--shadow); transition: transform .12s ease, box-shadow .12s ease; }
@@ -68,6 +87,22 @@
     <p class="hero-subtitle">Sony A7C II (2023) and A7C (2020) compared side by side.</p>
   </div>
   <main class="vs-main">
+      <div class="vs-products">
+        <div class="vs-product">
+          <div class="vs-photo"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e3/Sony_ILCE-7CM2_8_nov_2023a.jpg/1280px-Sony_ILCE-7CM2_8_nov_2023a.jpg" alt="Sony A7C II" class="vs-img" onerror="this.style.display='none';this.parentNode.querySelector('.vs-ph').style.display='flex'">
+          <div class="vs-ph" style="display:none;background:#2a1500;color:#ffae66">A7C II</div></div>
+          <div class="vs-pname">A7C II</div>
+          <div class="vs-pprice">$2,199</div>
+          <div class="vs-plinks"><a class="vs-view" href="https://electronics.sony.com/imaging/interchangeable-lens-cameras/full-frame/p/ilce7cm2-b" target="_blank" rel="noopener">View &#8599;</a><a class="vs-buy" href="https://www.amazon.com/dp/B0CGTTVYGM" target="_blank" rel="noopener">Buy &#8599;</a></div>
+        </div>
+        <div class="vs-product">
+          <div class="vs-photo"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Sony_%CE%B17C_24_Oct_2020a.jpg/1280px-Sony_%CE%B17C_24_Oct_2020a.jpg" alt="Sony A7C" class="vs-img" onerror="this.style.display='none';this.parentNode.querySelector('.vs-ph').style.display='flex'">
+          <div class="vs-ph" style="display:none;background:#2a1500;color:#ffae66">A7C</div></div>
+          <div class="vs-pname">A7C</div>
+          <div class="vs-pprice">$1,799</div>
+          <div class="vs-plinks"><a class="vs-view" href="https://electronics.sony.com/imaging/interchangeable-lens-cameras/full-frame/p/ilce7c-b" target="_blank" rel="noopener">View &#8599;</a><a class="vs-buy" href="https://www.amazon.com/s?k=Sony%20A7C" target="_blank" rel="noopener">Buy &#8599;</a></div>
+        </div>
+      </div>
     <a class="vs-cta" href="../index.html#cameras=a7c-ii,a7c"><span class="play">&#9654;</span> Compare these interactively</a>
     <div class="vs-card">
       <table>

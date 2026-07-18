@@ -24,6 +24,25 @@
   .header-back:hover { color: #fff; }
 
   .vs-main { max-width: 840px; margin: 0 auto; padding: 8px 20px 40px; }
+
+  .vs-products { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 24px 0 8px; }
+  .vs-product { background: var(--white); border: 1px solid var(--border); border-radius: var(--radius);
+                box-shadow: var(--shadow); padding: 18px; display: flex; flex-direction: column;
+                align-items: center; gap: 10px; text-align: center; }
+  .vs-photo { width: 100%; height: 160px; display: flex; align-items: center; justify-content: center; }
+  .vs-img { max-width: 100%; max-height: 160px; object-fit: contain; }
+  .vs-ph { width: 100%; height: 100%; border-radius: 8px; align-items: center; justify-content: center;
+           font-weight: 700; font-size: 14px; padding: 10px; text-align: center; }
+  .vs-pname { font-weight: 700; font-size: 16px; color: var(--gray-4); }
+  .vs-pprice { font-weight: 700; font-size: 18px; color: var(--gray-4); }
+  .vs-plinks { display: flex; gap: 8px; flex-wrap: wrap; justify-content: center; margin-top: 2px; }
+  .vs-view { font-size: 12px; color: var(--accent-color); text-decoration: none; border: 1px solid var(--accent-color);
+             padding: 5px 14px; border-radius: 999px; transition: all .15s; }
+  .vs-view:hover { background: var(--accent-color); color: #fff; }
+  .vs-view.na { color: var(--gray-3); border-color: var(--gray-3); }
+  .vs-buy { font-size: 12px; color: #e07b00; text-decoration: none; border: 1px solid #e07b00;
+            padding: 5px 14px; border-radius: 999px; transition: all .15s; }
+  .vs-buy:hover { background: #e07b00; color: #fff; }
   .vs-cta { display: inline-flex; align-items: center; gap: 9px; background: var(--gray-4); color: #fff;
             text-decoration: none; padding: 12px 22px; border-radius: 999px; font-weight: 600; font-size: 14px;
             margin: 24px 0 20px; box-shadow: var(--shadow); transition: transform .12s ease, box-shadow .12s ease; }
@@ -68,6 +87,22 @@
     <p class="hero-subtitle">Canon EOS R7 (2022) and EOS R10 (2022) compared side by side.</p>
   </div>
   <main class="vs-main">
+      <div class="vs-products">
+        <div class="vs-product">
+          <div class="vs-photo"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/28/Canon_EOS_R7_9_Jul_2022a.jpg/1280px-Canon_EOS_R7_9_Jul_2022a.jpg" alt="Canon EOS R7" class="vs-img" onerror="this.style.display='none';this.parentNode.querySelector('.vs-ph').style.display='flex'">
+          <div class="vs-ph" style="display:none;background:#1f0a0a;color:#c87070">EOS R7</div></div>
+          <div class="vs-pname">EOS R7</div>
+          <div class="vs-pprice">$1,499</div>
+          <div class="vs-plinks"><a class="vs-view" href="https://www.usa.canon.com/cameras/eos-r7" target="_blank" rel="noopener">View &#8599;</a><a class="vs-buy" href="https://www.amazon.com/dp/B0B27KKNZV" target="_blank" rel="noopener">Buy &#8599;</a></div>
+        </div>
+        <div class="vs-product">
+          <div class="vs-photo"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Canon_EOS_R10_22_nov_2022a.jpg/1280px-Canon_EOS_R10_22_nov_2022a.jpg" alt="Canon EOS R10" class="vs-img" onerror="this.style.display='none';this.parentNode.querySelector('.vs-ph').style.display='flex'">
+          <div class="vs-ph" style="display:none;background:#1f0a0a;color:#c87070">EOS R10</div></div>
+          <div class="vs-pname">EOS R10</div>
+          <div class="vs-pprice">$979</div>
+          <div class="vs-plinks"><a class="vs-view" href="https://www.usa.canon.com/cameras/eos-r10" target="_blank" rel="noopener">View &#8599;</a><a class="vs-buy" href="https://www.amazon.com/dp/B0B27NSHB4" target="_blank" rel="noopener">Buy &#8599;</a></div>
+        </div>
+      </div>
     <a class="vs-cta" href="../index.html#cameras=eos-r7,eos-r10"><span class="play">&#9654;</span> Compare these interactively</a>
     <div class="vs-card">
       <table>
