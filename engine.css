@@ -422,6 +422,26 @@ footer {
 footer a { color: var(--accent-color); text-decoration: none; }
 footer a:hover { text-decoration: underline; }
 
+/* ─── SEO links block (generated, below the tool) ─── */
+.seo-links {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 8px 20px 40px;
+}
+.seo-links h2 { font-size: 16px; margin: 8px 0 6px; }
+.seo-links p { color: var(--gray-3); font-size: 13px; margin: 0 0 12px; }
+.seo-links ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 4px 20px;
+}
+.seo-links li { font-size: 13px; line-height: 1.7; }
+.seo-links a { color: var(--accent-color); text-decoration: none; }
+.seo-links a:hover { text-decoration: underline; }
+
 /* ─── RESPONSIVE ─── */
 @media (max-width: 599px) {
   :root { --label-w: 120px; --num-slots: 2; }

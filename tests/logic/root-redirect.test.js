@@ -1,10 +1,11 @@
-// Tier 2 — Root index.html redirector.
+// Tier 2 — Root index.html conditional redirector.
 //
-// The root page is a standalone redirector (no data.js / engine.js). It reads
-// localStorage['brand'], falls back to Canon, and location.replace()s to the
-// brand directory, preserving the hash. We exercise the *shipped* inline
-// script by extracting it and running it against mock `localStorage`/`location`
-// globals, so the test tracks the real source.
+// The root page is a real landing page that redirects ONLY when a valid brand
+// preference is stored. Visitors with no (or an invalid) preference — including
+// crawlers, which have no localStorage — fall through and see the landing page,
+// so the redirect must NOT fire (target stays null). We exercise the *shipped*
+// inline script by extracting it and running it against mock globals, so the
+// test tracks the real source.
 const { test } = require('node:test');
 const assert = require('node:assert/strict');
 const fs = require('fs');
@@ -31,12 +32,16 @@ function runRedirect({ stored = null, hash = '' } = {}) {
   return target;
 }
 
-test('[root] first-time visitor (no stored brand) redirects to Canon', () => {
-  assert.equal(runRedirect({ stored: null }), './canon/');
+test('[root] first-time visitor (no stored brand) is NOT redirected — landing page shows', () => {
+  assert.equal(runRedirect({ stored: null }), null);
 });
 
-test('[root] invalid stored brand falls back to Canon', () => {
-  assert.equal(runRedirect({ stored: 'pentax' }), './canon/');
+test('[root] invalid stored brand is NOT redirected — landing page shows', () => {
+  assert.equal(runRedirect({ stored: 'pentax' }), null);
+});
+
+test('[root] a crawler (no localStorage at all) is NOT redirected', () => {
+  assert.equal(runRedirect({ stored: undefined }), null);
 });
 
 test('[root] valid stored brand is honored', () => {
@@ -58,7 +63,19 @@ test('[root] valid stored brand "panasonic" is honored', () => {
   assert.equal(runRedirect({ stored: 'panasonic', hash: '#lenses' }), './panasonic/#lenses');
 });
 
-test('[root] hash fragment is preserved through the redirect', () => {
-  assert.equal(runRedirect({ stored: null, hash: '#lenses' }), './canon/#lenses');
+test('[root] hash fragment is preserved through the redirect (returning visitor only)', () => {
   assert.equal(runRedirect({ stored: 'fujifilm', hash: '#lenses' }), './fujifilm/#lenses');
+  // No stored preference → no redirect, so nothing to preserve.
+  assert.equal(runRedirect({ stored: null, hash: '#lenses' }), null);
+});
+
+test('[root] served HTML contains crawlable landing content (present without JS)', () => {
+  const html = fs.readFileSync(path.join(ROOT, 'index.html'), 'utf8');
+  assert.match(html, /<h1[^>]*>[^<]*Compare Camera Specs[^<]*<\/h1>/, 'landing h1 missing');
+  // One brand card link per registered brand.
+  for (const brand of ['canon', 'fujifilm', 'nikon', 'panasonic', 'sony']) {
+    assert.match(html, new RegExp(`href="\\./${brand}/"`), `landing missing link to ${brand}`);
+  }
+  // At least one link into the comparison cluster.
+  assert.match(html, /href="\.\/[a-z]+\/vs\/[^"]+\.html"/, 'landing missing any vs-page link');
 });

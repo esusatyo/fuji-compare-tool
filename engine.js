@@ -396,7 +396,11 @@ function buildVerifiedLine() {
 }
 
 function injectBody() {
-  document.body.innerHTML = `
+  // Render into #app when present so generator-owned static content outside
+  // the container (crawlable SEO blocks) survives; fall back to the body for
+  // pages/tests that don't provide the container.
+  const mount = document.getElementById('app') || document.body;
+  mount.innerHTML = `
 <header id="site-header">
   <div class="header-brand">
     <span class="brand-logo"><span class="logo-text">${BRAND_CONFIG.logoText}</span><span class="accent">${BRAND_CONFIG.logoAccent}</span></span>
