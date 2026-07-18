@@ -50,17 +50,23 @@ function shimFor(varName, names) {
  * @param {boolean} [opts.engine=false]      also evaluate engine.js (runs init/render)
  * @param {string}  [opts.hash='']           initial location hash (e.g. '#lenses')
  * @param {boolean} [opts.siteConfig=true]   also evaluate site-config.js (as the real pages do)
+ * @param {string}  [opts.html]              boot document; defaults to a body with an #app mount (as real brand pages have)
  * @returns {{ window, data, engine, errors, dom }}
  */
 function loadBrand(brand, opts = {}) {
-  const { engine = false, hash = '', siteConfig = true } = opts;
+  const {
+    engine = false,
+    hash = '',
+    siteConfig = true,
+    html = '<!DOCTYPE html><html><head></head><body><div id="app"></div></body></html>',
+  } = opts;
   const dataSrc = fs.readFileSync(path.join(ROOT, brand, 'data.js'), 'utf8');
 
   const errors = [];
   const vc = new VirtualConsole();
   vc.on('jsdomError', e => errors.push(e));
 
-  const dom = new JSDOM('<!DOCTYPE html><html><head></head><body></body></html>', {
+  const dom = new JSDOM(html, {
     runScripts: 'dangerously',
     url: `https://example.test/${brand}/${hash}`,
     virtualConsole: vc,
