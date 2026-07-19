@@ -21,9 +21,15 @@
 - [ ] 4.1 Remove `brand-sync.test.js` assertions covering generator/About/Privacy literals (now generated); keep `engine.js`, `favicon.svg`, and the rgba whitelist (engine.css + generator VS_CSS)
 - [ ] 4.2 Negative-test the retained checks still fail on a corrupted `engine.js` copy; full `npm test` green
 
-## 5. Verification debt + docs
+## 5. Header & compare-cell labels
 
-- [ ] 5.1 Mobile visual pass (<600px viewport in Chrome): landing, one brand page (2-slot clamp, header without lockup, winner tints), compare page, one vs page — fix any styling bugs found (in scope)
-- [ ] 5.2 Font-fallback check: load a brand page with the Google Fonts request blocked (or from `file://`) and confirm the system-stack rendering is acceptable
-- [ ] 5.3 Update `CLAUDE.md` rebrand instructions: edit `assets/logo.svg` + `engine.css` tokens → `node scripts/generate-seo.js` + `node scripts/render-touch-icon.js` → `npm test` names anything left; update the design-system memory note
-- [ ] 5.4 `openspec validate single-source-branding --strict` passes; commit and push
+- [ ] 5.1 Set `cameras.headerTitle` to the brand name in all five `<brand>/data.js` files and to `'All Brands'` in `compare/index.html`'s `COMPARE_CONFIG` (`lenses.headerTitle` stays "Lens Compare"); grep to confirm "Camera Compare" no longer appears in page sources
+- [ ] 5.2 `engine.css`: hide `.compare-label-text` when the cell has the slot-count field (`.compare-label-cell--compare`); re-show it in the <600px breakpoint where `.slot-count-field` is hidden — exactly one label visible at any width
+- [ ] 5.3 Update/extend logic tests: header label equals brand name in cameras mode, "Lens Compare" after mode toggle, "All Brands" on the compare page; label-cell one-label rule asserted at both widths (jsdom class/structure checks)
+
+## 6. Verification debt + docs
+
+- [ ] 6.1 Mobile visual pass (<600px viewport in Chrome): landing, one brand page (2-slot clamp, "Compare" label alone, winner tints), compare page, one vs page — fix any styling bugs found (in scope)
+- [ ] 6.2 Font-fallback check: load a brand page with the Google Fonts request blocked (or from `file://`) and confirm the system-stack rendering is acceptable
+- [ ] 6.3 Update `CLAUDE.md` rebrand instructions: edit `assets/logo.svg` + `engine.css` tokens → `node scripts/generate-seo.js` + `node scripts/render-touch-icon.js` → `npm test` names anything left; update the design-system memory note
+- [ ] 6.4 `openspec validate single-source-branding --strict` passes; commit and push
