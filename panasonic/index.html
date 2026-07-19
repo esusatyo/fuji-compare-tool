@@ -19,6 +19,21 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap">
+  <script>
+  addEventListener('load', function () {
+    var css = document.querySelector('link[href$="engine.css"]');
+    var app = document.getElementById('app');
+    var broken = (css && !css.sheet) || (app && !app.children.length);
+    try {
+      if (broken && !sessionStorage.getItem('cc-selfheal')) {
+        sessionStorage.setItem('cc-selfheal', '1');
+        location.reload();
+      } else if (!broken) {
+        sessionStorage.removeItem('cc-selfheal');
+      }
+    } catch (e) { /* storage unavailable — never loop, so do nothing */ }
+  });
+  </script>
   <!-- seo:end -->
   <link rel="stylesheet" href="../engine.css">
   <!-- Umami analytics — temporarily disabled, kept for re-enabling.

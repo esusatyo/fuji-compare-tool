@@ -227,14 +227,33 @@ function lockupHTML(homeHref) {
 
 // Depth-aware head links every generated page carries: favicon, touch
 // icon, theme color and the Inter webfont (engine.css declares the
-// system fallback stack).
+// system fallback stack). The trailing self-heal script covers the
+// transient-network case where the HTML arrives but engine.css or the
+// render scripts don't (observed on Safari with the default
+// must-revalidate asset policy): reload once, guarded per-tab so a
+// genuine outage can't cause a reload loop.
 function assetLinks(prefix) {
   return `<link rel="icon" type="image/svg+xml" href="${prefix}favicon.svg">
   <link rel="apple-touch-icon" href="${prefix}apple-touch-icon.png">
   <meta name="theme-color" content="${THEME_COLOR}">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap">`;
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap">
+  <script>
+  addEventListener('load', function () {
+    var css = document.querySelector('link[href$="engine.css"]');
+    var app = document.getElementById('app');
+    var broken = (css && !css.sheet) || (app && !app.children.length);
+    try {
+      if (broken && !sessionStorage.getItem('cc-selfheal')) {
+        sessionStorage.setItem('cc-selfheal', '1');
+        location.reload();
+      } else if (!broken) {
+        sessionStorage.removeItem('cc-selfheal');
+      }
+    } catch (e) { /* storage unavailable — never loop, so do nothing */ }
+  });
+  </script>`;
 }
 
 function productLd(brandName, cam) {
