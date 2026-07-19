@@ -450,9 +450,9 @@ const CROSS_BRAND_MATCHUPS = [
 // Resolve, validate and canonicalize the curated matchups against the
 // loaded brand data. Fails hard (throw, no partial output) on a typo,
 // a same-brand pair, or a duplicate.
-function resolveMatchups(brandData) {
+function resolveMatchups(brandData, matchups = CROSS_BRAND_MATCHUPS) {
   const seen = new Set();
-  return CROSS_BRAND_MATCHUPS.map(entry => {
+  return matchups.map(entry => {
     const sides = entry.map(([brand, slug]) => {
       const data = brandData[brand];
       if (!data) throw new Error(`CROSS_BRAND_MATCHUPS: unknown brand '${brand}' in ${JSON.stringify(entry)}`);

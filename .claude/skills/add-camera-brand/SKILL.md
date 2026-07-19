@@ -12,8 +12,9 @@ throughout. It was distilled from the Sony onboarding
 (`openspec/changes/add-sony-brand/`), which is a complete worked example.
 
 The tool is a zero-dependency static site: a shared `engine.js` + `engine.css`
-render any brand whose `<brand>/data.js` defines a fixed set of globals. Adding a
-brand is **purely additive** — no existing brand changes except registration.
+render any brand whose `<brand>/data.js` registers a fixed dataset shape under
+`window.BRAND_DATA[<slug>]`. Adding a brand is **purely additive** — no existing
+brand changes except registration.
 
 ---
 
@@ -51,14 +52,20 @@ or an OpenSpec change's `research/` folder works well):
 
 - `cp canon/index.html <brand>/index.html`; update the `<title>`. It just loads
   `../engine.css`, `./data.js`, `../engine.js`.
-- Create `<brand>/data.js` from `canon/data.js`, defining all globals the engine
-  expects: `BRAND_CONFIG`, `SERIES_COLORS`, `CAMERAS`, `CAMERA_ORDER`,
+- Create `<brand>/data.js` from `canon/data.js`. Cloning keeps the registry
+  wrap intact — just update the registration key:
+  `window.BRAND_DATA['<slug>'] = (() => { … })();` (first line after the
+  `window.BRAND_DATA = window.BRAND_DATA || {};` guard) — and define the eight
+  dataset consts the engine expects inside that IIFE, returned at the end:
+  `BRAND_CONFIG`, `SERIES_COLORS`, `CAMERAS`, `CAMERA_ORDER`,
   `DROPDOWN_GROUPS`, `LENSES`, `LENS_DROPDOWN_GROUPS`, `REGISTERED_BRANDS`.
-  - `BRAND_CONFIG`: name, `slug` (= directory name), `accentColor`/`heroDark`
-    (hex), `logoText`, `logoAccent`, `families[]`, `brandSections: ['<slug>']`
-    (or `[]` if no brand section), `cameras`/`lenses` sub-configs (hero copy +
-    `defaultSelected` of 1–3 ids), `footerLinks[]` (https).
+  - `BRAND_CONFIG`: name, `slug` (= directory name, matches the registry key),
+    `accentColor`/`heroDark` (hex), `logoText`, `logoAccent`, `families[]`,
+    `brandSections: ['<slug>']` (or `[]` if no brand section), `cameras`/`lenses`
+    sub-configs (hero copy + `defaultSelected` of 1–3 ids), `footerLinks[]` (https).
   - Start with empty `CAMERAS`/`LENSES` and seed during Steps 5–6.
+  - No camera or lens slug may contain `:` — it's reserved as the brand/slug
+    separator on the cross-brand `/compare/` page.
 - `node --check <brand>/data.js` to confirm valid JS.
 
 ## Step 3 — Wire registration (do before bulk data)
@@ -73,6 +80,9 @@ The data tests auto-discover any directory with a `data.js`, so wire these
    for lens placeholder cards; `manufacturer` on each lens must match a key here).
 4. Add a `[<brand>]` case to `tests/logic/root-redirect.test.js` asserting a
    stored brand of `'<slug>'` redirects to `./<slug>/`.
+5. Add `<script src="../<slug>/data.js"></script>` to `compare/index.html`
+   (alongside the other brands, before `engine.js`) so the cross-brand compare
+   page picks up the new brand's cameras.
 
 ## Step 4 — Brand-specific spec section (optional)
 
@@ -178,6 +188,7 @@ group) and `npm run test:data`.
 - [ ] `engine.js` `MANUFACTURER_COLORS` has the brand
 - [ ] (optional) `engine.js` `SPEC_SECTIONS` brand section + `schema.js` branch
 - [ ] `tests/logic/root-redirect.test.js` honours `<slug>`
+- [ ] `compare/index.html` loads `<brand>/data.js`
 - [ ] new items in `KNOWN_IMAGE_GAPS[<slug>]` until images land
 - [ ] `npm test` green
 - [ ] OpenSpec change archived after the PR merges

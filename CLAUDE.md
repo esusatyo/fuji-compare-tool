@@ -8,14 +8,15 @@ A **zero-dependency static website** that compares cameras and lenses side-by-si
 
 ## Architecture
 
-- **`engine.js`** — the shared rendering engine. Reads a fixed set of globals defined by the active brand's `data.js` and renders the camera + lens comparison UI, winner highlighting, currency switching, and Amazon buy-links. Brand-agnostic.
+- **`engine.js`** — the shared rendering engine. Resolves the active brand's dataset from the `window.BRAND_DATA` registry and renders the camera + lens comparison UI, winner highlighting, currency switching, and Amazon buy-links. Brand-agnostic.
 - **`engine.css`** — shared styles.
-- **`<brand>/data.js`** — one per brand (`canon/`, `fujifilm/`, `nikon/`, `panasonic/`, `sony/`). Defines the globals the engine expects: `BRAND_CONFIG`, `SERIES_COLORS`, `CAMERAS`, `CAMERA_ORDER`, `DROPDOWN_GROUPS`, `LENSES`, `LENS_DROPDOWN_GROUPS`, `REGISTERED_BRANDS`.
+- **`<brand>/data.js`** — one per brand (`canon/`, `fujifilm/`, `nikon/`, `panasonic/`, `sony/`). Each file wraps its data in an IIFE and registers it as `window.BRAND_DATA[<slug>] = (() => { …; return { BRAND_CONFIG, SERIES_COLORS, CAMERAS, CAMERA_ORDER, DROPDOWN_GROUPS, LENSES, LENS_DROPDOWN_GROUPS, REGISTERED_BRANDS }; })();` — this lets several brands load on one page (see `compare/`) without top-level `const` name collisions. No camera/lens slug may contain `:` (reserved as the compare page's brand/slug separator).
 - **`<brand>/index.html`** — a thin loader: `../engine.css` → `./data.js` → `../engine.js`.
 - **`index.html`** (root) — a redirector that sends visitors to a brand directory based on `localStorage['brand']` (`VALID_BRANDS` / `DEFAULT_BRAND`).
-- **`engine.js` shared lookups** — `MANUFACTURER_COLORS` (lens card colors, keyed by `manufacturer`) and `SPEC_SECTIONS` (spec rows). A spec section tagged `brand: '<slug>'` only renders when that slug is in `BRAND_CONFIG.brandSections`.
+- **`compare/index.html`** — the cross-brand comparison page. Loads every brand's `data.js` plus an inline `window.COMPARE_CONFIG`, which switches the engine into cross-brand mode: cameras only, 2–4 user-adjustable slots (clamped to 2 below the 600px breakpoint), items addressed as `<brand>:<slug>`. Adding a brand means adding its `<script src>` here too.
+- **`engine.js` shared lookups** — `MANUFACTURER_COLORS` (lens card colors, keyed by `manufacturer`) and `SPEC_SECTIONS` (spec rows). A spec section tagged `brand: '<slug>'` renders on a brand page only when that slug is in `BRAND_CONFIG.brandSections`; on the compare page it renders whenever any selected camera belongs to that brand, with foreign cameras' cells showing "—".
 
-Each brand `data.js` is a **standalone browser script** (plain `const` globals, no modules/imports). Don't introduce shared imports between brand files or `engine.js` — the loader and tests depend on this "each brand is one self-contained script" invariant.
+Each brand `data.js` is a **standalone browser script** (plain `const` globals inside the registration IIFE, no modules/imports). Don't introduce shared imports between brand files or `engine.js` — the loader and tests depend on this "each brand is one self-contained script" invariant.
 
 ## Data model
 
@@ -62,8 +63,9 @@ python3 -m http.server 3456   # then open http://localhost:3456/<brand>/
 
 ## Adding / changing things
 
-- **New brand**: create `<brand>/data.js` + `<brand>/index.html` (copy an existing brand), add the brand to **every** brand's `REGISTERED_BRANDS` (a test enforces all brands list the same set), add the slug to `VALID_BRANDS` in root `index.html`, add a `MANUFACTURER_COLORS` entry, and (if it has distinctive specs) a `brand`-tagged `SPEC_SECTIONS` entry + a `schema.js` validation branch. There's an `add-camera-brand` skill and prior OpenSpec changes that document this end-to-end.
+- **New brand**: create `<brand>/data.js` + `<brand>/index.html` (copy an existing brand, keep the registry IIFE wrap), add the brand to **every** brand's `REGISTERED_BRANDS` (a test enforces all brands list the same set), add the slug to `VALID_BRANDS` in root `index.html`, add its `data.js` `<script src>` to `compare/index.html`, add a `MANUFACTURER_COLORS` entry, and (if it has distinctive specs) a `brand`-tagged `SPEC_SECTIONS` entry + a `schema.js` validation branch. There's an `add-camera-brand` skill and prior OpenSpec changes that document this end-to-end.
 - **New lens/camera**: add the entry, add its id to the right `*_DROPDOWN_GROUPS`, run `npm test`.
+- **New cross-brand vs-page**: add a resolved pair to `CROSS_BRAND_MATCHUPS` in `scripts/generate-seo.js`, then `node scripts/generate-seo.js` (fails loudly on an unresolvable brand/slug or a same-brand/duplicate pair).
 
 ## Workflow & conventions
 
