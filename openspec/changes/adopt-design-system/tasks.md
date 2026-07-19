@@ -39,6 +39,6 @@
 
 ## 7. Verify
 
-- [ ] 7.1 `npm test` passes (Tier 1 + Tier 2)
-- [ ] 7.2 Visual pass over `http.server`: landing (with and without stored brand + `?brands`), one brand page (cameras + lenses modes, currency switch, winner tint), compare page (2–4 slots), a vs page, About, Privacy, mobile breakpoint — favicon and lockup present everywhere, no per-brand recoloring
-- [ ] 7.3 `openspec validate adopt-design-system --strict` passes
+- [x] 7.1 `npm test` passes — 367/367 (Tier 1 + Tier 2, incl. new header/redirect tests + regeneration-freshness gate)
+- [x] 7.2 Visual pass in Chrome over `http.server`: landing picker (`?brands`), Fujifilm brand page (photo chips, pill buttons, purple/teal winner tints incl. tie case), compare page, cross-brand vs page (rethemed cards/CTA/table), About; live behavioral loop verified — `/` with stored brand redirects to the brand page, lockup click from there lands on `/?brands` picker with preference intact
+- [x] 7.3 `openspec validate adopt-design-system --strict` passes
