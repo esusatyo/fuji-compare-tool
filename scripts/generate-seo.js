@@ -222,6 +222,31 @@ function amazonBuyUrlUSD(brandName, cam) {
   return `https://www.amazon.com/s?k=${encodeURIComponent(`${brandName} ${cam.name}`)}`;
 }
 
+// Product card: photo (with placeholder fallback), USD price, View + Buy.
+// `displayName` optionally overrides the shown name (cross-brand pages
+// prefix the brand so two same-named models can't be confused).
+function productCardHTML(data, brandName, c, displayName) {
+  const usdPrice = (c.prices && c.prices.USD != null) ? `$${c.prices.USD.toLocaleString('en-US')}` : '—';
+  const shown = displayName || c.name;
+  const sc = (data.SERIES_COLORS && data.SERIES_COLORS[c.series]) || { bg: '#222', text: '#ccc' };
+  const phStyle = `background:${esc(sc.bg)};color:${esc(sc.text)}`;
+  const photo = c.imageUrl
+    ? `<img src="${esc(c.imageUrl)}" alt="${esc(brandName)} ${esc(c.name)}" class="vs-img" onerror="this.style.display='none';this.parentNode.querySelector('.vs-ph').style.display='flex'">
+          <div class="vs-ph" style="display:none;${phStyle}">${esc(c.name)}</div>`
+    : `<div class="vs-ph" style="${phStyle}">${esc(c.name)}</div>`;
+  const viewURL = (c.productUrl && !c.productUrl.endsWith('/cameras/')) ? c.productUrl : null;
+  const viewBtn = viewURL
+    ? `<a class="vs-view" href="${esc(viewURL)}" target="_blank" rel="noopener">View &#8599;</a>`
+    : `<span class="vs-view na">Discontinued</span>`;
+  const buyBtn = `<a class="vs-buy" href="${esc(amazonBuyUrlUSD(brandName, c))}" target="_blank" rel="noopener">Buy &#8599;</a>`;
+  return `        <div class="vs-product">
+          <div class="vs-photo">${photo}</div>
+          <div class="vs-pname">${esc(shown)}</div>
+          <div class="vs-pprice">${usdPrice}</div>
+          <div class="vs-plinks">${viewBtn}${buyBtn}</div>
+        </div>`;
+}
+
 function vsPageHTML(brand, data, site, aId, bId, allPairs) {
   const cams = data.CAMERAS;
   const brandName = data.BRAND_CONFIG.name;
@@ -242,30 +267,9 @@ function vsPageHTML(brand, data, site, aId, bId, allPairs) {
     return `      <tr><th scope="row">${esc(label)}</th><td>${va == null ? '—' : esc(va)}</td><td>${vb == null ? '—' : esc(vb)}</td></tr>`;
   }).join('\n');
 
-  // Product cards: photo (with placeholder fallback), USD price, View + Buy.
-  const usdPrice = c => (c.prices && c.prices.USD != null) ? `$${c.prices.USD.toLocaleString('en-US')}` : '—';
-  const productCard = (c) => {
-    const sc = (data.SERIES_COLORS && data.SERIES_COLORS[c.series]) || { bg: '#222', text: '#ccc' };
-    const phStyle = `background:${esc(sc.bg)};color:${esc(sc.text)}`;
-    const photo = c.imageUrl
-      ? `<img src="${esc(c.imageUrl)}" alt="${esc(brandName)} ${esc(c.name)}" class="vs-img" onerror="this.style.display='none';this.parentNode.querySelector('.vs-ph').style.display='flex'">
-          <div class="vs-ph" style="display:none;${phStyle}">${esc(c.name)}</div>`
-      : `<div class="vs-ph" style="${phStyle}">${esc(c.name)}</div>`;
-    const viewURL = (c.productUrl && !c.productUrl.endsWith('/cameras/')) ? c.productUrl : null;
-    const viewBtn = viewURL
-      ? `<a class="vs-view" href="${esc(viewURL)}" target="_blank" rel="noopener">View &#8599;</a>`
-      : `<span class="vs-view na">Discontinued</span>`;
-    const buyBtn = `<a class="vs-buy" href="${esc(amazonBuyUrlUSD(brandName, c))}" target="_blank" rel="noopener">Buy &#8599;</a>`;
-    return `        <div class="vs-product">
-          <div class="vs-photo">${photo}</div>
-          <div class="vs-pname">${esc(c.name)}</div>
-          <div class="vs-pprice">${usdPrice(c)}</div>
-          <div class="vs-plinks">${viewBtn}${buyBtn}</div>
-        </div>`;
-  };
   const productsHTML = `      <div class="vs-products">
-${productCard(a)}
-${productCard(b)}
+${productCardHTML(data, brandName, a)}
+${productCardHTML(data, brandName, b)}
       </div>`;
 
   const related = relatedPairs(allPairs || [], cams, aId, bId);
@@ -353,6 +357,274 @@ ${rows}
 `;
 }
 
+// ─── Cross-brand vs-pages ────────────────────
+// Hand-curated matchups spanning brands (never auto-cartesian — that
+// would be ~4,000 thin pages). Selection rationale: real head-to-head
+// buying decisions, grouped by segment — flagship speed, high-res,
+// mid-range full-frame hybrids (the volume segment), compact/entry
+// full-frame, video-first bodies, enthusiast APS-C, retro/street, and
+// vlogging/entry. Pairs are price- or segment-peers; the generator
+// canonicalizes order (newer first, then pricier) and fails hard on
+// any entry that doesn't resolve to a real brand/slug.
+const CROSS_BRAND_MATCHUPS = [
+  // Flagship speed & pro sports
+  [['sony', 'a9-iii'], ['canon', 'eos-r1']],
+  [['canon', 'eos-r1'], ['nikon', 'z9']],
+  [['sony', 'a1-ii'], ['nikon', 'z9']],
+  [['sony', 'a1-ii'], ['canon', 'eos-r1']],
+  [['sony', 'a1-ii'], ['canon', 'eos-r5-ii']],
+  // High-resolution full-frame
+  [['sony', 'a7r-v'], ['canon', 'eos-r5-ii']],
+  [['sony', 'a7r-v'], ['nikon', 'z8']],
+  [['sony', 'a7r-vi'], ['canon', 'eos-r5-ii']],
+  [['sony', 'a7r-vi'], ['nikon', 'z8']],
+  [['nikon', 'z8'], ['canon', 'eos-r5-ii']],
+  [['panasonic', 's1r-ii'], ['sony', 'a7r-v']],
+  [['panasonic', 's1r-ii'], ['nikon', 'z8']],
+  [['panasonic', 's1r-ii'], ['canon', 'eos-r5-ii']],
+  [['sony', 'a7cr'], ['panasonic', 's1r-ii']],
+  // Mid-range full-frame hybrids
+  [['sony', 'a7-iv'], ['canon', 'eos-r6-ii']],
+  [['sony', 'a7-v'], ['canon', 'eos-r6-iii']],
+  [['sony', 'a7-v'], ['nikon', 'z6-iii']],
+  [['canon', 'eos-r6-iii'], ['nikon', 'z6-iii']],
+  [['sony', 'a7-iv'], ['nikon', 'z6-iii']],
+  [['sony', 'a7-iv'], ['panasonic', 's5-ii']],
+  [['canon', 'eos-r6-ii'], ['panasonic', 's5-ii']],
+  [['nikon', 'z6-iii'], ['panasonic', 's5-ii']],
+  [['sony', 'a7-v'], ['panasonic', 's1-ii']],
+  [['canon', 'eos-r6-v'], ['sony', 'a7-v']],
+  [['canon', 'eos-r6-v'], ['nikon', 'z6-iii']],
+  // Compact & entry full-frame
+  [['canon', 'eos-r8'], ['nikon', 'z5-ii']],
+  [['sony', 'a7c-ii'], ['nikon', 'z5-ii']],
+  [['sony', 'a7c-ii'], ['canon', 'eos-r8']],
+  [['sony', 'a7c-ii'], ['panasonic', 's5-ii']],
+  [['panasonic', 's9'], ['sony', 'a7c-ii']],
+  [['panasonic', 's9'], ['canon', 'eos-r8']],
+  [['nikon', 'z5-ii'], ['panasonic', 's5-ii']],
+  // Video-first bodies
+  [['sony', 'a7s-iii'], ['panasonic', 's1h']],
+  [['sony', 'fx3'], ['panasonic', 's1h']],
+  [['sony', 'fx3'], ['canon', 'eos-r5c']],
+  [['sony', 'zv-e1'], ['panasonic', 's9']],
+  [['nikon', 'zr'], ['sony', 'zv-e1']],
+  [['nikon', 'zr'], ['panasonic', 's5-iix']],
+  [['panasonic', 'gh7'], ['sony', 'fx30']],
+  [['fujifilm', 'x-h2s'], ['sony', 'fx30']],
+  [['fujifilm', 'x-h2s'], ['panasonic', 'gh7']],
+  // Enthusiast APS-C (and APS-C vs full-frame crossovers)
+  [['fujifilm', 'x-t5'], ['sony', 'a7-iv']],
+  [['fujifilm', 'x-t5'], ['sony', 'a6700']],
+  [['fujifilm', 'x-t5'], ['canon', 'eos-r7']],
+  [['fujifilm', 'x-h2'], ['canon', 'eos-r7']],
+  [['fujifilm', 'x-h2'], ['sony', 'a7-iv']],
+  [['fujifilm', 'x-h2s'], ['canon', 'eos-r7']],
+  [['sony', 'a6700'], ['canon', 'eos-r7']],
+  [['sony', 'a6700'], ['nikon', 'z50-ii']],
+  [['canon', 'eos-r7'], ['nikon', 'z50-ii']],
+  [['canon', 'eos-r7'], ['panasonic', 'g9-ii']],
+  [['fujifilm', 'x-t50'], ['sony', 'a6700']],
+  [['fujifilm', 'x-s20'], ['sony', 'a6700']],
+  [['fujifilm', 'x-s20'], ['canon', 'eos-r10']],
+  [['sony', 'a6400'], ['canon', 'eos-r10']],
+  [['nikon', 'z50-ii'], ['canon', 'eos-r10']],
+  [['fujifilm', 'x-t30ii'], ['sony', 'a6400']],
+  // Retro & street
+  [['fujifilm', 'x-t5'], ['nikon', 'zf']],
+  [['fujifilm', 'x100vi'], ['nikon', 'zf']],
+  [['fujifilm', 'x100vi'], ['sony', 'a6700']],
+  [['fujifilm', 'x-e5'], ['nikon', 'zf']],
+  [['fujifilm', 'x-t50'], ['nikon', 'zfc']],
+  [['panasonic', 'l10'], ['fujifilm', 'x100vi']],
+  // Vlogging & entry
+  [['fujifilm', 'x-m5'], ['sony', 'zv-e10-ii']],
+  [['sony', 'zv-e10-ii'], ['canon', 'eos-r50v']],
+  [['sony', 'zv-e10-ii'], ['nikon', 'z30']],
+  [['canon', 'eos-r50v'], ['nikon', 'z30']],
+  [['fujifilm', 'x-m5'], ['canon', 'eos-r50']],
+  [['panasonic', 'g100d'], ['sony', 'zv-e10-ii']],
+  [['panasonic', 'g100d'], ['nikon', 'z30']],
+];
+
+// Resolve, validate and canonicalize the curated matchups against the
+// loaded brand data. Fails hard (throw, no partial output) on a typo,
+// a same-brand pair, or a duplicate.
+function resolveMatchups(brandData) {
+  const seen = new Set();
+  return CROSS_BRAND_MATCHUPS.map(entry => {
+    const sides = entry.map(([brand, slug]) => {
+      const data = brandData[brand];
+      if (!data) throw new Error(`CROSS_BRAND_MATCHUPS: unknown brand '${brand}' in ${JSON.stringify(entry)}`);
+      const cam = data.CAMERAS[slug];
+      if (!cam) throw new Error(`CROSS_BRAND_MATCHUPS: unknown camera '${brand}:${slug}' in ${JSON.stringify(entry)}`);
+      return { brand, slug, data, cam, brandName: data.BRAND_CONFIG.name };
+    });
+    if (sides[0].brand === sides[1].brand) {
+      throw new Error(`CROSS_BRAND_MATCHUPS: same-brand pair ${JSON.stringify(entry)} — belongs in the per-brand curated set`);
+    }
+    // Canonical order: newer first, then pricier, then name — matches
+    // the per-brand pairing convention.
+    const usd = s => (s.cam.prices && s.cam.prices.USD) || 0;
+    let [a, b] = sides;
+    if (b.cam.year > a.cam.year || (b.cam.year === a.cam.year && usd(b) > usd(a))) [a, b] = [b, a];
+    const key = [`${a.brand}:${a.slug}`, `${b.brand}:${b.slug}`].sort().join('|');
+    if (seen.has(key)) throw new Error(`CROSS_BRAND_MATCHUPS: duplicate pair ${JSON.stringify(entry)}`);
+    seen.add(key);
+    return { a, b, file: `vs/${a.brand}-${a.slug}-vs-${b.brand}-${b.slug}.html` };
+  });
+}
+
+const crossTitle = m => `${m.a.brandName} ${m.a.cam.name} vs ${m.b.brandName} ${m.b.cam.name}`;
+
+// Sibling cross-brand pages sharing a camera with this one (capped),
+// so the root vs/ cluster interlinks instead of leafing out.
+function crossRelated(all, m) {
+  const shares = (x, s) => (x.a.brand === s.brand && x.a.slug === s.slug) || (x.b.brand === s.brand && x.b.slug === s.slug);
+  return all
+    .filter(x => x.file !== m.file && (shares(x, m.a) || shares(x, m.b)))
+    .sort((p, q) => {
+      const yr = x => Math.max(x.a.cam.year, x.b.cam.year);
+      if (yr(p) !== yr(q)) return yr(q) - yr(p);
+      return p.file < q.file ? -1 : 1;
+    })
+    .slice(0, 6);
+}
+
+function crossVsPageHTML(site, m, all) {
+  const { a, b } = m;
+  const title = `${crossTitle(m)}: Spec Comparison`;
+  const desc = `Compare the ${a.brandName} ${a.cam.name} (${a.cam.year}) and ${b.brandName} ${b.cam.name} (${b.cam.year}) side by side — price, sensor, stabilization, video, weight and more.`;
+  const url = `${site.baseUrl}/${m.file}`;
+  const ld = {
+    '@context': 'https://schema.org',
+    '@type': 'ItemList',
+    name: title,
+    itemListElement: [a, b].map((s, i) => ({ '@type': 'ListItem', position: i + 1, item: productLd(s.brandName, s.cam) })),
+  };
+  const rows = VS_ROWS.map(([label, fn]) => {
+    const [va, vb] = [fn(a.cam), fn(b.cam)];
+    return `      <tr><th scope="row">${esc(label)}</th><td>${va == null ? '—' : esc(va)}</td><td>${vb == null ? '—' : esc(vb)}</td></tr>`;
+  }).join('\n');
+  const fullName = s => `${s.brandName} ${s.cam.name}`;
+  const compareHash = `#cameras=${a.brand}:${a.slug},${b.brand}:${b.slug}`;
+  const related = crossRelated(all, m);
+  const relatedHTML = related.length ? `
+    <section class="vs-related">
+      <h2>Related comparisons</h2>
+      <ul>
+${related.map(x => `        <li><a href="${path.basename(x.file)}">${esc(crossTitle(x))}</a></li>`).join('\n')}
+      </ul>
+    </section>` : '';
+
+  return `<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>${esc(title)}</title>
+  <meta name="description" content="${esc(desc)}">
+  <link rel="canonical" href="${url}">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="${esc(site.siteName)}">
+  <meta property="og:title" content="${esc(title)}">
+  <meta property="og:description" content="${esc(desc)}">
+  <meta property="og:url" content="${url}">
+  <meta name="twitter:card" content="summary">
+  <script type="application/ld+json">${JSON.stringify(ld)}</script>
+  <!-- Umami analytics — temporarily disabled, kept for re-enabling.
+  <script defer src="https://cloud.umami.is/script.js" data-website-id="365e9ee6-1fb5-4a0d-9c74-f6255522a196"></script> -->
+  <script data-goatcounter="https://esusatyo.goatcounter.com/count" defer src="https://gc.zgo.at/count.js"></script>
+  <link rel="stylesheet" href="../engine.css">
+  <style>
+    :root { --accent-color: #0071e3; --hero-dark: #26262b; }
+    ${VS_CSS}
+  </style>
+</head>
+<body>
+  <header id="site-header">
+    <div class="header-brand">
+      <span class="brand-logo">Compare<span class="accent">CameraSpecs</span></span>
+      <span class="header-sep">|</span>
+      <a class="header-back" href="../compare/">Cross-brand compare</a>
+    </div>
+  </header>
+  <div class="page-hero">
+    <div class="hero-eyebrow">${esc(a.brandName)} vs ${esc(b.brandName)} &middot; Head-to-head</div>
+    <h1 class="hero-title">${esc(fullName(a))} vs ${esc(fullName(b))}</h1>
+    <p class="hero-subtitle">${esc(fullName(a))} (${a.cam.year}) and ${esc(fullName(b))} (${b.cam.year}) compared side by side.</p>
+  </div>
+  <main class="vs-main">
+      <div class="vs-products">
+${productCardHTML(a.data, a.brandName, a.cam, fullName(a))}
+${productCardHTML(b.data, b.brandName, b.cam, fullName(b))}
+      </div>
+    <a class="vs-cta" href="../compare/${compareHash}"><span class="play">&#9654;</span> Compare these interactively</a>
+    <div class="vs-card">
+      <table>
+        <thead>
+          <tr><th scope="col">Spec</th><th scope="col">${esc(fullName(a))}</th><th scope="col">${esc(fullName(b))}</th></tr>
+        </thead>
+        <tbody>
+${rows}
+        </tbody>
+      </table>
+    </div>
+    <p class="vs-note">Prices shown are approximate manufacturer list prices (RRP) in USD and may differ from live retail prices.</p>${relatedHTML}
+  </main>
+  <footer>
+    <p>${esc(site.siteName)} &mdash; For informational purposes only.</p>
+    <p>Prices shown are approximate manufacturer list prices (RRP) and may differ from live retail prices. Use the Buy link for current pricing.</p>
+    <p>Specs sourced from manufacturer documentation.</p>
+    <p>Specs &amp; prices last verified: ${esc(site.dataVerified)}</p>
+    <div id="affiliate-disclosure"></div>
+    <p>
+      <a href="../compare/">Cross-brand compare</a>
+      &middot;
+      <a href="../${a.brand}/index.html">All ${esc(a.brandName)} cameras</a>
+      &middot;
+      <a href="../${b.brand}/index.html">All ${esc(b.brandName)} cameras</a>
+      &middot;
+      <a href="../about.html">About</a>
+      &middot;
+      <a href="../privacy.html">Privacy</a>
+      &middot;
+      Created by <a href="https://esusatyo.net" target="_blank" rel="noopener">Enrico Susatyo</a>
+      &middot;
+      Assisted by <a href="https://claude.ai" target="_blank" rel="noopener">Claude</a>
+    </p>
+  </footer>
+</body>
+</html>
+`;
+}
+
+// ─── Compare-page blocks ─────────────────────
+function compareHeadBlock(site, brandNames, nCams) {
+  return metaBlock(
+    site,
+    `${site.baseUrl}/compare/`,
+    'Compare Cameras Across Brands',
+    `Compare 2–4 of ${nCams} cameras from ${brandNames.join(', ')} side by side — specs, prices and buy links in 7 currencies.`
+  );
+}
+
+// Crawlable block for compare/index.html linking every cross-brand
+// vs-page, so none of them is an orphan (mirrors the brand pages).
+function compareBodyBlock(matchups) {
+  const items = matchups.map(m =>
+    `      <li><a href="../${m.file}">${esc(crossTitle(m))}</a></li>`).join('\n');
+  return `${SEO_BODY_BEGIN}
+  <section class="seo-links" aria-label="Popular cross-brand comparisons">
+    <h2>Popular cross-brand camera comparisons</h2>
+    <p>Pick any 2–4 cameras from Canon, Fujifilm, Nikon, Panasonic and Sony and compare them side by side. Popular head-to-head matchups across brands:</p>
+    <ul>
+${items}
+    </ul>
+  </section>
+  ${SEO_BODY_END}`;
+}
+
 // ─── Head blocks ─────────────────────────────
 function metaBlock(site, url, title, desc) {
   return `${SEO_BEGIN}
@@ -415,9 +687,16 @@ ${items}
 
 // Crawlable landing content for the root page: brand cards with live counts
 // plus a sample of vs-pages, so the root passes authority into the cluster.
-function rootBodyBlock(site, brands) {
+function rootBodyBlock(site, brands, crossSample = []) {
   const eyebrow = brands.map(b => esc(b.name).toUpperCase()).join(' · ');
-  const cards = brands.map(br =>
+  const compareCard = `        <li class="brand-card" style="--card-accent: #0071e3">
+          <a href="./compare/">
+            <div class="brand-name">All Brands</div>
+            <div class="brand-count">Mix &amp; match 2&ndash;4 cameras from any brand</div>
+            <div class="brand-go">Compare &rarr;</div>
+          </a>
+        </li>`;
+  const cards = [compareCard, ...brands.map(br =>
     `        <li class="brand-card" style="--card-accent: ${esc(br.accent)}">
           <a href="./${br.slug}/">
             <div class="brand-name">${esc(br.name)}</div>
@@ -425,11 +704,14 @@ function rootBodyBlock(site, brands) {
             <div class="brand-go">Compare &rarr;</div>
           </a>
         </li>`
-  ).join('\n');
-  const cluster = brands.flatMap(br =>
-    br.samplePairs.map(p =>
-      `        <li><a href="./${br.slug}/vs/${p.a}-vs-${p.b}.html">${esc(br.name)} ${esc(p.aName)} vs ${esc(p.bName)}</a></li>`)
-  ).join('\n');
+  )].join('\n');
+  const cluster = [
+    ...crossSample.map(m =>
+      `        <li><a href="./${m.file}">${esc(crossTitle(m))}</a></li>`),
+    ...brands.flatMap(br =>
+      br.samplePairs.map(p =>
+        `        <li><a href="./${br.slug}/vs/${p.a}-vs-${p.b}.html">${esc(br.name)} ${esc(p.aName)} vs ${esc(p.bName)}</a></li>`)),
+  ].join('\n');
   return `${SEO_BODY_BEGIN}
   <header id="site-header">
     <div class="header-brand">
@@ -517,9 +799,11 @@ function buildAll() {
   const sitemapPaths = [];
   const brandNames = [];
   const brandInfo = [];
+  const brandData = {};
 
   for (const brand of brandDirs()) {
     const { data } = loadBrand(brand);
+    brandData[brand] = data;
     const name = data.BRAND_CONFIG.name;
     brandNames.push(name);
 
@@ -549,10 +833,24 @@ function buildAll() {
     });
   }
 
+  // Cross-brand: the /compare/ page plus the curated root vs/ cluster.
+  const matchups = resolveMatchups(brandData);
+  sitemapPaths.push('compare/');
+  for (const m of matchups) {
+    files.set(m.file, crossVsPageHTML(site, m, matchups));
+    sitemapPaths.push(m.file);
+  }
+  const cmp = path.join('compare', 'index.html');
+  const totalCams = Object.values(brandData).reduce((n, d) => n + Object.keys(d.CAMERAS).length, 0);
+  let cmpHtml = fs.readFileSync(path.join(ROOT, cmp), 'utf8');
+  cmpHtml = withHeadBlock(cmpHtml, compareHeadBlock(site, brandNames, totalCams), cmp);
+  cmpHtml = withBodyBlock(cmpHtml, compareBodyBlock(matchups), cmp);
+  files.set(cmp, cmpHtml);
+
   sitemapPaths.push('about.html', 'privacy.html');
   let rootHtml = fs.readFileSync(path.join(ROOT, 'index.html'), 'utf8');
   rootHtml = withHeadBlock(rootHtml, rootHeadBlock(site, brandNames), 'index.html');
-  rootHtml = withBodyBlock(rootHtml, rootBodyBlock(site, brandInfo), 'index.html');
+  rootHtml = withBodyBlock(rootHtml, rootBodyBlock(site, brandInfo, matchups.slice(0, 6)), 'index.html');
   files.set('index.html', rootHtml);
   files.set('sitemap.xml', sitemapXML(site, sitemapPaths));
   files.set('robots.txt', robotsTxt(site));
@@ -571,16 +869,17 @@ if (require.main === module) {
       written++;
     }
   }
-  // Remove stale vs-pages no longer in the curated set.
+  // Remove stale vs-pages no longer in the curated set (per-brand vs/
+  // directories plus the root cross-brand vs/).
   let removed = 0;
-  for (const brand of brandDirs()) {
-    const vsDir = path.join(ROOT, brand, 'vs');
-    if (!fs.existsSync(vsDir)) continue;
-    for (const f of fs.readdirSync(vsDir)) {
-      if (!files.has(`${brand}/vs/${f}`)) { fs.unlinkSync(path.join(vsDir, f)); removed++; }
+  for (const dir of [...brandDirs().map(b => `${b}/vs`), 'vs']) {
+    const abs = path.join(ROOT, dir);
+    if (!fs.existsSync(abs)) continue;
+    for (const f of fs.readdirSync(abs)) {
+      if (!files.has(`${dir}/${f}`)) { fs.unlinkSync(path.join(abs, f)); removed++; }
     }
   }
   console.log(`generate-seo: ${files.size} artifacts (${written} written, ${removed} stale removed)`);
 }
 
-module.exports = { siteConfig, curatedPairs, relatedPairs, vsPageHTML, brandHeadBlock, rootHeadBlock, brandBodyBlock, rootBodyBlock, withHeadBlock, withBodyBlock, sitemapXML, robotsTxt, buildAll, SEO_BEGIN, SEO_END, SEO_BODY_BEGIN, SEO_BODY_END };
+module.exports = { siteConfig, curatedPairs, relatedPairs, vsPageHTML, resolveMatchups, crossVsPageHTML, crossTitle, CROSS_BRAND_MATCHUPS, compareHeadBlock, compareBodyBlock, brandHeadBlock, rootHeadBlock, brandBodyBlock, rootBodyBlock, withHeadBlock, withBodyBlock, sitemapXML, robotsTxt, buildAll, SEO_BEGIN, SEO_END, SEO_BODY_BEGIN, SEO_BODY_END };
