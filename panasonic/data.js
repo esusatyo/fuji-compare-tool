@@ -1,3 +1,7 @@
+// Registered into the shared brand-data registry so multiple brand files
+// can load on one page (see compare/). The data below is unchanged.
+window.BRAND_DATA = window.BRAND_DATA || {};
+window.BRAND_DATA['panasonic'] = (() => {
 // ─────────────────────────────────────────────
 // PANASONIC BRAND CONFIG
 // ─────────────────────────────────────────────
@@ -1521,3 +1525,7 @@ const LENS_DROPDOWN_GROUPS = [
   { label: '── Sigma (MFT) ──', ids: ['sigma-16mm-f14-mft', 'sigma-30mm-f14-mft', 'sigma-56mm-f14-mft'] },
   { label: '── Voigtländer & Laowa (MFT) ──', ids: ['voigtlander-nokton-25mm-f095', 'laowa-7-5mm-f2-mft'] },
 ];
+
+return { BRAND_CONFIG, SERIES_COLORS, CAMERAS, CAMERA_ORDER,
+         DROPDOWN_GROUPS, LENSES, LENS_DROPDOWN_GROUPS, REGISTERED_BRANDS };
+})();

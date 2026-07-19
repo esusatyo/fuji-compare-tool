@@ -148,6 +148,44 @@ body {
   border-right: 1px solid var(--border);
 }
 
+/* Compare page: stack "Compare" above the slot-count field instead of
+   centering a single line, so both fit in the same row as the slots. */
+.compare-label-cell--compare {
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.slot-count-field {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.slot-count-field label {
+  font-size: 11px;
+  color: var(--gray-3);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.slot-count-select {
+  width: fit-content;
+  padding: 5px 10px;
+  border: 1.5px solid var(--gray-2);
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--gray-4);
+  background: white;
+  cursor: pointer;
+  outline: none;
+  transition: border-color 0.15s;
+}
+
+.slot-count-select:focus, .slot-count-select:hover { border-color: var(--accent-color); }
+
 .compare-slot {
   display: flex;
   flex-direction: column;
@@ -453,6 +491,13 @@ footer a:hover { text-decoration: underline; }
   #site-header { padding: 0 10px; gap: 6px; justify-content: center; }
   .mode-btn { padding: 5px 9px; font-size: 11px; }
   .header-select { padding: 5px 6px; font-size: 11px; }
+  /* The viewport already clamps to 2 slots here (effectiveSlots), so
+     the "cameras to compare" choice has nothing to offer — hide it
+     rather than show a control that can't change anything. */
+  .slot-count-field { display: none; }
+  /* With the field hidden, fall back to the plain single-line "Compare"
+     layout instead of the stacked desktop arrangement. */
+  .compare-label-cell--compare { flex-direction: row; align-items: center; }
 }
 
 @media (max-width: 400px) {
