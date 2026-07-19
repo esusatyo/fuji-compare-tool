@@ -6,9 +6,9 @@
 
 ## 2. About/Privacy identity blocks
 
-- [ ] 2.1 Add `<!-- identity:head:begin/end -->` and `<!-- identity:header:begin/end -->` markers to `about.html` and `privacy.html`; strip their hand-maintained identity (head links, token `<style>` values, inline lockup) into the marked regions
-- [ ] 2.2 Generator: build the two identity blocks from the canonical sources (head: favicon/touch-icon/theme-color/font links + token style; header: lockup linking `./?brands`) and inject via `withBlock()`; add both pages to `buildAll()`'s file map
-- [ ] 2.3 Regenerate; confirm prose is untouched, pages still render self-contained from `file://`, and `tests/data/seo.test.js` now gates their freshness; extend a seo test case asserting missing identity markers throw
+- [x] 2.1 Identity markers added to both pages; hand-maintained identity stripped into the marked regions (head block also gained a canonical — required by the seo test's "every generated .html has a canonical under baseUrl" rule, and a real SEO gain)
+- [x] 2.2 `identityHeadBlock(page, site)` + `identityHeaderBlock()` built from the canonical sources and injected via `withBlock()`; both pages in `buildAll()`'s file map (224 artifacts)
+- [x] 2.3 Regenerated (+2 files); prose untouched, pages self-contained; freshness gate covers them via `buildAll()`; new seo test asserts both marker pairs exist on disk and both pages are in the output set (missing markers throw via the shared `withBlock` path)
 
 ## 3. Touch icon: script + pixel test
 

@@ -7,9 +7,20 @@ const assert = require('node:assert/strict');
 const fs = require('fs');
 const path = require('path');
 const { loadBrand, brandDirs, ROOT } = require('../helpers/load-brand');
-const { buildAll, curatedPairs, siteConfig } = require('../../scripts/generate-seo');
+const { buildAll, curatedPairs, siteConfig,
+        ID_HEAD_BEGIN, ID_HEAD_END, ID_HEADER_BEGIN, ID_HEADER_END } = require('../../scripts/generate-seo');
 
 const generated = buildAll();
+
+test('trust pages carry both identity marker pairs (generator refuses to write without them)', () => {
+  for (const page of ['about.html', 'privacy.html']) {
+    const html = fs.readFileSync(path.join(ROOT, page), 'utf8');
+    for (const marker of [ID_HEAD_BEGIN, ID_HEAD_END, ID_HEADER_BEGIN, ID_HEADER_END]) {
+      assert.ok(html.includes(marker), `${page}: missing identity marker ${marker}`);
+    }
+    assert.ok(generated.has(page), `${page} must be part of the generator's output set`);
+  }
+});
 
 test('every generated artifact matches the committed file (rerun scripts/generate-seo.js)', () => {
   for (const [rel, content] of generated) {

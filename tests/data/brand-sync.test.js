@@ -9,14 +9,14 @@
 // change assets/logo.svg and the engine.css tokens, run npm test, and
 // the failures list every file still carrying the old identity.
 //
-// Known copies enforced here:
-//   logo mark     → engine.js, scripts/generate-seo.js, about.html, privacy.html, favicon.svg
-//   accent hexes  → logo circles, favicon circles, about/privacy inline styles
+// Known copies enforced here (everything else is generated from the
+// canonical sources and covered by the seo regeneration freshness gate):
+//   logo mark     → engine.js (runtime code can't read files), favicon.svg
+//   accent hexes  → logo circles, favicon circles
 //   accent rgba   → engine.css + generate-seo.js VS_CSS fallback tints (whitelist scan)
-//   theme-color   → about.html, privacy.html, scripts/generate-seo.js (assetLinks)
 //
-// Not enforceable cheaply: apple-touch-icon.png pixels — re-render it
-// (headless Chrome, see the design change tasks) when the mark changes.
+// apple-touch-icon.png pixels are enforced by tests/data/touch-icon.test.js;
+// re-render via scripts/render-touch-icon.js when the identity changes.
 const { test } = require('node:test');
 const assert = require('node:assert/strict');
 const fs = require('fs');
@@ -34,7 +34,6 @@ const token = name => {
   assert.ok(m, `engine.css must define --${name} as a 6-digit hex token`);
   return m[1].toUpperCase();
 };
-const BG_DEEP = token('bg-deep');
 const ACCENT_PRIMARY = token('accent-primary');
 const ACCENT_SECONDARY = token('accent-secondary');
 
@@ -54,10 +53,12 @@ test('canonical logo has two circles filled with the accent tokens', () => {
 });
 
 // ─── Inline logo copies match the canonical mark ─────────────
-// Only genuine duplicates are listed: the generator reads the mark from
-// assets/logo.svg at build time, so generated pages are covered by the
-// regeneration freshness gate instead.
-const LOGO_COPIES = ['engine.js', 'about.html', 'privacy.html', 'favicon.svg'];
+// Only genuine duplicates are listed: everything else (vs pages,
+// landing, about/privacy identity blocks) is generated from
+// assets/logo.svg at build time and covered by the regeneration
+// freshness gate. engine.js stays inline because runtime code cannot
+// read files; favicon.svg is a distinct artifact by nature.
+const LOGO_COPIES = ['engine.js', 'favicon.svg'];
 
 for (const file of LOGO_COPIES) {
   test(`[${file}] inline logo matches assets/logo.svg`, () => {
@@ -68,30 +69,6 @@ for (const file of LOGO_COPIES) {
       const frag = `cx="${c.cx}" cy="${c.cy}" r="${c.r}" fill="${c.fill}"`;
       assert.ok(src.toUpperCase().includes(frag.toUpperCase()),
         `${file}: missing circle ${frag} — sync the mark from assets/logo.svg`);
-    }
-  });
-}
-
-// ─── theme-color metas match --bg-deep ───────────────────────
-// (The generator derives its theme-color from the token by construction.)
-for (const file of ['about.html', 'privacy.html']) {
-  test(`[${file}] theme-color equals --bg-deep`, () => {
-    const metas = [...read(file).matchAll(/name="theme-color" content="(#[0-9A-Fa-f]{6})"/g)];
-    assert.ok(metas.length > 0, `${file}: no theme-color meta found`);
-    for (const m of metas) {
-      assert.equal(m[1].toUpperCase(), BG_DEEP,
-        `${file}: theme-color ${m[1]} is stale — --bg-deep is ${BG_DEEP}`);
-    }
-  });
-}
-
-// ─── Self-contained token copies carry the current palette ───
-for (const file of ['about.html', 'privacy.html']) {
-  test(`[${file}] self-contained styles use the current tokens`, () => {
-    const src = read(file).toUpperCase();
-    for (const [name, hex] of [['bg-deep', BG_DEEP], ['accent-primary', ACCENT_PRIMARY]]) {
-      assert.ok(src.includes(hex),
-        `${file}: does not contain ${hex} (--${name}) — its inline token copy is stale`);
     }
   });
 }
