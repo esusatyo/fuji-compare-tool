@@ -482,6 +482,18 @@ function buildBrandSwitcher() {
   return `<select class="brand-switcher header-select" id="brand-switcher" aria-label="Brand">${allOpt}${options}</select>`;
 }
 
+// Compare-page only: how many slots to show (2-4), rendered under the
+// "Compare" label so it sits in the same row as the camera slot pickers.
+function buildSlotCountField() {
+  if (!IS_COMPARE) return '';
+  const options = [2, 3, 4]
+    .map(n => `<option value="${n}"${n === slotChoice ? ' selected' : ''}>${n}</option>`).join('');
+  return `<div class="slot-count-field">
+    <label for="slot-count-select">Cameras to compare</label>
+    <select id="slot-count-select" class="slot-count-select" aria-label="Number of cameras to compare">${options}</select>
+  </div>`;
+}
+
 function buildFooterLinks() {
   const links = BRAND_CONFIG.footerLinks;
   if (!links || !links.length) return 'manufacturer documentation';
@@ -508,11 +520,7 @@ function injectBody() {
     <span class="header-sep">|</span>
     <span class="header-title" id="header-title">${BRAND_CONFIG.cameras.headerTitle}</span>
   </div>
-  ${IS_COMPARE
-    ? `<div class="mode-toggle" id="slot-count" aria-label="Number of cameras">${
-        [2, 3, 4].map(n => `<button class="mode-btn${n === slotChoice ? ' active' : ''}" data-n="${n}">${n}</button>`).join('')
-      }</div>`
-    : `<div class="mode-toggle" id="mode-toggle">
+  ${IS_COMPARE ? '' : `<div class="mode-toggle" id="mode-toggle">
     <button class="mode-btn active" data-mode="cameras">Cameras</button>
     <button class="mode-btn" data-mode="lenses">Lenses</button>
   </div>`}
@@ -538,7 +546,10 @@ function injectBody() {
 
 <div id="compare-header">
   <div class="compare-grid" id="compare-grid-header">
-    <div class="compare-label-cell">Compare</div>
+    <div class="compare-label-cell${IS_COMPARE ? ' compare-label-cell--compare' : ''}">
+      <span class="compare-label-text">Compare</span>
+      ${buildSlotCountField()}
+    </div>
     ${Array.from({ length: MAX_SLOTS }, (_, i) =>
       `<div class="compare-slot${i === 2 && !IS_COMPARE ? ' slot-3-hide' : ''}" id="slot-${i}"></div>`).join('\n    ')}
   </div>
@@ -797,14 +808,10 @@ function attachEventListeners() {
     renderAll();
   });
 
-  document.getElementById('slot-count')?.addEventListener('click', e => {
-    const btn = e.target.closest('.mode-btn');
-    if (!btn) return;
-    const n = parseInt(btn.dataset.n, 10);
+  document.getElementById('slot-count-select')?.addEventListener('change', e => {
+    const n = parseInt(e.target.value, 10);
     if (!n || n === slotChoice) return;
     slotChoice = n;
-    document.querySelectorAll('#slot-count .mode-btn').forEach(b =>
-      b.classList.toggle('active', b === btn));
     numSlots = getNumSlots();
     updateHash();
     renderAll();
@@ -870,8 +877,8 @@ function attachEventListeners() {
   }
   if (IS_COMPARE && initial.count) {
     slotChoice = initial.count;
-    document.querySelectorAll('#slot-count .mode-btn').forEach(b =>
-      b.classList.toggle('active', parseInt(b.dataset.n, 10) === slotChoice));
+    const countSel = document.getElementById('slot-count-select');
+    if (countSel) countSel.value = String(slotChoice);
   }
   if (initial.mode === 'lenses' && !IS_COMPARE) {
     currentMode = 'lenses';

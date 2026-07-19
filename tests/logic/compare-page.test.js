@@ -16,8 +16,9 @@ function visibleSlots(window) {
 }
 
 function clickSlotCount(window, n) {
-  const btn = window.document.querySelector(`#slot-count .mode-btn[data-n="${n}"]`);
-  btn.dispatchEvent(new window.Event('click', { bubbles: true }));
+  const sel = window.document.getElementById('slot-count-select');
+  sel.value = String(n);
+  sel.dispatchEvent(new window.Event('change', { bubbles: true }));
 }
 
 function resizeTo(window, width) {
@@ -44,12 +45,18 @@ test('default render: 3 visible slots, 4th hidden, defaults selected', () => {
   assert.deepEqual([0, 1, 2].map(i => slotSelect(window, i).value), DEFAULTS.slice(0, 3));
 });
 
-test('cameras only: no mode toggle, slot-count control instead', () => {
+test('cameras only: no mode toggle, slot-count dropdown instead', () => {
   const { window } = loadCompare();
   assert.equal(window.document.getElementById('mode-toggle'), null);
-  const counts = [...window.document.querySelectorAll('#slot-count .mode-btn')];
-  assert.deepEqual(counts.map(b => b.dataset.n), ['2', '3', '4']);
-  assert.ok(counts[1].classList.contains('active'), 'default choice 3 is active');
+  const sel = window.document.getElementById('slot-count-select');
+  const opts = [...sel.querySelectorAll('option')];
+  assert.deepEqual(opts.map(o => o.value), ['2', '3', '4']);
+  assert.equal(sel.value, '3', 'default choice 3 is selected');
+  const label = window.document.querySelector(`label[for="slot-count-select"]`);
+  assert.equal(label.textContent, 'Cameras to compare');
+  assert.ok(
+    window.document.querySelector('.compare-label-cell').contains(sel),
+    'slot-count control lives inside the Compare label cell');
 });
 
 test('dropdowns group by brand and every option id is namespaced', () => {

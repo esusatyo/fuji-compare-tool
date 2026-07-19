@@ -148,6 +148,44 @@ body {
   border-right: 1px solid var(--border);
 }
 
+/* Compare page: stack "Compare" above the slot-count field instead of
+   centering a single line, so both fit in the same row as the slots. */
+.compare-label-cell--compare {
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.slot-count-field {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.slot-count-field label {
+  font-size: 11px;
+  color: var(--gray-3);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.slot-count-select {
+  width: fit-content;
+  padding: 5px 10px;
+  border: 1.5px solid var(--gray-2);
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--gray-4);
+  background: white;
+  cursor: pointer;
+  outline: none;
+  transition: border-color 0.15s;
+}
+
+.slot-count-select:focus, .slot-count-select:hover { border-color: var(--accent-color); }
+
 .compare-slot {
   display: flex;
   flex-direction: column;
