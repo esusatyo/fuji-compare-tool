@@ -29,7 +29,7 @@
 
 ## 6. Verification debt + docs
 
-- [ ] 6.1 Mobile visual pass (<600px viewport in Chrome): landing, one brand page (2-slot clamp, "Compare" label alone, winner tints), compare page, one vs page — fix any styling bugs found (in scope)
-- [ ] 6.2 Font-fallback check: load a brand page with the Google Fonts request blocked (or from `file://`) and confirm the system-stack rendering is acceptable
-- [ ] 6.3 Update `CLAUDE.md` rebrand instructions: edit `assets/logo.svg` + `engine.css` tokens → `node scripts/generate-seo.js` + `node scripts/render-touch-icon.js` → `npm test` names anything left; update the design-system memory note
-- [ ] 6.4 `openspec validate single-source-branding --strict` passes; commit and push
+- [x] 6.1 Mobile visual pass at a true 390px viewport (headless Chrome clamps windows to 500px CSS — first captures were crop artifacts; re-shot via a 390px iframe wrapper): landing, brand page (2-slot clamp, "Compare" alone, per-column winner tints), compare page, vs page — all render cleanly, no bugs found
+- [x] 6.2 Font-fallback check: brand page rendered with fonts.googleapis.com/fonts.gstatic.com DNS-blackholed — system-stack rendering fully legible, no layout breakage
+- [x] 6.3 `CLAUDE.md` rebrand flow updated (two sources → two scripts → `npm test`); design-system memory note updated
+- [x] 6.4 `openspec validate single-source-branding --strict` passes; committed and pushed
