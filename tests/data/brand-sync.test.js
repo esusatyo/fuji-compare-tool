@@ -54,7 +54,10 @@ test('canonical logo has two circles filled with the accent tokens', () => {
 });
 
 // ─── Inline logo copies match the canonical mark ─────────────
-const LOGO_COPIES = ['engine.js', 'scripts/generate-seo.js', 'about.html', 'privacy.html', 'favicon.svg'];
+// Only genuine duplicates are listed: the generator reads the mark from
+// assets/logo.svg at build time, so generated pages are covered by the
+// regeneration freshness gate instead.
+const LOGO_COPIES = ['engine.js', 'about.html', 'privacy.html', 'favicon.svg'];
 
 for (const file of LOGO_COPIES) {
   test(`[${file}] inline logo matches assets/logo.svg`, () => {
@@ -70,7 +73,8 @@ for (const file of LOGO_COPIES) {
 }
 
 // ─── theme-color metas match --bg-deep ───────────────────────
-for (const file of ['about.html', 'privacy.html', 'scripts/generate-seo.js']) {
+// (The generator derives its theme-color from the token by construction.)
+for (const file of ['about.html', 'privacy.html']) {
   test(`[${file}] theme-color equals --bg-deep`, () => {
     const metas = [...read(file).matchAll(/name="theme-color" content="(#[0-9A-Fa-f]{6})"/g)];
     assert.ok(metas.length > 0, `${file}: no theme-color meta found`);

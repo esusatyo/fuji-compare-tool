@@ -1,8 +1,8 @@
 ## 1. Generator sources identity from canonical assets
 
-- [ ] 1.1 Add identity helpers to `scripts/generate-seo.js` (or a small `scripts/lib/brand-identity.js`): `token(name)` parses `--bg-deep`/`--accent-primary`/`--accent-secondary` from `engine.css` (throws naming the token on failure); `logoSvg(size)` reads `assets/logo.svg` and returns the mark with lockup sizing, geometry verbatim
-- [ ] 1.2 Replace the generator's `LOGO_SVG` literal and hardcoded `#131722` theme-color with the helpers; `lockupHTML`/`assetLinks` derive from them
-- [ ] 1.3 Regenerate and diff: generated pages must be byte-identical to current output (pure refactor — no visual change); `npm test` green
+- [x] 1.1 Identity helpers added inline in `scripts/generate-seo.js`: `identityToken(name)` (throws naming the token) + `logoMark()` (parses viewBox/path/stroke/circles from `assets/logo.svg`, throws if unparseable)
+- [x] 1.2 `LOGO_SVG` literal and `#131722` theme-color replaced by the helpers
+- [x] 1.3 Regeneration byte-identical (222 artifacts, 0 written); brand-sync generator assertions retargeted (part of 4.1); `npm test` 380/380
 
 ## 2. About/Privacy identity blocks
 

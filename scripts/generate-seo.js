@@ -188,9 +188,32 @@ const VS_CSS = `
 `.trim();
 
 // ─── Design-system lockup + asset links ──────
-// The Framed Duo mark, inlined per page (geometry must match
-// assets/logo.svg and the engine.js copy).
-const LOGO_SVG = '<svg viewBox="0 0 64 64" width="24" height="24" aria-hidden="true" focusable="false"><path d="M4 16 V4 H16 M48 4 H60 V16 M60 48 V60 H48 M16 60 H4 V48" fill="none" stroke="#BFC6D4" stroke-width="3" stroke-linecap="round"></path><circle cx="24" cy="32" r="10" fill="#B48CE0"></circle><circle cx="40" cy="32" r="10" fill="#4FC7B0"></circle></svg>';
+// The mark geometry and palette are read from their canonical sources —
+// assets/logo.svg and the engine.css :root tokens — so a rebrand needs
+// no edits here. Parse failures throw before any file is written.
+function identityToken(name) {
+  const css = fs.readFileSync(path.join(ROOT, 'engine.css'), 'utf8');
+  const m = css.match(new RegExp(`--${name}:\\s*(#[0-9A-Fa-f]{6})`));
+  if (!m) throw new Error(`engine.css: token --${name} not found (the SEO generator derives identity from it)`);
+  return m[1];
+}
+
+function logoMark() {
+  const svg = fs.readFileSync(path.join(ROOT, 'assets', 'logo.svg'), 'utf8');
+  const viewBox = (svg.match(/viewBox="([^"]+)"/) || [])[1];
+  const d = (svg.match(/\bd="([^"]+)"/) || [])[1];
+  const stroke = (svg.match(/stroke="(#[0-9A-Fa-f]{6})"/) || [])[1];
+  const circles = [...svg.matchAll(/<circle cx="(\d+)" cy="(\d+)" r="(\d+)" fill="(#[0-9A-Fa-f]{6})"/g)];
+  if (!viewBox || !d || !stroke || circles.length !== 2) {
+    throw new Error('assets/logo.svg: could not parse the mark (need viewBox, bracket path, stroke, two circles)');
+  }
+  const circleTags = circles
+    .map(c => `<circle cx="${c[1]}" cy="${c[2]}" r="${c[3]}" fill="${c[4]}"></circle>`).join('');
+  return `<svg viewBox="${viewBox}" width="24" height="24" aria-hidden="true" focusable="false"><path d="${d}" fill="none" stroke="${stroke}" stroke-width="3" stroke-linecap="round"></path>${circleTags}</svg>`;
+}
+
+const LOGO_SVG = logoMark();
+const THEME_COLOR = identityToken('bg-deep');
 
 // homeHref must point at the ROOT landing page from the page's depth,
 // with ?brands so the stored-brand redirect never bounces the click.
@@ -204,7 +227,7 @@ function lockupHTML(homeHref) {
 function assetLinks(prefix) {
   return `<link rel="icon" type="image/svg+xml" href="${prefix}favicon.svg">
   <link rel="apple-touch-icon" href="${prefix}apple-touch-icon.png">
-  <meta name="theme-color" content="#131722">
+  <meta name="theme-color" content="${THEME_COLOR}">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap">`;
