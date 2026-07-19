@@ -4,8 +4,10 @@
 // <brand>/data.js populates before this file executes. Brand pages
 // register exactly one brand. compare/index.html registers all brands
 // and declares window.COMPARE_CONFIG, which switches the engine into
-// cross-brand mode: cameras only, 2–4 user-adjustable slots, and
-// brand-namespaced item ids ('fujifilm:x-t5').
+// cross-brand mode: cameras only, brand-namespaced item ids
+// ('fujifilm:x-t5'), and up to 4 slots. Every page — brand or compare —
+// offers a "Cameras to compare" dropdown (2..MAX_SLOTS); it's hidden
+// below the mobile breakpoint, where the viewport clamps to 2 anyway.
 // ─────────────────────────────────────────────
 
 // ─────────────────────────────────────────────
@@ -411,8 +413,9 @@ let currentMode = 'cameras';
 let selectedCameraIds = [...BRAND_CONFIG.cameras.defaultSelected];
 let selectedLensIds   = [...BRAND_CONFIG.lenses.defaultSelected];
 let currentCurrency = 'AUD';
-// slotChoice is the user's picked slot count (compare page only; brand
-// pages are fixed at 3). numSlots is what the viewport currently shows.
+// slotChoice is the user's picked slot count (2..MAX_SLOTS — 3 on brand
+// pages, 4 on the compare page). numSlots is what the viewport allows
+// right now (effectiveSlots clamps to 2 below the mobile breakpoint).
 let slotChoice = IS_COMPARE
   ? Math.min(Math.max(COMPARE_CONFIG.defaultSlots || 3, MIN_SLOTS), MAX_SLOTS)
   : 3;
@@ -482,12 +485,18 @@ function buildBrandSwitcher() {
   return `<select class="brand-switcher header-select" id="brand-switcher" aria-label="Brand">${allOpt}${options}</select>`;
 }
 
-// Compare-page only: how many slots to show (2-4), rendered under the
-// "Compare" label so it sits in the same row as the camera slot pickers.
+// Reusable on every page (brand pages max out at MAX_SLOTS=3, the
+// compare page at 4): lets the user choose how many slots to show,
+// rendered under the "Compare" label so it sits in the same row as
+// the camera slot pickers. Hidden below the mobile breakpoint via CSS
+// — narrow viewports are clamped to 2 regardless (see effectiveSlots),
+// so the control has nothing useful to offer there.
 function buildSlotCountField() {
-  if (!IS_COMPARE) return '';
-  const options = [2, 3, 4]
-    .map(n => `<option value="${n}"${n === slotChoice ? ' selected' : ''}>${n}</option>`).join('');
+  if (MAX_SLOTS <= MIN_SLOTS) return '';
+  let options = '';
+  for (let n = MIN_SLOTS; n <= MAX_SLOTS; n++) {
+    options += `<option value="${n}"${n === slotChoice ? ' selected' : ''}>${n}</option>`;
+  }
   return `<div class="slot-count-field">
     <label for="slot-count-select">Cameras to compare</label>
     <select id="slot-count-select" class="slot-count-select" aria-label="Number of cameras to compare">${options}</select>
@@ -546,7 +555,7 @@ function injectBody() {
 
 <div id="compare-header">
   <div class="compare-grid" id="compare-grid-header">
-    <div class="compare-label-cell${IS_COMPARE ? ' compare-label-cell--compare' : ''}">
+    <div class="compare-label-cell${MAX_SLOTS > MIN_SLOTS ? ' compare-label-cell--compare' : ''}">
       <span class="compare-label-text">Compare</span>
       ${buildSlotCountField()}
     </div>

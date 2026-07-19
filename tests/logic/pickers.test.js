@@ -1,12 +1,35 @@
 // Tier 2 — Dropdown pickers, mode toggle, and brand switcher behaviour.
 const { test } = require('node:test');
 const assert = require('node:assert/strict');
-const { loadBrand, brandDirs } = require('../helpers/load-brand');
+const fs = require('fs');
+const path = require('path');
+const { JSDOM } = require('jsdom');
+const { loadBrand, brandDirs, ROOT } = require('../helpers/load-brand');
 const { setSlot, clickMode, selectBrand, slotSelect } = require('../helpers/dom');
 
 function optionsOf(select) {
   return [...select.querySelectorAll('option')];
 }
+
+// jsdom doesn't apply external stylesheets during render, so the mobile-hide
+// rule can't be exercised by loading a real page — this parses engine.css
+// with jsdom's own CSSOM (real CSS parsing, not text matching) and checks
+// the rule directly. Below the mobile breakpoint the viewport already
+// clamps to 2 slots regardless of slotChoice (see effectiveSlots in
+// engine.js), so the dropdown has nothing left to offer there and should
+// be hidden, on every page.
+test('"Cameras to compare" dropdown is hidden below the mobile breakpoint', () => {
+  const css = fs.readFileSync(path.join(ROOT, 'engine.css'), 'utf8');
+  const dom = new JSDOM('<style></style>');
+  const styleEl = dom.window.document.querySelector('style');
+  styleEl.textContent = css;
+  const mediaRule = [...styleEl.sheet.cssRules]
+    .find(r => r.media && r.conditionText && r.conditionText.includes('599px'));
+  assert.ok(mediaRule, 'mobile breakpoint media query not found in engine.css');
+  const rule = [...mediaRule.cssRules].find(r => r.selectorText === '.slot-count-field');
+  assert.ok(rule, '.slot-count-field has no rule inside the mobile media query');
+  assert.equal(rule.style.display, 'none');
+});
 
 for (const brand of brandDirs()) {
   test(`[${brand}] renders three slot selects in cameras mode`, () => {
@@ -103,5 +126,28 @@ for (const brand of brandDirs()) {
     // can't perform — that error is filtered by the loader).
     selectBrand(window, other);
     assert.equal(window.localStorage.getItem('brand'), other);
+  });
+
+  test(`[${brand}] "Cameras to compare" dropdown offers 2 and 3, defaults to 3`, () => {
+    const { window } = loadBrand(brand, { engine: true });
+    const sel = window.document.getElementById('slot-count-select');
+    assert.ok(sel, 'slot-count-select missing on a brand page');
+    assert.deepEqual(optionsOf(sel).map(o => o.value), ['2', '3'],
+      'brand pages cap out at 3 slots, unlike the compare page\'s 2-4');
+    assert.equal(sel.value, '3', 'brand pages default to 3 visible slots');
+    const label = window.document.querySelector('label[for="slot-count-select"]');
+    assert.equal(label.textContent, 'Cameras to compare');
+  });
+
+  test(`[${brand}] choosing 2 in the dropdown hides the third slot`, () => {
+    const { window } = loadBrand(brand, { engine: true });
+    const sel = window.document.getElementById('slot-count-select');
+    sel.value = '2';
+    sel.dispatchEvent(new window.Event('change', { bubbles: true }));
+    const slot2 = window.document.getElementById('slot-2');
+    assert.equal(slot2.style.display, 'none');
+    const row = window.document.querySelector('.spec-row');
+    assert.equal(row.querySelectorAll('.spec-value').length, 2,
+      'table should only render 2 value columns once 2 is chosen');
   });
 }
