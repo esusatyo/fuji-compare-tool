@@ -27,9 +27,9 @@
 
 ## 5. Root landing, About, Privacy
 
-- [ ] 5.1 Root `index.html`: add the `?brands` early-return (`URLSearchParams`) to the redirect IIFE; keep `location.replace` + hash behavior; update/extend the redirect logic test for suppression
-- [ ] 5.2 Restyle the landing inline styles for the dark theme (brand cards keep their per-brand accent stripes); landing header gets the lockup (linking `./?brands`)
-- [ ] 5.3 Restyle `about.html` and `privacy.html` to the token theme (still self-contained inline CSS), adding lockup header, favicon, theme-color, and font links
+- [x] 5.1 Root `index.html`: `?brands` early-return added to the redirect IIFE; redirect tests extended (suppression, other-params-don't-suppress, localStorage untouched) — 11/11 pass
+- [x] 5.2 Landing inline styles rethemed to tokens (brand cards keep per-brand accent stripes); landing body header lockup is generator-owned → emitted in task 6.1
+- [x] 5.3 `about.html` + `privacy.html` rethemed (self-contained token copies), lockup header linking `./?brands`, favicon/theme-color/font links, titles renamed to "Compare Camera Specs"
 
 ## 6. Generator + regenerate
 
