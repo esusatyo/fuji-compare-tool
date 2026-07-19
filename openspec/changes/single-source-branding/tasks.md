@@ -12,14 +12,14 @@
 
 ## 3. Touch icon: script + pixel test
 
-- [ ] 3.1 Write `scripts/render-touch-icon.js`: builds the padded mark-on-`--bg-deep` HTML from the canonical sources, renders 180×180 via headless Chrome (`$CHROME_BIN` or the standard macOS path), writes `apple-touch-icon.png`; clear error if Chrome is missing
-- [ ] 3.2 Write `tests/data/touch-icon.test.js`: pure-node PNG decode (zlib inflate + row unfilter), assert 180×180 and four corner pixels equal `--bg-deep` (±2/channel); negative-test by asserting it fails against a wrong-color fixture during development
-- [ ] 3.3 Re-render the committed icon via the new script so the committed artifact and the script provably agree
+- [x] 3.1 `scripts/render-touch-icon.js` written: reuses `identityToken`/`logoMark` from generate-seo, renders via `$CHROME_BIN` or the macOS Chrome path, actionable error if absent
+- [x] 3.2 `tests/data/touch-icon.test.js` written: pure-node PNG decode (RGB + RGBA, all filter types), 180×180 + four `--bg-deep` corners (±3/channel); negative-tested against the white-padded qlmanage render (fails) and the fresh render (passes)
+- [x] 3.3 Committed icon re-rendered via the script — artifact and script provably agree
 
 ## 4. Retarget brand-sync tests
 
-- [ ] 4.1 Remove `brand-sync.test.js` assertions covering generator/About/Privacy literals (now generated); keep `engine.js`, `favicon.svg`, and the rgba whitelist (engine.css + generator VS_CSS)
-- [ ] 4.2 Negative-test the retained checks still fail on a corrupted `engine.js` copy; full `npm test` green
+- [x] 4.1 Generator/About/Privacy literal assertions removed (done alongside groups 1–2); kept: `engine.js` + `favicon.svg` geometry/fills, canonical-circle/accent-token check, rgba whitelist over engine.css + generator VS_CSS
+- [x] 4.2 Negative-tested: corrupted `engine.js` circle fill → 1 fail naming the file; restored → full `npm test` 376/376
 
 ## 5. Header & compare-cell labels
 
