@@ -1,3 +1,7 @@
+// Registered into the shared brand-data registry so multiple brand files
+// can load on one page (see compare/). The data below is unchanged.
+window.BRAND_DATA = window.BRAND_DATA || {};
+window.BRAND_DATA['nikon'] = (() => {
 // ─────────────────────────────────────────────
 // NIKON BRAND CONFIG
 // ─────────────────────────────────────────────
@@ -1355,3 +1359,7 @@ const LENS_DROPDOWN_GROUPS = [
   { label: '── Laowa ──', ids: ['laowa-10mm-f4-cookie', 'laowa-15mm-f2', 'laowa-90mm-f28-macro'] },
   { label: '── Other ──', ids: ['yongnuo-35mm-f2', 'yongnuo-50mm-f18', 'ttartisan-27mm-f28', '7artisans-27mm-f28', 'meike-85mm-f18'] },
 ];
+
+return { BRAND_CONFIG, SERIES_COLORS, CAMERAS, CAMERA_ORDER,
+         DROPDOWN_GROUPS, LENSES, LENS_DROPDOWN_GROUPS, REGISTERED_BRANDS };
+})();

@@ -1,3 +1,7 @@
+// Registered into the shared brand-data registry so multiple brand files
+// can load on one page (see compare/). The data below is unchanged.
+window.BRAND_DATA = window.BRAND_DATA || {};
+window.BRAND_DATA['fujifilm'] = (() => {
 // ─────────────────────────────────────────────
 // FUJIFILM BRAND CONFIG
 // ─────────────────────────────────────────────
@@ -1831,3 +1835,7 @@ const LENS_DROPDOWN_GROUPS = [
   { label: '── Laowa ──',               ids: ['laowa-9mm-f28','laowa-65mm-f28-macro','laowa-4mm-f28-fisheye'] },
   { label: '── Meike ──',               ids: ['meike-33mm-f14','meike-55mm-f18','meike-85mm-f18'] },
 ];
+
+return { BRAND_CONFIG, SERIES_COLORS, CAMERAS, CAMERA_ORDER,
+         DROPDOWN_GROUPS, LENSES, LENS_DROPDOWN_GROUPS, REGISTERED_BRANDS };
+})();

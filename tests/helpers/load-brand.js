@@ -1,13 +1,13 @@
 // ─────────────────────────────────────────────
 // BRAND LOADER
 //
-// The brand `data.js` files and the shared `engine.js` are plain
-// browser scripts that declare top-level `const` globals (CAMERAS,
-// BRAND_CONFIG, …). Top-level `const`/`let` live in the script's
-// lexical environment, NOT on `window`, so we can't read them from
-// Node after the fact. To bridge that, each loaded source is followed
-// by a small shim (in the SAME script, so it can see the consts) that
-// copies the globals onto `window.__BRAND__` / `window.__ENGINE__`.
+// Each brand `data.js` registers its dataset on the shared
+// `window.BRAND_DATA[<slug>]` registry, so brand data is read straight
+// off the window. The shared `engine.js` still declares top-level
+// `const` globals, which live in the script's lexical environment, NOT
+// on `window` — so the engine source is followed by a small shim (in
+// the SAME script, so it can see the consts) that copies them onto
+// `window.__ENGINE__`.
 //
 // This keeps the source files 100% browser-compatible (no exports,
 // no test-only hooks) while still being testable from node:test.
@@ -18,10 +18,6 @@ const { JSDOM, VirtualConsole } = require('jsdom');
 
 const ROOT = path.resolve(__dirname, '..', '..');
 
-const DATA_GLOBALS = [
-  'BRAND_CONFIG', 'SERIES_COLORS', 'CAMERAS', 'CAMERA_ORDER',
-  'DROPDOWN_GROUPS', 'LENSES', 'LENS_DROPDOWN_GROUPS', 'REGISTERED_BRANDS',
-];
 const ENGINE_GLOBALS = [
   'CURRENCY', 'MANUFACTURER_COLORS', 'SPEC_SECTIONS',
   'LENS_SPEC_SECTIONS', 'MODE_CONFIG',
@@ -78,7 +74,7 @@ function loadBrand(brand, opts = {}) {
     const siteSrc = fs.readFileSync(path.join(ROOT, 'site-config.js'), 'utf8');
     run(window, siteSrc + shimFor('__SITE__', ['SITE_CONFIG']));
   }
-  run(window, dataSrc + shimFor('__BRAND__', DATA_GLOBALS));
+  run(window, dataSrc + `\n;window.__BRAND__ = window.BRAND_DATA[${JSON.stringify(brand)}];`);
   if (engine) {
     const engineSrc = fs.readFileSync(path.join(ROOT, 'engine.js'), 'utf8');
     run(window, engineSrc + shimFor('__ENGINE__', ENGINE_GLOBALS));

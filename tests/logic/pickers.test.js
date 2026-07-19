@@ -88,8 +88,9 @@ for (const brand of brandDirs()) {
     assert.ok(sel, 'brand-switcher dropdown missing');
     assert.equal(sel.tagName, 'SELECT');
     const optVals = optionsOf(sel).map(o => o.value).sort();
-    const expected = data.REGISTERED_BRANDS.map(b => b.slug).sort();
-    assert.deepEqual(optVals, expected, 'dropdown should list every registered brand');
+    // '__compare' is the cross-brand entry point, listed above the brands.
+    const expected = ['__compare', ...data.REGISTERED_BRANDS.map(b => b.slug)].sort();
+    assert.deepEqual(optVals, expected, 'dropdown should list every registered brand plus All brands');
     assert.equal(sel.value, brand, 'current brand should be pre-selected');
   });
 

@@ -1,3 +1,7 @@
+// Registered into the shared brand-data registry so multiple brand files
+// can load on one page (see compare/). The data below is unchanged.
+window.BRAND_DATA = window.BRAND_DATA || {};
+window.BRAND_DATA['sony'] = (() => {
 // ─────────────────────────────────────────────
 // SONY BRAND CONFIG
 // ─────────────────────────────────────────────
@@ -2561,3 +2565,7 @@ const LENS_DROPDOWN_GROUPS = [
     '7artisans-27mm-f28', 'ttartisan-27mm-f28', 'meike-85mm-f18',
   ] },
 ];
+
+return { BRAND_CONFIG, SERIES_COLORS, CAMERAS, CAMERA_ORDER,
+         DROPDOWN_GROUPS, LENSES, LENS_DROPDOWN_GROUPS, REGISTERED_BRANDS };
+})();

@@ -1,10 +1,84 @@
 // ─────────────────────────────────────────────
 // CAMERA COMPARE ENGINE
-// Expects BRAND_CONFIG, CAMERAS, CAMERA_ORDER, DROPDOWN_GROUPS,
-// LENSES, LENS_DROPDOWN_GROUPS, SERIES_COLORS, and optionally
-// REGISTERED_BRANDS to be defined by the brand's data.js
-// before this file executes.
+// Reads brand datasets from the window.BRAND_DATA registry, which each
+// <brand>/data.js populates before this file executes. Brand pages
+// register exactly one brand. compare/index.html registers all brands
+// and declares window.COMPARE_CONFIG, which switches the engine into
+// cross-brand mode: cameras only, 2–4 user-adjustable slots, and
+// brand-namespaced item ids ('fujifilm:x-t5').
 // ─────────────────────────────────────────────
+
+// ─────────────────────────────────────────────
+// BRAND DATA RESOLUTION
+// ─────────────────────────────────────────────
+const REGISTRY = window.BRAND_DATA || {};
+const COMPARE_CONFIG = window.COMPARE_CONFIG || null;
+const IS_COMPARE = !!COMPARE_CONFIG;
+const ACTIVE_BRAND = IS_COMPARE ? null : REGISTRY[Object.keys(REGISTRY)[0]];
+const MIN_SLOTS = 2;
+const MAX_SLOTS = IS_COMPARE ? 4 : 3;
+
+// Cross-brand ids are '<brand>:<slug>'; brand-page ids are bare slugs
+// owned by the page's brand. Every per-item lookup that depends on the
+// owning brand (series colors, buy-link brand name, section matching)
+// goes through these two helpers.
+function brandOf(id) {
+  return IS_COMPARE ? id.split(':')[0] : BRAND_CONFIG.slug;
+}
+function brandDataOf(id) {
+  return (IS_COMPARE ? REGISTRY[brandOf(id)] : ACTIVE_BRAND) || null;
+}
+
+function mergedCameras() {
+  const merged = {};
+  for (const [slug, data] of Object.entries(REGISTRY)) {
+    for (const [id, cam] of Object.entries(data.CAMERAS)) merged[`${slug}:${id}`] = cam;
+  }
+  return merged;
+}
+
+// One dropdown group per brand, cameras in that brand's own order.
+function compareDropdownGroups() {
+  const order = (Object.values(REGISTRY)[0].REGISTERED_BRANDS || [])
+    .filter(b => REGISTRY[b.slug]);
+  return order.map(b => ({
+    label: b.name,
+    ids: REGISTRY[b.slug].CAMERA_ORDER.map(s => `${b.slug}:${s}`),
+  }));
+}
+
+// Synthetic config so the single-brand render paths need no branching.
+// slug is null on purpose: the compare page is not a brand and must
+// never be persisted as one.
+function compareBrandConfig() {
+  const c = COMPARE_CONFIG;
+  return {
+    name:        'All Brands',
+    slug:        null,
+    accentColor: c.accentColor || '#0071e3',
+    heroDark:    c.heroDark || '#26262b',
+    logoText:    'Compare',
+    logoAccent:  'CameraSpecs',
+    families:    [],
+    brandSections: [],
+    cameras: {
+      heroEyebrow:  c.heroEyebrow || 'All brands',
+      heroTitle:    c.heroTitle || 'Cross-Brand Camera Comparison',
+      heroSubtitle: c.heroSubtitle || '',
+      headerTitle:  c.headerTitle || 'Camera Compare',
+      defaultSelected: c.defaultSelected.slice(),
+    },
+    lenses: { heroEyebrow: '', heroTitle: '', heroSubtitle: '', headerTitle: '', defaultSelected: [] },
+    footerLinks: c.footerLinks || [],
+  };
+}
+
+const BRAND_CONFIG = IS_COMPARE ? compareBrandConfig() : ACTIVE_BRAND.BRAND_CONFIG;
+const CAMERAS = IS_COMPARE ? mergedCameras() : ACTIVE_BRAND.CAMERAS;
+const DROPDOWN_GROUPS = IS_COMPARE ? compareDropdownGroups() : ACTIVE_BRAND.DROPDOWN_GROUPS;
+const LENSES = IS_COMPARE ? {} : ACTIVE_BRAND.LENSES;
+const LENS_DROPDOWN_GROUPS = IS_COMPARE ? [] : ACTIVE_BRAND.LENS_DROPDOWN_GROUPS;
+const REGISTERED_BRANDS = (Object.values(REGISTRY)[0] || {}).REGISTERED_BRANDS;
 
 // ─────────────────────────────────────────────
 // CURRENCY CONFIG
@@ -48,18 +122,24 @@ const AMAZON_MARKETPLACE = {
   SGD: 'www.amazon.sg',
 };
 
-function amazonBuyUrl(item, cur = currentCurrency) {
+function brandNameOf(id) {
+  const data = brandDataOf(id);
+  return (data && data.BRAND_CONFIG.name) || BRAND_CONFIG.name;
+}
+
+function amazonBuyUrl(item, cur = currentCurrency, brandName = BRAND_CONFIG.name) {
   const domain = AMAZON_MARKETPLACE[cur] || AMAZON_MARKETPLACE.USD;
   if (item.asin) return `https://${domain}/dp/${item.asin}`;
-  const query = encodeURIComponent(`${BRAND_CONFIG.name} ${item.name}`);
+  const query = encodeURIComponent(`${brandName} ${item.name}`);
   return `https://${domain}/s?k=${query}`;
 }
 
 // ─────────────────────────────────────────────
-// SERIES COLOR LOOKUP (reads brand's SERIES_COLORS global)
+// SERIES COLOR LOOKUP (from the item's owning brand)
 // ─────────────────────────────────────────────
-function seriesColor(series) {
-  return (window.SERIES_COLORS && SERIES_COLORS[series]) || { bg: '#222', text: '#ccc' };
+function seriesColor(id, series) {
+  const colors = (brandDataOf(id) || {}).SERIES_COLORS;
+  return (colors && colors[series]) || { bg: '#222', text: '#ccc' };
 }
 
 // ─────────────────────────────────────────────
@@ -331,10 +411,22 @@ let currentMode = 'cameras';
 let selectedCameraIds = [...BRAND_CONFIG.cameras.defaultSelected];
 let selectedLensIds   = [...BRAND_CONFIG.lenses.defaultSelected];
 let currentCurrency = 'AUD';
+// slotChoice is the user's picked slot count (compare page only; brand
+// pages are fixed at 3). numSlots is what the viewport currently shows.
+let slotChoice = IS_COMPARE
+  ? Math.min(Math.max(COMPARE_CONFIG.defaultSlots || 3, MIN_SLOTS), MAX_SLOTS)
+  : 3;
 let numSlots = 3;
 
+// Pure so the clamp rule is unit-testable: below the mobile breakpoint
+// exactly 2 slots show; the user's choice is preserved and restored
+// when the viewport widens again.
+function effectiveSlots(choice, width) {
+  return width >= 600 ? choice : 2;
+}
+
 function getNumSlots() {
-  return window.innerWidth >= 600 ? 3 : 2;
+  return effectiveSlots(slotChoice, window.innerWidth);
 }
 
 // ─────────────────────────────────────────────
@@ -356,11 +448,19 @@ function parseHash(hash) {
   const ids = BRAND_CONFIG[mode].defaultSelected.map(
     (def, i) => (items[given[i]] ? given[i] : def)
   );
-  return { mode, ids };
+  // On the compare page the entry count also carries the slot count.
+  const count = IS_COMPARE
+    ? Math.min(Math.max(given.length, MIN_SLOTS), MAX_SLOTS)
+    : undefined;
+  return { mode, ids, count };
 }
 
 function updateHash() {
-  history.replaceState(null, '', `#${currentMode}=${cfg().selectedIds().join(',')}`);
+  const ids = cfg().selectedIds();
+  // Compare page: write the user's chosen count (not the responsive
+  // clamp), mirroring the brand-page rule of always writing all slugs.
+  const shown = IS_COMPARE ? ids.slice(0, slotChoice) : ids;
+  history.replaceState(null, '', `#${currentMode}=${shown.join(',')}`);
 }
 
 // Selection slugs are brand-specific — carry only the mode across brands.
@@ -372,13 +472,14 @@ function brandSwitchHash() {
 // BODY HTML GENERATION
 // ─────────────────────────────────────────────
 function buildBrandSwitcher() {
-  const brands = typeof REGISTERED_BRANDS !== 'undefined' ? REGISTERED_BRANDS : null;
+  const brands = REGISTERED_BRANDS || null;
   if (!brands || brands.length <= 1) return '';
+  const allOpt = `<option value="__compare"${IS_COMPARE ? ' selected' : ''}>All brands</option>`;
   const options = brands.map(b => {
-    const sel = b.slug === BRAND_CONFIG.slug ? ' selected' : '';
+    const sel = !IS_COMPARE && b.slug === BRAND_CONFIG.slug ? ' selected' : '';
     return `<option value="${b.slug}"${sel}>${b.name}</option>`;
   }).join('');
-  return `<select class="brand-switcher header-select" id="brand-switcher" aria-label="Brand">${options}</select>`;
+  return `<select class="brand-switcher header-select" id="brand-switcher" aria-label="Brand">${allOpt}${options}</select>`;
 }
 
 function buildFooterLinks() {
@@ -407,10 +508,14 @@ function injectBody() {
     <span class="header-sep">|</span>
     <span class="header-title" id="header-title">${BRAND_CONFIG.cameras.headerTitle}</span>
   </div>
-  <div class="mode-toggle" id="mode-toggle">
+  ${IS_COMPARE
+    ? `<div class="mode-toggle" id="slot-count" aria-label="Number of cameras">${
+        [2, 3, 4].map(n => `<button class="mode-btn${n === slotChoice ? ' active' : ''}" data-n="${n}">${n}</button>`).join('')
+      }</div>`
+    : `<div class="mode-toggle" id="mode-toggle">
     <button class="mode-btn active" data-mode="cameras">Cameras</button>
     <button class="mode-btn" data-mode="lenses">Lenses</button>
-  </div>
+  </div>`}
   ${buildBrandSwitcher()}
   <div class="header-controls">
     <select id="currency-select" class="header-select" aria-label="Currency">
@@ -434,16 +539,15 @@ function injectBody() {
 <div id="compare-header">
   <div class="compare-grid" id="compare-grid-header">
     <div class="compare-label-cell">Compare</div>
-    <div class="compare-slot" id="slot-0"></div>
-    <div class="compare-slot" id="slot-1"></div>
-    <div class="compare-slot slot-3-hide" id="slot-2"></div>
+    ${Array.from({ length: MAX_SLOTS }, (_, i) =>
+      `<div class="compare-slot${i === 2 && !IS_COMPARE ? ' slot-3-hide' : ''}" id="slot-${i}"></div>`).join('\n    ')}
   </div>
 </div>
 
 <main id="compare-table"></main>
 
 <footer>
-  <p>${BRAND_CONFIG.name} Camera &amp; Lens Comparison &mdash; For informational purposes only.</p>
+  <p>${BRAND_CONFIG.name} Camera ${IS_COMPARE ? '' : '&amp; Lens '}Comparison &mdash; For informational purposes only.</p>
   <p>Prices shown are approximate manufacturer list prices (RRP) and may differ from live retail prices. Use the Buy link for current pricing.</p>
   <p>Specs sourced from ${buildFooterLinks()}.</p>
   ${buildVerifiedLine()}
@@ -463,7 +567,7 @@ function injectBody() {
 // ─────────────────────────────────────────────
 // ITEM PLACEHOLDER (camera or lens)
 // ─────────────────────────────────────────────
-function buildPlaceholder(item) {
+function buildPlaceholder(item, id) {
   let svgHtml;
   if (currentMode === 'lenses') {
     const c = MANUFACTURER_COLORS[item.manufacturer] || { bg: '#1a1a2a', text: '#8080c0' };
@@ -481,7 +585,7 @@ function buildPlaceholder(item) {
     const gcx = feX + 1.5;
     svgHtml = `<div class="cam-placeholder" style="background:${c.bg}"><svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="${bX}" y="${bY}" width="${bW}" height="${bH}" rx="1.5" fill="${c.text}" opacity="0.28"/><rect x="${feX}" y="${feY}" width="3" height="${feH}" rx="1.5" fill="${c.text}" opacity="0.55"/><circle cx="${gcx}" cy="14" r="${gR}" fill="${c.text}" opacity="0.75"/>${gR > 2 ? `<circle cx="${gcx}" cy="14" r="${gR - 1.5}" fill="${c.text}" opacity="0.4"/>` : ''}</svg><span style="font-size:8px;font-weight:700;color:${c.text};letter-spacing:0.03em;opacity:0.9;text-align:center;line-height:1.2">${label}</span></div>`;
   } else {
-    const c = seriesColor(item.series);
+    const c = seriesColor(id, item.series);
     svgHtml = `<div class="cam-placeholder" style="background:${c.bg}"><svg width="28" height="20" viewBox="0 0 28 20" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="1" y="5" width="26" height="14" rx="2.5" fill="${c.text}" opacity="0.35"/><rect x="8" y="1" width="12" height="5" rx="2" fill="${c.text}" opacity="0.35"/><circle cx="14" cy="12" r="5" fill="${c.text}" opacity="0.5"/><circle cx="14" cy="12" r="3" fill="${c.text}" opacity="0.7"/><circle cx="21" cy="8" r="1.5" fill="${c.text}" opacity="0.5"/></svg><span style="font-size:9px;font-weight:700;color:${c.text};letter-spacing:0.04em;opacity:0.9">${item.name}</span></div>`;
   }
   if (item.imageUrl) {
@@ -554,7 +658,7 @@ function renderSlot(slotIndex) {
     const viewBtn = item.productUrl
       ? `<a href="${item.productUrl}" target="_blank" rel="noopener" class="slot-link">View Product ↗</a>`
       : `<span class="slot-link na">No Link</span>`;
-    const buyBtn = `<a href="${amazonBuyUrl(item)}" target="_blank" rel="noopener" class="slot-buy">Buy ↗</a>`;
+    const buyBtn = `<a href="${amazonBuyUrl(item, currentCurrency, brandNameOf(id))}" target="_blank" rel="noopener" class="slot-buy">Buy ↗</a>`;
     linkHTML = `<div class="slot-links">${viewBtn}${buyBtn}</div>`;
   } else {
     const linkURL = (item.productUrl && !item.productUrl.endsWith('/cameras/'))
@@ -562,12 +666,12 @@ function renderSlot(slotIndex) {
     const viewBtn = linkURL
       ? `<a href="${linkURL}" target="_blank" rel="noopener" class="slot-link">View Product ↗</a>`
       : `<span class="slot-link na">Discontinued</span>`;
-    const buyBtn = `<a href="${amazonBuyUrl(item)}" target="_blank" rel="noopener" class="slot-buy">Buy ↗</a>`;
+    const buyBtn = `<a href="${amazonBuyUrl(item, currentCurrency, brandNameOf(id))}" target="_blank" rel="noopener" class="slot-buy">Buy ↗</a>`;
     linkHTML = `<div class="slot-links">${viewBtn}${buyBtn}</div>`;
   }
 
   el.innerHTML = `
-    <div class="cam-image-wrap">${buildPlaceholder(item)}</div>
+    <div class="cam-image-wrap">${buildPlaceholder(item, id)}</div>
     ${buildSelectHTML(id, slotIndex)}
     ${priceHTML}
     ${linkHTML}
@@ -604,14 +708,22 @@ function formatVal(spec, item) {
 
 // ─────────────────────────────────────────────
 // RENDER COMPARE TABLE
-// Skips sections whose `brand` is not in BRAND_CONFIG.brandSections
+// Brand-tagged sections: on a brand page, shown iff the tag is in
+// BRAND_CONFIG.brandSections; in cross-brand mode, shown iff any
+// visible camera belongs to that brand (foreign cells render "—").
 // ─────────────────────────────────────────────
+function sectionVisible(section) {
+  if (!section.brand) return true;
+  if (!IS_COMPARE) return BRAND_CONFIG.brandSections.includes(section.brand);
+  return cfg().selectedIds().slice(0, numSlots).some(id => brandOf(id) === section.brand);
+}
+
 function renderTable() {
   const table = document.getElementById('compare-table');
   let html = '';
 
   for (const section of cfg().specSections) {
-    if (section.brand && !BRAND_CONFIG.brandSections.includes(section.brand)) continue;
+    if (!sectionVisible(section)) continue;
 
     html += `<div class="spec-section">
       <div class="section-header" data-section="${section.id}">
@@ -655,10 +767,12 @@ function renderTable() {
 function renderAll() {
   document.documentElement.style.setProperty('--num-slots', numSlots);
 
-  const slot2el = document.getElementById('slot-2');
-  if (slot2el) slot2el.style.display = numSlots < 3 ? 'none' : '';
+  for (let i = 0; i < MAX_SLOTS; i++) {
+    const el = document.getElementById(`slot-${i}`);
+    if (el) el.style.display = i < numSlots ? '' : 'none';
+  }
 
-  for (let i = 0; i < 3; i++) renderSlot(i);
+  for (let i = 0; i < MAX_SLOTS; i++) renderSlot(i);
   renderTable();
   attachSlotListeners();
 }
@@ -683,7 +797,20 @@ function attachEventListeners() {
     renderAll();
   });
 
-  document.getElementById('mode-toggle').addEventListener('click', e => {
+  document.getElementById('slot-count')?.addEventListener('click', e => {
+    const btn = e.target.closest('.mode-btn');
+    if (!btn) return;
+    const n = parseInt(btn.dataset.n, 10);
+    if (!n || n === slotChoice) return;
+    slotChoice = n;
+    document.querySelectorAll('#slot-count .mode-btn').forEach(b =>
+      b.classList.toggle('active', b === btn));
+    numSlots = getNumSlots();
+    updateHash();
+    renderAll();
+  });
+
+  document.getElementById('mode-toggle')?.addEventListener('click', e => {
     const btn = e.target.closest('.mode-btn');
     if (!btn || btn.dataset.mode === currentMode) return;
     currentMode = btn.dataset.mode;
@@ -699,6 +826,10 @@ function attachEventListeners() {
 
   document.getElementById('brand-switcher')?.addEventListener('change', e => {
     const slug = e.target.value;
+    if (slug === '__compare') {
+      if (!IS_COMPARE) location.href = `../compare/`;
+      return;
+    }
     if (!slug || slug === BRAND_CONFIG.slug) return;
     localStorage.setItem('brand', slug);
     location.href = `../${slug}/${brandSwitchHash()}`;
@@ -721,11 +852,12 @@ function attachEventListeners() {
   document.documentElement.style.setProperty('--accent-color', BRAND_CONFIG.accentColor);
   document.documentElement.style.setProperty('--hero-dark', BRAND_CONFIG.heroDark || '#2d0000');
 
-  // Set page title
-  document.title = BRAND_CONFIG.name + ' Camera & Lens Comparison';
-
-  // Persist brand preference
-  localStorage.setItem('brand', BRAND_CONFIG.slug);
+  // Set page title / persist brand preference (brand pages only — the
+  // compare page keeps its static title and is not a brand).
+  if (!IS_COMPARE) {
+    document.title = BRAND_CONFIG.name + ' Camera & Lens Comparison';
+    localStorage.setItem('brand', BRAND_CONFIG.slug);
+  }
 
   // Generate body HTML
   injectBody();
@@ -734,9 +866,14 @@ function attachEventListeners() {
   const initial = parseHash(location.hash);
   if (initial.ids) {
     if (initial.mode === 'cameras') selectedCameraIds = initial.ids;
-    else selectedLensIds = initial.ids;
+    else if (!IS_COMPARE) selectedLensIds = initial.ids;
   }
-  if (initial.mode === 'lenses') {
+  if (IS_COMPARE && initial.count) {
+    slotChoice = initial.count;
+    document.querySelectorAll('#slot-count .mode-btn').forEach(b =>
+      b.classList.toggle('active', parseInt(b.dataset.n, 10) === slotChoice));
+  }
+  if (initial.mode === 'lenses' && !IS_COMPARE) {
     currentMode = 'lenses';
     document.querySelectorAll('.mode-btn').forEach(b => {
       b.classList.toggle('active', b.dataset.mode === 'lenses');

@@ -1,3 +1,7 @@
+// Registered into the shared brand-data registry so multiple brand files
+// can load on one page (see compare/). The data below is unchanged.
+window.BRAND_DATA = window.BRAND_DATA || {};
+window.BRAND_DATA['canon'] = (() => {
 // ─────────────────────────────────────────────
 // CANON BRAND CONFIG
 // ─────────────────────────────────────────────
@@ -1114,3 +1118,7 @@ const LENS_DROPDOWN_GROUPS = [
   { label: '── Viltrox ──',            ids: ['viltrox-85mm-f18'] },
   { label: '── Other ──',              ids: ['yongnuo-35mm-f2','yongnuo-85mm-f18','laowa-15mm-f2','laowa-90mm-f28-macro','laowa-10mm-f4-cookie'] },
 ];
+
+return { BRAND_CONFIG, SERIES_COLORS, CAMERAS, CAMERA_ORDER,
+         DROPDOWN_GROUPS, LENSES, LENS_DROPDOWN_GROUPS, REGISTERED_BRANDS };
+})();
