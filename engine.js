@@ -63,7 +63,7 @@ function compareBrandConfig() {
       heroEyebrow:  c.heroEyebrow || 'All brands',
       heroTitle:    c.heroTitle || 'Cross-Brand Camera Comparison',
       heroSubtitle: c.heroSubtitle || '',
-      headerTitle:  c.headerTitle || 'Camera Compare',
+      headerTitle:  c.headerTitle || 'All Brands',
       defaultSelected: c.defaultSelected.slice(),
     },
     lenses: { heroEyebrow: '', heroTitle: '', heroSubtitle: '', headerTitle: '', defaultSelected: [] },

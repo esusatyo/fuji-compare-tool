@@ -14,7 +14,7 @@ const BRAND_CONFIG = {
     heroEyebrow:  'Z System',
     heroTitle:    '<span>Nikon</span> Camera Comparison',
     heroSubtitle: 'Compare up to 3 Nikon Z cameras side-by-side across the full lineup',
-    headerTitle:  'Camera Compare',
+    headerTitle:  'Nikon',
     defaultSelected: ['z8', 'z6-iii', 'z50-ii'],
   },
   lenses: {

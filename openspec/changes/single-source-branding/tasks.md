@@ -23,9 +23,9 @@
 
 ## 5. Header & compare-cell labels
 
-- [ ] 5.1 Set `cameras.headerTitle` to the brand name in all five `<brand>/data.js` files and to `'All Brands'` in `compare/index.html`'s `COMPARE_CONFIG` (`lenses.headerTitle` stays "Lens Compare"); grep to confirm "Camera Compare" no longer appears in page sources
-- [ ] 5.2 `engine.css`: hide `.compare-label-text` when the cell has the slot-count field (`.compare-label-cell--compare`); re-show it in the <600px breakpoint where `.slot-count-field` is hidden — exactly one label visible at any width
-- [ ] 5.3 Update/extend logic tests: header label equals brand name in cameras mode, "Lens Compare" after mode toggle, "All Brands" on the compare page; label-cell one-label rule asserted at both widths (jsdom class/structure checks)
+- [x] 5.1 `cameras.headerTitle` = brand name in all five data files, `'All Brands'` on the compare page (+ the engine's synthetic-config fallback); a test now asserts "Camera Compare" appears in no page source
+- [x] 5.2 One-label CSS: `.compare-label-cell--compare .compare-label-text` hidden at desktop, re-shown inside the <600px breakpoint where the field is hidden; the now-unneeded stacked-column layout rules removed
+- [x] 5.3 `header.test.js` extended: brand-name label per brand, "Lens Compare" after a real mode-toggle click, "All Brands" on compare, markup + CSS one-label assertions at both widths — suite 384/384
 
 ## 6. Verification debt + docs
 
