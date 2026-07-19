@@ -60,9 +60,13 @@ or an OpenSpec change's `research/` folder works well):
   `BRAND_CONFIG`, `SERIES_COLORS`, `CAMERAS`, `CAMERA_ORDER`,
   `DROPDOWN_GROUPS`, `LENSES`, `LENS_DROPDOWN_GROUPS`, `REGISTERED_BRANDS`.
   - `BRAND_CONFIG`: name, `slug` (= directory name, matches the registry key),
-    `accentColor`/`heroDark` (hex), `logoText`, `logoAccent`, `families[]`,
-    `brandSections: ['<slug>']` (or `[]` if no brand section), `cameras`/`lenses`
-    sub-configs (hero copy + `defaultSelected` of 1–3 ids), `footerLinks[]` (https).
+    `families[]`, `brandSections: ['<slug>']` (or `[]` if no brand section),
+    `cameras`/`lenses` sub-configs (hero copy + `defaultSelected` of 1–3 ids),
+    `footerLinks[]` (https). No theming fields — page colors come from the
+    site-wide design tokens in `engine.css`, and a test rejects
+    `accentColor`/`heroDark`/`logoText`/`logoAccent` if reintroduced. The
+    landing-page card stripe color lives in `BRAND_CARD_ACCENTS` in
+    `scripts/generate-seo.js` — add the new brand there.
   - Start with empty `CAMERAS`/`LENSES` and seed during Steps 5–6.
   - No camera or lens slug may contain `:` — it's reserved as the brand/slug
     separator on the cross-brand `/compare/` page.

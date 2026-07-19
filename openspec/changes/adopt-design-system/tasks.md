@@ -33,9 +33,9 @@
 
 ## 6. Generator + regenerate
 
-- [ ] 6.1 Update `scripts/generate-seo.js` templates: emit favicon + theme-color + Inter links in every `seo:begin` head block (depth-correct relative paths); emit the lockup header (depth-correct `?brands` href) in landing and vs-page bodies; remove `--accent-color`/`--hero-dark` inline overrides; retheme vs-page inline styles (photo chips, CTA, related links)
-- [ ] 6.2 Run `node scripts/generate-seo.js` and verify the full regeneration (root, brand heads, compare, all vs pages, sitemap); spot-check one cross-brand and one per-brand vs page
-- [ ] 6.3 Update `.claude/skills/add-camera-brand/SKILL.md` and `CLAUDE.md` to drop the removed `BRAND_CONFIG` theming fields from their instructions
+- [x] 6.1 Generator updated: `assetLinks(prefix)` (favicon/touch-icon/theme-color/Inter) emitted in every `seo:begin` head block and both vs-page templates; `lockupHTML(href)` in landing + vs headers; `--accent-color`/`--hero-dark` overrides removed; `VS_CSS` rethemed; landing card stripes moved to `BRAND_CARD_ACCENTS` map (BRAND_CONFIG no longer has accentColor)
+- [x] 6.2 `node scripts/generate-seo.js` — 222 artifacts, 220 written, 0 stale; full `npm test` 367/367 green (includes the regeneration-freshness gate)
+- [x] 6.3 SKILL.md field list updated (+ BRAND_CARD_ACCENTS step); CLAUDE.md engine.css line now documents tokens, lockup, `?brands`, and stripe map
 
 ## 7. Verify
 

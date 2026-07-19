@@ -132,59 +132,83 @@ const VS_ROWS = [
 // Complements engine.css (loaded alongside): header/hero/footer/tokens come
 // from there, this styles the vs-specific CTA, spec-table card and related list.
 const VS_CSS = `
-  .header-back { font-size: 13px; color: rgba(255,255,255,.65); text-decoration: none; white-space: nowrap;
+  .header-back { font-size: 13px; color: var(--text-secondary); text-decoration: none; white-space: nowrap;
                  overflow: hidden; text-overflow: ellipsis; }
-  .header-back:hover { color: #fff; }
+  .header-back:hover { color: var(--text-primary); }
 
   .vs-main { max-width: 840px; margin: 0 auto; padding: 8px 20px 40px; }
 
   .vs-products { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 24px 0 8px; }
-  .vs-product { background: var(--white); border: 1px solid var(--border); border-radius: var(--radius);
+  .vs-product { background: var(--bg-surface); border: 1px solid var(--border); border-radius: var(--radius);
                 box-shadow: var(--shadow); padding: 18px; display: flex; flex-direction: column;
                 align-items: center; gap: 10px; text-align: center; }
-  .vs-photo { width: 100%; height: 160px; display: flex; align-items: center; justify-content: center; }
-  .vs-img { max-width: 100%; max-height: 160px; object-fit: contain; }
+  .vs-photo { width: 100%; height: 160px; display: flex; align-items: center; justify-content: center;
+              background: var(--photo-chip); border-radius: 12px; padding: 8px; }
+  .vs-img { max-width: 100%; max-height: 144px; object-fit: contain; }
   .vs-ph { width: 100%; height: 100%; border-radius: 8px; align-items: center; justify-content: center;
            font-weight: 700; font-size: 14px; padding: 10px; text-align: center; }
-  .vs-pname { font-weight: 700; font-size: 16px; color: var(--gray-4); }
-  .vs-pprice { font-weight: 700; font-size: 18px; color: var(--gray-4); }
+  .vs-pname { font-weight: 700; font-size: 16px; color: var(--text-primary); }
+  .vs-pprice { font-weight: 700; font-size: 18px; color: var(--text-primary); }
   .vs-plinks { display: flex; gap: 8px; flex-wrap: wrap; justify-content: center; margin-top: 2px; }
-  .vs-view { font-size: 12px; color: var(--accent-color); text-decoration: none; border: 1px solid var(--accent-color);
-             padding: 5px 14px; border-radius: 999px; transition: all .15s; }
-  .vs-view:hover { background: var(--accent-color); color: #fff; }
-  .vs-view.na { color: var(--gray-3); border-color: var(--gray-3); }
-  .vs-buy { font-size: 12px; color: #e07b00; text-decoration: none; border: 1px solid #e07b00;
-            padding: 5px 14px; border-radius: 999px; transition: all .15s; }
-  .vs-buy:hover { background: #e07b00; color: #fff; }
-  .vs-cta { display: inline-flex; align-items: center; gap: 9px; background: var(--gray-4); color: #fff;
+  .vs-view { font-size: 12px; font-weight: 600; color: var(--accent-primary); background: rgba(180,140,224,.18);
+             text-decoration: none; padding: 5px 14px; border-radius: 999px; transition: all .15s; }
+  .vs-view:hover { background: var(--accent-primary); color: var(--bg-deep); }
+  .vs-view.na { color: var(--text-secondary); background: rgba(156,163,181,.14); }
+  .vs-buy { font-size: 12px; font-weight: 600; color: var(--accent-secondary); background: rgba(79,199,176,.18);
+            text-decoration: none; padding: 5px 14px; border-radius: 999px; transition: all .15s; }
+  .vs-buy:hover { background: var(--accent-secondary); color: var(--bg-deep); }
+  .vs-cta { display: inline-flex; align-items: center; gap: 9px; background: var(--accent-primary); color: var(--bg-deep);
             text-decoration: none; padding: 12px 22px; border-radius: 999px; font-weight: 600; font-size: 14px;
             margin: 24px 0 20px; box-shadow: var(--shadow); transition: transform .12s ease, box-shadow .12s ease; }
-  .vs-cta:hover { transform: translateY(-1px); box-shadow: 0 6px 18px rgba(0,0,0,.18); }
-  .vs-cta .play { color: var(--accent-color); font-size: 11px; }
+  .vs-cta:hover { transform: translateY(-1px); box-shadow: 0 6px 18px rgba(0,0,0,.4); }
+  .vs-cta .play { font-size: 11px; }
 
-  .vs-card { background: var(--white); border: 1px solid var(--border); border-radius: var(--radius);
+  .vs-card { background: var(--bg-surface); border: 1px solid var(--border); border-radius: var(--radius);
              box-shadow: var(--shadow); overflow: hidden; }
   .vs-card table { border-collapse: collapse; width: 100%; }
-  .vs-card thead th { background: var(--gray-4); color: #fff; font-weight: 600; font-size: 14px;
+  .vs-card thead th { background: var(--bg-surface-2); color: var(--text-primary); font-weight: 600; font-size: 14px;
                       padding: 14px 12px; text-align: center; }
-  .vs-card thead th:first-child { text-align: left; font-weight: 500; color: rgba(255,255,255,.55); font-size: 12px; }
-  .vs-card th[scope="row"] { text-align: left; font-weight: 500; color: var(--gray-3); font-size: 12px;
+  .vs-card thead th:first-child { text-align: left; font-weight: 500; color: var(--text-secondary); font-size: 12px; }
+  .vs-card th[scope="row"] { text-align: left; font-weight: 500; color: var(--text-secondary); font-size: 12px;
                              padding: 11px 16px; width: 34%; }
-  .vs-card td { text-align: center; font-size: 13px; color: var(--gray-4); padding: 11px 12px; font-weight: 500; }
+  .vs-card td { text-align: center; font-size: 13px; color: var(--text-primary); padding: 11px 12px; font-weight: 500; }
   .vs-card tbody tr { border-top: 1px solid var(--border); }
-  .vs-card tbody tr:nth-child(odd) { background: #fafafa; }
+  .vs-card tbody tr:nth-child(odd) { background: rgba(255,255,255,.02); }
 
-  .vs-note { color: var(--gray-3); font-size: 12px; margin: 16px 2px 0; }
+  .vs-note { color: var(--text-secondary); font-size: 12px; margin: 16px 2px 0; }
 
   .vs-related { margin-top: 36px; }
-  .vs-related h2 { font-size: 15px; text-transform: uppercase; letter-spacing: .06em; color: var(--gray-3);
+  .vs-related h2 { font-size: 15px; text-transform: uppercase; letter-spacing: .06em; color: var(--text-secondary);
                    margin-bottom: 14px; font-weight: 700; }
   .vs-related ul { list-style: none; display: grid; gap: 8px 24px;
                    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); }
-  .vs-related a { color: var(--gray-4); text-decoration: none; font-size: 14px; display: inline-block;
+  .vs-related a { color: var(--text-secondary); text-decoration: none; font-size: 14px; display: inline-block;
                   padding: 3px 0; border-bottom: 1px solid transparent; }
-  .vs-related a:hover { color: var(--accent-color); border-bottom-color: var(--accent-color); }
+  .vs-related a:hover { color: var(--accent-primary); border-bottom-color: var(--accent-primary); }
 `.trim();
+
+// ─── Design-system lockup + asset links ──────
+// The Framed Duo mark, inlined per page (geometry must match
+// assets/logo.svg and the engine.js copy).
+const LOGO_SVG = '<svg viewBox="0 0 64 64" width="24" height="24" aria-hidden="true" focusable="false"><path d="M4 16 V4 H16 M48 4 H60 V16 M60 48 V60 H48 M16 60 H4 V48" fill="none" stroke="#BFC6D4" stroke-width="3" stroke-linecap="round"></path><circle cx="24" cy="32" r="10" fill="#B48CE0"></circle><circle cx="40" cy="32" r="10" fill="#4FC7B0"></circle></svg>';
+
+// homeHref must point at the ROOT landing page from the page's depth,
+// with ?brands so the stored-brand redirect never bounces the click.
+function lockupHTML(homeHref) {
+  return `<a class="brand-home" href="${homeHref}" aria-label="Compare Camera Specs — choose a brand">${LOGO_SVG}<span class="brand-wordmark">Compare Camera Specs</span></a>`;
+}
+
+// Depth-aware head links every generated page carries: favicon, touch
+// icon, theme color and the Inter webfont (engine.css declares the
+// system fallback stack).
+function assetLinks(prefix) {
+  return `<link rel="icon" type="image/svg+xml" href="${prefix}favicon.svg">
+  <link rel="apple-touch-icon" href="${prefix}apple-touch-icon.png">
+  <meta name="theme-color" content="#131722">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap">`;
+}
 
 function productLd(brandName, cam) {
   const p = { '@type': 'Product', name: `${brandName} ${cam.name}`, brand: { '@type': 'Brand', name: brandName } };
@@ -250,8 +274,6 @@ function productCardHTML(data, brandName, c, displayName) {
 function vsPageHTML(brand, data, site, aId, bId, allPairs) {
   const cams = data.CAMERAS;
   const brandName = data.BRAND_CONFIG.name;
-  const accent = data.BRAND_CONFIG.accentColor;
-  const heroDark = data.BRAND_CONFIG.heroDark || '#2d0000';
   const [a, b] = [cams[aId], cams[bId]];
   const title = `${brandName} ${a.name} vs ${b.name}: Spec Comparison`;
   const desc = `Compare the ${brandName} ${a.name} (${a.year}) and ${b.name} (${b.year}) side by side — price, sensor, stabilization, video, weight and more.`;
@@ -300,16 +322,16 @@ ${related.map(([x, y]) =>
   <!-- Umami analytics — temporarily disabled, kept for re-enabling.
   <script defer src="https://cloud.umami.is/script.js" data-website-id="365e9ee6-1fb5-4a0d-9c74-f6255522a196"></script> -->
   <script data-goatcounter="https://esusatyo.goatcounter.com/count" defer src="https://gc.zgo.at/count.js"></script>
+  ${assetLinks('../../')}
   <link rel="stylesheet" href="../../engine.css">
   <style>
-    :root { --accent-color: ${esc(accent)}; --hero-dark: ${esc(heroDark)}; }
     ${VS_CSS}
   </style>
 </head>
 <body>
   <header id="site-header">
     <div class="header-brand">
-      <span class="brand-logo">Compare<span class="accent">CameraSpecs</span></span>
+      ${lockupHTML('../../?brands')}
       <span class="header-sep">|</span>
       <a class="header-back" href="../index.html">All ${esc(brandName)} cameras</a>
     </div>
@@ -535,16 +557,16 @@ ${related.map(x => `        <li><a href="${path.basename(x.file)}">${esc(crossTi
   <!-- Umami analytics — temporarily disabled, kept for re-enabling.
   <script defer src="https://cloud.umami.is/script.js" data-website-id="365e9ee6-1fb5-4a0d-9c74-f6255522a196"></script> -->
   <script data-goatcounter="https://esusatyo.goatcounter.com/count" defer src="https://gc.zgo.at/count.js"></script>
+  ${assetLinks('../')}
   <link rel="stylesheet" href="../engine.css">
   <style>
-    :root { --accent-color: #0071e3; --hero-dark: #26262b; }
     ${VS_CSS}
   </style>
 </head>
 <body>
   <header id="site-header">
     <div class="header-brand">
-      <span class="brand-logo">Compare<span class="accent">CameraSpecs</span></span>
+      ${lockupHTML('../?brands')}
       <span class="header-sep">|</span>
       <a class="header-back" href="../compare/">Cross-brand compare</a>
     </div>
@@ -605,7 +627,8 @@ function compareHeadBlock(site, brandNames, nCams) {
     site,
     `${site.baseUrl}/compare/`,
     'Compare Cameras Across Brands',
-    `Compare 2–4 of ${nCams} cameras from ${brandNames.join(', ')} side by side — specs, prices and buy links in 7 currencies.`
+    `Compare 2–4 of ${nCams} cameras from ${brandNames.join(', ')} side by side — specs, prices and buy links in 7 currencies.`,
+    '../'
   );
 }
 
@@ -626,7 +649,9 @@ ${items}
 }
 
 // ─── Head blocks ─────────────────────────────
-function metaBlock(site, url, title, desc) {
+// `prefix` is the page's relative path back to the site root, so the
+// generated favicon/touch-icon links resolve at any directory depth.
+function metaBlock(site, url, title, desc, prefix = './') {
   return `${SEO_BEGIN}
   <meta name="description" content="${esc(desc)}">
   <link rel="canonical" href="${url}">
@@ -636,6 +661,7 @@ function metaBlock(site, url, title, desc) {
   <meta property="og:description" content="${esc(desc)}">
   <meta property="og:url" content="${url}">
   <meta name="twitter:card" content="summary">
+  ${assetLinks(prefix)}
   ${SEO_END}`;
 }
 
@@ -647,7 +673,8 @@ function brandHeadBlock(brand, data, site) {
     site,
     `${site.baseUrl}/${brand}/`,
     `${name} Camera & Lens Comparison`,
-    `Compare ${nCams} ${name} cameras and ${nLenses} lenses side by side — price, sensor, autofocus, stabilization and video, in 7 currencies.`
+    `Compare ${nCams} ${name} cameras and ${nLenses} lenses side by side — price, sensor, autofocus, stabilization and video, in 7 currencies.`,
+    '../'
   );
 }
 
@@ -685,11 +712,23 @@ ${items}
   ${SEO_BODY_END}`;
 }
 
+// Landing brand-card stripe colors: these encode which brand a card is
+// (data identity, kept by the design system) — they moved here when
+// BRAND_CONFIG lost its accentColor theming field.
+const BRAND_CARD_ACCENTS = {
+  canon:     '#cc0000',
+  fujifilm:  '#cc0000',
+  nikon:     '#ffd200',
+  panasonic: '#0046ad',
+  sony:      '#ff6a00',
+};
+
 // Crawlable landing content for the root page: brand cards with live counts
 // plus a sample of vs-pages, so the root passes authority into the cluster.
 function rootBodyBlock(site, brands, crossSample = []) {
   const eyebrow = brands.map(b => esc(b.name).toUpperCase()).join(' · ');
-  const compareCard = `        <li class="brand-card" style="--card-accent: #0071e3">
+  // No stripe override: the all-brands card takes the shared accent.
+  const compareCard = `        <li class="brand-card">
           <a href="./compare/">
             <div class="brand-name">All Brands</div>
             <div class="brand-count">Mix &amp; match 2&ndash;4 cameras from any brand</div>
@@ -697,7 +736,7 @@ function rootBodyBlock(site, brands, crossSample = []) {
           </a>
         </li>`;
   const cards = [compareCard, ...brands.map(br =>
-    `        <li class="brand-card" style="--card-accent: ${esc(br.accent)}">
+    `        <li class="brand-card" style="--card-accent: ${esc(BRAND_CARD_ACCENTS[br.slug] || '#B48CE0')}">
           <a href="./${br.slug}/">
             <div class="brand-name">${esc(br.name)}</div>
             <div class="brand-count">${br.nCams} cameras · ${br.nLenses} lenses</div>
@@ -715,7 +754,7 @@ function rootBodyBlock(site, brands, crossSample = []) {
   return `${SEO_BODY_BEGIN}
   <header id="site-header">
     <div class="header-brand">
-      <span class="brand-logo">Compare<span class="accent">CameraSpecs</span></span>
+      ${lockupHTML('./?brands')}
     </div>
   </header>
   <div class="page-hero">
@@ -826,7 +865,6 @@ function buildAll() {
     brandInfo.push({
       slug: brand,
       name,
-      accent: data.BRAND_CONFIG.accentColor,
       nCams: Object.keys(cams).length,
       nLenses: Object.keys(data.LENSES).length,
       samplePairs: pairs.slice(0, 3).map(([a, b]) => ({ a, b, aName: cams[a].name, bName: cams[b].name })),

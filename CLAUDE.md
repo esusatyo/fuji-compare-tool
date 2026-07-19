@@ -9,7 +9,7 @@ A **zero-dependency static website** that compares cameras and lenses side-by-si
 ## Architecture
 
 - **`engine.js`** — the shared rendering engine. Resolves the active brand's dataset from the `window.BRAND_DATA` registry and renders the camera + lens comparison UI, winner highlighting, currency switching, and Amazon buy-links. Brand-agnostic.
-- **`engine.css`** — shared styles.
+- **`engine.css`** — shared styles + the site-wide design tokens (dark-neutral theme from `assets/design/`, purple/teal accents). Page theming is brand-agnostic: `BRAND_CONFIG` has **no** color/logo fields (a test rejects them). Every header shows the shared logo lockup linking to `/?brands` (the `brands` query param suppresses the root page's stored-brand redirect). Landing brand-card stripe colors live in `BRAND_CARD_ACCENTS` in `scripts/generate-seo.js`.
 - **`<brand>/data.js`** — one per brand (`canon/`, `fujifilm/`, `nikon/`, `panasonic/`, `sony/`). Each file wraps its data in an IIFE and registers it as `window.BRAND_DATA[<slug>] = (() => { …; return { BRAND_CONFIG, SERIES_COLORS, CAMERAS, CAMERA_ORDER, DROPDOWN_GROUPS, LENSES, LENS_DROPDOWN_GROUPS, REGISTERED_BRANDS }; })();` — this lets several brands load on one page (see `compare/`) without top-level `const` name collisions. No camera/lens slug may contain `:` (reserved as the compare page's brand/slug separator).
 - **`<brand>/index.html`** — a thin loader: `../engine.css` → `./data.js` → `../engine.js`.
 - **`index.html`** (root) — a redirector that sends visitors to a brand directory based on `localStorage['brand']` (`VALID_BRANDS` / `DEFAULT_BRAND`).
