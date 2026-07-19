@@ -7,11 +7,11 @@
 
 ## 2. Token theme in engine.css
 
-- [ ] 2.1 Replace the `:root` block with the Theme A token set (`--bg-deep`, `--bg-surface`, `--bg-surface-2`, `--border`, `--text-primary`, `--text-secondary`, `--accent-primary`, `--accent-secondary`, radius/spacing tokens) keeping `--accent-color` as an alias of `--accent-primary`; add the Inter font-family stack with system fallback
-- [ ] 2.2 Restyle site header/nav to the handoff nav treatment (bg-surface, lockup left, controls right) and add `.brand-home` lockup styles (24px mark + 15px/700 wordmark, single link)
-- [ ] 2.3 Restyle hero, compare header, slot cards, selects, and buttons (primary/secondary/outline treatments, 9px radius) for dark surfaces; give `.cam-image-wrap` the light photo chip (~#F4F5F7, radius 12)
-- [ ] 2.4 Restyle the spec table: dark row striping, borders, section headers; replace green winner highlight with per-column accent tint — `:nth-child`-driven `--col-accent` (odd=primary, even=secondary), `color-mix` with rgba fallback; restyle badges/pills to accent/0.18 fill + accent text (including `.badge-disc`, `.slot-link`, `.slot-buy`)
-- [ ] 2.5 Restyle footer + `.seo-links` block; sweep the file for leftover light-theme literals (`--gray-*`, `--white`, `--green-*`, `#fafafa`, `#eaeaec`, `#e07b00`, etc.) and mobile breakpoint rules
+- [x] 2.1 Replace the `:root` block with the Theme A token set (`--bg-deep`, `--bg-surface`, `--bg-surface-2`, `--border`, `--text-primary`, `--text-secondary`, `--accent-primary`, `--accent-secondary`, radius/spacing tokens) keeping `--accent-color` as an alias of `--accent-primary`; add the Inter font-family stack with system fallback
+- [x] 2.2 Restyle site header/nav to the handoff nav treatment (bg-surface, lockup left, controls right) and add `.brand-home` lockup styles (24px mark + 15px/700 wordmark, single link)
+- [x] 2.3 Restyle hero, compare header, slot cards, selects, and buttons (primary/secondary/outline treatments, 9px radius) for dark surfaces; give `.cam-image-wrap` the light photo chip (~#F4F5F7, radius 12)
+- [x] 2.4 Restyle the spec table: dark row striping, borders, section headers; replace green winner highlight with per-column accent tint — `:nth-child`-driven `--col-accent` (grid child 1 is the label, so slot A = nth-child(2)/even = primary, slot B = odd = secondary), `color-mix` with rgba fallback; badges/pills restyled to accent/0.18 fill + accent text (`.badge-disc` went neutral-gray — teal/purple misread semantically for "Discontinued")
+- [x] 2.5 Restyle footer + `.seo-links` block; swept all light-theme literals (`--gray-*`, `--white`, `--green-*`, `#fafafa`, `#eaeaec`, `#e07b00`) and mobile breakpoint rules
 
 ## 3. Engine markup (engine.js)
 
