@@ -8,10 +8,6 @@ window.BRAND_DATA['sony'] = (() => {
 const BRAND_CONFIG = {
   name:        'Sony',
   slug:        'sony',
-  accentColor: '#ff6a00',
-  heroDark:    '#1a0d00',
-  logoText:    'Sony',
-  logoAccent:  '',
   families:    ['E-mount System'],
   brandSections: ['sony'],
   cameras: {

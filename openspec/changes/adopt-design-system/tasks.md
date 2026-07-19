@@ -15,15 +15,15 @@
 
 ## 3. Engine markup (engine.js)
 
-- [ ] 3.1 Replace the header brand span with the lockup: inline Framed Duo SVG + "Compare Camera Specs" wordmark wrapped in `<a class="brand-home" href="../?brands">`; keep the `header-title` page context and other header controls
-- [ ] 3.2 Delete the `init()` lines applying `--accent-color`/`--hero-dark`; drop `accentColor`/`heroDark`/`logoText`/`logoAccent` from `compareBrandConfig()` and any other engine reads
-- [ ] 3.3 Add favicon + theme-color + Inter font links to the two engine-page `<head>`s that aren't generator-owned (`compare/index.html` hand-managed part; brand pages via generator in task 6) — and remove `compare/index.html`'s inline `--accent-color`/`--hero-dark` override
+- [x] 3.1 Replace the header brand span with the lockup: inline Framed Duo SVG + "Compare Camera Specs" wordmark wrapped in `<a class="brand-home" href="../?brands">`; keep the `header-title` page context and other header controls
+- [x] 3.2 Delete the `init()` lines applying `--accent-color`/`--hero-dark`; drop `accentColor`/`heroDark`/`logoText`/`logoAccent` from `compareBrandConfig()` and any other engine reads
+- [x] 3.3 Remove `compare/index.html`'s inline `--accent-color`/`--hero-dark` override (favicon + theme-color + Inter links for all engine pages are generator-emitted — task 6.1)
 
 ## 4. Brand data + schema
 
-- [ ] 4.1 Remove `accentColor`, `heroDark`, `logoText`, `logoAccent` from `BRAND_CONFIG` in all five `<brand>/data.js` files
-- [ ] 4.2 Update `tests/helpers/schema.js`: required fields become `name`, `families`, `brandSections` (+ existing per-brand branches); add a check that the removed theming fields are absent
-- [ ] 4.3 Update logic tests that assert the old header/logo/accent/green-winner markup (`pickers`, `compare-page`, winners/currency tests as needed); add coverage for the lockup link href and the winner accent class change
+- [x] 4.1 Remove `accentColor`, `heroDark`, `logoText`, `logoAccent` from `BRAND_CONFIG` in all five `<brand>/data.js` files
+- [x] 4.2 Contract enforcement lived in `tests/data/config.test.js` (not schema.js): required fields trimmed + new test asserting the four theming fields are absent
+- [x] 4.3 No logic test asserted the old logo/green-winner markup (verified by grep); added `tests/logic/header.test.js` — lockup present on every brand page + compare page, `../?brands` href, wordmark text, 2-circle mark, and engine sets no `--accent-color`/`--hero-dark`. 364/365 pass; the 1 failure is the intentional "generated pages stale" gate resolved by group 6
 
 ## 5. Root landing, About, Privacy
 

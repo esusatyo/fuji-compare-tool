@@ -8,10 +8,6 @@ window.BRAND_DATA['fujifilm'] = (() => {
 const BRAND_CONFIG = {
   name:        'Fujifilm',
   slug:        'fujifilm',
-  accentColor: '#cc0000',
-  heroDark:    '#2d0000',
-  logoText:    'FUJI',
-  logoAccent:  'film',
   families:    ['X Series', 'GFX'],
   brandSections: ['fujifilm'],
   cameras: {

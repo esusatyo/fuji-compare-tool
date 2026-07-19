@@ -8,10 +8,6 @@ window.BRAND_DATA['canon'] = (() => {
 const BRAND_CONFIG = {
   name:        'Canon',
   slug:        'canon',
-  accentColor: '#cc0000',
-  heroDark:    '#2d0000',
-  logoText:    'Canon',
-  logoAccent:  '',
   families:    ['EOS R System'],
   brandSections: ['canon'],
   cameras: {

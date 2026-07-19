@@ -8,10 +8,6 @@ window.BRAND_DATA['nikon'] = (() => {
 const BRAND_CONFIG = {
   name:        'Nikon',
   slug:        'nikon',
-  accentColor: '#ffd200',
-  heroDark:    '#1a1700',
-  logoText:    'Nikon',
-  logoAccent:  '',
   families:    ['Z System'],
   brandSections: ['nikon'],
   cameras: {

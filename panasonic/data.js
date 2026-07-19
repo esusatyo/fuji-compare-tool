@@ -8,10 +8,6 @@ window.BRAND_DATA['panasonic'] = (() => {
 const BRAND_CONFIG = {
   name:        'Panasonic',
   slug:        'panasonic',
-  accentColor: '#0046ad',
-  heroDark:    '#0a1530',
-  logoText:    'LUMIX',
-  logoAccent:  '',
   families:    ['Lumix S (L-Mount)', 'Lumix G (Micro Four Thirds)'],
   brandSections: ['panasonic'],
   cameras: {

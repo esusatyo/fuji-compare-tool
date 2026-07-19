@@ -57,10 +57,6 @@ function compareBrandConfig() {
   return {
     name:        'All Brands',
     slug:        null,
-    accentColor: c.accentColor || '#0071e3',
-    heroDark:    c.heroDark || '#26262b',
-    logoText:    'Compare',
-    logoAccent:  'CameraSpecs',
     families:    [],
     brandSections: [],
     cameras: {
@@ -517,6 +513,15 @@ function buildVerifiedLine() {
   return `<p>Specs &amp; prices last verified: ${SITE_CONFIG.dataVerified}</p>`;
 }
 
+// The Framed Duo mark, inlined so it needs no depth-relative asset path
+// and works from file://. Geometry must match assets/logo.svg.
+const LOGO_SVG = `<svg viewBox="0 0 64 64" width="24" height="24" aria-hidden="true" focusable="false"><path d="M4 16 V4 H16 M48 4 H60 V16 M60 48 V60 H48 M16 60 H4 V48" fill="none" stroke="#BFC6D4" stroke-width="3" stroke-linecap="round"></path><circle cx="24" cy="32" r="10" fill="#B48CE0"></circle><circle cx="40" cy="32" r="10" fill="#4FC7B0"></circle></svg>`;
+
+// Engine pages (brand dirs, compare/) all sit one level below the root.
+// ?brands suppresses the landing page's stored-brand redirect so the
+// lockup reliably lands on the brand picker.
+const HOME_HREF = '../?brands';
+
 function injectBody() {
   // Render into #app when present so generator-owned static content outside
   // the container (crawlable SEO blocks) survives; fall back to the body for
@@ -525,7 +530,7 @@ function injectBody() {
   mount.innerHTML = `
 <header id="site-header">
   <div class="header-brand">
-    <span class="brand-logo"><span class="logo-text">${BRAND_CONFIG.logoText}</span><span class="accent">${BRAND_CONFIG.logoAccent}</span></span>
+    <a class="brand-home" href="${HOME_HREF}" aria-label="Compare Camera Specs — choose a brand">${LOGO_SVG}<span class="brand-wordmark">Compare Camera Specs</span></a>
     <span class="header-sep">|</span>
     <span class="header-title" id="header-title">${BRAND_CONFIG.cameras.headerTitle}</span>
   </div>
@@ -864,10 +869,6 @@ function attachEventListeners() {
 // INIT
 // ─────────────────────────────────────────────
 (function init() {
-  // Apply brand colors
-  document.documentElement.style.setProperty('--accent-color', BRAND_CONFIG.accentColor);
-  document.documentElement.style.setProperty('--hero-dark', BRAND_CONFIG.heroDark || '#2d0000');
-
   // Set page title / persist brand preference (brand pages only — the
   // compare page keeps its static title and is not a brand).
   if (!IS_COMPARE) {
