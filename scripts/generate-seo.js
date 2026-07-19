@@ -43,6 +43,16 @@ function esc(s) {
   return String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
 }
 
+// Cloudflare Workers static assets 307-redirects `/page.html` to the
+// extensionless `/page` (html_handling: auto-trailing-slash, the
+// default). Canonicals, og:urls and sitemap entries must therefore use
+// the clean URL — otherwise every .html page's canonical points at a
+// redirect, which contradicts itself and slows indexing. Internal hrefs
+// keep .html so pages still work from file:// and local static servers.
+function cleanUrl(p) {
+  return p.replace(/\.html$/, '');
+}
+
 // ─── Pairing rules ───────────────────────────
 // The data's `series` field is a broad family (e.g. Sony "Alpha
 // (Full-frame)" spans a7/a7R/a9/a1), so successor detection derives the
@@ -323,7 +333,7 @@ function vsPageHTML(brand, data, site, aId, bId, allPairs) {
   const [a, b] = [cams[aId], cams[bId]];
   const title = `${brandName} ${a.name} vs ${b.name}: Spec Comparison`;
   const desc = `Compare the ${brandName} ${a.name} (${a.year}) and ${b.name} (${b.year}) side by side — price, sensor, stabilization, video, weight and more.`;
-  const url = `${site.baseUrl}/${brand}/vs/${aId}-vs-${bId}.html`;
+  const url = `${site.baseUrl}/${brand}/vs/${aId}-vs-${bId}`;
   const ld = {
     '@context': 'https://schema.org',
     '@type': 'ItemList',
@@ -563,7 +573,7 @@ function crossVsPageHTML(site, m, all) {
   const { a, b } = m;
   const title = `${crossTitle(m)}: Spec Comparison`;
   const desc = `Compare the ${a.brandName} ${a.cam.name} (${a.cam.year}) and ${b.brandName} ${b.cam.name} (${b.cam.year}) side by side — price, sensor, stabilization, video, weight and more.`;
-  const url = `${site.baseUrl}/${m.file}`;
+  const url = `${site.baseUrl}/${cleanUrl(m.file)}`;
   const ld = {
     '@context': 'https://schema.org',
     '@type': 'ItemList',
@@ -862,7 +872,7 @@ function withHeadBlock(html, block, file) {
 // self-contained and file://-safe.
 function identityHeadBlock(page, site) {
   return `${ID_HEAD_BEGIN}
-  <link rel="canonical" href="${site.baseUrl}/${page}">
+  <link rel="canonical" href="${site.baseUrl}/${cleanUrl(page)}">
   ${assetLinks('./')}
   <style>
     :root { color-scheme: dark; }
@@ -894,7 +904,7 @@ function withBodyBlock(html, block, file) {
 
 // ─── Sitemap & robots ────────────────────────
 function sitemapXML(site, paths) {
-  const urls = paths.map(p => `  <url><loc>${site.baseUrl}/${p}</loc></url>`).join('\n');
+  const urls = paths.map(p => `  <url><loc>${site.baseUrl}/${cleanUrl(p)}</loc></url>`).join('\n');
   return `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url><loc>${site.baseUrl}/</loc></url>
@@ -1006,4 +1016,4 @@ if (require.main === module) {
   console.log(`generate-seo: ${files.size} artifacts (${written} written, ${removed} stale removed)`);
 }
 
-module.exports = { siteConfig, curatedPairs, relatedPairs, vsPageHTML, resolveMatchups, crossVsPageHTML, crossTitle, CROSS_BRAND_MATCHUPS, compareHeadBlock, compareBodyBlock, brandHeadBlock, rootHeadBlock, brandBodyBlock, rootBodyBlock, withHeadBlock, withBodyBlock, sitemapXML, robotsTxt, buildAll, SEO_BEGIN, SEO_END, SEO_BODY_BEGIN, SEO_BODY_END, ID_HEAD_BEGIN, ID_HEAD_END, ID_HEADER_BEGIN, ID_HEADER_END, identityToken, logoMark };
+module.exports = { siteConfig, curatedPairs, relatedPairs, vsPageHTML, resolveMatchups, crossVsPageHTML, crossTitle, CROSS_BRAND_MATCHUPS, compareHeadBlock, compareBodyBlock, brandHeadBlock, rootHeadBlock, brandBodyBlock, rootBodyBlock, withHeadBlock, withBodyBlock, sitemapXML, robotsTxt, buildAll, SEO_BEGIN, SEO_END, SEO_BODY_BEGIN, SEO_BODY_END, ID_HEAD_BEGIN, ID_HEAD_END, ID_HEADER_BEGIN, ID_HEADER_END, identityToken, logoMark, cleanUrl };
