@@ -132,6 +132,7 @@ const KNOWN_IMAGE_GAPS = {
     // any clean Commons product photo and stay on the placeholder card.
     'a7-v',
     'a7r-vi',
+    'fx5',
     'a6100',
     'fe-14mm-f18-gm', 'fe-24mm-f14-gm', 'fe-35mm-f14-gm', 'fe-50mm-f12-gm',
     'fe-85mm-f14-gm-ii', 'fe-85mm-f14-gm', 'fe-100mm-f28-stf-gm', 'fe-135mm-f18-gm',
