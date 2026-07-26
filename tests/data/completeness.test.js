@@ -55,12 +55,13 @@ const KNOWN_IMAGE_GAPS = {
     'viltrox-24mm-f18', 'viltrox-35mm-f18-evo', 'voigtlander-nokton-40mm-f12',
     'yongnuo-35mm-f2', 'yongnuo-50mm-f18', 'ttartisan-27mm-f28', '7artisans-27mm-f28', 'meike-85mm-f18',
     'viltrox-40mm-f25-air', 'voigtlander-apo-lanthar-50mm-f2',
-    // Curated via scripts/fetch-images-commons.js (strict model-token match).
-    // 21 of 57 items carry real Commons images (4 cameras + 17 lenses); the
+    // Curated via scripts/fetch-images-commons.js (strict model-token match),
+    // plus z9 sourced manually for the landing-page flagship photo.
+    // 22 of 57 items carry real Commons images (5 cameras + 17 lenses); the
     // rest stay on the engine's series-coloured placeholder until a freely-
     // licensed Commons photo exists. The test self-cleans once one lands.
     // Cameras (10) — no clean Commons photo found yet:
-    'z9', 'z8', 'z5-ii', 'z7', 'z6', 'z5', 'z50', 'z30', 'zf', 'zfc', 'zr',
+    'z8', 'z5-ii', 'z7', 'z6', 'z5', 'z50', 'z30', 'zf', 'zfc', 'zr',
     // Lenses (26):
     'z-24mm-f1-8-s', 'z-35mm-f1-8-s', 'z-85mm-f1-8-s', 'z-35mm-f1-2-s',
     'z-135mm-f1-8-s-plena', 'z-mc-105mm-f2-8-vr-s', 'z-58mm-f0-95-s-noct',

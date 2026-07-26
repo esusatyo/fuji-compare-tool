@@ -16,6 +16,15 @@ for (const brand of allBrands) {
     assert.equal(cfg.slug, brand, 'slug must match directory name');
     assert.ok(Array.isArray(cfg.families) && cfg.families.length, 'families must be a non-empty array');
     assert.ok(Array.isArray(cfg.brandSections), 'brandSections must be an array');
+    assert.equal(typeof cfg.mount, 'string', 'mount must be a string');
+    assert.ok(cfg.mount.trim(), 'mount is empty');
+  });
+
+  test(`[${brand}] flagship resolves to a real, current camera`, () => {
+    assert.equal(typeof cfg.flagship, 'string', 'flagship must be a camera slug string');
+    const cam = data.CAMERAS[cfg.flagship];
+    assert.ok(cam, `flagship "${cfg.flagship}" is not a camera in CAMERAS`);
+    assert.ok(!cam.discontinued, `flagship "${cfg.flagship}" should be a current camera`);
   });
 
   test(`[${brand}] BRAND_CONFIG has no per-brand theming fields (design system owns page colors)`, () => {

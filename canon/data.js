@@ -10,6 +10,8 @@ const BRAND_CONFIG = {
   slug:        'canon',
   families:    ['EOS R System'],
   brandSections: ['canon'],
+  mount:       'RF-Mount',
+  flagship:    'eos-r1',
   cameras: {
     heroEyebrow:  'EOS R System',
     heroTitle:    '<span>Canon</span> Camera Comparison',

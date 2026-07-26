@@ -10,6 +10,8 @@ const BRAND_CONFIG = {
   slug:        'panasonic',
   families:    ['Lumix S (L-Mount)', 'Lumix G (Micro Four Thirds)'],
   brandSections: ['panasonic'],
+  mount:       'L-Mount / MFT',
+  flagship:    's1r-ii',
   cameras: {
     heroEyebrow:  'Lumix S & G',
     heroTitle:    '<span>Panasonic</span> Camera Comparison',

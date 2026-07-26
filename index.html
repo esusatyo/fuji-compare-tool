@@ -20,11 +20,34 @@
                   transition: transform .12s ease, box-shadow .12s ease; }
     /* Per-brand accent stripe: data identity, kept alongside the shared theme. */
     .brand-card::before { content: ""; display: block; height: 4px;
-                          background: var(--card-accent, var(--accent-primary)); }
-    .brand-card a { display: block; padding: 18px; text-decoration: none; color: var(--text-primary); }
-    .brand-card:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,0,0,.45); }
+                          background: var(--card-accent, var(--accent-primary)); position: relative; z-index: 1; }
+    .brand-card a { display: flex; flex-direction: column; text-decoration: none; color: var(--text-primary); }
+    .brand-card:hover { transform: translateY(-4px); box-shadow: 0 8px 24px rgba(0,0,0,.45); }
+    .brand-card:hover .brand-photo img { transform: scale(1.05); }
+
+    /* Flagship photo: a real product shot when the data has one, else the
+       engine's own series-coloured silhouette (never a guessed image — some
+       flagships have no freely-licensed photo yet). */
+    .brand-photo { position: relative; height: 132px; background: var(--bg-deep); overflow: hidden; }
+    .brand-photo img { width: 100%; height: 100%; object-fit: cover; object-position: center 30%;
+                        transition: transform .25s ease; display: block; }
+    .brand-photo img.img-broken { display: none; }
+    .brand-photo-fallback { display: none; position: absolute; inset: 0; flex-direction: column;
+                            align-items: center; justify-content: center; gap: 8px; }
+    .brand-photo-fallback span { font-size: 11px; font-weight: 700; letter-spacing: .02em; opacity: .9; }
+    .brand-photo:not(:has(img)) .brand-photo-fallback,
+    .brand-photo:has(img.img-broken) .brand-photo-fallback { display: flex; }
+    .brand-photo--all { display: flex; align-items: center; justify-content: center;
+                        background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary)); }
+    .brand-photo--all svg path { stroke: #fff; }
+    .brand-photo--all svg circle { fill: rgba(255,255,255,.9); }
+
+    .brand-card-body { padding: 16px 18px 18px; }
     .brand-name { font-size: 19px; font-weight: 700; letter-spacing: -0.01em; }
-    .brand-count { color: var(--text-secondary); font-size: 13px; margin-top: 6px; }
+    .brand-mount { display: inline-block; margin-top: 7px; padding: 2px 9px; border-radius: 999px;
+                  background: var(--bg-deep); color: var(--text-secondary); font-size: 11px;
+                  font-weight: 600; letter-spacing: .02em; }
+    .brand-count { color: var(--text-secondary); font-size: 13px; margin-top: 9px; }
     .brand-go { color: var(--accent-primary); font-size: 13px; font-weight: 600; margin-top: 12px; }
 
     .cluster { list-style: none; display: grid; gap: 8px 24px;
@@ -105,44 +128,67 @@
       <ul class="brand-grid">
         <li class="brand-card">
           <a href="./compare/">
-            <div class="brand-name">All Brands</div>
-            <div class="brand-count">Mix &amp; match 2&ndash;4 cameras from any brand</div>
-            <div class="brand-go">Compare &rarr;</div>
+            <div class="brand-photo brand-photo--all"><svg viewBox="0 0 64 64" width="40" height="40" aria-hidden="true" focusable="false"><path d="M4 16 V4 H16 M48 4 H60 V16 M60 48 V60 H48 M16 60 H4 V48" fill="none" stroke="#BFC6D4" stroke-width="3" stroke-linecap="round"></path><circle cx="24" cy="32" r="10" fill="#B48CE0"></circle><circle cx="40" cy="32" r="10" fill="#4FC7B0"></circle></svg></div>
+            <div class="brand-card-body">
+              <div class="brand-name">All Brands</div>
+              <div class="brand-count">Mix &amp; match 2&ndash;4 cameras from any brand</div>
+              <div class="brand-go">Compare &rarr;</div>
+            </div>
           </a>
         </li>
         <li class="brand-card" style="--card-accent: #cc0000">
           <a href="./canon/">
-            <div class="brand-name">Canon</div>
-            <div class="brand-count">17 cameras · 48 lenses</div>
-            <div class="brand-go">Compare &rarr;</div>
+            <div class="brand-photo"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/Canon_EOS_R1_12_apr_2025c.jpg/1280px-Canon_EOS_R1_12_apr_2025c.jpg" alt="Canon EOS R1" onerror="this.classList.add('img-broken')"><div class="brand-photo-fallback" style="background:#2d0a0a;color:#e08080"><svg width="40" height="28" viewBox="0 0 40 28" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><rect x="1" y="7" width="38" height="20" rx="3" fill="currentColor" opacity="0.35"/><rect x="12" y="1" width="16" height="7" rx="2.5" fill="currentColor" opacity="0.35"/><circle cx="20" cy="17" r="7" fill="currentColor" opacity="0.5"/><circle cx="20" cy="17" r="4.2" fill="currentColor" opacity="0.78"/><circle cx="30" cy="12" r="2" fill="currentColor" opacity="0.5"/></svg><span>EOS R1</span></div></div>
+            <div class="brand-card-body">
+              <div class="brand-name">Canon</div>
+              <div class="brand-mount">RF-Mount</div>
+              <div class="brand-count">17 cameras · 48 lenses</div>
+              <div class="brand-go">Compare &rarr;</div>
+            </div>
           </a>
         </li>
         <li class="brand-card" style="--card-accent: #cc0000">
           <a href="./fujifilm/">
-            <div class="brand-name">Fujifilm</div>
-            <div class="brand-count">35 cameras · 86 lenses</div>
-            <div class="brand-go">Compare &rarr;</div>
+            <div class="brand-photo"><img src="https://fujifilm-x.b-cdn.net/wp-content/uploads/2022/09/ajgz_x-h2_thum.png" alt="Fujifilm X-H2" onerror="this.classList.add('img-broken')"><div class="brand-photo-fallback" style="background:#162238;color:#80b4e0"><svg width="40" height="28" viewBox="0 0 40 28" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><rect x="1" y="7" width="38" height="20" rx="3" fill="currentColor" opacity="0.35"/><rect x="12" y="1" width="16" height="7" rx="2.5" fill="currentColor" opacity="0.35"/><circle cx="20" cy="17" r="7" fill="currentColor" opacity="0.5"/><circle cx="20" cy="17" r="4.2" fill="currentColor" opacity="0.78"/><circle cx="30" cy="12" r="2" fill="currentColor" opacity="0.5"/></svg><span>X-H2</span></div></div>
+            <div class="brand-card-body">
+              <div class="brand-name">Fujifilm</div>
+              <div class="brand-mount">X-Mount</div>
+              <div class="brand-count">35 cameras · 86 lenses</div>
+              <div class="brand-go">Compare &rarr;</div>
+            </div>
           </a>
         </li>
         <li class="brand-card" style="--card-accent: #ffd200">
           <a href="./nikon/">
-            <div class="brand-name">Nikon</div>
-            <div class="brand-count">15 cameras · 72 lenses</div>
-            <div class="brand-go">Compare &rarr;</div>
+            <div class="brand-photo"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fe/Nikon_Z9.jpg/1280px-Nikon_Z9.jpg" alt="Nikon Z9" onerror="this.classList.add('img-broken')"><div class="brand-photo-fallback" style="background:#1a1700;color:#ffd54a"><svg width="40" height="28" viewBox="0 0 40 28" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><rect x="1" y="7" width="38" height="20" rx="3" fill="currentColor" opacity="0.35"/><rect x="12" y="1" width="16" height="7" rx="2.5" fill="currentColor" opacity="0.35"/><circle cx="20" cy="17" r="7" fill="currentColor" opacity="0.5"/><circle cx="20" cy="17" r="4.2" fill="currentColor" opacity="0.78"/><circle cx="30" cy="12" r="2" fill="currentColor" opacity="0.5"/></svg><span>Z9</span></div></div>
+            <div class="brand-card-body">
+              <div class="brand-name">Nikon</div>
+              <div class="brand-mount">Z-Mount</div>
+              <div class="brand-count">15 cameras · 72 lenses</div>
+              <div class="brand-go">Compare &rarr;</div>
+            </div>
           </a>
         </li>
         <li class="brand-card" style="--card-accent: #0046ad">
           <a href="./panasonic/">
-            <div class="brand-name">Panasonic</div>
-            <div class="brand-count">19 cameras · 78 lenses</div>
-            <div class="brand-go">Compare &rarr;</div>
+            <div class="brand-photo"><div class="brand-photo-fallback" style="background:#0a1530;color:#6fa8ff"><svg width="40" height="28" viewBox="0 0 40 28" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><rect x="1" y="7" width="38" height="20" rx="3" fill="currentColor" opacity="0.35"/><rect x="12" y="1" width="16" height="7" rx="2.5" fill="currentColor" opacity="0.35"/><circle cx="20" cy="17" r="7" fill="currentColor" opacity="0.5"/><circle cx="20" cy="17" r="4.2" fill="currentColor" opacity="0.78"/><circle cx="30" cy="12" r="2" fill="currentColor" opacity="0.5"/></svg><span>Lumix S1R II</span></div></div>
+            <div class="brand-card-body">
+              <div class="brand-name">Panasonic</div>
+              <div class="brand-mount">L-Mount / MFT</div>
+              <div class="brand-count">19 cameras · 78 lenses</div>
+              <div class="brand-go">Compare &rarr;</div>
+            </div>
           </a>
         </li>
         <li class="brand-card" style="--card-accent: #ff6a00">
           <a href="./sony/">
-            <div class="brand-name">Sony</div>
-            <div class="brand-count">34 cameras · 128 lenses</div>
-            <div class="brand-go">Compare &rarr;</div>
+            <div class="brand-photo"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/ad/Sony_a1_II.jpg/1280px-Sony_a1_II.jpg" alt="Sony A1 II" onerror="this.classList.add('img-broken')"><div class="brand-photo-fallback" style="background:#2a1500;color:#ffae66"><svg width="40" height="28" viewBox="0 0 40 28" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><rect x="1" y="7" width="38" height="20" rx="3" fill="currentColor" opacity="0.35"/><rect x="12" y="1" width="16" height="7" rx="2.5" fill="currentColor" opacity="0.35"/><circle cx="20" cy="17" r="7" fill="currentColor" opacity="0.5"/><circle cx="20" cy="17" r="4.2" fill="currentColor" opacity="0.78"/><circle cx="30" cy="12" r="2" fill="currentColor" opacity="0.5"/></svg><span>A1 II</span></div></div>
+            <div class="brand-card-body">
+              <div class="brand-name">Sony</div>
+              <div class="brand-mount">E-Mount</div>
+              <div class="brand-count">34 cameras · 128 lenses</div>
+              <div class="brand-go">Compare &rarr;</div>
+            </div>
           </a>
         </li>
       </ul>

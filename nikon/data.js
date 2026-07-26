@@ -10,6 +10,8 @@ const BRAND_CONFIG = {
   slug:        'nikon',
   families:    ['Z System'],
   brandSections: ['nikon'],
+  mount:       'Z-Mount',
+  flagship:    'z9',
   cameras: {
     heroEyebrow:  'Z System',
     heroTitle:    '<span>Nikon</span> Camera Comparison',
@@ -65,7 +67,7 @@ const CAMERAS = {
     name:'Z9', series:'Z (Full-frame)', year:2021, discontinued:false,
     tagline:'Stacked-Sensor Pro Flagship',
     productUrl:'https://www.nikonusa.com/en/nikon-products/product/mirrorless-cameras/z-9.html',
-    imageUrl:null,
+    imageUrl:'https://upload.wikimedia.org/wikipedia/commons/thumb/f/fe/Nikon_Z9.jpg/1280px-Nikon_Z9.jpg',
     asin:'B09KHC4XCT',
     prices:{USD:5900,AUD:8799,EUR:6399,GBP:5299,JPY:900000,CAD:7599,SGD:7799},
     sensorMP:45.7, sensorType:'Full-frame Stacked BSI CMOS', processor:'EXPEED 7',

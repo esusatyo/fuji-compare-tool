@@ -10,6 +10,8 @@ const BRAND_CONFIG = {
   slug:        'sony',
   families:    ['E-mount System'],
   brandSections: ['sony'],
+  mount:       'E-Mount',
+  flagship:    'a1-ii',
   cameras: {
     heroEyebrow:  'Alpha E-mount System',
     heroTitle:    '<span>Sony</span> Camera Comparison',

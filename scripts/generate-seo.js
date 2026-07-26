@@ -212,7 +212,7 @@ function identityToken(name) {
   return m[1];
 }
 
-function logoMark() {
+function logoMark(size = 24) {
   const svg = fs.readFileSync(path.join(ROOT, 'assets', 'logo.svg'), 'utf8');
   const viewBox = (svg.match(/viewBox="([^"]+)"/) || [])[1];
   const d = (svg.match(/\bd="([^"]+)"/) || [])[1];
@@ -223,7 +223,7 @@ function logoMark() {
   }
   const circleTags = circles
     .map(c => `<circle cx="${c[1]}" cy="${c[2]}" r="${c[3]}" fill="${c[4]}"></circle>`).join('');
-  return `<svg viewBox="${viewBox}" width="24" height="24" aria-hidden="true" focusable="false"><path d="${d}" fill="none" stroke="${stroke}" stroke-width="3" stroke-linecap="round"></path>${circleTags}</svg>`;
+  return `<svg viewBox="${viewBox}" width="${size}" height="${size}" aria-hidden="true" focusable="false"><path d="${d}" fill="none" stroke="${stroke}" stroke-width="3" stroke-linecap="round"></path>${circleTags}</svg>`;
 }
 
 const LOGO_SVG = logoMark();
@@ -779,6 +779,30 @@ const BRAND_CARD_ACCENTS = {
   sony:      '#ff6a00',
 };
 
+// Landing brand-card photo: a real flagship product photo when the data has
+// one, else the engine's own series-coloured silhouette placeholder (same
+// visual language as the camera-slot cards) — never a guessed/mismatched
+// image (some flagships have no freely-licensed photo yet; see
+// tests/data/completeness.test.js KNOWN_IMAGE_GAPS). CSS :has() swaps to the
+// fallback if a real photo 404s, so no inline-JS/quote-escaping is needed.
+function silhouetteSVG() {
+  return `<svg width="40" height="28" viewBox="0 0 40 28" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><rect x="1" y="7" width="38" height="20" rx="3" fill="currentColor" opacity="0.35"/><rect x="12" y="1" width="16" height="7" rx="2.5" fill="currentColor" opacity="0.35"/><circle cx="20" cy="17" r="7" fill="currentColor" opacity="0.5"/><circle cx="20" cy="17" r="4.2" fill="currentColor" opacity="0.78"/><circle cx="30" cy="12" r="2" fill="currentColor" opacity="0.5"/></svg>`;
+}
+
+function brandPhotoHTML(brandName, flagship) {
+  const fallback = `<div class="brand-photo-fallback" style="background:${esc(flagship.color.bg)};color:${esc(flagship.color.text)}">${silhouetteSVG()}<span>${esc(flagship.name)}</span></div>`;
+  // No loading="lazy": these are above-the-fold hero content on the
+  // landing page, not deferred content.
+  const img = flagship.imageUrl
+    ? `<img src="${esc(flagship.imageUrl)}" alt="${esc(brandName)} ${esc(flagship.name)}" onerror="this.classList.add('img-broken')">`
+    : '';
+  return `<div class="brand-photo">${img}${fallback}</div>`;
+}
+
+function allBrandsPhotoHTML() {
+  return `<div class="brand-photo brand-photo--all">${logoMark(40)}</div>`;
+}
+
 // Crawlable landing content for the root page: brand cards with live counts
 // plus a sample of vs-pages, so the root passes authority into the cluster.
 function rootBodyBlock(site, brands, crossSample = []) {
@@ -786,17 +810,24 @@ function rootBodyBlock(site, brands, crossSample = []) {
   // No stripe override: the all-brands card takes the shared accent.
   const compareCard = `        <li class="brand-card">
           <a href="./compare/">
-            <div class="brand-name">All Brands</div>
-            <div class="brand-count">Mix &amp; match 2&ndash;4 cameras from any brand</div>
-            <div class="brand-go">Compare &rarr;</div>
+            ${allBrandsPhotoHTML()}
+            <div class="brand-card-body">
+              <div class="brand-name">All Brands</div>
+              <div class="brand-count">Mix &amp; match 2&ndash;4 cameras from any brand</div>
+              <div class="brand-go">Compare &rarr;</div>
+            </div>
           </a>
         </li>`;
   const cards = [compareCard, ...brands.map(br =>
     `        <li class="brand-card" style="--card-accent: ${esc(BRAND_CARD_ACCENTS[br.slug] || '#B48CE0')}">
           <a href="./${br.slug}/">
-            <div class="brand-name">${esc(br.name)}</div>
-            <div class="brand-count">${br.nCams} cameras · ${br.nLenses} lenses</div>
-            <div class="brand-go">Compare &rarr;</div>
+            ${brandPhotoHTML(br.name, br.flagship)}
+            <div class="brand-card-body">
+              <div class="brand-name">${esc(br.name)}</div>
+              <div class="brand-mount">${esc(br.mount)}</div>
+              <div class="brand-count">${br.nCams} cameras · ${br.nLenses} lenses</div>
+              <div class="brand-go">Compare &rarr;</div>
+            </div>
           </a>
         </li>`
   )].join('\n');
@@ -952,12 +983,24 @@ function buildAll() {
     }
 
     const cams = data.CAMERAS;
+    const flagshipSlug = data.BRAND_CONFIG.flagship;
+    const flagshipCam = cams[flagshipSlug];
+    if (!flagshipCam) {
+      throw new Error(`${brand}: BRAND_CONFIG.flagship "${flagshipSlug}" is not a camera in CAMERAS`);
+    }
     brandInfo.push({
       slug: brand,
       name,
+      mount: data.BRAND_CONFIG.mount,
       nCams: Object.keys(cams).length,
       nLenses: Object.keys(data.LENSES).length,
       samplePairs: pairs.slice(0, 3).map(([a, b]) => ({ a, b, aName: cams[a].name, bName: cams[b].name })),
+      flagship: {
+        slug: flagshipSlug,
+        name: flagshipCam.name,
+        imageUrl: flagshipCam.imageUrl || null,
+        color: (data.SERIES_COLORS && data.SERIES_COLORS[flagshipCam.series]) || { bg: '#1a1e2b', text: '#9aa4b8' },
+      },
     });
   }
 
