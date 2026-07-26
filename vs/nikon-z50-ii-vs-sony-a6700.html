@@ -16,6 +16,18 @@
   <!-- Umami analytics — temporarily disabled, kept for re-enabling.
   <script defer src="https://cloud.umami.is/script.js" data-website-id="365e9ee6-1fb5-4a0d-9c74-f6255522a196"></script> -->
   <script data-goatcounter="https://esusatyo.goatcounter.com/count" defer src="https://gc.zgo.at/count.js"></script>
+  <script>
+  (function(){
+    try {
+      var p = localStorage.getItem('theme-pref');
+      if (p !== 'light' && p !== 'dark' && p !== 'system') p = 'system';
+      var eff = p === 'system'
+        ? (matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark')
+        : p;
+      document.documentElement.setAttribute('data-theme', eff);
+    } catch (e) { /* storage/matchMedia unavailable — dark default stands */ }
+  })();
+  </script>
   <link rel="icon" type="image/svg+xml" href="../favicon.svg">
   <link rel="apple-touch-icon" href="../apple-touch-icon.png">
   <meta name="theme-color" content="#131722">

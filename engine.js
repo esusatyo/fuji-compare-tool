@@ -586,6 +586,11 @@ function injectBody() {
     &middot;
     Assisted by <a href="https://claude.ai" target="_blank" rel="noopener">Claude</a>
   </p>
+  <div class="theme-toggle" role="group" aria-label="Color theme">
+    <button class="theme-btn" data-theme-pref="light">Light</button>
+    <button class="theme-btn" data-theme-pref="dark">Dark</button>
+    <button class="theme-btn active" data-theme-pref="system">System</button>
+  </div>
 </footer>`;
 }
 

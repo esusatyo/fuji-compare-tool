@@ -13,6 +13,18 @@
   <meta property="og:description" content="Compare 35 Fujifilm cameras and 86 lenses side by side — price, sensor, autofocus, stabilization and video, in 7 currencies.">
   <meta property="og:url" content="https://comparecameraspecs.com/fujifilm/">
   <meta name="twitter:card" content="summary">
+  <script>
+  (function(){
+    try {
+      var p = localStorage.getItem('theme-pref');
+      if (p !== 'light' && p !== 'dark' && p !== 'system') p = 'system';
+      var eff = p === 'system'
+        ? (matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark')
+        : p;
+      document.documentElement.setAttribute('data-theme', eff);
+    } catch (e) { /* storage/matchMedia unavailable — dark default stands */ }
+  })();
+  </script>
   <link rel="icon" type="image/svg+xml" href="../favicon.svg">
   <link rel="apple-touch-icon" href="../apple-touch-icon.png">
   <meta name="theme-color" content="#131722">
@@ -89,5 +101,6 @@
   <script src="../site-config.js"></script>
   <script src="./data.js"></script>
   <script src="../engine.js"></script>
+  <script src="../theme.js"></script>
 </body>
 </html>

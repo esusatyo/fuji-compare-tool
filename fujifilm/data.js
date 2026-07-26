@@ -11,7 +11,7 @@ const BRAND_CONFIG = {
   families:    ['X Series', 'GFX'],
   brandSections: ['fujifilm'],
   mount:       'X-Mount',
-  flagship:    'x-h2',
+  heroCamera:  'x-h2',
   cameras: {
     heroEyebrow:  'X Series & GFX',
     heroTitle:    '<span>Fujifilm</span> Camera Comparison',

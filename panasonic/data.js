@@ -11,7 +11,7 @@ const BRAND_CONFIG = {
   families:    ['Lumix S (L-Mount)', 'Lumix G (Micro Four Thirds)'],
   brandSections: ['panasonic'],
   mount:       'L-Mount / MFT',
-  flagship:    's1r-ii',
+  heroCamera:  's1r-ii',
   cameras: {
     heroEyebrow:  'Lumix S & G',
     heroTitle:    '<span>Panasonic</span> Camera Comparison',
@@ -68,7 +68,7 @@ const CAMERAS = {
     name:'Lumix S1R II', series:'Lumix S (Full-frame)', year:2025, discontinued:false,
     tagline:'44MP High-Res 8K Hybrid',
     productUrl:'https://shop.panasonic.com/products/lumix-s1rii-full-frame-mirrorless-digital-camera-dc-s1rm2',
-    imageUrl:null,
+    imageUrl:'https://shop.panasonic.com/cdn/shop/files/S1RII_S-E2460_front_K.jpg?v=1779313634&width=1800',
     asin:'B0DY21GMBD',
     prices:{USD:3299,AUD:5299,EUR:3829,GBP:3149,JPY:545000,CAD:4549,SGD:4699},
     sensorMP:44.3, sensorType:'Full-frame BSI CMOS', processor:'Venus Engine',

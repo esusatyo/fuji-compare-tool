@@ -13,6 +13,18 @@
   <meta property="og:description" content="Compare 2–4 of 120 cameras from Canon, Fujifilm, Nikon, Panasonic, Sony side by side — specs, prices and buy links in 7 currencies.">
   <meta property="og:url" content="https://comparecameraspecs.com/compare/">
   <meta name="twitter:card" content="summary">
+  <script>
+  (function(){
+    try {
+      var p = localStorage.getItem('theme-pref');
+      if (p !== 'light' && p !== 'dark' && p !== 'system') p = 'system';
+      var eff = p === 'system'
+        ? (matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark')
+        : p;
+      document.documentElement.setAttribute('data-theme', eff);
+    } catch (e) { /* storage/matchMedia unavailable — dark default stands */ }
+  })();
+  </script>
   <link rel="icon" type="image/svg+xml" href="../favicon.svg">
   <link rel="apple-touch-icon" href="../apple-touch-icon.png">
   <meta name="theme-color" content="#131722">
@@ -140,5 +152,6 @@
   <script src="../panasonic/data.js"></script>
   <script src="../sony/data.js"></script>
   <script src="../engine.js"></script>
+  <script src="../theme.js"></script>
 </body>
 </html>

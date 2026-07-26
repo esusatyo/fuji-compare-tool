@@ -20,11 +20,11 @@ for (const brand of allBrands) {
     assert.ok(cfg.mount.trim(), 'mount is empty');
   });
 
-  test(`[${brand}] flagship resolves to a real, current camera`, () => {
-    assert.equal(typeof cfg.flagship, 'string', 'flagship must be a camera slug string');
-    const cam = data.CAMERAS[cfg.flagship];
-    assert.ok(cam, `flagship "${cfg.flagship}" is not a camera in CAMERAS`);
-    assert.ok(!cam.discontinued, `flagship "${cfg.flagship}" should be a current camera`);
+  test(`[${brand}] heroCamera (landing-tile showcase) resolves to a real, current camera`, () => {
+    assert.equal(typeof cfg.heroCamera, 'string', 'heroCamera must be a camera slug string');
+    const cam = data.CAMERAS[cfg.heroCamera];
+    assert.ok(cam, `heroCamera "${cfg.heroCamera}" is not a camera in CAMERAS`);
+    assert.ok(!cam.discontinued, `heroCamera "${cfg.heroCamera}" should be a current camera`);
   });
 
   test(`[${brand}] BRAND_CONFIG has no per-brand theming fields (design system owns page colors)`, () => {

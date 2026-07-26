@@ -11,7 +11,11 @@ const BRAND_CONFIG = {
   families:    ['Z System'],
   brandSections: ['nikon'],
   mount:       'Z-Mount',
-  flagship:    'z9',
+  // Landing-tile showcase camera: not the true flagship (that's the Z9) —
+  // the only freely-licensed Z9 photo found shows it in a shop with a large
+  // telephoto attached, which reads poorly as a tile thumbnail. The Z6 III
+  // has a clean product photo and is Nikon's most popular current body.
+  heroCamera:  'z6-iii',
   cameras: {
     heroEyebrow:  'Z System',
     heroTitle:    '<span>Nikon</span> Camera Comparison',

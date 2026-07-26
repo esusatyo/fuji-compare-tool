@@ -1,10 +1,15 @@
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-/* ─── DESIGN TOKENS (Theme A — Dark Neutral, from assets/design/README.md) ─── */
+/* ─── DESIGN TOKENS (Theme A — Dark Neutral, from assets/design/README.md) ───
+   Default/base theme — also what "Dark" explicitly selects. Site-wide
+   light/dark/system switching lives in the theme toggle (footer); see the
+   [data-theme="light"] block below for the paired "Lavender & Sand" theme. */
 :root {
+  color-scheme: dark;
   --bg-deep: #131722;        /* oklch(0.12 0.015 255) page background */
   --bg-surface: #20242F;     /* oklch(0.16 0.015 255) cards, nav bar */
   --bg-surface-2: #262B38;   /* oklch(0.19 0.015 255) raised surfaces */
+  --bg-hover: #2C3240;       /* hover tint one step above bg-surface-2 */
   --border: #3C4150;         /* oklch(0.27 0.015 255) card/table borders */
   --text-primary: #ECEDF1;   /* oklch(0.95 0.005 255) headings */
   --text-secondary: #9CA3B5; /* oklch(0.65 0.02 255) body/labels */
@@ -13,8 +18,11 @@
   /* Compatibility alias: pre-design-system rules and generated pages
      reference --accent-color; it now always means the primary accent. */
   --accent-color: var(--accent-primary);
-  --photo-chip: #F4F5F7;     /* light chip under product photos */
+  --photo-chip: #F4F5F7;     /* light chip under product photos (both themes) */
   --shadow: 0 2px 16px rgba(0,0,0,0.35);
+  --overlay-weak: rgba(255,255,255,0.06);   /* subtle raised-surface wash (selects, mode toggle) */
+  --overlay-medium: rgba(255,255,255,0.12); /* hover state of the above */
+  --stripe: rgba(255,255,255,0.02);         /* table zebra striping */
   --header-h: 54px;
   --compare-h: 196px;
   --label-w: 190px;
@@ -23,6 +31,27 @@
   --radius: 14px;
   --radius-panel: 20px;
   --radius-pill: 20px;
+}
+
+/* ─── Theme B — Light ("Lavender & Sand", from assets/design/README.md) ───
+   Applied when the user explicitly picks Light, or picks System while the
+   OS prefers light (theme.js resolves System to an explicit data-theme so
+   no @media duplicate of this block is needed). */
+:root[data-theme="light"] {
+  color-scheme: light;
+  --bg-deep: #F8F5F7;        /* oklch(0.97 0.006 320) page background */
+  --bg-surface: #FFFFFF;     /* cards, nav bar */
+  --bg-surface-2: #F1EDF1;   /* raised surfaces */
+  --bg-hover: #E8E2E8;       /* hover tint one step above bg-surface-2 */
+  --border: #EDEAEE;         /* oklch(0.94 0.007 320) card/table borders */
+  --text-primary: #18151A;   /* oklch(0.2 0.01 320) headings */
+  --text-secondary: #5A525C; /* oklch(0.45 0.02 320) body/labels */
+  --accent-primary: #A67FC9;   /* lavender — matches assets/logo-light-lavender.svg */
+  --accent-secondary: #C9A870; /* sand — matches assets/logo-light-lavender.svg */
+  --shadow: 0 2px 16px rgba(0,0,0,0.10);
+  --overlay-weak: rgba(0,0,0,0.04);
+  --overlay-medium: rgba(0,0,0,0.08);
+  --stripe: rgba(0,0,0,0.02);
 }
 
 html, body {
@@ -95,7 +124,7 @@ body {
 .header-controls { display: flex; align-items: center; gap: 10px; flex-shrink: 0; }
 
 .header-select {
-  background: rgba(255,255,255,0.06);
+  background: var(--overlay-weak);
   border: 1px solid var(--border);
   color: var(--text-primary);
   padding: 5px 10px;
@@ -106,13 +135,13 @@ body {
   transition: background 0.15s, border-color 0.15s;
 }
 
-.header-select:hover { background: rgba(255,255,255,0.12); border-color: var(--text-secondary); }
+.header-select:hover { background: var(--overlay-medium); border-color: var(--text-secondary); }
 .header-select option { background: var(--bg-surface-2); color: var(--text-primary); }
 
 /* ─── MODE TOGGLE ─── */
 .mode-toggle {
   display: flex;
-  background: rgba(255,255,255,0.06);
+  background: var(--overlay-weak);
   border-radius: var(--radius-btn);
   overflow: hidden;
   border: 1px solid var(--border);
@@ -363,7 +392,7 @@ body {
   transition: background 0.12s;
 }
 
-.section-header:hover { background: #2C3240; }
+.section-header:hover { background: var(--bg-hover); }
 
 .section-title {
   font-size: 11px;
@@ -392,7 +421,7 @@ body {
 }
 
 .spec-row:last-child { border-bottom: none; }
-.spec-row:nth-child(odd) { background: rgba(255,255,255,0.02); }
+.spec-row:nth-child(odd) { background: var(--stripe); }
 .spec-row:nth-child(even) { background: transparent; }
 
 /* Same odd/even accent mapping as .compare-slot (label cell is child 1). */
@@ -433,7 +462,7 @@ body {
 }
 
 .check { color: var(--accent-secondary); font-size: 15px; }
-.cross { color: #5A6172; font-size: 15px; }
+.cross { color: var(--text-secondary); font-size: 15px; }
 .badge-disc {
   display: inline-block;
   font-size: 10px;
@@ -499,6 +528,32 @@ footer {
 
 footer a { color: var(--accent-primary); text-decoration: none; }
 footer a:hover { text-decoration: underline; }
+
+/* ─── THEME TOGGLE (Light / Dark / System) ───
+   Same segmented-control language as .mode-toggle/.mode-btn; theme.js
+   wires up clicks and syncs .active on load. */
+.theme-toggle {
+  display: inline-flex;
+  background: var(--overlay-weak);
+  border-radius: var(--radius-btn);
+  overflow: hidden;
+  border: 1px solid var(--border);
+  margin-top: 16px;
+}
+.theme-btn {
+  padding: 5px 14px;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text-secondary);
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  transition: all 0.15s;
+  white-space: nowrap;
+  font-family: inherit;
+}
+.theme-btn.active { background: var(--accent-primary); color: var(--bg-deep); }
+.theme-btn:hover:not(.active) { color: var(--text-primary); }
 
 /* ─── SEO links block (generated, below the tool) ─── */
 .seo-links {
