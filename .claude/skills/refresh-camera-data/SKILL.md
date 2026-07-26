@@ -50,6 +50,31 @@ non-USD figures are approximate, derived from USD by regional ratios unless a re
 RRP is confirmed. US-only changes (e.g. tariff hikes) change USD only. Only overwrite a
 non-USD figure when you have a confirmed local RRP, and note it.
 
+**When sources disagree, fall back to the official manufacturer RRP.** Retailer
+"was/now" pairs are the usual culprit: a retailer's struck-through figure is *that
+retailer's own regular price*, not the manufacturer MSRP, and it drifts in both
+directions. Verified 2026-07-26 — B&H showed "$4,399 → $3,899" for the Canon EOS R5
+Mark II and "$2,299 → $1,999" for the R6 Mark II while Canon's MSRPs were still $4,299
+and $2,499, which would have produced a batch of false-positive "price changes". Anchor
+on the manufacturer's own store/press release; use a reputable reseller's **list**
+price (not the sale price) only when the official RRP can't be reached, and say which
+one you used.
+
+**One reputable data point is enough for a routine price.** "Ground it in more than one
+source" applies to *new entries and disputed figures* — it is not a bar every price must
+clear before it can be edited. A current list price from a major authorised dealer (B&H,
+the manufacturer's own store) is sufficient on its own; take it, cite it, move on.
+Decided 2026-07-26 for the Sony a6700 ($1,498) and a7R V ($3,798), both from B&H's list
+price. Don't stall a whole refresh hunting for corroboration on individually low-stakes
+numbers.
+
+**Don't escalate cosmetic deltas — just pick one.** Differences of a few dollars from
+rounding or the $X,499.99-vs-$X,498 convention (e.g. Sony press releases quote
+`$4,499.99` where the actual shelf price is `$4,498`) are not findings and are not worth
+a question. Pick the retail figure, apply it, and mention it in the summary at most.
+Reserve "Needs confirmation" for deltas that would change a buyer's decision or where
+sources genuinely conflict on the real price.
+
 Buy links are **generated per-currency** by the engine (`amazonBuyUrl`) — there are no
 `buyUrl` fields to maintain; don't reintroduce them.
 
@@ -76,6 +101,22 @@ Use **WebSearch** and **WebFetch**. Work brand by brand. For each brand:
   `"<Brand> RF lens roadmap"`, the brand's official "new products" page, DPReview, and
   the rumor sites in `BRAND_CONFIG.footerLinks`. Capture: name, year, official product
   URL, and as many spec fields as you can source confidently.
+
+  **Don't rely on news searches alone — enumerate what's actually on sale.** Walk a
+  retailer's brand listing (B&H's mirrorless category reads well via the browser; use
+  `find` rather than `get_page_text` to keep output small) and diff every SKU against
+  the data's slugs. News queries are anchored on the current year and silently miss
+  anything released in the *previous* year but after the data was last authored —
+  exactly how the Fujifilm X-T30 III (announced Oct 2025) stayed missing until
+  2026-07-26. Two cheap cross-checks that would each have caught it:
+  - **Kit-lens orphans**: `xc-13-33mm-f35-63`, the X-T30 III's kit lens announced the
+    same day, was already in the data. A lens whose companion body is absent is a
+    strong signal. Sweep for lenses with no matching body generation.
+  - **Successor gaps**: for every `<line> II` in the data, search `<line> III`. Roman
+    numeral bumps read as "already covered" and are easy to pattern-match past.
+
+  Never infer "this brand is current" from the newest `year` in the data — a brand can
+  hold a recent *lens* year while missing a *body*.
 - **Price changes** — for existing models still on sale (`discontinued:false`), check
   current RRP. Anchor on the official store / a major retailer. Flag any USD delta;
   for non-USD currencies in scope, update only where a confirmed local RRP exists,
@@ -84,6 +125,19 @@ Use **WebSearch** and **WebFetch**. Work brand by brand. For each brand:
   links and redirects. Don't churn `imageUrl` unless the current one is broken.
   (Buy links are generated from `asin` — missing/wrong ASINs are the
   [`check-prices-and-buy-links`](../check-prices-and-buy-links/SKILL.md) skill's job.)
+
+  **If the US manufacturer domain is blocked, try the brand's other regional sites
+  before giving up.** `electronics.sony.com` and `usa.canon.com` block both WebFetch and
+  the Chrome extension, and US slugs are inconsistent (`ilmefx3-b` vs `ilmefx30b`), so
+  guessing risks a 404. Regional domains — `sony.com.au`, `canon.com.au`,
+  `fujifilm-x.com/global/` — are usually reachable and use cleaner slugs
+  (`sony.com.au/electronics/interchangeable-lens-cameras/ilme-fx5`). A working regional
+  official page beats `productUrl: null`; the user supplied exactly that URL for the FX5
+  on 2026-07-26 after this skill left it null. Only fall back to `null` when no regional
+  page can be verified — never invent a slug.
+  Note `tests/links/links.test.js` treats 403 as a *warning*, so bot-blocking is not
+  evidence a URL is dead — and equally not evidence it's alive. Confirm before relying
+  on it.
 
 Cite the source URL for every proposed change. Prefer official/manufacturer sources,
 then major retailers (B&H), then reputable press; treat rumor sites as leads to verify,
@@ -108,7 +162,18 @@ Produce a per-brand review grouped into three sections. Keep it scannable:
 ```
 
 If nothing changed for a section, say "no changes". For genuinely uncertain items, put
-them under a "Needs confirmation" subsection rather than proposing a silent edit.
+them under a "Needs confirmation" subsection rather than proposing a silent edit. Keep
+that subsection for real ambiguity — see the cosmetic-delta rule above; a $1 rounding
+difference belongs in the summary line, not in a question to the user.
+
+**Re-flag unconfirmed values already in the data, every run.** Some schema fields are
+non-nullable (`maxBurst`, `weight`, `sensorMP`), so a new entry occasionally has to ship
+a placeholder inherited from a sibling model. Those do not become facts by surviving a
+cycle — carry them forward into "Needs confirmation" on each subsequent run until a real
+source lands or the user resolves them. The standing list lives in the
+`open-data-questions` memory; read it during step 2 and fold its entries into the step-4
+review. Current example: **Sony FX5 `maxBurst: 10`**, inherited from the FX3/FX30 entries
+and unverified — the user asked on 2026-07-26 to be shown it again next run.
 
 ### 5. Get approval, then apply
 Ask which changes to apply (default: all confirmed ones; uncertain ones excluded unless

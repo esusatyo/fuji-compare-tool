@@ -73,7 +73,7 @@ const CAMERAS = {
     productUrl:'https://electronics.sony.com/imaging/interchangeable-lens-cameras/full-frame/p/ilce7m4-b',
     imageUrl:'https://upload.wikimedia.org/wikipedia/commons/thumb/8/8b/Sony_A7_IV_%28ILCE-7M4%29_-_by_Henry_S%C3%B6derlund_%2851739988735%29.jpg/1280px-Sony_A7_IV_%28ILCE-7M4%29_-_by_Henry_S%C3%B6derlund_%2851739988735%29.jpg',
     asin:'B09JZT6YK5',
-    prices:{USD:2499,AUD:4299,EUR:2800,GBP:2400,JPY:330000,CAD:3299,SGD:3399},
+    prices:{USD:2498,AUD:4299,EUR:2800,GBP:2400,JPY:330000,CAD:3299,SGD:3399},
     sensorMP:33.0, sensorType:'Full-frame BSI CMOS', processor:'BIONZ XR',
     width:131.3, height:96.4, depth:79.8, weight:658, weatherSealed:true,
     lcdSize:'3.0"', lcdDots:1037, lcdType:'Vari-angle Touchscreen',
@@ -136,7 +136,7 @@ const CAMERAS = {
     productUrl:'https://electronics.sony.com/imaging/interchangeable-lens-cameras/full-frame/p/ilce7rm5-b',
     imageUrl:'https://upload.wikimedia.org/wikipedia/commons/thumb/2/21/Sony_a7R_V_20230616_162554.jpg/1280px-Sony_a7R_V_20230616_162554.jpg',
     asin:'B0BKLQFFSF',
-    prices:{USD:4198,AUD:5999,EUR:4500,GBP:4000,JPY:560000,CAD:5200,SGD:5400},
+    prices:{USD:3798,AUD:5999,EUR:4500,GBP:4000,JPY:560000,CAD:5200,SGD:5400},
     sensorMP:61.0, sensorType:'Full-frame BSI CMOS', processor:'BIONZ XR',
     width:131.3, height:96.9, depth:82.4, weight:723, weatherSealed:true,
     lcdSize:'3.2"', lcdDots:2095, lcdType:'4-axis Multi-angle Touchscreen',
@@ -199,7 +199,7 @@ const CAMERAS = {
     productUrl:'https://electronics.sony.com/imaging/interchangeable-lens-cameras/full-frame/p/ilce7m5-b',
     imageUrl:null,
     asin:'B0G4SC4R2P',
-    prices:{USD:2899,AUD:4999,EUR:3299,GBP:2899,JPY:430000,CAD:3699,SGD:3899},
+    prices:{USD:2898,AUD:4999,EUR:3299,GBP:2899,JPY:430000,CAD:3699,SGD:3899},
     sensorMP:33.0, sensorType:'Full-frame Partially-stacked Exmor RS BSI CMOS', processor:'BIONZ XR2',
     width:130.3, height:96.4, depth:82.4, weight:695, weatherSealed:true,
     lcdSize:'3.2"', lcdDots:2095, lcdType:'Multi-angle Touchscreen',
@@ -515,7 +515,7 @@ const CAMERAS = {
     productUrl:'https://electronics.sony.com/imaging/interchangeable-lens-cameras/aps-c/p/ilce6700-b',
     imageUrl:'https://upload.wikimedia.org/wikipedia/commons/thumb/0/0d/Sony_A6700_by_Henry_S%C3%B6derlund.jpg/1280px-Sony_A6700_by_Henry_S%C3%B6derlund.jpg',
     asin:'B0CBN8Y77Z',
-    prices:{USD:1399,AUD:2399,EUR:1700,GBP:1450,JPY:230000,CAD:1900,SGD:2100},
+    prices:{USD:1498,AUD:2399,EUR:1700,GBP:1450,JPY:230000,CAD:1900,SGD:2100},
     sensorMP:26.0, sensorType:'APS-C BSI CMOS', processor:'BIONZ XR',
     width:122.0, height:69.0, depth:75.1, weight:493, weatherSealed:true,
     lcdSize:'3.0"', lcdDots:1037, lcdType:'Vari-angle Touchscreen',
@@ -645,6 +645,26 @@ const CAMERAS = {
   },
 
   /* ── Cinema Line ── */
+  'fx5': {
+    name:'FX5', series:'Cinema Line', year:2026, discontinued:false,
+    tagline:'5K Open Gate + Internal X-OCN RAW',
+    productUrl:'https://www.sony.com.au/electronics/interchangeable-lens-cameras/ilme-fx5',
+    imageUrl:null,
+    asin:null,
+    prices:{USD:4898,AUD:7849,EUR:5399,GBP:4700,JPY:812900,CAD:6299,SGD:6499},
+    sensorMP:16.6, sensorType:'Full-frame Stacked Exmor RS CMOS', processor:'BIONZ XR2',
+    width:132.0, height:79.0, depth:87.0, weight:734, weatherSealed:true,
+    lcdSize:'3.5"', lcdDots:2760, lcdType:'4-axis Multi-angle Touchscreen',
+    evfType:null, evfDots:null, evfMag:null,
+    faceDetection:true, subjectDetection:'Human / Animal / Bird',
+    ibis:true, ibisStops:null, maxBurst:10,
+    maxVideoRes:'5K / 120P', logVideo:true,
+    bluetooth:'5.0', wifi:true,
+    cardSlots:'2× CFexpress Type A / SD UHS-II', batteryLife:null, usbCharging:true,
+    lensType:'Interchangeable', lensSpec:null,
+    logProfile:'S-Log3 / S-Cinetone', aiAf:true, realtimeTracking:true,
+  },
+
   'fx3': {
     name:'FX3', series:'Cinema Line', year:2021, discontinued:false,
     tagline:'Full-frame Cinema in a Compact Body',
@@ -748,7 +768,7 @@ const CAMERA_ORDER = [
   'a1', 'a7c', 'a9-ii', 'a7r-iv', 'a7-iii', 'a9', 'a7r-iii',
   'a7r-ii', 'a7s-ii', 'a7-ii', 'a7r', 'a7', 'a7s',
   'a6700', 'a6400', 'a6600', 'a6500', 'a6300', 'a6100', 'a6000',
-  'fx3', 'fx30',
+  'fx5', 'fx3', 'fx30',
   'zv-e1', 'zv-e10-ii', 'zv-e10',
 ];
 
@@ -758,7 +778,7 @@ const DROPDOWN_GROUPS = [
   { label: '── Alpha Full-frame (2017–2020) ──', ids: ['a1', 'a7c', 'a9-ii', 'a7r-iv', 'a7-iii', 'a9', 'a7r-iii'] },
   { label: '── Alpha Full-frame (2013–2015) ──', ids: ['a7r-ii', 'a7s-ii', 'a7-ii', 'a7r', 'a7', 'a7s'] },
   { label: '── Alpha APS-C ──',                  ids: ['a6700', 'a6400', 'a6600', 'a6500', 'a6300', 'a6100', 'a6000'] },
-  { label: '── Cinema Line ──',                  ids: ['fx3', 'fx30'] },
+  { label: '── Cinema Line ──',                  ids: ['fx5', 'fx3', 'fx30'] },
   { label: '── ZV (Vlog) ──',                    ids: ['zv-e1', 'zv-e10-ii', 'zv-e10'] },
 ];
 
