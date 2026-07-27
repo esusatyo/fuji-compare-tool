@@ -87,7 +87,7 @@ const KNOWN_IMAGE_GAPS = {
     // The s5/g9 search hits returned the newer-model photo (S5 II / G9 II) and
     // were rejected. The rest stay on the placeholder until a freely-licensed
     // Commons photo exists; the test self-cleans once one lands. Cameras (12):
-    's1r-ii', 's1-ii', 's5-iix', 's1h', 's1', 's1r', 's5',
+    's1r-ii', 's1-ii', 's5-iix', 's1h', 's1', 's5',
     'gh5',
     'g100d', 'g9', 'gx9', 'g95', 'l10',
     // Lenses — LUMIX S primes:
