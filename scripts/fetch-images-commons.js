@@ -171,7 +171,7 @@ function patch(src, id, url) {
 
 async function main() {
   const brand = process.argv[2];
-  if (!brand) { console.error('usage: node scripts/fetch-images-commons.js <brand> [cameras|lenses|all] [--apply]'); process.exit(1); }
+  if (!brand) { console.error('usage: node scripts/fetch-images-commons.js <brand> [cameras|lenses|all] [--skip=N] [--limit=N] [--apply]'); process.exit(1); }
   const which = (process.argv[3] && !process.argv[3].startsWith('--')) ? process.argv[3] : 'all';
   const apply = process.argv.includes('--apply');
   const width = 1280;
@@ -182,7 +182,22 @@ async function main() {
   if (which === 'cameras' || which === 'all') for (const [id, c] of Object.entries(data.CAMERAS)) if (!c.imageUrl) items.push([id, c]);
   if (which === 'lenses'  || which === 'all') for (const [id, l] of Object.entries(data.LENSES))  if (!l.imageUrl) items.push([id, l]);
 
-  console.error(`${brandName}: ${items.length} item(s) missing imageUrl\n`);
+  // --skip/--limit make a large brand chunkable. Commons rate-limiting puts
+  // throughput at roughly 4 items/minute, so a brand like Sony (105 gapped
+  // lenses) overruns a 10-minute command ceiling and is SIGTERM'd mid-run with
+  // no summary printed. Slicing the list lets it be swept across several runs.
+  const numArg = (name) => {
+    const a = process.argv.find(x => x.startsWith(`--${name}=`));
+    return a ? parseInt(a.split('=')[1], 10) : null;
+  };
+  const skip = numArg('skip') || 0;
+  const limit = numArg('limit');
+  const total = items.length;
+  const slice = items.slice(skip, limit != null ? skip + limit : undefined);
+  items.length = 0; items.push(...slice);
+
+  const range = (skip || limit != null) ? ` [${skip + 1}–${skip + items.length} of ${total}]` : '';
+  console.error(`${brandName}: ${total} item(s) missing imageUrl${range}\n`);
   const found = {}; const misses = [];
   for (const [id, item] of items) {
     const res = await findImage(brandName, item, width);

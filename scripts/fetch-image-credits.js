@@ -21,7 +21,10 @@ const API = 'https://commons.wikimedia.org/w/api.php';
 const UA = 'fuji-compare-tool/1.0 (image attribution; +https://comparecameraspecs.com)';
 
 // Licences we may use. Anything else is reported and skipped.
-const FREE = /^(CC0|CC BY(-SA)? [0-9.]+( [a-z]{2})?|Public domain|PD)/i;
+// FAL = Licence Art Libre / Free Art License: a copyleft free licence accepted
+// on Commons, attribution-requiring like CC BY-SA. GFDL is free but its terms
+// are awkward for a web thumbnail, so it stays off the list deliberately.
+const FREE = /^(CC0|CC BY(-SA)? [0-9.]+( [a-z]{2})?|Public domain|PD|FAL|Free Art License)/i;
 const UNFREE = /\b(NC|ND|NonCommercial|NoDerivatives|fair use|non-free)\b/i;
 
 const strip = s => String(s || '').replace(/<[^>]+>/g, '').replace(/\s+/g, ' ').trim();
