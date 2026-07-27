@@ -651,6 +651,18 @@ function brandHeadBlock(brand, data, site) {
   );
 }
 
+// about.html became a generated artifact once it started carrying the image
+// credits, so it needs its canonical from site-config like every other page
+// rather than a hardcoded URL.
+function aboutHeadBlock(site) {
+  return metaBlock(
+    site,
+    `${site.baseUrl}/about.html`,
+    `About — ${site.siteName}`,
+    `What ${site.siteName} is, how the spec and price data is sourced and verified, image credits, and who built it.`
+  );
+}
+
 function rootHeadBlock(site, brandNames) {
   return metaBlock(
     site,
@@ -773,6 +785,60 @@ function withBodyBlock(html, block, file) {
   return withBlock(html, block, file, SEO_BODY_BEGIN, SEO_BODY_END);
 }
 
+// ─── Image credits (about.html) ──────────────
+// Most Commons product photos here are CC BY / CC BY-SA, which permit reuse
+// only *with attribution*, so this block is a licence obligation rather than a
+// courtesy. It is generated from each item's `imageCredit` (populated by
+// scripts/fetch-image-credits.js, enforced by schema.js) so it can never drift
+// out of sync with the images actually shipped.
+//
+// Manufacturer/retailer product shots are deliberately absent: they are not
+// freely licensed and no credit line would change that — they are publicity
+// images used to depict the product they advertise.
+function imageCreditsBlock(brandData) {
+  const rows = [];
+  for (const [brand, data] of Object.entries(brandData)) {
+    // Display name, not the directory slug ("Canon", not "canon").
+    const brandName = data.BRAND_CONFIG.name || brand;
+    for (const [, item] of Object.entries({ ...data.CAMERAS, ...data.LENSES })) {
+      if (!item.imageCredit) continue;
+      rows.push({ brand: brandName, name: item.name, c: item.imageCredit });
+    }
+  }
+  rows.sort((a, b) => a.brand.localeCompare(b.brand) || a.name.localeCompare(b.name));
+  if (!rows.length) {
+    return `${SEO_BODY_BEGIN}\n  <h2>Image credits</h2>\n  <p>No freely-licensed third-party images are currently in use.</p>\n  ${SEO_BODY_END}`;
+  }
+
+  // One <li> per photo: the work, its author, and its licence — each linked to
+  // the Commons file page and the licence deed respectively.
+  const items = rows.map(r => {
+    const who = r.c.author ? esc(r.c.author) : 'Unknown author';
+    const lic = r.c.licenceUrl
+      ? `<a href="${esc(r.c.licenceUrl)}" rel="noopener nofollow">${esc(r.c.licence)}</a>`
+      : esc(r.c.licence);
+    return `    <li><a href="${esc(r.c.source)}" rel="noopener nofollow">${esc(r.brand)} ${esc(r.name)}</a>` +
+           ` — ${who}, ${lic}</li>`;
+  }).join('\n');
+
+  const licences = [...new Set(rows.map(r => r.c.licence))].sort();
+  return `${SEO_BODY_BEGIN}
+  <h2>Image credits</h2>
+  <p>Product photographs are used under free licences from
+     <a href="https://commons.wikimedia.org" rel="noopener">Wikimedia Commons</a>. Each photo below is
+     credited to its author and licence as those licences require; follow a product link for the
+     original file and its full terms. Licences in use: ${esc(licences.join(', '))}.</p>
+  <p>Remaining product images are manufacturer press/product photographs, used to depict the
+     product they show; those remain the copyright of their respective manufacturers.</p>
+  <details>
+    <summary>${rows.length} credited photographs</summary>
+    <ul class="credits">
+${items}
+    </ul>
+  </details>
+  ${SEO_BODY_END}`;
+}
+
 // ─── Sitemap & robots ────────────────────────
 function sitemapXML(site, paths) {
   const urls = paths.map(p => `  <url><loc>${site.baseUrl}/${p}</loc></url>`).join('\n');
@@ -848,6 +914,12 @@ function buildAll() {
   files.set(cmp, cmpHtml);
 
   sitemapPaths.push('about.html', 'privacy.html');
+  const about = 'about.html';
+  let aboutHtml = fs.readFileSync(path.join(ROOT, about), 'utf8');
+  aboutHtml = withHeadBlock(aboutHtml, aboutHeadBlock(site), about);
+  aboutHtml = withBodyBlock(aboutHtml, imageCreditsBlock(brandData), about);
+  files.set(about, aboutHtml);
+
   let rootHtml = fs.readFileSync(path.join(ROOT, 'index.html'), 'utf8');
   rootHtml = withHeadBlock(rootHtml, rootHeadBlock(site, brandNames), 'index.html');
   rootHtml = withBodyBlock(rootHtml, rootBodyBlock(site, brandInfo, matchups.slice(0, 6)), 'index.html');

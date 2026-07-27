@@ -96,6 +96,53 @@ function checkAsin(obj) {
   return [];
 }
 
+/**
+ * Validate `imageCredit` — the attribution that makes a Wikimedia Commons image
+ * lawful to display.
+ *
+ * Almost every Commons photo in this dataset is CC BY or CC BY-SA, which permit
+ * commercial use *only* with credit. Storing the URL without the credit leaves
+ * the site out of compliance, and the metadata is painful to recover later once
+ * nobody remembers which file a thumbnail came from — so any
+ * upload.wikimedia.org image MUST carry a complete credit. Images hotlinked from
+ * manufacturer/retailer hosts are a different arrangement (publicity shots
+ * depicting the product they advertise) and are out of scope here.
+ *
+ * Populated by scripts/fetch-image-credits.js; rendered on about.html by
+ * scripts/generate-seo.js.
+ */
+function checkImageCredit(obj) {
+  const url = obj.imageUrl;
+  const c = obj.imageCredit;
+  const fromCommons = typeof url === 'string' && url.startsWith('https://upload.wikimedia.org/');
+
+  if (!fromCommons) {
+    if (c != null) return ['"imageCredit" set but "imageUrl" is not a Wikimedia Commons image'];
+    return [];
+  }
+  if (c == null) return ['Wikimedia Commons "imageUrl" requires an "imageCredit" (run scripts/fetch-image-credits.js)'];
+  if (typeof c !== 'object' || Array.isArray(c)) return ['"imageCredit" should be an object'];
+
+  const errs = [];
+  const FIELDS = ['author', 'licence', 'licenceUrl', 'source'];
+  for (const k of FIELDS) {
+    const v = c[k];
+    // `author` may legitimately be null on CC0 / public-domain files.
+    if (v === null && k === 'author') continue;
+    if (typeof v !== 'string' || v.trim() === '') errs.push(`"imageCredit.${k}" missing or empty`);
+  }
+  if (typeof c.source === 'string' && !c.source.startsWith('https://commons.wikimedia.org/wiki/')) {
+    errs.push('"imageCredit.source" should link to the Commons file page');
+  }
+  if (typeof c.licence === 'string' && /\b(NC|ND|NonCommercial|NoDerivatives|fair use|non-free)\b/i.test(c.licence)) {
+    errs.push(`"imageCredit.licence" = ${JSON.stringify(c.licence)} is not a free licence`);
+  }
+  for (const k of Object.keys(c)) {
+    if (!FIELDS.includes(k)) errs.push(`"imageCredit.${k}" is not a recognised field`);
+  }
+  return errs;
+}
+
 // ── CAMERA ──────────────────────────────────
 function validateCamera(id, cam, brandSections = []) {
   const e = [];
@@ -149,6 +196,7 @@ function validateCamera(id, cam, brandSections = []) {
   // the engine's amazonBuyUrl() from `asin`; see tests/logic/buy-links.test.js.)
   add(checkField(cam, 'productUrl', { type: 'url', nullable: true, required: false }));
   add(checkField(cam, 'imageUrl', { type: 'url', nullable: true, required: false }));
+  add(checkImageCredit(cam));
   add(checkAsin(cam));
 
   // Prices: USD required & positive; other currencies may be null
@@ -232,6 +280,7 @@ function validateLens(id, lens) {
 
   add(checkField(lens, 'productUrl', { type: 'url', nullable: true, required: false }));
   add(checkField(lens, 'imageUrl', { type: 'url', nullable: true, required: false }));
+  add(checkImageCredit(lens));
   add(checkAsin(lens));
 
   add(checkPrices(lens));
