@@ -174,7 +174,11 @@ async function main() {
   if (!brand) { console.error('usage: node scripts/fetch-images-commons.js <brand> [cameras|lenses|all] [--skip=N] [--limit=N] [--apply]'); process.exit(1); }
   const which = (process.argv[3] && !process.argv[3].startsWith('--')) ? process.argv[3] : 'all';
   const apply = process.argv.includes('--apply');
-  const width = 1280;
+  // 500px covers every display context on the site (product cards top out
+  // at 160px tall; the landing-page brand tiles, the widest use, are ~132px
+  // tall) at a solid retina density — 1280px was ~4-8x heavier for no
+  // visible gain (see the optimize-image-sizes change).
+  const width = 500;
 
   const { data } = loadBrand(brand);
   const brandName = data.BRAND_CONFIG.name;
