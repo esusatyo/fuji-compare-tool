@@ -34,7 +34,7 @@ const KNOWN_IMAGE_GAPS = {
     'yongnuo-85mm-f18',
     'laowa-90mm-f28-macro',
     'laowa-15mm-f2',
-    'laowa-10mm-f4-cookie',
+    'laowa-10mm-f4-cookie'
   ]),
   fujifilm: new Set([
     'xc-16-50mm-f35-56', // no freely-licensed product image found
@@ -43,15 +43,18 @@ const KNOWN_IMAGE_GAPS = {
     // Meike — meikeglobal.com blocks automated fetch, no other direct image URL found
     'meike-33mm-f14', 'meike-55mm-f18', 'meike-85mm-f18',
     // 7Artisans — no direct manufacturer/retailer image URL found yet
-    '7artisans-50mm-f18', '7artisans-25mm-f18',
+    '7artisans-50mm-f18', '7artisans-25mm-f18'
   ]),
   nikon: new Set([
     // Third-party (Viltrox AF / Laowa MF) — manufacturer image URLs pending backfill
     'viltrox-13mm-f14', 'viltrox-16mm-f18', 'viltrox-27mm-f12', 'viltrox-33mm-f14',
     'viltrox-56mm-f14', 'viltrox-85mm-f18-ii',
     'laowa-90mm-f28-macro', 'laowa-15mm-f2', 'laowa-10mm-f4-cookie',
-    'tamron-11-20mm-f28', 'tamron-17-70mm-f28', 'tamron-18-300mm-f35-63', 'tamron-35-150mm-f2-28',
-    'tamron-50-400mm-f45-63', 'tamron-70-300mm-f45-63', 'tamron-150-500mm-f5-67',
+    // tamron-11-20mm / -50-400mm: the only Commons files are the Sony-E versions
+    // (Model B060 / A067). The Nikon Z variants are B060Z / A067Z, so these stay
+    // gapped here even though the Sony entries now carry those photos.
+    'tamron-11-20mm-f28', 'tamron-50-400mm-f45-63',
+    'tamron-17-70mm-f28', 'tamron-18-300mm-f35-63', 'tamron-35-150mm-f2-28',
     'viltrox-24mm-f18', 'viltrox-35mm-f18-evo', 'voigtlander-nokton-40mm-f12',
     'yongnuo-35mm-f2', 'yongnuo-50mm-f18', 'ttartisan-27mm-f28', '7artisans-27mm-f28', 'meike-85mm-f18',
     'viltrox-40mm-f25-air', 'voigtlander-apo-lanthar-50mm-f2',
@@ -63,14 +66,13 @@ const KNOWN_IMAGE_GAPS = {
     // Cameras (10) — no clean Commons photo found yet:
     'z8', 'z5-ii', 'z7', 'z6', 'z5', 'z50', 'z30', 'zf', 'zfc', 'zr',
     // Lenses (26):
-    'z-24mm-f1-8-s', 'z-35mm-f1-8-s', 'z-85mm-f1-8-s', 'z-35mm-f1-2-s',
-    'z-135mm-f1-8-s-plena', 'z-mc-105mm-f2-8-vr-s', 'z-58mm-f0-95-s-noct',
-    'z-26mm-f2-8', 'z-28mm-f2-8', 'z-40mm-f2-se', 'z-50mm-f1-4',
-    'z-dx-24mm-f1-7', 'z-14-24mm-f2-8-s', 'z-14-30mm-f4-s', 'z-24-70mm-f4-s',
-    'z-24-50mm-f4-6-3', 'z-24-200mm-f4-6-3-vr', 'z-180-600mm-f5-6-6-3-vr',
-    'z-400mm-f4-5-vr-s', 'z-400mm-f2-8-tc-vr-s', 'z-600mm-f6-3-vr-s-pf',
+    'z-24mm-f1-8-s', 'z-35mm-f1-8-s', 'z-35mm-f1-2-s',
+    'z-135mm-f1-8-s-plena', 'z-58mm-f0-95-s-noct',
+    'z-26mm-f2-8', 'z-40mm-f2-se', 'z-50mm-f1-4',
+    'z-dx-24mm-f1-7', 'z-14-24mm-f2-8-s', 'z-14-30mm-f4-s', 'z-180-600mm-f5-6-6-3-vr',
+    'z-400mm-f2-8-tc-vr-s', 'z-600mm-f6-3-vr-s-pf',
     'z-800mm-f6-3-vr-s-pf', 'z-dx-12-28mm-pz-vr', 'z-dx-16-50mm-vr',
-    'z-dx-18-140mm-vr', 'z-dx-50-250mm-vr',
+    'z-dx-18-140mm-vr', 'z-dx-50-250mm-vr'
   ]),
   panasonic: new Set([
     'voigtlander-nokton-25mm-f095', 'laowa-7-5mm-f2-mft',
@@ -80,14 +82,15 @@ const KNOWN_IMAGE_GAPS = {
     'voigtlander-apo-lanthar-35mm-f2-l', 'voigtlander-apo-lanthar-50mm-f2-l',
     'laowa-90mm-f28-macro-l', 'laowa-15mm-f2-l',
     'sigma-90mm-f28-dg', 'sigma-28-70mm-f28-dg', 'sigma-100-400mm-f5-63-dg',
-    // Curated via scripts/fetch-images-commons.js. 13 of 57 items carry real
-    // images (7 cameras: s5-ii, s9, gh7, gh6, gh5-ii, g9-ii, s1r-ii (official
-    // Panasonic product photo, sourced for the landing-page tile); 6 lenses:
-    // S 35/1.8, S 24-105/4, S PRO 70-200/4, S 70-300, G 25/1.7, Nocticron 42.5/1.2).
-    // The s5/g9 search hits returned the newer-model photo (S5 II / G9 II) and
-    // were rejected. The rest stay on the placeholder until a freely-licensed
-    // Commons photo exists; the test self-cleans once one lands. Cameras (12):
-    's1-ii', 's5-iix', 's1h', 's1', 's1r', 's5',
+    // Curated via scripts/fetch-images-commons.js. 14 of 57 items carry real
+    // images (8 cameras: s5-ii, s9, gh7, gh6, gh5-ii, g9-ii, s1r (Commons),
+    // s1r-ii (official Panasonic product photo, sourced for the landing-page
+    // tile); 6 lenses: S 35/1.8, S 24-105/4, S PRO 70-200/4, S 70-300, G
+    // 25/1.7, Nocticron 42.5/1.2). The s5/g9 search hits returned the
+    // newer-model photo (S5 II / G9 II) and were rejected. The rest stay on
+    // the placeholder until a freely-licensed Commons photo exists; the test
+    // self-cleans once one lands. Cameras (11):
+    's1-ii', 's5-iix', 's1h', 's1', 's5',
     'gh5',
     'g100d', 'g9', 'gx9', 'g95', 'l10',
     // Lenses — LUMIX S primes:
@@ -104,17 +107,21 @@ const KNOWN_IMAGE_GAPS = {
     'leica-dg-8-18mm-f2-8-4', 'leica-dg-10-25mm-f1-7', 'lumix-g-12-32mm-f3-5-5-6',
     'leica-dg-12-60mm-f2-8-4', 'lumix-g-12-60mm-f3-5-5-6', 'lumix-g-12-35mm-f2-8-ii',
     'leica-dg-25-50mm-f1-7', 'lumix-g-35-100mm-f2-8-ii', 'leica-dg-50-200mm-f2-8-4',
-    'lumix-g-14-140mm-f3-5-5-6-ii', 'lumix-g-100-300mm-f4-5-6-ii', 'leica-dg-100-400mm-f4-6-3-ii',
+    'lumix-g-14-140mm-f3-5-5-6-ii', 'lumix-g-100-300mm-f4-5-6-ii', 'leica-dg-100-400mm-f4-6-3-ii'
   ]),
   sony: new Set([
     'sigma-90mm-f28-dg', // discontinued I-series; Sigma image URL not available
     'sigma-28-70mm-f28-dg', // Sigma product image URL not available (404)
     'sigma-100-400mm-f5-63-dg', // Sigma product image URL not available (404)
-    'tamron-70-300mm-f45-63', // Tamron image URL pending backfill
+    // tamron-70-300mm: the only Commons file is the Nikon Z version (Model
+    // A047Z); the Sony-E variant is A047, so this stays gapped here even though
+    // the Nikon entry now carries that photo.
+    'tamron-70-300mm-f45-63',
+    // Tamron image URL pending backfill
     // Tamron FE zooms — Tamron image URLs vary by model/mount; pending backfill
-    'tamron-11-20mm-f28', 'tamron-16-30mm-f28-g2', 'tamron-17-70mm-f28',
-    'tamron-20-40mm-f28', 'tamron-28-75mm-f28-g2', 'tamron-35-150mm-f2-28',
-    'tamron-50-400mm-f45-63', 'tamron-70-180mm-f28-g2',
+    'tamron-16-30mm-f28-g2', 'tamron-17-70mm-f28',
+    'tamron-20-40mm-f28', 'tamron-35-150mm-f2-28',
+    'tamron-70-180mm-f28-g2',
     // Viltrox — store product image URLs pending backfill
     'viltrox-13mm-f14', 'viltrox-16mm-f18', 'viltrox-27mm-f12', 'viltrox-33mm-f14',
     'viltrox-56mm-f14', 'viltrox-85mm-f18-ii',
@@ -133,33 +140,20 @@ const KNOWN_IMAGE_GAPS = {
     // visually verified — and verify-images'd). Only a7-v (2025) and a6100 lack
     // any clean Commons product photo and stay on the placeholder card.
     'a7-v',
-    'a7r-vi',
     'fx5',
     'a6100',
-    'fe-14mm-f18-gm', 'fe-24mm-f14-gm', 'fe-35mm-f14-gm', 'fe-50mm-f12-gm',
-    'fe-85mm-f14-gm-ii', 'fe-85mm-f14-gm', 'fe-100mm-f28-stf-gm', 'fe-135mm-f18-gm',
     'fe-300mm-f28-gm', 'fe-400mm-f28-gm', 'fe-600mm-f4-gm',
-    'fe-16mm-f18-g', 'fe-20mm-f18-g', 'fe-24mm-f28-g', 'fe-40mm-f25-g',
-    'fe-50mm-f25-g', 'fe-90mm-f28-macro-g', 'fe-28mm-f2', 'fe-35mm-f18',
-    'fe-50mm-f18', 'fe-50mm-f28-macro', 'fe-35mm-f14-za', 'fe-35mm-f28-za',
+    'fe-16mm-f18-g', 'fe-20mm-f18-g', 'fe-28mm-f2', 'fe-35mm-f18',
+    'fe-50mm-f28-macro', 'fe-35mm-f14-za', 'fe-35mm-f28-za',
     'fe-50mm-f14-za', 'fe-55mm-f18-za',
-    'e-11mm-f18', 'e-15mm-f14-g', 'e-16mm-f28', 'e-20mm-f28', 'e-24mm-f18-za',
-    'e-30mm-f35-macro', 'e-35mm-f18-oss', 'e-50mm-f18-oss',
-    'fe-50mm-f14-gm',
-    'fe-24-70mm-f28-gm-ii',
-    'fe-70-200mm-f28-gm-oss-ii',
-    'fe-12-24mm-f28-gm', 'fe-12-24mm-f4-g', 'fe-16-25mm-f28-g', 'fe-16-35mm-f28-gm-ii',
-    'fe-16-35mm-f28-gm', 'fe-16-35mm-f4-pz-g', 'fe-16-35mm-f4-za-oss', 'fe-20-70mm-f4-g',
-    'fe-24-50mm-f28-g', 'fe-24-70mm-f4-za-oss', 'fe-24-105mm-f4-g-oss',
-    'fe-24-240mm-f35-63-oss', 'fe-28-60mm-f4-56', 'fe-28-70mm-f2-gm',
-    'fe-28-70mm-f35-56-oss-ii', 'fe-28-70mm-f35-56-oss', 'fe-50-150mm-f2-gm',
-    'fe-70-200mm-f4-macro-g-oss-ii', 'fe-70-200mm-f4-g-oss',
-    'fe-70-300mm-f45-56-g-oss', 'fe-100-400mm-f45-63-gm-oss', 'fe-200-600mm-f56-63-g-oss',
+    'e-16mm-f28', 'e-20mm-f28', 'e-24mm-f18-za',
+    'fe-12-24mm-f28-gm', 'fe-16-25mm-f28-g', 'fe-16-35mm-f28-gm-ii',
+    'fe-16-35mm-f28-gm', 'fe-16-35mm-f4-pz-g', 'fe-16-35mm-f4-za-oss', 'fe-24-50mm-f28-g', 'fe-24-70mm-f4-za-oss', 'fe-28-70mm-f2-gm',
+    'fe-28-70mm-f35-56-oss-ii', 'fe-70-200mm-f4-macro-g-oss-ii', 'fe-70-200mm-f4-g-oss',
+    'fe-100-400mm-f45-63-gm-oss', 'fe-200-600mm-f56-63-g-oss',
     'fe-400-800mm-f63-8-g-oss',
-    'e-10-18mm-f4-oss', 'e-10-20mm-f4-pz-g', 'e-16-50mm-f35-56-pz-oss-ii',
-    'e-16-50mm-f35-56-pz-oss', 'e-16-55mm-f28-g', 'e-16-70mm-f4-za-oss',
-    'e-18-105mm-f4-g-oss-pz', 'e-18-135mm-f35-56-oss', 'e-55-210mm-f45-63-oss',
-    'e-70-350mm-f45-63-g-oss',
+    'e-10-18mm-f4-oss', 'e-16-50mm-f35-56-pz-oss-ii',
+    'e-16-50mm-f35-56-pz-oss', 'e-16-55mm-f28-g', 'e-18-105mm-f4-g-oss-pz', 'e-18-135mm-f35-56-oss', 'e-70-350mm-f45-63-g-oss'
   ]),
 };
 

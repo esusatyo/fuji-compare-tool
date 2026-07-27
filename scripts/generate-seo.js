@@ -773,6 +773,18 @@ function brandHeadBlock(brand, data, site) {
   );
 }
 
+// about.html became a generated artifact once it started carrying the image
+// credits, so it needs its canonical from site-config like every other page
+// rather than a hardcoded URL.
+function aboutHeadBlock(site) {
+  return metaBlock(
+    site,
+    `${site.baseUrl}/about.html`,
+    `About — ${site.siteName}`,
+    `What ${site.siteName} is, how the spec and price data is sourced and verified, image credits, and who built it.`
+  );
+}
+
 function rootHeadBlock(site, brandNames) {
   return metaBlock(
     site,
@@ -945,11 +957,19 @@ function withHeadBlock(html, block, file) {
 // Trust pages don't load engine.css (self-contained, file://-safe), so their
 // few theme-dependent rules — including the toggle's — carry their own
 // tiny :root/[data-theme="light"] block derived from the same tokens.
-function identityHeadBlock(page, site) {
+function identityHeadBlock(page, site, title, desc) {
   const dark = n => identityToken(n, 'dark');
   const light = n => identityToken(n, 'light');
+  const url = `${site.baseUrl}/${cleanUrl(page)}`;
   return `${ID_HEAD_BEGIN}
-  <link rel="canonical" href="${site.baseUrl}/${cleanUrl(page)}">
+  <meta name="description" content="${esc(desc)}">
+  <link rel="canonical" href="${url}">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="${esc(site.siteName)}">
+  <meta property="og:title" content="${esc(title)}">
+  <meta property="og:description" content="${esc(desc)}">
+  <meta property="og:url" content="${url}">
+  <meta name="twitter:card" content="summary">
   ${assetLinks('./')}
   <style>
     :root {
@@ -983,6 +1003,10 @@ function identityHeadBlock(page, site) {
     .theme-btn { padding: 5px 14px; font-size: 12px; font-weight: 600; color: var(--text-secondary);
                  background: transparent; border: none; cursor: pointer; font-family: inherit; }
     .theme-btn.active { background: var(--accent-primary); color: var(--bg-deep); }
+    details { margin-top: 12px; }
+    summary { cursor: pointer; font-size: .95rem; }
+    ul.credits { font-size: .85rem; line-height: 1.5; padding-left: 20px; margin-top: 12px; }
+    ul.credits li { margin-bottom: 4px; }
   </style>
   ${ID_HEAD_END}`;
 }
@@ -1001,6 +1025,60 @@ function identityFooterBlock() {
 
 function withBodyBlock(html, block, file) {
   return withBlock(html, block, file, SEO_BODY_BEGIN, SEO_BODY_END);
+}
+
+// ─── Image credits (about.html) ──────────────
+// Most Commons product photos here are CC BY / CC BY-SA, which permit reuse
+// only *with attribution*, so this block is a licence obligation rather than a
+// courtesy. It is generated from each item's `imageCredit` (populated by
+// scripts/fetch-image-credits.js, enforced by schema.js) so it can never drift
+// out of sync with the images actually shipped.
+//
+// Manufacturer/retailer product shots are deliberately absent: they are not
+// freely licensed and no credit line would change that — they are publicity
+// images used to depict the product they advertise.
+function imageCreditsBlock(brandData) {
+  const rows = [];
+  for (const [brand, data] of Object.entries(brandData)) {
+    // Display name, not the directory slug ("Canon", not "canon").
+    const brandName = data.BRAND_CONFIG.name || brand;
+    for (const [, item] of Object.entries({ ...data.CAMERAS, ...data.LENSES })) {
+      if (!item.imageCredit) continue;
+      rows.push({ brand: brandName, name: item.name, c: item.imageCredit });
+    }
+  }
+  rows.sort((a, b) => a.brand.localeCompare(b.brand) || a.name.localeCompare(b.name));
+  if (!rows.length) {
+    return `${SEO_BODY_BEGIN}\n  <h2>Image credits</h2>\n  <p>No freely-licensed third-party images are currently in use.</p>\n  ${SEO_BODY_END}`;
+  }
+
+  // One <li> per photo: the work, its author, and its licence — each linked to
+  // the Commons file page and the licence deed respectively.
+  const items = rows.map(r => {
+    const who = r.c.author ? esc(r.c.author) : 'Unknown author';
+    const lic = r.c.licenceUrl
+      ? `<a href="${esc(r.c.licenceUrl)}" rel="noopener nofollow">${esc(r.c.licence)}</a>`
+      : esc(r.c.licence);
+    return `    <li><a href="${esc(r.c.source)}" rel="noopener nofollow">${esc(r.brand)} ${esc(r.name)}</a>` +
+           ` — ${who}, ${lic}</li>`;
+  }).join('\n');
+
+  const licences = [...new Set(rows.map(r => r.c.licence))].sort();
+  return `${SEO_BODY_BEGIN}
+  <h2>Image credits</h2>
+  <p>Product photographs are used under free licences from
+     <a href="https://commons.wikimedia.org" rel="noopener">Wikimedia Commons</a>. Each photo below is
+     credited to its author and licence as those licences require; follow a product link for the
+     original file and its full terms. Licences in use: ${esc(licences.join(', '))}.</p>
+  <p>Remaining product images are manufacturer press/product photographs, used to depict the
+     product they show; those remain the copyright of their respective manufacturers.</p>
+  <details>
+    <summary>${rows.length} credited photographs</summary>
+    <ul class="credits">
+${items}
+    </ul>
+  </details>
+  ${SEO_BODY_END}`;
 }
 
 // ─── Sitemap & robots ────────────────────────
@@ -1089,11 +1167,17 @@ function buildAll() {
   files.set(cmp, cmpHtml);
 
   sitemapPaths.push('about.html', 'privacy.html');
-  for (const page of ['about.html', 'privacy.html']) {
+  const ABOUT_DESC = `What ${site.siteName} is, how the spec and price data is sourced and verified, image credits, and who built it.`;
+  const PRIVACY_DESC = `${site.siteName} privacy policy: cookieless analytics, no accounts, no personal data collected.`;
+  for (const [page, title, desc] of [
+    ['about.html', `About — ${site.siteName}`, ABOUT_DESC],
+    ['privacy.html', `Privacy — ${site.siteName}`, PRIVACY_DESC],
+  ]) {
     let html = fs.readFileSync(path.join(ROOT, page), 'utf8');
-    html = withBlock(html, identityHeadBlock(page, site), page, ID_HEAD_BEGIN, ID_HEAD_END);
+    html = withBlock(html, identityHeadBlock(page, site, title, desc), page, ID_HEAD_BEGIN, ID_HEAD_END);
     html = withBlock(html, identityHeaderBlock(), page, ID_HEADER_BEGIN, ID_HEADER_END);
     html = withBlock(html, identityFooterBlock(), page, ID_FOOTER_BEGIN, ID_FOOTER_END);
+    if (page === 'about.html') html = withBodyBlock(html, imageCreditsBlock(brandData), page);
     files.set(page, html);
   }
   let rootHtml = fs.readFileSync(path.join(ROOT, 'index.html'), 'utf8');
