@@ -589,7 +589,11 @@ footer a:hover { text-decoration: underline; }
   .hero-title { font-size: 22px; }
   .cam-image-wrap { width: 80px; height: 64px; }
   .slot-price { font-size: 13px; }
-  .header-brand { display: none; }
+  /* Hide the wordmark text only, not the whole lockup — .header-brand
+     also carries .header-title (brand name / "Lens Compare") on brand
+     pages, and is the *only* header content on the root page, so hiding
+     it outright left the root page's mobile header completely empty. */
+  .brand-wordmark { display: none; }
   #site-header { padding: 0 10px; gap: 6px; justify-content: center; }
   .mode-btn { padding: 5px 9px; font-size: 11px; }
   .header-select { padding: 5px 6px; font-size: 11px; }

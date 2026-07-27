@@ -61,12 +61,17 @@ or an OpenSpec change's `research/` folder works well):
   `DROPDOWN_GROUPS`, `LENSES`, `LENS_DROPDOWN_GROUPS`, `REGISTERED_BRANDS`.
   - `BRAND_CONFIG`: name, `slug` (= directory name, matches the registry key),
     `families[]`, `brandSections: ['<slug>']` (or `[]` if no brand section),
-    `cameras`/`lenses` sub-configs (hero copy + `defaultSelected` of 1–3 ids),
-    `footerLinks[]` (https). No theming fields — page colors come from the
-    site-wide design tokens in `engine.css`, and a test rejects
-    `accentColor`/`heroDark`/`logoText`/`logoAccent` if reintroduced. The
-    landing-page card stripe color lives in `BRAND_CARD_ACCENTS` in
-    `scripts/generate-seo.js` — add the new brand there.
+    `mount` (e.g. `'RF-Mount'` — shown on the landing-page brand tile),
+    `heroCamera` (a current camera slug — the landing-tile showcase photo;
+    pick whichever current body has a clean freely-licensed or official
+    product photo, not necessarily the technical flagship — both validated
+    by `tests/data/config.test.js`), `cameras`/`lenses` sub-configs (hero
+    copy + `defaultSelected` of 1–3 ids), `footerLinks[]` (https). No
+    theming fields — page colors come from the site-wide design tokens in
+    `engine.css`, and a test rejects `accentColor`/`heroDark`/`logoText`/
+    `logoAccent` if reintroduced. The landing-page card stripe color lives
+    in `BRAND_CARD_ACCENTS` in `scripts/generate-seo.js` — add the new
+    brand there.
   - Start with empty `CAMERAS`/`LENSES` and seed during Steps 5–6.
   - No camera or lens slug may contain `:` — it's reserved as the brand/slug
     separator on the cross-brand `/compare/` page.
@@ -187,6 +192,8 @@ group) and `npm run test:data`.
 ## Full wiring checklist (don't miss one)
 
 - [ ] `<brand>/data.js` + `<brand>/index.html`
+- [ ] `BRAND_CONFIG.mount` + `BRAND_CONFIG.heroCamera` set (landing-tile mount badge + photo)
+- [ ] `BRAND_CARD_ACCENTS` in `scripts/generate-seo.js` has the new brand's stripe color
 - [ ] `REGISTERED_BRANDS` updated in **all** brands' `data.js` (identical sets)
 - [ ] root `index.html` `VALID_BRANDS` includes `<slug>`
 - [ ] `engine.js` `MANUFACTURER_COLORS` has the brand
