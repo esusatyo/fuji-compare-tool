@@ -528,6 +528,25 @@ const CAMERAS = {
     lensType:'Interchangeable', lensSpec:null, filmSims:20,
   },
 
+  'x-t30iii': {
+    name:'X-T30 III', series:'X-T', year:2025, discontinued:false,
+    tagline:'Pocket Size, Classic Style',
+    productUrl:'https://www.fujifilm-x.com/global/products/cameras/x-t30-iii/',
+    imageUrl:'https://fujifilm-x.b-cdn.net/wp-content/uploads/2025/10/X-T30%E2%85%A2_front_XC13-33_black-2da29f28-scaled.jpg',
+    asin:'B0FWTX8S9J',
+    prices:{USD:999,AUD:1679,EUR:899,GBP:829,JPY:152900,CAD:1349,SGD:1349},
+    sensorMP:26.1, sensorType:'X-Trans CMOS 4', processor:'X-Processor 5',
+    width:118.4, height:82.8, depth:46.8, weight:378, weatherSealed:false,
+    lcdSize:'3.0"', lcdDots:1620, lcdType:'Tilt',
+    evfType:'EVF', evfDots:2.36, evfMag:0.62,
+    faceDetection:true, subjectDetection:'Animal / Bird / Vehicle / Plane / Train',
+    ibis:false, ibisStops:null, maxBurst:8,
+    maxVideoRes:'6.2K / 30P', logVideo:true,
+    xApp:true, bluetooth:'5.2', wifi:true,
+    cardSlots:'1× SD UHS-I', batteryLife:315, usbCharging:true,
+    lensType:'Interchangeable', lensSpec:null, filmSims:20,
+  },
+
   'x-t30ii': {
     name:'X-T30 II', series:'X-T', year:2021, discontinued:false,
     tagline:'Compact 26MP Enthusiast',
@@ -718,7 +737,7 @@ const CAMERAS = {
 
 // Ordered list of camera IDs for dropdowns
 const CAMERA_ORDER = [
-  'x-half','x-e5','x-m5','x100vi','x-t50','x-s20','x-h2s','x-h2','x-t5',
+  'x-half','x-e5','x-m5','x-t30iii','x100vi','x-t50','x-s20','x-h2s','x-h2','x-t5',
   'x-pro3','x-t30ii','x-e4','x100v','x-t4','x-s10','x-t200',
   'x-t30','x-h1','x-t3','x-t100','x-e3','x100f','x-t20','x-pro2',
   'x-t10','x-t2','x-e2s','x100t','x-t1','x-e2','x100s','x-m1','x-e1',
@@ -726,7 +745,7 @@ const CAMERA_ORDER = [
 ];
 
 const DROPDOWN_GROUPS = [
-  { label: '── Current (2022–2025) ──',     ids: ['x-half','x-e5','x-m5','x100vi','x-t50','x-s20','x-h2s','x-h2','x-t5'] },
+  { label: '── Current (2022–2025) ──',     ids: ['x-half','x-e5','x-m5','x-t30iii','x100vi','x-t50','x-s20','x-h2s','x-h2','x-t5'] },
   { label: '── Recent (2019–2021) ──',       ids: ['x-pro3','x-t30ii','x-e4','x100v','x-t4','x-s10','x-t200'] },
   { label: '── Mid-Generation (2017–2019) ──', ids: ['x-t30','x-h1','x-t3','x-t100','x-e3','x100f','x-t20','x-pro2'] },
   { label: '── Classic (2013–2016) ──',      ids: ['x-t10','x-t2','x-e2s','x100t','x-t1','x-e2','x100s','x-m1','x-e1'] },
