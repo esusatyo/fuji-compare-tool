@@ -10,6 +10,7 @@
   --bg-surface: #20242F;     /* oklch(0.16 0.015 255) cards, nav bar */
   --bg-surface-2: #262B38;   /* oklch(0.19 0.015 255) raised surfaces */
   --bg-hover: #2C3240;       /* hover tint one step above bg-surface-2 */
+  --header-bg: var(--bg-surface); /* top nav bar — same as card surface here */
   --border: #3C4150;         /* oklch(0.27 0.015 255) card/table borders */
   --text-primary: #ECEDF1;   /* oklch(0.95 0.005 255) headings */
   --text-secondary: #9CA3B5; /* oklch(0.65 0.02 255) body/labels */
@@ -43,6 +44,12 @@
   --bg-surface: #FFFFFF;     /* cards, nav bar */
   --bg-surface-2: #F1EDF1;   /* raised surfaces */
   --bg-hover: #E8E2E8;       /* hover tint one step above bg-surface-2 */
+  /* Top nav bar gets a soft lavender wash instead of flat white — same
+     one tone on every page (root/brand/compare), echoing the brand-color
+     headers from before the shared design system without reintroducing
+     per-brand theming. Derived from --accent-primary so it always tracks
+     the palette; light enough to keep text-primary contrast near-white. */
+  --header-bg: color-mix(in srgb, var(--accent-primary) 12%, var(--bg-surface));
   --border: #EDEAEE;         /* oklch(0.94 0.007 320) card/table borders */
   --text-primary: #18151A;   /* oklch(0.2 0.01 320) headings */
   --text-secondary: #5A525C; /* oklch(0.45 0.02 320) body/labels */
@@ -72,7 +79,7 @@ body {
   position: sticky;
   top: 0;
   z-index: 100;
-  background: var(--bg-surface);
+  background: var(--header-bg);
   color: var(--text-primary);
   height: var(--header-h);
   display: flex;

@@ -30,6 +30,16 @@ test('dark (default) :root sets color-scheme: dark; light override sets color-sc
   assert.match(block, /color-scheme:\s*light;/);
 });
 
+test('#site-header uses a --header-bg token, not flat --bg-surface (one shared tone, no per-brand colors)', () => {
+  assert.match(css, /#site-header\s*\{[^}]*background:\s*var\(--header-bg\)/s);
+  const darkBlock = css.match(/:root\s*\{([^}]*)\}/)[1];
+  const lightBlock = css.match(/:root\[data-theme="light"\]\s*\{([^}]*)\}/)[1];
+  assert.match(darkBlock, /--header-bg:/, 'dark theme missing --header-bg');
+  assert.match(lightBlock, /--header-bg:/, 'light theme missing --header-bg');
+  // Light gets an actual tint (derived from --accent-primary), not plain white.
+  assert.match(lightBlock, /--header-bg:\s*color-mix\(in srgb,\s*var\(--accent-primary\)/);
+});
+
 const pagesWithTheme = [
   'index.html', 'about.html', 'privacy.html', 'compare/index.html',
   ...brandDirs().map(b => `${b}/index.html`),
