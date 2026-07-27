@@ -2,7 +2,7 @@
 const { test } = require('node:test');
 const assert = require('node:assert/strict');
 const { loadBrand, brandDirs } = require('../helpers/load-brand');
-const { HEX_COLOR, HTTPS_URL } = require('../helpers/schema');
+const { HTTPS_URL } = require('../helpers/schema');
 
 const allBrands = brandDirs();
 
@@ -14,12 +14,23 @@ for (const brand of allBrands) {
     assert.equal(typeof cfg.name, 'string');
     assert.ok(cfg.name.trim(), 'name is empty');
     assert.equal(cfg.slug, brand, 'slug must match directory name');
-    assert.match(cfg.accentColor, HEX_COLOR, 'accentColor must be a hex colour');
-    assert.match(cfg.heroDark, HEX_COLOR, 'heroDark must be a hex colour');
-    assert.equal(typeof cfg.logoText, 'string');
-    assert.equal(typeof cfg.logoAccent, 'string'); // may be ''
     assert.ok(Array.isArray(cfg.families) && cfg.families.length, 'families must be a non-empty array');
     assert.ok(Array.isArray(cfg.brandSections), 'brandSections must be an array');
+    assert.equal(typeof cfg.mount, 'string', 'mount must be a string');
+    assert.ok(cfg.mount.trim(), 'mount is empty');
+  });
+
+  test(`[${brand}] heroCamera (landing-tile showcase) resolves to a real, current camera`, () => {
+    assert.equal(typeof cfg.heroCamera, 'string', 'heroCamera must be a camera slug string');
+    const cam = data.CAMERAS[cfg.heroCamera];
+    assert.ok(cam, `heroCamera "${cfg.heroCamera}" is not a camera in CAMERAS`);
+    assert.ok(!cam.discontinued, `heroCamera "${cfg.heroCamera}" should be a current camera`);
+  });
+
+  test(`[${brand}] BRAND_CONFIG has no per-brand theming fields (design system owns page colors)`, () => {
+    for (const field of ['accentColor', 'heroDark', 'logoText', 'logoAccent']) {
+      assert.ok(!(field in cfg), `${field} is no longer part of the BRAND_CONFIG contract`);
+    }
   });
 
   test(`[${brand}] cameras/lenses sub-config is well-formed`, () => {

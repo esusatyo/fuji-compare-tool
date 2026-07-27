@@ -58,12 +58,13 @@ const KNOWN_IMAGE_GAPS = {
     'viltrox-24mm-f18', 'viltrox-35mm-f18-evo', 'voigtlander-nokton-40mm-f12',
     'yongnuo-35mm-f2', 'yongnuo-50mm-f18', 'ttartisan-27mm-f28', '7artisans-27mm-f28', 'meike-85mm-f18',
     'viltrox-40mm-f25-air', 'voigtlander-apo-lanthar-50mm-f2',
-    // Curated via scripts/fetch-images-commons.js (strict model-token match).
-    // 21 of 57 items carry real Commons images (4 cameras + 17 lenses); the
+    // Curated via scripts/fetch-images-commons.js (strict model-token match),
+    // plus z9 sourced manually for the landing-page flagship photo.
+    // 22 of 57 items carry real Commons images (5 cameras + 17 lenses); the
     // rest stay on the engine's series-coloured placeholder until a freely-
     // licensed Commons photo exists. The test self-cleans once one lands.
     // Cameras (10) — no clean Commons photo found yet:
-    'z9', 'z8', 'z5-ii', 'z7', 'z6', 'z5', 'z50', 'z30', 'zf', 'zfc', 'zr',
+    'z8', 'z5-ii', 'z7', 'z6', 'z5', 'z50', 'z30', 'zf', 'zfc', 'zr',
     // Lenses (26):
     'z-24mm-f1-8-s', 'z-35mm-f1-8-s', 'z-35mm-f1-2-s',
     'z-135mm-f1-8-s-plena', 'z-58mm-f0-95-s-noct',
@@ -81,13 +82,15 @@ const KNOWN_IMAGE_GAPS = {
     'voigtlander-apo-lanthar-35mm-f2-l', 'voigtlander-apo-lanthar-50mm-f2-l',
     'laowa-90mm-f28-macro-l', 'laowa-15mm-f2-l',
     'sigma-90mm-f28-dg', 'sigma-28-70mm-f28-dg', 'sigma-100-400mm-f5-63-dg',
-    // Curated via scripts/fetch-images-commons.js. 12 of 57 items carry real
-    // Commons images (6 cameras: s5-ii, s9, gh7, gh6, gh5-ii, g9-ii; 6 lenses:
-    // S 35/1.8, S 24-105/4, S PRO 70-200/4, S 70-300, G 25/1.7, Nocticron 42.5/1.2).
-    // The s5/g9 search hits returned the newer-model photo (S5 II / G9 II) and
-    // were rejected. The rest stay on the placeholder until a freely-licensed
-    // Commons photo exists; the test self-cleans once one lands. Cameras (12):
-    's1r-ii', 's1-ii', 's5-iix', 's1h', 's1', 's5',
+    // Curated via scripts/fetch-images-commons.js. 14 of 57 items carry real
+    // images (8 cameras: s5-ii, s9, gh7, gh6, gh5-ii, g9-ii, s1r (Commons),
+    // s1r-ii (official Panasonic product photo, sourced for the landing-page
+    // tile); 6 lenses: S 35/1.8, S 24-105/4, S PRO 70-200/4, S 70-300, G
+    // 25/1.7, Nocticron 42.5/1.2). The s5/g9 search hits returned the
+    // newer-model photo (S5 II / G9 II) and were rejected. The rest stay on
+    // the placeholder until a freely-licensed Commons photo exists; the test
+    // self-cleans once one lands. Cameras (11):
+    's1-ii', 's5-iix', 's1h', 's1', 's5',
     'gh5',
     'g100d', 'g9', 'gx9', 'g95', 'l10',
     // Lenses — LUMIX S primes:

@@ -8,17 +8,19 @@ window.BRAND_DATA['nikon'] = (() => {
 const BRAND_CONFIG = {
   name:        'Nikon',
   slug:        'nikon',
-  accentColor: '#ffd200',
-  heroDark:    '#1a1700',
-  logoText:    'Nikon',
-  logoAccent:  '',
   families:    ['Z System'],
   brandSections: ['nikon'],
+  mount:       'Z-Mount',
+  // Landing-tile showcase camera: not the true flagship (that's the Z9) —
+  // the only freely-licensed Z9 photo found shows it in a shop with a large
+  // telephoto attached, which reads poorly as a tile thumbnail. The Z6 III
+  // has a clean product photo and is Nikon's most popular current body.
+  heroCamera:  'z6-iii',
   cameras: {
     heroEyebrow:  'Z System',
     heroTitle:    '<span>Nikon</span> Camera Comparison',
     heroSubtitle: 'Compare up to 3 Nikon Z cameras side-by-side across the full lineup',
-    headerTitle:  'Camera Compare',
+    headerTitle:  'Nikon',
     defaultSelected: ['z8', 'z6-iii', 'z50-ii'],
   },
   lenses: {
@@ -69,7 +71,8 @@ const CAMERAS = {
     name:'Z9', series:'Z (Full-frame)', year:2021, discontinued:false,
     tagline:'Stacked-Sensor Pro Flagship',
     productUrl:'https://www.nikonusa.com/en/nikon-products/product/mirrorless-cameras/z-9.html',
-    imageUrl:null,
+    imageUrl:'https://upload.wikimedia.org/wikipedia/commons/thumb/f/fe/Nikon_Z9.jpg/1280px-Nikon_Z9.jpg',
+    imageCredit:{author:"Peachyeung316", licence:"CC BY-SA 4.0", licenceUrl:"https://creativecommons.org/licenses/by-sa/4.0", source:"https://commons.wikimedia.org/wiki/File:Nikon_Z9.jpg"},
     asin:'B09KHC4XCT',
     prices:{USD:5900,AUD:8799,EUR:6399,GBP:5299,JPY:900000,CAD:7599,SGD:7799},
     sensorMP:45.7, sensorType:'Full-frame Stacked BSI CMOS', processor:'EXPEED 7',

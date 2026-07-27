@@ -61,11 +61,14 @@ test('one generated page per matchup, with brand names and a valid CTA', () => {
   }
 });
 
-test('sitemap lists the compare page and every cross-brand page', () => {
+test('sitemap lists the compare page and every cross-brand page (clean URLs, no .html)', () => {
   const sitemap = files.get('sitemap.xml');
   assert.ok(sitemap.includes('/compare/</loc>'));
   for (const m of matchups) {
-    assert.ok(sitemap.includes(`/${m.file}</loc>`), `sitemap missing ${m.file}`);
+    // The host 307-redirects .html to the extensionless URL, so the
+    // sitemap must carry the clean form.
+    assert.ok(sitemap.includes(`/${m.file.replace(/\.html$/, '')}</loc>`), `sitemap missing ${m.file}`);
+    assert.ok(!sitemap.includes(`/${m.file}</loc>`), `sitemap must not list the .html form of ${m.file}`);
   }
 });
 

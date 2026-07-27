@@ -8,17 +8,15 @@ window.BRAND_DATA['canon'] = (() => {
 const BRAND_CONFIG = {
   name:        'Canon',
   slug:        'canon',
-  accentColor: '#cc0000',
-  heroDark:    '#2d0000',
-  logoText:    'Canon',
-  logoAccent:  '',
   families:    ['EOS R System'],
   brandSections: ['canon'],
+  mount:       'RF-Mount',
+  heroCamera:  'eos-r1',
   cameras: {
     heroEyebrow:  'EOS R System',
     heroTitle:    '<span>Canon</span> Camera Comparison',
     heroSubtitle: 'Compare up to 3 EOS R cameras side-by-side across the full lineup',
-    headerTitle:  'Camera Compare',
+    headerTitle:  'Canon',
     defaultSelected: ['eos-r5-ii', 'eos-r6-ii', 'eos-r8'],
   },
   lenses: {

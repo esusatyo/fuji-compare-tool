@@ -29,6 +29,14 @@ for (const brand of brandDirs()) {
     assert.equal(slot.textContent.trim(), '', 'disclosure slot must be empty until activated');
   });
 
+  test(`[${brand}] footer carries the Light/Dark/System theme toggle (theme.js wires it up)`, () => {
+    const { window } = loadBrand(brand, { engine: true });
+    const toggle = window.document.querySelector('footer .theme-toggle');
+    assert.ok(toggle, 'theme toggle missing from footer');
+    const prefs = [...toggle.querySelectorAll('.theme-btn')].map(b => b.dataset.themePref);
+    assert.deepEqual(prefs, ['light', 'dark', 'system']);
+  });
+
   test(`[${brand}] engine works without site-config (date line omitted, no errors)`, () => {
     const { window } = loadBrand(brand, { engine: true, siteConfig: false });
     const footer = window.document.querySelector('footer');

@@ -5,78 +5,111 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Nikon Z5 II vs Zf: Spec Comparison</title>
   <meta name="description" content="Compare the Nikon Z5 II (2025) and Zf (2023) side by side — price, sensor, stabilization, video, weight and more.">
-  <link rel="canonical" href="https://comparecameraspecs.com/nikon/vs/z5-ii-vs-zf.html">
+  <link rel="canonical" href="https://comparecameraspecs.com/nikon/vs/z5-ii-vs-zf">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Compare Camera Specs">
   <meta property="og:title" content="Nikon Z5 II vs Zf: Spec Comparison">
   <meta property="og:description" content="Compare the Nikon Z5 II (2025) and Zf (2023) side by side — price, sensor, stabilization, video, weight and more.">
-  <meta property="og:url" content="https://comparecameraspecs.com/nikon/vs/z5-ii-vs-zf.html">
+  <meta property="og:url" content="https://comparecameraspecs.com/nikon/vs/z5-ii-vs-zf">
   <meta name="twitter:card" content="summary">
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"ItemList","name":"Nikon Z5 II vs Zf: Spec Comparison","itemListElement":[{"@type":"ListItem","position":1,"item":{"@type":"Product","name":"Nikon Z5 II","brand":{"@type":"Brand","name":"Nikon"},"offers":{"@type":"Offer","priceCurrency":"USD","price":1850}}},{"@type":"ListItem","position":2,"item":{"@type":"Product","name":"Nikon Zf","brand":{"@type":"Brand","name":"Nikon"},"offers":{"@type":"Offer","priceCurrency":"USD","price":2200}}}]}</script>
   <!-- Umami analytics — temporarily disabled, kept for re-enabling.
   <script defer src="https://cloud.umami.is/script.js" data-website-id="365e9ee6-1fb5-4a0d-9c74-f6255522a196"></script> -->
   <script data-goatcounter="https://esusatyo.goatcounter.com/count" defer src="https://gc.zgo.at/count.js"></script>
+  <script>
+  (function(){
+    try {
+      var p = localStorage.getItem('theme-pref');
+      if (p !== 'light' && p !== 'dark' && p !== 'system') p = 'system';
+      var eff = p === 'system'
+        ? (matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark')
+        : p;
+      document.documentElement.setAttribute('data-theme', eff);
+    } catch (e) { /* storage/matchMedia unavailable — dark default stands */ }
+  })();
+  </script>
+  <link rel="icon" type="image/svg+xml" href="../../favicon.svg">
+  <link rel="apple-touch-icon" href="../../apple-touch-icon.png">
+  <meta name="theme-color" content="#131722">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap">
+  <script>
+  addEventListener('load', function () {
+    var css = document.querySelector('link[href$="engine.css"]');
+    var app = document.getElementById('app');
+    var broken = (css && !css.sheet) || (app && !app.children.length);
+    try {
+      if (broken && !sessionStorage.getItem('cc-selfheal')) {
+        sessionStorage.setItem('cc-selfheal', '1');
+        location.reload();
+      } else if (!broken) {
+        sessionStorage.removeItem('cc-selfheal');
+      }
+    } catch (e) { /* storage unavailable — never loop, so do nothing */ }
+  });
+  </script>
   <link rel="stylesheet" href="../../engine.css">
   <style>
-    :root { --accent-color: #ffd200; --hero-dark: #1a1700; }
-    .header-back { font-size: 13px; color: rgba(255,255,255,.65); text-decoration: none; white-space: nowrap;
+    .header-back { font-size: 13px; color: var(--text-secondary); text-decoration: none; white-space: nowrap;
                  overflow: hidden; text-overflow: ellipsis; }
-  .header-back:hover { color: #fff; }
+  .header-back:hover { color: var(--text-primary); }
 
   .vs-main { max-width: 840px; margin: 0 auto; padding: 8px 20px 40px; }
 
   .vs-products { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 24px 0 8px; }
-  .vs-product { background: var(--white); border: 1px solid var(--border); border-radius: var(--radius);
+  .vs-product { background: var(--bg-surface); border: 1px solid var(--border); border-radius: var(--radius);
                 box-shadow: var(--shadow); padding: 18px; display: flex; flex-direction: column;
                 align-items: center; gap: 10px; text-align: center; }
-  .vs-photo { width: 100%; height: 160px; display: flex; align-items: center; justify-content: center; }
-  .vs-img { max-width: 100%; max-height: 160px; object-fit: contain; }
+  .vs-photo { width: 100%; height: 160px; display: flex; align-items: center; justify-content: center;
+              background: var(--photo-chip); border-radius: 12px; padding: 8px; }
+  .vs-img { max-width: 100%; max-height: 144px; object-fit: contain; }
   .vs-ph { width: 100%; height: 100%; border-radius: 8px; align-items: center; justify-content: center;
            font-weight: 700; font-size: 14px; padding: 10px; text-align: center; }
-  .vs-pname { font-weight: 700; font-size: 16px; color: var(--gray-4); }
-  .vs-pprice { font-weight: 700; font-size: 18px; color: var(--gray-4); }
+  .vs-pname { font-weight: 700; font-size: 16px; color: var(--text-primary); }
+  .vs-pprice { font-weight: 700; font-size: 18px; color: var(--text-primary); }
   .vs-plinks { display: flex; gap: 8px; flex-wrap: wrap; justify-content: center; margin-top: 2px; }
-  .vs-view { font-size: 12px; color: var(--accent-color); text-decoration: none; border: 1px solid var(--accent-color);
-             padding: 5px 14px; border-radius: 999px; transition: all .15s; }
-  .vs-view:hover { background: var(--accent-color); color: #fff; }
-  .vs-view.na { color: var(--gray-3); border-color: var(--gray-3); }
-  .vs-buy { font-size: 12px; color: #e07b00; text-decoration: none; border: 1px solid #e07b00;
-            padding: 5px 14px; border-radius: 999px; transition: all .15s; }
-  .vs-buy:hover { background: #e07b00; color: #fff; }
-  .vs-cta { display: inline-flex; align-items: center; gap: 9px; background: var(--gray-4); color: #fff;
+  .vs-view { font-size: 12px; font-weight: 600; color: var(--accent-primary); background: rgba(180,140,224,.18);
+             text-decoration: none; padding: 5px 14px; border-radius: 999px; transition: all .15s; }
+  .vs-view:hover { background: var(--accent-primary); color: var(--bg-deep); }
+  .vs-view.na { color: var(--text-secondary); background: rgba(156,163,181,.14); }
+  .vs-buy { font-size: 12px; font-weight: 600; color: var(--accent-secondary); background: rgba(79,199,176,.18);
+            text-decoration: none; padding: 5px 14px; border-radius: 999px; transition: all .15s; }
+  .vs-buy:hover { background: var(--accent-secondary); color: var(--bg-deep); }
+  .vs-cta { display: inline-flex; align-items: center; gap: 9px; background: var(--accent-primary); color: var(--bg-deep);
             text-decoration: none; padding: 12px 22px; border-radius: 999px; font-weight: 600; font-size: 14px;
             margin: 24px 0 20px; box-shadow: var(--shadow); transition: transform .12s ease, box-shadow .12s ease; }
-  .vs-cta:hover { transform: translateY(-1px); box-shadow: 0 6px 18px rgba(0,0,0,.18); }
-  .vs-cta .play { color: var(--accent-color); font-size: 11px; }
+  .vs-cta:hover { transform: translateY(-1px); box-shadow: 0 6px 18px rgba(0,0,0,.4); }
+  .vs-cta .play { font-size: 11px; }
 
-  .vs-card { background: var(--white); border: 1px solid var(--border); border-radius: var(--radius);
+  .vs-card { background: var(--bg-surface); border: 1px solid var(--border); border-radius: var(--radius);
              box-shadow: var(--shadow); overflow: hidden; }
   .vs-card table { border-collapse: collapse; width: 100%; }
-  .vs-card thead th { background: var(--gray-4); color: #fff; font-weight: 600; font-size: 14px;
+  .vs-card thead th { background: var(--bg-surface-2); color: var(--text-primary); font-weight: 600; font-size: 14px;
                       padding: 14px 12px; text-align: center; }
-  .vs-card thead th:first-child { text-align: left; font-weight: 500; color: rgba(255,255,255,.55); font-size: 12px; }
-  .vs-card th[scope="row"] { text-align: left; font-weight: 500; color: var(--gray-3); font-size: 12px;
+  .vs-card thead th:first-child { text-align: left; font-weight: 500; color: var(--text-secondary); font-size: 12px; }
+  .vs-card th[scope="row"] { text-align: left; font-weight: 500; color: var(--text-secondary); font-size: 12px;
                              padding: 11px 16px; width: 34%; }
-  .vs-card td { text-align: center; font-size: 13px; color: var(--gray-4); padding: 11px 12px; font-weight: 500; }
+  .vs-card td { text-align: center; font-size: 13px; color: var(--text-primary); padding: 11px 12px; font-weight: 500; }
   .vs-card tbody tr { border-top: 1px solid var(--border); }
-  .vs-card tbody tr:nth-child(odd) { background: #fafafa; }
+  .vs-card tbody tr:nth-child(odd) { background: rgba(255,255,255,.02); }
 
-  .vs-note { color: var(--gray-3); font-size: 12px; margin: 16px 2px 0; }
+  .vs-note { color: var(--text-secondary); font-size: 12px; margin: 16px 2px 0; }
 
   .vs-related { margin-top: 36px; }
-  .vs-related h2 { font-size: 15px; text-transform: uppercase; letter-spacing: .06em; color: var(--gray-3);
+  .vs-related h2 { font-size: 15px; text-transform: uppercase; letter-spacing: .06em; color: var(--text-secondary);
                    margin-bottom: 14px; font-weight: 700; }
   .vs-related ul { list-style: none; display: grid; gap: 8px 24px;
                    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); }
-  .vs-related a { color: var(--gray-4); text-decoration: none; font-size: 14px; display: inline-block;
+  .vs-related a { color: var(--text-secondary); text-decoration: none; font-size: 14px; display: inline-block;
                   padding: 3px 0; border-bottom: 1px solid transparent; }
-  .vs-related a:hover { color: var(--accent-color); border-bottom-color: var(--accent-color); }
+  .vs-related a:hover { color: var(--accent-primary); border-bottom-color: var(--accent-primary); }
   </style>
 </head>
 <body>
   <header id="site-header">
     <div class="header-brand">
-      <span class="brand-logo">Compare<span class="accent">CameraSpecs</span></span>
+      <a class="brand-home" href="../../?brands" aria-label="Compare Camera Specs — choose a brand"><svg viewBox="0 0 64 64" width="24" height="24" aria-hidden="true" focusable="false"><path d="M4 16 V4 H16 M48 4 H60 V16 M60 48 V60 H48 M16 60 H4 V48" fill="none" stroke="#BFC6D4" stroke-width="3" stroke-linecap="round"></path><circle cx="24" cy="32" r="10" fill="#B48CE0"></circle><circle cx="40" cy="32" r="10" fill="#4FC7B0"></circle></svg><span class="brand-wordmark">Compare Camera Specs</span></a>
       <span class="header-sep">|</span>
       <a class="header-back" href="../index.html">All Nikon cameras</a>
     </div>

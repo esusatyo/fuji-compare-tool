@@ -1,0 +1,28 @@
+# Cloudflare static-assets headers (Workers assets supports _headers).
+#
+# The default asset policy is `max-age=0, must-revalidate`, which forbids
+# the browser from using its cached copy when a revalidation request
+# fails — one dropped connection renders the page unstyled/empty. Give
+# the render-critical subresources a modest freshness window plus
+# stale-if-error so a network blip degrades to "slightly stale" instead
+# of "broken". HTML keeps the default (always revalidated), so deploys
+# still propagate immediately; worst case is one hour of new-HTML/old-CSS
+# skew for repeat visitors.
+
+/engine.css
+  Cache-Control: public, max-age=3600, stale-while-revalidate=86400, stale-if-error=86400
+
+/engine.js
+  Cache-Control: public, max-age=3600, stale-while-revalidate=86400, stale-if-error=86400
+
+/site-config.js
+  Cache-Control: public, max-age=3600, stale-while-revalidate=86400, stale-if-error=86400
+
+/:brand/data.js
+  Cache-Control: public, max-age=3600, stale-while-revalidate=86400, stale-if-error=86400
+
+/favicon.svg
+  Cache-Control: public, max-age=86400, stale-if-error=604800
+
+/apple-touch-icon.png
+  Cache-Control: public, max-age=86400, stale-if-error=604800

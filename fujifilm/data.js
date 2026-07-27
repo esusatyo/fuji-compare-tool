@@ -8,17 +8,15 @@ window.BRAND_DATA['fujifilm'] = (() => {
 const BRAND_CONFIG = {
   name:        'Fujifilm',
   slug:        'fujifilm',
-  accentColor: '#cc0000',
-  heroDark:    '#2d0000',
-  logoText:    'FUJI',
-  logoAccent:  'film',
   families:    ['X Series', 'GFX'],
   brandSections: ['fujifilm'],
+  mount:       'X-Mount',
+  heroCamera:  'x-h2',
   cameras: {
     heroEyebrow:  'X Series & GFX',
     heroTitle:    '<span>Fujifilm</span> Camera Comparison',
     heroSubtitle: 'Compare up to 3 cameras side-by-side across all generations',
-    headerTitle:  'Camera Compare',
+    headerTitle:  'Fujifilm',
     defaultSelected: ['x-s20', 'x-t50', 'x100vi'],
   },
   lenses: {

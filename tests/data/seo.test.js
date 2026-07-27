@@ -7,9 +7,20 @@ const assert = require('node:assert/strict');
 const fs = require('fs');
 const path = require('path');
 const { loadBrand, brandDirs, ROOT } = require('../helpers/load-brand');
-const { buildAll, curatedPairs, siteConfig } = require('../../scripts/generate-seo');
+const { buildAll, curatedPairs, siteConfig,
+        ID_HEAD_BEGIN, ID_HEAD_END, ID_HEADER_BEGIN, ID_HEADER_END } = require('../../scripts/generate-seo');
 
 const generated = buildAll();
+
+test('trust pages carry both identity marker pairs (generator refuses to write without them)', () => {
+  for (const page of ['about.html', 'privacy.html']) {
+    const html = fs.readFileSync(path.join(ROOT, page), 'utf8');
+    for (const marker of [ID_HEAD_BEGIN, ID_HEAD_END, ID_HEADER_BEGIN, ID_HEADER_END]) {
+      assert.ok(html.includes(marker), `${page}: missing identity marker ${marker}`);
+    }
+    assert.ok(generated.has(page), `${page} must be part of the generator's output set`);
+  }
+});
 
 test('every generated artifact matches the committed file (rerun scripts/generate-seo.js)', () => {
   for (const [rel, content] of generated) {
@@ -31,20 +42,31 @@ test('no orphan vs-pages on disk beyond the curated set', () => {
   }
 });
 
-test('sitemap covers root, every brand page, every vs-page, and trust pages', () => {
+test('sitemap covers root, every brand page, every vs-page, and trust pages (clean URLs)', () => {
   const sitemap = generated.get('sitemap.xml');
   const site = siteConfig();
   assert.ok(sitemap.includes(`<loc>${site.baseUrl}/</loc>`));
-  for (const p of ['about.html', 'privacy.html']) {
+  // The host 307-redirects .html to the extensionless URL, so sitemap
+  // entries (like canonicals) must use the clean form.
+  assert.ok(!sitemap.includes('.html</loc>'), 'sitemap must not contain .html URLs');
+  for (const p of ['about', 'privacy']) {
     assert.ok(sitemap.includes(`<loc>${site.baseUrl}/${p}</loc>`), `sitemap missing ${p}`);
   }
   for (const brand of brandDirs()) {
     assert.ok(sitemap.includes(`<loc>${site.baseUrl}/${brand}/</loc>`), `sitemap missing ${brand}/`);
     for (const [rel] of generated) {
       if (rel.startsWith(`${brand}/vs/`)) {
-        assert.ok(sitemap.includes(`<loc>${site.baseUrl}/${rel}</loc>`), `sitemap missing ${rel}`);
+        assert.ok(sitemap.includes(`<loc>${site.baseUrl}/${rel.replace(/\.html$/, '')}</loc>`), `sitemap missing ${rel}`);
       }
     }
+  }
+});
+
+test('canonicals never point at a .html URL (the host redirects those)', () => {
+  for (const [rel, content] of generated) {
+    if (!rel.endsWith('.html')) continue;
+    const m = content.match(/<link rel="canonical" href="([^"]+)"/);
+    if (m) assert.ok(!m[1].endsWith('.html'), `${rel}: canonical ${m[1]} points at a redirecting .html URL`);
   }
 });
 

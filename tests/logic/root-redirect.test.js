@@ -22,11 +22,11 @@ function redirectScript() {
   return inline[2];
 }
 
-/** Run the redirect script with the given stored brand + hash; return the replace() target. */
-function runRedirect({ stored = null, hash = '' } = {}) {
+/** Run the redirect script with the given stored brand + hash + query; return the replace() target. */
+function runRedirect({ stored = null, hash = '', search = '' } = {}) {
   let target = null;
   const localStorage = { getItem: key => (key === 'brand' ? stored : null) };
-  const location = { hash, replace: url => { target = url; } };
+  const location = { hash, search, replace: url => { target = url; } };
   // The script is an IIFE referencing free `localStorage`/`location`; inject them as params.
   new Function('localStorage', 'location', redirectScript())(localStorage, location);
   return target;
@@ -67,6 +67,25 @@ test('[root] hash fragment is preserved through the redirect (returning visitor 
   assert.equal(runRedirect({ stored: 'fujifilm', hash: '#lenses' }), './fujifilm/#lenses');
   // No stored preference → no redirect, so nothing to preserve.
   assert.equal(runRedirect({ stored: null, hash: '#lenses' }), null);
+});
+
+test('[root] ?brands suppresses the redirect despite a stored brand (logo home link)', () => {
+  assert.equal(runRedirect({ stored: 'fujifilm', search: '?brands' }), null);
+  assert.equal(runRedirect({ stored: 'canon', search: '?brands=1' }), null);
+  // Other params don't suppress; the shortcut still fires.
+  assert.equal(runRedirect({ stored: 'fujifilm', search: '?utm_source=x' }), './fujifilm/');
+});
+
+test('[root] suppression leaves the stored preference untouched', () => {
+  let removed = false;
+  const localStorage = {
+    getItem: key => (key === 'brand' ? 'sony' : null),
+    removeItem: () => { removed = true; },
+    setItem: () => { removed = true; },
+  };
+  const location = { hash: '', search: '?brands', replace: () => {} };
+  new Function('localStorage', 'location', redirectScript())(localStorage, location);
+  assert.equal(removed, false, 'suppression must not clear or rewrite localStorage["brand"]');
 });
 
 test('[root] served HTML contains crawlable landing content (present without JS)', () => {

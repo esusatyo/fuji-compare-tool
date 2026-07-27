@@ -1,0 +1,44 @@
+## 1. Assets
+
+- [x] 1.1 Create a feature branch off `main` (e.g. `adopt-design-system`)
+- [x] 1.2 Check the design handoff into the repo: `assets/design/` (README + all three logo SVG variants + design_reference.dc.html from the zip), and `assets/logo.svg` as the canonical dark-theme mark
+- [x] 1.3 Create root `favicon.svg` — the mark tight-cropped per the handoff (viewBox trimmed to stroke extents, both circles equal weight)
+- [x] 1.4 Best-effort: generate `apple-touch-icon.png` (180px) from the SVG via headless Chrome (qlmanage produced white padding; Chrome render is full-bleed 180×180 on #131722)
+
+## 2. Token theme in engine.css
+
+- [x] 2.1 Replace the `:root` block with the Theme A token set (`--bg-deep`, `--bg-surface`, `--bg-surface-2`, `--border`, `--text-primary`, `--text-secondary`, `--accent-primary`, `--accent-secondary`, radius/spacing tokens) keeping `--accent-color` as an alias of `--accent-primary`; add the Inter font-family stack with system fallback
+- [x] 2.2 Restyle site header/nav to the handoff nav treatment (bg-surface, lockup left, controls right) and add `.brand-home` lockup styles (24px mark + 15px/700 wordmark, single link)
+- [x] 2.3 Restyle hero, compare header, slot cards, selects, and buttons (primary/secondary/outline treatments, 9px radius) for dark surfaces; give `.cam-image-wrap` the light photo chip (~#F4F5F7, radius 12)
+- [x] 2.4 Restyle the spec table: dark row striping, borders, section headers; replace green winner highlight with per-column accent tint — `:nth-child`-driven `--col-accent` (grid child 1 is the label, so slot A = nth-child(2)/even = primary, slot B = odd = secondary), `color-mix` with rgba fallback; badges/pills restyled to accent/0.18 fill + accent text (`.badge-disc` went neutral-gray — teal/purple misread semantically for "Discontinued")
+- [x] 2.5 Restyle footer + `.seo-links` block; swept all light-theme literals (`--gray-*`, `--white`, `--green-*`, `#fafafa`, `#eaeaec`, `#e07b00`) and mobile breakpoint rules
+
+## 3. Engine markup (engine.js)
+
+- [x] 3.1 Replace the header brand span with the lockup: inline Framed Duo SVG + "Compare Camera Specs" wordmark wrapped in `<a class="brand-home" href="../?brands">`; keep the `header-title` page context and other header controls
+- [x] 3.2 Delete the `init()` lines applying `--accent-color`/`--hero-dark`; drop `accentColor`/`heroDark`/`logoText`/`logoAccent` from `compareBrandConfig()` and any other engine reads
+- [x] 3.3 Remove `compare/index.html`'s inline `--accent-color`/`--hero-dark` override (favicon + theme-color + Inter links for all engine pages are generator-emitted — task 6.1)
+
+## 4. Brand data + schema
+
+- [x] 4.1 Remove `accentColor`, `heroDark`, `logoText`, `logoAccent` from `BRAND_CONFIG` in all five `<brand>/data.js` files
+- [x] 4.2 Contract enforcement lived in `tests/data/config.test.js` (not schema.js): required fields trimmed + new test asserting the four theming fields are absent
+- [x] 4.3 No logic test asserted the old logo/green-winner markup (verified by grep); added `tests/logic/header.test.js` — lockup present on every brand page + compare page, `../?brands` href, wordmark text, 2-circle mark, and engine sets no `--accent-color`/`--hero-dark`. 364/365 pass; the 1 failure is the intentional "generated pages stale" gate resolved by group 6
+
+## 5. Root landing, About, Privacy
+
+- [x] 5.1 Root `index.html`: `?brands` early-return added to the redirect IIFE; redirect tests extended (suppression, other-params-don't-suppress, localStorage untouched) — 11/11 pass
+- [x] 5.2 Landing inline styles rethemed to tokens (brand cards keep per-brand accent stripes); landing body header lockup is generator-owned → emitted in task 6.1
+- [x] 5.3 `about.html` + `privacy.html` rethemed (self-contained token copies), lockup header linking `./?brands`, favicon/theme-color/font links, titles renamed to "Compare Camera Specs"
+
+## 6. Generator + regenerate
+
+- [x] 6.1 Generator updated: `assetLinks(prefix)` (favicon/touch-icon/theme-color/Inter) emitted in every `seo:begin` head block and both vs-page templates; `lockupHTML(href)` in landing + vs headers; `--accent-color`/`--hero-dark` overrides removed; `VS_CSS` rethemed; landing card stripes moved to `BRAND_CARD_ACCENTS` map (BRAND_CONFIG no longer has accentColor)
+- [x] 6.2 `node scripts/generate-seo.js` — 222 artifacts, 220 written, 0 stale; full `npm test` 367/367 green (includes the regeneration-freshness gate)
+- [x] 6.3 SKILL.md field list updated (+ BRAND_CARD_ACCENTS step); CLAUDE.md engine.css line now documents tokens, lockup, `?brands`, and stripe map
+
+## 7. Verify
+
+- [x] 7.1 `npm test` passes — 367/367 (Tier 1 + Tier 2, incl. new header/redirect tests + regeneration-freshness gate)
+- [x] 7.2 Visual pass in Chrome over `http.server`: landing picker (`?brands`), Fujifilm brand page (photo chips, pill buttons, purple/teal winner tints incl. tie case), compare page, cross-brand vs page (rethemed cards/CTA/table), About; live behavioral loop verified — `/` with stored brand redirects to the brand page, lockup click from there lands on `/?brands` picker with preference intact
+- [x] 7.3 `openspec validate adopt-design-system --strict` passes
