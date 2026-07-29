@@ -130,6 +130,15 @@ Opticallimits, ephotozine, or the maker's downloadable spec PDF/press release
 (a distinct document from the product page). If you truly cannot get a second
 lineage, the lens is a **skip**, logged in `PROGRESS.md` — not a guess.
 
+**The one documented exception:** a lens released within the last ~3 months
+often has no independent review yet, and for those the maker's own per-mount
+spec table genuinely is the best available truth — a second lineage would only
+be quoting it back. Enter it, but say so explicitly in the ledger's notes
+column (`tier 2 unavailable — shipped <date>; re-verify next pass`) and add it
+to `PROGRESS.md`'s deferred list. Never take this exception for an older lens:
+if a design has been on sale a year and you can't corroborate it, that's a
+sourcing failure, not a publication gap.
+
 ### Field normalisation (where "sources disagree" is usually definitional)
 
 Two correct sources routinely print different numbers. Resolve by convention,

@@ -1093,6 +1093,19 @@ const LENSES = {
     productUrl:'https://www.tamron.com/global/consumer/lenses/b060/',
   },
 
+  'tamron-17-70mm-f28': {
+    name:'Tamron 17-70mm f/2.8 Di III-A VC RXD', manufacturer:'Tamron', line:'Di III-A', type:'Zoom',
+    focalLength:null, focalLengthMin:17, focalLengthMax:70, focalLengthEquiv:'27-112mm',
+    maxAperture:2.8, minAperture:22, weight:530, length:117.3, diameter:74.6,
+    filterThread:67, minFocusDist:19, maxMagnification:0.21,
+    elements:16, groups:12, blades:9, afType:'Stepping Motor',
+    weatherSealed:true, ois:true, oisStops:null, year:2026, discontinued:false,
+    imageUrl:'https://www.tamron.com/global/consumer/pc_file/file/b070_thumb.webp',
+    asin:null,
+    prices:{USD:749,AUD:1199,EUR:899,GBP:699,JPY:117000,CAD:999,SGD:1099},
+    productUrl:'https://www.tamron.com/global/consumer/lenses/b070/',
+  },
+
   'tamron-18-300mm-f35-63': {
     name:'Tamron 18-300mm f/3.5-6.3 Di III-A VC VXD', manufacturer:'Tamron', line:'Di III-A', type:'Zoom',
     focalLength:null, focalLengthMin:18, focalLengthMax:300, focalLengthEquiv:'29-480mm',
@@ -1205,7 +1218,7 @@ const LENS_DROPDOWN_GROUPS = [
   { label: '── Canon RF Zooms ──',    ids: ['rf-7-14mm-f28-35-l-fisheye-stm','rf-14-35mm-f4-l-is-usm','rf-15-35mm-f28-l-is-usm','rf-16-28mm-f28-is-stm','rf-20-50mm-f4-l-is-usm-pz','rf-24-50mm-f45-63-is-stm','rf-24-70mm-f28-l-is-usm','rf-24-105mm-f4-l-is-usm','rf-24-105mm-f4-71-is-stm','rf-70-200mm-f28-l-is-usm','rf-70-200mm-f4-l-is-usm','rf-75-300mm-f4-56','rf-100-400mm-f56-8-is-usm','rf-100-500mm-f45-71-l-is-usm'] },
   { label: '── Canon RF-S (APS-C) ──', ids: ['rfs-10-18mm-f45-63-is-stm','rfs-14-30mm-f4-63-is-stm-pz','rfs-18-45mm-f45-63-is-stm','rfs-18-150mm-f35-63-is-stm','rfs-55-210mm-f5-71-is-stm'] },
   { label: '── Sigma ──',              ids: ['sigma-12mm-f14','sigma-15mm-f14','sigma-16mm-f14','sigma-23mm-f14','sigma-30mm-f14','sigma-56mm-f14','sigma-10-18mm-f28','sigma-16-300mm-f35-67','sigma-17-40mm-f18','sigma-18-50mm-f28'] },
-  { label: '── Tamron ──',             ids: ['tamron-11-20mm-f28','tamron-18-300mm-f35-63'] },
+  { label: '── Tamron ──',             ids: ['tamron-11-20mm-f28','tamron-17-70mm-f28','tamron-18-300mm-f35-63'] },
   { label: '── Viltrox ──',            ids: ['viltrox-85mm-f18'] },
   { label: '── Other ──',              ids: ['yongnuo-35mm-f2','yongnuo-85mm-f18','laowa-15mm-f2','laowa-90mm-f28-macro','laowa-10mm-f4-cookie'] },
 ];
