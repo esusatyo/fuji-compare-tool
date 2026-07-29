@@ -167,7 +167,7 @@ One row per candidate, filled during research, *before* any data entry:
 ```markdown
 | slug | name | maker | line | type | year | disc | src1 (tier 1) | src2 (tier) | notes / conflicts |
 |---|---|---|---|---|---|---|---|---|---|
-| sigma-15mm-f14 | Sigma 15mm F1.4 DG DN Diagonal Fisheye | Sigma | Art | Prime | 2025 | no | https://sigma-global.com/… | https://lenstip.com/… (2) | weight 1360 g excl. collar (1495 g with) |
+| sigma-17-40mm-f18 | Sigma 17-40mm F1.8 DC Art | Sigma | Art | Zoom | 2025 | no | https://sigma-global.com/…/a025_17_40_18/ | https://dustinabbott.net/… (2) | **conflict:** review says 528 g / $829 (E-mount sample at announce); tier-1 per-mount table says RF = 560 g, Sigma US lists $919 → tier 1 wins |
 ```
 
 Include the **rejected** candidates too, with the reason (`out of scope: cine`,

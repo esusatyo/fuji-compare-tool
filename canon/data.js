@@ -955,6 +955,32 @@ const LENSES = {
     productUrl:'https://www.sigma-global.com/en/lenses/c017_16_14/',
   },
 
+  'sigma-12mm-f14': {
+    name:'Sigma 12mm f/1.4 DC', manufacturer:'Sigma', line:'Contemporary', type:'Prime',
+    focalLength:12, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'19mm',
+    maxAperture:1.4, minAperture:16, weight:250, length:67.4, diameter:69.0,
+    filterThread:62, minFocusDist:17.2, maxMagnification:0.12,
+    elements:14, groups:12, blades:9, afType:'Stepping Motor',
+    weatherSealed:true, ois:false, oisStops:null, year:2025, discontinued:false,
+    imageUrl:'https://www.sigma-global.com/lenses/c025_12_14_product_img01.png',
+    asin:null,
+    prices:{USD:629,AUD:999,EUR:699,GBP:599,JPY:97000,CAD:799,SGD:899},
+    productUrl:'https://www.sigma-global.com/en/lenses/c025_12_14/',
+  },
+
+  'sigma-15mm-f14': {
+    name:'Sigma 15mm f/1.4 DC', manufacturer:'Sigma', line:'Contemporary', type:'Prime',
+    focalLength:15, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'24mm',
+    maxAperture:1.4, minAperture:16, weight:240, length:62.8, diameter:69.0,
+    filterThread:58, minFocusDist:17.7, maxMagnification:0.13,
+    elements:13, groups:11, blades:9, afType:'Stepping Motor',
+    weatherSealed:true, ois:false, oisStops:null, year:2026, discontinued:false,
+    imageUrl:'https://www.sigma-global.com/lenses/images/c026_15_14_product_img01.png',
+    asin:null,
+    prices:{USD:579,AUD:899,EUR:699,GBP:499,JPY:90000,CAD:799,SGD:799},
+    productUrl:'https://www.sigma-global.com/en/lenses/c026_15_14/',
+  },
+
   'sigma-23mm-f14': {
     name:'Sigma 23mm f/1.4 DC DN', manufacturer:'Sigma', line:'Contemporary', type:'Prime',
     focalLength:23, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'37mm',
@@ -1023,6 +1049,32 @@ const LENSES = {
     prices:{USD:599,AUD:null,EUR:null,GBP:null,JPY:null,CAD:null,SGD:null},
     priceIncomplete:true,
     productUrl:'https://www.sigma-global.com/en/lenses/c021_18_50_28/',
+  },
+
+  'sigma-17-40mm-f18': {
+    name:'Sigma 17-40mm f/1.8 DC', manufacturer:'Sigma', line:'Art', type:'Zoom',
+    focalLength:null, focalLengthMin:17, focalLengthMax:40, focalLengthEquiv:'27-64mm',
+    maxAperture:1.8, minAperture:16, weight:560, length:115.9, diameter:72.9,
+    filterThread:67, minFocusDist:28, maxMagnification:0.21,
+    elements:17, groups:11, blades:11, afType:'HLA Linear',
+    weatherSealed:true, ois:false, oisStops:null, year:2025, discontinued:false,
+    imageUrl:'https://www.sigma-global.com/lenses/a025_17_40_18_product_img01.png',
+    asin:null,
+    prices:{USD:919,AUD:1399,EUR:1099,GBP:799,JPY:142000,CAD:1199,SGD:1299},
+    productUrl:'https://www.sigma-global.com/en/lenses/a025_17_40_18/',
+  },
+
+  'sigma-16-300mm-f35-67': {
+    name:'Sigma 16-300mm f/3.5-6.7 DC OS', manufacturer:'Sigma', line:'Contemporary', type:'Zoom',
+    focalLength:null, focalLengthMin:16, focalLengthMax:300, focalLengthEquiv:'26-480mm',
+    maxAperture:3.5, minAperture:22, weight:625, length:121.4, diameter:73.8,
+    filterThread:67, minFocusDist:17, maxMagnification:0.50,
+    elements:20, groups:14, blades:9, afType:'HLA Linear',
+    weatherSealed:true, ois:true, oisStops:6, year:2025, discontinued:false,
+    imageUrl:'https://www.sigma-global.com/lenses/c025_16_300_35_67_product_img01.png',
+    asin:null,
+    prices:{USD:769,AUD:1199,EUR:899,GBP:699,JPY:118000,CAD:999,SGD:1099},
+    productUrl:'https://www.sigma-global.com/en/lenses/c025_16_300_35_67/',
   },
 
   /* ── Tamron (RF-S, APS-C AF) ── */
@@ -1152,7 +1204,7 @@ const LENS_DROPDOWN_GROUPS = [
   { label: '── Canon RF Primes ──',   ids: ['rf-14mm-f14-l-vcm','rf-16mm-f28-stm','rf-20mm-f14-l-vcm','rf-24mm-f18-macro-is-stm','rf-28mm-f28-stm','rf-35mm-f18-macro-is-stm','rf-45mm-f12-stm','rf-50mm-f18-stm','rf-50mm-f12-l-usm','rf-85mm-f2-macro-is-stm','rf-85mm-f12-l-usm','rf-85mm-f14-l-vcm','rf-100mm-f28-l-macro-is-usm','rf-135mm-f18-l-is-usm','rf-800mm-f11-is-stm'] },
   { label: '── Canon RF Zooms ──',    ids: ['rf-7-14mm-f28-35-l-fisheye-stm','rf-14-35mm-f4-l-is-usm','rf-15-35mm-f28-l-is-usm','rf-16-28mm-f28-is-stm','rf-20-50mm-f4-l-is-usm-pz','rf-24-50mm-f45-63-is-stm','rf-24-70mm-f28-l-is-usm','rf-24-105mm-f4-l-is-usm','rf-24-105mm-f4-71-is-stm','rf-70-200mm-f28-l-is-usm','rf-70-200mm-f4-l-is-usm','rf-75-300mm-f4-56','rf-100-400mm-f56-8-is-usm','rf-100-500mm-f45-71-l-is-usm'] },
   { label: '── Canon RF-S (APS-C) ──', ids: ['rfs-10-18mm-f45-63-is-stm','rfs-14-30mm-f4-63-is-stm-pz','rfs-18-45mm-f45-63-is-stm','rfs-18-150mm-f35-63-is-stm','rfs-55-210mm-f5-71-is-stm'] },
-  { label: '── Sigma ──',              ids: ['sigma-16mm-f14','sigma-23mm-f14','sigma-30mm-f14','sigma-56mm-f14','sigma-10-18mm-f28','sigma-18-50mm-f28'] },
+  { label: '── Sigma ──',              ids: ['sigma-12mm-f14','sigma-15mm-f14','sigma-16mm-f14','sigma-23mm-f14','sigma-30mm-f14','sigma-56mm-f14','sigma-10-18mm-f28','sigma-16-300mm-f35-67','sigma-17-40mm-f18','sigma-18-50mm-f28'] },
   { label: '── Tamron ──',             ids: ['tamron-11-20mm-f28','tamron-18-300mm-f35-63'] },
   { label: '── Viltrox ──',            ids: ['viltrox-85mm-f18'] },
   { label: '── Other ──',              ids: ['yongnuo-35mm-f2','yongnuo-85mm-f18','laowa-15mm-f2','laowa-90mm-f28-macro','laowa-10mm-f4-cookie'] },

@@ -9,7 +9,7 @@ One line per batch. A batch is done when its lenses are entered, grouped,
 - [x] `npm test` green on the untouched baseline (409 pass)
 
 ## Research (citations before data)
-- [ ] Sigma RF-S follow-up: confirm which of 12/1.4, 15/1.4, 17-40/1.8, 16-300 ship in RF-S
+- [x] Sigma RF-S follow-up: all four confirmed shipping in Canon RF
 - [ ] Tamron RF lineup re-check (anything past 11-20 / 18-300)
 - [ ] Viltrox RF lineup re-check (did the rumoured RF-S AF primes ship?)
 - [ ] TTArtisan native RF MF primes + dimensions
@@ -17,7 +17,7 @@ One line per batch. A batch is done when its lenses are entered, grouped,
 - [ ] Laowa RF top-up (58/2.8, 100/2.8 2× macro)
 
 ## Data batches
-- [ ] Sigma batch entered + grouped + green
+- [x] Sigma batch entered + grouped + green
 - [ ] Tamron batch entered + grouped + green
 - [ ] Viltrox batch entered + grouped + green
 - [ ] TTArtisan batch entered + grouped + green
