@@ -284,10 +284,15 @@ render — a wrong-product photo is worse than the placeholder card.
   and the logic tier all auto-cover the new lenses).
 - `node scripts/verify-images.js <brand>` — every `imageUrl` returns an image.
 - `RUN_LINK_TESTS=1 npm run test:links` to spot-check the new `productUrl`s.
-- Bump `dataVerified` in `site-config.js` and re-run
-  `node scripts/generate-seo.js` — generated pages advertise
-  "Specs & prices last verified: <date>", and a run that adds priced lenses
-  without moving that date makes the page claim something untrue.
+- Re-run `node scripts/generate-seo.js` (lens counts change, so the generated
+  pages go stale — a `seo.test.js` test fails until you do).
+- **Leave `dataVerified` in `site-config.js` alone.** It backs the page claim
+  "Specs & prices last verified: <date>", which is a statement about the
+  *whole* dataset — all five brands, cameras and lenses. This skill verifies
+  one brand's third-party lenses, so moving that date would overstate what was
+  checked. Only the dataset-wide
+  [`check-prices-and-buy-links`](../check-prices-and-buy-links/SKILL.md) audit
+  earns the bump.
 - Open `<slug>/index.html` on the preview server
   (`python3 scripts/preview.py 3456`), switch to Lenses mode: confirm the new
   groups appear, cards render with maker colours (no lens on the default dark
@@ -318,7 +323,7 @@ render — a wrong-product photo is worse than the placeholder card.
 - [ ] all 7 currencies filled via `compute-prices.js`; `priceIncomplete` only
       where deliberate
 - [ ] `npm test` green; `verify-images.js` clean; preview eyeballed in lenses mode
-- [ ] `dataVerified` bumped + `generate-seo.js` re-run
+- [ ] `generate-seo.js` re-run (and `dataVerified` deliberately left alone)
 - [ ] OpenSpec change archived after the PR merges
 
 ## Resumability

@@ -33,3 +33,15 @@ re-sourced.
 | Samyang, Zeiss | no native RF |
 | Viltrox 1.33× anamorphics | out of scope: cine/anamorphic |
 | Viltrox 13/23/33/56 f/1.4 RF | withdrawn after Canon C&D — not shipping |
+
+## Deferred with unresolved source conflicts
+
+These were researched to the point of conflict and left out rather than
+guessed. Each needs one reachable tier-1 page with a Canon RF row.
+
+| candidate | agreed | in conflict |
+|---|---|---|
+| Laowa 100mm f/2.8 2× Ultra Macro APO | 12/10, 13 blades, f/2.8-22, MFD 24.7 cm, 2.0×, 67 mm | length 125 mm (Abbott, RF review; laowalenses.ca "Canon") vs 155 mm (B&H RF SKU; laowalenses.ca "Sony FE"); weight 638 g vs 650 g |
+| Laowa 58mm f/2.8 2× Ultra Macro APO | Ф74 × 117 mm, 13 blades, 67 mm, 2.0×, 14/11 | weight 595 g (B&H) vs 564 g (Abbott); venuslens.net 403s |
+| TTArtisan RF MF primes | RF versions exist | no reachable spec table: official pages 404, store pages omit dimensions/blades/filter |
+| 7Artisans RF MF primes | RF versions exist | same — no reachable spec table, B&H 403s |

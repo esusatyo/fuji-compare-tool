@@ -950,8 +950,7 @@ const LENSES = {
     weatherSealed:false, ois:false, oisStops:null, year:2025, discontinued:false,
     imageUrl:'https://www.sigma-global.com/lenses/c017_16_14_product_img01.png',
     asin:null,
-    prices:{USD:489,AUD:null,EUR:null,GBP:null,JPY:null,CAD:null,SGD:null},
-    priceIncomplete:true,
+    prices:{USD:489,AUD:799,EUR:599,GBP:399,JPY:75000,CAD:599,SGD:699},
     productUrl:'https://www.sigma-global.com/en/lenses/c017_16_14/',
   },
 
@@ -990,8 +989,7 @@ const LENSES = {
     weatherSealed:false, ois:false, oisStops:null, year:2025, discontinued:false,
     imageUrl:'https://www.sigma-global.com/lenses/c023_23_14_product_img01.png',
     asin:null,
-    prices:{USD:599,AUD:null,EUR:null,GBP:null,JPY:null,CAD:null,SGD:null},
-    priceIncomplete:true,
+    prices:{USD:599,AUD:899,EUR:699,GBP:499,JPY:92000,CAD:799,SGD:899},
     productUrl:'https://www.sigma-global.com/en/lenses/c023_23_14/',
   },
 
@@ -1004,8 +1002,7 @@ const LENSES = {
     weatherSealed:false, ois:false, oisStops:null, year:2024, discontinued:false,
     imageUrl:'https://www.sigma-global.com/lenses/c016_30_14_product_img01.png',
     asin:null,
-    prices:{USD:369,AUD:null,EUR:null,GBP:null,JPY:null,CAD:null,SGD:null},
-    priceIncomplete:true,
+    prices:{USD:369,AUD:599,EUR:399,GBP:299,JPY:56000,CAD:499,SGD:499},
     productUrl:'https://www.sigma-global.com/en/lenses/c016_30_14/',
   },
 
@@ -1018,8 +1015,7 @@ const LENSES = {
     weatherSealed:false, ois:false, oisStops:null, year:2024, discontinued:false,
     imageUrl:'https://www.sigma-global.com/lenses/c018_56_14_product_img01.png',
     asin:null,
-    prices:{USD:529,AUD:null,EUR:null,GBP:null,JPY:null,CAD:null,SGD:null},
-    priceIncomplete:true,
+    prices:{USD:529,AUD:799,EUR:599,GBP:499,JPY:80000,CAD:699,SGD:799},
     productUrl:'https://www.sigma-global.com/en/lenses/c018_56_14/',
   },
 
@@ -1032,8 +1028,7 @@ const LENSES = {
     weatherSealed:false, ois:false, oisStops:null, year:2024, discontinued:false,
     imageUrl:'https://www.sigma-global.com/lenses/c023_10_18_28_product_img01.png',
     asin:null,
-    prices:{USD:659,AUD:null,EUR:null,GBP:null,JPY:null,CAD:null,SGD:null},
-    priceIncomplete:true,
+    prices:{USD:659,AUD:999,EUR:799,GBP:599,JPY:100000,CAD:899,SGD:999},
     productUrl:'https://www.sigma-global.com/en/lenses/c023_10_18_28/',
   },
 
@@ -1046,8 +1041,7 @@ const LENSES = {
     weatherSealed:false, ois:false, oisStops:null, year:2024, discontinued:false,
     imageUrl:'https://www.sigma-global.com/lenses/c021_18_50_28_product_img01.png',
     asin:null,
-    prices:{USD:599,AUD:null,EUR:null,GBP:null,JPY:null,CAD:null,SGD:null},
-    priceIncomplete:true,
+    prices:{USD:599,AUD:899,EUR:699,GBP:499,JPY:90000,CAD:799,SGD:899},
     productUrl:'https://www.sigma-global.com/en/lenses/c021_18_50_28/',
   },
 
@@ -1088,8 +1082,7 @@ const LENSES = {
     weatherSealed:true, ois:false, oisStops:null, year:2024, discontinued:false,
     imageUrl:'https://www.tamron.com/global/consumer/pc_file/file/b060rf_ogp.webp',
     asin:'B0DPLL4P3Q',
-    prices:{USD:659,AUD:null,EUR:null,GBP:null,JPY:null,CAD:null,SGD:null},
-    priceIncomplete:true,
+    prices:{USD:659,AUD:999,EUR:799,GBP:599,JPY:100000,CAD:899,SGD:999},
     productUrl:'https://www.tamron.com/global/consumer/lenses/b060/',
   },
 
@@ -1115,8 +1108,7 @@ const LENSES = {
     weatherSealed:true, ois:true, oisStops:null, year:2025, discontinued:false,
     imageUrl:'https://www.tamron.com/global/consumer/pc_file/file/b061_ogp_new.jpg',
     asin:null,
-    prices:{USD:629,AUD:null,EUR:null,GBP:null,JPY:null,CAD:null,SGD:null},
-    priceIncomplete:true,
+    prices:{USD:629,AUD:999,EUR:699,GBP:599,JPY:97000,CAD:799,SGD:899},
     productUrl:'https://www.tamron.com/global/consumer/lenses/b061/',
   },
 
@@ -1132,8 +1124,7 @@ const LENSES = {
     weatherSealed:false, ois:false, oisStops:null, year:2021, discontinued:false,
     imageUrl:null,
     asin:null,
-    prices:{USD:399,AUD:null,EUR:null,GBP:null,JPY:null,CAD:null,SGD:null},
-    priceIncomplete:true,
+    prices:{USD:399,AUD:599,EUR:499,GBP:399,JPY:51000,CAD:499,SGD:599},
     productUrl:null,
   },
 
@@ -1147,8 +1138,7 @@ const LENSES = {
     weatherSealed:false, ois:false, oisStops:null, year:2021, discontinued:false,
     imageUrl:null,
     asin:null,
-    prices:{USD:289,AUD:null,EUR:null,GBP:null,JPY:null,CAD:null,SGD:null},
-    priceIncomplete:true,
+    prices:{USD:289,AUD:499,EUR:299,GBP:299,JPY:37000,CAD:399,SGD:399},
     productUrl:'https://yongnuo.eu/lenses/eos-rf-ef/yn35mm-f2r-df-dsm/',
   },
 
@@ -1161,8 +1151,7 @@ const LENSES = {
     weatherSealed:false, ois:false, oisStops:null, year:2021, discontinued:false,
     imageUrl:null,
     asin:null,
-    prices:{USD:398,AUD:null,EUR:null,GBP:null,JPY:null,CAD:null,SGD:null},
-    priceIncomplete:true,
+    prices:{USD:398,AUD:599,EUR:499,GBP:399,JPY:51000,CAD:499,SGD:599},
     productUrl:null,
   },
 
@@ -1178,8 +1167,7 @@ const LENSES = {
     weatherSealed:false, ois:false, oisStops:null, year:2022, discontinued:false,
     imageUrl:null,
     asin:'B0B347B7CJ',
-    prices:{USD:499,AUD:null,EUR:null,GBP:null,JPY:null,CAD:null,SGD:null},
-    priceIncomplete:true,
+    prices:{USD:499,AUD:799,EUR:599,GBP:399,JPY:70000,CAD:599,SGD:699},
     productUrl:'https://www.venuslens.net/product/laowa-90mm-f-2-8-2x-macro-apo/',
   },
 
@@ -1192,8 +1180,7 @@ const LENSES = {
     weatherSealed:false, ois:false, oisStops:null, year:2021, discontinued:false,
     imageUrl:null,
     asin:'B09SJ23319',
-    prices:{USD:849,AUD:null,EUR:null,GBP:null,JPY:null,CAD:null,SGD:null},
-    priceIncomplete:true,
+    prices:{USD:849,AUD:1299,EUR:999,GBP:799,JPY:109000,CAD:1099,SGD:1199},
     productUrl:'https://www.venuslens.net/product/laowa-15mm-f2/',
   },
 
@@ -1206,8 +1193,7 @@ const LENSES = {
     weatherSealed:false, ois:false, oisStops:null, year:2022, discontinued:false,
     imageUrl:null,
     asin:'B0B7BG44XP',
-    prices:{USD:299,AUD:null,EUR:null,GBP:null,JPY:null,CAD:null,SGD:null},
-    priceIncomplete:true,
+    prices:{USD:299,AUD:499,EUR:299,GBP:299,JPY:42000,CAD:399,SGD:399},
     productUrl:'https://www.venuslens.net/product/laowa-10mm-f-4-cookie/',
   },
 
