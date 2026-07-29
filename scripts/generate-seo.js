@@ -47,12 +47,27 @@ function esc(s) {
 
 // Cloudflare Workers static assets 307-redirects `/page.html` to the
 // extensionless `/page` (html_handling: auto-trailing-slash, the
-// default). Canonicals, og:urls and sitemap entries must therefore use
-// the clean URL — otherwise every .html page's canonical points at a
-// redirect, which contradicts itself and slows indexing. Internal hrefs
-// keep .html so pages still work from file:// and local static servers.
+// default). Canonicals, og:urls, sitemap entries AND internal <a href>s
+// must therefore all use the clean URL. Canonicals alone are not enough:
+// Google discovers pages by following links, so .html hrefs put a
+// *temporary* (307) redirect on every crawl path, which doesn't
+// consolidate signals like a 301 and contradicts the clean canonical the
+// destination then declares. Files on disk keep their .html names — only
+// the URLs we publish are clean.
+//
+// Cost of that choice: extensionless URLs need a host that maps `/page`
+// to `page.html`. Cloudflare Pages does; `python3 -m http.server` does
+// not, so local preview goes through scripts/preview.py (see CLAUDE.md).
 function cleanUrl(p) {
   return p.replace(/\.html$/, '');
+}
+
+// Same mapping for a relative href: `vs/a-vs-b.html` → `vs/a-vs-b`, and
+// `../index.html` → `../` (a directory URL, which every host resolves to
+// its index without a redirect).
+function cleanHref(p) {
+  const clean = p.replace(/(^|\/)index\.html$/, '$1').replace(/\.html$/, '');
+  return clean === '' ? './' : clean;
 }
 
 // ─── Pairing rules ───────────────────────────
@@ -395,7 +410,7 @@ ${productCardHTML(data, brandName, b)}
       <h2>Related comparisons</h2>
       <ul>
 ${related.map(([x, y]) =>
-    `        <li><a href="${x}-vs-${y}.html">${esc(brandName)} ${esc(cams[x].name)} vs ${esc(cams[y].name)}</a></li>`).join('\n')}
+    `        <li><a href="${x}-vs-${y}">${esc(brandName)} ${esc(cams[x].name)} vs ${esc(cams[y].name)}</a></li>`).join('\n')}
       </ul>
     </section>` : '';
 
@@ -428,7 +443,7 @@ ${related.map(([x, y]) =>
     <div class="header-brand">
       ${lockupHTML('../../?brands')}
       <span class="header-sep">|</span>
-      <a class="header-back" href="../index.html">All ${esc(brandName)} cameras</a>
+      <a class="header-back" href="../">All ${esc(brandName)} cameras</a>
     </div>
   </header>
   <div class="page-hero">
@@ -438,7 +453,7 @@ ${related.map(([x, y]) =>
   </div>
   <main class="vs-main">
 ${productsHTML}
-    <a class="vs-cta" href="../index.html#cameras=${aId},${bId}"><span class="play">&#9654;</span> Compare these interactively</a>
+    <a class="vs-cta" href="../#cameras=${aId},${bId}"><span class="play">&#9654;</span> Compare these interactively</a>
     <div class="vs-card">
       <table>
         <thead>
@@ -458,11 +473,11 @@ ${rows}
     <p>Specs &amp; prices last verified: ${esc(site.dataVerified)}</p>
     <div id="affiliate-disclosure"></div>
     <p>
-      <a href="../index.html">All ${esc(brandName)} cameras &amp; lenses</a>
+      <a href="../">All ${esc(brandName)} cameras &amp; lenses</a>
       &middot;
-      <a href="../../about.html">About</a>
+      <a href="../../about">About</a>
       &middot;
-      <a href="../../privacy.html">Privacy</a>
+      <a href="../../privacy">Privacy</a>
       &middot;
       Created by <a href="https://esusatyo.net" target="_blank" rel="noopener">Enrico Susatyo</a>
       &middot;
@@ -630,7 +645,7 @@ function crossVsPageHTML(site, m, all) {
     <section class="vs-related">
       <h2>Related comparisons</h2>
       <ul>
-${related.map(x => `        <li><a href="${path.basename(x.file)}">${esc(crossTitle(x))}</a></li>`).join('\n')}
+${related.map(x => `        <li><a href="${cleanHref(path.basename(x.file))}">${esc(crossTitle(x))}</a></li>`).join('\n')}
       </ul>
     </section>` : '';
 
@@ -698,13 +713,13 @@ ${rows}
     <p>
       <a href="../compare/">Cross-brand compare</a>
       &middot;
-      <a href="../${a.brand}/index.html">All ${esc(a.brandName)} cameras</a>
+      <a href="../${a.brand}/">All ${esc(a.brandName)} cameras</a>
       &middot;
-      <a href="../${b.brand}/index.html">All ${esc(b.brandName)} cameras</a>
+      <a href="../${b.brand}/">All ${esc(b.brandName)} cameras</a>
       &middot;
-      <a href="../about.html">About</a>
+      <a href="../about">About</a>
       &middot;
-      <a href="../privacy.html">Privacy</a>
+      <a href="../privacy">Privacy</a>
       &middot;
       Created by <a href="https://esusatyo.net" target="_blank" rel="noopener">Enrico Susatyo</a>
       &middot;
@@ -731,7 +746,7 @@ function compareHeadBlock(site, brandNames, nCams) {
 // vs-page, so none of them is an orphan (mirrors the brand pages).
 function compareBodyBlock(matchups) {
   const items = matchups.map(m =>
-    `      <li><a href="../${m.file}">${esc(crossTitle(m))}</a></li>`).join('\n');
+    `      <li><a href="../${cleanHref(m.file)}">${esc(crossTitle(m))}</a></li>`).join('\n');
   return `${SEO_BODY_BEGIN}
   <section class="seo-links" aria-label="Popular cross-brand comparisons">
     <h2>Popular cross-brand camera comparisons</h2>
@@ -779,7 +794,7 @@ function brandHeadBlock(brand, data, site) {
 function aboutHeadBlock(site) {
   return metaBlock(
     site,
-    `${site.baseUrl}/about.html`,
+    `${site.baseUrl}/about`,
     `About — ${site.siteName}`,
     `What ${site.siteName} is, how the spec and price data is sourced and verified, image credits, and who built it.`
   );
@@ -806,7 +821,7 @@ function brandBodyBlock(brand, data, site, pairs) {
   const nCams = Object.keys(cams).length;
   const nLenses = Object.keys(data.LENSES).length;
   const items = pairs.map(([a, b]) =>
-    `      <li><a href="vs/${a}-vs-${b}.html">${esc(name)} ${esc(cams[a].name)} vs ${esc(cams[b].name)}</a></li>`
+    `      <li><a href="vs/${a}-vs-${b}">${esc(name)} ${esc(cams[a].name)} vs ${esc(cams[b].name)}</a></li>`
   ).join('\n');
   return `${SEO_BODY_BEGIN}
   <section class="seo-links" aria-label="Popular ${esc(name)} comparisons">
@@ -886,10 +901,10 @@ function rootBodyBlock(site, brands, crossSample = []) {
   )].join('\n');
   const cluster = [
     ...crossSample.map(m =>
-      `        <li><a href="./${m.file}">${esc(crossTitle(m))}</a></li>`),
+      `        <li><a href="./${cleanHref(m.file)}">${esc(crossTitle(m))}</a></li>`),
     ...brands.flatMap(br =>
       br.samplePairs.map(p =>
-        `        <li><a href="./${br.slug}/vs/${p.a}-vs-${p.b}.html">${esc(br.name)} ${esc(p.aName)} vs ${esc(p.bName)}</a></li>`)),
+        `        <li><a href="./${br.slug}/vs/${p.a}-vs-${p.b}">${esc(br.name)} ${esc(p.aName)} vs ${esc(p.bName)}</a></li>`)),
   ].join('\n');
   return `${SEO_BODY_BEGIN}
   <header id="site-header">
@@ -922,9 +937,9 @@ ${cluster}
     <p>Specs &amp; prices last verified: ${esc(site.dataVerified)}</p>
     <div id="affiliate-disclosure"></div>
     <p>
-      <a href="./about.html">About</a>
+      <a href="./about">About</a>
       &middot;
-      <a href="./privacy.html">Privacy</a>
+      <a href="./privacy">Privacy</a>
       &middot;
       Created by <a href="https://esusatyo.net" target="_blank" rel="noopener">Enrico Susatyo</a>
       &middot;
@@ -1214,4 +1229,4 @@ if (require.main === module) {
   console.log(`generate-seo: ${files.size} artifacts (${written} written, ${removed} stale removed)`);
 }
 
-module.exports = { siteConfig, curatedPairs, relatedPairs, vsPageHTML, resolveMatchups, crossVsPageHTML, crossTitle, CROSS_BRAND_MATCHUPS, compareHeadBlock, compareBodyBlock, brandHeadBlock, rootHeadBlock, brandBodyBlock, rootBodyBlock, withHeadBlock, withBodyBlock, sitemapXML, robotsTxt, buildAll, SEO_BEGIN, SEO_END, SEO_BODY_BEGIN, SEO_BODY_END, ID_HEAD_BEGIN, ID_HEAD_END, ID_HEADER_BEGIN, ID_HEADER_END, ID_FOOTER_BEGIN, ID_FOOTER_END, identityToken, logoMark, cleanUrl, themeToggleHTML };
+module.exports = { siteConfig, curatedPairs, relatedPairs, vsPageHTML, resolveMatchups, crossVsPageHTML, crossTitle, CROSS_BRAND_MATCHUPS, compareHeadBlock, compareBodyBlock, brandHeadBlock, rootHeadBlock, brandBodyBlock, rootBodyBlock, withHeadBlock, withBodyBlock, sitemapXML, robotsTxt, buildAll, SEO_BEGIN, SEO_END, SEO_BODY_BEGIN, SEO_BODY_END, ID_HEAD_BEGIN, ID_HEAD_END, ID_HEADER_BEGIN, ID_HEADER_END, ID_FOOTER_BEGIN, ID_FOOTER_END, identityToken, logoMark, cleanUrl, cleanHref, themeToggleHTML };

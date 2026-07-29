@@ -4,7 +4,7 @@ Guidance for working in this repository. Keep it short and current — update it
 
 ## What this is
 
-A **zero-dependency static website** that compares cameras and lenses side-by-side (Apple "iPhone compare" style). Multiple camera brands share one rendering engine; each brand is a self-contained data file. Runs from `file://` or any static host — no build step, no runtime dependencies (jsdom is a dev-only test dependency).
+A **zero-dependency static website** that compares cameras and lenses side-by-side (Apple "iPhone compare" style). Multiple camera brands share one rendering engine; each brand is a self-contained data file. Runs from `file://` or any static host — no build step, no runtime dependencies (jsdom is a dev-only test dependency). One caveat since URLs went extensionless (see below): a brand page still *renders* fine from `file://`, but its links to other pages (About, Privacy, vs-pages) only resolve through a server that maps `/page` → `page.html`.
 
 ## Architecture
 
@@ -52,15 +52,23 @@ npm run test:links# opt-in live URL check (RUN_LINK_TESTS=1); slow, network
 - Referential tests catch orphans/dupes: every dropdown id must resolve, every camera/lens must appear in exactly one dropdown group, `CAMERA_ORDER` must match `CAMERAS`, `defaultSelected` must resolve.
 - Brand-specific camera fields are validated conditionally in `schema.js` under a `brandSections.includes('<slug>')` branch.
 
+## URLs: always link clean (no `.html`)
+
+Files on disk keep their `.html` names, but **every URL the site publishes is extensionless** — internal `<a href>`s, canonicals, `og:url`s and sitemap entries alike. The host (Cloudflare Pages) 307-redirects `/page.html` → `/page`, so a `.html` href puts a *temporary* redirect on every crawl path: it doesn't consolidate signals the way a 301 does, and it contradicts the clean canonical the destination then declares.
+
+- Generators use `cleanHref()` in `scripts/generate-seo.js` (`vs/a-vs-b.html` → `vs/a-vs-b`, `../index.html` → `../`). `cleanUrl()` does the same for absolute URLs.
+- Hand-written links (`about.html`, `privacy.html`, `engine.js`'s footer) must follow the same rule.
+- `tests/data/orphan-links.test.js` enforces it: one test fails on any `.html` href, another resolves every internal link through the host's URL→file mapping so a clean link to a missing page still fails.
+
 ## Local preview
 
 Static site — serve the directory and open a brand page:
 
 ```bash
-python3 -m http.server 3456   # then open http://localhost:3456/<brand>/
+python3 scripts/preview.py 3456   # then open http://localhost:3456/<brand>/
 ```
 
-(`.claude/launch.json` configures the same server.)
+Use this rather than `python3 -m http.server`: extensionless URLs need a server that maps `/page` → `page.html`, which the stdlib one doesn't do (every vs-page link 404s). `scripts/preview.py` is stdlib-only, so the repo stays dependency-free. (`.claude/launch.json` runs the same server.)
 
 ## Adding / changing things
 

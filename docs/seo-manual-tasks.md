@@ -38,10 +38,10 @@ Until this is done, Google doesn't know the site exists. A new domain typically 
    - `https://comparecameraspecs.com/canon/`
    - `https://comparecameraspecs.com/nikon/`
    - `https://comparecameraspecs.com/panasonic/`
-   - `https://comparecameraspecs.com/fujifilm/vs/x100vi-vs-x100v.html`
-   - `https://comparecameraspecs.com/sony/vs/a7-v-vs-a7-iv.html`
-   - `https://comparecameraspecs.com/nikon/vs/z6-iii-vs-z6-ii.html`
-   - `https://comparecameraspecs.com/canon/vs/eos-r5-ii-vs-eos-r5.html`
+   - `https://comparecameraspecs.com/fujifilm/vs/x100vi-vs-x100v`
+   - `https://comparecameraspecs.com/sony/vs/a7-v-vs-a7-iv`
+   - `https://comparecameraspecs.com/nikon/vs/z6-iii-vs-z6-ii`
+   - `https://comparecameraspecs.com/canon/vs/eos-r5-ii-vs-eos-r5`
 
 ## 2. Bing Webmaster Tools (5 minutes, do right after GSC)
 

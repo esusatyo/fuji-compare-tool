@@ -111,7 +111,8 @@ for (const brand of brandDirs()) {
     const { data } = loadBrand(brand);
     for (const [rel, content] of generated) {
       if (!rel.startsWith(`${brand}/vs/`)) continue;
-      const m = content.match(/href="\.\.\/index\.html#cameras=([^"]+)"/);
+      // Clean URL: the brand page is the parent directory, not index.html.
+      const m = content.match(/href="\.\.\/#cameras=([^"]+)"/);
       assert.ok(m, `${rel} has no interactive-tool deep link`);
       for (const slug of m[1].split(',')) {
         assert.ok(data.CAMERAS[slug], `${rel} deep-links to unknown camera "${slug}"`);

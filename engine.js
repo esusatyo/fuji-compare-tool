@@ -578,9 +578,9 @@ function injectBody() {
   ${buildVerifiedLine()}
   <div id="affiliate-disclosure"></div>
   <p>
-    <a href="../about.html">About</a>
+    <a href="../about">About</a>
     &middot;
-    <a href="../privacy.html">Privacy</a>
+    <a href="../privacy">Privacy</a>
     &middot;
     Created by <a href="https://esusatyo.net" target="_blank" rel="noopener">Enrico Susatyo</a>
     &middot;

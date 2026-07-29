@@ -18,8 +18,10 @@ for (const brand of brandDirs()) {
   test(`[${brand}] footer links to About and Privacy`, () => {
     const { window } = loadBrand(brand, { engine: true });
     const hrefs = [...window.document.querySelectorAll('footer a')].map(a => a.getAttribute('href'));
-    assert.ok(hrefs.includes('../about.html'), 'missing About link');
-    assert.ok(hrefs.includes('../privacy.html'), 'missing Privacy link');
+    // Clean URLs, like every other internal link — see cleanHref in
+    // scripts/generate-seo.js and the .html guard in orphan-links.test.js.
+    assert.ok(hrefs.includes('../about'), 'missing About link');
+    assert.ok(hrefs.includes('../privacy'), 'missing Privacy link');
   });
 
   test(`[${brand}] affiliate-disclosure slot exists and is empty pre-launch`, () => {

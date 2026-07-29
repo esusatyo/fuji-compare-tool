@@ -17,13 +17,18 @@ const { ROOT } = require('../helpers/load-brand');
 const generated = buildAll();
 
 // Repo-relative target of an href found in `fromFile`, or null if the href is
-// external / non-navigational. Directory links resolve to their index.html.
+// external / non-navigational. This mirrors the host's URL→file mapping, so
+// the test resolves links exactly as Cloudflare Pages serves them:
+//   - directory links (`../`, `./canon/`) resolve to their index.html
+//   - internal links are published extensionless (see cleanHref in
+//     scripts/generate-seo.js), and the host serves `<target>.html`
 function resolveHref(fromFile, href) {
   if (!href || /^(https?:|mailto:|tel:|#)/i.test(href)) return null;
   let h = href.split('#')[0].split('?')[0];
   if (!h) return null;
   let target = posix.normalize(posix.join(posix.dirname(fromFile), h));
-  if (target.endsWith('/')) target += 'index.html';
+  if (target.endsWith('/')) return target + 'index.html';
+  if (!target.endsWith('.html')) target += '.html';
   return target;
 }
 
@@ -46,12 +51,14 @@ function pathExists(rel) {
 // Build the set of every internal link target across the whole site.
 const linkedTargets = new Set();
 const brokenLinks = [];
+const dotHtmlLinks = [];
 for (const file of htmlPages) {
   for (const href of hrefsIn(generated.get(file))) {
     const target = resolveHref(file, href);
     if (target === null) continue;
     linkedTargets.add(target);
     if (!pathExists(target)) brokenLinks.push(`${file} → ${href} (resolved ${target})`);
+    if (/\.html(\?|#|$)/.test(href)) dotHtmlLinks.push(`${file} → ${href}`);
   }
 }
 
@@ -62,6 +69,14 @@ test('no generated page is orphaned (linked from at least one other page)', () =
 
 test('every internal link resolves to a real page', () => {
   assert.deepEqual(brokenLinks, [], `internal links pointing at nonexistent pages:\n${brokenLinks.join('\n')}`);
+});
+
+// The host 307-redirects /page.html → /page. A .html href therefore puts a
+// *temporary* redirect on a crawl path and contradicts the clean canonical
+// the destination declares, so every internal link must be published clean.
+test('internal links use clean URLs (no .html), matching canonicals and the sitemap', () => {
+  assert.deepEqual(dotHtmlLinks, [],
+    `internal links must drop .html (see cleanHref in scripts/generate-seo.js):\n${dotHtmlLinks.join('\n')}`);
 });
 
 test('vs-pages are reached by real links, not only the sitemap', () => {

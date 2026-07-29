@@ -95,6 +95,6 @@ test('[root] served HTML contains crawlable landing content (present without JS)
   for (const brand of ['canon', 'fujifilm', 'nikon', 'panasonic', 'sony']) {
     assert.match(html, new RegExp(`href="\\./${brand}/"`), `landing missing link to ${brand}`);
   }
-  // At least one link into the comparison cluster.
-  assert.match(html, /href="\.\/[a-z]+\/vs\/[^"]+\.html"/, 'landing missing any vs-page link');
+  // At least one link into the comparison cluster, as a clean URL.
+  assert.match(html, /href="\.\/[a-z]+\/vs\/[a-z0-9-]+"/, 'landing missing any vs-page link');
 });

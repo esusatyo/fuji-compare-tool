@@ -5,7 +5,7 @@
 const { test } = require('node:test');
 const assert = require('node:assert/strict');
 const { loadBrand, brandDirs } = require('../helpers/load-brand');
-const { buildAll, resolveMatchups, CROSS_BRAND_MATCHUPS } = require('../../scripts/generate-seo');
+const { buildAll, resolveMatchups, cleanHref, CROSS_BRAND_MATCHUPS } = require('../../scripts/generate-seo');
 
 const brandData = {};
 for (const b of brandDirs()) brandData[b] = loadBrand(b).data;
@@ -75,22 +75,23 @@ test('sitemap lists the compare page and every cross-brand page (clean URLs, no 
 test('no orphans: the compare page links every cross-brand vs-page', () => {
   const compare = files.get('compare/index.html');
   for (const m of matchups) {
-    assert.ok(compare.includes(`href="../${m.file}"`), `compare page missing link to ${m.file}`);
+    assert.ok(compare.includes(`href="../${cleanHref(m.file)}"`), `compare page missing link to ${m.file}`);
   }
 });
 
 test('landing page links the compare page and a cross-brand sample', () => {
   const root = files.get('index.html');
   assert.ok(root.includes('href="./compare/"'), 'All Brands card missing');
-  const linked = matchups.filter(m => root.includes(`href="./${m.file}"`));
+  const linked = matchups.filter(m => root.includes(`href="./${cleanHref(m.file)}"`));
   assert.ok(linked.length >= 3, 'landing cluster should sample cross-brand pages');
 });
 
 test('cross-brand related links resolve to generated sibling pages', () => {
   for (const m of matchups) {
     const html = files.get(m.file);
-    for (const [, target] of html.matchAll(/<a href="([a-z0-9-]+\.html)">/g)) {
-      assert.ok(files.has(`vs/${target}`), `${m.file}: related link ${target} is not generated`);
+    // Related links are clean URLs; the host serves the matching .html file.
+    for (const [, target] of html.matchAll(/<a href="([a-z0-9-]+)">/g)) {
+      assert.ok(files.has(`vs/${target}.html`), `${m.file}: related link ${target} is not generated`);
     }
   }
 });
