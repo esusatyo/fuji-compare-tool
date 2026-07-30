@@ -44,21 +44,22 @@ in all seven currencies instead of a lone USD figure.
   100mm: "DSLR versions are about 30mm shorter and 15g lighter than the
   mirrorless versions". So 125 mm / 638 g is the EF row and RF is 155 mm /
   650 g. Both are allowlisted for images — no reachable maker photo.
-- **TTArtisan RF primes** (35/1.4, 50/1.4 ASPH, 23/1.4, 17/1.4, 75/2, 90/1.25)
-  — TTArtisan's official spec pages 404, the store pages omit dimensions,
-  blades and filter thread, and the RF variants show "sold out or unavailable".
-  admiringlight has an RF-mount review of the 50mm f/1.4 (457 g, 0.5 m, f/1.4-16,
-  $239) but no dimensions. Not enough for a complete entry.
-- **7Artisans RF primes** (35/1.4, 50/0.95, 60/2.8 macro, 10/2.8 fisheye) —
-  same: no reachable official spec table, B&H 403s. The cine/anamorphic RF
-  lenses stay out of scope regardless.
+- **TTArtisan** — 14 lenses do ship in RF and the official spec tables *are*
+  reachable (curl + browser UA; WebFetch 404s on their URL encoding). The
+  blocker is that TTArtisan **publishes no diameter or length for any lens in
+  its catalogue**, and quotes weight as a range spanning all mounts rather than
+  per mount. `diameter`/`length` are schema-required, so this is a wall, not a
+  gap. Full enumeration with the specs they *do* publish is in
+  `research/lenses.md`. Also: none of their nine AF lenses come in RF.
+- **7Artisans** — 42 RF-capable SKUs via `7artisans.store/products.json`, none
+  publishing dimensions; 7artisans.com serves no crawlable spec table. About
+  half the RF list is cine/anamorphic and out of scope regardless.
 
 ## Not in scope but worth a follow-up
 - **9 first-party Canon lenses** still carry `priceIncomplete: true`, so they
   remain USD-only. This run deliberately touched third-party only.
-- ASINs: 15 of 19 third-party lenses still have `asin: null` (search
-  fallback). `check-prices-and-buy-links` owns that backfill. A verified RF
-  ASIN was spotted for the Laowa 100mm (`B0851QX7X5`) if it is ever entered.
+- ASINs: 16 of 21 third-party lenses still have `asin: null` (search
+  fallback). `check-prices-and-buy-links` owns that backfill.
 
 ## Open questions for the user
 - (none)
