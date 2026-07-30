@@ -1,12 +1,12 @@
 # Progress — Canon third-party lenses
 
-**Resume at:** run complete — open the PR, then archive after merge. The next
-pass starts from the deferred list below.
+**Resume at:** run complete — PR #22 open, archive after merge. The only
+remaining tail is TTArtisan/7Artisans, blocked on unpublished dimensions.
 **Branch:** expand-thirdparty-lenses-canon   **Last green commit:** see `git log -1`
 
 Baseline at start of run: **14** third-party Canon lenses, all
-`priceIncomplete: true`, 6 of 14 without an image. Now **19**, none carrying
-`priceIncomplete`, 6 of 19 without an image.
+`priceIncomplete: true`, 6 of 14 without an image. Now **21**, none carrying
+`priceIncomplete`, 8 of 21 without an image.
 
 ## Batches
 | Maker | Researched | Entered | Dropdown | Images | Prices | Committed |
@@ -16,7 +16,7 @@ Baseline at start of run: **14** third-party Canon lenses, all
 | Viltrox (re-check) | ✅ no change | — | — | — | — | ✅ |
 | TTArtisan | ✅ | ⛔ 0 — see deferred | — | — | — | ✅ |
 | 7Artisans | ✅ | ⛔ 0 — see deferred | — | — | — | ✅ |
-| Laowa (top-up) | ✅ | ⛔ 0 — see deferred | — | — | — | ✅ |
+| Laowa (top-up) | ✅ 2/2 | ✅ 2 | ✅ | allowlisted | ✅ 7 cur | ✅ |
 | Prices: drop `priceIncomplete` on the pre-existing 14 | — | — | — | — | ✅ 14/14 | ✅ |
 
 Sigma batch entered: `sigma-12mm-f14` (2025, $629), `sigma-15mm-f14` (2026,
@@ -38,17 +38,12 @@ in all seven currencies instead of a lone USD figure.
 - `tamron-17-70mm-f28` — **entered** under the new-release exception: no
   independent tier-2 review exists yet (shipped 2026-07-02). Specs are Tamron's
   own per-mount figures. **Re-verify next pass.**
-- **Laowa 100mm f/2.8 2× Ultra Macro APO** — sources disagree on the RF
-  variant's length and weight and no tier-1 page publishes an RF row.
-  laowalenses.ca gives Ф72 × 125 mm / 638 g for *Canon EF* and Ф72 × 155 mm for
-  *Sony FE*; B&H lists 155 mm / 650 g against the RF SKU; Dustin Abbott's
-  RF-mount review says 125 mm / 638 g. Blades (13), MFD (24.7 cm), 2.0×, 67 mm
-  filter and 12/10 construction are all agreed — only the barrel figures are
-  unresolved. Needs the RF box or a Venus Optics RF spec sheet.
-- **Laowa 58mm f/2.8 2× Ultra Macro APO** — same shape of problem: B&H says
-  595 g, Dustin Abbott's review says 564 g, and venuslens.net blocks fetching
-  so tier 1 can't arbitrate. Everything else (Ф74 × 117 mm, 13 blades, 67 mm,
-  2.0×, 14/11) is agreed.
+- ~~Laowa 58mm / 100mm 2× macros~~ — **both resolved and entered.** Laowa
+  Canada (the official regional distributor) serves the spec table venuslens.net
+  hides behind Cloudflare, and cameralabs supplied the rule that settles the
+  100mm: "DSLR versions are about 30mm shorter and 15g lighter than the
+  mirrorless versions". So 125 mm / 638 g is the EF row and RF is 155 mm /
+  650 g. Both are allowlisted for images — no reachable maker photo.
 - **TTArtisan RF primes** (35/1.4, 50/1.4 ASPH, 23/1.4, 17/1.4, 75/2, 90/1.25)
   — TTArtisan's official spec pages 404, the store pages omit dimensions,
   blades and filter thread, and the RF variants show "sold out or unavailable".

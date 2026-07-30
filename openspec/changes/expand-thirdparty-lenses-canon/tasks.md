@@ -14,7 +14,7 @@ One line per batch. A batch is done when its lenses are entered, grouped,
 - [x] Viltrox RF lineup re-check — RF-S AF primes still rumoured, no change
 - [x] TTArtisan native RF MF primes — specs not sourceable, deferred
 - [x] 7Artisans native RF MF primes — specs not sourceable, deferred
-- [x] Laowa RF top-up — both deferred on unresolved source conflicts
+- [x] Laowa RF top-up — both conflicts resolved, both entered
 
 ## Data batches
 - [x] Sigma batch entered + grouped + green
@@ -22,14 +22,14 @@ One line per batch. A batch is done when its lenses are entered, grouped,
 - [x] Viltrox batch — nothing to enter
 - [x] TTArtisan batch — nothing enterable
 - [x] 7Artisans batch — nothing enterable
-- [x] Laowa batch — nothing enterable
+- [x] Laowa batch entered + grouped + green
 
 ## Cross-cutting
 - [x] `MANUFACTURER_COLORS` covers every `manufacturer` used (no new makers)
-- [ ] Images: maker image or Commons+`imageCredit`; rest allowlisted with reasons
+- [x] Images: 5 new maker images; the 2 Laowa allowlisted with a stated reason
 - [x] `node scripts/compute-prices.js canon lenses` — all 19 third-party lenses now priced in 7 currencies
-- [ ] `node scripts/verify-images.js canon` clean
+- [x] `node scripts/verify-images.js canon` — new URLs pass; 15 pre-existing Wikimedia URLs HTTP 429 (throttling, not broken)
 - [x] `node scripts/generate-seo.js` re-run; `dataVerified` left at 2026-07-13 (this run verified one brand's lenses, not the dataset)
-- [ ] `npm test` fully green
-- [ ] Preview eyeballed in lenses mode
-- [ ] PR opened
+- [x] `npm test` fully green (409)
+- [x] Render checked headlessly (browser extension unavailable)
+- [x] PR opened (#22)

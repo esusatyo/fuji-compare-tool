@@ -1171,6 +1171,32 @@ const LENSES = {
     productUrl:'https://www.venuslens.net/product/laowa-90mm-f-2-8-2x-macro-apo/',
   },
 
+  'laowa-58mm-f28-macro': {
+    name:'Laowa 58mm f/2.8 2x Ultra Macro APO', manufacturer:'Laowa', line:'Ultra Macro APO', type:'Prime',
+    focalLength:58, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'58mm',
+    maxAperture:2.8, minAperture:22, weight:595, length:117, diameter:74,
+    filterThread:67, minFocusDist:18.5, maxMagnification:2.0,
+    elements:14, groups:11, blades:13, afType:'Manual',
+    weatherSealed:false, ois:false, oisStops:null, year:2022, discontinued:false,
+    imageUrl:null,
+    asin:null,
+    prices:{USD:499,AUD:799,EUR:599,GBP:399,JPY:70000,CAD:599,SGD:699},
+    productUrl:'https://www.venuslens.net/product/5828-2x-ultra-macro-apo/',
+  },
+
+  'laowa-100mm-f28-macro': {
+    name:'Laowa 100mm f/2.8 2x Ultra Macro APO', manufacturer:'Laowa', line:'Ultra Macro APO', type:'Prime',
+    focalLength:100, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'100mm',
+    maxAperture:2.8, minAperture:22, weight:650, length:155, diameter:72,
+    filterThread:67, minFocusDist:25, maxMagnification:2.0,
+    elements:12, groups:10, blades:13, afType:'Manual',
+    weatherSealed:false, ois:false, oisStops:null, year:2020, discontinued:false,
+    imageUrl:null,
+    asin:'B0851QX7X5',
+    prices:{USD:499,AUD:799,EUR:599,GBP:399,JPY:60000,CAD:599,SGD:699},
+    productUrl:'https://www.venuslens.net/product/laowa-100mm-f-2-8-2x-macro-apo/',
+  },
+
   'laowa-15mm-f2': {
     name:'Laowa 15mm f/2 FE Zero-D', manufacturer:'Laowa', line:'Zero-D', type:'Prime',
     focalLength:15, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'15mm',
@@ -1206,7 +1232,7 @@ const LENS_DROPDOWN_GROUPS = [
   { label: '── Sigma ──',              ids: ['sigma-12mm-f14','sigma-15mm-f14','sigma-16mm-f14','sigma-23mm-f14','sigma-30mm-f14','sigma-56mm-f14','sigma-10-18mm-f28','sigma-16-300mm-f35-67','sigma-17-40mm-f18','sigma-18-50mm-f28'] },
   { label: '── Tamron ──',             ids: ['tamron-11-20mm-f28','tamron-17-70mm-f28','tamron-18-300mm-f35-63'] },
   { label: '── Viltrox ──',            ids: ['viltrox-85mm-f18'] },
-  { label: '── Other ──',              ids: ['yongnuo-35mm-f2','yongnuo-85mm-f18','laowa-15mm-f2','laowa-90mm-f28-macro','laowa-10mm-f4-cookie'] },
+  { label: '── Other ──',              ids: ['yongnuo-35mm-f2','yongnuo-85mm-f18','laowa-15mm-f2','laowa-58mm-f28-macro','laowa-90mm-f28-macro','laowa-100mm-f28-macro','laowa-10mm-f4-cookie'] },
 ];
 
 return { BRAND_CONFIG, SERIES_COLORS, CAMERAS, CAMERA_ORDER,
