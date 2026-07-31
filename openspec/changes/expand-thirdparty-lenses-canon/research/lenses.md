@@ -54,42 +54,58 @@ Re-attempted with `curl` + a browser UA and Shopify's `products.json`, which
 reach pages `WebFetch` could not. **The blocker is not access — it is that the
 data is not published.**
 
-### TTArtisan — 14 lenses do ship in RF
+### TTArtisan — 14 lenses ship in RF (corrected names)
 
-From TTArtisan's own spec tables (`ttartisan.com/?<category>%2F<id>.html=`,
-reachable via curl; WebFetch 404s on the URL encoding):
+Scraped from TTArtisan's own spec tables (`ttartisan.com/?<category>%2F<id>.html=`,
+reachable with curl + browser UA; WebFetch 404s on the URL encoding).
 
-| lens | frame | blades | filter | MFD | weight |
+**Correction:** an earlier version of this table mislabelled these lenses. The
+page `<title>`s were being cut at the first hyphen, so every APS-C lens read
+"TTArtisan APS". Corrected names below.
+
+| page | lens | blades | filter | MFD | weight (as published) |
 |---|---|---|---|---|---|
-| APS-C 10mm F2 | APS-C | 10 | 39mm | — | ~180 g |
-| APS-C 23mm F1.4 | APS-C | 10 | 52mm | 0.5 m | ~336 g |
-| APS-C 25mm F2 | APS-C | 8 | 40.5mm | 0.2 m | ~248 g |
-| APS-C 35mm F1.4 | APS-C | 10 | 43mm | — | ~222–250 g |
-| APS-C 50mm F0.95 | APS-C | 10 | 58mm | — | ~411 g |
-| APS-C 40mm F2.8 Macro | APS-C | 7 | 43mm | — | ~166–189 g |
-| APS-C 7.5mm F2 fisheye | APS-C | 8 | holder | 0.25 m | ~333–345 g |
-| Tilt APS-C 35mm F1.4 | APS-C | 10 | 52mm | 0.35 m | ~341–350 g |
-| 50mm F1.4 ASPH | FF | 12 | 49mm | 0.5 m | ~429–457 g |
-| Tilt 50mm F1.4 | FF | 13 | 62mm | 0.5 m | ~452 g |
-| Tilt-Shift 17mm F4 | FF | 10 | — | 0.3 m | ~1051–1056 g |
-| 14mm F2.8 ASPH | FF | 8 | holder | 0.2 m | — |
-| 500mm F6.3 | FF | 12 | 82mm | 3.3 m | ~1564–1617 g |
-| 100mm F2.8 2X Macro | FF | 12 | 67mm | 0.25 m | ~700–748 g |
+| aps-c-lenses/71 | APS-C 35mm F1.4 | 10 | 39mm | — | ~180 g |
+| aps-c-lenses/73 | APS-C 50mm F1.2 | 10 | 52mm | 0.5 m | ~336 g |
+| aps-c-lenses/74 | APS-C 17mm F1.4 | 8 | 40.5mm | 0.2 m | ~248 g |
+| aps-c-lenses/76 | APS-C 23mm F1.4 | 10 | 43mm | — | ~222–250 g |
+| aps-c-lenses/77 | APS-C 50mm F0.95 | 10 | 58mm | — | ~411 g |
+| aps-c-lenses/78 | APS-C 25mm F2 | 7 | 43mm | — | ~166–189 g |
+| aps-c-lenses/79 | APS-C 10mm F2 ASPH | 8 | holder | 0.25 m | ~333–345 g |
+| aps-c-lenses/Tilt-C-35 | Tilt APS-C 35mm F1.4 | 10 | 52mm | 0.35 m | ~341–350 g |
+| full-frame-lenses/55 | 50mm F1.4 ASPH | 12 | 49mm | 0.5 m | ~429–457 g |
+| full-frame-lenses/60 | Tilt 50mm F1.4 | 13 | 62mm | 0.5 m | ~452 g |
+| full-frame-lenses/345 | Tilt-Shift 17mm F4 ASPH | 10 | — | 0.3 m | ~1051–1056 g |
+| full-frame-lenses/347 | 14mm F2.8 ASPH | 8 | holder | 0.2 m | (not published) |
+| full-frame-lenses/500-F6-3 | 500mm F6.3 | 12 | 82mm | 3.3 m | ~1564–1617 g |
+| full-frame-lenses/TS-100-Macro | 100mm F2.8 Macro 2X | 12 | 67mm | 0.25 m | ~700–748 g |
 
-**Two hard blockers, both structural:**
-1. **TTArtisan publishes no dimensions for any lens.** Their spec table has
-   focal length, apertures, MFD, frame, blades, filter size, optical design,
-   angle of view, focus method, weight and mount — never diameter × length.
-   `diameter` and `length` are schema-required (`min: 1`), so an entry is
-   impossible without inventing them. 14 of 14 affected.
-2. **Weight is a cross-mount range, not a per-mount figure** ("Around
-   429~457g" spans E/Z/RF/L). The RF value can't be pinned from tier 1.
-   admiringlight's RF-mount review of the 50mm F1.4 gives 457 g — the top of
-   the range — which is a usable per-mount value for that *one* lens only.
+**Completeness against `validateLens`, ignoring dimensions entirely: 0 of 14.**
 
-Also worth recording: **none of TTArtisan's AF lenses ship in RF.** All nine
-(AF 23, AF 56, AF 35 II, AF 14, AF 75, AF 50 Neo, AF 17 Air, …) are E/X/Z/L
-only. Canon still has no budget third-party AF at all.
+| required field | how many of the 14 are missing it | why |
+|---|---|---|
+| `diameter`, `length` | **14** | TTArtisan publishes no dimensions for any lens in its catalogue |
+| `maxMagnification` | **13** | only the 100mm macro publishes a ratio (2:1) |
+| `weight` | **9** | quoted as a range spanning all mounts (e.g. "429~457 g"), or absent |
+| `minFocusDist` | 4 | not published |
+
+So this is not a single missing field pair — three or four required fields are
+absent across the board. Making `diameter`/`length` nullable would not unlock a
+single lens on its own.
+
+**Dimensions do not exist in any citable form.** For the best-documented lens
+(50mm F1.4 ASPH, which has an actual RF-mount review), the only figures found
+disagree: CineD says 57 × 68 mm, lensfinder.org says 60 × 69 mm and cites
+nothing. Weight is the one number that *is* pinnable — admiringlight's RF review
+gives 457 g, the top of TTArtisan's range, consistent with RF being the heaviest
+mount.
+
+**Sources exhausted:** TTArtisan official (no dims), 7artisans.com (gzipped,
+no crawlable structure), maker Shopify JSON, retailer Shopify JSON (kmcamera,
+thecamerastore, pergear — marketing copy only), B&H / Adorama / photospecialist
+(403), Amazon (500), TTArtisan download centre (no PDFs exposed),
+admiringlight RF review (no dims), phillipreeve (reviews E/M-mount copies),
+lensfinder.org (uncited aggregator, conflicts with CineD).
 
 ### 7Artisans — 42 RF-capable SKUs, no dimensions anywhere
 
