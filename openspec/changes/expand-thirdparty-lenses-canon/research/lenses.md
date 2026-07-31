@@ -122,3 +122,42 @@ fields the schema requires. Entering them needs a measurement source per lens
 measured), which is per-lens manual work with no bulk path. Recommend leaving
 them out until a maker starts publishing dimensions, and revisiting the two
 Laowa macros first since those are one number each.
+
+## Aggregator route evaluated (2026-07-31)
+
+Per the owner's decision to accept retailer/aggregator figures, `lensfinder.org`
+(which has per-mount pages, e.g. `/lenses/canon-rf/<slug>`) was tested rather
+than trusted.
+
+**Validation — the structured spec table is largely accurate:**
+
+| lens | cross-check against | result |
+|---|---|---|
+| Tamron 11-20mm f/2.8 | our tier-1-verified entry | **8/8 exact** (filter, MFD, min ap, weight, elements, groups, length, diameter) |
+| Sigma 10-18mm f/2.8 | our tier-1-verified entry | 6/8 — MFD rounded (12 cm vs 11.6), **weight 260 g vs Sigma's RF figure of 270 g** |
+| 6 × TTArtisan RF | TTArtisan official spec tables | **20+ field matches, no contradictions**; resolves TTArtisan's cross-mount weight *ranges* to single values at the top of the range, consistent with RF being heaviest (admiringlight independently confirms 457 g for the 50mm F1.4 ASPH) |
+
+**But the prose on those pages is LLM-generated and wrong.** The 50mm F1.4 ASPH
+page's review text claims an "11-blade diaphragm"; TTArtisan's own table says
+12. **Only the structured table is usable; the prose must be ignored.**
+
+**Coverage:**
+- **TTArtisan: 9 of 14** RF lenses have a spec-table page.
+- **7Artisans: 0.** Every candidate slug soft-404s. This route does not help
+  7Artisans at all, and it remains unsourceable by any means tried.
+
+**The binding constraint has moved from dimensions to `maxMagnification`.**
+lensfinder's table has no magnification field, TTArtisan publishes it for the
+macros only, and no retailer lists it. `maxMagnification` is schema-required
+(`{ type: 'number', min: 0 }`, not nullable), so 12 of 14 TTArtisan lenses
+remain un-enterable *even with aggregator data accepted*.
+
+**Also unresolved:** the APS-C 35mm F1.4 has three mutually contradictory
+published dimension sets — ø44 × 42 mm, 44 mm long × 56 mm diameter
+(lensfinder), and 44 mm long × 42 mm diameter. Mount variation may explain part
+of it, but nothing arbitrates.
+
+**Naming hazard for the next pass:** TTArtisan sells both a `100mm F2.8 2X
+Macro` and a `Tilt-Shift 100mm F2.8 2X Macro`. The official page slugged
+`TS-100-Macro` and lensfinder's `ttartisan-100mm-f28-macro-2x` may not be the
+same product — confirm before entering either.
