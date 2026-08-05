@@ -261,10 +261,10 @@ function validateLens(id, lens) {
   add(checkField(lens, 'minAperture', { type: 'number', min: 1, max: 99 }));
   add(checkField(lens, 'elements', { type: 'number', nullable: true, min: 1 }));
   add(checkField(lens, 'groups', { type: 'number', nullable: true, min: 1 }));
-  add(checkField(lens, 'blades', { type: 'number', min: 1, max: 20 }));
+  add(checkField(lens, 'blades', { type: 'number', nullable: true, min: 1, max: 20 }));
 
   add(checkField(lens, 'minFocusDist', { type: 'number', min: 0 }));
-  add(checkField(lens, 'maxMagnification', { type: 'number', min: 0 }));
+  add(checkField(lens, 'maxMagnification', { type: 'number', nullable: true, min: 0 }));
   add(checkField(lens, 'afType', { type: 'string' }));
   add(checkField(lens, 'weatherSealed', { type: 'boolean' }));
   add(checkField(lens, 'ois', { type: 'boolean' }));
