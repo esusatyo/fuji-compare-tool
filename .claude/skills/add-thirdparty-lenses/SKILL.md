@@ -1,9 +1,9 @@
 ---
 name: add-thirdparty-lenses
-description: Add or expand third-party lenses (Sigma, Tamron, Viltrox, Samyang, Zeiss, Laowa, budget makers, …) for one camera brand in the comparison tool — research the mount's real third-party ecosystem, enter mount-specific specs corroborated by two independent sources, wire dropdown groups and manufacturer colours, fill images and regional prices, and verify the test suite. Use when the user wants to add third-party lenses to a brand, expand a brand's third-party coverage, or finish the third-party pass after onboarding a new brand.
+description: Add or expand third-party lenses (Sigma, Tamron, Viltrox, Samyang, Zeiss, Laowa, budget makers, …) for one camera brand in the comparison tool — research the mount's real third-party ecosystem, enter mount-specific specs sourced from the maker's own site, wire dropdown groups and manufacturer colours, fill images and regional prices, and verify the test suite. Use when the user wants to add third-party lenses to a brand, expand a brand's third-party coverage, or finish the third-party pass after onboarding a new brand.
 metadata:
   author: fuji-compare-tool
-  version: "1.1"
+  version: "1.2"
 ---
 
 Add comprehensive third-party lenses to **one brand** of this repo. The skill is
@@ -119,25 +119,50 @@ mount **today**, not just "was announced".
 | **3** | Retailers (B&H, Adorama, Amazon, WEX, digitalcamerawarehouse) | Corroboration and **price/ASIN only**. Never the sole second source — they share one distributor feed. |
 | **✗** | Rumour sites, aggregator spec databases, AI summaries, another brand's `data.js` | Never. |
 
-**The independence test:** if two pages could have been populated from the same
-upstream feed, they count once. Two retailers = one source. A retailer quoting
-"Manufacturer specs" = the tier-1 page again. A review that *measured* the
-weight = genuinely independent.
+**Tier 1 is sufficient on its own.** A spec taken from the maker's own site
+needs no second source — it is the authority for its own product, and a second
+lineage would usually just be quoting it back. This includes the maker's
+**official regional sites** (laowa.com.au, sigma-photo.co.uk, …), which are the
+practical route when the global domain is bot-blocked. Tier 2 remains valuable
+for *catching* a suspect tier-1 figure, so still reach for it when a number
+looks wrong, when the maker's table is ambiguous, or when it doesn't separate
+mounts — see the caution below.
+
+**Beware the combined spec table.** A maker page that lists several mounts
+("Canon EF, Canon RF, Nikon Z, Sony E") often prints **one** set of figures,
+usually the DSLR original. Those numbers are not this mount's numbers. Before
+trusting a single table, confirm it is either mount-specific or that the fields
+you're taking don't vary by mount. Where it does vary and the page won't say,
+that's exactly when tier 2 earns its keep.
+
+**The independence test** (for when you *are* corroborating): if two pages could
+have been populated from the same upstream feed, they count once. Two retailers
+= one source. A retailer quoting "Manufacturer specs" = the tier-1 page again. A
+review that *measured* the weight = genuinely independent.
 
 **Bot-blocked sources.** DPReview, FujiRumors and several retailers block
-`WebFetch`. When tier 2 won't load, acceptable substitutes are LensTip,
-Opticallimits, ephotozine, or the maker's downloadable spec PDF/press release
-(a distinct document from the product page). If you truly cannot get a second
-lineage, the lens is a **skip**, logged in `PROGRESS.md` — not a guess.
+`WebFetch`. When the maker's global domain won't load, try its official
+regional sites first (still tier 1); failing that, LensTip, Opticallimits,
+ephotozine, or the maker's downloadable spec PDF/press release. A lens with no
+tier-1 page in this mount and no usable substitute is a **skip**, logged in
+`PROGRESS.md` — not a guess.
 
-**The one documented exception:** a lens released within the last ~3 months
-often has no independent review yet, and for those the maker's own per-mount
-spec table genuinely is the best available truth — a second lineage would only
-be quoting it back. Enter it, but say so explicitly in the ledger's notes
-column (`tier 2 unavailable — shipped <date>; re-verify next pass`) and add it
-to `PROGRESS.md`'s deferred list. Never take this exception for an older lens:
-if a design has been on sale a year and you can't corroborate it, that's a
-sourcing failure, not a publication gap.
+**New releases — the ≤1-month rule.** A lens that started shipping in this
+mount within the **last month** may be entered on whatever the maker publishes,
+without waiting for full detail. Fill every field you can source; leave the
+nullable ones (`maxMagnification`, `elements`, `groups`, `filterThread`,
+`oisStops`) as `null` rather than inventing them, and enrich on a later pass.
+Record it in the ledger's notes column (`new release — shipped <date>; specs
+incomplete, re-verify next pass`) and list it under `PROGRESS.md`'s deferred
+section so the next run knows to come back.
+
+The non-nullable fields (`weight`, `length`, `diameter`, `blades`,
+`minFocusDist`, apertures) still need real values — a lens whose maker won't
+publish those isn't publishable yet, however new it is.
+
+Past one month, this stops applying: if a design has been on sale a year and
+its specs still can't be sourced, that's a sourcing failure, not a publication
+gap.
 
 ### Field normalisation (where "sources disagree" is usually definitional)
 

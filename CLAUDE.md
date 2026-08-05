@@ -35,7 +35,7 @@ Key conventions:
 
 Stored **denormalized per brand** — the same optical design (e.g. a Sigma prime sold for several mounts) is a separate entry in each brand's `data.js`, with that mount's own weight/price/`asin`/`productUrl`/`imageUrl`. There is intentionally **no shared lens catalog and no `mount` field**; the brand file implies the mount, and dropdown group labels carry it where a brand spans two mounts (Panasonic L-mount vs MFT). Group third-party lenses under `── <Maker> ──` labels in `LENS_DROPDOWN_GROUPS`. Every `manufacturer` must have a `MANUFACTURER_COLORS` entry (a test enforces this).
 
-Verify specs against ≥2 reputable sources (manufacturer page + retailer/DPReview); do not copy specs blindly between brand files (some existing entries have errors). If a required field can't be sourced, skip the lens rather than guess.
+The maker's own site — including its official regional sites — is authoritative on its own; a second source is only needed when its table is ambiguous, looks wrong, or lumps several mounts into one spec list (a common trap: the figures are usually the DSLR original). Otherwise corroborate with a reputable independent source. Do not copy specs blindly between brand files (some existing entries have errors). If a non-nullable field can't be sourced, skip the lens rather than guess; lenses released within the last month may be entered with nullable fields left `null` and enriched later.
 
 ## Tests
 
