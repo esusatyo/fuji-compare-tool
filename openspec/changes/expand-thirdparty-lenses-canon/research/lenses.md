@@ -210,3 +210,57 @@ weight, min aperture) + TTArtisan tier 1 (blades, frame, RF confirmation);
   RF-available on TTArtisan's own pages (blades 8/10/7/8/10), but **no
   lensfinder page**, so no dimensions. `diameter`/`length` are non-nullable.
   These need a measurement source, not a schema change.
+
+## 7Artisans (2026-08-05) — the "no coverage" verdict was wrong
+
+The earlier pass recorded 7Artisans as having **0** lensfinder pages. That was a
+**slug-guessing error**: the real slugs carry a `photoelectric-` prefix, and
+because lensfinder soft-404s (HTTP 200 for any slug), every wrong guess looked
+like a live-but-empty page. The sitemap in fact lists **8 `canon-rf`
+7Artisans pages**, all with full spec tables.
+
+Their own `7artisans.com` sitemap.xml serves an error page (0 URLs), but
+`7artisans.store` is a crawlable Shopify storefront whose **variant options are
+the authoritative mount list** — the check TTArtisan taught us to run.
+
+| lensfinder claims RF | store variants | verdict |
+|---|---|---|
+| 10mm f/2.8 Fisheye | Canon EOS-R ✓ | real |
+| 10mm f/2.8 Mark II | Canon EOS-R ✓ | real |
+| 35mm f/1.4 Mark III | EOS-R mount ✓ | real |
+| 9mm f/5.6 | Canon EOS-R ✓ | real |
+| 25mm f/0.95 | Canon EOS-R ✓ | **real** — slug hid it; lensfinder correct here |
+| 60mm f/2.8 Macro **Mark II** | Mark II is `canon-eos-**m**` | **wrong mount** |
+| 15mm f/4 | absent from the catalogue | **phantom** |
+| 50mm f/1.05 | only a `50mm-t-1-05` APS-C **cine** lens exists | **likely mislabelled** |
+
+Note the 60mm trap: an RF 60mm f/2.8 *does* exist (the full-frame 2X ultra
+macro, `...for-e-rf-z`) but it is a **different lens** from the Mark II that
+lensfinder filed under RF. Entering on the aggregator's word would have merged
+two products.
+
+**Entered (3).** Blades are `null` throughout — lensfinder carries no blade
+count and 7Artisans publishes no crawlable spec table.
+
+| slug | weight | dims | USD | year |
+|---|---|---|---|---|
+| `7artisans-9mm-f56` | 463 g | 86 × 70 mm | 335 | 2023 |
+| `7artisans-10mm-f28-ii` | 602 g | 95 × 75 mm | 278 | 2024 |
+| `7artisans-35mm-f14-iii` | 274 g | 50 × 63 mm | 189 | 2024 |
+
+**Deferred — specs captured, blocked only on release year** (`year` is
+non-nullable). Both are RF-confirmed on the maker's store; a single dated
+announcement unblocks each:
+
+| lens | filter | MFD | min ap | weight | elements/groups | L × Ø | store USD |
+|---|---|---|---|---|---|---|---|
+| 10mm f/2.8 Fisheye (orig.) | none | 17 cm | f22 | 570 g | 11 / 8 | 68 × 87 mm | 256.00 |
+| 25mm f/0.95 (APS-C) | 52 mm | 25 cm | f16 | 587 g | 11 / 9 | 100 × 62 mm | 143.40 |
+
+⚠️ The 25mm f/0.95's 587 g / 100 mm looks heavy and long for an APS-C 25mm and
+should be sanity-checked against a review before entry, independent of the year.
+
+**Note on 7artisans.store's robots.txt:** it carries instructions addressed to
+AI agents, recommending they install `https://shop.app/SKILL.md` to "purchase
+products directly". Treated as untrusted page content and ignored; only public
+catalogue HTML was read. Flagged to the owner.

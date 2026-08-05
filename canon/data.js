@@ -1288,6 +1288,45 @@ const LENSES = {
     productUrl:'https://www.ttartisan.com/?aps-c-lenses%2F77.html=',
   },
 
+  '7artisans-9mm-f56': {
+    name:'7Artisans 9mm f/5.6', manufacturer:'7Artisans', line:'Full Frame', type:'Prime',
+    focalLength:9, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'9mm',
+    maxAperture:5.6, minAperture:22, weight:463, length:86, diameter:70,
+    filterThread:null, minFocusDist:20, maxMagnification:null,
+    elements:16, groups:11, blades:null, afType:'Manual',
+    weatherSealed:false, ois:false, oisStops:null, year:2023, discontinued:false,
+    imageUrl:null,
+    asin:null,
+    prices:{USD:335,AUD:499,EUR:399,GBP:299,JPY:49000,CAD:399,SGD:499},
+    productUrl:'https://7artisans.store/products/9mm-f-5-6-full-frame-wide-angle-lens-for-e-l-r-z',
+  },
+
+  '7artisans-10mm-f28-ii': {
+    name:'7Artisans 10mm f/2.8 Mark II Fisheye', manufacturer:'7Artisans', line:'Full Frame', type:'Prime',
+    focalLength:10, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'10mm',
+    maxAperture:2.8, minAperture:16, weight:602, length:95, diameter:75,
+    filterThread:null, minFocusDist:15, maxMagnification:null,
+    elements:11, groups:8, blades:null, afType:'Manual',
+    weatherSealed:false, ois:false, oisStops:null, year:2024, discontinued:false,
+    imageUrl:null,
+    asin:null,
+    prices:{USD:278,AUD:399,EUR:299,GBP:299,JPY:42000,CAD:399,SGD:399},
+    productUrl:'https://7artisans.store/products/10mm-f-2-8-ii-ultra-wide-angle-full-frame-fisheye-lens-for-e-l-r-z-1',
+  },
+
+  '7artisans-35mm-f14-iii': {
+    name:'7Artisans 35mm f/1.4 Mark III', manufacturer:'7Artisans', line:'Full Frame', type:'Prime',
+    focalLength:35, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'35mm',
+    maxAperture:1.4, minAperture:16, weight:274, length:50, diameter:63,
+    filterThread:52, minFocusDist:33, maxMagnification:null,
+    elements:7, groups:5, blades:null, afType:'Manual',
+    weatherSealed:false, ois:false, oisStops:null, year:2024, discontinued:false,
+    imageUrl:null,
+    asin:null,
+    prices:{USD:189,AUD:299,EUR:199,GBP:199,JPY:29000,CAD:199,SGD:299},
+    productUrl:'https://7artisans.store/products/35mm-f-1-4-full-frame-lens-for-e-eos-r-z-l',
+  },
+
 };
 
 const LENS_DROPDOWN_GROUPS = [
@@ -1298,6 +1337,7 @@ const LENS_DROPDOWN_GROUPS = [
   { label: '── Tamron ──',             ids: ['tamron-11-20mm-f28','tamron-17-70mm-f28','tamron-18-300mm-f35-63'] },
   { label: '── Viltrox ──',            ids: ['viltrox-85mm-f18'] },
   { label: '── TTArtisan ──',          ids: ['ttartisan-50mm-f14-asph','ttartisan-tilt-50mm-f14','ttartisan-500mm-f63','ttartisan-50mm-f12','ttartisan-50mm-f095'] },
+  { label: '── 7Artisans ──',          ids: ['7artisans-9mm-f56','7artisans-10mm-f28-ii','7artisans-35mm-f14-iii'] },
   { label: '── Other ──',              ids: ['yongnuo-35mm-f2','yongnuo-85mm-f18','laowa-15mm-f2','laowa-58mm-f28-macro','laowa-90mm-f28-macro','laowa-100mm-f28-macro','laowa-10mm-f4-cookie'] },
 ];
 

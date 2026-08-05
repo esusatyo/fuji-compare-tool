@@ -79,6 +79,27 @@ in all seven currencies instead of a lone USD figure.
   publishing dimensions; 7artisans.com serves no crawlable spec table. About
   half the RF list is cine/anamorphic and out of scope regardless.
 
+## TODO — per-spec reference links (owner request, 2026-08-05)
+
+Owner wants to **expose reference links in the UI** eventually. Current state,
+audited rather than assumed:
+
+- `productUrl` exists on **409 of 424 lenses (96.5%)** — missing on 15 (5 Canon,
+  6 Nikon, 4 Sony). Enough to ship a per-lens "Source" link today.
+- `imageCredit` (`author`/`licence`/`licenceUrl`/`source`) is properly
+  structured and already surfaced on the About page. Images are fine.
+- **Per-field provenance does not exist.** The TTArtisan and 7Artisans entries
+  in this PR are the sharp case: dimensions from lensfinder, blades/frame/mount
+  from the maker, price from the store, year from a news post — one `productUrl`
+  slot cannot express that. A user clicking "source" on the 500mm's *weight*
+  would land on a page that never published a per-mount weight.
+
+**Recommendation:** add a `specSources` field *before* more batches land.
+Retrofitting means re-deriving provenance for 424 lenses across archived
+research files and dead links. Cheap interim step: ship the `productUrl` link
+and backfill the missing 15. Owner has parked this for a later session — do not
+start it without asking.
+
 ## Not in scope but worth a follow-up
 - **9 first-party Canon lenses** still carry `priceIncomplete: true`, so they
   remain USD-only. This run deliberately touched third-party only.
