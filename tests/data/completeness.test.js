@@ -34,11 +34,7 @@ const KNOWN_IMAGE_GAPS = {
     'yongnuo-85mm-f18',
     'laowa-90mm-f28-macro',
     'laowa-15mm-f2',
-    'laowa-10mm-f4-cookie',
-    // Laowa 58/100mm 2x macros — venuslens.net sits behind a Cloudflare
-    // challenge, so no maker product image is reachable to hotlink.
-    'laowa-58mm-f28-macro',
-    'laowa-100mm-f28-macro'
+    'laowa-10mm-f4-cookie'
   ]),
   fujifilm: new Set([
     'xc-16-50mm-f35-56', // no freely-licensed product image found
