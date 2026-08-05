@@ -3,7 +3,7 @@ name: add-thirdparty-lenses
 description: Add or expand third-party lenses (Sigma, Tamron, Viltrox, Samyang, Zeiss, Laowa, budget makers, …) for one camera brand in the comparison tool — research the mount's real third-party ecosystem, enter mount-specific specs sourced from the maker's own site, wire dropdown groups and manufacturer colours, fill images and regional prices, and verify the test suite. Use when the user wants to add third-party lenses to a brand, expand a brand's third-party coverage, or finish the third-party pass after onboarding a new brand.
 metadata:
   author: fuji-compare-tool
-  version: "1.2"
+  version: "1.3"
 ---
 
 Add comprehensive third-party lenses to **one brand** of this repo. The skill is
@@ -23,11 +23,16 @@ fallback). **No engine changes are needed** beyond colour entries.
 
 ## Golden rules
 
-- **Two *independent* sources per spec.** Not two pages — two lineages. See
-  the source tiers in Step 2; retailer listings mirror one distributor feed,
-  so B&H agreeing with Adorama is one source, not two.
-- **Cite as you go.** Every lens lands in `research/lenses.md` with its two
-  source URLs *before* it lands in `data.js`. An uncited spec is a guess.
+- **The maker's own site is sufficient on its own** — including its official
+  regional sites. Reach for a second source when the maker's table is ambiguous,
+  looks wrong, or lumps several mounts into one spec list (the figures are
+  usually the DSLR original). Full rules and tiers in Step 2.
+- **Always confirm mount availability against the maker**, whatever a retailer
+  or aggregator says. This is the single most common way wrong data gets in:
+  aggregators list lens/mount combinations that do not exist.
+- **Cite as you go.** Every lens lands in `research/lenses.md` with its source
+  URLs *before* it lands in `data.js`, and every URL lands in
+  `research/sources.md` as you read it. An uncited spec is a guess.
 - **Denormalized, per-brand, no `mount` field.** The same optical design (e.g.
   Sigma 18-50mm f/2.8 DC DN) is a separate entry in each brand's `data.js`
   with that mount's own weight/length/price/`asin`/`productUrl`/`imageUrl`.
@@ -207,6 +212,37 @@ One row per candidate, filled during research, *before* any data entry:
 Include the **rejected** candidates too, with the reason (`out of scope: cine`,
 `EF-only`, `rebadged as first-party`) — the next pass shouldn't re-research
 them.
+
+**Also keep `research/sources.md`.** The ledger above is per-*candidate*; this
+one is per-*source*, and it is what the site will eventually publish so readers
+can cross-check a spec. Write each URL in **as you read it**, recording what it
+was used for and its reliability class:
+
+**T1** maker's own site, incl. official regional sites · **T2** independent
+measurement/review · **T3** retailer — price and availability only · **T4**
+aggregator — tables only, never mount attribution · **NEWS** dated
+announcement, `year` only.
+
+Three rules that matter more than the format:
+
+1. **Record sources for facts you rejected**, with the reason. "laowa.com.au
+   says 638 g; that's the combined DSLR row, so the RF entry keeps 650 g" is
+   what stops a later pass "correcting" a right value to a wrong one.
+2. **A source's reliability doesn't travel as one lump.** lensfinder.org's spec
+   tables matched tier 1 exactly (8/8 on a verified Tamron) while its *mount
+   attribution* was ~30% wrong — it listed six lenses under Canon RF that the
+   makers don't sell in RF. Trust a source per-field, and **always confirm mount
+   availability against the maker.**
+3. **Populate `specSources`** on the entry itself where the field exists, so
+   provenance ships with the data rather than only in the change folder. A
+   composite entry (dimensions from one source, blades from another) is exactly
+   what it's for.
+
+Note the traps already found, so they aren't rediscovered: lensfinder.org
+**soft-404s** (any slug returns 200 — only sitemap-listed URLs are real, which
+is how a whole maker was once wrongly written off as having no coverage);
+ttartisan.com page titles **truncate at the first hyphen**, so every APS-C lens
+reads "TTArtisan APS"; and 7artisans.com's sitemap serves an error page.
 
 ## Step 3 — Shared wiring (before bulk data)
 

@@ -3,7 +3,7 @@ name: refresh-camera-data
 description: Research live camera/lens data from the web and propose updates to brand data files — price changes, product/image URL changes, and newly released cameras and lenses. Use when the user wants to refresh, update, or check for new camera data, prices, or releases across brands.
 metadata:
   author: fuji-compare-tool
-  version: "1.1"
+  version: "1.2"
 ---
 
 Refresh the brand data files in this repo against current real-world data.
@@ -117,6 +117,28 @@ Use **WebSearch** and **WebFetch**. Work brand by brand. For each brand:
 
   Never infer "this brand is current" from the newest `year` in the data — a brand can
   hold a recent *lens* year while missing a *body*.
+
+- **Full-lineup completeness diff (do this every run, for lenses too).** The checks
+  above all hunt for things that are *new*. They cannot find a product that was never
+  entered, because it isn't new and no search surfaces it. On 2026-08-05 that blind
+  spot was measured on Canon: **34 of ~55 first-party RF lenses present, 21 missing**
+  — including the RF 600mm f/11 while its sibling RF 800mm f/11 was in the data, the
+  entire super-telephoto L line, and the RF 28-70mm f/2 L. None were new; all had been
+  missing for months.
+
+  So: for each in-scope brand, enumerate the maker's **complete current lens and body
+  lineup** and diff it against the dataset. Report everything present upstream and
+  absent locally, whatever its age. Good enumeration sources, in order — the maker's
+  own "all lenses" listing, then a retailer's full brand listing, then the lineup
+  tables inside the relevant Wikipedia *article*.
+
+  ⚠️ Wikipedia **categories** are a trap for this: `Category:Canon RF lenses` has 2
+  members and reads as authoritative while listing almost nothing. Use the article's
+  tables (`action=parse&prop=wikitext` via the MediaWiki API parses cleanly), and treat
+  Wikipedia as an enumeration aid only — **never** as a spec source.
+
+- **Record every source as you read it** (see Guardrails). A refreshed price with no
+  recorded source is a number nobody can re-check next run.
 - **Price changes** — for existing models still on sale (`discontinued:false`), check
   current RRP. Anchor on the official store / a major retailer. Flag any USD delta;
   for non-USD currencies in scope, update only where a confirmed local RRP exists,
@@ -215,5 +237,19 @@ the test result, and any items left under "Needs confirmation" for the user to d
 - **Never invent prices or specs.** Unknown → `null` (or leave existing value and flag it).
 - **Don't reformat** unrelated parts of `data.js`; touch only the fields/entries that change.
 - **Preserve the USD-anchored pricing convention.**
-- **Always cite a source URL** for every applied change.
+- **Always cite a source URL** for every applied change — and record it durably, not
+  just in the chat summary. The owner intends to surface sources on the site so
+  readers can cross-check, so a citation that lives only in a transcript is lost work.
+  Write each one into the change's `research/sources.md` **as you read it**, with what
+  it was used for and its reliability class (T1 maker's own site incl. official
+  regional sites · T2 independent review/measurement · T3 retailer, price and
+  availability only · T4 aggregator, tables only · NEWS dated announcement, `year`
+  only). Populate `specSources` on the entry where the field exists.
+- **Keep sources for facts you rejected**, with the reason. "This page says 638 g and
+  we didn't use it because that's the DSLR row" is what stops the next run
+  "correcting" a right value to a wrong one.
+- **A source's classes don't travel together.** An aggregator whose spec tables check
+  out can still be badly wrong about which mounts a lens ships in — lensfinder.org was
+  ~30% wrong on mount attribution while its tables matched tier 1 exactly. Verify
+  availability against the maker, always.
 - This skill is run manually; do not schedule it or commit/push unless the user asks.
