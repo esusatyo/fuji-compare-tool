@@ -1223,6 +1223,71 @@ const LENSES = {
     productUrl:'https://www.venuslens.net/product/laowa-10mm-f-4-cookie/',
   },
 
+  'ttartisan-50mm-f14-asph': {
+    name:'TTArtisan 50mm f/1.4 ASPH', manufacturer:'TTArtisan', line:'Full Frame', type:'Prime',
+    focalLength:50, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'50mm',
+    maxAperture:1.4, minAperture:16, weight:457, length:69, diameter:60,
+    filterThread:49, minFocusDist:50, maxMagnification:null,
+    elements:10, groups:8, blades:12, afType:'Manual',
+    weatherSealed:false, ois:false, oisStops:null, year:2021, discontinued:false,
+    imageUrl:null,
+    asin:null,
+    prices:{USD:235,AUD:399,EUR:299,GBP:199,JPY:30000,CAD:299,SGD:299},
+    productUrl:'https://www.ttartisan.com/?full-frame-lenses%2F55.html=',
+  },
+
+  'ttartisan-tilt-50mm-f14': {
+    name:'TTArtisan Tilt 50mm f/1.4', manufacturer:'TTArtisan', line:'Full Frame', type:'Prime',
+    focalLength:50, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'50mm',
+    maxAperture:1.4, minAperture:16, weight:452, length:68, diameter:70,
+    filterThread:62, minFocusDist:50, maxMagnification:null,
+    elements:7, groups:6, blades:13, afType:'Manual',
+    weatherSealed:false, ois:false, oisStops:null, year:2022, discontinued:false,
+    imageUrl:null,
+    asin:null,
+    prices:{USD:229,AUD:399,EUR:299,GBP:199,JPY:32000,CAD:299,SGD:299},
+    productUrl:'https://www.ttartisan.com/?full-frame-lenses%2F60.html=',
+  },
+
+  'ttartisan-500mm-f63': {
+    name:'TTArtisan 500mm f/6.3', manufacturer:'TTArtisan', line:'Full Frame', type:'Prime',
+    focalLength:500, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'500mm',
+    maxAperture:6.3, minAperture:32, weight:1603, length:317, diameter:88,
+    filterThread:82, minFocusDist:330, maxMagnification:null,
+    elements:8, groups:5, blades:12, afType:'Manual',
+    weatherSealed:false, ois:false, oisStops:null, year:2023, discontinued:false,
+    imageUrl:null,
+    asin:null,
+    prices:{USD:369,AUD:599,EUR:399,GBP:299,JPY:54000,CAD:499,SGD:499},
+    productUrl:'https://www.ttartisan.com/?full-frame-lenses%2F500-F6-3.html=',
+  },
+
+  'ttartisan-50mm-f12': {
+    name:'TTArtisan APS-C 50mm f/1.2', manufacturer:'TTArtisan', line:'APS-C', type:'Prime',
+    focalLength:50, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'80mm',
+    maxAperture:1.2, minAperture:16, weight:336, length:60, diameter:62,
+    filterThread:52, minFocusDist:50, maxMagnification:null,
+    elements:7, groups:5, blades:10, afType:'Manual',
+    weatherSealed:false, ois:false, oisStops:null, year:2020, discontinued:false,
+    imageUrl:null,
+    asin:null,
+    prices:{USD:98,AUD:199,EUR:99,GBP:99,JPY:12000,CAD:99,SGD:99},
+    productUrl:'https://www.ttartisan.com/?aps-c-lenses%2F73.html=',
+  },
+
+  'ttartisan-50mm-f095': {
+    name:'TTArtisan APS-C 50mm f/0.95', manufacturer:'TTArtisan', line:'APS-C', type:'Prime',
+    focalLength:50, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'80mm',
+    maxAperture:0.95, minAperture:16, weight:411, length:60, diameter:62,
+    filterThread:58, minFocusDist:50, maxMagnification:null,
+    elements:8, groups:6, blades:10, afType:'Manual',
+    weatherSealed:false, ois:false, oisStops:null, year:2022, discontinued:false,
+    imageUrl:null,
+    asin:null,
+    prices:{USD:218,AUD:299,EUR:299,GBP:199,JPY:31000,CAD:299,SGD:299},
+    productUrl:'https://www.ttartisan.com/?aps-c-lenses%2F77.html=',
+  },
+
 };
 
 const LENS_DROPDOWN_GROUPS = [
@@ -1232,6 +1297,7 @@ const LENS_DROPDOWN_GROUPS = [
   { label: '── Sigma ──',              ids: ['sigma-12mm-f14','sigma-15mm-f14','sigma-16mm-f14','sigma-23mm-f14','sigma-30mm-f14','sigma-56mm-f14','sigma-10-18mm-f28','sigma-16-300mm-f35-67','sigma-17-40mm-f18','sigma-18-50mm-f28'] },
   { label: '── Tamron ──',             ids: ['tamron-11-20mm-f28','tamron-17-70mm-f28','tamron-18-300mm-f35-63'] },
   { label: '── Viltrox ──',            ids: ['viltrox-85mm-f18'] },
+  { label: '── TTArtisan ──',          ids: ['ttartisan-50mm-f14-asph','ttartisan-tilt-50mm-f14','ttartisan-500mm-f63','ttartisan-50mm-f12','ttartisan-50mm-f095'] },
   { label: '── Other ──',              ids: ['yongnuo-35mm-f2','yongnuo-85mm-f18','laowa-15mm-f2','laowa-58mm-f28-macro','laowa-90mm-f28-macro','laowa-100mm-f28-macro','laowa-10mm-f4-cookie'] },
 ];
 

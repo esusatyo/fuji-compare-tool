@@ -161,3 +161,52 @@ of it, but nothing arbitrates.
 Macro` and a `Tilt-Shift 100mm F2.8 2X Macro`. The official page slugged
 `TS-100-Macro` and lensfinder's `ttartisan-100mm-f28-macro-2x` may not be the
 same product — confirm before entering either.
+
+## TTArtisan entered (2026-08-05) — and why the aggregator can't be trusted for mounts
+
+With `maxMagnification` nullable, the batch was re-attempted. **5 of 14 entered.**
+
+**The decisive finding: lensfinder's mount attribution is wrong ~30% of the
+time.** Its sitemap lists 10 TTArtisan pages under `canon-rf`. Checking each
+against TTArtisan's own `Mount` row shows **three are for lenses TTArtisan does
+not sell in RF at all**:
+
+| lens | lensfinder | TTArtisan's own Mount row | verdict |
+|---|---|---|---|
+| 11mm F2.8 Fisheye | "Canon RF" page | `E//X/Z/L/GFX` | **not in RF** |
+| 40mm F2.8 Macro | "Canon RF" page | `E/X/Z/L/MFT` | **not in RF** |
+| 7.5mm F2 Fisheye | "Canon RF" page | `E/X/Z/L/MFT` | **not in RF** |
+
+Its *spec tables* remain good — CineD independently confirms the APS-C 35/50mm
+element, group, MFD, filter and blade figures exactly — but a page existing
+under `/canon-rf/` is **not** evidence the lens ships in RF. Always confirm
+availability against the maker's mount row. (Note the site also soft-404s:
+a nonsense slug returns HTTP 200, so only sitemap-listed URLs are real pages.)
+
+**Entered (5).** Specs = lensfinder table (dimensions, elements, groups,
+weight, min aperture) + TTArtisan tier 1 (blades, frame, RF confirmation);
+`maxMagnification` null throughout — TTArtisan publishes it for macros only.
+
+| slug | frame | blades | weight | USD | year |
+|---|---|---|---|---|---|
+| `ttartisan-50mm-f14-asph` | FF | 12 | 457 g | 235 | 2021 |
+| `ttartisan-tilt-50mm-f14` | FF | 13 | 452 g | 229 | 2022 |
+| `ttartisan-500mm-f63` | FF | 12 | 1603 g | 369 | 2023 |
+| `ttartisan-50mm-f12` | APS-C | 10 | 336 g | 98 | 2020 |
+| `ttartisan-50mm-f095` | APS-C | 10 | 411 g | 218 | 2022 |
+
+**Deferred, with reason (9).**
+- **11mm F2.8, 40mm F2.8 Macro, 7.5mm F2 Fisheye** — not sold in RF (above).
+- **APS-C 35mm F1.4** — RF-available, but the dimension conflict is still
+  unresolved: lensfinder says ø56 × 44 mm, other sources ø44 × 42 mm. A 39 mm
+  filter thread makes ø56 implausible, but nothing arbitrates, so it is not
+  entered on a hunch.
+- **100mm F2.8 Macro 2X** — RF-available, but the naming hazard is now
+  *confirmed real*: the official page slugged `TS-100-Macro` titles itself
+  "100mm F2.8 Macro 2X", while PetaPixel/PhotoRumors and Pergear's $339 listing
+  all describe a **tilt-shift** 100mm. Two products may be conflated. Needs
+  disambiguation before entry.
+- **17mm F1.4, 23mm F1.4, 25mm F2, 10mm F2 ASPH, 35mm F0.95** — all confirmed
+  RF-available on TTArtisan's own pages (blades 8/10/7/8/10), but **no
+  lensfinder page**, so no dimensions. `diameter`/`length` are non-nullable.
+  These need a measurement source, not a schema change.

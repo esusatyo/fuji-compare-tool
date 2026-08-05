@@ -66,6 +66,15 @@ in all seven currencies instead of a lone USD figure.
   follow-on work, and it rests on lensfinder's *tables* only (its prose is
   LLM-written and demonstrably wrong — see `research/lenses.md`). Also: none of
   their nine AF lenses come in RF.
+
+  **Update 2026-08-05 — batch run, 5 of 14 entered.** See `research/lenses.md`
+  for the full table. The headline is that lensfinder's *mount attribution* is
+  ~30% wrong: three of its ten "Canon RF" TTArtisan pages are lenses TTArtisan
+  does not sell in RF, caught only by checking the maker's own Mount row. Its
+  spec tables held up (CineD corroborates the APS-C figures exactly). Five
+  deferred lenses are RF-real but have no published dimensions; two more are
+  deferred on an unresolved dimension conflict and a confirmed naming
+  ambiguity.
 - **7Artisans** — 42 RF-capable SKUs via `7artisans.store/products.json`, none
   publishing dimensions; 7artisans.com serves no crawlable spec table. About
   half the RF list is cine/anamorphic and out of scope regardless.

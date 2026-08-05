@@ -34,7 +34,14 @@ const KNOWN_IMAGE_GAPS = {
     'yongnuo-85mm-f18',
     'laowa-90mm-f28-macro',
     'laowa-15mm-f2',
-    'laowa-10mm-f4-cookie'
+    'laowa-10mm-f4-cookie',
+    // TTArtisan RF primes — TTArtisan hotlinks are Shopify CDN assets that vary
+    // per SKU; no per-mount product photo confirmed. Backfill next image pass.
+    'ttartisan-50mm-f14-asph',
+    'ttartisan-tilt-50mm-f14',
+    'ttartisan-500mm-f63',
+    'ttartisan-50mm-f12',
+    'ttartisan-50mm-f095'
   ]),
   fujifilm: new Set([
     'xc-16-50mm-f35-56', // no freely-licensed product image found
