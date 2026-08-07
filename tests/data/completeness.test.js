@@ -27,6 +27,12 @@ const KNOWN_IMAGE_GAPS = {
     'rf-16-28mm-f28-is-stm',
     'rf-75-300mm-f4-56',
     'rfs-14-30mm-f4-63-is-stm-pz',
+    // 2020-2022 first-party RF supertelephoto/portrait primes added in the
+    // firstparty-lens-gaps pass — no freely-licensed Commons image yet
+    'rf-600mm-f11-is-stm',
+    'rf-400mm-f28-l-is-usm',
+    'rf-600mm-f4-l-is-usm',
+    'rf-85mm-f12-l-usm-ds',
     // Third-party RF AF lenses — no freely-licensed Commons image; manufacturer
     // image pending backfill (Viltrox 85 RF II B&H page blocks fetch; Yongnuo).
     'viltrox-85mm-f18',

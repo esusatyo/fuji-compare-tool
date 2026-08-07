@@ -675,6 +675,58 @@ const LENSES = {
     productUrl:'https://www.usa.canon.com/shop/p/rf800mmf11isstm',
   },
 
+  'rf-600mm-f11-is-stm': {
+    name:'RF 600mm f/11 IS STM', manufacturer:'Canon', line:'RF', type:'Prime',
+    focalLength:600, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'600mm',
+    maxAperture:11.0, minAperture:11, weight:930, length:199.5, diameter:93,
+    filterThread:null, minFocusDist:450, maxMagnification:0.14,
+    elements:10, groups:7, blades:null, afType:'STM',
+    weatherSealed:false, ois:true, oisStops:5.0, year:2020, discontinued:false,
+    imageUrl:null,
+    asin:null,
+    prices:{USD:930,AUD:1349,EUR:1099,GBP:799,JPY:112000,CAD:1199,SGD:1299},
+    productUrl:'https://www.canon.com.au/camera-lenses/rf-600mm-f11-is-stm',
+  },
+
+  'rf-400mm-f28-l-is-usm': {
+    name:'RF 400mm f/2.8 L IS USM', manufacturer:'Canon', line:'RF L', type:'Prime',
+    focalLength:400, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'400mm',
+    maxAperture:2.8, minAperture:32, weight:2890, length:367, diameter:163,
+    filterThread:52, minFocusDist:250, maxMagnification:0.17,
+    elements:17, groups:13, blades:9, afType:'Nano USM',
+    weatherSealed:true, ois:true, oisStops:5.5, year:2021, discontinued:false,
+    imageUrl:null,
+    asin:null,
+    prices:{USD:13399,AUD:20999,EUR:15399,GBP:12099,JPY:1715000,CAD:17399,SGD:19399},
+    productUrl:'https://www.canon.com.au/camera-lenses/rf-400mm-f2-8-l-is-usm',
+  },
+
+  'rf-600mm-f4-l-is-usm': {
+    name:'RF 600mm f/4 L IS USM', manufacturer:'Canon', line:'RF L', type:'Prime',
+    focalLength:600, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'600mm',
+    maxAperture:4.0, minAperture:32, weight:3090, length:472, diameter:168,
+    filterThread:52, minFocusDist:420, maxMagnification:0.15,
+    elements:17, groups:13, blades:9, afType:'Nano USM',
+    weatherSealed:true, ois:true, oisStops:5.5, year:2021, discontinued:false,
+    imageUrl:null,
+    asin:null,
+    prices:{USD:14499,AUD:22799,EUR:16699,GBP:12999,JPY:1856000,CAD:18799,SGD:20999},
+    productUrl:'https://www.canon.com.au/camera-lenses/rf-600mm-f4-l-is-usm',
+  },
+
+  'rf-85mm-f12-l-usm-ds': {
+    name:'RF 85mm f/1.2 L USM DS', manufacturer:'Canon', line:'RF L', type:'Prime',
+    focalLength:85, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'85mm',
+    maxAperture:1.2, minAperture:16, weight:1195, length:117.3, diameter:103.2,
+    filterThread:82, minFocusDist:85, maxMagnification:0.12,
+    elements:13, groups:9, blades:9, afType:'Nano USM',
+    weatherSealed:true, ois:false, oisStops:null, year:2022, discontinued:false,
+    imageUrl:null,
+    asin:null,
+    prices:{USD:2999,AUD:5499,EUR:3399,GBP:2699,JPY:420000,CAD:3899,SGD:4299},
+    productUrl:'https://www.canon.com.au/camera-lenses/rf-85mm-f1-2l-usm-ds',
+  },
+
   /* ── Canon RF Zoom Lenses ── */
   'rf-20-50mm-f4-l-is-usm-pz': {
     name:'RF 20-50mm f/4 L IS USM PZ', manufacturer:'Canon', line:'RF L', type:'Zoom', asin:'B0H1F1FPFH',
@@ -1330,7 +1382,7 @@ const LENSES = {
 };
 
 const LENS_DROPDOWN_GROUPS = [
-  { label: '── Canon RF Primes ──',   ids: ['rf-14mm-f14-l-vcm','rf-16mm-f28-stm','rf-20mm-f14-l-vcm','rf-24mm-f18-macro-is-stm','rf-28mm-f28-stm','rf-35mm-f18-macro-is-stm','rf-45mm-f12-stm','rf-50mm-f18-stm','rf-50mm-f12-l-usm','rf-85mm-f2-macro-is-stm','rf-85mm-f12-l-usm','rf-85mm-f14-l-vcm','rf-100mm-f28-l-macro-is-usm','rf-135mm-f18-l-is-usm','rf-800mm-f11-is-stm'] },
+  { label: '── Canon RF Primes ──',   ids: ['rf-14mm-f14-l-vcm','rf-16mm-f28-stm','rf-20mm-f14-l-vcm','rf-24mm-f18-macro-is-stm','rf-28mm-f28-stm','rf-35mm-f18-macro-is-stm','rf-45mm-f12-stm','rf-50mm-f18-stm','rf-50mm-f12-l-usm','rf-85mm-f2-macro-is-stm','rf-85mm-f12-l-usm','rf-85mm-f12-l-usm-ds','rf-85mm-f14-l-vcm','rf-100mm-f28-l-macro-is-usm','rf-135mm-f18-l-is-usm','rf-400mm-f28-l-is-usm','rf-600mm-f4-l-is-usm','rf-600mm-f11-is-stm','rf-800mm-f11-is-stm'] },
   { label: '── Canon RF Zooms ──',    ids: ['rf-7-14mm-f28-35-l-fisheye-stm','rf-14-35mm-f4-l-is-usm','rf-15-35mm-f28-l-is-usm','rf-16-28mm-f28-is-stm','rf-20-50mm-f4-l-is-usm-pz','rf-24-50mm-f45-63-is-stm','rf-24-70mm-f28-l-is-usm','rf-24-105mm-f4-l-is-usm','rf-24-105mm-f4-71-is-stm','rf-70-200mm-f28-l-is-usm','rf-70-200mm-f4-l-is-usm','rf-75-300mm-f4-56','rf-100-400mm-f56-8-is-usm','rf-100-500mm-f45-71-l-is-usm'] },
   { label: '── Canon RF-S (APS-C) ──', ids: ['rfs-10-18mm-f45-63-is-stm','rfs-14-30mm-f4-63-is-stm-pz','rfs-18-45mm-f45-63-is-stm','rfs-18-150mm-f35-63-is-stm','rfs-55-210mm-f5-71-is-stm'] },
   { label: '── Sigma ──',              ids: ['sigma-12mm-f14','sigma-15mm-f14','sigma-16mm-f14','sigma-23mm-f14','sigma-30mm-f14','sigma-56mm-f14','sigma-10-18mm-f28','sigma-16-300mm-f35-67','sigma-17-40mm-f18','sigma-18-50mm-f28'] },
