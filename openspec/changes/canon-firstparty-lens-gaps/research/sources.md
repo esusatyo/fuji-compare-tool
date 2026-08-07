@@ -164,3 +164,113 @@ returns the product name and nothing else. Not usable headless.
 - The existing `rf-800mm-f11-is-stm` entry carries `blades: 7` and
   `minAperture: 32`, but that lens has a **fixed** f/11 aperture like its 600mm
   sibling. One of the two is wrong; check both against Canon and reconcile.
+
+---
+
+## Canon first-party research — run 2 (2026-08-08): Canon Australia route
+
+Chrome (the extension) hits the **same IP-based Akamai block** on
+`usa.canon.com` as WebFetch did — confirmed by re-testing after the full
+3-hour wait: same "Access Denied", a fresh Akamai reference number each time.
+The block is not client-based and not time-based; waiting does not clear it.
+
+**`canon.com.au` works** and is a legitimate tier-1 source (an official
+regional site, per the sourcing rule). Two site quirks to know before using it:
+
+1. **Slug pattern is inconsistent.** Some lenses use no separator before the
+   aperture letter (`rf-600mm-f11-is-stm`), others insert one
+   (`rf-35mm-f1-4-l-vcm` vs `rf-24mm-f1.4l-vcm` for the otherwise-identical
+   24mm). Guessing 404s about half the time — always confirm via
+   `canon.com.au/search?q=<name>`, which reliably surfaces the real slug.
+2. **The "Dimensions (mm — retracted)" field is templated and unreliable —
+   confirmed by direct collision.** Independently fetched lenses returned
+   *identical* dimension pairs that cannot both be real:
+   - RF 800mm f/5.6L IS USM **and** RF 1200mm f/8L IS USM both show
+     `69 x 92.9mm` — physically implausible for either (both are large
+     supertelephotos; a 69mm barrel could not house their stated 800g+ front
+     elements).
+   - RF 24mm f/1.4L VCM shows `76.5 x 99.3mm`; RF 35mm f/1.4L VCM shows the
+     *same two numbers reversed* (`99.3 x 76.5mm`); RF 50mm f/1.4L VCM repeats
+     `76.5 x 99.3mm` exactly. Three different lenses, one recycled number pair.
+   - RF 400mm f/2.8L IS USM and RF 600mm f/4L IS USM both show `168 x 472mm`
+     — but Canon USA's own page (fetched independently, before the block) gives
+     the 400mm as **163 × 367mm**, a real and different figure. This is the
+     clearest proof: two sources for the same lens disagree, and AU's number
+     matches its *neighbour* rather than the product.
+
+   **Every other field on these same AU pages is correctly product-specific**
+   — elements/groups, blades, weight, MFD, magnification, IS stops, focus
+   drive, and AUD RRP all differ correctly per lens and (where cross-checked)
+   match Canon USA exactly. Only the dimensions row is affected. Treat AU
+   dimensions as **unverified** for any lens without an independent second
+   figure; do not enter `diameter`/`length` from AU alone.
+3. **AUD RRP is trustworthy and worth capturing even when you already have
+   USD** — better than the ratio-derived figure `compute-prices.js` would
+   otherwise produce. Recorded via `scripts/price-overrides/canon.json`.
+
+### Entered (4) — dimensions independently verified, not from AU alone
+
+| slug | dimensions source | AUD source |
+|---|---|---|
+| `rf-600mm-f11-is-stm` | AU retracted figure (93×199.5mm) matches Canon USA's own retracted figure (7.85in = 199.4mm, 3.66in = 93mm) converted independently — genuine agreement, not a collision | `canon.com.au/camera-lenses/rf-600mm-f11-is-stm` |
+| `rf-400mm-f28-l-is-usm` | Canon USA direct fetch (163×367mm) — used in place of AU's colliding figure | `canon.com.au/camera-lenses/rf-400mm-f2-8-l-is-usm` |
+| `rf-600mm-f4-l-is-usm` | Canon USA direct fetch (168×472mm) | `canon.com.au/camera-lenses/rf-600mm-f4-l-is-usm` |
+| `rf-85mm-f12-l-usm-ds` | Cross-validated against our own existing verified `rf-85mm-f12-l-usm` (non-DS) entry — weight (1195g), dims (103.2×117.3mm), elements/groups (13/9), blades (9) are all *identical* to the twin, consistent with DS being a coating-only variant with no mechanical redesign, not a templating collision (the twin's figures were independently sourced in an earlier PR, not from this AU page) | `canon.com.au/camera-lenses/rf-85mm-f1-2l-usm-ds` |
+
+Sources for each field: `usa.canon.com/shop/p/<slug>` (elements/groups, blades,
+MFD, max mag, filter, weight, IS stops, weather sealing, USD list price — for
+the two lenses fetched before the block) and `canon.com.au/camera-lenses/<slug>`
+(all fields except dimensions, plus AUD RRP, plus `afType` which USA's page
+text never stated). Release years: DPReview + Canon Rumors announcement
+coverage (600/11: 9 Jul 2020; 400/2.8 and 600/4: Apr 2021 announce / Jul 2021
+ship). USD prices are Canon's **current** store price, not the 2021 launch
+price the announcement coverage quotes (400/2.8 launched at $11,999, now
+$13,399; 600/4 launched at $12,999, now $14,499) — a real increase over time,
+not an error.
+
+**Correction to my own record:** an earlier message in this session claimed
+AU's 400mm f/2.8 figures "match Canon USA exactly." That was said before the
+numbers were actually compared side-by-side and is wrong for the dimensions
+field specifically — see the collision above. Every other field does match.
+
+### Not entered — blocked specifically on trustworthy dimensions (5)
+
+RF 800mm f/5.6L IS USM, RF 1200mm f/8L IS USM, RF 24mm f/1.4L VCM,
+RF 35mm f/1.4L VCM, RF 50mm f/1.4L VCM. For each, every other field is fully
+sourced and ready (see below) — only `diameter`/`length` (schema-required,
+non-nullable) are missing a trustworthy source. Canon USA would resolve this
+in one fetch each if the block lifts; otherwise needs a T2 review/press kit
+with real measurements.
+
+| slug | AUD RRP | elements/groups | blades | MFD | max mag | IS | focus | weight |
+|---|---|---|---|---|---|---|---|---|
+| RF 800mm f/5.6L IS USM | $29,799 | 26/18 | 9 | 2.6m | 0.34x | 4 stops | Nano USM | 3140g |
+| RF 1200mm f/8L IS USM | $35,099 | 26/18 | 9 | 4.3m | 0.29x | 4 stops | Nano USM | 3340g |
+| RF 24mm f/1.4L VCM | $2,700 | 15/11 | 11 | 0.24m | 0.17x | none | VCM + Nano USM | 515g |
+| RF 35mm f/1.4L VCM | $2,699 | 14/11 | 11 | 0.28m | 0.18x | none | VCM + Nano USM | 555g |
+| RF 50mm f/1.4L VCM | $2,429 | 14/11 | 11 | 0.4m | 0.15x | none | VCM + Nano USM | 580g |
+
+### Existing shipped data — bugs found while cross-checking, not fixed here
+
+Building the new `rf-600mm-f11-is-stm` sibling required comparing against the
+existing `rf-800mm-f11-is-stm` entry, which surfaced three likely errors in
+already-shipped data (not touched in this pass — flagged for task 6.1):
+
+- `groups:7` — Canon's own AU spec table says **8**.
+- `length:351.8` — Canon's own AU spec table gives the *retracted* length as
+  **281.8mm**; 351.8 may be the extended figure entered under the retracted
+  field, or simply wrong. Needs the extended figure confirmed separately if
+  that's what's intended.
+- `afType:'Nano USM'` — Canon's own AU spec table's "Focus Drive System" row
+  says **STM** for this lens (matching its own name, "IS STM"). Nano USM is
+  used on the L-series primes (400/2.8, 600/4, 800/5.6, 1200/8, 85/1.2 DS) in
+  this same research, never on the two f/11 budget primes. The new
+  `rf-600mm-f11-is-stm` entry correctly uses `'STM'`, sourced directly from its
+  own AU page — it does **not** match the sibling on this field, and that's
+  intentional, not an inconsistency to "fix" toward.
+- `minAperture:32` and `blades:7` on the existing 800/11 — neither figure
+  appears on Canon's own USA or AU pages for either f/11 prime (fixed-aperture
+  DO lenses with no conventional iris). Origin unknown; possibly guessed by an
+  earlier pass. The new `rf-600mm-f11-is-stm` entry uses `minAperture:11`
+  (physically correct for a fixed aperture) and `blades:null` (unverifiable)
+  rather than copying the sibling's unsourced numbers.

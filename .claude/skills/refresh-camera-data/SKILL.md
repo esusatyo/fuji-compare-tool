@@ -3,7 +3,7 @@ name: refresh-camera-data
 description: Research live camera/lens data from the web and propose updates to brand data files — price changes, product/image URL changes, and newly released cameras and lenses. Use when the user wants to refresh, update, or check for new camera data, prices, or releases across brands.
 metadata:
   author: fuji-compare-tool
-  version: "1.2"
+  version: "1.3"
 ---
 
 Refresh the brand data files in this repo against current real-world data.
@@ -159,7 +159,29 @@ Use **WebSearch** and **WebFetch**. Work brand by brand. For each brand:
   page can be verified — never invent a slug.
   Note `tests/links/links.test.js` treats 403 as a *warning*, so bot-blocking is not
   evidence a URL is dead — and equally not evidence it's alive. Confirm before relying
-  on it.
+  on it. The block on `usa.canon.com` is IP-based, not client-based — confirmed
+  2026-08-08 by re-testing after a 3-hour wait and via the Chrome extension (a real
+  browser), both still "Access Denied". Waiting or switching client doesn't clear it;
+  only a regional domain does.
+
+  **`canon.com.au`'s "Dimensions (mm — retracted)" field is templated and
+  unreliable — confirmed by direct collision, 2026-08-08.** Two different
+  supertelephotos (RF 800mm f/5.6L, RF 1200mm f/8L) both showed the identical,
+  physically-implausible `69 x 92.9mm`; three VCM primes (24/35/50mm f/1.4L)
+  showed the same two numbers recycled and reordered; RF 400mm f/2.8L and
+  RF 600mm f/4L both showed `168 x 472mm` even though Canon USA's own page gives
+  the 400mm as a genuinely different `163 x 367mm`. Every *other* field on these
+  same pages (elements/groups, blades, weight, MFD, magnification, IS stops,
+  focus drive, AUD RRP) is correctly product-specific and — where cross-checked —
+  matches Canon USA exactly. Treat AU's dimensions row as unverified for any
+  lens without an independent second figure; don't enter `diameter`/`length`
+  from it alone, and don't assume other fields share the bug just because
+  dimensions does.
+
+  Also: `canon.com.au` slugs are inconsistent even against Canon's own pattern —
+  `rf-24mm-f1.4l-vcm` vs `rf-35mm-f1-4-l-vcm` for two lenses in the same VCM
+  family. Confirm via `canon.com.au/search?q=<name>` rather than constructing a
+  slug; a guess 404s about as often as it hits.
 
 Cite the source URL for every proposed change. Prefer official/manufacturer sources,
 then major retailers (B&H), then reputable press; treat rumor sites as leads to verify,

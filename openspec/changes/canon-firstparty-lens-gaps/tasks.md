@@ -15,23 +15,31 @@ not at the end, when the tab is closed and the figure is already in the file.
 - [ ] 1.3 Add a test asserting every `specSources` value parses as an `https` URL
       and that no key names a field absent from the entry.
 
-## 2. Super-telephoto L primes (4)
+## 2. Super-telephoto L primes (4) — 2/4 entered, 2026-08-08
 
-- [ ] 2.1 `RF 400mm f/2.8 L IS USM`
-- [ ] 2.2 `RF 600mm f/4 L IS USM`
-- [ ] 2.3 `RF 800mm f/5.6 L IS USM`
-- [ ] 2.4 `RF 1200mm f/8 L IS USM`
+- [x] 2.1 `RF 400mm f/2.8 L IS USM` — entered as `rf-400mm-f28-l-is-usm`
+- [x] 2.2 `RF 600mm f/4 L IS USM` — entered as `rf-600mm-f4-l-is-usm`
+- [ ] 2.3 `RF 800mm f/5.6 L IS USM` — **blocked on dimensions only**; every other
+      field sourced and recorded in `research/sources.md`. `canon.com.au`'s
+      dimensions row is templated/unreliable for this lens (see sources.md) —
+      needs Canon USA (currently IP-blocked) or a T2 review with real measurements.
+- [ ] 2.4 `RF 1200mm f/8 L IS USM` — same blocker, same status; specs recorded.
 - [ ] 2.5 Dropdown ids + `npm run test:data` + commit
 
-## 3. The f/11 sibling and remaining primes (4)
+## 3. The f/11 sibling and remaining primes (4) — 2/4 entered, 2026-08-08
 
-- [ ] 3.1 `RF 600mm f/11 IS STM` — pairs with the already-present 800mm f/11
-- [ ] 3.2 `RF 24mm f/1.4 L VCM`
-- [ ] 3.3 `RF 35mm f/1.4 L VCM`
-- [ ] 3.4 `RF 50mm f/1.4 L VCM`
-- [ ] 3.5 `RF 85mm f/1.2 L USM DS` — the defocus-smoothing variant; confirm it is
-      a distinct SKU and not a finish option before entering
-- [ ] 3.6 Dropdown ids + test + commit
+- [x] 3.1 `RF 600mm f/11 IS STM` — entered as `rf-600mm-f11-is-stm`. While
+      building it, three likely errors surfaced in the existing
+      `rf-800mm-f11-is-stm` sibling (groups, length, afType) — see
+      "Existing shipped data" in `research/sources.md`. Not fixed here.
+- [ ] 3.2 `RF 24mm f/1.4 L VCM` — blocked on dimensions only, same as group 2.
+- [ ] 3.3 `RF 35mm f/1.4 L VCM` — blocked on dimensions only.
+- [ ] 3.4 `RF 50mm f/1.4 L VCM` — blocked on dimensions only.
+- [x] 3.5 `RF 85mm f/1.2 L USM DS` — entered as `rf-85mm-f12-l-usm-ds`. Confirmed
+      a distinct SKU (Canon AU lists it separately from the non-DS `rf-85mm-f12-l-usm`
+      already in the dataset); dimensions/weight/elements/groups/blades all match
+      the non-DS twin exactly, consistent with DS being a coating-only variant.
+- [x] 3.6 Dropdown ids + test + commit — done for the 4 entered lenses.
 
 ## 4. Specialty / VR fisheyes (3)
 
