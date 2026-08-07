@@ -111,3 +111,56 @@ table; a title-based script will silently label every lens identically.
 
 **`7artisans.com/sitemap.xml` serves an error page** (0 URLs). Use the Shopify
 storefront instead.
+
+---
+
+## Canon first-party research — run 1 (2026-08-07, INCOMPLETE)
+
+**Source route that works:** `https://www.usa.canon.com/shop/p/<slug>` via
+WebFetch. Canon's own store, tier 1, and it carries the US list price too.
+`curl` gets 403 from every Canon domain regardless of user-agent; WebFetch
+reaches usa.canon.com where curl cannot.
+
+**Slug patterns are inconsistent** — both `rf400mm-f2-8-l-is-usm` (dashes, and
+`f/2.8` → `f2-8`) and `rf800mmf11isstm` (no separators) exist. Expect to try
+both. `rf800mm-f5-6-l-is-usm` and `rf1200mm-f8-l-is-usm` both 404 on the dashed
+pattern; the no-separator form was not testable before the block below.
+
+⚠️ **Canon rate-limited then hard-blocked the host after ~3 successful
+fetches.** Every subsequent request — new URLs included, and `canon.com.au` too
+— returns 403. Not a per-URL cache effect: a never-fetched URL 403s the same
+way. Any resumed run must **pace itself** (a few lenses, then let it cool) or
+drive Canon through the Chrome extension, which renders as a real browser and
+is the reliable path for this domain.
+
+Also noted: `canon.ca` product pages load the spec table via JS, so WebFetch
+returns the product name and nothing else. Not usable headless.
+
+### Verified from Canon (3 of 21) — ready to enter
+
+| field | RF 600mm F11 IS STM | RF 400mm F2.8 L IS USM | RF 600mm F4 L IS USM |
+|---|---|---|---|
+| source | `/shop/p/rf600mm-f11-is-stm` | `/shop/p/rf400mm-f2-8-l-is-usm` | `/shop/p/rf600mm-f4-l-is-usm` |
+| elements / groups | 10 / 7 (gapless dual-layer DO) | 17 / 13 | 17 / 13 |
+| blades | fixed f/11 — none listed | 9 | 9 |
+| min aperture | fixed f/11 | f/32 | f/32 |
+| closest focus | 4.5 m | 2.5 m | 4.2 m |
+| max magnification | 0.14× | 0.17× | 0.15× |
+| filter | Ø82 mm | Ø52 mm drop-in | Ø52 mm drop-in |
+| dia × length | ~93 × 269.5 mm extended (199.5 retracted) | 163 × 367 mm | 168 × 472 mm |
+| weight | 930 g | 2890 g | 3090 g |
+| IS | 5 stops | 5.5 stops | 5.5 stops |
+| weather sealed | — | yes | yes |
+| US list | $929.99 (promo $729.99 — **use list**) | $13,399.00 | $14,499.00 |
+
+**Open items on these three, do not enter without resolving:**
+- `afType` is **not stated** on any of the three pages. Canon's super-telephoto
+  L primes use Ring USM and the f/11 DO primes use gear-type STM, but that must
+  be sourced, not assumed.
+- **RF 600mm F4 L IS USM is marked "Discontinued / no longer available" on
+  Canon's own store.** That contradicts its status as a current flagship and
+  would flip `discontinued: true`, changing how prices render. Verify against a
+  second source before trusting the store label — it may be a stock artifact.
+- The existing `rf-800mm-f11-is-stm` entry carries `blades: 7` and
+  `minAperture: 32`, but that lens has a **fixed** f/11 aperture like its 600mm
+  sibling. One of the two is wrong; check both against Canon and reconcile.
