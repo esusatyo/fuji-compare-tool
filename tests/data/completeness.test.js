@@ -121,7 +121,18 @@ const KNOWN_IMAGE_GAPS = {
     'leica-dg-25-50mm-f1-7', 'lumix-g-35-100mm-f2-8-ii', 'leica-dg-50-200mm-f2-8-4',
     'lumix-g-14-140mm-f3-5-5-6-ii', 'lumix-g-100-300mm-f4-5-6-ii', 'leica-dg-100-400mm-f4-6-3-ii',
     // Added 2026-08-08 refresh (new releases, manufacturer image not yet sourced):
-    'lumix-s-18-40mm-f4-5-6-3', 'lumix-s-100-500mm-f5-7-1', 'leica-dg-35-100mm-f2-8-power-ois'
+    'lumix-s-18-40mm-f4-5-6-3', 'lumix-s-100-500mm-f5-7-1', 'leica-dg-35-100mm-f2-8-power-ois',
+    // Sigma 35/1.4 DG II: maker product-image URL 404s (the 135/1.4 one resolves)
+    'sigma-35mm-f14-dg-ii',
+    // Viltrox/Samyang: makers host no stable product-image URL
+    'viltrox-16mm-f18-l', 'viltrox-28mm-f45-l', 'samyang-14-24mm-f28-l',
+    // Laowa/OM System additions (2026-08-08) — makers host no usable image URL
+    'laowa-180mm-f45-macro-l', 'laowa-17mm-f4-tilt-shift-l', 'omsystem-100-400mm-f5-63-ii',
+    // Older first-party MFT lenses backfilled 2026-08-08; no Commons photo yet
+    'lumix-g-14mm-f2-5-ii', 'lumix-g-fisheye-8mm-f3-5', 'lumix-g-macro-30mm-f2-8',
+    'lumix-g-7-14mm-f4', 'lumix-g-x-pz-14-42mm-f3-5-5-6', 'lumix-g-35-100mm-f4-5-6',
+    // Cameras backfilled 2026-08-08
+    'g100', 'bs1h', 'bgh1'
   ]),
   sony: new Set([
     'sigma-90mm-f28-dg', // discontinued I-series; Sigma image URL not available

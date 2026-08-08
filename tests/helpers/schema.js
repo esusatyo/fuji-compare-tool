@@ -275,7 +275,10 @@ function validateLens(id, lens) {
   add(checkField(lens, 'diameter', { type: 'number', min: 1, max: 300 }));
   add(checkField(lens, 'filterThread', { type: 'number', nullable: true, min: 1 }));
 
-  add(checkField(lens, 'year', { type: 'number', min: 2010, max: 2027 }));
+  // Floor is 2008, when Micro Four Thirds launched — the earliest mount any
+  // brand here covers. Panasonic's LUMIX G Vario 7-14mm F4 (2009) sits below
+  // the 2010 bound this used to carry; the bound is only a typo guard.
+  add(checkField(lens, 'year', { type: 'number', min: 2008, max: 2027 }));
   add(checkField(lens, 'discontinued', { type: 'boolean' }));
 
   add(checkField(lens, 'productUrl', { type: 'url', nullable: true, required: false }));
