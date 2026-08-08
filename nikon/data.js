@@ -1372,13 +1372,13 @@ const LENSES = {
 
   /* ── Voigtländer (native Z manual-focus) ── */
   'voigtlander-apo-lanthar-50mm-f2': {
-    name:'Voigtländer APO-Lanthar 50mm f/2 Z', manufacturer:'Voigtländer', line:'APO-Lanthar', type:'Prime',
+    name:'Voigtländer APO-Lanthar 50mm f/2 Aspherical II Z', manufacturer:'Voigtländer', line:'APO-Lanthar', type:'Prime',
     focalLength:50, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'50mm',
     maxAperture:2.0, minAperture:16, weight:370, length:64.3, diameter:63,
     filterThread:58, minFocusDist:45, maxMagnification:0.15,
     elements:10, groups:8, blades:12, afType:'Manual',
-    weatherSealed:false, ois:false, oisStops:null, year:2023, discontinued:false,
-    imageUrl:null, asin:'B09Z2NNDY4',
+    weatherSealed:false, ois:false, oisStops:null, year:2024, discontinued:false,
+    imageUrl:null, asin:'B0DPNK41Q7',
     prices:{USD:1049,AUD:null,EUR:null,GBP:null,JPY:null,CAD:null,SGD:null},
     priceIncomplete:true, productUrl:'https://www.voigtlaender.de/z-mount/50-mm-12-0-apo-lanthar/?lang=en',
   },
