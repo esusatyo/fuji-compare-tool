@@ -102,9 +102,9 @@ const KNOWN_IMAGE_GAPS = {
     // newer-model photo (S5 II / G9 II) and were rejected. The rest stay on
     // the placeholder until a freely-licensed Commons photo exists; the test
     // self-cleans once one lands. Cameras (11):
-    's1-ii', 's5-iix', 's1h', 's1', 's5',
+    's1-ii', 's1iie', 's5-iix', 's1h', 's1', 's5',
     'gh5',
-    'g100d', 'g9', 'gx9', 'g95', 'l10',
+    'g100d', 'g97', 'g9', 'gx9', 'g95', 'l10',
     // Lenses — LUMIX S primes:
     'lumix-s-18mm-f1-8', 'lumix-s-24mm-f1-8', 'lumix-s-40mm-f2',
     'lumix-s-50mm-f1-8', 'lumix-s-pro-50mm-f1-4', 'lumix-s-85mm-f1-8', 'lumix-s-100mm-f2-8-macro',
@@ -119,7 +119,9 @@ const KNOWN_IMAGE_GAPS = {
     'leica-dg-8-18mm-f2-8-4', 'leica-dg-10-25mm-f1-7', 'lumix-g-12-32mm-f3-5-5-6',
     'leica-dg-12-60mm-f2-8-4', 'lumix-g-12-60mm-f3-5-5-6', 'lumix-g-12-35mm-f2-8-ii',
     'leica-dg-25-50mm-f1-7', 'lumix-g-35-100mm-f2-8-ii', 'leica-dg-50-200mm-f2-8-4',
-    'lumix-g-14-140mm-f3-5-5-6-ii', 'lumix-g-100-300mm-f4-5-6-ii', 'leica-dg-100-400mm-f4-6-3-ii'
+    'lumix-g-14-140mm-f3-5-5-6-ii', 'lumix-g-100-300mm-f4-5-6-ii', 'leica-dg-100-400mm-f4-6-3-ii',
+    // Added 2026-08-08 refresh (new releases, manufacturer image not yet sourced):
+    'lumix-s-18-40mm-f4-5-6-3', 'lumix-s-100-500mm-f5-7-1', 'leica-dg-35-100mm-f2-8-power-ois'
   ]),
   sony: new Set([
     'sigma-90mm-f28-dg', // discontinued I-series; Sigma image URL not available
