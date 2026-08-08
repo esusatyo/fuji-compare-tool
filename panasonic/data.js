@@ -1208,7 +1208,9 @@ const LENSES = {
     imageUrl:null,
     prices:{USD:277,AUD:449,EUR:null,GBP:null,JPY:null,CAD:379,SGD:null},
     priceIncomplete:true,
-    productUrl:'https://shop.panasonic.com/products/lumix-g-vario-12-32mm-f3-5-5-6-asph-mega-ois-lens-h-fs12032',
+    // The US store page for this kit lens 404s (caught by test:links); Panasonic's
+    // JP product database still carries it, so use that rather than dropping to null.
+    productUrl:'https://panasonic.jp/dc/p-db/H-FS12032.html',
   },
 
   'leica-dg-50-200mm-f2-8-4': {
