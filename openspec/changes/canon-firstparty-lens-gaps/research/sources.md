@@ -169,10 +169,18 @@ returns the product name and nothing else. Not usable headless.
 
 ## Canon first-party research — run 2 (2026-08-08): Canon Australia route
 
-Chrome (the extension) hits the **same IP-based Akamai block** on
-`usa.canon.com` as WebFetch did — confirmed by re-testing after the full
-3-hour wait: same "Access Denied", a fresh Akamai reference number each time.
-The block is not client-based and not time-based; waiting does not clear it.
+Chrome (the extension) hits the **same Akamai block** on `usa.canon.com` as
+WebFetch did — confirmed by re-testing after the full 3-hour wait: same
+"Access Denied", a fresh Akamai reference number each time. Not client-based,
+not time-based; waiting or switching client doesn't clear it.
+
+**Update 2026-08-09:** the owner also gets blocked from their phone, on a
+different network entirely. Combined with a fast, clean 403 (not a timeout —
+ruling out a real outage) and this session's consistent AU context throughout,
+the most likely explanation is **geo-blocking of non-US traffic**, not a
+bot/rate-limit flag tied to any one IP. `canon.com` is not a usable
+alternative — it redirects to `global.canon`, Canon's corporate site, with no
+shop or per-lens spec pages. `canon.com.au` remains the right route.
 
 **`canon.com.au` works** and is a legitimate tier-1 source (an official
 regional site, per the sourcing rule). Two site quirks to know before using it:

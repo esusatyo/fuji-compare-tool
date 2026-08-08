@@ -159,10 +159,16 @@ Use **WebSearch** and **WebFetch**. Work brand by brand. For each brand:
   page can be verified — never invent a slug.
   Note `tests/links/links.test.js` treats 403 as a *warning*, so bot-blocking is not
   evidence a URL is dead — and equally not evidence it's alive. Confirm before relying
-  on it. The block on `usa.canon.com` is IP-based, not client-based — confirmed
-  2026-08-08 by re-testing after a 3-hour wait and via the Chrome extension (a real
-  browser), both still "Access Denied". Waiting or switching client doesn't clear it;
-  only a regional domain does.
+  on it. The block on `usa.canon.com` is most likely **geo-blocking of non-US
+  traffic**, not a bot/rate-limit flag — confirmed 2026-08-08 by re-testing after a
+  3-hour wait (no change), via the Chrome extension i.e. a real browser (no change),
+  and by the owner testing from their phone on a different network entirely (still
+  blocked). It's a fast, clean 403 with an Akamai reference number, not a timeout —
+  that's the signature of a deliberate edge rule, not an outage. Waiting, switching
+  client, or switching network doesn't clear it; use a regional domain
+  (`canon.com.au` etc.) instead. Note `canon.com` is a dead end for this purpose —
+  it redirects to `global.canon`, Canon's corporate site, which has no shop/spec
+  pages.
 
   **`canon.com.au`'s "Dimensions (mm — retracted)" field is templated and
   unreliable — confirmed by direct collision, 2026-08-08.** Two different
