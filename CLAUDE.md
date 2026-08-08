@@ -29,7 +29,7 @@ Key conventions:
   - **Discontinued** items (`discontinued: true`) may legitimately be USD-only — no `priceIncomplete` needed.
 - **Buy links**: generated at render time. If an item has an `asin` (10-char Amazon ID), the button deep-links to `/dp/<asin>` on the currency's regional marketplace; otherwise it falls back to an Amazon search. So `asin: null` is always safe.
 - **Images**: `imageUrl` should be a live `https` URL. Items with no freely-licensed image are allowlisted in `KNOWN_IMAGE_GAPS[<brand>]` in `tests/data/completeness.test.js` (a documented exception, not a silent skip — the test fails if a gapped item later gains an image).
-- **`focalLengthEquiv`** is a string (full-frame-equivalent focal length). APS-C brands apply their crop: Fujifilm X / Sony E / Nikon Z DX = **1.5×**, Canon RF-S = **1.6×**, Micro Four Thirds = **2.0×**. Full-frame lenses use the native focal length.
+- **`focalLengthEquiv`** is a string (full-frame-equivalent focal length). APS-C brands apply their crop: Fujifilm X / Sony E / Nikon Z DX = **1.5×**, Canon RF-S = **1.6×**, Micro Four Thirds = **2.0×**. Full-frame lenses use the native focal length. **Exception: dual-fisheye/VR lenses** (Canon's `RF 5.2mm f/2.8 L Dual Fisheye`, `RF-S 3.9mm f/3.5 STM Dual Fisheye`) don't apply a crop multiplier — `focalLengthEquiv` equals the native focal length even on the RF-S body. These lenses produce twin circular-fisheye images for stereoscopic VR, not a single rectilinear frame; a "35mm-equivalent" framing multiplier has no meaning for that use case and would only mislead a reader comparing them to normal lenses.
 
 ## Third-party lenses
 

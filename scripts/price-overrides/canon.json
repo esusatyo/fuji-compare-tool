@@ -9,5 +9,12 @@
   "rf-35mm-f14-l-vcm":    { "AUD": 2699 },
   "rf-50mm-f14-l-vcm":    { "AUD": 2429 },
   "rf-800mm-f56-l-is-usm": { "AUD": 29799 },
-  "rf-1200mm-f8-l-is-usm": { "AUD": 35099 }
+  "rf-1200mm-f8-l-is-usm": { "AUD": 35099 },
+  "rfs-39mm-f35-stm-dual-fisheye": { "AUD": 1999 },
+  "rfs-78mm-f4-stm-dual":          { "AUD": 799 },
+  "rf-28-70mm-f28-is-stm":         { "AUD": 1919 },
+  "rf-24-105mm-f28-l-is-usm-z":    { "AUD": 5399 },
+  "rf-24-240mm-f4-63-is-usm":      { "AUD": 1719 },
+  "rf-70-200mm-f28-l-is-usm-z":    { "AUD": 5399 },
+  "rf-200-800mm-f63-9-is-usm":     { "AUD": 3499 }
 }

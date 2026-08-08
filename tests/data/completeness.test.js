@@ -38,6 +38,18 @@ const KNOWN_IMAGE_GAPS = {
     'rf-50mm-f14-l-vcm',
     'rf-800mm-f56-l-is-usm',
     'rf-1200mm-f8-l-is-usm',
+    'rf-52mm-f28-l-dual-fisheye',
+    'rfs-39mm-f35-stm-dual-fisheye',
+    'rfs-78mm-f4-stm-dual',
+    'rf-10-20mm-f4-l-is-stm',
+    'rf-15-30mm-f45-63-is-stm',
+    'rf-28-70mm-f2-l-usm',
+    'rf-28-70mm-f28-is-stm',
+    'rf-24-105mm-f28-l-is-usm-z',
+    'rf-24-240mm-f4-63-is-usm',
+    'rf-70-200mm-f28-l-is-usm-z',
+    'rf-100-300mm-f28-l-is-usm',
+    'rf-200-800mm-f63-9-is-usm',
     // Third-party RF AF lenses — no freely-licensed Commons image; manufacturer
     // image pending backfill (Viltrox 85 RF II B&H page blocks fetch; Yongnuo).
     'viltrox-85mm-f18',
