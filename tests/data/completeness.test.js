@@ -33,6 +33,11 @@ const KNOWN_IMAGE_GAPS = {
     'rf-400mm-f28-l-is-usm',
     'rf-600mm-f4-l-is-usm',
     'rf-85mm-f12-l-usm-ds',
+    'rf-24mm-f14-l-vcm',
+    'rf-35mm-f14-l-vcm',
+    'rf-50mm-f14-l-vcm',
+    'rf-800mm-f56-l-is-usm',
+    'rf-1200mm-f8-l-is-usm',
     // Third-party RF AF lenses — no freely-licensed Commons image; manufacturer
     // image pending backfill (Viltrox 85 RF II B&H page blocks fetch; Yongnuo).
     'viltrox-85mm-f18',

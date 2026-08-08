@@ -274,3 +274,109 @@ already-shipped data (not touched in this pass — flagged for task 6.1):
   earlier pass. The new `rf-600mm-f11-is-stm` entry uses `minAperture:11`
   (physically correct for a fixed aperture) and `blades:null` (unverifiable)
   rather than copying the sibling's unsourced numbers.
+
+---
+
+## Canon first-party research — run 3 (2026-08-08): the 5 blocked lenses resolved, and a correction
+
+**Correction to run 2:** the VCM-prime "dimensions bug" claim was wrong. An
+independent T2 source (`the-digital-picture.com`, Bryan Carnathan — a
+long-established, methodical reviewer who publishes both the manufacturer's
+own spec **and** his own independent measurement side by side) confirms the
+RF 24/35/50mm f/1.4 L VCM primes **genuinely share identical barrel
+dimensions** — `76.5 × 99.3mm` on all three, matching Canon AU exactly. Canon
+deliberately built this trio on one shared barrel; three lenses returning the
+same number is a real design choice, not a template collision. The 35mm's
+apparent "reversal" was AU printing the pair as L×D on that one page instead
+of D×L — same values, different column order, not a wrong number.
+
+The genuinely-confirmed bug from run 2 stands: the two supertelephoto pairs
+(400mm f/2.8 / 600mm f/4, and 800mm f/5.6L / 1200mm f/8L) really did have
+templated/wrong AU dimensions, now proven by independent measurement rather
+than by suspicion:
+
+| lens | AU showed | real manufacturer spec (the-digital-picture.com) |
+|---|---|---|
+| RF 800mm f/5.6L IS USM | `69 × 92.9mm` | `163 × 432mm` |
+| RF 1200mm f/8L IS USM | `69 × 92.9mm` (same wrong pair again) | `168 × 537mm` |
+
+**Method going forward:** `the-digital-picture.com`'s
+`Reviews/Lens-Specifications.aspx?Lens=<id>` pages are the single richest
+source found this session — manufacturer spec *and* independently measured
+figures for weight, dimensions, elements/groups, blades, MFD, magnification,
+IS stops, weather sealing, AF motor, filter size, year, all in one page.
+WebFetch gets 403'd on this domain; Chrome reaches it fine. The lens ID isn't
+derivable from the name — get it from the `<select>` compare-tool's `option
+value="<id>"` on any spec page (all lenses are listed there), not from the
+friendly review-page URL.
+
+### The 5 previously-blocked lenses — entered
+
+All 5 now in `canon/data.js`, each dimension cross-validated against the
+independent measurement, not taken from AU alone:
+
+| slug | dims (mfr spec) | weight | elements/groups | blades | AF | year | USD |
+|---|---|---|---|---|---|---|---|
+| `rf-24mm-f14-l-vcm` | 76.5×99.3mm | 515g | 15/11 | 11 | VCM + Nano USM | 2024 | $1,499 |
+| `rf-35mm-f14-l-vcm` | 76.5×99.3mm | 555g | 14/11 | 11 | VCM + Nano USM | 2024 | $1,499 |
+| `rf-50mm-f14-l-vcm` | 76.5×99.3mm | 580g | 14/11 | 11 | VCM + Nano USM | 2024 | $1,399 |
+| `rf-800mm-f56-l-is-usm` | 163×432mm | 3140g | 26/18 | 9 | Nano USM | 2022 | $16,999 |
+| `rf-1200mm-f8-l-is-usm` | 168×537mm | 3340g | 26/18 | 9 | Nano USM | 2022 | $19,999 |
+
+Sources: `canon.com.au/camera-lenses/<slug>` for AUD RRP, blades, MFD,
+magnification, IS stops, focus drive (all confirmed correct on every field
+except dimensions on the two supertelephotos); `the-digital-picture.com` for
+dimensions, weather sealing, and AF motor detail; DPReview/PetaPixel/Fstoppers
+announcement coverage for launch USD price and year.
+
+⚠️ Minor unresolved discrepancies, noted rather than silently resolved:
+- 35mm VCM weight: AU says 555g, the-digital-picture.com's manufacturer-spec
+  figure (converted from their own imperial rounding) says 550g. Used AU's
+  555g (direct metric, no unit round-trip). 5g, immaterial either way.
+- 35mm VCM AF motor: AU's structured table says "VCM + Nano USM" uniformly for
+  all three primes; the-digital-picture.com's prose says "VCM, USM" for the
+  35mm specifically (vs "VCM, Nano USM" for 24mm and 50mm). Used AU's
+  structured field for consistency across the trio.
+- 800mm f/5.6L IS stops: AU's structured table says 4; the-digital-picture.com
+  says 4.5 (a more precise CIPA figure). Used 4.5 (the more precise number);
+  1200mm f/8L's IS stops agree exactly between both sources (4.0), no
+  discrepancy there.
+- 1200mm f/8L USD: DPReview/Fstoppers coverage all confirm $19,999 launch
+  price directly — no discrepancy, included for completeness of the pattern.
+
+The `length` schema cap (`tests/helpers/schema.js`) was 500mm — too low for
+the RF 1200mm f/8L's genuine 537mm. Raised to 600mm; this is real Canon data,
+not an entry error.
+
+### Bugs fixed in the already-shipped `rf-800mm-f11-is-stm` entry
+
+Cross-checked against **two independent sources** —
+`canon.com.au/camera-lenses/rf-800mm-f11-is-stm` (T1) and
+`the-digital-picture.com` Lens=1513 (T2, incl. its own independent
+measurement) — which agree with each other on every field below. The shipped
+entry disagreed with both:
+
+| field | was | now | evidence |
+|---|---|---|---|
+| `groups` | 7 | 8 | both sources agree: 11 elements / **8** groups |
+| `length` | 351.8 | 281.8 | AU's own retracted spec; corroborated by the-digital-picture's independent *measurement* of 290.7mm (close, independent methodology). 351.8 is closer to the **extended** figure (~358.9–361.8mm per both sources) with what looks like a single-digit transposition (361.8 → 351.8) |
+| `diameter` | 101.8 | 101.6 | both sources agree on 101.6mm |
+| `blades` | 7 | null | neither source publishes a blade count for this fixed-aperture design — now possible since `blades` is nullable |
+| `minAperture` | 32 | 11.0 | both sources confirm the aperture is **fixed** at f/11 with no range (`f/11.0-11.0`) |
+| `afType` | `'Nano USM'` | `'STM'` | both sources say STM (matching the lens's own name, "IS STM") — Nano USM is never used on this budget f/11 pair, only on the L-series |
+| `filterThread` | null | 95 | both sources confirm a genuine 95mm **front** filter thread (not drop-in, unlike the L-series supertelephotos) |
+| `weatherSealed` | true | false | both sources say `N` |
+
+Eight fields, not the three originally suspected. Given the density of errors
+found once actually checked, this entry's original sourcing looks to have been
+guessed rather than verified.
+
+### Same-family bug in my own newly-entered `rf-600mm-f11-is-stm` (run 2)
+
+Cross-checking its 800mm sibling above turned up the same mistake in my own
+entry from run 2: `filterThread` was set to `null` on the assumption these
+f/11 primes use rear drop-in filters like the L-series supertelephotos.
+`the-digital-picture.com` Lens=1511 confirms a genuine 82mm **front** filter
+thread (matching the "Lens Cap: E-82II" already noted from AU). Fixed to `82`.
+Its other fields (weatherSealed: false, minAperture: 11, blades: null,
+afType: STM) were independently confirmed correct by this same source.
