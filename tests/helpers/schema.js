@@ -271,7 +271,7 @@ function validateLens(id, lens) {
   add(checkField(lens, 'oisStops', { type: 'number', nullable: true, min: 0 }));
 
   add(checkField(lens, 'weight', { type: 'number', min: 1, max: 5000 }));
-  add(checkField(lens, 'length', { type: 'number', min: 1, max: 500 }));
+  add(checkField(lens, 'length', { type: 'number', min: 1, max: 600 }));
   add(checkField(lens, 'diameter', { type: 'number', min: 1, max: 300 }));
   add(checkField(lens, 'filterThread', { type: 'number', nullable: true, min: 1 }));
 
