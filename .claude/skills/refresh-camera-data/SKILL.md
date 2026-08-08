@@ -159,16 +159,19 @@ Use **WebSearch** and **WebFetch**. Work brand by brand. For each brand:
   page can be verified — never invent a slug.
   Note `tests/links/links.test.js` treats 403 as a *warning*, so bot-blocking is not
   evidence a URL is dead — and equally not evidence it's alive. Confirm before relying
-  on it. The block on `usa.canon.com` is most likely **geo-blocking of non-US
-  traffic**, not a bot/rate-limit flag — confirmed 2026-08-08 by re-testing after a
-  3-hour wait (no change), via the Chrome extension i.e. a real browser (no change),
-  and by the owner testing from their phone on a different network entirely (still
-  blocked). It's a fast, clean 403 with an Akamai reference number, not a timeout —
-  that's the signature of a deliberate edge rule, not an outage. Waiting, switching
-  client, or switching network doesn't clear it; use a regional domain
-  (`canon.com.au` etc.) instead. Note `canon.com` is a dead end for this purpose —
-  it redirects to `global.canon`, Canon's corporate site, which has no shop/spec
-  pages.
+  on it.
+
+  **`usa.canon.com` does not currently work from Australia** — confirmed 2026-08-08/09
+  from this tool's own network, from the owner's phone, and from several of the
+  owner's other computers across different Australian networks; a US-based VPN
+  reaches it fine. It's a fast, clean 403 with an Akamai reference number (not a
+  timeout), so the domain itself is live, current, and correct — this isn't a wrong
+  URL or an outage, just something (geo-targeting or otherwise) currently refusing
+  non-US traffic. Treat this as a present-day fact to re-check, not a permanent
+  property of the domain — it may not be intentional and may change without notice.
+  Use `canon.com.au` for AUD RRP and specs in the meantime (`canon.com` is not a
+  substitute — it redirects to `global.canon`, Canon's corporate site, with no
+  shop/spec pages).
 
   **`canon.com.au`'s "Dimensions (mm — retracted)" field is templated and
   unreliable — confirmed by direct collision, 2026-08-08.** Two different
