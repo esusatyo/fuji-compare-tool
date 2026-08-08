@@ -3,7 +3,7 @@ name: refresh-camera-data
 description: Research live camera/lens data from the web and propose updates to brand data files — price changes, product/image URL changes, and newly released cameras and lenses. Use when the user wants to refresh, update, or check for new camera data, prices, or releases across brands.
 metadata:
   author: fuji-compare-tool
-  version: "1.3"
+  version: "1.4"
 ---
 
 Refresh the brand data files in this repo against current real-world data.
@@ -112,8 +112,20 @@ Use **WebSearch** and **WebFetch**. Work brand by brand. For each brand:
   - **Kit-lens orphans**: `xc-13-33mm-f35-63`, the X-T30 III's kit lens announced the
     same day, was already in the data. A lens whose companion body is absent is a
     strong signal. Sweep for lenses with no matching body generation.
-  - **Successor gaps**: for every `<line> II` in the data, search `<line> III`. Roman
-    numeral bumps read as "already covered" and are easy to pattern-match past.
+  - **Successor gaps — cameras AND lenses.** For every `<line> II` in the data, search
+    `<line> III`. Roman numeral bumps read as "already covered" and are easy to
+    pattern-match past. **This applies just as much to lenses as bodies** — a maker
+    revising an existing lens (a new "S II" / "Mark II" / "Version II") keeps a
+    familiar-looking name, so "we already have a lens called X" reads as "covered" even
+    though the new one has different specs and a different price. Confirmed 2026-08-08
+    on Nikon: NIKKOR Z 24-70mm f/2.8 S gained an S II in Aug 2025 and 70-200mm f/2.8 VR
+    S gained a VR S II in Feb 2026 — both with different weight/elements/AF motor/price
+    from the original, both missed by every prior refresh because "24-70mm f/2.8 S"
+    already existed in the data. Whenever a maker announces a "II"/Mark 2/updated
+    version of a lens already in the data, research it as its own product with its own
+    specs and price — never assume it's the same entry under a new label. (Whether it
+    becomes a new coexisting entry or an in-place update to the existing one is a
+    separate call — see step 5.)
 
   Never infer "this brand is current" from the newest `year` in the data — a brand can
   hold a recent *lens* year while missing a *body*.
@@ -231,6 +243,22 @@ the user opts in). Then edit the relevant `<slug>/data.js`:
 
 - **Price update**: edit the `prices:{…}` object for that slug, in-scope currencies only.
 - **URL update**: replace the `productUrl` / `imageUrl` string.
+- **Revision handling — new coexisting entry vs. update in place.** A "II"/Mark 2/
+  Version 2 needs a judgment call, not a default: did the optical formula, AF system,
+  or mechanical design actually change, or is this a barrel/cosmetic refresh of the
+  same optics?
+  - **Real redesign → new coexisting entry**, old one gets `discontinued: true` (never
+    overwritten) — see the `lens-revisions-are-coexisting-entries` memory. Example:
+    NIKKOR Z 24-70mm f/2.8 S II (Aug 2025) has different elements/groups/AF motor/
+    weight from the original S — genuinely a new product to compare against.
+  - **Cosmetic-only refresh → update the existing entry in place**, don't duplicate it.
+    Example, confirmed 2026-08-08: Voigtländer's APO-Lanthar 50mm f/2 "Version II"
+    (Nov 2024) has the *identical* optical formula to the original per Cosina's own
+    materials — only the barrel design, hood, and 17g of weight changed. Adding it as
+    a second entry would just be near-duplicate noise in a comparison table; instead
+    update `asin`/`productUrl`/`year`/`weight` on the existing entry.
+  - When unsure which case applies, check the maker's own "what's new" copy for the
+    revision — it usually says outright whether the optics changed.
 - **New camera/lens**: add a full entry to `CAMERAS`/`LENSES` matching the exact field
   shape of neighbouring entries (same keys, same order, same formatting/indentation).
   Use `null` for any spec you can't source — do not invent values. New entries also need
@@ -238,10 +266,19 @@ the user opts in). Then edit the relevant `<slug>/data.js`:
   `CAMERA_ORDER`, `DROPDOWN_GROUPS`, `LENS_ORDER`); grep the file for the slug pattern of
   a sibling to find every array it must be added to.
 
-For non-USD launch prices on a new model where only USD is known, you may run
-`node scripts/compute-prices.js` if it supports deriving the row, or fill the ratio-
-derived figures by hand following the existing values' magnitude. Note which figures are
-derived vs confirmed.
+For non-USD prices, `scripts/compute-prices.js` has two modes:
+- **Fill mode** (default) — for a brand-new entry where only USD is known, derives
+  every non-USD currency from scratch via regional ratios.
+- **Recompute mode** (`--recompute`, optionally `--ids=slug1,slug2` to target specific
+  entries) — for an EXISTING entry whose USD you just refreshed, re-derives every
+  currency field that's already a number, leaving nulls as nulls (so a
+  `priceIncomplete` lens that only has AUD/CAD populated gets just those two
+  refreshed, and a USD-only third-party entry is untouched beyond USD). A single
+  credible source for the new USD figure is enough before running this — see the "one
+  source is enough for a routine price" rule above; the script's job is just the
+  arithmetic, not sourcing.
+
+Note which figures are derived vs confirmed either way.
 
 ### 6. Verify
 After edits, run the data tests so a malformed entry is caught:
@@ -280,4 +317,18 @@ the test result, and any items left under "Needs confirmation" for the user to d
   out can still be badly wrong about which mounts a lens ships in — lensfinder.org was
   ~30% wrong on mount attribution while its tables matched tier 1 exactly. Verify
   availability against the maker, always.
+- **A third-party entry surviving several refreshes unchallenged is not evidence it's
+  real — verify the mount exists, not just the specs.** Confirmed 2026-08-08: Nikon's
+  `tamron-11-20mm-f28` entry had a plausible name, specs, and price, and had been in
+  the dataset since the brand was authored — but no Nikon Z version of that lens has
+  ever existed. Tamron's 11-20mm f/2.8 Di III-A RXD (Model B060) only ever shipped for
+  Sony E, Fujifilm X, and Canon RF; B&H's SKU list and Tamron's own mount-selector
+  dropdown both confirm there's no Z-mount SKU. This is a sharper version of the
+  "source classes don't travel together" trap above: it's not that a source was wrong
+  about the mount, it's that the *dataset entry itself* had never been mount-checked
+  against anything, because every refresh since authoring checked its price/specs and
+  moved on without questioning whether the product existed at all. When doing a
+  third-party lens pass, periodically re-verify mount existence via the maker's own
+  mount selector or a major retailer's SKU list — independent of whether the price or
+  specs still look right — especially for entries a recent refresh hasn't touched.
 - This skill is run manually; do not schedule it or commit/push unless the user asks.
