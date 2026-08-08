@@ -85,14 +85,18 @@ const KNOWN_IMAGE_GAPS = {
     'viltrox-13mm-f14', 'viltrox-16mm-f18', 'viltrox-27mm-f12', 'viltrox-33mm-f14',
     'viltrox-56mm-f14', 'viltrox-85mm-f18-ii',
     'laowa-90mm-f28-macro', 'laowa-15mm-f2', 'laowa-10mm-f4-cookie',
-    // tamron-11-20mm / -50-400mm: the only Commons files are the Sony-E versions
-    // (Model B060 / A067). The Nikon Z variants are B060Z / A067Z, so these stay
-    // gapped here even though the Sony entries now carry those photos.
-    'tamron-11-20mm-f28', 'tamron-50-400mm-f45-63',
+    // tamron-50-400mm: the only Commons file is the Sony-E version (Model A067).
+    // The Nikon Z variant is A067Z, so it stays gapped even though the Sony
+    // entry now carries that photo.
+    'tamron-50-400mm-f45-63',
     'tamron-17-70mm-f28', 'tamron-18-300mm-f35-63', 'tamron-35-150mm-f2-28',
     'viltrox-24mm-f18', 'viltrox-35mm-f18-evo', 'voigtlander-nokton-40mm-f12',
     'yongnuo-35mm-f2', 'yongnuo-50mm-f18', 'ttartisan-27mm-f28', '7artisans-27mm-f28', 'meike-85mm-f18',
     'viltrox-40mm-f25-air', 'voigtlander-apo-lanthar-50mm-f2',
+    // 2025–2026 additions (refresh 2026-08-08) — no freely-licensed image sourced yet
+    'z-24-105mm-f4-71', 'z-70-200mm-f2-8-vr-s-ii', 'z-dx-mc-35mm-f17',
+    'z-24-70mm-f2-8-s-ii', 'z-28-135mm-f4-pz',
+    'viltrox-85mm-f20-evo', 'viltrox-85mm-f14-pro', 'meike-85mm-f18-se-ii',
     // Curated via scripts/fetch-images-commons.js (strict model-token match),
     // plus z9 sourced manually for the landing-page flagship photo.
     // 22 of 57 items carry real Commons images (5 cameras + 17 lenses); the
