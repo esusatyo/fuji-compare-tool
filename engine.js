@@ -221,7 +221,10 @@ const SPEC_SECTIONS = [
     specs: [
       { key: 'faceDetect',   label: 'Face / Eye Detection', type: 'boolean', fn: c => c.faceDetection },
       { key: 'subjectDet',   label: 'Subject Detection', type: 'text',   fn: c => c.subjectDetection || '—' },
-      { key: 'maxBurst',     label: 'Max Burst Speed',   type: 'number', higherBetter: true,  fn: c => c.maxBurst,     fmt: v => v + ' fps' },
+      // maxBurst is non-nullable in the schema, so bodies that publish no
+      // stills burst rate at all (the BS1H/BGH1 box cameras) carry 0. Render
+      // that as "—" rather than "0 fps", which reads as a measured figure.
+      { key: 'maxBurst',     label: 'Max Burst Speed',   type: 'number', higherBetter: true,  fn: c => c.maxBurst || null, fmt: v => v + ' fps' },
     ]
   },
   {

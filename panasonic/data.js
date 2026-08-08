@@ -49,6 +49,7 @@ const SERIES_COLORS = {
   'Lumix GH (MFT)':       { bg: '#0a1228', text: '#7fb0ff' },
   'Lumix G (MFT)':        { bg: '#0c1426', text: '#8ab4ff' },
   'Lumix Compact':        { bg: '#0e1832', text: '#9ec2ff' },
+  'Lumix Box (Cinema)':   { bg: '#0b1a2e', text: '#7fc4ff' },
 };
 
 // ─────────────────────────────────────────────
@@ -128,6 +129,27 @@ const CAMERAS = {
     lensType:'Interchangeable', lensSpec:null,
   },
 
+  's1iie': {
+    name:'Lumix S1IIE', series:'Lumix S (Full-frame)', year:2025, discontinued:false,
+    tagline:'Accessible Second-Gen Hybrid Full-Frame',
+    productUrl:'https://shop.panasonic.com/products/lumix-s1iie-full-frame-camera-dc-s1m2e',
+    imageUrl:null,
+    asin:'B0FFBR3YTT',
+    prices:{USD:2499,AUD:3899,EUR:2899,GBP:2199,JPY:385000,CAD:3199,SGD:3599},
+    sensorMP:24.1, sensorType:'Full-frame BSI CMOS', processor:'Venus Engine',
+    width:134.3, height:102.3, depth:91.8, weight:795, weatherSealed:true,
+    lcdSize:'3.0"', lcdDots:1840, lcdType:'Tilt & Free-angle Touch',
+    evfType:'EVF', evfDots:5.76, evfMag:0.78,
+    faceDetection:true, subjectDetection:'Human / Animal / Car / Motorcycle / Train / Airplane',
+    ibis:true, ibisStops:8.0, maxBurst:30,
+    maxVideoRes:'6K / 30P (3:2 Open Gate)',
+    logVideo:true,
+    vLog:'V-Log', dualNativeIso:true, openGate:'6K', proResInternal:true,
+    bluetooth:'5.0', wifi:true,
+    cardSlots:'1× CFexpress Type B + 1× SD UHS-II', batteryLife:380, usbCharging:true,
+    lensType:'Interchangeable', lensSpec:null,
+  },
+
   's5-iix': {
     name:'Lumix S5 IIX', series:'Lumix S (Full-frame)', year:2023, discontinued:false,
     tagline:'All-Black Pro Video S5 II',
@@ -177,7 +199,7 @@ const CAMERAS = {
     productUrl:'https://shop.panasonic.com/products/s1h-full-frame-mirrorless-camera-body',
     imageUrl:null,
     asin:'B07WSRHXPR',
-    prices:{USD:3499,AUD:5599,EUR:4049,GBP:3299,JPY:577000,CAD:4799,SGD:4999},
+    prices:{USD:3999,AUD:5599,EUR:4049,GBP:3299,JPY:577000,CAD:4799,SGD:4999},
     sensorMP:24.2, sensorType:'Full-frame CMOS', processor:'Venus Engine',
     width:151.0, height:114.2, depth:110.4, weight:1052, weatherSealed:true,
     lcdSize:'3.2"', lcdDots:2330, lcdType:'Tri-axis Tilt & Free-angle Touch',
@@ -375,7 +397,7 @@ const CAMERAS = {
     productUrl:'https://shop.panasonic.com/products/g100d-mirrorless-camera-12-32mm-f3-5-5-6-lens',
     imageUrl:null,
     asin:'B0CQCDTT82',
-    prices:{USD:597,AUD:999,EUR:699,GBP:599,JPY:99000,CAD:829,SGD:869},
+    prices:{USD:747,AUD:999,EUR:699,GBP:599,JPY:99000,CAD:829,SGD:869},
     sensorMP:20.3, sensorType:'Micro Four Thirds CMOS', processor:'Venus Engine',
     width:115.6, height:82.5, depth:54.2, weight:412, weatherSealed:false,
     lcdSize:'3.0"', lcdDots:1840, lcdType:'Free-angle Touch',
@@ -390,7 +412,51 @@ const CAMERAS = {
     lensType:'Interchangeable', lensSpec:null,
   },
 
+  'g97': {
+    name:'Lumix G97', series:'Lumix G (MFT)', year:2025, discontinued:false,
+    tagline:'Compact Hybrid MFT All-Rounder',
+    productUrl:'https://shop.panasonic.com/products/lumix-g97-micro-four-thirds-mirrorless-camera-dc-g97mk',
+    imageUrl:null,
+    asin:'B0DQ9DFXLQ',
+    prices:{USD:849,AUD:1299,EUR:999,GBP:799,JPY:131000,CAD:1099,SGD:1199},
+    sensorMP:20.3, sensorType:'Micro Four Thirds CMOS', processor:'Venus Engine',
+    width:130.4, height:93.5, depth:77.4, weight:530, weatherSealed:true,
+    lcdSize:'3.0"', lcdDots:1840, lcdType:'Free-angle Touch',
+    evfType:'EVF', evfDots:2.36, evfMag:0.74,
+    faceDetection:true, subjectDetection:'Human (face / eye)',
+    ibis:true, ibisStops:5.0, maxBurst:9,
+    maxVideoRes:'4K / 30P',
+    logVideo:true,
+    vLog:'V-Log L', dualNativeIso:false, openGate:null, proResInternal:false,
+    bluetooth:'5.0', wifi:true,
+    cardSlots:'1× SD UHS-II', batteryLife:290, usbCharging:true,
+    lensType:'Interchangeable', lensSpec:null,
+  },
+
   /* ── Lumix G — discontinued (USD list only) ── */
+  /* The "5-axis Hybrid I.S." here is electronic (video-only) plus lens O.I.S.
+     — there is no sensor-shift IBIS, so ibis:false. */
+  'g100': {
+    name:'Lumix G100', series:'Lumix G (MFT)', year:2020, discontinued:true,
+    tagline:'Compact 4K Vlogging MFT',
+    productUrl:null,
+    imageUrl:null,
+    asin:null,
+    prices:{USD:749,AUD:null,EUR:null,GBP:null,JPY:null,CAD:null,SGD:null},
+    sensorMP:20.3, sensorType:'Micro Four Thirds CMOS', processor:'Venus Engine',
+    width:115.6, height:82.5, depth:54.2, weight:345, weatherSealed:false,
+    lcdSize:'3.0"', lcdDots:1840, lcdType:'Free-angle Touch',
+    evfType:'EVF', evfDots:3.68, evfMag:0.73,
+    faceDetection:true, subjectDetection:'Human (face / eye)',
+    ibis:false, ibisStops:null, maxBurst:10,
+    maxVideoRes:'4K / 30P',
+    logVideo:true,
+    vLog:'V-Log L', dualNativeIso:false, openGate:null, proResInternal:false,
+    bluetooth:'4.2', wifi:true,
+    cardSlots:'1× SD UHS-I', batteryLife:270, usbCharging:true,
+    lensType:'Interchangeable', lensSpec:null,
+  },
+
   'g9': {
     name:'Lumix G9', series:'Lumix G (MFT)', year:2017, discontinued:true,
     tagline:'Original MFT Photo Flagship',
@@ -476,20 +542,71 @@ const CAMERAS = {
     lensType:'Fixed', lensSpec:'24-75mm equiv. f/1.7-2.8',
   },
 
+  /* ── Lumix Box (cinema / live-event bodies) ──
+     No LCD and no viewfinder at all — Panasonic's JP spec database records
+     these as affirmative absences (液晶モニター: 無し / ファインダー: 無し),
+     hence lcdSize/lcdType 'None' and evf* null. Likewise these publish no
+     stills burst rate (連写撮影: なし) → maxBurst 0, and no CIPA rating:
+     both run on external 12V DC / PoE+ / an external pack, with no internal
+     battery, so batteryLife is null. ── */
+  'bs1h': {
+    name:'Lumix BS1H', series:'Lumix Box (Cinema)', year:2021, discontinued:false,
+    tagline:'Full-Frame 6K Box Cinema',
+    productUrl:'https://shop.panasonic.com/products/box-camera-24-2mp-full-frame-mos-sensor',
+    imageUrl:null,
+    asin:null,
+    prices:{USD:3497,AUD:5499,EUR:3999,GBP:3099,JPY:448000,CAD:4499,SGD:5099},
+    sensorMP:24.2, sensorType:'Full-frame CMOS', processor:'Venus Engine',
+    width:93.0, height:93.0, depth:78.8, weight:585, weatherSealed:false,
+    lcdSize:'None', lcdDots:null, lcdType:'None',
+    evfType:null, evfDots:null, evfMag:null,
+    faceDetection:true, subjectDetection:'Human / Animal (face / eye / body)',
+    ibis:false, ibisStops:null, maxBurst:0,
+    maxVideoRes:'6K / 24P (3:2 Open Gate)',
+    logVideo:true,
+    vLog:'V-Log / V-Gamut', dualNativeIso:true, openGate:'6K', proResInternal:false,
+    bluetooth:'4.2', wifi:true,
+    cardSlots:'2× SD UHS-II', batteryLife:null, usbCharging:false,
+    lensType:'Interchangeable', lensSpec:null,
+  },
+
+  'bgh1': {
+    name:'Lumix BGH1', series:'Lumix Box (Cinema)', year:2020, discontinued:false,
+    tagline:'Modular MFT Box Cinema',
+    productUrl:'https://shop.panasonic.com/products/box-camera-10-2mp-m4-3-mos-sensor',
+    imageUrl:null,
+    asin:null,
+    prices:{USD:1997,AUD:3099,EUR:2299,GBP:1799,JPY:240000,CAD:2599,SGD:2899},
+    sensorMP:10.2, sensorType:'Micro Four Thirds CMOS', processor:'Venus Engine',
+    width:93.0, height:93.0, depth:78.0, weight:545, weatherSealed:false,
+    lcdSize:'None', lcdDots:null, lcdType:'None',
+    evfType:null, evfDots:null, evfMag:null,
+    faceDetection:true, subjectDetection:'Human / Animal (face / eye / body)',
+    ibis:false, ibisStops:null, maxBurst:0,
+    maxVideoRes:'C4K / 60P',
+    logVideo:true,
+    vLog:'V-Log L', dualNativeIso:true, openGate:null, proResInternal:false,
+    bluetooth:'4.2', wifi:true,
+    cardSlots:'2× SD UHS-II', batteryLife:null, usbCharging:false,
+    lensType:'Interchangeable', lensSpec:null,
+  },
+
 };
 
 const CAMERA_ORDER = [
-  's1r-ii', 's1-ii', 's5-ii', 's5-iix', 's9', 's1h', 's1', 's1r', 's5',
+  's1r-ii', 's1-ii', 's1iie', 's5-ii', 's5-iix', 's9', 's1h', 's1', 's1r', 's5',
   'gh7', 'gh6', 'gh5-ii', 'gh5',
-  'g9-ii', 'g100d', 'g9', 'gx9', 'g95',
+  'g9-ii', 'g100d', 'g97', 'g100', 'g9', 'gx9', 'g95',
   'l10',
+  'bs1h', 'bgh1',
 ];
 
 const DROPDOWN_GROUPS = [
-  { label: '── Lumix S — Full-Frame (L-Mount) ──', ids: ['s1r-ii', 's1-ii', 's5-ii', 's5-iix', 's9', 's1h', 's1', 's1r', 's5'] },
+  { label: '── Lumix S — Full-Frame (L-Mount) ──', ids: ['s1r-ii', 's1-ii', 's1iie', 's5-ii', 's5-iix', 's9', 's1h', 's1', 's1r', 's5'] },
   { label: '── Lumix GH — Micro Four Thirds ──',   ids: ['gh7', 'gh6', 'gh5-ii', 'gh5'] },
-  { label: '── Lumix G — Micro Four Thirds ──',    ids: ['g9-ii', 'g100d', 'g9', 'gx9', 'g95'] },
+  { label: '── Lumix G — Micro Four Thirds ──',    ids: ['g9-ii', 'g100d', 'g97', 'g100', 'g9', 'gx9', 'g95'] },
   { label: '── Lumix Compact (fixed-lens) ──',     ids: ['l10'] },
+  { label: '── Lumix Box (cinema / live event) ──', ids: ['bs1h', 'bgh1'] },
 ];
 
 // ─────────────────────────────────────────────
@@ -571,12 +688,12 @@ const LENSES = {
   'lumix-s-40mm-f2': {
     name:'LUMIX S 40mm F2', manufacturer:'Panasonic', line:'LUMIX S', type:'Prime', asin:'B0GY21YLS2',
     focalLength:40, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'40mm',
-    maxAperture:2.0, minAperture:22, weight:300, length:82.0, diameter:73.6,
-    filterThread:67, minFocusDist:23, maxMagnification:0.15,
-    elements:11, groups:9, blades:9, afType:'Stepping Motor',
-    weatherSealed:true, ois:false, oisStops:null, year:2023, discontinued:false,
+    maxAperture:2.0, minAperture:22, weight:144, length:40.9, diameter:69.4,
+    filterThread:62, minFocusDist:30, maxMagnification:0.17,
+    elements:7, groups:6, blades:7, afType:'Stepping Motor',
+    weatherSealed:true, ois:false, oisStops:null, year:2026, discontinued:false,
     imageUrl:null,
-    prices:{USD:597,AUD:949,EUR:null,GBP:null,JPY:null,CAD:799,SGD:null},
+    prices:{USD:399,AUD:599,EUR:null,GBP:null,JPY:null,CAD:499,SGD:null},
     priceIncomplete:true,
     productUrl:'https://shop.panasonic.com/products/lumix-s-series-40mm-f2-l-mount-camera-lens',
   },
@@ -589,7 +706,7 @@ const LENSES = {
     elements:13, groups:11, blades:11, afType:'Dual Phase Linear Motor',
     weatherSealed:true, ois:false, oisStops:null, year:2019, discontinued:false,
     imageUrl:null,
-    prices:{USD:2297,AUD:3599,EUR:null,GBP:null,JPY:null,CAD:3099,SGD:null},
+    prices:{USD:2499,AUD:3599,EUR:null,GBP:null,JPY:null,CAD:3099,SGD:null},
     priceIncomplete:true,
     productUrl:'https://shop.panasonic.com/products/s-series-50mm-f1-4-l-mount-lens',
   },
@@ -616,7 +733,7 @@ const LENSES = {
     elements:18, groups:16, blades:11, afType:'Linear Motor',
     weatherSealed:true, ois:false, oisStops:null, year:2020, discontinued:false,
     imageUrl:null,
-    prices:{USD:2197,AUD:3399,EUR:null,GBP:null,JPY:null,CAD:2899,SGD:null},
+    prices:{USD:2149,AUD:3399,EUR:null,GBP:null,JPY:null,CAD:2899,SGD:null},
     priceIncomplete:true,
     productUrl:'https://shop.panasonic.com/products/s-series-pro-24-70mm-f2-8-l-mount-lens',
   },
@@ -668,7 +785,7 @@ const LENSES = {
     elements:13, groups:12, blades:9, afType:'Linear Motor',
     weatherSealed:true, ois:false, oisStops:null, year:2024, discontinued:false,
     imageUrl:null,
-    prices:{USD:1099,AUD:1699,EUR:null,GBP:null,JPY:null,CAD:1479,SGD:null},
+    prices:{USD:1047,AUD:1699,EUR:null,GBP:null,JPY:null,CAD:1479,SGD:null},
     priceIncomplete:true,
     productUrl:'https://shop.panasonic.com/products/s-series-24-60mm-f2-8-l-mount-lens-s-e2460',
   },
@@ -682,7 +799,7 @@ const LENSES = {
     weatherSealed:true, ois:true, oisStops:null, year:2019, discontinued:false,
     imageUrl:'https://upload.wikimedia.org/wikipedia/commons/thumb/9/94/Panasonic_Lumix_S_24-105mm_F4_Macro_O.I.S._20260621150950.jpg/500px-Panasonic_Lumix_S_24-105mm_F4_Macro_O.I.S._20260621150950.jpg',
     imageCredit:{author:"TurnOnTheNight", licence:"CC0", licenceUrl:"http://creativecommons.org/publicdomain/zero/1.0/deed.en", source:"https://commons.wikimedia.org/wiki/File:Panasonic_Lumix_S_24-105mm_F4_Macro_O.I.S._20260621150950.jpg"},
-    prices:{USD:1297,AUD:1999,EUR:null,GBP:null,JPY:null,CAD:1749,SGD:null},
+    prices:{USD:1399,AUD:1999,EUR:null,GBP:null,JPY:null,CAD:1749,SGD:null},
     priceIncomplete:true,
     productUrl:'https://shop.panasonic.com/products/s-series-r24105-24-105mm-f4-l-mount-lens',
   },
@@ -708,7 +825,7 @@ const LENSES = {
     elements:22, groups:17, blades:11, afType:'Linear Motor',
     weatherSealed:true, ois:true, oisStops:null, year:2019, discontinued:false,
     imageUrl:null,
-    prices:{USD:2597,AUD:3999,EUR:null,GBP:null,JPY:null,CAD:3499,SGD:null},
+    prices:{USD:2499,AUD:3999,EUR:null,GBP:null,JPY:null,CAD:3499,SGD:null},
     priceIncomplete:true,
     productUrl:'https://shop.panasonic.com/products/s-series-pro-70-200mm-f2-8-l-mount-lens',
   },
@@ -739,6 +856,32 @@ const LENSES = {
     prices:{USD:1147,AUD:1799,EUR:null,GBP:null,JPY:null,CAD:1549,SGD:null},
     priceIncomplete:true,
     productUrl:'https://shop.panasonic.com/products/s-series-70-300mm-f4-5-5-6-l-mount-lens',
+  },
+
+  'lumix-s-18-40mm-f4-5-6-3': {
+    name:'LUMIX S 18-40mm F4.5-6.3', manufacturer:'Panasonic', line:'LUMIX S', type:'Zoom', asin:'B0DJG6ZS3V',
+    focalLength:null, focalLengthMin:18, focalLengthMax:40, focalLengthEquiv:'18-40mm',
+    maxAperture:4.5, minAperture:22, weight:155, length:40.9, diameter:67.9,
+    filterThread:62, minFocusDist:15, maxMagnification:0.28,
+    elements:8, groups:7, blades:7, afType:'Stepping Motor',
+    weatherSealed:true, ois:false, oisStops:null, year:2024, discontinued:false,
+    imageUrl:null,
+    prices:{USD:499,AUD:799,EUR:null,GBP:null,JPY:null,CAD:599,SGD:null},
+    priceIncomplete:true,
+    productUrl:'https://shop.panasonic.com/products/s-series-18-40mm-f4-5-6-3-l-mount-lens',
+  },
+
+  'lumix-s-100-500mm-f5-7-1': {
+    name:'LUMIX S 100-500mm F5-7.1 O.I.S.', manufacturer:'Panasonic', line:'LUMIX S', type:'Zoom', asin:'B0FS3C9BRG',
+    focalLength:null, focalLengthMin:100, focalLengthMax:500, focalLengthEquiv:'100-500mm',
+    maxAperture:5.0, minAperture:29, weight:1285, length:196.1, diameter:92.0,
+    filterThread:82, minFocusDist:80, maxMagnification:0.36,
+    elements:19, groups:12, blades:11, afType:'Dual Phase Linear Motor',
+    weatherSealed:true, ois:true, oisStops:7.0, year:2025, discontinued:false,
+    imageUrl:null,
+    prices:{USD:2099,AUD:3299,EUR:null,GBP:null,JPY:null,CAD:2699,SGD:null},
+    priceIncomplete:true,
+    productUrl:'https://shop.panasonic.com/products/lumix-s-series-100-500mm-f5-f7-1-ultra-telephoto-zoom-l-mount-lens',
   },
 
   /* ── LUMIX G Primes (Micro Four Thirds, 2.0× crop equiv) ── */
@@ -861,7 +1004,93 @@ const LENSES = {
     productUrl:'https://shop.panasonic.com/products/g-series-200mm-f2-8-asph-leica-1-4x-teleconverter',
   },
 
+  'lumix-g-14mm-f2-5-ii': {
+    name:'LUMIX G 14mm F2.5 II ASPH.', manufacturer:'Panasonic', line:'LUMIX G', type:'Prime', asin:'B00HV936AY',
+    focalLength:14, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'28mm',
+    maxAperture:2.5, minAperture:22, weight:55, length:20.5, diameter:55.5,
+    filterThread:46, minFocusDist:18, maxMagnification:0.1,
+    elements:6, groups:5, blades:7, afType:'Stepping Motor',
+    weatherSealed:false, ois:false, oisStops:null, year:2014, discontinued:false,
+    imageUrl:null,
+    prices:{USD:299,AUD:null,EUR:null,GBP:null,JPY:null,CAD:null,SGD:null},
+    priceIncomplete:true,
+    productUrl:'https://shop.panasonic.com/products/g-series-g-14mm-f2-5-ii-asph-lens',
+  },
+
+  /* Bulbous front element behind a permanently fixed petal hood — no filter
+     can be mounted at all, hence filterThread:null. */
+  'lumix-g-fisheye-8mm-f3-5': {
+    name:'LUMIX G Fisheye 8mm F3.5', manufacturer:'Panasonic', line:'LUMIX G', type:'Prime', asin:'B003O868UG',
+    focalLength:8, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'16mm',
+    maxAperture:3.5, minAperture:22, weight:165, length:51.7, diameter:60.7,
+    filterThread:null, minFocusDist:10, maxMagnification:0.2,
+    elements:10, groups:9, blades:7, afType:'Stepping Motor',
+    weatherSealed:false, ois:false, oisStops:null, year:2010, discontinued:false,
+    imageUrl:null,
+    prices:{USD:797,AUD:null,EUR:null,GBP:null,JPY:null,CAD:null,SGD:null},
+    priceIncomplete:true,
+    productUrl:'https://shop.panasonic.com/products/g-series-8mm-f3-5-fisheye-lens',
+  },
+
+  'lumix-g-macro-30mm-f2-8': {
+    name:'LUMIX G Macro 30mm F2.8 ASPH. MEGA O.I.S.', manufacturer:'Panasonic', line:'LUMIX G', type:'Prime', asin:'B00TXOYHYE',
+    focalLength:30, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'60mm',
+    maxAperture:2.8, minAperture:22, weight:180, length:63.5, diameter:58.8,
+    filterThread:46, minFocusDist:10.5, maxMagnification:1.0,
+    elements:9, groups:9, blades:7, afType:'Stepping Motor',
+    weatherSealed:false, ois:true, oisStops:null, year:2015, discontinued:false,
+    imageUrl:null,
+    prices:{USD:499,AUD:null,EUR:null,GBP:null,JPY:null,CAD:null,SGD:null},
+    priceIncomplete:true,
+    productUrl:'https://shop.panasonic.com/products/g-series-30mm-f2-8-asph-lens',
+  },
+
   /* ── LUMIX G Zooms (Micro Four Thirds) ── */
+  /* Bulbous front element + fixed hood: takes no filter (filterThread:null).
+     afType inferred — Panasonic published no motor type for this 2009 lens. */
+  'lumix-g-7-14mm-f4': {
+    name:'LUMIX G Vario 7-14mm F4 ASPH.', manufacturer:'Panasonic', line:'LUMIX G', type:'Zoom', asin:'B0028Y5GKK',
+    focalLength:null, focalLengthMin:7, focalLengthMax:14, focalLengthEquiv:'14-28mm',
+    maxAperture:4.0, minAperture:22, weight:300, length:83.1, diameter:70.0,
+    filterThread:null, minFocusDist:25, maxMagnification:0.08,
+    elements:16, groups:12, blades:7, afType:'Stepping Motor',
+    weatherSealed:false, ois:false, oisStops:null, year:2009, discontinued:false,
+    imageUrl:null,
+    prices:{USD:899,AUD:null,EUR:null,GBP:null,JPY:null,CAD:null,SGD:null},
+    priceIncomplete:true,
+    productUrl:'https://shop.panasonic.com/products/g-series-7-14mm-f4-0-asph-lens',
+  },
+
+  /* The US store's "14-42mm" URL serves the POWER ZOOM (H-PS14042), not the
+     standard H-FS14042 — different, larger lens. Specs below are the PZ's.
+     afType inferred; Panasonic names no motor type for it. */
+  'lumix-g-x-pz-14-42mm-f3-5-5-6': {
+    name:'LUMIX G X Vario PZ 14-42mm F3.5-5.6 POWER O.I.S.', manufacturer:'Panasonic', line:'LUMIX G', type:'Zoom', asin:null,
+    focalLength:null, focalLengthMin:14, focalLengthMax:42, focalLengthEquiv:'28-84mm',
+    maxAperture:3.5, minAperture:22, weight:95, length:26.8, diameter:61.0,
+    filterThread:37, minFocusDist:20, maxMagnification:0.17,
+    elements:9, groups:8, blades:7, afType:'Stepping Motor',
+    weatherSealed:false, ois:true, oisStops:null, year:2011, discontinued:false,
+    imageUrl:null,
+    prices:{USD:499,AUD:null,EUR:null,GBP:null,JPY:null,CAD:null,SGD:null},
+    priceIncomplete:true,
+    productUrl:'https://shop.panasonic.com/products/g-series-14-42mm-f3-5-5-6-asph-lens',
+  },
+
+  /* Budget/slow telephoto — distinct from the F2.8 "X" lens above it. */
+  'lumix-g-35-100mm-f4-5-6': {
+    name:'LUMIX G Vario 35-100mm F4-5.6 ASPH. MEGA O.I.S.', manufacturer:'Panasonic', line:'LUMIX G', type:'Zoom', asin:'B00NHZUFYG',
+    focalLength:null, focalLengthMin:35, focalLengthMax:100, focalLengthEquiv:'70-200mm',
+    maxAperture:4.0, minAperture:22, weight:135, length:50.0, diameter:55.5,
+    filterThread:46, minFocusDist:90, maxMagnification:0.11,
+    elements:12, groups:9, blades:7, afType:'Stepping Motor',
+    weatherSealed:false, ois:true, oisStops:null, year:2014, discontinued:false,
+    imageUrl:null,
+    prices:{USD:397,AUD:null,EUR:null,GBP:null,JPY:null,CAD:null,SGD:null},
+    priceIncomplete:true,
+    productUrl:'https://shop.panasonic.com/products/g-series-35-100mm-f4-0-5-6-asph-lens',
+  },
+
   'lumix-g-12-35mm-f2-8-ii': {
     name:'LUMIX G X Vario 12-35mm F2.8 II O.I.S.', manufacturer:'Panasonic', line:'LUMIX G', type:'Zoom', asin:'B01MY1ICID',
     focalLength:null, focalLengthMin:12, focalLengthMax:35, focalLengthEquiv:'24-70mm',
@@ -875,15 +1104,31 @@ const LENSES = {
     productUrl:'https://shop.panasonic.com/products/g-series-12-35mm-f2-8-asph-leica-lens',
   },
 
+  /* Superseded by the LEICA DG 35-100mm F2.8 POWER O.I.S. below (Sept 2023
+     redesign); Panasonic's product page for this model now serves the new
+     lens, so productUrl/asin are cleared rather than pointed at the wrong
+     product. */
   'lumix-g-35-100mm-f2-8-ii': {
-    name:'LUMIX G X Vario 35-100mm F2.8 II O.I.S.', manufacturer:'Panasonic', line:'LUMIX G', type:'Zoom', asin:'B01MU3WOVP',
+    name:'LUMIX G X Vario 35-100mm F2.8 II O.I.S.', manufacturer:'Panasonic', line:'LUMIX G', type:'Zoom', asin:null,
     focalLength:null, focalLengthMin:35, focalLengthMax:100, focalLengthEquiv:'70-200mm',
     maxAperture:2.8, minAperture:22, weight:360, length:100.0, diameter:67.4,
     filterThread:58, minFocusDist:85, maxMagnification:0.10,
     elements:18, groups:13, blades:7, afType:'Stepping Motor',
-    weatherSealed:true, ois:true, oisStops:null, year:2017, discontinued:false,
+    weatherSealed:true, ois:true, oisStops:null, year:2017, discontinued:true,
     imageUrl:null,
-    prices:{USD:1097,AUD:1699,EUR:null,GBP:null,JPY:null,CAD:1479,SGD:null},
+    prices:{USD:1097,AUD:null,EUR:null,GBP:null,JPY:null,CAD:null,SGD:null},
+    productUrl:null,
+  },
+
+  'leica-dg-35-100mm-f2-8-power-ois': {
+    name:'LEICA DG VARIO-ELMARIT 35-100mm F2.8 POWER O.I.S.', manufacturer:'Panasonic', line:'LUMIX G', type:'Zoom', asin:'B0CHTFTN2B',
+    focalLength:null, focalLengthMin:35, focalLengthMax:100, focalLengthEquiv:'70-200mm',
+    maxAperture:2.8, minAperture:22, weight:360, length:99.9, diameter:67.4,
+    filterThread:58, minFocusDist:85, maxMagnification:0.10,
+    elements:18, groups:13, blades:7, afType:'Stepping Motor',
+    weatherSealed:true, ois:true, oisStops:null, year:2023, discontinued:false,
+    imageUrl:null,
+    prices:{USD:1199,AUD:1899,EUR:null,GBP:null,JPY:null,CAD:1599,SGD:null},
     priceIncomplete:true,
     productUrl:'https://shop.panasonic.com/products/g-series-35-100mm-f2-8-asph-lens-1',
   },
@@ -909,7 +1154,7 @@ const LENSES = {
     elements:17, groups:12, blades:9, afType:'Stepping Motor',
     weatherSealed:true, ois:false, oisStops:null, year:2019, discontinued:false,
     imageUrl:null,
-    prices:{USD:1797,AUD:2799,EUR:null,GBP:null,JPY:null,CAD:2399,SGD:null},
+    prices:{USD:1997,AUD:2799,EUR:null,GBP:null,JPY:null,CAD:2399,SGD:null},
     priceIncomplete:true,
     productUrl:'https://shop.panasonic.com/products/g-series-10-25mm-f1-7-asph-leica-lens',
   },
@@ -963,7 +1208,9 @@ const LENSES = {
     imageUrl:null,
     prices:{USD:277,AUD:449,EUR:null,GBP:null,JPY:null,CAD:379,SGD:null},
     priceIncomplete:true,
-    productUrl:'https://shop.panasonic.com/products/lumix-g-vario-12-32mm-f3-5-5-6-asph-mega-ois-lens-h-fs12032',
+    // The US store page for this kit lens 404s (caught by test:links); Panasonic's
+    // JP product database still carries it, so use that rather than dropping to null.
+    productUrl:'https://panasonic.jp/dc/p-db/H-FS12032.html',
   },
 
   'leica-dg-50-200mm-f2-8-4': {
@@ -1011,9 +1258,9 @@ const LENSES = {
     maxAperture:4.0, minAperture:22, weight:985, length:172.0, diameter:83.0,
     filterThread:72, minFocusDist:130, maxMagnification:0.25,
     elements:20, groups:13, blades:9, afType:'Stepping Motor',
-    weatherSealed:true, ois:true, oisStops:null, year:2022, discontinued:false,
+    weatherSealed:true, ois:true, oisStops:null, year:2023, discontinued:false,
     imageUrl:null,
-    prices:{USD:1797,AUD:2799,EUR:null,GBP:null,JPY:null,CAD:2399,SGD:null},
+    prices:{USD:1699,AUD:2799,EUR:null,GBP:null,JPY:null,CAD:2399,SGD:null},
     priceIncomplete:true,
     productUrl:'https://shop.panasonic.com/products/g-series-100-400mm-f4-0-6-3-asph-leica-lens',
   },
@@ -1059,6 +1306,23 @@ const LENSES = {
     priceIncomplete:true,
     productUrl:'https://www.sigma-global.com/en/lenses/a021_35_14/',
   },
+  /* 2026 second generation. Sigma sells both concurrently (a021 is still in
+     the current lineup at a lower price), so this coexists rather than
+     replacing the entry above. Specs are the L-Mount rows — the Sony E
+     variant is 525 g / 96.0 mm. */
+  'sigma-35mm-f14-dg-ii': {
+    name:'Sigma 35mm f/1.4 DG II Art', manufacturer:'Sigma', line:'Art', type:'Prime',
+    focalLength:35, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'35mm',
+    maxAperture:1.4, minAperture:16, weight:530, length:94.0, diameter:73.0,
+    filterThread:67, minFocusDist:28, maxMagnification:0.19,
+    elements:15, groups:12, blades:11, afType:'Dual HLA',
+    weatherSealed:true, ois:false, oisStops:null, year:2026, discontinued:false,
+    imageUrl:null,
+    asin:'B0GQJLTML7',
+    prices:{USD:1059,AUD:null,EUR:null,GBP:null,JPY:null,CAD:null,SGD:null},
+    priceIncomplete:true,
+    productUrl:'https://www.sigma-global.com/en/lenses/a026_35_14/',
+  },
   'sigma-50mm-f14-dg': {
     name:'Sigma 50mm f/1.4 DG DN Art', manufacturer:'Sigma', line:'Art', type:'Prime',
     focalLength:50, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'50mm',
@@ -1084,6 +1348,20 @@ const LENSES = {
     prices:{USD:1199,AUD:null,EUR:null,GBP:null,JPY:null,CAD:null,SGD:null},
     priceIncomplete:true,
     productUrl:'https://www.sigma-global.com/en/lenses/a020_85_14/',
+  },
+  /* Specs are the L-Mount rows; the Sony E variant is 1420 g / 137.5 mm. */
+  'sigma-135mm-f14-dg': {
+    name:'Sigma 135mm f/1.4 DG Art', manufacturer:'Sigma', line:'Art', type:'Prime',
+    focalLength:135, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'135mm',
+    maxAperture:1.4, minAperture:16, weight:1430, length:135.5, diameter:111.7,
+    filterThread:105, minFocusDist:110, maxMagnification:0.14,
+    elements:17, groups:13, blades:13, afType:'Dual HLA',
+    weatherSealed:true, ois:false, oisStops:null, year:2025, discontinued:false,
+    imageUrl:'https://www.sigma-global.com/lenses/a025_135_14_product_img01.png',
+    asin:'B0FQWF28RV',
+    prices:{USD:1899,AUD:null,EUR:null,GBP:null,JPY:null,CAD:null,SGD:null},
+    priceIncomplete:true,
+    productUrl:'https://www.sigma-global.com/en/lenses/a025_135_14/',
   },
   'sigma-20mm-f2-dg': {
     name:'Sigma 20mm f/2 DG DN Contemporary', manufacturer:'Sigma', line:'Contemporary', type:'Prime',
@@ -1323,6 +1601,85 @@ const LENSES = {
     priceIncomplete:true, productUrl:'https://www.venuslens.net/product/laowa-15mm-f2/',
   },
 
+  /* L-mount ships as the manual-focus variant (AF is E/Z/EF only), which is
+     why minAperture is F32 — the AF version stops at F22. Laowa publishes no
+     L-mount weight/length row; the figures below are Lensrentals' L-mount SKU
+     (rounded from imperial). Do NOT substitute the Canon EF row — EF is the
+     DSLR-flange build and is ~46 mm shorter. productUrl uses Laowa's official
+     Canadian site: the venuslens.net page for this lens 502s intermittently. */
+  'laowa-180mm-f45-macro-l': {
+    name:'Laowa 180mm f/4.5 1.5x Ultra Macro APO', manufacturer:'Laowa', line:'Ultra Macro APO', type:'Prime',
+    focalLength:180, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'180mm',
+    maxAperture:4.5, minAperture:32, weight:499, length:134, diameter:67.6,
+    filterThread:62, minFocusDist:30, maxMagnification:1.5,
+    elements:12, groups:9, blades:9, afType:'Manual',
+    weatherSealed:false, ois:false, oisStops:null, year:2025, discontinued:false,
+    imageUrl:null, asin:'B0FX38XPTL',
+    prices:{USD:499,AUD:null,EUR:null,GBP:null,JPY:null,CAD:null,SGD:null},
+    priceIncomplete:true, productUrl:'https://www.laowalenses.ca/product/180mm-f4-5-1-5x-ultra-macro-apo/',
+  },
+
+  /* Sold in two SKUs sharing one optical design — this Tilt-Shift (±10° tilt,
+     ±12 mm shift, $1249) and a Shift-only version (±11 mm, 770 g, $999) not
+     yet entered. NOTE: Laowa lists this as incompatible with the Lumix S5 II,
+     S5 IIX, S1 II, S1 IIE and S1R II — the shift mechanism fouls the EVF
+     housing — i.e. most of Panasonic's current L-mount line. */
+  'laowa-17mm-f4-tilt-shift-l': {
+    name:'Laowa 17mm f/4 Zero-D Tilt-Shift', manufacturer:'Laowa', line:'Zero-D', type:'Prime',
+    focalLength:17, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'17mm',
+    maxAperture:4.0, minAperture:22, weight:810, length:111, diameter:93,
+    filterThread:86, minFocusDist:25, maxMagnification:0.131,
+    elements:18, groups:12, blades:14, afType:'Manual',
+    weatherSealed:false, ois:false, oisStops:null, year:2026, discontinued:false,
+    imageUrl:null, asin:null,
+    prices:{USD:1249,AUD:null,EUR:null,GBP:null,JPY:null,CAD:null,SGD:null},
+    priceIncomplete:true, productUrl:'https://www.venuslens.net/product/laowa-17mm-f-4-zero-d-tilt-shift-shift/',
+  },
+
+  /* ── Viltrox (L-Mount, native full-frame AF) — joined the L-Mount
+     Alliance Sept 2025; these are its first two L-mount lenses. ── */
+  'viltrox-16mm-f18-l': {
+    name:'Viltrox AF 16mm F1.8 L', manufacturer:'Viltrox', line:'AF', type:'Prime',
+    focalLength:16, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'16mm',
+    maxAperture:1.8, minAperture:22, weight:550, length:103, diameter:85.2,
+    filterThread:77, minFocusDist:27, maxMagnification:0.1,
+    elements:15, groups:12, blades:9, afType:'Stepping Motor',
+    weatherSealed:true, ois:false, oisStops:null, year:2026, discontinued:false,
+    imageUrl:null, asin:'B0GLGC7C21',
+    prices:{USD:580,AUD:null,EUR:null,GBP:null,JPY:null,CAD:null,SGD:null},
+    priceIncomplete:true, productUrl:'https://viltrox.com/products/af-16mm-f1-8-l',
+  },
+
+  /* Body-cap pancake: a fixed f/4.5 with no iris at all (a fixed aperture
+     plate in front of the elements), hence blades:null and minAperture
+     equal to maxAperture. Takes no screw-in filter. */
+  'viltrox-28mm-f45-l': {
+    name:'Viltrox AF 28mm F4.5 Chip L', manufacturer:'Viltrox', line:'Chip', type:'Prime',
+    focalLength:28, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'28mm',
+    maxAperture:4.5, minAperture:4.5, weight:60, length:13.2, diameter:60.6,
+    filterThread:null, minFocusDist:32, maxMagnification:0.1,
+    elements:6, groups:6, blades:null, afType:'VCM',
+    weatherSealed:false, ois:false, oisStops:null, year:2026, discontinued:false,
+    imageUrl:null, asin:'B0H338KPY6',
+    prices:{USD:99,AUD:null,EUR:null,GBP:null,JPY:null,CAD:null,SGD:null},
+    priceIncomplete:true, productUrl:'https://viltrox.com/products/af-28mm-f4-5-l',
+  },
+
+  /* ── Samyang (L-Mount, native full-frame AF) — sold as Rokinon in the
+     US. Specs are the L-mount rows: 2 mm shorter and 4 g lighter than the
+     E-mount version, which some listings incorrectly carry over. ── */
+  'samyang-14-24mm-f28-l': {
+    name:'Samyang AF 14-24mm F2.8 L', manufacturer:'Samyang', line:'AF', type:'Zoom',
+    focalLength:null, focalLengthMin:14, focalLengthMax:24, focalLengthEquiv:'14-24mm',
+    maxAperture:2.8, minAperture:22, weight:441, length:96.6, diameter:84,
+    filterThread:77, minFocusDist:18, maxMagnification:0.26,
+    elements:15, groups:11, blades:9, afType:'Linear STM',
+    weatherSealed:true, ois:false, oisStops:null, year:2026, discontinued:false,
+    imageUrl:null, asin:null,
+    prices:{USD:1199,AUD:null,EUR:null,GBP:null,JPY:null,CAD:null,SGD:null},
+    priceIncomplete:true, productUrl:'https://www.lksamyang.com/en/product/product-view.php?seq=685',
+  },
+
   /* ── OM System M.Zuiko (MFT, 2.0× crop) — major MFT third party ── */
   'omsystem-12-40mm-f28-pro': {
     name:'OM System M.Zuiko 12-40mm f/2.8 PRO II', manufacturer:'OM System', line:'PRO', type:'Zoom',
@@ -1333,7 +1690,7 @@ const LENSES = {
     weatherSealed:true, ois:false, oisStops:null, year:2022, discontinued:false,
     imageUrl:null,
     asin:null,
-    prices:{USD:1000,AUD:null,EUR:null,GBP:null,JPY:null,CAD:null,SGD:null},
+    prices:{USD:1099,AUD:null,EUR:null,GBP:null,JPY:null,CAD:null,SGD:null},
     priceIncomplete:true,
     productUrl:'https://explore.omsystem.com/us/en/m-zuiko-ed-12-40mm-f2-8-pro-ii',
   },
@@ -1363,6 +1720,21 @@ const LENSES = {
     priceIncomplete:true,
     productUrl:'https://explore.omsystem.com/us/en/m-zuiko-ed-12-100mm-f4-0-is-pro',
   },
+  /* `line` is 'M.Zuiko' rather than a grade badge: OM System publishes no
+     PRO/Premium designation for this lens on either its US or global page. */
+  'omsystem-100-400mm-f5-63-ii': {
+    name:'OM System M.Zuiko 100-400mm f/5-6.3 IS II', manufacturer:'OM System', line:'M.Zuiko', type:'Zoom',
+    focalLength:null, focalLengthMin:100, focalLengthMax:400, focalLengthEquiv:'200-800mm',
+    maxAperture:5.0, minAperture:22, weight:1125, length:205.6, diameter:86.4,
+    filterThread:72, minFocusDist:130, maxMagnification:0.29,
+    elements:21, groups:15, blades:9, afType:'MSC',
+    weatherSealed:true, ois:true, oisStops:7.0, year:2025, discontinued:false,
+    imageUrl:null,
+    asin:'B0DVZJYMWR',
+    prices:{USD:1699,AUD:null,EUR:null,GBP:null,JPY:null,CAD:null,SGD:null},
+    priceIncomplete:true,
+    productUrl:'https://explore.omsystem.com/us/en/m-zuiko-ed-100-400mm-f5-0-6-3-is-ii',
+  },
   'omsystem-17mm-f12-pro': {
     name:'OM System M.Zuiko 17mm f/1.2 PRO', manufacturer:'OM System', line:'PRO', type:'Prime',
     focalLength:17, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'34mm',
@@ -1372,7 +1744,7 @@ const LENSES = {
     weatherSealed:true, ois:false, oisStops:null, year:2017, discontinued:false,
     imageUrl:null,
     asin:null,
-    prices:{USD:1200,AUD:null,EUR:null,GBP:null,JPY:null,CAD:null,SGD:null},
+    prices:{USD:1299,AUD:null,EUR:null,GBP:null,JPY:null,CAD:null,SGD:null},
     priceIncomplete:true,
     productUrl:'https://explore.omsystem.com/us/en/m-zuiko-ed-17mm-f1-2-pro',
   },
@@ -1524,15 +1896,17 @@ const LENSES = {
 
 const LENS_DROPDOWN_GROUPS = [
   { label: '── LUMIX S Primes (L-Mount) ──', ids: ['lumix-s-18mm-f1-8', 'lumix-s-24mm-f1-8', 'lumix-s-35mm-f1-8', 'lumix-s-40mm-f2', 'lumix-s-50mm-f1-8', 'lumix-s-pro-50mm-f1-4', 'lumix-s-85mm-f1-8', 'lumix-s-100mm-f2-8-macro'] },
-  { label: '── LUMIX S Zooms (L-Mount) ──',  ids: ['lumix-s-14-28mm-f4-5-6-macro', 'lumix-s-pro-16-35mm-f4', 'lumix-s-20-60mm-f3-5-5-6', 'lumix-s-24-60mm-f2-8', 'lumix-s-24-70mm-f2-8-pro', 'lumix-s-24-105mm-f4-macro', 'lumix-s-28-200mm-f4-7-1-macro', 'lumix-s-pro-70-200mm-f2-8', 'lumix-s-pro-70-200mm-f4', 'lumix-s-70-300mm-f4-5-5-6-macro'] },
-  { label: '── LUMIX G Primes (MFT) ──',     ids: ['leica-dg-9mm-f1-7', 'leica-dg-12mm-f1-4', 'leica-dg-15mm-f1-7', 'lumix-g-20mm-f1-7-ii', 'leica-dg-25mm-f1-4-ii', 'lumix-g-25mm-f1-7', 'leica-dg-42-5mm-f1-2-nocticron', 'lumix-g-42-5mm-f1-7', 'leica-dg-200mm-f2-8'] },
-  { label: '── LUMIX G Zooms (MFT) ──',      ids: ['leica-dg-8-18mm-f2-8-4', 'leica-dg-10-25mm-f1-7', 'lumix-g-12-32mm-f3-5-5-6', 'leica-dg-12-60mm-f2-8-4', 'lumix-g-12-60mm-f3-5-5-6', 'lumix-g-12-35mm-f2-8-ii', 'leica-dg-25-50mm-f1-7', 'lumix-g-35-100mm-f2-8-ii', 'leica-dg-50-200mm-f2-8-4', 'lumix-g-14-140mm-f3-5-5-6-ii', 'lumix-g-100-300mm-f4-5-6-ii', 'leica-dg-100-400mm-f4-6-3-ii'] },
-  { label: '── Sigma Primes (L-Mount) ──', ids: ['sigma-20mm-f14-dg', 'sigma-24mm-f14-dg', 'sigma-35mm-f14-dg', 'sigma-50mm-f14-dg', 'sigma-85mm-f14-dg', 'sigma-20mm-f2-dg', 'sigma-24mm-f2-dg', 'sigma-35mm-f2-dg', 'sigma-45mm-f28-dg', 'sigma-50mm-f2-dg', 'sigma-65mm-f2-dg', 'sigma-90mm-f28-dg', 'sigma-17mm-f4-dg'] },
+  { label: '── LUMIX S Zooms (L-Mount) ──',  ids: ['lumix-s-18-40mm-f4-5-6-3', 'lumix-s-14-28mm-f4-5-6-macro', 'lumix-s-pro-16-35mm-f4', 'lumix-s-20-60mm-f3-5-5-6', 'lumix-s-24-60mm-f2-8', 'lumix-s-24-70mm-f2-8-pro', 'lumix-s-24-105mm-f4-macro', 'lumix-s-28-200mm-f4-7-1-macro', 'lumix-s-pro-70-200mm-f2-8', 'lumix-s-pro-70-200mm-f4', 'lumix-s-70-300mm-f4-5-5-6-macro', 'lumix-s-100-500mm-f5-7-1'] },
+  { label: '── LUMIX G Primes (MFT) ──',     ids: ['lumix-g-fisheye-8mm-f3-5', 'leica-dg-9mm-f1-7', 'leica-dg-12mm-f1-4', 'lumix-g-14mm-f2-5-ii', 'leica-dg-15mm-f1-7', 'lumix-g-20mm-f1-7-ii', 'leica-dg-25mm-f1-4-ii', 'lumix-g-25mm-f1-7', 'lumix-g-macro-30mm-f2-8', 'leica-dg-42-5mm-f1-2-nocticron', 'lumix-g-42-5mm-f1-7', 'leica-dg-200mm-f2-8'] },
+  { label: '── LUMIX G Zooms (MFT) ──',      ids: ['lumix-g-7-14mm-f4', 'leica-dg-8-18mm-f2-8-4', 'leica-dg-10-25mm-f1-7', 'lumix-g-12-32mm-f3-5-5-6', 'leica-dg-12-60mm-f2-8-4', 'lumix-g-12-60mm-f3-5-5-6', 'lumix-g-12-35mm-f2-8-ii', 'lumix-g-x-pz-14-42mm-f3-5-5-6', 'leica-dg-25-50mm-f1-7', 'lumix-g-35-100mm-f2-8-ii', 'leica-dg-35-100mm-f2-8-power-ois', 'lumix-g-35-100mm-f4-5-6', 'leica-dg-50-200mm-f2-8-4', 'lumix-g-14-140mm-f3-5-5-6-ii', 'lumix-g-100-300mm-f4-5-6-ii', 'leica-dg-100-400mm-f4-6-3-ii'] },
+  { label: '── Sigma Primes (L-Mount) ──', ids: ['sigma-20mm-f14-dg', 'sigma-24mm-f14-dg', 'sigma-35mm-f14-dg', 'sigma-35mm-f14-dg-ii', 'sigma-50mm-f14-dg', 'sigma-85mm-f14-dg', 'sigma-135mm-f14-dg', 'sigma-20mm-f2-dg', 'sigma-24mm-f2-dg', 'sigma-35mm-f2-dg', 'sigma-45mm-f28-dg', 'sigma-50mm-f2-dg', 'sigma-65mm-f2-dg', 'sigma-90mm-f28-dg', 'sigma-17mm-f4-dg'] },
   { label: '── Sigma Zooms (L-Mount) ──', ids: ['sigma-16-28mm-f28-dg', 'sigma-28-70mm-f28-dg', 'sigma-24-70mm-f28-dg-ii', 'sigma-28-45mm-f18-dg', 'sigma-70-200mm-f28-dg', 'sigma-100-400mm-f5-63-dg', 'sigma-150-600mm-f5-63-dg'] },
   { label: '── Voigtländer (L-Mount) ──', ids: ['voigtlander-apo-lanthar-35mm-f2-l', 'voigtlander-apo-lanthar-50mm-f2-l'] },
-  { label: '── Laowa (L-Mount) ──', ids: ['laowa-90mm-f28-macro-l', 'laowa-15mm-f2-l'] },
+  { label: '── Laowa (L-Mount) ──', ids: ['laowa-15mm-f2-l', 'laowa-17mm-f4-tilt-shift-l', 'laowa-90mm-f28-macro-l', 'laowa-180mm-f45-macro-l'] },
+  { label: '── Viltrox (L-Mount) ──', ids: ['viltrox-16mm-f18-l', 'viltrox-28mm-f45-l'] },
+  { label: '── Samyang (L-Mount) ──', ids: ['samyang-14-24mm-f28-l'] },
   { label: '── OM System Primes (MFT) ──', ids: ['omsystem-17mm-f12-pro', 'omsystem-25mm-f12-pro', 'omsystem-45mm-f12-pro', 'omsystem-60mm-f28-macro', 'omsystem-17mm-f18', 'omsystem-25mm-f18', 'omsystem-45mm-f18'] },
-  { label: '── OM System Zooms (MFT) ──', ids: ['omsystem-12-40mm-f28-pro', 'omsystem-40-150mm-f4-pro', 'omsystem-12-100mm-f4-pro'] },
+  { label: '── OM System Zooms (MFT) ──', ids: ['omsystem-12-40mm-f28-pro', 'omsystem-40-150mm-f4-pro', 'omsystem-12-100mm-f4-pro', 'omsystem-100-400mm-f5-63-ii'] },
   { label: '── Sigma (MFT) ──', ids: ['sigma-16mm-f14-mft', 'sigma-30mm-f14-mft', 'sigma-56mm-f14-mft'] },
   { label: '── Voigtländer & Laowa (MFT) ──', ids: ['voigtlander-nokton-25mm-f095', 'laowa-7-5mm-f2-mft'] },
 ];
