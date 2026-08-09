@@ -3,7 +3,7 @@ name: refresh-camera-data
 description: Research live camera/lens data from the web and propose updates to brand data files — price changes, product/image URL changes, and newly released cameras and lenses. Use when the user wants to refresh, update, or check for new camera data, prices, or releases across brands.
 metadata:
   author: fuji-compare-tool
-  version: "1.4"
+  version: "1.5"
 ---
 
 Refresh the brand data files in this repo against current real-world data.
@@ -50,6 +50,18 @@ non-USD figures are approximate, derived from USD by regional ratios unless a re
 RRP is confirmed. US-only changes (e.g. tariff hikes) change USD only. Only overwrite a
 non-USD figure when you have a confirmed local RRP, and note it.
 
+**Prices shown should be the RRP — check the manufacturer's own official store first,
+always. A retailer's price is a fallback for when the official source can't be reached,
+not an equally-valid alternative to check instead.** A retailer's *current, undiscounted-
+looking* price can still be marked up or down from the real RRP and there's no way to
+tell without comparing against the maker's own figure. Official stores are often more
+explicit than you'd expect: Sony's `electronics.sony.com` product pages state the actual
+MSRP in plain FAQ text — "MSRP is listed as $X.99" — even on a page showing a different,
+lower "Sale Price" banner above it (confirmed 2026-08-09, e.g. A7R V: Sale Price
+$3,499.99 vs "MSRP is listed as $3,799.99"). That's about as unambiguous as sourcing
+gets. Look for the equivalent official RRP/MSRP/List Price statement on other brands'
+own stores before reaching for a retailer at all.
+
 **When sources disagree, fall back to the official manufacturer RRP.** Retailer
 "was/now" pairs are the usual culprit: a retailer's struck-through figure is *that
 retailer's own regular price*, not the manufacturer MSRP, and it drifts in both
@@ -60,13 +72,18 @@ on the manufacturer's own store/press release; use a reputable reseller's **list
 price (not the sale price) only when the official RRP can't be reached, and say which
 one you used.
 
-**One reputable data point is enough for a routine price.** "Ground it in more than one
-source" applies to *new entries and disputed figures* — it is not a bar every price must
-clear before it can be edited. A current list price from a major authorised dealer (B&H,
-the manufacturer's own store) is sufficient on its own; take it, cite it, move on.
-Decided 2026-07-26 for the Sony a6700 ($1,498) and a7R V ($3,798), both from B&H's list
-price. Don't stall a whole refresh hunting for corroboration on individually low-stakes
-numbers.
+**One reputable data point is enough for a routine price — but make it the official one
+when you can reach it.** "Ground it in more than one source" applies to *new entries and
+disputed figures* — it is not a bar every price must clear before it can be edited. A
+current RRP from the manufacturer's own official store is sufficient on its own; take
+it, cite it, move on. Only fall back to a major authorised dealer's list price (B&H etc.)
+when the official store is unreachable or shows no price, and say so in the citation —
+"B&H list price, official store unreachable" reads very differently from "confirmed
+RRP" on the next run. Decided 2026-07-26 for the Sony a6700 ($1,498) and a7R V ($3,798),
+both from B&H's list price at the time (the official-store-first rule above wasn't yet
+this explicit) — don't stall a whole refresh hunting for corroboration on individually
+low-stakes numbers, but check the official store before the retailer when both are
+equally easy to reach.
 
 **Don't escalate cosmetic deltas — just pick one.** Differences of a few dollars from
 rounding or the $X,499.99-vs-$X,498 convention (e.g. Sony press releases quote
@@ -155,16 +172,54 @@ Use **WebSearch** and **WebFetch**. Work brand by brand. For each brand:
   current RRP. Anchor on the official store / a major retailer. Flag any USD delta;
   for non-USD currencies in scope, update only where a confirmed local RRP exists,
   otherwise note that it stays ratio-derived.
+
+  **If one current item's price looks stale, check whether the whole brand moved.**
+  Manufacturers often push a blanket USD increase across most of a lineup in a single
+  wave (tariff-driven repricing is the common cause) rather than one model at a time.
+  Before checking bodies one-by-one, search for a consolidated retrospective article
+  (`"<Brand> tariff price increase 2026"`, `"<Brand> raises prices"`) — one dated piece
+  can list a dozen before/after prices at once and save many per-item lookups. Confirmed
+  2026-08-09 on Sony: a single July 2025 article listing ~20 before/after body prices
+  flagged FX3, FX30, and A6400 as all needing updates in one pass. Treat the article as
+  a lead, not confirmation — it's a single snapshot and further rounds can follow — so
+  verify the *current* figure against the official store per the pricing convention
+  above, not just the article's "now" column.
+
+  **Individual B&H product pages often don't expose price through `get_page_text`** —
+  the price widget sits outside the `<article>` element the tool extracts, so it
+  silently returns marketing copy with no price rather than erroring (confirmed
+  2026-08-09 on multiple Sony product pages). B&H's *category/search listing* pages
+  work fine for this (price shows in each result tile), or check the manufacturer's own
+  product page directly — don't retry the same individual-product-page approach on a
+  different SKU expecting a different result.
+
+  **Don't trust `discontinued:true` in the existing data without checking.**
+  Manufacturers routinely keep older flagship/pro bodies on sale — often at a reduced
+  price — long after a nominal "replacement" ships, rather than pulling them from the
+  lineup. Confirmed 2026-08-09 on Sony: the A1, A9 II, A7R IV, and A7 III were all
+  marked `discontinued:true` but still had live, purchasable product pages on Sony's
+  own US store. When doing a price pass, spot-check whether the manufacturer's own
+  product page for a `discontinued:true` model near the current tier still resolves
+  with an active price — if it does, flip `discontinued` to `false` and backfill full
+  currency pricing (unlike lenses, cameras require all 7 currencies once current — no
+  `priceIncomplete` exemption; `scripts/compute-prices.js` fill mode plus a
+  `price-overrides/<brand>.json` entry for any confirmed regional figure covers this).
 - **URL changes** — verify `productUrl` still resolves to the right page. Note dead
   links and redirects. Don't churn `imageUrl` unless the current one is broken.
   (Buy links are generated from `asin` — missing/wrong ASINs are the
   [`check-prices-and-buy-links`](../check-prices-and-buy-links/SKILL.md) skill's job.)
 
-  **If the US manufacturer domain is blocked, try the brand's other regional sites
-  before giving up.** `electronics.sony.com` and `usa.canon.com` block both WebFetch and
-  the Chrome extension, and US slugs are inconsistent (`ilmefx3-b` vs `ilmefx30b`), so
-  guessing risks a 404. Regional domains — `sony.com.au`, `canon.com.au`,
-  `fujifilm-x.com/global/` — are usually reachable and use cleaner slugs
+  **If the US manufacturer domain fails via WebFetch, try Chrome browser automation
+  before falling back to regional sites.** `electronics.sony.com` blocks **WebFetch**
+  but is reachable via Chrome browser automation (confirmed 2026-08-09) — navigate
+  there directly rather than assuming the domain is dead. Its product pages are often
+  the *best* source available once loaded: see the MSRP-FAQ pattern in the pricing
+  convention section above. `usa.canon.com` is a harder case and blocks **both**
+  WebFetch and Chrome (see below), so for Canon go straight to a regional domain — don't
+  burn a Chrome call re-confirming a block that's already documented. US slugs are also
+  inconsistent (`ilmefx3-b` vs `ilmefx30b`), so guessing one risks a 404 regardless of
+  which tool reaches the domain. Regional domains — `sony.com.au`, `canon.com.au`,
+  `fujifilm-x.com/global/` — are usually reachable via either tool and use cleaner slugs
   (`sony.com.au/electronics/interchangeable-lens-cameras/ilme-fx5`). A working regional
   official page beats `productUrl: null`; the user supplied exactly that URL for the FX5
   on 2026-07-26 after this skill left it null. Only fall back to `null` when no regional
