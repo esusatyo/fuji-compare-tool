@@ -175,7 +175,7 @@ const KNOWN_IMAGE_GAPS = {
     'tamron-20-40mm-f28', 'tamron-35-150mm-f2-28',
     'tamron-70-180mm-f28-g2',
     // Viltrox — store product image URLs pending backfill
-    'viltrox-13mm-f14', 'viltrox-16mm-f18', 'viltrox-27mm-f12', 'viltrox-33mm-f14',
+    'viltrox-13mm-f14', 'viltrox-16mm-f18', 'viltrox-26mm-f28-evo', 'viltrox-27mm-f12', 'viltrox-33mm-f14',
     'viltrox-56mm-f14', 'viltrox-85mm-f18-ii',
     // Samyang — product image URLs pending backfill
     'samyang-24mm-f18', 'samyang-35mm-f18', 'samyang-45mm-f18', 'samyang-75mm-f18', 'samyang-135mm-f18',
@@ -193,7 +193,11 @@ const KNOWN_IMAGE_GAPS = {
     // any clean Commons product photo and stay on the placeholder card.
     'a7-v',
     'fx5',
+    'fx2', // 2025 Cinema Line camera added Aug 2026 refresh; no Commons photo yet
     'a6100',
+    // Aug 2026 refresh additions — brand new (2025/2026), no Commons image yet
+    'fe-100-400mm-f45-gm-oss', 'fe-100mm-f28-macro-gm', 'fe-100-400mm-f56-8-oss',
+    'sigma-35mm-f14-dg-ii', 'tamron-12-20mm-f28',
     'fe-300mm-f28-gm', 'fe-400mm-f28-gm', 'fe-600mm-f4-gm',
     'fe-16mm-f18-g', 'fe-20mm-f18-g', 'fe-28mm-f2', 'fe-35mm-f18',
     'fe-50mm-f28-macro', 'fe-35mm-f14-za', 'fe-35mm-f28-za',
