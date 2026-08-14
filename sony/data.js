@@ -263,13 +263,13 @@ const CAMERAS = {
   },
 
   'a1': {
-    name:'A1', series:'Alpha (Full-frame)', year:2021, discontinued:true,
+    name:'A1', series:'Alpha (Full-frame)', year:2021, discontinued:false,
     tagline:'Original 50MP Flagship (8K)',
     productUrl:'https://electronics.sony.com/imaging/interchangeable-lens-cameras/full-frame/p/ilce1-b',
     imageUrl:'https://upload.wikimedia.org/wikipedia/commons/thumb/3/3d/Sony_A1_-_front_view_-_by_Henry_S%C3%B6derlund_%2850993589248%29.jpg/500px-Sony_A1_-_front_view_-_by_Henry_S%C3%B6derlund_%2850993589248%29.jpg',
     imageCredit:{author:"Henry Söderlund from Helsinki, Finland", licence:"CC BY 2.0", licenceUrl:"https://creativecommons.org/licenses/by/2.0", source:"https://commons.wikimedia.org/wiki/File:Sony_A1_-_front_view_-_by_Henry_S%C3%B6derlund_(50993589248).jpg"},
     asin:null,
-    prices:{USD:6498,AUD:null,EUR:null,GBP:null,JPY:null,CAD:null,SGD:null},
+    prices:{USD:6199,AUD:6999,EUR:7099,GBP:5599,JPY:793000,CAD:8099,SGD:8999},
     sensorMP:50.1, sensorType:'Full-frame Stacked Exmor RS CMOS', processor:'BIONZ XR',
     width:128.9, height:96.9, depth:80.8, weight:737, weatherSealed:true,
     lcdSize:'3.0"', lcdDots:1440, lcdType:'Tilting Touchscreen',
@@ -308,12 +308,12 @@ const CAMERAS = {
 
   /* ── Alpha Full-frame (discontinued) ── */
   'a9-ii': {
-    name:'A9 II', series:'Alpha (Full-frame)', year:2019, discontinued:true,
+    name:'A9 II', series:'Alpha (Full-frame)', year:2019, discontinued:false,
     tagline:'Pro Sports Stacked 24MP',
     productUrl:'https://electronics.sony.com/imaging/interchangeable-lens-cameras/full-frame/p/ilce9m2-b',
     imageUrl:'https://upload.wikimedia.org/wikipedia/commons/thumb/2/2b/Sony_Alpha_9_II_--_2024_--_8081.jpg/500px-Sony_Alpha_9_II_--_2024_--_8081.jpg',
     imageCredit:{author:"Anil Öztas", licence:"CC BY 4.0", licenceUrl:"https://creativecommons.org/licenses/by/4.0", source:"https://commons.wikimedia.org/wiki/File:Sony_Alpha_9_II_--_2024_--_8081.jpg"}, asin:null,
-    prices:{USD:4498,AUD:null,EUR:null,GBP:null,JPY:null,CAD:null,SGD:null},
+    prices:{USD:4499,AUD:5790,EUR:5199,GBP:3999,JPY:508000,CAD:5799,SGD:6499},
     sensorMP:24.2, sensorType:'Full-frame Stacked Exmor RS CMOS', processor:'BIONZ X',
     width:128.9, height:96.4, depth:77.5, weight:678, weatherSealed:true,
     lcdSize:'3.0"', lcdDots:1440, lcdType:'Tilting Touchscreen',
@@ -328,12 +328,12 @@ const CAMERAS = {
   },
 
   'a7r-iv': {
-    name:'A7R IV', series:'Alpha (Full-frame)', year:2019, discontinued:true,
+    name:'A7R IV', series:'Alpha (Full-frame)', year:2019, discontinued:false,
     tagline:'First 61MP Full-frame',
     productUrl:'https://electronics.sony.com/imaging/interchangeable-lens-cameras/full-frame/p/ilce7rm4a-b',
     imageUrl:'https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Sony_Alpha_7R_IV_body_with_Sony_Zeiss_55mm_lens.jpg/500px-Sony_Alpha_7R_IV_body_with_Sony_Zeiss_55mm_lens.jpg',
     imageCredit:{author:"Franz van Duns", licence:"CC BY-SA 4.0", licenceUrl:"https://creativecommons.org/licenses/by-sa/4.0", source:"https://commons.wikimedia.org/wiki/File:Sony_Alpha_7R_IV_body_with_Sony_Zeiss_55mm_lens.jpg"}, asin:null,
-    prices:{USD:3498,AUD:null,EUR:null,GBP:null,JPY:null,CAD:null,SGD:null},
+    prices:{USD:3699,AUD:4099,EUR:4299,GBP:3299,JPY:418000,CAD:4799,SGD:5399},
     sensorMP:61.0, sensorType:'Full-frame BSI CMOS', processor:'BIONZ X',
     width:128.9, height:96.4, depth:77.5, weight:665, weatherSealed:true,
     lcdSize:'3.0"', lcdDots:1440, lcdType:'Tilting Touchscreen',
@@ -348,12 +348,12 @@ const CAMERAS = {
   },
 
   'a7-iii': {
-    name:'A7 III', series:'Alpha (Full-frame)', year:2018, discontinued:true,
+    name:'A7 III', series:'Alpha (Full-frame)', year:2018, discontinued:false,
     tagline:'The Full-frame Workhorse',
     productUrl:'https://electronics.sony.com/imaging/interchangeable-lens-cameras/full-frame/p/ilce7m3-b',
     imageUrl:'https://upload.wikimedia.org/wikipedia/commons/2/2c/Sony_Alpha7_III_20_apr_2018f.jpg',
     imageCredit:{author:"昼落ち", licence:"CC BY-SA 4.0", licenceUrl:"https://creativecommons.org/licenses/by-sa/4.0", source:"https://commons.wikimedia.org/wiki/File:Sony_Alpha7_III_20_apr_2018f.jpg"}, asin:null,
-    prices:{USD:1999,AUD:null,EUR:null,GBP:null,JPY:null,CAD:null,SGD:null},
+    prices:{USD:1999,AUD:1849,EUR:2299,GBP:1799,JPY:226000,CAD:2599,SGD:2899},
     sensorMP:24.2, sensorType:'Full-frame BSI CMOS', processor:'BIONZ X',
     width:126.9, height:95.6, depth:73.7, weight:650, weatherSealed:true,
     lcdSize:'3.0"', lcdDots:922, lcdType:'Tilting Touchscreen',
@@ -596,7 +596,7 @@ const CAMERAS = {
     productUrl:'https://electronics.sony.com/imaging/interchangeable-lens-cameras/aps-c/p/ilce6400-b',
     imageUrl:'https://upload.wikimedia.org/wikipedia/commons/thumb/3/3e/2022-02-17_Sony_alpha_6400_IMG20220217210008.jpg/500px-2022-02-17_Sony_alpha_6400_IMG20220217210008.jpg',
     imageCredit:{author:"Eckhard Henkel", licence:"CC BY-SA 3.0 de", licenceUrl:"https://creativecommons.org/licenses/by-sa/3.0/de/deed.en", source:"https://commons.wikimedia.org/wiki/File:2022-02-17_Sony_alpha_6400_IMG20220217210008.jpg"}, asin:'B07MTWVN3M',
-    prices:{USD:899,AUD:1499,EUR:1050,GBP:950,JPY:140000,CAD:1300,SGD:1400},
+    prices:{USD:1099,AUD:1699,EUR:1299,GBP:999,JPY:171000,CAD:1399,SGD:1599},
     sensorMP:24.2, sensorType:'APS-C Exmor CMOS', processor:'BIONZ X',
     width:120.0, height:66.9, depth:49.9, weight:403, weatherSealed:true,
     lcdSize:'3.0"', lcdDots:921, lcdType:'180° Tilting Touchscreen',
@@ -696,7 +696,7 @@ const CAMERAS = {
     productUrl:'https://electronics.sony.com/imaging/cinema-line-cameras/p/ilmefx3-b',
     imageUrl:'https://upload.wikimedia.org/wikipedia/commons/thumb/8/85/Sony_FX3_with_Sony_FE_24mm_F1.4_GM_-_by_Henry_S%C3%B6derlund_%2851061907312%2C_cropped%29.jpg/500px-Sony_FX3_with_Sony_FE_24mm_F1.4_GM_-_by_Henry_S%C3%B6derlund_%2851061907312%2C_cropped%29.jpg',
     imageCredit:{author:"Henry Söderlund from Helsinki, Finland", licence:"CC BY 2.0", licenceUrl:"https://creativecommons.org/licenses/by/2.0", source:"https://commons.wikimedia.org/wiki/File:Sony_FX3_with_Sony_FE_24mm_F1.4_GM_-_by_Henry_S%C3%B6derlund_(51061907312,_cropped).jpg"}, asin:'B08WJKKD47',
-    prices:{USD:3899,AUD:6499,EUR:4700,GBP:4200,JPY:528000,CAD:5000,SGD:5300},
+    prices:{USD:4298,AUD:6699,EUR:4899,GBP:3899,JPY:670000,CAD:5599,SGD:6199},
     sensorMP:12.1, sensorType:'Full-frame BSI CMOS', processor:'BIONZ XR',
     width:129.7, height:77.8, depth:84.5, weight:715, weatherSealed:true,
     lcdSize:'3.0"', lcdDots:1440, lcdType:'Vari-angle Touchscreen',
@@ -716,7 +716,7 @@ const CAMERAS = {
     productUrl:'https://electronics.sony.com/imaging/cinema-line-cameras/p/ilmefx30b',
     imageUrl:'https://upload.wikimedia.org/wikipedia/commons/thumb/e/e6/Sony_FX30_with_Sony_E_10-20mm_F4_PZ_G_-_by_Henry_S%C3%B6derlund_%2852445895581%29.jpg/500px-Sony_FX30_with_Sony_E_10-20mm_F4_PZ_G_-_by_Henry_S%C3%B6derlund_%2852445895581%29.jpg',
     imageCredit:{author:"Henry Söderlund from Helsinki, Finland", licence:"CC BY 2.0", licenceUrl:"https://creativecommons.org/licenses/by/2.0", source:"https://commons.wikimedia.org/wiki/File:Sony_FX30_with_Sony_E_10-20mm_F4_PZ_G_-_by_Henry_S%C3%B6derlund_(52445895581).jpg"}, asin:'B0BR8BKFPK',
-    prices:{USD:1799,AUD:2899,EUR:2100,GBP:1800,JPY:290000,CAD:2400,SGD:2500},
+    prices:{USD:2099,AUD:3299,EUR:2399,GBP:1899,JPY:327000,CAD:2699,SGD:2999},
     sensorMP:26.0, sensorType:'APS-C BSI CMOS', processor:'BIONZ XR',
     width:129.7, height:77.8, depth:84.5, weight:646, weatherSealed:true,
     lcdSize:'3.0"', lcdDots:2360, lcdType:'Vari-angle Touchscreen',
@@ -730,11 +730,31 @@ const CAMERAS = {
     logProfile:'S-Log3 / S-Cinetone / S-Log2', aiAf:false, realtimeTracking:true,
   },
 
+  'fx2': {
+    name:'FX2', series:'Cinema Line', year:2025, discontinued:false,
+    tagline:'Compact Gateway to Cinema Line Filmmaking',
+    productUrl:'https://www.sony.com.au/electronics/interchangeable-lens-cameras/ilme-fx2',
+    imageUrl:null,
+    asin:'B0FB9PWP2Q',
+    prices:{USD:2699,AUD:5299,EUR:2899,GBP:2700,JPY:417000,CAD:3750,SGD:4099},
+    sensorMP:33.0, sensorType:'Full-frame BSI CMOS', processor:'BIONZ XR',
+    width:129.7, height:77.8, depth:85.0, weight:679, weatherSealed:true,
+    lcdSize:'3.0"', lcdDots:1037, lcdType:'Vari-angle Touchscreen',
+    evfType:'EVF (OLED)', evfDots:3.69, evfMag:0.70,
+    faceDetection:true, subjectDetection:'Human / Animal / Bird / Insect / Car / Train / Plane',
+    ibis:true, ibisStops:5.5, maxBurst:10,
+    maxVideoRes:'4K / 60P (Super35)', logVideo:true,
+    bluetooth:'5.0', wifi:true,
+    cardSlots:'2× CFexpress Type A / SD UHS-II', batteryLife:520, usbCharging:true,
+    lensType:'Interchangeable', lensSpec:null,
+    logProfile:'S-Log3 / S-Cinetone', aiAf:true, realtimeTracking:true,
+  },
+
   /* ── ZV (Vlog) ── */
   'zv-e1': {
     name:'ZV-E1', series:'ZV (Vlog)', year:2023, discontinued:false,
     tagline:'Full-frame Vlog with AI Framing',
-    productUrl:'https://electronics.sony.com/imaging/interchangeable-lens-cameras/full-frame/p/ilczv-e1-b',
+    productUrl:'https://www.sony.com.au/interchangeable-lens-cameras/products/zv-e1',
     imageUrl:'https://upload.wikimedia.org/wikipedia/commons/thumb/6/60/Sony_ZV-E1_with_Sony_FE_28-60mm_F4-5.6_-_by_Henry_S%C3%B6derlund_%2852854053098%29.jpg/500px-Sony_ZV-E1_with_Sony_FE_28-60mm_F4-5.6_-_by_Henry_S%C3%B6derlund_%2852854053098%29.jpg',
     imageCredit:{author:"Henry Söderlund", licence:"CC BY 2.0", licenceUrl:"https://creativecommons.org/licenses/by/2.0", source:"https://commons.wikimedia.org/wiki/File:Sony_ZV-E1_with_Sony_FE_28-60mm_F4-5.6_-_by_Henry_S%C3%B6derlund_(52854053098).jpg"}, asin:'B0BZWNWCZ9',
     prices:{USD:2198,AUD:3499,EUR:2700,GBP:2300,JPY:298000,CAD:2900,SGD:3000},
@@ -798,7 +818,7 @@ const CAMERA_ORDER = [
   'a1', 'a7c', 'a9-ii', 'a7r-iv', 'a7-iii', 'a9', 'a7r-iii',
   'a7r-ii', 'a7s-ii', 'a7-ii', 'a7r', 'a7', 'a7s',
   'a6700', 'a6400', 'a6600', 'a6500', 'a6300', 'a6100', 'a6000',
-  'fx5', 'fx3', 'fx30',
+  'fx5', 'fx3', 'fx30', 'fx2',
   'zv-e1', 'zv-e10-ii', 'zv-e10',
 ];
 
@@ -808,7 +828,7 @@ const DROPDOWN_GROUPS = [
   { label: '── Alpha Full-frame (2017–2020) ──', ids: ['a1', 'a7c', 'a9-ii', 'a7r-iv', 'a7-iii', 'a9', 'a7r-iii'] },
   { label: '── Alpha Full-frame (2013–2015) ──', ids: ['a7r-ii', 'a7s-ii', 'a7-ii', 'a7r', 'a7', 'a7s'] },
   { label: '── Alpha APS-C ──',                  ids: ['a6700', 'a6400', 'a6600', 'a6500', 'a6300', 'a6100', 'a6000'] },
-  { label: '── Cinema Line ──',                  ids: ['fx5', 'fx3', 'fx30'] },
+  { label: '── Cinema Line ──',                  ids: ['fx5', 'fx3', 'fx30', 'fx2'] },
   { label: '── ZV (Vlog) ──',                    ids: ['zv-e1', 'zv-e10-ii', 'zv-e10'] },
 ];
 
@@ -1069,6 +1089,19 @@ const LENSES = {
     productUrl:'https://electronics.sony.com/imaging/lenses/full-frame-e-mount/p/sel90m28g',
   },
 
+  'fe-100mm-f28-macro-gm': {
+    name:'FE 100mm F2.8 Macro GM OSS', manufacturer:'Sony', line:'FE GM', type:'Prime', asin:'B0FT75W5PF',
+    focalLength:100, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'100mm',
+    maxAperture:2.8, minAperture:22, weight:646, length:147.9, diameter:81.4,
+    filterThread:67, minFocusDist:260, maxMagnification:1.4,
+    elements:17, groups:13, blades:11, afType:'XD Linear',
+    weatherSealed:true, ois:true, oisStops:null, year:2025, discontinued:false,
+    imageUrl:null,
+    prices:{USD:1499,AUD:2599,EUR:null,GBP:null,JPY:null,CAD:1799,SGD:null},
+    priceIncomplete:true,
+    productUrl:'https://electronics.sony.com/imaging/lenses/full-frame-e-mount/p/sel100m28gm',
+  },
+
   'fe-28mm-f2': {
     name:'FE 28mm F2', manufacturer:'Sony', line:'FE', type:'Prime', asin:'B00U29GN6O',
     focalLength:28, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'28mm',
@@ -1277,6 +1310,32 @@ const LENSES = {
     prices:{USD:2498,AUD:3899,EUR:null,GBP:null,JPY:null,CAD:3299,SGD:null},
     priceIncomplete:true,
     productUrl:'https://electronics.sony.com/imaging/lenses/full-frame-e-mount/p/sel100400gm',
+  },
+
+  'fe-100-400mm-f45-gm-oss': {
+    name:'FE 100-400mm F4.5 GM OSS', manufacturer:'Sony', line:'FE GM', type:'Zoom', asin:'B0H1N8LKW9',
+    focalLength:null, focalLengthMin:100, focalLengthMax:400, focalLengthEquiv:'100-400mm',
+    maxAperture:4.5, minAperture:32, weight:1840, length:328.0, diameter:119.8,
+    filterThread:95, minFocusDist:640, maxMagnification:0.25,
+    elements:28, groups:20, blades:11, afType:'XD Linear',
+    weatherSealed:true, ois:true, oisStops:null, year:2026, discontinued:false,
+    imageUrl:null,
+    prices:{USD:4299,AUD:6899,EUR:null,GBP:null,JPY:null,CAD:5599,SGD:null},
+    priceIncomplete:true,
+    productUrl:'https://electronics.sony.com/imaging/lenses/full-frame-e-mount/p/sel100400mc',
+  },
+
+  'fe-100-400mm-f56-8-oss': {
+    name:'FE 100-400mm F5.6-8 OSS', manufacturer:'Sony', line:'FE', type:'Zoom', asin:null,
+    focalLength:null, focalLengthMin:100, focalLengthMax:400, focalLengthEquiv:'100-400mm',
+    maxAperture:5.6, minAperture:32, weight:654, length:164.5, diameter:78.2,
+    filterThread:67, minFocusDist:860, maxMagnification:0.41,
+    elements:15, groups:10, blades:9, afType:'Linear',
+    weatherSealed:true, ois:true, oisStops:null, year:2026, discontinued:false,
+    imageUrl:null,
+    prices:{USD:850,AUD:1399,EUR:null,GBP:null,JPY:null,CAD:1080,SGD:null},
+    priceIncomplete:true,
+    productUrl:'https://electronics.sony.com/imaging/lenses/full-frame-e-mount/p/sel100400',
   },
 
   'fe-12-24mm-f4-g': {
@@ -1851,12 +1910,26 @@ const LENSES = {
     maxAperture:1.4, minAperture:16, weight:640, length:111.5, diameter:75.5,
     filterThread:67, minFocusDist:30, maxMagnification:0.19,
     elements:15, groups:11, blades:11, afType:'Stepping Motor',
-    weatherSealed:true, ois:false, oisStops:null, year:2021, discontinued:false,
+    weatherSealed:true, ois:false, oisStops:null, year:2021, discontinued:true,
     imageUrl:'https://www.sigma-global.com/lenses/a021_35_14_product_img01.png',
     asin:null,
     prices:{USD:799,AUD:null,EUR:null,GBP:null,JPY:null,CAD:null,SGD:null},
     priceIncomplete:true,
     productUrl:'https://www.sigma-global.com/en/lenses/a021_35_14/',
+  },
+
+  'sigma-35mm-f14-dg-ii': {
+    name:'Sigma 35mm f/1.4 DG DN II Art', manufacturer:'Sigma', line:'Art', type:'Prime',
+    focalLength:35, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'35mm',
+    maxAperture:1.4, minAperture:16, weight:525, length:94.0, diameter:73.0,
+    filterThread:67, minFocusDist:280, maxMagnification:0.19,
+    elements:15, groups:12, blades:11, afType:'HLA Linear',
+    weatherSealed:true, ois:false, oisStops:null, year:2026, discontinued:false,
+    imageUrl:null,
+    asin:null,
+    prices:{USD:1059,AUD:null,EUR:null,GBP:null,JPY:null,CAD:null,SGD:null},
+    priceIncomplete:true,
+    productUrl:'https://www.sigma-global.com/en/lenses/a026_35_14/',
   },
 
   'sigma-50mm-f14-dg': {
@@ -2071,6 +2144,20 @@ const LENSES = {
   /* ── Tamron (FE, full-frame Di III) ── */
   /* Specs from Tamron Americas spec tables (Sony E values). Tamron image URLs
      vary by model/mount and are recorded as gaps pending verification. */
+  'tamron-12-20mm-f28': {
+    name:'Tamron 12-20mm f/2.8 Di III VXD', manufacturer:'Tamron', line:'Di III', type:'Zoom',
+    focalLength:null, focalLengthMin:12, focalLengthMax:20, focalLengthEquiv:'12-20mm',
+    maxAperture:2.8, minAperture:16, weight:570, length:119.3, diameter:90.0,
+    filterThread:null, minFocusDist:180, maxMagnification:0.17,
+    elements:17, groups:12, blades:12, afType:'Linear Motor',
+    weatherSealed:true, ois:false, oisStops:null, year:2026, discontinued:false,
+    imageUrl:null,
+    asin:null,
+    prices:{USD:1699,AUD:null,EUR:null,GBP:null,JPY:null,CAD:null,SGD:null},
+    priceIncomplete:true,
+    productUrl:'https://www.tamron.com/global/consumer/lenses/a084/',
+  },
+
   'tamron-16-30mm-f28-g2': {
     name:'Tamron 16-30mm f/2.8 Di III VXD G2', manufacturer:'Tamron', line:'Di III', type:'Zoom',
     focalLength:null, focalLengthMin:16, focalLengthMax:30, focalLengthEquiv:'16-30mm',
@@ -2187,6 +2274,20 @@ const LENSES = {
   },
 
   /* ── Viltrox (E-mount AF) ── */
+  'viltrox-26mm-f28-evo': {
+    name:'Viltrox AF 26mm f/2.8 EVO', manufacturer:'Viltrox', line:'EVO', type:'Prime',
+    focalLength:26, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'26mm',
+    maxAperture:2.8, minAperture:16, weight:130, length:23.8, diameter:66,
+    filterThread:43, minFocusDist:200, maxMagnification:0.22,
+    elements:8, groups:6, blades:7, afType:'STM',
+    weatherSealed:false, ois:false, oisStops:null, year:2026, discontinued:false,
+    imageUrl:null,
+    asin:null,
+    prices:{USD:299,AUD:null,EUR:null,GBP:null,JPY:null,CAD:null,SGD:null},
+    priceIncomplete:true,
+    productUrl:'https://viltrox.com/products/af-26mm-f2-8-fe',
+  },
+
   'viltrox-16mm-f18': {
     name:'Viltrox AF 16mm f/1.8 FE', manufacturer:'Viltrox', line:'Pro', type:'Prime',
     focalLength:16, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'16mm',
@@ -2587,7 +2688,7 @@ const LENS_DROPDOWN_GROUPS = [
     'fe-35mm-f18', 'fe-35mm-f28-za', 'fe-40mm-f25-g', 'fe-50mm-f12-gm',
     'fe-50mm-f14-gm', 'fe-50mm-f14-za', 'fe-50mm-f18', 'fe-50mm-f25-g',
     'fe-50mm-f28-macro', 'fe-55mm-f18-za', 'fe-85mm-f14-gm-ii', 'fe-85mm-f14-gm',
-    'fe-90mm-f28-macro-g', 'fe-100mm-f28-stf-gm', 'fe-135mm-f18-gm',
+    'fe-90mm-f28-macro-g', 'fe-100mm-f28-stf-gm', 'fe-100mm-f28-macro-gm', 'fe-135mm-f18-gm',
     'fe-300mm-f28-gm', 'fe-400mm-f28-gm', 'fe-600mm-f4-gm',
   ] },
   { label: '── Sony FE Zooms ──',  ids: [
@@ -2597,7 +2698,8 @@ const LENS_DROPDOWN_GROUPS = [
     'fe-24-240mm-f35-63-oss', 'fe-28-60mm-f4-56', 'fe-28-70mm-f2-gm',
     'fe-28-70mm-f35-56-oss-ii', 'fe-28-70mm-f35-56-oss', 'fe-50-150mm-f2-gm',
     'fe-70-200mm-f28-gm-oss-ii', 'fe-70-200mm-f4-macro-g-oss-ii', 'fe-70-200mm-f4-g-oss',
-    'fe-70-300mm-f45-56-g-oss', 'fe-100-400mm-f45-63-gm-oss', 'fe-200-600mm-f56-63-g-oss',
+    'fe-70-300mm-f45-56-g-oss', 'fe-100-400mm-f45-63-gm-oss', 'fe-100-400mm-f45-gm-oss',
+    'fe-100-400mm-f56-8-oss', 'fe-200-600mm-f56-63-g-oss',
     'fe-400-800mm-f63-8-g-oss',
   ] },
   { label: '── Sony E (APS-C) Primes ──', ids: [
@@ -2616,7 +2718,7 @@ const LENS_DROPDOWN_GROUPS = [
   ] },
   { label: '── Sigma (FF Primes) ──', ids: [
     'sigma-20mm-f2-dg', 'sigma-20mm-f14-dg', 'sigma-24mm-f2-dg', 'sigma-24mm-f14-dg', 'sigma-35mm-f2-dg',
-    'sigma-35mm-f14-dg', 'sigma-45mm-f28-dg', 'sigma-50mm-f2-dg', 'sigma-50mm-f14-dg',
+    'sigma-35mm-f14-dg', 'sigma-35mm-f14-dg-ii', 'sigma-45mm-f28-dg', 'sigma-50mm-f2-dg', 'sigma-50mm-f14-dg',
     'sigma-65mm-f2-dg', 'sigma-85mm-f14-dg', 'sigma-90mm-f28-dg', 'sigma-17mm-f4-dg',
   ] },
   { label: '── Sigma (FF Zooms) ──', ids: [
@@ -2625,12 +2727,12 @@ const LENS_DROPDOWN_GROUPS = [
     'sigma-100-400mm-f5-63-dg', 'sigma-150-600mm-f5-63-dg',
   ] },
   { label: '── Tamron ──', ids: [
-    'tamron-11-20mm-f28', 'tamron-16-30mm-f28-g2', 'tamron-17-70mm-f28',
+    'tamron-11-20mm-f28', 'tamron-12-20mm-f28', 'tamron-16-30mm-f28-g2', 'tamron-17-70mm-f28',
     'tamron-20-40mm-f28', 'tamron-28-75mm-f28-g2', 'tamron-35-150mm-f2-28',
     'tamron-50-400mm-f45-63', 'tamron-70-180mm-f28-g2', 'tamron-70-300mm-f45-63',
   ] },
   { label: '── Viltrox ──', ids: [
-    'viltrox-13mm-f14', 'viltrox-16mm-f18', 'viltrox-27mm-f12', 'viltrox-33mm-f14',
+    'viltrox-13mm-f14', 'viltrox-16mm-f18', 'viltrox-26mm-f28-evo', 'viltrox-27mm-f12', 'viltrox-33mm-f14',
     'viltrox-56mm-f14', 'viltrox-85mm-f18-ii',
   ] },
   { label: '── Samyang ──', ids: [
