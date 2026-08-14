@@ -78,7 +78,23 @@ const KNOWN_IMAGE_GAPS = {
     // Meike — meikeglobal.com blocks automated fetch, no other direct image URL found
     'meike-33mm-f14', 'meike-55mm-f18', 'meike-85mm-f18',
     // 7Artisans — no direct manufacturer/retailer image URL found yet
-    '7artisans-50mm-f18', '7artisans-25mm-f18'
+    '7artisans-50mm-f18', '7artisans-25mm-f18',
+    // 2025-2026 additions (refresh 2026-08-15) — no freely-licensed image sourced yet
+    'sigma-12mm-f14', 'sigma-15mm-f14', 'sigma-16-300mm-f35-67', 'sigma-17-40mm-f18',
+    // viltrox-85mm-f18: now discontinued (superseded by the II below); its old
+    // imageUrl was actually the II's promo photo, moved to the new entry, so
+    // this one is genuinely gapped rather than reusing a wrong image.
+    'viltrox-85mm-f18',
+    'viltrox-air-9mm-f28', 'viltrox-air-15mm-f17',
+    'viltrox-28mm-f45-chip', 'viltrox-56mm-f12', 'viltrox-75mm-f18-evo', 'viltrox-90mm-f22-evo',
+    'ttartisan-23mm-f18', 'ttartisan-air-17mm-f18', 'ttartisan-14mm-f35',
+    'ttartisan-25mm-f2', 'ttartisan-35mm-f095', 'ttartisan-50mm-f095',
+    '7artisans-25mm-f18-lite', '7artisans-35mm-f18-lite',
+    'samyang-75mm-f18', 'samyang-8mm-f28', 'samyang-10mm-f28', 'samyang-12mm-f2-ncscs',
+    'samyang-14mm-f28', 'samyang-16mm-f2', 'samyang-85mm-f14', 'samyang-85mm-f18',
+    'samyang-100mm-f28-macro', 'samyang-135mm-f2', 'samyang-300mm-f63',
+    'laowa-aksen-45mm-f28',
+    'meike-55mm-f14-golden', 'meike-25mm-f17-air', 'meike-25mm-f18', 'meike-50mm-f17-ff'
   ]),
   nikon: new Set([
     // Third-party (Viltrox AF / Laowa MF) — manufacturer image URLs pending backfill
