@@ -97,36 +97,30 @@ const KNOWN_IMAGE_GAPS = {
     'meike-55mm-f14-golden', 'meike-25mm-f17-air', 'meike-25mm-f18', 'meike-50mm-f17-ff'
   ]),
   nikon: new Set([
-    // Third-party (Viltrox AF / Laowa MF) — manufacturer image URLs pending backfill
-    'viltrox-13mm-f14', 'viltrox-16mm-f18', 'viltrox-27mm-f12', 'viltrox-33mm-f14',
-    'viltrox-56mm-f14', 'viltrox-85mm-f18-ii',
-    'laowa-90mm-f28-macro', 'laowa-15mm-f2', 'laowa-10mm-f4-cookie',
+    // Cameras: all 10 resolved 2026-08-15 (Commons photos sourced + applied).
+    // Lenses — re-run 2026-08-15 (Nikon+Panasonic lens image pass): z-dx-16-50mm-vr
+    // and viltrox-27mm-f12 resolved and removed from this list. tamron-17-70mm-f28
+    // has a Commons candidate (File:Tamron 17-70mm F 2.8 Di III-A VC RXD (Model
+    // B070) (50829297527).jpg) but it's dated 2021-01-12 — years before this
+    // lens's 2026 Nikon Z release — and shows no rear mount, so it's almost
+    // certainly the original Sony E-mount (or later Fuji X) copy; rejected as
+    // wrong-mount rather than confirmed. Remaining 38 have no Commons candidate
+    // at all after a full sweep (script + manual per-item search).
+    'z-24mm-f1-8-s', 'z-35mm-f1-2-s', 'z-58mm-f0-95-s-noct',
+    'z-24-70mm-f2-8-s-ii', 'z-70-200mm-f2-8-vr-s-ii', 'z-40mm-f2-se',
+    'z-dx-24mm-f1-7', 'z-dx-mc-35mm-f17', 'z-14-24mm-f2-8-s',
+    'z-24-105mm-f4-71', 'z-28-135mm-f4-pz',
+    'z-400mm-f2-8-tc-vr-s', 'z-600mm-f6-3-vr-s-pf', 'z-800mm-f6-3-vr-s-pf',
+    'z-dx-12-28mm-pz-vr', 'z-dx-18-140mm-vr', 'z-dx-50-250mm-vr',
+    'viltrox-13mm-f14', 'viltrox-16mm-f18', 'viltrox-33mm-f14', 'viltrox-56mm-f14',
+    'viltrox-85mm-f18-ii', 'viltrox-24mm-f18', 'viltrox-35mm-f18-evo',
+    'viltrox-40mm-f25-air', 'viltrox-85mm-f20-evo', 'viltrox-85mm-f14-pro',
     'tamron-17-70mm-f28', 'tamron-18-300mm-f35-63',
-    'viltrox-24mm-f18', 'viltrox-35mm-f18-evo', 'voigtlander-nokton-40mm-f12',
-    'yongnuo-35mm-f2', 'yongnuo-50mm-f18', 'ttartisan-27mm-f28', '7artisans-27mm-f28', 'meike-85mm-f18',
-    'viltrox-40mm-f25-air', 'voigtlander-apo-lanthar-50mm-f2',
-    // 2025–2026 additions (refresh 2026-08-08) — no freely-licensed image sourced yet
-    'z-24-105mm-f4-71', 'z-70-200mm-f2-8-vr-s-ii', 'z-dx-mc-35mm-f17',
-    'z-24-70mm-f2-8-s-ii', 'z-28-135mm-f4-pz',
-    'viltrox-85mm-f20-evo', 'viltrox-85mm-f14-pro', 'meike-85mm-f18-se-ii',
-    // Curated via scripts/fetch-images-commons.js (strict model-token match),
-    // plus z9 sourced manually for the landing-page flagship photo.
-    // 28 of 57 items carry real Commons images (5 cameras + 23 lenses); the
-    // rest stay on the engine's series-coloured placeholder until a freely-
-    // licensed Commons photo exists. The test self-cleans once one lands.
-    // Cameras (10) — no clean Commons photo found yet:
-    'z8', 'z5-ii', 'z7', 'z6', 'z5', 'z50', 'z30', 'zf', 'zfc', 'zr',
-    // Lenses (18) — re-run 2026-08-15 (Nikon+Panasonic lens image pass):
-    // z-35mm-f1-8-s, z-135mm-f1-8-s-plena, z-26mm-f2-8, z-50mm-f1-4,
-    // z-14-30mm-f4-s, z-180-600mm-f5-6-6-3-vr, tamron-35-150mm-f2-28,
-    // tamron-50-400mm-f45-63 now have Commons images — removed from this list.
-    'z-24mm-f1-8-s', 'z-35mm-f1-2-s',
-    'z-58mm-f0-95-s-noct',
-    'z-40mm-f2-se',
-    'z-dx-24mm-f1-7', 'z-14-24mm-f2-8-s',
-    'z-400mm-f2-8-tc-vr-s', 'z-600mm-f6-3-vr-s-pf',
-    'z-800mm-f6-3-vr-s-pf', 'z-dx-12-28mm-pz-vr', 'z-dx-16-50mm-vr',
-    'z-dx-18-140mm-vr', 'z-dx-50-250mm-vr'
+    'laowa-90mm-f28-macro', 'laowa-15mm-f2', 'laowa-10mm-f4-cookie',
+    'voigtlander-nokton-40mm-f12', 'voigtlander-apo-lanthar-50mm-f2',
+    'yongnuo-35mm-f2', 'yongnuo-50mm-f18',
+    'ttartisan-27mm-f28', '7artisans-27mm-f28',
+    'meike-85mm-f18', 'meike-85mm-f18-se-ii',
   ]),
   panasonic: new Set([
     'voigtlander-nokton-25mm-f095', 'laowa-7-5mm-f2-mft',
@@ -136,17 +130,16 @@ const KNOWN_IMAGE_GAPS = {
     'voigtlander-apo-lanthar-35mm-f2-l', 'voigtlander-apo-lanthar-50mm-f2-l',
     'laowa-90mm-f28-macro-l', 'laowa-15mm-f2-l',
     'sigma-90mm-f28-dg', 'sigma-28-70mm-f28-dg', 'sigma-100-400mm-f5-63-dg',
-    // Curated via scripts/fetch-images-commons.js. 14 of 57 items carry real
-    // images (8 cameras: s5-ii, s9, gh7, gh6, gh5-ii, g9-ii, s1r (Commons),
-    // s1r-ii (official Panasonic product photo, sourced for the landing-page
-    // tile); 6 lenses: S 35/1.8, S 24-105/4, S PRO 70-200/4, S 70-300, G
-    // 25/1.7, Nocticron 42.5/1.2). The s5/g9 search hits returned the
-    // newer-model photo (S5 II / G9 II) and were rejected. The rest stay on
-    // the placeholder until a freely-licensed Commons photo exists; the test
-    // self-cleans once one lands. Cameras (11):
-    's1-ii', 's1iie', 's5-iix', 's1h', 's1', 's5',
-    'gh5',
-    'g100d', 'g97', 'g9', 'gx9', 'g95', 'l10',
+    // Curated via scripts/fetch-images-commons.js. Cameras: s1iie, g100, s1h,
+    // g100d, gx9, bs1h, s1, s5, gh5, g9 resolved 2026-08-15 (genuine
+    // matching-generation photos found after the script's first-pass hits
+    // returned wrong-generation photos — S1R for s1, S5D for s5, GH5 II for
+    // gh5, G9 II for g9 — and were rejected). l10 has a genuine 2026-model
+    // Commons candidate but its licence is suspect (CC0 tag, but Credit/Artist
+    // point to an Adorama retail listing, flagged "missing SDC copyright
+    // license") — rejected as likely mis-tagged, stays a gap. Remaining
+    // cameras (5) have no Commons candidate at all:
+    's1-ii', 's5-iix', 'g97', 'g95', 'l10',
     // Lenses — LUMIX S primes:
     'lumix-s-18mm-f1-8', 'lumix-s-24mm-f1-8', 'lumix-s-40mm-f2',
     'lumix-s-50mm-f1-8', 'lumix-s-pro-50mm-f1-4', 'lumix-s-85mm-f1-8', 'lumix-s-100mm-f2-8-macro',
@@ -175,7 +168,7 @@ const KNOWN_IMAGE_GAPS = {
     'lumix-g-14mm-f2-5-ii', 'lumix-g-fisheye-8mm-f3-5', 'lumix-g-macro-30mm-f2-8',
     'lumix-g-7-14mm-f4', 'lumix-g-x-pz-14-42mm-f3-5-5-6', 'lumix-g-35-100mm-f4-5-6',
     // Cameras backfilled 2026-08-08
-    'g100', 'bs1h', 'bgh1'
+    'bgh1'
   ]),
   sony: new Set([
     'sigma-90mm-f28-dg', // discontinued I-series; Sigma image URL not available
