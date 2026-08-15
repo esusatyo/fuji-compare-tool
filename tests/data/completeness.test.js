@@ -24,30 +24,26 @@ const KNOWN_IMAGE_GAPS = {
     'rf-45mm-f12-stm',
     'rf-20-50mm-f4-l-is-usm-pz',
     'rf-7-14mm-f28-35-l-fisheye-stm',
-    'rf-16-28mm-f28-is-stm',
+    'rf-16-28mm-f28-is-stm', // Commons search for this returns only the unrelated RF 28mm f/2.8 pancake
     'rf-75-300mm-f4-56',
     'rfs-14-30mm-f4-63-is-stm-pz',
-    // 2020-2022 first-party RF supertelephoto/portrait primes added in the
-    // firstparty-lens-gaps pass — no freely-licensed Commons image yet
-    'rf-600mm-f11-is-stm',
-    'rf-400mm-f28-l-is-usm',
+    // 2020-2022 first-party RF supertelephoto/portrait primes — resolved
+    // 2026-08-15: rf-600mm-f11-is-stm, rf-400mm-f28-l-is-usm, rf-24mm-f14-l-vcm,
+    // rf-35mm-f14-l-vcm, rf-52mm-f28-l-dual-fisheye, rf-10-20mm-f4-l-is-stm,
+    // rf-15-30mm-f45-63-is-stm, rf-28-70mm-f2-l-usm, rf-28-70mm-f28-is-stm,
+    // rf-24-105mm-f28-l-is-usm-z, rf-24-240mm-f4-63-is-usm,
+    // rf-70-200mm-f28-l-is-usm-z (all Commons, licence+visual verified).
+    // rf-800mm-f56-l-is-usm and rf-1200mm-f8-l-is-usm have Commons candidates
+    // but no legible model text on the barrel, and Canon's super-teles
+    // (400/2.8, 600/4, 800/5.6, 1200/8) look near-identical in a field shot —
+    // rejected, stay gaps. Remaining have no candidate at all:
     'rf-600mm-f4-l-is-usm',
     'rf-85mm-f12-l-usm-ds',
-    'rf-24mm-f14-l-vcm',
-    'rf-35mm-f14-l-vcm',
     'rf-50mm-f14-l-vcm',
     'rf-800mm-f56-l-is-usm',
     'rf-1200mm-f8-l-is-usm',
-    'rf-52mm-f28-l-dual-fisheye',
     'rfs-39mm-f35-stm-dual-fisheye',
     'rfs-78mm-f4-stm-dual',
-    'rf-10-20mm-f4-l-is-stm',
-    'rf-15-30mm-f45-63-is-stm',
-    'rf-28-70mm-f2-l-usm',
-    'rf-28-70mm-f28-is-stm',
-    'rf-24-105mm-f28-l-is-usm-z',
-    'rf-24-240mm-f4-63-is-usm',
-    'rf-70-200mm-f28-l-is-usm-z',
     'rf-100-300mm-f28-l-is-usm',
     'rf-200-800mm-f63-9-is-usm',
     // Third-party RF AF lenses — no freely-licensed Commons image; manufacturer
@@ -58,11 +54,10 @@ const KNOWN_IMAGE_GAPS = {
     'laowa-90mm-f28-macro',
     'laowa-15mm-f2',
     'laowa-10mm-f4-cookie',
-    // TTArtisan RF primes — TTArtisan hotlinks are Shopify CDN assets that vary
-    // per SKU; no per-mount product photo confirmed. Backfill next image pass.
+    // TTArtisan RF primes — ttartisan-500mm-f63 resolved 2026-08-15 (Commons,
+    // camera-mounted shot with legible barrel text). Rest: no per-mount photo.
     'ttartisan-50mm-f14-asph',
     'ttartisan-tilt-50mm-f14',
-    'ttartisan-500mm-f63',
     'ttartisan-50mm-f12',
     'ttartisan-50mm-f095',
     // 7Artisans RF primes — store photos are Shopify CDN assets keyed per
@@ -192,47 +187,65 @@ const KNOWN_IMAGE_GAPS = {
     // A047Z); the Sony-E variant is A047, so this stays gapped here even though
     // the Nikon entry now carries that photo.
     'tamron-70-300mm-f45-63',
-    // Tamron image URL pending backfill
-    // Tamron FE zooms — Tamron image URLs vary by model/mount; pending backfill
-    'tamron-16-30mm-f28-g2', 'tamron-17-70mm-f28',
+    // Tamron FE zooms — tamron-17-70mm-f28 and tamron-70-180mm-f28-g2 resolved
+    // 2026-08-15 (Commons, mount confirmed via filename/description). The
+    // 17-70mm photo is the SAME file rejected for the Nikon entry (dated
+    // 2021-01-12, before the lens existed in any mount but Sony E — right here,
+    // wrong there). tamron-35-150mm-f2-28's only Commons candidate explicitly
+    // says "Nikon Z" in the filename — wrong mount, rejected, stays a gap.
+    'tamron-16-30mm-f28-g2',
     'tamron-20-40mm-f28', 'tamron-35-150mm-f2-28',
-    'tamron-70-180mm-f28-g2',
-    // Viltrox — store product image URLs pending backfill
+    // Viltrox — viltrox-27mm-f12's only Commons candidate is the SAME photo
+    // used for the Nikon entry, visually confirmed there via an explicit
+    // "Nikon Z" mount marking — wrong mount here, rejected. Rest: no
+    // freely-licensed image found at all.
     'viltrox-13mm-f14', 'viltrox-16mm-f18', 'viltrox-26mm-f28-evo', 'viltrox-27mm-f12', 'viltrox-33mm-f14',
     'viltrox-56mm-f14', 'viltrox-85mm-f18-ii',
-    // Samyang — product image URLs pending backfill
-    'samyang-24mm-f18', 'samyang-35mm-f18', 'samyang-45mm-f18', 'samyang-75mm-f18', 'samyang-135mm-f18',
+    // Samyang — samyang-35mm-f18 and samyang-135mm-f18 resolved 2026-08-15
+    // (Commons, "FE" in filename/barrel text confirms Sony mount).
+    'samyang-24mm-f18', 'samyang-45mm-f18', 'samyang-75mm-f18',
     // Voigtländer — manufacturer image URLs pending backfill
     'voigtlander-apo-lanthar-35mm-f2', 'voigtlander-apo-lanthar-50mm-f2', 'voigtlander-nokton-40mm-f12',
     // Laowa — Venus Optics image URLs pending backfill
     'laowa-90mm-f28-macro', 'laowa-15mm-f2', 'laowa-10mm-f4-cookie',
-    // Zeiss — discontinued; manufacturer image URLs unavailable
-    'zeiss-batis-25mm-f2', 'zeiss-batis-85mm-f18', 'zeiss-loxia-35mm-f2', 'zeiss-touit-32mm-f18',
+    // Zeiss — zeiss-batis-25mm-f2, zeiss-batis-85mm-f18, zeiss-touit-32mm-f18
+    // resolved 2026-08-15 (Commons; Batis is Sony-E-exclusive so no mount
+    // ambiguity, Touit confirmed via NEX-mounted photo). Loxia still gapped.
+    'zeiss-loxia-35mm-f2',
     // 7Artisans / TTArtisan / Meike — product image URLs pending backfill
     '7artisans-27mm-f28', 'ttartisan-27mm-f28', 'meike-85mm-f18',
-    // 31 of 33 cameras now have curated product images (Wikipedia infobox +
-    // Wikimedia Commons category/file lookups, each model-confirmed — a9-ii was
-    // visually verified — and verify-images'd). Only a7-v (2025) and a6100 lack
-    // any clean Commons product photo and stay on the placeholder card.
+    // Cameras: fe-... — a7-v's only Commons candidate shows just the generic
+    // "α7" body badge, which every a7-series generation shares, and the file
+    // carries no confirming category (just "needs categories") — classic
+    // generation-trap, rejected. fx5/fx2/a6100 have no candidate at all.
     'a7-v',
     'fx5',
     'fx2', // 2025 Cinema Line camera added Aug 2026 refresh; no Commons photo yet
     'a6100',
-    // Aug 2026 refresh additions — brand new (2025/2026), no Commons image yet
-    'fe-100-400mm-f45-gm-oss', 'fe-100mm-f28-macro-gm', 'fe-100-400mm-f56-8-oss',
+    // Aug 2026 refresh additions — resolved 2026-08-15: fe-16mm-f18-g,
+    // fe-20mm-f18-g, fe-28mm-f2, fe-35mm-f14-za, fe-50mm-f14-za, fe-55mm-f18-za,
+    // fe-100mm-f28-macro-gm, fe-600mm-f4-gm (store placard reads "SEL600F40GM"),
+    // fe-16-35mm-f28-gm-ii, fe-16-35mm-f28-gm, fe-16-35mm-f4-pz-g,
+    // fe-16-35mm-f4-za-oss, fe-24-70mm-f4-za-oss, e-10-18mm-f4-oss (rear-mount
+    // view, description confirms E-mount), e-16-50mm-f35-56-pz-oss,
+    // e-18-105mm-f4-g-oss-pz, e-18-135mm-f35-56-oss, e-70-350mm-f45-63-g-oss
+    // (store placard reads model number). fe-400mm-f28-gm and
+    // fe-70-200mm-f4-g-oss (two-lens comparison photo) and
+    // fe-200-600mm-f56-63-g-oss (Commons Restrictions:"personality" — explicit
+    // reject) and e-16mm-f28 (multi-lens lineup photo, not a dedicated shot)
+    // were found but rejected; rest have no candidate:
+    'fe-100-400mm-f45-gm-oss', 'fe-100-400mm-f56-8-oss',
     'sigma-35mm-f14-dg-ii', 'tamron-12-20mm-f28',
-    'fe-300mm-f28-gm', 'fe-400mm-f28-gm', 'fe-600mm-f4-gm',
-    'fe-16mm-f18-g', 'fe-20mm-f18-g', 'fe-28mm-f2', 'fe-35mm-f18',
-    'fe-50mm-f28-macro', 'fe-35mm-f14-za', 'fe-35mm-f28-za',
-    'fe-50mm-f14-za', 'fe-55mm-f18-za',
+    'fe-300mm-f28-gm', 'fe-400mm-f28-gm',
+    'fe-35mm-f18',
+    'fe-50mm-f28-macro', 'fe-35mm-f28-za',
     'e-16mm-f28', 'e-20mm-f28', 'e-24mm-f18-za',
-    'fe-12-24mm-f28-gm', 'fe-16-25mm-f28-g', 'fe-16-35mm-f28-gm-ii',
-    'fe-16-35mm-f28-gm', 'fe-16-35mm-f4-pz-g', 'fe-16-35mm-f4-za-oss', 'fe-24-50mm-f28-g', 'fe-24-70mm-f4-za-oss', 'fe-28-70mm-f2-gm',
+    'fe-12-24mm-f28-gm', 'fe-16-25mm-f28-g',
+    'fe-24-50mm-f28-g', 'fe-28-70mm-f2-gm',
     'fe-28-70mm-f35-56-oss-ii', 'fe-70-200mm-f4-macro-g-oss-ii', 'fe-70-200mm-f4-g-oss',
     'fe-100-400mm-f45-63-gm-oss', 'fe-200-600mm-f56-63-g-oss',
     'fe-400-800mm-f63-8-g-oss',
-    'e-10-18mm-f4-oss', 'e-16-50mm-f35-56-pz-oss-ii',
-    'e-16-50mm-f35-56-pz-oss', 'e-16-55mm-f28-g', 'e-18-105mm-f4-g-oss-pz', 'e-18-135mm-f35-56-oss', 'e-70-350mm-f45-63-g-oss'
+    'e-16-50mm-f35-56-pz-oss-ii', 'e-16-55mm-f28-g'
   ]),
 };
 
