@@ -124,9 +124,18 @@ const KNOWN_IMAGE_GAPS = {
   ]),
   panasonic: new Set([
     'voigtlander-nokton-25mm-f095', 'laowa-7-5mm-f2-mft',
-    // OM System M.Zuiko — manufacturer image URLs pending backfill
-    'omsystem-12-40mm-f28-pro', 'omsystem-40-150mm-f4-pro', 'omsystem-12-100mm-f4-pro', 'omsystem-17mm-f12-pro', 'omsystem-25mm-f12-pro', 'omsystem-45mm-f12-pro', 'omsystem-60mm-f28-macro', 'omsystem-17mm-f18', 'omsystem-25mm-f18', 'omsystem-45mm-f18',
-    // Sigma L-mount product images unavailable (404): 90/2.8, 28-70, 100-400
+    // OM System M.Zuiko — omsystem-40-150mm-f4-pro, omsystem-25mm-f18,
+    // omsystem-45mm-f18 resolved 2026-08-15 (Commons). omsystem-17mm-f18 has
+    // a Commons candidate but its category says plain "17mm f/1.8" (the 2012
+    // original) while the dataset entry is the "II" (2023 redesign) —
+    // wrong-generation, rejected, stays a gap.
+    'omsystem-12-40mm-f28-pro', 'omsystem-12-100mm-f4-pro', 'omsystem-17mm-f12-pro',
+    'omsystem-25mm-f12-pro', 'omsystem-45mm-f12-pro', 'omsystem-60mm-f28-macro', 'omsystem-17mm-f18',
+    // Sigma L-mount: 90/2.8 and 28-70/2.8 have Commons candidates (Henry
+    // Söderlund photos, both undated-mount) but sibling photos in the same
+    // category explicitly suffix "Sony E" when that's the mount and these
+    // don't — and both are dated within weeks of each lens's Sony-E-only
+    // launch — so almost certainly Sony E, not L-mount. Rejected, stay gaps.
     'voigtlander-apo-lanthar-35mm-f2-l', 'voigtlander-apo-lanthar-50mm-f2-l',
     'laowa-90mm-f28-macro-l', 'laowa-15mm-f2-l',
     'sigma-90mm-f28-dg', 'sigma-28-70mm-f28-dg', 'sigma-100-400mm-f5-63-dg',
@@ -140,23 +149,27 @@ const KNOWN_IMAGE_GAPS = {
     // license") — rejected as likely mis-tagged, stays a gap. Remaining
     // cameras (5) have no Commons candidate at all:
     's1-ii', 's5-iix', 'g97', 'g95', 'l10',
-    // Lenses — LUMIX S primes:
+    // Lenses — LUMIX S primes: lumix-s-50mm-f1-8 resolved 2026-08-15.
     'lumix-s-18mm-f1-8', 'lumix-s-24mm-f1-8', 'lumix-s-40mm-f2',
-    'lumix-s-50mm-f1-8', 'lumix-s-pro-50mm-f1-4', 'lumix-s-85mm-f1-8', 'lumix-s-100mm-f2-8-macro',
+    'lumix-s-pro-50mm-f1-4', 'lumix-s-85mm-f1-8', 'lumix-s-100mm-f2-8-macro',
     // LUMIX G primes:
     'leica-dg-9mm-f1-7', 'leica-dg-12mm-f1-4', 'leica-dg-15mm-f1-7', 'lumix-g-20mm-f1-7-ii',
     'leica-dg-25mm-f1-4-ii', 'lumix-g-42-5mm-f1-7', 'leica-dg-200mm-f2-8',
-    // LUMIX S zooms:
+    // LUMIX S zooms: lumix-s-20-60mm-f3-5-5-6 has a Commons candidate but the
+    // only shot is a hand holding the camera at a store display — rejected
+    // per the "no people holding gear" guardrail, stays a gap.
     'lumix-s-14-28mm-f4-5-6-macro', 'lumix-s-pro-16-35mm-f4', 'lumix-s-20-60mm-f3-5-5-6',
     'lumix-s-24-60mm-f2-8', 'lumix-s-24-70mm-f2-8-pro',
     'lumix-s-28-200mm-f4-7-1-macro', 'lumix-s-pro-70-200mm-f2-8',
-    // LUMIX G zooms:
-    'leica-dg-8-18mm-f2-8-4', 'leica-dg-10-25mm-f1-7', 'lumix-g-12-32mm-f3-5-5-6',
-    'leica-dg-12-60mm-f2-8-4', 'lumix-g-12-60mm-f3-5-5-6', 'lumix-g-12-35mm-f2-8-ii',
+    // LUMIX G zooms: leica-dg-10-25mm-f1-7 and leica-dg-12-60mm-f2-8-4
+    // resolved 2026-08-15.
+    'leica-dg-8-18mm-f2-8-4', 'lumix-g-12-32mm-f3-5-5-6',
+    'lumix-g-12-60mm-f3-5-5-6', 'lumix-g-12-35mm-f2-8-ii',
     'leica-dg-25-50mm-f1-7', 'lumix-g-35-100mm-f2-8-ii', 'leica-dg-50-200mm-f2-8-4',
     'lumix-g-14-140mm-f3-5-5-6-ii', 'lumix-g-100-300mm-f4-5-6-ii', 'leica-dg-100-400mm-f4-6-3-ii',
-    // Added 2026-08-08 refresh (new releases, manufacturer image not yet sourced):
-    'lumix-s-18-40mm-f4-5-6-3', 'lumix-s-100-500mm-f5-7-1', 'leica-dg-35-100mm-f2-8-power-ois',
+    // Added 2026-08-08 refresh (new releases): lumix-s-18-40mm-f4-5-6-3
+    // resolved 2026-08-15 (VRT-verified official press photo).
+    'lumix-s-100-500mm-f5-7-1', 'leica-dg-35-100mm-f2-8-power-ois',
     // Sigma 35/1.4 DG II: maker product-image URL 404s (the 135/1.4 one resolves)
     'sigma-35mm-f14-dg-ii',
     // Viltrox/Samyang: makers host no stable product-image URL
@@ -164,9 +177,10 @@ const KNOWN_IMAGE_GAPS = {
     // Laowa/OM System additions (2026-08-08) — makers host no usable image URL
     // (laowa-180mm-f45-macro-l got a Commons image 2026-08-15 — removed)
     'laowa-17mm-f4-tilt-shift-l', 'omsystem-100-400mm-f5-63-ii',
-    // Older first-party MFT lenses backfilled 2026-08-08; no Commons photo yet
-    'lumix-g-14mm-f2-5-ii', 'lumix-g-fisheye-8mm-f3-5', 'lumix-g-macro-30mm-f2-8',
-    'lumix-g-7-14mm-f4', 'lumix-g-x-pz-14-42mm-f3-5-5-6', 'lumix-g-35-100mm-f4-5-6',
+    // Older first-party MFT lenses: lumix-g-macro-30mm-f2-8 and
+    // lumix-g-7-14mm-f4 resolved 2026-08-15 (Commons).
+    'lumix-g-14mm-f2-5-ii', 'lumix-g-fisheye-8mm-f3-5',
+    'lumix-g-x-pz-14-42mm-f3-5-5-6', 'lumix-g-35-100mm-f4-5-6',
     // Cameras backfilled 2026-08-08
     'bgh1'
   ]),
