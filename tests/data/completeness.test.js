@@ -101,11 +101,7 @@ const KNOWN_IMAGE_GAPS = {
     'viltrox-13mm-f14', 'viltrox-16mm-f18', 'viltrox-27mm-f12', 'viltrox-33mm-f14',
     'viltrox-56mm-f14', 'viltrox-85mm-f18-ii',
     'laowa-90mm-f28-macro', 'laowa-15mm-f2', 'laowa-10mm-f4-cookie',
-    // tamron-50-400mm: the only Commons file is the Sony-E version (Model A067).
-    // The Nikon Z variant is A067Z, so it stays gapped even though the Sony
-    // entry now carries that photo.
-    'tamron-50-400mm-f45-63',
-    'tamron-17-70mm-f28', 'tamron-18-300mm-f35-63', 'tamron-35-150mm-f2-28',
+    'tamron-17-70mm-f28', 'tamron-18-300mm-f35-63',
     'viltrox-24mm-f18', 'viltrox-35mm-f18-evo', 'voigtlander-nokton-40mm-f12',
     'yongnuo-35mm-f2', 'yongnuo-50mm-f18', 'ttartisan-27mm-f28', '7artisans-27mm-f28', 'meike-85mm-f18',
     'viltrox-40mm-f25-air', 'voigtlander-apo-lanthar-50mm-f2',
@@ -115,16 +111,19 @@ const KNOWN_IMAGE_GAPS = {
     'viltrox-85mm-f20-evo', 'viltrox-85mm-f14-pro', 'meike-85mm-f18-se-ii',
     // Curated via scripts/fetch-images-commons.js (strict model-token match),
     // plus z9 sourced manually for the landing-page flagship photo.
-    // 22 of 57 items carry real Commons images (5 cameras + 17 lenses); the
+    // 28 of 57 items carry real Commons images (5 cameras + 23 lenses); the
     // rest stay on the engine's series-coloured placeholder until a freely-
     // licensed Commons photo exists. The test self-cleans once one lands.
     // Cameras (10) — no clean Commons photo found yet:
     'z8', 'z5-ii', 'z7', 'z6', 'z5', 'z50', 'z30', 'zf', 'zfc', 'zr',
-    // Lenses (26):
-    'z-24mm-f1-8-s', 'z-35mm-f1-8-s', 'z-35mm-f1-2-s',
-    'z-135mm-f1-8-s-plena', 'z-58mm-f0-95-s-noct',
-    'z-26mm-f2-8', 'z-40mm-f2-se', 'z-50mm-f1-4',
-    'z-dx-24mm-f1-7', 'z-14-24mm-f2-8-s', 'z-14-30mm-f4-s', 'z-180-600mm-f5-6-6-3-vr',
+    // Lenses (18) — re-run 2026-08-15 (Nikon+Panasonic lens image pass):
+    // z-35mm-f1-8-s, z-135mm-f1-8-s-plena, z-26mm-f2-8, z-50mm-f1-4,
+    // z-14-30mm-f4-s, z-180-600mm-f5-6-6-3-vr, tamron-35-150mm-f2-28,
+    // tamron-50-400mm-f45-63 now have Commons images — removed from this list.
+    'z-24mm-f1-8-s', 'z-35mm-f1-2-s',
+    'z-58mm-f0-95-s-noct',
+    'z-40mm-f2-se',
+    'z-dx-24mm-f1-7', 'z-14-24mm-f2-8-s',
     'z-400mm-f2-8-tc-vr-s', 'z-600mm-f6-3-vr-s-pf',
     'z-800mm-f6-3-vr-s-pf', 'z-dx-12-28mm-pz-vr', 'z-dx-16-50mm-vr',
     'z-dx-18-140mm-vr', 'z-dx-50-250mm-vr'
@@ -170,7 +169,8 @@ const KNOWN_IMAGE_GAPS = {
     // Viltrox/Samyang: makers host no stable product-image URL
     'viltrox-16mm-f18-l', 'viltrox-28mm-f45-l', 'samyang-14-24mm-f28-l',
     // Laowa/OM System additions (2026-08-08) — makers host no usable image URL
-    'laowa-180mm-f45-macro-l', 'laowa-17mm-f4-tilt-shift-l', 'omsystem-100-400mm-f5-63-ii',
+    // (laowa-180mm-f45-macro-l got a Commons image 2026-08-15 — removed)
+    'laowa-17mm-f4-tilt-shift-l', 'omsystem-100-400mm-f5-63-ii',
     // Older first-party MFT lenses backfilled 2026-08-08; no Commons photo yet
     'lumix-g-14mm-f2-5-ii', 'lumix-g-fisheye-8mm-f3-5', 'lumix-g-macro-30mm-f2-8',
     'lumix-g-7-14mm-f4', 'lumix-g-x-pz-14-42mm-f3-5-5-6', 'lumix-g-35-100mm-f4-5-6',
