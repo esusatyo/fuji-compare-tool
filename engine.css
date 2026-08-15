@@ -62,7 +62,12 @@
 }
 
 html, body {
-  overflow-x: hidden;
+  /* clip, not hidden: an ancestor with overflow-x:hidden makes Safari/iOS
+     build an incorrect stacking context around descendant position:sticky
+     elements (#site-header, #compare-header), leaving the sticky header
+     visually pinned but untappable. clip prevents the same horizontal
+     overflow without establishing that scroll-container relationship. */
+  overflow-x: clip;
 }
 
 body {
