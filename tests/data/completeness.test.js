@@ -95,8 +95,14 @@ const KNOWN_IMAGE_GAPS = {
     'samyang-75mm-f18', 'samyang-8mm-f28', 'samyang-10mm-f28', 'samyang-12mm-f2-ncscs',
     'samyang-14mm-f28', 'samyang-16mm-f2', 'samyang-85mm-f14', 'samyang-85mm-f18',
     'samyang-100mm-f28-macro', 'samyang-135mm-f2', 'samyang-300mm-f63',
-    'laowa-aksen-45mm-f28',
-    'meike-55mm-f14-golden', 'meike-25mm-f17-air', 'meike-25mm-f18', 'meike-50mm-f17-ff'
+    'laowa-aksen-45mm-f28', 'laowa-aksen-17-5mm-f17',
+    'meike-55mm-f14-golden', 'meike-25mm-f17-air', 'meike-25mm-f18', 'meike-50mm-f17-ff',
+    // 13-deferred-lenses batch resolved 2026-08-16 — non-nullable fields sourced
+    // (dimensions via TTArtisan's size-diagram images, nicodottaphoto.com for
+    // the Meike Air 56mm, B&H spec table for the Laowa Aksen 17.5mm), but none
+    // of these product pages exposed a usable, non-blocked image URL.
+    'ttartisan-tilt-35mm-f14', 'ttartisan-10mm-f2-asph', 'ttartisan-35mm-f14',
+    'ttartisan-7-5mm-f2-fisheye', 'meike-56mm-f17-air'
   ]),
   nikon: new Set([
     // Cameras: all 10 resolved 2026-08-15 (Commons photos sourced + applied).
