@@ -52,6 +52,18 @@ npm run test:links# opt-in live URL check (RUN_LINK_TESTS=1); slow, network
 - Referential tests catch orphans/dupes: every dropdown id must resolve, every camera/lens must appear in exactly one dropdown group, `CAMERA_ORDER` must match `CAMERAS`, `defaultSelected` must resolve.
 - Brand-specific camera fields are validated conditionally in `schema.js` under a `brandSections.includes('<slug>')` branch.
 
+### Pre-commit hook: automatic SEO regeneration
+
+One-time setup after cloning (git hooks aren't version-controlled by default, but worktrees of this repo share the same hooks path once set):
+
+```bash
+git config core.hooksPath .githooks
+```
+
+With that set, `.githooks/pre-commit` runs automatically on every commit. It's a no-op unless the staged changes touch something that affects generated output (`<brand>/data.js`, `site-config.js`, `scripts/generate-seo.js`, `engine.css`, `assets/logo.svg`) — in that case it runs `node scripts/generate-seo.js`, stages whatever it wrote or removed, then runs the full `npm test` suite as a gate. If tests fail, the commit is aborted but the regenerated files stay staged, so fixing the issue and committing again doesn't require rerunning the generator by hand.
+
+Deliberately scoped to `generate-seo.js` only — it's pure and deterministic (no network calls). The scripts that fetch external data (`fetch-images*.js`, `fetch-image-credits.js`, `compute-prices.js`, `apply-images.js`) are **not** run automatically; those need human/agent review before committing, per the sourcing rules above.
+
 ## URLs: always link clean (no `.html`)
 
 Files on disk keep their `.html` names, but **every URL the site publishes is extensionless** — internal `<a href>`s, canonicals, `og:url`s and sitemap entries alike. The host (Cloudflare Pages) 307-redirects `/page.html` → `/page`, so a `.html` href puts a *temporary* redirect on every crawl path: it doesn't consolidate signals the way a 301 does, and it contradicts the clean canonical the destination then declares.
