@@ -179,6 +179,8 @@ const KNOWN_IMAGE_GAPS = {
     // Laowa/OM System additions (2026-08-08) — makers host no usable image URL
     // (laowa-180mm-f45-macro-l got a Commons image 2026-08-15 — removed)
     'laowa-17mm-f4-tilt-shift-l', 'omsystem-100-400mm-f5-63-ii',
+    // 2026-08-16 refresh additions — new/newly-found items, no image sourced yet
+    'lumix-s-26mm-f8', 'leica-dg-45mm-f28-macro', 'laowa-90mm-f28-macro-mft',
     // Older first-party MFT lenses: lumix-g-macro-30mm-f2-8 and
     // lumix-g-7-14mm-f4 resolved 2026-08-15 (Commons).
     'lumix-g-14mm-f2-5-ii', 'lumix-g-fisheye-8mm-f3-5',
