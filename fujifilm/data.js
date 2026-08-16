@@ -792,11 +792,30 @@ const CAMERAS = {
     lensType:'Fixed', lensSpec:'35mm f/4 (28mm equiv.)', filmSims:20,
   },
 
+  'gfx50s-ii': {
+    name:'GFX50S II', series:'GFX', year:2021, discontinued:true,
+    tagline:'51MP Medium Format, First With IBIS',
+    productUrl:'https://www.fujifilm-x.com/en-us/products/cameras/gfx50s-ii/',
+    imageUrl:null,
+    asin:null,
+    prices:{USD:3999,AUD:null,EUR:null,GBP:null,JPY:null,CAD:null,SGD:null},
+    sensorMP:51.4, sensorType:'43.8×32.9mm GFX CMOS', processor:'X-Processor 4',
+    width:150.0, height:104.2, depth:87.2, weight:900, weatherSealed:true,
+    lcdSize:'3.2"', lcdDots:2360, lcdType:'Tilt (3-way)',
+    evfType:'EVF', evfDots:3.69, evfMag:0.77,
+    faceDetection:true, subjectDetection:null,
+    ibis:true, ibisStops:6.5, maxBurst:3,
+    maxVideoRes:'Full HD / 30P', logVideo:false,
+    xApp:true, bluetooth:'4.2', wifi:true,
+    cardSlots:'2× SD UHS-II', batteryLife:455, usbCharging:true,
+    lensType:'Interchangeable', lensSpec:null, filmSims:19,
+  },
+
 };
 
 // Ordered list of camera IDs for dropdowns
 const CAMERA_ORDER = [
-  'gfx100rf','gfx100s-ii','gfx100-ii',
+  'gfx100rf','gfx100s-ii','gfx100-ii','gfx50s-ii',
   'x-half','x-e5','x-m5','x-t30iii','x100vi','x-t50','x-s20','x-h2s','x-h2','x-t5',
   'x-pro3','x-t30ii','x-e4','x100v','x-t4','x-s10','x-t200',
   'x-t30','x-h1','x-t3','x-t100','x-e3','x100f','x-t20','x-pro2',
@@ -805,7 +824,7 @@ const CAMERA_ORDER = [
 ];
 
 const DROPDOWN_GROUPS = [
-  { label: '── GFX (Medium Format) ──',     ids: ['gfx100rf','gfx100s-ii','gfx100-ii'] },
+  { label: '── GFX (Medium Format) ──',     ids: ['gfx100rf','gfx100s-ii','gfx100-ii','gfx50s-ii'] },
   { label: '── Current (2022–2025) ──',     ids: ['x-half','x-e5','x-m5','x-t30iii','x100vi','x-t50','x-s20','x-h2s','x-h2','x-t5'] },
   { label: '── Recent (2019–2021) ──',       ids: ['x-pro3','x-t30ii','x-e4','x100v','x-t4','x-s10','x-t200'] },
   { label: '── Mid-Generation (2017–2019) ──', ids: ['x-t30','x-h1','x-t3','x-t100','x-e3','x100f','x-t20','x-pro2'] },
