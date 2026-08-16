@@ -143,6 +143,46 @@ function checkImageCredit(obj) {
   return errs;
 }
 
+const SOURCE_TIERS = ['T1', 'T2', 'T3', 'T4', 'NEWS'];
+const DATE_RE = /^\d{4}-\d{2}-\d{2}$/;
+
+/**
+ * Validate a single `{url, tier, note, date}` citation object shared by both
+ * `specSources` entries and `priceSource`. `tier` follows the refresh-camera-data
+ * skill's own reliability classes: T1 maker's own site (incl. official regional
+ * sites), T2 independent review/measurement, T3 retailer (price/availability
+ * only), T4 aggregator (tables only), NEWS dated announcement (year only).
+ */
+function checkCitation(c, label) {
+  if (typeof c !== 'object' || c === null || Array.isArray(c)) return [`"${label}" should be an object`];
+  const errs = [];
+  if (typeof c.url !== 'string' || !/^https:\/\//.test(c.url)) errs.push(`"${label}.url" must be an https URL`);
+  if (!SOURCE_TIERS.includes(c.tier)) errs.push(`"${label}.tier" must be one of ${SOURCE_TIERS.join('/')}, got ${JSON.stringify(c.tier)}`);
+  if (c.note != null && (typeof c.note !== 'string' || c.note.trim() === '')) errs.push(`"${label}.note" must be a non-empty string when present`);
+  if (c.date != null && (typeof c.date !== 'string' || !DATE_RE.test(c.date))) errs.push(`"${label}.date" must be YYYY-MM-DD when present`);
+  const FIELDS = ['url', 'tier', 'note', 'date'];
+  for (const k of Object.keys(c)) if (!FIELDS.includes(k)) errs.push(`"${label}.${k}" is not a recognised field`);
+  return errs;
+}
+
+/**
+ * Validate the optional `specSources` (array of citations covering the
+ * weight/dimensions/optical-formula/status block) and `priceSource` (single
+ * citation for the current price) fields. Both are optional and retrofitted
+ * only where a refresh actually recorded where a fact came from — absence
+ * does not mean the data is wrong, just that no durable citation was kept
+ * for it (pre-dates this convention, added 2026-08-15).
+ */
+function checkSources(obj) {
+  const errs = [];
+  if (obj.specSources != null) {
+    if (!Array.isArray(obj.specSources)) errs.push('"specSources" should be an array');
+    else obj.specSources.forEach((c, i) => errs.push(...checkCitation(c, `specSources[${i}]`)));
+  }
+  if (obj.priceSource != null) errs.push(...checkCitation(obj.priceSource, 'priceSource'));
+  return errs;
+}
+
 // ── CAMERA ──────────────────────────────────
 function validateCamera(id, cam, brandSections = []) {
   const e = [];
@@ -198,6 +238,7 @@ function validateCamera(id, cam, brandSections = []) {
   add(checkField(cam, 'imageUrl', { type: 'url', nullable: true, required: false }));
   add(checkImageCredit(cam));
   add(checkAsin(cam));
+  add(checkSources(cam));
 
   // Prices: USD required & positive; other currencies may be null
   // (the UI falls back to the USD launch price for those).
@@ -285,6 +326,7 @@ function validateLens(id, lens) {
   add(checkField(lens, 'imageUrl', { type: 'url', nullable: true, required: false }));
   add(checkImageCredit(lens));
   add(checkAsin(lens));
+  add(checkSources(lens));
 
   add(checkPrices(lens));
 

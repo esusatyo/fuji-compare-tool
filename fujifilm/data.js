@@ -108,6 +108,7 @@ const CAMERAS = {
     imageUrl:'https://fujifilm-x.b-cdn.net/wp-content/uploads/2021/01/x-e4_thumbnail_gkac.jpg?width=400',
     asin:'B08TLVV9S8',
     prices:{USD:849,AUD:1349,EUR:849,GBP:749,JPY:119000,CAD:1149,SGD:1149},
+    specSources: [{ url:'https://www.fujifilm-x.com/global/products/cameras/x-e4/', tier:'T1', note:'"Discontinued" banner confirmed on Fujifilm\'s own product page', date:'2026-08-15' }],
     sensorMP:26.1, sensorType:'X-Trans CMOS 4 BSI', processor:'X-Processor 4',
     width:121.3, height:72.9, depth:32.7, weight:364, weatherSealed:false,
     lcdSize:'3.0"', lcdDots:1040, lcdType:'Tilt (180° selfie)',
@@ -219,6 +220,7 @@ const CAMERAS = {
     imageUrl:'https://fujifilm-x.b-cdn.net/wp-content/uploads/2020/02/x100v_thum.jpg?width=400',
     asin:'B084B3Z8FX',
     prices:{USD:1399,AUD:2199,EUR:1399,GBP:1199,JPY:189000,CAD:1899,SGD:1899},
+    specSources: [{ url:'https://www.fujifilm-x.com/global/products/cameras/x100v/', tier:'T1', note:'"Discontinued" banner confirmed on Fujifilm\'s own product page', date:'2026-08-15' }],
     sensorMP:26.1, sensorType:'X-Trans CMOS 4 BSI', processor:'X-Processor 4',
     width:128, height:74.8, depth:53.3, weight:478, weatherSealed:true,
     lcdSize:'3.0"', lcdDots:1620, lcdType:'Tilt',
@@ -311,6 +313,7 @@ const CAMERAS = {
     imageUrl:'https://fujifilm-x.b-cdn.net/wp-content/uploads/2019/10/xpro3_thum.jpg?width=400',
     asin:'B07Z1T3N59',
     prices:{USD:1799,AUD:2799,EUR:1799,GBP:1549,JPY:249000,CAD:2449,SGD:2449},
+    specSources: [{ url:'https://www.fujifilm-x.com/global/products/cameras/x-pro3/', tier:'T1', note:'page itself does NOT show a "Discontinued" banner (only body without a shipping successor); flip is based on corroborating B&H "no longer available" listing + dated press coverage (Fuji Rumors, thephoblographer) whose exact URLs were not retained during that research pass', date:'2026-08-15' }],
     sensorMP:26.1, sensorType:'X-Trans CMOS 4', processor:'X-Processor 4',
     width:140.5, height:82.8, depth:46.1, weight:497, weatherSealed:true,
     lcdSize:'1.28"', lcdDots:null, lcdType:'Hidden sub-LCD (flip-down)',
@@ -443,6 +446,7 @@ const CAMERAS = {
     imageUrl:'https://fujifilm-x.b-cdn.net/wp-content/uploads/2020/02/x-t4_thum.jpg?width=400',
     asin:'B084ZTV3QK',
     prices:{USD:1699,AUD:2649,EUR:1699,GBP:1449,JPY:219000,CAD:2299,SGD:2299},
+    specSources: [{ url:'https://www.fujifilm-x.com/global/products/cameras/x-t4/', tier:'T1', note:'"Discontinued" banner confirmed on Fujifilm\'s own product page', date:'2026-08-15' }],
     sensorMP:26.1, sensorType:'X-Trans CMOS 4 BSI', processor:'X-Processor 4',
     width:134.6, height:92.8, depth:63.8, weight:607, weatherSealed:true,
     lcdSize:'3.0"', lcdDots:1620, lcdType:'Vari-angle',
@@ -555,6 +559,7 @@ const CAMERAS = {
     imageUrl:'https://fujifilm-x.b-cdn.net/wp-content/uploads/2021/09/x-t30-ii_thum_bxyg.jpg?width=400',
     asin:'B09DTHG54V',
     prices:{USD:999,AUD:1399,EUR:899,GBP:799,JPY:129000,CAD:1249,SGD:1249},
+    specSources: [{ url:'https://www.fujifilm-x.com/global/products/cameras/x-t30-ii/', tier:'T1', note:'"Discontinued" banner confirmed 2026-08-15, though a Fujifilm rep had said the opposite ("not discontinued") in Sept 2025 per PetaPixel — the live official page is treated as the more current signal', date:'2026-08-15' }],
     sensorMP:26.1, sensorType:'X-Trans CMOS 4', processor:'X-Processor 4',
     width:118.4, height:82.8, depth:46.8, weight:383, weatherSealed:false,
     lcdSize:'3.0"', lcdDots:1040, lcdType:'Tilt',
@@ -684,6 +689,7 @@ const CAMERAS = {
     imageUrl:'https://fujifilm-x.b-cdn.net/wp-content/uploads/2020/10/x-s10_product_list-poiu.jpg?width=400',
     asin:'B08KYH5Q24',
     prices:{USD:999,AUD:1549,EUR:999,GBP:899,JPY:139000,CAD:1399,SGD:1349},
+    specSources: [{ url:'https://www.fujifilm-x.com/global/products/cameras/x-s10/', tier:'T1', note:'"Discontinued" banner confirmed on Fujifilm\'s own product page', date:'2026-08-15' }],
     sensorMP:26.1, sensorType:'X-Trans CMOS 4 BSI', processor:'X-Processor 4',
     width:126.0, height:85.1, depth:65.4, weight:465, weatherSealed:false,
     lcdSize:'3.0"', lcdDots:1040, lcdType:'Vari-angle',
@@ -742,6 +748,8 @@ const CAMERAS = {
     imageUrl:null,
     asin:null,
     prices:{USD:8499,AUD:13299,EUR:9799,GBP:7599,JPY:1249000,CAD:10999,SGD:12299},
+    specSources: [{ url:'https://www.fujifilm-x.com/en-us/products/cameras/gfx100-ii/specifications/', tier:'T1', note:'sensor/dimensions/IBIS/burst/video/AF/battery specs', date:'2026-08-15' }],
+    priceSource: { url:'https://www.fujifilm-x.com/en-us/products/cameras/gfx100-ii/', tier:'T1', date:'2026-08-15' },
     sensorMP:102, sensorType:'43.8×32.9mm GFX CMOS II HS', processor:'X-Processor 5',
     width:152.4, height:117.4, depth:98.6, weight:948, weatherSealed:true,
     lcdSize:'3.2"', lcdDots:2360, lcdType:'Tilt (3-way)',
@@ -761,6 +769,8 @@ const CAMERAS = {
     imageUrl:null,
     asin:null,
     prices:{USD:5699,AUD:8899,EUR:6599,GBP:5099,JPY:861000,CAD:7399,SGD:8299},
+    specSources: [{ url:'https://www.fujifilm-x.com/en-us/products/cameras/gfx100s-ii/specifications/', tier:'T1', note:'sensor/dimensions/IBIS/burst/video/AF/battery specs', date:'2026-08-15' }],
+    priceSource: { url:'https://www.fujifilm-x.com/en-us/products/cameras/gfx100s-ii/', tier:'T1', date:'2026-08-15' },
     sensorMP:102, sensorType:'43.8×32.9mm GFX CMOS II', processor:'X-Processor 5',
     width:150.0, height:104.2, depth:87.2, weight:883, weatherSealed:true,
     lcdSize:'3.2"', lcdDots:2360, lcdType:'Tilt (3-way)',
@@ -780,6 +790,8 @@ const CAMERAS = {
     imageUrl:null,
     asin:null,
     prices:{USD:5599,AUD:8699,EUR:6399,GBP:4999,JPY:862000,CAD:7299,SGD:8099},
+    specSources: [{ url:'https://www.fujifilm-x.com/en-us/products/cameras/gfx100rf/specifications/', tier:'T1', note:'sensor/dimensions/burst/video/AF/battery/fixed-lens specs', date:'2026-08-15' }],
+    priceSource: { url:'https://www.fujifilm-x.com/en-us/products/cameras/gfx100rf/', tier:'T1', date:'2026-08-15' },
     sensorMP:102, sensorType:'43.8×32.9mm GFX CMOS II', processor:'X-Processor 5',
     width:133.5, height:90.4, depth:76.5, weight:735, weatherSealed:true,
     lcdSize:'3.15"', lcdDots:2100, lcdType:'Tilt',
@@ -1181,6 +1193,7 @@ const LENSES = {
     imageUrl:'https://fujifilm-x.b-cdn.net/wp-content/uploads/2016/10/5_thum_xf18-55mmf2-8-4-r-lm-ois.jpg?width=400',
     asin:'B0092MD6S0',
     prices:{USD:699,AUD:1089,EUR:649,GBP:549,JPY:104900,CAD:969,SGD:969},
+    specSources: [{ url:'https://www.fujifilm-x.com/global/products/lenses/xf18-55mmf28-4-r-lm-ois/', tier:'T1', note:'Fujifilm\'s own shop shows "out of stock" with no price; corroborated by B&H "No Longer Available" + press (Fuji Rumors, Fstoppers, PetaPixel, Fuji Addict) whose exact URLs were not retained during that research pass', date:'2026-08-15' }],
     productUrl:'https://www.fujifilm-x.com/global/products/lenses/xf18-55mmf28-4-r-lm-ois/',
   },
   'xf-18-120mm-f4-pz': {
@@ -1289,6 +1302,7 @@ const LENSES = {
     elements:12, groups:10, blades:7, afType:'Stepping Motor',
     weatherSealed:false, ois:true, oisStops:3.5, year:2012, discontinued:true,
     prices:{USD:299,AUD:469,EUR:279,GBP:239,JPY:44900,CAD:419,SGD:419},
+    specSources: [{ url:'https://www.fujifilm-x.com/en-us/products/discontinued-lenses/xc16-50mmf35-56-ois-2/', tier:'T1', note:'listed on Fujifilm\'s own discontinued-lenses page', date:'2026-08-15' }],
     productUrl:'https://www.fujifilm-x.com/en-us/products/discontinued-lenses/xc16-50mmf35-56-ois-2/',
   },
   'xc-35mm-f2': {
@@ -1340,6 +1354,8 @@ const LENSES = {
     imageUrl:null,
     asin:null,
     prices:{USD:2999,AUD:4699,EUR:3399,GBP:2699,JPY:468000,CAD:3899,SGD:4299},
+    specSources: [{ url:'https://www.fujifilm-x.com/global/products/lenses/gf23mmf4-r-lm-wr/', tier:'T1', note:'weight/dimensions/optical formula/AF type/weather sealing', date:'2026-08-15' }],
+    priceSource: { url:'https://shopusa.fujifilm-x.com/gf23mmf4-gf23mmf4/', tier:'T1', date:'2026-08-15' },
     productUrl:'https://www.fujifilm-x.com/global/products/lenses/gf23mmf4-r-lm-wr/',
   },
   'gf30mm-f35': {
@@ -1352,6 +1368,8 @@ const LENSES = {
     imageUrl:null,
     asin:null,
     prices:{USD:1949,AUD:2999,EUR:2199,GBP:1799,JPY:220000,CAD:2499,SGD:2799},
+    specSources: [{ url:'https://www.fujifilm-x.com/global/products/lenses/gf30mmf35-r-wr/', tier:'T1', note:'weight/dimensions/optical formula/AF type/weather sealing', date:'2026-08-15' }],
+    priceSource: { url:'https://shopusa.fujifilm-x.com/gf30mmf3-5-r-wr-lens-600021771/', tier:'T1', date:'2026-08-15' },
     productUrl:'https://www.fujifilm-x.com/global/products/lenses/gf30mmf35-r-wr/',
   },
   'gf45mm-f28': {
@@ -1364,6 +1382,8 @@ const LENSES = {
     imageUrl:null,
     asin:null,
     prices:{USD:1949,AUD:2999,EUR:2199,GBP:1799,JPY:304000,CAD:2499,SGD:2799},
+    specSources: [{ url:'https://www.fujifilm-x.com/global/products/lenses/gf45mmf28-r-wr/', tier:'T1', note:'weight/dimensions/optical formula/AF type/weather sealing', date:'2026-08-15' }],
+    priceSource: { url:'https://shopusa.fujifilm-x.com/gf45mmf2-8-gf45mmf2-8/', tier:'T1', date:'2026-08-15' },
     productUrl:'https://www.fujifilm-x.com/global/products/lenses/gf45mmf28-r-wr/',
   },
   'gf50mm-f35': {
@@ -1376,6 +1396,8 @@ const LENSES = {
     imageUrl:null,
     asin:null,
     prices:{USD:1149,AUD:1799,EUR:1299,GBP:999,JPY:147000,CAD:1499,SGD:1699},
+    specSources: [{ url:'https://www.fujifilm-x.com/global/products/lenses/gf50mmf35-r-lm-wr/', tier:'T1', note:'weight/dimensions/optical formula/AF type/weather sealing', date:'2026-08-15' }],
+    priceSource: { url:'https://shopusa.fujifilm-x.com/gf50mmf3-5-gf50mmf3-5/', tier:'T1', date:'2026-08-15' },
     productUrl:'https://www.fujifilm-x.com/global/products/lenses/gf50mmf35-r-lm-wr/',
   },
   'gf55mm-f17': {
@@ -1388,6 +1410,8 @@ const LENSES = {
     imageUrl:null,
     asin:null,
     prices:{USD:2599,AUD:4099,EUR:2999,GBP:2299,JPY:382000,CAD:3399,SGD:3799},
+    specSources: [{ url:'https://www.fujifilm-x.com/global/products/lenses/gf55mmf17-r-wr/', tier:'T1', note:'weight/dimensions/optical formula/AF type/weather sealing', date:'2026-08-15' }],
+    priceSource: { url:'https://shopusa.fujifilm-x.com/gf55mmf1-7-r-wr-lens-600023613/', tier:'T1', date:'2026-08-15' },
     productUrl:'https://www.fujifilm-x.com/global/products/lenses/gf55mmf17-r-wr/',
   },
   'gf63mm-f28': {
@@ -1400,6 +1424,8 @@ const LENSES = {
     imageUrl:null,
     asin:null,
     prices:{USD:1699,AUD:2699,EUR:1999,GBP:1499,JPY:265000,CAD:2199,SGD:2499},
+    specSources: [{ url:'https://www.fujifilm-x.com/global/products/lenses/gf63mmf28-r-wr/', tier:'T1', note:'weight/dimensions/optical formula/AF type/weather sealing', date:'2026-08-15' }],
+    priceSource: { url:'https://shopusa.fujifilm-x.com/gf63mmf2-8-gf63mmf2-8/', tier:'T1', date:'2026-08-15' },
     productUrl:'https://www.fujifilm-x.com/global/products/lenses/gf63mmf28-r-wr/',
   },
   'gf80mm-f17': {
@@ -1412,6 +1438,8 @@ const LENSES = {
     imageUrl:null,
     asin:null,
     prices:{USD:2599,AUD:4099,EUR:2999,GBP:2299,JPY:333000,CAD:3399,SGD:3799},
+    specSources: [{ url:'https://www.fujifilm-x.com/global/products/lenses/gf80mmf17-r-wr/', tier:'T1', note:'weight/dimensions/optical formula/AF type/weather sealing', date:'2026-08-15' }],
+    priceSource: { url:'https://shopusa.fujifilm-x.com/gf80mmf1-7-gf80mmf1-7/', tier:'T1', date:'2026-08-15' },
     productUrl:'https://www.fujifilm-x.com/global/products/lenses/gf80mmf17-r-wr/',
   },
   'gf110mm-f2': {
@@ -1424,6 +1452,8 @@ const LENSES = {
     imageUrl:null,
     asin:null,
     prices:{USD:3199,AUD:4999,EUR:3699,GBP:2899,JPY:499000,CAD:4199,SGD:4599},
+    specSources: [{ url:'https://www.fujifilm-x.com/global/products/lenses/gf110mmf2-r-lm-wr/', tier:'T1', note:'weight/dimensions/optical formula/AF type/weather sealing', date:'2026-08-15' }],
+    priceSource: { url:'https://shopusa.fujifilm-x.com/gf110mmf2-gf110mmf2/', tier:'T1', date:'2026-08-15' },
     productUrl:'https://www.fujifilm-x.com/global/products/lenses/gf110mmf2-r-lm-wr/',
   },
   'gf120mm-f4-macro': {
@@ -1436,6 +1466,8 @@ const LENSES = {
     imageUrl:null,
     asin:null,
     prices:{USD:3099,AUD:4799,EUR:3599,GBP:2799,JPY:483000,CAD:3999,SGD:4499},
+    specSources: [{ url:'https://www.fujifilm-x.com/global/products/lenses/gf120mmf4-r-lm-ois-wr-macro/', tier:'T1', note:'weight/dimensions/optical formula/AF type/weather sealing', date:'2026-08-15' }],
+    priceSource: { url:'https://shopusa.fujifilm-x.com/gf120mmf4-gf120mmf4/', tier:'T1', date:'2026-08-15' },
     productUrl:'https://www.fujifilm-x.com/global/products/lenses/gf120mmf4-r-lm-ois-wr-macro/',
   },
   'gf250mm-f4': {
@@ -1448,6 +1480,8 @@ const LENSES = {
     imageUrl:null,
     asin:null,
     prices:{USD:3799,AUD:5899,EUR:4399,GBP:3399,JPY:429000,CAD:4899,SGD:5499},
+    specSources: [{ url:'https://www.fujifilm-x.com/global/products/lenses/gf250mmf4-r-lm-ois-wr/', tier:'T1', note:'weight/dimensions/optical formula/AF type/weather sealing', date:'2026-08-15' }],
+    priceSource: { url:'https://shopusa.fujifilm-x.com/gf250mmf4-gf250mmf4/', tier:'T1', date:'2026-08-15' },
     productUrl:'https://www.fujifilm-x.com/global/products/lenses/gf250mmf4-r-lm-ois-wr/',
   },
   'gf500mm-f56': {
@@ -1460,6 +1494,8 @@ const LENSES = {
     imageUrl:null,
     asin:null,
     prices:{USD:3999,AUD:6199,EUR:4599,GBP:3599,JPY:560000,CAD:5199,SGD:5799},
+    specSources: [{ url:'https://www.fujifilm-x.com/global/products/lenses/gf500mmf56-r-lm-ois-wr/', tier:'T1', note:'weight/dimensions/optical formula/AF type/weather sealing', date:'2026-08-15' }],
+    priceSource: { url:'https://shopusa.fujifilm-x.com/gf500mmf5-6-r-lm-ois-wr-600023753/', tier:'T1', date:'2026-08-15' },
     productUrl:'https://www.fujifilm-x.com/global/products/lenses/gf500mmf56-r-lm-ois-wr/',
   },
 
@@ -1474,6 +1510,8 @@ const LENSES = {
     imageUrl:null,
     asin:null,
     prices:{USD:2899,AUD:4499,EUR:3299,GBP:2599,JPY:406000,CAD:3799,SGD:4199},
+    specSources: [{ url:'https://www.fujifilm-x.com/en-us/products/lenses/gf20-35mmf4-r-wr/', tier:'T1', note:'weight/dimensions/optical formula/AF type/weather sealing', date:'2026-08-15' }],
+    priceSource: { url:'https://shopusa.fujifilm-x.com/gf20-35mmf4-r-wr-lens-600023098/', tier:'T1', date:'2026-08-15' },
     productUrl:'https://www.fujifilm-x.com/en-us/products/lenses/gf20-35mmf4-r-wr/',
   },
   'gf32-64mm-f4': {
@@ -1486,6 +1524,8 @@ const LENSES = {
     imageUrl:null,
     asin:null,
     prices:{USD:2599,AUD:4099,EUR:2999,GBP:2299,JPY:405000,CAD:3399,SGD:3799},
+    specSources: [{ url:'https://www.fujifilm-x.com/en-us/products/lenses/gf32-64mmf4-r-lm-wr/', tier:'T1', note:'weight/dimensions/optical formula/AF type/weather sealing', date:'2026-08-15' }],
+    priceSource: { url:'https://shopusa.fujifilm-x.com/gf32-64mmf4-gf32-64mmf4/', tier:'T1', date:'2026-08-15' },
     productUrl:'https://www.fujifilm-x.com/en-us/products/lenses/gf32-64mmf4-r-lm-wr/',
   },
   'gf35-70mm-f45-56': {
@@ -1498,6 +1538,8 @@ const LENSES = {
     imageUrl:null,
     asin:null,
     prices:{USD:1149,AUD:1799,EUR:1299,GBP:999,JPY:147000,CAD:1499,SGD:1699},
+    specSources: [{ url:'https://www.fujifilm-x.com/en-us/products/lenses/gf35-70mmf45-56-wr/', tier:'T1', note:'weight/dimensions/optical formula/AF type/weather sealing', date:'2026-08-15' }],
+    priceSource: { url:'https://shopusa.fujifilm-x.com/gf35-70mmf4-5-5-6-gf35-70mmf4-5-5-6/', tier:'T1', date:'2026-08-15' },
     productUrl:'https://www.fujifilm-x.com/en-us/products/lenses/gf35-70mmf45-56-wr/',
   },
   'gf45-100mm-f4': {
@@ -1510,6 +1552,8 @@ const LENSES = {
     imageUrl:null,
     asin:null,
     prices:{USD:2599,AUD:4099,EUR:2999,GBP:2299,JPY:312000,CAD:3399,SGD:3799},
+    specSources: [{ url:'https://www.fujifilm-x.com/en-us/products/lenses/gf45-100mmf4-r-lm-ois-wr/', tier:'T1', note:'weight/dimensions/optical formula/AF type/weather sealing', date:'2026-08-15' }],
+    priceSource: { url:'https://shopusa.fujifilm-x.com/gf45-100mmf4-gf45-100mmf4/', tier:'T1', date:'2026-08-15' },
     productUrl:'https://www.fujifilm-x.com/en-us/products/lenses/gf45-100mmf4-r-lm-ois-wr/',
   },
   'gf100-200mm-f56': {
@@ -1522,6 +1566,8 @@ const LENSES = {
     imageUrl:null,
     asin:null,
     prices:{USD:2299,AUD:3599,EUR:2599,GBP:2099,JPY:260000,CAD:2999,SGD:3299},
+    specSources: [{ url:'https://www.fujifilm-x.com/en-us/products/lenses/gf100-200mmf56-r-lm-ois-wr/', tier:'T1', note:'weight/dimensions/optical formula/AF type/weather sealing', date:'2026-08-15' }],
+    priceSource: { url:'https://shopusa.fujifilm-x.com/gf100-200mmf5-6-gf100-200mmf5-6/', tier:'T1', date:'2026-08-15' },
     productUrl:'https://www.fujifilm-x.com/en-us/products/lenses/gf100-200mmf56-r-lm-ois-wr/',
   },
 
@@ -1536,6 +1582,8 @@ const LENSES = {
     imageUrl:null,
     asin:null,
     prices:{USD:4499,AUD:6999,EUR:5199,GBP:3999,JPY:661000,CAD:5799,SGD:6499},
+    specSources: [{ url:'https://www.fujifilm-x.com/en-us/products/lenses/gf30mmf56-ts/', tier:'T1', note:'weight/dimensions/optical formula/AF type/weather sealing', date:'2026-08-15' }],
+    priceSource: { url:'https://shopusa.fujifilm-x.com/gf30mmf5-6-t-s-lens-600023617/', tier:'T1', date:'2026-08-15' },
     productUrl:'https://www.fujifilm-x.com/en-us/products/lenses/gf30mmf56-ts/',
   },
   'gf110mm-f56-ts-macro': {
@@ -1548,6 +1596,8 @@ const LENSES = {
     imageUrl:null,
     asin:null,
     prices:{USD:3999,AUD:6199,EUR:4599,GBP:3599,JPY:588000,CAD:5199,SGD:5799},
+    specSources: [{ url:'https://www.fujifilm-x.com/en-us/products/lenses/gf110mmf56-ts-macro/', tier:'T1', note:'weight/dimensions/optical formula/AF type/weather sealing', date:'2026-08-15' }],
+    priceSource: { url:'https://shopusa.fujifilm-x.com/gf110mmf5-6ts-gf110mmf5-6ts/', tier:'T1', date:'2026-08-15' },
     productUrl:'https://www.fujifilm-x.com/en-us/products/lenses/gf110mmf56-ts-macro/',
   },
 
@@ -1562,6 +1612,7 @@ const LENSES = {
     imageUrl:'https://www.sigma-global.com/lenses/c017_16_14_product_img01.png',
     asin:'B09T78KGRP',
     prices:{USD:539,AUD:839,EUR:503,GBP:443,JPY:80900,CAD:755,SGD:755},
+    specSources: [{ url:'https://www.sigma-global.com/en/lenses/c017_16_14/', tier:'T1', note:'`year` corrected to this lens\'s actual X-mount launch date (was previously copied from its original, usually Sony E, mount release)', date:'2026-08-15' }],
     productUrl:'https://www.sigma-global.com/en/lenses/c017_16_14/',
   },
   'sigma-23mm-f14': {
@@ -1574,6 +1625,7 @@ const LENSES = {
     imageUrl:'https://www.sigma-global.com/lenses/c023_23_14_product_img01.png',
     asin:'B0C1VKPXP6',
     prices:{USD:659,AUD:1019,EUR:611,GBP:527,JPY:98900,CAD:899,SGD:899},
+    specSources: [{ url:'https://www.sigma-global.com/en/lenses/c023_23_14/', tier:'T1', note:'`year` corrected to this lens\'s actual X-mount launch date (was previously copied from its original, usually Sony E, mount release)', date:'2026-08-15' }],
     productUrl:'https://www.sigma-global.com/en/lenses/c023_23_14/',
   },
   'sigma-30mm-f14': {
@@ -1586,6 +1638,7 @@ const LENSES = {
     imageUrl:'https://www.sigma-global.com/lenses/c016_30_14_product_img01.png',
     asin:'B09T6N7HRT',
     prices:{USD:419,AUD:654,EUR:394,GBP:333,JPY:62900,CAD:580,SGD:580},
+    specSources: [{ url:'https://www.sigma-global.com/en/lenses/c016_30_14/', tier:'T1', note:'`year` corrected to this lens\'s actual X-mount launch date (was previously copied from its original, usually Sony E, mount release)', date:'2026-08-15' }],
     productUrl:'https://www.sigma-global.com/en/lenses/c016_30_14/',
   },
   'sigma-56mm-f14': {
@@ -1598,6 +1651,7 @@ const LENSES = {
     imageUrl:'https://www.sigma-global.com/lenses/c018_56_14_product_img01.png',
     asin:'B09T78FM8M',
     prices:{USD:559,AUD:872,EUR:520,GBP:455,JPY:83900,CAD:767,SGD:767},
+    specSources: [{ url:'https://www.sigma-global.com/en/lenses/c018_56_14/', tier:'T1', note:'`year` corrected to this lens\'s actual X-mount launch date (was previously copied from its original, usually Sony E, mount release)', date:'2026-08-15' }],
     productUrl:'https://www.sigma-global.com/en/lenses/c018_56_14/',
   },
   'sigma-10-18mm-f28': {
@@ -1610,6 +1664,7 @@ const LENSES = {
     imageUrl:'https://www.sigma-global.com/lenses/c023_10_18_28_product_img01.png',
     asin:'B0CJVRTY76',
     prices:{USD:729,AUD:1136,EUR:677,GBP:573,JPY:109400,CAD:1011,SGD:1011},
+    specSources: [{ url:'https://www.sigma-global.com/en/lenses/c023_10_18_28/', tier:'T1', note:'`year` corrected to this lens\'s actual X-mount launch date (was previously copied from its original, usually Sony E, mount release)', date:'2026-08-15' }],
     productUrl:'https://www.sigma-global.com/en/lenses/c023_10_18_28/',
   },
   'sigma-18-50mm-f28': {
@@ -1634,6 +1689,7 @@ const LENSES = {
     imageUrl:'https://www.sigma-global.com/lenses/c020_100_400_5_63_product_img02.png',
     asin:'B0CH1JSJ6V',
     prices:{USD:1049,AUD:1626,EUR:996,GBP:839,JPY:157400,CAD:1469,SGD:1469},
+    specSources: [{ url:'https://www.sigma-global.com/en/lenses/c020_100_400_5_63/', tier:'T1', note:'`year` corrected to this lens\'s actual X-mount launch date (was previously copied from its original, usually Sony E, mount release)', date:'2026-08-15' }],
     productUrl:'https://www.sigma-global.com/en/lenses/c020_100_400_5_63/',
   },
   'sigma-12mm-f14': {
@@ -1646,6 +1702,8 @@ const LENSES = {
     imageUrl:null,
     asin:null,
     prices:{USD:629,AUD:999,EUR:699,GBP:599,JPY:97000,CAD:799,SGD:899},
+    specSources: [{ url:'https://www.sigma-global.com/en/lenses/c025_12_14/', tier:'T1', note:'weight/dimensions/optical formula/mount confirmation', date:'2026-08-15' }],
+    priceSource: { url:'https://www.sigma-global.com/en/lenses/c025_12_14/', tier:'T1', date:'2026-08-15' },
     productUrl:'https://www.sigma-global.com/en/lenses/c025_12_14/',
   },
   'sigma-15mm-f14': {
@@ -1658,6 +1716,8 @@ const LENSES = {
     imageUrl:null,
     asin:null,
     prices:{USD:579,AUD:899,EUR:699,GBP:499,JPY:90000,CAD:799,SGD:799},
+    specSources: [{ url:'https://www.sigma-global.com/en/lenses/c026_15_14/', tier:'T1', note:'weight/dimensions/optical formula/mount confirmation', date:'2026-08-15' }],
+    priceSource: { url:'https://www.sigma-global.com/en/lenses/c026_15_14/', tier:'T1', date:'2026-08-15' },
     productUrl:'https://www.sigma-global.com/en/lenses/c026_15_14/',
   },
   'sigma-16-300mm-f35-67': {
@@ -1670,6 +1730,8 @@ const LENSES = {
     imageUrl:null,
     asin:null,
     prices:{USD:699,AUD:1099,EUR:799,GBP:599,JPY:108000,CAD:899,SGD:999},
+    specSources: [{ url:'https://www.sigma-global.com/en/lenses/c025_16_300_35_67/', tier:'T1', note:'weight/dimensions/optical formula/mount confirmation', date:'2026-08-15' }],
+    priceSource: { url:'https://www.sigma-global.com/en/lenses/c025_16_300_35_67/', tier:'T1', date:'2026-08-15' },
     productUrl:'https://www.sigma-global.com/en/lenses/c025_16_300_35_67/',
   },
   'sigma-17-40mm-f18': {
@@ -1682,6 +1744,8 @@ const LENSES = {
     imageUrl:null,
     asin:null,
     prices:{USD:919,AUD:1399,EUR:1099,GBP:799,JPY:142000,CAD:1199,SGD:1299},
+    specSources: [{ url:'https://www.sigma-global.com/en/lenses/a025_17_40_18/', tier:'T1', note:'weight/dimensions/optical formula/mount confirmation', date:'2026-08-15' }],
+    priceSource: { url:'https://www.sigma-global.com/en/lenses/a025_17_40_18/', tier:'T1', date:'2026-08-15' },
     productUrl:'https://www.sigma-global.com/en/lenses/a025_17_40_18/',
   },
 
@@ -1696,6 +1760,7 @@ const LENSES = {
     imageUrl:'https://www.tamron.com/global/consumer/pc_file/file/b060rf_ogp.webp',
     asin:'B0C5RGRHMJ',
     prices:{USD:829,AUD:1293,EUR:768,GBP:658,JPY:124400,CAD:1146,SGD:1146},
+    specSources: [{ url:'https://www.tamron.com/global/consumer/lenses/b060/', tier:'T1', note:'`year` corrected to this lens\'s actual X-mount launch date (was previously copied from its original, usually Sony E, mount release)', date:'2026-08-15' }],
     productUrl:'https://www.tamron.com/global/consumer/lenses/b060/',
   },
   'tamron-17-70mm-f28': {
@@ -1708,6 +1773,7 @@ const LENSES = {
     imageUrl:'https://www.tamron.com/global/consumer/pc_file/file/b070_thumb.webp',
     asin:'B0B3MNLZH3',
     prices:{USD:799,AUD:1249,EUR:749,GBP:649,JPY:119900,CAD:1099,SGD:1099},
+    specSources: [{ url:'https://www.tamron.com/global/consumer/lenses/b070/', tier:'T1', note:'`year` corrected to this lens\'s actual X-mount launch date (was previously copied from its original, usually Sony E, mount release)', date:'2026-08-15' }],
     productUrl:'https://www.tamron.com/global/consumer/lenses/b070/',
   },
   'tamron-18-300mm-f35-63': {
@@ -1720,6 +1786,7 @@ const LENSES = {
     imageUrl:'https://www.tamron.com/global/consumer/pc_file/file/b061_ogp_new.jpg',
     asin:'B09HL27Y5S',
     prices:{USD:699,AUD:1087,EUR:648,GBP:556,JPY:104900,CAD:969,SGD:969},
+    specSources: [{ url:'https://www.tamron.com/global/consumer/lenses/b061/', tier:'T1', note:'`year` corrected to this lens\'s actual X-mount launch date (was previously copied from its original, usually Sony E, mount release)', date:'2026-08-15' }],
     productUrl:'https://www.tamron.com/global/consumer/lenses/b061/',
   },
   'tamron-150-500mm-f5-67': {
@@ -1732,6 +1799,7 @@ const LENSES = {
     imageUrl:'https://www.tamron.com/global/consumer/pc_file/file/a057_thumb.webp',
     asin:'B0BJ4939R1',
     prices:{USD:1499,AUD:2325,EUR:1392,GBP:1188,JPY:224900,CAD:2067,SGD:2067},
+    specSources: [{ url:'https://www.tamron.com/global/consumer/lenses/a057x/', tier:'T1', note:'`year` corrected to this lens\'s actual X-mount launch date (was previously copied from its original, usually Sony E, mount release)', date:'2026-08-15' }],
     productUrl:'https://www.tamron.com/global/consumer/lenses/a057x/',
   },
 
@@ -1746,6 +1814,7 @@ const LENSES = {
     imageUrl:'https://cdn.shopify.com/s/files/1/0104/0380/7298/files/AF_13mm_F1.4_XF-134471.png',
     asin:'B0BF9TTY5C',
     prices:{USD:486,AUD:759,EUR:452,GBP:383,JPY:72900,CAD:674,SGD:674},
+    specSources: [{ url:'https://viltrox.com/products/13mm-f14-af-lens-for-fujifilm-x-mount-camera-models', tier:'T1', note:'`year` corrected to this lens\'s actual X-mount launch date (was previously copied from its original, usually Sony E, mount release)', date:'2026-08-15' }],
     productUrl:'https://viltrox.com/products/13mm-f14-af-lens-for-fujifilm-x-mount-camera-models',
   },
   'viltrox-23mm-f14': {
@@ -1782,6 +1851,7 @@ const LENSES = {
     imageUrl:'https://cdn.shopify.com/s/files/1/0104/0380/7298/files/AF56mm_F1.4_XF-789704.png',
     asin:'B08JLRKTS1',
     prices:{USD:299,AUD:468,EUR:280,GBP:237,JPY:44900,CAD:411,SGD:411},
+    specSources: [{ url:'https://viltrox.com/products/viltrox-af-56mm-f14-x-mount-lens', tier:'T1', note:'`year` corrected to this lens\'s actual X-mount launch date (was previously copied from its original, usually Sony E, mount release)', date:'2026-08-15' }],
     productUrl:'https://viltrox.com/products/viltrox-af-56mm-f14-x-mount-lens',
   },
   'viltrox-85mm-f18': {
@@ -1806,6 +1876,8 @@ const LENSES = {
     imageUrl:'https://cdn.shopify.com/s/files/1/0104/0380/7298/files/AF85mm_F1.8_II_XF-373650.png',
     asin:null,
     prices:{USD:399,AUD:599,EUR:499,GBP:399,JPY:60000,CAD:499,SGD:599},
+    specSources: [{ url:'https://viltrox.com/products/viltrox-85mm-f1-8-lens-of-lighter-weight-for-fuji-x-mount', tier:'T1', note:'product page, elements/groups redesign confirmation', date:'2026-08-15' }, { url:'https://cdn.shopify.com/s/files/1/0104/0380/7298/files/AF_85mm_F1.8_II_XF_Manual_2aab47d7-41f3-442f-91ac-8c08dded95e6.pdf', tier:'T1', note:'official X-mount manual: weight/dimensions/MFD, chosen over an aggregator page that merged specs across mounts', date:'2026-08-15' }],
+    priceSource: { url:'https://viltrox.com/products/viltrox-85mm-f1-8-lens-of-lighter-weight-for-fuji-x-mount', tier:'T1', date:'2026-08-15' },
     productUrl:'https://viltrox.com/products/viltrox-85mm-f1-8-lens-of-lighter-weight-for-fuji-x-mount',
   },
   'viltrox-75mm-f12': {
@@ -1818,6 +1890,7 @@ const LENSES = {
     imageUrl:'https://cdn.shopify.com/s/files/1/0104/0380/7298/files/AF_75mm_F1.2_Pro_XF_13762c0e-3a85-406c-acb1-5f0ce5c78ee9.png',
     asin:'B0BTYQTGSP',
     prices:{USD:580,AUD:902,EUR:544,GBP:464,JPY:87000,CAD:803,SGD:803},
+    specSources: [{ url:'https://viltrox.com/products/75mm-f12-xf-lens', tier:'T1', note:'`year` corrected to this lens\'s actual X-mount launch date (was previously copied from its original, usually Sony E, mount release)', date:'2026-08-15' }],
     productUrl:'https://viltrox.com/products/75mm-f12-xf-lens',
   },
   'viltrox-27mm-f12': {
@@ -1882,6 +1955,8 @@ const LENSES = {
     imageUrl:null,
     asin:null,
     prices:{USD:199,AUD:299,EUR:199,GBP:199,JPY:31000,CAD:299,SGD:299},
+    specSources: [{ url:'https://viltrox.com/products/af-9mm-f2-8-xf', tier:'T1', note:'weight/dimensions/optical formula/mount confirmation', date:'2026-08-15' }],
+    priceSource: { url:'https://viltrox.com/products/af-9mm-f2-8-xf', tier:'T1', date:'2026-08-15' },
     productUrl:'https://viltrox.com/products/af-9mm-f2-8-xf',
   },
   'viltrox-air-15mm-f17': {
@@ -1894,6 +1969,8 @@ const LENSES = {
     imageUrl:null,
     asin:null,
     prices:{USD:239,AUD:399,EUR:299,GBP:199,JPY:37000,CAD:299,SGD:299},
+    specSources: [{ url:'https://viltrox.com/products/af-15mm-f1-7-xf', tier:'T1', note:'weight/dimensions/optical formula/mount confirmation', date:'2026-08-15' }],
+    priceSource: { url:'https://viltrox.com/products/af-15mm-f1-7-xf', tier:'T1', date:'2026-08-15' },
     productUrl:'https://viltrox.com/products/af-15mm-f1-7-xf',
   },
   'viltrox-28mm-f45-chip': {
@@ -1906,6 +1983,8 @@ const LENSES = {
     imageUrl:null,
     asin:null,
     prices:{USD:99,AUD:199,EUR:99,GBP:99,JPY:15000,CAD:99,SGD:99},
+    specSources: [{ url:'https://viltrox.com/products/af-28mm-f4-5-x', tier:'T1', note:'weight/dimensions/optical formula/mount confirmation', date:'2026-08-15' }],
+    priceSource: { url:'https://viltrox.com/products/af-28mm-f4-5-x', tier:'T1', date:'2026-08-15' },
     productUrl:'https://viltrox.com/products/af-28mm-f4-5-x',
   },
   'viltrox-56mm-f12': {
@@ -1918,6 +1997,8 @@ const LENSES = {
     imageUrl:null,
     asin:null,
     prices:{USD:580,AUD:899,EUR:699,GBP:499,JPY:89000,CAD:799,SGD:799},
+    specSources: [{ url:'https://viltrox.com/products/af-56mm-f1-2-xf', tier:'T1', note:'weight/dimensions/optical formula/mount confirmation', date:'2026-08-15' }],
+    priceSource: { url:'https://viltrox.com/products/af-56mm-f1-2-xf', tier:'T1', date:'2026-08-15' },
     productUrl:'https://viltrox.com/products/af-56mm-f1-2-xf',
   },
   'viltrox-75mm-f18-evo': {
@@ -1930,6 +2011,8 @@ const LENSES = {
     imageUrl:null,
     asin:null,
     prices:{USD:329,AUD:499,EUR:399,GBP:299,JPY:51000,CAD:399,SGD:499},
+    specSources: [{ url:'https://viltrox.com/products/af-75mm-f1-8-xf', tier:'T1', note:'weight/dimensions/optical formula/mount confirmation', date:'2026-08-15' }],
+    priceSource: { url:'https://viltrox.com/products/af-75mm-f1-8-xf', tier:'T1', date:'2026-08-15' },
     productUrl:'https://viltrox.com/products/af-75mm-f1-8-xf',
   },
   'viltrox-90mm-f22-evo': {
@@ -1942,6 +2025,8 @@ const LENSES = {
     imageUrl:null,
     asin:null,
     prices:{USD:369,AUD:599,EUR:399,GBP:299,JPY:58000,CAD:499,SGD:499},
+    specSources: [{ url:'https://viltrox.com/products/af-90mm-f2-2-xf', tier:'T1', note:'weight/dimensions/optical formula/mount confirmation', date:'2026-08-15' }],
+    priceSource: { url:'https://viltrox.com/products/af-90mm-f2-2-xf', tier:'T1', date:'2026-08-15' },
     productUrl:'https://viltrox.com/products/af-90mm-f2-2-xf',
   },
 
@@ -1968,6 +2053,7 @@ const LENSES = {
     imageUrl:'https://cdn.shopify.com/s/files/1/0433/2224/5282/files/1_9e55fda4-0d75-4253-8ca7-0e669462dffd.jpg',
     asin:'B0CF29QRX7',
     prices:{USD:125,AUD:194,EUR:119,GBP:100,JPY:18800,CAD:175,SGD:175},
+    specSources: [{ url:'https://ttartisan.com/?af-lens%2FAF-35-II.html=', tier:'T1', note:'`year` corrected to this lens\'s actual X-mount launch date (was previously copied from its original, usually Sony E, mount release)', date:'2026-08-15' }],
     productUrl:'https://ttartisan.com/?af-lens%2FAF-35-II.html=',
   },
   'ttartisan-56mm-f18': {
@@ -2058,6 +2144,8 @@ const LENSES = {
     imageUrl:null,
     asin:null,
     prices:{USD:127,AUD:199,EUR:99,GBP:99,JPY:19000,CAD:199,SGD:199},
+    specSources: [{ url:'https://ttartisan.store/products/ttartisan-af-23mm-f1-8', tier:'T1', note:'mount/price confirmation', date:'2026-08-15' }, { url:'https://www.bhphotovideo.com/c/product/1874404-REG/ttartisan_af2318_x_b_af_23mm_f_1_8_lens.html/specs', tier:'T3', note:'weight/dimensions/optical formula (SKU AF2318-X-B)', date:'2026-08-15' }],
+    priceSource: { url:'https://ttartisan.store/products/ttartisan-af-23mm-f1-8', tier:'T1', date:'2026-08-15' },
     productUrl:'https://ttartisan.store/products/ttartisan-af-23mm-f1-8',
   },
   'ttartisan-air-17mm-f18': {
@@ -2070,6 +2158,8 @@ const LENSES = {
     imageUrl:null,
     asin:null,
     prices:{USD:148,AUD:199,EUR:199,GBP:99,JPY:23000,CAD:199,SGD:199},
+    specSources: [{ url:'https://ttartisan.store/products/af-17mm-f1-8-air', tier:'T1', note:'mount/price confirmation', date:'2026-08-15' }, { url:'https://www.bhphotovideo.com/c/product/1964451-REG/ttartisan_af1718_x_b_af_17mm_f_1_8_air.html/specs', tier:'T3', note:'dimensions/optical formula (SKU AF1718-X-B)', date:'2026-08-15' }],
+    priceSource: { url:'https://ttartisan.store/products/af-17mm-f1-8-air', tier:'T1', date:'2026-08-15' },
     productUrl:'https://ttartisan.store/products/af-17mm-f1-8-air',
   },
   'ttartisan-14mm-f35': {
@@ -2082,6 +2172,8 @@ const LENSES = {
     imageUrl:null,
     asin:null,
     prices:{USD:129,AUD:199,EUR:99,GBP:99,JPY:19000,CAD:199,SGD:199},
+    specSources: [{ url:'https://ttartisan.store/products/ttartisan-af-14mm-f3-5', tier:'T1', note:'mount/price confirmation', date:'2026-08-15' }, { url:'https://www.bhphotovideo.com/c/product/1904555-REG/ttartisan_af1435_x_b_af_14mm_f_3_5_lens.html/specs', tier:'T3', note:'weight/dimensions/optical formula (SKU AF1435-X-B)', date:'2026-08-15' }],
+    priceSource: { url:'https://ttartisan.store/products/ttartisan-af-14mm-f3-5', tier:'T1', date:'2026-08-15' },
     productUrl:'https://ttartisan.store/products/ttartisan-af-14mm-f3-5',
   },
   'ttartisan-25mm-f2': {
@@ -2094,6 +2186,8 @@ const LENSES = {
     imageUrl:null,
     asin:null,
     prices:{USD:64,AUD:99,EUR:99,GBP:99,JPY:9000,CAD:99,SGD:99},
+    specSources: [{ url:'https://ttartisan.store/products/aps-c-25mm-f2', tier:'T1', note:'mount/price/optical formula confirmation', date:'2026-08-15' }, { url:'https://www.pergear.com/products/ttartisan-25mm-f2', tier:'T3', note:'dimensions (ø x L: 59 x 31mm) — not published on the maker\'s own page', date:'2026-08-15' }],
+    priceSource: { url:'https://ttartisan.store/products/aps-c-25mm-f2', tier:'T1', date:'2026-08-15' },
     productUrl:'https://ttartisan.store/products/aps-c-25mm-f2',
   },
   'ttartisan-35mm-f095': {
@@ -2106,6 +2200,8 @@ const LENSES = {
     imageUrl:null,
     asin:null,
     prices:{USD:210,AUD:299,EUR:199,GBP:199,JPY:29000,CAD:299,SGD:299},
+    specSources: [{ url:'https://ttartisan.store/products/aps-c-35mm-f0-95', tier:'T1', note:'mount/price/optical formula confirmation', date:'2026-08-15' }, { url:'https://www.pergear.com/products/ttartisan-35mm-f0-95', tier:'T3', note:'dimensions (ø x L: 45 x 55mm) — not published on the maker\'s own page', date:'2026-08-15' }],
+    priceSource: { url:'https://ttartisan.store/products/aps-c-35mm-f0-95', tier:'T1', date:'2026-08-15' },
     productUrl:'https://ttartisan.store/products/aps-c-35mm-f0-95',
   },
   'ttartisan-50mm-f095': {
@@ -2118,6 +2214,8 @@ const LENSES = {
     imageUrl:null,
     asin:null,
     prices:{USD:218,AUD:299,EUR:299,GBP:199,JPY:28000,CAD:299,SGD:299},
+    specSources: [{ url:'https://ttartisan.store/products/aps-c-50mm-f0-95', tier:'T1', note:'mount/price/optical formula confirmation', date:'2026-08-15' }, { url:'https://www.pergear.com/products/ttartisan-50mm-f0-95', tier:'T3', note:'dimensions (73x72mm) — not published on the maker\'s own page', date:'2026-08-15' }],
+    priceSource: { url:'https://ttartisan.store/products/aps-c-50mm-f0-95', tier:'T1', date:'2026-08-15' },
     productUrl:'https://ttartisan.store/products/aps-c-50mm-f0-95',
   },
 
@@ -2196,6 +2294,8 @@ const LENSES = {
     imageUrl:null,
     asin:null,
     prices:{USD:125,AUD:199,EUR:99,GBP:99,JPY:20000,CAD:199,SGD:199},
+    specSources: [{ url:'https://www.bhphotovideo.com/c/product/1945500-REG/7artisans_af25f18b_x_aps_c_25mm_f_1_8_af_lens.html/specs', tier:'T3', note:'weight/dimensions/optical formula (BH# 7AAF25F18BXA); 7artisans.store’s own page has no per-lens spec table', date:'2026-08-15' }, { url:'https://7artisans.store/products/af-25-35-50mm-f1-8-aps-c-lens-for-e-fx-z', tier:'T1', note:'price/mount confirmation', date:'2026-08-15' }],
+    priceSource: { url:'https://www.bhphotovideo.com/c/product/1945500-REG/7artisans_af25f18b_x_aps_c_25mm_f_1_8_af_lens.html', tier:'T1', date:'2026-08-15' },
     productUrl:'https://www.bhphotovideo.com/c/product/1945500-REG/7artisans_af25f18b_x_aps_c_25mm_f_1_8_af_lens.html',
   },
   '7artisans-35mm-f18-lite': {
@@ -2208,6 +2308,8 @@ const LENSES = {
     imageUrl:null,
     asin:null,
     prices:{USD:125,AUD:199,EUR:99,GBP:99,JPY:20000,CAD:199,SGD:199},
+    specSources: [{ url:'https://www.bhphotovideo.com/c/product/1945501-REG/7artisans_af35f18b_x_aps_c_35mm_f_1_8_af_lens.html/specs', tier:'T3', note:'weight/dimensions/optical formula (BH# 7AAF35F18BXA)', date:'2026-08-15' }, { url:'https://7artisans.store/products/af-25-35-50mm-f1-8-aps-c-lens-for-e-fx-z', tier:'T1', note:'price/mount confirmation', date:'2026-08-15' }],
+    priceSource: { url:'https://www.bhphotovideo.com/c/product/1945501-REG/7artisans_af35f18b_x_aps_c_35mm_f_1_8_af_lens.html', tier:'T1', date:'2026-08-15' },
     productUrl:'https://www.bhphotovideo.com/c/product/1945501-REG/7artisans_af35f18b_x_aps_c_35mm_f_1_8_af_lens.html',
   },
 
@@ -2234,6 +2336,8 @@ const LENSES = {
     imageUrl:null,
     asin:null,
     prices:{USD:499,AUD:799,EUR:599,GBP:399,JPY:73000,CAD:599,SGD:699},
+    specSources: [{ url:'https://samyangus.com/products/75mm-f1-8-af-aps-c-compact-telephoto-fuji-x', tier:'T1', note:'weight/dimensions/optical formula/price (SKU SYIO75AF-FX)', date:'2026-08-15' }],
+    priceSource: { url:'https://samyangus.com/products/75mm-f1-8-af-aps-c-compact-telephoto-fuji-x', tier:'T1', date:'2026-08-15' },
     productUrl:'https://samyangus.com/products/75mm-f1-8-af-aps-c-compact-telephoto-fuji-x',
   },
   'samyang-8mm-f28': {
@@ -2246,6 +2350,8 @@ const LENSES = {
     imageUrl:null,
     asin:null,
     prices:{USD:349,AUD:499,EUR:399,GBP:299,JPY:54000,CAD:499,SGD:499},
+    specSources: [{ url:'https://samyangus.com/products/8mm-f2-8-fisheye', tier:'T1', note:'weight/dimensions/optical formula/price, via product JSON compare_at_price for regular (non-sale) price', date:'2026-08-15' }],
+    priceSource: { url:'https://samyangus.com/products/8mm-f2-8-fisheye', tier:'T1', date:'2026-08-15' },
     productUrl:'https://samyangus.com/products/8mm-f2-8-fisheye',
   },
   'samyang-10mm-f28': {
@@ -2258,6 +2364,8 @@ const LENSES = {
     imageUrl:null,
     asin:null,
     prices:{USD:499,AUD:799,EUR:599,GBP:399,JPY:78000,CAD:599,SGD:699},
+    specSources: [{ url:'https://samyangus.com/products/10mm-f2-8-ultra-wide-angle', tier:'T1', note:'weight/dimensions/optical formula/price, via product JSON compare_at_price', date:'2026-08-15' }],
+    priceSource: { url:'https://samyangus.com/products/10mm-f2-8-ultra-wide-angle', tier:'T1', date:'2026-08-15' },
     productUrl:'https://samyangus.com/products/10mm-f2-8-ultra-wide-angle',
   },
   'samyang-12mm-f2-ncscs': {
@@ -2270,6 +2378,8 @@ const LENSES = {
     imageUrl:null,
     asin:null,
     prices:{USD:499,AUD:799,EUR:599,GBP:399,JPY:78000,CAD:599,SGD:699},
+    specSources: [{ url:'https://samyangus.com/products/12mm-f2-0-high-speed-wide-angle', tier:'T1', note:'weight/dimensions/optical formula/price, via product JSON compare_at_price', date:'2026-08-15' }],
+    priceSource: { url:'https://samyangus.com/products/12mm-f2-0-high-speed-wide-angle', tier:'T1', date:'2026-08-15' },
     productUrl:'https://samyangus.com/products/12mm-f2-0-high-speed-wide-angle',
   },
   'samyang-14mm-f28': {
@@ -2282,6 +2392,8 @@ const LENSES = {
     imageUrl:null,
     asin:null,
     prices:{USD:449,AUD:699,EUR:499,GBP:399,JPY:70000,CAD:599,SGD:699},
+    specSources: [{ url:'https://samyangus.com/products/14mm-f2-8-full-frame-ultra-wide-angle', tier:'T1', note:'weight/dimensions/optical formula/price, via product JSON compare_at_price', date:'2026-08-15' }],
+    priceSource: { url:'https://samyangus.com/products/14mm-f2-8-full-frame-ultra-wide-angle', tier:'T1', date:'2026-08-15' },
     productUrl:'https://samyangus.com/products/14mm-f2-8-full-frame-ultra-wide-angle',
   },
   'samyang-16mm-f2': {
@@ -2294,6 +2406,8 @@ const LENSES = {
     imageUrl:null,
     asin:null,
     prices:{USD:499,AUD:799,EUR:599,GBP:399,JPY:78000,CAD:599,SGD:699},
+    specSources: [{ url:'https://samyangus.com/products/16mm-f2-0-high-speed-wide-angle', tier:'T1', note:'weight/dimensions/optical formula/price, via product JSON compare_at_price', date:'2026-08-15' }],
+    priceSource: { url:'https://samyangus.com/products/16mm-f2-0-high-speed-wide-angle', tier:'T1', date:'2026-08-15' },
     productUrl:'https://samyangus.com/products/16mm-f2-0-high-speed-wide-angle',
   },
   'samyang-85mm-f14': {
@@ -2306,6 +2420,8 @@ const LENSES = {
     imageUrl:null,
     asin:null,
     prices:{USD:349,AUD:499,EUR:399,GBP:299,JPY:54000,CAD:499,SGD:499},
+    specSources: [{ url:'https://samyangus.com/products/85mm-f1-4-full-frame', tier:'T1', note:'weight/dimensions/optical formula/price, via product JSON compare_at_price', date:'2026-08-15' }],
+    priceSource: { url:'https://samyangus.com/products/85mm-f1-4-full-frame', tier:'T1', date:'2026-08-15' },
     productUrl:'https://samyangus.com/products/85mm-f1-4-full-frame',
   },
   'samyang-85mm-f18': {
@@ -2318,6 +2434,8 @@ const LENSES = {
     imageUrl:null,
     asin:null,
     prices:{USD:299,AUD:499,EUR:299,GBP:299,JPY:34000,CAD:399,SGD:399},
+    specSources: [{ url:'https://samyangus.com/products/85mm-f1-8-high-speed', tier:'T1', note:'weight/dimensions/optical formula; only SKU with no compare_at_price set, i.e. $299 is the plain list price', date:'2026-08-15' }],
+    priceSource: { url:'https://samyangus.com/products/85mm-f1-8-high-speed', tier:'T1', date:'2026-08-15' },
     productUrl:'https://samyangus.com/products/85mm-f1-8-high-speed',
   },
   'samyang-100mm-f28-macro': {
@@ -2330,6 +2448,8 @@ const LENSES = {
     imageUrl:null,
     asin:null,
     prices:{USD:599,AUD:899,EUR:699,GBP:499,JPY:93000,CAD:799,SGD:899},
+    specSources: [{ url:'https://samyangus.com/products/100mm-f2-8-full-frame-macro', tier:'T1', note:'weight/dimensions/optical formula/price, via product JSON compare_at_price', date:'2026-08-15' }],
+    priceSource: { url:'https://samyangus.com/products/100mm-f2-8-full-frame-macro', tier:'T1', date:'2026-08-15' },
     productUrl:'https://samyangus.com/products/100mm-f2-8-full-frame-macro',
   },
   'samyang-135mm-f2': {
@@ -2342,6 +2462,8 @@ const LENSES = {
     imageUrl:null,
     asin:null,
     prices:{USD:599,AUD:899,EUR:699,GBP:499,JPY:93000,CAD:799,SGD:899},
+    specSources: [{ url:'https://samyangus.com/products/135mm-f2-0-full-frame-telephoto', tier:'T1', note:'weight/dimensions/optical formula/price, via product JSON compare_at_price', date:'2026-08-15' }],
+    priceSource: { url:'https://samyangus.com/products/135mm-f2-0-full-frame-telephoto', tier:'T1', date:'2026-08-15' },
     productUrl:'https://samyangus.com/products/135mm-f2-0-full-frame-telephoto',
   },
   'samyang-300mm-f63': {
@@ -2354,6 +2476,8 @@ const LENSES = {
     imageUrl:null,
     asin:null,
     prices:{USD:349,AUD:499,EUR:399,GBP:299,JPY:54000,CAD:499,SGD:499},
+    specSources: [{ url:'https://samyangus.com/products/copy-of-300mm-f6-3-catadioptric-compact-telephoto-for-mirrorless-cameras', tier:'T1', note:'weight/dimensions/optical formula/price, via product JSON compare_at_price', date:'2026-08-15' }],
+    priceSource: { url:'https://samyangus.com/products/copy-of-300mm-f6-3-catadioptric-compact-telephoto-for-mirrorless-cameras', tier:'T1', date:'2026-08-15' },
     productUrl:'https://samyangus.com/products/copy-of-300mm-f6-3-catadioptric-compact-telephoto-for-mirrorless-cameras',
   },
 
@@ -2471,6 +2595,8 @@ const LENSES = {
     imageUrl:null,
     asin:null,
     prices:{USD:749,AUD:1199,EUR:899,GBP:699,JPY:117000,CAD:999,SGD:1099},
+    specSources: [{ url:'https://www.venuslens.net/product/laowa-aksen-ultra-macro-apo/', tier:'T1', note:'weight/dimensions/optical formula/price; pre-order, confirmed shipping late Aug/early Sept 2026, cross-checked against B&H SKU VEAKSN4528FX', date:'2026-08-15' }],
+    priceSource: { url:'https://www.venuslens.net/product/laowa-aksen-ultra-macro-apo/', tier:'T1', date:'2026-08-15' },
     productUrl:'https://www.venuslens.net/product/laowa-aksen-ultra-macro-apo/',
   },
 
@@ -2524,6 +2650,8 @@ const LENSES = {
     imageUrl:null,
     asin:null,
     prices:{USD:200,AUD:299,EUR:199,GBP:199,JPY:31000,CAD:299,SGD:299},
+    specSources: [{ url:'https://meikeglobal.com/products/5514x', tier:'T1', note:'weight/dimensions/optical formula/price', date:'2026-08-15' }, { url:'https://www.bhphotovideo.com/c/product/1815846-REG/meike_mk_5514cfstm_x_55mm_f_1_4_aps_c_af.html/specs', tier:'T3', note:'cross-check (SKU MK-5514CFSTM-X)', date:'2026-08-15' }],
+    priceSource: { url:'https://meikeglobal.com/products/5514x', tier:'T1', date:'2026-08-15' },
     productUrl:'https://meikeglobal.com/products/5514x',
   },
   'meike-25mm-f17-air': {
@@ -2536,6 +2664,8 @@ const LENSES = {
     imageUrl:null,
     asin:null,
     prices:{USD:159,AUD:199,EUR:199,GBP:99,JPY:24000,CAD:199,SGD:199},
+    specSources: [{ url:'https://meikeglobal.com/products/2517x', tier:'T1', note:'weight/dimensions/optical formula/price', date:'2026-08-15' }],
+    priceSource: { url:'https://meikeglobal.com/products/2517x', tier:'T1', date:'2026-08-15' },
     productUrl:'https://meikeglobal.com/products/2517x',
   },
   'meike-25mm-f18': {
@@ -2548,6 +2678,8 @@ const LENSES = {
     imageUrl:null,
     asin:null,
     prices:{USD:80,AUD:99,EUR:99,GBP:99,JPY:9000,CAD:99,SGD:99},
+    specSources: [{ url:'https://meikeglobal.com/collections/fujifilm/products/2518x', tier:'T1', note:'weight/dimensions/optical formula/price (regular, not the concurrent sale price)', date:'2026-08-15' }],
+    priceSource: { url:'https://meikeglobal.com/collections/fujifilm/products/2518x', tier:'T1', date:'2026-08-15' },
     productUrl:'https://meikeglobal.com/products/2518x',
   },
   'meike-50mm-f17-ff': {
@@ -2560,6 +2692,8 @@ const LENSES = {
     imageUrl:null,
     asin:null,
     prices:{USD:130,AUD:199,EUR:99,GBP:99,JPY:16000,CAD:199,SGD:199},
+    specSources: [{ url:'https://meikeglobal.com/collections/fujifilm/products/5017x', tier:'T1', note:'weight/dimensions/optical formula/price (regular, not the concurrent sale price)', date:'2026-08-15' }],
+    priceSource: { url:'https://meikeglobal.com/collections/fujifilm/products/5017x', tier:'T1', date:'2026-08-15' },
     productUrl:'https://meikeglobal.com/products/5017x',
   },
 };
