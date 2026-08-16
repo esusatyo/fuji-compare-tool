@@ -7,7 +7,7 @@ const assert = require('node:assert/strict');
 const fs = require('fs');
 const path = require('path');
 const { loadBrand, brandDirs, ROOT } = require('../helpers/load-brand');
-const { buildAll, curatedPairs, siteConfig,
+const { buildAll, curatedPairs, siteConfig, vsSummary, vsSummaryFacts,
         ID_HEAD_BEGIN, ID_HEAD_END, ID_HEADER_BEGIN, ID_HEADER_END } = require('../../scripts/generate-seo');
 
 const generated = buildAll();
@@ -120,3 +120,56 @@ for (const brand of brandDirs()) {
     }
   });
 }
+
+test('every vs-page (same-brand and cross-brand) carries a real, visible quick-take summary', () => {
+  for (const [rel, content] of generated) {
+    if (!/(^|\/)vs\/.*\.html$/.test(rel)) continue;
+    const m = content.match(/<p class="vs-summary">([^<]*)<\/p>/);
+    assert.ok(m, `${rel}: missing .vs-summary paragraph`);
+    const text = m[1];
+    assert.ok(text.length > 10, `${rel}: summary looks too short: "${text}"`);
+    assert.match(text, /\$[\d,]+/, `${rel}: summary has no price — "${text}"`);
+    assert.doesNotMatch(text, /undefined|null|NaN/, `${rel}: summary leaked a bad value — "${text}"`);
+  }
+});
+
+test('vsSummary: only facts that actually differ are surfaced, in priority order, capped at two', () => {
+  const base = { prices: { USD: 1000 }, sensorMP: 24, ibis: true, ibisStops: 5, maxBurst: 10, weight: 500 };
+  // Everything differs — mp and ibis (the top two priority slots) win, burst/weight dropped.
+  const a = { ...base };
+  const b = { ...base, sensorMP: 40, ibisStops: 7, maxBurst: 20, weight: 600 };
+  assert.equal(
+    vsSummary('A', a, 'B', b),
+    'A is $1,000 with a 24MP sensor and 5-stop IBIS; B is $1,000 with a 40MP sensor and 7-stop IBIS.'
+  );
+});
+
+test('vsSummary: identical sensor/IBIS falls through to the next differing spec', () => {
+  const base = { prices: { USD: 1000 }, sensorMP: 24, ibis: false, ibisStops: null, maxBurst: 10, weight: 500 };
+  const a = { ...base };
+  const b = { ...base, maxBurst: 20, weight: 600 };
+  assert.equal(
+    vsSummary('A', a, 'B', b),
+    'A is $1,000 with 10fps burst and a 500g body; B is $1,000 with 20fps burst and a 600g body.'
+  );
+});
+
+test('vsSummary: IBIS presence-vs-absence counts as differing even without stops', () => {
+  const base = { prices: { USD: 1000 }, sensorMP: 24, maxBurst: 10, weight: 500 };
+  const a = { ...base, ibis: true, ibisStops: null };
+  const b = { ...base, ibis: false, ibisStops: null };
+  assert.match(vsSummary('A', a, 'B', b), /A is \$1,000 with IBIS.*B is \$1,000 with no IBIS/s);
+});
+
+test('vsSummary: degrades gracefully when nothing in the priority list differs', () => {
+  const cam = { prices: { USD: 1000 }, sensorMP: 24, ibis: true, ibisStops: 5, maxBurst: 10, weight: 500 };
+  assert.equal(vsSummary('A', cam, 'B', { ...cam }), 'A is $1,000; B is $1,000.');
+});
+
+test('vsSummaryFacts: null fields are simply absent, never rendered as a fact', () => {
+  const facts = vsSummaryFacts({ prices: { USD: 1000 }, sensorMP: null, ibis: false, ibisStops: null, maxBurst: null, weight: null });
+  assert.equal(facts.mp, undefined);
+  assert.equal(facts.burst, undefined);
+  assert.equal(facts.weight, undefined);
+  assert.equal(facts.ibis, 'no IBIS');
+});
