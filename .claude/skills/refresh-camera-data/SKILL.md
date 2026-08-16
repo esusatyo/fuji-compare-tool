@@ -166,6 +166,21 @@ Use **WebSearch** and **WebFetch**. Work brand by brand. For each brand:
   tables (`action=parse&prop=wikitext` via the MediaWiki API parses cleanly), and treat
   Wikipedia as an enumeration aid only — **never** as a spec source.
 
+  **"Complete" includes recently-discontinued models — don't quietly drop one because
+  it looks like it's on its way out.** This repo's stated goal is maximum completeness,
+  and `discontinued:true` already exists precisely to carry a model whose sale has
+  ended. When the Fujifilm GFX line was added (2026-08-15), the GFX50S II was found
+  during enumeration and then deliberately left out because it looked like it was
+  "fading out" — out of stock at both Fujifilm's own store and B&H at research time.
+  That reasoning was wrong: out of stock isn't the same as never having existed, and
+  the dataset already has a field for exactly this case. It had to be added back a
+  session later at the user's explicit instruction ("we try to be as complete as
+  possible even if the camera is discontinued"). Treat any enumerated model this way —
+  if it's real, it goes in, `discontinued:true` and all; being hard to buy right now is
+  not a reason to omit it. The only real exclusions are products that don't fit this
+  repo's schema at all (e.g. the GFX ETERNA 55 cinema camera, teleconverters), not
+  ones that are merely old or low-stock.
+
 - **Record every source as you read it** (see Guardrails). A refreshed price with no
   recorded source is a number nobody can re-check next run.
 - **Price changes** — for existing models still on sale (`discontinued:false`), check
@@ -357,6 +372,8 @@ the test result, and any items left under "Needs confirmation" for the user to d
 - **Never invent prices or specs.** Unknown → `null` (or leave existing value and flag it).
 - **Don't reformat** unrelated parts of `data.js`; touch only the fields/entries that change.
 - **Preserve the USD-anchored pricing convention.**
+- **Never exclude a real, enumerated model just because it looks discontinued or hard to
+  buy.** Use `discontinued:true`, not omission — see the completeness-diff section above.
 - **Always cite a source URL** for every applied change — and record it durably, not
   just in the chat summary. The owner intends to surface sources on the site so
   readers can cross-check, so a citation that lives only in a transcript is lost work.

@@ -75,7 +75,7 @@ const KNOWN_IMAGE_GAPS = {
     // 7Artisans — no direct manufacturer/retailer image URL found yet
     '7artisans-50mm-f18', '7artisans-25mm-f18',
     // GFX medium format line (added 2026-08-15) — no freely-licensed image sourced yet
-    'gfx100-ii', 'gfx100s-ii', 'gfx100rf',
+    'gfx100-ii', 'gfx100s-ii', 'gfx100rf', 'gfx50s-ii',
     'gf23mm-f4', 'gf30mm-f35', 'gf45mm-f28', 'gf50mm-f35', 'gf55mm-f17',
     'gf63mm-f28', 'gf80mm-f17', 'gf110mm-f2', 'gf120mm-f4-macro',
     'gf250mm-f4', 'gf500mm-f56', 'gf20-35mm-f4', 'gf32-64mm-f4',
