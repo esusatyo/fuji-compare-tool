@@ -1,0 +1,49 @@
+#!/bin/sh
+# Regenerates SEO artifacts (scripts/generate-seo.js) and runs the full test
+# suite whenever staged changes could affect generated output, then stages
+# whatever the generator wrote so it rides along in the same commit —
+# nothing stale ever gets committed. See CLAUDE.md for the rationale and
+# scope: deliberately limited to generate-seo.js. Scripts that fetch
+# external data (fetch-images*.js, compute-prices.js, apply-images.js, etc.)
+# are NOT run here — those need human/agent review before committing, per
+# this project's sourcing rules.
+#
+# One-time setup after cloning: git config core.hooksPath .githooks
+
+set -e
+
+cd "$(git rev-parse --show-toplevel)"
+
+# Resolve node defensively: hooks run non-interactively and may not see the
+# same PATH as an interactive shell (common with nvm-managed installs).
+NODE_BIN=$(command -v node) || {
+  echo "pre-commit: 'node' not found on PATH — cannot run the SEO regeneration check." >&2
+  echo "pre-commit: if node works in your normal terminal, your shell's PATH isn't" >&2
+  echo "pre-commit: reaching non-interactive scripts (common with nvm-managed installs)." >&2
+  echo "pre-commit: fix that, or bypass once with 'git commit --no-verify' if you're" >&2
+  echo "pre-commit: sure this commit doesn't need regeneration." >&2
+  exit 1
+}
+
+TRIGGER='(^|/)data\.js$|^site-config\.js$|^scripts/generate-seo\.js$|^engine\.css$|^assets/logo\.svg$'
+if ! git diff --cached --name-only | grep -qE "$TRIGGER"; then
+  exit 0
+fi
+
+echo "pre-commit: staged changes affect generated output — regenerating..."
+"$NODE_BIN" scripts/generate-seo.js
+
+# Stage whatever the generator wrote or removed (new/changed/stale
+# vs-pages, sitemap, robots.txt) — scoped to what it manages, not the
+# whole tree, so unrelated dirty files elsewhere are never swept in.
+git add -A -- '*.html' 'sitemap.xml' 'robots.txt'
+
+echo "pre-commit: running test suite..."
+if ! npm test; then
+  echo "" >&2
+  echo "pre-commit: tests failed. Regenerated files are already staged — fix the" >&2
+  echo "pre-commit: failure and commit again, no need to rerun the generator." >&2
+  exit 1
+fi
+
+exit 0
