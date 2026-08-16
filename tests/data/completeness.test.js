@@ -171,6 +171,8 @@ const KNOWN_IMAGE_GAPS = {
     'viltrox-16mm-f18-l', 'viltrox-28mm-f45-l', 'samyang-14-24mm-f28-l',
     // Laowa/OM System additions (2026-08-08) — makers host no usable image URL
     'laowa-180mm-f45-macro-l', 'laowa-17mm-f4-tilt-shift-l', 'omsystem-100-400mm-f5-63-ii',
+    // 2026-08-16 refresh additions — new/newly-found items, no image sourced yet
+    'lumix-s-26mm-f8', 'leica-dg-45mm-f28-macro', 'laowa-90mm-f28-macro-mft',
     // Older first-party MFT lenses backfilled 2026-08-08; no Commons photo yet
     'lumix-g-14mm-f2-5-ii', 'lumix-g-fisheye-8mm-f3-5', 'lumix-g-macro-30mm-f2-8',
     'lumix-g-7-14mm-f4', 'lumix-g-x-pz-14-42mm-f3-5-5-6', 'lumix-g-35-100mm-f4-5-6',
