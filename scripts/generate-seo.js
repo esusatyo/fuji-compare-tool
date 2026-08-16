@@ -160,6 +160,41 @@ const VS_ROWS = [
   ['Lens mount', c => c.lensType],
 ];
 
+// ─── Vs-page "quick take" summary ────────────
+// One visible, strictly factual sentence per vs-page: crawlers that don't
+// render JS (GPTBot, ClaudeBot, PerplexityBot, CCBot, OAI-SearchBot — as
+// of 2026 none of the major AI crawlers do, only Googlebot fully renders)
+// only ever see this page's raw HTML, so a takeaway needs to exist as
+// real text rather than something a reader infers from the table below.
+// No "better/worse" judgment calls — cameras trade off in ways that
+// depend on the reader, so this states numbers, not verdicts. Only facts
+// that actually differ are surfaced (in a fixed priority order, capped at
+// two) so it stays a genuine takeaway instead of restating identical
+// specs or reading like a random spec dump.
+function vsSummaryFacts(cam) {
+  const facts = {};
+  if (cam.sensorMP != null) facts.mp = `a ${cam.sensorMP}MP sensor`;
+  facts.ibis = cam.ibis ? (cam.ibisStops ? `${cam.ibisStops}-stop IBIS` : 'IBIS') : 'no IBIS';
+  if (cam.maxBurst != null) facts.burst = `${cam.maxBurst}fps burst`;
+  if (cam.weight != null) facts.weight = `a ${cam.weight}g body`;
+  return facts;
+}
+
+function vsSummary(nameA, camA, nameB, camB) {
+  const [factsA, factsB] = [vsSummaryFacts(camA), vsSummaryFacts(camB)];
+  const picked = ['mp', 'ibis', 'burst', 'weight']
+    .filter(k => factsA[k] && factsB[k] && factsA[k] !== factsB[k])
+    .slice(0, 2);
+  const clause = (facts, picks) => picks.map(k => facts[k]).join(' and ');
+  const price = c => c.prices && c.prices.USD != null ? `$${c.prices.USD.toLocaleString('en-US')}` : null;
+  const part = (name, cam, facts) => {
+    const p = price(cam);
+    const c = clause(facts, picked);
+    return `${name}${p ? ` is ${p}` : ''}${c ? `${p ? ' with' : ' has'} ${c}` : ''}`;
+  };
+  return `${part(nameA, camA, factsA)}; ${part(nameB, camB, factsB)}.`;
+}
+
 // Complements engine.css (loaded alongside): header/hero/footer/tokens come
 // from there, this styles the vs-specific CTA, spec-table card and related list.
 const VS_CSS = `
@@ -188,6 +223,10 @@ const VS_CSS = `
   .vs-buy { font-size: 12px; font-weight: 600; color: var(--accent-secondary); background: rgba(79,199,176,.18);
             text-decoration: none; padding: 5px 14px; border-radius: 999px; transition: all .15s; }
   .vs-buy:hover { background: var(--accent-secondary); color: var(--bg-deep); }
+
+  .vs-summary { font-size: 14px; line-height: 1.5; color: var(--text-secondary); text-align: center;
+                max-width: 640px; margin: 4px auto 20px; }
+
   .vs-cta { display: inline-flex; align-items: center; gap: 9px; background: var(--accent-primary); color: var(--bg-deep);
             text-decoration: none; padding: 12px 22px; border-radius: 999px; font-weight: 600; font-size: 14px;
             margin: 24px 0 20px; box-shadow: var(--shadow); transition: transform .12s ease, box-shadow .12s ease; }
@@ -403,6 +442,7 @@ function vsPageHTML(brand, data, site, aId, bId, allPairs) {
 ${productCardHTML(data, brandName, a)}
 ${productCardHTML(data, brandName, b)}
       </div>`;
+  const summary = vsSummary(`${brandName} ${a.name}`, a, b.name, b);
 
   const related = relatedPairs(allPairs || [], cams, aId, bId);
   const relatedHTML = related.length ? `
@@ -453,6 +493,7 @@ ${related.map(([x, y]) =>
   </div>
   <main class="vs-main">
 ${productsHTML}
+    <p class="vs-summary">${esc(summary)}</p>
     <a class="vs-cta" href="../#cameras=${aId},${bId}"><span class="play">&#9654;</span> Compare these interactively</a>
     <div class="vs-card">
       <table>
@@ -639,6 +680,7 @@ function crossVsPageHTML(site, m, all) {
     return `      <tr><th scope="row">${esc(label)}</th><td>${va == null ? '—' : esc(va)}</td><td>${vb == null ? '—' : esc(vb)}</td></tr>`;
   }).join('\n');
   const fullName = s => `${s.brandName} ${s.cam.name}`;
+  const summary = vsSummary(fullName(a), a.cam, fullName(b), b.cam);
   const compareHash = `#cameras=${a.brand}:${a.slug},${b.brand}:${b.slug}`;
   const related = crossRelated(all, m);
   const relatedHTML = related.length ? `
@@ -691,6 +733,7 @@ ${related.map(x => `        <li><a href="${cleanHref(path.basename(x.file))}">${
 ${productCardHTML(a.data, a.brandName, a.cam, fullName(a))}
 ${productCardHTML(b.data, b.brandName, b.cam, fullName(b))}
       </div>
+    <p class="vs-summary">${esc(summary)}</p>
     <a class="vs-cta" href="../compare/${compareHash}"><span class="play">&#9654;</span> Compare these interactively</a>
     <div class="vs-card">
       <table>
@@ -1229,4 +1272,4 @@ if (require.main === module) {
   console.log(`generate-seo: ${files.size} artifacts (${written} written, ${removed} stale removed)`);
 }
 
-module.exports = { siteConfig, curatedPairs, relatedPairs, vsPageHTML, resolveMatchups, crossVsPageHTML, crossTitle, CROSS_BRAND_MATCHUPS, compareHeadBlock, compareBodyBlock, brandHeadBlock, rootHeadBlock, brandBodyBlock, rootBodyBlock, withHeadBlock, withBodyBlock, sitemapXML, robotsTxt, buildAll, SEO_BEGIN, SEO_END, SEO_BODY_BEGIN, SEO_BODY_END, ID_HEAD_BEGIN, ID_HEAD_END, ID_HEADER_BEGIN, ID_HEADER_END, ID_FOOTER_BEGIN, ID_FOOTER_END, identityToken, logoMark, cleanUrl, cleanHref, themeToggleHTML };
+module.exports = { siteConfig, curatedPairs, relatedPairs, vsPageHTML, vsSummary, vsSummaryFacts, resolveMatchups, crossVsPageHTML, crossTitle, CROSS_BRAND_MATCHUPS, compareHeadBlock, compareBodyBlock, brandHeadBlock, rootHeadBlock, brandBodyBlock, rootBodyBlock, withHeadBlock, withBodyBlock, sitemapXML, robotsTxt, buildAll, SEO_BEGIN, SEO_END, SEO_BODY_BEGIN, SEO_BODY_END, ID_HEAD_BEGIN, ID_HEAD_END, ID_HEADER_BEGIN, ID_HEADER_END, ID_FOOTER_BEGIN, ID_FOOTER_END, identityToken, logoMark, cleanUrl, cleanHref, themeToggleHTML };
