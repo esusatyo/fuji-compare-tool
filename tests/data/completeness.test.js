@@ -79,6 +79,13 @@ const KNOWN_IMAGE_GAPS = {
     'meike-33mm-f14', 'meike-55mm-f18', 'meike-85mm-f18',
     // 7Artisans — no direct manufacturer/retailer image URL found yet
     '7artisans-50mm-f18', '7artisans-25mm-f18',
+    // GFX medium format line (added 2026-08-15) — no freely-licensed image sourced yet
+    'gfx100-ii', 'gfx100s-ii', 'gfx100rf',
+    'gf23mm-f4', 'gf30mm-f35', 'gf45mm-f28', 'gf50mm-f35', 'gf55mm-f17',
+    'gf63mm-f28', 'gf80mm-f17', 'gf110mm-f2', 'gf120mm-f4-macro',
+    'gf250mm-f4', 'gf500mm-f56', 'gf20-35mm-f4', 'gf32-64mm-f4',
+    'gf35-70mm-f45-56', 'gf45-100mm-f4', 'gf100-200mm-f56',
+    'gf30mm-f56-ts', 'gf110mm-f56-ts-macro',
     // 2025-2026 additions (refresh 2026-08-15) — no freely-licensed image sourced yet
     'sigma-12mm-f14', 'sigma-15mm-f14', 'sigma-16-300mm-f35-67', 'sigma-17-40mm-f18',
     // viltrox-85mm-f18: now discontinued (superseded by the II below); its old
