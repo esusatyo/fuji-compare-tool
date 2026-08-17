@@ -16,7 +16,8 @@ const { CURRENCIES } = require('../helpers/schema');
 // allowlisted item later gains an image (so this list self-cleans over time).
 const KNOWN_IMAGE_GAPS = {
   canon: new Set([
-    'eos-r50v',          // 2025 vlogging body — no Wikimedia/Commons image yet
+    // eos-r50v resolved 2026-08-17 (Tier 3 manufacturer hotlink, canon.com.au —
+    // usa.canon.com geo-blocks non-US traffic)
     'rf-85mm-f14-l-vcm', // RF 85mm f/1.4 L VCM — no Commons image yet
     // 2025–2026 RF/RF-S lenses — no freely-licensed Commons image yet
     'rf-14mm-f14-l-vcm',
@@ -36,7 +37,13 @@ const KNOWN_IMAGE_GAPS = {
     // rf-800mm-f56-l-is-usm and rf-1200mm-f8-l-is-usm have Commons candidates
     // but no legible model text on the barrel, and Canon's super-teles
     // (400/2.8, 600/4, 800/5.6, 1200/8) look near-identical in a field shot —
-    // rejected, stay gaps. Remaining have no candidate at all:
+    // rejected, stay gaps. Re-checked 2026-08-16 at full resolution (crop of
+    // the front barrel): still blank, no printed designation anywhere visible.
+    // The focus-limiter switch reads "2.6m-20m", far closer to the 400mm
+    // f/2.8's ~2.5m MFD than the 800mm f/5.6's ~6m — actively suggests this
+    // is a mislabeled 400mm f/2.8 photo, not weak evidence either way.
+    // Confirms the original rejection was correct; don't re-accept without a
+    // source that actually shows the barrel text. Remaining have no candidate at all:
     'rf-600mm-f4-l-is-usm',
     'rf-85mm-f12-l-usm-ds',
     'rf-50mm-f14-l-vcm',
@@ -74,13 +81,14 @@ const KNOWN_IMAGE_GAPS = {
     'meike-33mm-f14', 'meike-55mm-f18', 'meike-85mm-f18',
     // 7Artisans — no direct manufacturer/retailer image URL found yet
     '7artisans-50mm-f18', '7artisans-25mm-f18',
-    // GFX medium format line (added 2026-08-15) — no freely-licensed image sourced yet
-    'gfx100-ii', 'gfx100s-ii', 'gfx100rf', 'gfx50s-ii',
+    // GFX medium format line (added 2026-08-15) — bodies resolved 2026-08-16
+    // (Commons, same uploader documenting each GFX launch, licence+visual
+    // verified: CC0/CC BY 4.0/CC BY-SA 4.0). Lenses still gapped.
     'gf23mm-f4', 'gf30mm-f35', 'gf45mm-f28', 'gf50mm-f35', 'gf55mm-f17',
     'gf63mm-f28', 'gf80mm-f17', 'gf110mm-f2', 'gf120mm-f4-macro',
     'gf250mm-f4', 'gf500mm-f56', 'gf20-35mm-f4', 'gf32-64mm-f4',
     'gf35-70mm-f45-56', 'gf45-100mm-f4', 'gf100-200mm-f56',
-    'gf30mm-f56-ts', 'gf110mm-f56-ts-macro',
+    'gf110mm-f56-ts-macro', // gf30mm-f56-ts resolved 2026-08-16 (Commons)
     // 2025-2026 additions (refresh 2026-08-15) — no freely-licensed image sourced yet
     'sigma-12mm-f14', 'sigma-15mm-f14', 'sigma-16-300mm-f35-67', 'sigma-17-40mm-f18',
     // viltrox-85mm-f18: now discontinued (superseded by the II below); its old
@@ -90,13 +98,24 @@ const KNOWN_IMAGE_GAPS = {
     'viltrox-air-9mm-f28', 'viltrox-air-15mm-f17',
     'viltrox-28mm-f45-chip', 'viltrox-56mm-f12', 'viltrox-75mm-f18-evo', 'viltrox-90mm-f22-evo',
     'ttartisan-23mm-f18', 'ttartisan-air-17mm-f18', 'ttartisan-14mm-f35',
-    'ttartisan-25mm-f2', 'ttartisan-35mm-f095', 'ttartisan-50mm-f095',
+    'ttartisan-25mm-f2', 'ttartisan-50mm-f095',
+    // ttartisan-35mm-f095: Commons has "TTArtisan 35mm F0.95 (APS-C).jpg" but
+    // neither the filename, description, nor image itself states a mount —
+    // this optic ships in 5+ mounts (E/X/Z/RF/M43) with identical front
+    // barrel markings, so it can't be attributed to X specifically. Rejected
+    // 2026-08-16, stays a gap.
+    'ttartisan-35mm-f095',
     '7artisans-25mm-f18-lite', '7artisans-35mm-f18-lite',
-    'samyang-75mm-f18', 'samyang-8mm-f28', 'samyang-10mm-f28', 'samyang-12mm-f2-ncscs',
+    'samyang-75mm-f18', 'samyang-8mm-f28', 'samyang-10mm-f28',
+    // samyang-12mm-f2-ncscs: Commons candidate's barrel is legibly stamped
+    // "NCS CS E" — the Sony E-mount copy, not X. samyang-14mm-f28: candidate's
+    // barrel reads "EOS" — the Canon DSLR-mount original, not the X-mount
+    // mirrorless version. Both rejected 2026-08-16 (visual barrel-text check).
+    'samyang-12mm-f2-ncscs',
     'samyang-14mm-f28', 'samyang-16mm-f2', 'samyang-85mm-f14', 'samyang-85mm-f18',
     'samyang-100mm-f28-macro', 'samyang-135mm-f2', 'samyang-300mm-f63',
     'laowa-aksen-45mm-f28', 'laowa-aksen-17-5mm-f17',
-    'meike-55mm-f14-golden', 'meike-25mm-f17-air', 'meike-25mm-f18', 'meike-50mm-f17-ff',
+    'meike-55mm-f14-golden', 'meike-25mm-f17-air', 'meike-50mm-f17-ff', // meike-25mm-f18 resolved 2026-08-16 (Commons, filename states Fuji-X)
     // 13-deferred-lenses batch resolved 2026-08-16 — non-nullable fields sourced
     // (dimensions via TTArtisan's size-diagram images, nicodottaphoto.com for
     // the Meike Air 56mm, B&H spec table for the Laowa Aksen 17.5mm), but none
@@ -151,12 +170,11 @@ const KNOWN_IMAGE_GAPS = {
     // g100d, gx9, bs1h, s1, s5, gh5, g9 resolved 2026-08-15 (genuine
     // matching-generation photos found after the script's first-pass hits
     // returned wrong-generation photos — S1R for s1, S5D for s5, GH5 II for
-    // gh5, G9 II for g9 — and were rejected). l10 has a genuine 2026-model
-    // Commons candidate but its licence is suspect (CC0 tag, but Credit/Artist
-    // point to an Adorama retail listing, flagged "missing SDC copyright
-    // license") — rejected as likely mis-tagged, stays a gap. Remaining
-    // cameras (5) have no Commons candidate at all:
-    's1-ii', 's5-iix', 'g97', 'g95', 'l10',
+    // gh5, G9 II for g9 — and were rejected). l10's Commons candidate is still
+    // rejected (licence-suspect, points to an Adorama listing) — but l10,
+    // s1-ii, s5-iix, g97, g95 all resolved 2026-08-17 via Tier 3 manufacturer
+    // hotlinks (shop.panasonic.com official product galleries, `imageSource`
+    // citations recorded).
     // Lenses — LUMIX S primes: lumix-s-50mm-f1-8 resolved 2026-08-15.
     'lumix-s-18mm-f1-8', 'lumix-s-24mm-f1-8', 'lumix-s-40mm-f2',
     'lumix-s-pro-50mm-f1-4', 'lumix-s-85mm-f1-8', 'lumix-s-100mm-f2-8-macro',
@@ -191,8 +209,9 @@ const KNOWN_IMAGE_GAPS = {
     // lumix-g-7-14mm-f4 resolved 2026-08-15 (Commons).
     'lumix-g-14mm-f2-5-ii', 'lumix-g-fisheye-8mm-f3-5',
     'lumix-g-x-pz-14-42mm-f3-5-5-6', 'lumix-g-35-100mm-f4-5-6',
-    // Cameras backfilled 2026-08-08
-    'bgh1'
+    // bgh1 resolved 2026-08-17 (Tier 3 manufacturer hotlink; the page's other
+    // gallery images were mislabeled GH7 photos — rejected those, used the
+    // one matching the page's own "DC-BGH1PP" title)
   ]),
   sony: new Set([
     'sigma-90mm-f28-dg', // discontinued I-series; Sigma image URL not available
@@ -229,14 +248,18 @@ const KNOWN_IMAGE_GAPS = {
     'zeiss-loxia-35mm-f2',
     // 7Artisans / TTArtisan / Meike — product image URLs pending backfill
     '7artisans-27mm-f28', 'ttartisan-27mm-f28', 'meike-85mm-f18',
-    // Cameras: fe-... — a7-v's only Commons candidate shows just the generic
-    // "α7" body badge, which every a7-series generation shares, and the file
-    // carries no confirming category (just "needs categories") — classic
-    // generation-trap, rejected. fx5/fx2/a6100 have no candidate at all.
-    'a7-v',
-    'fx5',
-    'fx2', // 2025 Cinema Line camera added Aug 2026 refresh; no Commons photo yet
-    'a6100',
+    // a7-v and a6100 resolved 2026-08-17 via Tier 3 manufacturer hotlinks
+    // (electronics.sony.com's /PDP/DI/.../desktop/N.jpg product gallery,
+    // which serves correct image/* Content-Type — a7-v's earlier Commons
+    // rejection, a generic "α7" badge with no confirming category, is
+    // resolved here by a front 3/4 shot with an explicit "α7 V" nameplate).
+    // fx5/fx2 stay gapped: Sony's Cinema Line category only has product
+    // photos on the /converted/ CDN path, which serves genuinely valid image
+    // bytes (confirmed via `file`) but with Content-Type
+    // application/octet-stream — fails this repo's own image-link check, and
+    // no working /PDP/DI/ equivalent exists for either model (checked both
+    // pages' DOM directly, only a generic cashback banner uses that path).
+    'fx5', 'fx2',
     // Aug 2026 refresh additions — resolved 2026-08-15: fe-16mm-f18-g,
     // fe-20mm-f18-g, fe-28mm-f2, fe-35mm-f14-za, fe-50mm-f14-za, fe-55mm-f18-za,
     // fe-100mm-f28-macro-gm, fe-600mm-f4-gm (store placard reads "SEL600F40GM"),

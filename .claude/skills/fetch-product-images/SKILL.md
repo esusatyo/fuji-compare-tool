@@ -3,7 +3,7 @@ name: fetch-product-images
 description: Find, verify and apply freely-licensed product images for cameras and lenses that are missing one — sourcing from Wikimedia Commons and other genuinely free repositories, proving each photo is the right product AND that the licence permits use, and recording the attribution the licence requires. Use when the user wants to fill in missing camera/lens images, fix a wrong or broken product photo, shrink KNOWN_IMAGE_GAPS, or audit the licensing of images already in the dataset.
 metadata:
   author: fuji-compare-tool
-  version: "1.0"
+  version: "1.2"
 ---
 
 Fill in `imageUrl` for items that lack one, using images the project **actually has
@@ -32,7 +32,7 @@ and both are easy to get wrong in ways no test can catch:
 | `upload.wikimedia.org` | 105 | Free. **92 of 104 unique files require attribution** (41× CC BY 2.0, 41× CC BY-SA 4.0, 4× CC BY-SA 3.0, 4× CC BY 4.0, 1× CC BY 3.0, 1× CC BY-SA 3.0 de). 12 are CC0 — no attribution needed. |
 | Manufacturer / retailer hotlinks | 167 | **No licence basis.** `sigma-global.com` (59), `fujifilm-x.b-cdn.net` (75), `tamron.com` (6), `cdn.shopify.com` (10), `viltrox.com` (4), plus TTArtisan, 7Artisans, Voigtländer, Venus/Laowa, foto-erhardt. |
 
-**The site currently renders no attribution anywhere** (`grep -rn -i "attribution\|credit\|licen" engine.js *.html` → nothing). So the ~92 CC BY/BY-SA images in use today are technically non-compliant. Raise this with the user on the first run; fixing it is step 6.
+**Attribution is now built and enforced** (PR #18, 2026-07-27, landed the day after this skill did): every `upload.wikimedia.org` `imageUrl` must carry a matching `imageCredit` object (`author`, `licence`, `licenceUrl`, `source`), checked by `checkImageCredit` in `tests/helpers/schema.js` and rendered in a credits block on `about.html` by `scripts/generate-seo.js`. Steps 5–6 below are about *using* that machinery for whatever you add this run, not building it from scratch.
 
 The 167 manufacturer hotlinks are a separate, pre-existing decision — publicity product shots used to depict the product they advertise. That is common practice and low-risk, but it is **not** "copyright free". Don't silently convert them, and don't add new ones under this skill without flagging the trade-off.
 
@@ -49,6 +49,25 @@ licence metadata via the API, so licence and attribution are provable rather tha
 - Openverse (`openverse.org`) — aggregates CC-licensed images; still verify licence at
   the source, not via the aggregator.
 - Public-domain sources (US federal works, expired copyright, explicit CC0 releases).
+
+**Tier 3 — the manufacturer's own official product page**, only when Tiers 1–2 turn up
+nothing, and only with the owner's explicit go-ahead (given 2026-08-17: "let's do it"
+for the remaining gaps — the earlier default was to flag this trade-off and stop, and
+that default still applies to anything not covered by that decision). This is **not**
+a free licence — it's the same "a product photo may depict the product it's selling"
+retail norm already covering the dataset's 167 pre-existing manufacturer hotlinks
+(`sigma-global.com`, `fujifilm-x.b-cdn.net`, `tamron.com`, etc.), extended to fill
+remaining gaps rather than left as a closed, historical set:
+- Source the image from the model's **own current official product page** on the
+  manufacturer's site — not a press kit, not a retailer, not a fan/review site hosting
+  a re-uploaded copy. A page that no longer exists (common for cameras discontinued
+  10–20 years ago, e.g. Panasonic's DMC-L10) has no Tier 3 candidate either; don't
+  substitute a retailer or archive copy for it.
+- Record the page as an `imageSource` citation (see step 5) — this is what makes a
+  Tier 3 image different from an untracked hotlink: every one added under this tier
+  must be traceable back to the exact page it came from.
+- Still subject to step 3's correctness bar in full — generation suffixes, wrong
+  mount, non-product images are rejected exactly as they would be from Commons.
 
 **Never acceptable:** Google Images results, Amazon/B&H/retailer product shots, review-site
 photographs, Pinterest, stock previews, watermarked images, or anything whose licence you
@@ -126,32 +145,58 @@ Record from the response: `LicenseShortName`, `Artist`, `LicenseUrl`, `Attributi
 Never infer a licence from the fact that a file is hotlinkable, or from a sibling file in
 the same category.
 
-### 5. Record the attribution
+### 5. Record the source — for every image, not just Commons ones
 CC BY and CC BY-SA permit use **only** if credit is given, so the credit must be stored
 alongside the URL — an image whose attribution was never captured cannot be lawfully
-displayed later.
+displayed later, and cannot be reconstructed after the fact once nobody remembers which
+file a thumbnail came from. **Never leave sourcing only in the chat transcript or the
+step-8 report — if it isn't written into `<brand>/data.js`, it isn't recorded.**
 
-The data model has **no field for this yet**. Adding one is part of this skill's job:
+**Commons images (the normal case): automated, don't hand-write the object.** After
+applying new `upload.wikimedia.org` URLs, run:
 
-```js
-imageUrl:'https://upload.wikimedia.org/...',
-imageCredit:{ author:'Henry Söderlund', licence:'CC BY 4.0',
-              licenceUrl:'https://creativecommons.org/licenses/by/4.0/',
-              source:'https://commons.wikimedia.org/wiki/File:...' },
+```bash
+node scripts/fetch-image-credits.js <brand> --apply
 ```
 
-CC0/public-domain items may set `imageCredit: null` (no obligation), but recording the
-source is still good practice. Extend `tests/helpers/schema.js` so that **any image whose
-licence requires attribution must carry a complete `imageCredit`** — that turns the
-obligation into something the test suite enforces rather than something a future run
-forgets. Strip HTML from the API's `Artist` field before storing it.
+This queries the Commons API, strips HTML from the `Artist` field, and inserts
+`imageCredit:{ author, licence, licenceUrl, source }` right after each `imageUrl` — safe
+to re-run, existing credits refresh in place. `tests/helpers/schema.js`'s
+`checkImageCredit` already *requires* a complete `imageCredit` on any
+`upload.wikimedia.org` `imageUrl` and rejects one on any other URL, so a Commons image
+applied without running this script fails `npm test` rather than shipping silently
+uncredited.
 
-### 6. Surface the credit in the UI
-Storing attribution isn't compliance on its own — it has to be visible. Add a credit line
-to the rendered card in `engine.js` (author + licence, linking to the source file page),
-or a consolidated credits section on the About page linked from each image. Keep it
-unobtrusive but real. Confirm the approach with the user, since it touches shared
-rendering.
+**Tier 2/3 images (Openverse, permitted press assets, manufacturer product pages): use
+`imageSource`, hand-written, on every one.** `checkImageCredit` only accepts
+`imageCredit` on `upload.wikimedia.org` URLs — it errors if set on anything else, because
+Tier 2/3 images aren't attribution-under-a-free-licence the way a Commons photo is. Use
+the separate `imageSource` field instead (added 2026-08-17,
+`tests/helpers/schema.js`'s `checkSources`, same `{url, tier, note, date}` citation shape
+`specSources`/`priceSource` already use):
+
+```js
+imageUrl:'https://www.manufacturer.com/products/model/hero-shot.jpg',
+imageSource: { url:'https://www.manufacturer.com/products/model/', tier:'T1',
+               note:'official product page, front 3/4 view, model badge legible', date:'2026-08-17' },
+```
+
+No script populates this one — the citation records *which page you actually verified
+the image on*, so write it by hand as you apply each image, not after the fact. Don't
+apply a Tier 2/3 image and defer the citation to "later" — later is how the 167
+pre-existing manufacturer hotlinks ended up with no recorded source at all, which is the
+exact gap this field exists to close going forward. It's optional at the schema level
+(existing untracked hotlinks aren't retroactively required to gain one), but mandatory in
+practice for anything *this skill* applies from here on.
+
+### 6. Confirm the credit renders
+The About-page credits block already exists (`imageCreditsBlock` in
+`scripts/generate-seo.js`, iterates every item's `imageCredit`) — this step is a check,
+not a build, for **Commons** images specifically. `imageSource` citations are provenance
+for re-verification, not licence attribution, so they deliberately don't need a public
+credits-page entry — confirm instead that `node scripts/generate-seo.js` still runs clean
+and `about.html`'s credited-photo count only grew by the Commons images this run added,
+not the Tier 2/3 ones.
 
 ### 7. Apply, verify, test
 Apply only reviewed matches — patch `imageUrl` (+ `imageCredit`) in `<brand>/data.js`,
@@ -186,11 +231,23 @@ step-8 report rather than changing it silently.
 
 - **Never apply an image you have not both seen and licence-checked.** Correct-and-unfree
   and free-and-wrong are equally unusable.
+- **Never apply an image whose source isn't durably recorded in `data.js`.** Commons →
+  run `fetch-image-credits.js`; Tier 2/3 → hand-write `imageSource` (see step 5). A source
+  that exists only in this run's chat transcript is lost the moment the session ends.
 - **Never guess or assume a licence.** Cite the file page for every one.
 - **Never use English Wikipedia's non-free fair-use product photos.**
 - **Prefer a gap to a guess.** `KNOWN_IMAGE_GAPS` is a documented exception, not a failure.
 - **Don't churn working images.** Only replace one that is broken, wrong, or non-free.
-- **Don't add new manufacturer hotlinks under this skill** — it exists to source *free*
-  images. Flag the trade-off instead and let the user decide.
+- **Manufacturer hotlinks (Tier 3) require the owner's go-ahead first — this is not a
+  free default.** The owner gave that go-ahead for this dataset's remaining gaps on
+  2026-08-17 ("let's do it"), specifically because the same "depicts the product it
+  sells" norm already covers 167 pre-existing images here — so a *future* run of this
+  skill on *this* repo may treat Tier 3 as standing approval for closing gaps the same
+  way, but still needs the current **official product page** for each item (not a press
+  kit, not a retailer, not an old page that's gone 404 for a discontinued model — see
+  Tier 3 above) and an `imageSource` citation, no exceptions. A different repo, or a
+  request to touch *existing* hotlinks (replace/re-license/audit them), is a new
+  trade-off — flag it and let the user decide again rather than assuming this consent
+  carries over.
 - Hotlinking `upload.wikimedia.org` is acceptable for this project's scale; don't
   re-host Commons files without checking the licence's share-alike terms.
