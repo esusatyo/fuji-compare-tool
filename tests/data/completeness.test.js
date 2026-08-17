@@ -152,28 +152,34 @@ const KNOWN_IMAGE_GAPS = {
   nikon: new Set([
     // Cameras: all 10 resolved 2026-08-15 (Commons photos sourced + applied).
     // Lenses — re-run 2026-08-15 (Nikon+Panasonic lens image pass): z-dx-16-50mm-vr
-    // and viltrox-27mm-f12 resolved and removed from this list. tamron-17-70mm-f28
-    // has a Commons candidate (File:Tamron 17-70mm F 2.8 Di III-A VC RXD (Model
-    // B070) (50829297527).jpg) but it's dated 2021-01-12 — years before this
-    // lens's 2026 Nikon Z release — and shows no rear mount, so it's almost
-    // certainly the original Sony E-mount (or later Fuji X) copy; rejected as
-    // wrong-mount rather than confirmed. Remaining 38 have no Commons candidate
-    // at all after a full sweep (script + manual per-item search).
-    'z-24mm-f1-8-s', 'z-35mm-f1-2-s', 'z-58mm-f0-95-s-noct',
-    'z-24-70mm-f2-8-s-ii', 'z-70-200mm-f2-8-vr-s-ii', 'z-40mm-f2-se',
-    'z-dx-24mm-f1-7', 'z-dx-mc-35mm-f17', 'z-14-24mm-f2-8-s',
-    'z-24-105mm-f4-71', 'z-28-135mm-f4-pz',
-    'z-400mm-f2-8-tc-vr-s', 'z-600mm-f6-3-vr-s-pf', 'z-800mm-f6-3-vr-s-pf',
-    'z-dx-12-28mm-pz-vr', 'z-dx-18-140mm-vr', 'z-dx-50-250mm-vr',
-    'viltrox-13mm-f14', 'viltrox-16mm-f18', 'viltrox-33mm-f14', 'viltrox-56mm-f14',
-    'viltrox-85mm-f18-ii', 'viltrox-24mm-f18', 'viltrox-35mm-f18-evo',
-    'viltrox-40mm-f25-air', 'viltrox-85mm-f20-evo', 'viltrox-85mm-f14-pro',
+    // and viltrox-27mm-f12 resolved and removed from this list.
+    // All 17 first-party NIKKOR Z lenses resolved 2026-08-17 (Tier 3, official
+    // nikonusa.com product-page images, barrel text visually confirmed for
+    // every one — several explicitly print the model designation, e.g.
+    // "NIKKOR Z 70-200mm 1:2.8 VR S II", "DX 12-28/3.5-5.6 PZ").
+    // 9 Viltrox Z primes, 3 Laowa Z manuals, both Voigtländer Z manuals, both
+    // Yongnuo Z primes, TTArtisan/7Artisans 27mm f/2.8, and both Meike 85mm
+    // f/1.8 variants all resolved 2026-08-17 (Tier 3, official maker store
+    // pages — viltrox.com, venuslens.net, voigtlaender.de, yongnuo.eu,
+    // ttartisan.store, 7artisans.store, meikeglobal.com — barrel/mount text
+    // or an explicit Z-mount selector confirmed for every one; see each
+    // entry's imageSource.note for specifics).
+    //
+    // viltrox-85mm-f18-ii: genuine gap, checked 2026-08-17 — no Nikon Z
+    // product of this "II" revision exists on viltrox.com (only Fuji X and
+    // Sony E Mark II variants found); the stored productUrl was already null.
+    'viltrox-85mm-f18-ii',
+    // tamron-17-70mm-f28 has a Commons candidate (File:Tamron 17-70mm F 2.8
+    // Di III-A VC RXD (Model B070) (50829297527).jpg) but it's dated
+    // 2021-01-12 — years before this lens's 2026 Nikon Z release — and shows
+    // no rear mount, so it's almost certainly the original Sony E-mount (or
+    // later Fuji X) copy; rejected as wrong-mount rather than confirmed.
+    // tamron.com's own B070 (17-70mm) and B061 (18-300mm) product/spec pages
+    // were checked directly 2026-08-17: both the hero shot and the dedicated
+    // rear-mount closeup (b061e_mount.png) show a generic bayonet with no
+    // "Nikon Z"/mount-identifying text or shape — Tamron does not publish
+    // visually mount-distinguishable photography for either lens.
     'tamron-17-70mm-f28', 'tamron-18-300mm-f35-63',
-    'laowa-90mm-f28-macro', 'laowa-15mm-f2', 'laowa-10mm-f4-cookie',
-    'voigtlander-nokton-40mm-f12', 'voigtlander-apo-lanthar-50mm-f2',
-    'yongnuo-35mm-f2', 'yongnuo-50mm-f18',
-    'ttartisan-27mm-f28', '7artisans-27mm-f28',
-    'meike-85mm-f18', 'meike-85mm-f18-se-ii',
   ]),
   panasonic: new Set([
     'voigtlander-nokton-25mm-f095', 'laowa-7-5mm-f2-mft',
