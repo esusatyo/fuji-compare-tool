@@ -17,61 +17,52 @@ const { CURRENCIES } = require('../helpers/schema');
 const KNOWN_IMAGE_GAPS = {
   canon: new Set([
     // eos-r50v resolved 2026-08-17 (Tier 3 manufacturer hotlink, canon.com.au —
-    // usa.canon.com geo-blocks non-US traffic)
-    'rf-85mm-f14-l-vcm', // RF 85mm f/1.4 L VCM — no Commons image yet
-    // 2025–2026 RF/RF-S lenses — no freely-licensed Commons image yet
-    'rf-14mm-f14-l-vcm',
-    'rf-20mm-f14-l-vcm',
-    'rf-45mm-f12-stm',
-    'rf-20-50mm-f4-l-is-usm-pz',
-    'rf-7-14mm-f28-35-l-fisheye-stm',
-    'rf-16-28mm-f28-is-stm', // Commons search for this returns only the unrelated RF 28mm f/2.8 pancake
-    'rf-75-300mm-f4-56',
-    'rfs-14-30mm-f4-63-is-stm-pz',
-    // 2020-2022 first-party RF supertelephoto/portrait primes — resolved
-    // 2026-08-15: rf-600mm-f11-is-stm, rf-400mm-f28-l-is-usm, rf-24mm-f14-l-vcm,
-    // rf-35mm-f14-l-vcm, rf-52mm-f28-l-dual-fisheye, rf-10-20mm-f4-l-is-stm,
-    // rf-15-30mm-f45-63-is-stm, rf-28-70mm-f2-l-usm, rf-28-70mm-f28-is-stm,
-    // rf-24-105mm-f28-l-is-usm-z, rf-24-240mm-f4-63-is-usm,
-    // rf-70-200mm-f28-l-is-usm-z (all Commons, licence+visual verified).
-    // rf-800mm-f56-l-is-usm and rf-1200mm-f8-l-is-usm have Commons candidates
-    // but no legible model text on the barrel, and Canon's super-teles
-    // (400/2.8, 600/4, 800/5.6, 1200/8) look near-identical in a field shot —
-    // rejected, stay gaps. Re-checked 2026-08-16 at full resolution (crop of
-    // the front barrel): still blank, no printed designation anywhere visible.
-    // The focus-limiter switch reads "2.6m-20m", far closer to the 400mm
-    // f/2.8's ~2.5m MFD than the 800mm f/5.6's ~6m — actively suggests this
-    // is a mislabeled 400mm f/2.8 photo, not weak evidence either way.
-    // Confirms the original rejection was correct; don't re-accept without a
-    // source that actually shows the barrel text. Remaining have no candidate at all:
-    'rf-600mm-f4-l-is-usm',
-    'rf-85mm-f12-l-usm-ds',
-    'rf-50mm-f14-l-vcm',
+    // usa.canon.com geo-blocks non-US traffic). All 18 first-party RF/RF-S
+    // lenses that were still gapped (rf-14mm-f14-l-vcm, rf-20mm-f14-l-vcm,
+    // rf-45mm-f12-stm, rf-85mm-f14-l-vcm, rf-600mm-f4-l-is-usm,
+    // rf-85mm-f12-l-usm-ds, rf-50mm-f14-l-vcm, rf-1200mm-f8-l-is-usm,
+    // rfs-39mm-f35-stm-dual-fisheye, rfs-78mm-f4-stm-dual,
+    // rf-20-50mm-f4-l-is-usm-pz, rf-7-14mm-f28-35-l-fisheye-stm,
+    // rf-16-28mm-f28-is-stm, rf-100-300mm-f28-l-is-usm,
+    // rf-200-800mm-f63-9-is-usm, rf-75-300mm-f4-56,
+    // rfs-14-30mm-f4-63-is-stm-pz) resolved the same day via canon.com.au
+    // product-carousel images, barrel text visually confirmed for every one.
+    //
+    // rf-800mm-f56-l-is-usm and rf-1200mm-f8-l-is-usm's Commons candidate
+    // (used only for the 800) has no legible model text on the barrel, and
+    // Canon's super-teles (400/2.8, 600/4, 800/5.6, 1200/8) look near-identical
+    // in a field shot — rejected, stays a gap. Re-checked 2026-08-16 at full
+    // resolution (crop of the front barrel): still blank, no printed
+    // designation anywhere visible. The focus-limiter switch reads
+    // "2.6m-20m", far closer to the 400mm f/2.8's ~2.5m MFD than the 800mm
+    // f/5.6's ~6m — actively suggests this is a mislabeled 400mm f/2.8
+    // photo, not weak evidence either way. rf-1200mm-f8-l-is-usm itself
+    // resolved 2026-08-17 via its own canon.com.au page instead.
     'rf-800mm-f56-l-is-usm',
-    'rf-1200mm-f8-l-is-usm',
-    'rfs-39mm-f35-stm-dual-fisheye',
-    'rfs-78mm-f4-stm-dual',
-    'rf-100-300mm-f28-l-is-usm',
-    'rf-200-800mm-f63-9-is-usm',
-    // Third-party RF AF lenses — no freely-licensed Commons image; manufacturer
-    // image pending backfill (Viltrox 85 RF II B&H page blocks fetch; Yongnuo).
+    // viltrox-85mm-f18 (RF II): Viltrox pulled this lens from their own site
+    // entirely — Canon blocks third-party AF lens licensing on RF, so
+    // viltroxcamera.com now only lists the Sony E-mount version. No official
+    // manufacturer page exists to source from; B&H/retailer photos aren't an
+    // acceptable substitute per this skill's sourcing tiers. Stays a gap
+    // until Viltrox (or Canon's policy) changes.
     'viltrox-85mm-f18',
-    'yongnuo-35mm-f2',
-    'yongnuo-85mm-f18',
-    'laowa-90mm-f28-macro',
-    'laowa-15mm-f2',
-    'laowa-10mm-f4-cookie',
-    // TTArtisan RF primes — ttartisan-500mm-f63 resolved 2026-08-15 (Commons,
-    // camera-mounted shot with legible barrel text). Rest: no per-mount photo.
-    'ttartisan-50mm-f14-asph',
-    'ttartisan-tilt-50mm-f14',
-    'ttartisan-50mm-f12',
-    'ttartisan-50mm-f095',
-    // 7Artisans RF primes — store photos are Shopify CDN assets keyed per
-    // variant; no stable per-mount product shot. Backfill next image pass.
-    '7artisans-9mm-f56',
-    '7artisans-10mm-f28-ii',
-    '7artisans-35mm-f14-iii'
+    // yongnuo-35mm-f2, yongnuo-85mm-f18: resolved 2026-08-17 (Tier 3,
+    // yongnuo.eu — both images carry an explicit "R mount / Full Frame"
+    // badge overlay confirming Canon RF, despite the 85mm page's body copy
+    // being a template error describing Fujifilm X-mount).
+    // laowa-90mm-f28-macro, laowa-15mm-f2, laowa-10mm-f4-cookie: resolved
+    // 2026-08-17 (Tier 3, venuslens.net + laowa.com.au — Canon RF confirmed
+    // as a selectable mount on each page; the Cookie's image goes further,
+    // showing the lens mounted on an actual Canon EOS R6 body).
+    // ttartisan-50mm-f14-asph, ttartisan-tilt-50mm-f14, ttartisan-50mm-f12,
+    // ttartisan-50mm-f095, 7artisans-9mm-f56, 7artisans-10mm-f28-ii,
+    // 7artisans-35mm-f14-iii: resolved 2026-08-17 (Tier 3, ttartisan.store /
+    // 7artisans.store — Canon RF/EOS-R confirmed as a selectable mount on
+    // each page; none of the photos show mount-specific markings since
+    // these are manual lenses with an identical front barrel across
+    // mounts, but nothing in any image contradicts the confirmed RF
+    // availability). ttartisan-500mm-f63 resolved earlier, 2026-08-15
+    // (Commons, camera-mounted shot with legible barrel text).
   ]),
   fujifilm: new Set([
     'xc-16-50mm-f35-56', // no freely-licensed product image found
