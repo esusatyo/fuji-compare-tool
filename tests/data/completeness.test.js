@@ -242,40 +242,34 @@ const KNOWN_IMAGE_GAPS = {
     'omsystem-100-400mm-f5-63-ii',
   ]),
   sony: new Set([
-    'sigma-90mm-f28-dg', // discontinued I-series; Sigma image URL not available
-    'sigma-28-70mm-f28-dg', // Sigma product image URL not available (404)
-    'sigma-100-400mm-f5-63-dg', // Sigma product image URL not available (404)
     // tamron-70-300mm: the only Commons file is the Nikon Z version (Model
     // A047Z); the Sony-E variant is A047, so this stays gapped here even though
     // the Nikon entry now carries that photo.
     'tamron-70-300mm-f45-63',
     // Tamron FE zooms — tamron-17-70mm-f28 and tamron-70-180mm-f28-g2 resolved
-    // 2026-08-15 (Commons, mount confirmed via filename/description). The
-    // 17-70mm photo is the SAME file rejected for the Nikon entry (dated
-    // 2021-01-12, before the lens existed in any mount but Sony E — right here,
-    // wrong there). tamron-35-150mm-f2-28's only Commons candidate explicitly
-    // says "Nikon Z" in the filename — wrong mount, rejected, stays a gap.
-    'tamron-16-30mm-f28-g2',
-    'tamron-20-40mm-f28', 'tamron-35-150mm-f2-28',
-    // Viltrox — viltrox-27mm-f12's only Commons candidate is the SAME photo
-    // used for the Nikon entry, visually confirmed there via an explicit
-    // "Nikon Z" mount marking — wrong mount here, rejected. Rest: no
-    // freely-licensed image found at all.
-    'viltrox-13mm-f14', 'viltrox-16mm-f18', 'viltrox-26mm-f28-evo', 'viltrox-27mm-f12', 'viltrox-33mm-f14',
-    'viltrox-56mm-f14', 'viltrox-85mm-f18-ii',
+    // 2026-08-15 (Commons, mount confirmed via filename/description).
+    // tamron-35-150mm-f2-28's only Commons candidate explicitly says "Nikon Z"
+    // in the filename — wrong mount, rejected. tamron-16-30mm-f28-g2,
+    // tamron-20-40mm-f28, and tamron-12-20mm-f28 checked directly on
+    // tamron-americas.com 2026-08-17: each product page is a shared
+    // Sony-E-and-Nikon-Z listing (e.g. page title "...for Sony E & Nikon
+    // Z-Mount") with no dedicated hero product photo at all, only spec
+    // diagrams/icons — consistent with the mount-indistinguishable
+    // photography already confirmed for Tamron's Nikon Z entries.
+    'tamron-16-30mm-f28-g2', 'tamron-20-40mm-f28', 'tamron-35-150mm-f2-28',
+    'tamron-12-20mm-f28',
     // Samyang — samyang-35mm-f18 and samyang-135mm-f18 resolved 2026-08-15
-    // (Commons, "FE" in filename/barrel text confirms Sony mount).
-    'samyang-24mm-f18', 'samyang-45mm-f18', 'samyang-75mm-f18',
-    // Voigtländer — manufacturer image URLs pending backfill
-    'voigtlander-apo-lanthar-35mm-f2', 'voigtlander-apo-lanthar-50mm-f2', 'voigtlander-nokton-40mm-f12',
-    // Laowa — Venus Optics image URLs pending backfill
-    'laowa-90mm-f28-macro', 'laowa-15mm-f2', 'laowa-10mm-f4-cookie',
-    // Zeiss — zeiss-batis-25mm-f2, zeiss-batis-85mm-f18, zeiss-touit-32mm-f18
-    // resolved 2026-08-15 (Commons; Batis is Sony-E-exclusive so no mount
-    // ambiguity, Touit confirmed via NEX-mounted photo). Loxia still gapped.
+    // (Commons). samyang-24mm-f18, samyang-45mm-f18, samyang-75mm-f18 resolved
+    // 2026-08-17 via Tier 3 (samyangus.com, filenames literally contain "FE").
+    // Viltrox (all 7), Voigtländer (all 3), Laowa (all 3), 7Artisans,
+    // TTArtisan, and Meike resolved 2026-08-17 via Tier 3 manufacturer store
+    // pages (viltrox.com, voigtlaender.de, venuslens.net, 7artisans.store,
+    // ttartisan.store, meikeglobal.com) — see each entry's imageSource.note.
+    //
+    // Zeiss Loxia 35mm f/2: Zeiss discontinued the whole Loxia line and no
+    // longer hosts a live per-lens product page (zeiss.com/.../loxia-lenses
+    // and /loxia both 404); stays a documented gap.
     'zeiss-loxia-35mm-f2',
-    // 7Artisans / TTArtisan / Meike — product image URLs pending backfill
-    '7artisans-27mm-f28', 'ttartisan-27mm-f28', 'meike-85mm-f18',
     // a7-v and a6100 resolved 2026-08-17 via Tier 3 manufacturer hotlinks
     // (electronics.sony.com's /PDP/DI/.../desktop/N.jpg product gallery,
     // which serves correct image/* Content-Type — a7-v's earlier Commons
@@ -288,30 +282,41 @@ const KNOWN_IMAGE_GAPS = {
     // no working /PDP/DI/ equivalent exists for either model (checked both
     // pages' DOM directly, only a generic cashback banner uses that path).
     'fx5', 'fx2',
-    // Aug 2026 refresh additions — resolved 2026-08-15: fe-16mm-f18-g,
-    // fe-20mm-f18-g, fe-28mm-f2, fe-35mm-f14-za, fe-50mm-f14-za, fe-55mm-f18-za,
-    // fe-100mm-f28-macro-gm, fe-600mm-f4-gm (store placard reads "SEL600F40GM"),
-    // fe-16-35mm-f28-gm-ii, fe-16-35mm-f28-gm, fe-16-35mm-f4-pz-g,
-    // fe-16-35mm-f4-za-oss, fe-24-70mm-f4-za-oss, e-10-18mm-f4-oss (rear-mount
-    // view, description confirms E-mount), e-16-50mm-f35-56-pz-oss,
-    // e-18-105mm-f4-g-oss-pz, e-18-135mm-f35-56-oss, e-70-350mm-f45-63-g-oss
-    // (store placard reads model number). fe-400mm-f28-gm and
-    // fe-70-200mm-f4-g-oss (two-lens comparison photo) and
-    // fe-200-600mm-f56-63-g-oss (Commons Restrictions:"personality" — explicit
-    // reject) and e-16mm-f28 (multi-lens lineup photo, not a dedicated shot)
-    // were found but rejected; rest have no candidate:
-    'fe-100-400mm-f45-gm-oss', 'fe-100-400mm-f56-8-oss',
-    'sigma-35mm-f14-dg-ii', 'tamron-12-20mm-f28',
-    'fe-300mm-f28-gm', 'fe-400mm-f28-gm',
-    'fe-35mm-f18',
-    'fe-50mm-f28-macro', 'fe-35mm-f28-za',
-    'e-16mm-f28', 'e-20mm-f28', 'e-24mm-f18-za',
-    'fe-12-24mm-f28-gm', 'fe-16-25mm-f28-g',
-    'fe-24-50mm-f28-g', 'fe-28-70mm-f2-gm',
-    'fe-28-70mm-f35-56-oss-ii', 'fe-70-200mm-f4-macro-g-oss-ii', 'fe-70-200mm-f4-g-oss',
-    'fe-100-400mm-f45-63-gm-oss', 'fe-200-600mm-f56-63-g-oss',
-    'fe-400-800mm-f63-8-g-oss',
-    'e-16-50mm-f35-56-pz-oss-ii', 'e-16-55mm-f28-g'
+    // Lens batch resolved 2026-08-17 via Tier 3 — electronics.sony.com's
+    // 1WorldSync-syndicated product gallery (cdn.cs.1worldsync.com
+    // .../inline-content/<hash>/..._gallery.jpg or _hero.jpg, alt-text
+    // matched to the exact product name to rule out cross-sell/related-item
+    // contamination — a real trap hit mid-pass, see commit message) for
+    // fe-400mm-f28-gm, fe-35mm-f18, fe-50mm-f28-macro, fe-35mm-f28-za,
+    // fe-12-24mm-f28-gm, fe-100-400mm-f45-63-gm-oss, fe-70-200mm-f4-g-oss,
+    // e-16mm-f28, e-20mm-f28, e-24mm-f18-za, e-16-55mm-f28-g; plus
+    // sigma-35mm-f14-dg-ii, sigma-90mm-f28-dg, sigma-28-70mm-f28-dg,
+    // sigma-100-400mm-f5-63-dg via sigma-global.com/lenses/images/*_product_
+    // img01.png (barrel-text confirmed, page lists Sony E-mount availability).
+    //
+    // Genuine remaining gaps, checked 2026-08-17: fe-300mm-f28-gm,
+    // fe-28-70mm-f2-gm, fe-100-400mm-f45-gm-oss, fe-100-400mm-f56-8-oss,
+    // fe-16-25mm-f28-g, and fe-24-50mm-f28-g each have ONLY numbered
+    // PDP/DI/Lenses/<SKU>/desktop-or-mobile/N.jpg marketing-lifestyle photos
+    // (a tennis player, a ballet studio, a portrait, a "G MASTER" logo card —
+    // confirmed by screenshot, not equipment shots) and no 1WorldSync
+    // product-gallery block on their electronics.sony.com pages at all — a
+    // real distinction from Sony's *camera* PDP pages, where that same N.jpg
+    // path IS the product photo (used successfully for a7-v/a6100 above).
+    // fe-70-200mm-f4-macro-g-oss-ii, fe-200-600mm-f56-63-g-oss (Commons
+    // Restrictions:"personality" — explicit reject), and fe-400-800mm-f63-8-g-oss
+    // have no 1WorldSync block either. fe-28-70mm-f35-56-oss-ii's stored
+    // productUrl 404'd — fixed to the correct sel28702 slug (found via
+    // search) — but that corrected page also has no product-gallery block.
+    // e-16-50mm-f35-56-pz-oss-ii's stored productUrl (selp1650-2) also
+    // 404s; a search only surfaces the ORIGINAL (non-II) selp1650 SKU page,
+    // not a distinct current URL for the "II" revision — left unfixed rather
+    // than risk attaching the wrong product's URL, and stays gapped.
+    'fe-300mm-f28-gm', 'fe-28-70mm-f2-gm', 'fe-100-400mm-f45-gm-oss',
+    'fe-100-400mm-f56-8-oss', 'fe-16-25mm-f28-g', 'fe-24-50mm-f28-g',
+    'fe-70-200mm-f4-macro-g-oss-ii', 'fe-200-600mm-f56-63-g-oss',
+    'fe-400-800mm-f63-8-g-oss', 'fe-28-70mm-f35-56-oss-ii',
+    'e-16-50mm-f35-56-pz-oss-ii',
   ]),
 };
 
