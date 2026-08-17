@@ -65,39 +65,82 @@ const KNOWN_IMAGE_GAPS = {
     // (Commons, camera-mounted shot with legible barrel text).
   ]),
   fujifilm: new Set([
-    'xc-16-50mm-f35-56', // no freely-licensed product image found
-    // Zeiss Touit trio — discontinued, manufacturer/retailer pages block automated fetch
+    // 38 ids resolved 2026-08-17 (manufacturer product-image sourcing sweep):
+    // xc-16-50mm-f35-56; all 17 first-party GF lenses (gf23mm-f4 through
+    // gf110mm-f56-ts-macro) via fujifilm-x.com product pages
+    // (fujifilm-x.b-cdn.net assets, barrel text confirmed on every one); all
+    // 4 Sigma entries via sigma-global.com (each page states "FUJIFILM X
+    // MOUNT" in its Available Mounts list); viltrox-air-9mm-f28,
+    // viltrox-air-15mm-f17, viltrox-28mm-f45-chip, viltrox-56mm-f12,
+    // viltrox-75mm-f18-evo, viltrox-90mm-f22-evo via viltroxcamera.com
+    // (viltrox-56mm-f12's first candidate image was caught showing the WRONG
+    // mount — barrel read "AF 56/1.2 E" on a visible Sony body — corrected to
+    // the XF-marked photo); and all 10 TTArtisan entries (ttartisan-23mm-f18,
+    // ttartisan-air-17mm-f18, ttartisan-14mm-f35, ttartisan-25mm-f2,
+    // ttartisan-50mm-f095, ttartisan-35mm-f095, ttartisan-tilt-35mm-f14,
+    // ttartisan-10mm-f2-asph, ttartisan-35mm-f14, ttartisan-7-5mm-f2-fisheye)
+    // via ttartisan.store — notable finding: that store's mount-selector
+    // radio buttons default to "Sony E" regardless of the linked lens's
+    // relevant mount, and the gallery image swaps per mount selection;
+    // several first-pass captures were caught (via "SKU-E"-prefixed
+    // filenames / unclicked default state) before the mount was explicitly
+    // switched to "Fuji X" and re-verified. ttartisan-7-5mm-f2-fisheye's
+    // listing has no per-mount hero image at all (confirmed via the store's
+    // own product.json — no variant has a distinct featured_image), so its
+    // shared front-only studio shot (no mount plate visible) was used
+    // instead. ttartisan-35mm-f095 previously had a rejected Commons
+    // candidate (no mount stated) — resolved here via Tier 3 instead.
+    //
+    // 14 more ids resolved 2026-08-17 (second pass, same sweep): all 4
+    // 7Artisans (7artisans-50mm-f18/25mm-f18/25mm-f18-lite/35mm-f18-lite) via
+    // 7artisans.store — the AF 25/35/50mm f/1.8 Lite trio share one listing
+    // with no per-mount hero image (product.json confirms every variant
+    // shares the same image set), so its focal-length-specific studio shots
+    // were used directly; the manual 25mm f/1.8's page mixes in an
+    // EOS-M-mount photo (rear reads "EOS-M Mount") alongside the used one,
+    // confirming the listing is genuinely multi-mount rather than reused
+    // Sony/Canon-only assets. samyang-75mm-f18 via samyangus.com — a
+    // single-mount (X-only) listing, barrel reads "AF 75/1.8 X". Both Laowa
+    // Aksen lenses via venuslens.net (real browser only — 403s to
+    // curl/WebFetch): the mount dropdown includes Fuji X but doesn't swap the
+    // gallery, which is entirely "FE"-filenamed (Sony); used a top-angle shot
+    // that shows no mount plate for each. All 7 Meike entries via
+    // meikeglobal.com — meike-33mm-f14's productUrl on file
+    // (meikeglobal.com/products/3314) turned out to be the Nikon Z-mount
+    // page ("...for Z Mount" in its own title); corrected to the X-mount
+    // "3314x" handle (matching the "x"-suffix convention used by every other
+    // X-mount SKU on this site) and sourced a photo showing the
+    // lens mounted on a "FUJIFILM X-T5" body. meike-55mm-f18 and
+    // meike-85mm-f18's galleries mix in explicit on-body lifestyle photos
+    // shot on Sony/Nikon bodies (rejected) alongside studio shots that are
+    // genuinely shared, unmarked imagery across every mount's listing page
+    // (confirmed via each page's product.json) — used the studio shots.
+    // meike-25mm-f17-air and meike-56mm-f17-air's pages had no ambiguity:
+    // filenames are explicitly "2517X-"/non-"Z"-tagged and page titles state
+    // "for Fujifilm Mirrorless Cameras".
+    //
+    // Zeiss Touit trio — discontinued; the old per-lens URLs now redirect to
+    // one combined page whose sole product image (a "stage" hero banner)
+    // 403s to curl even from a same-origin fetch inside a real browser tab —
+    // reconfirmed 2026-08-17, still blocked.
     'zeiss-touit-12mm-f28', 'zeiss-touit-32mm-f18', 'zeiss-touit-50mm-f28',
-    // Meike — meikeglobal.com blocks automated fetch, no other direct image URL found
-    'meike-33mm-f14', 'meike-55mm-f18', 'meike-85mm-f18',
-    // 7Artisans — no direct manufacturer/retailer image URL found yet
-    '7artisans-50mm-f18', '7artisans-25mm-f18',
-    // GFX medium format line (added 2026-08-15) — bodies resolved 2026-08-16
-    // (Commons, same uploader documenting each GFX launch, licence+visual
-    // verified: CC0/CC BY 4.0/CC BY-SA 4.0). Lenses still gapped.
-    'gf23mm-f4', 'gf30mm-f35', 'gf45mm-f28', 'gf50mm-f35', 'gf55mm-f17',
-    'gf63mm-f28', 'gf80mm-f17', 'gf110mm-f2', 'gf120mm-f4-macro',
-    'gf250mm-f4', 'gf500mm-f56', 'gf20-35mm-f4', 'gf32-64mm-f4',
-    'gf35-70mm-f45-56', 'gf45-100mm-f4', 'gf100-200mm-f56',
-    'gf110mm-f56-ts-macro', // gf30mm-f56-ts resolved 2026-08-16 (Commons)
-    // 2025-2026 additions (refresh 2026-08-15) — no freely-licensed image sourced yet
-    'sigma-12mm-f14', 'sigma-15mm-f14', 'sigma-16-300mm-f35-67', 'sigma-17-40mm-f18',
-    // viltrox-85mm-f18: now discontinued (superseded by the II below); its old
-    // imageUrl was actually the II's promo photo, moved to the new entry, so
-    // this one is genuinely gapped rather than reusing a wrong image.
+    // viltrox-85mm-f18 (plain original, not Air/Pro/EVO): discontinued,
+    // superseded by the II; Viltrox pulled its own listing and no Commons
+    // candidate exists ("Viltrox 85mm f1.8 X" search: zero results, checked
+    // 2026-08-17).
     'viltrox-85mm-f18',
-    'viltrox-air-9mm-f28', 'viltrox-air-15mm-f17',
-    'viltrox-28mm-f45-chip', 'viltrox-56mm-f12', 'viltrox-75mm-f18-evo', 'viltrox-90mm-f22-evo',
-    'ttartisan-23mm-f18', 'ttartisan-air-17mm-f18', 'ttartisan-14mm-f35',
-    'ttartisan-25mm-f2', 'ttartisan-50mm-f095',
-    // ttartisan-35mm-f095: Commons has "TTArtisan 35mm F0.95 (APS-C).jpg" but
-    // neither the filename, description, nor image itself states a mount —
-    // this optic ships in 5+ mounts (E/X/Z/RF/M43) with identical front
-    // barrel markings, so it can't be attributed to X specifically. Rejected
-    // 2026-08-16, stays a gap.
-    'ttartisan-35mm-f095',
-    '7artisans-25mm-f18-lite', '7artisans-35mm-f18-lite',
-    'samyang-75mm-f18', 'samyang-8mm-f28', 'samyang-10mm-f28',
+    // Samyang manual-lens line (10 of 11 — only samyang-75mm-f18 above
+    // resolved): samyangus.com's product pages for these list "Fuji X" as a
+    // purchasable mount option, but the gallery photography is either
+    // explicitly another mount by filename (8mm/10mm/12mm-ncscs/14mm/16mm are
+    // "sony"/"Canon"/"NikonAE"-tagged; 300mm is "SonyE"-tagged; confirmed
+    // wrong-mount even after clicking the "Fuji X" mount selector, which
+    // doesn't swap the displayed images on this site) or unlabeled with no
+    // mount plate markings either way (85mm f/1.4, 85mm f/1.8, 100mm macro,
+    // 135mm f/2 — no "sony"/"canon"/"nikon" tag, but the visible bayonet ring
+    // has no legible brand text to confirm X specifically, so left gapped
+    // rather than guess). Checked 2026-08-17.
+    'samyang-8mm-f28', 'samyang-10mm-f28',
     // samyang-12mm-f2-ncscs: Commons candidate's barrel is legibly stamped
     // "NCS CS E" — the Sony E-mount copy, not X. samyang-14mm-f28: candidate's
     // barrel reads "EOS" — the Canon DSLR-mount original, not the X-mount
@@ -105,14 +148,6 @@ const KNOWN_IMAGE_GAPS = {
     'samyang-12mm-f2-ncscs',
     'samyang-14mm-f28', 'samyang-16mm-f2', 'samyang-85mm-f14', 'samyang-85mm-f18',
     'samyang-100mm-f28-macro', 'samyang-135mm-f2', 'samyang-300mm-f63',
-    'laowa-aksen-45mm-f28', 'laowa-aksen-17-5mm-f17',
-    'meike-55mm-f14-golden', 'meike-25mm-f17-air', 'meike-50mm-f17-ff', // meike-25mm-f18 resolved 2026-08-16 (Commons, filename states Fuji-X)
-    // 13-deferred-lenses batch resolved 2026-08-16 — non-nullable fields sourced
-    // (dimensions via TTArtisan's size-diagram images, nicodottaphoto.com for
-    // the Meike Air 56mm, B&H spec table for the Laowa Aksen 17.5mm), but none
-    // of these product pages exposed a usable, non-blocked image URL.
-    'ttartisan-tilt-35mm-f14', 'ttartisan-10mm-f2-asph', 'ttartisan-35mm-f14',
-    'ttartisan-7-5mm-f2-fisheye', 'meike-56mm-f17-air'
   ]),
   nikon: new Set([
     // Cameras: all 10 resolved 2026-08-15 (Commons photos sourced + applied).
