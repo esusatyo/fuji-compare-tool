@@ -182,68 +182,64 @@ const KNOWN_IMAGE_GAPS = {
     'tamron-17-70mm-f28', 'tamron-18-300mm-f35-63',
   ]),
   panasonic: new Set([
-    'voigtlander-nokton-25mm-f095', 'laowa-7-5mm-f2-mft',
-    // OM System M.Zuiko — omsystem-40-150mm-f4-pro, omsystem-25mm-f18,
-    // omsystem-45mm-f18 resolved 2026-08-15 (Commons). omsystem-17mm-f18 has
-    // a Commons candidate but its category says plain "17mm f/1.8" (the 2012
-    // original) while the dataset entry is the "II" (2023 redesign) —
-    // wrong-generation, rejected, stays a gap.
-    'omsystem-12-40mm-f28-pro', 'omsystem-12-100mm-f4-pro', 'omsystem-17mm-f12-pro',
-    'omsystem-25mm-f12-pro', 'omsystem-45mm-f12-pro', 'omsystem-60mm-f28-macro', 'omsystem-17mm-f18',
-    // Sigma L-mount: 90/2.8 and 28-70/2.8 have Commons candidates (Henry
-    // Söderlund photos, both undated-mount) but sibling photos in the same
-    // category explicitly suffix "Sony E" when that's the mount and these
-    // don't — and both are dated within weeks of each lens's Sony-E-only
-    // launch — so almost certainly Sony E, not L-mount. Rejected, stay gaps.
+    // Cameras: all resolved (see git history — Commons sweeps plus Tier 3
+    // manufacturer hotlinks for l10/s1-ii/s5-iix/g97/g95/bgh1, the last of
+    // which required rejecting mislabeled GH7 photos on the same page).
+    //
+    // Lenses — the large majority (LUMIX S primes/zooms, LUMIX G/Leica DG
+    // primes/zooms, third-party L-mount/MFT from Sigma/Viltrox/Samyang/
+    // Laowa/Voigtländer, and most of OM System's MFT PRO line) resolved
+    // 2026-08-17 via Tier 3 manufacturer hotlinks — shop.panasonic.com,
+    // explore.omsystem.com, sigma-global.com, viltrox.com, lksamyang.com,
+    // venuslens.net, voigtlaender.de — each with an `imageSource` citation
+    // and a barrel-text or dimension-spec visual match recorded in its note.
+    // Notable catches during that pass: shop.panasonic.com's 100mm F2.8
+    // MACRO page's first DOM-order image was actually an unrelated 70-300mm
+    // zoom pulled in from a widget; Viltrox's 16mm L page likewise surfaced
+    // the Sony FE-mount photo first. Both rejected in favor of explicitly
+    // mount/model-tagged filenames found deeper in each gallery.
+    //
+    // omsystem-17mm-f18: Commons candidate's category says plain "17mm
+    // f/1.8" (the 2012 original) while the dataset entry is the "II" (2023
+    // redesign) — wrong-generation, rejected, stays a gap.
+    'omsystem-17mm-f18',
+    // voigtlander-apo-lanthar-35mm-f2-l / -50mm-f2-l: investigated
+    // 2026-08-17 — Voigtländer does not currently manufacture any lens in
+    // the modern Leica/Panasonic/Sigma L-Mount Alliance mount. Their own
+    // site explicitly warns "Voigtländer L-mount has nothing in common with
+    // the L-mount from Leica, Sigma, Panasonic and Leitz Cine lens!" (it
+    // refers to a decades-old L39 screw mount instead), voigtlaender.de has
+    // no /l-mount/ or /lenses/l-mount/ path for either lens (both 404, and
+    // the 50mm's stored productUrl silently redirects to the Nikon Z-mount
+    // page instead), and multiple independent sources confirm Voigtländer's
+    // APO-Lanthar/Nokton lines ship in VM/Sony E/Nikon Z/Canon RF only, not
+    // native L-mount. This calls the underlying data entries into question,
+    // not just their images — flagged to the repo owner for a decision
+    // rather than deleted unilaterally.
     'voigtlander-apo-lanthar-35mm-f2-l', 'voigtlander-apo-lanthar-50mm-f2-l',
-    'laowa-90mm-f28-macro-l', 'laowa-15mm-f2-l',
-    'sigma-90mm-f28-dg', 'sigma-28-70mm-f28-dg', 'sigma-100-400mm-f5-63-dg',
-    // Curated via scripts/fetch-images-commons.js. Cameras: s1iie, g100, s1h,
-    // g100d, gx9, bs1h, s1, s5, gh5, g9 resolved 2026-08-15 (genuine
-    // matching-generation photos found after the script's first-pass hits
-    // returned wrong-generation photos — S1R for s1, S5D for s5, GH5 II for
-    // gh5, G9 II for g9 — and were rejected). l10's Commons candidate is still
-    // rejected (licence-suspect, points to an Adorama listing) — but l10,
-    // s1-ii, s5-iix, g97, g95 all resolved 2026-08-17 via Tier 3 manufacturer
-    // hotlinks (shop.panasonic.com official product galleries, `imageSource`
-    // citations recorded).
-    // Lenses — LUMIX S primes: lumix-s-50mm-f1-8 resolved 2026-08-15.
-    'lumix-s-18mm-f1-8', 'lumix-s-24mm-f1-8', 'lumix-s-40mm-f2',
-    'lumix-s-pro-50mm-f1-4', 'lumix-s-85mm-f1-8', 'lumix-s-100mm-f2-8-macro',
-    // LUMIX G primes:
-    'leica-dg-9mm-f1-7', 'leica-dg-12mm-f1-4', 'leica-dg-15mm-f1-7', 'lumix-g-20mm-f1-7-ii',
-    'leica-dg-25mm-f1-4-ii', 'lumix-g-42-5mm-f1-7', 'leica-dg-200mm-f2-8',
-    // LUMIX S zooms: lumix-s-20-60mm-f3-5-5-6 has a Commons candidate but the
-    // only shot is a hand holding the camera at a store display — rejected
-    // per the "no people holding gear" guardrail, stays a gap.
-    'lumix-s-14-28mm-f4-5-6-macro', 'lumix-s-pro-16-35mm-f4', 'lumix-s-20-60mm-f3-5-5-6',
-    'lumix-s-24-60mm-f2-8', 'lumix-s-24-70mm-f2-8-pro',
-    'lumix-s-28-200mm-f4-7-1-macro', 'lumix-s-pro-70-200mm-f2-8',
-    // LUMIX G zooms: leica-dg-10-25mm-f1-7 and leica-dg-12-60mm-f2-8-4
-    // resolved 2026-08-15.
-    'leica-dg-8-18mm-f2-8-4', 'lumix-g-12-32mm-f3-5-5-6',
-    'lumix-g-12-60mm-f3-5-5-6', 'lumix-g-12-35mm-f2-8-ii',
-    'leica-dg-25-50mm-f1-7', 'lumix-g-35-100mm-f2-8-ii', 'leica-dg-50-200mm-f2-8-4',
-    'lumix-g-14-140mm-f3-5-5-6-ii', 'lumix-g-100-300mm-f4-5-6-ii', 'leica-dg-100-400mm-f4-6-3-ii',
-    // Added 2026-08-08 refresh (new releases): lumix-s-18-40mm-f4-5-6-3
-    // resolved 2026-08-15 (VRT-verified official press photo).
-    'lumix-s-100-500mm-f5-7-1', 'leica-dg-35-100mm-f2-8-power-ois',
-    // Sigma 35/1.4 DG II: maker product-image URL 404s (the 135/1.4 one resolves)
-    'sigma-35mm-f14-dg-ii',
-    // Viltrox/Samyang: makers host no stable product-image URL
-    'viltrox-16mm-f18-l', 'viltrox-28mm-f45-l', 'samyang-14-24mm-f28-l',
-    // Laowa/OM System additions (2026-08-08) — makers host no usable image URL
-    // (laowa-180mm-f45-macro-l got a Commons image 2026-08-15 — removed)
-    'laowa-17mm-f4-tilt-shift-l', 'omsystem-100-400mm-f5-63-ii',
-    // 2026-08-16 refresh additions — new/newly-found items, no image sourced yet
-    'lumix-s-26mm-f8', 'leica-dg-45mm-f28-macro', 'laowa-90mm-f28-macro-mft',
-    // Older first-party MFT lenses: lumix-g-macro-30mm-f2-8 and
-    // lumix-g-7-14mm-f4 resolved 2026-08-15 (Commons).
-    'lumix-g-14mm-f2-5-ii', 'lumix-g-fisheye-8mm-f3-5',
-    'lumix-g-x-pz-14-42mm-f3-5-5-6', 'lumix-g-35-100mm-f4-5-6',
-    // bgh1 resolved 2026-08-17 (Tier 3 manufacturer hotlink; the page's other
-    // gallery images were mislabeled GH7 photos — rejected those, used the
-    // one matching the page's own "DC-BGH1PP" title)
+    // lumix-g-12-32mm-f3-5-5-6: the US shop.panasonic.com product page
+    // 404s for this kit lens (pre-existing productUrl note); Panasonic's JP
+    // site (panasonic.jp) has no standalone product photo, only marketing
+    // composites/diagrams (a cross-section render, a "-K vs -S" color
+    // comparison banner) and Commons has camera+lens combo shots only
+    // (DMC-GM1 body reviews), no standalone lens photo. Stays a gap.
+    'lumix-g-12-32mm-f3-5-5-6',
+    // lumix-g-35-100mm-f2-8-ii: discontinued/superseded by the LEICA DG
+    // 35-100mm F2.8 POWER O.I.S. — Panasonic's own product page for this
+    // model now serves the replacement lens (productUrl already cleared to
+    // null for that reason), and Commons has zero results for this exact
+    // model. Stays a gap.
+    'lumix-g-35-100mm-f2-8-ii',
+    // omsystem-100-400mm-f5-63-ii: explore.omsystem.com's product page for
+    // this exact "IS II" SKU is confirmed correct (page title matches), but
+    // its only tech-spec image (100-400mmf5-63is-techspecs.webp — filename
+    // has no "ii") shows a barrel with no "II" badge and a dimension label
+    // reading "160mm" against this entry's stored length:205.6 — diameter
+    // matches exactly (86.4mm) but length does not, so this may be a
+    // leftover first-gen asset on the II's page rather than a genuine II
+    // photo. Left as a gap rather than risk a wrong-generation image;
+    // worth a second look with a non-cached page load.
+    'omsystem-100-400mm-f5-63-ii',
   ]),
   sony: new Set([
     'sigma-90mm-f28-dg', // discontinued I-series; Sigma image URL not available
