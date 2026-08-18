@@ -167,11 +167,16 @@ function checkCitation(c, label) {
 
 /**
  * Validate the optional `specSources` (array of citations covering the
- * weight/dimensions/optical-formula/status block) and `priceSource` (single
- * citation for the current price) fields. Both are optional and retrofitted
- * only where a refresh actually recorded where a fact came from — absence
- * does not mean the data is wrong, just that no durable citation was kept
- * for it (pre-dates this convention, added 2026-08-15).
+ * weight/dimensions/optical-formula/status block), `priceSource` (single
+ * citation for the current price), and `imageSource` (single citation for
+ * where the current `imageUrl` was found/verified) fields. All three are
+ * optional and retrofitted only where a refresh actually recorded where a
+ * fact came from — absence does not mean the data is wrong, just that no
+ * durable citation was kept for it (specSources/priceSource added
+ * 2026-08-15; imageSource added 2026-08-17 for manufacturer-hotlinked
+ * images, which — unlike a Commons `imageCredit` — aren't attribution
+ * under a free licence, just a record of which official page the photo
+ * came from so a future run can re-verify or re-source it).
  */
 function checkSources(obj) {
   const errs = [];
@@ -180,6 +185,7 @@ function checkSources(obj) {
     else obj.specSources.forEach((c, i) => errs.push(...checkCitation(c, `specSources[${i}]`)));
   }
   if (obj.priceSource != null) errs.push(...checkCitation(obj.priceSource, 'priceSource'));
+  if (obj.imageSource != null) errs.push(...checkCitation(obj.imageSource, 'imageSource'));
   return errs;
 }
 
