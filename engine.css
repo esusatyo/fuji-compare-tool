@@ -62,12 +62,7 @@
 }
 
 html, body {
-  /* clip, not hidden: an ancestor with overflow-x:hidden makes Safari/iOS
-     build an incorrect stacking context around descendant position:sticky
-     elements (#site-header, #compare-header), leaving the sticky header
-     visually pinned but untappable. clip prevents the same horizontal
-     overflow without establishing that scroll-container relationship. */
-  overflow-x: clip;
+  overflow-x: hidden;
 }
 
 body {
@@ -92,6 +87,14 @@ body {
   padding: 0 20px;
   gap: 12px;
   border-bottom: 1px solid var(--border);
+  /* iPad Safari: a sticky element pinned at top:0 sits in the region the
+     dynamic toolbar collapses/expands over, and WebKit can repaint it
+     without recomputing its touch hit-test rect, leaving a tappable-looking
+     header that doesn't respond to touches. Forcing this onto its own
+     compositing layer keeps its hit-test region reliably in sync with what's
+     painted. See engine.js's matching visualViewport resync nudge. */
+  will-change: transform;
+  transform: translateZ(0);
 }
 
 .header-brand {

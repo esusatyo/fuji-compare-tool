@@ -871,6 +871,24 @@ function attachEventListeners() {
       renderAll();
     }
   });
+
+  // iPad Safari: the dynamic toolbar collapsing/expanding over #site-header
+  // (position: sticky; top: 0) can repaint it in its new position without
+  // updating its touch hit-test rect, leaving it visually in place but
+  // untappable until something forces a re-layout (e.g. pinch-zoom). Nudge
+  // the header's transform on every visualViewport change so the hit-test
+  // rect gets recomputed to match what's actually painted.
+  if (window.visualViewport) {
+    const header = document.getElementById('site-header');
+    const resyncHeaderHitRect = () => {
+      if (!header) return;
+      header.style.transform = 'translateZ(0.01px)';
+      void header.offsetHeight;
+      header.style.transform = 'translateZ(0)';
+    };
+    window.visualViewport.addEventListener('resize', resyncHeaderHitRect);
+    window.visualViewport.addEventListener('scroll', resyncHeaderHitRect);
+  }
 }
 
 // ─────────────────────────────────────────────
