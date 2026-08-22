@@ -87,14 +87,6 @@ body {
   padding: 0 20px;
   gap: 12px;
   border-bottom: 1px solid var(--border);
-  /* iPad Safari: a sticky element pinned at top:0 sits in the region the
-     dynamic toolbar collapses/expands over, and WebKit can repaint it
-     without recomputing its touch hit-test rect, leaving a tappable-looking
-     header that doesn't respond to touches. Forcing this onto its own
-     compositing layer keeps its hit-test region reliably in sync with what's
-     painted. See engine.js's matching visualViewport resync nudge. */
-  will-change: transform;
-  transform: translateZ(0);
 }
 
 .header-brand {
@@ -153,16 +145,41 @@ body {
 .header-select:hover { background: var(--overlay-medium); border-color: var(--text-secondary); }
 .header-select option { background: var(--bg-surface-2); color: var(--text-primary); }
 
+/* Enlarges a native <select>'s tap target past its visible box without
+   changing how it looks, working around a reported iPad Safari bug where
+   #site-header's controls stop responding to taps that land on the visible
+   control (root cause unconfirmed — suspected touch hit-test/paint desync
+   on the sticky header). ::before doesn't render reliably on native form
+   controls in WebKit, so the enlarged region lives on the wrapping <label>
+   instead; clicking anywhere on a <label> natively activates the control
+   it's `for`, including opening a <select>'s picker, so this needs no JS.
+   Biased down more than up, matching the device-observed direction of the
+   mis-hit. Bottom is capped at 14px: when the page is scrolled far enough
+   that #compare-header is also stuck, its top edge sits flush against
+   #site-header's bottom (top: var(--header-h)), so bleeding further would
+   start shadowing #compare-header's own (currently working) controls —
+   14px stays inside its shared 14px top padding, which every compare-header
+   cell reserves before any interactive content. */
+.tap-pad { position: relative; display: inline-flex; }
+.tap-pad::before {
+  content: '';
+  position: absolute;
+  top: -8px;
+  right: -5px;
+  bottom: -14px;
+  left: -5px;
+}
+
 /* ─── MODE TOGGLE ─── */
 .mode-toggle {
   display: flex;
   background: var(--overlay-weak);
   border-radius: var(--radius-btn);
-  overflow: hidden;
   border: 1px solid var(--border);
   flex-shrink: 0;
 }
 .mode-btn {
+  position: relative;
   padding: 5px 14px;
   font-size: 12px;
   font-weight: 600;
@@ -174,12 +191,31 @@ body {
   white-space: nowrap;
   font-family: inherit;
 }
+/* Corners rounded per-button (rather than clipped via overflow:hidden on
+   .mode-toggle) so .mode-btn::before's enlarged tap target below isn't
+   clipped along with them. */
+.mode-btn:first-child { border-radius: var(--radius-btn) 0 0 var(--radius-btn); }
+.mode-btn:last-child { border-radius: 0 var(--radius-btn) var(--radius-btn) 0; }
 .mode-btn.active { background: var(--accent-primary); color: var(--bg-deep); }
 .mode-btn:hover:not(.active) { color: var(--text-primary); }
+/* Same enlarged/biased/14px-capped tap target as .tap-pad above, kept
+   directly on the button (no wrapper needed — ::before is reliable on
+   real <button> elements, unlike native <select>). No horizontal bleed:
+   the two mode buttons sit flush against each other, so widening sideways
+   would let a tap meant for one register on the other instead. */
+.mode-btn::before {
+  content: '';
+  position: absolute;
+  top: -8px;
+  right: 0;
+  bottom: -14px;
+  left: 0;
+}
 
 /* ─── BRAND SWITCHER ─── */
-/* Brand switcher reuses .header-select styling; just keep it from shrinking. */
-.brand-switcher { flex-shrink: 0; }
+/* Brand switcher reuses .header-select styling; just keep it (and its
+   .tap-pad wrapper, now the actual flex item) from shrinking. */
+.brand-switcher, .brand-switcher-pad { flex-shrink: 0; }
 
 /* ─── COMPARE STICKY HEADER ─── */
 #compare-header {
