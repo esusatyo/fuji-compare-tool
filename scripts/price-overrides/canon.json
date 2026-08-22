@@ -1,6 +1,8 @@
 {
   "eos-r7":    { "GBP": 1349, "AUD": 2349 },
   "eos-r5-ii": { "AUD": 6699, "JPY": 648000 },
+  "eos-r5":    { "AUD": 4799 },
+  "eos-r5c":   { "AUD": 5000 },
   "rf-600mm-f11-is-stm":  { "AUD": 1349 },
   "rf-400mm-f28-l-is-usm": { "AUD": 20999 },
   "rf-600mm-f4-l-is-usm":  { "AUD": 22799 },
