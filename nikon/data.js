@@ -164,6 +164,7 @@ const CAMERAS = {
     imageCredit:{author:"昼落ち", licence:"CC0", licenceUrl:"http://creativecommons.org/publicdomain/zero/1.0/deed.en", source:"https://commons.wikimedia.org/wiki/File:Nikon_ZR_27_nov_2025a.jpg"},
     asin:'B0FPXLG8X7',
     prices:{USD:2199,AUD:3499,EUR:2549,GBP:2099,JPY:363000,CAD:2999,SGD:3149},
+    specSources: [{ url:'https://onlinemanual.nikonimglib.com/zr/en/15-12.html', tier:'T1', note:'"batteryLife" filled from null — Nikon\'s own manual gives 370 shots (Energy Saving ON, CIPA standard) or 350 shots (Energy Saving OFF) with the EN-EL15c; 370 (the higher, Energy Saving ON figure) used here', date:'2026-08-23' }],
     sensorMP:24.5, sensorType:'Full-frame Partially-Stacked BSI CMOS', processor:'EXPEED 7',
     width:134.0, height:80.5, depth:49.0, weight:630, weatherSealed:true,
     lcdSize:'4.0"', lcdDots:3070, lcdType:'Fully-Articulating Touch',
@@ -174,7 +175,7 @@ const CAMERAS = {
     logVideo:true,
     expeed:'EXPEED 7', nRaw:'6K', pixelShift:null, preCapture:false,
     bluetooth:'5.0', wifi:true,
-    cardSlots:'1× CFexpress Type B + 1× microSD', batteryLife:null, usbCharging:true,
+    cardSlots:'1× CFexpress Type B + 1× microSD', batteryLife:370, usbCharging:true,
     lensType:'Interchangeable', lensSpec:null,
   },
 
