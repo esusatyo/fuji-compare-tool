@@ -598,7 +598,7 @@ const LENSES = {
   },
 
   'z-24-70mm-f2-8-s-ii': {
-    name:'NIKKOR Z 24-70mm f/2.8 S II', manufacturer:'Nikon', line:'S-Line', type:'Zoom', asin:null,
+    name:'NIKKOR Z 24-70mm f/2.8 S II', manufacturer:'Nikon', line:'S-Line', type:'Zoom', asin:'B0FNCDZW6V',
     focalLength:null, focalLengthMin:24, focalLengthMax:70, focalLengthEquiv:'24-70mm',
     maxAperture:2.8, minAperture:22, weight:675, length:142.0, diameter:84.0,
     filterThread:77, minFocusDist:240, maxMagnification:0.32,
@@ -626,7 +626,7 @@ const LENSES = {
   },
 
   'z-70-200mm-f2-8-vr-s-ii': {
-    name:'NIKKOR Z 70-200mm f/2.8 VR S II', manufacturer:'Nikon', line:'S-Line', type:'Zoom', asin:null,
+    name:'NIKKOR Z 70-200mm f/2.8 VR S II', manufacturer:'Nikon', line:'S-Line', type:'Zoom', asin:'B0GPT1BFK1',
     focalLength:null, focalLengthMin:70, focalLengthMax:200, focalLengthEquiv:'70-200mm',
     maxAperture:2.8, minAperture:22, weight:998, length:208.0, diameter:90.0,
     filterThread:77, minFocusDist:380, maxMagnification:0.30,
@@ -768,7 +768,7 @@ const LENSES = {
   },
 
   'z-dx-mc-35mm-f17': {
-    name:'NIKKOR Z DX MC 35mm f/1.7', manufacturer:'Nikon', line:'DX', type:'Prime', asin:null,
+    name:'NIKKOR Z DX MC 35mm f/1.7', manufacturer:'Nikon', line:'DX', type:'Prime', asin:'B0FWD1MZ8P',
     focalLength:35, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'53mm',
     maxAperture:1.7, minAperture:22, weight:220, length:72.0, diameter:70.0,
     filterThread:52, minFocusDist:160, maxMagnification:0.67,
@@ -882,7 +882,7 @@ const LENSES = {
   },
 
   'z-24-105mm-f4-71': {
-    name:'NIKKOR Z 24-105mm f/4-7.1', manufacturer:'Nikon', line:'NIKKOR Z', type:'Zoom', asin:null,
+    name:'NIKKOR Z 24-105mm f/4-7.1', manufacturer:'Nikon', line:'NIKKOR Z', type:'Zoom', asin:'B0GFC89WDP',
     focalLength:null, focalLengthMin:24, focalLengthMax:105, focalLengthEquiv:'24-105mm',
     maxAperture:4.0, minAperture:22, weight:350, length:106.5, diameter:73.5,
     filterThread:67, minFocusDist:200, maxMagnification:0.5,
@@ -897,7 +897,7 @@ const LENSES = {
 
   /* ── FX Video Power Zoom ── */
   'z-28-135mm-f4-pz': {
-    name:'NIKKOR Z 28-135mm f/4 PZ', manufacturer:'Nikon', line:'NIKKOR Z', type:'Zoom', asin:null,
+    name:'NIKKOR Z 28-135mm f/4 PZ', manufacturer:'Nikon', line:'NIKKOR Z', type:'Zoom', asin:'B0F561J59R',
     focalLength:null, focalLengthMin:28, focalLengthMax:135, focalLengthEquiv:'28-135mm',
     maxAperture:4.0, minAperture:22, weight:1120, length:177.5, diameter:105.0,
     filterThread:95, minFocusDist:340, maxMagnification:0.25,
@@ -1137,7 +1137,7 @@ const LENSES = {
     elements:16, groups:13, blades:9, afType:'Stepping Motor',
     weatherSealed:false, ois:false, oisStops:null, year:2023, discontinued:false,
     imageUrl:'https://www.sigma-global.com/lenses/c017_16_14_product_img01.png',
-    asin:null,
+    asin:'B0C1KLRJDW',
     prices:{USD:539,AUD:null,EUR:null,GBP:null,JPY:null,CAD:null,SGD:null},
     priceIncomplete:true,
     productUrl:'https://www.sigma-global.com/en/lenses/c017_16_14/',
@@ -1151,7 +1151,7 @@ const LENSES = {
     elements:9, groups:7, blades:9, afType:'Stepping Motor',
     weatherSealed:false, ois:false, oisStops:null, year:2023, discontinued:false,
     imageUrl:'https://www.sigma-global.com/lenses/c016_30_14_product_img01.png',
-    asin:null,
+    asin:'B0C1KNW8ND',
     prices:{USD:419,AUD:null,EUR:null,GBP:null,JPY:null,CAD:null,SGD:null},
     priceIncomplete:true,
     productUrl:'https://www.sigma-global.com/en/lenses/c016_30_14/',
@@ -1165,7 +1165,7 @@ const LENSES = {
     elements:10, groups:6, blades:9, afType:'Stepping Motor',
     weatherSealed:false, ois:false, oisStops:null, year:2023, discontinued:false,
     imageUrl:'https://www.sigma-global.com/lenses/c018_56_14_product_img01.png',
-    asin:null,
+    asin:'B0C1L1XN3J',
     prices:{USD:559,AUD:null,EUR:null,GBP:null,JPY:null,CAD:null,SGD:null},
     priceIncomplete:true,
     productUrl:'https://www.sigma-global.com/en/lenses/c018_56_14/',
@@ -1276,7 +1276,7 @@ const LENSES = {
     filterThread:67, minFocusDist:19, maxMagnification:0.21,
     elements:16, groups:12, blades:9, afType:'Stepping Motor',
     weatherSealed:true, ois:true, oisStops:null, year:2026, discontinued:false,
-    imageUrl:null, asin:null,
+    imageUrl:null, asin:'B0H6YGLQTF',
     prices:{USD:749,AUD:null,EUR:null,GBP:null,JPY:null,CAD:null,SGD:null},
     priceIncomplete:true,
     productUrl:'https://tamron-americas.com/product/17-70mm-f-2-8-di-iii-a-vc-rxd/',
