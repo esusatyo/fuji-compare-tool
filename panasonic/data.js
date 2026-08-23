@@ -540,7 +540,7 @@ const CAMERAS = {
     productUrl:'https://shop.panasonic.com/products/lumix-l10-premium-point-shoot-digital-camera-24-75mm-zoom-lens',
     imageUrl:'https://shop.panasonic.com/cdn/shop/files/lumix-2026-l10-galleryimages-2-260417.png',
     imageSource: { url:'https://shop.panasonic.com/products/lumix-l10-premium-point-shoot-digital-camera-24-75mm-zoom-lens', tier:'T1', note:'official Panasonic US shop product gallery, front view, LUMIX/Leica DC Vario-Summilux 1:1.7-2.8/10.9-34 ASPH markings legible and match the stored lens spec', date:'2026-08-17' },
-    asin:null,
+    asin:'B0H1WSLJ8H',
     prices:{USD:1599,AUD:2499,EUR:1799,GBP:1399,JPY:249000,CAD:2099,SGD:2299},
     sensorMP:20.4, sensorType:'Micro Four Thirds BSI CMOS', processor:'Venus Engine',
     width:127.1, height:73.9, depth:66.9, weight:508, weatherSealed:false,
@@ -569,7 +569,7 @@ const CAMERAS = {
     productUrl:'https://shop.panasonic.com/products/box-camera-24-2mp-full-frame-mos-sensor',
     imageUrl:'https://upload.wikimedia.org/wikipedia/commons/thumb/b/b0/Panasonic_Lumix_DC-BS1H_25_may_2024a.jpg/500px-Panasonic_Lumix_DC-BS1H_25_may_2024a.jpg',
     imageCredit:{author:"昼落ち", licence:"CC0", licenceUrl:"http://creativecommons.org/publicdomain/zero/1.0/deed.en", source:"https://commons.wikimedia.org/wiki/File:Panasonic_Lumix_DC-BS1H_25_may_2024a.jpg"},
-    asin:null,
+    asin:'B09J1L9RS6',
     prices:{USD:3497,AUD:5499,EUR:3999,GBP:3099,JPY:448000,CAD:4499,SGD:5099},
     sensorMP:24.2, sensorType:'Full-frame CMOS', processor:'Venus Engine',
     width:93.0, height:93.0, depth:78.8, weight:585, weatherSealed:false,
@@ -591,7 +591,7 @@ const CAMERAS = {
     productUrl:'https://shop.panasonic.com/products/box-camera-10-2mp-m4-3-mos-sensor',
     imageUrl:'https://shop.panasonic.com/cdn/shop/products/jegpwael4rvuvdzzmgpf.jpg',
     imageSource: { url:'https://shop.panasonic.com/products/box-camera-10-2mp-m4-3-mos-sensor', tier:'T1', note:'official Panasonic US shop product gallery, front view of the exposed MFT mount box body; other images on this page are mislabeled GH7 photos, this one matches the page title "DC-BGH1PP"', date:'2026-08-17' },
-    asin:null,
+    asin:'B08KGZ2CPB',
     prices:{USD:1997,AUD:3099,EUR:2299,GBP:1799,JPY:240000,CAD:2599,SGD:2899},
     sensorMP:10.2, sensorType:'Micro Four Thirds CMOS', processor:'Venus Engine',
     width:93.0, height:93.0, depth:78.0, weight:545, weatherSealed:false,
@@ -720,7 +720,7 @@ const LENSES = {
   },
 
   'lumix-s-26mm-f8': {
-    name:'LUMIX S 26mm F8', manufacturer:'Panasonic', line:'LUMIX S', type:'Prime', asin:null,
+    name:'LUMIX S 26mm F8', manufacturer:'Panasonic', line:'LUMIX S', type:'Prime', asin:'B0D4SNH275',
     focalLength:26, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'26mm',
     maxAperture:8, minAperture:8, weight:58, length:18.1, diameter:67.1,
     filterThread:null, minFocusDist:25, maxMagnification:0.14,
@@ -1044,7 +1044,7 @@ const LENSES = {
   },
 
   'leica-dg-45mm-f28-macro': {
-    name:'LEICA DG MACRO-ELMARIT 45mm F2.8', manufacturer:'Panasonic', line:'LUMIX G', type:'Prime', asin:null,
+    name:'LEICA DG MACRO-ELMARIT 45mm F2.8', manufacturer:'Panasonic', line:'LUMIX G', type:'Prime', asin:'B002P4A63A',
     focalLength:45, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'90mm',
     maxAperture:2.8, minAperture:22, weight:225, length:62.5, diameter:63,
     filterThread:46, minFocusDist:15, maxMagnification:1.0,
@@ -1136,7 +1136,7 @@ const LENSES = {
      standard H-FS14042 — different, larger lens. Specs below are the PZ's.
      afType inferred; Panasonic names no motor type for it. */
   'lumix-g-x-pz-14-42mm-f3-5-5-6': {
-    name:'LUMIX G X Vario PZ 14-42mm F3.5-5.6 POWER O.I.S.', manufacturer:'Panasonic', line:'LUMIX G', type:'Zoom', asin:null,
+    name:'LUMIX G X Vario PZ 14-42mm F3.5-5.6 POWER O.I.S.', manufacturer:'Panasonic', line:'LUMIX G', type:'Zoom', asin:'B005J5UKIS',
     focalLength:null, focalLengthMin:14, focalLengthMax:42, focalLengthEquiv:'28-84mm',
     maxAperture:3.5, minAperture:22, weight:95, length:26.8, diameter:61.0,
     filterThread:37, minFocusDist:20, maxMagnification:0.17,
