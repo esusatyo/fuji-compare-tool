@@ -760,7 +760,7 @@ const CAMERAS = {
     productUrl:'https://www.sony.com.au/interchangeable-lens-cameras/products/zv-e1',
     imageUrl:'https://upload.wikimedia.org/wikipedia/commons/thumb/6/60/Sony_ZV-E1_with_Sony_FE_28-60mm_F4-5.6_-_by_Henry_S%C3%B6derlund_%2852854053098%29.jpg/500px-Sony_ZV-E1_with_Sony_FE_28-60mm_F4-5.6_-_by_Henry_S%C3%B6derlund_%2852854053098%29.jpg',
     imageCredit:{author:"Henry Söderlund", licence:"CC BY 2.0", licenceUrl:"https://creativecommons.org/licenses/by/2.0", source:"https://commons.wikimedia.org/wiki/File:Sony_ZV-E1_with_Sony_FE_28-60mm_F4-5.6_-_by_Henry_S%C3%B6derlund_(52854053098).jpg"}, asin:'B0BZWNWCZ9',
-    prices:{USD:2198,AUD:3499,EUR:2700,GBP:2300,JPY:298000,CAD:2900,SGD:3000},
+    prices:{USD:2498,AUD:3499,EUR:2700,GBP:2300,JPY:298000,CAD:2900,SGD:3000},
     sensorMP:12.1, sensorType:'Full-frame BSI CMOS', processor:'BIONZ XR',
     width:121.0, height:71.9, depth:54.3, weight:483, weatherSealed:true,
     lcdSize:'3.0"', lcdDots:1037, lcdType:'Vari-angle Touchscreen',
