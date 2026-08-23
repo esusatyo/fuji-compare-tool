@@ -115,6 +115,7 @@ const CAMERAS = {
     imageCredit:{author:"昼落ち", licence:"CC0", licenceUrl:"http://creativecommons.org/publicdomain/zero/1.0/deed.en", source:"https://commons.wikimedia.org/wiki/File:Canon_EOS_R6_Mark_III_26_nov_2025g.jpg"},
     asin:'B0FZVVLR9D',
     prices:{USD:2799,AUD:4399,EUR:3199,GBP:2499,JPY:431000,CAD:3599,SGD:4099},
+    priceSource: { url:'https://www.cpricewatch.com/product/08495/Canon-EOS-R6-Mark-III-price.html', tier:'T4', note:'USD $2,799 body-only regular price confirmed unchanged, consistent across B&H Photo, Adorama, Canon Store and PROCAM (Aug 2026) — usa.canon.com geo-blocks this session', date:'2026-08-23' },
     sensorMP:32.5, sensorType:'Full-frame CMOS', processor:'DIGIC X',
     width:138.4, height:98.4, depth:88.4, weight:699, weatherSealed:true,
     lcdSize:'3.0"', lcdDots:1620, lcdType:'Vari-angle',
