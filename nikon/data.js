@@ -31,7 +31,7 @@ const BRAND_CONFIG = {
     defaultSelected: ['z-50mm-f1-8-s', 'z-24-70mm-f2-8-s', 'z-70-200mm-f2-8-vr-s'],
   },
   footerLinks: [
-    { label: 'Nikon Z System', url: 'https://www.nikonusa.com/en/nikon-products/mirrorless-cameras.page' },
+    { label: 'Nikon Z System', url: 'https://www.nikonusa.com/c/cameras/mirrorless-cameras/overview' },
     { label: 'DPReview Nikon', url: 'https://www.dpreview.com/products/nikon' },
     { label: 'Nikon Rumors',   url: 'https://nikonrumors.com' },
   ],
@@ -75,6 +75,7 @@ const CAMERAS = {
     imageCredit:{author:"Peachyeung316", licence:"CC BY-SA 4.0", licenceUrl:"https://creativecommons.org/licenses/by-sa/4.0", source:"https://commons.wikimedia.org/wiki/File:Nikon_Z9.jpg"},
     asin:'B09KHC4XCT',
     prices:{USD:5000,AUD:7799,EUR:5799,GBP:4499,JPY:780000,CAD:6499,SGD:7299},
+    priceSource: { url:'https://www.nikonusa.com/en/nikon-products/product/mirrorless-cameras/z-9.html', tier:'T1', note:'"Starting at $4,999.95" body-only on nikonusa.com (Aug 2026), confirmed unchanged and consistent with the stored $5,000', date:'2026-08-23' },
     sensorMP:45.7, sensorType:'Full-frame Stacked BSI CMOS', processor:'EXPEED 7',
     width:149.0, height:149.5, depth:90.5, weight:1340, weatherSealed:true,
     lcdSize:'3.2"', lcdDots:2089, lcdType:'4-axis Tilting',
@@ -97,6 +98,7 @@ const CAMERAS = {
     imageCredit:{author:"昼落ち", licence:"CC BY-SA 4.0", licenceUrl:"https://creativecommons.org/licenses/by-sa/4.0", source:"https://commons.wikimedia.org/wiki/File:Nikon_Z_8_27_may_2023b.jpg"},
     asin:'B0C4Q71JBY',
     prices:{USD:3400,AUD:5299,EUR:3899,GBP:3099,JPY:530000,CAD:4399,SGD:4899},
+    priceSource: { url:'https://www.nikonusa.com/en/nikon-products/product/mirrorless-cameras/z-8.html', tier:'T1', note:'"Starting at $3,399.95" body-only on nikonusa.com (Aug 2026), confirmed unchanged and consistent with the stored $3,400', date:'2026-08-23' },
     sensorMP:45.7, sensorType:'Full-frame Stacked BSI CMOS', processor:'EXPEED 7',
     width:144.0, height:118.5, depth:83.0, weight:910, weatherSealed:true,
     lcdSize:'3.2"', lcdDots:2089, lcdType:'4-axis Tilting',
@@ -118,7 +120,8 @@ const CAMERAS = {
     imageUrl:'https://upload.wikimedia.org/wikipedia/commons/thumb/3/39/Nikon_Z6III_%28by_Henry_S%C3%B6derlund%29.jpg/500px-Nikon_Z6III_%28by_Henry_S%C3%B6derlund%29.jpg',
     imageCredit:{author:"Henry Söderlund", licence:"CC BY 2.0", licenceUrl:"https://creativecommons.org/licenses/by/2.0", source:"https://commons.wikimedia.org/wiki/File:Nikon_Z6III_(by_Henry_S%C3%B6derlund).jpg"},
     asin:'B0D77SL8CY',
-    prices:{USD:2000,AUD:3099,EUR:2299,GBP:1799,JPY:312000,CAD:2599,SGD:2899},
+    prices:{USD:2200,AUD:3399,EUR:2499,GBP:1999,JPY:343000,CAD:2899,SGD:3199},
+    priceSource: { url:'https://www.nikonusa.com/p/z6iii/1890/overview', tier:'T1', note:'"Starting at $2,199.95" body-only on nikonusa.com (Aug 2026), confirming the already-current $2,200 USD; regional currencies here are ratio-derived from an earlier refresh and were not independently re-confirmed this pass', date:'2026-08-23' },
     sensorMP:24.5, sensorType:'Full-frame Partially-Stacked BSI CMOS', processor:'EXPEED 7',
     width:138.5, height:101.5, depth:74.0, weight:760, weatherSealed:true,
     lcdSize:'3.2"', lcdDots:2100, lcdType:'Vari-angle',
@@ -164,6 +167,8 @@ const CAMERAS = {
     imageCredit:{author:"昼落ち", licence:"CC0", licenceUrl:"http://creativecommons.org/publicdomain/zero/1.0/deed.en", source:"https://commons.wikimedia.org/wiki/File:Nikon_ZR_27_nov_2025a.jpg"},
     asin:'B0FPXLG8X7',
     prices:{USD:2199,AUD:3499,EUR:2549,GBP:2099,JPY:363000,CAD:2999,SGD:3149},
+    specSources: [{ url:'https://onlinemanual.nikonimglib.com/zr/en/15-12.html', tier:'T1', note:'"batteryLife" filled from null — Nikon\'s own manual gives 370 shots (Energy Saving ON, CIPA standard) or 350 shots (Energy Saving OFF) with the EN-EL15c; 370 (the higher, Energy Saving ON figure) used here', date:'2026-08-23' }],
+    priceSource: { url:'https://www.nikonusa.com/p/zr/2043/overview', tier:'T1', note:'"Starting at $2,199.95" body-only on nikonusa.com (Aug 2026), confirming the stored $2,199', date:'2026-08-23' },
     sensorMP:24.5, sensorType:'Full-frame Partially-Stacked BSI CMOS', processor:'EXPEED 7',
     width:134.0, height:80.5, depth:49.0, weight:630, weatherSealed:true,
     lcdSize:'4.0"', lcdDots:3070, lcdType:'Fully-Articulating Touch',
@@ -174,18 +179,28 @@ const CAMERAS = {
     logVideo:true,
     expeed:'EXPEED 7', nRaw:'6K', pixelShift:null, preCapture:false,
     bluetooth:'5.0', wifi:true,
-    cardSlots:'1× CFexpress Type B + 1× microSD', batteryLife:null, usbCharging:true,
+    cardSlots:'1× CFexpress Type B + 1× microSD', batteryLife:370, usbCharging:true,
     lensType:'Interchangeable', lensSpec:null,
   },
 
-  /* ── Z Full-frame (discontinued) ── USD-only pricing; asin null → search link */
+  /* ── Z Full-frame (older full-frame bodies) ──
+     Z7 II, Z6 II and Z5 were previously marked discontinued:true, but
+     nikonusa.com still sells all three new with active "Was/Now" pricing as
+     of 2026-08-22 (Nikon keeps older FX bodies in the lineup at a reduced
+     price well past a nominal successor's launch, same pattern documented
+     for Sony's A1/A9 II/A7R IV/A7 III). Flipped to discontinued:false and
+     backfilled full currency pricing (ratio-derived from the confirmed USD).
+     Z7, Z6 and Z50 (below/further down) were re-checked the same day and are
+     genuinely archived — "This product has been archived", no price shown —
+     so they keep discontinued:true and USD-only pricing; asin null → search
+     link for those. */
   'z7-ii': {
-    name:'Z7 II', series:'Z (Full-frame)', year:2020, discontinued:true,
+    name:'Z7 II', series:'Z (Full-frame)', year:2020, discontinued:false,
     tagline:'High-Res Dual-Processor',
     productUrl:'https://www.nikonusa.com/en/nikon-products/product/mirrorless-cameras/z-7ii.html',
     imageUrl:'https://upload.wikimedia.org/wikipedia/commons/thumb/6/6e/Nikon_Z_7II_with_Nikkor_Z_24-70mm_F4_S_-_by_Henry_S%C3%B6derlund_%2850723434183%29.jpg/500px-Nikon_Z_7II_with_Nikkor_Z_24-70mm_F4_S_-_by_Henry_S%C3%B6derlund_%2850723434183%29.jpg',
     imageCredit:{author:"Henry Söderlund from Helsinki, Finland", licence:"CC BY 2.0", licenceUrl:"https://creativecommons.org/licenses/by/2.0", source:"https://commons.wikimedia.org/wiki/File:Nikon_Z_7II_with_Nikkor_Z_24-70mm_F4_S_-_by_Henry_S%C3%B6derlund_(50723434183).jpg"}, asin:null,
-    prices:{USD:2999,AUD:null,EUR:null,GBP:null,JPY:null,CAD:null,SGD:null},
+    prices:{USD:1900,AUD:2999,EUR:2199,GBP:1699,JPY:296000,CAD:2499,SGD:2799},
     sensorMP:45.7, sensorType:'Full-frame BSI CMOS', processor:'Dual EXPEED 6',
     width:134.0, height:100.5, depth:69.5, weight:705, weatherSealed:true,
     lcdSize:'3.2"', lcdDots:2100, lcdType:'Tilting',
@@ -222,12 +237,12 @@ const CAMERAS = {
   },
 
   'z6-ii': {
-    name:'Z6 II', series:'Z (Full-frame)', year:2020, discontinued:true,
+    name:'Z6 II', series:'Z (Full-frame)', year:2020, discontinued:false,
     tagline:'Dual-Processor All-Rounder',
     productUrl:'https://www.nikonusa.com/en/nikon-products/product/mirrorless-cameras/z-6ii.html',
     imageUrl:'https://upload.wikimedia.org/wikipedia/commons/thumb/2/26/Nikon_Z_6II_2.jpg/500px-Nikon_Z_6II_2.jpg',
     imageCredit:{author:"Thilo Parg", licence:"CC BY-SA 4.0", licenceUrl:"https://creativecommons.org/licenses/by-sa/4.0", source:"https://commons.wikimedia.org/wiki/File:Nikon_Z_6II_2.jpg"}, asin:null,
-    prices:{USD:1999,AUD:null,EUR:null,GBP:null,JPY:null,CAD:null,SGD:null},
+    prices:{USD:1400,AUD:2199,EUR:1599,GBP:1299,JPY:218000,CAD:1799,SGD:1999},
     sensorMP:24.5, sensorType:'Full-frame BSI CMOS', processor:'Dual EXPEED 6',
     width:134.0, height:100.5, depth:69.5, weight:705, weatherSealed:true,
     lcdSize:'3.2"', lcdDots:2100, lcdType:'Tilting',
@@ -264,12 +279,12 @@ const CAMERAS = {
   },
 
   'z5': {
-    name:'Z5', series:'Z (Full-frame)', year:2020, discontinued:true,
+    name:'Z5', series:'Z (Full-frame)', year:2020, discontinued:false,
     tagline:'Full-Frame Entry (Original)',
     productUrl:'https://www.nikonusa.com/en/nikon-products/product/mirrorless-cameras/z-5.html',
     imageUrl:'https://upload.wikimedia.org/wikipedia/commons/thumb/b/ba/Nikon_Z_5_21_Oct_2020a.jpg/500px-Nikon_Z_5_21_Oct_2020a.jpg',
     imageCredit:{author:"昼落ち", licence:"CC BY-SA 4.0", licenceUrl:"https://creativecommons.org/licenses/by-sa/4.0", source:"https://commons.wikimedia.org/wiki/File:Nikon_Z_5_21_Oct_2020a.jpg"}, asin:null,
-    prices:{USD:1399,AUD:null,EUR:null,GBP:null,JPY:null,CAD:null,SGD:null},
+    prices:{USD:1150,AUD:1799,EUR:1299,GBP:999,JPY:179000,CAD:1499,SGD:1699},
     sensorMP:24.3, sensorType:'Full-frame CMOS', processor:'EXPEED 6',
     width:134.0, height:100.5, depth:69.5, weight:675, weatherSealed:true,
     lcdSize:'3.2"', lcdDots:1040, lcdType:'Tilting',
@@ -292,7 +307,8 @@ const CAMERAS = {
     imageUrl:'https://upload.wikimedia.org/wikipedia/commons/thumb/c/cb/Nikon_Z50II_28_nov_2024a.jpg/500px-Nikon_Z50II_28_nov_2024a.jpg',
     imageCredit:{author:"昼落ち", licence:"CC0", licenceUrl:"http://creativecommons.org/publicdomain/zero/1.0/deed.en", source:"https://commons.wikimedia.org/wiki/File:Nikon_Z50II_28_nov_2024a.jpg"},
     asin:'B0DMJBLQGP',
-    prices:{USD:1007,AUD:1449,EUR:1049,GBP:849,JPY:150000,CAD:1249,SGD:1299},
+    prices:{USD:1010,AUD:1449,EUR:1049,GBP:849,JPY:150000,CAD:1249,SGD:1299},
+    priceSource: { url:'https://www.nikonusa.com/p/z50ii/1784/overview', tier:'T1', note:'"Starting at $1,009.95" body-only on nikonusa.com (Aug 2026); corrects the stale $1,007 figure previously stored here', date:'2026-08-23' },
     sensorMP:20.9, sensorType:'APS-C (DX) CMOS', processor:'EXPEED 7',
     width:127.0, height:96.8, depth:66.5, weight:550, weatherSealed:false,
     lcdSize:'3.2"', lcdDots:1040, lcdType:'Vari-angle',
@@ -588,7 +604,7 @@ const LENSES = {
   },
 
   'z-24-70mm-f2-8-s-ii': {
-    name:'NIKKOR Z 24-70mm f/2.8 S II', manufacturer:'Nikon', line:'S-Line', type:'Zoom', asin:null,
+    name:'NIKKOR Z 24-70mm f/2.8 S II', manufacturer:'Nikon', line:'S-Line', type:'Zoom', asin:'B0FNCDZW6V',
     focalLength:null, focalLengthMin:24, focalLengthMax:70, focalLengthEquiv:'24-70mm',
     maxAperture:2.8, minAperture:22, weight:675, length:142.0, diameter:84.0,
     filterThread:77, minFocusDist:240, maxMagnification:0.32,
@@ -598,6 +614,7 @@ const LENSES = {
     imageSource: { url:'https://www.nikonusa.com/p/nikkor-z-24-70mm-f28-s-ii/20129/overview', tier:'T1', note:'official Nikon USA product page, barrel reads "NIKKOR S", focus-limiter switch visible confirming the S II revision', date:'2026-08-17' },
     prices:{USD:2800,AUD:4399,EUR:null,GBP:null,JPY:null,CAD:3599,SGD:null},
     priceIncomplete:true,
+    priceSource: { url:'https://www.nikonusa.com/p/nikkor-z-24-70mm-f28-s-ii/20129/overview', tier:'T1', note:'"$2,799.95" on nikonusa.com (Aug 2026), confirmed unchanged and consistent with the stored $2,800', date:'2026-08-23' },
     productUrl:'https://www.nikonusa.com/p/nikkor-z-24-70mm-f28-s-ii/20129/overview',
   },
 
@@ -616,7 +633,7 @@ const LENSES = {
   },
 
   'z-70-200mm-f2-8-vr-s-ii': {
-    name:'NIKKOR Z 70-200mm f/2.8 VR S II', manufacturer:'Nikon', line:'S-Line', type:'Zoom', asin:null,
+    name:'NIKKOR Z 70-200mm f/2.8 VR S II', manufacturer:'Nikon', line:'S-Line', type:'Zoom', asin:'B0GPT1BFK1',
     focalLength:null, focalLengthMin:70, focalLengthMax:200, focalLengthEquiv:'70-200mm',
     maxAperture:2.8, minAperture:22, weight:998, length:208.0, diameter:90.0,
     filterThread:77, minFocusDist:380, maxMagnification:0.30,
@@ -626,6 +643,7 @@ const LENSES = {
     imageSource: { url:'https://www.nikonusa.com/p/nikkor-z-70-200mm-f28-vr-s-ii/20130/overview', tier:'T1', note:'official Nikon USA product page, barrel explicitly reads "NIKKOR Z 70-200mm 1:2.8 VR S II"', date:'2026-08-17' },
     prices:{USD:3200,AUD:4999,EUR:null,GBP:null,JPY:null,CAD:4199,SGD:null},
     priceIncomplete:true,
+    priceSource: { url:'https://www.nikonusa.com/p/nikkor-z-70-200mm-f28-vr-s-ii/20130/overview', tier:'T1', note:'"$3,199.95" on nikonusa.com (Aug 2026), confirmed unchanged and consistent with the stored $3,200', date:'2026-08-23' },
     productUrl:'https://www.nikonusa.com/p/nikkor-z-70-200mm-f28-vr-s-ii/20130/overview',
   },
 
@@ -667,7 +685,7 @@ const LENSES = {
     weatherSealed:false, ois:false, oisStops:null, year:2021, discontinued:false,
     imageUrl:'https://upload.wikimedia.org/wikipedia/commons/thumb/c/c1/Nikon_Z_fc_with_Nikkor_Z_28mm_F2.8_SE_-_by_Henry_S%C3%B6derlund_%2851675302954%29.jpg/500px-Nikon_Z_fc_with_Nikkor_Z_28mm_F2.8_SE_-_by_Henry_S%C3%B6derlund_%2851675302954%29.jpg',
     imageCredit:{author:"Henry Söderlund from Helsinki, Finland", licence:"CC BY 2.0", licenceUrl:"https://creativecommons.org/licenses/by/2.0", source:"https://commons.wikimedia.org/wiki/File:Nikon_Z_fc_with_Nikkor_Z_28mm_F2.8_SE_-_by_Henry_S%C3%B6derlund_(51675302954).jpg"},
-    prices:{USD:297,AUD:449,EUR:null,GBP:null,JPY:null,CAD:399,SGD:null},
+    prices:{USD:310,AUD:499,EUR:null,GBP:null,JPY:null,CAD:399,SGD:null},
     priceIncomplete:true,
     productUrl:'https://www.nikonusa.com/p/nikkor-z-28mm-f28-se/20110/overview',
   },
@@ -681,7 +699,7 @@ const LENSES = {
     weatherSealed:false, ois:false, oisStops:null, year:2024, discontinued:false,
     imageUrl:'https://upload.wikimedia.org/wikipedia/commons/thumb/8/89/Nikon_NIKKOR_Z_35mm_f_1.4_%2853868344792%29.jpg/500px-Nikon_NIKKOR_Z_35mm_f_1.4_%2853868344792%29.jpg',
     imageCredit:{author:"Henry Söderlund from Helsinki, Finland, Finland", licence:"CC BY 2.0", licenceUrl:"https://creativecommons.org/licenses/by/2.0", source:"https://commons.wikimedia.org/wiki/File:Nikon_NIKKOR_Z_35mm_f_1.4_(53868344792).jpg"},
-    prices:{USD:597,AUD:899,EUR:null,GBP:null,JPY:null,CAD:799,SGD:null},
+    prices:{USD:580,AUD:899,EUR:null,GBP:null,JPY:null,CAD:799,SGD:null},
     priceIncomplete:true,
     productUrl:'https://www.nikonusa.com/p/nikkor-z-35mm-f14/20126/overview',
   },
@@ -737,7 +755,7 @@ const LENSES = {
     weatherSealed:true, ois:false, oisStops:null, year:2021, discontinued:false,
     imageUrl:'https://upload.wikimedia.org/wikipedia/commons/thumb/e/e2/Nikon_NIKKOR_Z_MC_50mm_f_2.8_%2851378200761%29.jpg/500px-Nikon_NIKKOR_Z_MC_50mm_f_2.8_%2851378200761%29.jpg',
     imageCredit:{author:"Henry Söderlund from Helsinki, Finland", licence:"CC BY 2.0", licenceUrl:"https://creativecommons.org/licenses/by/2.0", source:"https://commons.wikimedia.org/wiki/File:Nikon_NIKKOR_Z_MC_50mm_f_2.8_(51378200761).jpg"},
-    prices:{USD:647,AUD:999,EUR:null,GBP:null,JPY:null,CAD:879,SGD:null},
+    prices:{USD:670,AUD:999,EUR:null,GBP:null,JPY:null,CAD:899,SGD:null},
     priceIncomplete:true,
     productUrl:'https://www.nikonusa.com/p/nikkor-z-mc-50mm-f28/20103/overview',
   },
@@ -752,13 +770,13 @@ const LENSES = {
     weatherSealed:false, ois:false, oisStops:null, year:2023, discontinued:false,
     imageUrl:'https://images.cdn.us-central1.gcp.commercetools.com/f7c8f2bb-aff1-4581-a826-1ad2527be222/FrontLeft-Z24DX_1_7_-KomKgyzE-large.png',
     imageSource: { url:'https://www.nikonusa.com/p/nikkor-z-dx-24mm-f17/20119/overview', tier:'T1', note:'official Nikon USA product page, barrel explicitly reads "NIKKOR DX 24/1.7"', date:'2026-08-17' },
-    prices:{USD:277,AUD:429,EUR:null,GBP:null,JPY:null,CAD:379,SGD:null},
+    prices:{USD:270,AUD:399,EUR:null,GBP:null,JPY:null,CAD:379,SGD:null},
     priceIncomplete:true,
     productUrl:'https://www.nikonusa.com/p/nikkor-z-dx-24mm-f17/20119/overview',
   },
 
   'z-dx-mc-35mm-f17': {
-    name:'NIKKOR Z DX MC 35mm f/1.7', manufacturer:'Nikon', line:'DX', type:'Prime', asin:null,
+    name:'NIKKOR Z DX MC 35mm f/1.7', manufacturer:'Nikon', line:'DX', type:'Prime', asin:'B0FWD1MZ8P',
     focalLength:35, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'53mm',
     maxAperture:1.7, minAperture:22, weight:220, length:72.0, diameter:70.0,
     filterThread:52, minFocusDist:160, maxMagnification:0.67,
@@ -872,7 +890,7 @@ const LENSES = {
   },
 
   'z-24-105mm-f4-71': {
-    name:'NIKKOR Z 24-105mm f/4-7.1', manufacturer:'Nikon', line:'NIKKOR Z', type:'Zoom', asin:null,
+    name:'NIKKOR Z 24-105mm f/4-7.1', manufacturer:'Nikon', line:'NIKKOR Z', type:'Zoom', asin:'B0GFC89WDP',
     focalLength:null, focalLengthMin:24, focalLengthMax:105, focalLengthEquiv:'24-105mm',
     maxAperture:4.0, minAperture:22, weight:350, length:106.5, diameter:73.5,
     filterThread:67, minFocusDist:200, maxMagnification:0.5,
@@ -887,7 +905,7 @@ const LENSES = {
 
   /* ── FX Video Power Zoom ── */
   'z-28-135mm-f4-pz': {
-    name:'NIKKOR Z 28-135mm f/4 PZ', manufacturer:'Nikon', line:'NIKKOR Z', type:'Zoom', asin:null,
+    name:'NIKKOR Z 28-135mm f/4 PZ', manufacturer:'Nikon', line:'NIKKOR Z', type:'Zoom', asin:'B0F561J59R',
     focalLength:null, focalLengthMin:28, focalLengthMax:135, focalLengthEquiv:'28-135mm',
     maxAperture:4.0, minAperture:22, weight:1120, length:177.5, diameter:105.0,
     filterThread:95, minFocusDist:340, maxMagnification:0.25,
@@ -952,7 +970,7 @@ const LENSES = {
     weatherSealed:true, ois:false, oisStops:null, year:2023, discontinued:false,
     imageUrl:'https://upload.wikimedia.org/wikipedia/commons/thumb/a/a1/Nikon_NIKKOR_Z_70-180mm_F2.8_%2853061678724%29.jpg/500px-Nikon_NIKKOR_Z_70-180mm_F2.8_%2853061678724%29.jpg',
     imageCredit:{author:"Henry Söderlund from Helsinki, Finland, Finland", licence:"CC BY 2.0", licenceUrl:"https://creativecommons.org/licenses/by/2.0", source:"https://commons.wikimedia.org/wiki/File:Nikon_NIKKOR_Z_70-180mm_F2.8_(53061678724).jpg"},
-    prices:{USD:1247,AUD:1899,EUR:null,GBP:null,JPY:null,CAD:1699,SGD:null},
+    prices:{USD:1200,AUD:1899,EUR:null,GBP:null,JPY:null,CAD:1599,SGD:null},
     priceIncomplete:true,
     productUrl:'https://www.nikonusa.com/p/nikkor-z-70-180mm-f28/20120/overview',
   },
@@ -1051,7 +1069,7 @@ const LENSES = {
     weatherSealed:false, ois:true, oisStops:null, year:2023, discontinued:false,
     imageUrl:'https://images.cdn.us-central1.gcp.commercetools.com/f7c8f2bb-aff1-4581-a826-1ad2527be222/FrontLeft-Z12-28DX_3-ZrP_ChZS-large.png',
     imageSource: { url:'https://www.nikonusa.com/p/nikkor-z-dx-12-28mm-f35-56-pz-vr/20118/overview', tier:'T1', note:'official Nikon USA product page, barrel explicitly reads "DX 12-28/3.5-5.6 PZ"', date:'2026-08-17' },
-    prices:{USD:357,AUD:549,EUR:null,GBP:null,JPY:null,CAD:479,SGD:null},
+    prices:{USD:340,AUD:499,EUR:null,GBP:null,JPY:null,CAD:399,SGD:null},
     priceIncomplete:true,
     productUrl:'https://www.nikonusa.com/p/nikkor-z-dx-12-28mm-f35-56-pz-vr/20118/overview',
   },
@@ -1065,9 +1083,27 @@ const LENSES = {
     weatherSealed:false, ois:true, oisStops:4.5, year:2019, discontinued:false,
     imageUrl:'https://upload.wikimedia.org/wikipedia/commons/thumb/5/59/Nikon_Z_50_Nikkor_Z_DX_16-50_VR.jpg/500px-Nikon_Z_50_Nikkor_Z_DX_16-50_VR.jpg',
     imageCredit:{author:"Thilo Parg", licence:"CC BY-SA 4.0", licenceUrl:"https://creativecommons.org/licenses/by-sa/4.0", source:"https://commons.wikimedia.org/wiki/File:Nikon_Z_50_Nikkor_Z_DX_16-50_VR.jpg"},
-    prices:{USD:307,AUD:469,EUR:null,GBP:null,JPY:null,CAD:419,SGD:null},
+    prices:{USD:330,AUD:499,EUR:null,GBP:null,JPY:null,CAD:399,SGD:null},
     priceIncomplete:true,
     productUrl:'https://www.nikonusa.com/p/nikkor-z-dx-16-50mm-f35-63-vr/20084/overview',
+  },
+
+  /* New release, added 2026-08-22: announced Oct 2025, found via a full
+     nikonusa.com lens-lineup sweep (missed by prior refreshes since it wasn't
+     new enough to surface in "announced 2026" searches). First DX lens with a
+     metal, weather-sealed mount and constant f/2.8 aperture. */
+  'z-dx-16-50mm-f28-vr': {
+    name:'NIKKOR Z DX 16-50mm f/2.8 VR', manufacturer:'Nikon', line:'DX', type:'Zoom', asin:'B0FWD8HPVV',
+    focalLength:null, focalLengthMin:16, focalLengthMax:50, focalLengthEquiv:'24-75mm',
+    maxAperture:2.8, minAperture:22, weight:330, length:88.0, diameter:74.5,
+    filterThread:67, minFocusDist:150, maxMagnification:0.24,
+    elements:12, groups:11, blades:9, afType:'Stepping Motor',
+    weatherSealed:true, ois:true, oisStops:5.0, year:2025, discontinued:false,
+    imageUrl:'https://images.contentstack.io/v3/assets/blt0e5ec1de4817c440/blt8b35b096fe184040/68dc1e5c877911c2e788b1b6/20133-hero.jpg',
+    imageSource: { url:'https://www.nikonusa.com/p/nikkor-z-dx-16-50mm-f28-vr/20133/overview', tier:'T1', note:'official Nikon USA product page', date:'2026-08-22' },
+    prices:{USD:900,AUD:1399,EUR:null,GBP:null,JPY:null,CAD:1199,SGD:null},
+    priceIncomplete:true,
+    productUrl:'https://www.nikonusa.com/p/nikkor-z-dx-16-50mm-f28-vr/20133/overview',
   },
 
   'z-dx-18-140mm-vr': {
@@ -1109,7 +1145,7 @@ const LENSES = {
     elements:16, groups:13, blades:9, afType:'Stepping Motor',
     weatherSealed:false, ois:false, oisStops:null, year:2023, discontinued:false,
     imageUrl:'https://www.sigma-global.com/lenses/c017_16_14_product_img01.png',
-    asin:null,
+    asin:'B0C1KLRJDW',
     prices:{USD:539,AUD:null,EUR:null,GBP:null,JPY:null,CAD:null,SGD:null},
     priceIncomplete:true,
     productUrl:'https://www.sigma-global.com/en/lenses/c017_16_14/',
@@ -1123,7 +1159,7 @@ const LENSES = {
     elements:9, groups:7, blades:9, afType:'Stepping Motor',
     weatherSealed:false, ois:false, oisStops:null, year:2023, discontinued:false,
     imageUrl:'https://www.sigma-global.com/lenses/c016_30_14_product_img01.png',
-    asin:null,
+    asin:'B0C1KNW8ND',
     prices:{USD:419,AUD:null,EUR:null,GBP:null,JPY:null,CAD:null,SGD:null},
     priceIncomplete:true,
     productUrl:'https://www.sigma-global.com/en/lenses/c016_30_14/',
@@ -1137,7 +1173,7 @@ const LENSES = {
     elements:10, groups:6, blades:9, afType:'Stepping Motor',
     weatherSealed:false, ois:false, oisStops:null, year:2023, discontinued:false,
     imageUrl:'https://www.sigma-global.com/lenses/c018_56_14_product_img01.png',
-    asin:null,
+    asin:'B0C1L1XN3J',
     prices:{USD:559,AUD:null,EUR:null,GBP:null,JPY:null,CAD:null,SGD:null},
     priceIncomplete:true,
     productUrl:'https://www.sigma-global.com/en/lenses/c018_56_14/',
@@ -1214,16 +1250,25 @@ const LENSES = {
     priceIncomplete:true, productUrl:null,
   },
 
+  /* No "II" revision of this lens exists for Nikon Z — confirmed 2026-08-22 via
+     viltrox.com's own product search: "AF 85mm F1.8 II" is sold only for Sony
+     E-mount and Fujifilm X-mount (both $399, with a $329 sale price active at
+     check time). The plain (non-II) "AF 85mm f/1.8 Z" is the real Nikon Z
+     product this entry describes (year:2020, STM AF, elements/groups match
+     B&H's listing) but has been dropped from viltrox.com's own current
+     storefront (its official product URL now 404s/redirects home); B&H still
+     stocks it new at $329 as of this check. */
   'viltrox-85mm-f18-ii': {
-    name:'Viltrox AF 85mm f/1.8 II', manufacturer:'Viltrox', line:'AF', type:'Prime',
+    name:'Viltrox AF 85mm f/1.8', manufacturer:'Viltrox', line:'AF', type:'Prime',
     focalLength:85, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'85mm',
     maxAperture:1.8, minAperture:16, weight:371, length:92, diameter:80,
     filterThread:72, minFocusDist:80, maxMagnification:0.12,
     elements:10, groups:7, blades:9, afType:'STM',
     weatherSealed:false, ois:false, oisStops:null, year:2020, discontinued:false,
     imageUrl:null, asin:null,
-    prices:{USD:399,AUD:null,EUR:null,GBP:null,JPY:null,CAD:null,SGD:null},
-    priceIncomplete:true, productUrl:null,
+    prices:{USD:329,AUD:null,EUR:null,GBP:null,JPY:null,CAD:null,SGD:null},
+    priceIncomplete:true,
+    productUrl:'https://www.bhphotovideo.com/c/product/1612520-REG/viltrox_af_85_1_8_z_85mm_f_1_8_lens_for.html',
   },
 
   /* ── Tamron (Z mount Di III) — excludes 17-28/28-75/70-180 (sold as Nikkor Z) ── */
@@ -1239,7 +1284,7 @@ const LENSES = {
     filterThread:67, minFocusDist:19, maxMagnification:0.21,
     elements:16, groups:12, blades:9, afType:'Stepping Motor',
     weatherSealed:true, ois:true, oisStops:null, year:2026, discontinued:false,
-    imageUrl:null, asin:null,
+    imageUrl:null, asin:'B0H6YGLQTF',
     prices:{USD:749,AUD:null,EUR:null,GBP:null,JPY:null,CAD:null,SGD:null},
     priceIncomplete:true,
     productUrl:'https://tamron-americas.com/product/17-70mm-f-2-8-di-iii-a-vc-rxd/',
@@ -1295,7 +1340,10 @@ const LENSES = {
     weatherSealed:true, ois:false, oisStops:null, year:2022, discontinued:false,
     imageUrl:'https://upload.wikimedia.org/wikipedia/commons/thumb/b/bd/Tamron_70-300mm_F_4.5-6.3_Di_III_RXD_%28Model_A047Z%29_Nikon_Z_%2852393501355%29.jpg/500px-Tamron_70-300mm_F_4.5-6.3_Di_III_RXD_%28Model_A047Z%29_Nikon_Z_%2852393501355%29.jpg',
     imageCredit:{author:"Henry Söderlund from Helsinki, Finland", licence:"CC BY 2.0", licenceUrl:"https://creativecommons.org/licenses/by/2.0", source:"https://commons.wikimedia.org/wiki/File:Tamron_70-300mm_F_4.5-6.3_Di_III_RXD_(Model_A047Z)_Nikon_Z_(52393501355).jpg"}, asin:null,
-    prices:{USD:549,AUD:null,EUR:null,GBP:null,JPY:null,CAD:null,SGD:null},
+    // Price re-verified 2026-08-22: tamron-americas.com's own Nikon Z variant
+    // selector shows $499 (matches B&H's current $499 exactly), down from the
+    // $549 launch-era figure last confirmed in 2022.
+    prices:{USD:499,AUD:null,EUR:null,GBP:null,JPY:null,CAD:null,SGD:null},
     priceIncomplete:true,
     productUrl:'https://tamron-americas.com/product/70-300mm-f-4-5-6-3-di-iii-rxd/',
   },
@@ -1309,7 +1357,12 @@ const LENSES = {
     weatherSealed:true, ois:true, oisStops:null, year:2023, discontinued:false,
     imageUrl:'https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Tamron_150-500mm_F5-6.7_Di_III_VC_VXD_%28Model_A057Z%29_%2853272622666%29.jpg/500px-Tamron_150-500mm_F5-6.7_Di_III_VC_VXD_%28Model_A057Z%29_%2853272622666%29.jpg',
     imageCredit:{author:"Henry Söderlund", licence:"CC BY 2.0", licenceUrl:"https://creativecommons.org/licenses/by/2.0", source:"https://commons.wikimedia.org/wiki/File:Tamron_150-500mm_F5-6.7_Di_III_VC_VXD_(Model_A057Z)_(53272622666).jpg"}, asin:null,
-    prices:{USD:1399,AUD:null,EUR:null,GBP:null,JPY:null,CAD:null,SGD:null},
+    // Price re-verified 2026-08-22: tamron-americas.com shows this SKU out of
+    // stock (no live price on the official store), but B&H and Adorama both
+    // independently list $1,199 for the Nikon Z variant — down from the $1,399
+    // launch-era figure last confirmed in 2023. Two-retailer agreement used in
+    // place of the unreachable official price per sourcing convention.
+    prices:{USD:1199,AUD:null,EUR:null,GBP:null,JPY:null,CAD:null,SGD:null},
     priceIncomplete:true,
     productUrl:'https://tamron-americas.com/product/150-500mm-f-5-6-7-di-iii-vc-vxd/',
   },
@@ -1482,7 +1535,12 @@ const LENSES = {
     imageUrl:'https://yongnuo.eu/wp-content/uploads/2024/03/YN50mm_F1.8Z_DF_DSM_lens_1.jpg',
     imageSource: { url:'https://yongnuo.eu/lenses/nikon-z-f/yn50mm-f1-8z-df-dsm/', tier:'T1', note:'official Yongnuo EU store, Nikon Z-F category; page heading "YN50mm F1.8Z DF DSM"', date:'2026-08-17' },
     asin:null,
-    prices:{USD:130,AUD:null,EUR:null,GBP:null,JPY:null,CAD:null,SGD:null},
+    // Price corrected 2026-08-22: $130 was implausible for this full-frame
+    // variant and its specs (11 elements/8 groups/9 blades/58mm filter/0.45m
+    // MFD) match the DF DSM exactly, not the cheaper APS-C "DA DSM" ($100-120)
+    // this figure likely got copied from. B&H sells this exact SKU new at
+    // $359 (matches AliExpress $359); name/specs/URL were already correct.
+    prices:{USD:359,AUD:null,EUR:null,GBP:null,JPY:null,CAD:null,SGD:null},
     priceIncomplete:true, productUrl:'https://th.hkyongnuo.com/products/yn50mm-f18z-df-dsm',
   },
 
@@ -1550,7 +1608,7 @@ const LENS_DROPDOWN_GROUPS = [
   { label: '── S-Line Zooms ──',  ids: ['z-14-24mm-f2-8-s', 'z-24-70mm-f2-8-s', 'z-24-70mm-f2-8-s-ii', 'z-24-70mm-f4-s', 'z-14-30mm-f4-s', 'z-24-120mm-f4-s', 'z-70-200mm-f2-8-vr-s', 'z-70-200mm-f2-8-vr-s-ii', 'z-100-400mm-f4-5-5-6-vr-s'] },
   { label: '── Standard / Travel Zooms ──', ids: ['z-17-28mm-f2-8', 'z-24-50mm-f4-6-3', 'z-24-105mm-f4-71', 'z-28-75mm-f2-8', 'z-24-200mm-f4-6-3-vr', 'z-28-400mm-f4-8-vr', 'z-28-135mm-f4-pz'] },
   { label: '── Telephoto / Super-Telephoto ──', ids: ['z-70-180mm-f2-8', 'z-180-600mm-f5-6-6-3-vr', 'z-400mm-f4-5-vr-s', 'z-400mm-f2-8-tc-vr-s', 'z-600mm-f6-3-vr-s-pf', 'z-600mm-f4-tc-vr-s', 'z-800mm-f6-3-vr-s-pf'] },
-  { label: '── DX Lenses ──',     ids: ['z-dx-24mm-f1-7', 'z-dx-mc-35mm-f17', 'z-dx-12-28mm-pz-vr', 'z-dx-16-50mm-vr', 'z-dx-18-140mm-vr', 'z-dx-50-250mm-vr'] },
+  { label: '── DX Lenses ──',     ids: ['z-dx-24mm-f1-7', 'z-dx-mc-35mm-f17', 'z-dx-12-28mm-pz-vr', 'z-dx-16-50mm-vr', 'z-dx-16-50mm-f28-vr', 'z-dx-18-140mm-vr', 'z-dx-50-250mm-vr'] },
   { label: '── Sigma ──', ids: ['sigma-16mm-f14', 'sigma-30mm-f14', 'sigma-56mm-f14'] },
   { label: '── Viltrox ──', ids: ['viltrox-13mm-f14', 'viltrox-16mm-f18', 'viltrox-27mm-f12', 'viltrox-33mm-f14', 'viltrox-56mm-f14', 'viltrox-85mm-f18-ii', 'viltrox-85mm-f20-evo', 'viltrox-85mm-f14-pro', 'viltrox-24mm-f18', 'viltrox-35mm-f18-evo', 'viltrox-40mm-f25-air'] },
   { label: '── Tamron ──', ids: ['tamron-17-70mm-f28', 'tamron-18-300mm-f35-63', 'tamron-35-150mm-f2-28', 'tamron-50-400mm-f45-63', 'tamron-70-300mm-f45-63', 'tamron-150-500mm-f5-67'] },

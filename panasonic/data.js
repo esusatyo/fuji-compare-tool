@@ -72,6 +72,7 @@ const CAMERAS = {
     imageUrl:'https://shop.panasonic.com/cdn/shop/files/S1RII_S-E2460_front_K.jpg?v=1779313634&width=500',
     asin:'B0DY21GMBD',
     prices:{USD:3299,AUD:5299,EUR:3829,GBP:3149,JPY:545000,CAD:4549,SGD:4699},
+    priceSource: { url:'https://shop.panasonic.com/products/lumix-s1rii-full-frame-mirrorless-digital-camera-dc-s1rm2', tier:'T1', note:'"Regular price $3,297.77" body-only on shop.panasonic.com (Aug 2026, currently on promo at $2,997.77), confirming the stored $3,299 as the list/MSRP figure, unchanged', date:'2026-08-23' },
     sensorMP:44.3, sensorType:'Full-frame BSI CMOS', processor:'Venus Engine',
     width:134.3, height:102.3, depth:91.8, weight:795, weatherSealed:true,
     lcdSize:'3.0"', lcdDots:1840, lcdType:'Tilt & Free-angle Touch',
@@ -94,6 +95,7 @@ const CAMERAS = {
     imageCredit:{author:"Henry Söderlund from Helsinki, Finland", licence:"CC BY 2.0", licenceUrl:"https://creativecommons.org/licenses/by/2.0", source:"https://commons.wikimedia.org/wiki/File:Panasonic_LUMIX_S5_II_(52682131682).jpg"},
     asin:'B0BR8JMCYG',
     prices:{USD:1999,AUD:3199,EUR:2299,GBP:1899,JPY:330000,CAD:2749,SGD:2849},
+    priceSource: { url:'https://shop.panasonic.com/products/s5m2-full-frame-mirrorless-camera-body', tier:'T1', note:'"Regular price $1,997.99" body-only on shop.panasonic.com (Aug 2026, currently on promo at $1,697.99), confirming the stored $1,999 unchanged', date:'2026-08-23' },
     sensorMP:24.2, sensorType:'Full-frame CMOS', processor:'Venus Engine',
     width:134.3, height:102.3, depth:90.1, weight:740, weatherSealed:true,
     lcdSize:'3.0"', lcdDots:1840, lcdType:'Free-angle Touch',
@@ -116,6 +118,7 @@ const CAMERAS = {
     imageSource: { url:'https://shop.panasonic.com/products/lumix-s1ii-full-frame-camera-partially-stacked-sensor-dc-s1m2', tier:'T1', note:'official Panasonic US shop product gallery, front view with S-E2460 kit lens, LUMIX/S1II badge and lens markings legible', date:'2026-08-17' },
     asin:'B0F8MHCD7V',
     prices:{USD:3199,AUD:5099,EUR:3699,GBP:3049,JPY:528000,CAD:4399,SGD:4549},
+    priceSource: { url:'https://shop.panasonic.com/products/lumix-s1ii-full-frame-camera-partially-stacked-sensor-dc-s1m2', tier:'T1', note:'"Regular price $3,199.99" body-only on shop.panasonic.com (Aug 2026, currently on promo at $2,899.99), confirming the stored $3,199 unchanged', date:'2026-08-23' },
     sensorMP:24.1, sensorType:'Full-frame Partially-Stacked BSI CMOS', processor:'Venus Engine',
     width:134.3, height:102.3, depth:91.8, weight:800, weatherSealed:true,
     lcdSize:'3.0"', lcdDots:1840, lcdType:'Tilt & Free-angle Touch',
@@ -160,6 +163,7 @@ const CAMERAS = {
     imageSource: { url:'https://shop.panasonic.com/products/s5m2x-full-frame-mirrorless-camera-body', tier:'T1', note:'official Panasonic US shop product gallery, front view with S-E2460 kit lens, "IIx" badge visible on shoulder', date:'2026-08-17' },
     asin:'B0BR8FY5HT',
     prices:{USD:2199,AUD:3499,EUR:2549,GBP:2099,JPY:363000,CAD:3049,SGD:3149},
+    priceSource: { url:'https://shop.panasonic.com/products/s5m2x-full-frame-mirrorless-camera-body', tier:'T1', note:'"Regular price $2,197.99" body-only on shop.panasonic.com (Aug 2026, currently on promo at $1,897.99), confirming the stored $2,199 unchanged', date:'2026-08-23' },
     sensorMP:24.2, sensorType:'Full-frame CMOS', processor:'Venus Engine',
     width:134.3, height:102.3, depth:90.1, weight:740, weatherSealed:true,
     lcdSize:'3.0"', lcdDots:1840, lcdType:'Free-angle Touch',
@@ -294,6 +298,7 @@ const CAMERAS = {
     imageCredit:{author:"Mateusz Stopczynski", licence:"CC BY-SA 4.0", licenceUrl:"https://creativecommons.org/licenses/by-sa/4.0", source:"https://commons.wikimedia.org/wiki/File:Panasonic_LUMIX_GH7_front_view.jpg"},
     asin:'B0D613NW2M',
     prices:{USD:2199,AUD:3499,EUR:2549,GBP:2099,JPY:363000,CAD:3049,SGD:3149},
+    priceSource: { url:'https://shop.panasonic.com/products/gh7-mirrorless-camera', tier:'T1', note:'Sale price $2,197.99 body-only on shop.panasonic.com (Aug 2026, no separate MSRP shown besides a bundle "Save $400" promo), confirming the stored $2,199 unchanged; corroborated by B&H Photo body-only listing at the same $2,197.99', date:'2026-08-23' },
     sensorMP:25.2, sensorType:'Micro Four Thirds BSI CMOS', processor:'Venus Engine',
     width:138.4, height:100.3, depth:99.6, weight:805, weatherSealed:true,
     lcdSize:'3.0"', lcdDots:1840, lcdType:'Free-angle Touch',
@@ -384,6 +389,7 @@ const CAMERAS = {
     imageCredit:{author:"Peachyeung316", licence:"CC BY-SA 4.0", licenceUrl:"https://creativecommons.org/licenses/by-sa/4.0", source:"https://commons.wikimedia.org/wiki/File:Panasonic_Lumix_G9_II.jpg"},
     asin:'B0CHTHLVHS',
     prices:{USD:1899,AUD:2999,EUR:2199,GBP:1799,JPY:313000,CAD:2599,SGD:2699},
+    priceSource: { url:'https://shop.panasonic.com/products/g9m2-mirrorless-camera-body', tier:'T1', note:'Sale price $1,897.99 body-only on shop.panasonic.com (Aug 2026, no separate struck-through MSRP shown), confirming the stored $1,899 unchanged; corroborated by B&H Photo body-only listing at the same $1,897.99', date:'2026-08-23' },
     sensorMP:25.2, sensorType:'Micro Four Thirds BSI CMOS', processor:'Venus Engine',
     width:134.3, height:102.3, depth:90.1, weight:658, weatherSealed:true,
     lcdSize:'3.0"', lcdDots:1840, lcdType:'Free-angle Touch',
@@ -540,8 +546,9 @@ const CAMERAS = {
     productUrl:'https://shop.panasonic.com/products/lumix-l10-premium-point-shoot-digital-camera-24-75mm-zoom-lens',
     imageUrl:'https://shop.panasonic.com/cdn/shop/files/lumix-2026-l10-galleryimages-2-260417.png',
     imageSource: { url:'https://shop.panasonic.com/products/lumix-l10-premium-point-shoot-digital-camera-24-75mm-zoom-lens', tier:'T1', note:'official Panasonic US shop product gallery, front view, LUMIX/Leica DC Vario-Summilux 1:1.7-2.8/10.9-34 ASPH markings legible and match the stored lens spec', date:'2026-08-17' },
-    asin:null,
+    asin:'B0H1WSLJ8H',
     prices:{USD:1599,AUD:2499,EUR:1799,GBP:1399,JPY:249000,CAD:2099,SGD:2299},
+    priceSource: { url:'https://shop.panasonic.com/products/lumix-l10-premium-point-shoot-digital-camera-24-75mm-zoom-lens', tier:'T1', note:'"$1,599.99" on shop.panasonic.com (Aug 2026), confirming the stored $1,599 unchanged', date:'2026-08-23' },
     sensorMP:20.4, sensorType:'Micro Four Thirds BSI CMOS', processor:'Venus Engine',
     width:127.1, height:73.9, depth:66.9, weight:508, weatherSealed:false,
     lcdSize:'3.0"', lcdDots:1840, lcdType:'Free-angle Touch',
@@ -569,7 +576,7 @@ const CAMERAS = {
     productUrl:'https://shop.panasonic.com/products/box-camera-24-2mp-full-frame-mos-sensor',
     imageUrl:'https://upload.wikimedia.org/wikipedia/commons/thumb/b/b0/Panasonic_Lumix_DC-BS1H_25_may_2024a.jpg/500px-Panasonic_Lumix_DC-BS1H_25_may_2024a.jpg',
     imageCredit:{author:"昼落ち", licence:"CC0", licenceUrl:"http://creativecommons.org/publicdomain/zero/1.0/deed.en", source:"https://commons.wikimedia.org/wiki/File:Panasonic_Lumix_DC-BS1H_25_may_2024a.jpg"},
-    asin:null,
+    asin:'B09J1L9RS6',
     prices:{USD:3497,AUD:5499,EUR:3999,GBP:3099,JPY:448000,CAD:4499,SGD:5099},
     sensorMP:24.2, sensorType:'Full-frame CMOS', processor:'Venus Engine',
     width:93.0, height:93.0, depth:78.8, weight:585, weatherSealed:false,
@@ -591,7 +598,7 @@ const CAMERAS = {
     productUrl:'https://shop.panasonic.com/products/box-camera-10-2mp-m4-3-mos-sensor',
     imageUrl:'https://shop.panasonic.com/cdn/shop/products/jegpwael4rvuvdzzmgpf.jpg',
     imageSource: { url:'https://shop.panasonic.com/products/box-camera-10-2mp-m4-3-mos-sensor', tier:'T1', note:'official Panasonic US shop product gallery, front view of the exposed MFT mount box body; other images on this page are mislabeled GH7 photos, this one matches the page title "DC-BGH1PP"', date:'2026-08-17' },
-    asin:null,
+    asin:'B08KGZ2CPB',
     prices:{USD:1997,AUD:3099,EUR:2299,GBP:1799,JPY:240000,CAD:2599,SGD:2899},
     sensorMP:10.2, sensorType:'Micro Four Thirds CMOS', processor:'Venus Engine',
     width:93.0, height:93.0, depth:78.0, weight:545, weatherSealed:false,
@@ -646,6 +653,7 @@ const LENSES = {
     imageCredit:{author:"Sudo Work", licence:"CC BY-SA 4.0", licenceUrl:"https://creativecommons.org/licenses/by-sa/4.0", source:"https://commons.wikimedia.org/wiki/File:Panasonic_Lumix_DC-S5II_with_Lumix_S_50mm_1.8_2023-02-06.jpg"},
     prices:{USD:499,AUD:799,EUR:null,GBP:null,JPY:null,CAD:599,SGD:null},
     priceIncomplete:true,
+    priceSource: { url:'https://shop.panasonic.com/products/s-series-50mm-f1-8-l-mount-lens', tier:'T1', note:'"Regular price $499.99" on shop.panasonic.com (Aug 2026, currently on promo at $349.99), confirming the stored $499 unchanged', date:'2026-08-23' },
     productUrl:'https://shop.panasonic.com/products/s-series-50mm-f1-8-l-mount-lens',
   },
 
@@ -720,7 +728,7 @@ const LENSES = {
   },
 
   'lumix-s-26mm-f8': {
-    name:'LUMIX S 26mm F8', manufacturer:'Panasonic', line:'LUMIX S', type:'Prime', asin:null,
+    name:'LUMIX S 26mm F8', manufacturer:'Panasonic', line:'LUMIX S', type:'Prime', asin:'B0D4SNH275',
     focalLength:26, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'26mm',
     maxAperture:8, minAperture:8, weight:58, length:18.1, diameter:67.1,
     filterThread:null, minFocusDist:25, maxMagnification:0.14,
@@ -773,6 +781,7 @@ const LENSES = {
     imageSource: { url:'https://shop.panasonic.com/products/s-series-pro-24-70mm-f2-8-l-mount-lens', tier:'T1', note:'official Panasonic shop.panasonic.com product page; barrel reads "LUMIX S PRO 1:2.8/24-70mm" and "24-70"', date:'2026-08-17' },
     prices:{USD:2149,AUD:3399,EUR:null,GBP:null,JPY:null,CAD:2899,SGD:null},
     priceIncomplete:true,
+    priceSource: { url:'https://shop.panasonic.com/products/s-series-pro-24-70mm-f2-8-l-mount-lens', tier:'T1', note:'"Regular price $2,149.99" on shop.panasonic.com (Aug 2026, currently on promo at $1,899.99), confirming the stored $2,149 unchanged', date:'2026-08-23' },
     productUrl:'https://shop.panasonic.com/products/s-series-pro-24-70mm-f2-8-l-mount-lens',
   },
 
@@ -871,6 +880,7 @@ const LENSES = {
     imageSource: { url:'https://shop.panasonic.com/products/s-series-pro-70-200mm-f2-8-l-mount-lens', tier:'T1', note:'official Panasonic shop.panasonic.com product page; barrel reads "LUMIX S PRO 1:2.8/70-200mm" and "70-200", matching the F2.8 PRO model (the page also carries a separate F4 non-PRO variant — verified alt text says "PRO 70-200mm F2.8")', date:'2026-08-17' },
     prices:{USD:2499,AUD:3999,EUR:null,GBP:null,JPY:null,CAD:3499,SGD:null},
     priceIncomplete:true,
+    priceSource: { url:'https://shop.panasonic.com/products/s-series-pro-70-200mm-f2-8-l-mount-lens', tier:'T1', note:'"Regular price $2,499.99" on shop.panasonic.com (Aug 2026, currently on promo at $2,299.99), confirming the stored $2,499 unchanged', date:'2026-08-23' },
     productUrl:'https://shop.panasonic.com/products/s-series-pro-70-200mm-f2-8-l-mount-lens',
   },
 
@@ -998,6 +1008,7 @@ const LENSES = {
     imageSource: { url:'https://shop.panasonic.com/products/g-series-25mm-f1-4-aph-leica-lens', tier:'T1', note:'official Panasonic shop.panasonic.com product page (page title explicitly "LEICA 25mm F1.4 II DG SUMMILUX"); barrel reads "DG SUMMILUX 1:1.4/25 ASPH." and "25"', date:'2026-08-17' },
     prices:{USD:849,AUD:1299,EUR:null,GBP:null,JPY:null,CAD:1099,SGD:null},
     priceIncomplete:true,
+    priceSource: { url:'https://shop.panasonic.com/products/g-series-25mm-f1-4-aph-leica-lens', tier:'T1', note:'"Regular price $849.99" on shop.panasonic.com (Aug 2026, currently on promo at $649.99), confirming the stored $849 unchanged', date:'2026-08-23' },
     productUrl:'https://shop.panasonic.com/products/g-series-25mm-f1-4-aph-leica-lens',
   },
 
@@ -1044,7 +1055,7 @@ const LENSES = {
   },
 
   'leica-dg-45mm-f28-macro': {
-    name:'LEICA DG MACRO-ELMARIT 45mm F2.8', manufacturer:'Panasonic', line:'LUMIX G', type:'Prime', asin:null,
+    name:'LEICA DG MACRO-ELMARIT 45mm F2.8', manufacturer:'Panasonic', line:'LUMIX G', type:'Prime', asin:'B002P4A63A',
     focalLength:45, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'90mm',
     maxAperture:2.8, minAperture:22, weight:225, length:62.5, diameter:63,
     filterThread:46, minFocusDist:15, maxMagnification:1.0,
@@ -1136,7 +1147,7 @@ const LENSES = {
      standard H-FS14042 — different, larger lens. Specs below are the PZ's.
      afType inferred; Panasonic names no motor type for it. */
   'lumix-g-x-pz-14-42mm-f3-5-5-6': {
-    name:'LUMIX G X Vario PZ 14-42mm F3.5-5.6 POWER O.I.S.', manufacturer:'Panasonic', line:'LUMIX G', type:'Zoom', asin:null,
+    name:'LUMIX G X Vario PZ 14-42mm F3.5-5.6 POWER O.I.S.', manufacturer:'Panasonic', line:'LUMIX G', type:'Zoom', asin:'B005J5UKIS',
     focalLength:null, focalLengthMin:14, focalLengthMax:42, focalLengthEquiv:'28-84mm',
     maxAperture:3.5, minAperture:22, weight:95, length:26.8, diameter:61.0,
     filterThread:37, minFocusDist:20, maxMagnification:0.17,
@@ -1261,6 +1272,7 @@ const LENSES = {
     imageCredit:{author:"Bautsch", licence:"CC0", licenceUrl:"http://creativecommons.org/publicdomain/zero/1.0/deed.en", source:"https://commons.wikimedia.org/wiki/File:Panasonic.Lumix.DC-GH5.Leica.12-60.front_view.jpg"},
     prices:{USD:1049,AUD:1599,EUR:null,GBP:null,JPY:null,CAD:1399,SGD:null},
     priceIncomplete:true,
+    priceSource: { url:'https://shop.panasonic.com/products/g-series-12-60mm-f2-8-4-0-asph-leica-lens', tier:'T1', note:'"Regular price $1,049.99" on shop.panasonic.com (Aug 2026, currently on promo at $899.99), confirming the stored $1,049 unchanged', date:'2026-08-23' },
     productUrl:'https://shop.panasonic.com/products/g-series-12-60mm-f2-8-4-0-asph-leica-lens',
   },
 

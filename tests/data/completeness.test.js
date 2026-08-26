@@ -167,7 +167,12 @@ const KNOWN_IMAGE_GAPS = {
     //
     // viltrox-85mm-f18-ii: genuine gap, checked 2026-08-17 — no Nikon Z
     // product of this "II" revision exists on viltrox.com (only Fuji X and
-    // Sony E Mark II variants found); the stored productUrl was already null.
+    // Sony E Mark II variants found). Corrected 2026-08-22: this entry's
+    // `name` had an erroneous "II" — it actually describes the plain
+    // (non-II) "AF 85mm f/1.8 Z", a real product no longer on viltrox.com's
+    // own storefront but still sold new by B&H (productUrl updated to that
+    // listing); still no official product photo to source, so the image gap
+    // stands under this same (unchanged) slug.
     'viltrox-85mm-f18-ii',
     // tamron-17-70mm-f28 has a Commons candidate (File:Tamron 17-70mm F 2.8
     // Di III-A VC RXD (Model B070) (50829297527).jpg) but it's dated
