@@ -1512,6 +1512,39 @@ const LENSES = {
     productUrl:'https://yongnuo.eu/lenses/eos-rf-ef/85f1-8r-df-dsm/',
   },
 
+  /* ── Samyang (native RF; re-scoped 2026-08-29 — round 1 wrongly called "no native RF Samyang") ── */
+  'samyang-14mm-f28': {
+    name:'Samyang MF 14mm F2.8 RF', manufacturer:'Samyang', line:'Manual', type:'Prime',
+    focalLength:14, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'14mm',
+    maxAperture:2.8, minAperture:22, weight:800, length:120.1, diameter:87,
+    filterThread:null, minFocusDist:28, maxMagnification:0.08,
+    elements:14, groups:10, blades:6, afType:'Manual',
+    weatherSealed:true, ois:false, oisStops:null, year:2019, discontinued:false,
+    imageUrl:'https://samyangus.com/cdn/shop/products/MF14mm_2.8RF_FRONT.jpg?v=1600872641',
+    specSources: [
+      { url:'https://www.lksamyang.com/en/product/product-view.php?seq=410', tier:'T1', note:'official Samyang product page — full spec table (weight, length, diameter, MFD, magnification, elements/groups, blades, weather sealing) for the Canon RF-mount manual-focus version', date:'2026-08-29' },
+    ],
+    asin:null,
+    prices:{USD:499,AUD:799,EUR:599,GBP:399,JPY:56000,CAD:599,SGD:699},
+    productUrl:'https://samyangus.com/products/14mm-f2-8-full-frame-ultra-wide-angle-canon-rf',
+  },
+
+  'samyang-12mm-f2-rf-s': {
+    name:'Samyang AF 12mm F2 RF-S', manufacturer:'Samyang', line:'AF', type:'Prime',
+    focalLength:12, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'19mm',
+    maxAperture:2, minAperture:22, weight:213, length:57.2, diameter:70,
+    filterThread:62, minFocusDist:20, maxMagnification:0.09,
+    elements:12, groups:10, blades:7, afType:'Linear STM',
+    weatherSealed:true, ois:false, oisStops:null, year:2025, discontinued:false,
+    imageUrl:'https://samyangus.com/cdn/shop/files/AF_12mm_F2_RF-S_45.png?v=1733383277',
+    specSources: [
+      { url:'https://www.lksamyang.com/en/product/product-view.php?seq=657', tier:'T1', note:'official Samyang product page — full spec table for the Canon RF-S (APS-C) autofocus version, Samyang\'s first RF-S lens', date:'2026-08-29' },
+    ],
+    asin:null,
+    prices:{USD:499,AUD:799,EUR:599,GBP:399,JPY:77000,CAD:599,SGD:699},
+    productUrl:'https://samyangus.com/products/samyang-af-12mm-f2-0-rf-s-ultra-wide-angle-lens',
+  },
+
   /* ── Laowa (native RF manual-focus specialty) ── */
   /* Canon blocks third-party AF, so specialty makers ship native RF as MF only.
      Specs from Venus Optics + retailer spec tables; ASINs are Canon RF listings. */
@@ -1703,6 +1736,7 @@ const LENS_DROPDOWN_GROUPS = [
   { label: '── Canon RF-S (APS-C) ──', ids: ['rfs-10-18mm-f45-63-is-stm','rfs-14-30mm-f4-63-is-stm-pz','rfs-18-45mm-f45-63-is-stm','rfs-18-150mm-f35-63-is-stm','rfs-55-210mm-f5-71-is-stm','rfs-39mm-f35-stm-dual-fisheye','rfs-78mm-f4-stm-dual'] },
   { label: '── Sigma ──',              ids: ['sigma-12mm-f14','sigma-15mm-f14','sigma-16mm-f14','sigma-23mm-f14','sigma-30mm-f14','sigma-56mm-f14','sigma-10-18mm-f28','sigma-16-300mm-f35-67','sigma-17-40mm-f18','sigma-18-50mm-f28'] },
   { label: '── Tamron ──',             ids: ['tamron-11-20mm-f28','tamron-17-70mm-f28','tamron-18-300mm-f35-63'] },
+  { label: '── Samyang ──',            ids: ['samyang-14mm-f28','samyang-12mm-f2-rf-s'] },
   { label: '── Viltrox ──',            ids: ['viltrox-85mm-f18'] },
   { label: '── TTArtisan ──',          ids: ['ttartisan-50mm-f14-asph','ttartisan-tilt-50mm-f14','ttartisan-500mm-f63','ttartisan-50mm-f12','ttartisan-50mm-f095'] },
   { label: '── 7Artisans ──',          ids: ['7artisans-9mm-f56','7artisans-10mm-f28-ii','7artisans-35mm-f14-iii'] },
