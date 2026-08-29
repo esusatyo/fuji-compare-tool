@@ -1,12 +1,11 @@
 # Progress — Canon third-party lenses (round 2)
 
-**Resume at:** Sigma+Tamron, Viltrox, Yongnuo/Meike/Samyang/Zeiss, and
-7Artisans batches done (all merged; 7Artisans researched 14 candidates and
-closed out with 0 new entries — see "Deferred / skipped" below for the
-per-candidate blockers before re-attempting). 1 remaining maker batch
-(TTArtisan) still to land; merge and verify once it does.
+**Resume at:** All 5 maker batches done and merged (Sigma+Tamron, Viltrox,
+Yongnuo/Meike/Samyang/Zeiss, 7Artisans, TTArtisan). Ready for final
+verification (full test suite, `verify-images.js`, `test:links`,
+`generate-seo.js`) and PR.
 
-**Branch:** expand-thirdparty-lenses-canon   **Last green commit:** a35e106 (Samyang batch merge)
+**Branch:** expand-thirdparty-lenses-canon   **Last green commit:** 635bdb8 (7Artisans batch merge)
 
 ## Baseline (before this round)
 
@@ -22,9 +21,9 @@ conflicts" tables.
 |---|---|---|---|---|---|---|
 | Sigma + Tamron re-check | ✅ both lineups enumerated, 0 new | ✅ N/A — 0 new | ✅ N/A | ✅ N/A | ✅ N/A | 6046cbe |
 | Viltrox re-check | ✅ no change | — | n/a | n/a | n/a | 9769bce |
-| TTArtisan deferred (9 of 14) | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ | — |
+| TTArtisan deferred (9 of 14) | ✅ 9/9 | ✅ 7 | ✅ | ✅ | ✅ | 284a5d4 |
 | 7Artisans deferred | ✅ 14/14 researched | 0 entered — all blocked, see below | n/a | n/a | n/a | fb4bbf5 |
-| Yongnuo + Meike/Samyang/Zeiss re-check | ✅ | ✅ 2 (Samyang) | ✅ | ✅ | ✅ | (this commit) |
+| Yongnuo + Meike/Samyang/Zeiss re-check | ✅ | ✅ 2 (Samyang) | ✅ | ✅ | ✅ | 2e4dd6b |
 
 ## Batch 5 summary (2026-08-29)
 
@@ -124,6 +123,61 @@ exists. Findings:
   already correctly allowlisted in `completeness.test.js` (2026-08-17 note).
 - Full citation trail in `research/sources.md` and `research/lenses.md`.
 
+## TTArtisan batch — findings (2026-08-29)
+
+TTArtisan is now **12 total** (5 from round 1 + 7 this batch):
+`ttartisan-50mm-f14-asph`, `ttartisan-tilt-50mm-f14`, `ttartisan-500mm-f63`,
+`ttartisan-50mm-f12`, `ttartisan-50mm-f095`, `ttartisan-35mm-f14-apsc`,
+`ttartisan-23mm-f14-apsc`, `ttartisan-10mm-f2-asph-apsc`,
+`ttartisan-tilt-35mm-f14-apsc`, `ttartisan-tilt-shift-17mm-f4-asph`,
+`ttartisan-14mm-f28-asph`, `ttartisan-100mm-f28-2x-macro`.
+
+## TTArtisan deferred-batch outcome (2026-08-29)
+
+**The unlock worked**: `ttartisan.store`'s per-mount "Size" comparison image
+gave real RF-specific diameter/length for 7 of the 9 lenses round 1 deferred
+— see `research/lenses.md` for full citations. `ttartisan.com` (round 1's
+primary tier-1 source) was **completely unreachable this round** (connection
+refused, both WebFetch and browser) — a worse starting point than round 1,
+made up for entirely by the store technique.
+
+**Entered (7):** APS-C 35mm f/1.4, APS-C 23mm f/1.4, APS-C 10mm f/2 ASPH,
+Tilt APS-C 35mm f/1.4, Tilt-Shift 17mm f/4 ASPH, 14mm f/2.8 ASPH, 100mm f/2.8
+2X Macro. The last one also resolves round 1's open "TS-100-Macro naming
+hazard" question (see ledger) — it's the plain macro, not a tilt-shift
+product.
+
+**Still deferred (2), narrower reasons than round 1's blanket one:**
+- `ttartisan-17mm-f14-apsc` (APS-C 17mm F1.4) — round 1 believed this shipped
+  in RF; this round found the *opposite* on the maker's own current
+  storefront (Mount selector + spec prose both omit RF). A 2022 RF SKU
+  existed at retail historically but appears delisted from TTArtisan's
+  current catalogue.
+- `ttartisan-25mm-f2-apsc` (APS-C 25mm F2) — RF *is* a live add-to-cart Mount
+  option, but neither the spec-table prose nor — critically — the page's own
+  per-mount Size **image** (which only has 3 columns: E/X, Z, M43) include an
+  RF entry. The unlock technique doesn't help here because the maker hasn't
+  published the diagram for this mount yet, not because of an image-reading
+  problem.
+
+**New-since-round-1 scope check:** re-scanned all 75 products on
+`ttartisan.store` (`products.json`). Two Canon-RF-capable lenses exist that
+were **not** on round 1's original 14-lens list and are **not yet entered**:
+- `90mm-f1-25` — "90mm F1.25 Multi Mounts" (Sony E/Nikon Z/Canon RF/L
+  mount/Fuji GFX/X1D)
+- `ttartisan-21mm-f1-5` — "21mm F1.5 Multi Mounts" (Sony E/Nikon Z/Canon RF)
+
+Neither was researched/entered this batch (out of the assigned scope: this
+batch was "unblock the 9 deferred", not "find new SKUs") — flag for the next
+Sigma/Tamron/Viltrox/Yongnuo re-check pass or a dedicated follow-up.
+Also confirmed via the same scan: none of TTArtisan's `AF`-prefixed lenses
+(17mm f/1.8 Air, 40mm F2, 75mm F2, 56mm F1.8, 35mm F1.8, 27mm F2.8) carry a
+Canon RF mount option — consistent with this project's established scope
+fact that TTArtisan AF lenses aren't RF-licensed. `TTARTISAN 100mm f/2.8
+Macro Tilt-Shift RF` was also seen referenced externally (a 2026 RF add for
+the *separate* `ts100` tilt-shift macro product, distinct from the plain
+macro entered this batch) — also not researched/entered, same reason.
+
 ## Deferred / skipped (with reason)
 
 (carried forward from the archived round — see its PROGRESS.md; nothing new
@@ -206,7 +260,8 @@ completely-untried candidates, check template richness first (does the page
 have a numeric spec grid at all?) before investing in the diagram hunt.
 
 (carried forward from the archived round — see its PROGRESS.md for older
-TTArtisan/7Artisans deferred items pre-dating this round)
+TTArtisan/7Artisans deferred items pre-dating this round, plus the two
+TTArtisan items from this batch above)
 
 ## Open questions for the user
 
