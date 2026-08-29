@@ -3,7 +3,7 @@
 - [x] 0. Archive the completed round-1 change; scaffold this one
 - [ ] 1. Sigma + Tamron re-check batch
 - [ ] 2. Viltrox re-check batch
-- [ ] 3. TTArtisan deferred batch (image-diagram dimension technique)
+- [x] 3. TTArtisan deferred batch (image-diagram dimension technique) — 7 of 9 unblocked, 2 still deferred (narrower reasons, see PROGRESS.md)
 - [ ] 4. 7Artisans deferred batch (same technique)
 - [ ] 5. Yongnuo + Meike/Samyang/Zeiss re-check batch
 - [ ] 6. Merge all batches, resolve MANUFACTURER_COLORS as a union
