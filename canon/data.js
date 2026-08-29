@@ -1448,6 +1448,10 @@ const LENSES = {
     asin:'B0H6Y347BF',
     prices:{USD:749,AUD:1199,EUR:899,GBP:699,JPY:117000,CAD:999,SGD:1099},
     productUrl:'https://www.tamron.com/global/consumer/lenses/b070/',
+    specSources: [
+      { url:'https://tamron-americas.com/canon/', tier:'T1', note:'Re-verified ~2 months post-launch: RF-specific 530 g / 117.3 mm / 67 mm filter unchanged. No tier-2 hands-on review of the RF copy exists yet (confirmed via an rfshooters.com Canon-RF forum thread explicitly asking for one) — stays tier-1-sourced.', date:'2026-08-29' },
+      { url:'https://www.photographytalk.com/tamron-17-70mm-f-2-8-review-the-aps-c-zoom-lands-on-canon-rf-and-nikon-z/', tier:'T4', note:'Independently states the same RF figures (530 g/117.3 mm) as tier 1, but reads as a spec-comparison writeup rather than a hands-on measurement — corroboration only.', date:'2026-08-29' },
+    ],
   },
 
   'tamron-18-300mm-f35-63': {

@@ -1,7 +1,7 @@
 # Tasks — expand Canon third-party lenses (round 2)
 
 - [x] 0. Archive the completed round-1 change; scaffold this one
-- [ ] 1. Sigma + Tamron re-check batch
+- [x] 1. Sigma + Tamron re-check batch (0 new lenses; `tamron-17-70mm-f28` re-verified)
 - [ ] 2. Viltrox re-check batch
 - [ ] 3. TTArtisan deferred batch (image-diagram dimension technique)
 - [ ] 4. 7Artisans deferred batch (same technique)
