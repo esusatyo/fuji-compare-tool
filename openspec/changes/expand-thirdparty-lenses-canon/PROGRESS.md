@@ -1,11 +1,12 @@
 # Progress — Canon third-party lenses (round 2)
 
-**Resume at:** Sigma+Tamron, Viltrox, and Yongnuo/Meike/Samyang/Zeiss batches
-done (all merged). 2 remaining maker batches (TTArtisan, 7Artisans) still to
-land; merge and verify once each does.
+**Resume at:** Sigma+Tamron, Viltrox, Yongnuo/Meike/Samyang/Zeiss, and
+7Artisans batches done (all merged; 7Artisans researched 14 candidates and
+closed out with 0 new entries — see "Deferred / skipped" below for the
+per-candidate blockers before re-attempting). 1 remaining maker batch
+(TTArtisan) still to land; merge and verify once it does.
 
-**Branch:** expand-thirdparty-lenses-canon   **Last green commit:** (this
-batch's commit, on top of dae183b)
+**Branch:** expand-thirdparty-lenses-canon   **Last green commit:** a35e106 (Samyang batch merge)
 
 ## Baseline (before this round)
 
@@ -22,7 +23,7 @@ conflicts" tables.
 | Sigma + Tamron re-check | ✅ both lineups enumerated, 0 new | ✅ N/A — 0 new | ✅ N/A | ✅ N/A | ✅ N/A | 6046cbe |
 | Viltrox re-check | ✅ no change | — | n/a | n/a | n/a | 9769bce |
 | TTArtisan deferred (9 of 14) | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ | — |
-| 7Artisans deferred (~39 of 42) | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ | — |
+| 7Artisans deferred | ✅ 14/14 researched | 0 entered — all blocked, see below | n/a | n/a | n/a | fb4bbf5 |
 | Yongnuo + Meike/Samyang/Zeiss re-check | ✅ | ✅ 2 (Samyang) | ✅ | ✅ | ✅ | (this commit) |
 
 ## Batch 5 summary (2026-08-29)
@@ -59,6 +60,35 @@ conflicts" tables.
 - New `── Samyang ──` dropdown group added to `LENS_DROPDOWN_GROUPS`,
   ordered after Tamron / before Viltrox.
 - `npm test` green (416/416) after `node scripts/generate-seo.js`.
+
+## 7Artisans batch — findings (2026-08-29)
+
+Re-pulled `7artisans.store/products.json` fresh (121 products). After
+excluding cine/T-stop lenses (out of scope), the discontinued EF-M mount
+(`Canon EOS-M` is not RF), the 3 already-entered lenses, and one accessory
+(PL adapter kit), **14 non-cine candidates remain, none entered this pass.**
+
+The `.store` dimension-diagram technique from round 1 is confirmed still
+real (validated against the 3 existing entries — `7artisans-9mm-f56`'s page
+still shows the exact Φ70mm × 86mm that's in `data.js`), but it does **not**
+generalize across the catalogue:
+- Several candidate pages (50mm f/1.05, 55mm f/1.4 Mark II) use an older page
+  template with no numeric spec grid or dimension diagram at all.
+- One candidate (35mm f/0.95 APS-C) has a full spec grid but **no dimension
+  diagram anywhere on the page** (confirmed to footer).
+- One candidate (60mm f/2.8 full-frame 2X ultra-macro) has a weight figure in
+  marketing prose (about 550g) but no numeric grid or diagram.
+- One candidate (14mm f/2.8, a very recent release) has the richest template
+  seen — full spec grid *and* a "Product Parameters" dimension-diagram
+  section — but the diagram's underlying element (a rounded-corner
+  canvas/video component) never renders any content, confirmed via repeated
+  waits, a fresh reload, and a pixel-region zoom capture. Its weight figure
+  is also explicitly marked "(E)" (Sony E-mount only), so even a working
+  diagram wouldn't have resolved the RF-specific weight.
+
+Full per-candidate detail (spec-grid presence, diagram presence, sourced
+partial figures) is in `research/lenses.md` and `research/sources.md` under
+their 2026-08-29 sections.
 
 ## Confirmed unchanged
 
@@ -123,6 +153,60 @@ from the Viltrox batch — see "Confirmed unchanged" above)
   measurement). Nothing needed correcting. This item can come off the
   "needs re-verification" list; a genuine tier-2 review, if one appears in a
   later pass, would still be worth adding.
+
+7Artisans candidates deferred this pass (all lack a sourceable
+`length`/`diameter` pair, which is non-nullable):
+
+- `7artisans-6mm-f2` (6mm f/2.0 APS-C fisheye) — not checked for template
+  richness yet; untried.
+- `7artisans-12mm-f28-ii` (12mm f/2.8 Mark II APS-C) — untried.
+- `7artisans-14mm-f28` (14mm f/2.8 full-frame, new release) — spec grid
+  sourced (F2.8-F22, Φ77mm filter, 13/9 elements/groups, 116° AOV, 10
+  blades, manual focus, metal) but weight is Sony-E-specific (about 504g)
+  and the dimension-diagram element renders empty (likely broken video
+  component, not a timing issue) — re-check next pass in case 7Artisans
+  fixes the storefront component, or source length/diameter from a
+  corroborating retailer listing (B&H/Amazon box dims) instead.
+- `7artisans-75mm-f14` (75mm f/1.4 full-frame) — untried.
+- `7artisans-10mm-f28` (original 10mm f/2.8 fisheye, pre-Mark-II) — untried;
+  round 1 already captured partial specs for this exact lens (filter none,
+  MFD 17cm, f22 min, 570g, 11/8 elements/groups, 68x87mm L x diameter, store
+  USD 256.00) blocked only on `year` at the time — worth checking if that
+  old partial data plus a fresh year lookup is enough to enter without
+  needing the diagram again.
+- `7artisans-35mm-f14` (original 35mm f/1.4 APS-C, pre-Mark-III) — untried.
+- `7artisans-25mm-f095` (25mm f/0.95 APS-C) — round 1 also captured partial
+  specs (filter 52mm, MFD 25cm, f16 min, 587g, 11/9 elements/groups, 100x62mm
+  L x diameter, store USD 143.40) blocked on `year`, with a flagged
+  sanity-check concern (587g/100mm looked heavy/long for an APS-C 25mm) —
+  re-verify that concern before trusting the old figures.
+- `7artisans-50mm-f095` (50mm f/0.95 APS-C) — untried.
+- `7artisans-60mm-f28-2x-macro` (60mm f/2.8 full-frame 2X ultra-macro) —
+  weight sourced (about 550g, confirmed shown on a Canon EOS R body) but no
+  length/diameter; page has no numeric grid or diagram at all.
+- `7artisans-60mm-f28-ii-macro` (60mm f/2.8 Mark II APS-C macro) — untried.
+- `7artisans-55mm-f14-ii` (55mm f/1.4 Mark II APS-C) — checked, older
+  template, no numeric specs beyond marketing prose at all.
+- `7artisans-50mm-f105` (50mm f/1.05 full-frame) — checked, older template,
+  no numeric specs beyond marketing prose at all.
+- `7artisans-35mm-f56` (35mm f/5.6 full-frame) — untried.
+- `7artisans-35mm-f095` (35mm f/0.95 APS-C) — checked, full spec grid
+  sourced (weight 369g, 11/8 elements/groups, 12 blades, Φ52mm filter, MFD
+  0.37m, f0.95-16, 43.9° AOV, stepless aperture ring, metal body, USD RRP
+  $249 — do not use the $149.25 sale price seen at read time) but **no
+  dimension diagram anywhere on the page** — confirmed scrolled to footer.
+  Closest to enterable of anything checked; only length/diameter missing.
+- `7artisans-75mm-f28-ii` (7.5mm f/2.8 Mark II APS-C fisheye) — untried.
+
+**Next-pass recommendation:** try Amazon/AliExpress listing "package
+dimensions" as a tier-3 corroborating source for `35mm-0-95` and
+`60mm-f-2-8-2x-macro` specifically, since both have every other field sourced
+tier-1 and are blocked on exactly one pair of numbers each. For the 6
+completely-untried candidates, check template richness first (does the page
+have a numeric spec grid at all?) before investing in the diagram hunt.
+
+(carried forward from the archived round — see its PROGRESS.md for older
+TTArtisan/7Artisans deferred items pre-dating this round)
 
 ## Open questions for the user
 
