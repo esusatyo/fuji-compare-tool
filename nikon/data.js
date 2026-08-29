@@ -1136,7 +1136,17 @@ const LENSES = {
 
   /* ── Sigma (Z DX, APS-C DC DN) ── */
   /* Nikon Z APS-C crop = 1.5×. Sigma's official Z lineup is only these 3 DC DN
-     primes (Nikon licenses no full-frame Sigma). Z-mount weights from Sigma. */
+     primes (Nikon licenses no full-frame Sigma). Z-mount weights from Sigma.
+     Re-verified 2026-08-29 (round-2 Sigma+Tamron re-check): sigma-global.com's
+     mount-selector still lists Nikon Z on only these 3 (16/30/56mm); checked
+     18-50mm f/2.8, 10-18mm f/2.8, and 23mm f/1.4 DC DN individually — none
+     list Nikon Z among their available mounts. No DG DN (full-frame) Sigma on
+     Z exists — corroborated by a PetaPixel piece dated 2025-11-02 stating
+     Nikon still blocks Sigma's full-frame AF lenses from Z-mount. USD prices
+     re-checked against sigmaphoto.com: the stored figures are the "Regular
+     Price" (RRP); sigmaphoto.com's current "As low as" figures ($414/$344/
+     $434) are an active Instant Savings promo, not the RRP — left unchanged
+     per the "USD = RRP, not a sale price" convention. */
   'sigma-16mm-f14': {
     name:'Sigma 16mm f/1.4 DC DN', manufacturer:'Sigma', line:'Contemporary', type:'Prime',
     focalLength:16, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'24mm',
@@ -1272,19 +1282,27 @@ const LENSES = {
   },
 
   /* ── Tamron (Z mount Di III) — excludes 17-28/28-75/70-180 (sold as Nikkor Z) ── */
-  /* APS-C = 1.5× crop. Weights: 18-300 & 150-500 are Nikon-Z values; the others
-     reuse the verified cross-mount weight (mount delta ~10-15g). `year` is the
-     Nikon-Z-mount launch date, not the lens's original (usually Sony) release —
-     verified per-mount 2026-08-08 after several were found copied from the wrong
-     mount's launch. */
+  /* APS-C = 1.5× crop. `year` is the Nikon-Z-mount launch date, not the lens's
+     original (usually Sony) release — verified per-mount 2026-08-08 after
+     several were found copied from the wrong mount's launch.
+     Re-verified 2026-08-29 (round-2 Sigma+Tamron re-check) against
+     tamron.com's own per-mount spec tables (spec.html pages print Nikon Z and
+     Sony E side by side): weight/length on 17-70, 35-150, 50-400 and 70-300
+     turned out to still be the Sony E figures despite the block comment above
+     claiming a "verified" mount delta — corrected to the genuine Nikon-Z
+     figures below. 18-300 and 150-500 were already Nikon-Z-specific and are
+     unchanged. See research/lenses.md for the per-lens before/after. */
   'tamron-17-70mm-f28': {
     name:'Tamron 17-70mm f/2.8 Di III-A VC RXD', manufacturer:'Tamron', line:'Di III-A', type:'Zoom',
     focalLength:null, focalLengthMin:17, focalLengthMax:70, focalLengthEquiv:'26-105mm',
-    maxAperture:2.8, minAperture:22, weight:525, length:119.3, diameter:74.6,
+    maxAperture:2.8, minAperture:22, weight:540, length:121.3, diameter:74.6,
     filterThread:67, minFocusDist:19, maxMagnification:0.21,
     elements:16, groups:12, blades:9, afType:'Stepping Motor',
     weatherSealed:true, ois:true, oisStops:null, year:2026, discontinued:false,
     imageUrl:null, asin:'B0H6YGLQTF',
+    specSources: [
+      { url:'https://www.tamron.com/global/consumer/lenses/b070/spec.html', tier:'T1', note:'Nikon-Z-specific spec table: weight 540g / length 121.3mm — corrected from a stored 525g/119.3mm that matched the Sony E-mount column on the same page, not the Nikon Z column.', date:'2026-08-29' },
+    ],
     prices:{USD:749,AUD:null,EUR:null,GBP:null,JPY:null,CAD:null,SGD:null},
     priceIncomplete:true,
     productUrl:'https://tamron-americas.com/product/17-70mm-f-2-8-di-iii-a-vc-rxd/',
@@ -1306,13 +1324,17 @@ const LENSES = {
   'tamron-35-150mm-f2-28': {
     name:'Tamron 35-150mm f/2-2.8 Di III VXD', manufacturer:'Tamron', line:'Di III', type:'Zoom',
     focalLength:null, focalLengthMin:35, focalLengthMax:150, focalLengthEquiv:'35-150mm',
-    maxAperture:2.0, minAperture:22, weight:1165, length:158, diameter:89.2,
+    maxAperture:2.0, minAperture:22, weight:1190, length:160.1, diameter:89.2,
     filterThread:82, minFocusDist:33, maxMagnification:0.18,
     elements:21, groups:15, blades:9, afType:'Linear Motor',
     weatherSealed:true, ois:false, oisStops:null, year:2023, discontinued:false,
     imageUrl:'https://upload.wikimedia.org/wikipedia/commons/thumb/3/3e/Tamron_35-150mm_F2-2.8_Di_III_VXD_%28model_A058Z%29_Nikon_Z_by_Henry_S%C3%B6derlund.jpg/500px-Tamron_35-150mm_F2-2.8_Di_III_VXD_%28model_A058Z%29_Nikon_Z_by_Henry_S%C3%B6derlund.jpg',
     imageCredit:{author:"Henry Söderlund", licence:"CC BY 2.0", licenceUrl:"https://creativecommons.org/licenses/by/2.0", source:"https://commons.wikimedia.org/wiki/File:Tamron_35-150mm_F2-2.8_Di_III_VXD_(model_A058Z)_Nikon_Z_by_Henry_S%C3%B6derlund.jpg"}, asin:null,
-    prices:{USD:1799,AUD:null,EUR:null,GBP:null,JPY:null,CAD:null,SGD:null},
+    specSources: [
+      { url:'https://www.tamron.com/global/consumer/lenses/a058/spec.html', tier:'T1', note:'Nikon-Z-specific spec table: weight 1,190g / length 160.1mm — corrected from a stored 1,165g/158mm that matched the Sony E-mount column, not Nikon Z.', date:'2026-08-29' },
+    ],
+    priceSource: { url:'https://www.dpreview.com/news/8584835899/tamron-s-35-150mm-f2-2-8-for-nikon-z-mount-goes-on-sale-on-sept-21-for-1-999', tier:'NEWS', note:'Nikon Z launch MSRP $1,999, corroborated by tamron.com\'s own dated news post (launch confirmed 2023-09-21, no price on that page) and PetaPixel\'s contemporaneous coverage; corrects a stored $1,799 that matched no found source for this mount ($1,449.95 seen elsewhere is an Amazon sale price, not the RRP).', date:'2026-08-29' },
+    prices:{USD:1999,AUD:null,EUR:null,GBP:null,JPY:null,CAD:null,SGD:null},
     priceIncomplete:true,
     productUrl:'https://tamron-americas.com/product/35-150mm-f-2-2-8-di-iii-vxd/',
   },
@@ -1320,12 +1342,15 @@ const LENSES = {
   'tamron-50-400mm-f45-63': {
     name:'Tamron 50-400mm f/4.5-6.3 Di III VC VXD', manufacturer:'Tamron', line:'Di III', type:'Zoom',
     focalLength:null, focalLengthMin:50, focalLengthMax:400, focalLengthEquiv:'50-400mm',
-    maxAperture:4.5, minAperture:22, weight:1155, length:183.4, diameter:88.5,
+    maxAperture:4.5, minAperture:22, weight:1180, length:185.8, diameter:88.5,
     filterThread:67, minFocusDist:25, maxMagnification:0.5,
     elements:24, groups:18, blades:9, afType:'Linear Motor',
     weatherSealed:true, ois:true, oisStops:null, year:2024, discontinued:false,
     imageUrl:'https://upload.wikimedia.org/wikipedia/commons/thumb/9/98/Tamron_50-400mm_F4.5-6.3_Di_III_VC_VXD%2C_Nikon_Z_%2853995931346%29.jpg/500px-Tamron_50-400mm_F4.5-6.3_Di_III_VC_VXD%2C_Nikon_Z_%2853995931346%29.jpg',
     imageCredit:{author:"Henry Söderlund", licence:"CC BY 2.0", licenceUrl:"https://creativecommons.org/licenses/by/2.0", source:"https://commons.wikimedia.org/wiki/File:Tamron_50-400mm_F4.5-6.3_Di_III_VC_VXD,_Nikon_Z_(53995931346).jpg"}, asin:null,
+    specSources: [
+      { url:'https://www.tamron.com/global/consumer/lenses/a067/spec.html', tier:'T1', note:'Nikon-Z-specific spec table: weight 1,180g / length 185.8mm — corrected from a stored 1,155g/183.4mm that matched the Sony E-mount column, not Nikon Z.', date:'2026-08-29' },
+    ],
     prices:{USD:1299,AUD:null,EUR:null,GBP:null,JPY:null,CAD:null,SGD:null},
     priceIncomplete:true,
     productUrl:'https://tamron-americas.com/product/50-400mm-f-4-5-6-3-di-iii-vc-vxd/',
@@ -1334,8 +1359,8 @@ const LENSES = {
   'tamron-70-300mm-f45-63': {
     name:'Tamron 70-300mm f/4.5-6.3 Di III RXD', manufacturer:'Tamron', line:'Di III', type:'Zoom',
     focalLength:null, focalLengthMin:70, focalLengthMax:300, focalLengthEquiv:'70-300mm',
-    maxAperture:4.5, minAperture:22, weight:545, length:148, diameter:77,
-    filterThread:67, minFocusDist:80, maxMagnification:0.11,
+    maxAperture:4.5, minAperture:22, weight:580, length:150.3, diameter:77,
+    filterThread:67, minFocusDist:80, maxMagnification:0.2,
     elements:15, groups:10, blades:7, afType:'Stepping Motor',
     weatherSealed:true, ois:false, oisStops:null, year:2022, discontinued:false,
     imageUrl:'https://upload.wikimedia.org/wikipedia/commons/thumb/b/bd/Tamron_70-300mm_F_4.5-6.3_Di_III_RXD_%28Model_A047Z%29_Nikon_Z_%2852393501355%29.jpg/500px-Tamron_70-300mm_F_4.5-6.3_Di_III_RXD_%28Model_A047Z%29_Nikon_Z_%2852393501355%29.jpg',
@@ -1343,6 +1368,9 @@ const LENSES = {
     // Price re-verified 2026-08-22: tamron-americas.com's own Nikon Z variant
     // selector shows $499 (matches B&H's current $499 exactly), down from the
     // $549 launch-era figure last confirmed in 2022.
+    specSources: [
+      { url:'https://www.tamron.com/global/consumer/lenses/a047/spec.html', tier:'T1', note:'Nikon-Z-specific spec table: weight 580g / length 150.3mm — corrected from a stored 545g/148mm that matched the Sony E-mount column, not Nikon Z. Also corrected maxMagnification: the page states 1:9.4 (WIDE) / 1:5.1 (TELE) — the TELE figure (0.20) is the true maximum across the range, not the stored 0.11 which had taken the WIDE figure.', date:'2026-08-29' },
+    ],
     prices:{USD:499,AUD:null,EUR:null,GBP:null,JPY:null,CAD:null,SGD:null},
     priceIncomplete:true,
     productUrl:'https://tamron-americas.com/product/70-300mm-f-4-5-6-3-di-iii-rxd/',
