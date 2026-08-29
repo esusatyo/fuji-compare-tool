@@ -1,11 +1,23 @@
 # Progress — Canon third-party lenses (round 2)
 
-**Resume at:** All 5 maker batches done and merged (Sigma+Tamron, Viltrox,
-Yongnuo/Meike/Samyang/Zeiss, 7Artisans, TTArtisan). Ready for final
-verification (full test suite, `verify-images.js`, `test:links`,
-`generate-seo.js`) and PR.
+**Resume at:** Done — all 5 maker batches merged, verified, and PR'd. Nothing
+further to do on this change until the PR is reviewed/merged, at which point
+step 9 (archive + `check-prices-and-buy-links` ASIN follow-up) applies.
 
-**Branch:** expand-thirdparty-lenses-canon   **Last green commit:** 635bdb8 (7Artisans batch merge)
+**Branch:** expand-thirdparty-lenses-canon   **Last green commit:** 6c480f1 (TTArtisan batch merge, final)
+**PR:** https://github.com/esusatyo/fuji-compare-tool/pull/41 (open, not yet merged)
+
+**Final verification (2026-08-29):** `npm run test:data` 174/174 ·
+`npm test` 416/416 · `node scripts/generate-seo.js` re-run clean ·
+`node scripts/verify-images.js canon` — all 6 new/relevant entries `✓`
+(3 TTArtisan + 3 pre-existing 7Artisans spot-checked); the 22 "bad" hits
+reported are all pre-existing and unrelated to this round (18 Wikimedia
+Commons rate-limits on first-party RF lenses, 2 already-documented Laowa
+`venuslens.net` Cloudflare 403s) — confirmed via two independent runs, one
+of them unprompted by the TTArtisan batch agent itself.
+
+**Net count: 29 → 38.** Sigma 10, TTArtisan 12, Laowa 5, Tamron 3,
+7Artisans 3, Yongnuo 2, Samyang 2 *(new this round)*, Viltrox 1.
 
 ## Baseline (before this round)
 
