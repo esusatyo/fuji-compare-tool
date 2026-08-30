@@ -98,3 +98,63 @@ end-to-end for Nikon Z mount availability; probe lenses (24mm T14 2X Probe /
 PeriProbe) and cine-only variants (T-stop lenses, e.g. 12mm T2.9 Zero-D Cine,
 15mm T2.1 Zero-D Cine) were excluded as out-of-scope per the skill
 (cine/probe lenses, not conventional stills lenses).
+
+## Yongnuo + Meike batch (2026-08-31)
+
+Yongnuo's full current Z-mount lineup enumerated from yongnuo.eu's own
+"NIKON Z/F" category page (`yongnuo.eu/lenses/nikon-z-f/`) — 13 products
+shown, F-mount ("N" suffix) DSLR lenses excluded, leaving 10 genuine Z-mount
+lenses: 2 already in the dataset (`yongnuo-35mm-f2`, `yongnuo-50mm-f18`, both
+DF DSM/full-frame) plus 8 not yet entered. Cross-checked against Thom Hogan's
+zsystemuser.com (a Nikon-Z-specific third-party-lens tracker; its own
+"current tally" note states 95 Z-mount third-party AF lenses from 12 makers
+as of 2026-07-31 — a figure consistent with this dataset's scale) — its
+sitemap lists the exact same 10-lens Yongnuo catalogue, and its own spec
+page for the already-in-dataset `yongnuo-50mm-f18` (417g/87mm/68mm) matches
+this dataset's existing entry exactly, corroborating the site's reliability
+before trusting it for the new entries.
+
+Meike's current Z-mount AF lineup cross-checked three ways: meikeglobal.com's
+own site (search + "AF Lens Lineups" navigation block, which lists the five
+current series — MIX/Neo/Pro/SE/Air — by name), an Amazon Nikon-Z listing's
+"Size" variant selector (which enumerates the whole current AF family with
+live prices), and zsystemuser.com's Meike sitemap section. 2 already in the
+dataset (`meike-85mm-f18`, `meike-85mm-f18-se-ii`).
+
+| slug | name | maker | line | type | year | disc | src1 (tier 1) | src2 (tier) | notes / conflicts |
+|---|---|---|---|---|---|---|---|---|---|
+| yongnuo-85mm-f18 | Yongnuo YN85mm F1.8Z DF DSM | Yongnuo | DF DSM | Prime | 2022 | no | https://th.hkyongnuo.com/products/yn85mm-f18z-df-dsm | https://www.zsystemuser.com/z-mount-lenses/third-party-lenses/third-party-autofocus-lense/yongnuo-lenses/yongnuo-85mm-f18z-df-dsm.html (2) | **the flagged priority gap** — full spec table on the maker's own Thai storefront (405g/Φ67×88mm/58mm filter/0.8m MFD/0.13x/9 elem/8 grp/7 blades/$360); T2 independently confirms weight (405g) and elements/groups/blades exactly, gives release date 2022-03-10 (used for `year`) and 89mm/68mm for length/diameter (1mm off from T1 each way — T1 kept per convention) |
+| yongnuo-11mm-f18 | Yongnuo YN11mm F1.8 DA DSM WL | Yongnuo | DA DSM WL | Prime | 2022 | no | https://yongnuo.eu/yn-11mm-f-1-8-lens-for-nikon-aps-c/ | https://www.zsystemuser.com/z-mount-lenses/third-party-lenses/third-party-autofocus-lense/yongnuo-lenses/yongnuo-11mm-f18-da-dsm-wl.html (2) | T1 confirms Z-mount + APS-C ("YN 11mm f/1.8 APS-C – Z Mount" on the maker's own EU store category page); T2 supplies full spec table (260g/69×64mm/58mm filter/0.15m MFD/1:6.7/10 elem/9 grp/7 blades/weather-sealed/$300), release date 2022-09-12 |
+| yongnuo-23mm-f14 | Yongnuo YN23mm F1.4 DA DSM WL Pro | Yongnuo | DA DSM WL Pro | Prime | 2022 | no | https://yongnuo.eu/yn-23mm-f-1-4-aps-c/ | https://www.zsystemuser.com/z-mount-lenses/third-party-lenses/third-party-autofocus-lense/yongnuo-lenses/yongnuo-23mm-f14-da-dsm-wl.html (2) | T1 confirms APS-C Z-mount listing; T2 full spec table (273g/69×64mm/58mm filter/0.3m MFD/1:10/11 elem/9 grp/9 blades/weather-sealed/$288), release date 2022-09-12 |
+| yongnuo-33mm-f14 | Yongnuo YN33mm F1.4 DA DSM WL Pro | Yongnuo | DA DSM WL Pro | Prime | 2024 | no | https://yongnuo.eu/lenses/nikon-z-f/yongnuo-33mm-f-1-4-aps-c-lens-for-nikon/ | https://www.zsystemuser.com/z-mount-lenses/third-party-lenses/third-party-autofocus-lense/yongnuo-lenses/yongnuo-33mm-f14-da-dsm-wl.html (2) | T1 confirms APS-C Z-mount category listing; T2 full spec table (378g/89×59mm/58mm filter/0.4m MFD/1:10/11 elem/9 grp/9 blades/weather-sealed/$300), release date 2024-08 |
+| yongnuo-35mm-f18 | Yongnuo YN35mm F1.8 DA DSM WL | Yongnuo | DA DSM WL | Prime | 2022 | no | https://yongnuo.eu/lenses/nikon-z-f/yongnuo-35mm-f-1-8-aps-c-lens-for-nikon-z-mount-camera-auto-focus-large-aperture-remote-control/ | https://zsystemuser.com/z-mount-lenses/third-party-lenses/third-party-autofocus-lense/yongnuo-lenses/yongnuo-35mm-f18-da-dsm-wl.html (2) | T1 title explicitly states "APS-C ... for Nikon Z Mount Camera" + confirms 182g; T2 full spec table (182g exact match/64×68mm/52mm filter/0.3m MFD/1:6.6/10 elem/8 grp/7 blades/weather-sealed/$300), release date 2022-10-31. Distinct slug from the existing full-frame `yongnuo-35mm-f2` (DF DSM) — same focal length, different optical design/format |
+| yongnuo-50mm-f18-da | Yongnuo YN50mm F1.8Z DA DSM | Yongnuo | DA DSM | Prime | 2024 | no | https://yongnuo.eu/lenses/nikon-z-f/yn50mm-f1-8z-da-dsm/ | https://www.zsystemuser.com/z-mount-lenses/third-party-lenses/third-party-autofocus-lense/yongnuo-lenses/yongnuo-50mm-f18-da-dsm.html (2) | T1 confirms "APS-C, Z Mount" + 148g weight + "equivalent focal length is 75mm" (matches ×1.5 crop); T2 full spec table (148g exact match/67×60mm/49mm filter/0.45m MFD/1:7.1/8 elem/7 grp/7 blades/weather-sealed/~$120), release date 2024-01-18. Distinct slug from the existing full-frame `yongnuo-50mm-f18` (DF DSM) |
+| yongnuo-56mm-f14 | Yongnuo YN56mm F1.4 DA DSM WL Pro | Yongnuo | DA DSM WL Pro | Prime | 2024 | no | https://yongnuo.eu/lenses/nikon-z-f/yongnuo-56mm-f-1-4-aps-c/ | https://www.zsystemuser.com/z-mount-lenses/third-party-lenses/third-party-autofocus-lense/yongnuo-lenses/yongnuo-56mm-f14-da-dsm-wl.html (2) | T1 confirms APS-C Z-mount category listing; T2 full spec table (378g/89×69mm/58mm filter/0.4m MFD/1:9/11 elem/9 grp/9 blades/weather-sealed/$278), release date 2024-06-07 |
+| meike-24mm-f14 | Meike 24mm F1.4 MIX Full Frame AF | Meike | MIX | Prime | 2025 | no | https://meikeglobal.com/ (AF Lens Lineups nav: "MIX series 85mm F1.4/24mm F1.4") | https://www.zsystemuser.com/z-mount-lenses/third-party-lenses/third-party-autofocus-lense/meike-autofocus-lenses/meike-24mm-f14-lens-specifi.html (2) | T1 confirms current MIX-line membership + Z-mount listing (`Meike 24mm f1.4 MIX Full Frame Auto Focus STM Lens for Z Cameras` product tile, $589); T2 full spec table (550g/72mm filter/0.28m MFD/15 elem/12 grp/11 blades/$589), release 2025-08; length/diameter (107×79mm) independently confirmed by phillipreeve.net's hands-on review (15/12 elements/groups match exactly) and B&H's own listing (same 79×107mm) — both corroborate, not counted as one of the two required sources but recorded for confidence |
+| meike-35mm-f18-pro | Meike 35mm F1.8 Pro AF STM | Meike | Pro | Prime | 2025 | no | https://meikeglobal.com/products/3518proz | https://www.digitalcameraworld.com/cameras/lenses/meike-35mm-f-1-8-pro-af-review (2) | T1 maker product page ($379 regular price, Nikon Z variant selector); T2 independent DCW review (Matthew Richards, published 2026-02-02) full spec table: 400g/93×74mm/58mm filter/0.35m MFD/0.13x/12 elem/10 grp/9 blades/weather-sealed. Amazon's own "Item details" panel for this exact Nikon-Z ASIN (B0FFSZTV4N) gives 404g (kept over T2's rounded 400g) and confirms mount/aperture. `year` from earliest verified-purchase Amazon review date (2025-09-15), predating the DCW review |
+| meike-50mm-f18 | Meike 50mm F1.8 AF STM | Meike | SE | Prime | 2024 | no | https://meikeglobal.com/products/5018z ($169.99, "50mm F1.8 Auto Focus Prime Lens for Z Cameras for Portrait/Street/Landscape shooting") | https://www.zsystemuser.com/z-mount-lenses/third-party-lenses/third-party-autofocus-lense/meike-autofocus-lenses/meike-50mm-f18.html (2) | T1 confirms current listing + price; T2 full spec table minus length/diameter (382g/58mm filter/0.63m MFD/11 elem/7 grp/9 blades), release 2024-01-22; length/diameter (Φ68.6×59.5mm) from B&H's lens-compare tool (T3, single clean unambiguous row — no conflicting figure found) since neither T1 nor T2 publish them |
+| meike-85mm-f18-pro | Meike 85mm F1.8 Pro AF STM | Meike | Pro | Prime | 2024 | no | https://meikeglobal.com/search?q=85mm+f1.8+pro (search hit: "Meike 85mm f1.8 Pro Full Frame Auto Focus STM Lens for Z Cameras", $339.99) | https://www.zsystemuser.com/z-mount-lenses/third-party-lenses/third-party-autofocus-lense/meike-autofocus-lenses/meike-85mm-f18-pro-lens.html (2) | T1 confirms current Z-mount listing + price ($339.99, rounds to T2's $340); T2 full spec table (389g/97×76mm/62mm filter/0.85m MFD/11 elem/8 grp/9 blades), release 2024-11. Distinct from the existing `meike-85mm-f18` (discontinued, base/original non-Pro tier) and `meike-85mm-f18-se-ii` (SE Mark II) — this is the Pro-line 85mm |
+
+### Rejected / deferred candidates
+
+| slug | name | reason |
+|---|---|---|
+| — | Yongnuo YN16mm F1.8 DF DSM | **deferred, not entered** — zsystemuser.com lists this lens as APS-C (DX) coverage despite the maker's own "DF" naming convention meaning full-frame everywhere else in the lineup (DA = DX, DF = FX); this internal contradiction wasn't resolved within this round's time budget, and yongnuo.eu's own Nikon Z/F category page (fetched fresh this round, 13-product listing) does not show a 16mm entry at all. Re-verify against the maker directly before adding. |
+| — | Meike 55mm F1.8 Pro AF STM | **deferred, not entered** — non-nullable `length`/`diameter` fields unpublished on both T1 (meikeglobal.com's own product page is pure marketing imagery, no spec table) and T2 (zsystemuser.com's own page marks these fields "?"); B&H's lens-compare tool returned three different, mutually-contradictory diameter/length figures across different comparison pages for what should be the same lens (67×76mm vs 76.2×88.9mm vs 67×73.5mm) — too unreliable to use without visiting and disambiguating the source page directly, which the time budget didn't allow this round. All other fields (364g/58mm filter/0.55m MFD/11 elem/8 grp/9 blades/$329, release 2024-10-18) are solid. |
+| — | Meike 25mm F1.7 Air (APS-C) | **deferred, not entered** — genuinely brand-new (meikeglobal.com's own "New Releases" section, Nikon Z variant priced $159); not yet indexed on zsystemuser.com's Meike sitemap (confirms recency) and no independent review found this round. Falls under the skill's ≤1-month new-release allowance in principle, but this round's time budget didn't extend to sourcing its non-nullable dimensional fields even provisionally. Worth a priority re-check next pass — task explicitly flagged 25mm as a notable gap. |
+| — | Meike 55mm F1.4 Neo, 33mm F1.4 Neo, 85mm F1.4 MIX (I & II), 35mm F2 SE, 56mm F1.7 Air | **out of scope for this batch, not rejected** — genuine current Meike Z-mount AF products (confirmed via meikeglobal.com's "AF Lens Lineups" nav and/or zsystemuser.com's sitemap) but not pursued this round to keep the batch within a representative-set time budget; candidates for a future Meike-focused pass. |
+| — | Meike manual-focus Z-mount lenses (6.5mm f/2 fisheye DX, 7.5mm f/2.8 fisheye DX, ~10mm, 12mm f/2, 25mm f/0.95, 25mm f/1.8, 35mm f/1.4, 35mm f/1.7, 50mm f/0.95, 50mm f/1.2, 50mm f/1.7, 60mm f/2.8 macro — full list via zsystemuser.com's Meike MF sitemap section) | **out of scope for this batch, not rejected** — the task's "also check MF" note was not reached this round; representative MF coverage is a candidate for a future pass. |
+
+**Note on Thom Hogan's zsystemuser.com as a source.** Not in the skill's
+documented tier examples, but functionally a **T2 independent measurement/
+catalogue source** for this purpose: it is a long-running, actively-maintained
+(dated entries through July 2026), Nikon-Z-specific third-party lens tracker
+run by a well-known independent Nikon authority, not an aggregator scraping
+generic spec databases — each entry cites the maker's own published figures
+directly and its own "current tally" self-audits against the total lens
+count. Verified against this dataset's own pre-existing, independently-
+sourced `yongnuo-50mm-f18` entry before being trusted for new entries (exact
+weight/length/diameter match). Still treated as a single T2 lineage per
+lens — not stacked with meikeglobal.com/yongnuo.eu as if they were two
+independent measurements of the same fact, since Thom Hogan's own figures are
+themselves sourced from the makers.

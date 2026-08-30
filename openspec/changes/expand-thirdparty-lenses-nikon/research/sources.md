@@ -258,3 +258,111 @@ stops a later pass "correcting" a right value to a wrong one.
   "surprisingly" framing that reads as a misreading of the DOF-scale marking
   rather than a genuine physical-limit finding. Majority-independent T2 (f/16)
   used; both recorded in research/lenses.md.
+
+## Yongnuo + Meike batch (2026-08-31)
+
+- **T1** `https://yongnuo.eu/lenses/nikon-z-f/` — the maker's own "NIKON Z/F"
+  category page; lists 13 products, 10 of them genuine Z-mount (the rest are
+  F-mount "N"-suffix DSLR lenses on the same page). Used to confirm mount
+  existence for every Yongnuo candidate this round — the golden rule ("always
+  confirm mount availability against the maker") applied before trusting any
+  spec-tracker page.
+- **T1** `https://yongnuo.eu/yn-11mm-f-1-8-lens-for-nikon-aps-c/` and
+  `https://yongnuo.eu/yn-23mm-f-1-4-aps-c/` — two Yongnuo Z-mount products
+  live at URLs *outside* the `/lenses/nikon-z-f/` path structure but still
+  explicitly titled "for Nikon"/"Z Mount"; caught by checking yongnuo.eu's
+  own category-page links directly rather than assuming a single URL prefix
+  covers the whole catalogue.
+- **T1** `https://th.hkyongnuo.com/products/yn85mm-f18z-df-dsm` — Yongnuo's
+  Thai regional storefront (same maker, official regional site per the
+  skill). Static curl of the raw HTML surfaces a full spec table embedded in
+  the page's own descriptive copy (`Weight 405g`, `Max Diameter and Length
+  Φ67×88mm`, `Filter Diameter 58mm`, `Lens Construction 8 groups 9 elements`,
+  `Aperture Blades 7 blades`) plus a JSON-LD `offers.price: "360"` —
+  `yongnuo.eu`'s own page for the same SKU (checked first) is a marketing-copy
+  page with no dimensional spec table at all, a pattern that recurred for
+  most Yongnuo/Meike product pages this round: **the maker's marketing pages
+  and its (or a regional distributor's) full-catalogue/spec pages are not
+  the same document**, and only the latter carries dimensions.
+- **T1 (weak — marketing copy only, no dimensions)**
+  `https://yongnuo.eu/lenses/nikon-z-f/yn50mm-f1-8z-da-dsm/`,
+  `.../yongnuo-35mm-f-1-8-aps-c-lens-for-nikon-z-mount-camera-.../` — confirm
+  mount + APS-C format + partial specs (148g / 182g weight, "equivalent focal
+  length" crop statements) but no length/diameter/filter/MFD/elements —
+  supplemented by zsystemuser.com (T2) below.
+- **T2** `https://www.zsystemuser.com/z-mount-lenses/third-party-lenses/third-party-autofocus-lense/yongnuo-lenses/` —
+  Thom Hogan's Nikon-Z-specific third-party AF lens tracker. Its sitemap
+  (`https://www.zsystemuser.com/about-z-system-user/sitemap.html`) lists
+  every current Yongnuo and Meike Z-mount lens page by exact URL — used as
+  the enumeration backbone for this batch, then individually fetched per
+  lens for full spec tables. Cross-verified against this dataset's existing
+  `yongnuo-50mm-f18` entry (417g/87mm/68mm) before trusting it for new
+  entries — exact match. See the "Note on zsystemuser.com" at the end of
+  `research/lenses.md` for why this counts as a single T2 lineage, not
+  several independent ones, despite covering many lenses.
+- **T2** individual zsystemuser.com spec pages fetched (one per lens, exact
+  URLs recorded in `research/lenses.md`'s table): `yongnuo-85mm-f18z-df-dsm`,
+  `yongnuo-11mm-f18-da-dsm-wl`, `yongnuo-23mm-f14-da-dsm-wl`,
+  `yongnuo-33mm-f14-da-dsm-wl`, `yongnuo-35mm-f18-da-dsm-wl`,
+  `yongnuo-50mm-f18-da-dsm`, `yongnuo-56mm-f14-da-dsm-wl`,
+  `meike-24mm-f14-lens-specifi`, `meike-50mm-f18`, `meike-55mm-f18-pro-lens`
+  (dims missing — deferred), `meike-85mm-f18-pro-lens`.
+- **Rejected**: Yongnuo YN16mm F1.8 DF DSM — zsystemuser.com lists it (DX
+  coverage despite the "DF" = full-frame naming convention holding everywhere
+  else in the lineup — an internal contradiction), but it does **not** appear
+  on yongnuo.eu's own Nikon Z/F category page (fetched fresh this round).
+  Deferred, not entered, pending direct re-verification against the maker.
+- **T1** `https://meikeglobal.com/` — homepage's "AF Lens Lineups" block
+  names all five current AF series (PRO/MIX/NEO/SE/AIR) by their exact
+  member lenses; used to scope the maker's current catalogue before
+  searching individual products. Also surfaced "MEIKE 25mm f1.7 Air ... for
+  Nikon" as a "New Release" — too new for a second source this round,
+  deferred (see research/lenses.md rejects table).
+- **T1** `https://meikeglobal.com/products/3518proz` — Meike 35mm F1.8 Pro's
+  own product page. Confirmed this is an **image-only marketing description**
+  (a long series of lifestyle photos and an MTF-chart graphic, verified by
+  scrolling the full page to its footer) with **no text or image spec table**
+  at all — not a case of missing a collapsed tab, genuinely absent. This
+  pattern recurred across every Meike AF product page checked this round;
+  Meike's site is good for mount/price/current-catalogue confirmation but not
+  for dimensional specs.
+- **T3** `https://www.amazon.com/dp/B0FFSZTV4N` (Meike 35mm F1.8 Pro, Nikon Z
+  SKU) — "Item details" panel: 404g weight, confirmed Nikon Z mount + f/1.8
+  max aperture, ASIN B0FFSZTV4N. "About this item" bullets: "10 groups 12
+  elements, including 3 ED lenses and 2 aspherical lens" (elements/groups).
+  No length/diameter/filter/blades/MFD on this listing — supplemented by the
+  Digital Camera World review below.
+- **T2** `https://www.digitalcameraworld.com/cameras/lenses/meike-35mm-f-1-8-pro-af-review` —
+  Matthew Richards, published 2026-02-02. Full independent spec table:
+  400g/93×74mm/58mm filter/0.35m MFD/0.13x/12 elements/10 groups/9 blades,
+  states weather-sealed, mount options "Nikon Z (FX), Sony E (FE)" with "no
+  noted variations" between them.
+- **T2** `https://www.phillipreeve.net/blog/review-meike-24mm-f-1-4-mix/` —
+  independent hands-on review corroborating zsystemuser's Meike 24mm F1.4 MIX
+  elements/groups (15/12) exactly and supplying length×diameter (107×79mm,
+  not on either T1 or the T2 spec tracker); not counted as a required second
+  source (zsystemuser already serves that role) but recorded for confidence.
+- **T3** B&H Photo lens-compare tool, `bhphotovideo.com/compare/BHitems` —
+  used once, successfully, for Meike 50mm F1.8's length/diameter (Φ68.6×
+  59.5mm, a single unambiguous row, no conflicting figure found elsewhere) —
+  the only field missing from both T1 and T2 for that lens. **Trap found and
+  not used**: the same tool's compare pages for Meike 55mm F1.8 Pro returned
+  three different, mutually contradictory diameter/length pairs across three
+  separate comparison URLs (67×76mm / 76.2×88.9mm / 67×73.5mm) — Google's
+  search-result snippets interleave figures from *both* compared products
+  without reliably labelling which column belongs to which lens, so a
+  snippet-only reading is not trustworthy here; the page itself would need
+  to be opened and its column headers read directly to disambiguate, which
+  this round's budget didn't allow. Recorded as a caution for future passes
+  using this same tool: verify column attribution before trusting a
+  Google-snippet-only compare-page reading.
+- **Session note**: this batch's WebSearch tool budget was already exhausted
+  (200/200) from earlier work in this session before any Yongnuo/Meike
+  research began. All web research this batch used `WebFetch` plus the
+  Chrome extension's browser tools (navigation, `find`, `javascript_tool` for
+  reading `<a href>` lists off Google result pages) as a substitute —
+  slower and noisier (Amazon/B&H sometimes return 403/503 to `WebFetch`
+  directly, requiring the logged-in browser instead) but functionally
+  equivalent for this purpose. Future runs should raise
+  `CLAUDE_CODE_MAX_WEB_SEARCHES_PER_SESSION` or start research before other
+  batches burn the shared budget.
