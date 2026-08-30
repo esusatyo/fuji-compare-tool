@@ -2,9 +2,13 @@
 
 - [x] 0. Scaffold this change (baseline: 31 lenses / 9 makers, confirmed
       against `nikon/data.js`)
-- [ ] 1. Sigma + Tamron re-check batch — confirm current 3+6, look for new
+- [x] 1. Sigma + Tamron re-check batch — confirm current 3+6, look for new
       Sigma DG DN / Tamron Di III Z releases; do NOT re-add
-      `tamron-11-20mm-f28` (confirmed fabricated, removed PR #25)
+      `tamron-11-20mm-f28` (confirmed fabricated, removed PR #25).
+      **Done 2026-08-30**: Sigma re-confirmed complete (still 3, no DG DN on
+      Z); 6 new Tamron lenses found and entered (12-20mm, 16-30mm G2, 28-75mm
+      G2, 35-100mm, 70-180mm G2, 90mm macro) — see PROGRESS.md. Branch
+      `nikon-sigma-tamron-v2`.
 - [ ] 2. Viltrox + Voigtländer batch — new Viltrox Air/LAB Z releases;
       Voigtländer APO-Lanthar 35mm Z (flagged remaining-tail) + others
 - [ ] 3. Laowa + Samyang batch — full Laowa Z re-enumeration; determine from

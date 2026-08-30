@@ -1281,7 +1281,7 @@ const LENSES = {
     productUrl:'https://www.bhphotovideo.com/c/product/1612520-REG/viltrox_af_85_1_8_z_85mm_f_1_8_lens_for.html',
   },
 
-  /* ── Tamron (Z mount Di III) — excludes 17-28/28-75/70-180 (sold as Nikkor Z) ── */
+  /* ── Tamron (Z mount Di III) ── */
   /* APS-C = 1.5× crop. `year` is the Nikon-Z-mount launch date, not the lens's
      original (usually Sony) release — verified per-mount 2026-08-08 after
      several were found copied from the wrong mount's launch.
@@ -1291,7 +1291,23 @@ const LENSES = {
      turned out to still be the Sony E figures despite the block comment above
      claiming a "verified" mount delta — corrected to the genuine Nikon-Z
      figures below. 18-300 and 150-500 were already Nikon-Z-specific and are
-     unchanged. See research/lenses.md for the per-lens before/after. */
+     unchanged. See research/lenses.md for the per-lens before/after.
+
+     Round-2 new-lens search (2026-08-30): tamron.com's own Nikon Z lineup
+     page (tamron.com/global/consumer/lenses/nikon_z/) surfaced 6 Tamron Di
+     III lenses not yet entered — the "G2 trinity" (16-30mm f/2.8 G2, 28-75mm
+     f/2.8 G2, 70-180mm f/2.8 G2), 12-20mm f/2.8, 35-100mm f/2.8, and the 90mm
+     f/2.8 macro — each confirmed via its own Nikon-Z-specific spec.html
+     table plus a per-mount B&H SKU/Amazon listing. This corrects the header
+     this comment used to carry ("excludes 17-28/28-75/70-180, sold as
+     Nikkor Z"): that exclusion is only true of the *G1* originals — Tamron's
+     A036 (28-75mm G1) and A056 (70-180mm G1) spec pages state "SONY E Mount
+     (End of sale)" with no Nikon Z ever offered, and there's no confirmed
+     Nikkor-rebadge relationship (round-1's note appears to have conflated
+     "no Z SKU" with "rebadged"). The G2 successors ship for Z directly under
+     the Tamron name and are entered below. Also checked and confirmed
+     Sony-E-only (not entered): 20-40mm f/2.8, 50-300mm f/4.5-6.3. See
+     research/lenses.md for full citations. */
   'tamron-17-70mm-f28': {
     name:'Tamron 17-70mm f/2.8 Di III-A VC RXD', manufacturer:'Tamron', line:'Di III-A', type:'Zoom',
     focalLength:null, focalLengthMin:17, focalLengthMax:70, focalLengthEquiv:'26-105mm',
@@ -1393,6 +1409,110 @@ const LENSES = {
     prices:{USD:1199,AUD:null,EUR:null,GBP:null,JPY:null,CAD:null,SGD:null},
     priceIncomplete:true,
     productUrl:'https://tamron-americas.com/product/150-500mm-f-5-6-7-di-iii-vc-vxd/',
+  },
+
+  /* New Tamron Z-mount entries below found 2026-08-30 (round-2 new-lens
+     search) — see header comment above and research/lenses.md. */
+  'tamron-12-20mm-f28': {
+    name:'Tamron 12-20mm f/2.8 Di III VXD', manufacturer:'Tamron', line:'Di III', type:'Zoom',
+    focalLength:null, focalLengthMin:12, focalLengthMax:20, focalLengthEquiv:'12-20mm',
+    maxAperture:2.8, minAperture:16, weight:585, length:121.3, diameter:90,
+    filterThread:null, minFocusDist:18, maxMagnification:0.17,
+    elements:17, groups:12, blades:12, afType:'Linear Motor',
+    weatherSealed:true, ois:false, oisStops:null, year:2026, discontinued:false,
+    imageUrl:'https://tamron-americas.com/wp-content/uploads/2026/06/a084z-style.webp',
+    asin:null,
+    specSources: [
+      { url:'https://www.tamron.com/global/consumer/lenses/a084/spec.html', tier:'T1', note:'Nikon-Z-specific spec table: weight 585g / length 121.3mm; filter size is an integrated rear filter holder, no front thread.', date:'2026-08-30' },
+    ],
+    priceSource: { url:'https://tamron-americas.com/tamron-announces-new-12-20mm-f2-8-for-sony-e-and-nikon-z-mount/', tier:'T1', note:'Nikon Z launch MSRP $1,799 USD / $2,399 CAD (Sony E is $1,699), shipping 2026-08-27 — brand new (3 days old at entry); no Amazon ASIN found yet for the Nikon Z variant.', date:'2026-08-30' },
+    prices:{USD:1799,AUD:2799,EUR:2099,GBP:1599,JPY:281000,CAD:2399,SGD:2599},
+    productUrl:'https://tamron-americas.com/product/12-20mm-f-2-8/',
+  },
+
+  'tamron-16-30mm-f28-g2': {
+    name:'Tamron 16-30mm f/2.8 Di III VXD G2', manufacturer:'Tamron', line:'Di III', type:'Zoom',
+    focalLength:null, focalLengthMin:16, focalLengthMax:30, focalLengthEquiv:'16-30mm',
+    maxAperture:2.8, minAperture:16, weight:450, length:103.9, diameter:74.8,
+    filterThread:67, minFocusDist:19, maxMagnification:0.19,
+    elements:16, groups:12, blades:9, afType:'Linear Motor',
+    weatherSealed:true, ois:false, oisStops:null, year:2025, discontinued:false,
+    imageUrl:'https://tamron-americas.com/wp-content/uploads/2026/08/a0641200-x-1200-eisa-wht-1024x1024.webp',
+    asin:'B0FJT7ZSJP',
+    specSources: [
+      { url:'https://www.tamron.com/global/consumer/lenses/a064/spec.html', tier:'T1', note:'Nikon-Z-specific spec table: weight 450g / length 103.9mm (Sony E is 440g/101.8mm).', date:'2026-08-30' },
+    ],
+    priceSource: { url:'https://tamron-americas.com/announced-ultra-wide-angle-16-30-mm-g2-trinity-sony-nikon/', tier:'T1', note:'"Both mounts will retail for $929 USD" — launched for Z 2025-08-22. No CAD figure published on the official announcement; not found on any independent source either.', date:'2026-08-30' },
+    prices:{USD:929,AUD:1399,EUR:1099,GBP:799,JPY:143000,CAD:1199,SGD:1299},
+    productUrl:'https://tamron-americas.com/product/16-30mm-f-2-8-di-iii-vxd-g2/',
+  },
+
+  'tamron-28-75mm-f28-g2': {
+    name:'Tamron 28-75mm f/2.8 Di III VXD G2', manufacturer:'Tamron', line:'Di III', type:'Zoom',
+    focalLength:null, focalLengthMin:28, focalLengthMax:75, focalLengthEquiv:'28-75mm',
+    maxAperture:2.8, minAperture:22, weight:550, length:119.8, diameter:75.8,
+    filterThread:67, minFocusDist:18, maxMagnification:0.37,
+    elements:17, groups:15, blades:9, afType:'Linear Motor',
+    weatherSealed:true, ois:false, oisStops:null, year:2024, discontinued:false,
+    imageUrl:'https://tamron-americas.com/wp-content/uploads/2026/04/a063-1200-x-1200-wht-1024x1024.webp',
+    asin:'B0D1W1SRGT',
+    specSources: [
+      { url:'https://www.tamron.com/global/consumer/lenses/a063/spec.html', tier:'T1', note:'Nikon-Z-specific spec table: weight 550g / length 119.8mm (Sony E is 540g/117.6mm).', date:'2026-08-30' },
+    ],
+    priceSource: { url:'https://www.tamron.com/global/consumer/news/detail/a063z_20240314.html', tier:'T1', note:'Nikon Z launch MSRP $999 USD / $1,399 CAD, on sale from 2024-04-18 ($100 more than the Sony E price).', date:'2026-08-30' },
+    prices:{USD:999,AUD:1599,EUR:1099,GBP:899,JPY:151000,CAD:1399,SGD:1399},
+    productUrl:'https://tamron-americas.com/product/28-75mm-f-2-8-di-iii-vxd-g2/',
+  },
+
+  'tamron-35-100mm-f28': {
+    name:'Tamron 35-100mm f/2.8 Di III VXD', manufacturer:'Tamron', line:'Di III', type:'Zoom',
+    focalLength:null, focalLengthMin:35, focalLengthMax:100, focalLengthEquiv:'35-100mm',
+    maxAperture:2.8, minAperture:22, weight:575, length:121.5, diameter:80.6,
+    filterThread:67, minFocusDist:22, maxMagnification:0.3,
+    elements:15, groups:13, blades:9, afType:'Linear Motor',
+    weatherSealed:true, ois:false, oisStops:null, year:2026, discontinued:false,
+    imageUrl:'https://tamron-americas.com/wp-content/uploads/2026/08/a078-1200-x-1200-eisa-wht.webp',
+    asin:'B0GS3K7GBB',
+    specSources: [
+      { url:'https://www.tamron.com/global/consumer/lenses/a078/spec.html', tier:'T1', note:'Nikon-Z-specific spec table: weight 575g / length 121.5mm (Sony E is 565g/119.2mm).', date:'2026-08-30' },
+    ],
+    priceSource: { url:'https://tamron-americas.com/launch-announcement-35-100-lens/', tier:'T1', note:'"$929 for Nikon Z" (Sony E is $899), launched 2026-03-26; CAD $1,299 corroborated independently via dailycameranews.com and provideocoalition.com.', date:'2026-08-30' },
+    prices:{USD:929,AUD:1399,EUR:1099,GBP:799,JPY:145000,CAD:1299,SGD:1299},
+    productUrl:'https://tamron-americas.com/product/35-100mm-f-2-8-di-iii-vxd/',
+  },
+
+  'tamron-70-180mm-f28-g2': {
+    name:'Tamron 70-180mm f/2.8 Di III VC VXD G2', manufacturer:'Tamron', line:'Di III', type:'Zoom',
+    focalLength:null, focalLengthMin:70, focalLengthMax:180, focalLengthEquiv:'70-180mm',
+    maxAperture:2.8, minAperture:22, weight:865, length:158.7, diameter:83,
+    filterThread:67, minFocusDist:30, maxMagnification:0.38,
+    elements:20, groups:15, blades:9, afType:'Linear Motor',
+    weatherSealed:true, ois:true, oisStops:null, year:2025, discontinued:false,
+    imageUrl:'https://tamron-americas.com/wp-content/uploads/2026/04/a065-1200-x-1200-wht.webp',
+    asin:'B0FVKQ6FFV',
+    specSources: [
+      { url:'https://www.tamron.com/global/consumer/lenses/a065/spec.html', tier:'T1', note:'Nikon-Z-specific spec table: weight 865g / length 158.7mm (Sony E is 855g/156.5mm).', date:'2026-08-30' },
+    ],
+    priceSource: { url:'https://tamron-americas.com/70-180-g2-for-nikon-z-mount/', tier:'T1', note:'"The lens will retail for $1,149 USD / $1,549 CAD", shipping from 2025-10-23.', date:'2026-08-30' },
+    prices:{USD:1149,AUD:1799,EUR:1299,GBP:999,JPY:177000,CAD:1549,SGD:1699},
+    productUrl:'https://tamron-americas.com/product/tamron-70-180mm-f-2-8-di-iii-vc-vxd-g2/',
+  },
+
+  'tamron-90mm-f28-macro': {
+    name:'Tamron 90mm f/2.8 Di III Macro VXD', manufacturer:'Tamron', line:'Di III', type:'Prime',
+    focalLength:90, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'90mm',
+    maxAperture:2.8, minAperture:16, weight:640, length:128.5, diameter:79.2,
+    filterThread:67, minFocusDist:23, maxMagnification:1.0,
+    elements:15, groups:12, blades:12, afType:'Linear Motor',
+    weatherSealed:true, ois:false, oisStops:null, year:2024, discontinued:false,
+    imageUrl:'https://tamron-americas.com/wp-content/uploads/2026/04/f072-1200-x-1200-wht-1024x1024.webp',
+    asin:'B0DLHPZDGB',
+    specSources: [
+      { url:'https://www.tamron.com/global/consumer/lenses/f072/spec.html', tier:'T1', note:'Nikon-Z-specific spec table: weight 640g / length 128.5mm (Sony E is 630g/126.5mm); 1:1 macro, 12-blade circular aperture (Tamron\'s first).', date:'2026-08-30' },
+    ],
+    priceSource: { url:'https://tamron-americas.com/tamron-announces-new-90mm-macro/', tier:'T1', note:'"$699 USD / $949 CAD", available from 2024-10-24; price applies to both Sony E and Nikon Z.', date:'2026-08-30' },
+    prices:{USD:699,AUD:1099,EUR:799,GBP:599,JPY:106000,CAD:949,SGD:999},
+    productUrl:'https://tamron-americas.com/product/90mm-f-2-8-di-iii-vxd-m11/',
   },
 
   /* ── Laowa (Z mount manual-focus specialty) ── */
@@ -1639,7 +1759,7 @@ const LENS_DROPDOWN_GROUPS = [
   { label: '── DX Lenses ──',     ids: ['z-dx-24mm-f1-7', 'z-dx-mc-35mm-f17', 'z-dx-12-28mm-pz-vr', 'z-dx-16-50mm-vr', 'z-dx-16-50mm-f28-vr', 'z-dx-18-140mm-vr', 'z-dx-50-250mm-vr'] },
   { label: '── Sigma ──', ids: ['sigma-16mm-f14', 'sigma-30mm-f14', 'sigma-56mm-f14'] },
   { label: '── Viltrox ──', ids: ['viltrox-13mm-f14', 'viltrox-16mm-f18', 'viltrox-27mm-f12', 'viltrox-33mm-f14', 'viltrox-56mm-f14', 'viltrox-85mm-f18-ii', 'viltrox-85mm-f20-evo', 'viltrox-85mm-f14-pro', 'viltrox-24mm-f18', 'viltrox-35mm-f18-evo', 'viltrox-40mm-f25-air'] },
-  { label: '── Tamron ──', ids: ['tamron-17-70mm-f28', 'tamron-18-300mm-f35-63', 'tamron-35-150mm-f2-28', 'tamron-50-400mm-f45-63', 'tamron-70-300mm-f45-63', 'tamron-150-500mm-f5-67'] },
+  { label: '── Tamron ──', ids: ['tamron-12-20mm-f28', 'tamron-16-30mm-f28-g2', 'tamron-17-70mm-f28', 'tamron-18-300mm-f35-63', 'tamron-28-75mm-f28-g2', 'tamron-35-100mm-f28', 'tamron-35-150mm-f2-28', 'tamron-50-400mm-f45-63', 'tamron-70-180mm-f28-g2', 'tamron-70-300mm-f45-63', 'tamron-90mm-f28-macro', 'tamron-150-500mm-f5-67'] },
   { label: '── Voigtländer ──', ids: ['voigtlander-apo-lanthar-50mm-f2', 'voigtlander-nokton-40mm-f12'] },
   { label: '── Laowa ──', ids: ['laowa-10mm-f4-cookie', 'laowa-15mm-f2', 'laowa-90mm-f28-macro'] },
   { label: '── Other ──', ids: ['yongnuo-35mm-f2', 'yongnuo-50mm-f18', 'ttartisan-27mm-f28', '7artisans-27mm-f28', 'meike-85mm-f18', 'meike-85mm-f18-se-ii'] },

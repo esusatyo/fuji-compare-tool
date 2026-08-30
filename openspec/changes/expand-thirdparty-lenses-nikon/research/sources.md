@@ -38,3 +38,88 @@ stops a later pass "correcting" a right value to a wrong one.
   DG DN (full-frame) checked individually, none list Nikon Z.
 - **T4** PetaPixel (2025-11-02) — corroborating-only mention that Nikon
   still blocks Sigma full-frame AF lenses from Z-mount.
+
+## Sigma+Tamron batch, new-lens search (2026-08-30)
+
+- **T1** `https://www.tamron.com/global/consumer/lenses/nikon_z/` — Tamron's
+  own current Nikon Z Di III/Di III-A lineup page. Listed 12 lenses total;
+  diffed against the 6 already entered, surfacing 6 candidates: 12-20mm
+  f/2.8 (A084), 16-30mm f/2.8 G2 (A064), 28-75mm f/2.8 G2 (A063), 35-100mm
+  f/2.8 (A078), 70-180mm f/2.8 VC G2 (A065), 90mm f/2.8 Macro (F072).
+- **T1** `https://www.tamron.com/global/consumer/lenses/a084/spec.html`,
+  `.../a064/spec.html`, `.../a063/spec.html`, `.../a078/spec.html`,
+  `.../a065/spec.html`, `.../f072/spec.html` — Nikon-Z-specific weight/length
+  (and Sony E figures alongside, for the mount-delta note) for each of the 6
+  new entries. All confirm a genuine Nikon Z mount entry exists (not just
+  Sony E) with its own dimensions.
+- **T1** `https://www.tamron.com/global/consumer/news/detail/a063z_20240314.html`
+  — Nikon Z launch announcement for 28-75mm G2: "$999 USD / $1,399 CAD",
+  on sale 2024-04-18, "$100 more than the E-mount version."
+- **T1** `https://tamron-americas.com/tamron-announces-new-12-20mm-f2-8-for-sony-e-and-nikon-z-mount/`
+  — 12-20mm Nikon Z: "$1,799 USD / $2,399 CAD", ships 2026-08-27.
+- **T1** `https://tamron-americas.com/announced-ultra-wide-angle-16-30-mm-g2-trinity-sony-nikon/`
+  — 16-30mm G2: "Both mounts will retail for $929 USD." No CAD given; none
+  found on any independent source either — left `null`, not guessed.
+- **T1** `https://tamron-americas.com/launch-announcement-35-100-lens/` —
+  35-100mm: "$929 for Nikon Z" (Sony E $899). Corroborated (T2, independent):
+  dailycameranews.com and provideocoalition.com both separately report the
+  $1,299 CAD figure — the independence test passes (different outlets, not
+  quoting each other or a shared feed).
+- **T1** `https://tamron-americas.com/70-180-g2-for-nikon-z-mount/` —
+  70-180mm G2: "The lens will retail for $1,149 USD / $1,549 CAD", ships
+  2025-10-23.
+- **T1** `https://tamron-americas.com/tamron-announces-new-90mm-macro/` —
+  90mm macro: "$699 USD / $949 CAD", available 2024-10-24, same price both
+  mounts.
+- **T1** product images (maker's own, no imageCredit per Step 5 option 2) —
+  verified live (curl HTTP 200, `image/webp`) and visually confirmed by
+  rendering each one (barrel text matches the lens name exactly, e.g. "16-30mm
+  F/2.8 Di III VXD G2" engraved on the ring) before use:
+  `tamron-americas.com/wp-content/uploads/2026/06/a084z-style.webp`,
+  `.../2026/08/a0641200-x-1200-eisa-wht-1024x1024.webp`,
+  `.../2026/04/a063-1200-x-1200-wht-1024x1024.webp`,
+  `.../2026/08/a078-1200-x-1200-eisa-wht.webp`,
+  `.../2026/04/a065-1200-x-1200-wht.webp`,
+  `.../2026/04/f072-1200-x-1200-wht-1024x1024.webp`. Note: the Sony batch's
+  `completeness.test.js` comment (2026-08-17) had found "no dedicated hero
+  photo, only spec diagrams/icons" for the 12-20mm/16-30mm-G2 product pages
+  at that time — the site has since gained real hero photos (12-20mm shipped
+  2026-08-27, ten days after that note), so that finding is now stale for
+  these Nikon entries specifically. Left the Sony `KNOWN_IMAGE_GAPS` entries
+  alone since that's a different brand file, not re-checked here.
+- **T1** `https://www.tamron.com/global/consumer/lenses/a036/spec.html`
+  (28-75mm f/2.8 Di III RXD, **G1**, model A036) and
+  `https://www.tamron.com/global/consumer/lenses/a056/spec.html` (70-180mm
+  f/2.8 Di III VXD, **G1**, model A056) — both state "Mount: SONY E Mount
+  (End of sale)", no Nikon Z ever offered. This is what the pre-existing
+  "excludes 17-28/28-75/70-180, sold as Nikkor Z" comment in `nikon/data.js`
+  was actually describing (the G1 originals lack a Z SKU) — but the
+  "sold as Nikkor Z" rebadge claim itself is unconfirmed by anything found
+  this pass and reads as a probable misreading of round-1's research notes.
+  Comment corrected in `nikon/data.js` to state what's actually verified
+  (no Z SKU for the G1s) rather than repeat the unconfirmed rebadge theory.
+- **Rejected**: `tamron-20-40mm-f28` (Di III VXD) — WebSearch + DPReview
+  forum threads ("Tamron 20-40mm F/2.8 to Z mount?", "...adapted to Nikon
+  Z") confirm Sony-E-only; not on tamron.com's Nikon Z lineup page. Not
+  entered.
+- **Rejected**: `tamron-50-300mm-f45-63` (Di III VC VXD) — DustinAbbott.net
+  review and B&H listing both Sony-E-only; not on tamron.com's Nikon Z
+  lineup page (only the already-entered 50-400mm appears there). Not
+  entered. (Distinguish carefully from the already-shipped Nikon Z
+  `tamron-50-400mm-f45-63` — different lens, easy to conflate by focal
+  length alone.)
+- **T3** B&H per-mount SKUs (price/availability corroboration only, per
+  sourcing tiers — never the sole source for mount existence, always paired
+  with the tamron.com T1 spec page above): 1986709-REG (A084Z700, 12-20mm),
+  1904846-REG (AFA064Z700, 16-30mm G2), 1818564-REG (AFA063Z700, 28-75mm G2),
+  1950504-REG (AFA078Z700, 35-100mm), 1925472-REG (AFA065Z700, 70-180mm G2),
+  1854122-REG (AFF072Z700, 90mm macro). B&H itself 403s to both `curl` and
+  `WebFetch` (bot-blocked, consistent with the skill's documented trap) —
+  these SKUs came from WebSearch result snippets/titles, not a fetched page;
+  used only as corroboration alongside the T1 tamron.com pages, never alone.
+- **T3** Amazon ASINs (plain, non-bundle Nikon-Z-mount listings, title
+  verified to mention "Nikon Z" explicitly): B0FJT7ZSJP (16-30mm G2),
+  B0D1W1SRGT (28-75mm G2), B0GS3K7GBB (35-100mm), B0FVKQ6FFV (70-180mm G2),
+  B0DLHPZDGB (90mm macro). No ASIN found for 12-20mm — too new (shipped
+  2026-08-27, 3 days before this entry); left `asin:null` (safe, falls back
+  to Amazon search).
