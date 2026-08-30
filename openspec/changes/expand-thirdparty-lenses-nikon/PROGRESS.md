@@ -183,6 +183,75 @@ nikon` run in the background to confirm every Nikon imageUrl (not just the
 6 new ones) still resolves — see next update to this file or the commit log
 for its result if this note wasn't updated after it finished.
 
+### Laowa + Samyang batch — what landed (2026-08-30)
+
+**Branch note:** this batch's agent was assigned a fresh worktree from
+`origin/main` (stale) and had to `git fetch` + branch from
+`origin/expand-thirdparty-lenses-canon` at commit `25a1be6` before starting
+(that commit is the hand-merged Sigma+Tamron correction above). It ended up
+on branch `nikon-laowa-samyang-v2`, pushed separately, **not** landed
+directly on `expand-thirdparty-lenses-canon` — the orchestrator will need to
+merge it in (expected purely additive: this batch only touches Laowa/Samyang
+sections of `LENSES`, the Laowa/Samyang rows of `LENS_DROPDOWN_GROUPS`, and
+`KNOWN_IMAGE_GAPS.nikon` — no overlap with the Sigma/Tamron or other
+in-flight batches' sections).
+
+**Samyang — the investigation this round was asked to do:** git history
+(`git log --all -p -- nikon/data.js`) found commit `9266255` (2026-07-13)
+removed round 1's single Samyang entry, `samyang-135mm-f18` (AF), with the
+stated reason "Samyang's Nikon Z lineup doesn't include this lens (their AF
+135mm F1.8 is Sony E-only)" — a genuine mount-fabrication fix, not
+unrelated link-rot cleanup. **Independently re-verified from scratch**
+against `samyangus.com`'s own Nikon Z collection filter (not the removed
+entry, not an aggregator): it lists exactly 2 lenses today, both tagged
+Manual Focus — `14mm F2.8 Full Frame Ultra Wide Angle (Nikon Z)` and `85mm
+F1.4 Full Frame Telephoto (Nikon Z)`. Both entered with full spec tables
+from the maker's own Specifications accordion. Cross-checked against
+independent 2026 reporting (Nikon Rumors, Digital Camera World): Nikon has
+**not** licensed Samyang for AF Z-mount lenses as of this writing — which is
+exactly why the AF 135mm f/1.8 was fabricated/wrong and why these two MF
+lenses (no electronic contacts, no license needed) are the *entire*
+legitimate Samyang Z-mount lineup today. Not "0 entries was wrong" in a
+simple sense — the 135mm removal was correct — but "0 entries" undersold
+what Samyang actually does ship: two long-standing manual primes (customer
+reviews on both date back to 2019-2020).
+
+**Laowa — full re-enumeration:** read venuslens.net's entire 72-product
+camera-lens shop listing end-to-end (not just the round-1 candidate leads)
+and checked every product's Nikon Z availability. Found 21 new lenses beyond
+the 3 already entered, including all 5 round-1 leads that turned out to
+genuinely ship (12mm f/2.8 Lite Zero-D AF, 58mm f/2.8 2X macro, 65mm f/2.8
+2X macro, 100mm f/2.8 2X macro, Argus 33mm f/0.95 APS-C) plus 16 more not on
+that list at all — notably Laowa's entire Tilt-Shift/Shift family (17mm,
+20mm, 15mm shift; 35mm/55mm/100mm tilt-shift-macro; 12-24mm zoom-shift) and
+both of Laowa's current *autofocus* lenses (10mm f/2.8, 12mm f/2.8 Lite —
+Laowa's only two AF designs to date, both Sony E/Nikon Z only). Full
+per-lens citation ledger in `research/lenses.md`; every mount confirmed via
+the live purchase-mount dropdown (not just prose, which was caught being
+stale for the 65mm macro).
+
+**Data entered:** all 23 lenses have full specs (`elements`/`groups`,
+apertures, dimensions, weight, `afType`, `year`), a `specSources` citation
+block (T1 + T2 each), `LENS_DROPDOWN_GROUPS` placement (Laowa group
+expanded to 24 total; new `── Samyang ──` group added), USD pricing sourced
+from the maker, and all 7 currencies filled via
+`node scripts/compute-prices.js nikon lenses` (initially entered with
+`priceIncomplete:true` matching this file's existing third-party-lens
+convention, then deliberately removed before running compute-prices.js —
+per the skill, that flag is an opt-out for "should stay USD-only", not a
+default, and there was no reason these 23 should be withheld from the
+approximate-RRP derivation the rest of the round is using).
+`MANUFACTURER_COLORS.Samyang` in `engine.js` already existed (from another
+brand's earlier work) — no engine change needed.
+
+**Images:** deferred to `KNOWN_IMAGE_GAPS.nikon` for all 23, with a comment
+explaining why (batch size vs. time budget) — a genuine documented gap per
+the skill's 3rd allowed outcome, not a silent skip. Follow-up
+`fetch-product-images` pass needed.
+
+**Test status:** `npm test` — 416/416 green (174 data + 242 logic).
+`node scripts/generate-seo.js` re-run (lens counts changed).
+
 ## Deferred / skipped (with reason)
 
 - `tamron-20-40mm-f28`, `tamron-50-300mm-f45-63` — confirmed Sony-E-only,
@@ -203,6 +272,15 @@ for its result if this note wasn't updated after it finished.
   grid has. Doesn't actually ship in Z yet.
 - Viltrox `TC-2.0X Teleconverter for Nikon` (out of scope) — teleconverter,
   not a lens, per the skill's scope boundary.
+- All 23 new Laowa/Samyang lenses' `imageUrl` — genuine gap, allowlisted in
+  `KNOWN_IMAGE_GAPS.nikon`; needs a `fetch-product-images` follow-up pass.
+- No ASINs sourced for the 23 new lenses (`asin:null` throughout) — belongs
+  to a `check-prices-and-buy-links` follow-up per the skill's division of
+  labor.
+- `laowa-15mm-f45-shift`'s USD price ($1,199) is the top of a
+  venuslens.net "Sale!" range ($839–$1,199) whose lower/upper split by
+  variant (blade count) wasn't fully disambiguated — flagged in case a more
+  precise per-variant figure surfaces later.
 
 ## Open questions for the user
 

@@ -1705,6 +1705,387 @@ const LENSES = {
     productUrl:'https://www.venuslens.net/product/laowa-10mm-f-4-cookie/',
   },
 
+  /* ── Laowa (Z mount) round 2 — 21 new lenses found on venuslens.net's own
+     Z-mount-selectable listings, closing the gap against the 3 originally
+     entered. Every mount confirmed via the product's own "Mount" dropdown
+     plus its description text; specs from each product's own Specifications
+     tab (or, where that tab was empty, corroborated via an independent
+     hands-on review/retailer spec sheet — noted per-lens below). Images
+     deferred to KNOWN_IMAGE_GAPS.nikon this batch (2026-08-30) — see
+     research/lenses.md for the full per-lens source ledger. */
+  'laowa-10mm-f28-af': {
+    name:'Laowa 10mm f/2.8 Zero-D FF', manufacturer:'Laowa', line:'Zero-D', type:'Prime',
+    focalLength:10, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'10mm',
+    maxAperture:2.8, minAperture:22, weight:420, length:70.8, diameter:82,
+    filterThread:77, minFocusDist:12, maxMagnification:0.24,
+    elements:15, groups:9, blades:5, afType:'Stepping Motor',
+    weatherSealed:false, ois:false, oisStops:null, year:2024, discontinued:false,
+    specSources: [
+      { url:'https://www.laowalenses.ca/product/laowa-10mm-f-2-8-zero-d-ff/', tier:'T1', note:'official Laowa Canada regional store; Nikon Z listed as an Auto Focus mount (5-blade) alongside Sony E; full spec table (15 elements/9 groups, 77mm filter, 420g, Ø82×70.8mm) — weight/dimensions are the shared AF-mount figures, no Nikon-Z-specific delta published separately from Sony E.', date:'2026-08-30' },
+      { url:'https://petapixel.com/2024/11/01/laowa-10mm-f-2-8-zero-d-review-a-fun-lens-that-has-some-tradeoffs/', tier:'T2', note:'independent hands-on review confirms Stepping Motor (STM) autofocus, available on Sony FE and Nikon Z only (Canon RF/L are MF-only variants).', date:'2026-08-30' },
+    ],
+    asin:null,
+    prices:{USD:799,AUD:1199,EUR:899,GBP:699,JPY:121000,CAD:999,SGD:1199},
+    productUrl:'https://www.venuslens.net/product/laowa-10mm-f-2-8-ff-zero-d/',
+  },
+
+  'laowa-12mm-f28-lite-zero-d': {
+    name:'Laowa 12mm f/2.8 Lite Zero-D FF', manufacturer:'Laowa', line:'Lite Zero-D', type:'Prime',
+    focalLength:12, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'12mm',
+    maxAperture:2.8, minAperture:22, weight:390, length:84.6, diameter:74.8,
+    filterThread:72, minFocusDist:14, maxMagnification:0.2,
+    elements:16, groups:9, blades:5, afType:'Stepping Motor',
+    weatherSealed:false, ois:false, oisStops:null, year:2025, discontinued:false,
+    specSources: [
+      { url:'https://www.venuslens.net/product/laowa-12mm-f-2-8-lite-zero-d-ff/', tier:'T1', note:'official Venus Optics/Laowa store; Mount dropdown lists Sony E / Nikon Z (both AF, 5-blade) / Canon RF / L mount (MF); "the second autofocus lens in Laowa\'s lineup" for Sony E and Nikon Z.', date:'2026-08-30' },
+      { url:'https://www.cined.com/laowa-12mm-f-2-8-lite-zero-d-ff-lens-released/', tier:'T2', note:'independent per-mount spec breakdown: Nikon Z (AF, 5 blades) = 390g / 84.6mm length / Ø74.8mm — distinct from the Sony E figure (377g) that venuslens.net\'s own prose quotes as "AF Sony E mount" only.', date:'2026-08-30' },
+    ],
+    asin:null,
+    prices:{USD:699,AUD:1099,EUR:799,GBP:599,JPY:108000,CAD:899,SGD:999},
+    productUrl:'https://www.venuslens.net/product/laowa-12mm-f-2-8-lite-zero-d-ff/',
+  },
+
+  'laowa-8-15mm-f28-fisheye': {
+    name:'Laowa 8-15mm f/2.8 FF Zoom Fisheye', manufacturer:'Laowa', line:'Zoom Fisheye', type:'Zoom',
+    focalLength:null, focalLengthMin:8, focalLengthMax:15, focalLengthEquiv:'8-15mm',
+    maxAperture:2.8, minAperture:22, weight:650, length:94.5, diameter:76.4,
+    filterThread:null, minFocusDist:16, maxMagnification:0.23,
+    elements:13, groups:9, blades:9, afType:'Manual',
+    weatherSealed:false, ois:false, oisStops:null, year:2025, discontinued:false,
+    specSources: [
+      { url:'https://www.laowalenses.ca/product/laowa-8-15mm-f2-8-ff-zoom-fisheye/', tier:'T1', note:'official Laowa Canada regional store; Nikon Z confirmed as an available mount; length given per-mount as RF 94.5mm/GFX 101.2mm/XCD 96.36mm (all share the same Ø76.4mm diameter) — Nikon Z\'s own length not separately listed, RF\'s figure used as the closest full-frame-mirrorless proxy.', date:'2026-08-30' },
+      { url:'https://www.nikonrumors.com/2025/06/06/venus-optics-announced-a-new-laowa-8-15mm-f-2-8-ff-zoom-fisheye-lens-for-nikon-z-mount.aspx/', tier:'T2', note:'independent dated announcement confirms Nikon Z-mount launch 2025-06-06, matching this entry\'s year.', date:'2026-08-30' },
+    ],
+    asin:null,
+    prices:{USD:699,AUD:1099,EUR:799,GBP:599,JPY:108000,CAD:899,SGD:999},
+    productUrl:'https://www.venuslens.net/product/laowa-8-15mm-f-2-8-ff-zoom-fisheye-2/',
+  },
+
+  'laowa-argus-28mm-f12': {
+    name:'Laowa Argus 28mm f/1.2 FF', manufacturer:'Laowa', line:'Argus', type:'Prime',
+    focalLength:28, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'28mm',
+    maxAperture:1.2, minAperture:16, weight:562, length:106.31, diameter:68.5,
+    filterThread:62, minFocusDist:50, maxMagnification:0.073,
+    elements:13, groups:7, blades:13, afType:'Manual',
+    weatherSealed:false, ois:false, oisStops:null, year:2023, discontinued:false,
+    specSources: [
+      { url:'https://www.venuslens.net/product/laowa-argus-28mm-f-1-2-ff/', tier:'T1', note:'official Venus Optics/Laowa store; Mount dropdown lists Sony E / Canon RF / Nikon Z / L mount; full Specifications tab: 13 elements/7 groups, 13 blades, Ø68.5×106.31mm, 562g, 62mm filter, 50cm min focus, 0.073x max mag.', date:'2026-08-30' },
+      { url:'https://www.nikonrumors.com/2023/03/22/venus-optics-to-release-a-new-laowa-argus-28mm-f-1-2-full-frame-manual-focus-lens-for-nikon-z-mount-next-week.aspx/', tier:'T2', note:'independent dated announcement confirms Nikon Z-mount release week of 2023-03-28, matching this entry\'s year.', date:'2026-08-30' },
+    ],
+    asin:null,
+    prices:{USD:599,AUD:899,EUR:699,GBP:499,JPY:88000,CAD:799,SGD:899},
+    productUrl:'https://www.venuslens.net/product/laowa-argus-28mm-f-1-2-ff/',
+  },
+
+  'laowa-15mm-f45-macro': {
+    name:'Laowa 15mm f/4.5 0.5X Wide Angle Macro', manufacturer:'Laowa', line:'Wide Angle Macro', type:'Prime',
+    focalLength:15, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'15mm',
+    maxAperture:4.5, minAperture:32, weight:308, length:47.7, diameter:70,
+    filterThread:62, minFocusDist:12.9, maxMagnification:0.5,
+    elements:16, groups:11, blades:5, afType:'Manual',
+    weatherSealed:false, ois:false, oisStops:null, year:2025, discontinued:false,
+    specSources: [
+      { url:'https://www.laowalenses.ca/product/laowa-15mm-f-4-5-0-5x-wide-angle-macro/', tier:'T1', note:'official Laowa Canada regional store; full spec table (16 elements/11 groups, f/4.5-32, 5 blades, Ø70×47.7mm, 308g, 62mm filter, 12.9cm min focus, 0.5x max mag); Nikon Z listed under Auto-Aperture mounts alongside Sony E/Canon EF (electronic aperture only — the lens itself remains manual-focus).', date:'2026-08-30' },
+      { url:'https://petapixel.com/2025/05/15/new-laowa-15mm-f-4-5-0-5x-macro-lens-gives-your-close-ups-a-much-wider-background/', tier:'T2', note:'independent dated announcement (2025-05-15) corroborates the full spec sheet and Nikon Z availability.', date:'2026-08-30' },
+    ],
+    asin:null,
+    prices:{USD:399,AUD:599,EUR:499,GBP:399,JPY:61000,CAD:499,SGD:599},
+    productUrl:'https://www.venuslens.net/product/laowa-15mm-f-4-5-0-5x-wide-angle-macro/',
+  },
+
+  'laowa-15mm-f5-cookie': {
+    name:'Laowa 15mm f/5 Cookie FF', manufacturer:'Laowa', line:'Cookie', type:'Prime',
+    focalLength:15, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'15mm',
+    maxAperture:5.0, minAperture:22, weight:138, length:35.2, diameter:53,
+    filterThread:39, minFocusDist:12, maxMagnification:0.2,
+    elements:13, groups:9, blades:5, afType:'Manual',
+    weatherSealed:false, ois:false, oisStops:null, year:2024, discontinued:false,
+    specSources: [
+      { url:'https://www.venuslens.net/product/laowa-15mm-f-5-cookie-ff/', tier:'T1', note:'official Venus Optics/Laowa store; "Auto-aperture function has been included in Sony E and Nikon Z mount" (electronic aperture only, focus stays manual); weight/dimensions from this page\'s Features prose (Sony E figures — Nikon Z not separately dimensioned).', date:'2026-08-30' },
+      { url:'https://www.laowalenses.ca/product/laowa-15mm-f5-cookie-ff/', tier:'T1', note:'official Laowa Canada store; full spec table confirms f/5-22 range, 13 elements/9 groups, 5 blades, 39mm filter, 12cm min focus, 0.2x max mag; "Nikon Z: Auto-aperture function included".', date:'2026-08-30' },
+    ],
+    asin:null,
+    prices:{USD:399,AUD:599,EUR:499,GBP:399,JPY:60000,CAD:499,SGD:599},
+    productUrl:'https://www.venuslens.net/product/laowa-15mm-f-5-cookie-ff/',
+  },
+
+  'laowa-8-16mm-f35-5': {
+    name:'Laowa 8-16mm f/3.5-5 Zoom CF', manufacturer:'Laowa', line:'Zoom CF', type:'Zoom',
+    focalLength:null, focalLengthMin:8, focalLengthMax:16, focalLengthEquiv:'12-24mm',
+    maxAperture:3.5, minAperture:16, weight:463, length:88.53, diameter:88.4,
+    filterThread:86, minFocusDist:20, maxMagnification:0.125,
+    elements:16, groups:12, blades:5, afType:'Manual',
+    weatherSealed:false, ois:false, oisStops:null, year:2023, discontinued:false,
+    specSources: [
+      { url:'https://www.venuslens.net/product/laowa-8-16mm-f3-5-5-zoom-cf/', tier:'T1', note:'official Venus Optics/Laowa store; APS-C ("CF" = Cropped Frame) lens — focalLengthEquiv applies the project\'s 1.5× Nikon-Z-DX convention (8-16mm → 12-24mm), consistent with the existing Sigma DC DN Z entries. Full Specifications tab: 16 elements/12 groups, 5 blades, Ø88.4×88.53mm, 463g, 86mm filter, 20cm min focus, 0.125x max mag; Mount dropdown lists Sony E/Fujifilm X/Nikon Z/Canon RF/Canon EF-M.', date:'2026-08-30' },
+      { url:'https://petapixel.com/2023/10/10/laowa-8-16mm-f-3-5-5-zoom-cf-is-a-compact-ultra-wide-angle-zoom-for-aps-c-cameras/', tier:'T2', note:'independent dated announcement (2023-10-10), $549 launch price matches this entry\'s USD.', date:'2026-08-30' },
+    ],
+    asin:null,
+    prices:{USD:549,AUD:899,EUR:599,GBP:499,JPY:81000,CAD:699,SGD:799},
+    productUrl:'https://www.venuslens.net/product/laowa-8-16mm-f3-5-5-zoom-cf/',
+  },
+
+  'laowa-58mm-f28-2x-macro': {
+    name:'Laowa 58mm f/2.8 2X Ultra-Macro APO', manufacturer:'Laowa', line:'Ultra Macro APO', type:'Prime',
+    focalLength:58, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'58mm',
+    maxAperture:2.8, minAperture:22, weight:595, length:117, diameter:74,
+    filterThread:67, minFocusDist:18.5, maxMagnification:2.0,
+    elements:14, groups:11, blades:13, afType:'Manual',
+    weatherSealed:false, ois:false, oisStops:null, year:2022, discontinued:false,
+    specSources: [
+      { url:'https://www.venuslens.net/product/5828-2x-ultra-macro-apo/', tier:'T1', note:'official Venus Optics/Laowa store; Mount dropdown lists Canon RF/Nikon Z/Sony FE/L mount; full Specifications tab: 14 elements/11 groups, 13 blades, Ø74×117mm, 595g, 67mm filter, 18.5cm min focus, 2x max mag.', date:'2026-08-30' },
+      { url:'https://www.digitalcameraworld.com/reviews/laowa-58mm-f28-2x-ultra-macro-apo-review', tier:'T2', note:'independent review confirms Sony E/Canon RF/Nikon Z/L-mount availability and 2022 launch.', date:'2026-08-30' },
+    ],
+    asin:null,
+    prices:{USD:499,AUD:799,EUR:599,GBP:399,JPY:70000,CAD:599,SGD:699},
+    productUrl:'https://www.venuslens.net/product/5828-2x-ultra-macro-apo/',
+  },
+
+  'laowa-65mm-f28-2x-macro': {
+    name:'Laowa 65mm f/2.8 2x Ultra Macro APO', manufacturer:'Laowa', line:'Ultra Macro APO', type:'Prime',
+    focalLength:65, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'98mm',
+    maxAperture:2.8, minAperture:22, weight:335, length:100, diameter:57,
+    filterThread:52, minFocusDist:17, maxMagnification:2.0,
+    elements:14, groups:10, blades:9, afType:'Manual',
+    weatherSealed:false, ois:false, oisStops:null, year:2020, discontinued:false,
+    specSources: [
+      { url:'https://www.venuslens.net/product/laowa-65mm-f-2-8-2x-ultra-macro-apo/', tier:'T1', note:'official Venus Optics/Laowa store; APS-C lens — focalLengthEquiv applies the 1.5× Nikon-Z-DX convention (65mm → 98mm). The page\'s own "Mounts" spec-table row is stale (lists only Fuji X/Sony E/Canon EF-M) but the live Mount *dropdown* on the same page and its description prose ("The lens features Fujifilm X, Sony E, Nikon Z and Canon M，RF mount") both confirm Nikon Z is purchasable — dropdown/prose trusted over the stale table row per the skill\'s "confirm mount against the maker" rule. Specifications tab: 14 elements/10 groups, 9 blades, Ø57×100mm, 335g, 52mm filter, 17cm min focus, 2x max mag.', date:'2026-08-30' },
+      { url:'https://jonasraskphotography.com/2020/01/24/the-laowa-65mm-f-2-8-2x-ultra-macro-apo-review/', tier:'T2', note:'independent hands-on review dated 2020-01-24, corroborating the launch timeframe and full spec sheet.', date:'2026-08-30' },
+    ],
+    asin:null,
+    prices:{USD:399,AUD:599,EUR:499,GBP:399,JPY:48000,CAD:499,SGD:599},
+    productUrl:'https://www.venuslens.net/product/laowa-65mm-f-2-8-2x-ultra-macro-apo/',
+  },
+
+  'laowa-10-18mm-f45-56': {
+    name:'Laowa 10-18mm f/4.5-5.6 Zoom', manufacturer:'Laowa', line:'Zoom', type:'Zoom',
+    focalLength:null, focalLengthMin:10, focalLengthMax:18, focalLengthEquiv:'10-18mm',
+    maxAperture:4.5, minAperture:22, weight:496, length:90.9, diameter:70,
+    filterThread:null, minFocusDist:15, maxMagnification:0.25,
+    elements:14, groups:10, blades:5, afType:'Manual',
+    weatherSealed:false, ois:false, oisStops:null, year:2019, discontinued:false,
+    specSources: [
+      { url:'https://www.venuslens.net/product/laowa-10-18mm-f-4-5-5-6-fe-zoom/', tier:'T1', note:'official Venus Optics/Laowa store; Mount dropdown lists Sony FE/Nikon Z/L mount. Filter is a 37mm *rear* gel thread only ("designed a 37mm filter thread into the back of the lens") — filterThread left null per the schema\'s front-thread-only convention. Specifications tab: 14 elements/10 groups, 5 blades, 90.9mm×Ø70mm, 496g, 15cm min focus, 1:4 (0.25x) max mag.', date:'2026-08-30' },
+      { url:'https://www.nikonrumors.com/2019/07/11/officially-announced-laowa-10-18mm-f-4-5-5-6-and-laowa-15mm-f-2-lenses-for-nikon-z-canon-rf-cameras.aspx/', tier:'T2', note:'independent dated announcement (2019-07-11) of the Nikon Z variant, matching this entry\'s year; phillipreeve.net\'s hands-on review independently confirms f/22 minimum aperture.', date:'2026-08-30' },
+    ],
+    asin:null,
+    prices:{USD:599,AUD:899,EUR:699,GBP:499,JPY:68000,CAD:799,SGD:899},
+    productUrl:'https://www.venuslens.net/product/laowa-10-18mm-f-4-5-5-6-fe-zoom/',
+  },
+
+  'laowa-25mm-f28-25-5x-macro': {
+    name:'Laowa 25mm f/2.8 2.5-5X Ultra Macro', manufacturer:'Laowa', line:'Ultra Macro', type:'Prime',
+    focalLength:25, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'25mm',
+    maxAperture:2.8, minAperture:16, weight:400, length:65, diameter:82,
+    filterThread:null, minFocusDist:17.3, maxMagnification:5.0,
+    elements:8, groups:6, blades:8, afType:'Manual',
+    weatherSealed:false, ois:false, oisStops:null, year:2020, discontinued:false,
+    specSources: [
+      { url:'https://www.venuslens.net/product/laowa-25mm-f-2-8-2-5-5x-ultra-macro-2/', tier:'T1', note:'official Venus Optics/Laowa store; "New mounts are available for Canon R and Nikon Z users now!"; Mount dropdown includes Nikon Z. Specifications tab: 8 elements/6 groups, 8 blades, 82×65mm, 400g, Filter Thread N/A (extreme-macro barrel takes no front filter), 17.3cm min focus (at 5x), 5x max magnification (this is a 2.5-5x specialty macro lens — the stored maxMagnification is the top of its native range, not a 1:1-normalized figure).', date:'2026-08-30' },
+      { url:'https://www.newsshooter.com/2021/01/25/laowa-25mm-f-2-8-2-5-5x-ultra-macro-lens-review/', tier:'T2', note:'independent review (2021-01-25) lists Nikon Z among available mounts, corroborating the Nikon-Z rollout was complete by early 2021; Nikon Rumors\' 100mm f/2.8 2x coverage (same April 2020 mount-expansion wave) anchors the year estimate.', date:'2026-08-30' },
+    ],
+    asin:null,
+    prices:{USD:399,AUD:599,EUR:499,GBP:399,JPY:48000,CAD:499,SGD:599},
+    productUrl:'https://www.venuslens.net/product/laowa-25mm-f-2-8-2-5-5x-ultra-macro-2/',
+  },
+
+  'laowa-100mm-f28-2x-macro': {
+    name:'Laowa 100mm f/2.8 2x Ultra Macro APO', manufacturer:'Laowa', line:'Ultra Macro APO', type:'Prime',
+    focalLength:100, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'100mm',
+    maxAperture:2.8, minAperture:22, weight:650, length:155, diameter:72,
+    filterThread:67, minFocusDist:24.7, maxMagnification:2.0,
+    elements:12, groups:10, blades:13, afType:'Manual',
+    weatherSealed:false, ois:false, oisStops:null, year:2020, discontinued:false,
+    specSources: [
+      { url:'https://www.venuslens.net/product/laowa-100mm-f-2-8-2x-macro-apo/', tier:'T1', note:'official Venus Optics/Laowa store; Mount dropdown lists Nikon Z among Canon EF/RF, Nikon F/Z, Sony FE, L mount, Pentax K. Specifications tab gives per-mount deltas: blades "9 (Canon), 7 (Nikon F), 13 (Sony, Canon R, Nikon Z)" and dimensions/weight "Φ72×155mm / 650g (Canon R, Nikon Z & Sony FE)" vs "Φ72×125mm / 638g (Canon EF & Nikon F)" — the mirrorless-Z figures (13 blades, 650g, 155mm) used here, not the Nikon-F-adapter figures.', date:'2026-08-30' },
+      { url:'https://www.digitalcameraworld.com/news/laowa-100mm-f28-2x-macro-apo-now-comes-in-nikon-z-and-canon-rf-mounts', tier:'T2', note:'independent dated announcement (2020-04-20) of the Nikon Z mount and confirms f/22 minimum aperture (not separately stated on the maker\'s own spec table).', date:'2026-08-30' },
+    ],
+    asin:null,
+    prices:{USD:499,AUD:799,EUR:599,GBP:399,JPY:60000,CAD:599,SGD:699},
+    productUrl:'https://www.venuslens.net/product/laowa-100mm-f-2-8-2x-macro-apo/',
+  },
+
+  'laowa-argus-33mm-f095': {
+    name:'Laowa Argus 33mm f/0.95 CF APO', manufacturer:'Laowa', line:'Argus', type:'Prime',
+    focalLength:33, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'50mm',
+    maxAperture:0.95, minAperture:16, weight:590, length:83, diameter:71.5,
+    filterThread:62, minFocusDist:35, maxMagnification:0.125,
+    elements:14, groups:9, blades:9, afType:'Manual',
+    weatherSealed:false, ois:false, oisStops:null, year:2021, discontinued:false,
+    specSources: [
+      { url:'https://www.venuslens.net/product/laowa-argus-33mm-f-0-95-cf-apo/', tier:'T1', note:'official Venus Optics/Laowa store; APS-C lens — focalLengthEquiv applies the 1.5× Nikon-Z-DX convention (33mm → 50mm). Mount dropdown lists Fuji X/Sony E/Canon RF/Nikon Z/EOS-M. Specifications tab: 14 elements/9 groups, 9 blades, 71.5×83mm, 590g, 62mm filter, 35cm min focus — no minimum-aperture or max-magnification row on this tab.', date:'2026-08-30' },
+      { url:'https://jonasraskphotography.com/2021/05/03/another-one-the-laowa-argus-33mm-f-0-95-apo-review/', tier:'T2', note:'independent hands-on review (2021-05-03) publishes the full tech-spec block including aperture range f/0.95-f/16 and max magnification 0.125x, and confirms "Nikon Z and Canon RF versions from Mid May [2021]" — used for both fields plus the year. Two other independent reviews (photorumors.com, digitalcameraworld.com) also state f/16 minimum; one outlier (sonyalpha.blog) claims f/11, flagged but not used since 3 of 4 independent hands-on sources agree on f/16.', date:'2026-08-30' },
+    ],
+    asin:null,
+    prices:{USD:449,AUD:699,EUR:499,GBP:399,JPY:57000,CAD:599,SGD:699},
+    productUrl:'https://www.venuslens.net/product/laowa-argus-33mm-f-0-95-cf-apo/',
+  },
+
+  'laowa-17mm-f4-tilt-shift': {
+    name:'Laowa 17mm f/4 Zero-D Tilt-Shift / Shift', manufacturer:'Laowa', line:'Tilt-Shift', type:'Prime',
+    focalLength:17, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'17mm',
+    maxAperture:4.0, minAperture:22, weight:810, length:93, diameter:111,
+    filterThread:86, minFocusDist:25, maxMagnification:0.131,
+    elements:18, groups:12, blades:14, afType:'Manual',
+    weatherSealed:false, ois:false, oisStops:null, year:2026, discontinued:false,
+    specSources: [
+      { url:'https://www.laowalenses.ca/product/laowa-17mm-f-4-zero-d-tilt-shift-shift/', tier:'T1', note:'official Laowa Canada regional store; mounts listed as E/Z/RF/L/GFX/XCD, Nikon Z explicitly confirmed. Full spec table: 18 elements/12 groups, 14 blades, 86mm filter, 25cm min focus, 0.131x max mag, weight "810g and 770g" for the two module variants (Tilt-Shift vs Shift-only) — the heavier 810g Tilt-Shift figure used here since that\'s the variant this entry describes.', date:'2026-08-30' },
+      { url:'https://www.nikonrumors.com/2026/03/10/venus-optics-announced-a-new-laowa-17mm-f-4-zero-d-tilt-shift-lens-for-nikon-z-mount.aspx/', tier:'T2', note:'independent dated announcement (2026-03-10) confirms Nikon Z-mount availability and $1,249 US launch price for the Tilt-Shift version, matching this entry\'s year and USD.', date:'2026-08-30' },
+    ],
+    asin:null,
+    prices:{USD:1249,AUD:1899,EUR:1399,GBP:1099,JPY:195000,CAD:1599,SGD:1799},
+    productUrl:'https://www.venuslens.net/product/laowa-17mm-f-4-zero-d-tilt-shift-shift/',
+  },
+
+  'laowa-35mm-f28-tilt-shift-macro': {
+    name:'Laowa 35mm f/2.8 Zero-D Tilt-Shift 0.5x Macro', manufacturer:'Laowa', line:'Tilt-Shift Macro', type:'Prime',
+    focalLength:35, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'35mm',
+    maxAperture:2.8, minAperture:22, weight:1350, length:148.9, diameter:104.9,
+    filterThread:77, minFocusDist:22.8, maxMagnification:0.5,
+    elements:14, groups:12, blades:15, afType:'Manual',
+    weatherSealed:false, ois:false, oisStops:null, year:2025, discontinued:false,
+    specSources: [
+      { url:'https://www.laowalenses.ca/product/laowa-35mm-f-2-8-zero-d-tilt-shift-0-5x-macro/', tier:'T1', note:'official Laowa Canada regional store; mounts E/Z(Nikon)/RF/L/GFX/XCD confirmed. Full spec table: 14 elements/12 groups, 15 blades, 77mm filter, 22.8cm min focus, 0.5x max mag, "±10° tilt / ±12mm shift (FF)". Dimensions were scraped as "Ø148.9mm × Ø104.9mm" (both marked diameter); read as length×diameter per the family pattern (its 55mm/100mm siblings are both far longer than wide) — 148.9mm length, 104.9mm diameter.', date:'2026-08-30' },
+      { url:'https://www.nikonrumors.com/2025/11/25/venus-optics-laowa-35mm-f-2-8-zero-d-tilt-shift-0-5x-macro-lens-for-nikon-z-mount-is-now-officially-announced.aspx/', tier:'T2', note:'independent dated announcement (2025-11-25) confirming Nikon Z mount and $1,249 US price, matching this entry.', date:'2026-08-30' },
+    ],
+    asin:null,
+    prices:{USD:1249,AUD:1899,EUR:1399,GBP:1099,JPY:192000,CAD:1599,SGD:1799},
+    productUrl:'https://www.venuslens.net/product/laowa-35mm-f-2-8-zero-d-tilt-shift-0-5x-macro/',
+  },
+
+  'laowa-55mm-f28-tilt-shift-macro': {
+    name:'Laowa 55mm f/2.8 Tilt-shift 1X Macro', manufacturer:'Laowa', line:'Tilt-Shift Macro', type:'Prime',
+    focalLength:55, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'55mm',
+    maxAperture:2.8, minAperture:22, weight:1345, length:168.5, diameter:85,
+    filterThread:77, minFocusDist:27, maxMagnification:1.0,
+    elements:14, groups:11, blades:15, afType:'Manual',
+    weatherSealed:false, ois:false, oisStops:null, year:2025, discontinued:false,
+    specSources: [
+      { url:'https://www.venuslens.net/product/laowa-55mm-f-2-8-tilt-shift-1x-macro/', tier:'T1', note:'official Venus Optics/Laowa store; Mount dropdown lists Sony E/Nikon Z/Canon RF/L Mount/GFX. Specifications tab: Aperture Range F2.8-22, 14 elements/11 groups, 15 blades, 270mm (27cm) min focus, 77mm filter, "Dimension Approx. 168.5mm × Ø85mm" (length × diameter), 1345g, 1:1 (1.0x) magnification, ±10° tilt/±12mm shift.', date:'2026-08-30' },
+      { url:'https://fstoppers.com/reviews/what-can-you-do-tilt-shift-macro-lens-trying-out-laowas-55mm-f28-1x-680199', tier:'T2', note:'independent review (2025-01-19) confirms "comes in Sony E, Nikon Z, Canon R, and [L mount]", corroborating mount availability and 2025 launch year.', date:'2026-08-30' },
+    ],
+    asin:null,
+    prices:{USD:1249,AUD:1899,EUR:1399,GBP:1099,JPY:192000,CAD:1599,SGD:1799},
+    productUrl:'https://www.venuslens.net/product/laowa-55mm-f-2-8-tilt-shift-1x-macro/',
+  },
+
+  'laowa-100mm-f28-tilt-shift-macro': {
+    name:'Laowa 100mm f/2.8 Tilt-shift 1X Macro', manufacturer:'Laowa', line:'Tilt-Shift Macro', type:'Prime',
+    focalLength:100, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'100mm',
+    maxAperture:2.8, minAperture:22, weight:1215, length:162, diameter:85,
+    filterThread:77, minFocusDist:32, maxMagnification:1.0,
+    elements:13, groups:10, blades:15, afType:'Manual',
+    weatherSealed:false, ois:false, oisStops:null, year:2025, discontinued:false,
+    specSources: [
+      { url:'https://www.venuslens.net/product/laowa-100mm-f-2-8-tilt-shift-1x-macro/', tier:'T1', note:'official Venus Optics/Laowa store; Mount dropdown lists Sony E/Nikon Z/Canon RF/L Mount/GFX/Hasselblad XCD. Specifications tab: Aperture Range F2.8-22, 13 elements/10 groups, 15 blades, 320mm (32cm) min focus, 77mm filter, "Dimension Approx. 162mm × Ø85mm" (length × diameter), 1215g, 1:1 (1.0x) magnification.', date:'2026-08-30' },
+      { url:'https://www.bhphotovideo.com/c/product/1869912-REG/venus_optics_ve10028tsz_laowa_100mm_f_2_8_tilt_shift.html', tier:'T3', note:'B&H\'s dedicated Nikon-Z-mount SKU listing ("the first Laowa tilt-shift macro lens for full-frame Nikon Z-mount camera systems") corroborates mount availability and $1,249 US price.', date:'2026-08-30' },
+    ],
+    asin:null,
+    prices:{USD:1249,AUD:1899,EUR:1399,GBP:1099,JPY:192000,CAD:1599,SGD:1799},
+    productUrl:'https://www.venuslens.net/product/laowa-100mm-f-2-8-tilt-shift-1x-macro/',
+  },
+
+  'laowa-15mm-f45-shift': {
+    name:'Laowa 15mm f/4.5 Zero-D Shift', manufacturer:'Laowa', line:'Zero-D Shift', type:'Prime',
+    focalLength:15, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'15mm',
+    maxAperture:4.5, minAperture:22, weight:597, length:103, diameter:79,
+    filterThread:null, minFocusDist:20, maxMagnification:0.2,
+    elements:17, groups:11, blades:14, afType:'Manual',
+    weatherSealed:false, ois:false, oisStops:null, year:2020, discontinued:false,
+    specSources: [
+      { url:'https://www.laowalenses.ca/product/laowa-15mm-f-4-5-zero-d-shift/', tier:'T1', note:'official Laowa Canada regional store; mounts Canon EF&RF/Nikon F&Z/Sony E/Pentax K/L mount/Fujifilm G/Hasselblad XCD, Nikon Z confirmed. 17 elements/11 groups, 79×103mm, 597g; no front filter thread published (this Shift design has none) so filterThread left null; two aperture-blade variants exist (5-blade original, 14-blade "R" update from 2022) — 14 used here as the version blade tables now typically ship.', date:'2026-08-30' },
+      { url:'https://www.fujirumors.com/laowa-15mm-f-4-5r-zero-d-shift-new-version-announced/', tier:'T2', note:'independent coverage of the 2022 "R" 14-blade update states max magnification 0.2x (1:5) and min focus 20cm, matching this entry; original announcement (canonrumors.com, 2020-10-30) anchors the 2020 first-ship year for this mount family.', date:'2026-08-30' },
+    ],
+    asin:null,
+    prices:{USD:1199,AUD:1899,EUR:1399,GBP:1099,JPY:144000,CAD:1599,SGD:1699},
+    productUrl:'https://www.venuslens.net/product/laowa-15mm-f4-5-zero-d-shift/',
+  },
+
+  'laowa-20mm-f4-shift': {
+    name:'Laowa 20mm f/4 Zero-D Shift', manufacturer:'Laowa', line:'Zero-D Shift', type:'Prime',
+    focalLength:20, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'20mm',
+    maxAperture:4.0, minAperture:22, weight:747, length:91, diameter:95,
+    filterThread:82, minFocusDist:25, maxMagnification:0.17,
+    elements:16, groups:11, blades:14, afType:'Manual',
+    weatherSealed:false, ois:false, oisStops:null, year:2022, discontinued:false,
+    specSources: [
+      { url:'https://www.laowalenses.ca/product/laowa-20mm-f-4-zero-d-shift/', tier:'T1', note:'official Laowa Canada regional store; mounts Canon EF&RF/Nikon F&Z/Sony E/Pentax K/L mount/Fujifilm G confirmed. Full spec table: 16 elements/11 groups (2 aspherical, 3 ED), 14 blades, 82mm filter, 25cm min focus, 0.17x max mag, Ø95×91mm, 747g, ±11mm shift (FF)/±8mm (medium format).', date:'2026-08-30' },
+      { url:'https://petapixel.com/2022/03/28/venus-optics-unveils-the-laowa-20mm-f4-zero-d-shift-lens/', tier:'T2', note:'independent dated announcement (2022-03-28) confirms the launch year and ±11mm shift spec.', date:'2026-08-30' },
+    ],
+    asin:null,
+    prices:{USD:1099,AUD:1699,EUR:1299,GBP:999,JPY:154000,CAD:1399,SGD:1599},
+    productUrl:'https://www.venuslens.net/product/laowa-20mm-f-4-zero-d-shift/',
+  },
+
+  'laowa-12-24mm-f56-shift': {
+    name:'Laowa 12-24mm f/5.6 Zoom Shift CF', manufacturer:'Laowa', line:'Zoom Shift', type:'Zoom',
+    focalLength:null, focalLengthMin:12, focalLengthMax:24, focalLengthEquiv:'18-36mm',
+    maxAperture:5.6, minAperture:22, weight:575, length:98.91, diameter:80,
+    filterThread:77, minFocusDist:15, maxMagnification:0.4,
+    elements:15, groups:11, blades:9, afType:'Manual',
+    weatherSealed:false, ois:false, oisStops:null, year:2024, discontinued:false,
+    specSources: [
+      { url:'https://www.venuslens.net/product/laowa-12-24mm-f-5-6-zoom-shift-cf/', tier:'T1', note:'official Venus Optics/Laowa store; APS-C ("CF") lens — focalLengthEquiv applies the 1.5× Nikon-Z-DX convention (12-24mm → 18-36mm). Mount dropdown lists EOS-M/Sony E/Nikon Z/Canon RF/Fuji X/L mount. Specifications tab: 15 elements/11 groups, 9 blades, 15cm min focus, 0.4x max mag, 77mm filter, 98.91×80mm, 575g, ±7mm shift.', date:'2026-08-30' },
+      { url:'https://www.nikonrumors.com/2024/11/05/new-venus-optics-laowa-12-24mm-f-5-6-aps-c-for-z-mount.aspx/', tier:'T2', note:'independent dated announcement (2024-11-05) of the Nikon Z-mount variant specifically; theasc.com corroborates the $699 list price "for all mounts".', date:'2026-08-30' },
+    ],
+    asin:null,
+    prices:{USD:699,AUD:1099,EUR:799,GBP:599,JPY:106000,CAD:899,SGD:999},
+    productUrl:'https://www.venuslens.net/product/laowa-12-24mm-f-5-6-zoom-shift-cf/',
+  },
+
+  'laowa-85mm-f56-2x-macro': {
+    name:'Laowa 85mm f/5.6 2x Ultra Macro APO', manufacturer:'Laowa', line:'Ultra Macro APO', type:'Prime',
+    focalLength:85, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'85mm',
+    maxAperture:5.6, minAperture:22, weight:314, length:81, diameter:53,
+    filterThread:46, minFocusDist:16.3, maxMagnification:2.0,
+    elements:13, groups:9, blades:7, afType:'Manual',
+    weatherSealed:false, ois:false, oisStops:null, year:2021, discontinued:false,
+    specSources: [
+      { url:'https://www.laowalenses.ca/product/laowa-85mm-f-5-6-2x-ultra-macro-apo/', tier:'T1', note:'official Laowa Canada regional store; per-mount weight explicitly broken out — "Nikon Z: 314g / Sony FE: 291g / Leica M: 289g" — the Nikon Z figure used here (not the Sony/Leica figures). Mounts Canon RF/Nikon Z/Sony E/Leica M confirmed. 13 elements/9 groups, Ø53×81mm (Sony E dims quoted; Nikon Z close given the shared design), 46mm filter, 16.3cm min focus, 2:1 max mag.', date:'2026-08-30' },
+      { url:'https://www.nickybay.com/laowa-85mm-f-5-6-2x-ultra-macro-apo-field-review/', tier:'T2', note:'independent field review (2021-11-29) states "launch price for the Laowa 85mm f/5.6 2x is at 449USD for Nikon Z", confirming Nikon Z availability at 2021 launch, and multiple retailer spec pages (Cathay Photo, Kameraliike.fi, Fdirect.eu — Nikon-Z-listed) independently confirm f/22 minimum aperture (not on the maker\'s own page).', date:'2026-08-30' },
+    ],
+    asin:null,
+    prices:{USD:499,AUD:799,EUR:599,GBP:399,JPY:64000,CAD:599,SGD:699},
+    productUrl:'https://www.venuslens.net/product/laowa-85mm-f-5-6-2x-ultra-macro-apo/',
+  },
+
+  /* ── Samyang (Z mount, manual focus) ── Nikon has not licensed AF Z-mount
+     lenses to Samyang (confirmed still pending as of March 2026 — Nikon
+     Rumors, Digital Camera World), which is why the round-1 AF 135mm f/1.8
+     entry was fabricated and removed in PR #25 (it's Sony-E-only). But
+     Samyang's classic manual-focus, no-electronic-contact lenses don't need
+     that licensing — samyangus.com's own Nikon Z collection (verified fresh
+     this round, independent of the removed entry) lists exactly 2: */
+  'samyang-14mm-f28': {
+    name:'Samyang 14mm F2.8 Z', manufacturer:'Samyang', line:'MF', type:'Prime',
+    focalLength:14, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'14mm',
+    maxAperture:2.8, minAperture:22, weight:810, length:124.1, diameter:87,
+    filterThread:null, minFocusDist:28, maxMagnification:0.08,
+    elements:14, groups:10, blades:6, afType:'Manual',
+    weatherSealed:true, ois:false, oisStops:null, year:2019, discontinued:false,
+    specSources: [
+      { url:'https://samyangus.com/products/14mm-f2-8-full-frame-ultra-wide-angle-nikon-z', tier:'T1', note:'official Samyang US store (SKU SYZ14-N); "the first 14mm prime lens with precision manual focus control to be available in Nikon Z mount... As Samyang\'s first lens for Nikon Z mount". Full Specifications accordion: F2.8-22, 14 elements/10 groups (1 ASP, 2 ED, 3 HR, 1 H-ASP), rear gelatin filter holder (no front thread — filterThread left null), 6 blades, 115.7° AoV, Ø87×124.1mm, 810g, weather-sealed. Customer reviews date back to 2019-12-30, corroborating this as a long-standing product, not new.', date:'2026-08-30' },
+    ],
+    asin:null,
+    prices:{USD:707,AUD:1099,EUR:799,GBP:599,JPY:80000,CAD:899,SGD:999},
+    productUrl:'https://samyangus.com/products/14mm-f2-8-full-frame-ultra-wide-angle-nikon-z',
+  },
+
+  'samyang-85mm-f14': {
+    name:'Samyang 85mm F1.4 Z', manufacturer:'Samyang', line:'MF', type:'Prime',
+    focalLength:85, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'85mm',
+    maxAperture:1.4, minAperture:22, weight:740, length:102.7, diameter:78,
+    filterThread:72, minFocusDist:100, maxMagnification:0.09,
+    elements:9, groups:7, blades:8, afType:'Manual',
+    weatherSealed:true, ois:false, oisStops:null, year:2020, discontinued:false,
+    specSources: [
+      { url:'https://samyangus.com/products/85mm-f1-4-full-frame-telephoto-nikon-z', tier:'T1', note:'official Samyang US store (SKU SYZ85-N); "the first 85mm prime lens with precision manual focus control to be available in Nikon Z mount". Full Specifications accordion: F1.4-22, 9 elements/7 groups (1 H-ASP), 72mm non-rotating front filter, 8 curved blades, 28.3° AoV, Ø78×102.7mm, 740g, weather-sealed. Customer reviews date back to 2020-09-13.', date:'2026-08-30' },
+    ],
+    asin:null,
+    prices:{USD:565,AUD:899,EUR:599,GBP:499,JPY:68000,CAD:699,SGD:799},
+    productUrl:'https://samyangus.com/products/85mm-f1-4-full-frame-telephoto-nikon-z',
+  },
+
   /* ── Viltrox full-frame Z primes ── */
   'viltrox-24mm-f18': {
     name:'Viltrox AF 24mm f/1.8', manufacturer:'Viltrox', line:'AF', type:'Prime',
@@ -2241,7 +2622,8 @@ const LENS_DROPDOWN_GROUPS = [
   { label: '── Viltrox ──', ids: ['viltrox-13mm-f14', 'viltrox-16mm-f18', 'viltrox-27mm-f12', 'viltrox-33mm-f14', 'viltrox-56mm-f14', 'viltrox-85mm-f18-ii', 'viltrox-85mm-f20-evo', 'viltrox-85mm-f14-pro', 'viltrox-24mm-f18', 'viltrox-35mm-f18-evo', 'viltrox-40mm-f25-air', 'viltrox-90mm-f22-evo', 'viltrox-75mm-f18-evo', 'viltrox-56mm-f12-pro', 'viltrox-9mm-f28-air', 'viltrox-15mm-f17-air', 'viltrox-25mm-f17-air', 'viltrox-35mm-f17-air', 'viltrox-23mm-f14', 'viltrox-75mm-f12-pro', 'viltrox-56mm-f17-air', 'viltrox-26mm-f28-evo', 'viltrox-55mm-f18-evo', 'viltrox-50mm-f14-pro', 'viltrox-35mm-f12-lab', 'viltrox-135mm-f18-lab', 'viltrox-14mm-f4-air', 'viltrox-28mm-f45', 'viltrox-50mm-f2-air', 'viltrox-20mm-f28-air', 'viltrox-28mm-f18', 'viltrox-20mm-f18-mf'] },
   { label: '── Tamron ──', ids: ['tamron-12-20mm-f28', 'tamron-16-30mm-f28-g2', 'tamron-17-70mm-f28', 'tamron-18-300mm-f35-63', 'tamron-28-75mm-f28-g2', 'tamron-35-100mm-f28', 'tamron-35-150mm-f2-28', 'tamron-50-400mm-f45-63', 'tamron-70-180mm-f28-g2', 'tamron-70-300mm-f45-63', 'tamron-90mm-f28-macro', 'tamron-150-500mm-f5-67'] },
   { label: '── Voigtländer ──', ids: ['voigtlander-apo-lanthar-50mm-f2', 'voigtlander-nokton-40mm-f12', 'voigtlander-super-wide-heliar-15mm-f45', 'voigtlander-nokton-d23mm-f12', 'voigtlander-nokton-28mm-f15', 'voigtlander-apo-lanthar-28mm-f2', 'voigtlander-nokton-d35mm-f12', 'voigtlander-macro-apo-ultron-d35mm-f2', 'voigtlander-apo-lanthar-35mm-f2', 'voigtlander-septon-40mm-f2', 'voigtlander-nokton-50mm-f10', 'voigtlander-macro-apo-lanthar-65mm-f2', 'voigtlander-portrait-heliar-75mm-f18'] },
-  { label: '── Laowa ──', ids: ['laowa-10mm-f4-cookie', 'laowa-15mm-f2', 'laowa-90mm-f28-macro'] },
+  { label: '── Laowa ──', ids: ['laowa-10mm-f4-cookie', 'laowa-10mm-f28-af', 'laowa-12mm-f28-lite-zero-d', 'laowa-15mm-f2', 'laowa-15mm-f45-macro', 'laowa-15mm-f5-cookie', 'laowa-15mm-f45-shift', 'laowa-17mm-f4-tilt-shift', 'laowa-20mm-f4-shift', 'laowa-25mm-f28-25-5x-macro', 'laowa-35mm-f28-tilt-shift-macro', 'laowa-55mm-f28-tilt-shift-macro', 'laowa-58mm-f28-2x-macro', 'laowa-65mm-f28-2x-macro', 'laowa-85mm-f56-2x-macro', 'laowa-90mm-f28-macro', 'laowa-100mm-f28-2x-macro', 'laowa-100mm-f28-tilt-shift-macro', 'laowa-argus-28mm-f12', 'laowa-argus-33mm-f095', 'laowa-8-15mm-f28-fisheye', 'laowa-8-16mm-f35-5', 'laowa-10-18mm-f45-56', 'laowa-12-24mm-f56-shift'] },
+  { label: '── Samyang ──', ids: ['samyang-14mm-f28', 'samyang-85mm-f14'] },
   { label: '── Other ──', ids: ['yongnuo-35mm-f2', 'yongnuo-50mm-f18', 'ttartisan-27mm-f28', '7artisans-27mm-f28', 'meike-85mm-f18', 'meike-85mm-f18-se-ii'] },
 ];
 
