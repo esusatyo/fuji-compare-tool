@@ -1,24 +1,20 @@
 # Progress — Nikon third-party lenses (round 2)
 
-**Resume at:** Sigma+Tamron batch is now fully complete (correction half +
-new-lens-search half, see below). The other 4 batches (Viltrox+Voigtländer,
-Laowa+Samyang, Yongnuo+Meike, TTArtisan+7Artisans) still need to be run —
-they never got past the scaffold commit after the earlier spend-limit
-deaths.
+**Resume at:** Sigma+Tamron batch is fully complete (correction half +
+new-lens-search half) and merged into the shared branch. The other 4 batches
+(Viltrox+Voigtländer, Laowa+Samyang, Yongnuo+Meike, TTArtisan+7Artisans) are
+each paused mid-run (killed on purpose, not crashed — resumable via
+SendMessage with context intact) after two earlier attempts died to the
+account's spend limit before producing any output. Being resumed one at a
+time, 30 minutes apart, per explicit user instruction — see the live agent
+list for current status of each.
 
-**Branch (this batch):** `nikon-sigma-tamron-v2`, forked from
-`origin/expand-thirdparty-lenses-canon` at commit `25a1be6` — a dedicated
-branch for this parallel re-run, not the shared `expand-thirdparty-lenses-
-canon` branch the process note below still describes. Merge this branch's
-work into the shared branch (take the union, no conflicts expected —
-this batch only touches `nikon/data.js`, `nikon/index.html`,
-`index.html` (generated SEO counts), and files under
-`openspec/changes/expand-thirdparty-lenses-nikon/`).
-**PR:** https://github.com/esusatyo/fuji-compare-tool/pull/41 (Canon round-2
-PR — merge this branch's diff into it, or open a follow-up PR, per
-orchestrator's call)
-**Last green commit:** (see git log on `nikon-sigma-tamron-v2` — full
-`npm test` green, 416/416)
+**Branch:** `expand-thirdparty-lenses-canon` (shared with the Canon round-2
+work per explicit user instruction — no dedicated Nikon branch this round).
+The `nikon-sigma-tamron-v2` branch this batch ran on has been fast-forward
+merged in and can be deleted.
+**PR:** https://github.com/esusatyo/fuji-compare-tool/pull/41 (same PR as Canon)
+**Last green commit:** see git log — `npm test` 416/416 on the merged branch.
 
 ## Baseline (before this round)
 
