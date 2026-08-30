@@ -9,8 +9,10 @@
       Z); 6 new Tamron lenses found and entered (12-20mm, 16-30mm G2, 28-75mm
       G2, 35-100mm, 70-180mm G2, 90mm macro) — see PROGRESS.md. Branch
       `nikon-sigma-tamron-v2`.
-- [ ] 2. Viltrox + Voigtländer batch — new Viltrox Air/LAB Z releases;
-      Voigtländer APO-Lanthar 35mm Z (flagged remaining-tail) + others
+- [x] 2. Viltrox + Voigtländer batch — new Viltrox Air/LAB Z releases;
+      Voigtländer APO-Lanthar 35mm Z (flagged remaining-tail) + others.
+      **Done 2026-08-30**: 32 new lenses entered (21 Viltrox + 11
+      Voigtländer); see PROGRESS.md. Branch `nikon-viltrox-voigtlander-v2`.
 - [ ] 3. Laowa + Samyang batch — full Laowa Z re-enumeration; determine from
       scratch whether Samyang ships ANY native Z-mount lens today
 - [ ] 4. Yongnuo + Meike batch — expand representative set beyond current 2+2
