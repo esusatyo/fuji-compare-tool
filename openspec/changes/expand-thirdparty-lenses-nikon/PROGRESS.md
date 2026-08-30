@@ -176,6 +176,18 @@ enumerating genuinely new Sigma/Tamron Z-mount lenses beyond the existing
   date for this SKU anywhere else that this session found. Low-stakes (it's
   a `year` field only, all specs are solid) but worth a second look if a
   future pass has better search tooling.
+- `node scripts/verify-images.js nikon` reports all 13 `voigtlander-*`
+  entries' images as bad (`[0 rate-limited/error]`) — **including the 2
+  pre-existing entries that predate this batch**, so this is not something
+  introduced here. Node's `fetch()` in this environment appears unable to
+  validate `voigtlaender.de`'s TLS certificate chain (the same
+  `unable to verify the first certificate` error `WebFetch` hit on this
+  domain during research). Every one of the 11 new image URLs was
+  independently confirmed live and correctly typed via `curl -I` during
+  research (`HTTP/2 200`, `content-type: image/*`), so the images
+  themselves are fine — this looks like an environment-specific Node/TLS
+  gap for this one domain, not a dead-link problem. Worth a second look with
+  a different verification environment before treating it as real.
 - Four Voigtländer entries' `year` came from the product photo's own
   upload-path date (`/wp-content/uploads/<year>/<month>/…`) rather than an
   explicit "as of" disclaimer, because their product pages carry no such
