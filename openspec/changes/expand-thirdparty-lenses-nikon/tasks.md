@@ -5,8 +5,9 @@
 - [ ] 1. Sigma + Tamron re-check batch — confirm current 3+6, look for new
       Sigma DG DN / Tamron Di III Z releases; do NOT re-add
       `tamron-11-20mm-f28` (confirmed fabricated, removed PR #25)
-- [ ] 2. Viltrox + Voigtländer batch — new Viltrox Air/LAB Z releases;
-      Voigtländer APO-Lanthar 35mm Z (flagged remaining-tail) + others
+- [x] 2. Viltrox + Voigtländer batch — new Viltrox Air/LAB Z releases;
+      Voigtländer APO-Lanthar 35mm Z (flagged remaining-tail) + others.
+      32 new lenses entered (21 Viltrox + 11 Voigtländer); see PROGRESS.md.
 - [ ] 3. Laowa + Samyang batch — full Laowa Z re-enumeration; determine from
       scratch whether Samyang ships ANY native Z-mount lens today
 - [ ] 4. Yongnuo + Meike batch — expand representative set beyond current 2+2
