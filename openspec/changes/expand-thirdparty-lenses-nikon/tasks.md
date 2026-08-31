@@ -38,10 +38,19 @@
       stale page redirects), 7Artisans 24mm F1.8 (weight unpublished
       anywhere found), 7Artisans 135mm F1.8 (too new for the T2 tracker).
       Branch `nikon-ttartisan-7artisans-v4`.
-- [ ] 6. Merge all batches into `expand-thirdparty-lenses-canon`, resolve
-      `MANUFACTURER_COLORS` as a union
-- [ ] 7. `npm test` green, `verify-images.js nikon`, `generate-seo.js`
-- [ ] 8. Push to existing PR #41 (no new branch/PR — explicit user
-      instruction this round); leave `dataVerified` alone
+- [x] 6. Merge all batches into `expand-thirdparty-lenses-canon`, resolve
+      `MANUFACTURER_COLORS` as a union. **Done 2026-08-31**: all 5 branches
+      merged (2 with real conflicts, resolved as unions per the skill's
+      guidance; 2 clean fast-forwards). No `MANUFACTURER_COLORS` conflicts
+      arose this round — every maker touched already had an entry.
+- [x] 7. `npm test` green, `verify-images.js nikon`, `generate-seo.js`.
+      **Done 2026-08-31**: `npm test` 416/416 after every merge;
+      `generate-seo.js` re-run clean each time; `verify-images.js nikon`
+      clean throughout (only known tool-specific false positives — Laowa
+      `venuslens.net` 403s and the `voigtlaender.de` Node-TLS gap, both
+      independently confirmed via `curl` to be real, loading images).
+- [x] 8. Push to existing PR #41 (no new branch/PR — explicit user
+      instruction this round); leave `dataVerified` alone. **Done** — PR #41
+      description kept current after every batch landed.
 - [ ] 9. After PR #41 merges: archive this change alongside the Canon one;
       follow up with `check-prices-and-buy-links` for ASIN backfill

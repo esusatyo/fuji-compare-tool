@@ -1,31 +1,22 @@
 # Progress — Nikon third-party lenses (round 2)
 
-**Resume at:** All 5 batches are now complete. Sigma+Tamron, Viltrox+
-Voigtländer, and Laowa+Samyang are merged into the shared branch. Yongnuo+
-Meike finished on branch `nikon-yongnuo-meike-v4`, pushed separately for the
-orchestrator to merge (not yet landed as of this update). **TTArtisan+
-7Artisans has now also finished** (this file's update) on branch
-`nikon-ttartisan-7artisans-v4`, pushed separately — same pattern as the
-prior two solo-agent batches; the orchestrator needs to merge it in (purely
-additive: only touches the TTArtisan/7Artisans section of `LENSES`, their
-rows in `LENS_DROPDOWN_GROUPS`'s `── Other ──` group — no `KNOWN_IMAGE_GAPS`
-changes this batch, all 16 new lenses got real images — plus the
-SEO-generated `index.html`/`nikon/index.html` lens-count strings,
-regenerable via `node scripts/generate-seo.js` if a merge conflict touches
-them). **This was the last batch of the round** — next step is merging all
-outstanding batch branches into `expand-thirdparty-lenses-canon`, then the
-orchestrator's final full-suite verification and PR update (tasks.md items
-6-9).
+**Resume at:** Done. All 5 batches complete, merged into
+`expand-thirdparty-lenses-canon`, and pushed. PR #41 description is current.
+Nothing further to do on this change until PR #41 is reviewed/merged — at
+which point step 9 (archive + `check-prices-and-buy-links` ASIN follow-up)
+applies.
 
 **Branch:** `expand-thirdparty-lenses-canon` (shared with the Canon round-2
 work per explicit user instruction — no dedicated Nikon branch this round).
-Each batch's own `nikon-<maker>-v2`/`-v4` branch is merged in by the
-orchestrator and then deleted.
-**PR:** https://github.com/esusatyo/fuji-compare-tool/pull/41 (same PR as Canon)
-**Last green commit:** see git log — `npm test` 416/416 after each merge
-(this batch's own branch: 416/416 after entry — same total test count as
-before, since the new lenses are covered by existing parametrized logic-tier
-tests, not new ones).
+**PR:** https://github.com/esusatyo/fuji-compare-tool/pull/41 (open, not yet merged)
+**Last green commit:** `233d833` (TTArtisan+7Artisans batch, final) —
+`npm test` 416/416.
+
+**Final count: 31 → 119 Nikon third-party lenses** (verified directly against
+`nikon/data.js`, not derived). Sigma 3, Viltrox 32, Tamron 12, Laowa 24,
+Voigtländer 13, Yongnuo 9, TTArtisan 9, 7Artisans 9, Meike 6, Samyang 2.
+(168 was this brand's *total* lens count including first-party Nikkor —
+don't conflate the two; a prior draft of this note did.)
 
 ## Baseline (before this round)
 
