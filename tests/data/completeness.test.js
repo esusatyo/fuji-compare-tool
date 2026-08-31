@@ -199,6 +199,15 @@ const KNOWN_IMAGE_GAPS = {
     'laowa-55mm-f28-tilt-shift-macro', 'laowa-100mm-f28-tilt-shift-macro',
     'laowa-15mm-f45-shift', 'laowa-20mm-f4-shift', 'laowa-12-24mm-f56-shift',
     'laowa-85mm-f56-2x-macro', 'samyang-14mm-f28', 'samyang-85mm-f14',
+    // 7 new Yongnuo + 4 new Meike Nikon Z entries added 2026-08-31
+    // (Yongnuo+Meike batch, expand-thirdparty-lenses-nikon round 2). Mount
+    // and specs are fully sourced (see each entry's specSources / this
+    // change's research/lenses.md), but image sourcing was deferred given
+    // the batch's size — genuine gap, not a silent skip, pending a
+    // follow-up fetch-product-images pass.
+    'yongnuo-11mm-f18', 'yongnuo-23mm-f14', 'yongnuo-33mm-f14', 'yongnuo-35mm-f18',
+    'yongnuo-50mm-f18-da', 'yongnuo-56mm-f14', 'yongnuo-85mm-f18',
+    'meike-24mm-f14', 'meike-35mm-f18-pro', 'meike-50mm-f18', 'meike-85mm-f18-pro',
   ]),
   panasonic: new Set([
     // Cameras: all resolved (see git history — Commons sweeps plus Tier 3

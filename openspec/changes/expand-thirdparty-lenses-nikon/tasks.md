@@ -13,9 +13,18 @@
       Voigtländer APO-Lanthar 35mm Z (flagged remaining-tail) + others.
       **Done 2026-08-30**: 32 new lenses entered (21 Viltrox + 11
       Voigtländer); see PROGRESS.md. Branch `nikon-viltrox-voigtlander-v2`.
-- [ ] 3. Laowa + Samyang batch — full Laowa Z re-enumeration; determine from
+- [x] 3. Laowa + Samyang batch — full Laowa Z re-enumeration; determine from
       scratch whether Samyang ships ANY native Z-mount lens today
-- [ ] 4. Yongnuo + Meike batch — expand representative set beyond current 2+2
+      **Done 2026-08-30**: 21 new Laowa + 2 new Samyang lenses entered; see
+      PROGRESS.md. Branch `nikon-laowa-samyang-v2` (stale checkbox fixed —
+      PROGRESS.md already documented this as complete).
+- [x] 4. Yongnuo + Meike batch — expand representative set beyond current 2+2
+      **Done 2026-08-31**: 7 new Yongnuo (11mm/23mm/33mm/35mm-APS-C/
+      50mm-DA/56mm/85mm f/1.8 — the maker's entire remaining Z-mount
+      catalogue) + 4 new Meike (24mm MIX/35mm Pro/50mm SE/85mm Pro) entered;
+      see PROGRESS.md. Deferred: Yongnuo 16mm f/1.8 (DF/DX naming
+      contradiction), Meike 55mm f/1.8 Pro (dims unpublished), Meike 25mm
+      f/1.7 Air (too new). Branch `nikon-yongnuo-meike-v4`.
 - [ ] 5. TTArtisan + 7Artisans batch — expand representative set beyond
       current 1+1; try the `.store` dimension-diagram technique (worked for
       TTArtisan on Canon) against Z-mount pages

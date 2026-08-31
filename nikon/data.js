@@ -2609,6 +2609,188 @@ const LENSES = {
     priceIncomplete:true, productUrl:'https://meikeglobal.com/products/8518%E2%85%B1-se-z-mount',
   },
 
+  /* ── Yongnuo + Meike batch (2026-08-31): 7 new Yongnuo APS-C/FF primes
+     (the maker's entire remaining Z-mount catalogue beyond the 2 already
+     above) + 4 new Meike AF primes (MIX/Pro/SE lines). See
+     research/lenses.md's "Yongnuo + Meike batch" section for full citations. */
+  'yongnuo-11mm-f18': {
+    name:'Yongnuo YN11mm F1.8 DA DSM WL', manufacturer:'Yongnuo', line:'DA DSM WL', type:'Prime',
+    focalLength:11, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'17mm',
+    maxAperture:1.8, minAperture:16, weight:260, length:69, diameter:64,
+    filterThread:58, minFocusDist:15, maxMagnification:0.15,
+    elements:10, groups:9, blades:7, afType:'Stepping Motor (DSM)',
+    weatherSealed:true, ois:false, oisStops:null, year:2022, discontinued:false,
+    specSources: [
+      { url:'https://yongnuo.eu/yn-11mm-f-1-8-lens-for-nikon-aps-c/', tier:'T1', note:'official Yongnuo EU store; title states "for Nikon" APS-C, and the page is filed under the maker\'s Nikon Z/F lens listing — no dimensional spec table on this marketing page (weight/length/diameter/filter/MFD/elements/groups/blades from the T2 source below)', date:'2026-08-31' },
+      { url:'https://www.zsystemuser.com/z-mount-lenses/third-party-lenses/third-party-autofocus-lense/yongnuo-lenses/yongnuo-11mm-f18-da-dsm-wl.html', tier:'T2', note:'Thom Hogan\'s Nikon-Z-specific third-party lens tracker; full spec table (APS-C/DX, 260g, 2.7"x2.5"/69x64mm, 58mm filter, 0.15m MFD, 1:6.7 max mag, 10 elements/9 groups, 7 blades, "dust and splash proof build", release 2022-09-12, $300)', date:'2026-08-31' },
+    ],
+    asin:null,
+    prices:{USD:300,AUD:499,EUR:299,GBP:299,JPY:42000,CAD:399,SGD:399},
+    productUrl:'https://yongnuo.eu/yn-11mm-f-1-8-lens-for-nikon-aps-c/',
+  },
+
+  'yongnuo-23mm-f14': {
+    name:'Yongnuo YN23mm F1.4 DA DSM WL Pro', manufacturer:'Yongnuo', line:'DA DSM WL Pro', type:'Prime',
+    focalLength:23, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'35mm',
+    maxAperture:1.4, minAperture:16, weight:273, length:69, diameter:64,
+    filterThread:58, minFocusDist:30, maxMagnification:0.1,
+    elements:11, groups:9, blades:9, afType:'Stepping Motor (DSM)',
+    weatherSealed:true, ois:false, oisStops:null, year:2022, discontinued:false,
+    specSources: [
+      { url:'https://yongnuo.eu/yn-23mm-f-1-4-aps-c/', tier:'T1', note:'official Yongnuo EU store, product titled "YONGNUO 23mm f/1.4 APS-C"; confirms Nikon Z/APS-C fit — marketing-copy page, no dimensional table (supplemented by T2)', date:'2026-08-31' },
+      { url:'https://www.zsystemuser.com/z-mount-lenses/third-party-lenses/third-party-autofocus-lense/yongnuo-lenses/yongnuo-23mm-f14-da-dsm-wl.html', tier:'T2', note:'full spec table (APS-C/DX, 65.4° AoV, 273g, 2.7"x2.5"/69x64mm, 58mm filter, 0.3m MFD, 1:10 max mag, 11 elements/9 groups, 9 blades, "dust and splash proof build", release 2022-09-12, $288)', date:'2026-08-31' },
+    ],
+    asin:null,
+    prices:{USD:288,AUD:399,EUR:299,GBP:299,JPY:40000,CAD:399,SGD:399},
+    productUrl:'https://yongnuo.eu/yn-23mm-f-1-4-aps-c/',
+  },
+
+  'yongnuo-33mm-f14': {
+    name:'Yongnuo YN33mm F1.4 DA DSM WL Pro', manufacturer:'Yongnuo', line:'DA DSM WL Pro', type:'Prime',
+    focalLength:33, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'50mm',
+    maxAperture:1.4, minAperture:16, weight:378, length:89, diameter:59,
+    filterThread:58, minFocusDist:40, maxMagnification:0.1,
+    elements:11, groups:9, blades:9, afType:'Stepping Motor (DSM)',
+    weatherSealed:true, ois:false, oisStops:null, year:2024, discontinued:false,
+    specSources: [
+      { url:'https://yongnuo.eu/lenses/nikon-z-f/yongnuo-33mm-f-1-4-aps-c-lens-for-nikon/', tier:'T1', note:'official Yongnuo EU store, Nikon Z-F category listing "YONGNUO 33mm F1.4 APS-C" — marketing-copy page, no dimensional table (supplemented by T2)', date:'2026-08-31' },
+      { url:'https://www.zsystemuser.com/z-mount-lenses/third-party-lenses/third-party-autofocus-lense/yongnuo-lenses/yongnuo-33mm-f14-da-dsm-wl.html', tier:'T2', note:'full spec table (APS-C/DX, 48.8° AoV, 378g, 3.5"x2.7"/89x59mm, 58mm filter, 0.4m MFD, 1:10 max mag, 11 elements/9 groups, 9 blades, "dust and splash proof build", release 2024-08, $300)', date:'2026-08-31' },
+    ],
+    asin:null,
+    prices:{USD:300,AUD:499,EUR:299,GBP:299,JPY:45000,CAD:399,SGD:399},
+    productUrl:'https://yongnuo.eu/lenses/nikon-z-f/yongnuo-33mm-f-1-4-aps-c-lens-for-nikon/',
+  },
+
+  'yongnuo-35mm-f18': {
+    name:'Yongnuo YN35mm F1.8 DA DSM WL', manufacturer:'Yongnuo', line:'DA DSM WL', type:'Prime',
+    focalLength:35, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'53mm',
+    maxAperture:1.8, minAperture:16, weight:182, length:64, diameter:68,
+    filterThread:52, minFocusDist:30, maxMagnification:0.15,
+    elements:10, groups:8, blades:7, afType:'Stepping Motor (DSM)',
+    weatherSealed:true, ois:false, oisStops:null, year:2022, discontinued:false,
+    specSources: [
+      { url:'https://yongnuo.eu/lenses/nikon-z-f/yongnuo-35mm-f-1-8-aps-c-lens-for-nikon-z-mount-camera-auto-focus-large-aperture-remote-control/', tier:'T1', note:'official Yongnuo EU store; title explicitly "APS-C Lens for Nikon Z Mount Camera"; confirms 182g weight and "equivalent focal length is 52.5mm" (matches ×1.5 DX crop) — distinct APS-C sibling of the already-entered full-frame `yongnuo-35mm-f2` (DF DSM)', date:'2026-08-31' },
+      { url:'https://zsystemuser.com/z-mount-lenses/third-party-lenses/third-party-autofocus-lense/yongnuo-lenses/yongnuo-35mm-f18-da-dsm-wl.html', tier:'T2', note:'full spec table (APS-C/DX, 182g exact match to T1, 2.5"x2.7"/64x68mm, 52mm filter, 0.3m MFD, 1:6.6 max mag, 10 elements/8 groups, 7 blades, "dust and splash proof build", release 2022-10-31, $300)', date:'2026-08-31' },
+    ],
+    asin:null,
+    prices:{USD:300,AUD:499,EUR:299,GBP:299,JPY:42000,CAD:399,SGD:399},
+    productUrl:'https://yongnuo.eu/lenses/nikon-z-f/yongnuo-35mm-f-1-8-aps-c-lens-for-nikon-z-mount-camera-auto-focus-large-aperture-remote-control/',
+  },
+
+  'yongnuo-50mm-f18-da': {
+    name:'Yongnuo YN50mm F1.8Z DA DSM', manufacturer:'Yongnuo', line:'DA DSM', type:'Prime',
+    focalLength:50, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'75mm',
+    maxAperture:1.8, minAperture:16, weight:148, length:67, diameter:60,
+    filterThread:49, minFocusDist:45, maxMagnification:0.14,
+    elements:8, groups:7, blades:7, afType:'Stepping Motor (DSM)',
+    weatherSealed:true, ois:false, oisStops:null, year:2024, discontinued:false,
+    specSources: [
+      { url:'https://yongnuo.eu/lenses/nikon-z-f/yn50mm-f1-8z-da-dsm/', tier:'T1', note:'official Yongnuo EU store; confirms "APS-C, Auto Focus" + Nikon Z mount + 148g weight + "equivalent focal length is 75mm" (matches ×1.5 DX crop) — distinct APS-C sibling of the already-entered full-frame `yongnuo-50mm-f18` (DF DSM)', date:'2026-08-31' },
+      { url:'https://www.zsystemuser.com/z-mount-lenses/third-party-lenses/third-party-autofocus-lense/yongnuo-lenses/yongnuo-50mm-f18-da-dsm.html', tier:'T2', note:'full spec table (148g exact match to T1, 2.6"x2.4"/67x60mm, 49mm filter, 0.45m MFD, 1:7.1 max mag, 8 elements/7 groups, 7 blades, "dust and splash proof build", release 2024-01-18, ~$120)', date:'2026-08-31' },
+    ],
+    asin:null,
+    prices:{USD:120,AUD:199,EUR:99,GBP:99,JPY:18000,CAD:199,SGD:199},
+    productUrl:'https://yongnuo.eu/lenses/nikon-z-f/yn50mm-f1-8z-da-dsm/',
+  },
+
+  'yongnuo-56mm-f14': {
+    name:'Yongnuo YN56mm F1.4 DA DSM WL Pro', manufacturer:'Yongnuo', line:'DA DSM WL Pro', type:'Prime',
+    focalLength:56, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'84mm',
+    maxAperture:1.4, minAperture:16, weight:378, length:89, diameter:69,
+    filterThread:58, minFocusDist:40, maxMagnification:0.11,
+    elements:11, groups:9, blades:9, afType:'Stepping Motor (DSM)',
+    weatherSealed:true, ois:false, oisStops:null, year:2024, discontinued:false,
+    specSources: [
+      { url:'https://yongnuo.eu/lenses/nikon-z-f/yongnuo-56mm-f-1-4-aps-c/', tier:'T1', note:'official Yongnuo EU store, Nikon Z-F category listing "YONGNUO 56mm f/1.4 APS-C" — marketing-copy page, no dimensional table (supplemented by T2)', date:'2026-08-31' },
+      { url:'https://www.zsystemuser.com/z-mount-lenses/third-party-lenses/third-party-autofocus-lense/yongnuo-lenses/yongnuo-56mm-f14-da-dsm-wl.html', tier:'T2', note:'full spec table (APS-C/DX, 378g, 3.5"x2.7"/89x69mm, 58mm filter, 0.4m MFD, 1:9 max mag, 11 elements/9 groups, 9 blades, "dust and splash proof build", release 2024-06-07, $278)', date:'2026-08-31' },
+    ],
+    asin:null,
+    prices:{USD:278,AUD:399,EUR:299,GBP:299,JPY:42000,CAD:399,SGD:399},
+    productUrl:'https://yongnuo.eu/lenses/nikon-z-f/yongnuo-56mm-f-1-4-aps-c/',
+  },
+
+  'yongnuo-85mm-f18': {
+    name:'Yongnuo YN85mm F1.8Z DF DSM', manufacturer:'Yongnuo', line:'DF DSM', type:'Prime',
+    focalLength:85, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'85mm',
+    maxAperture:1.8, minAperture:16, weight:405, length:88, diameter:67,
+    filterThread:58, minFocusDist:80, maxMagnification:0.13,
+    elements:9, groups:8, blades:7, afType:'Stepping Motor (DSM)',
+    weatherSealed:false, ois:false, oisStops:null, year:2022, discontinued:false,
+    specSources: [
+      { url:'https://th.hkyongnuo.com/products/yn85mm-f18z-df-dsm', tier:'T1', note:'Yongnuo\'s Thai regional storefront (official regional site); full spec table embedded in the page copy: "Weight 405g", "Max Diameter and Length Φ67×88mm", "Filter Diameter 58mm", "Lens Construction 8 groups 9 elements", "Aperture Blades 7 blades", "Min Focusing Distance 0.8m", "Max Magnification 0.13 times"; JSON-LD offers.price "360" USD; mount stated as "Nikon Z" full frame', date:'2026-08-31' },
+      { url:'https://www.zsystemuser.com/z-mount-lenses/third-party-lenses/third-party-autofocus-lense/yongnuo-lenses/yongnuo-85mm-f18z-df-dsm.html', tier:'T2', note:'independent corroboration: weight (405g) and elements/groups/blades (9/8/7) match T1 exactly; length/diameter given as 89/68mm (1mm off from T1 each way — T1 kept per convention); supplies release date 2022-03-10, used for `year`; no weather-sealing claim found on either source, so `weatherSealed:false`', date:'2026-08-31' },
+    ],
+    asin:null,
+    prices:{USD:360,AUD:599,EUR:399,GBP:299,JPY:50000,CAD:499,SGD:499},
+    productUrl:'https://th.hkyongnuo.com/products/yn85mm-f18z-df-dsm',
+  },
+
+  'meike-24mm-f14': {
+    name:'Meike 24mm F1.4 MIX Full Frame AF', manufacturer:'Meike', line:'MIX', type:'Prime',
+    focalLength:24, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'24mm',
+    maxAperture:1.4, minAperture:16, weight:550, length:107, diameter:79,
+    filterThread:72, minFocusDist:28, maxMagnification:null,
+    elements:15, groups:12, blades:11, afType:'STM',
+    weatherSealed:false, ois:false, oisStops:null, year:2025, discontinued:false,
+    specSources: [
+      { url:'https://meikeglobal.com/products/2414z', tier:'T1', note:'official Meike Global store, "24mm F1.4 MIX Z mount" variant, $589.00 regular price; part of the maker\'s own "AF Lens Lineups" MIX-series listing ("85mm F1.4/24mm F1.4") — marketing-image description page, no text/image dimension table (supplemented by T2)', date:'2026-08-31' },
+      { url:'https://www.zsystemuser.com/z-mount-lenses/third-party-lenses/third-party-autofocus-lense/meike-autofocus-lenses/meike-24mm-f14-lens-specifi.html', tier:'T2', note:'full frame (FX), 550g, 72mm filter, 0.28m MFD, 15 elements/12 groups, 11 blades, release 2025-08, $589; length/diameter (107x79mm, not on this page) independently corroborated by phillipreeve.net\'s hands-on review (elements/groups match exactly, 107x79mm) and B&H\'s own listing (79x107mm) — not counted as the required second source, recorded for confidence only', date:'2026-08-31' },
+    ],
+    asin:null,
+    prices:{USD:589,AUD:899,EUR:699,GBP:499,JPY:91000,CAD:799,SGD:899},
+    productUrl:'https://meikeglobal.com/products/2414z',
+  },
+
+  'meike-35mm-f18-pro': {
+    name:'Meike 35mm F1.8 Pro AF STM', manufacturer:'Meike', line:'Pro', type:'Prime',
+    focalLength:35, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'35mm',
+    maxAperture:1.8, minAperture:16, weight:404, length:93, diameter:74,
+    filterThread:58, minFocusDist:35, maxMagnification:0.13,
+    elements:12, groups:10, blades:9, afType:'STM',
+    weatherSealed:true, ois:false, oisStops:null, year:2025, discontinued:false,
+    specSources: [
+      { url:'https://meikeglobal.com/products/3518proz', tier:'T1', note:'official Meike Global store, "35mm F1.8 Pro Z" variant, $379.00 regular price; part of the maker\'s own Pro-series listing ("85mm F1.8 Pro/55mm F1.8/35mm F1.8") — marketing-image description page, no text/image dimension table', date:'2026-08-31' },
+      { url:'https://www.digitalcameraworld.com/cameras/lenses/meike-35mm-f-1-8-pro-af-review', tier:'T2', note:'independent review by Matthew Richards (published 2026-02-02); full spec table: 400g, 93x74mm, 58mm filter, 0.35m MFD, 0.13x max mag, 12 elements/10 groups, 9 blades, weather-sealed, mount options "Nikon Z (FX), Sony E (FE)" with no noted variation between them', date:'2026-08-31' },
+    ],
+    asin:'B0FFSZTV4N',
+    priceSource: { url:'https://www.amazon.com/dp/B0FFSZTV4N', tier:'T3', note:'Amazon "Item details" panel for this exact Nikon Z ASIN confirms weight 404g (used, over T2\'s rounded 400g) and List Price $379.00 (current sale price $329.00 is a discount, not the RRP)', date:'2026-08-31' },
+    prices:{USD:379,AUD:599,EUR:399,GBP:299,JPY:58000,CAD:499,SGD:499},
+    productUrl:'https://meikeglobal.com/products/3518proz',
+  },
+
+  'meike-50mm-f18': {
+    name:'Meike 50mm F1.8 AF STM', manufacturer:'Meike', line:'SE', type:'Prime',
+    focalLength:50, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'50mm',
+    maxAperture:1.8, minAperture:16, weight:382, length:59.5, diameter:68.6,
+    filterThread:58, minFocusDist:63, maxMagnification:null,
+    elements:11, groups:7, blades:9, afType:'STM',
+    weatherSealed:false, ois:false, oisStops:null, year:2024, discontinued:false,
+    specSources: [
+      { url:'https://meikeglobal.com/products/5018z', tier:'T1', note:'official Meike Global store, "50mm F1.8 Auto Focus Prime Lens for Z Cameras for Portrait/Street/Landscape shooting", $169.99 regular price; part of the maker\'s own SE-series listing ("85mm F1.8/50mm F1.8/35mm F2/85mm F1.8 II SE") — marketing-image description page, no dimension table', date:'2026-08-31' },
+      { url:'https://www.zsystemuser.com/z-mount-lenses/third-party-lenses/third-party-autofocus-lense/meike-autofocus-lenses/meike-50mm-f18.html', tier:'T2', note:'382g, 58mm filter, 0.63m MFD, 11 elements/7 groups, 9 blades, release 2024-01-22, $160; page marks length/diameter as unpublished ("?")', date:'2026-08-31' },
+    ],
+    priceSource: { url:'https://www.bhphotovideo.com/c/product/1889441-REG/meike_mk_50mm_f_1_8_af.html', tier:'T3', note:'B&H\'s lens-compare tool gives this lens\'s diameter x length as Φ68.6 x 59.5mm — the only field missing from T1/T2; a single unambiguous row, not contradicted elsewhere (unlike the 55mm f/1.8 Pro, whose compare-page snippets conflicted and were not used)', date:'2026-08-31' },
+    asin:null,
+    prices:{USD:170,AUD:299,EUR:199,GBP:199,JPY:26000,CAD:199,SGD:199},
+    productUrl:'https://meikeglobal.com/products/5018z',
+  },
+
+  'meike-85mm-f18-pro': {
+    name:'Meike 85mm F1.8 Pro AF STM', manufacturer:'Meike', line:'Pro', type:'Prime',
+    focalLength:85, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'85mm',
+    maxAperture:1.8, minAperture:16, weight:389, length:97, diameter:76,
+    filterThread:62, minFocusDist:85, maxMagnification:null,
+    elements:11, groups:8, blades:9, afType:'STM',
+    weatherSealed:false, ois:false, oisStops:null, year:2024, discontinued:false,
+    specSources: [
+      { url:'https://meikeglobal.com/products/8518proz', tier:'T1', note:'official Meike Global store, "85mm f1.8 Pro Full Frame Auto Focus STM Lens for Z Cameras -Low Dispersion&High Resolution", $339.99 regular price; distinct from the already-entered `meike-85mm-f18` (discontinued, base/original non-Pro tier, its own `/products/85mm-f1-8z` URL) and `meike-85mm-f18-se-ii` (SE Mark II) — this is the Pro-line 85mm', date:'2026-08-31' },
+      { url:'https://www.zsystemuser.com/z-mount-lenses/third-party-lenses/third-party-autofocus-lense/meike-autofocus-lenses/meike-85mm-f18-pro-lens.html', tier:'T2', note:'full spec table: 389g, 97x76mm, 62mm filter, 0.85m MFD, "1 aspherical, 3 HR, 2 ED elements" totaling 11 elements/8 groups, 9-blade diaphragm, release 2024-11, $340 (matches T1\'s $339.99)', date:'2026-08-31' },
+    ],
+    asin:null,
+    prices:{USD:340,AUD:499,EUR:399,GBP:299,JPY:51000,CAD:399,SGD:499},
+    productUrl:'https://meikeglobal.com/products/8518proz',
+  },
+
 };
 
 const LENS_DROPDOWN_GROUPS = [
@@ -2624,7 +2806,7 @@ const LENS_DROPDOWN_GROUPS = [
   { label: '── Voigtländer ──', ids: ['voigtlander-apo-lanthar-50mm-f2', 'voigtlander-nokton-40mm-f12', 'voigtlander-super-wide-heliar-15mm-f45', 'voigtlander-nokton-d23mm-f12', 'voigtlander-nokton-28mm-f15', 'voigtlander-apo-lanthar-28mm-f2', 'voigtlander-nokton-d35mm-f12', 'voigtlander-macro-apo-ultron-d35mm-f2', 'voigtlander-apo-lanthar-35mm-f2', 'voigtlander-septon-40mm-f2', 'voigtlander-nokton-50mm-f10', 'voigtlander-macro-apo-lanthar-65mm-f2', 'voigtlander-portrait-heliar-75mm-f18'] },
   { label: '── Laowa ──', ids: ['laowa-10mm-f4-cookie', 'laowa-10mm-f28-af', 'laowa-12mm-f28-lite-zero-d', 'laowa-15mm-f2', 'laowa-15mm-f45-macro', 'laowa-15mm-f5-cookie', 'laowa-15mm-f45-shift', 'laowa-17mm-f4-tilt-shift', 'laowa-20mm-f4-shift', 'laowa-25mm-f28-25-5x-macro', 'laowa-35mm-f28-tilt-shift-macro', 'laowa-55mm-f28-tilt-shift-macro', 'laowa-58mm-f28-2x-macro', 'laowa-65mm-f28-2x-macro', 'laowa-85mm-f56-2x-macro', 'laowa-90mm-f28-macro', 'laowa-100mm-f28-2x-macro', 'laowa-100mm-f28-tilt-shift-macro', 'laowa-argus-28mm-f12', 'laowa-argus-33mm-f095', 'laowa-8-15mm-f28-fisheye', 'laowa-8-16mm-f35-5', 'laowa-10-18mm-f45-56', 'laowa-12-24mm-f56-shift'] },
   { label: '── Samyang ──', ids: ['samyang-14mm-f28', 'samyang-85mm-f14'] },
-  { label: '── Other ──', ids: ['yongnuo-35mm-f2', 'yongnuo-50mm-f18', 'ttartisan-27mm-f28', '7artisans-27mm-f28', 'meike-85mm-f18', 'meike-85mm-f18-se-ii'] },
+  { label: '── Other ──', ids: ['yongnuo-11mm-f18', 'yongnuo-23mm-f14', 'yongnuo-33mm-f14', 'yongnuo-35mm-f18', 'yongnuo-35mm-f2', 'yongnuo-50mm-f18-da', 'yongnuo-50mm-f18', 'yongnuo-56mm-f14', 'yongnuo-85mm-f18', 'ttartisan-27mm-f28', '7artisans-27mm-f28', 'meike-24mm-f14', 'meike-35mm-f18-pro', 'meike-50mm-f18', 'meike-85mm-f18', 'meike-85mm-f18-pro', 'meike-85mm-f18-se-ii'] },
 ];
 
 return { BRAND_CONFIG, SERIES_COLORS, CAMERAS, CAMERA_ORDER,
