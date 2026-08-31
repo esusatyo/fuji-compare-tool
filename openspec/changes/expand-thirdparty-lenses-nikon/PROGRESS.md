@@ -1,17 +1,21 @@
 # Progress — Nikon third-party lenses (round 2)
 
-**Resume at:** Sigma+Tamron, Viltrox+Voigtländer, and Laowa+Samyang are all
-complete and merged into the shared branch. Yongnuo+Meike has now also
-finished (this file's update) on branch `nikon-yongnuo-meike-v4`, pushed
-separately — **not** landed directly on `expand-thirdparty-lenses-canon`,
-same pattern as the Laowa+Samyang batch; the orchestrator will need to merge
-it in (purely additive: only touches the Yongnuo/Meike section of `LENSES`,
-their rows in `LENS_DROPDOWN_GROUPS`'s `── Other ──` group, and
-`KNOWN_IMAGE_GAPS.nikon` — no overlap with other in-flight batches' sections,
-plus the SEO-generated `index.html`/`nikon/index.html` lens-count strings,
+**Resume at:** All 5 batches are now complete. Sigma+Tamron, Viltrox+
+Voigtländer, and Laowa+Samyang are merged into the shared branch. Yongnuo+
+Meike finished on branch `nikon-yongnuo-meike-v4`, pushed separately for the
+orchestrator to merge (not yet landed as of this update). **TTArtisan+
+7Artisans has now also finished** (this file's update) on branch
+`nikon-ttartisan-7artisans-v4`, pushed separately — same pattern as the
+prior two solo-agent batches; the orchestrator needs to merge it in (purely
+additive: only touches the TTArtisan/7Artisans section of `LENSES`, their
+rows in `LENS_DROPDOWN_GROUPS`'s `── Other ──` group — no `KNOWN_IMAGE_GAPS`
+changes this batch, all 16 new lenses got real images — plus the
+SEO-generated `index.html`/`nikon/index.html` lens-count strings,
 regenerable via `node scripts/generate-seo.js` if a merge conflict touches
-them). Only TTArtisan+7Artisans remains, paused mid-run from an earlier
-attempt (per this file's prior note) — resumable next.
+them). **This was the last batch of the round** — next step is merging all
+outstanding batch branches into `expand-thirdparty-lenses-canon`, then the
+orchestrator's final full-suite verification and PR update (tasks.md items
+6-9).
 
 **Branch:** `expand-thirdparty-lenses-canon` (shared with the Canon round-2
 work per explicit user instruction — no dedicated Nikon branch this round).
@@ -19,8 +23,8 @@ Each batch's own `nikon-<maker>-v2`/`-v4` branch is merged in by the
 orchestrator and then deleted.
 **PR:** https://github.com/esusatyo/fuji-compare-tool/pull/41 (same PR as Canon)
 **Last green commit:** see git log — `npm test` 416/416 after each merge
-(this batch's own branch: 416/416 after entry, same total test count as
-before — the new lenses are covered by existing parametrized logic-tier
+(this batch's own branch: 416/416 after entry — same total test count as
+before, since the new lenses are covered by existing parametrized logic-tier
 tests, not new ones).
 
 ## Baseline (before this round)
@@ -47,7 +51,7 @@ from an aggregator.
 | Viltrox + Voigtländer | ✅ 32/32 (21 Viltrox + 11 Voigtländer; 1 Viltrox teleconverter and 1 Voigtländer lens out-of-scope/deferred, see below) | ✅ 32 | ✅ | ✅ 32 (maker product photos) | ✅ Viltrox tier-1 USD; ⚠️ Voigtländer USD estimated, see Open questions | see below |
 | Laowa + Samyang | ✅ 23/23 (21 Laowa + 2 Samyang) | ✅ 23 | ✅ | ⬜ deferred to `KNOWN_IMAGE_GAPS.nikon` (batch size — flagged for a follow-up `fetch-product-images` pass) | ✅ 23 | see below |
 | Yongnuo + Meike | ✅ 11/11 (7 new Yongnuo + 4 new Meike; 3 more researched but deferred — see below) | ✅ 11 | ✅ | ⬜ deferred to `KNOWN_IMAGE_GAPS.nikon` (batch size — flagged for a follow-up `fetch-product-images` pass) | ✅ 11 | see below |
-| TTArtisan + 7Artisans | ⬜ not started (agent died before any tool use produced output) | ⬜ | ⬜ | ⬜ | ⬜ | — |
+| TTArtisan + 7Artisans | ✅ 16/16 (8 TTArtisan + 8 7Artisans; 1 TTArtisan + 2 7Artisans deferred, see below) | ✅ 16 | ✅ | ✅ 16/16 (maker product photos) | ✅ 16/16 | see below |
 
 ### Viltrox+Voigtländer batch — what landed (2026-08-30)
 
@@ -342,6 +346,97 @@ lenses are covered by existing parametrized data/logic tests, not new test
 cases). `node scripts/generate-seo.js` re-run (lens count 141→152 across
 Nikon; `index.html`/`nikon/index.html` regenerated).
 
+### TTArtisan + 7Artisans batch — what landed (2026-08-31)
+
+**Branch note:** same pattern as the Laowa+Samyang and Yongnuo+Meike batches
+— a fresh worktree from `origin/main` (stale), rebased onto
+`origin/expand-thirdparty-lenses-canon` at commit `0645196` ("Nikon: enter 7
+Yongnuo + 4 Meike Z-mount lenses") before starting. Ended up on branch
+`nikon-ttartisan-7artisans-v4`, pushed separately for the orchestrator to
+merge. Three prior attempts at this exact batch had died to an account
+spend-limit error before any research landed — this run started completely
+fresh. Mid-run, `WebFetch` itself hit the session's monthly spend limit
+(after TTArtisan research was done, partway through 7Artisans) — the same
+failure mode, one layer down. Two research checkpoints were committed and
+pushed before any data entry, specifically so a third hit wouldn't lose the
+work again: commit `954cd95` (TTArtisan, 8 lenses fully researched) and
+`7221a7d` (7Artisans, 8 lenses fully researched). All research past the
+WebFetch limit used the Chrome browser extension (`navigate` +
+`get_page_text` + `javascript_tool`) instead, which draws from a separate
+budget and was not affected.
+
+**The dimension-diagram technique (from the Canon round) — confirmed working
+again for TTArtisan, confirmed NOT generalizing to 7Artisans, exactly as the
+task flagged as an open question.** `ttartisan.store`'s "Size" spec-table row
+renders per-mount length/diameter as an image; found and read via `find`
+(locate "Size" row) → `computer scroll_to` → `computer screenshot`,
+successfully for all 8 TTArtisan lenses entered. Tested directly against
+7artisans.store rather than assuming it would/wouldn't work: **it does not**
+— no 7Artisans product page in this batch has any "Size" row, dimension
+diagram, or spec table of any kind, only marketing prose and a mount/color
+selector. This matches the Meike batch's finding one round ago (meikeglobal.com
+product pages are also spec-table-free) more than the TTArtisan finding —
+7Artisans needed the same T2-tracker workaround (Thom Hogan's
+zsystemuser.com) that Meike did.
+
+**TTArtisan — 8 new lenses**, its entire current in-stock AF Z-mount lineup
+minus 2 sold-out originals (`351-8`, `32mm-f2-8-af-lens-nikon-mount`, both
+deferred — see below) and the out-of-scope Trio bundle: 23mm f/1.8, 35mm
+f/1.8 II, 56mm f/1.8, 75mm f/2 (closes 3 of round-1's 4 original candidate
+leads — 27mm was already entered), plus 3 not on that original list at all
+(40mm f/2, 17mm f/1.8 Air, 50mm/85mm f/1.8 Neo). All T1-only per the skill's
+"tier 1 is sufficient on its own" rule — every page's own mount selector
+lists Nikon Z as a purchasable variant, the mount-existence proof, and
+there's no ambiguous/combined-mount table here to trigger the "reach for
+tier 2" caution. Weight is published as a color-variant range on 7 of the 8
+(e.g. "233~245g"); stored as the rounded midpoint, full range kept in
+`specSources`. `year` values are estimates from review-history depth/dates
+(no explicit launch date published anywhere on this maker's site) —
+flagged per-lens in `specSources`, same convention the Meike batch used for
+`year` a round ago.
+
+**7Artisans — 8 new lenses**, enumerated from `7artisans.store`'s own
+"Autofocus Z" collection (11 products, every one explicitly Z-mount by
+collection membership + its own mount selector): 10mm f/2.8, 25/35/50mm
+f/1.8 "Lite" APS-C trio, 35mm/40mm/50mm/85mm full-frame primes. T1 (store)
+supplies mount + price confirmation only (no spec table); T2
+(zsystemuser.com) supplies the full dimensional spec table for all 8 —
+weight, dimensions, optical formula, and (for 7 of 8) an explicit "Announced"
+date used for `year`.
+
+**Data entered:** all 16 lenses have full specs, a `specSources` citation
+block (T1+T2 for 7Artisans, T1-only for TTArtisan per the skill's rule
+above), `LENS_DROPDOWN_GROUPS` placement (`── Other ──` group expanded from
+17 to 33 ids), USD pricing sourced from the maker, and all 7 currencies
+filled via `node scripts/compute-prices.js nikon lenses`. `asin:null`
+throughout (search fallback) — left for a `check-prices-and-buy-links`
+follow-up, same as every prior batch this round.
+
+**Images:** all 16 got real maker product photos (og:image meta tag from
+each product page) — **no `KNOWN_IMAGE_GAPS` entries needed this batch**,
+unlike the two prior solo-agent batches (Laowa+Samyang, Yongnuo+Meike),
+which both deferred images for batch-size reasons. One caveat recorded in
+`specSources`/`imageSource` notes: for TTArtisan's "Neo"/"Air" SKUs where the
+maker publishes a per-mount photo (filenames containing `SKU-E`), the
+`og:image` meta tag reflects the page's default Sony-E-variant photo, not
+the Nikon-Z-selected one — the Shopify theme doesn't update the OG tag on a
+client-side mount-selector click, and the browser tool used this round
+blocks reading a live `<img>` element's resolved `src` (a cookie/query-string
+safety filter) after such a click. This is a small step down from the
+existing `ttartisan-27mm-f28`/`7artisans-27mm-f28` entries, whose images
+were confirmed Z-mount-specific by an earlier session — but the barrels are
+cosmetically identical across mounts in a front-on product shot (confirmed
+while reading the Size-diagram screenshots, which differ only at the rear
+flange, invisible in a hero photo), so these are still genuinely
+correct-product photos, just not provably the Z-specific variant image where
+one technically exists.
+
+**Test status:** `npm test` — 416/416 green (data + logic tiers, same total
+count as before this batch — new lenses covered by existing parametrized
+tests). `npm run test:data` green after `node scripts/compute-prices.js
+nikon lenses` (filled all 6 regional currencies for all 16) and `node
+scripts/generate-seo.js` (lens count 152→168 across Nikon).
+
 ## Deferred / skipped (with reason)
 
 - Yongnuo YN16mm F1.8 DF DSM — **deferred, not entered.** zsystemuser.com
@@ -408,6 +503,37 @@ Nikon; `index.html`/`nikon/index.html` regenerated).
   venuslens.net "Sale!" range ($839–$1,199) whose lower/upper split by
   variant (blade count) wasn't fully disambiguated — flagged in case a more
   precise per-variant figure surfaces later.
+- TTArtisan AF 35mm F1.8 (original, handle `351-8`) and 32mm F2.8 AF Nikon
+  Mount — **deferred, not entered.** Both sold-out on ttartisan.store; both
+  product pages returned stale/redirected content when navigated directly
+  this round rather than their own spec table. The 35mm original is
+  superseded by the in-stock "II" (entered); the 32mm is a genuinely
+  Nikon-named historical SKU worth a dedicated follow-up re-attempt.
+- TTArtisan AF 14mm F3.5 and AF Trio Lens SET — **rejected, not deferred.**
+  14mm F3.5 has no Nikon Z variant on ttartisan.store (Sony E/Fuji X only,
+  confirmed via `/products.json`); the Trio Set is a 3-lens bundle SKU, out
+  of scope per the skill's per-lens model.
+- 7Artisans AF 24mm F1.8 Full-frame Lens for E/Z/L — **deferred, not
+  entered.** Z-mount confirmed (T1 mount selector + T2 spec page), and every
+  other field is solid (92×72mm, 14E/11G, 11 blades, 62mm filter, 0.32m MFD,
+  $329-330) — but **weight is unpublished on both T1 and T2** (the T2 page
+  literally prints "? ounces (?g)"). Checked several $329 Nikon-Z Amazon
+  listings without finding a weight figure in visible bullets within this
+  round's time budget. Every other field is ready — a quick follow-up
+  sourcing just the weight would close this one.
+- 7Artisans AF 135mm F1.8 Full-frame Lens for Z/E/L — **out of scope for
+  this batch, not rejected.** Confirmed real, current, Z-mount ($689, the
+  line's flagship/priciest lens) via the T1 store collection listing, but
+  newer than zsystemuser.com's Jan-2025-dated 7Artisans tracker page (not
+  listed there), so no readily-available T2 spec table this round. Candidate
+  for a future 7Artisans-focused pass.
+- 7Artisans AF 35mm F1.4 (APS-C, handle `af-35mm-f1-4`) and AF 10mm F2.5
+  Full-frame Lens for E/Z/L — **out of scope for this batch, not rejected.**
+  The 35mm F1.4 surfaced only as a "related product" link, never confirmed
+  against the maker's own Z-mount collection list (which doesn't include
+  it) — needs re-verification from scratch before adding. The 10mm F2.5
+  ($449) does appear on the Z-mount collection page but wasn't pursued this
+  round to keep the batch within its representative-set time budget.
 
 ## Open questions for the user
 

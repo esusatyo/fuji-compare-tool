@@ -25,9 +25,19 @@
       see PROGRESS.md. Deferred: Yongnuo 16mm f/1.8 (DF/DX naming
       contradiction), Meike 55mm f/1.8 Pro (dims unpublished), Meike 25mm
       f/1.7 Air (too new). Branch `nikon-yongnuo-meike-v4`.
-- [ ] 5. TTArtisan + 7Artisans batch — expand representative set beyond
+- [x] 5. TTArtisan + 7Artisans batch — expand representative set beyond
       current 1+1; try the `.store` dimension-diagram technique (worked for
       TTArtisan on Canon) against Z-mount pages
+      **Done 2026-08-31**: 8 new TTArtisan (23mm/35mm II/56mm/75mm/40mm/
+      17mm Air/50mm Neo/85mm Neo f/1.8-f/2) + 8 new 7Artisans (10mm/25mm
+      Lite/35mm Lite/50mm Lite/35mm/40mm Lite/50mm/85mm) entered; see
+      PROGRESS.md. Dimension-diagram technique confirmed working again for
+      TTArtisan (all 8), confirmed NOT generalizing to 7Artisans (tested
+      directly, per the task's instruction not to assume). Deferred:
+      TTArtisan 35mm F1.8 original + 32mm F2.8 Nikon Mount (both sold-out,
+      stale page redirects), 7Artisans 24mm F1.8 (weight unpublished
+      anywhere found), 7Artisans 135mm F1.8 (too new for the T2 tracker).
+      Branch `nikon-ttartisan-7artisans-v4`.
 - [ ] 6. Merge all batches into `expand-thirdparty-lenses-canon`, resolve
       `MANUFACTURER_COLORS` as a union
 - [ ] 7. `npm test` green, `verify-images.js nikon`, `generate-seo.js`
