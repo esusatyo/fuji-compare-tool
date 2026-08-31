@@ -158,3 +158,51 @@ weight/length/diameter match). Still treated as a single T2 lineage per
 lens — not stacked with meikeglobal.com/yongnuo.eu as if they were two
 independent measurements of the same fact, since Thom Hogan's own figures are
 themselves sourced from the makers.
+
+## TTArtisan + 7Artisans batch (2026-08-31)
+
+**Session note**: this batch's `WebFetch` tool hit the session's monthly spend
+limit partway through (mid-7Artisans research) — the exact failure mode the
+task said three prior attempts at this batch died to. Research from that
+point on switched entirely to the Chrome browser extension (`navigate` +
+`get_page_text` + `javascript_tool`), which draws from a different budget and
+kept working. This checkpoint is committed immediately so a repeat hit
+doesn't lose the TTArtisan research (fully complete at this point).
+
+**TTArtisan — dimension-diagram technique confirmed working again.** Per the
+task's lead from the Canon round, `ttartisan.store`'s "Size" spec-table row
+renders per-mount length/diameter as an image (E-mount / X-mount / Z-mount /
+L-mount side by side with dimension callouts), invisible to `WebFetch`'s
+markdown conversion but fully legible via a browser screenshot. Used
+successfully for all 8 lenses below via `find` (locate the "Size" row) →
+`scroll_to` → `screenshot`. ttartisan.store's own "AF Lens" collection (13
+products) filtered/cross-checked against its "Mount → Nikon Z" facet (11 of
+13 in-stock+sold-out products support Z; 2 don't: 14mm F3.5 is E/X only, and
+the Trio Set is an out-of-scope bundle). All 8 below are T1-only
+(ttartisan.store product pages) per the skill's "tier 1 is sufficient on its
+own" rule — each page's own mount selector explicitly lists "Nikon Z" as a
+purchasable variant, which is the mount-existence proof; no second source
+needed since these are single-lineage maker spec tables, not combined/
+ambiguous multi-mount tables. Weight is given as a range on every page except
+the 23mm (color-variant range, e.g. "233~245g" for Black/Silver) — stored as
+the rounded midpoint per lens, range noted in `specSources`.
+
+| slug | name | maker | line | type | year | disc | src1 (tier 1) | src2 (tier) | notes / conflicts |
+|---|---|---|---|---|---|---|---|---|---|
+| ttartisan-23mm-f18 | TTArtisan AF 23mm F1.8 | TTArtisan | AF | Prime | 2023 | no | https://ttartisan.store/products/ttartisan-af-23mm-f1-8 | — | APS-C, mount X/E/Z. 210g (single figure, no range) confirmed via product copy + spec table both. Z-mount dims from the page's own Size diagram: 62mm len × 64mm dia (X 60×67, E 60×67). $127. A verified-purchase review explicitly confirms Nikon compatibility ("I tried it on my Nikon camera and it worked well"). `year` estimated from earliest review date range shown (reviews since 2025-11) — no explicit launch date published; flagged. |
+| ttartisan-35mm-f18-ii | TTArtisan AF 35mm F1.8 Ⅱ | TTArtisan | AF | Prime | 2024 | no | https://ttartisan.store/products/ttartisan-af-35mm-f1-8 | — | APS-C, mount X/E/Z (the "II"/Mark II redesign — a separate, older sold-out original "35mm F1.8" also exists at handle `351-8`, not entered, see rejects). 176~193g range (Black/Silver/Orange color variants) → 185g midpoint. Z-mount dims from Size diagram: 51mm len × 66mm dia (X 49×65, E 49×65 — both colors' diagrams cross-checked, identical). $125. A review dated 07/20/2026 explicitly names "Z mount". `year` estimated from earliest review date (2024, oldest visible review page). |
+| ttartisan-56mm-f18 | TTArtisan AF 56mm F1.8 | TTArtisan | AF | Prime | 2023 | no | https://ttartisan.store/products/56mm | — | APS-C, mount E/X/Z. 233~245g range → 239g midpoint. Z-mount dims from Size diagram: 70mm len × 65mm dia (E 66×65, X 62×65). $158 reg / $129 current sale (RRP $158 used, sale price is a discount not a new RRP). One reviewer explicitly runs it on Sony (confirms E-mount works); page's own spec-table "Mount E / X / Z" is the Z-mount proof. `year` estimated from review history depth (83 reviews, oldest era implies 2023 launch consistent with round-1's original candidate-lead list). |
+| ttartisan-75mm-f2 | TTArtisan AF 75mm F2 | TTArtisan | AF | Prime | 2023 | no | https://ttartisan.store/products/ttartisan-af-75mm-f2 | — | Full-frame, mount E/Z/L/X. 326-340g range → 333g midpoint. Z-mount dims from Size diagram: 76mm len × 67mm dia (E 74×67, L 76×67, X 74×67 — Z ties L for the longest). $199. This was one of round-1's flagged leads ("75/2"); confirmed real and entered this round. `year` estimated from 103-review history depth, consistent with a 2023 launch alongside the 56mm F1.8. |
+| ttartisan-40mm-f2 | TTArtisan AF 40mm F2 | TTArtisan | AF | Prime | 2024 | no | https://ttartisan.store/products/af-40mm-f2 | — | Full-frame, mount E/Z/L (no X — full-frame only design). 166~176g range → 171g midpoint. Z-mount dims from Size diagram: 46mm len × 65mm dia (E 44×61, L 43×63 — Z is both longest and widest of the three). $168. Clicked aperture ring (unusual for this maker's AF line — most are declicked/ring-less). `year` estimated from 30-review history (a review dated 08/28/2026 is recent, oldest reviews imply a 2024 launch). |
+| ttartisan-17mm-f18-air | TTArtisan AF 17mm f1.8 Air | TTArtisan | AF Air | Prime | 2025 | no | https://ttartisan.store/products/af-17mm-f1-8-air | — | APS-C, mount E/X/Z. 161~178g range → 170g midpoint. Z-mount dims from Size diagram: 51mm len × 65mm dia (X 47×60, E 47×60). $148. Widest-angle lens in TTArtisan's current AF lineup (81° AoV, 14E/10G). Marketing copy states "25mm full-frame equivalent" (a truncated/rounded figure) but this project's own established rounding convention (see `z-dx-mc-35mm-f17`'s 35×1.5=52.5→'53mm') rounds 17×1.5=25.5 up to `'26mm'` for consistency — not copied from the maker's marketing phrasing. Only 7 reviews (newest of the APS-C primes); `year` estimated 2025 from review-date range. |
+| ttartisan-50mm-f18-neo | TTArtisan AF 50mm F1.8 Neo | TTArtisan | AF Neo | Prime | 2025 | no | https://ttartisan.store/products/ttartisan-af-50mm-f1-8-neo | — | Full-frame, mount E/Z/L. "Neo" line — simplified design with no focus/aperture rings, glass-fiber composite body (lighter than the metal AF line). 156~167g range → 162g midpoint. Z-mount dims from Size diagram: 54mm len × 66mm dia (E 51.5×61, L 50×64). $89 (cheapest lens in the TTArtisan AF catalogue). A review explicitly names "Nikon Zf". `year` estimated 2025 from 9-review history, newer than the metal-bodied 40mm F2. |
+| ttartisan-85mm-f18-neo | TTArtisan AF 85mm F1.8 Neo | TTArtisan | AF Neo | Prime | 2025 | no | https://ttartisan.store/products/ttartisan-af-85mm-f1-8-neo | — | Full-frame, mount E/Z only (no L, unlike its 50mm Neo sibling). 332~338g range → 335g midpoint. Z-mount dims from Size diagram: 92mm len × 70mm dia (E 90.5×70 — Z is 1.5mm longer). $99. Same simplified/ringless "Neo" design language as the 50mm. Only 2 reviews (newest lens in this batch); `year` estimated 2025 alongside the 50mm Neo (same product line, same page-design generation). |
+
+### Rejected / deferred candidates — TTArtisan
+
+| slug | name | reason |
+|---|---|---|
+| — | TTArtisan AF 14mm F3.5 | **rejected, no Z mount** — ttartisan.store's own `/products.json` variant data lists this lens as Sony E + Fuji X only; no Nikon Z option offered anywhere on its product page. |
+| — | TTArtisan AF Trio Lens SET | **out of scope** — a 3-lens bundle SKU (not a single lens design), excluded per the skill's normal per-lens entry model. |
+| — | TTArtisan AF 35mm F1.8 (original, handle `351-8`) | **deferred, not entered** — shown as "Sold out" on the AF Lens collection page; superseded by the "II" redesign (`ttartisan-35mm-f1-8-ii`, entered above) which is in-stock and current. Round-1's lens-revisions-coexist convention would call for entering this as a separate `discontinued:true` entry, but its own product page returned inconsistent/stale content when navigated directly this round (redirected to a different product's cached page) — not re-attempted given the batch's time budget; the current "II" replacement covers the design. |
+| — | 32mm F2.8 AF lens Nikon Mount | **deferred, not entered** — explicitly Nikon-named and sold out (a genuine discontinued Nikon-specific SKU, notable per the skill's "discontinued-but-notable is fine" allowance), but its product page also returned stale/redirected content when navigated directly this round, the same issue as the 35mm F1.8 original above — not re-attempted given the batch's time budget. Worth a dedicated follow-up: this could be a genuinely interesting historical entry (TTArtisan's first-ever Nikon-Z-named SKU, distinct from the mount-agnostic "AF 27mm F2.8" family). |

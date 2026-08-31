@@ -366,3 +366,47 @@ stops a later pass "correcting" a right value to a wrong one.
   equivalent for this purpose. Future runs should raise
   `CLAUDE_CODE_MAX_WEB_SEARCHES_PER_SESSION` or start research before other
   batches burn the shared budget.
+
+## TTArtisan + 7Artisans batch (2026-08-31)
+
+- **T1** `https://ttartisan.store/collections/af-lens` — the maker's own "AF
+  Lens" collection, 13 products; the Mount filter facet ("Nikon Z (11)")
+  cross-checked against `/products.json` variant data to identify which of
+  the 13 support Z.
+- **T1** `https://ttartisan.store/products/ttartisan-af-23mm-f1-8` — full
+  spec table (210g, APS-C, 11E/9G, 9 blades, 52mm filter, 0.3m MFD, 62°
+  AoV) + Size diagram image (Z: 62×64mm). $127.
+- **T1** `https://ttartisan.store/products/ttartisan-af-35mm-f1-8` (page
+  title "AF 35mm F1.8 Ⅱ") — full spec table (176~193g, APS-C, 10E/7G, 9
+  blades, 52mm filter, 0.4m MFD, 45° AoV) + Size diagram (Z: 51×66mm,
+  cross-checked identical across Black/Silver color variants). $125.
+- **T1** `https://ttartisan.store/products/56mm` (page title "AF 56mm
+  F1.8") — full spec table (233~245g, APS-C, 10E/9G, 9 blades, 52mm filter,
+  0.5m MFD, 28° AoV) + Size diagram (Z: 70×65mm). $158 reg / $129 sale.
+- **T1** `https://ttartisan.store/products/ttartisan-af-75mm-f2` — full
+  spec table (326-340g, Full-Frame, 10E/7G, 9 blades, 62mm filter, 0.75m
+  MFD, 32° AoV) + Size diagram (Z: 76×67mm). $199.
+- **T1** `https://ttartisan.store/products/af-40mm-f2` — full spec table
+  (166~176g, Full Frame, 9E/6G, 7 blades, 52mm filter, 0.4m MFD, 57° AoV) +
+  Size diagram (Z: 46×65mm). $168.
+- **T1** `https://ttartisan.store/products/af-17mm-f1-8-air` — full spec
+  table (161~178g, APS-C, 14E/10G, 6 blades, 52mm filter, 0.18m MFD, 81°
+  AoV) + Size diagram (Z: 51×65mm). $148.
+- **T1** `https://ttartisan.store/products/ttartisan-af-50mm-f1-8-neo` —
+  full spec table (156~167g, Full-frame, 12E/8G, 7 blades, 52mm filter,
+  0.48m MFD, 45° AoV) + Size diagram (Z: 54×66mm). $89.
+- **T1** `https://ttartisan.store/products/ttartisan-af-85mm-f1-8-neo` —
+  full spec table (332~338g, Full-frame, 12E/8G, 11 blades, 62mm filter,
+  0.8m MFD, 29° AoV) + Size diagram (Z: 92×70mm). $99.
+- **Method note**: the "Size" spec-table row on every ttartisan.store product
+  page renders per-mount length/diameter as an image, not text — invisible
+  to `WebFetch`'s markdown conversion. Read via the Chrome browser extension:
+  `find` (locate the "Size" row) → `computer scroll_to` → `computer
+  screenshot`, then read the callout numbers directly off the rendered
+  image. Confirmed working for all 8 lenses above (same technique the Canon
+  round found for this same store).
+- **Session note**: `WebFetch` hit this session's monthly spend limit midway
+  through 7Artisans research (after the TTArtisan section above was already
+  complete). All research past that point used the Chrome browser extension
+  (`navigate` + `get_page_text` + `javascript_tool`) instead, which draws
+  from a separate budget.
