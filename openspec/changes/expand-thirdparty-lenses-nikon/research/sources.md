@@ -410,3 +410,24 @@ stops a later pass "correcting" a right value to a wrong one.
   complete). All research past that point used the Chrome browser extension
   (`navigate` + `get_page_text` + `javascript_tool`) instead, which draws
   from a separate budget.
+- **T1** `https://7artisans.store/collections/autofocus-z` — the maker's own
+  "Autofocus Z" collection, 11 products, every one explicitly Z-mount
+  (collection name + each page's own mount selector). Confirmed via browser
+  `javascript_tool` link enumeration (product handles + titles) rather than
+  `WebFetch` (spend limit).
+- **T1** individual 7artisans.store product pages for the 8 lenses entered
+  (10mm f2.8, 25/35/50mm f1.8 Lite shared listing, 35mm f1.8, 40mm f2.5 Lite,
+  50mm f1.8, 85mm f1.8) — each confirms price + Nikon Z as a purchasable
+  mount option, but carries **no spec table** (prose + mount/color selector
+  only) — see the "method note" in `lenses.md` about the dimension-diagram
+  technique not generalizing here.
+- **T2** Thom Hogan's zsystemuser.com 7Artisans autofocus page tree
+  (`.../third-party-autofocus-lense/7artisans-autofocus-lenses/`), page dated
+  Jan 8, 2025 (older than several 2025/2026 7Artisans releases, hence the
+  135mm f/1.8 and 24mm f/1.8 gaps — see rejects). Supplied full spec tables
+  (weight/dims/optical formula/AoV/announce-date) for all 8 entered lenses
+  except the 24mm f/1.8's weight, which its own page marks "? ounces (?g)".
+- **T3** `https://www.amazon.com/s?k=7Artisans+24mm+f1.8+Nikon+Z` — confirmed
+  multiple live $329 Nikon-Z listings (SKU exists, price corroborated) but no
+  weight figure found in visible search-result bullets within this round's
+  time budget; not pursued to a full product-page read.

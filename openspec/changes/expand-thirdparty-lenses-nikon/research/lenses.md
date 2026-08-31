@@ -206,3 +206,69 @@ the rounded midpoint per lens, range noted in `specSources`.
 | — | TTArtisan AF Trio Lens SET | **out of scope** — a 3-lens bundle SKU (not a single lens design), excluded per the skill's normal per-lens entry model. |
 | — | TTArtisan AF 35mm F1.8 (original, handle `351-8`) | **deferred, not entered** — shown as "Sold out" on the AF Lens collection page; superseded by the "II" redesign (`ttartisan-35mm-f1-8-ii`, entered above) which is in-stock and current. Round-1's lens-revisions-coexist convention would call for entering this as a separate `discontinued:true` entry, but its own product page returned inconsistent/stale content when navigated directly this round (redirected to a different product's cached page) — not re-attempted given the batch's time budget; the current "II" replacement covers the design. |
 | — | 32mm F2.8 AF lens Nikon Mount | **deferred, not entered** — explicitly Nikon-named and sold out (a genuine discontinued Nikon-specific SKU, notable per the skill's "discontinued-but-notable is fine" allowance), but its product page also returned stale/redirected content when navigated directly this round, the same issue as the 35mm F1.8 original above — not re-attempted given the batch's time budget. Worth a dedicated follow-up: this could be a genuinely interesting historical entry (TTArtisan's first-ever Nikon-Z-named SKU, distinct from the mount-agnostic "AF 27mm F2.8" family). |
+
+**7Artisans — enumerated from `7artisans.store`'s own "Autofocus Z" collection**
+(`/collections/autofocus-z`, T1) — 11 products, every one of which lists
+"Nikon Z mount" as a purchasable option on its own product page (mount
+existence proof). Cross-referenced against Thom Hogan's
+`zsystemuser.com` 7Artisans autofocus page (T2, last dated Jan 8 2025 — so
+it's missing the maker's newer 2025/2026 releases, a staleness gap noted
+below) for full dimensional spec tables, since — like Meike in the prior
+batch — 7artisans.store's own product pages are pure marketing copy with no
+spec table at all (confirming the task's instruction to test this
+independently rather than assume the Canon `.store` dimension-diagram
+finding: **that technique does NOT generalize to 7artisans.store** — there
+is no "Size" row or dimension-diagram image anywhere on any of these product
+pages, only prose bullets and a mount/color selector).
+
+| slug | name | maker | line | type | year | disc | src1 (tier 1) | src2 (tier) | notes / conflicts |
+|---|---|---|---|---|---|---|---|---|---|
+| 7artisans-10mm-f28 | 7Artisans AF 10mm F2.8 | 7Artisans | AF | Prime | 2025 | no | https://7artisans.store/products/af-10mm-f2-8-aps-c-lens-for-e-fx-z | https://www.zsystemuser.com/z-mount-lenses/third-party-lenses/third-party-autofocus-lense/7artisans-autofocus-lenses/7artisans-10mm-f28-lens.html | APS-C (DX) ultra-wide, mount E/FX(Fuji)/Z. T1 store page confirms $199 + Z-mount option; T2 full spec table (232g, 72×69mm, 62mm filter, 0.3m MFD, 105.3° AoV, 11E/10G, 7 blades, announced Nov 2025). No "dust/splash resistant" claim on either source → `weatherSealed:false` (unlike every other 7Artisans lens in this batch, which do claim it). |
+| 7artisans-25mm-f18-lite | 7Artisans AF 25mm F1.8 Lite | 7Artisans | AF Lite | Prime | 2026 | no | https://7artisans.store/products/af-25-35-50mm-f1-8-aps-c-lens-for-e-fx-z | https://www.zsystemuser.com/z-mount-lenses/third-party-lenses/third-party-autofocus-lense/7artisans-autofocus-lenses/7artisans-25mm-f18-lite.html | APS-C (DX) "Lite" line — one shared Shopify listing on T1 (`$125` "From" price, a focal-length variant selector covering 25/35/50mm) confirms Z-mount for all three; T2 gives each focal length its own dedicated spec page. 25mm: 183g, 51×67mm, 58mm filter, 0.25m MFD, 58.3° AoV, 8E/5G, 9 blades, announced 2026-06-16, dust/splash resistant. |
+| 7artisans-35mm-f18-lite | 7Artisans AF 35mm F1.8 Lite | 7Artisans | AF Lite | Prime | 2026 | no | https://7artisans.store/products/af-25-35-50mm-f1-8-aps-c-lens-for-e-fx-z | https://www.zsystemuser.com/z-mount-lenses/third-party-lenses/third-party-autofocus-lense/7artisans-autofocus-lenses/7artisans-35mm-f18-lite.html | Same shared T1 listing as the 25mm/50mm Lite siblings. T2: 181g, 51×67mm, 58mm filter, 0.35m MFD, 44° AoV, 7E/6G, 9 blades, announced 2026-06-16, dust/splash resistant. Distinct slug from the existing full-frame `7artisans-35mm-f18` (different optical design/format, same nominal focal length). |
+| 7artisans-50mm-f18-lite | 7Artisans AF 50mm F1.8 Lite | 7Artisans | AF Lite | Prime | 2026 | no | https://7artisans.store/products/af-25-35-50mm-f1-8-aps-c-lens-for-e-fx-z | https://www.zsystemuser.com/z-mount-lenses/third-party-lenses/third-party-autofocus-lense/7artisans-autofocus-lenses/7artisans-50mm-f18-lite.html | Same shared T1 listing. T2: 178g, 51×67mm, 58mm filter, 0.55m MFD, 31.4° AoV, 6E/5G, 9 blades, announced 2026-06-16, dust/splash resistant. Distinct slug from the existing full-frame `7artisans-50mm-f18` entered below. |
+| 7artisans-35mm-f18 | 7Artisans AF 35mm F1.8 | 7Artisans | AF | Prime | 2025 | no | https://7artisans.store/products/af-35mm-f1-8-full-frame-lens-for-e-z-l | https://www.zsystemuser.com/z-mount-lenses/third-party-lenses/third-party-autofocus-lense/7artisans-autofocus-lenses/7artisans-35mm-f18-lens.html | Full-frame, mount E/Z/L. T1 $299, matches T2 exactly. T2 full spec table: 426g, 94×72mm, 62mm filter, 0.4m MFD, 11E/8G, 11 blades, announced 2025-10-15, dust/splash resistant, AF/MF switch + Fn button. |
+| 7artisans-40mm-f25-lite | 7Artisans AF 40mm F2.5 LITE | 7Artisans | AF Lite | Prime | 2026 | no | https://7artisans.store/products/af-40mm-f2-5-full-frame-lens-for-e-z-l | https://www.zsystemuser.com/z-mount-lenses/third-party-lenses/third-party-autofocus-lense/7artisans-autofocus-lenses/7artisans-40mm-f25-lite.html | Full-frame pancake, mount E/Z/L. T1 $159, matches T2 exactly. Genuinely new (announced 2026-08-06, 25 days before this entry — within the skill's ≤1-month allowance, but every non-nullable field is already published so no fields need to be left null). T2: 90g, 40×63mm, 46mm filter, 0.4m MFD, 56.1° AoV, 7E/6G, 9 blades, clicked aperture ring (unusual — most of this batch is declicked), dust/splash resistant. |
+| 7artisans-50mm-f18 | 7Artisans AF 50mm F1.8 | 7Artisans | AF | Prime | 2025 | no | https://7artisans.store/products/50mm-f1-8-af-lens | https://www.zsystemuser.com/z-mount-lenses/third-party-lenses/third-party-autofocus-lense/7artisans-autofocus-lenses/50mm-f18-lens-specification.html | Full-frame, mount Z/E. T1 $228, T2 $230 (small rounding gap, T1 kept per convention). T2 full spec table: 420g, 100×72mm, 62mm filter, 0.5m MFD, 11E/9G, 11 blades, dust/splash resistant. |
+| 7artisans-85mm-f18 | 7Artisans AF 85mm F1.8 | 7Artisans | AF | Prime | 2024 | no | https://7artisans.store/products/af-85mm-f1-8-full-frame-lens-for-z | https://www.zsystemuser.com/z-mount-lenses/third-party-lenses/third-party-autofocus-lense/7artisans-autofocus-lenses/7artisans-85mm-f18-lens.html | Full-frame, mount Z (a separate `for-l` SKU exists for L-mount, not this one). T1 $299, T2 $300 (T1 kept). T2 full spec table: 452g, 100×72mm, 62mm filter, 0.8m MFD, 28.5° AoV, 10E/7G, 11 blades, announced 2024-10-17, dust/splash resistant. |
+
+### Rejected / deferred candidates — 7Artisans
+
+| slug | name | reason |
+|---|---|---|
+| — | 7Artisans AF 24mm F1.8 Full-frame Lens for E/Z/L | **deferred, not entered** — Z-mount confirmed on both T1 (`7artisans.store/products/af-24mm-f1-8-full-frame-lens-for-e`, mount selector lists Sony E/Nikon Z/L) and T2 (zsystemuser spec page), and most fields are solid (92mm long, 72mm diameter, 14E/11G, 11 blades, f/1.8-f16 declicked, 62mm filter, 0.32m MFD, $330/$329) — but **weight is unpublished on both sources** (T2's own page literally prints "? ounces (?g) weight"), and this project's schema treats `weight` as non-nullable. Checked Amazon (multiple $329 Nikon-Z listings found, confirming the SKU and price again) but didn't locate a weight figure on any listing's visible bullets within this round's time budget. Every other field is ready — a quick follow-up sourcing just the weight would close this one. |
+| — | 7Artisans AF 135mm F1.8 Full-frame Lens for Z/E/L | **out of scope for this batch, not rejected** — genuine current Z-mount product (T1 store listing, $689, confirmed) but newer than zsystemuser.com's Jan-2025-dated 7Artisans page (not listed there), so no T2 spec table was readily available this round; not pursued further to keep the batch within its representative-set time budget. Candidate for a future 7Artisans-focused pass — would be the line's flagship/priciest entry. |
+| — | 7Artisans AF 35mm F1.4 (APS-C, handle `af-35mm-f1-4`) | **not investigated** — surfaced only as a "related product" link on another product page, never confirmed against the maker's own Z-mount collection list (`/collections/autofocus-z`) which does not include it; may be Fuji-X-only or otherwise mount-restricted. Re-check from scratch before adding. |
+| — | 7Artisans AF 10mm F2.5 Full-frame Lens for E/Z/L | **out of scope for this batch, not rejected** — appears on the Z-mount collection page ($449) but not pursued this round; candidate for a future pass. |
+| — | 7Artisans cine lenses (35mm/50mm/85mm T2.0, 10/16/25/35/50/85mm T2.1, 16-135mm T2.1-2.5 sets) | **out of scope** — cine lenses excluded per the skill's scope boundary, same as every other maker in this dataset. |
+
+**Method note — the Canon `.store` dimension-diagram technique tested against
+7artisans.store and confirmed NOT to generalize here**, exactly as the task
+warned it might not: none of the 7Artisans product pages checked this round
+carry a "Size" spec-table row or dimension-diagram image at all (unlike
+ttartisan.store, where every AF product page has one) — 7artisans.store's
+product pages are marketing prose + a mount/color selector only, no spec
+table of any kind. This confirms the prior Canon-round finding that this
+technique is TTArtisan-`.store`-specific, not a general budget-Shopify-store
+pattern, and 7Artisans instead needs the same T2-tracker workaround
+(zsystemuser.com) that the Meike batch used one round ago.
+
+**Image sourcing note.** All 8 TTArtisan and 6 7Artisans images below are
+each maker's own product photo pulled from the product page's `og:image`
+meta tag. For SKUs where the maker publishes a per-mount photo (filenames
+containing `SKU-E`/`SKU-Z` etc. — confirmed present for TTArtisan's Neo/Air
+lines), `og:image` reflects the page's *default* (usually Sony E) variant
+photo rather than the Nikon-Z-selected one, because these Shopify themes
+render the OG meta tag server-side at page load and do not update it when a
+shopper clicks a different mount radio button client-side; the browser tool
+used this round also blocks reading a live `<img>` element's resolved `src`
+after such a click (a cookie/query-string safety filter). This is a step
+down from the existing `ttartisan-27mm-f28`/`7artisans-27mm-f28` entries,
+whose images were confirmed Z-mount-specific by an earlier session. Visually
+these makers' AF lens barrels are cosmetically identical across mounts from
+a straight-on product-photography angle (confirmed while reading the
+dimension-diagram screenshots above — only the rear flange, invisible in a
+hero shot, differs) so the photos are still genuinely correct-product
+images, just not provably the Z-specific variant photo where one exists.
+Flagged here rather than silently treated as equivalent to the existing
+precedent.
