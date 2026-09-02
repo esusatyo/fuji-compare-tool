@@ -1,0 +1,274 @@
+# Nikon Z third-party lenses — round 2 citation ledger
+
+One row per candidate, filled during research before any data entry. Reuse
+`openspec/changes/archive/2026-07-05-add-thirdparty-lenses-nikon/research/lenses.md`
+as a checklist of designs to look for — never as a source of specs.
+
+## Sigma + Tamron batch, new-lens search (2026-08-30)
+
+| slug | name | maker | line | type | year | disc | src1 (tier 1) | src2 (tier) | notes / conflicts |
+|---|---|---|---|---|---|---|---|---|---|
+| tamron-12-20mm-f28 | Tamron 12-20mm f/2.8 Di III VXD | Tamron | Di III | Zoom | 2026 | no | https://www.tamron.com/global/consumer/lenses/a084/spec.html | https://tamron-americas.com/tamron-announces-new-12-20mm-f2-8-for-sony-e-and-nikon-z-mount/ (T1, price) | Brand new — shipped 2026-08-27, 3 days before entry. tamron.com's own Nikon Z lineup page lists it; spec page carries a Nikon-Z-specific weight/length (585g/121.3mm vs Sony E's unlisted-here figure). No Amazon ASIN found yet for the Z variant — too new. |
+| tamron-16-30mm-f28-g2 | Tamron 16-30mm f/2.8 Di III VXD G2 | Tamron | Di III | Zoom | 2025 | no | https://www.tamron.com/global/consumer/lenses/a064/spec.html | https://tamron-americas.com/announced-ultra-wide-angle-16-30-mm-g2-trinity-sony-nikon/ (T1, price) | Part of the "G2 trinity" announcement (16-30/28-75/70-180, all G2). Nikon Z: 450g/103.9mm vs Sony E 440g/101.8mm. B&H SKU AFA064Z700 confirms per-mount listing. Amazon B0FJT7ZSJP (plain Nikon Z listing). No CAD published. |
+| tamron-28-75mm-f28-g2 | Tamron 28-75mm f/2.8 Di III VXD G2 | Tamron | Di III | Zoom | 2024 | no | https://www.tamron.com/global/consumer/lenses/a063/spec.html | https://www.tamron.com/global/consumer/news/detail/a063z_20240314.html (T1 news, price) | **Corrects a stale exclusion**: the pre-existing header comment claimed 28-75 was "sold as Nikkor Z" and excluded. That's true only of the *G1* original (Model A036 — confirmed "SONY E Mount (End of sale)" only, never Z). The G2 (A063) ships for Z directly under the Tamron name, $999 USD / $1,399 CAD, on sale since 2024-04-18. B&H SKU AFA063Z700, Amazon B0D1W1SRGT. |
+| tamron-35-100mm-f28 | Tamron 35-100mm f/2.8 Di III VXD | Tamron | Di III | Zoom | 2026 | no | https://www.tamron.com/global/consumer/lenses/a078/spec.html | https://tamron-americas.com/launch-announcement-35-100-lens/ (T1, price) | New "trimmed 35-150" design. Nikon Z price ($929) is $30 more than Sony E ($899) — per-mount price difference confirmed on the T1 announcement itself, not just a retailer. CAD $1,299 corroborated by dailycameranews.com and provideocoalition.com (both independent of each other and of Tamron). B&H SKU AFA078Z700, Amazon B0GS3K7GBB. |
+| tamron-70-180mm-f28-g2 | Tamron 70-180mm f/2.8 Di III VC VXD G2 | Tamron | Di III | Zoom | 2025 | no | https://www.tamron.com/global/consumer/lenses/a065/spec.html | https://tamron-americas.com/70-180-g2-for-nikon-z-mount/ (T1, price) | Same "stale exclusion" correction as 28-75 G2: the G1 original (Model A056) is "SONY E Mount (End of sale)" only, never Z. The G2 (A065) ships for Z, $1,149 USD / $1,549 CAD, since 2025-10-23. B&H SKU AFA065Z700, Amazon B0FVKQ6FFV (plain listing; several bundle-variant ASINs also exist, not used). |
+| tamron-90mm-f28-macro | Tamron 90mm f/2.8 Di III Macro VXD | Tamron | Di III | Prime | 2024 | no | https://www.tamron.com/global/consumer/lenses/f072/spec.html | https://tamron-americas.com/tamron-announces-new-90mm-macro/ (T1, price) | 1:1 macro, Tamron's first 12-blade aperture. $699 USD / $949 CAD, same price both mounts, available since 2024-10-24. Nikon Z: 640g/128.5mm vs Sony E 630g/126.5mm. B&H SKU AFF072Z700, Amazon B0DLHPZDGB. |
+| tamron-20-40mm-f28 | Tamron 20-40mm f/2.8 Di III VXD | Tamron | — | — | — | — | — | https://www.dpreview.com/forums/thread/4666195 (T4, forum) | **Rejected — not in scope.** Sony E-mount only; DPReview forum threads ("Tamron 20-40mm F/2.8 to Z mount?") confirm no native Z version exists as of 2026-08-30, only third-party-adapter workarounds. Not on tamron.com's Nikon Z lineup page. |
+| tamron-50-300mm-f45-63 | Tamron 50-300mm f/4.5-6.3 Di III VC VXD | Tamron | — | — | — | — | — | https://dustinabbott.net/2024/06/tamron-50-300mm-f4-5-6-3-vc-vxd-review/ (T2) | **Rejected — not in scope.** Sony E-mount only; not on tamron.com's Nikon Z lineup page (only the 50-400mm, already entered, appears there). No B&H/Amazon Nikon Z SKU found. |
+
+## Viltrox + Voigtländer batch (2026-08-30)
+
+| slug | name | maker | line | type | year | disc | src1 (tier 1) | src2 (tier) | notes / conflicts |
+|---|---|---|---|---|---|---|---|---|---|
+| viltrox-26mm-f28-evo | Viltrox AF 26mm F2.8 EVO | Viltrox | EVO | Prime | 2026 | no | https://viltrox.com/products/af-26mm-f2-8-z | https://www.dpreview.com/news/viltrox-adds-a-pocketable-wide-angle-lens-to-its-evo-series/ (2, corroboration only) | **conflict resolved:** Z-mount weight is 170g (tier-1 spec dialog), while multiple reviews (DPReview/PetaPixel/DCW) report 130g — those reviews cover the E-mount sample; confirmed via the E-mount product page's own spec dialog (130g/Φ66x23.8mm) vs Z-mount's (170g/Φ69.4x25.8mm). Genuine per-mount difference, not an error. |
+| viltrox-90mm-f22-evo | Viltrox AF 90mm F2.2 EVO | Viltrox | EVO | Prime | 2026 | no | https://viltrox.com/products/af-90mm-f2-2-z | — | blade count unpublished on maker page |
+| viltrox-75mm-f18-evo | Viltrox AF 75mm F1.8 EVO | Viltrox | EVO | Prime | 2026 | no | https://viltrox.com/products/af-75mm-f1-8-z | — | blade count unpublished on maker page |
+| viltrox-55mm-f18-evo | Viltrox AF 55mm F1.8 EVO | Viltrox | EVO | Prime | 2026 | no | https://viltrox.com/products/af-55mm-f1-8-z | — | blade count unpublished on maker page; product image filename reads "II EVO" |
+| viltrox-50mm-f14-pro | Viltrox AF 50mm F1.4 Pro | Viltrox | Pro | Prime | 2026 | no | https://viltrox.com/products/af-50mm-f1-4-z | — | |
+| viltrox-56mm-f12-pro | Viltrox AF 56mm F1.2 Pro | Viltrox | Pro | Prime | 2026 | no | https://viltrox.com/products/af-56mm-f1-2-z | — | blade count unpublished |
+| viltrox-35mm-f12-lab | Viltrox AF 35mm F1.2 LAB | Viltrox | LAB | Prime | 2025 | no | https://viltrox.com/products/af-35mm-f1-2-z | — | blade count unpublished |
+| viltrox-14mm-f4-air | Viltrox AF 14mm F4.0 Air | Viltrox | Air | Prime | 2025 | no | https://viltrox.com/products/af-14mm-f4-0-z | — | blade count unpublished |
+| viltrox-9mm-f28-air | Viltrox AF 9mm F2.8 Air | Viltrox | Air | Prime | 2025 | no | https://viltrox.com/products/af-9mm-f2-8-z | — | blade count unpublished; equiv 9×1.5=13.5→14mm |
+| viltrox-15mm-f17-air | Viltrox AF 15mm F1.7 Air | Viltrox | Air | Prime | 2025 | no | https://viltrox.com/products/af-15mm-f1-7-z | — | blade count unpublished |
+| viltrox-28mm-f45 | Viltrox AF 28mm F4.5 | Viltrox | AF | Prime | 2025 | no | https://viltrox.com/products/af-28mm-f4-5-z | — | **fixed-aperture pancake** — no iris/blades; maxAperture=minAperture=4.5, filterThread null (unpublished, likely none) |
+| viltrox-50mm-f2-air | Viltrox AF 50mm F2.0 Air | Viltrox | Air | Prime | 2025 | no | https://viltrox.com/products/af-50mm-f2-z | — | |
+| viltrox-135mm-f18-lab | Viltrox AF 135mm F1.8 LAB | Viltrox | LAB | Prime | 2025 | no | https://viltrox.com/products/af-135mm-f1-8-lab-z | — | round-1 ledger's flagged LAB gap — confirmed real and entered |
+| viltrox-25mm-f17-air | Viltrox AF 25mm F1.7 Air | Viltrox | Air | Prime | 2025 | no | https://viltrox.com/products/af-25mm-f1-7-z | — | |
+| viltrox-35mm-f17-air | Viltrox AF 35mm F1.7 Air | Viltrox | Air | Prime | 2024 | no | https://viltrox.com/products/viltrox-af-35mm-f1-7-aps-c-lens-for-nikon-z-mount | — | |
+| viltrox-20mm-f28-air | Viltrox AF 20mm F2.8 | Viltrox | Air | Prime | 2024 | no | https://viltrox.com/products/viltrox-af-20mm-f2-8-full-frame-lens-for-nikon-z-mount | — | maker's own table separates E-mount (65x59.5mm/157g) from Z-mount (68x60.8mm/173g) inline — Z-mount figures used |
+| viltrox-23mm-f14 | Viltrox AF 23mm F1.4 | Viltrox | AF | Prime | 2024 | no | https://viltrox.com/products/viltrox-af-23mm-f1-4-aps-c-lens-for-nikon-z-mount | — | |
+| viltrox-75mm-f12-pro | Viltrox AF 75mm F1.2 Pro | Viltrox | Pro | Prime | 2024 | no | https://viltrox.com/products/viltrox-af-75mm-f1-2-aps-c-lens-for-nikon-z-mount | — | maker's own per-mount table: Z-mount weighs ~35g more than E-mount (710g vs ~675g) |
+| viltrox-56mm-f17-air | Viltrox AF 56mm F1.7 Air | Viltrox | Air | Prime | 2024 | no | https://viltrox.com/products/viltrox-af-56mm-f1-7-aps-c-lens-for-nikno-z-mount | — | maker's own URL slug has a typo ("nikno") |
+| viltrox-28mm-f18 | Viltrox AF 28mm F1.8 | Viltrox | AF | Prime | 2023 | no | https://viltrox.com/products/viltrox-af-28mm-f1-8 | — | |
+| viltrox-20mm-f18-mf | Viltrox MF 20mm F1.8 | Viltrox | MF | Prime | 2020 | no | https://viltrox.com/products/viltrox-20mm-f1-8-full-frame-wide-angle-fixed-prime-lens-for-nikon-z-mount-mirrorless | — | manual focus, needs no AF licensing — Viltrox's earliest Z-mount lens; year from store's own "created" timestamp (2019-12-16), rounded to 2020; maker's table separates Z-mount (104mm/782g) from E-mount (102mm/775g) |
+| voigtlander-super-wide-heliar-15mm-f45 | Voigtländer Super Wide Heliar 15mm f/4.5 Aspherical Z | Voigtländer | Heliar | Prime | 2023 | no | https://www.voigtlaender.de/z-mount/15mm-14-5-super-wide-heliar/?lang=en | — | full spec table dated "as of January 2023"; blade count unpublished |
+| voigtlander-nokton-d23mm-f12 | Voigtländer Nokton D23mm f/1.2 Z | Voigtländer | Nokton | Prime | 2022 | no | https://www.voigtlaender.de/z-mount/d23-mm-11-2-nokton/?lang=en | — | full spec table dated "as of April 2022"; blade count (12) from the page's own bullet, not the (blank) table cell |
+| voigtlander-nokton-28mm-f15 | Voigtländer Nokton 28mm f/1.5 Aspherical Z | Voigtländer | Nokton | Prime | 2025 | no | https://www.voigtlaender.de/z-mount/28-mm-115-nokton-aspherical-z/?lang=en | — | full spec table dated "as of January 2025" |
+| voigtlander-apo-lanthar-28mm-f2 | Voigtländer APO-Lanthar 28mm f/2 Aspherical Z | Voigtländer | APO-Lanthar | Prime | 2025 | no | https://www.voigtlaender.de/z-mount/28-mm-1-2-apo-lanthar/?lang=en | — | full spec table dated "as of November 2025" |
+| voigtlander-nokton-d35mm-f12 | Voigtländer Nokton D35mm f/1.2 Z | Voigtländer | Nokton | Prime | 2022 | no | https://www.voigtlaender.de/d35-mm-11-2-nokton/?lang=en | — | **no "as of" date on this page**; year inferred from the product photo's own upload timestamp (2022-04), matching the sibling D23mm Nokton's confirmed April-2022 date |
+| voigtlander-macro-apo-ultron-d35mm-f2 | Voigtländer Macro APO-Ultron D35mm f/2 Z | Voigtländer | APO-Ultron | Prime | 2022 | no | https://www.voigtlaender.de/z-mount/d35mm-12-0-macro-apo-ultron/?lang=en | — | **no "as of" date on this page**; year inferred from product-photo upload timestamp (2022-12) |
+| voigtlander-apo-lanthar-35mm-f2 | Voigtländer APO-Lanthar 35mm f/2 Aspherical II Z | Voigtländer | APO-Lanthar | Prime | 2025 | no | https://www.voigtlaender.de/z-mount/35mm-12-apo-lanthar-aspherical/?lang=en | — | **the round-1 "remaining tail" lead** — verified genuinely shipping (dedicated Z-mount page, own product photo, distinct from the existing 50mm APO-Lanthar II). No "as of" date on this page; year from product-photo upload timestamp (2025-01). Catalog item no. (114 751) is close to the D23mm Nokton's (114 508, confirmed April 2022) which would have suggested 2022 — the photo-timestamp evidence is stronger and was used instead; Voigtländer's item numbers evidently aren't strictly chronological. |
+| voigtlander-septon-40mm-f2 | Voigtländer Septon 40mm f/2 Aspherical Z | Voigtländer | Septon | Prime | 2026 | no | https://www.voigtlaender.de/z-mount/40-mm-12-septon-aspherical-z/?lang=en | — | **brand-new, same-month release** — full spec table dated "as of August 2026"; blade count unpublished (within the ≤1-month new-release allowance) |
+| voigtlander-nokton-50mm-f10 | Voigtländer Nokton 50mm f/1.0 Aspherical Z | Voigtländer | Nokton | Prime | 2023 | no | https://www.voigtlaender.de/z-mount/50-mm-11-0-nokton/?lang=en | — | full spec table dated "as of January 2023" |
+| voigtlander-macro-apo-lanthar-65mm-f2 | Voigtländer Macro APO-Lanthar 65mm f/2 Aspherical Z | Voigtländer | APO-Lanthar | Prime | 2022 | no | https://www.voigtlaender.de/z-mount/65mm-120-macro-apo-lanthar-aspherical/?lang=en | — | **no "as of" date on this page**; year from product-photo upload timestamp (2022-12) |
+| voigtlander-portrait-heliar-75mm-f18 | Voigtländer Portrait Heliar 75mm f/1.8 Z | Voigtländer | Heliar | Prime | 2025 | no | https://www.voigtlaender.de/z-mount/75-mm-11-8-portrait-heliar-z/?lang=en | — | full spec table dated "as of May 2025"; distinctive F11 minimum aperture (not a typo) — the "Bokeh Controller" ring trades spherical-aberration correction for creative bokeh |
+
+### Rejected candidates
+
+| slug | name | reason |
+|---|---|---|
+| — | Viltrox TC-2.0X Teleconverter for Nikon | out of scope: teleconverter, not a lens |
+| — | Voigtländer Nokton 75mm f/1.5 Aspherical Z | **not genuinely shipping in Z-mount yet** — its tile on voigtlaender.de's own Z-mount overview page links only to `/lenses/e-mount/nokton-75-mm-f1-5-aspherical/`, the E-mount product page. No dedicated Z-mount product page exists (unlike every other design on that grid, which each link to their own `/z-mount/...` page). Listed on the overview grid but not actually purchasable in Z yet — exactly the "aggregator lists a mount that doesn't exist" trap, except here it's the maker's own overview page being ahead of its actual SKU list. |
+| — | Voigtländer Nokton classic 35mm f/1.4 Z | **deferred, not rejected** — genuinely brand-new (item no. 126307, page dated "as of August 2026"). The maker's own spec table leaves "Smallest Aperture (F)" blank with no value, and `minAperture` is non-nullable in this project's schema even under the skill's ≤1-month new-release allowance (which only permits `maxMagnification`/`elements`/`groups`/`filterThread`/`oisStops` to stay null). Every other field (weight 250g, length 41.6mm, diameter 67.6mm, filter 58mm, weight, min focus 0.27m) is published and solid — only minAperture is missing. Re-check in the next pass; the page may fill in the missing cell once the SKU is more than a few weeks old. |
+
+## Laowa + Samyang batch (2026-08-30)
+
+| slug | name | maker | line | type | year | disc | src1 (tier 1) | src2 (tier) | notes / conflicts |
+|---|---|---|---|---|---|---|---|---|---|
+| laowa-10mm-f28-af | Laowa 10mm f/2.8 Zero-D FF | Laowa | Zero-D | Prime | 2024 | no | https://www.laowalenses.ca/product/laowa-10mm-f-2-8-zero-d-ff/ | https://petapixel.com/2024/11/01/laowa-10mm-f-2-8-zero-d-review-a-fun-lens-that-has-some-tradeoffs/ (2) | AF (Stepping Motor) confirmed Sony FE + Nikon Z only, RF/L are MF-only variants |
+| laowa-12mm-f28-lite-zero-d | Laowa 12mm f/2.8 Lite Zero-D FF | Laowa | Lite Zero-D | Prime | 2025 | no | https://www.venuslens.net/product/laowa-12mm-f-2-8-lite-zero-d-ff/ | https://www.cined.com/laowa-12mm-f-2-8-lite-zero-d-ff-lens-released/ (2) | **conflict resolved:** venuslens prose quotes 377g as "AF Sony E mount" specifically; CineD's per-mount table gives Nikon Z = 390g — the mount-specific figure used |
+| laowa-8-15mm-f28-fisheye | Laowa 8-15mm f/2.8 FF Zoom Fisheye | Laowa | Zoom Fisheye | Zoom | 2025 | no | https://www.laowalenses.ca/product/laowa-8-15mm-f2-8-ff-zoom-fisheye/ | https://www.nikonrumors.com/2025/06/06/venus-optics-announced-a-new-laowa-8-15mm-f-2-8-ff-zoom-fisheye-lens-for-nikon-z-mount.aspx/ (2) | length uses RF-mount figure as proxy (Nikon Z length not separately published); no front filter thread |
+| laowa-argus-28mm-f12 | Laowa Argus 28mm f/1.2 FF | Laowa | Argus | Prime | 2023 | no | https://www.venuslens.net/product/laowa-argus-28mm-f-1-2-ff/ | https://www.nikonrumors.com/2023/03/22/venus-optics-to-release-a-new-laowa-argus-28mm-f-1-2-full-frame-manual-focus-lens-for-nikon-z-mount-next-week.aspx/ (2) | full spec table on maker's own Specifications tab |
+| laowa-15mm-f45-macro | Laowa 15mm f/4.5 0.5X Wide Angle Macro | Laowa | Wide Angle Macro | Prime | 2025 | no | https://www.laowalenses.ca/product/laowa-15mm-f-4-5-0-5x-wide-angle-macro/ | https://petapixel.com/2025/05/15/new-laowa-15mm-f-4-5-0-5x-macro-lens-gives-your-close-ups-a-much-wider-background/ (2) | Nikon Z gets electronic (auto) aperture; still manual focus |
+| laowa-15mm-f5-cookie | Laowa 15mm f/5 Cookie FF | Laowa | Cookie | Prime | 2024 | no | https://www.venuslens.net/product/laowa-15mm-f-5-cookie-ff/ | https://www.laowalenses.ca/product/laowa-15mm-f5-cookie-ff/ (1, corroborating) | pancake; Nikon Z gets auto-aperture |
+| laowa-8-16mm-f35-5 | Laowa 8-16mm f/3.5-5 Zoom CF | Laowa | Zoom CF | Zoom | 2023 | no | https://www.venuslens.net/product/laowa-8-16mm-f3-5-5-zoom-cf/ | https://petapixel.com/2023/10/10/laowa-8-16mm-f-3-5-5-zoom-cf-is-a-compact-ultra-wide-angle-zoom-for-aps-c-cameras/ (2) | APS-C ("CF"); focalLengthEquiv = ×1.5 per project convention |
+| laowa-58mm-f28-2x-macro | Laowa 58mm f/2.8 2X Ultra-Macro APO | Laowa | Ultra Macro APO | Prime | 2022 | no | https://www.venuslens.net/product/5828-2x-ultra-macro-apo/ | https://www.digitalcameraworld.com/reviews/laowa-58mm-f28-2x-ultra-macro-apo-review (2) | full spec table on maker's own Specifications tab |
+| laowa-65mm-f28-2x-macro | Laowa 65mm f/2.8 2x Ultra Macro APO | Laowa | Ultra Macro APO | Prime | 2020 | no | https://www.venuslens.net/product/laowa-65mm-f-2-8-2x-ultra-macro-apo/ | https://jonasraskphotography.com/2020/01/24/the-laowa-65mm-f-2-8-2x-ultra-macro-apo-review/ (2) | **conflict resolved:** the page's own "Mounts" spec-table row is stale (Fuji X/Sony E/EF-M only) but the live Mount dropdown + description prose both confirm Nikon Z — dropdown/prose trusted over the stale table row |
+| laowa-10-18mm-f45-56 | Laowa 10-18mm f/4.5-5.6 Zoom | Laowa | Zoom | Zoom | 2019 | no | https://www.venuslens.net/product/laowa-10-18mm-f-4-5-5-6-fe-zoom/ | https://www.nikonrumors.com/2019/07/11/officially-announced-laowa-10-18mm-f-4-5-5-6-and-laowa-15mm-f-2-lenses-for-nikon-z-canon-rf-cameras.aspx/ (2) | rear-only 37mm filter thread, no front — filterThread null |
+| laowa-25mm-f28-25-5x-macro | Laowa 25mm f/2.8 2.5-5X Ultra Macro | Laowa | Ultra Macro | Prime | 2020 | no | https://www.venuslens.net/product/laowa-25mm-f-2-8-2-5-5x-ultra-macro-2/ | https://www.newsshooter.com/2021/01/25/laowa-25mm-f-2-8-2-5-5x-ultra-macro-lens-review/ (2) | maxMagnification stored as 5.0 (top of native 2.5-5x range, not 1:1-normalized) |
+| laowa-100mm-f28-2x-macro | Laowa 100mm f/2.8 2x Ultra Macro APO | Laowa | Ultra Macro APO | Prime | 2020 | no | https://www.venuslens.net/product/laowa-100mm-f-2-8-2x-macro-apo/ | https://www.digitalcameraworld.com/news/laowa-100mm-f28-2x-macro-apo-now-comes-in-nikon-z-and-canon-rf-mounts (2) | maker's own table gives per-mount deltas (blades 13 for Nikon Z vs 7 for Nikon F); f/22 min aperture only on T2 |
+| laowa-argus-33mm-f095 | Laowa Argus 33mm f/0.95 CF APO | Laowa | Argus | Prime | 2021 | no | https://www.venuslens.net/product/laowa-argus-33mm-f-0-95-cf-apo/ | https://jonasraskphotography.com/2021/05/03/another-one-the-laowa-argus-33mm-f-0-95-apo-review/ (2) | **conflict:** min aperture f/16 (3 independent T2 sources: jonasrask, photorumors, digitalcameraworld) vs f/11 (1 outlier, sonyalpha.blog) — majority T2 used; APS-C, ×1.5 equiv |
+| laowa-17mm-f4-tilt-shift | Laowa 17mm f/4 Zero-D Tilt-Shift / Shift | Laowa | Tilt-Shift | Prime | 2026 | no | https://www.laowalenses.ca/product/laowa-17mm-f-4-zero-d-tilt-shift-shift/ | https://www.nikonrumors.com/2026/03/10/venus-optics-announced-a-new-laowa-17mm-f-4-zero-d-tilt-shift-lens-for-nikon-z-mount.aspx/ (2) | brand-new (Mar 2026); heavier 810g dual-module weight used (Tilt-Shift variant) |
+| laowa-35mm-f28-tilt-shift-macro | Laowa 35mm f/2.8 Zero-D Tilt-Shift 0.5x Macro | Laowa | Tilt-Shift Macro | Prime | 2025 | no | https://www.laowalenses.ca/product/laowa-35mm-f-2-8-zero-d-tilt-shift-0-5x-macro/ | https://www.nikonrumors.com/2025/11/25/venus-optics-laowa-35mm-f-2-8-zero-d-tilt-shift-0-5x-macro-lens-for-nikon-z-mount-is-now-officially-announced.aspx/ (2) | dimensions scraped as "Ø148.9×Ø104.9mm" (both marked diameter) — read as length×diameter per sibling-lens pattern |
+| laowa-55mm-f28-tilt-shift-macro | Laowa 55mm f/2.8 Tilt-shift 1X Macro | Laowa | Tilt-Shift Macro | Prime | 2025 | no | https://www.venuslens.net/product/laowa-55mm-f-2-8-tilt-shift-1x-macro/ | https://fstoppers.com/reviews/what-can-you-do-tilt-shift-macro-lens-trying-out-laowas-55mm-f28-1x-680199 (2) | full spec table on maker's own Specifications tab |
+| laowa-100mm-f28-tilt-shift-macro | Laowa 100mm f/2.8 Tilt-shift 1X Macro | Laowa | Tilt-Shift Macro | Prime | 2025 | no | https://www.venuslens.net/product/laowa-100mm-f-2-8-tilt-shift-1x-macro/ | https://www.bhphotovideo.com/c/product/1869912-REG/venus_optics_ve10028tsz_laowa_100mm_f_2_8_tilt_shift.html (3) | distinct slug from laowa-100mm-f28-2x-macro (different optical design, same focal length) |
+| laowa-15mm-f45-shift | Laowa 15mm f/4.5 Zero-D Shift | Laowa | Zero-D Shift | Prime | 2020 | no | https://www.laowalenses.ca/product/laowa-15mm-f-4-5-zero-d-shift/ | https://www.fujirumors.com/laowa-15mm-f-4-5r-zero-d-shift-new-version-announced/ (2) | no front filter thread; 14-blade "R" (2022) update figure used for blades |
+| laowa-20mm-f4-shift | Laowa 20mm f/4 Zero-D Shift | Laowa | Zero-D Shift | Prime | 2022 | no | https://www.laowalenses.ca/product/laowa-20mm-f-4-zero-d-shift/ | https://petapixel.com/2022/03/28/venus-optics-unveils-the-laowa-20mm-f4-zero-d-shift-lens/ (2) | full spec table on maker's own regional store |
+| laowa-12-24mm-f56-shift | Laowa 12-24mm f/5.6 Zoom Shift CF | Laowa | Zoom Shift | Zoom | 2024 | no | https://www.venuslens.net/product/laowa-12-24mm-f-5-6-zoom-shift-cf/ | https://www.nikonrumors.com/2024/11/05/new-venus-optics-laowa-12-24mm-f-5-6-aps-c-for-z-mount.aspx/ (2) | APS-C ("CF"); focalLengthEquiv = ×1.5 |
+| laowa-85mm-f56-2x-macro | Laowa 85mm f/5.6 2x Ultra Macro APO | Laowa | Ultra Macro APO | Prime | 2021 | no | https://www.laowalenses.ca/product/laowa-85mm-f-5-6-2x-ultra-macro-apo/ | https://www.nickybay.com/laowa-85mm-f-5-6-2x-ultra-macro-apo-field-review/ (2) | per-mount weight explicitly broken out on T1 (Nikon Z 314g vs Sony FE 291g vs Leica M 289g) |
+| samyang-14mm-f28 | Samyang 14mm F2.8 Z | Samyang | MF | Prime | 2019 | no | https://samyangus.com/products/14mm-f2-8-full-frame-ultra-wide-angle-nikon-z | (T1 sufficient — full Specifications accordion on the maker's own US store) | **the notable finding this round:** Samyang's Nikon Z lineup is real but MF-only (Nikon hasn't licensed AF to Samyang for Z, confirmed still pending March 2026 — see PROGRESS.md); this is Samyang's first-ever Z-mount lens, reviews date to 2019-12-30 |
+| samyang-85mm-f14 | Samyang 85mm F1.4 Z | Samyang | MF | Prime | 2020 | no | https://samyangus.com/products/85mm-f1-4-full-frame-telephoto-nikon-z | (T1 sufficient) | reviews date to 2020-09-13; non-rotating 72mm front filter mount |
+
+**Rejected candidates checked this round:** none of the round-1 candidate leads
+(58/2.8, 65/2.8, 100/2.8, 33/0.95 APS-C, 12/2.8) were actually rejected — every
+one of them genuinely ships in Nikon Z and is entered above. The full
+venuslens.net "Camera Lenses" shop listing (72 products) was checked
+end-to-end for Nikon Z mount availability; probe lenses (24mm T14 2X Probe /
+PeriProbe) and cine-only variants (T-stop lenses, e.g. 12mm T2.9 Zero-D Cine,
+15mm T2.1 Zero-D Cine) were excluded as out-of-scope per the skill
+(cine/probe lenses, not conventional stills lenses).
+
+## Yongnuo + Meike batch (2026-08-31)
+
+Yongnuo's full current Z-mount lineup enumerated from yongnuo.eu's own
+"NIKON Z/F" category page (`yongnuo.eu/lenses/nikon-z-f/`) — 13 products
+shown, F-mount ("N" suffix) DSLR lenses excluded, leaving 10 genuine Z-mount
+lenses: 2 already in the dataset (`yongnuo-35mm-f2`, `yongnuo-50mm-f18`, both
+DF DSM/full-frame) plus 8 not yet entered. Cross-checked against Thom Hogan's
+zsystemuser.com (a Nikon-Z-specific third-party-lens tracker; its own
+"current tally" note states 95 Z-mount third-party AF lenses from 12 makers
+as of 2026-07-31 — a figure consistent with this dataset's scale) — its
+sitemap lists the exact same 10-lens Yongnuo catalogue, and its own spec
+page for the already-in-dataset `yongnuo-50mm-f18` (417g/87mm/68mm) matches
+this dataset's existing entry exactly, corroborating the site's reliability
+before trusting it for the new entries.
+
+Meike's current Z-mount AF lineup cross-checked three ways: meikeglobal.com's
+own site (search + "AF Lens Lineups" navigation block, which lists the five
+current series — MIX/Neo/Pro/SE/Air — by name), an Amazon Nikon-Z listing's
+"Size" variant selector (which enumerates the whole current AF family with
+live prices), and zsystemuser.com's Meike sitemap section. 2 already in the
+dataset (`meike-85mm-f18`, `meike-85mm-f18-se-ii`).
+
+| slug | name | maker | line | type | year | disc | src1 (tier 1) | src2 (tier) | notes / conflicts |
+|---|---|---|---|---|---|---|---|---|---|
+| yongnuo-85mm-f18 | Yongnuo YN85mm F1.8Z DF DSM | Yongnuo | DF DSM | Prime | 2022 | no | https://th.hkyongnuo.com/products/yn85mm-f18z-df-dsm | https://www.zsystemuser.com/z-mount-lenses/third-party-lenses/third-party-autofocus-lense/yongnuo-lenses/yongnuo-85mm-f18z-df-dsm.html (2) | **the flagged priority gap** — full spec table on the maker's own Thai storefront (405g/Φ67×88mm/58mm filter/0.8m MFD/0.13x/9 elem/8 grp/7 blades/$360); T2 independently confirms weight (405g) and elements/groups/blades exactly, gives release date 2022-03-10 (used for `year`) and 89mm/68mm for length/diameter (1mm off from T1 each way — T1 kept per convention) |
+| yongnuo-11mm-f18 | Yongnuo YN11mm F1.8 DA DSM WL | Yongnuo | DA DSM WL | Prime | 2022 | no | https://yongnuo.eu/yn-11mm-f-1-8-lens-for-nikon-aps-c/ | https://www.zsystemuser.com/z-mount-lenses/third-party-lenses/third-party-autofocus-lense/yongnuo-lenses/yongnuo-11mm-f18-da-dsm-wl.html (2) | T1 confirms Z-mount + APS-C ("YN 11mm f/1.8 APS-C – Z Mount" on the maker's own EU store category page); T2 supplies full spec table (260g/69×64mm/58mm filter/0.15m MFD/1:6.7/10 elem/9 grp/7 blades/weather-sealed/$300), release date 2022-09-12 |
+| yongnuo-23mm-f14 | Yongnuo YN23mm F1.4 DA DSM WL Pro | Yongnuo | DA DSM WL Pro | Prime | 2022 | no | https://yongnuo.eu/yn-23mm-f-1-4-aps-c/ | https://www.zsystemuser.com/z-mount-lenses/third-party-lenses/third-party-autofocus-lense/yongnuo-lenses/yongnuo-23mm-f14-da-dsm-wl.html (2) | T1 confirms APS-C Z-mount listing; T2 full spec table (273g/69×64mm/58mm filter/0.3m MFD/1:10/11 elem/9 grp/9 blades/weather-sealed/$288), release date 2022-09-12 |
+| yongnuo-33mm-f14 | Yongnuo YN33mm F1.4 DA DSM WL Pro | Yongnuo | DA DSM WL Pro | Prime | 2024 | no | https://yongnuo.eu/lenses/nikon-z-f/yongnuo-33mm-f-1-4-aps-c-lens-for-nikon/ | https://www.zsystemuser.com/z-mount-lenses/third-party-lenses/third-party-autofocus-lense/yongnuo-lenses/yongnuo-33mm-f14-da-dsm-wl.html (2) | T1 confirms APS-C Z-mount category listing; T2 full spec table (378g/89×59mm/58mm filter/0.4m MFD/1:10/11 elem/9 grp/9 blades/weather-sealed/$300), release date 2024-08 |
+| yongnuo-35mm-f18 | Yongnuo YN35mm F1.8 DA DSM WL | Yongnuo | DA DSM WL | Prime | 2022 | no | https://yongnuo.eu/lenses/nikon-z-f/yongnuo-35mm-f-1-8-aps-c-lens-for-nikon-z-mount-camera-auto-focus-large-aperture-remote-control/ | https://zsystemuser.com/z-mount-lenses/third-party-lenses/third-party-autofocus-lense/yongnuo-lenses/yongnuo-35mm-f18-da-dsm-wl.html (2) | T1 title explicitly states "APS-C ... for Nikon Z Mount Camera" + confirms 182g; T2 full spec table (182g exact match/64×68mm/52mm filter/0.3m MFD/1:6.6/10 elem/8 grp/7 blades/weather-sealed/$300), release date 2022-10-31. Distinct slug from the existing full-frame `yongnuo-35mm-f2` (DF DSM) — same focal length, different optical design/format |
+| yongnuo-50mm-f18-da | Yongnuo YN50mm F1.8Z DA DSM | Yongnuo | DA DSM | Prime | 2024 | no | https://yongnuo.eu/lenses/nikon-z-f/yn50mm-f1-8z-da-dsm/ | https://www.zsystemuser.com/z-mount-lenses/third-party-lenses/third-party-autofocus-lense/yongnuo-lenses/yongnuo-50mm-f18-da-dsm.html (2) | T1 confirms "APS-C, Z Mount" + 148g weight + "equivalent focal length is 75mm" (matches ×1.5 crop); T2 full spec table (148g exact match/67×60mm/49mm filter/0.45m MFD/1:7.1/8 elem/7 grp/7 blades/weather-sealed/~$120), release date 2024-01-18. Distinct slug from the existing full-frame `yongnuo-50mm-f18` (DF DSM) |
+| yongnuo-56mm-f14 | Yongnuo YN56mm F1.4 DA DSM WL Pro | Yongnuo | DA DSM WL Pro | Prime | 2024 | no | https://yongnuo.eu/lenses/nikon-z-f/yongnuo-56mm-f-1-4-aps-c/ | https://www.zsystemuser.com/z-mount-lenses/third-party-lenses/third-party-autofocus-lense/yongnuo-lenses/yongnuo-56mm-f14-da-dsm-wl.html (2) | T1 confirms APS-C Z-mount category listing; T2 full spec table (378g/89×69mm/58mm filter/0.4m MFD/1:9/11 elem/9 grp/9 blades/weather-sealed/$278), release date 2024-06-07 |
+| meike-24mm-f14 | Meike 24mm F1.4 MIX Full Frame AF | Meike | MIX | Prime | 2025 | no | https://meikeglobal.com/ (AF Lens Lineups nav: "MIX series 85mm F1.4/24mm F1.4") | https://www.zsystemuser.com/z-mount-lenses/third-party-lenses/third-party-autofocus-lense/meike-autofocus-lenses/meike-24mm-f14-lens-specifi.html (2) | T1 confirms current MIX-line membership + Z-mount listing (`Meike 24mm f1.4 MIX Full Frame Auto Focus STM Lens for Z Cameras` product tile, $589); T2 full spec table (550g/72mm filter/0.28m MFD/15 elem/12 grp/11 blades/$589), release 2025-08; length/diameter (107×79mm) independently confirmed by phillipreeve.net's hands-on review (15/12 elements/groups match exactly) and B&H's own listing (same 79×107mm) — both corroborate, not counted as one of the two required sources but recorded for confidence |
+| meike-35mm-f18-pro | Meike 35mm F1.8 Pro AF STM | Meike | Pro | Prime | 2025 | no | https://meikeglobal.com/products/3518proz | https://www.digitalcameraworld.com/cameras/lenses/meike-35mm-f-1-8-pro-af-review (2) | T1 maker product page ($379 regular price, Nikon Z variant selector); T2 independent DCW review (Matthew Richards, published 2026-02-02) full spec table: 400g/93×74mm/58mm filter/0.35m MFD/0.13x/12 elem/10 grp/9 blades/weather-sealed. Amazon's own "Item details" panel for this exact Nikon-Z ASIN (B0FFSZTV4N) gives 404g (kept over T2's rounded 400g) and confirms mount/aperture. `year` from earliest verified-purchase Amazon review date (2025-09-15), predating the DCW review |
+| meike-50mm-f18 | Meike 50mm F1.8 AF STM | Meike | SE | Prime | 2024 | no | https://meikeglobal.com/products/5018z ($169.99, "50mm F1.8 Auto Focus Prime Lens for Z Cameras for Portrait/Street/Landscape shooting") | https://www.zsystemuser.com/z-mount-lenses/third-party-lenses/third-party-autofocus-lense/meike-autofocus-lenses/meike-50mm-f18.html (2) | T1 confirms current listing + price; T2 full spec table minus length/diameter (382g/58mm filter/0.63m MFD/11 elem/7 grp/9 blades), release 2024-01-22; length/diameter (Φ68.6×59.5mm) from B&H's lens-compare tool (T3, single clean unambiguous row — no conflicting figure found) since neither T1 nor T2 publish them |
+| meike-85mm-f18-pro | Meike 85mm F1.8 Pro AF STM | Meike | Pro | Prime | 2024 | no | https://meikeglobal.com/search?q=85mm+f1.8+pro (search hit: "Meike 85mm f1.8 Pro Full Frame Auto Focus STM Lens for Z Cameras", $339.99) | https://www.zsystemuser.com/z-mount-lenses/third-party-lenses/third-party-autofocus-lense/meike-autofocus-lenses/meike-85mm-f18-pro-lens.html (2) | T1 confirms current Z-mount listing + price ($339.99, rounds to T2's $340); T2 full spec table (389g/97×76mm/62mm filter/0.85m MFD/11 elem/8 grp/9 blades), release 2024-11. Distinct from the existing `meike-85mm-f18` (discontinued, base/original non-Pro tier) and `meike-85mm-f18-se-ii` (SE Mark II) — this is the Pro-line 85mm |
+
+### Rejected / deferred candidates
+
+| slug | name | reason |
+|---|---|---|
+| — | Yongnuo YN16mm F1.8 DF DSM | **deferred, not entered** — zsystemuser.com lists this lens as APS-C (DX) coverage despite the maker's own "DF" naming convention meaning full-frame everywhere else in the lineup (DA = DX, DF = FX); this internal contradiction wasn't resolved within this round's time budget, and yongnuo.eu's own Nikon Z/F category page (fetched fresh this round, 13-product listing) does not show a 16mm entry at all. Re-verify against the maker directly before adding. |
+| — | Meike 55mm F1.8 Pro AF STM | **deferred, not entered** — non-nullable `length`/`diameter` fields unpublished on both T1 (meikeglobal.com's own product page is pure marketing imagery, no spec table) and T2 (zsystemuser.com's own page marks these fields "?"); B&H's lens-compare tool returned three different, mutually-contradictory diameter/length figures across different comparison pages for what should be the same lens (67×76mm vs 76.2×88.9mm vs 67×73.5mm) — too unreliable to use without visiting and disambiguating the source page directly, which the time budget didn't allow this round. All other fields (364g/58mm filter/0.55m MFD/11 elem/8 grp/9 blades/$329, release 2024-10-18) are solid. |
+| — | Meike 25mm F1.7 Air (APS-C) | **deferred, not entered** — genuinely brand-new (meikeglobal.com's own "New Releases" section, Nikon Z variant priced $159); not yet indexed on zsystemuser.com's Meike sitemap (confirms recency) and no independent review found this round. Falls under the skill's ≤1-month new-release allowance in principle, but this round's time budget didn't extend to sourcing its non-nullable dimensional fields even provisionally. Worth a priority re-check next pass — task explicitly flagged 25mm as a notable gap. |
+| — | Meike 55mm F1.4 Neo, 33mm F1.4 Neo, 85mm F1.4 MIX (I & II), 35mm F2 SE, 56mm F1.7 Air | **out of scope for this batch, not rejected** — genuine current Meike Z-mount AF products (confirmed via meikeglobal.com's "AF Lens Lineups" nav and/or zsystemuser.com's sitemap) but not pursued this round to keep the batch within a representative-set time budget; candidates for a future Meike-focused pass. |
+| — | Meike manual-focus Z-mount lenses (6.5mm f/2 fisheye DX, 7.5mm f/2.8 fisheye DX, ~10mm, 12mm f/2, 25mm f/0.95, 25mm f/1.8, 35mm f/1.4, 35mm f/1.7, 50mm f/0.95, 50mm f/1.2, 50mm f/1.7, 60mm f/2.8 macro — full list via zsystemuser.com's Meike MF sitemap section) | **out of scope for this batch, not rejected** — the task's "also check MF" note was not reached this round; representative MF coverage is a candidate for a future pass. |
+
+**Note on Thom Hogan's zsystemuser.com as a source.** Not in the skill's
+documented tier examples, but functionally a **T2 independent measurement/
+catalogue source** for this purpose: it is a long-running, actively-maintained
+(dated entries through July 2026), Nikon-Z-specific third-party lens tracker
+run by a well-known independent Nikon authority, not an aggregator scraping
+generic spec databases — each entry cites the maker's own published figures
+directly and its own "current tally" self-audits against the total lens
+count. Verified against this dataset's own pre-existing, independently-
+sourced `yongnuo-50mm-f18` entry before being trusted for new entries (exact
+weight/length/diameter match). Still treated as a single T2 lineage per
+lens — not stacked with meikeglobal.com/yongnuo.eu as if they were two
+independent measurements of the same fact, since Thom Hogan's own figures are
+themselves sourced from the makers.
+
+## TTArtisan + 7Artisans batch (2026-08-31)
+
+**Session note**: this batch's `WebFetch` tool hit the session's monthly spend
+limit partway through (mid-7Artisans research) — the exact failure mode the
+task said three prior attempts at this batch died to. Research from that
+point on switched entirely to the Chrome browser extension (`navigate` +
+`get_page_text` + `javascript_tool`), which draws from a different budget and
+kept working. This checkpoint is committed immediately so a repeat hit
+doesn't lose the TTArtisan research (fully complete at this point).
+
+**TTArtisan — dimension-diagram technique confirmed working again.** Per the
+task's lead from the Canon round, `ttartisan.store`'s "Size" spec-table row
+renders per-mount length/diameter as an image (E-mount / X-mount / Z-mount /
+L-mount side by side with dimension callouts), invisible to `WebFetch`'s
+markdown conversion but fully legible via a browser screenshot. Used
+successfully for all 8 lenses below via `find` (locate the "Size" row) →
+`scroll_to` → `screenshot`. ttartisan.store's own "AF Lens" collection (13
+products) filtered/cross-checked against its "Mount → Nikon Z" facet (11 of
+13 in-stock+sold-out products support Z; 2 don't: 14mm F3.5 is E/X only, and
+the Trio Set is an out-of-scope bundle). All 8 below are T1-only
+(ttartisan.store product pages) per the skill's "tier 1 is sufficient on its
+own" rule — each page's own mount selector explicitly lists "Nikon Z" as a
+purchasable variant, which is the mount-existence proof; no second source
+needed since these are single-lineage maker spec tables, not combined/
+ambiguous multi-mount tables. Weight is given as a range on every page except
+the 23mm (color-variant range, e.g. "233~245g" for Black/Silver) — stored as
+the rounded midpoint per lens, range noted in `specSources`.
+
+| slug | name | maker | line | type | year | disc | src1 (tier 1) | src2 (tier) | notes / conflicts |
+|---|---|---|---|---|---|---|---|---|---|
+| ttartisan-23mm-f18 | TTArtisan AF 23mm F1.8 | TTArtisan | AF | Prime | 2025 | no | https://ttartisan.store/products/ttartisan-af-23mm-f1-8 | — | APS-C, mount X/E/Z. 210g (single figure, no range) confirmed via product copy + spec table both. Z-mount dims from the page's own Size diagram: 62mm len × 64mm dia (X 60×67, E 60×67). $127. A verified-purchase review explicitly confirms Nikon compatibility ("I tried it on my Nikon camera and it worked well"). `year` estimated from earliest visible review date (2025-11-21) — no explicit launch date published; flagged. |
+| ttartisan-35mm-f18-ii | TTArtisan AF 35mm F1.8 Ⅱ | TTArtisan | AF | Prime | 2024 | no | https://ttartisan.store/products/ttartisan-af-35mm-f1-8 | — | APS-C, mount X/E/Z (the "II"/Mark II redesign — a separate, older sold-out original "35mm F1.8" also exists at handle `351-8`, not entered, see rejects). 176~193g range (Black/Silver/Orange color variants) → 185g midpoint. Z-mount dims from Size diagram: 51mm len × 66mm dia (X 49×65, E 49×65 — both colors' diagrams cross-checked, identical). $125. A review dated 07/20/2026 explicitly names "Z mount". `year` estimated from earliest review date (2024, oldest visible review page). |
+| ttartisan-56mm-f18 | TTArtisan AF 56mm F1.8 | TTArtisan | AF | Prime | 2023 | no | https://ttartisan.store/products/56mm | — | APS-C, mount E/X/Z. 233~245g range → 239g midpoint. Z-mount dims from Size diagram: 70mm len × 65mm dia (E 66×65, X 62×65). $158 reg / $129 current sale (RRP $158 used, sale price is a discount not a new RRP). One reviewer explicitly runs it on Sony (confirms E-mount works); page's own spec-table "Mount E / X / Z" is the Z-mount proof. `year` estimated from review history depth (83 reviews, oldest era implies 2023 launch consistent with round-1's original candidate-lead list). |
+| ttartisan-75mm-f2 | TTArtisan AF 75mm F2 | TTArtisan | AF | Prime | 2023 | no | https://ttartisan.store/products/ttartisan-af-75mm-f2 | — | Full-frame, mount E/Z/L/X. 326-340g range → 333g midpoint. Z-mount dims from Size diagram: 76mm len × 67mm dia (E 74×67, L 76×67, X 74×67 — Z ties L for the longest). $199. This was one of round-1's flagged leads ("75/2"); confirmed real and entered this round. `year` estimated from 103-review history depth, consistent with a 2023 launch alongside the 56mm F1.8. |
+| ttartisan-40mm-f2 | TTArtisan AF 40mm F2 | TTArtisan | AF | Prime | 2024 | no | https://ttartisan.store/products/af-40mm-f2 | — | Full-frame, mount E/Z/L (no X — full-frame only design). 166~176g range → 171g midpoint. Z-mount dims from Size diagram: 46mm len × 65mm dia (E 44×61, L 43×63 — Z is both longest and widest of the three). $168. Clicked aperture ring (unusual for this maker's AF line — most are declicked/ring-less). `year` estimated from 30-review history (a review dated 08/28/2026 is recent, oldest reviews imply a 2024 launch). |
+| ttartisan-17mm-f18-air | TTArtisan AF 17mm f1.8 Air | TTArtisan | AF Air | Prime | 2025 | no | https://ttartisan.store/products/af-17mm-f1-8-air | — | APS-C, mount E/X/Z. 161~178g range → 170g midpoint. Z-mount dims from Size diagram: 51mm len × 65mm dia (X 47×60, E 47×60). $148. Widest-angle lens in TTArtisan's current AF lineup (81° AoV, 14E/10G). Marketing copy states "25mm full-frame equivalent" (a truncated/rounded figure) but this project's own established rounding convention (see `z-dx-mc-35mm-f17`'s 35×1.5=52.5→'53mm') rounds 17×1.5=25.5 up to `'26mm'` for consistency — not copied from the maker's marketing phrasing. Only 7 reviews (newest of the APS-C primes); `year` estimated 2025 from review-date range. |
+| ttartisan-50mm-f18-neo | TTArtisan AF 50mm F1.8 Neo | TTArtisan | AF Neo | Prime | 2025 | no | https://ttartisan.store/products/ttartisan-af-50mm-f1-8-neo | — | Full-frame, mount E/Z/L. "Neo" line — simplified design with no focus/aperture rings, glass-fiber composite body (lighter than the metal AF line). 156~167g range → 162g midpoint. Z-mount dims from Size diagram: 54mm len × 66mm dia (E 51.5×61, L 50×64). $89 (cheapest lens in the TTArtisan AF catalogue). A review explicitly names "Nikon Zf". `year` estimated 2025 from 9-review history, newer than the metal-bodied 40mm F2. |
+| ttartisan-85mm-f18-neo | TTArtisan AF 85mm F1.8 Neo | TTArtisan | AF Neo | Prime | 2025 | no | https://ttartisan.store/products/ttartisan-af-85mm-f1-8-neo | — | Full-frame, mount E/Z only (no L, unlike its 50mm Neo sibling). 332~338g range → 335g midpoint. Z-mount dims from Size diagram: 92mm len × 70mm dia (E 90.5×70 — Z is 1.5mm longer). $99. Same simplified/ringless "Neo" design language as the 50mm. Only 2 reviews (newest lens in this batch); `year` estimated 2025 alongside the 50mm Neo (same product line, same page-design generation). |
+
+### Rejected / deferred candidates — TTArtisan
+
+| slug | name | reason |
+|---|---|---|
+| — | TTArtisan AF 14mm F3.5 | **rejected, no Z mount** — ttartisan.store's own `/products.json` variant data lists this lens as Sony E + Fuji X only; no Nikon Z option offered anywhere on its product page. |
+| — | TTArtisan AF Trio Lens SET | **out of scope** — a 3-lens bundle SKU (not a single lens design), excluded per the skill's normal per-lens entry model. |
+| — | TTArtisan AF 35mm F1.8 (original, handle `351-8`) | **deferred, not entered** — shown as "Sold out" on the AF Lens collection page; superseded by the "II" redesign (`ttartisan-35mm-f1-8-ii`, entered above) which is in-stock and current. Round-1's lens-revisions-coexist convention would call for entering this as a separate `discontinued:true` entry, but its own product page returned inconsistent/stale content when navigated directly this round (redirected to a different product's cached page) — not re-attempted given the batch's time budget; the current "II" replacement covers the design. |
+| — | 32mm F2.8 AF lens Nikon Mount | **deferred, not entered** — explicitly Nikon-named and sold out (a genuine discontinued Nikon-specific SKU, notable per the skill's "discontinued-but-notable is fine" allowance), but its product page also returned stale/redirected content when navigated directly this round, the same issue as the 35mm F1.8 original above — not re-attempted given the batch's time budget. Worth a dedicated follow-up: this could be a genuinely interesting historical entry (TTArtisan's first-ever Nikon-Z-named SKU, distinct from the mount-agnostic "AF 27mm F2.8" family). |
+
+**7Artisans — enumerated from `7artisans.store`'s own "Autofocus Z" collection**
+(`/collections/autofocus-z`, T1) — 11 products, every one of which lists
+"Nikon Z mount" as a purchasable option on its own product page (mount
+existence proof). Cross-referenced against Thom Hogan's
+`zsystemuser.com` 7Artisans autofocus page (T2, last dated Jan 8 2025 — so
+it's missing the maker's newer 2025/2026 releases, a staleness gap noted
+below) for full dimensional spec tables, since — like Meike in the prior
+batch — 7artisans.store's own product pages are pure marketing copy with no
+spec table at all (confirming the task's instruction to test this
+independently rather than assume the Canon `.store` dimension-diagram
+finding: **that technique does NOT generalize to 7artisans.store** — there
+is no "Size" row or dimension-diagram image anywhere on any of these product
+pages, only prose bullets and a mount/color selector).
+
+| slug | name | maker | line | type | year | disc | src1 (tier 1) | src2 (tier) | notes / conflicts |
+|---|---|---|---|---|---|---|---|---|---|
+| 7artisans-10mm-f28 | 7Artisans AF 10mm F2.8 | 7Artisans | AF | Prime | 2025 | no | https://7artisans.store/products/af-10mm-f2-8-aps-c-lens-for-e-fx-z | https://www.zsystemuser.com/z-mount-lenses/third-party-lenses/third-party-autofocus-lense/7artisans-autofocus-lenses/7artisans-10mm-f28-lens.html | APS-C (DX) ultra-wide, mount E/FX(Fuji)/Z. T1 store page confirms $199 + Z-mount option; T2 full spec table (232g, 72×69mm, 62mm filter, 0.3m MFD, 105.3° AoV, 11E/10G, 7 blades, announced Nov 2025). No "dust/splash resistant" claim on either source → `weatherSealed:false` (unlike every other 7Artisans lens in this batch, which do claim it). |
+| 7artisans-25mm-f18-lite | 7Artisans AF 25mm F1.8 Lite | 7Artisans | AF Lite | Prime | 2026 | no | https://7artisans.store/products/af-25-35-50mm-f1-8-aps-c-lens-for-e-fx-z | https://www.zsystemuser.com/z-mount-lenses/third-party-lenses/third-party-autofocus-lense/7artisans-autofocus-lenses/7artisans-25mm-f18-lite.html | APS-C (DX) "Lite" line — one shared Shopify listing on T1 (`$125` "From" price, a focal-length variant selector covering 25/35/50mm) confirms Z-mount for all three; T2 gives each focal length its own dedicated spec page. 25mm: 183g, 51×67mm, 58mm filter, 0.25m MFD, 58.3° AoV, 8E/5G, 9 blades, announced 2026-06-16, dust/splash resistant. |
+| 7artisans-35mm-f18-lite | 7Artisans AF 35mm F1.8 Lite | 7Artisans | AF Lite | Prime | 2026 | no | https://7artisans.store/products/af-25-35-50mm-f1-8-aps-c-lens-for-e-fx-z | https://www.zsystemuser.com/z-mount-lenses/third-party-lenses/third-party-autofocus-lense/7artisans-autofocus-lenses/7artisans-35mm-f18-lite.html | Same shared T1 listing as the 25mm/50mm Lite siblings. T2: 181g, 51×67mm, 58mm filter, 0.35m MFD, 44° AoV, 7E/6G, 9 blades, announced 2026-06-16, dust/splash resistant. Distinct slug from the existing full-frame `7artisans-35mm-f18` (different optical design/format, same nominal focal length). |
+| 7artisans-50mm-f18-lite | 7Artisans AF 50mm F1.8 Lite | 7Artisans | AF Lite | Prime | 2026 | no | https://7artisans.store/products/af-25-35-50mm-f1-8-aps-c-lens-for-e-fx-z | https://www.zsystemuser.com/z-mount-lenses/third-party-lenses/third-party-autofocus-lense/7artisans-autofocus-lenses/7artisans-50mm-f18-lite.html | Same shared T1 listing. T2: 178g, 51×67mm, 58mm filter, 0.55m MFD, 31.4° AoV, 6E/5G, 9 blades, announced 2026-06-16, dust/splash resistant. Distinct slug from the existing full-frame `7artisans-50mm-f18` entered below. |
+| 7artisans-35mm-f18 | 7Artisans AF 35mm F1.8 | 7Artisans | AF | Prime | 2025 | no | https://7artisans.store/products/af-35mm-f1-8-full-frame-lens-for-e-z-l | https://www.zsystemuser.com/z-mount-lenses/third-party-lenses/third-party-autofocus-lense/7artisans-autofocus-lenses/7artisans-35mm-f18-lens.html | Full-frame, mount E/Z/L. T1 $299, matches T2 exactly. T2 full spec table: 426g, 94×72mm, 62mm filter, 0.4m MFD, 11E/8G, 11 blades, announced 2025-10-15, dust/splash resistant, AF/MF switch + Fn button. |
+| 7artisans-40mm-f25-lite | 7Artisans AF 40mm F2.5 LITE | 7Artisans | AF Lite | Prime | 2026 | no | https://7artisans.store/products/af-40mm-f2-5-full-frame-lens-for-e-z-l | https://www.zsystemuser.com/z-mount-lenses/third-party-lenses/third-party-autofocus-lense/7artisans-autofocus-lenses/7artisans-40mm-f25-lite.html | Full-frame pancake, mount E/Z/L. T1 $159, matches T2 exactly. Genuinely new (announced 2026-08-06, 25 days before this entry — within the skill's ≤1-month allowance, but every non-nullable field is already published so no fields need to be left null). T2: 90g, 40×63mm, 46mm filter, 0.4m MFD, 56.1° AoV, 7E/6G, 9 blades, clicked aperture ring (unusual — most of this batch is declicked), dust/splash resistant. |
+| 7artisans-50mm-f18 | 7Artisans AF 50mm F1.8 | 7Artisans | AF | Prime | 2025 | no | https://7artisans.store/products/50mm-f1-8-af-lens | https://www.zsystemuser.com/z-mount-lenses/third-party-lenses/third-party-autofocus-lense/7artisans-autofocus-lenses/50mm-f18-lens-specification.html | Full-frame, mount Z/E. T1 $228, T2 $230 (small rounding gap, T1 kept per convention). T2 full spec table: 420g, 100×72mm, 62mm filter, 0.5m MFD, 11E/9G, 11 blades, dust/splash resistant. |
+| 7artisans-85mm-f18 | 7Artisans AF 85mm F1.8 | 7Artisans | AF | Prime | 2024 | no | https://7artisans.store/products/af-85mm-f1-8-full-frame-lens-for-z | https://www.zsystemuser.com/z-mount-lenses/third-party-lenses/third-party-autofocus-lense/7artisans-autofocus-lenses/7artisans-85mm-f18-lens.html | Full-frame, mount Z (a separate `for-l` SKU exists for L-mount, not this one). T1 $299, T2 $300 (T1 kept). T2 full spec table: 452g, 100×72mm, 62mm filter, 0.8m MFD, 28.5° AoV, 10E/7G, 11 blades, announced 2024-10-17, dust/splash resistant. |
+
+### Rejected / deferred candidates — 7Artisans
+
+| slug | name | reason |
+|---|---|---|
+| — | 7Artisans AF 24mm F1.8 Full-frame Lens for E/Z/L | **deferred, not entered** — Z-mount confirmed on both T1 (`7artisans.store/products/af-24mm-f1-8-full-frame-lens-for-e`, mount selector lists Sony E/Nikon Z/L) and T2 (zsystemuser spec page), and most fields are solid (92mm long, 72mm diameter, 14E/11G, 11 blades, f/1.8-f16 declicked, 62mm filter, 0.32m MFD, $330/$329) — but **weight is unpublished on both sources** (T2's own page literally prints "? ounces (?g) weight"), and this project's schema treats `weight` as non-nullable. Checked Amazon (multiple $329 Nikon-Z listings found, confirming the SKU and price again) but didn't locate a weight figure on any listing's visible bullets within this round's time budget. Every other field is ready — a quick follow-up sourcing just the weight would close this one. |
+| — | 7Artisans AF 135mm F1.8 Full-frame Lens for Z/E/L | **out of scope for this batch, not rejected** — genuine current Z-mount product (T1 store listing, $689, confirmed) but newer than zsystemuser.com's Jan-2025-dated 7Artisans page (not listed there), so no T2 spec table was readily available this round; not pursued further to keep the batch within its representative-set time budget. Candidate for a future 7Artisans-focused pass — would be the line's flagship/priciest entry. |
+| — | 7Artisans AF 35mm F1.4 (APS-C, handle `af-35mm-f1-4`) | **not investigated** — surfaced only as a "related product" link on another product page, never confirmed against the maker's own Z-mount collection list (`/collections/autofocus-z`) which does not include it; may be Fuji-X-only or otherwise mount-restricted. Re-check from scratch before adding. |
+| — | 7Artisans AF 10mm F2.5 Full-frame Lens for E/Z/L | **out of scope for this batch, not rejected** — appears on the Z-mount collection page ($449) but not pursued this round; candidate for a future pass. |
+| — | 7Artisans cine lenses (35mm/50mm/85mm T2.0, 10/16/25/35/50/85mm T2.1, 16-135mm T2.1-2.5 sets) | **out of scope** — cine lenses excluded per the skill's scope boundary, same as every other maker in this dataset. |
+
+**Method note — the Canon `.store` dimension-diagram technique tested against
+7artisans.store and confirmed NOT to generalize here**, exactly as the task
+warned it might not: none of the 7Artisans product pages checked this round
+carry a "Size" spec-table row or dimension-diagram image at all (unlike
+ttartisan.store, where every AF product page has one) — 7artisans.store's
+product pages are marketing prose + a mount/color selector only, no spec
+table of any kind. This confirms the prior Canon-round finding that this
+technique is TTArtisan-`.store`-specific, not a general budget-Shopify-store
+pattern, and 7Artisans instead needs the same T2-tracker workaround
+(zsystemuser.com) that the Meike batch used one round ago.
+
+**Image sourcing note.** All 8 TTArtisan and 6 7Artisans images below are
+each maker's own product photo pulled from the product page's `og:image`
+meta tag. For SKUs where the maker publishes a per-mount photo (filenames
+containing `SKU-E`/`SKU-Z` etc. — confirmed present for TTArtisan's Neo/Air
+lines), `og:image` reflects the page's *default* (usually Sony E) variant
+photo rather than the Nikon-Z-selected one, because these Shopify themes
+render the OG meta tag server-side at page load and do not update it when a
+shopper clicks a different mount radio button client-side; the browser tool
+used this round also blocks reading a live `<img>` element's resolved `src`
+after such a click (a cookie/query-string safety filter). This is a step
+down from the existing `ttartisan-27mm-f28`/`7artisans-27mm-f28` entries,
+whose images were confirmed Z-mount-specific by an earlier session. Visually
+these makers' AF lens barrels are cosmetically identical across mounts from
+a straight-on product-photography angle (confirmed while reading the
+dimension-diagram screenshots above — only the rear flange, invisible in a
+hero shot, differs) so the photos are still genuinely correct-product
+images, just not provably the Z-specific variant photo where one exists.
+Flagged here rather than silently treated as equivalent to the existing
+precedent.

@@ -1,45 +1,50 @@
 ## Why
 
-Canon has the thinnest third-party lens coverage of the five brands — **14
-entries** vs Sony 51, Fujifilm 46, Panasonic 39, Nikon 26. Some of that gap is
-real (Canon only licensed RF-S autofocus to Sigma and Tamron in 2024, and still
-has no third-party full-frame RF AF), but the rest is unfinished work: the
-archived `2026-07-05-add-thirdparty-lenses-canon` change explicitly deferred
-three batches — the newer Sigma RF-S lenses, and the TTArtisan / 7Artisans
-manual-focus primes it had researched but never entered.
+`canon/data.js` currently ships 29 third-party lenses (Sigma 10, TTArtisan 5,
+Laowa 5, Tamron 3, 7Artisans 3, Yongnuo 2, Viltrox 1), the result of the
+archived `2026-08-05-expand-thirdparty-lenses-canon` change (PR #22, which
+took it from 14 → 29). That change's own research already answered the
+scope-level questions for Canon RF and is carried forward here rather than
+re-derived: Canon only opened RF-S AF licensing to Sigma/Tamron in 2024 and
+still has no third-party full-frame RF AF; Viltrox's RF-S AF primes were
+pulled after a 2022 cease-and-desist and only the 85mm f/1.8 RF II AF lens
+ships natively; Meike routes third-party AF around Canon via EF-mount, not
+native RF, so it's out of scope; no native RF Samyang or Zeiss exists. Those
+facts need re-verifying (a licensing or C&D situation can change), not
+re-researching from zero.
 
-Every one of Canon's 14 third-party lenses also carries `priceIncomplete: true`,
-so each shows a lone USD figure on the card. That flag makes
-`scripts/compute-prices.js` skip the item, so the regional prices never arrive.
+What that change explicitly left on the table:
+- **TTArtisan**: 14 RF SKUs identified, only 5 entered — the other 9 were
+  blocked because TTArtisan's own site publishes no diameter/length and
+  quotes weight as a range spanning every mount, and the aggregator route
+  (lensfinder.org) that filled some gaps has ~30%-wrong mount attribution.
+  **A later Fujifilm pass in this repo found a real unlock for this exact
+  problem**: ttartisan.store (not ttartisan.com) renders per-mount dimensions
+  as an **image diagram** next to a "Size" table row, invisible to WebFetch's
+  text extraction but readable via Chrome browser automation
+  (`document.querySelectorAll('td')` → find the Size row → read the
+  adjacent `<img>`). Worth applying here before re-deferring the same 9.
+- **7Artisans**: ~42 RF-capable SKUs exist per their own `products.json`, only
+  3 entered. Same "no published dimensions" blocker, same potential unlock.
+- Both makers' entered/deferred lists are two-plus months old — re-scope
+  against current SKUs, not just the old deferred list.
+- **Sigma/Tamron/Viltrox/Yongnuo**: not re-checked since Aug 5 — worth a fresh
+  pass for anything shipped since.
 
 ## What Changes
 
-- **Sigma follow-up batch** — the RF-S lenses released after the first pass:
-  12mm F1.4 DC DN, 15mm F1.4 DC DN, 17-40mm F1.8 DC Art, 16-300mm F3.5-6.7 DC OS
-  (each confirmed shipping in RF-S before entry).
-- **Tamron / Viltrox re-check** — re-verify the RF lineups for anything added
-  since July 2026 (Viltrox RF-S AF primes were rumoured for 2026).
-- **TTArtisan + 7Artisans manual-focus RF primes** — the batch the previous
-  change researched and deferred. Canon blocks third-party AF, so these makers
-  ship native RF only as MF; that is in scope.
-- **Laowa top-up** — the previously identified 58mm f/2.8 and 100mm f/2.8 2× macro.
-- **Prices** — fill all seven currencies for Canon third-party lenses (existing
-  and new) via `compute-prices.js`, dropping the reflexive `priceIncomplete`.
-- **Images** — reduce `KNOWN_IMAGE_GAPS.canon` where a maker product image or a
-  Commons file exists; keep the rest allowlisted with a stated reason.
+- Re-verify the four scope facts above against each maker's current site.
+- **TTArtisan + 7Artisans**: retry the deferred lenses using the
+  ttartisan.store/7artisans.store image-diagram dimension technique; enter
+  whatever becomes sourceable, re-defer (with an updated reason) what doesn't.
+- **Sigma, Tamron, Viltrox, Yongnuo**: re-scope each maker's current RF/RF-S
+  listing against what's already entered; add anything new.
+- Wire any new `manufacturer` into `MANUFACTURER_COLORS`, group new lenses
+  into `── <Maker> ──` `LENS_DROPDOWN_GROUPS`, source images and 7-currency
+  prices per the skill's steps 5-6.
 
-## Scope Boundary
+## Storage decision (unchanged, denormalized)
 
-- **In:** native RF / RF-S lenses shipping today, AF where licensed, MF from
-  budget/specialty makers.
-- **Out:** EF-mount via adapter, cine/anamorphic, teleconverters, announced-
-  but-not-shipping lenses, and any lens whose specs cannot be corroborated by
-  two independent sources (logged as a deferred tail instead).
-
-## Method
-
-Run under `add-thirdparty-lenses` **v1.1**: two independent source lineages per
-lens (tier 1 maker page + tier 2 independent review; retailers are price-only),
-citations recorded in `research/lenses.md` before data entry, field
-normalisation per the skill's convention table, and a `PROGRESS.md` updated in
-the same commit as each batch so the run is resumable.
+Same convention as the other 4 brands: each lens is a self-contained
+Canon-mount entry (weight/length/price/`asin`/`productUrl`/`imageUrl` all
+RF-specific), no shared catalog, no `mount` field.

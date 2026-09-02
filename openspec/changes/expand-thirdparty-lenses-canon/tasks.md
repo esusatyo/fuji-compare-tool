@@ -1,35 +1,13 @@
-# Tasks — Canon third-party lens expansion
+# Tasks — expand Canon third-party lenses (round 2)
 
-One line per batch. A batch is done when its lenses are entered, grouped,
-`npm run test:data` is green, and `PROGRESS.md` is updated **in the same commit**.
-
-## Setup
-- [x] Branch `expand-thirdparty-lenses-canon` off `main`
-- [x] Change scaffold + `PROGRESS.md`
-- [x] `npm test` green on the untouched baseline (409 pass)
-
-## Research (citations before data)
-- [x] Sigma RF-S follow-up: all four confirmed shipping in Canon RF
-- [x] Tamron RF lineup re-check — 17-70mm f/2.8 (B070) newly shipping for RF
-- [x] Viltrox RF lineup re-check — RF-S AF primes still rumoured, no change
-- [x] TTArtisan native RF MF primes — specs not sourceable, deferred
-- [x] 7Artisans native RF MF primes — specs not sourceable, deferred
-- [x] Laowa RF top-up — both conflicts resolved, both entered
-
-## Data batches
-- [x] Sigma batch entered + grouped + green
-- [x] Tamron batch entered + grouped + green
-- [x] Viltrox batch — nothing to enter
-- [x] TTArtisan batch — nothing enterable
-- [x] 7Artisans batch — nothing enterable
-- [x] Laowa batch entered + grouped + green
-
-## Cross-cutting
-- [x] `MANUFACTURER_COLORS` covers every `manufacturer` used (no new makers)
-- [x] Images: 5 new maker images; the 2 Laowa allowlisted with a stated reason
-- [x] `node scripts/compute-prices.js canon lenses` — all 19 third-party lenses now priced in 7 currencies
-- [x] `node scripts/verify-images.js canon` — new URLs pass; 15 pre-existing Wikimedia URLs HTTP 429 (throttling, not broken)
-- [x] `node scripts/generate-seo.js` re-run; `dataVerified` left at 2026-07-13 (this run verified one brand's lenses, not the dataset)
-- [x] `npm test` fully green (409)
-- [x] Render checked headlessly (browser extension unavailable)
-- [x] PR opened (#22)
+- [x] 0. Archive the completed round-1 change; scaffold this one
+- [x] 1. Sigma + Tamron re-check batch (0 new lenses; `tamron-17-70mm-f28` re-verified)
+- [x] 2. Viltrox re-check batch (0 new lenses — viltrox.com's own mount filter has no Canon option; confirms round 1)
+- [x] 3. TTArtisan deferred batch (image-diagram dimension technique) — 7 of 9 unblocked, 2 still deferred (narrower reasons, see PROGRESS.md)
+- [x] 4. 7Artisans deferred batch (same technique — confirmed NOT to generalize here; 0 new lenses, all 14 candidates individually documented)
+- [x] 5. Yongnuo + Meike/Samyang/Zeiss re-check batch (corrected round-1's "no native RF Samyang" error; 2 new Samyang lenses)
+- [x] 6. Merge all batches, resolve MANUFACTURER_COLORS as a union (no conflict this round — Samyang already had an entry)
+- [x] 7. `npm test` green (416/416), `verify-images.js` clean (new entries only), `generate-seo.js` re-run
+- [x] 8. Open PR — https://github.com/esusatyo/fuji-compare-tool/pull/41 ; `dataVerified` left alone
+- [ ] 9. After merge: archive this change; follow up with
+      `check-prices-and-buy-links` for ASIN backfill on new entries
