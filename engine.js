@@ -481,7 +481,7 @@ function buildBrandSwitcher() {
     const sel = !IS_COMPARE && b.slug === BRAND_CONFIG.slug ? ' selected' : '';
     return `<option value="${b.slug}"${sel}>${b.name}</option>`;
   }).join('');
-  return `<select class="brand-switcher header-select" id="brand-switcher" aria-label="Brand">${allOpt}${options}</select>`;
+  return `<label class="tap-pad brand-switcher-pad"><select class="brand-switcher header-select" id="brand-switcher" aria-label="Brand">${allOpt}${options}</select></label>`;
 }
 
 // Reusable on every page (brand pages max out at MAX_SLOTS=3, the
@@ -543,15 +543,17 @@ function injectBody() {
   </div>`}
   ${buildBrandSwitcher()}
   <div class="header-controls">
-    <select id="currency-select" class="header-select" aria-label="Currency">
-      <option value="USD">USD ($)</option>
-      <option value="AUD" selected>AUD (A$)</option>
-      <option value="EUR">EUR (€)</option>
-      <option value="GBP">GBP (£)</option>
-      <option value="JPY">JPY (¥)</option>
-      <option value="CAD">CAD (C$)</option>
-      <option value="SGD">SGD (S$)</option>
-    </select>
+    <label class="tap-pad">
+      <select id="currency-select" class="header-select" aria-label="Currency">
+        <option value="USD">USD ($)</option>
+        <option value="AUD" selected>AUD (A$)</option>
+        <option value="EUR">EUR (€)</option>
+        <option value="GBP">GBP (£)</option>
+        <option value="JPY">JPY (¥)</option>
+        <option value="CAD">CAD (C$)</option>
+        <option value="SGD">SGD (S$)</option>
+      </select>
+    </label>
   </div>
 </header>
 
