@@ -185,29 +185,18 @@ const KNOWN_IMAGE_GAPS = {
     // "Nikon Z"/mount-identifying text or shape — Tamron does not publish
     // visually mount-distinguishable photography for either lens.
     'tamron-17-70mm-f28', 'tamron-18-300mm-f35-63',
-    // 21 new Laowa + 2 new Samyang Nikon Z entries added 2026-08-30
-    // (Laowa+Samyang batch, expand-thirdparty-lenses-nikon round 2). Mount
-    // and specs are fully sourced (see each entry's specSources / this
-    // change's research/lenses.md), but image sourcing was deferred given
-    // the batch's size — genuine gap, not a silent skip, pending a
-    // follow-up fetch-product-images pass.
-    'laowa-10mm-f28-af', 'laowa-12mm-f28-lite-zero-d', 'laowa-8-15mm-f28-fisheye',
-    'laowa-argus-28mm-f12', 'laowa-15mm-f45-macro', 'laowa-15mm-f5-cookie',
-    'laowa-8-16mm-f35-5', 'laowa-58mm-f28-2x-macro', 'laowa-65mm-f28-2x-macro',
-    'laowa-10-18mm-f45-56', 'laowa-25mm-f28-25-5x-macro', 'laowa-100mm-f28-2x-macro',
-    'laowa-argus-33mm-f095', 'laowa-17mm-f4-tilt-shift', 'laowa-35mm-f28-tilt-shift-macro',
-    'laowa-55mm-f28-tilt-shift-macro', 'laowa-100mm-f28-tilt-shift-macro',
-    'laowa-15mm-f45-shift', 'laowa-20mm-f4-shift', 'laowa-12-24mm-f56-shift',
-    'laowa-85mm-f56-2x-macro', 'samyang-14mm-f28', 'samyang-85mm-f14',
-    // 7 new Yongnuo + 4 new Meike Nikon Z entries added 2026-08-31
-    // (Yongnuo+Meike batch, expand-thirdparty-lenses-nikon round 2). Mount
-    // and specs are fully sourced (see each entry's specSources / this
-    // change's research/lenses.md), but image sourcing was deferred given
-    // the batch's size — genuine gap, not a silent skip, pending a
-    // follow-up fetch-product-images pass.
-    'yongnuo-11mm-f18', 'yongnuo-23mm-f14', 'yongnuo-33mm-f14', 'yongnuo-35mm-f18',
-    'yongnuo-50mm-f18-da', 'yongnuo-56mm-f14', 'yongnuo-85mm-f18',
-    'meike-24mm-f14', 'meike-35mm-f18-pro', 'meike-50mm-f18', 'meike-85mm-f18-pro',
+    // The 34 round-2 third-party Nikon Z entries whose images were deferred
+    // in the Aug 2026 lens-entry batches (21 Laowa, 7 Yongnuo, 4 Meike,
+    // 2 Samyang) were all resolved 2026-09-06 via Tier 3 maker-store pages
+    // (venuslens.net, yongnuo.eu, meikeglobal.com, samyangus.com) — every
+    // image viewed at full size in a real browser, model confirmed by barrel
+    // text / caption / file name and the page's own Nikon-Z-mount listing;
+    // see each entry's imageSource.note. The venuslens.net (Laowa) hotlinks
+    // 403 to datacenter IPs (Cloudflare) exactly like the 3 pre-existing
+    // round-1 Laowa images here — they load for real visitors. Manual-focus
+    // Laowa lenses share one mount-agnostic barrel across mounts; the studio
+    // shots used show either no mount plate or an unmarked bayonet, nothing
+    // contradicting Nikon Z.
   ]),
   panasonic: new Set([
     // Cameras: all resolved (see git history — Commons sweeps plus Tier 3
