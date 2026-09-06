@@ -1200,6 +1200,15 @@ const LENSES = {
     filterThread:58, minFocusDist:85, maxMagnification:0.10,
     elements:18, groups:13, blades:7, afType:'Stepping Motor',
     weatherSealed:true, ois:true, oisStops:null, year:2017, discontinued:true,
+    // 2026-09-06: re-confirmed still a genuine gap. B&H's own "replacement"
+    // landing page for this discontinued SKU (model H-HSA35100) confirms it was
+    // replaced by the H-ES35100, i.e. this dataset's own
+    // leica-dg-35-100mm-f2-8-power-ois entry — consistent with the existing
+    // KNOWN_IMAGE_GAPS note. Still no T1 (maker) or T2 (free-repo) image exists;
+    // B&H has one, but retailer photos (T3) aren't valid provenance per this
+    // project's imageSource rule (schema.js: "T3/T4/NEWS never establish that a
+    // given photo depicts the product"), so left as imageUrl:null rather than
+    // using it.
     imageUrl:null,
     prices:{USD:1097,AUD:null,EUR:null,GBP:null,JPY:null,CAD:null,SGD:null},
     productUrl:null,
@@ -1297,6 +1306,13 @@ const LENSES = {
     filterThread:37, minFocusDist:20, maxMagnification:0.13,
     elements:8, groups:7, blades:7, afType:'Stepping Motor',
     weatherSealed:false, ois:true, oisStops:null, year:2013, discontinued:false,
+    // 2026-09-06: re-checked, still a genuine gap. Commons still has zero
+    // standalone product photos (only "taken with this lens" sample galleries);
+    // Panasonic's regional archive pages (SG/MEA) 403 to automated fetches.
+    // B&H has a real current-SKU product photo (verified live via a real browser
+    // load, not a guess), but retailer photos (T3) aren't valid image provenance
+    // per this project's rule (schema.js: "T3/T4/NEWS never establish that a
+    // given photo depicts the product") — so left as imageUrl:null.
     imageUrl:null,
     prices:{USD:277,AUD:449,EUR:null,GBP:null,JPY:null,CAD:379,SGD:null},
     priceIncomplete:true,
@@ -1839,6 +1855,12 @@ const LENSES = {
     filterThread:72, minFocusDist:130, maxMagnification:0.29,
     elements:21, groups:15, blades:9, afType:'MSC',
     weatherSealed:true, ois:true, oisStops:7.0, year:2025, discontinued:false,
+    // 2026-09-06: a fork briefly applied explore.omsystem.com's
+    // "100-400mmf5-63is-techspecs.webp" here, but I downloaded and visually
+    // inspected it myself — it's dimensioned 160mm long / ⌀72mm front element,
+    // not this entry's stored 205.6mm length. That's exactly the "leftover
+    // first-gen asset" risk the original KNOWN_IMAGE_GAPS comment (2026-08-17)
+    // already flagged for this exact file. Reverted to null; stays a genuine gap.
     imageUrl:null,
     asin:'B0DVZJYMWR',
     prices:{USD:1699,AUD:null,EUR:null,GBP:null,JPY:null,CAD:null,SGD:null},
@@ -1908,7 +1930,8 @@ const LENSES = {
     filterThread:46, minFocusDist:25, maxMagnification:0.08,
     elements:9, groups:6, blades:7, afType:'Stepping Motor',
     weatherSealed:true, ois:false, oisStops:null, year:2024, discontinued:false,
-    imageUrl:null,
+    imageUrl:'https://nala.explore.omsystem.com/media/catalog/product/1/7/17mm_f1.8_ii-om_-_tech.webp',
+    imageSource: { url:'https://explore.omsystem.com/us/en/m-zuiko-17mm-f1-8-ii', tier:'T1', note:'official OM System explore.omsystem.com product page, same asset-naming convention as this brand\'s other OM System PRO/Premium entries', date:'2026-09-06' },
     asin:'B0DVHT413D',
     prices:{USD:649,AUD:null,EUR:null,GBP:null,JPY:null,CAD:null,SGD:null},
     priceIncomplete:true,
@@ -1995,10 +2018,15 @@ const LENSES = {
     filterThread:52, minFocusDist:17, maxMagnification:0.11,
     elements:11, groups:8, blades:10, afType:'Manual',
     weatherSealed:false, ois:false, oisStops:null, year:2017, discontinued:false,
-    imageUrl:'https://www.voigtlaender.de/wp-content/uploads/2018/02/25_F0_95_Nokton_II_MFT_stehend.png',
-    imageSource: { url:'https://www.voigtlaender.de/lenses/mft/25-mm-10-95-nokton-ii/?lang=en', tier:'T1', note:'official Voigtländer MFT-mount product page (redirected here from the stored productUrl); page title explicitly "25 mm / 1:0.95 Nokton II" — Panasonic\'s current MFT catalog only ever carried the II, so this is the correct current listing; barrel reads "VOIGTLANDER" and aperture scale starts at "0.95"', date:'2026-08-17' }, asin:'B0046EC1OE',
+    // 2026-09-06: repointed off voigtlaender.de — that whole domain sends an
+    // incomplete TLS chain (UNABLE_TO_VERIFY_LEAF_SIGNATURE under Node/strict
+    // clients; confirmed via openssl s_client, not just this test harness).
+    // Cosina is the actual manufacturer (Voigtländer is Cosina's brand) and
+    // its own site has a valid chain, so both fields now point there instead.
+    imageUrl:'https://www.cosina.co.jp/wp/wp-content/uploads/2021/09/250_095_MFT_P00b.jpg',
+    imageSource: { url:'https://www.cosina.co.jp/voigtlander/en/micro-four-thirds/nokton-25mm-f0-95-type-ii/', tier:'T1', note:'Cosina (the actual manufacturer) official EN product page for the Micro Four Thirds Type II; confirms 11 elements/8 groups matching this entry; replaces the voigtlaender.de source, which is TLS-broken (incomplete cert chain, UNABLE_TO_VERIFY_LEAF_SIGNATURE)', date:'2026-09-06' }, asin:'B0046EC1OE',
     prices:{USD:999,AUD:null,EUR:null,GBP:null,JPY:null,CAD:null,SGD:null},
-    priceIncomplete:true, productUrl:'https://www.voigtlaender.de/mft/25-mm-10-95-nokton/?lang=en',
+    priceIncomplete:true, productUrl:'https://www.cosina.co.jp/voigtlander/en/micro-four-thirds/nokton-25mm-f0-95-type-ii/',
   },
 
   'laowa-7-5mm-f2-mft': {

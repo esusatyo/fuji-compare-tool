@@ -2613,6 +2613,10 @@ const LENSES = {
   },
 
   /* ── Voigtländer ── */
+  // voigtlaender.de serves an incomplete TLS chain (UNABLE_TO_VERIFY_LEAF_SIGNATURE
+  // for strict/non-browser clients, confirmed 2026-09-06 via openssl s_client and a
+  // direct Node https.get) — both entries below repointed to B&H's X-mount SKU pages,
+  // the established precedent for a broken manufacturer link (see nikon's viltrox-85mm-f18-ii).
   'voigtlander-nokton-35mm-f09': {
     name:'Voigtländer NOKTON 35mm f/0.9', manufacturer:'Voigtländer', line:'NOKTON', type:'Prime',
     focalLength:35, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'53mm',
@@ -2620,10 +2624,10 @@ const LENSES = {
     filterThread:58, minFocusDist:35, maxMagnification:0.14,
     elements:10, groups:8, blades:10, afType:'Manual',
     weatherSealed:false, ois:false, oisStops:null, year:2023, discontinued:false,
-    imageUrl:'https://www.voigtlaender.de/wp-content/uploads/2023/09/NOKTON-35mm-F09X_Klein_Freigestellt.png',
+    imageUrl:'https://www.bhphotovideo.com/images/fb/voigtlander_ba377a_nokton_35mm_f_0_9_x_mount_1781158.jpg',
     asin:'B0CLJWKVR9',
     prices:{USD:1199,AUD:1859,EUR:1119,GBP:949,JPY:179900,CAD:1649,SGD:1649},
-    productUrl:'https://www.voigtlaender.de/lenses/x-mount/35mm-109-nokton/?lang=en',
+    productUrl:'https://www.bhphotovideo.com/c/product/1781158-REG/voigtlander_ba377a_nokton_35mm_f_0_9_x_mount.html',
   },
   'voigtlander-ultron-27mm-f2': {
     name:'Voigtländer ULTRON 27mm f/2', manufacturer:'Voigtländer', line:'ULTRON', type:'Prime',
@@ -2632,10 +2636,10 @@ const LENSES = {
     filterThread:49, minFocusDist:30, maxMagnification:0.13,
     elements:7, groups:5, blades:10, afType:'Manual',
     weatherSealed:false, ois:false, oisStops:null, year:2022, discontinued:false,
-    imageUrl:'https://www.voigtlaender.de/wp-content/uploads/2023/05/ULTON27mmF2-X-BLK_klein.jpg',
+    imageUrl:'https://www.bhphotovideo.com/images/fb/voigtlander_ba380a_ultron_27mm_f_2_0_lens_1776463.jpg',
     asin:'B0CF47NDP8',
     prices:{USD:595,AUD:925,EUR:549,GBP:476,JPY:89300,CAD:824,SGD:824},
-    productUrl:'https://www.voigtlaender.de/lenses/x-mount/27-mm-12-0-nokton/?lang=en',
+    productUrl:'https://www.bhphotovideo.com/c/product/1776463-REG/voigtlander_ba380a_ultron_27mm_f_2_0_lens.html',
   },
 
   /* ── Zeiss ── */

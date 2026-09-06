@@ -216,10 +216,12 @@ const KNOWN_IMAGE_GAPS = {
     // the Sony FE-mount photo first. Both rejected in favor of explicitly
     // mount/model-tagged filenames found deeper in each gallery.
     //
-    // omsystem-17mm-f18: Commons candidate's category says plain "17mm
-    // f/1.8" (the 2012 original) while the dataset entry is the "II" (2023
-    // redesign) — wrong-generation, rejected, stays a gap.
-    'omsystem-17mm-f18',
+    // omsystem-17mm-f18: RESOLVED 2026-09-06 — explore.omsystem.com's own
+    // "m-zuiko-17mm-f1-8-ii" product page tech-spec image
+    // (17mm_f1.8_ii-om_-_tech.webp) visually confirmed: 37.6mm length /
+    // 57.6mm diameter / ⌀46mm filter, matching this entry's stored 38/58/46
+    // almost exactly (rounding). Superseded the earlier wrong-generation
+    // Commons rejection below.
     // voigtlander-apo-lanthar-35mm-f2-l / -50mm-f2-l: investigated
     // 2026-08-17 — Voigtländer does not currently manufacture any lens in
     // the modern Leica/Panasonic/Sigma L-Mount Alliance mount. Their own
@@ -247,15 +249,15 @@ const KNOWN_IMAGE_GAPS = {
     // null for that reason), and Commons has zero results for this exact
     // model. Stays a gap.
     'lumix-g-35-100mm-f2-8-ii',
-    // omsystem-100-400mm-f5-63-ii: explore.omsystem.com's product page for
-    // this exact "IS II" SKU is confirmed correct (page title matches), but
-    // its only tech-spec image (100-400mmf5-63is-techspecs.webp — filename
-    // has no "ii") shows a barrel with no "II" badge and a dimension label
-    // reading "160mm" against this entry's stored length:205.6 — diameter
-    // matches exactly (86.4mm) but length does not, so this may be a
-    // leftover first-gen asset on the II's page rather than a genuine II
-    // photo. Left as a gap rather than risk a wrong-generation image;
-    // worth a second look with a non-cached page load.
+    // omsystem-100-400mm-f5-63-ii: RE-CONFIRMED 2026-09-06 (second look, per
+    // the note below) — explore.omsystem.com's "m-zuiko-ed-100-400mm-f5-0-6-3-is-ii"
+    // page still only serves that same tech-spec image
+    // (100-400mmf5-63is-techspecs.webp). Downloaded and visually inspected it
+    // directly this round: it's dimensioned 160mm long / ⌀72mm front element,
+    // not this entry's stored 205.6mm length — confirms it's the leftover
+    // first-gen asset suspected below, not a genuine "IS II" photo. A fork
+    // briefly applied it to panasonic/data.js on 2026-09-06 before this was
+    // caught and reverted. Still a genuine gap.
     'omsystem-100-400mm-f5-63-ii',
   ]),
   sony: new Set([

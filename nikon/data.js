@@ -2365,10 +2365,14 @@ const LENSES = {
     filterThread:58, minFocusDist:45, maxMagnification:0.15,
     elements:10, groups:8, blades:12, afType:'Manual',
     weatherSealed:false, ois:false, oisStops:null, year:2024, discontinued:false,
-    imageUrl:'https://www.voigtlaender.de/wp-content/uploads/2025/01/50mm-F2.0-APO-II-Z_klein.jpg',
-    imageSource: { url:'https://www.voigtlaender.de/z-anschluss/50-mm-120-apo-lanthar/', tier:'T1', note:'official Voigtländer Z-mount product page; header explicitly reads "50 mm / 1:2,0 APO-Lanthar II Z", matching this entry\'s stored name ("Aspherical II Z")', date:'2026-08-17' }, asin:'B0DPNK41Q7',
+    // 2026-09-06: repointed off voigtlaender.de — the whole domain sends an
+    // incomplete TLS chain (UNABLE_TO_VERIFY_LEAF_SIGNATURE under Node/strict
+    // clients, confirmed via openssl s_client). Cosina (the actual manufacturer;
+    // Voigtländer is Cosina's brand) has a valid chain, so both fields now point there.
+    imageUrl:'https://www.cosina.co.jp/wp/wp-content/uploads/2024/10/Z-50_20-APO-II-01-kjhgt.jpg',
+    imageSource: { url:'https://www.cosina.co.jp/voigtlander/en/z-mount/apo-lanthar-50mm-f2-aspherical-ii/', tier:'T1', note:'Cosina\'s own EN product page for the Z-mount APO-LANTHAR 50mm F2 Aspherical II; replaces the voigtlaender.de source (TLS chain broken)', date:'2026-09-06' }, asin:'B0DPNK41Q7',
     prices:{USD:1049,AUD:null,EUR:null,GBP:null,JPY:null,CAD:null,SGD:null},
-    priceIncomplete:true, productUrl:'https://www.voigtlaender.de/z-mount/50-mm-12-0-apo-lanthar/?lang=en',
+    priceIncomplete:true, productUrl:'https://www.cosina.co.jp/voigtlander/en/z-mount/apo-lanthar-50mm-f2-aspherical-ii/',
   },
 
   'voigtlander-nokton-40mm-f12': {
@@ -2378,10 +2382,11 @@ const LENSES = {
     filterThread:58, minFocusDist:35, maxMagnification:0.1,
     elements:8, groups:6, blades:10, afType:'Manual',
     weatherSealed:false, ois:false, oisStops:null, year:2022, discontinued:false,
-    imageUrl:'https://www.voigtlaender.de/wp-content/uploads/2022/12/Voigtlaender-NOKTON-40mmF12-Z-online-small.png',
-    imageSource: { url:'https://www.voigtlaender.de/z-anschluss/40-mm-112-nokton/', tier:'T1', note:'official Voigtländer Z-mount product page; filename itself is "NOKTON-40mmF12-Z"', date:'2026-08-17' }, asin:'B0BMWKQ1WP',
+    // 2026-09-06: repointed off voigtlaender.de — broken TLS chain (see note above).
+    imageUrl:'https://www.cosina.co.jp/wp/wp-content/uploads/2022/09/40_12_Z_01thygfd.jpg',
+    imageSource: { url:'https://www.cosina.co.jp/voigtlander/en/z-mount/nokton-40mm-f1-2-aspherical/', tier:'T1', note:'Cosina\'s own EN product page for the Z-mount NOKTON 40mm F1.2 Aspherical; replaces the voigtlaender.de source (TLS chain broken)', date:'2026-09-06' }, asin:'B0BMWKQ1WP',
     prices:{USD:899,AUD:null,EUR:null,GBP:null,JPY:null,CAD:null,SGD:null},
-    priceIncomplete:true, productUrl:'https://www.voigtlaender.de/z-mount/40-mm-11-2-nokton/?lang=en',
+    priceIncomplete:true, productUrl:'https://www.cosina.co.jp/voigtlander/en/z-mount/nokton-40mm-f1-2-aspherical/',
   },
 
   /* ── Voigtländer round-2 additions (2026-08-30) — enumerated from
@@ -2407,12 +2412,13 @@ const LENSES = {
     filterThread:58, minFocusDist:12.6, maxMagnification:null,
     elements:11, groups:9, blades:null, afType:'Manual',
     weatherSealed:false, ois:false, oisStops:null, year:2023, discontinued:false,
-    imageUrl:'https://www.voigtlaender.de/wp-content/uploads/2023/04/Super-wide-heliar-15mmf4_5_Z-web.png',
-    imageSource: { url:'https://www.voigtlaender.de/z-mount/15mm-14-5-super-wide-heliar/?lang=en', tier:'T1', note:'official Voigtländer Z-mount product page; full spec table dated "as of January 2023"; aperture-blade count genuinely unpublished on this page', date:'2026-08-30' },
+    // 2026-09-06: repointed off voigtlaender.de — broken TLS chain (see note above).
+    imageUrl:'https://www.cosina.co.jp/wp/wp-content/uploads/2023/01/Z-15_45_01kjhuy.jpg',
+    imageSource: { url:'https://www.cosina.co.jp/voigtlander/en/z-mount/super-wide-heliar-15mm-f4-5-aspherical/', tier:'T1', note:'Cosina\'s own EN product page for the Z-mount Super Wide-Heliar 15mm F4.5 Aspherical; replaces the voigtlaender.de source (TLS chain broken)', date:'2026-09-06' },
     priceSource: { url:'https://www.voigtlaender.de/z-mount/15mm-14-5-super-wide-heliar/?lang=en', tier:'T1', note:'EUR 849 stated on the maker\'s own page; USD is an estimate (849×1.169≈993) — not independently retail-confirmed, see block comment above', date:'2026-08-30' },
     asin:'B0BVY37JZ4',
     prices:{USD:993,AUD:null,EUR:849,GBP:null,JPY:null,CAD:null,SGD:null},
-    priceIncomplete:true, productUrl:'https://www.voigtlaender.de/z-mount/15mm-14-5-super-wide-heliar/?lang=en',
+    priceIncomplete:true, productUrl:'https://www.cosina.co.jp/voigtlander/en/z-mount/super-wide-heliar-15mm-f4-5-aspherical/',
   },
 
   'voigtlander-nokton-d23mm-f12': {
@@ -2422,12 +2428,13 @@ const LENSES = {
     filterThread:46, minFocusDist:18, maxMagnification:null,
     elements:10, groups:6, blades:12, afType:'Manual',
     weatherSealed:false, ois:false, oisStops:null, year:2022, discontinued:false,
-    imageUrl:'https://www.voigtlaender.de/wp-content/uploads/2022/04/NOKTON-D23mmF1.2-Z.jpg',
-    imageSource: { url:'https://www.voigtlaender.de/z-mount/d23-mm-11-2-nokton/?lang=en', tier:'T1', note:'official Voigtländer Z-mount (APS-C/DX) product page; full spec table dated "as of April 2022"; blade count taken from the page\'s own bullet ("12 aperture blades for exceptional bokeh"), not the (blank) table row', date:'2026-08-30' },
+    // 2026-09-06: repointed off voigtlaender.de — broken TLS chain (see note above).
+    imageUrl:'https://www.cosina.co.jp/wp/wp-content/uploads/2022/04/Z-D23_12-01-tgjtsxhgw.jpg',
+    imageSource: { url:'https://www.cosina.co.jp/voigtlander/z-mount/nokton-d23mm-f1-2-aspherical/', tier:'T1', note:'Cosina\'s own product page for the Z-mount (APS-C/DX) NOKTON D23mm F1.2 Aspherical; replaces the voigtlaender.de source (TLS chain broken)', date:'2026-09-06' },
     priceSource: { url:'https://www.voigtlaender.de/z-mount/d23-mm-11-2-nokton/?lang=en', tier:'T1', note:'EUR 699 stated on the maker\'s own page; USD is an estimate (699×1.169≈817) — not independently retail-confirmed, see block comment above', date:'2026-08-30' },
     asin:'B0B2VSXZV4',
     prices:{USD:817,AUD:null,EUR:699,GBP:null,JPY:null,CAD:null,SGD:null},
-    priceIncomplete:true, productUrl:'https://www.voigtlaender.de/z-mount/d23-mm-11-2-nokton/?lang=en',
+    priceIncomplete:true, productUrl:'https://www.cosina.co.jp/voigtlander/z-mount/nokton-d23mm-f1-2-aspherical/',
   },
 
   'voigtlander-nokton-28mm-f15': {
@@ -2437,12 +2444,13 @@ const LENSES = {
     filterThread:52, minFocusDist:28, maxMagnification:null,
     elements:10, groups:8, blades:12, afType:'Manual',
     weatherSealed:false, ois:false, oisStops:null, year:2025, discontinued:false,
-    imageUrl:'https://www.voigtlaender.de/wp-content/uploads/2025/01/28mm-f1_5-Nokton-Z-klein.jpg',
-    imageSource: { url:'https://www.voigtlaender.de/z-mount/28-mm-115-nokton-aspherical-z/?lang=en', tier:'T1', note:'official Voigtländer Z-mount product page; full spec table dated "as of January 2025"; blade count from the page\'s own bullet ("12 aperture blades for beautiful bokeh")', date:'2026-08-30' },
+    // 2026-09-06: repointed off voigtlaender.de — broken TLS chain (see note above).
+    imageUrl:'https://www.cosina.co.jp/wp/wp-content/uploads/2025/01/Z-28_15-01.jpg',
+    imageSource: { url:'https://www.cosina.co.jp/voigtlander/en/z-mount/nokton-28mm-f1-5-aspherical/', tier:'T1', note:'Cosina\'s own EN product page for the Z-mount NOKTON 28mm F1.5 Aspherical; replaces the voigtlaender.de source (TLS chain broken)', date:'2026-09-06' },
     priceSource: { url:'https://www.voigtlaender.de/z-mount/28-mm-115-nokton-aspherical-z/?lang=en', tier:'T1', note:'EUR 1,049 stated on the maker\'s own page; USD is an estimate (1049×1.169≈1226) — not independently retail-confirmed, see block comment above', date:'2026-08-30' },
     asin:'B0FFZVN1SZ',
     prices:{USD:1226,AUD:null,EUR:1049,GBP:null,JPY:null,CAD:null,SGD:null},
-    priceIncomplete:true, productUrl:'https://www.voigtlaender.de/z-mount/28-mm-115-nokton-aspherical-z/?lang=en',
+    priceIncomplete:true, productUrl:'https://www.cosina.co.jp/voigtlander/en/z-mount/nokton-28mm-f1-5-aspherical/',
   },
 
   'voigtlander-apo-lanthar-28mm-f2': {
@@ -2452,12 +2460,13 @@ const LENSES = {
     filterThread:58, minFocusDist:28, maxMagnification:0.145,
     elements:12, groups:8, blades:null, afType:'Manual',
     weatherSealed:false, ois:false, oisStops:null, year:2025, discontinued:false,
-    imageUrl:'https://www.voigtlaender.de/wp-content/uploads/2026/01/28mm-f2-Apo-Lanthar-Z-1.png',
-    imageSource: { url:'https://www.voigtlaender.de/z-mount/28-mm-1-2-apo-lanthar/?lang=en', tier:'T1', note:'official Voigtländer Z-mount product page; full spec table dated "as of November 2025"; max magnification from the stated 1:6.9', date:'2026-08-30' },
+    // 2026-09-06: repointed off voigtlaender.de — broken TLS chain (see note above).
+    imageUrl:'https://www.cosina.co.jp/wp/wp-content/uploads/2025/11/Z-28_20-01-ikws.jpg',
+    imageSource: { url:'https://www.cosina.co.jp/voigtlander/en/z-mount/apo-lanthar-28mm-f2-aspherical/', tier:'T1', note:'Cosina\'s own EN product page for the Z-mount APO-LANTHAR 28mm F2 Aspherical; replaces the voigtlaender.de source (TLS chain broken)', date:'2026-09-06' },
     priceSource: { url:'https://www.voigtlaender.de/z-mount/28-mm-1-2-apo-lanthar/?lang=en', tier:'T1', note:'EUR 1,149 stated on the maker\'s own page; USD is an estimate (1149×1.169≈1343) — not independently retail-confirmed, see block comment above', date:'2026-08-30' },
     asin:null,
     prices:{USD:1343,AUD:null,EUR:1149,GBP:null,JPY:null,CAD:null,SGD:null},
-    priceIncomplete:true, productUrl:'https://www.voigtlaender.de/z-mount/28-mm-1-2-apo-lanthar/?lang=en',
+    priceIncomplete:true, productUrl:'https://www.cosina.co.jp/voigtlander/en/z-mount/apo-lanthar-28mm-f2-aspherical/',
   },
 
   'voigtlander-nokton-d35mm-f12': {
@@ -2467,12 +2476,13 @@ const LENSES = {
     filterThread:46, minFocusDist:30, maxMagnification:0.149,
     elements:8, groups:6, blades:null, afType:'Manual',
     weatherSealed:false, ois:false, oisStops:null, year:2022, discontinued:false,
-    imageUrl:'https://www.voigtlaender.de/wp-content/uploads/2022/04/NOKTON_D35mmF12Z_klein.png',
-    imageSource: { url:'https://www.voigtlaender.de/d35-mm-11-2-nokton/?lang=en', tier:'T1', note:'official Voigtländer Z-mount (APS-C/DX) product page (no "as of" date disclaimer on this specific page — year taken from the product photo\'s own upload date, 2022-04, matching the sibling D23mm Nokton\'s confirmed April-2022 launch); max magnification from the stated 1:6.7', date:'2026-08-30' },
+    // 2026-09-06: repointed off voigtlaender.de — broken TLS chain (see note above).
+    imageUrl:'https://www.cosina.co.jp/wp/wp-content/uploads/2022/02/D35F12Z-top.jpg',
+    imageSource: { url:'https://www.cosina.co.jp/voigtlander/z-mount/nokton-d35mm-f1-2/', tier:'T1', note:'Cosina\'s own product page for the Z-mount (APS-C/DX) NOKTON D35mm F1.2; replaces the voigtlaender.de source (TLS chain broken)', date:'2026-09-06' },
     priceSource: { url:'https://www.voigtlaender.de/d35-mm-11-2-nokton/?lang=en', tier:'T1', note:'EUR 649 stated on the maker\'s own page; USD is an estimate (649×1.169≈759) — not independently retail-confirmed, see block comment above', date:'2026-08-30' },
     asin:'B09VWW41S6',
     prices:{USD:759,AUD:null,EUR:649,GBP:null,JPY:null,CAD:null,SGD:null},
-    priceIncomplete:true, productUrl:'https://www.voigtlaender.de/d35-mm-11-2-nokton/?lang=en',
+    priceIncomplete:true, productUrl:'https://www.cosina.co.jp/voigtlander/z-mount/nokton-d35mm-f1-2/',
   },
 
   'voigtlander-macro-apo-ultron-d35mm-f2': {
@@ -2482,12 +2492,13 @@ const LENSES = {
     filterThread:52, minFocusDist:16.3, maxMagnification:0.5,
     elements:9, groups:6, blades:10, afType:'Manual',
     weatherSealed:false, ois:false, oisStops:null, year:2022, discontinued:false,
-    imageUrl:'https://www.voigtlaender.de/wp-content/uploads/2022/12/MACRO-APO-ULTRON-D35mm-F2-Z.png',
-    imageSource: { url:'https://www.voigtlaender.de/z-mount/d35mm-12-0-macro-apo-ultron/?lang=en', tier:'T1', note:'official Voigtländer Z-mount (APS-C/DX) product page (no "as of" date disclaimer — year taken from the product photo\'s own upload date, 2022-12); blade count from the page\'s own bullet ("10-blade diaphragm for beautiful bokeh")', date:'2026-08-30' },
+    // 2026-09-06: repointed off voigtlaender.de — broken TLS chain (see note above).
+    imageUrl:'https://www.cosina.co.jp/wp/wp-content/uploads/2022/09/D35_20_Z_01ertgfs.jpg',
+    imageSource: { url:'https://www.cosina.co.jp/voigtlander/z-mount/macro-apo-ultron-d35mm-f2/', tier:'T1', note:'Cosina\'s own product page for the Z-mount (APS-C/DX) MACRO APO-ULTRON D35mm F2; replaces the voigtlaender.de source (TLS chain broken)', date:'2026-09-06' },
     priceSource: { url:'https://www.voigtlaender.de/z-mount/d35mm-12-0-macro-apo-ultron/?lang=en', tier:'T1', note:'EUR 729 stated on the maker\'s own page; USD is an estimate (729×1.169≈852) — not independently retail-confirmed, see block comment above', date:'2026-08-30' },
     asin:'B0BM8FYPZ2',
     prices:{USD:852,AUD:null,EUR:729,GBP:null,JPY:null,CAD:null,SGD:null},
-    priceIncomplete:true, productUrl:'https://www.voigtlaender.de/z-mount/d35mm-12-0-macro-apo-ultron/?lang=en',
+    priceIncomplete:true, productUrl:'https://www.cosina.co.jp/voigtlander/z-mount/macro-apo-ultron-d35mm-f2/',
   },
 
   'voigtlander-apo-lanthar-35mm-f2': {
@@ -2497,12 +2508,13 @@ const LENSES = {
     filterThread:58, minFocusDist:35, maxMagnification:null,
     elements:11, groups:9, blades:12, afType:'Manual',
     weatherSealed:false, ois:false, oisStops:null, year:2025, discontinued:false,
-    imageUrl:'https://www.voigtlaender.de/wp-content/uploads/2025/01/35mm-F2.0-APO-II-Z_klein.jpg',
-    imageSource: { url:'https://www.voigtlaender.de/z-mount/35mm-12-apo-lanthar-aspherical/?lang=en', tier:'T1', note:'official Voigtländer Z-mount product page — this is the specific "APO-Lanthar 35mm f/2 II" lead flagged from a prior pass; verified genuinely shipping (own dedicated Z-mount page + product photo, distinct from the existing 50mm APO-Lanthar II sibling); no "as of" date disclaimer on this page — year taken from the product photo\'s own upload date, 2025-01; blade count from the page\'s own bullet ("12 aperture blades with circular aperture at F2.0/F2.8/F5.6/F16")', date:'2026-08-30' },
+    // 2026-09-06: repointed off voigtlaender.de — broken TLS chain (see note above).
+    imageUrl:'https://www.cosina.co.jp/wp/wp-content/uploads/2024/10/Z-35_20-APO-II-01-rtyesd.jpg',
+    imageSource: { url:'https://www.cosina.co.jp/voigtlander/en/z-mount/apo-lanthar-35mm-f2-aspherical-ii/', tier:'T1', note:'Cosina\'s own EN product page for the Z-mount APO-LANTHAR 35mm F2 Aspherical II; replaces the voigtlaender.de source (TLS chain broken)', date:'2026-09-06' },
     priceSource: { url:'https://www.voigtlaender.de/z-mount/35mm-12-apo-lanthar-aspherical/?lang=en', tier:'T1', note:'EUR 1,099 stated on the maker\'s own page; USD is an estimate (1099×1.169≈1285) — not independently retail-confirmed, see block comment above', date:'2026-08-30' },
     asin:'B0DSRBWFC8',
     prices:{USD:1285,AUD:null,EUR:1099,GBP:null,JPY:null,CAD:null,SGD:null},
-    priceIncomplete:true, productUrl:'https://www.voigtlaender.de/z-mount/35mm-12-apo-lanthar-aspherical/?lang=en',
+    priceIncomplete:true, productUrl:'https://www.cosina.co.jp/voigtlander/en/z-mount/apo-lanthar-35mm-f2-aspherical-ii/',
   },
 
   'voigtlander-septon-40mm-f2': {
@@ -2512,12 +2524,13 @@ const LENSES = {
     filterThread:52, minFocusDist:30, maxMagnification:null,
     elements:7, groups:6, blades:null, afType:'Manual',
     weatherSealed:false, ois:false, oisStops:null, year:2026, discontinued:false,
-    imageUrl:'https://www.voigtlaender.de/wp-content/uploads/2026/08/40mm-Septon-Z_.png',
-    imageSource: { url:'https://www.voigtlaender.de/z-mount/40-mm-12-septon-aspherical-z/?lang=en', tier:'T1', note:'official Voigtländer Z-mount product page; full spec table dated "as of August 2026" — a same-month release (Viltrox-style pancake-standard Septon revival for E/Z mounts); aperture-blade count genuinely unpublished on this page, within the skill\'s ≤1-month new-release allowance', date:'2026-08-30' },
+    // 2026-09-06: repointed off voigtlaender.de — broken TLS chain (see note above).
+    imageUrl:'https://www.cosina.co.jp/wp/wp-content/uploads/2026/02/Z-40_20-web01-thoju.jpg',
+    imageSource: { url:'https://www.cosina.co.jp/voigtlander/en/z-mount/septon-40mm-f2-aspherical/', tier:'T1', note:'Cosina\'s own EN product page for the Z-mount SEPTON 40mm F2 Aspherical; replaces the voigtlaender.de source (TLS chain broken)', date:'2026-09-06' },
     priceSource: { url:'https://www.voigtlaender.de/z-mount/40-mm-12-septon-aspherical-z/?lang=en', tier:'T1', note:'EUR 649 stated on the maker\'s own page; USD is an estimate (649×1.169≈759) — not independently retail-confirmed, see block comment above', date:'2026-08-30' },
     asin:null,
     prices:{USD:759,AUD:null,EUR:649,GBP:null,JPY:null,CAD:null,SGD:null},
-    priceIncomplete:true, productUrl:'https://www.voigtlaender.de/z-mount/40-mm-12-septon-aspherical-z/?lang=en',
+    priceIncomplete:true, productUrl:'https://www.cosina.co.jp/voigtlander/en/z-mount/septon-40mm-f2-aspherical/',
   },
 
   'voigtlander-nokton-50mm-f10': {
@@ -2527,12 +2540,13 @@ const LENSES = {
     filterThread:62, minFocusDist:45, maxMagnification:null,
     elements:9, groups:7, blades:12, afType:'Manual',
     weatherSealed:false, ois:false, oisStops:null, year:2023, discontinued:false,
-    imageUrl:'https://www.voigtlaender.de/wp-content/uploads/2023/04/50mm-F1-Z-small.png',
-    imageSource: { url:'https://www.voigtlaender.de/z-mount/50-mm-11-0-nokton/?lang=en', tier:'T1', note:'official Voigtländer Z-mount product page; full spec table dated "as of January 2023"; blade count from the page\'s own bullet ("12 aperture blades for a pleasing and picturesque bokeh")', date:'2026-08-30' },
+    // 2026-09-06: repointed off voigtlaender.de — broken TLS chain (see note above).
+    imageUrl:'https://www.cosina.co.jp/wp/wp-content/uploads/2023/01/Z-50_10_01olktr.jpg',
+    imageSource: { url:'https://www.cosina.co.jp/voigtlander/en/z-mount/nokton-50mm-f1-aspherical/', tier:'T1', note:'Cosina\'s own EN product page for the Z-mount NOKTON 50mm F1 Aspherical; replaces the voigtlaender.de source (TLS chain broken)', date:'2026-09-06' },
     priceSource: { url:'https://www.voigtlaender.de/z-mount/50-mm-11-0-nokton/?lang=en', tier:'T1', note:'EUR 1,799 stated on the maker\'s own page; USD is an estimate (1799×1.169≈2103) — not independently retail-confirmed, see block comment above', date:'2026-08-30' },
     asin:'B0BYRT9YGL',
     prices:{USD:2103,AUD:null,EUR:1799,GBP:null,JPY:null,CAD:null,SGD:null},
-    priceIncomplete:true, productUrl:'https://www.voigtlaender.de/z-mount/50-mm-11-0-nokton/?lang=en',
+    priceIncomplete:true, productUrl:'https://www.cosina.co.jp/voigtlander/en/z-mount/nokton-50mm-f1-aspherical/',
   },
 
   'voigtlander-macro-apo-lanthar-65mm-f2': {
@@ -2542,12 +2556,13 @@ const LENSES = {
     filterThread:67, minFocusDist:31, maxMagnification:0.5,
     elements:10, groups:8, blades:10, afType:'Manual',
     weatherSealed:false, ois:false, oisStops:null, year:2022, discontinued:false,
-    imageUrl:'https://www.voigtlaender.de/wp-content/uploads/2022/12/MACRO-APO-LANTHAR-65Z.png',
-    imageSource: { url:'https://www.voigtlaender.de/z-mount/65mm-120-macro-apo-lanthar-aspherical/?lang=en', tier:'T1', note:'official Voigtländer Z-mount product page (no "as of" date disclaimer — year taken from the product photo\'s own upload date, 2022-12); max magnification and blade count from the page\'s own bullets (1:2, "10-blade aperture diaphragm")', date:'2026-08-30' },
+    // 2026-09-06: repointed off voigtlaender.de — broken TLS chain (see note above).
+    imageUrl:'https://www.cosina.co.jp/wp/wp-content/uploads/2022/10/Z-65_20-01b.jpg',
+    imageSource: { url:'https://www.cosina.co.jp/voigtlander/en/z-mount/macro-apo-lanthar-65mm-f2-aspherical/', tier:'T1', note:'Cosina\'s own EN product page for the Z-mount MACRO APO-LANTHAR 65mm F2 Aspherical; replaces the voigtlaender.de source (TLS chain broken)', date:'2026-09-06' },
     priceSource: { url:'https://www.voigtlaender.de/z-mount/65mm-120-macro-apo-lanthar-aspherical/?lang=en', tier:'T1', note:'EUR 1,149 stated on the maker\'s own page; USD is an estimate (1149×1.169≈1343) — not independently retail-confirmed, see block comment above', date:'2026-08-30' },
     asin:'B0BTRPNWSV',
     prices:{USD:1343,AUD:null,EUR:1149,GBP:null,JPY:null,CAD:null,SGD:null},
-    priceIncomplete:true, productUrl:'https://www.voigtlaender.de/z-mount/65mm-120-macro-apo-lanthar-aspherical/?lang=en',
+    priceIncomplete:true, productUrl:'https://www.cosina.co.jp/voigtlander/en/z-mount/macro-apo-lanthar-65mm-f2-aspherical/',
   },
 
   'voigtlander-portrait-heliar-75mm-f18': {
@@ -2557,12 +2572,13 @@ const LENSES = {
     filterThread:62, minFocusDist:70, maxMagnification:null,
     elements:6, groups:3, blades:null, afType:'Manual',
     weatherSealed:false, ois:false, oisStops:null, year:2025, discontinued:false,
-    imageUrl:'https://www.voigtlaender.de/wp-content/uploads/2026/01/75mm-Portrait-Heliar-Z-Mount-stehend.png',
-    imageSource: { url:'https://www.voigtlaender.de/z-mount/75-mm-11-8-portrait-heliar-z/?lang=en', tier:'T1', note:'official Voigtländer Z-mount product page; full spec table dated "as of May 2025"; distinctive "Bokeh Controller" ring trades spherical-aberration correction for creative bokeh — a smaller-than-usual F11 minimum aperture is correct per the maker\'s own table, not a typo; camera-body 5-axis IBIS is listed as supported (not lens-based OIS, hence ois:false)', date:'2026-08-30' },
+    // 2026-09-06: repointed off voigtlaender.de — broken TLS chain (see note above).
+    imageUrl:'https://www.cosina.co.jp/wp/wp-content/uploads/2026/01/Z-75_18-web01-lkpe.jpg',
+    imageSource: { url:'https://www.cosina.co.jp/voigtlander/en/z-mount/portrait-heliar-75mm-f1-8/', tier:'T1', note:'Cosina\'s own EN product page for the Z-mount PORTRAIT HELIAR 75mm F1.8; replaces the voigtlaender.de source (TLS chain broken)', date:'2026-09-06' },
     priceSource: { url:'https://www.voigtlaender.de/z-mount/75-mm-11-8-portrait-heliar-z/?lang=en', tier:'T1', note:'EUR 1,199 stated on the maker\'s own page; USD is an estimate (1199×1.169≈1402) — not independently retail-confirmed, see block comment above', date:'2026-08-30' },
     asin:null,
     prices:{USD:1402,AUD:null,EUR:1199,GBP:null,JPY:null,CAD:null,SGD:null},
-    priceIncomplete:true, productUrl:'https://www.voigtlaender.de/z-mount/75-mm-11-8-portrait-heliar-z/?lang=en',
+    priceIncomplete:true, productUrl:'https://www.cosina.co.jp/voigtlander/en/z-mount/portrait-heliar-75mm-f1-8/',
   },
 
   /* ── Other (Yongnuo AF + budget makers) ── */
