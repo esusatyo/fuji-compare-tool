@@ -185,29 +185,18 @@ const KNOWN_IMAGE_GAPS = {
     // "Nikon Z"/mount-identifying text or shape — Tamron does not publish
     // visually mount-distinguishable photography for either lens.
     'tamron-17-70mm-f28', 'tamron-18-300mm-f35-63',
-    // 21 new Laowa + 2 new Samyang Nikon Z entries added 2026-08-30
-    // (Laowa+Samyang batch, expand-thirdparty-lenses-nikon round 2). Mount
-    // and specs are fully sourced (see each entry's specSources / this
-    // change's research/lenses.md), but image sourcing was deferred given
-    // the batch's size — genuine gap, not a silent skip, pending a
-    // follow-up fetch-product-images pass.
-    'laowa-10mm-f28-af', 'laowa-12mm-f28-lite-zero-d', 'laowa-8-15mm-f28-fisheye',
-    'laowa-argus-28mm-f12', 'laowa-15mm-f45-macro', 'laowa-15mm-f5-cookie',
-    'laowa-8-16mm-f35-5', 'laowa-58mm-f28-2x-macro', 'laowa-65mm-f28-2x-macro',
-    'laowa-10-18mm-f45-56', 'laowa-25mm-f28-25-5x-macro', 'laowa-100mm-f28-2x-macro',
-    'laowa-argus-33mm-f095', 'laowa-17mm-f4-tilt-shift', 'laowa-35mm-f28-tilt-shift-macro',
-    'laowa-55mm-f28-tilt-shift-macro', 'laowa-100mm-f28-tilt-shift-macro',
-    'laowa-15mm-f45-shift', 'laowa-20mm-f4-shift', 'laowa-12-24mm-f56-shift',
-    'laowa-85mm-f56-2x-macro', 'samyang-14mm-f28', 'samyang-85mm-f14',
-    // 7 new Yongnuo + 4 new Meike Nikon Z entries added 2026-08-31
-    // (Yongnuo+Meike batch, expand-thirdparty-lenses-nikon round 2). Mount
-    // and specs are fully sourced (see each entry's specSources / this
-    // change's research/lenses.md), but image sourcing was deferred given
-    // the batch's size — genuine gap, not a silent skip, pending a
-    // follow-up fetch-product-images pass.
-    'yongnuo-11mm-f18', 'yongnuo-23mm-f14', 'yongnuo-33mm-f14', 'yongnuo-35mm-f18',
-    'yongnuo-50mm-f18-da', 'yongnuo-56mm-f14', 'yongnuo-85mm-f18',
-    'meike-24mm-f14', 'meike-35mm-f18-pro', 'meike-50mm-f18', 'meike-85mm-f18-pro',
+    // The 34 round-2 third-party Nikon Z entries whose images were deferred
+    // in the Aug 2026 lens-entry batches (21 Laowa, 7 Yongnuo, 4 Meike,
+    // 2 Samyang) were all resolved 2026-09-06 via Tier 3 maker-store pages
+    // (venuslens.net, yongnuo.eu, meikeglobal.com, samyangus.com) — every
+    // image viewed at full size in a real browser, model confirmed by barrel
+    // text / caption / file name and the page's own Nikon-Z-mount listing;
+    // see each entry's imageSource.note. The venuslens.net (Laowa) hotlinks
+    // 403 to datacenter IPs (Cloudflare) exactly like the 3 pre-existing
+    // round-1 Laowa images here — they load for real visitors. Manual-focus
+    // Laowa lenses share one mount-agnostic barrel across mounts; the studio
+    // shots used show either no mount plate or an unmarked bayonet, nothing
+    // contradicting Nikon Z.
   ]),
   panasonic: new Set([
     // Cameras: all resolved (see git history — Commons sweeps plus Tier 3
@@ -348,6 +337,26 @@ const KNOWN_IMAGE_GAPS = {
   ]),
 };
 
+// Two different products in the same brand sharing one `imageUrl` is almost
+// always a copy-paste slip — and a wrong-but-plausible photo ships silently
+// (a dead link fails loudly, a mismatched one doesn't). The only legitimate
+// case is a maker that publishes a single photo for a set of near-identical
+// SKUs; those groups are listed here. (Cross-brand reuse — the same third-party
+// lens in several mounts pointing at one mount-agnostic maker shot — is fine
+// and not checked.)
+const SHARED_IMAGE_OK = {
+  nikon: [
+    // 7Artisans' AF 25/35/50mm f/1.8 "Lite" trio share one product listing with
+    // a single hero image (no per-focal-length photo published).
+    ['7artisans-25mm-f18-lite', '7artisans-35mm-f18-lite', '7artisans-50mm-f18-lite'],
+  ],
+  panasonic: [
+    // Laowa 90mm f/2.8 2x Macro APO — one maker studio shot, entered once per
+    // Panasonic-file mount (L and MFT).
+    ['laowa-90mm-f28-macro-l', 'laowa-90mm-f28-macro-mft'],
+  ],
+};
+
 for (const brand of brandDirs()) {
   const { data } = loadBrand(brand);
   const gaps = KNOWN_IMAGE_GAPS[brand] || new Set();
@@ -366,6 +375,29 @@ for (const brand of brandDirs()) {
     assert.deepEqual(missing, [], `\n${missing.length} item(s) missing imageUrl:\n${missing.join('\n')}`);
     assert.deepEqual(staleAllow, [],
       `\nThese now have an image — remove them from KNOWN_IMAGE_GAPS[${brand}]:\n${staleAllow.join('\n')}`);
+
+    // The allowlist must not carry ids that don't resolve to a real item in
+    // this brand — a typo, or a leftover after an item was renamed/removed,
+    // silently exempts nothing and rots. Every entry has to earn its place.
+    const realIds = new Set([...Object.keys(data.CAMERAS), ...Object.keys(data.LENSES)]);
+    const bogus = [...gaps].filter((id) => !realIds.has(id));
+    assert.deepEqual(bogus, [],
+      `\nKNOWN_IMAGE_GAPS[${brand}] lists ids that aren't a camera or lens in ${brand}:\n${bogus.join('\n')}`);
+  });
+
+  test(`[${brand}] no two items share a product image (copy-paste guard)`, () => {
+    const ok = new Set((SHARED_IMAGE_OK[brand] || []).flat());
+    const byUrl = new Map();
+    for (const [id, item] of [...Object.entries(data.CAMERAS), ...Object.entries(data.LENSES)]) {
+      if (!item.imageUrl) continue;
+      (byUrl.get(item.imageUrl) || byUrl.set(item.imageUrl, []).get(item.imageUrl)).push(id);
+    }
+    const clashes = [];
+    for (const [url, ids] of byUrl) {
+      if (ids.length > 1 && !ids.every((id) => ok.has(id))) clashes.push(`${ids.join(' + ')}\n    ${url}`);
+    }
+    assert.deepEqual(clashes, [],
+      `\n${clashes.length} imageUrl(s) reused by different ${brand} items (add to SHARED_IMAGE_OK if intentional):\n${clashes.join('\n')}`);
   });
 
   test(`[${brand}] every current camera is priced in all currencies`, () => {
