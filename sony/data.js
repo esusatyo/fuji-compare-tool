@@ -2530,12 +2530,17 @@ const LENSES = {
     filterThread:49, minFocusDist:35, maxMagnification:0.19,
     elements:11, groups:9, blades:12, afType:'Manual',
     weatherSealed:false, ois:false, oisStops:null, year:2021, discontinued:false,
-    imageUrl:'https://www.voigtlaender.de/wp-content/uploads/2021/05/ApoLantharEMount_35_f20-057.jpg',
-    imageSource: { url:'https://www.voigtlaender.de/lenses/e-mount/35-mm-12-0-apo-lanthar-aspherical/?lang=en', tier:'T1', note:'official Voigtländer E-mount product page; filename itself is "ApoLantharEMount_35_f20"', date:'2026-08-17' },
+    // 2026-09-06: repointed off voigtlaender.de — that domain sends an incomplete
+    // TLS chain (UNABLE_TO_VERIFY_LEAF_SIGNATURE under Node/strict clients,
+    // confirmed via openssl s_client). Cosina (the actual manufacturer) has its
+    // own valid-cert EN product page for this exact lens; specs cross-checked
+    // and match (11 elem/9 grp, 352g, φ62.6×67.3mm, 49mm filter, 0.35m MFD, 12 blades).
+    imageUrl:'https://www.cosina.co.jp/wp/wp-content/uploads/2021/09/35_20_E_P00b.jpg',
+    imageSource: { url:'https://www.cosina.co.jp/voigtlander/en/e-mount/apo-lanthar-35mm-f2-aspherical/', tier:'T1', note:'Cosina (manufacturer) official EN E-mount product page; replaces voigtlaender.de source (TLS-broken, incomplete cert chain)', date:'2026-09-06' },
     asin:'B09236KDDX',
     prices:{USD:1149,AUD:null,EUR:null,GBP:null,JPY:null,CAD:null,SGD:null},
     priceIncomplete:true,
-    productUrl:'https://www.voigtlaender.de/lenses/e-mount/35-mm-12-0-apo-lanthar-aspherical/?lang=en',
+    productUrl:'https://www.cosina.co.jp/voigtlander/en/e-mount/apo-lanthar-35mm-f2-aspherical/',
   },
 
   'voigtlander-apo-lanthar-50mm-f2': {
@@ -2545,12 +2550,17 @@ const LENSES = {
     filterThread:49, minFocusDist:45, maxMagnification:0.15,
     elements:10, groups:8, blades:12, afType:'Manual',
     weatherSealed:false, ois:false, oisStops:null, year:2020, discontinued:false,
-    imageUrl:'https://www.voigtlaender.de/wp-content/uploads/2019/12/50mm_F2_ApoLanthar_E_stehend_transparent.png',
-    imageSource: { url:'https://www.voigtlaender.de/lenses/e-mount/50-mm-120-apo-lanthar-e/?lang=en', tier:'T1', note:'official Voigtländer E-mount product page; filename itself is "50mm_F2_ApoLanthar_E"', date:'2026-08-17' },
+    // 2026-09-06: repointed off voigtlaender.de — that domain sends an incomplete
+    // TLS chain (UNABLE_TO_VERIFY_LEAF_SIGNATURE under Node/strict clients,
+    // confirmed via openssl s_client). Cosina (the actual manufacturer) has its
+    // own valid-cert EN product page for this exact lens; specs cross-checked
+    // and match (10 elem/8 grp, 364g, 49mm filter, 0.45m MFD, 12 blades).
+    imageUrl:'https://www.cosina.co.jp/wp/wp-content/uploads/2021/09/E-50_2_P00b.jpg',
+    imageSource: { url:'https://www.cosina.co.jp/voigtlander/en/e-mount/apo-lanthar-50mm-f2-aspherical/', tier:'T1', note:'Cosina (manufacturer) official EN E-mount product page; replaces voigtlaender.de source (TLS-broken, incomplete cert chain)', date:'2026-09-06' },
     asin:'B082NM7LRM',
     prices:{USD:1049,AUD:null,EUR:null,GBP:null,JPY:null,CAD:null,SGD:null},
     priceIncomplete:true,
-    productUrl:'https://www.voigtlaender.de/lenses/e-mount/50-mm-120-apo-lanthar-e/?lang=en',
+    productUrl:'https://www.cosina.co.jp/voigtlander/en/e-mount/apo-lanthar-50mm-f2-aspherical/',
   },
 
   'voigtlander-nokton-40mm-f12': {
@@ -2560,12 +2570,23 @@ const LENSES = {
     filterThread:58, minFocusDist:35, maxMagnification:0.09,
     elements:8, groups:6, blades:10, afType:'Manual',
     weatherSealed:false, ois:false, oisStops:null, year:2018, discontinued:false,
-    imageUrl:'https://www.voigtlaender.de/wp-content/uploads/2020/07/Nokton_E_40_f12_asph-stehend_SE.png',
-    imageSource: { url:'https://www.voigtlaender.de/lenses/e-mount/40-mm-112-nokton-se/?lang=en', tier:'T1', note:'official Voigtländer E-mount product page (branded "Nokton SE" on this mount); filename itself is "Nokton_E_40_f12"', date:'2026-08-17' },
+    // 2026-09-06: repointed off voigtlaender.de — that domain sends an incomplete
+    // TLS chain (UNABLE_TO_VERIFY_LEAF_SIGNATURE under Node/strict clients,
+    // confirmed via openssl s_client). Cosina's own site confirms this entry's
+    // dimensions (φ66.5×51.9mm) match the "SE" variant exactly, NOT the current
+    // non-SE E-mount Nokton 40mm f/1.2 (which is φ70.1×59.3mm, 420g) — but
+    // Cosina's own SE page is filed under /discontinued/ (discontinued Jan 2023).
+    // FLAG FOR REVIEW: this entry is stored as discontinued:false but its own
+    // specs identify it as the now-discontinued SE variant; weight is also off
+    // (stored 383g vs Cosina's stated 340g for the SE). Out of scope for this
+    // link-fix pass — left discontinued/weight fields untouched, repointed URLs
+    // only to the correct (SE) page since that's what these specs describe.
+    imageUrl:'https://www.cosina.co.jp/wp/wp-content/uploads/2021/09/E-40_12-SE_01-scaled.jpg',
+    imageSource: { url:'https://www.cosina.co.jp/discontinued/nokton-40mm-f1-2-aspherical-se/', tier:'T1', note:'Cosina (manufacturer) official EN E-mount "SE" page (now filed under /discontinued/, Jan 2023); replaces voigtlaender.de source (TLS-broken, incomplete cert chain); dimensions confirm this is the SE variant, not the current non-SE listing', date:'2026-09-06' },
     asin:'B0767ZVJL3',
     prices:{USD:799,AUD:null,EUR:null,GBP:null,JPY:null,CAD:null,SGD:null},
     priceIncomplete:true,
-    productUrl:'https://www.voigtlaender.de/lenses/e-mount/40-mm-112-nokton-se/?lang=en',
+    productUrl:'https://www.cosina.co.jp/discontinued/nokton-40mm-f1-2-aspherical-se/',
   },
 
   /* ── Zeiss (FE) — Batis (AF) + Loxia (MF), discontinued but iconic ── */
