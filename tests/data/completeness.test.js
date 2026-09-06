@@ -337,6 +337,26 @@ const KNOWN_IMAGE_GAPS = {
   ]),
 };
 
+// Two different products in the same brand sharing one `imageUrl` is almost
+// always a copy-paste slip — and a wrong-but-plausible photo ships silently
+// (a dead link fails loudly, a mismatched one doesn't). The only legitimate
+// case is a maker that publishes a single photo for a set of near-identical
+// SKUs; those groups are listed here. (Cross-brand reuse — the same third-party
+// lens in several mounts pointing at one mount-agnostic maker shot — is fine
+// and not checked.)
+const SHARED_IMAGE_OK = {
+  nikon: [
+    // 7Artisans' AF 25/35/50mm f/1.8 "Lite" trio share one product listing with
+    // a single hero image (no per-focal-length photo published).
+    ['7artisans-25mm-f18-lite', '7artisans-35mm-f18-lite', '7artisans-50mm-f18-lite'],
+  ],
+  panasonic: [
+    // Laowa 90mm f/2.8 2x Macro APO — one maker studio shot, entered once per
+    // Panasonic-file mount (L and MFT).
+    ['laowa-90mm-f28-macro-l', 'laowa-90mm-f28-macro-mft'],
+  ],
+};
+
 for (const brand of brandDirs()) {
   const { data } = loadBrand(brand);
   const gaps = KNOWN_IMAGE_GAPS[brand] || new Set();
@@ -355,6 +375,29 @@ for (const brand of brandDirs()) {
     assert.deepEqual(missing, [], `\n${missing.length} item(s) missing imageUrl:\n${missing.join('\n')}`);
     assert.deepEqual(staleAllow, [],
       `\nThese now have an image — remove them from KNOWN_IMAGE_GAPS[${brand}]:\n${staleAllow.join('\n')}`);
+
+    // The allowlist must not carry ids that don't resolve to a real item in
+    // this brand — a typo, or a leftover after an item was renamed/removed,
+    // silently exempts nothing and rots. Every entry has to earn its place.
+    const realIds = new Set([...Object.keys(data.CAMERAS), ...Object.keys(data.LENSES)]);
+    const bogus = [...gaps].filter((id) => !realIds.has(id));
+    assert.deepEqual(bogus, [],
+      `\nKNOWN_IMAGE_GAPS[${brand}] lists ids that aren't a camera or lens in ${brand}:\n${bogus.join('\n')}`);
+  });
+
+  test(`[${brand}] no two items share a product image (copy-paste guard)`, () => {
+    const ok = new Set((SHARED_IMAGE_OK[brand] || []).flat());
+    const byUrl = new Map();
+    for (const [id, item] of [...Object.entries(data.CAMERAS), ...Object.entries(data.LENSES)]) {
+      if (!item.imageUrl) continue;
+      (byUrl.get(item.imageUrl) || byUrl.set(item.imageUrl, []).get(item.imageUrl)).push(id);
+    }
+    const clashes = [];
+    for (const [url, ids] of byUrl) {
+      if (ids.length > 1 && !ids.every((id) => ok.has(id))) clashes.push(`${ids.join(' + ')}\n    ${url}`);
+    }
+    assert.deepEqual(clashes, [],
+      `\n${clashes.length} imageUrl(s) reused by different ${brand} items (add to SHARED_IMAGE_OK if intentional):\n${clashes.join('\n')}`);
   });
 
   test(`[${brand}] every current camera is priced in all currencies`, () => {

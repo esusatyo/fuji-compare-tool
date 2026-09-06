@@ -185,7 +185,26 @@ function checkSources(obj) {
     else obj.specSources.forEach((c, i) => errs.push(...checkCitation(c, `specSources[${i}]`)));
   }
   if (obj.priceSource != null) errs.push(...checkCitation(obj.priceSource, 'priceSource'));
-  if (obj.imageSource != null) errs.push(...checkCitation(obj.imageSource, 'imageSource'));
+  if (obj.imageSource != null) {
+    errs.push(...checkCitation(obj.imageSource, 'imageSource'));
+    // imageSource records the page a manufacturer/free-repo photo was verified
+    // on — it is meaningless without an image, and Commons images carry an
+    // `imageCredit` (licence attribution) instead, never an `imageSource`.
+    const url = obj.imageUrl;
+    if (url == null) {
+      errs.push('"imageSource" is set but "imageUrl" is null/absent');
+    } else if (typeof url === 'string' && url.startsWith('https://upload.wikimedia.org/')) {
+      errs.push('"imageSource" set on a Wikimedia Commons image — those use "imageCredit"');
+    }
+    // Image provenance is a maker's own product page (T1) or a genuinely-free
+    // repository such as Openverse (T2). T3/T4/NEWS (retailer, aggregator
+    // table, dated announcement) never establish that a given photo depicts
+    // the product, so they are not valid provenance for an `imageUrl`.
+    const t = obj.imageSource.tier;
+    if (t != null && t !== 'T1' && t !== 'T2') {
+      errs.push(`"imageSource.tier" = ${JSON.stringify(t)} — image provenance must be T1 (maker page) or T2 (free repo)`);
+    }
+  }
   return errs;
 }
 
