@@ -156,23 +156,26 @@
 > stays open and is **not** part of this PR. Run these *after* group 8 so they
 > see the final URLs and ASINs.
 
-- [ ] 9.1 Add `tests/data/links-offline.test.js`: every `imageUrl`/`productUrl`
+- [x] 9.1 Add `tests/data/links-offline.test.js`: every `imageUrl`/`productUrl`
   parses with `new URL()`, is `https`, and its host is in `ALLOWED_HOSTS`.
   There is no `buyUrl` in the data — do not test for one.
-- [ ] 9.2 Assert every `imageUrl` path ends with a known image extension.
-- [ ] 9.3 Assert no `imageUrl`/`productUrl` is shared by two ids **within one
+- [x] 9.2 Assert every `imageUrl` path ends with a known image extension.
+- [x] 9.3 Assert no `imageUrl`/`productUrl` is shared by two ids **within one
   brand**, minus a reviewed `KNOWN_SHARED_LINKS` allowlist. Do **not** compare
   across brands (98 legitimate cross-brand duplicates). Seed the allowlist from
-  the 6 existing within-brand pairs after reviewing each — including the Nikon
-  7Artisans 25/35/50mm trio, which shares one photo and one product URL and may
-  be a real error rather than a series page.
-- [ ] 9.4 Assert entries sharing an `asin` agree on `manufacturer` and have
+  the 6 existing within-brand pairs after reviewing each. All 6 reviewed
+  2026-09-07 and all are legitimate — including the Nikon 7Artisans 25/35/50mm
+  trio, which 7Artisans sells as ONE listing with variants; the shared photo is
+  the maker's official family shot of all three barrels (confirmed visually).
+- [x] 9.4 Assert entries sharing an `asin` agree on `manufacturer` and have
   closely-similar `name`s (Amazon parent listings legitimately carry mount
   variants, so sharing is allowed — describing a different product is not).
-- [ ] 9.5 Ratchet ASIN coverage: assert the count of non-discontinued items
+- [x] 9.5 Ratchet ASIN coverage: assert the count of non-discontinued items
   lacking an `asin` stays at or below a recorded baseline (56 of 670 on
   2026-09-07; this PR should lower it).
-- [ ] 9.6 Retire the stale `buyUrl` capability specs — the REMOVED deltas for
+- [~] 9.6 Retire the stale `buyUrl` capability specs — REMOVED/ADDED deltas are
+  authored in `openspec/changes/expand-correctness-tests/specs/`; OpenSpec applies
+  them to `openspec/specs/` at archive time, not before merge. — the REMOVED deltas for
   `brand-engine`'s "Buy button disabled when no URL provided" and
   `canon-eos-r`'s "Buy button handling for Canon items", plus the ADDED
   `brand-engine` requirement describing the real per-currency/ASIN behaviour.
