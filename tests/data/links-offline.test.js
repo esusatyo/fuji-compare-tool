@@ -53,10 +53,11 @@ const KNOWN_SHARED_LINKS = new Map([
   ['panasonic productUrl https://www.venuslens.net/product/laowa-90mm-f-2-8-2x-macro-apo/', 2],
 ]);
 
-// Non-discontinued items without an ASIN, as of 2026-09-07. A null ASIN is a
+// Non-discontinued items without an ASIN, as of 2026-09-07 (was 74 before the
+// Sigma ASIN pass; tighten this whenever coverage improves). A null ASIN is a
 // degraded Buy link (the engine falls back to an Amazon search), not a broken
 // one — so this ratchets downward rather than demanding zero.
-const ASIN_GAP_BASELINE = 74;
+const ASIN_GAP_BASELINE = 61;
 
 const allItems = () => brandDirs().flatMap(brand => {
   const { data } = loadBrand(brand);
