@@ -62,7 +62,7 @@ test('cameras only: no mode toggle, slot-count dropdown instead', () => {
 test('dropdowns group by brand and every option id is namespaced', () => {
   const { window } = loadCompare();
   const groups = [...slotSelect(window, 0).querySelectorAll('optgroup')];
-  assert.deepEqual(groups.map(g => g.label), ['Fujifilm', 'Canon', 'Sony', 'Nikon', 'Panasonic']);
+  assert.deepEqual(groups.map(g => g.label), ['Fujifilm', 'Canon', 'Sony', 'Nikon', 'Panasonic', 'Sigma']);
   const opts = [...slotSelect(window, 0).querySelectorAll('option')];
   assert.ok(opts.length > 100, 'all brands\' cameras offered');
   for (const o of opts) {

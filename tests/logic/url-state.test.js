@@ -10,11 +10,24 @@ function slotValues(window) {
   return [0, 1, 2].map(i => slotSelect(window, i).value);
 }
 
-/** Three item ids that are not in the mode's default selection. */
+/**
+ * Three item ids forming a selection that differs from the mode's default.
+ *
+ * Prefers ids outside `defaultSelected`, but tops up from the end of the pool
+ * for brands whose catalogue is smaller than defaults+3 (Sigma ships five
+ * cameras). The point of these tests is that a hash round-trips through the
+ * engine — not that every brand has six of everything — so the helper adapts
+ * rather than forcing thin brands to carry filler entries.
+ */
 function nonDefaultIds(data, mode) {
   const pool = mode === 'cameras' ? data.CAMERA_ORDER : Object.keys(data.LENSES);
   const defaults = data.BRAND_CONFIG[mode].defaultSelected;
-  return pool.filter(id => !defaults.includes(id)).slice(0, 3);
+  const picked = pool.filter(id => !defaults.includes(id));
+  for (const id of [...pool].reverse()) {
+    if (picked.length >= 3) break;
+    if (!picked.includes(id)) picked.push(id);
+  }
+  return picked.slice(0, 3);
 }
 
 for (const brand of brandDirs()) {

@@ -30,33 +30,44 @@ The test suite SHALL verify that the rendered image area for every camera and le
 - **THEN** the slot contains a `.cam-placeholder` element with a resolved (non-empty) background colour
 
 ### Requirement: All links are well-formed and point at expected domains
-The test suite SHALL verify, offline, that every `imageUrl`, `buyUrl`, and `productUrl` across all items parses as a valid `https` URL whose host is in the expected-domain allowlist, and that every `imageUrl` path ends with a recognised image file extension.
+The test suite SHALL verify, offline, that every `imageUrl` and `productUrl` across all items parses as a valid `https` URL whose host is in the expected-domain allowlist, and that every `imageUrl` path ends with a recognised image file extension. (`buyUrl` is not tested — the field no longer exists in the data.)
 
 #### Scenario: URLs parse and use allowed hosts
-- **WHEN** any item declares an `imageUrl`, `buyUrl`, or `productUrl`
+- **WHEN** any item declares an `imageUrl` or `productUrl`
 - **THEN** the value parses with `new URL()`, uses the `https` scheme, and its host matches an entry in the expected-domain allowlist
 
 #### Scenario: Image URLs reference image files
 - **WHEN** an item declares an `imageUrl`
 - **THEN** the URL path ends with one of `.jpg`, `.jpeg`, `.png`, `.webp`, `.gif`, or `.svg`
 
-### Requirement: Links are not accidentally shared between products
-The test suite SHALL verify that no two distinct products share the same `imageUrl`, `buyUrl`, or `productUrl`, guarding against copy-paste errors that point a product at the wrong asset.
+### Requirement: Shared links and ASINs are legitimate only in known shapes
+Duplication is normal in this dataset and a global uniqueness rule would be wrong: one maker product page and one product photo routinely serve every mount of the same optic. As of 2026-09-07 there are **98 cross-brand duplicate `imageUrl`/`productUrl`/`asin` values** and 6 within-brand ones, essentially all legitimate. The guard SHALL therefore be scoped rather than global.
 
-#### Scenario: No duplicate image URLs across products
-- **WHEN** the full set of non-null `imageUrl` values is collected across cameras and lenses
-- **THEN** no URL is used by more than one distinct product id
+`imageUrl` and `productUrl` uniqueness SHALL be asserted **within a single brand**, never across brands. Legitimate within-brand duplicates (a maker's series page shared by several focal lengths; two mounts of one optic in a brand spanning two mounts) SHALL be recorded in a reviewed allowlist, so that a *new* duplicate fails while known ones stay green.
 
-#### Scenario: No duplicate buy or product URLs across products
-- **WHEN** the full set of non-null `buyUrl` and `productUrl` values is collected
-- **THEN** no buy URL and no product URL is shared by more than one distinct product id
+A shared `asin` SHALL be treated as legitimate, because Amazon lists mount variants of one lens under a single parent ASIN. Entries sharing an `asin` MUST however agree on `manufacturer`, and their `name` values MUST be closely similar — differing only by mount or variant wording, not naming a different product.
 
-### Requirement: Purchasable items have a buy link
-The test suite SHALL verify that every non-discontinued camera and lens declares a non-null `buyUrl`.
+#### Scenario: Unexplained duplicate image or product URL within a brand
+- **WHEN** two distinct items in the same brand share an `imageUrl` or `productUrl`
+- **AND** that pair is not in the reviewed allowlist
+- **THEN** the test fails
 
-#### Scenario: Current item has a buy link
-- **WHEN** an item has `discontinued: false`
-- **THEN** the item declares a non-null `buyUrl`
+#### Scenario: Cross-brand duplicates are not flagged
+- **WHEN** the same maker product page or photo is used by entries in different brands
+- **THEN** no failure is reported
+
+#### Scenario: Entries sharing an ASIN describe the same product
+- **WHEN** two or more entries declare the same `asin`
+- **THEN** they all share the same `manufacturer`, and their `name` values are closely similar
+
+### Requirement: ASIN coverage does not regress
+`buyUrl` is no longer stored — buy links are generated per-currency from `asin`, and a null `asin` falls back to an Amazon search rather than breaking. A missing ASIN is therefore a degraded link, not a defect, and MUST NOT fail the suite outright: 56 of 670 non-discontinued items lack one as of 2026-09-07.
+
+The suite SHALL instead ratchet: assert the number of non-discontinued items without an `asin` does not exceed a recorded baseline, so coverage can only improve.
+
+#### Scenario: ASIN coverage regresses
+- **WHEN** a change raises the count of non-discontinued items lacking an `asin` above the recorded baseline
+- **THEN** the test fails, naming the items
 
 ### Requirement: Prices are internally plausible across currencies
 The test suite SHALL verify that, for each item, every present non-null currency price sits within a documented ratio band relative to the item's USD price, catching order-of-magnitude and decimal-entry errors.

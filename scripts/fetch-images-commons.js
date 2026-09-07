@@ -74,9 +74,24 @@ async function resolveUrl(title, width) {
   if (!pages) return null;
   for (const p of Object.values(pages)) {
     const ii = p.imageinfo && p.imageinfo[0];
-    if (ii && /^image\//.test(ii.mime || '')) return ii.thumburl || ii.url;
+    if (ii && /^image\//.test(ii.mime || '')) return normaliseCommonsUrl(ii.thumburl || ii.url);
   }
   return null;
+}
+
+/**
+ * The API sometimes hands back a `thumb.wikimedia.org` host with `utm_*` query
+ * params. Both are harmful here: `checkImageCredit` in tests/helpers/schema.js
+ * only demands CC attribution for URLs starting `https://upload.wikimedia.org/`,
+ * so a `thumb.` host silently skips the licence-credit requirement (and adding
+ * a credit to one is actively rejected). Pin the canonical host and drop the
+ * tracking query so every Commons image lands under the attribution guard.
+ */
+function normaliseCommonsUrl(url) {
+  if (typeof url !== 'string') return url;
+  return url
+    .replace(/^https:\/\/thumb\.wikimedia\.org\//, 'https://upload.wikimedia.org/')
+    .replace(/\?.*$/, '');
 }
 
 // Model token from a productUrl slug, e.g. .../p/ilce7m4-b -> "ILCE7M4",

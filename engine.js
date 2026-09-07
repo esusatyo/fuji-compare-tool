@@ -323,6 +323,17 @@ const SPEC_SECTIONS = [
       { key: 'proResInternal', label: 'Internal ProRes',  type: 'boolean', fn: c => c.proResInternal },
     ]
   },
+  // ── Sigma-specific ──
+  {
+    id: 'sigma', label: 'Foveon & L-Mount',
+    brand: 'sigma',
+    specs: [
+      { key: 'foveonGen',       label: 'Foveon Sensor',     type: 'text',    fn: c => c.foveonGen || '—' },
+      { key: 'shutterType',     label: 'Shutter',           type: 'text',    fn: c => c.shutterType || '—' },
+      { key: 'internalStorage', label: 'Internal Storage',  type: 'text',    fn: c => c.internalStorage || '—' },
+      { key: 'lLog',            label: 'L-Log',             type: 'boolean', fn: c => c.lLog },
+    ]
+  },
 ];
 
 // ─────────────────────────────────────────────

@@ -141,6 +141,20 @@ function curatedPairs(cams) {
   for (let i = 0; i < current.length; i++) {
     for (let k = 1; k <= 2 && i + k < current.length; k++) add(current[i], current[i + k]);
   }
+
+  // Rule 3: a brand with fewer than two current bodies gets no pages at all
+  // from the rules above — Sigma sells one current camera (the BF) beside a
+  // discontinued back catalogue, yet "BF vs fp L" is a real comparison people
+  // search for. Fall back to price-neighbour pairs across every body.
+  // Guarded on emptiness so no existing brand's generated output shifts.
+  if (pairs.length === 0) {
+    const all = Object.keys(cams)
+      .filter(id => usd(id) > 0)
+      .sort((a, b) => usd(b) - usd(a) || (a < b ? -1 : 1));
+    for (let i = 0; i < all.length; i++) {
+      for (let k = 1; k <= 2 && i + k < all.length; k++) add(all[i], all[i + k]);
+    }
+  }
   return pairs;
 }
 
@@ -886,6 +900,7 @@ const BRAND_CARD_ACCENTS = {
   nikon:     '#ffd200',
   panasonic: '#0046ad',
   sony:      '#ff6a00',
+  sigma:     '#8f9bd8',
 };
 
 // Landing brand-card photo: a real product photo of the brand's showcase

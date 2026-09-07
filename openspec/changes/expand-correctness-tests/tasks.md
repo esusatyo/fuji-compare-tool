@@ -15,10 +15,17 @@
 
 ## 4. Offline link hygiene (Tier 1)
 
-- [ ] 4.1 Add `tests/data/links-offline.test.js`: every `imageUrl`/`buyUrl`/`productUrl` parses with `new URL()`, is `https`, and its host is in `ALLOWED_HOSTS`.
+> **Delivered early by the `add-sigma-brand` PR** (owner decision 2026-09-07 —
+> one PR). That change creates the repo's first same-mount duplicate URLs and
+> ASINs, so this group ships with it as its group 9. Tick these off when that PR
+> merges; the rest of this change (groups 1–3, 5, 6) remains open.
+
+- [ ] 4.1 Add `tests/data/links-offline.test.js`: every `imageUrl`/`productUrl` parses with `new URL()`, is `https`, and its host is in `ALLOWED_HOSTS`. (`buyUrl` does not exist in the data — 0 items carry one; do not test for it.)
 - [ ] 4.2 Assert every `imageUrl` path ends with an image extension from `IMAGE_EXT`.
-- [ ] 4.3 Assert no `imageUrl`, `buyUrl`, or `productUrl` is shared by two distinct product ids (collect maps, report collisions).
-- [ ] 4.4 Assert every non-discontinued camera and lens has a non-null `buyUrl`.
+- [ ] 4.3 Assert no `imageUrl`/`productUrl` is shared by two distinct ids **within the same brand**, minus a reviewed `KNOWN_SHARED_LINKS` allowlist. Do **not** compare across brands (98 legitimate cross-brand duplicates). Seed the allowlist from the 6 existing within-brand pairs after reviewing each.
+- [ ] 4.4 Assert entries sharing an `asin` agree on `manufacturer` and have closely-similar `name`s (normalised compare, e.g. token overlap ignoring mount words).
+- [ ] 4.5 Ratchet ASIN coverage: assert the count of non-discontinued items lacking an `asin` stays at or below a recorded baseline (56 of 670 as of 2026-09-07).
+- [ ] 4.6 Retire the stale `buyUrl` capability specs: apply the REMOVED delta for `brand-engine`'s "Buy button disabled when no URL provided" and `canon-eos-r`'s "Buy button handling for Canon items", and the ADDED `brand-engine` requirement describing the real per-currency/ASIN behaviour. Both live specs currently mandate a disabled Buy state the engine has never implemented since the migration.
 
 ## 5. Data plausibility (Tier 1)
 
