@@ -145,7 +145,9 @@
 - [x] 8.3 Clear `priceIncomplete` on ported lenses, then
   `node scripts/compute-prices.js sigma lenses --recompute`; put confirmed
   regional figures in `scripts/price-overrides/sigma.json`.
-- [ ] 8.4 Backfill `asin`s via the **check-prices-and-buy-links** skill.
+- [x] 8.4 Backfill `asin`s — 10 verified and applied; Sigma is 27/40 covered.
+  The 60-600mm (bundle-only listing) and 300-600mm (listing title omits the
+  mount) were left `null` rather than guessed.
 
 ## 9. Link & ASIN hygiene
 
@@ -182,14 +184,14 @@
 
 ## 10. Verify, ship, close out
 
-- [ ] 10.1 `node scripts/generate-seo.js` (or let the pre-commit hook do it).
-- [ ] 10.2 `npm test` fully green.
-- [ ] 10.3 `RUN_LINK_TESTS=1 npm run test:links` — **required**, URLs changed.
-- [ ] 10.4 Manual pass on `python3 scripts/preview.py 3456` → `/sigma/`:
+- [x] 10.1 `node scripts/generate-seo.js` (or let the pre-commit hook do it).
+- [x] 10.2 `npm test` fully green.
+- [x] 10.3 `RUN_LINK_TESTS=1 npm run test:links` — **required**, URLs changed.
+- [x] 10.4 Manual pass on `python3 scripts/preview.py 3456` → `/sigma/`:
   dropdown groups, brand switch in/out, currency switching, winner
   highlighting, the Foveon section, Buy links, and `/compare/` cross-brand
   with a Sigma body selected.
-- [ ] 10.5 `openspec validate add-sigma-brand --strict` **and**
+- [x] 10.5 `openspec validate add-sigma-brand --strict` **and**
   `openspec validate expand-correctness-tests --strict`.
 - [ ] 10.6 Open **one** PR covering everything above.
 - [ ] 10.7 After merge: archive `add-sigma-brand` (`/opsx:archive`); tick the
