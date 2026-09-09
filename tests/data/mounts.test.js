@@ -18,6 +18,23 @@ const { loadBrand, brandDirs } = require('../helpers/load-brand');
 // sensorType → mount, first match wins. Only the brands spanning more than one
 // mount need a rule; everywhere else the brand's sole mount is the answer, and
 // asserting that is still worth doing — it catches a stray token.
+// Crop factor per mount, for the lens-side equivalent of the sensor check.
+// A lens's `focalLengthEquiv` divided by its native focal length IS the mount's
+// crop factor, which makes it an independent witness: the mounts were seeded
+// from dropdown-group labels, so without this a whole group tagged wrong would
+// pass every other guard here — schema (the id is declared), group agreement
+// (they all agree with each other) and the sensor rule (cameras only).
+// Only the multi-mount brands need it; elsewhere there is nothing to tell apart.
+const LENS_CROP = {
+  fujifilm:  { x: 1.5, g: 0.79 },
+  panasonic: { l: 1.0, mft: 2.0 },
+  sigma:     { l: 1.0 },
+};
+// Generous next to the spread actually seen (worst case 1.467 against 1.5, from
+// rounding a 14mm APS-C lens to "21mm"), and nowhere near wide enough to blur
+// two mounts — the closest pair is 1.5 against 0.79.
+const CROP_TOLERANCE = 0.08;
+
 const SENSOR_RULES = {
   fujifilm:  [[/43\.8×32\.9mm GFX/, 'g'], [/X-Trans|Bayer CMOS|1" Primary Color/, 'x']],
   panasonic: [[/Micro Four Thirds/, 'mft'], [/Full-frame/, 'l']],
@@ -68,6 +85,37 @@ for (const brand of brandDirs()) {
           problems.push(`${label} group "${grp.label}" spans ${mounts.size} mounts: ` +
             [...mounts].map(([m, ids]) => `${m} (${ids.join(', ')})`).join(' vs '));
         }
+      }
+    }
+    assert.deepEqual(problems, [], `\n${problems.join('\n')}`);
+  });
+
+  test(`[${brand}] every lens's mount agrees with its focal-length equivalent`, () => {
+    const crops = LENS_CROP[brand];
+    if (!crops) return; // single-mount brand: nothing to tell apart
+    const problems = [];
+    for (const [id, lens] of Object.entries(data.LENSES)) {
+      const native = lens.focalLength ?? lens.focalLengthMin;
+      const equiv = parseFloat(String(lens.focalLengthEquiv).replace(/[^0-9.].*$/, ''));
+      if (!native || !equiv) {
+        problems.push(`${id}: cannot read a crop factor from focalLengthEquiv ` +
+          `${JSON.stringify(lens.focalLengthEquiv)} and focal length ${native}`);
+        continue;
+      }
+      const expected = crops[lens.mount];
+      if (expected === undefined) {
+        problems.push(`${id}: mount ${JSON.stringify(lens.mount)} has no crop factor in ` +
+          'LENS_CROP — add one so its lenses stay checkable');
+        continue;
+      }
+      const actual = equiv / native;
+      if (Math.abs(actual - expected) > CROP_TOLERANCE) {
+        // Name the mount it looks like, since a wrong token is the likely cause.
+        const nearest = Object.entries(crops)
+          .sort((a, b) => Math.abs(actual - a[1]) - Math.abs(actual - b[1]))[0];
+        problems.push(`${id}: mount ${JSON.stringify(lens.mount)} implies a ${expected}× crop, ` +
+          `but ${native}mm → ${lens.focalLengthEquiv} is ${actual.toFixed(2)}×` +
+          (Math.abs(actual - nearest[1]) <= CROP_TOLERANCE ? ` — that is ${nearest[0]}` : ''));
       }
     }
     assert.deepEqual(problems, [], `\n${problems.join('\n')}`);

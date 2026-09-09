@@ -168,6 +168,44 @@ test('[sigma] the slot-count control drops out, then returns intact on All', () 
   assert.equal(doc.documentElement.style.getPropertyValue('--num-slots'), '3');
 });
 
+test('[panasonic] chips carry their pressed state for assistive tech', () => {
+  const doc = page('panasonic').document;
+  const pressed = () => [...doc.querySelectorAll('.mount-chip')]
+    .map(c => `${c.textContent}:${c.getAttribute('aria-pressed')}`);
+  assert.deepEqual(pressed(), ['All:true', 'L-Mount:false', 'Micro Four Thirds:false']);
+  chip(doc, 'mft').click();
+  assert.deepEqual(pressed(), ['All:false', 'L-Mount:false', 'Micro Four Thirds:true']);
+});
+
+// The claim is that `slotChoice` survives a filter untouched — not that it
+// resets to the brand default, which is what a 3-slot brand would show either way.
+test('[sigma] All restores the count the user picked, not the default', () => {
+  const doc = page('sigma', { patchData: oneItemSA }).document;
+  const count = doc.getElementById('slot-count-select');
+  count.value = '2';
+  count.dispatchEvent(new doc.defaultView.Event('change', { bubbles: true }));
+  assert.equal(doc.documentElement.style.getPropertyValue('--num-slots'), '2');
+
+  chip(doc, 'sa').click();
+  assert.equal(doc.documentElement.style.getPropertyValue('--num-slots'), '1');
+
+  chip(doc, '').click();
+  assert.equal(doc.documentElement.style.getPropertyValue('--num-slots'), '2',
+    "back to the user's 2, not the brand's default 3");
+  assert.equal(doc.getElementById('slot-count-select').value, '2');
+});
+
+test('[panasonic] changing currency leaves the filter alone', () => {
+  const { LENSES } = loadBrand('panasonic').data;
+  const doc = page('panasonic', { hash: '#lenses' }).document;
+  chip(doc, 'mft').click();
+  const cur = doc.getElementById('currency-select');
+  cur.value = 'USD';
+  cur.dispatchEvent(new doc.defaultView.Event('change', { bubbles: true }));
+  assert.equal(doc.querySelector('.mount-chip.active').textContent, 'Micro Four Thirds');
+  assert.ok(selected(doc).every(id => LENSES[id].mount === 'mft'));
+});
+
 test('[panasonic] the mobile 2-slot clamp still applies under a filter', () => {
   const doc = loadBrand('panasonic', { engine: true, width: 375 }).window.document;
   chip(doc, 'mft').click();
