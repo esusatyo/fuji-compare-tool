@@ -66,10 +66,10 @@ The riskiest group — it touches the slot-count path that PR #51 already found 
 
 ## 8. Docs
 
-- [ ] 8.1 Rewrite CLAUDE.md's "no `mount` field" paragraph — describe the `mount` field, why the one-brand-one-mount reasoning no longer holds, and the "one group, one mount" invariant
-- [ ] 8.2 Note in CLAUDE.md's "Adding / changing things" that every new camera or lens records its `mount`, and that `BRAND_CONFIG` declares `mounts` (not a `mount` string)
-- [ ] 8.3 Update `add-camera-brand`, `add-thirdparty-lenses` and `refresh-camera-data` so research records the mount at entry time
-- [ ] **Checkpoint H** — re-read CLAUDE.md's data-model section end to end for contradictions with the new field. Commit: *"Document the mount field and record it during research"*
+- [x] 8.1 Rewrite CLAUDE.md's "no `mount` field" paragraph — describe the `mount` field, why the one-brand-one-mount reasoning no longer holds, and the "one group, one mount" invariant
+- [x] 8.2 Note in CLAUDE.md's "Adding / changing things" that every new camera or lens records its `mount`, and that `BRAND_CONFIG` declares `mounts` (not a `mount` string)
+- [x] 8.3 Update `add-camera-brand`, `add-thirdparty-lenses` and `refresh-camera-data` so research records the mount at entry time
+- [x] **Checkpoint H** — re-read CLAUDE.md's data-model section end to end for contradictions with the new field. Commit: *"Document the mount field and record it during research"*
 
 ## 9. Ship
 
