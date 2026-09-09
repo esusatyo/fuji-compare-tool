@@ -417,6 +417,19 @@ const LENSES = {
     priceIncomplete:true,
     productUrl:'https://www.sigma-global.com/en/lenses/c021_28_70_28/',
   },
+  'sigma-24-70mm-f28-dg': {
+    name:'Sigma 24-70mm f/2.8 DG DN Art', manufacturer:'Sigma', line:'Art', type:'Zoom',
+    focalLength:null, focalLengthMin:24, focalLengthMax:70, focalLengthEquiv:'24-70mm',
+    maxAperture:2.8, minAperture:22, weight:835, length:122.9, diameter:87.8,
+    filterThread:82, minFocusDist:18, maxMagnification:0.34,
+    elements:19, groups:15, blades:11, afType:'Stepping Motor',
+    weatherSealed:true, ois:false, oisStops:null, year:2019, discontinued:true,
+    imageUrl:'https://www.sigma-global.com/lenses/a019_24_70_28_product_img01.png',
+    asin:null,
+    prices:{USD:1099,AUD:null,EUR:null,GBP:null,JPY:null,CAD:null,SGD:null},
+    priceIncomplete:true,
+    productUrl:'https://www.sigma-global.com/en/lenses/a019_24_70_28/',
+  },
   'sigma-24-70mm-f28-dg-ii': {
     name:'Sigma 24-70mm f/2.8 DG DN II Art', manufacturer:'Sigma', line:'Art', type:'Zoom',
     focalLength:null, focalLengthMin:24, focalLengthMax:70, focalLengthEquiv:'24-70mm',
@@ -656,7 +669,7 @@ const LENSES = {
 
 const LENS_DROPDOWN_GROUPS = [
   { label: '── Art Primes (L-Mount) ──', ids: ['sigma-14mm-f14-dg', 'sigma-15mm-f14-dg-fisheye', 'sigma-20mm-f14-dg', 'sigma-24mm-f14-dg', 'sigma-35mm-f12-dg-ii', 'sigma-35mm-f14-dg', 'sigma-35mm-f14-dg-ii', 'sigma-50mm-f12-dg', 'sigma-50mm-f14-dg', 'sigma-85mm-f14-dg', 'sigma-105mm-f28-dg-macro', 'sigma-135mm-f14-dg'] },
-  { label: '── Art Zooms (L-Mount) ──', ids: ['sigma-14-24mm-f28-dg', 'sigma-24-70mm-f28-dg-ii', 'sigma-28-45mm-f18-dg', 'sigma-28-105mm-f28-dg'] },
+  { label: '── Art Zooms (L-Mount) ──', ids: ['sigma-14-24mm-f28-dg', 'sigma-24-70mm-f28-dg', 'sigma-24-70mm-f28-dg-ii', 'sigma-28-45mm-f18-dg', 'sigma-28-105mm-f28-dg'] },
   { label: '── Contemporary Primes (L-Mount) ──', ids: ['sigma-17mm-f4-dg', 'sigma-20mm-f2-dg', 'sigma-24mm-f2-dg', 'sigma-24mm-f35-dg', 'sigma-35mm-f2-dg', 'sigma-45mm-f28-dg', 'sigma-50mm-f2-dg', 'sigma-65mm-f2-dg', 'sigma-90mm-f28-dg'] },
   { label: '── Contemporary Zooms (L-Mount) ──', ids: ['sigma-16-28mm-f28-dg', 'sigma-20-200mm-f35-63-dg', 'sigma-28-70mm-f28-dg', 'sigma-100-400mm-f5-63-dg'] },
   { label: '── Sports (L-Mount) ──', ids: ['sigma-200mm-f2-dg', 'sigma-500mm-f56-dg', 'sigma-60-600mm-f45-63-dg', 'sigma-70-200mm-f28-dg', 'sigma-150-600mm-f5-63-dg', 'sigma-300-600mm-f4-dg'] },

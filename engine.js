@@ -426,9 +426,18 @@ let currentCurrency = 'AUD';
 // slotChoice is the user's picked slot count (2..MAX_SLOTS — 3 on brand
 // pages, 4 on the compare page). numSlots is what the viewport allows
 // right now (effectiveSlots clamps to 2 below the mobile breakpoint).
+// A brand page takes its slot count from the mode's `defaultSelected`: a brand
+// with only two cameras declares two ids and gets a two-slot layout. Previously
+// this was hardcoded to 3, which meant any brand with fewer than three defaults
+// rendered an empty slot and threw — an invisible four-camera minimum.
+function brandSlotChoice(mode) {
+  const n = (BRAND_CONFIG[mode] && BRAND_CONFIG[mode].defaultSelected || []).length;
+  return Math.min(Math.max(n, MIN_SLOTS), MAX_SLOTS);
+}
+
 let slotChoice = IS_COMPARE
   ? Math.min(Math.max(COMPARE_CONFIG.defaultSlots || 3, MIN_SLOTS), MAX_SLOTS)
-  : 3;
+  : brandSlotChoice('cameras');
 let numSlots = 3;
 
 // Pure so the clamp rule is unit-testable: below the mobile breakpoint
@@ -739,6 +748,9 @@ function computeWinners(spec) {
 // FORMAT SPEC VALUE
 // ─────────────────────────────────────────────
 function formatVal(spec, item) {
+  // A slot can legitimately hold nothing (a brand with fewer items than slots),
+  // and every spec fn dereferences its argument — so bail before calling it.
+  if (!item) return '<span class="cross">—</span>';
   const raw = spec.fn(item);
   if (spec.type === 'boolean') {
     return raw
@@ -854,6 +866,7 @@ function attachEventListeners() {
     const btn = e.target.closest('.mode-btn');
     if (!btn || btn.dataset.mode === currentMode) return;
     currentMode = btn.dataset.mode;
+    if (!IS_COMPARE) slotChoice = brandSlotChoice(currentMode);
     document.querySelectorAll('.mode-btn').forEach(b => b.classList.remove('active'));
     btn.classList.add('active');
     document.getElementById('hero-eyebrow').textContent = cfg().heroEyebrow;
@@ -911,6 +924,7 @@ function attachEventListeners() {
   }
   if (initial.mode === 'lenses' && !IS_COMPARE) {
     currentMode = 'lenses';
+    slotChoice = brandSlotChoice('lenses');
     document.querySelectorAll('.mode-btn').forEach(b => {
       b.classList.toggle('active', b.dataset.mode === 'lenses');
     });

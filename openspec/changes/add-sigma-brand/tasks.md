@@ -123,13 +123,12 @@
 - [x] 7.3 APS-C `DC` L-Mount lenses — **skipped** (decision 2026-09-07): no Sigma
   body is APS-C L-Mount, so they'd only serve a Leica CL/TL owner. Deferred, not
   rejected; see `research/lenses.md` group C.
-- [ ] 7.4 Add discontinued predecessors (`research/lenses.md` group D). **NOT
-  DONE** — this was ticked in error on 2026-09-07 and corrected on review. The
-  original 24-70mm F2.8 DG DN Art (2019, superseded by the II) is absent from
-  every brand file, so it is a genuine gap. The 35mm F1.4 DG DN / DG II pair is
-  already carried correctly.
-- [ ] 7.7 **Data-quality issues found in the ported entries** (see the report
-  below; awaiting a scope decision):
+- [x] 7.4 Add discontinued predecessors — done 2026-09-09. (This was ticked in
+  error on 2026-09-07, caught on review, and then actually done.) Added the
+  original 24-70mm F2.8 DG DN Art (2019, discontinued, $1,099 launch); the
+  35mm F1.4 DG DN / DG II pair was already carried correctly.
+- [x] 7.7 **Data-quality issues found in the ported entries** — fixed 2026-09-09
+  (owner chose to fold into this PR):
   a. Eight I-series Contemporary primes are marked `discontinued: true` in
      panasonic, sony *and* sigma, but Sigma's own pages list them as currently
      sold under renewed `_re` URLs with the SAME edition number (C019–C023).
@@ -139,7 +138,7 @@
      all store the E-mount length (L-Mount barrels are ~2mm shorter because the
      L flange distance is 20mm vs E's 18mm), and the 45mm's weight matches
      neither mount. Inconsistent, so every one of the 22 needs checking.
-- [ ] 7.5 Add the **same-mount drift guard** — `tests/data/shared-mount.test.js`.
+- [x] 7.5 Add the **same-mount drift guard** — `tests/data/shared-mount.test.js`.
   For any lens slug present in both `panasonic/data.js` and `sigma/data.js`
   (both L-Mount, one physical product), assert the two entries agree on their
   mount-invariant fields: `name`, `manufacturer`, `line`, `type`, focal lengths,
@@ -208,7 +207,7 @@
   with a Sigma body selected.
 - [x] 10.5 `openspec validate add-sigma-brand --strict` **and**
   `openspec validate expand-correctness-tests --strict`.
-- [ ] 10.6 Open **one** PR covering everything above.
+- [x] 10.6 Opened PR #51.
 - [ ] 10.7 After merge: archive `add-sigma-brand` (`/opsx:archive`); tick the
   delivered tasks in `expand-correctness-tests` and leave it open for its
   remaining scope; propose the follow-up `add-thirdparty-lenses-sigma`

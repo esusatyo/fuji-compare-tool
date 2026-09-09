@@ -55,8 +55,12 @@ function loadBrand(brand, opts = {}) {
     hash = '',
     siteConfig = true,
     html = '<!DOCTYPE html><html><head></head><body><div id="app"></div></body></html>',
+    // Optional source transform, for tests that need a data shape no brand
+    // currently ships (e.g. a two-camera brand exercising the 2-slot layout).
+    patchData = null,
   } = opts;
-  const dataSrc = fs.readFileSync(path.join(ROOT, brand, 'data.js'), 'utf8');
+  let dataSrc = fs.readFileSync(path.join(ROOT, brand, 'data.js'), 'utf8');
+  if (patchData) dataSrc = patchData(dataSrc);
 
   const errors = [];
   const vc = new VirtualConsole();
