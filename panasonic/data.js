@@ -1669,29 +1669,7 @@ const LENSES = {
   },
 
   /* ── Voigtländer (L-Mount, native full-frame manual-focus) ── */
-  'voigtlander-apo-lanthar-35mm-f2-l': {
-    name:'Voigtländer APO-Lanthar 35mm f/2 Aspherical', manufacturer:'Voigtländer', line:'APO-Lanthar', type:'Prime',
-    focalLength:35, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'35mm',
-    maxAperture:2.0, minAperture:16, weight:352, length:67.3, diameter:62.6,
-    filterThread:49, minFocusDist:35, maxMagnification:0.19,
-    elements:11, groups:9, blades:12, afType:'Manual',
-    weatherSealed:false, ois:false, oisStops:null, year:2021, discontinued:false,
-    imageUrl:null, asin:null,
-    prices:{USD:1149,AUD:null,EUR:null,GBP:null,JPY:null,CAD:null,SGD:null},
-    priceIncomplete:true, productUrl:'https://www.voigtlaender.de/l-mount/35-mm-12-0-apo-lanthar/?lang=en',
-  },
 
-  'voigtlander-apo-lanthar-50mm-f2-l': {
-    name:'Voigtländer APO-Lanthar 50mm f/2 Aspherical', manufacturer:'Voigtländer', line:'APO-Lanthar', type:'Prime',
-    focalLength:50, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'50mm',
-    maxAperture:2.0, minAperture:16, weight:364, length:61, diameter:63,
-    filterThread:49, minFocusDist:45, maxMagnification:0.15,
-    elements:10, groups:8, blades:12, afType:'Manual',
-    weatherSealed:false, ois:false, oisStops:null, year:2020, discontinued:false,
-    imageUrl:null, asin:null,
-    prices:{USD:1049,AUD:null,EUR:null,GBP:null,JPY:null,CAD:null,SGD:null},
-    priceIncomplete:true, productUrl:'https://www.voigtlaender.de/l-mount/50-mm-12-0-apo-lanthar/?lang=en',
-  },
 
   /* ── Laowa (L-Mount full-frame manual-focus specialty) ── */
   'laowa-90mm-f28-macro-l': {
@@ -2064,7 +2042,6 @@ const LENS_DROPDOWN_GROUPS = [
   { label: '── LUMIX G Zooms (MFT) ──',      ids: ['lumix-g-7-14mm-f4', 'leica-dg-8-18mm-f2-8-4', 'leica-dg-10-25mm-f1-7', 'lumix-g-12-32mm-f3-5-5-6', 'leica-dg-12-60mm-f2-8-4', 'lumix-g-12-60mm-f3-5-5-6', 'lumix-g-12-35mm-f2-8-ii', 'lumix-g-x-pz-14-42mm-f3-5-5-6', 'leica-dg-25-50mm-f1-7', 'lumix-g-35-100mm-f2-8-ii', 'leica-dg-35-100mm-f2-8-power-ois', 'lumix-g-35-100mm-f4-5-6', 'leica-dg-50-200mm-f2-8-4', 'lumix-g-14-140mm-f3-5-5-6-ii', 'lumix-g-100-300mm-f4-5-6-ii', 'leica-dg-100-400mm-f4-6-3-ii'] },
   { label: '── Sigma Primes (L-Mount) ──', ids: ['sigma-20mm-f14-dg', 'sigma-24mm-f14-dg', 'sigma-35mm-f14-dg', 'sigma-35mm-f14-dg-ii', 'sigma-50mm-f14-dg', 'sigma-85mm-f14-dg', 'sigma-135mm-f14-dg', 'sigma-20mm-f2-dg', 'sigma-24mm-f2-dg', 'sigma-35mm-f2-dg', 'sigma-45mm-f28-dg', 'sigma-50mm-f2-dg', 'sigma-65mm-f2-dg', 'sigma-90mm-f28-dg', 'sigma-17mm-f4-dg'] },
   { label: '── Sigma Zooms (L-Mount) ──', ids: ['sigma-16-28mm-f28-dg', 'sigma-28-70mm-f28-dg', 'sigma-24-70mm-f28-dg-ii', 'sigma-28-45mm-f18-dg', 'sigma-70-200mm-f28-dg', 'sigma-100-400mm-f5-63-dg', 'sigma-150-600mm-f5-63-dg'] },
-  { label: '── Voigtländer (L-Mount) ──', ids: ['voigtlander-apo-lanthar-35mm-f2-l', 'voigtlander-apo-lanthar-50mm-f2-l'] },
   { label: '── Laowa (L-Mount) ──', ids: ['laowa-15mm-f2-l', 'laowa-17mm-f4-tilt-shift-l', 'laowa-90mm-f28-macro-l', 'laowa-180mm-f45-macro-l'] },
   { label: '── Viltrox (L-Mount) ──', ids: ['viltrox-16mm-f18-l', 'viltrox-28mm-f45-l'] },
   { label: '── Samyang (L-Mount) ──', ids: ['samyang-14-24mm-f28-l'] },
