@@ -27,20 +27,20 @@ Worked on one branch (`add-mount-filter`) and shipped as **one PR**. Each group 
 
 ## 4. Engine: chip row and filtering
 
-- [ ] 4.1 Add `mountsForMode(mode)` — declared mounts having ≥1 item in that mode; returns empty when fewer than two qualify
-- [ ] 4.2 Add `activeMount` state (default `null` = All) and `itemsInMount(mode, id)` honouring dropdown order
-- [ ] 4.3 Render the chip row in `injectBody()` inside `#compare-header` above the slot pickers — `role="group"`, `aria-pressed` buttons, matching the mode/theme toggle idiom; omit the element entirely when `mountsForMode()` is empty
-- [ ] 4.4 Filter `buildSelectHTML()` by `activeMount`, dropping optgroups that end up empty
-- [ ] 4.5 Implement the auto-swap rule on chip activation — replace out-of-mount slots with the first free in-mount item in dropdown order, leave in-mount slots untouched, no-op on `All`
-- [ ] 4.6 Call the existing `updateHash()` after a swap so the new selection stays shareable
-- [ ] 4.7 On mode toggle, keep `activeMount` when it qualifies in the destination mode, otherwise reset to `All`; re-render the chip row for the new mode
-- [ ] **Checkpoint D** — `npm test` green; manual pass on `python3 scripts/preview.py 3456` over Panasonic and Fujifilm (both tabs) and Canon (confirm nothing moved). Commit: *"Add the mount filter chip row to brand pages"*
+- [x] 4.1 Add `mountsForMode(mode)` — declared mounts having ≥1 item in that mode; returns empty when fewer than two qualify
+- [x] 4.2 Add `activeMount` state (default `null` = All) and `itemsInMount(mode, id)` honouring dropdown order
+- [x] 4.3 Render the chip row in `injectBody()` inside `#compare-header` above the slot pickers — `role="group"`, `aria-pressed` buttons, matching the mode/theme toggle idiom; omit the element entirely when `mountsForMode()` is empty
+- [x] 4.4 Filter `buildSelectHTML()` by `activeMount`, dropping optgroups that end up empty
+- [x] 4.5 Implement the auto-swap rule on chip activation — replace out-of-mount slots with the first free in-mount item in dropdown order, leave in-mount slots untouched, no-op on `All`
+- [x] 4.6 Call the existing `updateHash()` after a swap so the new selection stays shareable
+- [x] 4.7 On mode toggle, keep `activeMount` when it qualifies in the destination mode, otherwise reset to `All`; re-render the chip row for the new mode
+- [x] **Checkpoint D** — `npm test` green; manual pass on `python3 scripts/preview.py 3456` over Panasonic and Fujifilm (both tabs) and Canon (confirm nothing moved). Commit: *"Add the mount filter chip row to brand pages"*
 
 ## 5. Engine: single-slot rendering
 
 The riskiest group — it touches the slot-count path that PR #51 already found sharp edges in. Kept separate so it can be reviewed and reverted on its own.
 
-- [ ] 5.1 Clamp the effective slot count to the number of items the active mount offers, floor of 1, without disturbing the existing viewport clamp
+- [x] 5.1 Clamp the effective slot count to the number of items the active mount offers, floor of 1, without disturbing the existing viewport clamp — **pulled forward into group 4**: Sigma's SA-Mount has 2 cameras against a 3-slot layout, so without the clamp the third slot keeps an L-Mount camera the filter claims to have excluded. Correctness today, not future-proofing
 - [ ] 5.2 Suppress winner highlighting in `computeWinners()` when only one slot renders
 - [ ] 5.3 Restore the user's chosen slot count when the filter returns to `All`
 - [ ] 5.4 Handle the "Cameras to compare" select while a single-item mount is active — it must not offer a count the filter cannot fill
