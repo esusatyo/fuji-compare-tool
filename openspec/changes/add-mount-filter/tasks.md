@@ -73,9 +73,9 @@ The riskiest group — it touches the slot-count path that PR #51 already found 
 
 ## 9. Ship
 
-- [ ] 9.1 `npm test` green
-- [ ] 9.2 `RUN_LINK_TESTS=1 npm run test:links` — no URLs changed in this work, so this is a regression check only
-- [ ] 9.3 `node scripts/generate-seo.js` produces no diff
-- [ ] 9.4 `openspec validate add-mount-filter --strict`
-- [ ] 9.5 Final manual pass: all six brands, both tabs, both themes, desktop and mobile widths
+- [x] 9.1 `npm test` green
+- [x] 9.2 `RUN_LINK_TESTS=1 npm run test:links` — no URLs changed in this work, so this is a regression check only
+- [x] 9.3 `node scripts/generate-seo.js` produces no diff
+- [x] 9.4 `openspec validate add-mount-filter --strict`
+- [x] 9.5 Final manual pass: all six brands, both tabs, both themes, desktop and mobile widths
 - [ ] **Checkpoint I** — open one PR from `add-mount-filter` covering the whole change
