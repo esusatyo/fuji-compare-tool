@@ -92,7 +92,7 @@ const CAMERAS = {
     name:'fp L', series:'fp Series', year:2021, discontinued:true,
     tagline:'61MP Pocketable Full-Frame',
     productUrl:'https://www.sigma-global.com/en/cameras/fpl/',
-    imageUrl:null,
+    imageUrl:'https://www.sigma-global.com/cameras/fpl_product_img01.png',
     asin:'B0916G94WV',
     prices:{USD:2499,AUD:null,EUR:null,GBP:null,JPY:null,CAD:null,SGD:null},
     sensorMP:61, sensorType:'Full-frame BSI Bayer CMOS', processor:'Not disclosed',

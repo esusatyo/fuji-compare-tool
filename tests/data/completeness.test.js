@@ -260,14 +260,6 @@ const KNOWN_IMAGE_GAPS = {
     // caught and reverted. Still a genuine gap.
     'omsystem-100-400mm-f5-63-ii',
   ]),
-  sigma: new Set([
-    // fp L — Commons has "Sigma fp L in hand.jpg", but the fetch tool rejected
-    // it on apply and the only other candidates show the fp (not the L), which
-    // are externally identical bodies: an fp photo would be a plausible-looking
-    // wrong subject. Sigma's own product shots are not freely licensed.
-    // Gap checked 2026-09-07.
-    'fp-l',
-  ]),
   sony: new Set([
     // tamron-70-300mm: the only Commons file is the Nikon Z version (Model
     // A047Z); the Sony-E variant is A047, so this stays gapped here even though
