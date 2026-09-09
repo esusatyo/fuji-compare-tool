@@ -115,6 +115,12 @@ in exactly one group), then `npm run test:data`.
   and benefit from a verified `asin`.
 - **Discontinued bodies** may use `USD` only (other currencies `null`); `asin`
   may be `null` (engine falls back to an Amazon search link).
+- Every camera needs a **`mount`** id declared in `BRAND_CONFIG.mounts`, and it
+  must agree with its `sensorType` (`tests/data/mounts.test.js` re-derives it).
+  A brand spanning one mount still declares a one-entry `mounts` array and still
+  tags every item. A brand spanning two (Fujifilm X/G, Panasonic L/MFT, Sigma
+  L/SA) also needs each dropdown group to hold a single mount — that is what
+  drives the mount filter chips.
 - Every `series` value needs a `SERIES_COLORS` entry. Match the camera field
   shape exactly (see `tests/helpers/schema.js` `validateCamera`): sensor, body,
   display/EVF (nullable for no-EVF cinema bodies), AF, IBIS, video, connectivity,

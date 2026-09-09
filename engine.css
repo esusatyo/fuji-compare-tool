@@ -173,6 +173,64 @@ body {
 /* Brand switcher reuses .header-select styling; just keep it from shrinking. */
 .brand-switcher { flex-shrink: 0; }
 
+/* ─── MOUNT FILTER ─── */
+/* Brands spanning two mounts (Fujifilm X/G, Panasonic L/MFT, Sigma L/SA) get a
+   chip row above the pickers. Same button idiom as .mode-toggle, laid out as a
+   wrapping row because the labels are long ("Micro Four Thirds") and there can
+   be three of them on a narrow screen. */
+#mount-filter-slot:empty { display: none; }
+
+.mount-filter {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 16px;
+  border-bottom: 1px solid var(--border);
+}
+
+.mount-filter-label {
+  flex-shrink: 0;
+  font-size: 11px;
+  color: var(--text-secondary);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+/* The chips scroll sideways rather than wrapping: this row sits in the sticky
+   header, so growing a second line costs vertical space on exactly the screens
+   that have least of it. `min-width: 0` lets the track shrink below its content
+   width, which a flex item otherwise refuses to do. */
+.mount-chips {
+  display: flex;
+  gap: 6px;
+  flex: 1;
+  min-width: 0;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+.mount-chips::-webkit-scrollbar { display: none; }
+
+/* One size at every width — the responsive block must not touch it, or the
+   sticky header jumps as the viewport crosses 600px (a test enforces that).
+   Sized to match .mode-btn rather than enlarged for touch. */
+.mount-chip {
+  flex-shrink: 0;
+  padding: 5px 12px;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text-secondary);
+  background: var(--overlay-weak);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-pill);
+  cursor: pointer;
+  transition: all 0.15s;
+  white-space: nowrap;
+  font-family: inherit;
+}
+.mount-chip.active { background: var(--accent-primary); color: var(--bg-deep); border-color: var(--accent-primary); }
+.mount-chip:hover:not(.active) { color: var(--text-primary); background: var(--overlay-medium); }
+
 /* ─── COMPARE STICKY HEADER ─── */
 #compare-header {
   position: sticky;
@@ -596,6 +654,11 @@ footer a:hover { text-decoration: underline; }
   .brand-wordmark { display: none; }
   #site-header { padding: 0 10px; gap: 6px; justify-content: center; }
   .mode-btn { padding: 5px 9px; font-size: 11px; }
+  /* Only the row padding and the label tighten here — the chips keep the size
+     they have at every other width (see .mount-chip), so nothing jumps as the
+     viewport crosses the breakpoint. */
+  .mount-filter { padding: 8px 10px; gap: 8px; }
+  .mount-filter-label { font-size: 10px; }
   .header-select { padding: 5px 6px; font-size: 11px; }
   /* The viewport already clamps to 2 slots here (effectiveSlots), so
      the "cameras to compare" choice has nothing to offer — hide it and

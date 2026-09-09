@@ -10,7 +10,10 @@ const BRAND_CONFIG = {
   slug:        'fujifilm',
   families:    ['X Series', 'GFX'],
   brandSections: ['fujifilm'],
+  // `mount` is the landing-tile headline label; `mounts` is the machine-readable
+  // list every item's `mount` id must come from, and the order the filter chips render in.
   mount:       'X-Mount',
+  mounts:      [{ id:'x', label:'X-Mount' }, { id:'g', label:'G-Mount', system:'GFX' }],
   heroCamera:  'x-h2',
   cameras: {
     heroEyebrow:  'X Series & GFX',
@@ -64,7 +67,7 @@ const CAMERAS = {
 
   /* ── X Half ── */
   'x-half': {
-    name:'X Half', series:'X Half', year:2025, discontinued:false,
+    name:'X Half', series:'X Half', mount:'x', year:2025, discontinued:false,
     tagline:'Half-Frame Creative Compact',
     productUrl:'https://www.fujifilm-x.com/global/products/cameras/x-hf1/',
     imageUrl:'https://fujifilm-x.b-cdn.net/wp-content/uploads/2025/04/x-hf1-placeholder-thumbnail-charcoal-73646e81-8615-4f61-a627-cc1354e44101.jpg?width=400',
@@ -84,7 +87,7 @@ const CAMERAS = {
 
   /* ── X-E Series ── */
   'x-e5': {
-    name:'X-E5', series:'X-E', year:2025, discontinued:false,
+    name:'X-E5', series:'X-E', mount:'x', year:2025, discontinued:false,
     tagline:'Rangefinder, 40MP + IBIS',
     productUrl:'https://www.fujifilm-x.com/global/products/cameras/x-e5/',
     imageUrl:'https://fujifilm-x.b-cdn.net/wp-content/uploads/2025/06/thum_X-E5-1.jpg?width=400',
@@ -104,7 +107,7 @@ const CAMERAS = {
   },
 
   'x-e4': {
-    name:'X-E4', series:'X-E', year:2021, discontinued:true,
+    name:'X-E4', series:'X-E', mount:'x', year:2021, discontinued:true,
     tagline:'Ultra-Slim Rangefinder',
     productUrl:'https://www.fujifilm-x.com/global/products/cameras/x-e4/',
     imageUrl:'https://fujifilm-x.b-cdn.net/wp-content/uploads/2021/01/x-e4_thumbnail_gkac.jpg?width=400',
@@ -124,7 +127,7 @@ const CAMERAS = {
   },
 
   'x-e3': {
-    name:'X-E3', series:'X-E', year:2017, discontinued:true,
+    name:'X-E3', series:'X-E', mount:'x', year:2017, discontinued:true,
     tagline:'Slim Touchscreen Rangefinder',
     productUrl:'https://www.fujifilm-x.com/global/products/cameras/',
     imageUrl:'https://fujifilm-x.b-cdn.net/wp-content/uploads/2017/09/7_thum_x-e3.jpg?width=400',
@@ -142,7 +145,7 @@ const CAMERAS = {
   },
 
   'x-e2s': {
-    name:'X-E2S', series:'X-E', year:2016, discontinued:true,
+    name:'X-E2S', series:'X-E', mount:'x', year:2016, discontinued:true,
     tagline:'Refined Compact Rangefinder',
     productUrl:'https://www.fujifilm-x.com/global/products/cameras/',
     imageUrl:'https://fujifilm-x.b-cdn.net/wp-content/uploads/2016/01/480xcom_MH0409_X_E2S.jpg?width=400',
@@ -160,7 +163,7 @@ const CAMERAS = {
   },
 
   'x-e2': {
-    name:'X-E2', series:'X-E', year:2013, discontinued:true,
+    name:'X-E2', series:'X-E', mount:'x', year:2013, discontinued:true,
     tagline:'Second-Gen Compact Rangefinder',
     productUrl:'https://www.fujifilm-x.com/global/products/cameras/',
     imageUrl:'https://fujifilm-x.b-cdn.net/wp-content/uploads/2017/09/480xcom_MH0409_X_E2.jpg?width=400',
@@ -178,7 +181,7 @@ const CAMERAS = {
   },
 
   'x-e1': {
-    name:'X-E1', series:'X-E', year:2012, discontinued:true,
+    name:'X-E1', series:'X-E', mount:'x', year:2012, discontinued:true,
     tagline:'Original X-E Rangefinder',
     productUrl:'https://www.fujifilm-x.com/global/products/cameras/',
     imageUrl:'https://fujifilm-x.b-cdn.net/wp-content/uploads/2019/04/480xcom_MH0409_X_E1.jpg?width=400',
@@ -197,7 +200,7 @@ const CAMERAS = {
 
   /* ── X100 Series ── */
   'x100vi': {
-    name:'X100VI', series:'X100', year:2024, discontinued:false,
+    name:'X100VI', series:'X100', mount:'x', year:2024, discontinued:false,
     tagline:'40MP Fixed-Lens Compact + IBIS',
     productUrl:'https://www.fujifilm-x.com/global/products/cameras/x100vi/',
     imageUrl:'https://fujifilm-x.b-cdn.net/wp-content/uploads/2024/02/stjw_x100vi_thum.jpg?width=400',
@@ -217,7 +220,7 @@ const CAMERAS = {
   },
 
   'x100v': {
-    name:'X100V', series:'X100', year:2020, discontinued:true,
+    name:'X100V', series:'X100', mount:'x', year:2020, discontinued:true,
     tagline:'26MP Fixed-Lens + Weather Seal',
     productUrl:'https://www.fujifilm-x.com/global/products/cameras/x100v/',
     imageUrl:'https://fujifilm-x.b-cdn.net/wp-content/uploads/2020/02/x100v_thum.jpg?width=400',
@@ -237,7 +240,7 @@ const CAMERAS = {
   },
 
   'x100f': {
-    name:'X100F', series:'X100', year:2017, discontinued:true,
+    name:'X100F', series:'X100', mount:'x', year:2017, discontinued:true,
     tagline:'24MP Fixed-Lens Enthusiast',
     productUrl:'https://www.fujifilm-x.com/global/products/cameras/',
     imageUrl:'https://fujifilm-x.b-cdn.net/wp-content/uploads/2017/01/1_thum_x100f.jpg?width=400',
@@ -255,7 +258,7 @@ const CAMERAS = {
   },
 
   'x100t': {
-    name:'X100T', series:'X100', year:2014, discontinued:true,
+    name:'X100T', series:'X100', mount:'x', year:2014, discontinued:true,
     tagline:'Refined 16MP Fixed-Lens Compact',
     productUrl:'https://www.fujifilm-x.com/global/products/cameras/',
     imageUrl:'https://fujifilm-x.b-cdn.net/wp-content/uploads/2017/09/480xcom_MH0409_X100T.jpg?width=400',
@@ -273,7 +276,7 @@ const CAMERAS = {
   },
 
   'x100s': {
-    name:'X100S', series:'X100', year:2013, discontinued:true,
+    name:'X100S', series:'X100', mount:'x', year:2013, discontinued:true,
     tagline:'First X-Trans Fixed-Lens',
     productUrl:'https://www.fujifilm-x.com/global/products/cameras/',
     imageUrl:'https://fujifilm-x.b-cdn.net/wp-content/uploads/2019/04/480xcom_MH0409_X100S.jpg?width=400',
@@ -291,7 +294,7 @@ const CAMERAS = {
   },
 
   'x100': {
-    name:'X100', series:'X100', year:2011, discontinued:true,
+    name:'X100', series:'X100', mount:'x', year:2011, discontinued:true,
     tagline:'The Original X100',
     productUrl:'https://www.fujifilm-x.com/global/products/cameras/',
     imageUrl:'https://fujifilm-x.b-cdn.net/wp-content/uploads/2019/04/480xcom_MH0409_X100.jpg?width=400',
@@ -310,7 +313,7 @@ const CAMERAS = {
 
   /* ── X-Pro Series ── */
   'x-pro3': {
-    name:'X-Pro3', series:'X-Pro', year:2019, discontinued:true,
+    name:'X-Pro3', series:'X-Pro', mount:'x', year:2019, discontinued:true,
     tagline:'Rangefinder with Hidden LCD',
     productUrl:'https://www.fujifilm-x.com/global/products/cameras/x-pro3/',
     imageUrl:'https://fujifilm-x.b-cdn.net/wp-content/uploads/2019/10/xpro3_thum.jpg?width=400',
@@ -330,7 +333,7 @@ const CAMERAS = {
   },
 
   'x-pro2': {
-    name:'X-Pro2', series:'X-Pro', year:2016, discontinued:true,
+    name:'X-Pro2', series:'X-Pro', mount:'x', year:2016, discontinued:true,
     tagline:'Pro Rangefinder, Weather Sealed',
     productUrl:'https://www.fujifilm-x.com/global/products/cameras/',
     imageUrl:'https://fujifilm-x.b-cdn.net/wp-content/uploads/2016/10/2_thum_x-pro2.jpg?width=400',
@@ -348,7 +351,7 @@ const CAMERAS = {
   },
 
   'x-pro1': {
-    name:'X-Pro1', series:'X-Pro', year:2012, discontinued:true,
+    name:'X-Pro1', series:'X-Pro', mount:'x', year:2012, discontinued:true,
     tagline:'First X-Series Interchangeable',
     productUrl:'https://www.fujifilm-x.com/global/products/cameras/',
     imageUrl:'https://fujifilm-x.b-cdn.net/wp-content/uploads/2019/04/480xcom_MH0409_X_Pro1.jpg?width=400',
@@ -367,7 +370,7 @@ const CAMERAS = {
 
   /* ── X-H Series ── */
   'x-h2s': {
-    name:'X-H2S', series:'X-H', year:2022, discontinued:false,
+    name:'X-H2S', series:'X-H', mount:'x', year:2022, discontinued:false,
     tagline:'Pro Speed — Stacked Sensor',
     productUrl:'https://www.fujifilm-x.com/global/products/cameras/x-h2s/',
     imageUrl:'https://fujifilm-x.b-cdn.net/wp-content/uploads/2022/05/sgew_x-h2s_thum-1.png?width=400',
@@ -387,7 +390,7 @@ const CAMERAS = {
   },
 
   'x-h2': {
-    name:'X-H2', series:'X-H', year:2022, discontinued:false,
+    name:'X-H2', series:'X-H', mount:'x', year:2022, discontinued:false,
     tagline:'40MP + 8K Video Flagship',
     productUrl:'https://www.fujifilm-x.com/global/products/cameras/x-h2/',
     imageUrl:'https://fujifilm-x.b-cdn.net/wp-content/uploads/2022/09/ajgz_x-h2_thum.png?width=400',
@@ -407,7 +410,7 @@ const CAMERAS = {
   },
 
   'x-h1': {
-    name:'X-H1', series:'X-H', year:2018, discontinued:true,
+    name:'X-H1', series:'X-H', mount:'x', year:2018, discontinued:true,
     tagline:'First X-H, First X-Series IBIS',
     productUrl:'https://www.fujifilm-x.com/global/products/cameras/',
     imageUrl:'https://fujifilm-x.b-cdn.net/wp-content/uploads/2018/06/1_thum_x-h1.jpg?width=400',
@@ -426,7 +429,7 @@ const CAMERAS = {
 
   /* ── X-T Series (Pro) ── */
   'x-t5': {
-    name:'X-T5', series:'X-T', year:2022, discontinued:false,
+    name:'X-T5', series:'X-T', mount:'x', year:2022, discontinued:false,
     tagline:'40MP Stills-First Mirrorless',
     productUrl:'https://www.fujifilm-x.com/global/products/cameras/x-t5/',
     imageUrl:'https://fujifilm-x.b-cdn.net/wp-content/uploads/2022/10/koes_x-t5_thum.jpg?width=400',
@@ -446,7 +449,7 @@ const CAMERAS = {
   },
 
   'x-t4': {
-    name:'X-T4', series:'X-T', year:2020, discontinued:true,
+    name:'X-T4', series:'X-T', mount:'x', year:2020, discontinued:true,
     tagline:'First X-T with IBIS + Vari-angle',
     productUrl:'https://www.fujifilm-x.com/global/products/cameras/x-t4/',
     imageUrl:'https://fujifilm-x.b-cdn.net/wp-content/uploads/2020/02/x-t4_thum.jpg?width=400',
@@ -466,7 +469,7 @@ const CAMERAS = {
   },
 
   'x-t3': {
-    name:'X-T3', series:'X-T', year:2018, discontinued:true,
+    name:'X-T3', series:'X-T', mount:'x', year:2018, discontinued:true,
     tagline:'4K/60P, No IBIS',
     productUrl:'https://www.fujifilm-x.com/global/products/cameras/',
     imageUrl:'https://fujifilm-x.b-cdn.net/wp-content/uploads/2018/09/3_thum_x-t3.jpg?width=400',
@@ -484,7 +487,7 @@ const CAMERAS = {
   },
 
   'x-t2': {
-    name:'X-T2', series:'X-T', year:2016, discontinued:true,
+    name:'X-T2', series:'X-T', mount:'x', year:2016, discontinued:true,
     tagline:'24MP, 4K, Dual Card',
     productUrl:'https://www.fujifilm-x.com/global/products/cameras/',
     imageUrl:'https://fujifilm-x.b-cdn.net/wp-content/uploads/2018/09/thum_x-t2.jpg?width=400',
@@ -502,7 +505,7 @@ const CAMERAS = {
   },
 
   'x-t1': {
-    name:'X-T1', series:'X-T', year:2014, discontinued:true,
+    name:'X-T1', series:'X-T', mount:'x', year:2014, discontinued:true,
     tagline:'First Weather-Sealed X-T',
     productUrl:'https://www.fujifilm-x.com/global/products/cameras/',
     imageUrl:'https://fujifilm-x.b-cdn.net/wp-content/uploads/2018/05/480xcom_MH0409_X_T1.jpg?width=400',
@@ -521,7 +524,7 @@ const CAMERAS = {
 
   /* ── X-T Series (Compact) ── */
   'x-t50': {
-    name:'X-T50', series:'X-T', year:2024, discontinued:false,
+    name:'X-T50', series:'X-T', mount:'x', year:2024, discontinued:false,
     tagline:'40MP Compact + Film Sim Dial',
     productUrl:'https://www.fujifilm-x.com/global/products/cameras/x-t50/',
     imageUrl:'https://fujifilm-x.b-cdn.net/wp-content/uploads/2024/05/product-list_X-T50_front_16-50_silver.jpg?width=400',
@@ -541,7 +544,7 @@ const CAMERAS = {
   },
 
   'x-t30iii': {
-    name:'X-T30 III', series:'X-T', year:2025, discontinued:false,
+    name:'X-T30 III', series:'X-T', mount:'x', year:2025, discontinued:false,
     tagline:'Pocket Size, Classic Style',
     productUrl:'https://www.fujifilm-x.com/global/products/cameras/x-t30-iii/',
     imageUrl:'https://fujifilm-x.b-cdn.net/wp-content/uploads/2025/10/X-T30%E2%85%A2_front_XC13-33_black-2da29f28-scaled.jpg?width=400',
@@ -560,7 +563,7 @@ const CAMERAS = {
   },
 
   'x-t30ii': {
-    name:'X-T30 II', series:'X-T', year:2021, discontinued:true,
+    name:'X-T30 II', series:'X-T', mount:'x', year:2021, discontinued:true,
     tagline:'Compact 26MP Enthusiast',
     productUrl:'https://www.fujifilm-x.com/global/products/cameras/x-t30-ii/',
     imageUrl:'https://fujifilm-x.b-cdn.net/wp-content/uploads/2021/09/x-t30-ii_thum_bxyg.jpg?width=400',
@@ -580,7 +583,7 @@ const CAMERAS = {
   },
 
   'x-t30': {
-    name:'X-T30', series:'X-T', year:2019, discontinued:true,
+    name:'X-T30', series:'X-T', mount:'x', year:2019, discontinued:true,
     tagline:'Budget X-Trans 4 Compact',
     productUrl:'https://www.fujifilm-x.com/global/products/cameras/',
     imageUrl:'https://fujifilm-x.b-cdn.net/wp-content/uploads/2019/02/X-T30_480x480.jpg?width=400',
@@ -598,7 +601,7 @@ const CAMERAS = {
   },
 
   'x-t20': {
-    name:'X-T20', series:'X-T', year:2017, discontinued:true,
+    name:'X-T20', series:'X-T', mount:'x', year:2017, discontinued:true,
     tagline:'24MP Compact with Touchscreen',
     productUrl:'https://www.fujifilm-x.com/global/products/cameras/',
     imageUrl:'https://fujifilm-x.b-cdn.net/wp-content/uploads/2017/01/5_thum_x-t20.jpg?width=400',
@@ -616,7 +619,7 @@ const CAMERAS = {
   },
 
   'x-t10': {
-    name:'X-T10', series:'X-T', year:2015, discontinued:true,
+    name:'X-T10', series:'X-T', mount:'x', year:2015, discontinued:true,
     tagline:'Compact SLR-Style Enthusiast',
     productUrl:'https://www.fujifilm-x.com/global/products/cameras/',
     imageUrl:'https://fujifilm-x.b-cdn.net/wp-content/uploads/2015/05/480xcom_MH0409_X_T10.jpg?width=400',
@@ -634,7 +637,7 @@ const CAMERAS = {
   },
 
   'x-t100': {
-    name:'X-T100', series:'X-T', year:2018, discontinued:true,
+    name:'X-T100', series:'X-T', mount:'x', year:2018, discontinued:true,
     tagline:'Budget Entry with 3-Way Tilt',
     productUrl:'https://www.fujifilm-x.com/global/products/cameras/',
     imageUrl:'https://fujifilm-x.b-cdn.net/wp-content/uploads/2018/05/6_thum_x-t100.jpg?width=400',
@@ -652,7 +655,7 @@ const CAMERAS = {
   },
 
   'x-t200': {
-    name:'X-T200', series:'X-T', year:2020, discontinued:true,
+    name:'X-T200', series:'X-T', mount:'x', year:2020, discontinued:true,
     tagline:'Budget Vlogger with Articulating Screen',
     productUrl:'https://www.fujifilm-x.com/global/products/cameras/',
     imageUrl:'https://fujifilm-x.b-cdn.net/wp-content/uploads/2020/01/x-t200_thum.jpg?width=400',
@@ -671,7 +674,7 @@ const CAMERAS = {
 
   /* ── X-S Series ── */
   'x-s20': {
-    name:'X-S20', series:'X-S', year:2023, discontinued:false,
+    name:'X-S20', series:'X-S', mount:'x', year:2023, discontinued:false,
     tagline:'Best Value Hybrid All-Rounder',
     productUrl:'https://www.fujifilm-x.com/global/products/cameras/x-s20/',
     imageUrl:'https://fujifilm-x.b-cdn.net/wp-content/uploads/2023/05/dwga_x-s20_thum.jpg?width=400',
@@ -691,7 +694,7 @@ const CAMERAS = {
   },
 
   'x-s10': {
-    name:'X-S10', series:'X-S', year:2020, discontinued:true,
+    name:'X-S10', series:'X-S', mount:'x', year:2020, discontinued:true,
     tagline:'Compact IBIS for Budget Buyers',
     productUrl:'https://www.fujifilm-x.com/global/products/cameras/x-s10/',
     imageUrl:'https://fujifilm-x.b-cdn.net/wp-content/uploads/2020/10/x-s10_product_list-poiu.jpg?width=400',
@@ -712,7 +715,7 @@ const CAMERAS = {
 
   /* ── X-M Series ── */
   'x-m5': {
-    name:'X-M5', series:'X-M', year:2024, discontinued:false,
+    name:'X-M5', series:'X-M', mount:'x', year:2024, discontinued:false,
     tagline:'Smallest X Series, Content Creator',
     productUrl:'https://www.fujifilm-x.com/global/products/cameras/x-m5/',
     imageUrl:'https://fujifilm-x.b-cdn.net/wp-content/uploads/2024/10/product_thumb_x-m5.jpg?width=400',
@@ -731,7 +734,7 @@ const CAMERAS = {
   },
 
   'x-m1': {
-    name:'X-M1', series:'X-M', year:2013, discontinued:true,
+    name:'X-M1', series:'X-M', mount:'x', year:2013, discontinued:true,
     tagline:'Original Budget X-Trans Compact',
     productUrl:'https://www.fujifilm-x.com/global/products/cameras/',
     imageUrl:'https://fujifilm-x.b-cdn.net/wp-content/uploads/2019/04/480xcom_MH0409_X_M1.jpg?width=400',
@@ -750,7 +753,7 @@ const CAMERAS = {
 
   /* ── GFX Series (Medium Format) ── */
   'gfx100-ii': {
-    name:'GFX100 II', series:'GFX', year:2023, discontinued:false,
+    name:'GFX100 II', series:'GFX', mount:'g', year:2023, discontinued:false,
     tagline:'102MP Medium Format Flagship',
     productUrl:'https://www.fujifilm-x.com/en-us/products/cameras/gfx100-ii/',
     imageUrl:'https://upload.wikimedia.org/wikipedia/commons/thumb/c/c8/Fujifilm_GFX100_II_2_dec_2023a.jpg/500px-Fujifilm_GFX100_II_2_dec_2023a.jpg',
@@ -772,7 +775,7 @@ const CAMERAS = {
   },
 
   'gfx100s-ii': {
-    name:'GFX100S II', series:'GFX', year:2024, discontinued:false,
+    name:'GFX100S II', series:'GFX', mount:'g', year:2024, discontinued:false,
     tagline:'102MP Medium Format, Compact Body',
     productUrl:'https://www.fujifilm-x.com/en-us/products/cameras/gfx100s-ii/',
     imageUrl:'https://upload.wikimedia.org/wikipedia/commons/thumb/5/5a/Fujifilm_GFX100S_II_25_may_2024a.jpg/500px-Fujifilm_GFX100S_II_25_may_2024a.jpg',
@@ -794,7 +797,7 @@ const CAMERAS = {
   },
 
   'gfx100rf': {
-    name:'GFX100RF', series:'GFX', year:2025, discontinued:false,
+    name:'GFX100RF', series:'GFX', mount:'g', year:2025, discontinued:false,
     tagline:'102MP Fixed-Lens Compact',
     productUrl:'https://www.fujifilm-x.com/en-us/products/cameras/gfx100rf/',
     imageUrl:'https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Fujifilm_GFX100RF_25_oct_2025a.jpg/500px-Fujifilm_GFX100RF_25_oct_2025a.jpg',
@@ -816,7 +819,7 @@ const CAMERAS = {
   },
 
   'gfx50s-ii': {
-    name:'GFX50S II', series:'GFX', year:2021, discontinued:true,
+    name:'GFX50S II', series:'GFX', mount:'g', year:2021, discontinued:true,
     tagline:'51MP Medium Format, First With IBIS',
     productUrl:'https://www.fujifilm-x.com/en-us/products/cameras/gfx50s-ii/',
     imageUrl:'https://upload.wikimedia.org/wikipedia/commons/thumb/b/b0/Fujifilm_GFX50S_II_10_nov_2021a.jpg/500px-Fujifilm_GFX50S_II_10_nov_2021a.jpg',
@@ -864,7 +867,7 @@ const LENSES = {
   /* ── Fujifilm XF Primes ── */
   'xf-8mm-f35': {
     name:'XF 8mm f/3.5 R WR', manufacturer:'Fujifilm', line:'XF', type:'Prime',
-    focalLength:8, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'12mm',
+    mount:'x', focalLength:8, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'12mm',
     maxAperture:3.5, minAperture:22, weight:215, length:63.4, diameter:71.7,
     filterThread:62, minFocusDist:20, maxMagnification:0.12,
     elements:11, groups:8, blades:7, afType:'Stepping Motor',
@@ -876,7 +879,7 @@ const LENSES = {
   },
   'xf-14mm-f28': {
     name:'XF 14mm f/2.8 R', manufacturer:'Fujifilm', line:'XF', type:'Prime',
-    focalLength:14, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'21mm',
+    mount:'x', focalLength:14, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'21mm',
     maxAperture:2.8, minAperture:22, weight:235, length:58.4, diameter:65,
     filterThread:null, minFocusDist:18, maxMagnification:0.1,
     elements:10, groups:7, blades:7, afType:'DC Motor',
@@ -888,7 +891,7 @@ const LENSES = {
   },
   'xf-16mm-f14': {
     name:'XF 16mm f/1.4 R WR', manufacturer:'Fujifilm', line:'XF', type:'Prime',
-    focalLength:16, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'24mm',
+    mount:'x', focalLength:16, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'24mm',
     maxAperture:1.4, minAperture:16, weight:375, length:73.5, diameter:73,
     filterThread:67, minFocusDist:15, maxMagnification:0.21,
     elements:13, groups:11, blades:9, afType:'DC Motor',
@@ -900,7 +903,7 @@ const LENSES = {
   },
   'xf-16mm-f28': {
     name:'XF 16mm f/2.8 R WR', manufacturer:'Fujifilm', line:'XF', type:'Prime',
-    focalLength:16, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'24mm',
+    mount:'x', focalLength:16, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'24mm',
     maxAperture:2.8, minAperture:22, weight:155, length:45, diameter:60,
     filterThread:49, minFocusDist:17, maxMagnification:0.12,
     elements:10, groups:8, blades:9, afType:'Stepping Motor',
@@ -912,7 +915,7 @@ const LENSES = {
   },
   'xf-18mm-f14': {
     name:'XF 18mm f/1.4 R LM WR', manufacturer:'Fujifilm', line:'XF', type:'Prime',
-    focalLength:18, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'27mm',
+    mount:'x', focalLength:18, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'27mm',
     maxAperture:1.4, minAperture:16, weight:370, length:81, diameter:73,
     filterThread:62, minFocusDist:20, maxMagnification:0.15,
     elements:12, groups:8, blades:9, afType:'Linear Motor',
@@ -924,7 +927,7 @@ const LENSES = {
   },
   'xf-18mm-f2': {
     name:'XF 18mm f/2 R', manufacturer:'Fujifilm', line:'XF', type:'Prime',
-    focalLength:18, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'27mm',
+    mount:'x', focalLength:18, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'27mm',
     maxAperture:2.0, minAperture:16, weight:116, length:41, diameter:65,
     filterThread:52, minFocusDist:18, maxMagnification:0.14,
     elements:8, groups:7, blades:7, afType:'DC Motor',
@@ -937,7 +940,7 @@ const LENSES = {
   },
   'xf-23mm-f14-lm-wr': {
     name:'XF 23mm f/1.4 R LM WR', manufacturer:'Fujifilm', line:'XF', type:'Prime',
-    focalLength:23, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'35mm',
+    mount:'x', focalLength:23, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'35mm',
     maxAperture:1.4, minAperture:16, weight:375, length:77.8, diameter:67,
     filterThread:58, minFocusDist:19, maxMagnification:0.1,
     elements:15, groups:10, blades:9, afType:'Linear Motor',
@@ -949,7 +952,7 @@ const LENSES = {
   },
   'xf-23mm-f2': {
     name:'XF 23mm f/2 R WR', manufacturer:'Fujifilm', line:'XF', type:'Prime',
-    focalLength:23, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'35mm',
+    mount:'x', focalLength:23, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'35mm',
     maxAperture:2.0, minAperture:16, weight:180, length:56.2, diameter:60,
     filterThread:43, minFocusDist:22, maxMagnification:0.1,
     elements:8, groups:6, blades:9, afType:'DC Motor',
@@ -961,7 +964,7 @@ const LENSES = {
   },
   'xf-23mm-f28': {
     name:'XF 23mm f/2.8 R WR', manufacturer:'Fujifilm', line:'XF', type:'Prime',
-    focalLength:23, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'35mm',
+    mount:'x', focalLength:23, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'35mm',
     maxAperture:2.8, minAperture:16, weight:90, length:23, diameter:61.8,
     filterThread:39, minFocusDist:20, maxMagnification:0.15,
     elements:8, groups:6, blades:11, afType:'DC Motor',
@@ -974,7 +977,7 @@ const LENSES = {
   },
   'xf-27mm-f28': {
     name:'XF 27mm f/2.8 R WR', manufacturer:'Fujifilm', line:'XF', type:'Prime',
-    focalLength:27, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'41mm',
+    mount:'x', focalLength:27, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'41mm',
     maxAperture:2.8, minAperture:16, weight:84, length:23, diameter:60,
     filterThread:39, minFocusDist:34, maxMagnification:0.1,
     elements:8, groups:7, blades:7, afType:'DC Motor',
@@ -986,7 +989,7 @@ const LENSES = {
   },
   'xf-30mm-f28-macro': {
     name:'XF 30mm f/2.8 R LM WR Macro', manufacturer:'Fujifilm', line:'XF', type:'Prime',
-    focalLength:30, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'46mm',
+    mount:'x', focalLength:30, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'46mm',
     maxAperture:2.8, minAperture:22, weight:195, length:69.5, diameter:60,
     filterThread:43, minFocusDist:10, maxMagnification:1.0,
     elements:11, groups:9, blades:9, afType:'Linear Motor',
@@ -999,7 +1002,7 @@ const LENSES = {
   },
   'xf-33mm-f14': {
     name:'XF 33mm f/1.4 R LM WR', manufacturer:'Fujifilm', line:'XF', type:'Prime',
-    focalLength:33, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'50mm',
+    mount:'x', focalLength:33, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'50mm',
     maxAperture:1.4, minAperture:16, weight:360, length:73.5, diameter:67,
     filterThread:58, minFocusDist:30, maxMagnification:0.1,
     elements:11, groups:8, blades:9, afType:'Linear Motor',
@@ -1011,7 +1014,7 @@ const LENSES = {
   },
   'xf-35mm-f14': {
     name:'XF 35mm f/1.4 R', manufacturer:'Fujifilm', line:'XF', type:'Prime',
-    focalLength:35, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'53mm',
+    mount:'x', focalLength:35, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'53mm',
     maxAperture:1.4, minAperture:16, weight:187, length:54.9, diameter:65,
     filterThread:52, minFocusDist:28, maxMagnification:0.17,
     elements:8, groups:6, blades:7, afType:'DC Motor',
@@ -1023,7 +1026,7 @@ const LENSES = {
   },
   'xf-35mm-f2': {
     name:'XF 35mm f/2 R WR', manufacturer:'Fujifilm', line:'XF', type:'Prime',
-    focalLength:35, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'53mm',
+    mount:'x', focalLength:35, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'53mm',
     maxAperture:2.0, minAperture:16, weight:170, length:45.9, diameter:60,
     filterThread:43, minFocusDist:35, maxMagnification:0.12,
     elements:9, groups:6, blades:9, afType:'DC Motor',
@@ -1035,7 +1038,7 @@ const LENSES = {
   },
   'xf-50mm-f10': {
     name:'XF 50mm f/1.0 R WR', manufacturer:'Fujifilm', line:'XF', type:'Prime',
-    focalLength:50, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'76mm',
+    mount:'x', focalLength:50, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'76mm',
     maxAperture:1.0, minAperture:16, weight:845, length:103.5, diameter:87,
     filterThread:77, minFocusDist:70, maxMagnification:0.08,
     elements:12, groups:9, blades:9, afType:'DC Motor',
@@ -1047,7 +1050,7 @@ const LENSES = {
   },
   'xf-50mm-f2': {
     name:'XF 50mm f/2 R WR', manufacturer:'Fujifilm', line:'XF', type:'Prime',
-    focalLength:50, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'76mm',
+    mount:'x', focalLength:50, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'76mm',
     maxAperture:2.0, minAperture:16, weight:200, length:59.4, diameter:60,
     filterThread:46, minFocusDist:39, maxMagnification:0.12,
     elements:10, groups:6, blades:9, afType:'DC Motor',
@@ -1059,7 +1062,7 @@ const LENSES = {
   },
   'xf-56mm-f12-wr': {
     name:'XF 56mm f/1.2 R WR', manufacturer:'Fujifilm', line:'XF', type:'Prime',
-    focalLength:56, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'85mm',
+    mount:'x', focalLength:56, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'85mm',
     maxAperture:1.2, minAperture:16, weight:445, length:77.1, diameter:73,
     filterThread:62, minFocusDist:50, maxMagnification:0.09,
     elements:13, groups:11, blades:9, afType:'DC Motor',
@@ -1071,7 +1074,7 @@ const LENSES = {
   },
   'xf-60mm-f24-macro': {
     name:'XF 60mm f/2.4 R Macro', manufacturer:'Fujifilm', line:'XF', type:'Prime',
-    focalLength:60, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'91mm',
+    mount:'x', focalLength:60, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'91mm',
     maxAperture:2.4, minAperture:22, weight:215, length:71, diameter:64,
     filterThread:39, minFocusDist:27, maxMagnification:0.5,
     elements:10, groups:8, blades:9, afType:'DC Motor',
@@ -1084,7 +1087,7 @@ const LENSES = {
   },
   'xf-80mm-f28-macro': {
     name:'XF 80mm f/2.8 R LM OIS WR Macro', manufacturer:'Fujifilm', line:'XF', type:'Prime',
-    focalLength:80, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'122mm',
+    mount:'x', focalLength:80, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'122mm',
     maxAperture:2.8, minAperture:22, weight:750, length:130, diameter:80,
     filterThread:62, minFocusDist:25, maxMagnification:1.0,
     elements:16, groups:12, blades:9, afType:'Linear Motor',
@@ -1097,7 +1100,7 @@ const LENSES = {
   },
   'xf-90mm-f2': {
     name:'XF 90mm f/2 R LM WR', manufacturer:'Fujifilm', line:'XF', type:'Prime',
-    focalLength:90, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'137mm',
+    mount:'x', focalLength:90, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'137mm',
     maxAperture:2.0, minAperture:16, weight:540, length:105.1, diameter:72,
     filterThread:62, minFocusDist:60, maxMagnification:0.2,
     elements:11, groups:8, blades:9, afType:'Linear Motor',
@@ -1109,7 +1112,7 @@ const LENSES = {
   },
   'xf-200mm-f2': {
     name:'XF 200mm f/2 R LM OIS WR', manufacturer:'Fujifilm', line:'XF', type:'Prime',
-    focalLength:200, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'305mm',
+    mount:'x', focalLength:200, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'305mm',
     maxAperture:2.0, minAperture:22, weight:2265, length:200, diameter:122,
     filterThread:105, minFocusDist:180, maxMagnification:0.14,
     elements:19, groups:14, blades:9, afType:'Linear Motor',
@@ -1122,7 +1125,7 @@ const LENSES = {
   },
   'xf-400mm-f45': {
     name:'XF 400mm f/4.5 R LM OIS WR', manufacturer:'Fujifilm', line:'XF', type:'Prime',
-    focalLength:400, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'609mm',
+    mount:'x', focalLength:400, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'609mm',
     maxAperture:4.5, minAperture:22, weight:1245, length:239.5, diameter:104.5,
     filterThread:95, minFocusDist:275, maxMagnification:0.16,
     elements:21, groups:14, blades:9, afType:'Linear Motor',
@@ -1139,7 +1142,7 @@ const LENSES = {
   },
   'xf-500mm-f56': {
     name:'XF 500mm f/5.6 R LM OIS WR', manufacturer:'Fujifilm', line:'XF', type:'Prime',
-    focalLength:500, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'762mm',
+    mount:'x', focalLength:500, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'762mm',
     maxAperture:5.6, minAperture:22, weight:1335, length:255.5, diameter:104.5,
     filterThread:95, minFocusDist:275, maxMagnification:0.2,
     elements:21, groups:14, blades:9, afType:'Linear Motor',
@@ -1153,7 +1156,7 @@ const LENSES = {
   /* ── Fujifilm XF Zooms ── */
   'xf-8-16mm-f28': {
     name:'XF 8-16mm f/2.8 R LM WR', manufacturer:'Fujifilm', line:'XF', type:'Zoom',
-    focalLength:null, focalLengthMin:8, focalLengthMax:16, focalLengthEquiv:'12-24mm',
+    mount:'x', focalLength:null, focalLengthMin:8, focalLengthMax:16, focalLengthEquiv:'12-24mm',
     maxAperture:2.8, minAperture:22, weight:805, length:121.5, diameter:88,
     filterThread:null, minFocusDist:25, maxMagnification:0.1,
     elements:20, groups:13, blades:9, afType:'Linear Motor',
@@ -1165,7 +1168,7 @@ const LENSES = {
   },
   'xf-10-24mm-f4': {
     name:'XF 10-24mm f/4 R OIS WR', manufacturer:'Fujifilm', line:'XF', type:'Zoom',
-    focalLength:null, focalLengthMin:10, focalLengthMax:24, focalLengthEquiv:'15-36mm',
+    mount:'x', focalLength:null, focalLengthMin:10, focalLengthMax:24, focalLengthEquiv:'15-36mm',
     maxAperture:4.0, minAperture:22, weight:410, length:87.1, diameter:78,
     filterThread:72, minFocusDist:24, maxMagnification:0.16,
     elements:14, groups:10, blades:7, afType:'DC Motor',
@@ -1177,7 +1180,7 @@ const LENSES = {
   },
   'xf-16-50mm-f28-48': {
     name:'XF 16-50mm f/2.8-4.8 R LM WR', manufacturer:'Fujifilm', line:'XF', type:'Zoom',
-    focalLength:null, focalLengthMin:16, focalLengthMax:50, focalLengthEquiv:'24-76mm',
+    mount:'x', focalLength:null, focalLengthMin:16, focalLengthMax:50, focalLengthEquiv:'24-76mm',
     maxAperture:2.8, minAperture:22, weight:240, length:71.4, diameter:68,
     filterThread:58, minFocusDist:24, maxMagnification:0.3,
     elements:null, groups:null, blades:9, afType:'Linear Motor',
@@ -1189,7 +1192,7 @@ const LENSES = {
   },
   'xf-16-55mm-f28-ii': {
     name:'XF 16-55mm f/2.8 R LM WR II', manufacturer:'Fujifilm', line:'XF', type:'Zoom',
-    focalLength:null, focalLengthMin:16, focalLengthMax:55, focalLengthEquiv:'24-84mm',
+    mount:'x', focalLength:null, focalLengthMin:16, focalLengthMax:55, focalLengthEquiv:'24-84mm',
     maxAperture:2.8, minAperture:22, weight:655, length:106, diameter:85,
     filterThread:77, minFocusDist:30, maxMagnification:0.16,
     elements:19, groups:13, blades:9, afType:'Linear Motor',
@@ -1201,7 +1204,7 @@ const LENSES = {
   },
   'xf-16-80mm-f4': {
     name:'XF 16-80mm f/4 R OIS WR', manufacturer:'Fujifilm', line:'XF', type:'Zoom',
-    focalLength:null, focalLengthMin:16, focalLengthMax:80, focalLengthEquiv:'24-122mm',
+    mount:'x', focalLength:null, focalLengthMin:16, focalLengthMax:80, focalLengthEquiv:'24-122mm',
     maxAperture:4.0, minAperture:22, weight:440, length:88.9, diameter:78,
     filterThread:72, minFocusDist:35, maxMagnification:0.25,
     elements:16, groups:12, blades:9, afType:'Stepping Motor',
@@ -1214,7 +1217,7 @@ const LENSES = {
   },
   'xf-18-55mm-f28-4': {
     name:'XF 18-55mm f/2.8-4 R LM OIS', manufacturer:'Fujifilm', line:'XF', type:'Zoom',
-    focalLength:null, focalLengthMin:18, focalLengthMax:55, focalLengthEquiv:'27-84mm',
+    mount:'x', focalLength:null, focalLengthMin:18, focalLengthMax:55, focalLengthEquiv:'27-84mm',
     maxAperture:2.8, minAperture:22, weight:310, length:70.4, diameter:65,
     filterThread:58, minFocusDist:30, maxMagnification:0.15,
     elements:14, groups:10, blades:7, afType:'Linear Motor',
@@ -1227,7 +1230,7 @@ const LENSES = {
   },
   'xf-18-120mm-f4-pz': {
     name:'XF 18-120mm f/4 LM PZ WR', manufacturer:'Fujifilm', line:'XF', type:'Zoom',
-    focalLength:null, focalLengthMin:18, focalLengthMax:120, focalLengthEquiv:'27-183mm',
+    mount:'x', focalLength:null, focalLengthMin:18, focalLengthMax:120, focalLengthEquiv:'27-183mm',
     maxAperture:4.0, minAperture:22, weight:460, length:123.5, diameter:77.3,
     filterThread:72, minFocusDist:60, maxMagnification:0.2,
     elements:15, groups:12, blades:7, afType:'Linear Motor',
@@ -1239,7 +1242,7 @@ const LENSES = {
   },
   'xf-18-135mm-f35-56': {
     name:'XF 18-135mm f/3.5-5.6 R LM OIS WR', manufacturer:'Fujifilm', line:'XF', type:'Zoom',
-    focalLength:null, focalLengthMin:18, focalLengthMax:135, focalLengthEquiv:'27-206mm',
+    mount:'x', focalLength:null, focalLengthMin:18, focalLengthMax:135, focalLengthEquiv:'27-206mm',
     maxAperture:3.5, minAperture:22, weight:490, length:97.8, diameter:75.7,
     filterThread:67, minFocusDist:45, maxMagnification:0.27,
     elements:16, groups:12, blades:7, afType:'Linear Motor',
@@ -1251,7 +1254,7 @@ const LENSES = {
   },
   'xf-50-140mm-f28': {
     name:'XF 50-140mm f/2.8 R LM OIS WR', manufacturer:'Fujifilm', line:'XF', type:'Zoom',
-    focalLength:null, focalLengthMin:50, focalLengthMax:140, focalLengthEquiv:'76-213mm',
+    mount:'x', focalLength:null, focalLengthMin:50, focalLengthMax:140, focalLengthEquiv:'76-213mm',
     maxAperture:2.8, minAperture:22, weight:995, length:175.9, diameter:83.5,
     filterThread:72, minFocusDist:100, maxMagnification:0.12,
     elements:23, groups:16, blades:9, afType:'Linear Motor',
@@ -1263,7 +1266,7 @@ const LENSES = {
   },
   'xf-55-200mm-f35-48': {
     name:'XF 55-200mm f/3.5-4.8 R LM OIS', manufacturer:'Fujifilm', line:'XF', type:'Zoom',
-    focalLength:null, focalLengthMin:55, focalLengthMax:200, focalLengthEquiv:'84-305mm',
+    mount:'x', focalLength:null, focalLengthMin:55, focalLengthMax:200, focalLengthEquiv:'84-305mm',
     maxAperture:3.5, minAperture:22, weight:580, length:175, diameter:75,
     filterThread:72, minFocusDist:110, maxMagnification:0.18,
     elements:18, groups:14, blades:7, afType:'Linear Motor',
@@ -1275,7 +1278,7 @@ const LENSES = {
   },
   'xf-70-300mm-f4-56': {
     name:'XF 70-300mm f/4-5.6 R LM OIS WR', manufacturer:'Fujifilm', line:'XF', type:'Zoom',
-    focalLength:null, focalLengthMin:70, focalLengthMax:300, focalLengthEquiv:'107-457mm',
+    mount:'x', focalLength:null, focalLengthMin:70, focalLengthMax:300, focalLengthEquiv:'107-457mm',
     maxAperture:4.0, minAperture:22, weight:580, length:132.5, diameter:75,
     filterThread:67, minFocusDist:83, maxMagnification:0.3,
     elements:17, groups:12, blades:9, afType:'Linear Motor',
@@ -1287,7 +1290,7 @@ const LENSES = {
   },
   'xf-100-400mm-f45-56': {
     name:'XF 100-400mm f/4.5-5.6 R LM OIS WR', manufacturer:'Fujifilm', line:'XF', type:'Zoom',
-    focalLength:null, focalLengthMin:100, focalLengthMax:400, focalLengthEquiv:'152-609mm',
+    mount:'x', focalLength:null, focalLengthMin:100, focalLengthMax:400, focalLengthEquiv:'152-609mm',
     maxAperture:4.5, minAperture:22, weight:1375, length:209.8, diameter:95,
     filterThread:77, minFocusDist:175, maxMagnification:0.19,
     elements:21, groups:14, blades:9, afType:'Linear Motor',
@@ -1299,7 +1302,7 @@ const LENSES = {
   },
   'xf-150-600mm-f56-8': {
     name:'XF 150-600mm f/5.6-8 R LM OIS WR', manufacturer:'Fujifilm', line:'XF', type:'Zoom',
-    focalLength:null, focalLengthMin:150, focalLengthMax:600, focalLengthEquiv:'229-914mm',
+    mount:'x', focalLength:null, focalLengthMin:150, focalLengthMax:600, focalLengthEquiv:'229-914mm',
     maxAperture:5.6, minAperture:22, weight:1605, length:313.5, diameter:107,
     filterThread:82, minFocusDist:240, maxMagnification:0.25,
     elements:24, groups:17, blades:9, afType:'Linear Motor',
@@ -1313,7 +1316,7 @@ const LENSES = {
   /* ── Fujifilm XC ── */
   'xc-15-45mm-f35-56': {
     name:'XC 15-45mm f/3.5-5.6 OIS PZ', manufacturer:'Fujifilm', line:'XC', type:'Zoom',
-    focalLength:null, focalLengthMin:15, focalLengthMax:45, focalLengthEquiv:'23-69mm',
+    mount:'x', focalLength:null, focalLengthMin:15, focalLengthMax:45, focalLengthEquiv:'23-69mm',
     maxAperture:3.5, minAperture:22, weight:135, length:44, diameter:61,
     filterThread:52, minFocusDist:25, maxMagnification:0.2,
     elements:10, groups:8, blades:7, afType:'Stepping Motor',
@@ -1324,7 +1327,7 @@ const LENSES = {
     productUrl:'https://www.fujifilm-x.com/global/products/lenses/xc15-45mmf35-56-ois-pz/',
   },
   'xc-16-50mm-f35-56': {
-    name:'XC 16-50mm f/3.5-5.6 OIS II', manufacturer:'Fujifilm', line:'XC', type:'Zoom', asin:'B00XTPE4LY',
+    name:'XC 16-50mm f/3.5-5.6 OIS II', manufacturer:'Fujifilm', line:'XC', type:'Zoom', mount:'x', asin:'B00XTPE4LY',
     focalLength:null, focalLengthMin:16, focalLengthMax:50, focalLengthEquiv:'24-76mm',
     maxAperture:3.5, minAperture:22, weight:195, length:62.6, diameter:65,
     filterThread:58, minFocusDist:30, maxMagnification:0.15,
@@ -1337,7 +1340,7 @@ const LENSES = {
     productUrl:'https://www.fujifilm-x.com/en-us/products/discontinued-lenses/xc16-50mmf35-56-ois-2/',
   },
   'xc-35mm-f2': {
-    name:'XC 35mm f/2', manufacturer:'Fujifilm', line:'XC', type:'Prime', asin:'B08412XPWK',
+    name:'XC 35mm f/2', manufacturer:'Fujifilm', line:'XC', type:'Prime', mount:'x', asin:'B08412XPWK',
     focalLength:35, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'53mm',
     maxAperture:2.0, minAperture:16, weight:130, length:49.4, diameter:60,
     filterThread:43, minFocusDist:35, maxMagnification:0.12,
@@ -1349,7 +1352,7 @@ const LENSES = {
   },
   'xc-50-230mm-f45-67': {
     name:'XC 50-230mm f/4.5-6.7 OIS II', manufacturer:'Fujifilm', line:'XC', type:'Zoom',
-    focalLength:null, focalLengthMin:50, focalLengthMax:230, focalLengthEquiv:'76-350mm',
+    mount:'x', focalLength:null, focalLengthMin:50, focalLengthMax:230, focalLengthEquiv:'76-350mm',
     maxAperture:4.5, minAperture:22, weight:370, length:111, diameter:69.5,
     filterThread:58, minFocusDist:110, maxMagnification:0.2,
     elements:13, groups:10, blades:7, afType:'Stepping Motor',
@@ -1361,7 +1364,7 @@ const LENSES = {
   },
   'xc-13-33mm-f35-63': {
     name:'XC 13-33mm f/3.5-6.3 OIS', manufacturer:'Fujifilm', line:'XC', type:'Zoom',
-    focalLength:null, focalLengthMin:13, focalLengthMax:33, focalLengthEquiv:'20-50mm',
+    mount:'x', focalLength:null, focalLengthMin:13, focalLengthMax:33, focalLengthEquiv:'20-50mm',
     maxAperture:3.5, minAperture:22, weight:125, length:37.5, diameter:62,
     filterThread:49, minFocusDist:20, maxMagnification:0.25,
     elements:10, groups:9, blades:9, afType:'Stepping Motor',
@@ -1377,7 +1380,7 @@ const LENSES = {
      uses Fujifilm's own published ~0.79x factor, not a crop multiplier. */
   'gf23mm-f4': {
     name:'GF23mmF4 R LM WR', manufacturer:'Fujifilm', line:'GF', type:'Prime',
-    focalLength:23, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'18mm',
+    mount:'g', focalLength:23, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'18mm',
     maxAperture:4.0, minAperture:32, weight:845, length:103.0, diameter:89.8,
     filterThread:82, minFocusDist:38, maxMagnification:0.09,
     elements:15, groups:12, blades:9, afType:'Linear Motor',
@@ -1392,7 +1395,7 @@ const LENSES = {
   },
   'gf30mm-f35': {
     name:'GF30mmF3.5 R WR', manufacturer:'Fujifilm', line:'GF', type:'Prime',
-    focalLength:30, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'24mm',
+    mount:'g', focalLength:30, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'24mm',
     maxAperture:3.5, minAperture:32, weight:510, length:99.4, diameter:84,
     filterThread:58, minFocusDist:32, maxMagnification:0.15,
     elements:13, groups:10, blades:9, afType:'AF',
@@ -1407,7 +1410,7 @@ const LENSES = {
   },
   'gf45mm-f28': {
     name:'GF45mmF2.8 R WR', manufacturer:'Fujifilm', line:'GF', type:'Prime',
-    focalLength:45, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'36mm',
+    mount:'g', focalLength:45, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'36mm',
     maxAperture:2.8, minAperture:32, weight:490, length:88, diameter:84,
     filterThread:62, minFocusDist:45, maxMagnification:0.14,
     elements:11, groups:8, blades:9, afType:'AF',
@@ -1422,7 +1425,7 @@ const LENSES = {
   },
   'gf50mm-f35': {
     name:'GF50mmF3.5 R LM WR', manufacturer:'Fujifilm', line:'GF', type:'Prime',
-    focalLength:50, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'40mm',
+    mount:'g', focalLength:50, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'40mm',
     maxAperture:3.5, minAperture:32, weight:335, length:48, diameter:84,
     filterThread:62, minFocusDist:55, maxMagnification:0.1,
     elements:9, groups:6, blades:9, afType:'Linear Motor',
@@ -1437,7 +1440,7 @@ const LENSES = {
   },
   'gf55mm-f17': {
     name:'GF55mmF1.7 R WR', manufacturer:'Fujifilm', line:'GF', type:'Prime',
-    focalLength:55, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'43mm',
+    mount:'g', focalLength:55, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'43mm',
     maxAperture:1.7, minAperture:22, weight:780, length:99.3, diameter:94.7,
     filterThread:77, minFocusDist:50, maxMagnification:0.17,
     elements:14, groups:10, blades:11, afType:'DC Motor',
@@ -1452,7 +1455,7 @@ const LENSES = {
   },
   'gf63mm-f28': {
     name:'GF63mmF2.8 R WR', manufacturer:'Fujifilm', line:'GF', type:'Prime',
-    focalLength:63, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'50mm',
+    mount:'g', focalLength:63, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'50mm',
     maxAperture:2.8, minAperture:32, weight:405, length:71.0, diameter:84.0,
     filterThread:62, minFocusDist:50, maxMagnification:0.17,
     elements:10, groups:8, blades:9, afType:'AF',
@@ -1467,7 +1470,7 @@ const LENSES = {
   },
   'gf80mm-f17': {
     name:'GF80mmF1.7 R WR', manufacturer:'Fujifilm', line:'GF', type:'Prime',
-    focalLength:80, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'63mm',
+    mount:'g', focalLength:80, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'63mm',
     maxAperture:1.7, minAperture:22, weight:795, length:99.2, diameter:94.7,
     filterThread:77, minFocusDist:70, maxMagnification:0.15,
     elements:12, groups:9, blades:9, afType:'DC Motor',
@@ -1482,7 +1485,7 @@ const LENSES = {
   },
   'gf110mm-f2': {
     name:'GF110mmF2 R LM WR', manufacturer:'Fujifilm', line:'GF', type:'Prime',
-    focalLength:110, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'87mm',
+    mount:'g', focalLength:110, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'87mm',
     maxAperture:2.0, minAperture:22, weight:1010, length:125.5, diameter:94.3,
     filterThread:77, minFocusDist:90, maxMagnification:0.16,
     elements:14, groups:9, blades:9, afType:'Linear Motor',
@@ -1497,7 +1500,7 @@ const LENSES = {
   },
   'gf120mm-f4-macro': {
     name:'GF120mmF4 R LM OIS WR Macro', manufacturer:'Fujifilm', line:'GF', type:'Prime',
-    focalLength:120, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'95mm',
+    mount:'g', focalLength:120, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'95mm',
     maxAperture:4.0, minAperture:32, weight:980, length:152.5, diameter:89.2,
     filterThread:72, minFocusDist:45, maxMagnification:0.5,
     elements:14, groups:9, blades:9, afType:'Linear Motor',
@@ -1512,7 +1515,7 @@ const LENSES = {
   },
   'gf250mm-f4': {
     name:'GF250mmF4 R LM OIS WR', manufacturer:'Fujifilm', line:'GF', type:'Prime',
-    focalLength:250, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'198mm',
+    mount:'g', focalLength:250, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'198mm',
     maxAperture:4.0, minAperture:32, weight:1425, length:203.5, diameter:108,
     filterThread:82, minFocusDist:140, maxMagnification:0.22,
     elements:16, groups:10, blades:9, afType:'Linear Motor',
@@ -1527,7 +1530,7 @@ const LENSES = {
   },
   'gf500mm-f56': {
     name:'GF500mmF5.6 R LM OIS WR', manufacturer:'Fujifilm', line:'GF', type:'Prime',
-    focalLength:500, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'395mm',
+    mount:'g', focalLength:500, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'395mm',
     maxAperture:5.6, minAperture:32, weight:1375, length:246.5, diameter:104.5,
     filterThread:95, minFocusDist:275, maxMagnification:0.2,
     elements:21, groups:14, blades:9, afType:'Linear Motor',
@@ -1544,7 +1547,7 @@ const LENSES = {
   /* ── Fujifilm GF (Medium Format Zooms) ── */
   'gf20-35mm-f4': {
     name:'GF20-35mmF4 R WR', manufacturer:'Fujifilm', line:'GF', type:'Zoom',
-    focalLength:null, focalLengthMin:20, focalLengthMax:35, focalLengthEquiv:'16-28mm',
+    mount:'g', focalLength:null, focalLengthMin:20, focalLengthMax:35, focalLengthEquiv:'16-28mm',
     maxAperture:4.0, minAperture:22, weight:725, length:112.5, diameter:88.5,
     filterThread:82, minFocusDist:35, maxMagnification:0.14,
     elements:14, groups:10, blades:9, afType:'Stepping Motor',
@@ -1559,7 +1562,7 @@ const LENSES = {
   },
   'gf32-64mm-f4': {
     name:'GF32-64mmF4 R LM WR', manufacturer:'Fujifilm', line:'GF', type:'Zoom',
-    focalLength:null, focalLengthMin:32, focalLengthMax:64, focalLengthEquiv:'25-51mm',
+    mount:'g', focalLength:null, focalLengthMin:32, focalLengthMax:64, focalLengthEquiv:'25-51mm',
     maxAperture:4.0, minAperture:32, weight:875, length:116, diameter:92.6,
     filterThread:77, minFocusDist:50, maxMagnification:0.12,
     elements:14, groups:11, blades:9, afType:'Linear Motor',
@@ -1574,7 +1577,7 @@ const LENSES = {
   },
   'gf35-70mm-f45-56': {
     name:'GF35-70mmF4.5-5.6 WR', manufacturer:'Fujifilm', line:'GF', type:'Zoom',
-    focalLength:null, focalLengthMin:35, focalLengthMax:70, focalLengthEquiv:'28-55mm',
+    mount:'g', focalLength:null, focalLengthMin:35, focalLengthMax:70, focalLengthEquiv:'28-55mm',
     maxAperture:4.5, minAperture:32, weight:390, length:73.9, diameter:84.9,
     filterThread:62, minFocusDist:35, maxMagnification:0.28,
     elements:11, groups:9, blades:9, afType:'AF',
@@ -1589,7 +1592,7 @@ const LENSES = {
   },
   'gf45-100mm-f4': {
     name:'GF45-100mmF4 R LM OIS WR', manufacturer:'Fujifilm', line:'GF', type:'Zoom',
-    focalLength:null, focalLengthMin:45, focalLengthMax:100, focalLengthEquiv:'36-79mm',
+    mount:'g', focalLength:null, focalLengthMin:45, focalLengthMax:100, focalLengthEquiv:'36-79mm',
     maxAperture:4.0, minAperture:32, weight:1005, length:144.5, diameter:93,
     filterThread:82, minFocusDist:65, maxMagnification:0.13,
     elements:16, groups:12, blades:9, afType:'Linear Motor',
@@ -1604,7 +1607,7 @@ const LENSES = {
   },
   'gf100-200mm-f56': {
     name:'GF100-200mmF5.6 R LM OIS WR', manufacturer:'Fujifilm', line:'GF', type:'Zoom',
-    focalLength:null, focalLengthMin:100, focalLengthMax:200, focalLengthEquiv:'79-158mm',
+    mount:'g', focalLength:null, focalLengthMin:100, focalLengthMax:200, focalLengthEquiv:'79-158mm',
     maxAperture:5.6, minAperture:32, weight:1050, length:183, diameter:89.5,
     filterThread:67, minFocusDist:60, maxMagnification:0.2,
     elements:20, groups:13, blades:9, afType:'Linear Motor',
@@ -1621,7 +1624,7 @@ const LENSES = {
   /* ── Fujifilm GF (Tilt-Shift, Manual Focus) ── */
   'gf30mm-f56-ts': {
     name:'GF30mmF5.6 T/S', manufacturer:'Fujifilm', line:'Tilt-Shift', type:'Prime',
-    focalLength:30, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'24mm',
+    mount:'g', focalLength:30, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'24mm',
     maxAperture:5.6, minAperture:32, weight:1340, length:138.5, diameter:87.1,
     filterThread:105, minFocusDist:30, maxMagnification:0.21,
     elements:16, groups:11, blades:9, afType:'Manual',
@@ -1636,7 +1639,7 @@ const LENSES = {
   },
   'gf110mm-f56-ts-macro': {
     name:'GF110mmF5.6 T/S Macro', manufacturer:'Fujifilm', line:'Tilt-Shift', type:'Prime',
-    focalLength:110, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'87mm',
+    mount:'g', focalLength:110, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'87mm',
     maxAperture:5.6, minAperture:32, weight:1255, length:149, diameter:95,
     filterThread:72, minFocusDist:43, maxMagnification:0.5,
     elements:11, groups:9, blades:9, afType:'Manual',
@@ -1653,7 +1656,7 @@ const LENSES = {
   /* ── Sigma ── */
   'sigma-16mm-f14': {
     name:'Sigma 16mm f/1.4 DC DN', manufacturer:'Sigma', line:'Contemporary', type:'Prime',
-    focalLength:16, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'24mm',
+    mount:'x', focalLength:16, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'24mm',
     maxAperture:1.4, minAperture:16, weight:405, length:91.9, diameter:72.6,
     filterThread:67, minFocusDist:25, maxMagnification:0.1,
     elements:16, groups:13, blades:9, afType:'Stepping Motor',
@@ -1666,7 +1669,7 @@ const LENSES = {
   },
   'sigma-23mm-f14': {
     name:'Sigma 23mm f/1.4 DC DN', manufacturer:'Sigma', line:'Contemporary', type:'Prime',
-    focalLength:23, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'35mm',
+    mount:'x', focalLength:23, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'35mm',
     maxAperture:1.4, minAperture:16, weight:372, length:78.3, diameter:70.4,
     filterThread:58, minFocusDist:24, maxMagnification:0.15,
     elements:15, groups:10, blades:9, afType:'Stepping Motor',
@@ -1679,7 +1682,7 @@ const LENSES = {
   },
   'sigma-30mm-f14': {
     name:'Sigma 30mm f/1.4 DC DN', manufacturer:'Sigma', line:'Contemporary', type:'Prime',
-    focalLength:30, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'45mm',
+    mount:'x', focalLength:30, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'45mm',
     maxAperture:1.4, minAperture:16, weight:265, length:73.3, diameter:63.8,
     filterThread:52, minFocusDist:30, maxMagnification:0.1,
     elements:9, groups:7, blades:9, afType:'Stepping Motor',
@@ -1692,7 +1695,7 @@ const LENSES = {
   },
   'sigma-56mm-f14': {
     name:'Sigma 56mm f/1.4 DC DN', manufacturer:'Sigma', line:'Contemporary', type:'Prime',
-    focalLength:56, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'85mm',
+    mount:'x', focalLength:56, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'85mm',
     maxAperture:1.4, minAperture:16, weight:280, length:59.5, diameter:67.2,
     filterThread:55, minFocusDist:50, maxMagnification:0.1,
     elements:10, groups:8, blades:9, afType:'Stepping Motor',
@@ -1705,7 +1708,7 @@ const LENSES = {
   },
   'sigma-10-18mm-f28': {
     name:'Sigma 10-18mm f/2.8 DC DN', manufacturer:'Sigma', line:'Contemporary', type:'Zoom',
-    focalLength:null, focalLengthMin:10, focalLengthMax:18, focalLengthEquiv:'15-27mm',
+    mount:'x', focalLength:null, focalLengthMin:10, focalLengthMax:18, focalLengthEquiv:'15-27mm',
     maxAperture:2.8, minAperture:22, weight:250, length:64.3, diameter:72.2,
     filterThread:67, minFocusDist:11.6, maxMagnification:0.25,
     elements:13, groups:10, blades:7, afType:'Stepping Motor',
@@ -1718,7 +1721,7 @@ const LENSES = {
   },
   'sigma-18-50mm-f28': {
     name:'Sigma 18-50mm f/2.8 DC DN', manufacturer:'Sigma', line:'Contemporary', type:'Zoom',
-    focalLength:null, focalLengthMin:18, focalLengthMax:50, focalLengthEquiv:'27-76mm',
+    mount:'x', focalLength:null, focalLengthMin:18, focalLengthMax:50, focalLengthEquiv:'27-76mm',
     maxAperture:2.8, minAperture:22, weight:290, length:76.7, diameter:65.4,
     filterThread:58, minFocusDist:12.1, maxMagnification:0.2,
     elements:17, groups:13, blades:7, afType:'Stepping Motor',
@@ -1730,7 +1733,7 @@ const LENSES = {
   },
   'sigma-100-400mm-f5-63': {
     name:'Sigma 100-400mm f/5-6.3 DG DN OS', manufacturer:'Sigma', line:'Contemporary', type:'Zoom',
-    focalLength:null, focalLengthMin:100, focalLengthMax:400, focalLengthEquiv:'152-609mm',
+    mount:'x', focalLength:null, focalLengthMin:100, focalLengthMax:400, focalLengthEquiv:'152-609mm',
     maxAperture:5.0, minAperture:22, weight:1140, length:199.2, diameter:86.4,
     filterThread:77, minFocusDist:112, maxMagnification:0.24,
     elements:21, groups:15, blades:9, afType:'Stepping Motor',
@@ -1743,7 +1746,7 @@ const LENSES = {
   },
   'sigma-12mm-f14': {
     name:'Sigma 12mm f/1.4 DC', manufacturer:'Sigma', line:'Contemporary', type:'Prime',
-    focalLength:12, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'18mm',
+    mount:'x', focalLength:12, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'18mm',
     maxAperture:1.4, minAperture:16, weight:235, length:69.7, diameter:68.0,
     filterThread:62, minFocusDist:17.2, maxMagnification:0.12,
     elements:14, groups:12, blades:9, afType:'Stepping Motor',
@@ -1758,7 +1761,7 @@ const LENSES = {
   },
   'sigma-15mm-f14': {
     name:'Sigma 15mm f/1.4 DC', manufacturer:'Sigma', line:'Contemporary', type:'Prime',
-    focalLength:15, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'23mm',
+    mount:'x', focalLength:15, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'23mm',
     maxAperture:1.4, minAperture:16, weight:225, length:65.1, diameter:64.0,
     filterThread:58, minFocusDist:17.7, maxMagnification:0.13,
     elements:13, groups:11, blades:9, afType:'Stepping Motor',
@@ -1773,7 +1776,7 @@ const LENSES = {
   },
   'sigma-16-300mm-f35-67': {
     name:'Sigma 16-300mm f/3.5-6.7 DC OS', manufacturer:'Sigma', line:'Contemporary', type:'Zoom',
-    focalLength:null, focalLengthMin:16, focalLengthMax:300, focalLengthEquiv:'24-450mm',
+    mount:'x', focalLength:null, focalLengthMin:16, focalLengthMax:300, focalLengthEquiv:'24-450mm',
     maxAperture:3.5, minAperture:22, weight:615, length:123.7, diameter:73.8,
     filterThread:67, minFocusDist:17, maxMagnification:0.5,
     elements:20, groups:14, blades:9, afType:'HLA (High-response Linear Actuator)',
@@ -1788,7 +1791,7 @@ const LENSES = {
   },
   'sigma-17-40mm-f18': {
     name:'Sigma 17-40mm f/1.8 DC', manufacturer:'Sigma', line:'Art', type:'Zoom',
-    focalLength:null, focalLengthMin:17, focalLengthMax:40, focalLengthEquiv:'26-60mm',
+    mount:'x', focalLength:null, focalLengthMin:17, focalLengthMax:40, focalLengthEquiv:'26-60mm',
     maxAperture:1.8, minAperture:16, weight:530, length:118.2, diameter:72.9,
     filterThread:67, minFocusDist:28, maxMagnification:0.21,
     elements:17, groups:11, blades:11, afType:'HLA (High-response Linear Actuator)',
@@ -1805,7 +1808,7 @@ const LENSES = {
   /* ── Tamron ── */
   'tamron-11-20mm-f28': {
     name:'Tamron 11-20mm f/2.8 Di III-A RXD', manufacturer:'Tamron', line:'Di III-A', type:'Zoom',
-    focalLength:null, focalLengthMin:11, focalLengthMax:20, focalLengthEquiv:'17-30mm',
+    mount:'x', focalLength:null, focalLengthMin:11, focalLengthMax:20, focalLengthEquiv:'17-30mm',
     maxAperture:2.8, minAperture:22, weight:335, length:86.2, diameter:73,
     filterThread:67, minFocusDist:15, maxMagnification:0.25,
     elements:12, groups:10, blades:7, afType:'Stepping Motor',
@@ -1818,7 +1821,7 @@ const LENSES = {
   },
   'tamron-17-70mm-f28': {
     name:'Tamron 17-70mm f/2.8 Di III-A VC RXD', manufacturer:'Tamron', line:'Di III-A', type:'Zoom',
-    focalLength:null, focalLengthMin:17, focalLengthMax:70, focalLengthEquiv:'26-107mm',
+    mount:'x', focalLength:null, focalLengthMin:17, focalLengthMax:70, focalLengthEquiv:'26-107mm',
     maxAperture:2.8, minAperture:22, weight:525, length:119.3, diameter:75,
     filterThread:67, minFocusDist:19, maxMagnification:0.19,
     elements:16, groups:12, blades:7, afType:'Stepping Motor',
@@ -1831,7 +1834,7 @@ const LENSES = {
   },
   'tamron-18-300mm-f35-63': {
     name:'Tamron 18-300mm f/3.5-6.3 Di III-A VC VXD', manufacturer:'Tamron', line:'Di III-A', type:'Zoom',
-    focalLength:null, focalLengthMin:18, focalLengthMax:300, focalLengthEquiv:'27-457mm',
+    mount:'x', focalLength:null, focalLengthMin:18, focalLengthMax:300, focalLengthEquiv:'27-457mm',
     maxAperture:3.5, minAperture:22, weight:620, length:125.6, diameter:75,
     filterThread:67, minFocusDist:15, maxMagnification:0.5,
     elements:19, groups:15, blades:7, afType:'Linear Motor',
@@ -1844,7 +1847,7 @@ const LENSES = {
   },
   'tamron-150-500mm-f5-67': {
     name:'Tamron 150-500mm f/5-6.7 Di III VC VXD', manufacturer:'Tamron', line:'Di III', type:'Zoom',
-    focalLength:null, focalLengthMin:150, focalLengthMax:500, focalLengthEquiv:'229-762mm',
+    mount:'x', focalLength:null, focalLengthMin:150, focalLengthMax:500, focalLengthEquiv:'229-762mm',
     maxAperture:5.0, minAperture:22, weight:1725, length:209.6, diameter:88,
     filterThread:82, minFocusDist:150, maxMagnification:0.33,
     elements:25, groups:18, blades:9, afType:'Linear Motor',
@@ -1859,7 +1862,7 @@ const LENSES = {
   /* ── Viltrox ── */
   'viltrox-13mm-f14': {
     name:'Viltrox AF 13mm f/1.4', manufacturer:'Viltrox', line:'AF', type:'Prime',
-    focalLength:13, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'20mm',
+    mount:'x', focalLength:13, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'20mm',
     maxAperture:1.4, minAperture:16, weight:512, length:88.5, diameter:75,
     filterThread:72, minFocusDist:15, maxMagnification:0.1,
     elements:14, groups:10, blades:9, afType:'Stepping Motor',
@@ -1872,7 +1875,7 @@ const LENSES = {
   },
   'viltrox-23mm-f14': {
     name:'Viltrox AF 23mm f/1.4', manufacturer:'Viltrox', line:'AF', type:'Prime',
-    focalLength:23, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'35mm',
+    mount:'x', focalLength:23, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'35mm',
     maxAperture:1.4, minAperture:16, weight:298, length:74.6, diameter:66.5,
     filterThread:52, minFocusDist:22, maxMagnification:0.1,
     elements:10, groups:7, blades:9, afType:'Stepping Motor',
@@ -1884,7 +1887,7 @@ const LENSES = {
   },
   'viltrox-33mm-f14': {
     name:'Viltrox AF 33mm f/1.4', manufacturer:'Viltrox', line:'AF', type:'Prime',
-    focalLength:33, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'50mm',
+    mount:'x', focalLength:33, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'50mm',
     maxAperture:1.4, minAperture:16, weight:266, length:73.3, diameter:66,
     filterThread:52, minFocusDist:40, maxMagnification:0.1,
     elements:10, groups:7, blades:9, afType:'Stepping Motor',
@@ -1896,7 +1899,7 @@ const LENSES = {
   },
   'viltrox-56mm-f14': {
     name:'Viltrox AF 56mm f/1.4', manufacturer:'Viltrox', line:'AF', type:'Prime',
-    focalLength:56, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'85mm',
+    mount:'x', focalLength:56, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'85mm',
     maxAperture:1.4, minAperture:16, weight:327, length:75.5, diameter:65,
     filterThread:52, minFocusDist:50, maxMagnification:0.1,
     elements:11, groups:8, blades:9, afType:'Stepping Motor',
@@ -1909,7 +1912,7 @@ const LENSES = {
   },
   'viltrox-85mm-f18': {
     name:'Viltrox AF 85mm f/1.8', manufacturer:'Viltrox', line:'AF', type:'Prime',
-    focalLength:85, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'130mm',
+    mount:'x', focalLength:85, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'130mm',
     maxAperture:1.8, minAperture:16, weight:432, length:96.5, diameter:74,
     filterThread:67, minFocusDist:85, maxMagnification:0.1,
     elements:10, groups:9, blades:9, afType:'Stepping Motor',
@@ -1921,7 +1924,7 @@ const LENSES = {
   },
   'viltrox-85mm-f18-ii': {
     name:'Viltrox AF 85mm f/1.8 II', manufacturer:'Viltrox', line:'AF', type:'Prime',
-    focalLength:85, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'130mm',
+    mount:'x', focalLength:85, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'130mm',
     maxAperture:1.8, minAperture:16, weight:492, length:92, diameter:80,
     filterThread:72, minFocusDist:80, maxMagnification:0.125,
     elements:10, groups:7, blades:9, afType:'Stepping Motor',
@@ -1935,7 +1938,7 @@ const LENSES = {
   },
   'viltrox-75mm-f12': {
     name:'Viltrox AF 75mm f/1.2 PRO', manufacturer:'Viltrox', line:'AF PRO', type:'Prime',
-    focalLength:75, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'114mm',
+    mount:'x', focalLength:75, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'114mm',
     maxAperture:1.2, minAperture:16, weight:710, length:94, diameter:84,
     filterThread:82, minFocusDist:70, maxMagnification:0.1,
     elements:15, groups:11, blades:13, afType:'Stepping Motor',
@@ -1948,7 +1951,7 @@ const LENSES = {
   },
   'viltrox-27mm-f12': {
     name:'Viltrox AF 27mm f/1.2 Pro', manufacturer:'Viltrox', line:'Pro', type:'Prime',
-    focalLength:27, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'41mm',
+    mount:'x', focalLength:27, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'41mm',
     maxAperture:1.2, minAperture:16, weight:560, length:92, diameter:82,
     filterThread:67, minFocusDist:28, maxMagnification:0.15,
     elements:15, groups:11, blades:11, afType:'Stepping Motor',
@@ -1961,7 +1964,7 @@ const LENSES = {
   },
   'viltrox-air-25mm-f17': {
     name:'Viltrox AF 25mm f/1.7 Air', manufacturer:'Viltrox', line:'Air', type:'Prime',
-    focalLength:25, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'38mm',
+    mount:'x', focalLength:25, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'38mm',
     maxAperture:1.7, minAperture:16, weight:170, length:56.4, diameter:64,
     filterThread:52, minFocusDist:30, maxMagnification:0.11,
     elements:12, groups:10, blades:9, afType:'Stepping Motor',
@@ -1974,7 +1977,7 @@ const LENSES = {
   },
   'viltrox-air-35mm-f17': {
     name:'Viltrox AF 35mm f/1.7 Air', manufacturer:'Viltrox', line:'Air', type:'Prime',
-    focalLength:35, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'53mm',
+    mount:'x', focalLength:35, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'53mm',
     maxAperture:1.7, minAperture:16, weight:170, length:54.7, diameter:64,
     filterThread:52, minFocusDist:33, maxMagnification:0.12,
     elements:11, groups:9, blades:9, afType:'Stepping Motor',
@@ -1987,7 +1990,7 @@ const LENSES = {
   },
   'viltrox-air-56mm-f17': {
     name:'Viltrox AF 56mm f/1.7 Air', manufacturer:'Viltrox', line:'Air', type:'Prime',
-    focalLength:56, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'85mm',
+    mount:'x', focalLength:56, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'85mm',
     maxAperture:1.7, minAperture:16, weight:171, length:65, diameter:64,
     filterThread:52, minFocusDist:55, maxMagnification:0.11,
     elements:11, groups:9, blades:9, afType:'Stepping Motor',
@@ -2000,7 +2003,7 @@ const LENSES = {
   },
   'viltrox-air-9mm-f28': {
     name:'Viltrox AF 9mm f/2.8 Air', manufacturer:'Viltrox', line:'Air', type:'Prime',
-    focalLength:9, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'13.5mm',
+    mount:'x', focalLength:9, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'13.5mm',
     maxAperture:2.8, minAperture:16, weight:175, length:56.7, diameter:65,
     filterThread:58, minFocusDist:13, maxMagnification:0.15,
     elements:13, groups:11, blades:7, afType:'Stepping Motor',
@@ -2015,7 +2018,7 @@ const LENSES = {
   },
   'viltrox-air-15mm-f17': {
     name:'Viltrox AF 15mm f/1.7 Air', manufacturer:'Viltrox', line:'Air', type:'Prime',
-    focalLength:15, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'22.5mm',
+    mount:'x', focalLength:15, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'22.5mm',
     maxAperture:1.7, minAperture:16, weight:180, length:56.7, diameter:65,
     filterThread:58, minFocusDist:23, maxMagnification:0.1,
     elements:12, groups:10, blades:9, afType:'Stepping Motor',
@@ -2030,7 +2033,7 @@ const LENSES = {
   },
   'viltrox-28mm-f45-chip': {
     name:'Viltrox AF 28mm f/4.5 Chip', manufacturer:'Viltrox', line:'Chip', type:'Prime',
-    focalLength:28, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'42mm',
+    mount:'x', focalLength:28, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'42mm',
     maxAperture:4.5, minAperture:4.5, weight:60, length:15.25, diameter:60.3,
     filterThread:null, minFocusDist:34, maxMagnification:0.1,
     elements:6, groups:6, blades:null, afType:'VCM',
@@ -2045,7 +2048,7 @@ const LENSES = {
   },
   'viltrox-56mm-f12': {
     name:'Viltrox AF 56mm f/1.2 Pro', manufacturer:'Viltrox', line:'Pro', type:'Prime',
-    focalLength:56, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'85mm',
+    mount:'x', focalLength:56, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'85mm',
     maxAperture:1.2, minAperture:16, weight:575, length:92, diameter:78.4,
     filterThread:67, minFocusDist:50, maxMagnification:0.13,
     elements:13, groups:8, blades:11, afType:'Dual HyperVCM',
@@ -2060,7 +2063,7 @@ const LENSES = {
   },
   'viltrox-75mm-f18-evo': {
     name:'Viltrox AF 75mm f/1.8 EVO', manufacturer:'Viltrox', line:'EVO', type:'Prime',
-    focalLength:75, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'112mm',
+    mount:'x', focalLength:75, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'112mm',
     maxAperture:1.8, minAperture:16, weight:325, length:76, diameter:69,
     filterThread:58, minFocusDist:74, maxMagnification:0.12,
     elements:11, groups:9, blades:9, afType:'Stepping Motor',
@@ -2075,7 +2078,7 @@ const LENSES = {
   },
   'viltrox-90mm-f22-evo': {
     name:'Viltrox AF 90mm f/2.2 EVO', manufacturer:'Viltrox', line:'EVO', type:'Prime',
-    focalLength:90, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'135mm',
+    mount:'x', focalLength:90, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'135mm',
     maxAperture:2.2, minAperture:16, weight:325, length:76, diameter:69,
     filterThread:58, minFocusDist:74, maxMagnification:0.14,
     elements:10, groups:8, blades:9, afType:'Stepping Motor',
@@ -2092,7 +2095,7 @@ const LENSES = {
   /* ── TTArtisan ── */
   'ttartisan-27mm-f28': {
     name:'TTArtisan AF 27mm f/2.8', manufacturer:'TTArtisan', line:'AF', type:'Prime',
-    focalLength:27, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'41mm',
+    mount:'x', focalLength:27, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'41mm',
     maxAperture:2.8, minAperture:16, weight:170, length:50, diameter:61,
     filterThread:49, minFocusDist:35, maxMagnification:0.1,
     elements:9, groups:7, blades:7, afType:'Stepping Motor',
@@ -2105,7 +2108,7 @@ const LENSES = {
   },
   'ttartisan-35mm-f18': {
     name:'TTArtisan AF 35mm f/1.8', manufacturer:'TTArtisan', line:'AF', type:'Prime',
-    focalLength:35, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'53mm',
+    mount:'x', focalLength:35, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'53mm',
     maxAperture:1.8, minAperture:16, weight:208, length:56, diameter:65,
     filterThread:52, minFocusDist:35, maxMagnification:0.1,
     elements:9, groups:7, blades:9, afType:'Stepping Motor',
@@ -2118,7 +2121,7 @@ const LENSES = {
   },
   'ttartisan-56mm-f18': {
     name:'TTArtisan AF 56mm f/1.8', manufacturer:'TTArtisan', line:'AF', type:'Prime',
-    focalLength:56, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'85mm',
+    mount:'x', focalLength:56, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'85mm',
     maxAperture:1.8, minAperture:16, weight:235, length:62, diameter:65,
     filterThread:52, minFocusDist:50, maxMagnification:0.1,
     elements:10, groups:9, blades:9, afType:'Stepping Motor',
@@ -2131,7 +2134,7 @@ const LENSES = {
   },
   'ttartisan-40mm-f28-macro': {
     name:'TTArtisan 40mm f/2.8 Macro', manufacturer:'TTArtisan', line:'Macro', type:'Prime',
-    focalLength:40, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'60mm',
+    mount:'x', focalLength:40, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'60mm',
     maxAperture:2.8, minAperture:16, weight:371, length:76, diameter:62,
     filterThread:52, minFocusDist:17, maxMagnification:1.0,
     elements:8, groups:7, blades:11, afType:'Manual',
@@ -2144,7 +2147,7 @@ const LENSES = {
   },
   'ttartisan-17mm-f14': {
     name:'TTArtisan 17mm f/1.4', manufacturer:'TTArtisan', line:'MF', type:'Prime',
-    focalLength:17, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'26mm',
+    mount:'x', focalLength:17, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'26mm',
     maxAperture:1.4, minAperture:16, weight:247, length:62, diameter:54,
     filterThread:40.5, minFocusDist:20, maxMagnification:0.1,
     elements:9, groups:8, blades:10, afType:'Manual',
@@ -2157,7 +2160,7 @@ const LENSES = {
   },
   'ttartisan-23mm-f14': {
     name:'TTArtisan 23mm f/1.4', manufacturer:'TTArtisan', line:'MF', type:'Prime',
-    focalLength:23, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'35mm',
+    mount:'x', focalLength:23, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'35mm',
     maxAperture:1.4, minAperture:16, weight:230, length:40.5, diameter:60,
     filterThread:43, minFocusDist:20, maxMagnification:0.1,
     elements:8, groups:6, blades:10, afType:'Manual',
@@ -2170,7 +2173,7 @@ const LENSES = {
   },
   'ttartisan-50mm-f12': {
     name:'TTArtisan 50mm f/1.2', manufacturer:'TTArtisan', line:'MF', type:'Prime',
-    focalLength:50, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'76mm',
+    mount:'x', focalLength:50, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'76mm',
     maxAperture:1.2, minAperture:16, weight:336, length:60, diameter:62,
     filterThread:52, minFocusDist:50, maxMagnification:0.1,
     elements:7, groups:5, blades:10, afType:'Manual',
@@ -2183,7 +2186,7 @@ const LENSES = {
   },
   'ttartisan-75mm-f2': {
     name:'TTArtisan AF 75mm f/2', manufacturer:'TTArtisan', line:'AF', type:'Prime',
-    focalLength:75, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'114mm',
+    mount:'x', focalLength:75, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'114mm',
     maxAperture:2.0, minAperture:16, weight:326, length:74, diameter:65,
     filterThread:62, minFocusDist:75, maxMagnification:0.1,
     elements:10, groups:7, blades:9, afType:'Stepping Motor',
@@ -2196,7 +2199,7 @@ const LENSES = {
   },
   'ttartisan-23mm-f18': {
     name:'TTArtisan AF 23mm f/1.8', manufacturer:'TTArtisan', line:'AF', type:'Prime',
-    focalLength:23, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'35mm',
+    mount:'x', focalLength:23, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'35mm',
     maxAperture:1.8, minAperture:16, weight:210, length:60, diameter:67,
     filterThread:52, minFocusDist:30, maxMagnification:null,
     elements:11, groups:9, blades:9, afType:'Stepping Motor',
@@ -2211,7 +2214,7 @@ const LENSES = {
   },
   'ttartisan-air-17mm-f18': {
     name:'TTArtisan AF 17mm f/1.8 Air', manufacturer:'TTArtisan', line:'Air', type:'Prime',
-    focalLength:17, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'26mm',
+    mount:'x', focalLength:17, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'26mm',
     maxAperture:1.8, minAperture:16, weight:170, length:47, diameter:60,
     filterThread:52, minFocusDist:18, maxMagnification:null,
     elements:14, groups:10, blades:6, afType:'Stepping Motor',
@@ -2226,7 +2229,7 @@ const LENSES = {
   },
   'ttartisan-14mm-f35': {
     name:'TTArtisan AF 14mm f/3.5', manufacturer:'TTArtisan', line:'AF', type:'Prime',
-    focalLength:14, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'21mm',
+    mount:'x', focalLength:14, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'21mm',
     maxAperture:3.5, minAperture:16, weight:98, length:31, diameter:62,
     filterThread:39, minFocusDist:25, maxMagnification:null,
     elements:8, groups:7, blades:7, afType:'Stepping Motor',
@@ -2241,7 +2244,7 @@ const LENSES = {
   },
   'ttartisan-25mm-f2': {
     name:'TTArtisan 25mm f/2', manufacturer:'TTArtisan', line:'Manual', type:'Prime',
-    focalLength:25, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'38mm',
+    mount:'x', focalLength:25, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'38mm',
     maxAperture:2.0, minAperture:16, weight:178, length:31, diameter:59,
     filterThread:43, minFocusDist:25, maxMagnification:null,
     elements:7, groups:5, blades:7, afType:'Manual',
@@ -2256,7 +2259,7 @@ const LENSES = {
   },
   'ttartisan-35mm-f095': {
     name:'TTArtisan 35mm f/0.95', manufacturer:'TTArtisan', line:'Manual', type:'Prime',
-    focalLength:35, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'53mm',
+    mount:'x', focalLength:35, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'53mm',
     maxAperture:0.95, minAperture:16, weight:258, length:55, diameter:45,
     filterThread:52, minFocusDist:35, maxMagnification:null,
     elements:7, groups:5, blades:10, afType:'Manual',
@@ -2271,7 +2274,7 @@ const LENSES = {
   },
   'ttartisan-50mm-f095': {
     name:'TTArtisan 50mm f/0.95', manufacturer:'TTArtisan', line:'Manual', type:'Prime',
-    focalLength:50, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'76mm',
+    mount:'x', focalLength:50, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'76mm',
     maxAperture:0.95, minAperture:16, weight:411, length:72, diameter:73,
     filterThread:58, minFocusDist:50, maxMagnification:null,
     elements:8, groups:6, blades:10, afType:'Manual',
@@ -2286,7 +2289,7 @@ const LENSES = {
   },
   'ttartisan-tilt-35mm-f14': {
     name:'TTArtisan Tilt 35mm f/1.4', manufacturer:'TTArtisan', line:'Tilt', type:'Prime',
-    focalLength:35, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'53mm',
+    mount:'x', focalLength:35, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'53mm',
     maxAperture:1.4, minAperture:16, weight:346, length:66, diameter:63,
     filterThread:52, minFocusDist:35, maxMagnification:0.1,
     elements:7, groups:6, blades:10, afType:'Manual',
@@ -2301,7 +2304,7 @@ const LENSES = {
   },
   'ttartisan-10mm-f2-asph': {
     name:'TTArtisan 10mm f/2 ASPH', manufacturer:'TTArtisan', line:'Manual', type:'Prime',
-    focalLength:10, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'15mm',
+    mount:'x', focalLength:10, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'15mm',
     maxAperture:2.0, minAperture:16, weight:339, length:60, diameter:63,
     filterThread:72, minFocusDist:25, maxMagnification:0.1,
     elements:13, groups:10, blades:8, afType:'Manual',
@@ -2316,7 +2319,7 @@ const LENSES = {
   },
   'ttartisan-35mm-f14': {
     name:'TTArtisan 35mm f/1.4', manufacturer:'TTArtisan', line:'Manual', type:'Prime',
-    focalLength:35, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'52mm',
+    mount:'x', focalLength:35, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'52mm',
     maxAperture:1.4, minAperture:16, weight:180, length:56, diameter:44,
     filterThread:39, minFocusDist:28, maxMagnification:0.1,
     elements:7, groups:6, blades:10, afType:'Manual',
@@ -2331,7 +2334,7 @@ const LENSES = {
   },
   'ttartisan-7-5mm-f2-fisheye': {
     name:'TTArtisan 7.5mm f/2 Fisheye', manufacturer:'TTArtisan', line:'Manual', type:'Prime',
-    focalLength:7.5, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'11mm',
+    mount:'x', focalLength:7.5, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'11mm',
     maxAperture:2.0, minAperture:11, weight:357, length:72, diameter:57,
     filterThread:null, minFocusDist:12.5, maxMagnification:0.11,
     elements:11, groups:8, blades:7, afType:'Manual',
@@ -2348,7 +2351,7 @@ const LENSES = {
   /* ── 7Artisans ── */
   '7artisans-35mm-f14': {
     name:'7Artisans AF 35mm f/1.4', manufacturer:'7Artisans', line:'AF', type:'Prime',
-    focalLength:35, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'53mm',
+    mount:'x', focalLength:35, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'53mm',
     maxAperture:1.4, minAperture:16, weight:220, length:58, diameter:65,
     filterThread:52, minFocusDist:35, maxMagnification:0.12,
     elements:9, groups:7, blades:9, afType:'Stepping Motor',
@@ -2360,7 +2363,7 @@ const LENSES = {
   },
   '7artisans-27mm-f28': {
     name:'7Artisans AF 27mm f/2.8', manufacturer:'7Artisans', line:'AF', type:'Prime',
-    focalLength:27, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'41mm',
+    mount:'x', focalLength:27, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'41mm',
     maxAperture:2.8, minAperture:16, weight:158, length:42, diameter:61,
     filterThread:39, minFocusDist:30, maxMagnification:0.1,
     elements:6, groups:5, blades:6, afType:'Stepping Motor',
@@ -2373,7 +2376,7 @@ const LENSES = {
   },
   '7artisans-50mm-f18': {
     name:'7Artisans AF 50mm f/1.8', manufacturer:'7Artisans', line:'Lite', type:'Prime',
-    focalLength:50, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'76mm',
+    mount:'x', focalLength:50, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'76mm',
     maxAperture:1.8, minAperture:16, weight:180, length:51, diameter:67,
     filterThread:58, minFocusDist:55, maxMagnification:0.1,
     elements:5, groups:5, blades:7, afType:'Stepping Motor',
@@ -2387,7 +2390,7 @@ const LENSES = {
   },
   '7artisans-25mm-f18': {
     name:'7Artisans 25mm f/1.8', manufacturer:'7Artisans', line:'MF', type:'Prime',
-    focalLength:25, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'38mm',
+    mount:'x', focalLength:25, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'38mm',
     maxAperture:1.8, minAperture:16, weight:143, length:32, diameter:46,
     filterThread:46, minFocusDist:18, maxMagnification:0.1,
     elements:7, groups:5, blades:12, afType:'Manual',
@@ -2401,7 +2404,7 @@ const LENSES = {
   },
   '7artisans-55mm-f14-ii': {
     name:'7Artisans 55mm f/1.4 II', manufacturer:'7Artisans', line:'MF', type:'Prime',
-    focalLength:55, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'83mm',
+    mount:'x', focalLength:55, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'83mm',
     maxAperture:1.4, minAperture:16, weight:360, length:65, diameter:60,
     filterThread:52, minFocusDist:42, maxMagnification:0.1,
     elements:6, groups:5, blades:9, afType:'Manual',
@@ -2414,7 +2417,7 @@ const LENSES = {
   },
   '7artisans-25mm-f18-lite': {
     name:'7Artisans AF 25mm f/1.8 Lite', manufacturer:'7Artisans', line:'Lite', type:'Prime',
-    focalLength:25, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'38mm',
+    mount:'x', focalLength:25, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'38mm',
     maxAperture:1.8, minAperture:16, weight:183, length:51, diameter:67,
     filterThread:58, minFocusDist:25, maxMagnification:null,
     elements:8, groups:5, blades:9, afType:'Stepping Motor',
@@ -2429,7 +2432,7 @@ const LENSES = {
   },
   '7artisans-35mm-f18-lite': {
     name:'7Artisans AF 35mm f/1.8 Lite', manufacturer:'7Artisans', line:'Lite', type:'Prime',
-    focalLength:35, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'53mm',
+    mount:'x', focalLength:35, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'53mm',
     maxAperture:1.8, minAperture:16, weight:181, length:51, diameter:67,
     filterThread:58, minFocusDist:35, maxMagnification:null,
     elements:7, groups:6, blades:9, afType:'Stepping Motor',
@@ -2446,7 +2449,7 @@ const LENSES = {
   /* ── Samyang ── */
   'samyang-12mm-f2': {
     name:'Samyang AF 12mm f/2.0', manufacturer:'Samyang', line:'AF', type:'Prime',
-    focalLength:12, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'18mm',
+    mount:'x', focalLength:12, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'18mm',
     maxAperture:2.0, minAperture:22, weight:167, length:60.5, diameter:67.8,
     filterThread:62, minFocusDist:20, maxMagnification:0.1,
     elements:11, groups:8, blades:7, afType:'Stepping Motor',
@@ -2459,7 +2462,7 @@ const LENSES = {
   },
   'samyang-75mm-f18': {
     name:'Samyang AF 75mm f/1.8 X', manufacturer:'Samyang', line:'AF', type:'Prime',
-    focalLength:75, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'114mm',
+    mount:'x', focalLength:75, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'114mm',
     maxAperture:1.8, minAperture:22, weight:257, length:69.3, diameter:70,
     filterThread:62, minFocusDist:69, maxMagnification:0.13,
     elements:10, groups:9, blades:9, afType:'Stepping Motor',
@@ -2474,7 +2477,7 @@ const LENSES = {
   },
   'samyang-8mm-f28': {
     name:'Samyang 8mm f/2.8 Fisheye', manufacturer:'Samyang', line:'Manual', type:'Prime',
-    focalLength:8, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'12mm',
+    mount:'x', focalLength:8, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'12mm',
     maxAperture:2.8, minAperture:22, weight:290, length:64.6, diameter:60,
     filterThread:null, minFocusDist:30, maxMagnification:null,
     elements:11, groups:8, blades:6, afType:'Manual',
@@ -2488,7 +2491,7 @@ const LENSES = {
   },
   'samyang-10mm-f28': {
     name:'Samyang 10mm f/2.8', manufacturer:'Samyang', line:'Manual', type:'Prime',
-    focalLength:10, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'15mm',
+    mount:'x', focalLength:10, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'15mm',
     maxAperture:2.8, minAperture:22, weight:607, length:132.4, diameter:87,
     filterThread:null, minFocusDist:24, maxMagnification:null,
     elements:14, groups:9, blades:6, afType:'Manual',
@@ -2502,7 +2505,7 @@ const LENSES = {
   },
   'samyang-12mm-f2-ncscs': {
     name:'Samyang 12mm f/2.0 NCS CS', manufacturer:'Samyang', line:'Manual', type:'Prime',
-    focalLength:12, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'18mm',
+    mount:'x', focalLength:12, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'18mm',
     maxAperture:2.0, minAperture:22, weight:252, length:59.4, diameter:72.5,
     filterThread:67, minFocusDist:20, maxMagnification:null,
     elements:12, groups:10, blades:6, afType:'Manual',
@@ -2516,7 +2519,7 @@ const LENSES = {
   },
   'samyang-14mm-f28': {
     name:'Samyang 14mm f/2.8', manufacturer:'Samyang', line:'Manual', type:'Prime',
-    focalLength:14, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'21mm',
+    mount:'x', focalLength:14, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'21mm',
     maxAperture:2.8, minAperture:22, weight:552, length:122.4, diameter:87,
     filterThread:null, minFocusDist:28, maxMagnification:null,
     elements:14, groups:10, blades:6, afType:'Manual',
@@ -2530,7 +2533,7 @@ const LENSES = {
   },
   'samyang-16mm-f2': {
     name:'Samyang 16mm f/2.0', manufacturer:'Samyang', line:'Manual', type:'Prime',
-    focalLength:16, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'24mm',
+    mount:'x', focalLength:16, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'24mm',
     maxAperture:2.0, minAperture:22, weight:600, length:115.7, diameter:83,
     filterThread:77, minFocusDist:20, maxMagnification:null,
     elements:13, groups:11, blades:8, afType:'Manual',
@@ -2544,7 +2547,7 @@ const LENSES = {
   },
   'samyang-85mm-f14': {
     name:'Samyang 85mm f/1.4', manufacturer:'Samyang', line:'Manual', type:'Prime',
-    focalLength:85, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'128mm',
+    mount:'x', focalLength:85, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'128mm',
     maxAperture:1.4, minAperture:22, weight:610, length:101, diameter:78,
     filterThread:72, minFocusDist:100, maxMagnification:null,
     elements:9, groups:7, blades:8, afType:'Manual',
@@ -2558,7 +2561,7 @@ const LENSES = {
   },
   'samyang-85mm-f18': {
     name:'Samyang 85mm f/1.8 Compact High Speed', manufacturer:'Samyang', line:'Manual', type:'Prime',
-    focalLength:85, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'128mm',
+    mount:'x', focalLength:85, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'128mm',
     maxAperture:1.8, minAperture:22, weight:353, length:80.25, diameter:67.5,
     filterThread:62, minFocusDist:65, maxMagnification:0.17,
     elements:9, groups:7, blades:9, afType:'Manual',
@@ -2572,7 +2575,7 @@ const LENSES = {
   },
   'samyang-100mm-f28-macro': {
     name:'Samyang 100mm f/2.8 Macro', manufacturer:'Samyang', line:'Manual', type:'Prime',
-    focalLength:100, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'150mm',
+    mount:'x', focalLength:100, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'150mm',
     maxAperture:2.8, minAperture:22, weight:770, length:149.4, diameter:72.5,
     filterThread:67, minFocusDist:30.7, maxMagnification:1.0,
     elements:15, groups:12, blades:9, afType:'Manual',
@@ -2586,7 +2589,7 @@ const LENSES = {
   },
   'samyang-135mm-f2': {
     name:'Samyang 135mm f/2.0', manufacturer:'Samyang', line:'Manual', type:'Prime',
-    focalLength:135, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'203mm',
+    mount:'x', focalLength:135, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'203mm',
     maxAperture:2.0, minAperture:22, weight:880, length:148.4, diameter:82,
     filterThread:77, minFocusDist:80, maxMagnification:null,
     elements:11, groups:7, blades:9, afType:'Manual',
@@ -2600,7 +2603,7 @@ const LENSES = {
   },
   'samyang-300mm-f63': {
     name:'Samyang Reflex 300mm f/6.3 Catadioptric', manufacturer:'Samyang', line:'Manual', type:'Prime',
-    focalLength:300, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'450mm',
+    mount:'x', focalLength:300, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'450mm',
     maxAperture:6.3, minAperture:6.3, weight:316, length:74.1, diameter:64.5,
     filterThread:58, minFocusDist:90, maxMagnification:null,
     elements:9, groups:9, blades:null, afType:'Manual',
@@ -2620,7 +2623,7 @@ const LENSES = {
   // the established precedent for a broken manufacturer link (see nikon's viltrox-85mm-f18-ii).
   'voigtlander-nokton-35mm-f09': {
     name:'Voigtländer NOKTON 35mm f/0.9', manufacturer:'Voigtländer', line:'NOKTON', type:'Prime',
-    focalLength:35, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'53mm',
+    mount:'x', focalLength:35, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'53mm',
     maxAperture:0.9, minAperture:16, weight:564, length:76.2, diameter:67.5,
     filterThread:58, minFocusDist:35, maxMagnification:0.14,
     elements:10, groups:8, blades:10, afType:'Manual',
@@ -2632,7 +2635,7 @@ const LENSES = {
   },
   'voigtlander-ultron-27mm-f2': {
     name:'Voigtländer ULTRON 27mm f/2', manufacturer:'Voigtländer', line:'ULTRON', type:'Prime',
-    focalLength:27, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'41mm',
+    mount:'x', focalLength:27, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'41mm',
     maxAperture:2.0, minAperture:16, weight:232, length:49.4, diameter:62,
     filterThread:49, minFocusDist:30, maxMagnification:0.13,
     elements:7, groups:5, blades:10, afType:'Manual',
@@ -2646,7 +2649,7 @@ const LENSES = {
   /* ── Zeiss ── */
   'zeiss-touit-12mm-f28': {
     name:'ZEISS Touit 12mm f/2.8', manufacturer:'Zeiss', line:'Touit', type:'Prime',
-    focalLength:12, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'18mm',
+    mount:'x', focalLength:12, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'18mm',
     maxAperture:2.8, minAperture:22, weight:270, length:68, diameter:88,
     filterThread:67, minFocusDist:18, maxMagnification:0.11,
     elements:11, groups:8, blades:9, afType:'Stepping Motor',
@@ -2658,7 +2661,7 @@ const LENSES = {
   },
   'zeiss-touit-32mm-f18': {
     name:'ZEISS Touit 32mm f/1.8', manufacturer:'Zeiss', line:'Touit', type:'Prime',
-    focalLength:32, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'48mm',
+    mount:'x', focalLength:32, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'48mm',
     maxAperture:1.8, minAperture:22, weight:210, length:65, diameter:64,
     filterThread:52, minFocusDist:30, maxMagnification:0.1,
     elements:8, groups:5, blades:9, afType:'Stepping Motor',
@@ -2670,7 +2673,7 @@ const LENSES = {
   },
   'zeiss-touit-50mm-f28': {
     name:'ZEISS Touit 50mm f/2.8 Macro', manufacturer:'Zeiss', line:'Touit', type:'Prime',
-    focalLength:50, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'75mm',
+    mount:'x', focalLength:50, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'75mm',
     maxAperture:2.8, minAperture:22, weight:290, length:78, diameter:65,
     filterThread:52, minFocusDist:15, maxMagnification:1.0,
     elements:14, groups:11, blades:9, afType:'Stepping Motor',
@@ -2684,7 +2687,7 @@ const LENSES = {
   /* ── Laowa ── */
   'laowa-9mm-f28': {
     name:'Laowa 9mm f/2.8 Zero-D', manufacturer:'Laowa', line:'Zero-D', type:'Prime',
-    focalLength:9, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'14mm',
+    mount:'x', focalLength:9, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'14mm',
     maxAperture:2.8, minAperture:22, weight:215, length:60, diameter:53,
     filterThread:49, minFocusDist:12, maxMagnification:0.13,
     elements:15, groups:10, blades:7, afType:'Manual',
@@ -2697,7 +2700,7 @@ const LENSES = {
   },
   'laowa-65mm-f28-macro': {
     name:'Laowa 65mm f/2.8 2X Ultra Macro APO', manufacturer:'Laowa', line:'Ultra Macro APO', type:'Prime',
-    focalLength:65, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'98mm',
+    mount:'x', focalLength:65, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'98mm',
     maxAperture:2.8, minAperture:22, weight:335, length:100, diameter:57,
     filterThread:52, minFocusDist:17, maxMagnification:2.0,
     elements:14, groups:10, blades:9, afType:'Manual',
@@ -2710,7 +2713,7 @@ const LENSES = {
   },
   'laowa-4mm-f28-fisheye': {
     name:'Laowa 4mm f/2.8 Circular Fisheye', manufacturer:'Laowa', line:'Fisheye', type:'Prime',
-    focalLength:4, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'6mm',
+    mount:'x', focalLength:4, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'6mm',
     maxAperture:2.8, minAperture:16, weight:135, length:45.2, diameter:25.5,
     filterThread:null, minFocusDist:8, maxMagnification:0.11,
     elements:7, groups:6, blades:7, afType:'Manual',
@@ -2723,7 +2726,7 @@ const LENSES = {
   },
   'laowa-aksen-45mm-f28': {
     name:'Laowa Aksen 45mm f/2.8 1-5X Ultra Macro APO', manufacturer:'Laowa', line:'Aksen', type:'Prime',
-    focalLength:45, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'68mm',
+    mount:'x', focalLength:45, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'68mm',
     maxAperture:2.8, minAperture:11, weight:599, length:121, diameter:70.2,
     filterThread:65, minFocusDist:4, maxMagnification:5.0,
     elements:13, groups:9, blades:11, afType:'Manual',
@@ -2738,7 +2741,7 @@ const LENSES = {
   },
   'laowa-aksen-17-5mm-f17': {
     name:'Laowa Aksen 17.5mm f/1.7 5-10X Ultra Macro APO', manufacturer:'Laowa', line:'Aksen', type:'Prime',
-    focalLength:17.5, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'26mm',
+    mount:'x', focalLength:17.5, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'26mm',
     maxAperture:1.7, minAperture:5.6, weight:570, length:127.5, diameter:70.2,
     filterThread:null, minFocusDist:2.25, maxMagnification:10.0,
     elements:17, groups:12, blades:11, afType:'Manual',
@@ -2755,7 +2758,7 @@ const LENSES = {
   /* ── Meike ── */
   'meike-33mm-f14': {
     name:'Meike 33mm f/1.4 AF', manufacturer:'Meike', line:'AF', type:'Prime',
-    focalLength:33, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'50mm',
+    mount:'x', focalLength:33, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'50mm',
     maxAperture:1.4, minAperture:16, weight:314, length:83, diameter:63,
     filterThread:55, minFocusDist:40, maxMagnification:0.1,
     elements:12, groups:9, blades:9, afType:'Stepping Motor',
@@ -2769,7 +2772,7 @@ const LENSES = {
   },
   'meike-55mm-f18': {
     name:'Meike 55mm f/1.8 Pro AF', manufacturer:'Meike', line:'Pro', type:'Prime',
-    focalLength:55, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'83mm',
+    mount:'x', focalLength:55, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'83mm',
     maxAperture:1.8, minAperture:16, weight:365, length:90, diameter:58,
     filterThread:58, minFocusDist:55, maxMagnification:0.1,
     elements:11, groups:8, blades:9, afType:'Stepping Motor',
@@ -2783,7 +2786,7 @@ const LENSES = {
   },
   'meike-85mm-f18': {
     name:'Meike 85mm f/1.8 Pro AF', manufacturer:'Meike', line:'Pro', type:'Prime',
-    focalLength:85, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'130mm',
+    mount:'x', focalLength:85, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'130mm',
     maxAperture:1.8, minAperture:16, weight:389, length:92, diameter:80,
     filterThread:62, minFocusDist:85, maxMagnification:0.1,
     elements:9, groups:6, blades:9, afType:'Stepping Motor',
@@ -2797,7 +2800,7 @@ const LENSES = {
   },
   'meike-55mm-f14-golden': {
     name:'Meike AF 55mm f/1.4 Golden Portrait STM', manufacturer:'Meike', line:'AF', type:'Prime',
-    focalLength:55, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'83mm',
+    mount:'x', focalLength:55, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'83mm',
     maxAperture:1.4, minAperture:16, weight:289, length:76, diameter:66.5,
     filterThread:52, minFocusDist:61, maxMagnification:null,
     elements:11, groups:8, blades:9, afType:'Stepping Motor',
@@ -2812,7 +2815,7 @@ const LENSES = {
   },
   'meike-25mm-f17-air': {
     name:'Meike AF 25mm f/1.7 Air', manufacturer:'Meike', line:'Air', type:'Prime',
-    focalLength:25, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'38mm',
+    mount:'x', focalLength:25, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'38mm',
     maxAperture:1.7, minAperture:16, weight:170, length:59.2, diameter:65.5,
     filterThread:52, minFocusDist:25, maxMagnification:null,
     elements:12, groups:9, blades:9, afType:'Stepping Motor',
@@ -2827,7 +2830,7 @@ const LENSES = {
   },
   'meike-25mm-f18': {
     name:'Meike 25mm f/1.8', manufacturer:'Meike', line:'Manual', type:'Prime',
-    focalLength:25, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'38mm',
+    mount:'x', focalLength:25, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'38mm',
     maxAperture:1.8, minAperture:16, weight:190, length:40.9, diameter:60.5,
     filterThread:49, minFocusDist:25, maxMagnification:null,
     elements:7, groups:5, blades:null, afType:'Manual',
@@ -2842,7 +2845,7 @@ const LENSES = {
   },
   'meike-50mm-f17-ff': {
     name:'Meike 50mm f/1.7 Full Frame', manufacturer:'Meike', line:'Manual', type:'Prime',
-    focalLength:50, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'76mm',
+    mount:'x', focalLength:50, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'76mm',
     maxAperture:1.7, minAperture:22, weight:310, length:54.5, diameter:61,
     filterThread:52, minFocusDist:50, maxMagnification:null,
     elements:6, groups:5, blades:null, afType:'Manual',
@@ -2857,7 +2860,7 @@ const LENSES = {
   },
   'meike-56mm-f17-air': {
     name:'Meike AF 56mm f/1.7 Air', manufacturer:'Meike', line:'Air', type:'Prime',
-    focalLength:56, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'84mm',
+    mount:'x', focalLength:56, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'84mm',
     maxAperture:1.7, minAperture:16, weight:190, length:59.2, diameter:66.5,
     filterThread:52, minFocusDist:55, maxMagnification:null,
     elements:11, groups:7, blades:9, afType:'Stepping Motor',

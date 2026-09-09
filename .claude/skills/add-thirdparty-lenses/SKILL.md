@@ -272,6 +272,13 @@ entry must satisfy the **per-lens definition of done**:
   `sigma-18-50mm-f28`, `tamron-28-75mm-f28-g2`, `viltrox-27mm-f12`,
   `zeiss-batis-25mm-f2`. On Panasonic, suffix `-mft` when an MFT entry would
   collide with its L-mount sibling. No `:` in any slug (compare-page separator).
+- **`mount`**: the brand's mount id for this lens (Fujifilm `x`/`g`, Panasonic
+  `l`/`mft`, Sigma `l`/`sa`, Canon `rf`, Nikon `z`, Sony `e` — see
+  `BRAND_CONFIG.mounts`). On a brand spanning two mounts this decides which
+  filter chip the lens appears under, and the lens must go in a dropdown group
+  whose other members share it — `tests/data/mounts.test.js` fails otherwise.
+  An APS-C lens on Canon/Nikon/Sony is still `rf`/`z`/`e`: RF-S, DX and E APS-C
+  glass shares the full-frame mount and crops rather than failing to fit.
 - **`manufacturer`** exactly matching a `MANUFACTURER_COLORS` key; **`line`**
   records the sub-brand (`Art`, `Contemporary`, `Di III`, `Air`, `Batis`,
   `Nokton`, …).

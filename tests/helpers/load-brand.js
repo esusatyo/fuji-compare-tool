@@ -47,6 +47,7 @@ function shimFor(varName, names) {
  * @param {string}  [opts.hash='']           initial location hash (e.g. '#lenses')
  * @param {boolean} [opts.siteConfig=true]   also evaluate site-config.js (as the real pages do)
  * @param {string}  [opts.html]              boot document; defaults to a body with an #app mount (as real brand pages have)
+ * @param {number}  [opts.width]             viewport width (default jsdom's 1024), for the responsive slot clamp
  * @returns {{ window, data, engine, errors, dom }}
  */
 function loadBrand(brand, opts = {}) {
@@ -58,6 +59,8 @@ function loadBrand(brand, opts = {}) {
     // Optional source transform, for tests that need a data shape no brand
     // currently ships (e.g. a two-camera brand exercising the 2-slot layout).
     patchData = null,
+    // Set before any script runs, so the engine's init reads it (matches loadCompare).
+    width,
   } = opts;
   let dataSrc = fs.readFileSync(path.join(ROOT, brand, 'data.js'), 'utf8');
   if (patchData) dataSrc = patchData(dataSrc);
@@ -73,6 +76,9 @@ function loadBrand(brand, opts = {}) {
     pretendToBeVisual: true,
   });
   const { window } = dom;
+  if (width !== undefined) {
+    Object.defineProperty(window, 'innerWidth', { value: width, configurable: true, writable: true });
+  }
 
   if (siteConfig) {
     const siteSrc = fs.readFileSync(path.join(ROOT, 'site-config.js'), 'utf8');

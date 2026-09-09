@@ -284,6 +284,7 @@ Produce a per-brand review grouped into three sections. Keep it scannable:
 ### New releases (N)
 - X-T6 (2026) — $1799 USD — https://fujifilm-x.com/...  [proposed slug: x-t6]
   prices: USD 1799 / AUD … / EUR … (others ratio-derived)
+  mount: x   ← every new camera and lens records its mount id
 
 ### Price changes (N)
 - X100VI  USD 1599 → 1699   src: https://...
@@ -292,6 +293,13 @@ Produce a per-brand review grouped into three sections. Keep it scannable:
 ### URL changes (N)
 - X-T5 productUrl 404s → https://...(new)   src: …
 ```
+
+Every proposed new entry carries a **`mount`** id from its brand's
+`BRAND_CONFIG.mounts` (Fujifilm `x`/`g`, Panasonic `l`/`mft`, Sigma `l`/`sa`,
+Canon `rf`, Nikon `z`, Sony `e`), and goes into a dropdown group whose other
+members share it — `tests/data/mounts.test.js` fails otherwise. Note that RF-S,
+DX and Sony E APS-C lenses are *not* a separate mount from their full-frame
+siblings.
 
 If nothing changed for a section, say "no changes". For genuinely uncertain items, put
 them under a "Needs confirmation" subsection rather than proposing a silent edit. Keep

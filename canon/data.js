@@ -10,7 +10,10 @@ const BRAND_CONFIG = {
   slug:        'canon',
   families:    ['EOS R System'],
   brandSections: ['canon'],
+  // `mount` is the landing-tile headline label; `mounts` is the machine-readable
+  // list every item's `mount` id must come from, and the order the filter chips render in.
   mount:       'RF-Mount',
+  mounts:      [{ id:'rf', label:'RF-Mount' }],
   heroCamera:  'eos-r1',
   cameras: {
     heroEyebrow:  'EOS R System',
@@ -63,7 +66,7 @@ const CAMERAS = {
 
   /* ── EOS R – 2024 ── */
   'eos-r1': {
-    name:'EOS R1', series:'EOS R (Full-frame)', year:2024, discontinued:false,
+    name:'EOS R1', series:'EOS R (Full-frame)', mount:'rf', year:2024, discontinued:false,
     tagline:'Pro Sports Flagship',
     productUrl:'https://www.usa.canon.com/cameras/eos-r1',
     imageUrl:'https://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/Canon_EOS_R1_12_apr_2025c.jpg/500px-Canon_EOS_R1_12_apr_2025c.jpg',
@@ -85,7 +88,7 @@ const CAMERAS = {
   },
 
   'eos-r5-ii': {
-    name:'EOS R5 Mark II', series:'EOS R (Full-frame)', year:2024, discontinued:false,
+    name:'EOS R5 Mark II', series:'EOS R (Full-frame)', mount:'rf', year:2024, discontinued:false,
     tagline:'45MP 8K60P + Neural AI AF',
     productUrl:'https://www.usa.canon.com/cameras/eos-r5-mark-ii',
     imageUrl:'https://upload.wikimedia.org/wikipedia/commons/thumb/5/57/Canon_EOS_R5_Mark_II_%28front%2C_no_body_cap%29.jpg/500px-Canon_EOS_R5_Mark_II_%28front%2C_no_body_cap%29.jpg',
@@ -109,7 +112,7 @@ const CAMERAS = {
 
   /* ── EOS R – 2025/2026 ── */
   'eos-r6-iii': {
-    name:'EOS R6 Mark III', series:'EOS R (Full-frame)', year:2025, discontinued:false,
+    name:'EOS R6 Mark III', series:'EOS R (Full-frame)', mount:'rf', year:2025, discontinued:false,
     tagline:'32.5MP 7K Hybrid Workhorse',
     productUrl:'https://www.usa.canon.com/cameras/eos-r6-mark-iii',
     imageUrl:'https://upload.wikimedia.org/wikipedia/commons/thumb/3/38/Canon_EOS_R6_Mark_III_26_nov_2025g.jpg/500px-Canon_EOS_R6_Mark_III_26_nov_2025g.jpg',
@@ -132,7 +135,7 @@ const CAMERAS = {
   },
 
   'eos-r6-v': {
-    name:'EOS R6 V', series:'EOS R (Full-frame)', year:2026, discontinued:false,
+    name:'EOS R6 V', series:'EOS R (Full-frame)', mount:'rf', year:2026, discontinued:false,
     tagline:'32.5MP 7K Video Body, No EVF',
     productUrl:'https://www.usa.canon.com/cameras/eos-r6-v',
     imageUrl:'https://upload.wikimedia.org/wikipedia/commons/thumb/a/a6/Canon_EOS_R6_V_with_RF_20-50mm_F4L_IS_USM_PZ_20260516100729.jpg/500px-Canon_EOS_R6_V_with_RF_20-50mm_F4L_IS_USM_PZ_20260516100729.jpg',
@@ -156,7 +159,7 @@ const CAMERAS = {
 
   /* ── EOS R – 2023 ── */
   'eos-r8': {
-    name:'EOS R8', series:'EOS R (Full-frame)', year:2023, discontinued:false,
+    name:'EOS R8', series:'EOS R (Full-frame)', mount:'rf', year:2023, discontinued:false,
     tagline:'Lightweight 24MP Full-Frame',
     productUrl:'https://www.usa.canon.com/cameras/eos-r8',
     imageUrl:'https://upload.wikimedia.org/wikipedia/commons/thumb/6/67/Canon_EOS_R8_27_may_2023c.jpg/500px-Canon_EOS_R8_27_may_2023c.jpg',
@@ -180,7 +183,7 @@ const CAMERAS = {
   },
 
   'eos-r50': {
-    name:'EOS R50', series:'EOS R (APS-C)', year:2023, discontinued:false,
+    name:'EOS R50', series:'EOS R (APS-C)', mount:'rf', year:2023, discontinued:false,
     tagline:'Budget APS-C Content Creator',
     productUrl:'https://www.usa.canon.com/cameras/eos-r50',
     imageUrl:'https://upload.wikimedia.org/wikipedia/commons/thumb/d/dd/Canon_EOS_R50_%2852694437103%29.jpg/500px-Canon_EOS_R50_%2852694437103%29.jpg',
@@ -203,7 +206,7 @@ const CAMERAS = {
   },
 
   'eos-r100': {
-    name:'EOS R100', series:'EOS R (APS-C)', year:2023, discontinued:false,
+    name:'EOS R100', series:'EOS R (APS-C)', mount:'rf', year:2023, discontinued:false,
     tagline:'Entry-Level APS-C Mirrorless',
     productUrl:'https://www.usa.canon.com/cameras/eos-r100',
     imageUrl:'https://upload.wikimedia.org/wikipedia/commons/thumb/e/ea/Canon_EOS_R100_19_aug_2023a.jpg/500px-Canon_EOS_R100_19_aug_2023a.jpg',
@@ -227,7 +230,7 @@ const CAMERAS = {
 
   /* ── EOS R – 2022 ── */
   'eos-r6-ii': {
-    name:'EOS R6 Mark II', series:'EOS R (Full-frame)', year:2022, discontinued:false,
+    name:'EOS R6 Mark II', series:'EOS R (Full-frame)', mount:'rf', year:2022, discontinued:false,
     tagline:'40fps 24MP Sports Hybrid',
     productUrl:'https://www.usa.canon.com/cameras/eos-r6-mark-ii',
     imageUrl:'https://upload.wikimedia.org/wikipedia/commons/thumb/f/f8/Canon_EOS_R6_Mark_II_-_by_Henry_S%C3%B6derlund_%2852546794891%29.jpg/500px-Canon_EOS_R6_Mark_II_-_by_Henry_S%C3%B6derlund_%2852546794891%29.jpg',
@@ -250,7 +253,7 @@ const CAMERAS = {
   },
 
   'eos-r7': {
-    name:'EOS R7', series:'EOS R (APS-C)', year:2022, discontinued:false,
+    name:'EOS R7', series:'EOS R (APS-C)', mount:'rf', year:2022, discontinued:false,
     tagline:'32MP APS-C Enthusiast + IBIS',
     productUrl:'https://www.usa.canon.com/cameras/eos-r7',
     imageUrl:'https://upload.wikimedia.org/wikipedia/commons/thumb/2/28/Canon_EOS_R7_9_Jul_2022a.jpg/500px-Canon_EOS_R7_9_Jul_2022a.jpg',
@@ -273,7 +276,7 @@ const CAMERAS = {
   },
 
   'eos-r10': {
-    name:'EOS R10', series:'EOS R (APS-C)', year:2022, discontinued:false,
+    name:'EOS R10', series:'EOS R (APS-C)', mount:'rf', year:2022, discontinued:false,
     tagline:'Affordable APS-C Fast-Burst',
     productUrl:'https://www.usa.canon.com/cameras/eos-r10',
     imageUrl:'https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Canon_EOS_R10_22_nov_2022a.jpg/500px-Canon_EOS_R10_22_nov_2022a.jpg',
@@ -296,7 +299,7 @@ const CAMERAS = {
   },
 
   'eos-r5c': {
-    name:'EOS R5 C', series:'EOS R (Full-frame)', year:2022, discontinued:false,
+    name:'EOS R5 C', series:'EOS R (Full-frame)', mount:'rf', year:2022, discontinued:false,
     tagline:'8K Cinema Hybrid with Active Cooling',
     productUrl:'https://www.usa.canon.com/cameras/eos-r5-c',
     imageUrl:'https://upload.wikimedia.org/wikipedia/commons/thumb/c/cc/Canon_EOS_R5C_%2851973388828%29.jpg/500px-Canon_EOS_R5C_%2851973388828%29.jpg',
@@ -320,7 +323,7 @@ const CAMERAS = {
 
   /* ── EOS R – 2021 ── */
   'eos-r3': {
-    name:'EOS R3', series:'EOS R (Full-frame)', year:2021, discontinued:false,
+    name:'EOS R3', series:'EOS R (Full-frame)', mount:'rf', year:2021, discontinued:false,
     tagline:'Pro Action + Eye Control AF',
     productUrl:'https://www.usa.canon.com/cameras/eos-r3',
     imageUrl:'https://upload.wikimedia.org/wikipedia/commons/thumb/7/75/Canon_EOS_R3.jpg/500px-Canon_EOS_R3.jpg',
@@ -344,7 +347,7 @@ const CAMERAS = {
 
   /* ── EOS R – 2020 ── */
   'eos-r5': {
-    name:'EOS R5', series:'EOS R (Full-frame)', year:2020, discontinued:false,
+    name:'EOS R5', series:'EOS R (Full-frame)', mount:'rf', year:2020, discontinued:false,
     tagline:'45MP 8K Flagship Hybrid',
     productUrl:'https://www.usa.canon.com/cameras/eos-r5',
     imageUrl:'https://upload.wikimedia.org/wikipedia/commons/thumb/8/88/Canon_EOS_R5.jpg/500px-Canon_EOS_R5.jpg',
@@ -367,7 +370,7 @@ const CAMERAS = {
   },
 
   'eos-r6': {
-    name:'EOS R6', series:'EOS R (Full-frame)', year:2020, discontinued:true,
+    name:'EOS R6', series:'EOS R (Full-frame)', mount:'rf', year:2020, discontinued:true,
     tagline:'20MP IBIS All-Rounder',
     productUrl:'https://www.usa.canon.com/cameras/eos-r6',
     imageUrl:'https://upload.wikimedia.org/wikipedia/commons/thumb/8/8d/Canon_R6_und_RF_85_1%2C2-8068.jpg/500px-Canon_R6_und_RF_85_1%2C2-8068.jpg',
@@ -389,7 +392,7 @@ const CAMERAS = {
 
   /* ── EOS R – 2019 ── */
   'eos-rp': {
-    name:'EOS RP', series:'EOS R (Full-frame)', year:2019, discontinued:false,
+    name:'EOS RP', series:'EOS R (Full-frame)', mount:'rf', year:2019, discontinued:false,
     tagline:'Lightest Full-Frame EOS R',
     productUrl:'https://www.usa.canon.com/cameras/eos-rp',
     imageUrl:'https://upload.wikimedia.org/wikipedia/commons/thumb/a/ab/Canon_EOS_RP_27_Mar_2019a.jpg/500px-Canon_EOS_RP_27_Mar_2019a.jpg',
@@ -413,7 +416,7 @@ const CAMERAS = {
 
   /* ── EOS R – 2018 ── */
   'eos-r': {
-    name:'EOS R', series:'EOS R (Full-frame)', year:2018, discontinued:true,
+    name:'EOS R', series:'EOS R (Full-frame)', mount:'rf', year:2018, discontinued:true,
     tagline:'The Original EOS R Full-Frame',
     productUrl:'https://www.usa.canon.com/cameras/eos-r',
     imageUrl:'https://upload.wikimedia.org/wikipedia/commons/thumb/3/3d/Canon_EOS_R_07_sep_2018a.jpg/500px-Canon_EOS_R_07_sep_2018a.jpg',
@@ -435,7 +438,7 @@ const CAMERAS = {
 
   /* ── EOS R50 V – 2025 ── */
   'eos-r50v': {
-    name:'EOS R50 V', series:'EOS R (APS-C)', year:2025, discontinued:false, asin:'B0F2523BMZ',
+    name:'EOS R50 V', series:'EOS R (APS-C)', mount:'rf', year:2025, discontinued:false, asin:'B0F2523BMZ',
     tagline:'Compact APS-C Vlogger Upgrade',
     productUrl:'https://www.usa.canon.com/cameras/eos-r50v',
     imageUrl:'https://www.canon.com.au/-/media/images/canon/products/mirrorless-cameras/eos-r50-v/carousel-1-eosr50v-1400x960.jpg',
@@ -488,7 +491,7 @@ const LENSES = {
 
   /* ── Canon RF Prime Lenses ── */
   'rf-14mm-f14-l-vcm': {
-    name:'RF 14mm f/1.4 L VCM', manufacturer:'Canon', line:'RF L', type:'Prime', asin:'B0GLFTJ246',
+    name:'RF 14mm f/1.4 L VCM', manufacturer:'Canon', line:'RF L', type:'Prime', mount:'rf', asin:'B0GLFTJ246',
     focalLength:14, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'14mm',
     maxAperture:1.4, minAperture:16, weight:578, length:112.0, diameter:76.5,
     filterThread:null, minFocusDist:24, maxMagnification:0.11,
@@ -501,7 +504,7 @@ const LENSES = {
   },
 
   'rf-20mm-f14-l-vcm': {
-    name:'RF 20mm f/1.4 L VCM', manufacturer:'Canon', line:'RF L', type:'Prime', asin:'B0F253Q86C',
+    name:'RF 20mm f/1.4 L VCM', manufacturer:'Canon', line:'RF L', type:'Prime', mount:'rf', asin:'B0F253Q86C',
     focalLength:20, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'20mm',
     maxAperture:1.4, minAperture:16, weight:519, length:99.3, diameter:76.5,
     filterThread:67, minFocusDist:20, maxMagnification:0.19,
@@ -515,7 +518,7 @@ const LENSES = {
   },
 
   'rf-45mm-f12-stm': {
-    name:'RF 45mm f/1.2 STM', manufacturer:'Canon', line:'RF', type:'Prime', asin:'B0FZWB8D2S',
+    name:'RF 45mm f/1.2 STM', manufacturer:'Canon', line:'RF', type:'Prime', mount:'rf', asin:'B0FZWB8D2S',
     focalLength:45, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'45mm',
     maxAperture:1.2, minAperture:16, weight:346, length:75.0, diameter:78.0,
     filterThread:67, minFocusDist:35, maxMagnification:0.13,
@@ -530,7 +533,7 @@ const LENSES = {
 
   'rf-16mm-f28-stm': {
     name:'RF 16mm f/2.8 STM', manufacturer:'Canon', line:'RF', type:'Prime',
-    focalLength:16, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'16mm',
+    mount:'rf', focalLength:16, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'16mm',
     maxAperture:2.8, minAperture:22, weight:165, length:40.2, diameter:69.2,
     filterThread:43, minFocusDist:13, maxMagnification:0.26,
     elements:9, groups:9, blades:7, afType:'STM',
@@ -545,7 +548,7 @@ const LENSES = {
 
   'rf-24mm-f18-macro-is-stm': {
     name:'RF 24mm f/1.8 Macro IS STM', manufacturer:'Canon', line:'RF', type:'Prime',
-    focalLength:24, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'24mm',
+    mount:'rf', focalLength:24, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'24mm',
     maxAperture:1.8, minAperture:22, weight:270, length:64.3, diameter:74.4,
     filterThread:52, minFocusDist:14, maxMagnification:0.50,
     elements:12, groups:10, blades:7, afType:'STM',
@@ -560,7 +563,7 @@ const LENSES = {
 
   'rf-28mm-f28-stm': {
     name:'RF 28mm f/2.8 STM', manufacturer:'Canon', line:'RF', type:'Prime',
-    focalLength:28, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'28mm',
+    mount:'rf', focalLength:28, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'28mm',
     maxAperture:2.8, minAperture:22, weight:120, length:24.7, diameter:69.2,
     filterThread:55, minFocusDist:23, maxMagnification:0.17,
     elements:9, groups:8, blades:7, afType:'STM',
@@ -575,7 +578,7 @@ const LENSES = {
 
   'rf-35mm-f18-macro-is-stm': {
     name:'RF 35mm f/1.8 Macro IS STM', manufacturer:'Canon', line:'RF', type:'Prime',
-    focalLength:35, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'35mm',
+    mount:'rf', focalLength:35, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'35mm',
     maxAperture:1.8, minAperture:22, weight:305, length:62.8, diameter:74.4,
     filterThread:52, minFocusDist:17, maxMagnification:0.50,
     elements:11, groups:9, blades:9, afType:'STM',
@@ -590,7 +593,7 @@ const LENSES = {
 
   'rf-50mm-f12-l-usm': {
     name:'RF 50mm f/1.2 L USM', manufacturer:'Canon', line:'RF L', type:'Prime',
-    focalLength:50, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'50mm',
+    mount:'rf', focalLength:50, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'50mm',
     maxAperture:1.2, minAperture:16, weight:950, length:108.0, diameter:89.8,
     filterThread:77, minFocusDist:40, maxMagnification:0.19,
     elements:15, groups:9, blades:10, afType:'Ring USM',
@@ -606,7 +609,7 @@ const LENSES = {
 
   'rf-50mm-f18-stm': {
     name:'RF 50mm f/1.8 STM', manufacturer:'Canon', line:'RF', type:'Prime',
-    focalLength:50, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'50mm',
+    mount:'rf', focalLength:50, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'50mm',
     maxAperture:1.8, minAperture:22, weight:160, length:40.5, diameter:69.2,
     filterThread:43, minFocusDist:30, maxMagnification:0.25,
     elements:6, groups:5, blades:7, afType:'STM',
@@ -621,7 +624,7 @@ const LENSES = {
 
   'rf-85mm-f12-l-usm': {
     name:'RF 85mm f/1.2 L USM', manufacturer:'Canon', line:'RF L', type:'Prime',
-    focalLength:85, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'85mm',
+    mount:'rf', focalLength:85, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'85mm',
     maxAperture:1.2, minAperture:16, weight:1195, length:117.3, diameter:103.2,
     filterThread:82, minFocusDist:85, maxMagnification:0.12,
     elements:13, groups:9, blades:9, afType:'Ring USM',
@@ -635,7 +638,7 @@ const LENSES = {
   },
 
   'rf-85mm-f14-l-vcm': {
-    name:'RF 85mm f/1.4 L VCM', manufacturer:'Canon', line:'RF L', type:'Prime', asin:'B0FPZBRPTQ',
+    name:'RF 85mm f/1.4 L VCM', manufacturer:'Canon', line:'RF L', type:'Prime', mount:'rf', asin:'B0FPZBRPTQ',
     focalLength:85, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'85mm',
     maxAperture:1.4, minAperture:16, weight:636, length:99.3, diameter:76.5,
     filterThread:67, minFocusDist:75, maxMagnification:0.12,
@@ -649,7 +652,7 @@ const LENSES = {
 
   'rf-85mm-f2-macro-is-stm': {
     name:'RF 85mm f/2 Macro IS STM', manufacturer:'Canon', line:'RF', type:'Prime',
-    focalLength:85, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'85mm',
+    mount:'rf', focalLength:85, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'85mm',
     maxAperture:2.0, minAperture:32, weight:500, length:90.5, diameter:78.0,
     filterThread:67, minFocusDist:35, maxMagnification:0.50,
     elements:13, groups:10, blades:9, afType:'STM',
@@ -664,7 +667,7 @@ const LENSES = {
 
   'rf-100mm-f28-l-macro-is-usm': {
     name:'RF 100mm f/2.8 L Macro IS USM', manufacturer:'Canon', line:'RF L', type:'Prime',
-    focalLength:100, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'100mm',
+    mount:'rf', focalLength:100, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'100mm',
     maxAperture:2.8, minAperture:32, weight:730, length:148.0, diameter:81.5,
     filterThread:67, minFocusDist:26, maxMagnification:1.40,
     elements:17, groups:13, blades:9, afType:'Nano USM',
@@ -679,7 +682,7 @@ const LENSES = {
 
   'rf-135mm-f18-l-is-usm': {
     name:'RF 135mm f/1.8 L IS USM', manufacturer:'Canon', line:'RF L', type:'Prime',
-    focalLength:135, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'135mm',
+    mount:'rf', focalLength:135, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'135mm',
     maxAperture:1.8, minAperture:22, weight:910, length:126.5, diameter:88.5,
     filterThread:82, minFocusDist:70, maxMagnification:0.25,
     elements:17, groups:13, blades:9, afType:'Nano USM',
@@ -694,7 +697,7 @@ const LENSES = {
 
   'rf-800mm-f11-is-stm': {
     name:'RF 800mm f/11 IS STM', manufacturer:'Canon', line:'RF', type:'Prime',
-    focalLength:800, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'800mm',
+    mount:'rf', focalLength:800, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'800mm',
     maxAperture:11.0, minAperture:11.0, weight:1260, length:281.8, diameter:101.6,
     filterThread:95, minFocusDist:600, maxMagnification:0.14,
     elements:11, groups:8, blades:null, afType:'STM',
@@ -708,7 +711,7 @@ const LENSES = {
 
   'rf-600mm-f11-is-stm': {
     name:'RF 600mm f/11 IS STM', manufacturer:'Canon', line:'RF', type:'Prime',
-    focalLength:600, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'600mm',
+    mount:'rf', focalLength:600, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'600mm',
     maxAperture:11.0, minAperture:11, weight:930, length:199.5, diameter:93,
     filterThread:82, minFocusDist:450, maxMagnification:0.14,
     elements:10, groups:7, blades:null, afType:'STM',
@@ -723,7 +726,7 @@ const LENSES = {
 
   'rf-400mm-f28-l-is-usm': {
     name:'RF 400mm f/2.8 L IS USM', manufacturer:'Canon', line:'RF L', type:'Prime',
-    focalLength:400, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'400mm',
+    mount:'rf', focalLength:400, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'400mm',
     maxAperture:2.8, minAperture:32, weight:2890, length:367, diameter:163,
     filterThread:52, minFocusDist:250, maxMagnification:0.17,
     elements:17, groups:13, blades:9, afType:'Nano USM',
@@ -737,7 +740,7 @@ const LENSES = {
 
   'rf-600mm-f4-l-is-usm': {
     name:'RF 600mm f/4 L IS USM', manufacturer:'Canon', line:'RF L', type:'Prime',
-    focalLength:600, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'600mm',
+    mount:'rf', focalLength:600, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'600mm',
     maxAperture:4.0, minAperture:32, weight:3090, length:472, diameter:168,
     filterThread:52, minFocusDist:420, maxMagnification:0.15,
     elements:17, groups:13, blades:9, afType:'Nano USM',
@@ -751,7 +754,7 @@ const LENSES = {
 
   'rf-85mm-f12-l-usm-ds': {
     name:'RF 85mm f/1.2 L USM DS', manufacturer:'Canon', line:'RF L', type:'Prime',
-    focalLength:85, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'85mm',
+    mount:'rf', focalLength:85, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'85mm',
     maxAperture:1.2, minAperture:16, weight:1195, length:117.3, diameter:103.2,
     filterThread:82, minFocusDist:85, maxMagnification:0.12,
     elements:13, groups:9, blades:9, afType:'Nano USM',
@@ -766,7 +769,7 @@ const LENSES = {
 
   'rf-24mm-f14-l-vcm': {
     name:'RF 24mm f/1.4 L VCM', manufacturer:'Canon', line:'RF L', type:'Prime',
-    focalLength:24, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'24mm',
+    mount:'rf', focalLength:24, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'24mm',
     maxAperture:1.4, minAperture:16, weight:515, length:99.3, diameter:76.5,
     filterThread:67, minFocusDist:24, maxMagnification:0.17,
     elements:15, groups:11, blades:11, afType:'VCM + Nano USM',
@@ -781,7 +784,7 @@ const LENSES = {
 
   'rf-35mm-f14-l-vcm': {
     name:'RF 35mm f/1.4 L VCM', manufacturer:'Canon', line:'RF L', type:'Prime',
-    focalLength:35, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'35mm',
+    mount:'rf', focalLength:35, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'35mm',
     maxAperture:1.4, minAperture:16, weight:555, length:99.3, diameter:76.5,
     filterThread:67, minFocusDist:28, maxMagnification:0.18,
     elements:14, groups:11, blades:11, afType:'VCM + Nano USM',
@@ -796,7 +799,7 @@ const LENSES = {
 
   'rf-50mm-f14-l-vcm': {
     name:'RF 50mm f/1.4 L VCM', manufacturer:'Canon', line:'RF L', type:'Prime',
-    focalLength:50, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'50mm',
+    mount:'rf', focalLength:50, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'50mm',
     maxAperture:1.4, minAperture:16, weight:580, length:99.3, diameter:76.5,
     filterThread:67, minFocusDist:40, maxMagnification:0.15,
     elements:14, groups:11, blades:11, afType:'VCM + Nano USM',
@@ -811,7 +814,7 @@ const LENSES = {
 
   'rf-800mm-f56-l-is-usm': {
     name:'RF 800mm f/5.6 L IS USM', manufacturer:'Canon', line:'RF L', type:'Prime',
-    focalLength:800, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'800mm',
+    mount:'rf', focalLength:800, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'800mm',
     maxAperture:5.6, minAperture:64, weight:3140, length:432, diameter:163,
     filterThread:52, minFocusDist:260, maxMagnification:0.34,
     elements:26, groups:18, blades:9, afType:'Nano USM',
@@ -825,7 +828,7 @@ const LENSES = {
 
   'rf-1200mm-f8-l-is-usm': {
     name:'RF 1200mm f/8 L IS USM', manufacturer:'Canon', line:'RF L', type:'Prime',
-    focalLength:1200, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'1200mm',
+    mount:'rf', focalLength:1200, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'1200mm',
     maxAperture:8.0, minAperture:64, weight:3340, length:537, diameter:168,
     filterThread:52, minFocusDist:430, maxMagnification:0.29,
     elements:26, groups:18, blades:9, afType:'Nano USM',
@@ -840,7 +843,7 @@ const LENSES = {
 
   'rf-52mm-f28-l-dual-fisheye': {
     name:'RF 5.2mm f/2.8 L Dual Fisheye', manufacturer:'Canon', line:'RF L', type:'Prime',
-    focalLength:5.2, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'5.2mm',
+    mount:'rf', focalLength:5.2, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'5.2mm',
     maxAperture:2.8, minAperture:16, weight:350, length:53.5, diameter:121.1,
     filterThread:null, minFocusDist:20, maxMagnification:0.03,
     elements:12, groups:10, blades:7, afType:'Manual',
@@ -854,7 +857,7 @@ const LENSES = {
 
   'rfs-39mm-f35-stm-dual-fisheye': {
     name:'RF-S 3.9mm f/3.5 STM Dual Fisheye', manufacturer:'Canon', line:'RF-S', type:'Prime',
-    focalLength:3.9, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'3.9mm',
+    mount:'rf', focalLength:3.9, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'3.9mm',
     maxAperture:3.5, minAperture:16, weight:289, length:53, diameter:112,
     filterThread:null, minFocusDist:20, maxMagnification:0.03,
     elements:11, groups:8, blades:7, afType:'STM',
@@ -868,7 +871,7 @@ const LENSES = {
 
   'rfs-78mm-f4-stm-dual': {
     name:'RF-S 7.8mm f/4 STM Dual', manufacturer:'Canon', line:'RF-S', type:'Prime',
-    focalLength:7.8, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'7.8mm',
+    mount:'rf', focalLength:7.8, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'7.8mm',
     maxAperture:4.0, minAperture:16, weight:131, length:40.6, diameter:68.6,
     filterThread:58, minFocusDist:15, maxMagnification:0.07,
     elements:9, groups:7, blades:7, afType:'STM',
@@ -883,7 +886,7 @@ const LENSES = {
 
   /* ── Canon RF Zoom Lenses ── */
   'rf-20-50mm-f4-l-is-usm-pz': {
-    name:'RF 20-50mm f/4 L IS USM PZ', manufacturer:'Canon', line:'RF L', type:'Zoom', asin:'B0H1F1FPFH',
+    name:'RF 20-50mm f/4 L IS USM PZ', manufacturer:'Canon', line:'RF L', type:'Zoom', mount:'rf', asin:'B0H1F1FPFH',
     focalLength:null, focalLengthMin:20, focalLengthMax:50, focalLengthEquiv:'20–50mm',
     maxAperture:4.0, minAperture:22, weight:408, length:99.0, diameter:81.2,
     filterThread:67, minFocusDist:24, maxMagnification:0.33,
@@ -896,7 +899,7 @@ const LENSES = {
   },
 
   'rf-7-14mm-f28-35-l-fisheye-stm': {
-    name:'RF 7-14mm f/2.8-3.5 L Fisheye STM', manufacturer:'Canon', line:'RF L', type:'Zoom', asin:'B0GLF3B13Y',
+    name:'RF 7-14mm f/2.8-3.5 L Fisheye STM', manufacturer:'Canon', line:'RF L', type:'Zoom', mount:'rf', asin:'B0GLF3B13Y',
     focalLength:null, focalLengthMin:7, focalLengthMax:14, focalLengthEquiv:'7–14mm',
     maxAperture:2.8, minAperture:22, weight:476, length:109.4, diameter:76.5,
     filterThread:null, minFocusDist:15, maxMagnification:0.35,
@@ -909,7 +912,7 @@ const LENSES = {
   },
 
   'rf-16-28mm-f28-is-stm': {
-    name:'RF 16-28mm f/2.8 IS STM', manufacturer:'Canon', line:'RF', type:'Zoom', asin:'B0DTKVZ64J',
+    name:'RF 16-28mm f/2.8 IS STM', manufacturer:'Canon', line:'RF', type:'Zoom', mount:'rf', asin:'B0DTKVZ64J',
     focalLength:null, focalLengthMin:16, focalLengthMax:28, focalLengthEquiv:'16–28mm',
     maxAperture:2.8, minAperture:16, weight:445, length:91.0, diameter:77.0,
     filterThread:67, minFocusDist:20, maxMagnification:0.26,
@@ -923,7 +926,7 @@ const LENSES = {
   },
 
   'rf-75-300mm-f4-56': {
-    name:'RF 75-300mm f/4-5.6', manufacturer:'Canon', line:'RF', type:'Zoom', asin:'B0FH2ZKT94',
+    name:'RF 75-300mm f/4-5.6', manufacturer:'Canon', line:'RF', type:'Zoom', mount:'rf', asin:'B0FH2ZKT94',
     focalLength:null, focalLengthMin:75, focalLengthMax:300, focalLengthEquiv:'75–300mm',
     maxAperture:4.0, minAperture:32, weight:507, length:146.1, diameter:71.2,
     filterThread:58, minFocusDist:150, maxMagnification:0.25,
@@ -937,7 +940,7 @@ const LENSES = {
 
   'rf-14-35mm-f4-l-is-usm': {
     name:'RF 14-35mm f/4 L IS USM', manufacturer:'Canon', line:'RF L', type:'Zoom',
-    focalLength:null, focalLengthMin:14, focalLengthMax:35, focalLengthEquiv:'14–35mm',
+    mount:'rf', focalLength:null, focalLengthMin:14, focalLengthMax:35, focalLengthEquiv:'14–35mm',
     maxAperture:4.0, minAperture:22, weight:540, length:99.8, diameter:83.5,
     filterThread:77, minFocusDist:20, maxMagnification:0.38,
     elements:20, groups:14, blades:9, afType:'Nano USM',
@@ -952,7 +955,7 @@ const LENSES = {
 
   'rf-15-35mm-f28-l-is-usm': {
     name:'RF 15-35mm f/2.8 L IS USM', manufacturer:'Canon', line:'RF L', type:'Zoom',
-    focalLength:null, focalLengthMin:15, focalLengthMax:35, focalLengthEquiv:'15–35mm',
+    mount:'rf', focalLength:null, focalLengthMin:15, focalLengthMax:35, focalLengthEquiv:'15–35mm',
     maxAperture:2.8, minAperture:22, weight:840, length:126.8, diameter:88.5,
     filterThread:82, minFocusDist:28, maxMagnification:0.21,
     elements:16, groups:12, blades:9, afType:'Nano USM',
@@ -967,7 +970,7 @@ const LENSES = {
 
   'rf-24-50mm-f45-63-is-stm': {
     name:'RF 24-50mm f/4.5-6.3 IS STM', manufacturer:'Canon', line:'RF', type:'Zoom',
-    focalLength:null, focalLengthMin:24, focalLengthMax:50, focalLengthEquiv:'24–50mm',
+    mount:'rf', focalLength:null, focalLengthMin:24, focalLengthMax:50, focalLengthEquiv:'24–50mm',
     maxAperture:4.5, minAperture:22, weight:210, length:58.1, diameter:74.4,
     filterThread:58, minFocusDist:13, maxMagnification:0.25,
     elements:10, groups:8, blades:7, afType:'STM',
@@ -981,7 +984,7 @@ const LENSES = {
 
   'rf-24-70mm-f28-l-is-usm': {
     name:'RF 24-70mm f/2.8 L IS USM', manufacturer:'Canon', line:'RF L', type:'Zoom',
-    focalLength:null, focalLengthMin:24, focalLengthMax:70, focalLengthEquiv:'24–70mm',
+    mount:'rf', focalLength:null, focalLengthMin:24, focalLengthMax:70, focalLengthEquiv:'24–70mm',
     maxAperture:2.8, minAperture:22, weight:900, length:125.7, diameter:88.5,
     filterThread:82, minFocusDist:21, maxMagnification:0.30,
     elements:21, groups:15, blades:9, afType:'Nano USM',
@@ -996,7 +999,7 @@ const LENSES = {
 
   'rf-24-105mm-f4-l-is-usm': {
     name:'RF 24-105mm f/4 L IS USM', manufacturer:'Canon', line:'RF L', type:'Zoom',
-    focalLength:null, focalLengthMin:24, focalLengthMax:105, focalLengthEquiv:'24–105mm',
+    mount:'rf', focalLength:null, focalLengthMin:24, focalLengthMax:105, focalLengthEquiv:'24–105mm',
     maxAperture:4.0, minAperture:22, weight:700, length:107.4, diameter:83.5,
     filterThread:77, minFocusDist:45, maxMagnification:0.24,
     elements:18, groups:14, blades:9, afType:'Nano USM',
@@ -1011,7 +1014,7 @@ const LENSES = {
 
   'rf-24-105mm-f4-71-is-stm': {
     name:'RF 24-105mm f/4-7.1 IS STM', manufacturer:'Canon', line:'RF', type:'Zoom',
-    focalLength:null, focalLengthMin:24, focalLengthMax:105, focalLengthEquiv:'24–105mm',
+    mount:'rf', focalLength:null, focalLengthMin:24, focalLengthMax:105, focalLengthEquiv:'24–105mm',
     maxAperture:4.0, minAperture:32, weight:395, length:88.8, diameter:74.4,
     filterThread:67, minFocusDist:20, maxMagnification:0.30,
     elements:15, groups:13, blades:7, afType:'STM',
@@ -1026,7 +1029,7 @@ const LENSES = {
 
   'rf-70-200mm-f28-l-is-usm': {
     name:'RF 70-200mm f/2.8 L IS USM', manufacturer:'Canon', line:'RF L', type:'Zoom',
-    focalLength:null, focalLengthMin:70, focalLengthMax:200, focalLengthEquiv:'70–200mm',
+    mount:'rf', focalLength:null, focalLengthMin:70, focalLengthMax:200, focalLengthEquiv:'70–200mm',
     maxAperture:2.8, minAperture:32, weight:1070, length:146.0, diameter:89.9,
     filterThread:77, minFocusDist:70, maxMagnification:0.23,
     elements:17, groups:13, blades:9, afType:'Nano USM',
@@ -1041,7 +1044,7 @@ const LENSES = {
 
   'rf-70-200mm-f4-l-is-usm': {
     name:'RF 70-200mm f/4 L IS USM', manufacturer:'Canon', line:'RF L', type:'Zoom',
-    focalLength:null, focalLengthMin:70, focalLengthMax:200, focalLengthEquiv:'70–200mm',
+    mount:'rf', focalLength:null, focalLengthMin:70, focalLengthMax:200, focalLengthEquiv:'70–200mm',
     maxAperture:4.0, minAperture:32, weight:695, length:118.6, diameter:83.5,
     filterThread:77, minFocusDist:60, maxMagnification:0.28,
     elements:18, groups:14, blades:9, afType:'Nano USM',
@@ -1055,7 +1058,7 @@ const LENSES = {
 
   'rf-100-400mm-f56-8-is-usm': {
     name:'RF 100-400mm f/5.6-8 IS USM', manufacturer:'Canon', line:'RF', type:'Zoom',
-    focalLength:null, focalLengthMin:100, focalLengthMax:400, focalLengthEquiv:'100–400mm',
+    mount:'rf', focalLength:null, focalLengthMin:100, focalLengthMax:400, focalLengthEquiv:'100–400mm',
     maxAperture:5.6, minAperture:32, weight:635, length:161.6, diameter:79.5,
     filterThread:77, minFocusDist:88, maxMagnification:0.41,
     elements:20, groups:12, blades:7, afType:'Nano USM',
@@ -1070,7 +1073,7 @@ const LENSES = {
 
   'rf-100-500mm-f45-71-l-is-usm': {
     name:'RF 100-500mm f/4.5-7.1 L IS USM', manufacturer:'Canon', line:'RF L', type:'Zoom',
-    focalLength:null, focalLengthMin:100, focalLengthMax:500, focalLengthEquiv:'100–500mm',
+    mount:'rf', focalLength:null, focalLengthMin:100, focalLengthMax:500, focalLengthEquiv:'100–500mm',
     maxAperture:4.5, minAperture:40, weight:1530, length:207.6, diameter:93.8,
     filterThread:77, minFocusDist:90, maxMagnification:0.33,
     elements:20, groups:14, blades:9, afType:'Nano USM',
@@ -1085,7 +1088,7 @@ const LENSES = {
 
   'rf-10-20mm-f4-l-is-stm': {
     name:'RF 10-20mm f/4 L IS STM', manufacturer:'Canon', line:'RF L', type:'Zoom',
-    focalLength:null, focalLengthMin:10, focalLengthMax:20, focalLengthEquiv:'10–20mm',
+    mount:'rf', focalLength:null, focalLengthMin:10, focalLengthMax:20, focalLengthEquiv:'10–20mm',
     maxAperture:4.0, minAperture:22, weight:570, length:112, diameter:83.7,
     filterThread:null, minFocusDist:25, maxMagnification:0.12,
     elements:16, groups:12, blades:9, afType:'STM',
@@ -1099,7 +1102,7 @@ const LENSES = {
 
   'rf-15-30mm-f45-63-is-stm': {
     name:'RF 15-30mm f/4.5-6.3 IS STM', manufacturer:'Canon', line:'RF', type:'Zoom',
-    focalLength:null, focalLengthMin:15, focalLengthMax:30, focalLengthEquiv:'15–30mm',
+    mount:'rf', focalLength:null, focalLengthMin:15, focalLengthMax:30, focalLengthEquiv:'15–30mm',
     maxAperture:4.5, minAperture:32, weight:390, length:88.4, diameter:76.6,
     filterThread:67, minFocusDist:13, maxMagnification:0.52,
     elements:13, groups:11, blades:7, afType:'STM',
@@ -1113,7 +1116,7 @@ const LENSES = {
 
   'rf-28-70mm-f2-l-usm': {
     name:'RF 28-70mm f/2 L USM', manufacturer:'Canon', line:'RF L', type:'Zoom',
-    focalLength:null, focalLengthMin:28, focalLengthMax:70, focalLengthEquiv:'28–70mm',
+    mount:'rf', focalLength:null, focalLengthMin:28, focalLengthMax:70, focalLengthEquiv:'28–70mm',
     maxAperture:2.0, minAperture:22, weight:1430, length:139.8, diameter:103.8,
     filterThread:95, minFocusDist:39, maxMagnification:0.18,
     elements:19, groups:13, blades:9, afType:'USM',
@@ -1128,7 +1131,7 @@ const LENSES = {
 
   'rf-28-70mm-f28-is-stm': {
     name:'RF 28-70mm f/2.8 IS STM', manufacturer:'Canon', line:'RF', type:'Zoom',
-    focalLength:null, focalLengthMin:28, focalLengthMax:70, focalLengthEquiv:'28–70mm',
+    mount:'rf', focalLength:null, focalLengthMin:28, focalLengthMax:70, focalLengthEquiv:'28–70mm',
     maxAperture:2.8, minAperture:22, weight:495, length:92.2, diameter:76.5,
     filterThread:67, minFocusDist:27, maxMagnification:0.24,
     elements:15, groups:12, blades:9, afType:'STM',
@@ -1143,7 +1146,7 @@ const LENSES = {
 
   'rf-24-105mm-f28-l-is-usm-z': {
     name:'RF 24-105mm f/2.8 L IS USM Z', manufacturer:'Canon', line:'RF L', type:'Zoom',
-    focalLength:null, focalLengthMin:24, focalLengthMax:105, focalLengthEquiv:'24–105mm',
+    mount:'rf', focalLength:null, focalLengthMin:24, focalLengthMax:105, focalLengthEquiv:'24–105mm',
     maxAperture:2.8, minAperture:22, weight:1330, length:199, diameter:88.5,
     filterThread:82, minFocusDist:45, maxMagnification:0.29,
     elements:23, groups:18, blades:11, afType:'Dual Nano USM',
@@ -1158,7 +1161,7 @@ const LENSES = {
 
   'rf-24-240mm-f4-63-is-usm': {
     name:'RF 24-240mm f/4-6.3 IS USM', manufacturer:'Canon', line:'RF', type:'Zoom',
-    focalLength:null, focalLengthMin:24, focalLengthMax:240, focalLengthEquiv:'24–240mm',
+    mount:'rf', focalLength:null, focalLengthMin:24, focalLengthMax:240, focalLengthEquiv:'24–240mm',
     maxAperture:4.0, minAperture:38, weight:750, length:122.5, diameter:80.4,
     filterThread:72, minFocusDist:50, maxMagnification:0.26,
     elements:21, groups:15, blades:7, afType:'Nano USM',
@@ -1173,7 +1176,7 @@ const LENSES = {
 
   'rf-70-200mm-f28-l-is-usm-z': {
     name:'RF 70-200mm f/2.8 L IS USM Z', manufacturer:'Canon', line:'RF L', type:'Zoom',
-    focalLength:null, focalLengthMin:70, focalLengthMax:200, focalLengthEquiv:'70–200mm',
+    mount:'rf', focalLength:null, focalLengthMin:70, focalLengthMax:200, focalLengthEquiv:'70–200mm',
     maxAperture:2.8, minAperture:22, weight:1107, length:199, diameter:88.5,
     filterThread:82, minFocusDist:49, maxMagnification:0.30,
     elements:18, groups:15, blades:11, afType:'Dual Nano USM',
@@ -1188,7 +1191,7 @@ const LENSES = {
 
   'rf-100-300mm-f28-l-is-usm': {
     name:'RF 100-300mm f/2.8 L IS USM', manufacturer:'Canon', line:'RF L', type:'Zoom',
-    focalLength:null, focalLengthMin:100, focalLengthMax:300, focalLengthEquiv:'100–300mm',
+    mount:'rf', focalLength:null, focalLengthMin:100, focalLengthMax:300, focalLengthEquiv:'100–300mm',
     maxAperture:2.8, minAperture:22, weight:2650, length:323.4, diameter:128,
     filterThread:112, minFocusDist:180, maxMagnification:0.16,
     elements:23, groups:18, blades:9, afType:'Dual Nano USM',
@@ -1203,7 +1206,7 @@ const LENSES = {
 
   'rf-200-800mm-f63-9-is-usm': {
     name:'RF 200-800mm f/6.3-9 IS USM', manufacturer:'Canon', line:'RF', type:'Zoom',
-    focalLength:null, focalLengthMin:200, focalLengthMax:800, focalLengthEquiv:'200–800mm',
+    mount:'rf', focalLength:null, focalLengthMin:200, focalLengthMax:800, focalLengthEquiv:'200–800mm',
     maxAperture:6.3, minAperture:54, weight:2050, length:314.1, diameter:102.3,
     filterThread:95, minFocusDist:80, maxMagnification:0.25,
     elements:17, groups:11, blades:9, afType:'Nano USM',
@@ -1218,7 +1221,7 @@ const LENSES = {
 
   /* ── Canon RF-S Lenses (APS-C) ── */
   'rfs-14-30mm-f4-63-is-stm-pz': {
-    name:'RF-S 14-30mm f/4-6.3 IS STM PZ', manufacturer:'Canon', line:'RF-S', type:'Zoom', asin:'B0F252YTR7',
+    name:'RF-S 14-30mm f/4-6.3 IS STM PZ', manufacturer:'Canon', line:'RF-S', type:'Zoom', mount:'rf', asin:'B0F252YTR7',
     focalLength:null, focalLengthMin:14, focalLengthMax:30, focalLengthEquiv:'22–48mm',
     maxAperture:4.0, minAperture:22, weight:181, length:62.0, diameter:69.6,
     filterThread:58, minFocusDist:15, maxMagnification:0.38,
@@ -1233,7 +1236,7 @@ const LENSES = {
 
   'rfs-10-18mm-f45-63-is-stm': {
     name:'RF-S 10-18mm f/4.5-6.3 IS STM', manufacturer:'Canon', line:'RF-S', type:'Zoom',
-    focalLength:null, focalLengthMin:10, focalLengthMax:18, focalLengthEquiv:'16–29mm',
+    mount:'rf', focalLength:null, focalLengthMin:10, focalLengthMax:18, focalLengthEquiv:'16–29mm',
     maxAperture:4.5, minAperture:22, weight:130, length:34.8, diameter:69.2,
     filterThread:49, minFocusDist:12, maxMagnification:0.32,
     elements:12, groups:8, blades:7, afType:'STM',
@@ -1248,7 +1251,7 @@ const LENSES = {
 
   'rfs-18-45mm-f45-63-is-stm': {
     name:'RF-S 18-45mm f/4.5-6.3 IS STM', manufacturer:'Canon', line:'RF-S', type:'Zoom',
-    focalLength:null, focalLengthMin:18, focalLengthMax:45, focalLengthEquiv:'29–72mm',
+    mount:'rf', focalLength:null, focalLengthMin:18, focalLengthMax:45, focalLengthEquiv:'29–72mm',
     maxAperture:4.5, minAperture:22, weight:130, length:44.8, diameter:69.2,
     filterThread:49, minFocusDist:10, maxMagnification:0.42,
     elements:12, groups:10, blades:7, afType:'STM',
@@ -1263,7 +1266,7 @@ const LENSES = {
 
   'rfs-18-150mm-f35-63-is-stm': {
     name:'RF-S 18-150mm f/3.5-6.3 IS STM', manufacturer:'Canon', line:'RF-S', type:'Zoom',
-    focalLength:null, focalLengthMin:18, focalLengthMax:150, focalLengthEquiv:'29–240mm',
+    mount:'rf', focalLength:null, focalLengthMin:18, focalLengthMax:150, focalLengthEquiv:'29–240mm',
     maxAperture:3.5, minAperture:32, weight:310, length:84.1, diameter:74.4,
     filterThread:55, minFocusDist:14, maxMagnification:0.42,
     elements:16, groups:12, blades:7, afType:'STM',
@@ -1278,7 +1281,7 @@ const LENSES = {
 
   'rfs-55-210mm-f5-71-is-stm': {
     name:'RF-S 55-210mm f/5-7.1 IS STM', manufacturer:'Canon', line:'RF-S', type:'Zoom',
-    focalLength:null, focalLengthMin:55, focalLengthMax:210, focalLengthEquiv:'88–336mm',
+    mount:'rf', focalLength:null, focalLengthMin:55, focalLengthMax:210, focalLengthEquiv:'88–336mm',
     maxAperture:5.0, minAperture:32, weight:210, length:89.8, diameter:69.2,
     filterThread:55, minFocusDist:60, maxMagnification:0.25,
     elements:12, groups:10, blades:7, afType:'STM',
@@ -1296,7 +1299,7 @@ const LENSES = {
      optical design shared across mounts, weights are the RF-mount values. */
   'sigma-16mm-f14': {
     name:'Sigma 16mm f/1.4 DC DN', manufacturer:'Sigma', line:'Contemporary', type:'Prime',
-    focalLength:16, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'26mm',
+    mount:'rf', focalLength:16, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'26mm',
     maxAperture:1.4, minAperture:16, weight:415, length:90.3, diameter:72.2,
     filterThread:67, minFocusDist:25, maxMagnification:0.1,
     elements:16, groups:13, blades:9, afType:'Stepping Motor',
@@ -1309,7 +1312,7 @@ const LENSES = {
 
   'sigma-12mm-f14': {
     name:'Sigma 12mm f/1.4 DC', manufacturer:'Sigma', line:'Contemporary', type:'Prime',
-    focalLength:12, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'19mm',
+    mount:'rf', focalLength:12, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'19mm',
     maxAperture:1.4, minAperture:16, weight:250, length:67.4, diameter:69.0,
     filterThread:62, minFocusDist:17.2, maxMagnification:0.12,
     elements:14, groups:12, blades:9, afType:'Stepping Motor',
@@ -1322,7 +1325,7 @@ const LENSES = {
 
   'sigma-15mm-f14': {
     name:'Sigma 15mm f/1.4 DC', manufacturer:'Sigma', line:'Contemporary', type:'Prime',
-    focalLength:15, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'24mm',
+    mount:'rf', focalLength:15, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'24mm',
     maxAperture:1.4, minAperture:16, weight:240, length:62.8, diameter:69.0,
     filterThread:58, minFocusDist:17.7, maxMagnification:0.13,
     elements:13, groups:11, blades:9, afType:'Stepping Motor',
@@ -1335,7 +1338,7 @@ const LENSES = {
 
   'sigma-23mm-f14': {
     name:'Sigma 23mm f/1.4 DC DN', manufacturer:'Sigma', line:'Contemporary', type:'Prime',
-    focalLength:23, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'37mm',
+    mount:'rf', focalLength:23, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'37mm',
     maxAperture:1.4, minAperture:16, weight:345, length:76.9, diameter:69.0,
     filterThread:52, minFocusDist:25, maxMagnification:0.14,
     elements:13, groups:10, blades:9, afType:'Stepping Motor',
@@ -1348,7 +1351,7 @@ const LENSES = {
 
   'sigma-30mm-f14': {
     name:'Sigma 30mm f/1.4 DC DN', manufacturer:'Sigma', line:'Contemporary', type:'Prime',
-    focalLength:30, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'48mm',
+    mount:'rf', focalLength:30, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'48mm',
     maxAperture:1.4, minAperture:16, weight:285, length:71.3, diameter:69.0,
     filterThread:52, minFocusDist:30, maxMagnification:0.14,
     elements:9, groups:7, blades:9, afType:'Stepping Motor',
@@ -1361,7 +1364,7 @@ const LENSES = {
 
   'sigma-56mm-f14': {
     name:'Sigma 56mm f/1.4 DC DN', manufacturer:'Sigma', line:'Contemporary', type:'Prime',
-    focalLength:56, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'90mm',
+    mount:'rf', focalLength:56, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'90mm',
     maxAperture:1.4, minAperture:16, weight:290, length:57.5, diameter:69.0,
     filterThread:55, minFocusDist:50, maxMagnification:0.14,
     elements:10, groups:6, blades:9, afType:'Stepping Motor',
@@ -1374,7 +1377,7 @@ const LENSES = {
 
   'sigma-10-18mm-f28': {
     name:'Sigma 10-18mm f/2.8 DC DN', manufacturer:'Sigma', line:'Contemporary', type:'Zoom',
-    focalLength:null, focalLengthMin:10, focalLengthMax:18, focalLengthEquiv:'16-29mm',
+    mount:'rf', focalLength:null, focalLengthMin:10, focalLengthMax:18, focalLengthEquiv:'16-29mm',
     maxAperture:2.8, minAperture:22, weight:270, length:62.0, diameter:72.2,
     filterThread:67, minFocusDist:11.6, maxMagnification:0.25,
     elements:13, groups:10, blades:7, afType:'Stepping Motor',
@@ -1387,7 +1390,7 @@ const LENSES = {
 
   'sigma-18-50mm-f28': {
     name:'Sigma 18-50mm f/2.8 DC DN', manufacturer:'Sigma', line:'Contemporary', type:'Zoom',
-    focalLength:null, focalLengthMin:18, focalLengthMax:50, focalLengthEquiv:'29-80mm',
+    mount:'rf', focalLength:null, focalLengthMin:18, focalLengthMax:50, focalLengthEquiv:'29-80mm',
     maxAperture:2.8, minAperture:22, weight:300, length:74.5, diameter:69.2,
     filterThread:55, minFocusDist:12.1, maxMagnification:0.36,
     elements:13, groups:10, blades:7, afType:'Stepping Motor',
@@ -1400,7 +1403,7 @@ const LENSES = {
 
   'sigma-17-40mm-f18': {
     name:'Sigma 17-40mm f/1.8 DC', manufacturer:'Sigma', line:'Art', type:'Zoom',
-    focalLength:null, focalLengthMin:17, focalLengthMax:40, focalLengthEquiv:'27-64mm',
+    mount:'rf', focalLength:null, focalLengthMin:17, focalLengthMax:40, focalLengthEquiv:'27-64mm',
     maxAperture:1.8, minAperture:16, weight:560, length:115.9, diameter:72.9,
     filterThread:67, minFocusDist:28, maxMagnification:0.21,
     elements:17, groups:11, blades:11, afType:'HLA Linear',
@@ -1413,7 +1416,7 @@ const LENSES = {
 
   'sigma-16-300mm-f35-67': {
     name:'Sigma 16-300mm f/3.5-6.7 DC OS', manufacturer:'Sigma', line:'Contemporary', type:'Zoom',
-    focalLength:null, focalLengthMin:16, focalLengthMax:300, focalLengthEquiv:'26-480mm',
+    mount:'rf', focalLength:null, focalLengthMin:16, focalLengthMax:300, focalLengthEquiv:'26-480mm',
     maxAperture:3.5, minAperture:22, weight:625, length:121.4, diameter:73.8,
     filterThread:67, minFocusDist:17, maxMagnification:0.50,
     elements:20, groups:14, blades:9, afType:'HLA Linear',
@@ -1428,7 +1431,7 @@ const LENSES = {
   /* Specs from Tamron Americas spec tables; weights/lengths are RF-mount values. */
   'tamron-11-20mm-f28': {
     name:'Tamron 11-20mm f/2.8 Di III-A RXD', manufacturer:'Tamron', line:'Di III-A', type:'Zoom',
-    focalLength:null, focalLengthMin:11, focalLengthMax:20, focalLengthEquiv:'18-32mm',
+    mount:'rf', focalLength:null, focalLengthMin:11, focalLengthMax:20, focalLengthEquiv:'18-32mm',
     maxAperture:2.8, minAperture:16, weight:340, length:84.2, diameter:73,
     filterThread:67, minFocusDist:15, maxMagnification:0.25,
     elements:12, groups:10, blades:7, afType:'Stepping Motor',
@@ -1441,7 +1444,7 @@ const LENSES = {
 
   'tamron-17-70mm-f28': {
     name:'Tamron 17-70mm f/2.8 Di III-A VC RXD', manufacturer:'Tamron', line:'Di III-A', type:'Zoom',
-    focalLength:null, focalLengthMin:17, focalLengthMax:70, focalLengthEquiv:'27-112mm',
+    mount:'rf', focalLength:null, focalLengthMin:17, focalLengthMax:70, focalLengthEquiv:'27-112mm',
     maxAperture:2.8, minAperture:22, weight:530, length:117.3, diameter:74.6,
     filterThread:67, minFocusDist:19, maxMagnification:0.21,
     elements:16, groups:12, blades:9, afType:'Stepping Motor',
@@ -1458,7 +1461,7 @@ const LENSES = {
 
   'tamron-18-300mm-f35-63': {
     name:'Tamron 18-300mm f/3.5-6.3 Di III-A VC VXD', manufacturer:'Tamron', line:'Di III-A', type:'Zoom',
-    focalLength:null, focalLengthMin:18, focalLengthMax:300, focalLengthEquiv:'29-480mm',
+    mount:'rf', focalLength:null, focalLengthMin:18, focalLengthMax:300, focalLengthEquiv:'29-480mm',
     maxAperture:3.5, minAperture:22, weight:625, length:123.6, diameter:75.5,
     filterThread:67, minFocusDist:15, maxMagnification:0.5,
     elements:19, groups:15, blades:7, afType:'Linear Motor',
@@ -1474,7 +1477,7 @@ const LENSES = {
      discontinued for RF). The 85mm f/1.8 RF II is its current native RF AF lens. */
   'viltrox-85mm-f18': {
     name:'Viltrox AF 85mm f/1.8 RF II', manufacturer:'Viltrox', line:'RF II', type:'Prime',
-    focalLength:85, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'85mm',
+    mount:'rf', focalLength:85, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'85mm',
     maxAperture:1.8, minAperture:22, weight:484, length:92, diameter:80,
     filterThread:72, minFocusDist:80, maxMagnification:0.125,
     elements:10, groups:7, blades:9, afType:'STM',
@@ -1488,7 +1491,7 @@ const LENSES = {
   /* ── Yongnuo (full-frame RF AF) ── */
   'yongnuo-35mm-f2': {
     name:'Yongnuo YN35mm f/2R DF DSM', manufacturer:'Yongnuo', line:'DF DSM', type:'Prime',
-    focalLength:35, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'35mm',
+    mount:'rf', focalLength:35, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'35mm',
     maxAperture:2.0, minAperture:22, weight:280, length:72, diameter:67,
     filterThread:52, minFocusDist:35, maxMagnification:0.13,
     elements:9, groups:8, blades:7, afType:'Stepping Motor (DSM)',
@@ -1502,7 +1505,7 @@ const LENSES = {
 
   'yongnuo-85mm-f18': {
     name:'Yongnuo YN85mm f/1.8R DF DSM', manufacturer:'Yongnuo', line:'DF DSM', type:'Prime',
-    focalLength:85, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'85mm',
+    mount:'rf', focalLength:85, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'85mm',
     maxAperture:1.8, minAperture:22, weight:346, length:88, diameter:67,
     filterThread:58, minFocusDist:85, maxMagnification:0.11,
     elements:9, groups:8, blades:7, afType:'Stepping Motor (DSM)',
@@ -1517,7 +1520,7 @@ const LENSES = {
   /* ── Samyang (native RF; re-scoped 2026-08-29 — round 1 wrongly called "no native RF Samyang") ── */
   'samyang-14mm-f28': {
     name:'Samyang MF 14mm F2.8 RF', manufacturer:'Samyang', line:'Manual', type:'Prime',
-    focalLength:14, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'14mm',
+    mount:'rf', focalLength:14, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'14mm',
     maxAperture:2.8, minAperture:22, weight:800, length:120.1, diameter:87,
     filterThread:null, minFocusDist:28, maxMagnification:0.08,
     elements:14, groups:10, blades:6, afType:'Manual',
@@ -1533,7 +1536,7 @@ const LENSES = {
 
   'samyang-12mm-f2-rf-s': {
     name:'Samyang AF 12mm F2 RF-S', manufacturer:'Samyang', line:'AF', type:'Prime',
-    focalLength:12, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'19mm',
+    mount:'rf', focalLength:12, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'19mm',
     maxAperture:2, minAperture:22, weight:213, length:57.2, diameter:70,
     filterThread:62, minFocusDist:20, maxMagnification:0.09,
     elements:12, groups:10, blades:7, afType:'Linear STM',
@@ -1552,7 +1555,7 @@ const LENSES = {
      Specs from Venus Optics + retailer spec tables; ASINs are Canon RF listings. */
   'laowa-90mm-f28-macro': {
     name:'Laowa 90mm f/2.8 2x Ultra Macro APO', manufacturer:'Laowa', line:'Ultra Macro APO', type:'Prime',
-    focalLength:90, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'90mm',
+    mount:'rf', focalLength:90, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'90mm',
     maxAperture:2.8, minAperture:22, weight:619, length:120, diameter:74,
     filterThread:67, minFocusDist:20.5, maxMagnification:2.0,
     elements:13, groups:10, blades:13, afType:'Manual',
@@ -1566,7 +1569,7 @@ const LENSES = {
 
   'laowa-58mm-f28-macro': {
     name:'Laowa 58mm f/2.8 2x Ultra Macro APO', manufacturer:'Laowa', line:'Ultra Macro APO', type:'Prime',
-    focalLength:58, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'58mm',
+    mount:'rf', focalLength:58, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'58mm',
     maxAperture:2.8, minAperture:22, weight:595, length:117, diameter:74,
     filterThread:67, minFocusDist:18.5, maxMagnification:2.0,
     elements:14, groups:11, blades:13, afType:'Manual',
@@ -1579,7 +1582,7 @@ const LENSES = {
 
   'laowa-100mm-f28-macro': {
     name:'Laowa 100mm f/2.8 2x Ultra Macro APO', manufacturer:'Laowa', line:'Ultra Macro APO', type:'Prime',
-    focalLength:100, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'100mm',
+    mount:'rf', focalLength:100, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'100mm',
     maxAperture:2.8, minAperture:22, weight:650, length:155, diameter:72,
     filterThread:67, minFocusDist:25, maxMagnification:2.0,
     elements:12, groups:10, blades:13, afType:'Manual',
@@ -1592,7 +1595,7 @@ const LENSES = {
 
   'laowa-15mm-f2': {
     name:'Laowa 15mm f/2 FE Zero-D', manufacturer:'Laowa', line:'Zero-D', type:'Prime',
-    focalLength:15, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'15mm',
+    mount:'rf', focalLength:15, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'15mm',
     maxAperture:2.0, minAperture:22, weight:500, length:82, diameter:66,
     filterThread:72, minFocusDist:15, maxMagnification:0.1,
     elements:12, groups:9, blades:5, afType:'Manual',
@@ -1606,7 +1609,7 @@ const LENSES = {
 
   'laowa-10mm-f4-cookie': {
     name:'Laowa 10mm f/4 Cookie', manufacturer:'Laowa', line:'Cookie', type:'Prime',
-    focalLength:10, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'16mm',
+    mount:'rf', focalLength:10, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'16mm',
     maxAperture:4.0, minAperture:22, weight:130, length:25, diameter:54,
     filterThread:37, minFocusDist:10, maxMagnification:0.1,
     elements:12, groups:8, blades:5, afType:'Manual',
@@ -1620,7 +1623,7 @@ const LENSES = {
 
   'ttartisan-50mm-f14-asph': {
     name:'TTArtisan 50mm f/1.4 ASPH', manufacturer:'TTArtisan', line:'Full Frame', type:'Prime',
-    focalLength:50, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'50mm',
+    mount:'rf', focalLength:50, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'50mm',
     maxAperture:1.4, minAperture:16, weight:457, length:69, diameter:60,
     filterThread:49, minFocusDist:50, maxMagnification:null,
     elements:10, groups:8, blades:12, afType:'Manual',
@@ -1634,7 +1637,7 @@ const LENSES = {
 
   'ttartisan-tilt-50mm-f14': {
     name:'TTArtisan Tilt 50mm f/1.4', manufacturer:'TTArtisan', line:'Full Frame', type:'Prime',
-    focalLength:50, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'50mm',
+    mount:'rf', focalLength:50, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'50mm',
     maxAperture:1.4, minAperture:16, weight:452, length:68, diameter:70,
     filterThread:62, minFocusDist:50, maxMagnification:null,
     elements:7, groups:6, blades:13, afType:'Manual',
@@ -1648,7 +1651,7 @@ const LENSES = {
 
   'ttartisan-500mm-f63': {
     name:'TTArtisan 500mm f/6.3', manufacturer:'TTArtisan', line:'Full Frame', type:'Prime',
-    focalLength:500, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'500mm',
+    mount:'rf', focalLength:500, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'500mm',
     maxAperture:6.3, minAperture:32, weight:1603, length:317, diameter:88,
     filterThread:82, minFocusDist:330, maxMagnification:null,
     elements:8, groups:5, blades:12, afType:'Manual',
@@ -1662,7 +1665,7 @@ const LENSES = {
 
   'ttartisan-50mm-f12': {
     name:'TTArtisan APS-C 50mm f/1.2', manufacturer:'TTArtisan', line:'APS-C', type:'Prime',
-    focalLength:50, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'80mm',
+    mount:'rf', focalLength:50, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'80mm',
     maxAperture:1.2, minAperture:16, weight:336, length:60, diameter:62,
     filterThread:52, minFocusDist:50, maxMagnification:null,
     elements:7, groups:5, blades:10, afType:'Manual',
@@ -1676,7 +1679,7 @@ const LENSES = {
 
   'ttartisan-50mm-f095': {
     name:'TTArtisan APS-C 50mm f/0.95', manufacturer:'TTArtisan', line:'APS-C', type:'Prime',
-    focalLength:50, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'80mm',
+    mount:'rf', focalLength:50, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'80mm',
     maxAperture:0.95, minAperture:16, weight:411, length:60, diameter:62,
     filterThread:58, minFocusDist:50, maxMagnification:null,
     elements:8, groups:6, blades:10, afType:'Manual',
@@ -1690,7 +1693,7 @@ const LENSES = {
 
   'ttartisan-35mm-f14-apsc': {
     name:'TTArtisan APS-C 35mm f/1.4', manufacturer:'TTArtisan', line:'APS-C', type:'Prime',
-    focalLength:35, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'56mm',
+    mount:'rf', focalLength:35, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'56mm',
     maxAperture:1.4, minAperture:16, weight:180, length:63, diameter:42,
     filterThread:39, minFocusDist:28, maxMagnification:null,
     elements:7, groups:6, blades:10, afType:'Manual',
@@ -1708,7 +1711,7 @@ const LENSES = {
 
   'ttartisan-23mm-f14-apsc': {
     name:'TTArtisan APS-C 23mm f/1.4', manufacturer:'TTArtisan', line:'APS-C', type:'Prime',
-    focalLength:23, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'37mm',
+    mount:'rf', focalLength:23, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'37mm',
     maxAperture:1.4, minAperture:16, weight:250, length:63, diameter:41,
     filterThread:43, minFocusDist:20, maxMagnification:null,
     elements:8, groups:6, blades:10, afType:'Manual',
@@ -1726,7 +1729,7 @@ const LENSES = {
 
   'ttartisan-10mm-f2-asph-apsc': {
     name:'TTArtisan APS-C 10mm f/2 ASPH', manufacturer:'TTArtisan', line:'APS-C', type:'Prime',
-    focalLength:10, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'16mm',
+    mount:'rf', focalLength:10, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'16mm',
     maxAperture:2, minAperture:16, weight:345, length:61, diameter:63,
     filterThread:72, minFocusDist:25, maxMagnification:null,
     elements:13, groups:10, blades:8, afType:'Manual',
@@ -1745,7 +1748,7 @@ const LENSES = {
 
   'ttartisan-tilt-35mm-f14-apsc': {
     name:'TTArtisan Tilt APS-C 35mm f/1.4', manufacturer:'TTArtisan', line:'APS-C', type:'Prime',
-    focalLength:35, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'56mm',
+    mount:'rf', focalLength:35, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'56mm',
     maxAperture:1.4, minAperture:16, weight:350, length:66, diameter:61,
     filterThread:52, minFocusDist:35, maxMagnification:null,
     elements:7, groups:6, blades:10, afType:'Manual',
@@ -1764,7 +1767,7 @@ const LENSES = {
 
   'ttartisan-tilt-shift-17mm-f4-asph': {
     name:'TTArtisan Tilt-Shift 17mm f/4 ASPH', manufacturer:'TTArtisan', line:'Full Frame', type:'Prime',
-    focalLength:17, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'17mm',
+    mount:'rf', focalLength:17, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'17mm',
     maxAperture:4, minAperture:16, weight:1055, length:88, diameter:113,
     filterThread:null, minFocusDist:30, maxMagnification:null,
     elements:17, groups:11, blades:10, afType:'Manual',
@@ -1784,7 +1787,7 @@ const LENSES = {
 
   'ttartisan-14mm-f28-asph': {
     name:'TTArtisan 14mm f/2.8 ASPH', manufacturer:'TTArtisan', line:'Full Frame', type:'Prime',
-    focalLength:14, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'14mm',
+    mount:'rf', focalLength:14, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'14mm',
     maxAperture:2.8, minAperture:16, weight:441, length:65, diameter:75,
     filterThread:77, minFocusDist:20, maxMagnification:null,
     elements:13, groups:10, blades:8, afType:'Manual',
@@ -1803,7 +1806,7 @@ const LENSES = {
 
   'ttartisan-100mm-f28-2x-macro': {
     name:'TTArtisan 100mm f/2.8 2X Macro', manufacturer:'TTArtisan', line:'Full Frame', type:'Prime',
-    focalLength:100, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'100mm',
+    mount:'rf', focalLength:100, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'100mm',
     maxAperture:2.8, minAperture:22, weight:724, length:72, diameter:148,
     filterThread:67, minFocusDist:25, maxMagnification:2.0,
     elements:14, groups:10, blades:12, afType:'Manual',
@@ -1822,7 +1825,7 @@ const LENSES = {
 
   '7artisans-9mm-f56': {
     name:'7Artisans 9mm f/5.6', manufacturer:'7Artisans', line:'Full Frame', type:'Prime',
-    focalLength:9, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'9mm',
+    mount:'rf', focalLength:9, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'9mm',
     maxAperture:5.6, minAperture:22, weight:463, length:86, diameter:70,
     filterThread:null, minFocusDist:20, maxMagnification:null,
     elements:16, groups:11, blades:null, afType:'Manual',
@@ -1836,7 +1839,7 @@ const LENSES = {
 
   '7artisans-10mm-f28-ii': {
     name:'7Artisans 10mm f/2.8 Mark II Fisheye', manufacturer:'7Artisans', line:'Full Frame', type:'Prime',
-    focalLength:10, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'10mm',
+    mount:'rf', focalLength:10, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'10mm',
     maxAperture:2.8, minAperture:16, weight:602, length:95, diameter:75,
     filterThread:null, minFocusDist:15, maxMagnification:null,
     elements:11, groups:8, blades:null, afType:'Manual',
@@ -1850,7 +1853,7 @@ const LENSES = {
 
   '7artisans-35mm-f14-iii': {
     name:'7Artisans 35mm f/1.4 Mark III', manufacturer:'7Artisans', line:'Full Frame', type:'Prime',
-    focalLength:35, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'35mm',
+    mount:'rf', focalLength:35, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'35mm',
     maxAperture:1.4, minAperture:16, weight:274, length:50, diameter:63,
     filterThread:52, minFocusDist:33, maxMagnification:null,
     elements:7, groups:5, blades:null, afType:'Manual',

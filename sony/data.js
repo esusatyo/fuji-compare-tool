@@ -10,7 +10,10 @@ const BRAND_CONFIG = {
   slug:        'sony',
   families:    ['E-mount System'],
   brandSections: ['sony'],
+  // `mount` is the landing-tile headline label; `mounts` is the machine-readable
+  // list every item's `mount` id must come from, and the order the filter chips render in.
   mount:       'E-Mount',
+  mounts:      [{ id:'e', label:'E-Mount' }],
   heroCamera:  'a1-ii',
   cameras: {
     heroEyebrow:  'Alpha E-mount System',
@@ -67,7 +70,7 @@ const CAMERAS = {
 
   /* ── Alpha Full-frame ── */
   'a7-iv': {
-    name:'A7 IV', series:'Alpha (Full-frame)', year:2021, discontinued:false,
+    name:'A7 IV', series:'Alpha (Full-frame)', mount:'e', year:2021, discontinued:false,
     tagline:'All-round Hybrid Full-frame',
     productUrl:'https://electronics.sony.com/imaging/interchangeable-lens-cameras/full-frame/p/ilce7m4-b',
     imageUrl:'https://upload.wikimedia.org/wikipedia/commons/thumb/8/8b/Sony_A7_IV_%28ILCE-7M4%29_-_by_Henry_S%C3%B6derlund_%2851739988735%29.jpg/500px-Sony_A7_IV_%28ILCE-7M4%29_-_by_Henry_S%C3%B6derlund_%2851739988735%29.jpg',
@@ -89,7 +92,7 @@ const CAMERAS = {
   },
 
   'a7c-ii': {
-    name:'A7C II', series:'Alpha (Full-frame)', year:2023, discontinued:false,
+    name:'A7C II', series:'Alpha (Full-frame)', mount:'e', year:2023, discontinued:false,
     tagline:'Compact 33MP Full-frame with AI AF',
     productUrl:'https://electronics.sony.com/imaging/interchangeable-lens-cameras/full-frame/p/ilce7cm2-b',
     imageUrl:'https://upload.wikimedia.org/wikipedia/commons/thumb/e/e3/Sony_ILCE-7CM2_8_nov_2023a.jpg/500px-Sony_ILCE-7CM2_8_nov_2023a.jpg',
@@ -111,7 +114,7 @@ const CAMERAS = {
   },
 
   'a7r-vi': {
-    name:'A7R VI', series:'Alpha (Full-frame)', year:2026, discontinued:false,
+    name:'A7R VI', series:'Alpha (Full-frame)', mount:'e', year:2026, discontinued:false,
     tagline:'66.8MP Stacked + 8K',
     productUrl:'https://electronics.sony.com/imaging/interchangeable-lens-cameras/full-frame/p/ilce7rm6b',
     imageUrl:'https://upload.wikimedia.org/wikipedia/commons/thumb/3/3e/2026-07-25_Frontansicht_der_Sony_a7R_VI_ohne_Focus_Stacking_HOF6862_RAW-Export.png/500px-2026-07-25_Frontansicht_der_Sony_a7R_VI_ohne_Focus_Stacking_HOF6862_RAW-Export.png',
@@ -134,7 +137,7 @@ const CAMERAS = {
   },
 
   'a7r-v': {
-    name:'A7R V', series:'Alpha (Full-frame)', year:2022, discontinued:false,
+    name:'A7R V', series:'Alpha (Full-frame)', mount:'e', year:2022, discontinued:false,
     tagline:'61MP Resolution + AI AF + 8K',
     productUrl:'https://electronics.sony.com/imaging/interchangeable-lens-cameras/full-frame/p/ilce7rm5-b',
     imageUrl:'https://upload.wikimedia.org/wikipedia/commons/thumb/2/21/Sony_a7R_V_20230616_162554.jpg/500px-Sony_a7R_V_20230616_162554.jpg',
@@ -156,7 +159,7 @@ const CAMERAS = {
   },
 
   'a1-ii': {
-    name:'A1 II', series:'Alpha (Full-frame)', year:2024, discontinued:false,
+    name:'A1 II', series:'Alpha (Full-frame)', mount:'e', year:2024, discontinued:false,
     tagline:'50MP Flagship: Speed + Resolution + 8K',
     productUrl:'https://electronics.sony.com/imaging/interchangeable-lens-cameras/full-frame/p/ilce1m2-b',
     imageUrl:'https://upload.wikimedia.org/wikipedia/commons/thumb/a/ad/Sony_a1_II.jpg/500px-Sony_a1_II.jpg',
@@ -179,7 +182,7 @@ const CAMERAS = {
   },
 
   'a9-iii': {
-    name:'A9 III', series:'Alpha (Full-frame)', year:2024, discontinued:false,
+    name:'A9 III', series:'Alpha (Full-frame)', mount:'e', year:2024, discontinued:false,
     tagline:"World's First Global Shutter Full-frame",
     productUrl:'https://electronics.sony.com/imaging/interchangeable-lens-cameras/all-interchangeable-lens-cameras/p/ilce9m3b',
     imageUrl:'https://upload.wikimedia.org/wikipedia/commons/thumb/1/13/Sony_ILCE-9M3_9_mar_2024a.jpg/500px-Sony_ILCE-9M3_9_mar_2024a.jpg',
@@ -202,7 +205,7 @@ const CAMERAS = {
   },
 
   'a7-v': {
-    name:'A7 V', series:'Alpha (Full-frame)', year:2025, discontinued:false,
+    name:'A7 V', series:'Alpha (Full-frame)', mount:'e', year:2025, discontinued:false,
     tagline:'Partially-stacked 33MP Hybrid + BIONZ XR2',
     productUrl:'https://electronics.sony.com/imaging/interchangeable-lens-cameras/full-frame/p/ilce7m5-b',
     imageUrl:'https://d1ncau8tqf99kp.cloudfront.net/PDP/DI/Interchangeable-Lens-Cameras/ILCE/ILCE-7M5/desktop/2.jpg',
@@ -225,7 +228,7 @@ const CAMERAS = {
   },
 
   'a7cr': {
-    name:'A7C R', series:'Alpha (Full-frame)', year:2023, discontinued:false,
+    name:'A7C R', series:'Alpha (Full-frame)', mount:'e', year:2023, discontinued:false,
     tagline:'Compact 61MP with AI AF',
     productUrl:'https://electronics.sony.com/imaging/interchangeable-lens-cameras/full-frame/p/ilce7cr-b',
     imageUrl:'https://upload.wikimedia.org/wikipedia/commons/thumb/0/09/Sony_ILCE-7CR_8_nov_2023a.jpg/500px-Sony_ILCE-7CR_8_nov_2023a.jpg',
@@ -248,7 +251,7 @@ const CAMERAS = {
   },
 
   'a7s-iii': {
-    name:'A7S III', series:'Alpha (Full-frame)', year:2021, discontinued:false,
+    name:'A7S III', series:'Alpha (Full-frame)', mount:'e', year:2021, discontinued:false,
     tagline:'12MP Low-light Video Specialist',
     productUrl:'https://electronics.sony.com/imaging/interchangeable-lens-cameras/full-frame/p/ilce7sm3-b',
     imageUrl:'https://upload.wikimedia.org/wikipedia/commons/thumb/e/e2/Sony_%CE%B17S_III_21_Oct_2020a.jpg/500px-Sony_%CE%B17S_III_21_Oct_2020a.jpg',
@@ -270,7 +273,7 @@ const CAMERAS = {
   },
 
   'a1': {
-    name:'A1', series:'Alpha (Full-frame)', year:2021, discontinued:false,
+    name:'A1', series:'Alpha (Full-frame)', mount:'e', year:2021, discontinued:false,
     tagline:'Original 50MP Flagship (8K)',
     productUrl:'https://electronics.sony.com/imaging/interchangeable-lens-cameras/full-frame/p/ilce1-b',
     imageUrl:'https://upload.wikimedia.org/wikipedia/commons/thumb/3/3d/Sony_A1_-_front_view_-_by_Henry_S%C3%B6derlund_%2850993589248%29.jpg/500px-Sony_A1_-_front_view_-_by_Henry_S%C3%B6derlund_%2850993589248%29.jpg',
@@ -292,7 +295,7 @@ const CAMERAS = {
   },
 
   'a7c': {
-    name:'A7C', series:'Alpha (Full-frame)', year:2020, discontinued:true,
+    name:'A7C', series:'Alpha (Full-frame)', mount:'e', year:2020, discontinued:true,
     tagline:'First Compact Full-frame',
     productUrl:'https://electronics.sony.com/imaging/interchangeable-lens-cameras/full-frame/p/ilce7c-b',
     imageUrl:'https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Sony_%CE%B17C_24_Oct_2020a.jpg/500px-Sony_%CE%B17C_24_Oct_2020a.jpg',
@@ -315,7 +318,7 @@ const CAMERAS = {
 
   /* ── Alpha Full-frame (discontinued) ── */
   'a9-ii': {
-    name:'A9 II', series:'Alpha (Full-frame)', year:2019, discontinued:false,
+    name:'A9 II', series:'Alpha (Full-frame)', mount:'e', year:2019, discontinued:false,
     tagline:'Pro Sports Stacked 24MP',
     productUrl:'https://electronics.sony.com/imaging/interchangeable-lens-cameras/full-frame/p/ilce9m2-b',
     imageUrl:'https://upload.wikimedia.org/wikipedia/commons/thumb/2/2b/Sony_Alpha_9_II_--_2024_--_8081.jpg/500px-Sony_Alpha_9_II_--_2024_--_8081.jpg',
@@ -335,7 +338,7 @@ const CAMERAS = {
   },
 
   'a7r-iv': {
-    name:'A7R IV', series:'Alpha (Full-frame)', year:2019, discontinued:false,
+    name:'A7R IV', series:'Alpha (Full-frame)', mount:'e', year:2019, discontinued:false,
     tagline:'First 61MP Full-frame',
     productUrl:'https://electronics.sony.com/imaging/interchangeable-lens-cameras/full-frame/p/ilce7rm4a-b',
     imageUrl:'https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Sony_Alpha_7R_IV_body_with_Sony_Zeiss_55mm_lens.jpg/500px-Sony_Alpha_7R_IV_body_with_Sony_Zeiss_55mm_lens.jpg',
@@ -355,7 +358,7 @@ const CAMERAS = {
   },
 
   'a7-iii': {
-    name:'A7 III', series:'Alpha (Full-frame)', year:2018, discontinued:false,
+    name:'A7 III', series:'Alpha (Full-frame)', mount:'e', year:2018, discontinued:false,
     tagline:'The Full-frame Workhorse',
     productUrl:'https://electronics.sony.com/imaging/interchangeable-lens-cameras/full-frame/p/ilce7m3-b',
     imageUrl:'https://upload.wikimedia.org/wikipedia/commons/2/2c/Sony_Alpha7_III_20_apr_2018f.jpg',
@@ -375,7 +378,7 @@ const CAMERAS = {
   },
 
   'a9': {
-    name:'A9', series:'Alpha (Full-frame)', year:2017, discontinued:true,
+    name:'A9', series:'Alpha (Full-frame)', mount:'e', year:2017, discontinued:true,
     tagline:'First Stacked Pro Sports Body',
     productUrl:'https://electronics.sony.com/imaging/interchangeable-lens-cameras/full-frame/p/ilce9-b',
     imageUrl:'https://upload.wikimedia.org/wikipedia/commons/thumb/0/0d/Sony_Alpha_A9_DSCF0221_%2834482667712%29.jpg/500px-Sony_Alpha_A9_DSCF0221_%2834482667712%29.jpg',
@@ -395,7 +398,7 @@ const CAMERAS = {
   },
 
   'a7r-iii': {
-    name:'A7R III', series:'Alpha (Full-frame)', year:2017, discontinued:true,
+    name:'A7R III', series:'Alpha (Full-frame)', mount:'e', year:2017, discontinued:true,
     tagline:'42MP High-resolution Hybrid',
     productUrl:'https://electronics.sony.com/imaging/interchangeable-lens-cameras/full-frame/p/ilce7rm3a-b',
     imageUrl:'https://upload.wikimedia.org/wikipedia/commons/thumb/d/d2/Sony_Alpha_ILCE-7RM3_full_frame_camera_with_lens.jpeg/500px-Sony_Alpha_ILCE-7RM3_full_frame_camera_with_lens.jpeg',
@@ -415,7 +418,7 @@ const CAMERAS = {
   },
 
   'a7r-ii': {
-    name:'A7R II', series:'Alpha (Full-frame)', year:2015, discontinued:true,
+    name:'A7R II', series:'Alpha (Full-frame)', mount:'e', year:2015, discontinued:true,
     tagline:'First BSI 42MP Full-frame',
     productUrl:'https://electronics.sony.com/imaging/interchangeable-lens-cameras/full-frame/p/ilce7rm2',
     imageUrl:'https://upload.wikimedia.org/wikipedia/commons/thumb/d/d0/Sony_A7RMII.jpg/500px-Sony_A7RMII.jpg',
@@ -435,7 +438,7 @@ const CAMERAS = {
   },
 
   'a7s-ii': {
-    name:'A7S II', series:'Alpha (Full-frame)', year:2015, discontinued:true,
+    name:'A7S II', series:'Alpha (Full-frame)', mount:'e', year:2015, discontinued:true,
     tagline:'12MP Low-light Video',
     productUrl:'https://electronics.sony.com/imaging/interchangeable-lens-cameras/full-frame/p/ilce7sm2',
     imageUrl:'https://upload.wikimedia.org/wikipedia/commons/thumb/f/fc/Sony_A7S_II_with_FE_24-70_F4_ZA_lens.jpg/500px-Sony_A7S_II_with_FE_24-70_F4_ZA_lens.jpg',
@@ -455,7 +458,7 @@ const CAMERAS = {
   },
 
   'a7-ii': {
-    name:'A7 II', series:'Alpha (Full-frame)', year:2014, discontinued:true,
+    name:'A7 II', series:'Alpha (Full-frame)', mount:'e', year:2014, discontinued:true,
     tagline:'First IBIS Full-frame',
     productUrl:'https://electronics.sony.com/imaging/interchangeable-lens-cameras/full-frame/p/ilce7m2',
     imageUrl:'https://upload.wikimedia.org/wikipedia/commons/8/8e/Sony_a7_II_with_FE_28mm_F2_and_fisheye_converter_-_Crop.jpg',
@@ -475,7 +478,7 @@ const CAMERAS = {
   },
 
   'a7r': {
-    name:'A7R', series:'Alpha (Full-frame)', year:2013, discontinued:true,
+    name:'A7R', series:'Alpha (Full-frame)', mount:'e', year:2013, discontinued:true,
     tagline:'Original 36MP No-AA Full-frame',
     productUrl:'https://electronics.sony.com/imaging/interchangeable-lens-cameras/full-frame/p/ilce7r',
     imageUrl:'https://upload.wikimedia.org/wikipedia/commons/thumb/c/cd/Sony_Alpha_ILCE-7R_front_2014_CP%2B.jpg/500px-Sony_Alpha_ILCE-7R_front_2014_CP%2B.jpg',
@@ -495,7 +498,7 @@ const CAMERAS = {
   },
 
   'a7': {
-    name:'A7', series:'Alpha (Full-frame)', year:2013, discontinued:true,
+    name:'A7', series:'Alpha (Full-frame)', mount:'e', year:2013, discontinued:true,
     tagline:'The Original Full-frame Mirrorless',
     productUrl:'https://electronics.sony.com/imaging/interchangeable-lens-cameras/full-frame/p/ilce7',
     imageUrl:'https://upload.wikimedia.org/wikipedia/commons/thumb/b/b4/Sony_Alpha_ILCE-7_%28A7%29_full-frame_camera_no_body_cap.jpg/500px-Sony_Alpha_ILCE-7_%28A7%29_full-frame_camera_no_body_cap.jpg',
@@ -515,7 +518,7 @@ const CAMERAS = {
   },
 
   'a7s': {
-    name:'A7S', series:'Alpha (Full-frame)', year:2014, discontinued:true,
+    name:'A7S', series:'Alpha (Full-frame)', mount:'e', year:2014, discontinued:true,
     tagline:'First 12MP Low-light Specialist',
     productUrl:'https://electronics.sony.com/imaging/interchangeable-lens-cameras/full-frame/p/ilce7s',
     imageUrl:'https://upload.wikimedia.org/wikipedia/commons/c/cf/ILCE-7S.jpg',
@@ -536,7 +539,7 @@ const CAMERAS = {
 
   /* ── Alpha APS-C ── */
   'a6700': {
-    name:'A6700', series:'Alpha (APS-C)', year:2023, discontinued:false,
+    name:'A6700', series:'Alpha (APS-C)', mount:'e', year:2023, discontinued:false,
     tagline:'Flagship APS-C with AI AF',
     productUrl:'https://electronics.sony.com/imaging/interchangeable-lens-cameras/aps-c/p/ilce6700-b',
     imageUrl:'https://upload.wikimedia.org/wikipedia/commons/thumb/0/0d/Sony_A6700_by_Henry_S%C3%B6derlund.jpg/500px-Sony_A6700_by_Henry_S%C3%B6derlund.jpg',
@@ -559,7 +562,7 @@ const CAMERAS = {
   },
 
   'a6600': {
-    name:'A6600', series:'Alpha (APS-C)', year:2019, discontinued:true,
+    name:'A6600', series:'Alpha (APS-C)', mount:'e', year:2019, discontinued:true,
     tagline:'APS-C Flagship with IBIS',
     productUrl:'https://electronics.sony.com/imaging/interchangeable-lens-cameras/aps-c/p/ilce6600-b',
     imageUrl:'https://upload.wikimedia.org/wikipedia/commons/thumb/6/6f/2020-05_-_Sony_ILCE-6600_-_01.jpg/500px-2020-05_-_Sony_ILCE-6600_-_01.jpg',
@@ -579,7 +582,7 @@ const CAMERAS = {
   },
 
   'a6500': {
-    name:'A6500', series:'Alpha (APS-C)', year:2016, discontinued:true,
+    name:'A6500', series:'Alpha (APS-C)', mount:'e', year:2016, discontinued:true,
     tagline:'First APS-C with IBIS',
     productUrl:'https://electronics.sony.com/imaging/interchangeable-lens-cameras/aps-c/p/ilce6500',
     imageUrl:'https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/Sony_Alpha_ILCE-6500_front-left_2017_CP%2B.jpg/500px-Sony_Alpha_ILCE-6500_front-left_2017_CP%2B.jpg',
@@ -599,7 +602,7 @@ const CAMERAS = {
   },
 
   'a6400': {
-    name:'A6400', series:'Alpha (APS-C)', year:2019, discontinued:false,
+    name:'A6400', series:'Alpha (APS-C)', mount:'e', year:2019, discontinued:false,
     tagline:'Real-time Tracking APS-C',
     productUrl:'https://electronics.sony.com/imaging/interchangeable-lens-cameras/aps-c/p/ilce6400-b',
     imageUrl:'https://upload.wikimedia.org/wikipedia/commons/thumb/3/3e/2022-02-17_Sony_alpha_6400_IMG20220217210008.jpg/500px-2022-02-17_Sony_alpha_6400_IMG20220217210008.jpg',
@@ -619,7 +622,7 @@ const CAMERAS = {
   },
 
   'a6300': {
-    name:'A6300', series:'Alpha (APS-C)', year:2016, discontinued:true,
+    name:'A6300', series:'Alpha (APS-C)', mount:'e', year:2016, discontinued:true,
     tagline:'4K APS-C with Fast Hybrid AF',
     productUrl:'https://electronics.sony.com/imaging/interchangeable-lens-cameras/aps-c/p/ilce6300',
     imageUrl:'https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/Sony_Alpha_ILCE-6300_APS-C-frame_camera_no_body_cap.jpeg/500px-Sony_Alpha_ILCE-6300_APS-C-frame_camera_no_body_cap.jpeg',
@@ -639,7 +642,7 @@ const CAMERAS = {
   },
 
   'a6100': {
-    name:'A6100', series:'Alpha (APS-C)', year:2019, discontinued:true,
+    name:'A6100', series:'Alpha (APS-C)', mount:'e', year:2019, discontinued:true,
     tagline:'Entry APS-C with Fast AF',
     productUrl:'https://electronics.sony.com/imaging/interchangeable-lens-cameras/aps-c/p/ilce6100-b',
     imageUrl:'https://d1ncau8tqf99kp.cloudfront.net/PDP/DI/Interchangeable-Lens-Cameras/ILCE/ILCE-6100/desktop/2.png',
@@ -660,7 +663,7 @@ const CAMERAS = {
   },
 
   'a6000': {
-    name:'A6000', series:'Alpha (APS-C)', year:2014, discontinued:true,
+    name:'A6000', series:'Alpha (APS-C)', mount:'e', year:2014, discontinued:true,
     tagline:'The Best-selling APS-C',
     productUrl:'https://electronics.sony.com/imaging/interchangeable-lens-cameras/aps-c/p/ilce6000',
     imageUrl:'https://upload.wikimedia.org/wikipedia/commons/thumb/1/19/Sony_Alpha_ILCE-6000_APS-C-frame_camera_no_body_cap-Crop.jpeg/500px-Sony_Alpha_ILCE-6000_APS-C-frame_camera_no_body_cap-Crop.jpeg',
@@ -681,7 +684,7 @@ const CAMERAS = {
 
   /* ── Cinema Line ── */
   'fx5': {
-    name:'FX5', series:'Cinema Line', year:2026, discontinued:false,
+    name:'FX5', series:'Cinema Line', mount:'e', year:2026, discontinued:false,
     tagline:'5K Open Gate + Internal X-OCN RAW',
     productUrl:'https://www.sony.com.au/electronics/interchangeable-lens-cameras/ilme-fx5',
     imageUrl:null,
@@ -701,7 +704,7 @@ const CAMERAS = {
   },
 
   'fx3': {
-    name:'FX3', series:'Cinema Line', year:2021, discontinued:false,
+    name:'FX3', series:'Cinema Line', mount:'e', year:2021, discontinued:false,
     tagline:'Full-frame Cinema in a Compact Body',
     productUrl:'https://electronics.sony.com/imaging/cinema-line-cameras/p/ilmefx3-b',
     imageUrl:'https://upload.wikimedia.org/wikipedia/commons/thumb/8/85/Sony_FX3_with_Sony_FE_24mm_F1.4_GM_-_by_Henry_S%C3%B6derlund_%2851061907312%2C_cropped%29.jpg/500px-Sony_FX3_with_Sony_FE_24mm_F1.4_GM_-_by_Henry_S%C3%B6derlund_%2851061907312%2C_cropped%29.jpg',
@@ -721,7 +724,7 @@ const CAMERAS = {
   },
 
   'fx30': {
-    name:'FX30', series:'Cinema Line', year:2022, discontinued:false,
+    name:'FX30', series:'Cinema Line', mount:'e', year:2022, discontinued:false,
     tagline:'APS-C Cinema Line Gateway',
     productUrl:'https://electronics.sony.com/imaging/cinema-line-cameras/p/ilmefx30b',
     imageUrl:'https://upload.wikimedia.org/wikipedia/commons/thumb/e/e6/Sony_FX30_with_Sony_E_10-20mm_F4_PZ_G_-_by_Henry_S%C3%B6derlund_%2852445895581%29.jpg/500px-Sony_FX30_with_Sony_E_10-20mm_F4_PZ_G_-_by_Henry_S%C3%B6derlund_%2852445895581%29.jpg',
@@ -741,7 +744,7 @@ const CAMERAS = {
   },
 
   'fx2': {
-    name:'FX2', series:'Cinema Line', year:2025, discontinued:false,
+    name:'FX2', series:'Cinema Line', mount:'e', year:2025, discontinued:false,
     tagline:'Compact Gateway to Cinema Line Filmmaking',
     productUrl:'https://www.sony.com.au/electronics/interchangeable-lens-cameras/ilme-fx2',
     imageUrl:null,
@@ -762,7 +765,7 @@ const CAMERAS = {
 
   /* ── ZV (Vlog) ── */
   'zv-e1': {
-    name:'ZV-E1', series:'ZV (Vlog)', year:2023, discontinued:false,
+    name:'ZV-E1', series:'ZV (Vlog)', mount:'e', year:2023, discontinued:false,
     tagline:'Full-frame Vlog with AI Framing',
     productUrl:'https://www.sony.com.au/interchangeable-lens-cameras/products/zv-e1',
     imageUrl:'https://upload.wikimedia.org/wikipedia/commons/thumb/6/60/Sony_ZV-E1_with_Sony_FE_28-60mm_F4-5.6_-_by_Henry_S%C3%B6derlund_%2852854053098%29.jpg/500px-Sony_ZV-E1_with_Sony_FE_28-60mm_F4-5.6_-_by_Henry_S%C3%B6derlund_%2852854053098%29.jpg',
@@ -782,7 +785,7 @@ const CAMERAS = {
   },
 
   'zv-e10-ii': {
-    name:'ZV-E10 II', series:'ZV (Vlog)', year:2024, discontinued:false,
+    name:'ZV-E10 II', series:'ZV (Vlog)', mount:'e', year:2024, discontinued:false,
     tagline:'26MP APS-C Content Creator',
     productUrl:'https://electronics.sony.com/imaging/interchangeable-lens-cameras/aps-c/p/ilczv-e10m2-b',
     imageUrl:'https://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/Sony_ZV-E10_Mark_II.tiff/lossy-page1-960px-Sony_ZV-E10_Mark_II.tiff.jpg',
@@ -803,7 +806,7 @@ const CAMERAS = {
   },
 
   'zv-e10': {
-    name:'ZV-E10', series:'ZV (Vlog)', year:2021, discontinued:true,
+    name:'ZV-E10', series:'ZV (Vlog)', mount:'e', year:2021, discontinued:true,
     tagline:'First APS-C Vlog Camera',
     productUrl:'https://electronics.sony.com/imaging/interchangeable-lens-cameras/aps-c/p/ilczv-e10-b',
     imageUrl:'https://upload.wikimedia.org/wikipedia/commons/thumb/b/ba/Sony_ZV-E10_with_Sony_E_16-50mm_F3.5-5.6_OSS_PZ_-_by_Henry_S%C3%B6derlund_%2851375243603%29.jpg/500px-Sony_ZV-E10_with_Sony_E_16-50mm_F3.5-5.6_OSS_PZ_-_by_Henry_S%C3%B6derlund_%2851375243603%29.jpg',
@@ -854,7 +857,7 @@ const LENSES = {
 
   /* ── Sony FE Primes ── */
   'fe-50mm-f14-gm': {
-    name:'FE 50mm F1.4 GM', manufacturer:'Sony', line:'FE GM', type:'Prime', asin:'B0BWFSJXQC',
+    name:'FE 50mm F1.4 GM', manufacturer:'Sony', line:'FE GM', type:'Prime', mount:'e', asin:'B0BWFSJXQC',
     focalLength:50, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'50mm',
     maxAperture:1.4, minAperture:16, weight:516, length:96.0, diameter:80.6,
     filterThread:67, minFocusDist:38, maxMagnification:0.16,
@@ -868,7 +871,7 @@ const LENSES = {
   },
 
   'fe-14mm-f18-gm': {
-    name:'FE 14mm F1.8 GM', manufacturer:'Sony', line:'FE GM', type:'Prime', asin:'B09316YPCH',
+    name:'FE 14mm F1.8 GM', manufacturer:'Sony', line:'FE GM', type:'Prime', mount:'e', asin:'B09316YPCH',
     focalLength:14, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'14mm',
     maxAperture:1.8, minAperture:16, weight:460, length:99.8, diameter:83.0,
     filterThread:null, minFocusDist:25, maxMagnification:0.10,
@@ -882,7 +885,7 @@ const LENSES = {
   },
 
   'fe-24mm-f14-gm': {
-    name:'FE 24mm F1.4 GM', manufacturer:'Sony', line:'FE GM', type:'Prime', asin:'B07HJXVHSS',
+    name:'FE 24mm F1.4 GM', manufacturer:'Sony', line:'FE GM', type:'Prime', mount:'e', asin:'B07HJXVHSS',
     focalLength:24, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'24mm',
     maxAperture:1.4, minAperture:16, weight:445, length:92.4, diameter:75.4,
     filterThread:67, minFocusDist:24, maxMagnification:0.17,
@@ -896,7 +899,7 @@ const LENSES = {
   },
 
   'fe-35mm-f14-gm': {
-    name:'FE 35mm F1.4 GM', manufacturer:'Sony', line:'FE GM', type:'Prime', asin:'B08SWMH186',
+    name:'FE 35mm F1.4 GM', manufacturer:'Sony', line:'FE GM', type:'Prime', mount:'e', asin:'B08SWMH186',
     focalLength:35, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'35mm',
     maxAperture:1.4, minAperture:16, weight:524, length:96.0, diameter:76.0,
     filterThread:67, minFocusDist:25, maxMagnification:0.26,
@@ -910,7 +913,7 @@ const LENSES = {
   },
 
   'fe-50mm-f12-gm': {
-    name:'FE 50mm F1.2 GM', manufacturer:'Sony', line:'FE GM', type:'Prime', asin:'B08Z4HVBXC',
+    name:'FE 50mm F1.2 GM', manufacturer:'Sony', line:'FE GM', type:'Prime', mount:'e', asin:'B08Z4HVBXC',
     focalLength:50, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'50mm',
     maxAperture:1.2, minAperture:16, weight:778, length:108.0, diameter:87.0,
     filterThread:72, minFocusDist:40, maxMagnification:0.17,
@@ -925,7 +928,7 @@ const LENSES = {
   },
 
   'fe-85mm-f14-gm-ii': {
-    name:'FE 85mm F1.4 GM II', manufacturer:'Sony', line:'FE GM', type:'Prime', asin:'B0DFHSFL7L',
+    name:'FE 85mm F1.4 GM II', manufacturer:'Sony', line:'FE GM', type:'Prime', mount:'e', asin:'B0DFHSFL7L',
     focalLength:85, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'85mm',
     maxAperture:1.4, minAperture:16, weight:642, length:107.3, diameter:84.7,
     filterThread:77, minFocusDist:80, maxMagnification:0.12,
@@ -939,7 +942,7 @@ const LENSES = {
   },
 
   'fe-85mm-f14-gm': {
-    name:'FE 85mm F1.4 GM', manufacturer:'Sony', line:'FE GM', type:'Prime', asin:'B01BESR5KO',
+    name:'FE 85mm F1.4 GM', manufacturer:'Sony', line:'FE GM', type:'Prime', mount:'e', asin:'B01BESR5KO',
     focalLength:85, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'85mm',
     maxAperture:1.4, minAperture:16, weight:820, length:107.5, diameter:89.5,
     filterThread:77, minFocusDist:80, maxMagnification:0.12,
@@ -952,7 +955,7 @@ const LENSES = {
   },
 
   'fe-100mm-f28-stf-gm': {
-    name:'FE 100mm F2.8 STF GM OSS', manufacturer:'Sony', line:'FE GM', type:'Prime', asin:'B06WRMXVKK',
+    name:'FE 100mm F2.8 STF GM OSS', manufacturer:'Sony', line:'FE GM', type:'Prime', mount:'e', asin:'B06WRMXVKK',
     focalLength:100, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'100mm',
     maxAperture:2.8, minAperture:20, weight:700, length:118.1, diameter:85.2,
     filterThread:72, minFocusDist:57, maxMagnification:0.25,
@@ -966,7 +969,7 @@ const LENSES = {
   },
 
   'fe-135mm-f18-gm': {
-    name:'FE 135mm F1.8 GM', manufacturer:'Sony', line:'FE GM', type:'Prime', asin:'B07P6MNC3R',
+    name:'FE 135mm F1.8 GM', manufacturer:'Sony', line:'FE GM', type:'Prime', mount:'e', asin:'B07P6MNC3R',
     focalLength:135, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'135mm',
     maxAperture:1.8, minAperture:22, weight:950, length:127.0, diameter:89.5,
     filterThread:82, minFocusDist:70, maxMagnification:0.25,
@@ -980,7 +983,7 @@ const LENSES = {
   },
 
   'fe-300mm-f28-gm': {
-    name:'FE 300mm F2.8 GM OSS', manufacturer:'Sony', line:'FE GM', type:'Prime', asin:'B0CMV75475',
+    name:'FE 300mm F2.8 GM OSS', manufacturer:'Sony', line:'FE GM', type:'Prime', mount:'e', asin:'B0CMV75475',
     focalLength:300, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'300mm',
     maxAperture:2.8, minAperture:22, weight:1470, length:265.0, diameter:124.0,
     filterThread:40.5, minFocusDist:200, maxMagnification:0.16,
@@ -993,7 +996,7 @@ const LENSES = {
   },
 
   'fe-400mm-f28-gm': {
-    name:'FE 400mm F2.8 GM OSS', manufacturer:'Sony', line:'FE GM', type:'Prime', asin:'B07FHDZ3Z6',
+    name:'FE 400mm F2.8 GM OSS', manufacturer:'Sony', line:'FE GM', type:'Prime', mount:'e', asin:'B07FHDZ3Z6',
     focalLength:400, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'400mm',
     maxAperture:2.8, minAperture:22, weight:2895, length:359.0, diameter:158.1,
     filterThread:40.5, minFocusDist:270, maxMagnification:0.16,
@@ -1007,7 +1010,7 @@ const LENSES = {
   },
 
   'fe-600mm-f4-gm': {
-    name:'FE 600mm F4 GM OSS', manufacturer:'Sony', line:'FE GM', type:'Prime', asin:'B07SZVGKMD',
+    name:'FE 600mm F4 GM OSS', manufacturer:'Sony', line:'FE GM', type:'Prime', mount:'e', asin:'B07SZVGKMD',
     focalLength:600, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'600mm',
     maxAperture:4.0, minAperture:22, weight:3040, length:449.0, diameter:163.6,
     filterThread:40.5, minFocusDist:450, maxMagnification:0.14,
@@ -1022,7 +1025,7 @@ const LENSES = {
 
   /* ── Sony FE G + standard primes ── */
   'fe-16mm-f18-g': {
-    name:'FE 16mm F1.8 G', manufacturer:'Sony', line:'FE G', type:'Prime', asin:'B0DYK97L9M',
+    name:'FE 16mm F1.8 G', manufacturer:'Sony', line:'FE G', type:'Prime', mount:'e', asin:'B0DYK97L9M',
     focalLength:16, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'16mm',
     maxAperture:1.8, minAperture:22, weight:304, length:73.8, diameter:73.8,
     filterThread:67, minFocusDist:15, maxMagnification:0.25,
@@ -1036,7 +1039,7 @@ const LENSES = {
   },
 
   'fe-20mm-f18-g': {
-    name:'FE 20mm F1.8 G', manufacturer:'Sony', line:'FE G', type:'Prime', asin:'B08556WW56',
+    name:'FE 20mm F1.8 G', manufacturer:'Sony', line:'FE G', type:'Prime', mount:'e', asin:'B08556WW56',
     focalLength:20, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'20mm',
     maxAperture:1.8, minAperture:22, weight:373, length:84.7, diameter:73.5,
     filterThread:67, minFocusDist:18, maxMagnification:0.20,
@@ -1050,7 +1053,7 @@ const LENSES = {
   },
 
   'fe-24mm-f28-g': {
-    name:'FE 24mm F2.8 G', manufacturer:'Sony', line:'FE G', type:'Prime', asin:'B08ZSWL58M',
+    name:'FE 24mm F2.8 G', manufacturer:'Sony', line:'FE G', type:'Prime', mount:'e', asin:'B08ZSWL58M',
     focalLength:24, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'24mm',
     maxAperture:2.8, minAperture:22, weight:162, length:45.0, diameter:68.0,
     filterThread:49, minFocusDist:24, maxMagnification:0.13,
@@ -1064,7 +1067,7 @@ const LENSES = {
   },
 
   'fe-40mm-f25-g': {
-    name:'FE 40mm F2.5 G', manufacturer:'Sony', line:'FE G', type:'Prime', asin:'B08ZSW1PHB',
+    name:'FE 40mm F2.5 G', manufacturer:'Sony', line:'FE G', type:'Prime', mount:'e', asin:'B08ZSW1PHB',
     focalLength:40, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'40mm',
     maxAperture:2.5, minAperture:22, weight:173, length:45.0, diameter:68.0,
     filterThread:49, minFocusDist:28, maxMagnification:0.20,
@@ -1078,7 +1081,7 @@ const LENSES = {
   },
 
   'fe-50mm-f25-g': {
-    name:'FE 50mm F2.5 G', manufacturer:'Sony', line:'FE G', type:'Prime', asin:'B08ZSYM3K1',
+    name:'FE 50mm F2.5 G', manufacturer:'Sony', line:'FE G', type:'Prime', mount:'e', asin:'B08ZSYM3K1',
     focalLength:50, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'50mm',
     maxAperture:2.5, minAperture:22, weight:174, length:45.0, diameter:68.0,
     filterThread:49, minFocusDist:31, maxMagnification:0.18,
@@ -1092,7 +1095,7 @@ const LENSES = {
   },
 
   'fe-90mm-f28-macro-g': {
-    name:'FE 90mm F2.8 Macro G OSS', manufacturer:'Sony', line:'FE G', type:'Prime', asin:'B00U29GNEG',
+    name:'FE 90mm F2.8 Macro G OSS', manufacturer:'Sony', line:'FE G', type:'Prime', mount:'e', asin:'B00U29GNEG',
     focalLength:90, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'90mm',
     maxAperture:2.8, minAperture:22, weight:602, length:130.5, diameter:79.0,
     filterThread:62, minFocusDist:28, maxMagnification:1.0,
@@ -1106,7 +1109,7 @@ const LENSES = {
   },
 
   'fe-100mm-f28-macro-gm': {
-    name:'FE 100mm F2.8 Macro GM OSS', manufacturer:'Sony', line:'FE GM', type:'Prime', asin:'B0FT75W5PF',
+    name:'FE 100mm F2.8 Macro GM OSS', manufacturer:'Sony', line:'FE GM', type:'Prime', mount:'e', asin:'B0FT75W5PF',
     focalLength:100, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'100mm',
     maxAperture:2.8, minAperture:22, weight:646, length:147.9, diameter:81.4,
     filterThread:67, minFocusDist:260, maxMagnification:1.4,
@@ -1120,7 +1123,7 @@ const LENSES = {
   },
 
   'fe-28mm-f2': {
-    name:'FE 28mm F2', manufacturer:'Sony', line:'FE', type:'Prime', asin:'B00U29GN6O',
+    name:'FE 28mm F2', manufacturer:'Sony', line:'FE', type:'Prime', mount:'e', asin:'B00U29GN6O',
     focalLength:28, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'28mm',
     maxAperture:2.0, minAperture:22, weight:200, length:60.0, diameter:64.0,
     filterThread:49, minFocusDist:29, maxMagnification:0.13,
@@ -1134,7 +1137,7 @@ const LENSES = {
   },
 
   'fe-35mm-f18': {
-    name:'FE 35mm F1.8', manufacturer:'Sony', line:'FE', type:'Prime', asin:'B07V8X4KGG',
+    name:'FE 35mm F1.8', manufacturer:'Sony', line:'FE', type:'Prime', mount:'e', asin:'B07V8X4KGG',
     focalLength:35, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'35mm',
     maxAperture:1.8, minAperture:22, weight:280, length:73.0, diameter:65.6,
     filterThread:55, minFocusDist:22, maxMagnification:0.24,
@@ -1148,7 +1151,7 @@ const LENSES = {
   },
 
   'fe-50mm-f18': {
-    name:'FE 50mm F1.8', manufacturer:'Sony', line:'FE', type:'Prime', asin:'B01DLMD5O6',
+    name:'FE 50mm F1.8', manufacturer:'Sony', line:'FE', type:'Prime', mount:'e', asin:'B01DLMD5O6',
     focalLength:50, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'50mm',
     maxAperture:1.8, minAperture:22, weight:186, length:59.5, diameter:68.6,
     filterThread:49, minFocusDist:45, maxMagnification:0.14,
@@ -1163,7 +1166,7 @@ const LENSES = {
   },
 
   'fe-50mm-f28-macro': {
-    name:'FE 50mm F2.8 Macro', manufacturer:'Sony', line:'FE', type:'Prime', asin:'B01LC8GMV4',
+    name:'FE 50mm F2.8 Macro', manufacturer:'Sony', line:'FE', type:'Prime', mount:'e', asin:'B01LC8GMV4',
     focalLength:50, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'50mm',
     maxAperture:2.8, minAperture:16, weight:236, length:71.0, diameter:70.8,
     filterThread:55, minFocusDist:16, maxMagnification:1.0,
@@ -1178,7 +1181,7 @@ const LENSES = {
 
   /* ── Sony-Zeiss (ZA) FE primes ── */
   'fe-35mm-f14-za': {
-    name:'FE 35mm F1.4 ZA Distagon', manufacturer:'Sony', line:'FE ZA', type:'Prime', asin:'B00U29GNBO',
+    name:'FE 35mm F1.4 ZA Distagon', manufacturer:'Sony', line:'FE ZA', type:'Prime', mount:'e', asin:'B00U29GNBO',
     focalLength:35, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'35mm',
     maxAperture:1.4, minAperture:16, weight:630, length:112.0, diameter:78.5,
     filterThread:72, minFocusDist:30, maxMagnification:0.18,
@@ -1191,7 +1194,7 @@ const LENSES = {
   },
 
   'fe-35mm-f28-za': {
-    name:'FE 35mm F2.8 ZA Sonnar', manufacturer:'Sony', line:'FE ZA', type:'Prime', asin:'B00FSB79KU',
+    name:'FE 35mm F2.8 ZA Sonnar', manufacturer:'Sony', line:'FE ZA', type:'Prime', mount:'e', asin:'B00FSB79KU',
     focalLength:35, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'35mm',
     maxAperture:2.8, minAperture:22, weight:120, length:36.5, diameter:61.5,
     filterThread:49, minFocusDist:35, maxMagnification:0.12,
@@ -1204,7 +1207,7 @@ const LENSES = {
   },
 
   'fe-50mm-f14-za': {
-    name:'FE 50mm F1.4 ZA Planar', manufacturer:'Sony', line:'FE ZA', type:'Prime', asin:'B01IALYGU0',
+    name:'FE 50mm F1.4 ZA Planar', manufacturer:'Sony', line:'FE ZA', type:'Prime', mount:'e', asin:'B01IALYGU0',
     focalLength:50, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'50mm',
     maxAperture:1.4, minAperture:16, weight:778, length:108.0, diameter:83.5,
     filterThread:72, minFocusDist:45, maxMagnification:0.15,
@@ -1217,7 +1220,7 @@ const LENSES = {
   },
 
   'fe-55mm-f18-za': {
-    name:'FE 55mm F1.8 ZA Sonnar', manufacturer:'Sony', line:'FE ZA', type:'Prime', asin:'B00FSB799Q',
+    name:'FE 55mm F1.8 ZA Sonnar', manufacturer:'Sony', line:'FE ZA', type:'Prime', mount:'e', asin:'B00FSB799Q',
     focalLength:55, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'55mm',
     maxAperture:1.8, minAperture:22, weight:281, length:70.5, diameter:64.4,
     filterThread:49, minFocusDist:50, maxMagnification:0.14,
@@ -1232,7 +1235,7 @@ const LENSES = {
 
   /* ── Sony FE Zooms ── */
   'fe-24-70mm-f28-gm-ii': {
-    name:'FE 24-70mm F2.8 GM II', manufacturer:'Sony', line:'FE GM', type:'Zoom', asin:'B09YYY6P98',
+    name:'FE 24-70mm F2.8 GM II', manufacturer:'Sony', line:'FE GM', type:'Zoom', mount:'e', asin:'B09YYY6P98',
     focalLength:null, focalLengthMin:24, focalLengthMax:70, focalLengthEquiv:'24-70mm',
     maxAperture:2.8, minAperture:22, weight:695, length:119.9, diameter:87.8,
     filterThread:82, minFocusDist:21, maxMagnification:0.32,
@@ -1247,7 +1250,7 @@ const LENSES = {
   },
 
   'fe-70-200mm-f28-gm-oss-ii': {
-    name:'FE 70-200mm F2.8 GM OSS II', manufacturer:'Sony', line:'FE GM', type:'Zoom', asin:'B09JCMLP46',
+    name:'FE 70-200mm F2.8 GM OSS II', manufacturer:'Sony', line:'FE GM', type:'Zoom', mount:'e', asin:'B09JCMLP46',
     focalLength:null, focalLengthMin:70, focalLengthMax:200, focalLengthEquiv:'70-200mm',
     maxAperture:2.8, minAperture:22, weight:1045, length:200.0, diameter:88.0,
     filterThread:77, minFocusDist:40, maxMagnification:0.30,
@@ -1262,7 +1265,7 @@ const LENSES = {
   },
 
   'fe-12-24mm-f28-gm': {
-    name:'FE 12-24mm F2.8 GM', manufacturer:'Sony', line:'FE GM', type:'Zoom', asin:'B08CHN22SJ',
+    name:'FE 12-24mm F2.8 GM', manufacturer:'Sony', line:'FE GM', type:'Zoom', mount:'e', asin:'B08CHN22SJ',
     focalLength:null, focalLengthMin:12, focalLengthMax:24, focalLengthEquiv:'12-24mm',
     maxAperture:2.8, minAperture:22, weight:847, length:137.0, diameter:97.6,
     filterThread:null, minFocusDist:28, maxMagnification:0.14,
@@ -1276,7 +1279,7 @@ const LENSES = {
   },
 
   'fe-16-35mm-f28-gm-ii': {
-    name:'FE 16-35mm F2.8 GM II', manufacturer:'Sony', line:'FE GM', type:'Zoom', asin:'B0CGTW24VF',
+    name:'FE 16-35mm F2.8 GM II', manufacturer:'Sony', line:'FE GM', type:'Zoom', mount:'e', asin:'B0CGTW24VF',
     focalLength:null, focalLengthMin:16, focalLengthMax:35, focalLengthEquiv:'16-35mm',
     maxAperture:2.8, minAperture:22, weight:547, length:121.6, diameter:87.8,
     filterThread:82, minFocusDist:22, maxMagnification:0.32,
@@ -1291,7 +1294,7 @@ const LENSES = {
   },
 
   'fe-16-35mm-f28-gm': {
-    name:'FE 16-35mm F2.8 GM', manufacturer:'Sony', line:'FE GM', type:'Zoom', asin:'B071LHLS11',
+    name:'FE 16-35mm F2.8 GM', manufacturer:'Sony', line:'FE GM', type:'Zoom', mount:'e', asin:'B071LHLS11',
     focalLength:null, focalLengthMin:16, focalLengthMax:35, focalLengthEquiv:'16-35mm',
     maxAperture:2.8, minAperture:22, weight:680, length:121.6, diameter:88.5,
     filterThread:82, minFocusDist:28, maxMagnification:0.19,
@@ -1304,7 +1307,7 @@ const LENSES = {
   },
 
   'fe-28-70mm-f2-gm': {
-    name:'FE 28-70mm F2 GM', manufacturer:'Sony', line:'FE GM', type:'Zoom', asin:'B0DNKVBCYL',
+    name:'FE 28-70mm F2 GM', manufacturer:'Sony', line:'FE GM', type:'Zoom', mount:'e', asin:'B0DNKVBCYL',
     focalLength:null, focalLengthMin:28, focalLengthMax:70, focalLengthEquiv:'28-70mm',
     maxAperture:2.0, minAperture:22, weight:918, length:139.8, diameter:92.9,
     filterThread:86, minFocusDist:38, maxMagnification:0.23,
@@ -1317,7 +1320,7 @@ const LENSES = {
   },
 
   'fe-50-150mm-f2-gm': {
-    name:'FE 50-150mm F2 GM', manufacturer:'Sony', line:'FE GM', type:'Zoom', asin:'B0F5X657S5',
+    name:'FE 50-150mm F2 GM', manufacturer:'Sony', line:'FE GM', type:'Zoom', mount:'e', asin:'B0F5X657S5',
     focalLength:null, focalLengthMin:50, focalLengthMax:150, focalLengthEquiv:'50-150mm',
     maxAperture:2.0, minAperture:22, weight:1340, length:200.0, diameter:102.8,
     filterThread:95, minFocusDist:40, maxMagnification:0.20,
@@ -1331,7 +1334,7 @@ const LENSES = {
   },
 
   'fe-100-400mm-f45-63-gm-oss': {
-    name:'FE 100-400mm F4.5-5.6 GM OSS', manufacturer:'Sony', line:'FE GM', type:'Zoom', asin:'B071RFR318',
+    name:'FE 100-400mm F4.5-5.6 GM OSS', manufacturer:'Sony', line:'FE GM', type:'Zoom', mount:'e', asin:'B071RFR318',
     focalLength:null, focalLengthMin:100, focalLengthMax:400, focalLengthEquiv:'100-400mm',
     maxAperture:4.5, minAperture:32, weight:1395, length:205.0, diameter:93.9,
     filterThread:77, minFocusDist:98, maxMagnification:0.35,
@@ -1345,7 +1348,7 @@ const LENSES = {
   },
 
   'fe-100-400mm-f45-gm-oss': {
-    name:'FE 100-400mm F4.5 GM OSS', manufacturer:'Sony', line:'FE GM', type:'Zoom', asin:'B0H1N8LKW9',
+    name:'FE 100-400mm F4.5 GM OSS', manufacturer:'Sony', line:'FE GM', type:'Zoom', mount:'e', asin:'B0H1N8LKW9',
     focalLength:null, focalLengthMin:100, focalLengthMax:400, focalLengthEquiv:'100-400mm',
     maxAperture:4.5, minAperture:32, weight:1840, length:328.0, diameter:119.8,
     filterThread:95, minFocusDist:640, maxMagnification:0.25,
@@ -1358,7 +1361,7 @@ const LENSES = {
   },
 
   'fe-100-400mm-f56-8-oss': {
-    name:'FE 100-400mm F5.6-8 OSS', manufacturer:'Sony', line:'FE', type:'Zoom', asin:null,
+    name:'FE 100-400mm F5.6-8 OSS', manufacturer:'Sony', line:'FE', type:'Zoom', mount:'e', asin:null,
     focalLength:null, focalLengthMin:100, focalLengthMax:400, focalLengthEquiv:'100-400mm',
     maxAperture:5.6, minAperture:32, weight:654, length:164.5, diameter:78.2,
     filterThread:67, minFocusDist:860, maxMagnification:0.41,
@@ -1371,7 +1374,7 @@ const LENSES = {
   },
 
   'fe-12-24mm-f4-g': {
-    name:'FE 12-24mm F4 G', manufacturer:'Sony', line:'FE G', type:'Zoom', asin:'B072J4B6WS',
+    name:'FE 12-24mm F4 G', manufacturer:'Sony', line:'FE G', type:'Zoom', mount:'e', asin:'B072J4B6WS',
     focalLength:null, focalLengthMin:12, focalLengthMax:24, focalLengthEquiv:'12-24mm',
     maxAperture:4.0, minAperture:22, weight:565, length:117.4, diameter:87.0,
     filterThread:null, minFocusDist:28, maxMagnification:0.14,
@@ -1385,7 +1388,7 @@ const LENSES = {
   },
 
   'fe-16-25mm-f28-g': {
-    name:'FE 16-25mm F2.8 G', manufacturer:'Sony', line:'FE G', type:'Zoom', asin:'B0D1VWRW46',
+    name:'FE 16-25mm F2.8 G', manufacturer:'Sony', line:'FE G', type:'Zoom', mount:'e', asin:'B0D1VWRW46',
     focalLength:null, focalLengthMin:16, focalLengthMax:25, focalLengthEquiv:'16-25mm',
     maxAperture:2.8, minAperture:22, weight:409, length:91.4, diameter:74.8,
     filterThread:67, minFocusDist:18, maxMagnification:0.20,
@@ -1398,7 +1401,7 @@ const LENSES = {
   },
 
   'fe-16-35mm-f4-pz-g': {
-    name:'FE 16-35mm F4 PZ G', manufacturer:'Sony', line:'FE G', type:'Zoom', asin:'B09W6CG368',
+    name:'FE 16-35mm F4 PZ G', manufacturer:'Sony', line:'FE G', type:'Zoom', mount:'e', asin:'B09W6CG368',
     focalLength:null, focalLengthMin:16, focalLengthMax:35, focalLengthEquiv:'16-35mm',
     maxAperture:4.0, minAperture:22, weight:353, length:88.1, diameter:80.5,
     filterThread:72, minFocusDist:24, maxMagnification:0.23,
@@ -1412,7 +1415,7 @@ const LENSES = {
   },
 
   'fe-20-70mm-f4-g': {
-    name:'FE 20-70mm F4 G', manufacturer:'Sony', line:'FE G', type:'Zoom', asin:'B0BSHFF5WX',
+    name:'FE 20-70mm F4 G', manufacturer:'Sony', line:'FE G', type:'Zoom', mount:'e', asin:'B0BSHFF5WX',
     focalLength:null, focalLengthMin:20, focalLengthMax:70, focalLengthEquiv:'20-70mm',
     maxAperture:4.0, minAperture:22, weight:488, length:99.0, diameter:78.7,
     filterThread:72, minFocusDist:25, maxMagnification:0.39,
@@ -1426,7 +1429,7 @@ const LENSES = {
   },
 
   'fe-24-50mm-f28-g': {
-    name:'FE 24-50mm F2.8 G', manufacturer:'Sony', line:'FE G', type:'Zoom', asin:'B0CVSLTYLK',
+    name:'FE 24-50mm F2.8 G', manufacturer:'Sony', line:'FE G', type:'Zoom', mount:'e', asin:'B0CVSLTYLK',
     focalLength:null, focalLengthMin:24, focalLengthMax:50, focalLengthEquiv:'24-50mm',
     maxAperture:2.8, minAperture:22, weight:440, length:92.3, diameter:74.8,
     filterThread:67, minFocusDist:19, maxMagnification:0.33,
@@ -1439,7 +1442,7 @@ const LENSES = {
   },
 
   'fe-24-105mm-f4-g-oss': {
-    name:'FE 24-105mm F4 G OSS', manufacturer:'Sony', line:'FE G', type:'Zoom', asin:'B076V9P58R',
+    name:'FE 24-105mm F4 G OSS', manufacturer:'Sony', line:'FE G', type:'Zoom', mount:'e', asin:'B076V9P58R',
     focalLength:null, focalLengthMin:24, focalLengthMax:105, focalLengthEquiv:'24-105mm',
     maxAperture:4.0, minAperture:22, weight:663, length:113.3, diameter:83.4,
     filterThread:77, minFocusDist:38, maxMagnification:0.31,
@@ -1453,7 +1456,7 @@ const LENSES = {
   },
 
   'fe-70-200mm-f4-g-oss': {
-    name:'FE 70-200mm F4 G OSS', manufacturer:'Sony', line:'FE G', type:'Zoom', asin:'B00I8BICEO',
+    name:'FE 70-200mm F4 G OSS', manufacturer:'Sony', line:'FE G', type:'Zoom', mount:'e', asin:'B00I8BICEO',
     focalLength:null, focalLengthMin:70, focalLengthMax:200, focalLengthEquiv:'70-200mm',
     maxAperture:4.0, minAperture:22, weight:840, length:175.0, diameter:80.0,
     filterThread:72, minFocusDist:100, maxMagnification:0.13,
@@ -1466,7 +1469,7 @@ const LENSES = {
   },
 
   'fe-70-200mm-f4-macro-g-oss-ii': {
-    name:'FE 70-200mm F4 Macro G OSS II', manufacturer:'Sony', line:'FE G', type:'Zoom', asin:'B0CBNBDVMZ',
+    name:'FE 70-200mm F4 Macro G OSS II', manufacturer:'Sony', line:'FE G', type:'Zoom', mount:'e', asin:'B0CBNBDVMZ',
     focalLength:null, focalLengthMin:70, focalLengthMax:200, focalLengthEquiv:'70-200mm',
     maxAperture:4.0, minAperture:22, weight:794, length:149.0, diameter:82.2,
     filterThread:72, minFocusDist:26, maxMagnification:0.50,
@@ -1479,7 +1482,7 @@ const LENSES = {
   },
 
   'fe-70-300mm-f45-56-g-oss': {
-    name:'FE 70-300mm F4.5-5.6 G OSS', manufacturer:'Sony', line:'FE G', type:'Zoom', asin:'B01DLMD7DK',
+    name:'FE 70-300mm F4.5-5.6 G OSS', manufacturer:'Sony', line:'FE G', type:'Zoom', mount:'e', asin:'B01DLMD7DK',
     focalLength:null, focalLengthMin:70, focalLengthMax:300, focalLengthEquiv:'70-300mm',
     maxAperture:4.5, minAperture:32, weight:854, length:143.5, diameter:84.0,
     filterThread:72, minFocusDist:90, maxMagnification:0.31,
@@ -1493,7 +1496,7 @@ const LENSES = {
   },
 
   'fe-200-600mm-f56-63-g-oss': {
-    name:'FE 200-600mm F5.6-6.3 G OSS', manufacturer:'Sony', line:'FE G', type:'Zoom', asin:'B07SZXDN9X',
+    name:'FE 200-600mm F5.6-6.3 G OSS', manufacturer:'Sony', line:'FE G', type:'Zoom', mount:'e', asin:'B07SZXDN9X',
     focalLength:null, focalLengthMin:200, focalLengthMax:600, focalLengthEquiv:'200-600mm',
     maxAperture:5.6, minAperture:36, weight:2115, length:318.0, diameter:111.5,
     filterThread:95, minFocusDist:240, maxMagnification:0.20,
@@ -1506,7 +1509,7 @@ const LENSES = {
   },
 
   'fe-400-800mm-f63-8-g-oss': {
-    name:'FE 400-800mm F6.3-8 G OSS', manufacturer:'Sony', line:'FE G', type:'Zoom', asin:'B0DYKB9RY9',
+    name:'FE 400-800mm F6.3-8 G OSS', manufacturer:'Sony', line:'FE G', type:'Zoom', mount:'e', asin:'B0DYKB9RY9',
     focalLength:null, focalLengthMin:400, focalLengthMax:800, focalLengthEquiv:'400-800mm',
     maxAperture:6.3, minAperture:51, weight:2475, length:348.0, diameter:119.8,
     filterThread:105, minFocusDist:170, maxMagnification:0.23,
@@ -1519,7 +1522,7 @@ const LENSES = {
   },
 
   'fe-16-35mm-f4-za-oss': {
-    name:'FE 16-35mm F4 ZA OSS Vario-Tessar', manufacturer:'Sony', line:'FE ZA', type:'Zoom', asin:'B00NN6J3AG',
+    name:'FE 16-35mm F4 ZA OSS Vario-Tessar', manufacturer:'Sony', line:'FE ZA', type:'Zoom', mount:'e', asin:'B00NN6J3AG',
     focalLength:null, focalLengthMin:16, focalLengthMax:35, focalLengthEquiv:'16-35mm',
     maxAperture:4.0, minAperture:22, weight:518, length:98.5, diameter:78.5,
     filterThread:72, minFocusDist:28, maxMagnification:0.19,
@@ -1532,7 +1535,7 @@ const LENSES = {
   },
 
   'fe-24-70mm-f4-za-oss': {
-    name:'FE 24-70mm F4 ZA OSS Vario-Tessar', manufacturer:'Sony', line:'FE ZA', type:'Zoom', asin:'B00FSB79FU',
+    name:'FE 24-70mm F4 ZA OSS Vario-Tessar', manufacturer:'Sony', line:'FE ZA', type:'Zoom', mount:'e', asin:'B00FSB79FU',
     focalLength:null, focalLengthMin:24, focalLengthMax:70, focalLengthEquiv:'24-70mm',
     maxAperture:4.0, minAperture:22, weight:426, length:94.5, diameter:73.0,
     filterThread:67, minFocusDist:40, maxMagnification:0.20,
@@ -1545,7 +1548,7 @@ const LENSES = {
   },
 
   'fe-24-240mm-f35-63-oss': {
-    name:'FE 24-240mm F3.5-6.3 OSS', manufacturer:'Sony', line:'FE', type:'Zoom', asin:'B00U29GNC8',
+    name:'FE 24-240mm F3.5-6.3 OSS', manufacturer:'Sony', line:'FE', type:'Zoom', mount:'e', asin:'B00U29GNC8',
     focalLength:null, focalLengthMin:24, focalLengthMax:240, focalLengthEquiv:'24-240mm',
     maxAperture:3.5, minAperture:40, weight:780, length:118.5, diameter:80.5,
     filterThread:72, minFocusDist:50, maxMagnification:0.27,
@@ -1559,7 +1562,7 @@ const LENSES = {
   },
 
   'fe-28-60mm-f4-56': {
-    name:'FE 28-60mm F4-5.6', manufacturer:'Sony', line:'FE', type:'Zoom', asin:'B08J3HTGQX',
+    name:'FE 28-60mm F4-5.6', manufacturer:'Sony', line:'FE', type:'Zoom', mount:'e', asin:'B08J3HTGQX',
     focalLength:null, focalLengthMin:28, focalLengthMax:60, focalLengthEquiv:'28-60mm',
     maxAperture:4.0, minAperture:22, weight:167, length:45.0, diameter:66.6,
     filterThread:40.5, minFocusDist:30, maxMagnification:0.16,
@@ -1573,7 +1576,7 @@ const LENSES = {
   },
 
   'fe-28-70mm-f35-56-oss': {
-    name:'FE 28-70mm F3.5-5.6 OSS', manufacturer:'Sony', line:'FE', type:'Zoom', asin:'B00GTXHQ8Q',
+    name:'FE 28-70mm F3.5-5.6 OSS', manufacturer:'Sony', line:'FE', type:'Zoom', mount:'e', asin:'B00GTXHQ8Q',
     focalLength:null, focalLengthMin:28, focalLengthMax:70, focalLengthEquiv:'28-70mm',
     maxAperture:3.5, minAperture:22, weight:295, length:83.0, diameter:72.5,
     filterThread:55, minFocusDist:30, maxMagnification:0.19,
@@ -1586,7 +1589,7 @@ const LENSES = {
   },
 
   'fe-28-70mm-f35-56-oss-ii': {
-    name:'FE 28-70mm F3.5-5.6 OSS II', manufacturer:'Sony', line:'FE', type:'Zoom', asin:'B0G4SC388G',
+    name:'FE 28-70mm F3.5-5.6 OSS II', manufacturer:'Sony', line:'FE', type:'Zoom', mount:'e', asin:'B0G4SC388G',
     focalLength:null, focalLengthMin:28, focalLengthMax:70, focalLengthEquiv:'28-70mm',
     maxAperture:3.5, minAperture:22, weight:290, length:83.0, diameter:72.5,
     filterThread:55, minFocusDist:30, maxMagnification:0.19,
@@ -1600,7 +1603,7 @@ const LENSES = {
 
   /* ── Sony E (APS-C) Primes ── */
   'e-11mm-f18': {
-    name:'E 11mm F1.8', manufacturer:'Sony', line:'E', type:'Prime', asin:'B0B2RZZBPN',
+    name:'E 11mm F1.8', manufacturer:'Sony', line:'E', type:'Prime', mount:'e', asin:'B0B2RZZBPN',
     focalLength:11, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'16.5mm',
     maxAperture:1.8, minAperture:16, weight:181, length:57.5, diameter:66.0,
     filterThread:55, minFocusDist:12, maxMagnification:0.20,
@@ -1614,7 +1617,7 @@ const LENSES = {
   },
 
   'e-15mm-f14-g': {
-    name:'E 15mm F1.4 G', manufacturer:'Sony', line:'E G', type:'Prime', asin:'B0B2X335XB',
+    name:'E 15mm F1.4 G', manufacturer:'Sony', line:'E G', type:'Prime', mount:'e', asin:'B0B2X335XB',
     focalLength:15, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'22.5mm',
     maxAperture:1.4, minAperture:16, weight:219, length:69.5, diameter:66.0,
     filterThread:55, minFocusDist:17, maxMagnification:0.17,
@@ -1628,7 +1631,7 @@ const LENSES = {
   },
 
   'e-16mm-f28': {
-    name:'E 16mm F2.8', manufacturer:'Sony', line:'E', type:'Prime', asin:'B003OUX6MW',
+    name:'E 16mm F2.8', manufacturer:'Sony', line:'E', type:'Prime', mount:'e', asin:'B003OUX6MW',
     focalLength:16, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'24mm',
     maxAperture:2.8, minAperture:22, weight:67, length:22.5, diameter:62.0,
     filterThread:49, minFocusDist:24, maxMagnification:0.078,
@@ -1641,7 +1644,7 @@ const LENSES = {
   },
 
   'e-20mm-f28': {
-    name:'E 20mm F2.8', manufacturer:'Sony', line:'E', type:'Prime', asin:'B00B20OYUO',
+    name:'E 20mm F2.8', manufacturer:'Sony', line:'E', type:'Prime', mount:'e', asin:'B00B20OYUO',
     focalLength:20, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'30mm',
     maxAperture:2.8, minAperture:22, weight:69, length:20.4, diameter:62.6,
     filterThread:49, minFocusDist:20, maxMagnification:0.12,
@@ -1655,7 +1658,7 @@ const LENSES = {
   },
 
   'e-24mm-f18-za': {
-    name:'E 24mm F1.8 ZA Sonnar', manufacturer:'Sony', line:'E ZA', type:'Prime', asin:'B005LLIEO2',
+    name:'E 24mm F1.8 ZA Sonnar', manufacturer:'Sony', line:'E ZA', type:'Prime', mount:'e', asin:'B005LLIEO2',
     focalLength:24, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'36mm',
     maxAperture:1.8, minAperture:22, weight:225, length:65.5, diameter:63.0,
     filterThread:49, minFocusDist:16, maxMagnification:0.25,
@@ -1668,7 +1671,7 @@ const LENSES = {
   },
 
   'e-30mm-f35-macro': {
-    name:'E 30mm F3.5 Macro', manufacturer:'Sony', line:'E', type:'Prime', asin:'B0054I54JU',
+    name:'E 30mm F3.5 Macro', manufacturer:'Sony', line:'E', type:'Prime', mount:'e', asin:'B0054I54JU',
     focalLength:30, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'45mm',
     maxAperture:3.5, minAperture:22, weight:138, length:55.5, diameter:62.0,
     filterThread:49, minFocusDist:9.5, maxMagnification:1.0,
@@ -1681,7 +1684,7 @@ const LENSES = {
   },
 
   'e-35mm-f18-oss': {
-    name:'E 35mm F1.8 OSS', manufacturer:'Sony', line:'E', type:'Prime', asin:'B0096W1P5W',
+    name:'E 35mm F1.8 OSS', manufacturer:'Sony', line:'E', type:'Prime', mount:'e', asin:'B0096W1P5W',
     focalLength:35, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'52.5mm',
     maxAperture:1.8, minAperture:22, weight:154, length:45.0, diameter:63.0,
     filterThread:49, minFocusDist:30, maxMagnification:0.15,
@@ -1695,7 +1698,7 @@ const LENSES = {
   },
 
   'e-50mm-f18-oss': {
-    name:'E 50mm F1.8 OSS', manufacturer:'Sony', line:'E', type:'Prime', asin:'B00EPWC30O',
+    name:'E 50mm F1.8 OSS', manufacturer:'Sony', line:'E', type:'Prime', mount:'e', asin:'B00EPWC30O',
     focalLength:50, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'75mm',
     maxAperture:1.8, minAperture:22, weight:202, length:62.0, diameter:62.0,
     filterThread:49, minFocusDist:39, maxMagnification:0.16,
@@ -1710,7 +1713,7 @@ const LENSES = {
 
   /* ── Sony E (APS-C) Zooms ── */
   'e-10-18mm-f4-oss': {
-    name:'E 10-18mm F4 OSS', manufacturer:'Sony', line:'E', type:'Zoom', asin:'B0096W1ONK',
+    name:'E 10-18mm F4 OSS', manufacturer:'Sony', line:'E', type:'Zoom', mount:'e', asin:'B0096W1ONK',
     focalLength:null, focalLengthMin:10, focalLengthMax:18, focalLengthEquiv:'15-27mm',
     maxAperture:4.0, minAperture:22, weight:225, length:63.5, diameter:70.0,
     filterThread:62, minFocusDist:25, maxMagnification:0.10,
@@ -1724,7 +1727,7 @@ const LENSES = {
   },
 
   'e-10-20mm-f4-pz-g': {
-    name:'E 10-20mm F4 PZ G', manufacturer:'Sony', line:'E G', type:'Zoom', asin:'B0B2RYSS32',
+    name:'E 10-20mm F4 PZ G', manufacturer:'Sony', line:'E G', type:'Zoom', mount:'e', asin:'B0B2RYSS32',
     focalLength:null, focalLengthMin:10, focalLengthMax:20, focalLengthEquiv:'15-30mm',
     maxAperture:4.0, minAperture:22, weight:178, length:55.0, diameter:69.8,
     filterThread:62, minFocusDist:18, maxMagnification:0.18,
@@ -1738,7 +1741,7 @@ const LENSES = {
   },
 
   'e-16-50mm-f35-56-pz-oss': {
-    name:'E 16-50mm F3.5-5.6 PZ OSS', manufacturer:'Sony', line:'E', type:'Zoom', asin:'B0096W1PG6',
+    name:'E 16-50mm F3.5-5.6 PZ OSS', manufacturer:'Sony', line:'E', type:'Zoom', mount:'e', asin:'B0096W1PG6',
     focalLength:null, focalLengthMin:16, focalLengthMax:50, focalLengthEquiv:'24-75mm',
     maxAperture:3.5, minAperture:22, weight:116, length:29.9, diameter:64.7,
     filterThread:40.5, minFocusDist:25, maxMagnification:0.215,
@@ -1751,7 +1754,7 @@ const LENSES = {
   },
 
   'e-16-50mm-f35-56-pz-oss-ii': {
-    name:'E 16-50mm F3.5-5.6 PZ OSS II', manufacturer:'Sony', line:'E', type:'Zoom', asin:'B0771TQZP8',
+    name:'E 16-50mm F3.5-5.6 PZ OSS II', manufacturer:'Sony', line:'E', type:'Zoom', mount:'e', asin:'B0771TQZP8',
     focalLength:null, focalLengthMin:16, focalLengthMax:50, focalLengthEquiv:'24-75mm',
     maxAperture:3.5, minAperture:22, weight:107, length:31.3, diameter:64.7,
     filterThread:40.5, minFocusDist:25, maxMagnification:0.22,
@@ -1764,7 +1767,7 @@ const LENSES = {
   },
 
   'e-16-55mm-f28-g': {
-    name:'E 16-55mm F2.8 G', manufacturer:'Sony', line:'E G', type:'Zoom', asin:'B07WZVKZHK',
+    name:'E 16-55mm F2.8 G', manufacturer:'Sony', line:'E G', type:'Zoom', mount:'e', asin:'B07WZVKZHK',
     focalLength:null, focalLengthMin:16, focalLengthMax:55, focalLengthEquiv:'24-82.5mm',
     maxAperture:2.8, minAperture:22, weight:494, length:100.0, diameter:73.0,
     filterThread:67, minFocusDist:33, maxMagnification:0.20,
@@ -1778,7 +1781,7 @@ const LENSES = {
   },
 
   'e-16-70mm-f4-za-oss': {
-    name:'E 16-70mm F4 ZA OSS Vario-Tessar', manufacturer:'Sony', line:'E ZA', type:'Zoom', asin:'B00ENZRPG0',
+    name:'E 16-70mm F4 ZA OSS Vario-Tessar', manufacturer:'Sony', line:'E ZA', type:'Zoom', mount:'e', asin:'B00ENZRPG0',
     focalLength:null, focalLengthMin:16, focalLengthMax:70, focalLengthEquiv:'24-105mm',
     maxAperture:4.0, minAperture:22, weight:308, length:75.0, diameter:66.6,
     filterThread:55, minFocusDist:35, maxMagnification:0.23,
@@ -1791,7 +1794,7 @@ const LENSES = {
   },
 
   'e-18-105mm-f4-g-oss-pz': {
-    name:'E 18-105mm F4 G OSS PZ', manufacturer:'Sony', line:'E G', type:'Zoom', asin:'B00ENZRQH8',
+    name:'E 18-105mm F4 G OSS PZ', manufacturer:'Sony', line:'E G', type:'Zoom', mount:'e', asin:'B00ENZRQH8',
     focalLength:null, focalLengthMin:18, focalLengthMax:105, focalLengthEquiv:'27-157.5mm',
     maxAperture:4.0, minAperture:22, weight:427, length:110.0, diameter:78.0,
     filterThread:72, minFocusDist:45, maxMagnification:0.11,
@@ -1805,7 +1808,7 @@ const LENSES = {
   },
 
   'e-18-135mm-f35-56-oss': {
-    name:'E 18-135mm F3.5-5.6 OSS', manufacturer:'Sony', line:'E', type:'Zoom', asin:'B078VPM6WM',
+    name:'E 18-135mm F3.5-5.6 OSS', manufacturer:'Sony', line:'E', type:'Zoom', mount:'e', asin:'B078VPM6WM',
     focalLength:null, focalLengthMin:18, focalLengthMax:135, focalLengthEquiv:'27-202.5mm',
     maxAperture:3.5, minAperture:22, weight:325, length:88.0, diameter:67.2,
     filterThread:55, minFocusDist:45, maxMagnification:0.29,
@@ -1819,7 +1822,7 @@ const LENSES = {
   },
 
   'e-55-210mm-f45-63-oss': {
-    name:'E 55-210mm F4.5-6.3 OSS', manufacturer:'Sony', line:'E', type:'Zoom', asin:'B00HNJWSDS',
+    name:'E 55-210mm F4.5-6.3 OSS', manufacturer:'Sony', line:'E', type:'Zoom', mount:'e', asin:'B00HNJWSDS',
     focalLength:null, focalLengthMin:55, focalLengthMax:210, focalLengthEquiv:'82.5-315mm',
     maxAperture:4.5, minAperture:32, weight:345, length:108.0, diameter:63.8,
     filterThread:49, minFocusDist:100, maxMagnification:0.225,
@@ -1833,7 +1836,7 @@ const LENSES = {
   },
 
   'e-70-350mm-f45-63-g-oss': {
-    name:'E 70-350mm F4.5-6.3 G OSS', manufacturer:'Sony', line:'E G', type:'Zoom', asin:'B07X72DMLC',
+    name:'E 70-350mm F4.5-6.3 G OSS', manufacturer:'Sony', line:'E G', type:'Zoom', mount:'e', asin:'B07X72DMLC',
     focalLength:null, focalLengthMin:70, focalLengthMax:350, focalLengthEquiv:'105-525mm',
     maxAperture:4.5, minAperture:32, weight:625, length:142.0, diameter:77.0,
     filterThread:67, minFocusDist:110, maxMagnification:0.23,
@@ -1851,7 +1854,7 @@ const LENSES = {
      Sigma official spec pages; optical design shared across mounts. */
   'sigma-16mm-f14': {
     name:'Sigma 16mm f/1.4 DC DN', manufacturer:'Sigma', line:'Contemporary', type:'Prime',
-    focalLength:16, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'24mm',
+    mount:'e', focalLength:16, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'24mm',
     maxAperture:1.4, minAperture:16, weight:405, length:92.3, diameter:72.2,
     filterThread:67, minFocusDist:25, maxMagnification:0.1,
     elements:16, groups:13, blades:9, afType:'Stepping Motor',
@@ -1865,7 +1868,7 @@ const LENSES = {
 
   'sigma-23mm-f14': {
     name:'Sigma 23mm f/1.4 DC DN', manufacturer:'Sigma', line:'Contemporary', type:'Prime',
-    focalLength:23, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'35mm',
+    mount:'e', focalLength:23, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'35mm',
     maxAperture:1.4, minAperture:16, weight:330, length:78.9, diameter:65.8,
     filterThread:52, minFocusDist:25, maxMagnification:0.14,
     elements:13, groups:10, blades:9, afType:'Stepping Motor',
@@ -1879,7 +1882,7 @@ const LENSES = {
 
   'sigma-30mm-f14': {
     name:'Sigma 30mm f/1.4 DC DN', manufacturer:'Sigma', line:'Contemporary', type:'Prime',
-    focalLength:30, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'45mm',
+    mount:'e', focalLength:30, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'45mm',
     maxAperture:1.4, minAperture:16, weight:265, length:73.3, diameter:64.8,
     filterThread:52, minFocusDist:30, maxMagnification:0.14,
     elements:9, groups:7, blades:9, afType:'Stepping Motor',
@@ -1893,7 +1896,7 @@ const LENSES = {
 
   'sigma-56mm-f14': {
     name:'Sigma 56mm f/1.4 DC DN', manufacturer:'Sigma', line:'Contemporary', type:'Prime',
-    focalLength:56, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'84mm',
+    mount:'e', focalLength:56, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'84mm',
     maxAperture:1.4, minAperture:16, weight:280, length:59.5, diameter:66.5,
     filterThread:55, minFocusDist:50, maxMagnification:0.14,
     elements:10, groups:6, blades:9, afType:'Stepping Motor',
@@ -1907,7 +1910,7 @@ const LENSES = {
 
   'sigma-10-18mm-f28': {
     name:'Sigma 10-18mm f/2.8 DC DN', manufacturer:'Sigma', line:'Contemporary', type:'Zoom',
-    focalLength:null, focalLengthMin:10, focalLengthMax:18, focalLengthEquiv:'15-27mm',
+    mount:'e', focalLength:null, focalLengthMin:10, focalLengthMax:18, focalLengthEquiv:'15-27mm',
     maxAperture:2.8, minAperture:22, weight:255, length:64.0, diameter:72.2,
     filterThread:67, minFocusDist:11.6, maxMagnification:0.25,
     elements:13, groups:10, blades:7, afType:'Stepping Motor',
@@ -1921,7 +1924,7 @@ const LENSES = {
 
   'sigma-18-50mm-f28': {
     name:'Sigma 18-50mm f/2.8 DC DN', manufacturer:'Sigma', line:'Contemporary', type:'Zoom',
-    focalLength:null, focalLengthMin:18, focalLengthMax:50, focalLengthEquiv:'27-75mm',
+    mount:'e', focalLength:null, focalLengthMin:18, focalLengthMax:50, focalLengthEquiv:'27-75mm',
     maxAperture:2.8, minAperture:22, weight:290, length:76.5, diameter:61.6,
     filterThread:55, minFocusDist:12.1, maxMagnification:0.36,
     elements:13, groups:10, blades:7, afType:'Stepping Motor',
@@ -1937,7 +1940,7 @@ const LENSES = {
   /* Full-frame E-mount; specs from Sigma official spec pages (Sony E values). */
   'sigma-24mm-f14-dg': {
     name:'Sigma 24mm f/1.4 DG DN Art', manufacturer:'Sigma', line:'Art', type:'Prime',
-    focalLength:24, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'24mm',
+    mount:'e', focalLength:24, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'24mm',
     maxAperture:1.4, minAperture:16, weight:510, length:97.5, diameter:75.7,
     filterThread:72, minFocusDist:25, maxMagnification:0.14,
     elements:17, groups:14, blades:11, afType:'Stepping Motor',
@@ -1951,7 +1954,7 @@ const LENSES = {
 
   'sigma-35mm-f14-dg': {
     name:'Sigma 35mm f/1.4 DG DN Art', manufacturer:'Sigma', line:'Art', type:'Prime',
-    focalLength:35, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'35mm',
+    mount:'e', focalLength:35, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'35mm',
     maxAperture:1.4, minAperture:16, weight:640, length:111.5, diameter:75.5,
     filterThread:67, minFocusDist:30, maxMagnification:0.19,
     elements:15, groups:11, blades:11, afType:'Stepping Motor',
@@ -1965,7 +1968,7 @@ const LENSES = {
 
   'sigma-35mm-f14-dg-ii': {
     name:'Sigma 35mm f/1.4 DG DN II Art', manufacturer:'Sigma', line:'Art', type:'Prime',
-    focalLength:35, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'35mm',
+    mount:'e', focalLength:35, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'35mm',
     maxAperture:1.4, minAperture:16, weight:525, length:94.0, diameter:73.0,
     filterThread:67, minFocusDist:280, maxMagnification:0.19,
     elements:15, groups:12, blades:11, afType:'HLA Linear',
@@ -1980,7 +1983,7 @@ const LENSES = {
 
   'sigma-50mm-f14-dg': {
     name:'Sigma 50mm f/1.4 DG DN Art', manufacturer:'Sigma', line:'Art', type:'Prime',
-    focalLength:50, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'50mm',
+    mount:'e', focalLength:50, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'50mm',
     maxAperture:1.4, minAperture:16, weight:660, length:111.5, diameter:78.2,
     filterThread:72, minFocusDist:45, maxMagnification:0.15,
     elements:14, groups:11, blades:11, afType:'HLA Linear',
@@ -1994,7 +1997,7 @@ const LENSES = {
 
   'sigma-85mm-f14-dg': {
     name:'Sigma 85mm f/1.4 DG DN Art', manufacturer:'Sigma', line:'Art', type:'Prime',
-    focalLength:85, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'85mm',
+    mount:'e', focalLength:85, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'85mm',
     maxAperture:1.4, minAperture:16, weight:625, length:96.1, diameter:82.8,
     filterThread:77, minFocusDist:85, maxMagnification:0.12,
     elements:15, groups:11, blades:11, afType:'Stepping Motor',
@@ -2008,7 +2011,7 @@ const LENSES = {
 
   'sigma-20mm-f14-dg': {
     name:'Sigma 20mm f/1.4 DG DN Art', manufacturer:'Sigma', line:'Art', type:'Prime',
-    focalLength:20, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'20mm',
+    mount:'e', focalLength:20, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'20mm',
     maxAperture:1.4, minAperture:16, weight:630, length:113.2, diameter:87.8,
     filterThread:82, minFocusDist:23, maxMagnification:0.16,
     elements:17, groups:15, blades:11, afType:'Stepping Motor',
@@ -2025,7 +2028,7 @@ const LENSES = {
      discontinued on Sigma's site but remain widely sold; marked discontinued. */
   'sigma-20mm-f2-dg': {
     name:'Sigma 20mm f/2 DG DN Contemporary', manufacturer:'Sigma', line:'Contemporary', type:'Prime',
-    focalLength:20, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'20mm',
+    mount:'e', focalLength:20, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'20mm',
     maxAperture:2.0, minAperture:22, weight:370, length:74.4, diameter:70,
     filterThread:62, minFocusDist:22, maxMagnification:0.15,
     elements:13, groups:11, blades:9, afType:'Stepping Motor',
@@ -2038,7 +2041,7 @@ const LENSES = {
 
   'sigma-24mm-f2-dg': {
     name:'Sigma 24mm f/2 DG DN Contemporary', manufacturer:'Sigma', line:'Contemporary', type:'Prime',
-    focalLength:24, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'24mm',
+    mount:'e', focalLength:24, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'24mm',
     maxAperture:2.0, minAperture:22, weight:360, length:74, diameter:70,
     filterThread:62, minFocusDist:24.5, maxMagnification:0.15,
     elements:13, groups:11, blades:9, afType:'Stepping Motor',
@@ -2051,7 +2054,7 @@ const LENSES = {
 
   'sigma-35mm-f2-dg': {
     name:'Sigma 35mm f/2 DG DN Contemporary', manufacturer:'Sigma', line:'Contemporary', type:'Prime',
-    focalLength:35, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'35mm',
+    mount:'e', focalLength:35, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'35mm',
     maxAperture:2.0, minAperture:22, weight:325, length:67.4, diameter:70,
     filterThread:58, minFocusDist:27, maxMagnification:0.18,
     elements:10, groups:9, blades:9, afType:'Stepping Motor',
@@ -2064,7 +2067,7 @@ const LENSES = {
 
   'sigma-65mm-f2-dg': {
     name:'Sigma 65mm f/2 DG DN Contemporary', manufacturer:'Sigma', line:'Contemporary', type:'Prime',
-    focalLength:65, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'65mm',
+    mount:'e', focalLength:65, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'65mm',
     maxAperture:2.0, minAperture:22, weight:405, length:76.7, diameter:72,
     filterThread:62, minFocusDist:55, maxMagnification:0.15,
     elements:12, groups:9, blades:9, afType:'Stepping Motor',
@@ -2077,7 +2080,7 @@ const LENSES = {
 
   'sigma-90mm-f28-dg': {
     name:'Sigma 90mm f/2.8 DG DN Contemporary', manufacturer:'Sigma', line:'Contemporary', type:'Prime',
-    focalLength:90, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'90mm',
+    mount:'e', focalLength:90, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'90mm',
     maxAperture:2.8, minAperture:22, weight:295, length:61.7, diameter:64,
     filterThread:55, minFocusDist:50, maxMagnification:0.2,
     elements:11, groups:10, blades:9, afType:'Stepping Motor',
@@ -2092,7 +2095,7 @@ const LENSES = {
   /* ── Sigma (FE, full-frame DG DN zooms) ── */
   'sigma-16-28mm-f28-dg': {
     name:'Sigma 16-28mm f/2.8 DG DN Contemporary', manufacturer:'Sigma', line:'Contemporary', type:'Zoom',
-    focalLength:null, focalLengthMin:16, focalLengthMax:28, focalLengthEquiv:'16-28mm',
+    mount:'e', focalLength:null, focalLengthMin:16, focalLengthMax:28, focalLengthEquiv:'16-28mm',
     maxAperture:2.8, minAperture:22, weight:450, length:102.6, diameter:77.2,
     filterThread:72, minFocusDist:25, maxMagnification:0.18,
     elements:16, groups:11, blades:9, afType:'Stepping Motor',
@@ -2106,7 +2109,7 @@ const LENSES = {
 
   'sigma-28-70mm-f28-dg': {
     name:'Sigma 28-70mm f/2.8 DG DN Contemporary', manufacturer:'Sigma', line:'Contemporary', type:'Zoom',
-    focalLength:null, focalLengthMin:28, focalLengthMax:70, focalLengthEquiv:'28-70mm',
+    mount:'e', focalLength:null, focalLengthMin:28, focalLengthMax:70, focalLengthEquiv:'28-70mm',
     maxAperture:2.8, minAperture:22, weight:470, length:103.5, diameter:72.2,
     filterThread:67, minFocusDist:19, maxMagnification:0.3,
     elements:16, groups:12, blades:9, afType:'Stepping Motor',
@@ -2121,7 +2124,7 @@ const LENSES = {
 
   'sigma-28-45mm-f18-dg': {
     name:'Sigma 28-45mm f/1.8 DG DN Art', manufacturer:'Sigma', line:'Art', type:'Zoom',
-    focalLength:null, focalLengthMin:28, focalLengthMax:45, focalLengthEquiv:'28-45mm',
+    mount:'e', focalLength:null, focalLengthMin:28, focalLengthMax:45, focalLengthEquiv:'28-45mm',
     maxAperture:1.8, minAperture:16, weight:950, length:153.4, diameter:87.8,
     filterThread:82, minFocusDist:30, maxMagnification:0.25,
     elements:18, groups:15, blades:11, afType:'HLA Linear',
@@ -2135,7 +2138,7 @@ const LENSES = {
 
   'sigma-70-200mm-f28-dg': {
     name:'Sigma 70-200mm f/2.8 DG DN OS Sports', manufacturer:'Sigma', line:'Sports', type:'Zoom',
-    focalLength:null, focalLengthMin:70, focalLengthMax:200, focalLengthEquiv:'70-200mm',
+    mount:'e', focalLength:null, focalLengthMin:70, focalLengthMax:200, focalLengthEquiv:'70-200mm',
     maxAperture:2.8, minAperture:22, weight:1335, length:207.0, diameter:90.6,
     filterThread:77, minFocusDist:65, maxMagnification:0.19,
     elements:20, groups:15, blades:11, afType:'HLA Linear',
@@ -2149,7 +2152,7 @@ const LENSES = {
 
   'sigma-24-70mm-f28-dg-ii': {
     name:'Sigma 24-70mm f/2.8 DG DN II Art', manufacturer:'Sigma', line:'Art', type:'Zoom',
-    focalLength:null, focalLengthMin:24, focalLengthMax:70, focalLengthEquiv:'24-70mm',
+    mount:'e', focalLength:null, focalLengthMin:24, focalLengthMax:70, focalLengthEquiv:'24-70mm',
     maxAperture:2.8, minAperture:22, weight:735, length:122.2, diameter:87.8,
     filterThread:82, minFocusDist:17, maxMagnification:0.34,
     elements:19, groups:15, blades:11, afType:'HLA Linear',
@@ -2163,7 +2166,7 @@ const LENSES = {
 
   'sigma-100-400mm-f5-63-dg': {
     name:'Sigma 100-400mm f/5-6.3 DG DN OS Contemporary', manufacturer:'Sigma', line:'Contemporary', type:'Zoom',
-    focalLength:null, focalLengthMin:100, focalLengthMax:400, focalLengthEquiv:'100-400mm',
+    mount:'e', focalLength:null, focalLengthMin:100, focalLengthMax:400, focalLengthEquiv:'100-400mm',
     maxAperture:5.0, minAperture:22, weight:1140, length:199.2, diameter:86,
     filterThread:67, minFocusDist:112, maxMagnification:0.24,
     elements:22, groups:16, blades:9, afType:'Stepping Motor',
@@ -2178,7 +2181,7 @@ const LENSES = {
 
   'sigma-150-600mm-f5-63-dg': {
     name:'Sigma 150-600mm f/5-6.3 DG DN OS Sports', manufacturer:'Sigma', line:'Sports', type:'Zoom',
-    focalLength:null, focalLengthMin:150, focalLengthMax:600, focalLengthEquiv:'150-600mm',
+    mount:'e', focalLength:null, focalLengthMin:150, focalLengthMax:600, focalLengthEquiv:'150-600mm',
     maxAperture:5.0, minAperture:22, weight:2100, length:263.6, diameter:109.4,
     filterThread:95, minFocusDist:58, maxMagnification:0.34,
     elements:25, groups:15, blades:9, afType:'Stepping Motor',
@@ -2195,7 +2198,7 @@ const LENSES = {
      vary by model/mount and are recorded as gaps pending verification. */
   'tamron-12-20mm-f28': {
     name:'Tamron 12-20mm f/2.8 Di III VXD', manufacturer:'Tamron', line:'Di III', type:'Zoom',
-    focalLength:null, focalLengthMin:12, focalLengthMax:20, focalLengthEquiv:'12-20mm',
+    mount:'e', focalLength:null, focalLengthMin:12, focalLengthMax:20, focalLengthEquiv:'12-20mm',
     maxAperture:2.8, minAperture:16, weight:570, length:119.3, diameter:90.0,
     filterThread:null, minFocusDist:180, maxMagnification:0.17,
     elements:17, groups:12, blades:12, afType:'Linear Motor',
@@ -2209,7 +2212,7 @@ const LENSES = {
 
   'tamron-16-30mm-f28-g2': {
     name:'Tamron 16-30mm f/2.8 Di III VXD G2', manufacturer:'Tamron', line:'Di III', type:'Zoom',
-    focalLength:null, focalLengthMin:16, focalLengthMax:30, focalLengthEquiv:'16-30mm',
+    mount:'e', focalLength:null, focalLengthMin:16, focalLengthMax:30, focalLengthEquiv:'16-30mm',
     maxAperture:2.8, minAperture:16, weight:440, length:101.8, diameter:74.8,
     filterThread:67, minFocusDist:19, maxMagnification:0.19,
     elements:16, groups:12, blades:9, afType:'Linear Motor',
@@ -2223,7 +2226,7 @@ const LENSES = {
 
   'tamron-20-40mm-f28': {
     name:'Tamron 20-40mm f/2.8 Di III VXD', manufacturer:'Tamron', line:'Di III', type:'Zoom',
-    focalLength:null, focalLengthMin:20, focalLengthMax:40, focalLengthEquiv:'20-40mm',
+    mount:'e', focalLength:null, focalLengthMin:20, focalLengthMax:40, focalLengthEquiv:'20-40mm',
     maxAperture:2.8, minAperture:22, weight:365, length:86.5, diameter:74.4,
     filterThread:67, minFocusDist:17, maxMagnification:0.26,
     elements:12, groups:11, blades:9, afType:'Linear Motor',
@@ -2237,7 +2240,7 @@ const LENSES = {
 
   'tamron-28-75mm-f28-g2': {
     name:'Tamron 28-75mm f/2.8 Di III VXD G2', manufacturer:'Tamron', line:'Di III', type:'Zoom',
-    focalLength:null, focalLengthMin:28, focalLengthMax:75, focalLengthEquiv:'28-75mm',
+    mount:'e', focalLength:null, focalLengthMin:28, focalLengthMax:75, focalLengthEquiv:'28-75mm',
     maxAperture:2.8, minAperture:22, weight:540, length:117.6, diameter:75.8,
     filterThread:67, minFocusDist:18, maxMagnification:0.37,
     elements:17, groups:15, blades:9, afType:'Linear Motor',
@@ -2252,7 +2255,7 @@ const LENSES = {
 
   'tamron-35-150mm-f2-28': {
     name:'Tamron 35-150mm f/2-2.8 Di III VXD', manufacturer:'Tamron', line:'Di III', type:'Zoom',
-    focalLength:null, focalLengthMin:35, focalLengthMax:150, focalLengthEquiv:'35-150mm',
+    mount:'e', focalLength:null, focalLengthMin:35, focalLengthMax:150, focalLengthEquiv:'35-150mm',
     maxAperture:2.0, minAperture:22, weight:1165, length:158, diameter:89.2,
     filterThread:82, minFocusDist:33, maxMagnification:0.18,
     elements:21, groups:15, blades:9, afType:'Linear Motor',
@@ -2266,7 +2269,7 @@ const LENSES = {
 
   'tamron-50-400mm-f45-63': {
     name:'Tamron 50-400mm f/4.5-6.3 Di III VC VXD', manufacturer:'Tamron', line:'Di III', type:'Zoom',
-    focalLength:null, focalLengthMin:50, focalLengthMax:400, focalLengthEquiv:'50-400mm',
+    mount:'e', focalLength:null, focalLengthMin:50, focalLengthMax:400, focalLengthEquiv:'50-400mm',
     maxAperture:4.5, minAperture:22, weight:1155, length:183.4, diameter:88.5,
     filterThread:67, minFocusDist:25, maxMagnification:0.5,
     elements:24, groups:18, blades:9, afType:'Linear Motor',
@@ -2281,7 +2284,7 @@ const LENSES = {
 
   'tamron-70-180mm-f28-g2': {
     name:'Tamron 70-180mm f/2.8 Di III VC VXD G2', manufacturer:'Tamron', line:'Di III', type:'Zoom',
-    focalLength:null, focalLengthMin:70, focalLengthMax:180, focalLengthEquiv:'70-180mm',
+    mount:'e', focalLength:null, focalLengthMin:70, focalLengthMax:180, focalLengthEquiv:'70-180mm',
     maxAperture:2.8, minAperture:22, weight:855, length:156.5, diameter:83,
     filterThread:67, minFocusDist:30, maxMagnification:0.38,
     elements:20, groups:15, blades:9, afType:'Linear Motor',
@@ -2296,7 +2299,7 @@ const LENSES = {
 
   'tamron-17-70mm-f28': {
     name:'Tamron 17-70mm f/2.8 Di III-A VC RXD', manufacturer:'Tamron', line:'Di III-A', type:'Zoom',
-    focalLength:null, focalLengthMin:17, focalLengthMax:70, focalLengthEquiv:'26-105mm',
+    mount:'e', focalLength:null, focalLengthMin:17, focalLengthMax:70, focalLengthEquiv:'26-105mm',
     maxAperture:2.8, minAperture:22, weight:525, length:119.3, diameter:74.6,
     filterThread:67, minFocusDist:19, maxMagnification:0.21,
     elements:16, groups:12, blades:9, afType:'Stepping Motor',
@@ -2311,7 +2314,7 @@ const LENSES = {
 
   'tamron-11-20mm-f28': {
     name:'Tamron 11-20mm f/2.8 Di III-A RXD', manufacturer:'Tamron', line:'Di III-A', type:'Zoom',
-    focalLength:null, focalLengthMin:11, focalLengthMax:20, focalLengthEquiv:'17-30mm',
+    mount:'e', focalLength:null, focalLengthMin:11, focalLengthMax:20, focalLengthEquiv:'17-30mm',
     maxAperture:2.8, minAperture:16, weight:335, length:86.2, diameter:73,
     filterThread:67, minFocusDist:15, maxMagnification:0.25,
     elements:12, groups:10, blades:7, afType:'Stepping Motor',
@@ -2327,7 +2330,7 @@ const LENSES = {
   /* ── Viltrox (E-mount AF) ── */
   'viltrox-26mm-f28-evo': {
     name:'Viltrox AF 26mm f/2.8 EVO', manufacturer:'Viltrox', line:'EVO', type:'Prime',
-    focalLength:26, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'26mm',
+    mount:'e', focalLength:26, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'26mm',
     maxAperture:2.8, minAperture:16, weight:130, length:23.8, diameter:66,
     filterThread:43, minFocusDist:200, maxMagnification:0.22,
     elements:8, groups:6, blades:7, afType:'STM',
@@ -2342,7 +2345,7 @@ const LENSES = {
 
   'viltrox-16mm-f18': {
     name:'Viltrox AF 16mm f/1.8 FE', manufacturer:'Viltrox', line:'Pro', type:'Prime',
-    focalLength:16, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'16mm',
+    mount:'e', focalLength:16, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'16mm',
     maxAperture:1.8, minAperture:22, weight:550, length:101, diameter:85.2,
     filterThread:77, minFocusDist:27, maxMagnification:0.1,
     elements:15, groups:12, blades:9, afType:'STM',
@@ -2357,7 +2360,7 @@ const LENSES = {
 
   'viltrox-27mm-f12': {
     name:'Viltrox AF 27mm f/1.2 Pro', manufacturer:'Viltrox', line:'Pro', type:'Prime',
-    focalLength:27, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'41mm',
+    mount:'e', focalLength:27, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'41mm',
     maxAperture:1.2, minAperture:16, weight:560, length:92, diameter:82,
     filterThread:67, minFocusDist:28, maxMagnification:0.15,
     elements:15, groups:11, blades:11, afType:'STM',
@@ -2372,7 +2375,7 @@ const LENSES = {
 
   'viltrox-56mm-f14': {
     name:'Viltrox AF 56mm f/1.4', manufacturer:'Viltrox', line:'AF', type:'Prime',
-    focalLength:56, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'84mm',
+    mount:'e', focalLength:56, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'84mm',
     maxAperture:1.4, minAperture:16, weight:320, length:72, diameter:65,
     filterThread:52, minFocusDist:60, maxMagnification:0.1,
     elements:10, groups:9, blades:9, afType:'STM',
@@ -2387,7 +2390,7 @@ const LENSES = {
 
   'viltrox-13mm-f14': {
     name:'Viltrox AF 13mm f/1.4', manufacturer:'Viltrox', line:'AF', type:'Prime',
-    focalLength:13, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'20mm',
+    mount:'e', focalLength:13, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'20mm',
     maxAperture:1.4, minAperture:16, weight:420, length:90, diameter:74,
     filterThread:67, minFocusDist:22, maxMagnification:0.1,
     elements:14, groups:11, blades:9, afType:'STM',
@@ -2402,7 +2405,7 @@ const LENSES = {
 
   'viltrox-33mm-f14': {
     name:'Viltrox AF 33mm f/1.4', manufacturer:'Viltrox', line:'AF', type:'Prime',
-    focalLength:33, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'50mm',
+    mount:'e', focalLength:33, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'50mm',
     maxAperture:1.4, minAperture:16, weight:270, length:72, diameter:65,
     filterThread:52, minFocusDist:40, maxMagnification:0.1,
     elements:10, groups:9, blades:9, afType:'STM',
@@ -2417,7 +2420,7 @@ const LENSES = {
 
   'viltrox-85mm-f18-ii': {
     name:'Viltrox AF 85mm f/1.8 FE II', manufacturer:'Viltrox', line:'AF', type:'Prime',
-    focalLength:85, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'85mm',
+    mount:'e', focalLength:85, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'85mm',
     maxAperture:1.8, minAperture:16, weight:371, length:92, diameter:80,
     filterThread:72, minFocusDist:80, maxMagnification:0.12,
     elements:10, groups:7, blades:9, afType:'STM',
@@ -2433,7 +2436,7 @@ const LENSES = {
   /* ── Samyang (FE AF) ── */
   'samyang-35mm-f18': {
     name:'Samyang AF 35mm f/1.8 FE', manufacturer:'Samyang', line:'AF', type:'Prime',
-    focalLength:35, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'35mm',
+    mount:'e', focalLength:35, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'35mm',
     maxAperture:1.8, minAperture:22, weight:210, length:65, diameter:63.5,
     filterThread:58, minFocusDist:29, maxMagnification:0.17,
     elements:10, groups:8, blades:9, afType:'Linear STM',
@@ -2448,7 +2451,7 @@ const LENSES = {
 
   'samyang-75mm-f18': {
     name:'Samyang AF 75mm f/1.8 FE', manufacturer:'Samyang', line:'AF', type:'Prime',
-    focalLength:75, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'75mm',
+    mount:'e', focalLength:75, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'75mm',
     maxAperture:1.8, minAperture:22, weight:230, length:69, diameter:65,
     filterThread:58, minFocusDist:69, maxMagnification:0.13,
     elements:10, groups:9, blades:9, afType:'Linear STM',
@@ -2463,7 +2466,7 @@ const LENSES = {
 
   'samyang-135mm-f18': {
     name:'Samyang AF 135mm f/1.8 FE', manufacturer:'Samyang', line:'AF', type:'Prime',
-    focalLength:135, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'135mm',
+    mount:'e', focalLength:135, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'135mm',
     maxAperture:1.8, minAperture:22, weight:772, length:129.6, diameter:93,
     filterThread:82, minFocusDist:69, maxMagnification:0.24,
     elements:13, groups:11, blades:11, afType:'Linear STM',
@@ -2480,7 +2483,7 @@ const LENSES = {
   /* Optical specs shared across mounts (verified from Venus Optics). */
   'laowa-90mm-f28-macro': {
     name:'Laowa 90mm f/2.8 2x Ultra Macro APO', manufacturer:'Laowa', line:'Ultra Macro APO', type:'Prime',
-    focalLength:90, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'90mm',
+    mount:'e', focalLength:90, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'90mm',
     maxAperture:2.8, minAperture:22, weight:619, length:120, diameter:74,
     filterThread:67, minFocusDist:20.5, maxMagnification:2.0,
     elements:13, groups:10, blades:13, afType:'Manual',
@@ -2495,7 +2498,7 @@ const LENSES = {
 
   'laowa-15mm-f2': {
     name:'Laowa 15mm f/2 FE Zero-D', manufacturer:'Laowa', line:'Zero-D', type:'Prime',
-    focalLength:15, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'15mm',
+    mount:'e', focalLength:15, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'15mm',
     maxAperture:2.0, minAperture:22, weight:500, length:82, diameter:66,
     filterThread:72, minFocusDist:15, maxMagnification:0.1,
     elements:12, groups:9, blades:5, afType:'Manual',
@@ -2510,7 +2513,7 @@ const LENSES = {
 
   'laowa-10mm-f4-cookie': {
     name:'Laowa 10mm f/4 Cookie', manufacturer:'Laowa', line:'Cookie', type:'Prime',
-    focalLength:10, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'15mm',
+    mount:'e', focalLength:10, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'15mm',
     maxAperture:4.0, minAperture:22, weight:130, length:25, diameter:54,
     filterThread:37, minFocusDist:10, maxMagnification:0.1,
     elements:12, groups:8, blades:5, afType:'Manual',
@@ -2526,7 +2529,7 @@ const LENSES = {
   /* ── Voigtländer (E-mount manual-focus) ── */
   'voigtlander-apo-lanthar-35mm-f2': {
     name:'Voigtländer APO-Lanthar 35mm f/2 Aspherical', manufacturer:'Voigtländer', line:'APO-Lanthar', type:'Prime',
-    focalLength:35, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'35mm',
+    mount:'e', focalLength:35, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'35mm',
     maxAperture:2.0, minAperture:16, weight:352, length:67.3, diameter:62.6,
     filterThread:49, minFocusDist:35, maxMagnification:0.19,
     elements:11, groups:9, blades:12, afType:'Manual',
@@ -2546,7 +2549,7 @@ const LENSES = {
 
   'voigtlander-apo-lanthar-50mm-f2': {
     name:'Voigtländer APO-Lanthar 50mm f/2 Aspherical', manufacturer:'Voigtländer', line:'APO-Lanthar', type:'Prime',
-    focalLength:50, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'50mm',
+    mount:'e', focalLength:50, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'50mm',
     maxAperture:2.0, minAperture:16, weight:364, length:61, diameter:63,
     filterThread:49, minFocusDist:45, maxMagnification:0.15,
     elements:10, groups:8, blades:12, afType:'Manual',
@@ -2566,7 +2569,7 @@ const LENSES = {
 
   'voigtlander-nokton-40mm-f12': {
     name:'Voigtländer Nokton 40mm f/1.2 Aspherical', manufacturer:'Voigtländer', line:'Nokton', type:'Prime',
-    focalLength:40, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'40mm',
+    mount:'e', focalLength:40, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'40mm',
     maxAperture:1.2, minAperture:22, weight:383, length:51.9, diameter:66.5,
     filterThread:58, minFocusDist:35, maxMagnification:0.09,
     elements:8, groups:6, blades:10, afType:'Manual',
@@ -2593,7 +2596,7 @@ const LENSES = {
   /* ── Zeiss (FE) — Batis (AF) + Loxia (MF), discontinued but iconic ── */
   'zeiss-batis-25mm-f2': {
     name:'Zeiss Batis 25mm f/2', manufacturer:'Zeiss', line:'Batis', type:'Prime',
-    focalLength:25, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'25mm',
+    mount:'e', focalLength:25, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'25mm',
     maxAperture:2.0, minAperture:22, weight:335, length:78, diameter:81,
     filterThread:67, minFocusDist:20, maxMagnification:0.19,
     elements:10, groups:8, blades:9, afType:'Autofocus',
@@ -2607,7 +2610,7 @@ const LENSES = {
 
   'zeiss-batis-85mm-f18': {
     name:'Zeiss Batis 85mm f/1.8', manufacturer:'Zeiss', line:'Batis', type:'Prime',
-    focalLength:85, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'85mm',
+    mount:'e', focalLength:85, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'85mm',
     maxAperture:1.8, minAperture:22, weight:475, length:105, diameter:78,
     filterThread:67, minFocusDist:80, maxMagnification:0.13,
     elements:11, groups:8, blades:9, afType:'Autofocus',
@@ -2621,7 +2624,7 @@ const LENSES = {
 
   'zeiss-loxia-35mm-f2': {
     name:'Zeiss Loxia 35mm f/2 Biogon', manufacturer:'Zeiss', line:'Loxia', type:'Prime',
-    focalLength:35, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'35mm',
+    mount:'e', focalLength:35, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'35mm',
     maxAperture:2.0, minAperture:22, weight:340, length:62.1, diameter:66,
     filterThread:52, minFocusDist:30, maxMagnification:0.14,
     elements:9, groups:6, blades:10, afType:'Manual',
@@ -2635,7 +2638,7 @@ const LENSES = {
   /* ── Other budget makers (TTArtisan, Meike) ── */
   'ttartisan-27mm-f28': {
     name:'TTArtisan AF 27mm f/2.8', manufacturer:'TTArtisan', line:'AF', type:'Prime',
-    focalLength:27, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'41mm',
+    mount:'e', focalLength:27, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'41mm',
     maxAperture:2.8, minAperture:16, weight:93, length:41, diameter:64,
     filterThread:39, minFocusDist:35, maxMagnification:0.1,
     elements:6, groups:5, blades:7, afType:'STM',
@@ -2650,7 +2653,7 @@ const LENSES = {
 
   'meike-85mm-f18': {
     name:'Meike 85mm f/1.8 Full Frame AF', manufacturer:'Meike', line:'AF', type:'Prime',
-    focalLength:85, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'85mm',
+    mount:'e', focalLength:85, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'85mm',
     maxAperture:1.8, minAperture:22, weight:386, length:92, diameter:80,
     filterThread:67, minFocusDist:85, maxMagnification:0.12,
     elements:null, groups:null, blades:9, afType:'STM',
@@ -2665,7 +2668,7 @@ const LENSES = {
 
   '7artisans-27mm-f28': {
     name:'7Artisans AF 27mm f/2.8', manufacturer:'7Artisans', line:'AF', type:'Prime',
-    focalLength:27, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'41mm',
+    mount:'e', focalLength:27, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'41mm',
     maxAperture:2.8, minAperture:16, weight:172, length:48, diameter:64,
     filterThread:52, minFocusDist:30, maxMagnification:0.1,
     elements:6, groups:5, blades:6, afType:'STM',
@@ -2680,7 +2683,7 @@ const LENSES = {
 
   'samyang-24mm-f18': {
     name:'Samyang AF 24mm f/1.8 FE', manufacturer:'Samyang', line:'AF', type:'Prime',
-    focalLength:24, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'24mm',
+    mount:'e', focalLength:24, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'24mm',
     maxAperture:1.8, minAperture:22, weight:230, length:71.5, diameter:65,
     filterThread:58, minFocusDist:19, maxMagnification:0.12,
     elements:11, groups:8, blades:9, afType:'Linear STM',
@@ -2695,7 +2698,7 @@ const LENSES = {
 
   'samyang-45mm-f18': {
     name:'Samyang AF 45mm f/1.8 FE', manufacturer:'Samyang', line:'AF', type:'Prime',
-    focalLength:45, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'45mm',
+    mount:'e', focalLength:45, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'45mm',
     maxAperture:1.8, minAperture:22, weight:162, length:56.1, diameter:62,
     filterThread:49, minFocusDist:45, maxMagnification:0.11,
     elements:7, groups:6, blades:9, afType:'Linear STM',
@@ -2710,7 +2713,7 @@ const LENSES = {
 
   'zeiss-touit-32mm-f18': {
     name:'Zeiss Touit 32mm f/1.8', manufacturer:'Zeiss', line:'Touit', type:'Prime',
-    focalLength:32, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'48mm',
+    mount:'e', focalLength:32, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'48mm',
     maxAperture:1.8, minAperture:22, weight:200, length:76, diameter:65,
     filterThread:52, minFocusDist:30, maxMagnification:0.11,
     elements:8, groups:5, blades:9, afType:'Autofocus',
@@ -2725,7 +2728,7 @@ const LENSES = {
   /* ── Sigma I-series primes (17/4, 45/2.8, 50/2) — discontinued, still sold ── */
   'sigma-17mm-f4-dg': {
     name:'Sigma 17mm f/4 DG DN Contemporary', manufacturer:'Sigma', line:'Contemporary', type:'Prime',
-    focalLength:17, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'17mm',
+    mount:'e', focalLength:17, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'17mm',
     maxAperture:4.0, minAperture:22, weight:220, length:50.8, diameter:64,
     filterThread:55, minFocusDist:12, maxMagnification:0.28,
     elements:9, groups:8, blades:7, afType:'Stepping Motor',
@@ -2738,7 +2741,7 @@ const LENSES = {
 
   'sigma-45mm-f28-dg': {
     name:'Sigma 45mm f/2.8 DG DN Contemporary', manufacturer:'Sigma', line:'Contemporary', type:'Prime',
-    focalLength:45, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'45mm',
+    mount:'e', focalLength:45, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'45mm',
     maxAperture:2.8, minAperture:22, weight:230, length:48.2, diameter:64,
     filterThread:55, minFocusDist:24, maxMagnification:0.25,
     elements:8, groups:7, blades:7, afType:'Stepping Motor',
@@ -2751,7 +2754,7 @@ const LENSES = {
 
   'sigma-50mm-f2-dg': {
     name:'Sigma 50mm f/2 DG DN Contemporary', manufacturer:'Sigma', line:'Contemporary', type:'Prime',
-    focalLength:50, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'50mm',
+    mount:'e', focalLength:50, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'50mm',
     maxAperture:2.0, minAperture:22, weight:345, length:70, diameter:70,
     filterThread:58, minFocusDist:45, maxMagnification:0.14,
     elements:11, groups:9, blades:9, afType:'Stepping Motor',
@@ -2764,7 +2767,7 @@ const LENSES = {
 
   'tamron-70-300mm-f45-63': {
     name:'Tamron 70-300mm f/4.5-6.3 Di III RXD', manufacturer:'Tamron', line:'Di III', type:'Zoom',
-    focalLength:null, focalLengthMin:70, focalLengthMax:300, focalLengthEquiv:'70-300mm',
+    mount:'e', focalLength:null, focalLengthMin:70, focalLengthMax:300, focalLengthEquiv:'70-300mm',
     maxAperture:4.5, minAperture:22, weight:545, length:148, diameter:77,
     filterThread:67, minFocusDist:80, maxMagnification:0.11,
     elements:15, groups:10, blades:7, afType:'Stepping Motor',

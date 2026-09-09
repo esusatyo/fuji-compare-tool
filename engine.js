@@ -78,6 +78,40 @@ const LENSES = IS_COMPARE ? {} : ACTIVE_BRAND.LENSES;
 const LENS_DROPDOWN_GROUPS = IS_COMPARE ? [] : ACTIVE_BRAND.LENS_DROPDOWN_GROUPS;
 const REGISTERED_BRANDS = (Object.values(REGISTRY)[0] || {}).REGISTERED_BRANDS;
 
+// Mount id → display label, merged across every brand loaded on the page (one
+// on a brand page, all six on compare/). Ids are site-wide rather than
+// brand-scoped — `l` is L-Mount for both Panasonic and Sigma — and a Tier 1
+// test pins that no two brands give the same id different labels. The merged
+// map is what lets a spec row resolve a label from the item alone: spec `fn`s
+// receive the item, not the id, so they cannot reach their own brand's config.
+const MOUNTS_BY_ID = (() => {
+  const map = {};
+  for (const data of Object.values(REGISTRY)) {
+    for (const m of (data.BRAND_CONFIG.mounts || [])) map[m.id] = m;
+  }
+  return map;
+})();
+
+// A fixed-lens body has no mount. It carries its lineup's id so it stays
+// visible under that filter chip (an X100VI belongs in the X list), but
+// printing "X-Mount" in a spec row would claim something untrue — so name the
+// system instead, which is still the useful comparison against an X-T5.
+function mountName(mountId) {
+  const m = MOUNTS_BY_ID[mountId];
+  return m ? m.label : mountId;
+}
+
+// Cameras only. A lens always has a real mount, so it uses mountName directly;
+// a body may not, which is what this handles. `system` is the line's own name
+// where the mount label is not it — Fujifilm's G-Mount bodies are the GFX line,
+// and nobody calls them "G".
+function cameraMountLabel(cam) {
+  const m = MOUNTS_BY_ID[cam.mount];
+  if (!m) return cam.mount;
+  if (cam.lensType !== 'Fixed') return m.label;
+  return `Fixed lens (${m.system || m.label.replace(/-Mount$/, '')} system)`;
+}
+
 // ─────────────────────────────────────────────
 // CURRENCY CONFIG
 // ─────────────────────────────────────────────
@@ -185,6 +219,7 @@ const SPEC_SECTIONS = [
   {
     id: 'lens', label: 'Lens System',
     specs: [
+      { key: 'mount',        label: 'Lens Mount',       type: 'text',    fn: c => cameraMountLabel(c) },
       { key: 'lensType',     label: 'Lens Type',        type: 'text',    fn: c => c.lensType },
       { key: 'lensSpec',     label: 'Fixed Lens',       type: 'text',    fn: c => c.lensSpec || '—' },
     ]
@@ -345,6 +380,7 @@ const LENS_SPEC_SECTIONS = [
     specs: [
       { key: 'manufacturer', label: 'Manufacturer',    type: 'text',   fn: l => l.manufacturer },
       { key: 'line',         label: 'Lens Line',       type: 'text',   fn: l => l.line },
+      { key: 'mount',        label: 'Mount',           type: 'text',   fn: l => mountName(l.mount) },
       { key: 'lensType',     label: 'Type',            type: 'text',   fn: l => l.type },
       { key: 'year',         label: 'Year Introduced', type: 'text',   fn: l => l.year },
       { key: 'status',       label: 'Status',          type: 'text',   fn: l => l.discontinued ? '🔴 Discontinued' : '🟢 Current' },
@@ -442,13 +478,60 @@ let numSlots = 3;
 
 // Pure so the clamp rule is unit-testable: below the mobile breakpoint
 // exactly 2 slots show; the user's choice is preserved and restored
-// when the viewport widens again.
-function effectiveSlots(choice, width) {
-  return width >= 600 ? choice : 2;
+// when the viewport widens again. `available` is the ceiling the active mount
+// filter imposes — Sigma's SA-Mount has two bodies against a three-slot
+// layout, so without this the third slot would keep an L-Mount camera the
+// filter claims to have excluded. It can go to 1; the viewport clamp cannot.
+function effectiveSlots(choice, width, available = Infinity) {
+  const byWidth = width >= 600 ? choice : MIN_SLOTS;
+  return Math.max(1, Math.min(byWidth, available));
 }
 
 function getNumSlots() {
-  return effectiveSlots(slotChoice, window.innerWidth);
+  return effectiveSlots(slotChoice, window.innerWidth, availableCount());
+}
+
+// ─────────────────────────────────────────────
+// MOUNT FILTER
+//
+// Brands spanning more than one mount (Fujifilm X/G, Panasonic L/MFT, Sigma
+// L/SA) can restrict both pickers to one of them. `activeMount` is null for
+// "All". A mount earns a chip in a mode when it has at least one item there,
+// and the row renders only when two or more qualify — a lone chip beside "All"
+// offers no choice, which is why Sigma's lens tab (36 L-Mount, 0 SA-Mount)
+// shows no row at all while its camera tab shows both.
+// ─────────────────────────────────────────────
+let activeMount = null;
+
+function mountsForMode(mode) {
+  const declared = BRAND_CONFIG.mounts || [];
+  if (declared.length < 2) return [];
+  const items = MODE_CONFIG[mode].items;
+  const present = new Set(Object.values(items).map(it => it.mount));
+  const qualifying = declared.filter(m => present.has(m.id));
+  return qualifying.length >= 2 ? qualifying : [];
+}
+
+// The mode's item ids in dropdown order — the order the user sees — optionally
+// restricted to one mount. `null` means every item.
+function itemsInMount(mode, mountId) {
+  const c = MODE_CONFIG[mode];
+  const ids = [];
+  for (const grp of c.dropdownGroups) {
+    for (const id of grp.ids) {
+      const it = c.items[id];
+      if (!it) continue;
+      if (mountId && it.mount !== mountId) continue;
+      ids.push(id);
+    }
+  }
+  return ids;
+}
+
+// How many items the active filter leaves to fill slots with. Unfiltered this
+// is unbounded — the viewport and the user's choice are the only limits.
+function availableCount() {
+  return activeMount ? itemsInMount(currentMode, activeMount).length : Infinity;
 }
 
 // ─────────────────────────────────────────────
@@ -510,16 +593,54 @@ function buildBrandSwitcher() {
 // the camera slot pickers. Hidden below the mobile breakpoint via CSS
 // — narrow viewports are clamped to 2 regardless (see effectiveSlots),
 // so the control has nothing useful to offer there.
+function buildSlotCountSlot() {
+  return `<div id="slot-count-slot">${buildSlotCountField()}</div>`;
+}
+
+// Wrapped above, because the field's contents depend on the active mount
+// filter and so are re-rendered with everything else.
 function buildSlotCountField() {
   if (MAX_SLOTS <= MIN_SLOTS) return '';
+  // An active mount filter caps what the table can show. When the cap leaves no
+  // real choice the control is dropped rather than offering counts that would
+  // silently clamp — `slotChoice` is untouched, so it returns intact on "All".
+  const cap = Math.min(MAX_SLOTS, availableCount());
+  if (cap <= MIN_SLOTS) return '';
   let options = '';
-  for (let n = MIN_SLOTS; n <= MAX_SLOTS; n++) {
-    options += `<option value="${n}"${n === slotChoice ? ' selected' : ''}>${n}</option>`;
+  const shown = Math.min(slotChoice, cap);
+  for (let n = MIN_SLOTS; n <= cap; n++) {
+    options += `<option value="${n}"${n === shown ? ' selected' : ''}>${n}</option>`;
   }
   return `<div class="slot-count-field">
     <label for="slot-count-select">Cameras to compare</label>
     <select id="slot-count-select" class="slot-count-select" aria-label="Number of cameras to compare">${options}</select>
   </div>`;
+}
+
+// The wrapper is emitted only for brands that declare two or more mounts, so
+// a single-mount brand's DOM is untouched. Its contents are re-rendered per
+// mode, and can legitimately be empty (see mountsForMode).
+function buildMountFilterSlot() {
+  if ((BRAND_CONFIG.mounts || []).length < 2) return '';
+  return `<div id="mount-filter-slot">${buildMountFilterHTML()}</div>`;
+}
+
+function buildMountFilterHTML() {
+  const mounts = mountsForMode(currentMode);
+  if (!mounts.length) return '';
+  const chip = (id, label) => {
+    const on = id === activeMount;
+    return `<button type="button" class="mount-chip${on ? ' active' : ''}" ` +
+      `data-mount="${id === null ? '' : id}" aria-pressed="${on}">${label}</button>`;
+  };
+  // The chips live in their own track so it can scroll sideways on a narrow
+  // screen while the label stays pinned — scrolling the label out of view
+  // would leave an unlabelled row of pills.
+  return `<div class="mount-filter" id="mount-filter" role="group" aria-label="Filter by mount">` +
+    `<span class="mount-filter-label">Mount</span>` +
+    `<div class="mount-chips">` +
+    chip(null, 'All') + mounts.map(m => chip(m.id, m.label)).join('') +
+    `</div></div>`;
 }
 
 function buildFooterLinks() {
@@ -582,10 +703,11 @@ function injectBody() {
 </div>
 
 <div id="compare-header">
+  ${buildMountFilterSlot()}
   <div class="compare-grid" id="compare-grid-header">
     <div class="compare-label-cell${MAX_SLOTS > MIN_SLOTS ? ' compare-label-cell--compare' : ''}">
       <span class="compare-label-text">Compare</span>
-      ${buildSlotCountField()}
+      ${buildSlotCountSlot()}
     </div>
     ${Array.from({ length: MAX_SLOTS }, (_, i) =>
       `<div class="compare-slot${i === 2 && !IS_COMPARE ? ' slot-3-hide' : ''}" id="slot-${i}"></div>`).join('\n    ')}
@@ -655,8 +777,13 @@ function buildSelectHTML(currentId, slotIndex) {
   const otherIds = cfg().selectedIds().filter((_, i) => i !== slotIndex && i < numSlots);
   let html = `<select class="slot-select" data-slot="${slotIndex}">`;
   for (const grp of cfg().dropdownGroups) {
+    const ids = grp.ids.filter(id => {
+      const it = cfg().items[id];
+      return it && (!activeMount || it.mount === activeMount);
+    });
+    if (!ids.length) continue; // a group wholly outside the active mount
     html += `<optgroup label="${grp.label}">`;
-    for (const id of grp.ids) {
+    for (const id of ids) {
       const item = cfg().items[id];
       if (!item) continue;
       const disabled = otherIds.includes(id) ? 'disabled' : '';
@@ -736,6 +863,10 @@ function renderSlot(slotIndex) {
 // ─────────────────────────────────────────────
 function computeWinners(spec) {
   const vals = cfg().selectedIds().slice(0, numSlots).map(id => spec.fn(cfg().items[id]));
+  // One column wins every row it has a value for, which is noise rather than
+  // information. A single slot only happens under a mount filter that offers
+  // one item.
+  if (numSlots < 2) return vals.map(() => false);
   if (!spec.higherBetter && !spec.lowerBetter) return vals.map(() => false);
   const nums = vals.map(v => typeof v === 'number' ? v : null);
   if (nums.every(v => v === null)) return vals.map(() => false);
@@ -823,6 +954,12 @@ function renderTable() {
 function renderAll() {
   document.documentElement.style.setProperty('--num-slots', numSlots);
 
+  const filterSlot = document.getElementById('mount-filter-slot');
+  if (filterSlot) filterSlot.innerHTML = buildMountFilterHTML();
+
+  const countSlot = document.getElementById('slot-count-slot');
+  if (countSlot) countSlot.innerHTML = buildSlotCountField();
+
   for (let i = 0; i < MAX_SLOTS; i++) {
     const el = document.getElementById(`slot-${i}`);
     if (el) el.style.display = i < numSlots ? '' : 'none';
@@ -847,13 +984,54 @@ function attachSlotListeners() {
   });
 }
 
+// Activating a mount replaces every slot holding an item from another mount
+// with the first free item of the chosen one, in dropdown order, and leaves
+// in-mount slots alone — so the table never contradicts the active chip.
+// "All" swaps nothing, which is what keeps a deliberate cross-mount comparison
+// (an S5 II against a GH7) reachable.
+function swapOutOfMountSlots() {
+  if (!activeMount) return false;
+  const ids = cfg().selectedIds();
+  const inMount = id => cfg().items[id] && cfg().items[id].mount === activeMount;
+  const taken = new Set(ids.filter(inMount));
+  const pool = itemsInMount(currentMode, activeMount).filter(id => !taken.has(id));
+  let next = 0, changed = false;
+  for (let i = 0; i < ids.length; i++) {
+    if (inMount(ids[i])) continue;
+    if (next >= pool.length) break; // fewer items than slots; the clamp hides the rest
+    cfg().setSelectedId(i, pool[next++]);
+    changed = true;
+  }
+  return changed;
+}
+
+function applyMountFilter(mountId) {
+  activeMount = mountId;
+  if (swapOutOfMountSlots()) updateHash();
+  numSlots = getNumSlots();
+  renderAll();
+}
+
 function attachEventListeners() {
+  // Delegated: the chip row is re-rendered on every mode switch and filter change.
+  document.getElementById('mount-filter-slot')?.addEventListener('click', e => {
+    const btn = e.target.closest('.mount-chip');
+    if (!btn) return;
+    const id = btn.dataset.mount || null;
+    if (id === activeMount) return;
+    applyMountFilter(id);
+  });
+
   document.getElementById('currency-select').addEventListener('change', e => {
     currentCurrency = e.target.value;
     renderAll();
   });
 
-  document.getElementById('slot-count-select')?.addEventListener('change', e => {
+  // Delegated: the select is re-rendered whenever the mount filter changes what
+  // counts it can honestly offer, so a listener bound to the element itself
+  // would be orphaned after the first re-render.
+  document.getElementById('slot-count-slot')?.addEventListener('change', e => {
+    if (e.target.id !== 'slot-count-select') return;
     const n = parseInt(e.target.value, 10);
     if (!n || n === slotChoice) return;
     slotChoice = n;
@@ -867,6 +1045,17 @@ function attachEventListeners() {
     if (!btn || btn.dataset.mode === currentMode) return;
     currentMode = btn.dataset.mode;
     if (!IS_COMPARE) slotChoice = brandSlotChoice(currentMode);
+    // A mount with no chip in the destination mode cannot stay active — Sigma's
+    // SA-Mount has bodies but no lenses, so switching to Lenses drops to "All".
+    if (activeMount && !mountsForMode(currentMode).some(m => m.id === activeMount)) {
+      activeMount = null;
+    }
+    // Each mode carries its own selection, and the destination mode's defaults
+    // are not necessarily in the active mount — without this the pickers fall
+    // back to their first option (showing one lens twice) while the spec table
+    // below still reads the untouched, out-of-mount ids.
+    swapOutOfMountSlots();
+    numSlots = getNumSlots();
     document.querySelectorAll('.mode-btn').forEach(b => b.classList.remove('active'));
     btn.classList.add('active');
     document.getElementById('hero-eyebrow').textContent = cfg().heroEyebrow;
