@@ -58,6 +58,11 @@ test('[root] valid stored brand "nikon" is honored', () => {
   assert.equal(runRedirect({ stored: 'nikon', hash: '#lenses' }), './nikon/#lenses');
 });
 
+test('[root] valid stored brand "sigma" is honored', () => {
+  assert.equal(runRedirect({ stored: 'sigma' }), './sigma/');
+  assert.equal(runRedirect({ stored: 'sigma', hash: '#lenses' }), './sigma/#lenses');
+});
+
 test('[root] valid stored brand "panasonic" is honored', () => {
   assert.equal(runRedirect({ stored: 'panasonic' }), './panasonic/');
   assert.equal(runRedirect({ stored: 'panasonic', hash: '#lenses' }), './panasonic/#lenses');
@@ -92,7 +97,7 @@ test('[root] served HTML contains crawlable landing content (present without JS)
   const html = fs.readFileSync(path.join(ROOT, 'index.html'), 'utf8');
   assert.match(html, /<h1[^>]*>[^<]*Compare Camera Specs[^<]*<\/h1>/, 'landing h1 missing');
   // One brand card link per registered brand.
-  for (const brand of ['canon', 'fujifilm', 'nikon', 'panasonic', 'sony']) {
+  for (const brand of ['canon', 'fujifilm', 'nikon', 'panasonic', 'sigma', 'sony']) {
     assert.match(html, new RegExp(`href="\\./${brand}/"`), `landing missing link to ${brand}`);
   }
   // At least one link into the comparison cluster, as a clean URL.

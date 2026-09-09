@@ -5,7 +5,7 @@ The harness loads each brand's `data.js` (and optionally `engine.js`) into jsdom
 Key facts that shape the new tests:
 - The compare table is built by `renderTable()`; each spec cell is `formatVal(spec, item)`, which already maps `null`/`undefined`/false to an em-dash/cross. A leaked literal `"undefined"`/`"NaN"` therefore means a spec `fn` returned a bad value (e.g. string concatenation over a missing field), not a missing null-guard in the renderer.
 - Images are remote Wikimedia/retailer URLs rendered by `buildPlaceholder()` as `<img ... onerror=SVG fallback>`; when `imageUrl` is absent an SVG placeholder is rendered using `seriesColor()` / `MANUFACTURER_COLORS`.
-- `imageUrl`/`buyUrl`/`productUrl` are optional and only schema-checked as "https string"; nothing checks host, extension, or duplication.
+- `imageUrl`/`productUrl` are optional and only schema-checked as "https string"; nothing checks host, extension, or duplication. (`buyUrl` no longer exists — buy links are generated per-currency from `asin`.)
 
 ## Goals / Non-Goals
 
@@ -35,7 +35,7 @@ After rendering, assert every `.spec-value` cell has non-empty trimmed text (the
 Assert via the rendered slot DOM: when `imageUrl` is set the slot contains an `<img class="cam-photo">` with non-empty `alt`; otherwise it contains a `.cam-placeholder` with a resolved background colour. This re-uses `seriesColor`/`MANUFACTURER_COLORS` through the engine rather than reaching into them.
 
 ### Offline link hygiene uses `new URL()` + a shared domain allowlist
-A new `helpers/link-policy.js` exports `ALLOWED_HOSTS` (suffix match: wikimedia/wikipedia, amazon TLDs, manufacturer + known retailer domains) and a `kindOf`/extension helper. Tests parse every URL with `new URL()` (catches malformed), assert host suffix ∈ allowlist, assert `imageUrl` path ends in `.jpg|.jpeg|.png|.webp|.gif|.svg`, and build maps to detect a URL reused across different product ids. `buyUrl` presence is required only for non-discontinued items. The allowlist is intentionally a suffix allowlist so subdomains/regional TLDs pass; adding a new retailer is a one-line edit.
+A new `helpers/link-policy.js` exports `ALLOWED_HOSTS` (suffix match: wikimedia/wikipedia, amazon TLDs, manufacturer + known retailer domains) and a `kindOf`/extension helper. Tests parse every URL with `new URL()` (catches malformed), assert host suffix ∈ allowlist, assert `imageUrl` path ends in `.jpg|.jpeg|.png|.webp|.gif|.svg`, and build **per-brand** maps to detect a URL reused across different product ids within one brand (cross-brand reuse is legitimate). There is no `buyUrl` to check. The allowlist is intentionally a suffix allowlist so subdomains/regional TLDs pass; adding a new retailer is a one-line edit.
 
 *Alternative considered:* regex-validate URLs. Rejected — `new URL()` is the correct parser and gives host/pathname for free.
 

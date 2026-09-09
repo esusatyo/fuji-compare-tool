@@ -222,20 +222,15 @@ const KNOWN_IMAGE_GAPS = {
     // 57.6mm diameter / ⌀46mm filter, matching this entry's stored 38/58/46
     // almost exactly (rounding). Superseded the earlier wrong-generation
     // Commons rejection below.
-    // voigtlander-apo-lanthar-35mm-f2-l / -50mm-f2-l: investigated
-    // 2026-08-17 — Voigtländer does not currently manufacture any lens in
-    // the modern Leica/Panasonic/Sigma L-Mount Alliance mount. Their own
-    // site explicitly warns "Voigtländer L-mount has nothing in common with
-    // the L-mount from Leica, Sigma, Panasonic and Leitz Cine lens!" (it
-    // refers to a decades-old L39 screw mount instead), voigtlaender.de has
-    // no /l-mount/ or /lenses/l-mount/ path for either lens (both 404, and
-    // the 50mm's stored productUrl silently redirects to the Nikon Z-mount
-    // page instead), and multiple independent sources confirm Voigtländer's
-    // APO-Lanthar/Nokton lines ship in VM/Sony E/Nikon Z/Canon RF only, not
-    // native L-mount. This calls the underlying data entries into question,
-    // not just their images — flagged to the repo owner for a decision
-    // rather than deleted unilaterally.
-    'voigtlander-apo-lanthar-35mm-f2-l', 'voigtlander-apo-lanthar-50mm-f2-l',
+    // voigtlander-apo-lanthar-35mm-f2-l / -50mm-f2-l: RESOLVED 2026-09-09 —
+    // both entries DELETED from panasonic/data.js. The 2026-08-17
+    // investigation concluded they were fabricated: Voigtländer makes no lens
+    // in the modern L-Mount Alliance mount (its own site warns its
+    // "Voigtländer L-mount" is a decades-old L39 screw mount with "nothing in
+    // common with the L-mount from Leica, Sigma, Panasonic"), both stored
+    // productUrls 404, and the APO-Lanthar line ships in VM/Sony E/Nikon
+    // Z/Canon RF only. The repo owner confirmed and approved removal. Their
+    // dead links were the only failures in `npm run test:links`.
     // lumix-g-12-32mm-f3-5-5-6: the US shop.panasonic.com product page
     // 404s for this kit lens (pre-existing productUrl note); Panasonic's JP
     // site (panasonic.jp) has no standalone product photo, only marketing

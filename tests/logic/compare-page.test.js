@@ -62,7 +62,7 @@ test('cameras only: no mode toggle, slot-count dropdown instead', () => {
 test('dropdowns group by brand and every option id is namespaced', () => {
   const { window } = loadCompare();
   const groups = [...slotSelect(window, 0).querySelectorAll('optgroup')];
-  assert.deepEqual(groups.map(g => g.label), ['Fujifilm', 'Canon', 'Sony', 'Nikon', 'Panasonic']);
+  assert.deepEqual(groups.map(g => g.label), ['Fujifilm', 'Canon', 'Sony', 'Nikon', 'Panasonic', 'Sigma']);
   const opts = [...slotSelect(window, 0).querySelectorAll('option')];
   assert.ok(opts.length > 100, 'all brands\' cameras offered');
   for (const o of opts) {
@@ -136,8 +136,8 @@ test('foreign cameras show "—" in brand-tagged rows', () => {
 test('one camera from each brand renders every brand section without throwing', () => {
   const { window } = loadCompare();
   clickSlotCount(window, 4);
-  // 4 slots can hold 4 of the 5 brands; swap slot 0 through the fifth
-  // (Panasonic) as well so every brand-tagged spec fn sees foreigners.
+  // 4 slots can hold 4 of the 6 brands; swap the remaining two through a slot
+  // as well so every brand-tagged spec fn sees foreigners.
   setSlot(window, 3, 'panasonic:s5-ii');
   for (const title of ['Film Simulations', 'Color Science & AI AF', 'Dual Pixel AF', 'C-Log', 'Panasonic Video']) {
     assert.ok(sectionByTitle(window, title), `${title} section rendered`);
@@ -145,6 +145,14 @@ test('one camera from each brand renders every brand section without throwing', 
   setSlot(window, 0, 'nikon:z8');
   assert.ok(sectionByTitle(window, 'Nikon Imaging'), 'Nikon section rendered');
   assert.equal(sectionByTitle(window, 'Film Simulations'), null, 'Fujifilm section gone with its camera');
+
+  // Sigma's section reads foveonGen/internalStorage, which are null on the BF
+  // and absent entirely on every non-Sigma camera — so this also exercises the
+  // "foreign camera shows an em-dash" path.
+  setSlot(window, 1, 'sigma:sd-quattro');
+  assert.ok(sectionByTitle(window, 'Foveon & L-Mount'), 'Sigma section rendered');
+  setSlot(window, 1, 'canon:eos-r5-ii');
+  assert.equal(sectionByTitle(window, 'Foveon & L-Mount'), null, 'Sigma section gone with its camera');
 });
 
 test('brand-tagged winner ignores foreign cameras', () => {

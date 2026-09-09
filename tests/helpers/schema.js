@@ -216,7 +216,9 @@ function validateCamera(id, cam, brandSections = []) {
   add(checkField(cam, 'name', { type: 'string' }));
   add(checkField(cam, 'series', { type: 'string' }));
   add(checkField(cam, 'tagline', { type: 'string' }));
-  add(checkField(cam, 'year', { type: 'number', min: 2010, max: 2027 }));
+  // Floor matches the lens floor below. Sigma's DP compacts start in 2008, and
+  // the bound is only a fat-finger guard (`year: 210`), not a scoping rule.
+  add(checkField(cam, 'year', { type: 'number', min: 2008, max: 2027 }));
   add(checkField(cam, 'discontinued', { type: 'boolean' }));
 
   add(checkField(cam, 'sensorMP', { type: 'number', min: 1, max: 200 }));
@@ -290,6 +292,12 @@ function validateCamera(id, cam, brandSections = []) {
     add(checkField(cam, 'nRaw', { type: 'string', nullable: true }));
     add(checkField(cam, 'pixelShift', { type: 'string', nullable: true }));
     add(checkField(cam, 'preCapture', { type: 'boolean' }));
+  }
+  if (brandSections.includes('sigma')) {
+    add(checkField(cam, 'foveonGen', { type: 'string', nullable: true }));
+    add(checkField(cam, 'shutterType', { type: 'string' }));
+    add(checkField(cam, 'internalStorage', { type: 'string', nullable: true }));
+    add(checkField(cam, 'lLog', { type: 'boolean' }));
   }
   if (brandSections.includes('panasonic')) {
     add(checkField(cam, 'vLog', { type: 'string', nullable: true }));
