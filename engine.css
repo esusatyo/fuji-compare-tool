@@ -211,17 +211,12 @@ body {
 }
 .mount-chips::-webkit-scrollbar { display: none; }
 
-/* One height at every width. The chip is a touch target, so it does not shrink
-   with the breakpoint the way the header buttons do — and a chip that changed
-   height as the viewport crossed 600px made the sticky header jump. inline-flex
-   because a bare button with a min-height does not reliably centre its label. */
+/* One size at every width — the responsive block must not touch it, or the
+   sticky header jumps as the viewport crosses 600px (a test enforces that).
+   Sized to match .mode-btn rather than enlarged for touch. */
 .mount-chip {
   flex-shrink: 0;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 36px;
-  padding: 6px 13px;
+  padding: 5px 12px;
   font-size: 12px;
   font-weight: 600;
   color: var(--text-secondary);
