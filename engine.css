@@ -182,23 +182,37 @@ body {
 
 .mount-filter {
   display: flex;
-  flex-wrap: wrap;
   align-items: center;
-  gap: 6px;
+  gap: 10px;
   padding: 10px 16px;
   border-bottom: 1px solid var(--border);
 }
 
 .mount-filter-label {
+  flex-shrink: 0;
   font-size: 11px;
   color: var(--text-secondary);
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.06em;
-  margin-right: 4px;
 }
 
+/* The chips scroll sideways rather than wrapping: this row sits in the sticky
+   header, so growing a second line costs vertical space on exactly the screens
+   that have least of it. `min-width: 0` lets the track shrink below its content
+   width, which a flex item otherwise refuses to do. */
+.mount-chips {
+  display: flex;
+  gap: 6px;
+  flex: 1;
+  min-width: 0;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+.mount-chips::-webkit-scrollbar { display: none; }
+
 .mount-chip {
+  flex-shrink: 0;
   padding: 5px 12px;
   font-size: 12px;
   font-weight: 600;
@@ -641,9 +655,9 @@ footer a:hover { text-decoration: underline; }
      rather than shrinking them to match the header buttons. The 40px floor is
      deliberate — the header's own controls are ~26px tall and have a standing
      bug report about being hard to hit on a real iPad. */
-  .mount-filter { padding: 8px 10px; gap: 6px; }
+  .mount-filter { padding: 8px 10px; gap: 8px; }
   .mount-chip { padding: 7px 13px; font-size: 11px; min-height: 40px; }
-  .mount-filter-label { font-size: 10px; width: 100%; margin: 0 0 2px; }
+  .mount-filter-label { font-size: 10px; }
   .header-select { padding: 5px 6px; font-size: 11px; }
   /* The viewport already clamps to 2 slots here (effectiveSlots), so
      the "cameras to compare" choice has nothing to offer — hide it and

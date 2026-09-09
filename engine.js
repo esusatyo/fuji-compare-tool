@@ -633,10 +633,14 @@ function buildMountFilterHTML() {
     return `<button type="button" class="mount-chip${on ? ' active' : ''}" ` +
       `data-mount="${id === null ? '' : id}" aria-pressed="${on}">${label}</button>`;
   };
+  // The chips live in their own track so it can scroll sideways on a narrow
+  // screen while the label stays pinned — scrolling the label out of view
+  // would leave an unlabelled row of pills.
   return `<div class="mount-filter" id="mount-filter" role="group" aria-label="Filter by mount">` +
     `<span class="mount-filter-label">Mount</span>` +
+    `<div class="mount-chips">` +
     chip(null, 'All') + mounts.map(m => chip(m.id, m.label)).join('') +
-    `</div>`;
+    `</div></div>`;
 }
 
 function buildFooterLinks() {

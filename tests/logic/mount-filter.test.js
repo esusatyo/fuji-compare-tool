@@ -168,6 +168,18 @@ test('[sigma] the slot-count control drops out, then returns intact on All', () 
   assert.equal(doc.documentElement.style.getPropertyValue('--num-slots'), '3');
 });
 
+// The chips sit in their own track so it can scroll sideways on a narrow screen
+// while the label stays pinned. jsdom cannot check the scrolling, but it can
+// hold the structure the CSS depends on.
+test('[panasonic] the label sits outside the scrolling chip track', () => {
+  const row = page('panasonic').document.getElementById('mount-filter');
+  const track = row.querySelector('.mount-chips');
+  assert.ok(track, 'chips are wrapped in a .mount-chips track');
+  assert.equal(track.querySelectorAll('.mount-chip').length, 3, 'every chip is inside it');
+  assert.equal(row.querySelector('.mount-filter-label').closest('.mount-chips'), null,
+    'the label must stay outside the track, or it scrolls away with the chips');
+});
+
 test('[panasonic] chips carry their pressed state for assistive tech', () => {
   const doc = page('panasonic').document;
   const pressed = () => [...doc.querySelectorAll('.mount-chip')]
