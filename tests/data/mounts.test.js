@@ -41,6 +41,27 @@ const SENSOR_RULES = {
   sigma:     [[/Foveon/, 'sa'], [/Full-frame/, 'l']],
 };
 
+// The "Lens Mount" spec row resolves a label from the item's mount id alone,
+// because spec `fn`s receive the item and not its brand. That only works while
+// ids mean the same thing site-wide — `l` is L-Mount in both Panasonic and
+// Sigma. A future brand reusing an id for something else would silently
+// mislabel the other brand's cameras on the cross-brand compare page.
+test('a mount id means the same thing in every brand', () => {
+  const seen = new Map();
+  const problems = [];
+  for (const brand of brandDirs()) {
+    for (const m of loadBrand(brand).data.BRAND_CONFIG.mounts || []) {
+      const prior = seen.get(m.id);
+      if (!prior) { seen.set(m.id, { brand, ...m }); continue; }
+      if (prior.label !== m.label || (prior.system || null) !== (m.system || null)) {
+        problems.push(`mount id "${m.id}": ${prior.brand} calls it ` +
+          `${JSON.stringify(prior.label)}, ${brand} calls it ${JSON.stringify(m.label)}`);
+      }
+    }
+  }
+  assert.deepEqual(problems, [], `\n${problems.join('\n')}`);
+});
+
 for (const brand of brandDirs()) {
   const { data } = loadBrand(brand);
   const declared = (data.BRAND_CONFIG.mounts || []).map(m => m.id);

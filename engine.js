@@ -78,6 +78,33 @@ const LENSES = IS_COMPARE ? {} : ACTIVE_BRAND.LENSES;
 const LENS_DROPDOWN_GROUPS = IS_COMPARE ? [] : ACTIVE_BRAND.LENS_DROPDOWN_GROUPS;
 const REGISTERED_BRANDS = (Object.values(REGISTRY)[0] || {}).REGISTERED_BRANDS;
 
+// Mount id → display label, merged across every brand loaded on the page (one
+// on a brand page, all six on compare/). Ids are site-wide rather than
+// brand-scoped — `l` is L-Mount for both Panasonic and Sigma — and a Tier 1
+// test pins that no two brands give the same id different labels. The merged
+// map is what lets a spec row resolve a label from the item alone: spec `fn`s
+// receive the item, not the id, so they cannot reach their own brand's config.
+const MOUNTS_BY_ID = (() => {
+  const map = {};
+  for (const data of Object.values(REGISTRY)) {
+    for (const m of (data.BRAND_CONFIG.mounts || [])) map[m.id] = m;
+  }
+  return map;
+})();
+
+// A fixed-lens body has no mount. It carries its lineup's id so it stays
+// visible under that filter chip (an X100VI belongs in the X list), but
+// printing "X-Mount" in a spec row would claim something untrue — so name the
+// system instead, which is still the useful comparison against an X-T5.
+// `system` is the line's own name where the mount label is not it — Fujifilm's
+// G-Mount bodies are the GFX line, and nobody calls them "G".
+function mountLabel(cam) {
+  const m = MOUNTS_BY_ID[cam.mount];
+  if (!m) return cam.mount;
+  if (cam.lensType !== 'Fixed') return m.label;
+  return `Fixed lens (${m.system || m.label.replace(/-Mount$/, '')} system)`;
+}
+
 // ─────────────────────────────────────────────
 // CURRENCY CONFIG
 // ─────────────────────────────────────────────
@@ -185,6 +212,7 @@ const SPEC_SECTIONS = [
   {
     id: 'lens', label: 'Lens System',
     specs: [
+      { key: 'mount',        label: 'Lens Mount',       type: 'text',    fn: c => mountLabel(c) },
       { key: 'lensType',     label: 'Lens Type',        type: 'text',    fn: c => c.lensType },
       { key: 'lensSpec',     label: 'Fixed Lens',       type: 'text',    fn: c => c.lensSpec || '—' },
     ]

@@ -211,3 +211,33 @@ test('[panasonic] the mobile 2-slot clamp still applies under a filter', () => {
   chip(doc, 'mft').click();
   assert.equal(doc.documentElement.style.getPropertyValue('--num-slots'), '2');
 });
+
+// ── 7. the Lens Mount spec row ──────────────────────────────────────
+const mountRow = doc => {
+  const label = [...doc.querySelectorAll('.spec-label')].find(l => l.textContent === 'Lens Mount');
+  return label && [...label.parentElement.querySelectorAll('.spec-value')].map(v => v.textContent);
+};
+
+test('[panasonic] the spec table names each camera\'s mount', () => {
+  assert.deepEqual(mountRow(page('panasonic').document),
+    ['L-Mount', 'L-Mount', 'Micro Four Thirds']);
+});
+
+test('[canon] a single-mount brand still shows the row', () => {
+  assert.deepEqual(mountRow(page('canon').document), ['RF-Mount', 'RF-Mount', 'RF-Mount']);
+});
+
+// The 9 fixed-lens bodies carry a mount id so they stay visible under that
+// filter chip, but they have no mount — the row must not claim they do.
+test('[fujifilm] fixed-lens bodies name their system, not a mount', () => {
+  const doc = page('fujifilm', { hash: '#cameras=x100vi,gfx100rf,x-t5' }).document;
+  assert.deepEqual(mountRow(doc),
+    ['Fixed lens (X system)', 'Fixed lens (GFX system)', 'X-Mount']);
+});
+
+test('[compare] the row resolves labels across brands', () => {
+  const { window } = loadCompare();
+  const row = mountRow(window.document);
+  assert.ok(row.every(v => v && v !== '—'), `every cross-brand cell resolved: ${row}`);
+  assert.ok(new Set(row).size > 1, 'different brands should show different mounts');
+});

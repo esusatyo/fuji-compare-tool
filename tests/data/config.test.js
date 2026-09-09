@@ -33,6 +33,10 @@ for (const brand of allBrands) {
       assert.ok(/^[a-z0-9-]+$/.test(m.id), `mount id "${m.id}" must be kebab-case`);
       assert.equal(typeof m.label, 'string', `mount "${m.id}" needs a string label`);
       assert.ok(m.label.trim(), `mount "${m.id}" has an empty label`);
+      if ('system' in m) {
+        assert.equal(typeof m.system, 'string', `mount "${m.id}" system must be a string`);
+        assert.ok(m.system.trim(), `mount "${m.id}" has an empty system name`);
+      }
       assert.ok(!ids.has(m.id), `mount id "${m.id}" is declared twice`);
       ids.add(m.id);
     }
