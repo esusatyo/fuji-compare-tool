@@ -72,7 +72,7 @@ const CAMERAS = {
 
   /* ── Z Full-frame ── */
   'z9': {
-    name:'Z9', series:'Z (Full-frame)', year:2021, discontinued:false,
+    name:'Z9', series:'Z (Full-frame)', mount:'z', year:2021, discontinued:false,
     tagline:'Stacked-Sensor Pro Flagship',
     productUrl:'https://www.nikonusa.com/en/nikon-products/product/mirrorless-cameras/z-9.html',
     imageUrl:'https://upload.wikimedia.org/wikipedia/commons/thumb/f/fe/Nikon_Z9.jpg/500px-Nikon_Z9.jpg',
@@ -95,7 +95,7 @@ const CAMERAS = {
   },
 
   'z8': {
-    name:'Z8', series:'Z (Full-frame)', year:2023, discontinued:false,
+    name:'Z8', series:'Z (Full-frame)', mount:'z', year:2023, discontinued:false,
     tagline:'Z9 Power in a Smaller Body',
     productUrl:'https://www.nikonusa.com/en/nikon-products/product/mirrorless-cameras/z-8.html',
     imageUrl:'https://upload.wikimedia.org/wikipedia/commons/thumb/d/d9/Nikon_Z_8_27_may_2023b.jpg/500px-Nikon_Z_8_27_may_2023b.jpg',
@@ -118,7 +118,7 @@ const CAMERAS = {
   },
 
   'z6-iii': {
-    name:'Z6 III', series:'Z (Full-frame)', year:2024, discontinued:false,
+    name:'Z6 III', series:'Z (Full-frame)', mount:'z', year:2024, discontinued:false,
     tagline:'World-First Partially-Stacked Sensor',
     productUrl:'https://www.nikonusa.com/p/z6iii/1890/overview',
     imageUrl:'https://upload.wikimedia.org/wikipedia/commons/thumb/3/39/Nikon_Z6III_%28by_Henry_S%C3%B6derlund%29.jpg/500px-Nikon_Z6III_%28by_Henry_S%C3%B6derlund%29.jpg',
@@ -141,7 +141,7 @@ const CAMERAS = {
   },
 
   'z5-ii': {
-    name:'Z5 II', series:'Z (Full-frame)', year:2025, discontinued:false,
+    name:'Z5 II', series:'Z (Full-frame)', mount:'z', year:2025, discontinued:false,
     tagline:'EXPEED 7 Full-Frame Entry Point',
     productUrl:'https://www.nikonusa.com/p/z5ii/1680/overview',
     imageUrl:'https://upload.wikimedia.org/wikipedia/commons/thumb/8/88/Nikon_Z5II_03.jpg/500px-Nikon_Z5II_03.jpg',
@@ -164,7 +164,7 @@ const CAMERAS = {
 
   /* ── Z Cinema ── */
   'zr': {
-    name:'ZR', series:'Z Cinema (Full-frame)', year:2025, discontinued:false,
+    name:'ZR', series:'Z Cinema (Full-frame)', mount:'z', year:2025, discontinued:false,
     tagline:'RED-Powered Full-Frame Cinema',
     productUrl:'https://imaging.nikon.com/imaging/lineup/z_cinema/z_r/',
     imageUrl:'https://upload.wikimedia.org/wikipedia/commons/thumb/3/34/Nikon_ZR_27_nov_2025a.jpg/500px-Nikon_ZR_27_nov_2025a.jpg',
@@ -199,7 +199,7 @@ const CAMERAS = {
      so they keep discontinued:true and USD-only pricing; asin null → search
      link for those. */
   'z7-ii': {
-    name:'Z7 II', series:'Z (Full-frame)', year:2020, discontinued:false,
+    name:'Z7 II', series:'Z (Full-frame)', mount:'z', year:2020, discontinued:false,
     tagline:'High-Res Dual-Processor',
     productUrl:'https://www.nikonusa.com/en/nikon-products/product/mirrorless-cameras/z-7ii.html',
     imageUrl:'https://upload.wikimedia.org/wikipedia/commons/thumb/6/6e/Nikon_Z_7II_with_Nikkor_Z_24-70mm_F4_S_-_by_Henry_S%C3%B6derlund_%2850723434183%29.jpg/500px-Nikon_Z_7II_with_Nikkor_Z_24-70mm_F4_S_-_by_Henry_S%C3%B6derlund_%2850723434183%29.jpg',
@@ -220,7 +220,7 @@ const CAMERAS = {
   },
 
   'z7': {
-    name:'Z7', series:'Z (Full-frame)', year:2018, discontinued:true,
+    name:'Z7', series:'Z (Full-frame)', mount:'z', year:2018, discontinued:true,
     tagline:'First High-Res Z Body',
     productUrl:'https://www.nikonusa.com/en/nikon-products/product/mirrorless-cameras/z-7.html',
     imageUrl:'https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Nikon_Z7.jpg/500px-Nikon_Z7.jpg',
@@ -241,7 +241,7 @@ const CAMERAS = {
   },
 
   'z6-ii': {
-    name:'Z6 II', series:'Z (Full-frame)', year:2020, discontinued:false,
+    name:'Z6 II', series:'Z (Full-frame)', mount:'z', year:2020, discontinued:false,
     tagline:'Dual-Processor All-Rounder',
     productUrl:'https://www.nikonusa.com/en/nikon-products/product/mirrorless-cameras/z-6ii.html',
     imageUrl:'https://upload.wikimedia.org/wikipedia/commons/thumb/2/26/Nikon_Z_6II_2.jpg/500px-Nikon_Z_6II_2.jpg',
@@ -262,7 +262,7 @@ const CAMERAS = {
   },
 
   'z6': {
-    name:'Z6', series:'Z (Full-frame)', year:2018, discontinued:true,
+    name:'Z6', series:'Z (Full-frame)', mount:'z', year:2018, discontinued:true,
     tagline:'The Original 24MP Z',
     productUrl:'https://www.nikonusa.com/en/nikon-products/product/mirrorless-cameras/z-6.html',
     imageUrl:'https://upload.wikimedia.org/wikipedia/commons/thumb/c/cc/Nikon_Z_6_28_nov_2018a.jpg/500px-Nikon_Z_6_28_nov_2018a.jpg',
@@ -283,7 +283,7 @@ const CAMERAS = {
   },
 
   'z5': {
-    name:'Z5', series:'Z (Full-frame)', year:2020, discontinued:false,
+    name:'Z5', series:'Z (Full-frame)', mount:'z', year:2020, discontinued:false,
     tagline:'Full-Frame Entry (Original)',
     productUrl:'https://www.nikonusa.com/en/nikon-products/product/mirrorless-cameras/z-5.html',
     imageUrl:'https://upload.wikimedia.org/wikipedia/commons/thumb/b/ba/Nikon_Z_5_21_Oct_2020a.jpg/500px-Nikon_Z_5_21_Oct_2020a.jpg',
@@ -305,7 +305,7 @@ const CAMERAS = {
 
   /* ── Z APS-C (DX) ── */
   'z50-ii': {
-    name:'Z50 II', series:'Z (APS-C)', year:2024, discontinued:false,
+    name:'Z50 II', series:'Z (APS-C)', mount:'z', year:2024, discontinued:false,
     tagline:'EXPEED 7 Comes to DX',
     productUrl:'https://www.nikonusa.com/p/z50ii/1784/overview',
     imageUrl:'https://upload.wikimedia.org/wikipedia/commons/thumb/c/cb/Nikon_Z50II_28_nov_2024a.jpg/500px-Nikon_Z50II_28_nov_2024a.jpg',
@@ -328,7 +328,7 @@ const CAMERAS = {
   },
 
   'z50': {
-    name:'Z50', series:'Z (APS-C)', year:2019, discontinued:true,
+    name:'Z50', series:'Z (APS-C)', mount:'z', year:2019, discontinued:true,
     tagline:'First DX Z Body',
     productUrl:'https://www.nikonusa.com/en/nikon-products/product/mirrorless-cameras/z-50.html',
     imageUrl:'https://upload.wikimedia.org/wikipedia/commons/thumb/8/86/Nikon_Z_50_0.jpg/500px-Nikon_Z_50_0.jpg',
@@ -349,7 +349,7 @@ const CAMERAS = {
   },
 
   'z30': {
-    name:'Z30', series:'Z (APS-C)', year:2022, discontinued:false,
+    name:'Z30', series:'Z (APS-C)', mount:'z', year:2022, discontinued:false,
     tagline:'Vlogging DX, No Viewfinder',
     productUrl:'https://www.nikonusa.com/p/z-30/1737/overview',
     imageUrl:'https://upload.wikimedia.org/wikipedia/commons/thumb/f/fe/Nikon_Z30.jpg/500px-Nikon_Z30.jpg',
@@ -371,7 +371,7 @@ const CAMERAS = {
 
   /* ── Z Retro ── */
   'zf': {
-    name:'Zf', series:'Z (Retro)', year:2023, discontinued:false,
+    name:'Zf', series:'Z (Retro)', mount:'z', year:2023, discontinued:false,
     tagline:'Retro Full-Frame, Modern Guts',
     productUrl:'https://www.nikonusa.com/en/nikon-products/product/mirrorless-cameras/z-f.html',
     imageUrl:'https://upload.wikimedia.org/wikipedia/commons/thumb/3/3e/Nikon_Z_f_8_nov_2023a.jpg/500px-Nikon_Z_f_8_nov_2023a.jpg',
@@ -392,7 +392,7 @@ const CAMERAS = {
   },
 
   'zfc': {
-    name:'Zfc', series:'Z (Retro)', year:2021, discontinued:false,
+    name:'Zfc', series:'Z (Retro)', mount:'z', year:2021, discontinued:false,
     tagline:'Retro DX Crowd-Pleaser',
     productUrl:'https://www.nikonusa.com/en/nikon-products/product/mirrorless-cameras/z-fc.html',
     imageUrl:'https://upload.wikimedia.org/wikipedia/commons/thumb/6/64/Nikon_Z_fc_3_aug_2021a.jpg/500px-Nikon_Z_fc_3_aug_2021a.jpg',
@@ -439,7 +439,7 @@ const LENSES = {
 
   /* ── S-Line Primes ── */
   'z-50mm-f1-8-s': {
-    name:'NIKKOR Z 50mm f/1.8 S', manufacturer:'Nikon', line:'S-Line', type:'Prime', asin:'B07GQ6FR5F',
+    name:'NIKKOR Z 50mm f/1.8 S', manufacturer:'Nikon', line:'S-Line', type:'Prime', mount:'z', asin:'B07GQ6FR5F',
     focalLength:50, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'50mm',
     maxAperture:1.8, minAperture:16, weight:415, length:86.5, diameter:76.0,
     filterThread:62, minFocusDist:40, maxMagnification:0.15,
@@ -453,7 +453,7 @@ const LENSES = {
   },
 
   'z-20mm-f1-8-s': {
-    name:'NIKKOR Z 20mm f/1.8 S', manufacturer:'Nikon', line:'S-Line', type:'Prime', asin:'B084QPDT1H',
+    name:'NIKKOR Z 20mm f/1.8 S', manufacturer:'Nikon', line:'S-Line', type:'Prime', mount:'z', asin:'B084QPDT1H',
     focalLength:20, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'20mm',
     maxAperture:1.8, minAperture:16, weight:505, length:108.5, diameter:84.5,
     filterThread:77, minFocusDist:20, maxMagnification:0.19,
@@ -467,7 +467,7 @@ const LENSES = {
   },
 
   'z-24mm-f1-8-s': {
-    name:'NIKKOR Z 24mm f/1.8 S', manufacturer:'Nikon', line:'S-Line', type:'Prime', asin:'B07W86M8FG',
+    name:'NIKKOR Z 24mm f/1.8 S', manufacturer:'Nikon', line:'S-Line', type:'Prime', mount:'z', asin:'B07W86M8FG',
     focalLength:24, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'24mm',
     maxAperture:1.8, minAperture:16, weight:450, length:96.5, diameter:78.0,
     filterThread:72, minFocusDist:25, maxMagnification:0.15,
@@ -481,7 +481,7 @@ const LENSES = {
   },
 
   'z-35mm-f1-8-s': {
-    name:'NIKKOR Z 35mm f/1.8 S', manufacturer:'Nikon', line:'S-Line', type:'Prime', asin:'B07GPVJ6HG',
+    name:'NIKKOR Z 35mm f/1.8 S', manufacturer:'Nikon', line:'S-Line', type:'Prime', mount:'z', asin:'B07GPVJ6HG',
     focalLength:35, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'35mm',
     maxAperture:1.8, minAperture:16, weight:370, length:86.0, diameter:73.0,
     filterThread:62, minFocusDist:25, maxMagnification:0.19,
@@ -495,7 +495,7 @@ const LENSES = {
   },
 
   'z-85mm-f1-8-s': {
-    name:'NIKKOR Z 85mm f/1.8 S', manufacturer:'Nikon', line:'S-Line', type:'Prime', asin:'B07VQWGNHR',
+    name:'NIKKOR Z 85mm f/1.8 S', manufacturer:'Nikon', line:'S-Line', type:'Prime', mount:'z', asin:'B07VQWGNHR',
     focalLength:85, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'85mm',
     maxAperture:1.8, minAperture:16, weight:470, length:99.0, diameter:75.0,
     filterThread:67, minFocusDist:80, maxMagnification:0.12,
@@ -509,7 +509,7 @@ const LENSES = {
   },
 
   'z-35mm-f1-2-s': {
-    name:'NIKKOR Z 35mm f/1.2 S', manufacturer:'Nikon', line:'S-Line', type:'Prime', asin:'B0DVZRWJSG',
+    name:'NIKKOR Z 35mm f/1.2 S', manufacturer:'Nikon', line:'S-Line', type:'Prime', mount:'z', asin:'B0DVZRWJSG',
     focalLength:35, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'35mm',
     maxAperture:1.2, minAperture:16, weight:1060, length:150.0, diameter:90.0,
     filterThread:82, minFocusDist:30, maxMagnification:0.17,
@@ -523,7 +523,7 @@ const LENSES = {
   },
 
   'z-50mm-f1-2-s': {
-    name:'NIKKOR Z 50mm f/1.2 S', manufacturer:'Nikon', line:'S-Line', type:'Prime', asin:'B08J7FDF6G',
+    name:'NIKKOR Z 50mm f/1.2 S', manufacturer:'Nikon', line:'S-Line', type:'Prime', mount:'z', asin:'B08J7FDF6G',
     focalLength:50, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'50mm',
     maxAperture:1.2, minAperture:16, weight:1090, length:150.0, diameter:89.5,
     filterThread:82, minFocusDist:45, maxMagnification:0.15,
@@ -537,7 +537,7 @@ const LENSES = {
   },
 
   'z-85mm-f1-2-s': {
-    name:'NIKKOR Z 85mm f/1.2 S', manufacturer:'Nikon', line:'S-Line', type:'Prime', asin:'B0BTZZTTRH',
+    name:'NIKKOR Z 85mm f/1.2 S', manufacturer:'Nikon', line:'S-Line', type:'Prime', mount:'z', asin:'B0BTZZTTRH',
     focalLength:85, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'85mm',
     maxAperture:1.2, minAperture:16, weight:1160, length:141.5, diameter:102.5,
     filterThread:82, minFocusDist:85, maxMagnification:0.11,
@@ -551,7 +551,7 @@ const LENSES = {
   },
 
   'z-135mm-f1-8-s-plena': {
-    name:'NIKKOR Z 135mm f/1.8 S Plena', manufacturer:'Nikon', line:'S-Line', type:'Prime', asin:'B0CJWJ2PMY',
+    name:'NIKKOR Z 135mm f/1.8 S Plena', manufacturer:'Nikon', line:'S-Line', type:'Prime', mount:'z', asin:'B0CJWJ2PMY',
     focalLength:135, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'135mm',
     maxAperture:1.8, minAperture:16, weight:995, length:139.5, diameter:98.0,
     filterThread:82, minFocusDist:82, maxMagnification:0.19,
@@ -565,7 +565,7 @@ const LENSES = {
   },
 
   'z-mc-105mm-f2-8-vr-s': {
-    name:'NIKKOR Z MC 105mm f/2.8 VR S', manufacturer:'Nikon', line:'S-Line', type:'Prime', asin:'B096DHS1BF',
+    name:'NIKKOR Z MC 105mm f/2.8 VR S', manufacturer:'Nikon', line:'S-Line', type:'Prime', mount:'z', asin:'B096DHS1BF',
     focalLength:105, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'105mm',
     maxAperture:2.8, minAperture:32, weight:630, length:140.0, diameter:85.0,
     filterThread:62, minFocusDist:29, maxMagnification:1.0,
@@ -579,7 +579,7 @@ const LENSES = {
   },
 
   'z-58mm-f0-95-s-noct': {
-    name:'NIKKOR Z 58mm f/0.95 S Noct', manufacturer:'Nikon', line:'S-Line', type:'Prime', asin:'B07YXBWK3W',
+    name:'NIKKOR Z 58mm f/0.95 S Noct', manufacturer:'Nikon', line:'S-Line', type:'Prime', mount:'z', asin:'B07YXBWK3W',
     focalLength:58, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'58mm',
     maxAperture:0.95, minAperture:16, weight:2000, length:153.0, diameter:102.0,
     filterThread:82, minFocusDist:50, maxMagnification:0.19,
@@ -594,7 +594,7 @@ const LENSES = {
 
   /* ── S-Line Zooms ── */
   'z-24-70mm-f2-8-s': {
-    name:'NIKKOR Z 24-70mm f/2.8 S', manufacturer:'Nikon', line:'S-Line', type:'Zoom', asin:'B07NLQ46M2',
+    name:'NIKKOR Z 24-70mm f/2.8 S', manufacturer:'Nikon', line:'S-Line', type:'Zoom', mount:'z', asin:'B07NLQ46M2',
     focalLength:null, focalLengthMin:24, focalLengthMax:70, focalLengthEquiv:'24-70mm',
     maxAperture:2.8, minAperture:22, weight:805, length:126.0, diameter:89.0,
     filterThread:82, minFocusDist:38, maxMagnification:0.22,
@@ -608,7 +608,7 @@ const LENSES = {
   },
 
   'z-24-70mm-f2-8-s-ii': {
-    name:'NIKKOR Z 24-70mm f/2.8 S II', manufacturer:'Nikon', line:'S-Line', type:'Zoom', asin:'B0FNCDZW6V',
+    name:'NIKKOR Z 24-70mm f/2.8 S II', manufacturer:'Nikon', line:'S-Line', type:'Zoom', mount:'z', asin:'B0FNCDZW6V',
     focalLength:null, focalLengthMin:24, focalLengthMax:70, focalLengthEquiv:'24-70mm',
     maxAperture:2.8, minAperture:22, weight:675, length:142.0, diameter:84.0,
     filterThread:77, minFocusDist:240, maxMagnification:0.32,
@@ -623,7 +623,7 @@ const LENSES = {
   },
 
   'z-70-200mm-f2-8-vr-s': {
-    name:'NIKKOR Z 70-200mm f/2.8 VR S', manufacturer:'Nikon', line:'S-Line', type:'Zoom', asin:'B083K3C5P2',
+    name:'NIKKOR Z 70-200mm f/2.8 VR S', manufacturer:'Nikon', line:'S-Line', type:'Zoom', mount:'z', asin:'B083K3C5P2',
     focalLength:null, focalLengthMin:70, focalLengthMax:200, focalLengthEquiv:'70-200mm',
     maxAperture:2.8, minAperture:22, weight:1440, length:220.0, diameter:89.0,
     filterThread:77, minFocusDist:50, maxMagnification:0.20,
@@ -637,7 +637,7 @@ const LENSES = {
   },
 
   'z-70-200mm-f2-8-vr-s-ii': {
-    name:'NIKKOR Z 70-200mm f/2.8 VR S II', manufacturer:'Nikon', line:'S-Line', type:'Zoom', asin:'B0GPT1BFK1',
+    name:'NIKKOR Z 70-200mm f/2.8 VR S II', manufacturer:'Nikon', line:'S-Line', type:'Zoom', mount:'z', asin:'B0GPT1BFK1',
     focalLength:null, focalLengthMin:70, focalLengthMax:200, focalLengthEquiv:'70-200mm',
     maxAperture:2.8, minAperture:22, weight:998, length:208.0, diameter:90.0,
     filterThread:77, minFocusDist:380, maxMagnification:0.30,
@@ -653,7 +653,7 @@ const LENSES = {
 
   /* ── Standard Primes (non-S, FX) ── */
   'z-26mm-f2-8': {
-    name:'NIKKOR Z 26mm f/2.8', manufacturer:'Nikon', line:'NIKKOR Z', type:'Prime', asin:'B0BV11Z35L',
+    name:'NIKKOR Z 26mm f/2.8', manufacturer:'Nikon', line:'NIKKOR Z', type:'Prime', mount:'z', asin:'B0BV11Z35L',
     focalLength:26, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'26mm',
     maxAperture:2.8, minAperture:16, weight:125, length:23.5, diameter:70.0,
     filterThread:52, minFocusDist:20, maxMagnification:0.19,
@@ -667,7 +667,7 @@ const LENSES = {
   },
 
   'z-28mm-f2-8': {
-    name:'NIKKOR Z 28mm f/2.8', manufacturer:'Nikon', line:'NIKKOR Z', type:'Prime', asin:'B09M62RJK2',
+    name:'NIKKOR Z 28mm f/2.8', manufacturer:'Nikon', line:'NIKKOR Z', type:'Prime', mount:'z', asin:'B09M62RJK2',
     focalLength:28, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'28mm',
     maxAperture:2.8, minAperture:16, weight:155, length:43.0, diameter:70.0,
     filterThread:52, minFocusDist:19, maxMagnification:0.20,
@@ -681,7 +681,7 @@ const LENSES = {
   },
 
   'z-28mm-f2-8-se': {
-    name:'NIKKOR Z 28mm f/2.8 (SE)', manufacturer:'Nikon', line:'NIKKOR Z', type:'Prime', asin:'B0982T5T68',
+    name:'NIKKOR Z 28mm f/2.8 (SE)', manufacturer:'Nikon', line:'NIKKOR Z', type:'Prime', mount:'z', asin:'B0982T5T68',
     focalLength:28, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'28mm',
     maxAperture:2.8, minAperture:16, weight:160, length:43.0, diameter:71.5,
     filterThread:52, minFocusDist:19, maxMagnification:0.20,
@@ -695,7 +695,7 @@ const LENSES = {
   },
 
   'z-35mm-f1-4': {
-    name:'NIKKOR Z 35mm f/1.4', manufacturer:'Nikon', line:'NIKKOR Z', type:'Prime', asin:'B0D83PR5SQ',
+    name:'NIKKOR Z 35mm f/1.4', manufacturer:'Nikon', line:'NIKKOR Z', type:'Prime', mount:'z', asin:'B0D83PR5SQ',
     focalLength:35, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'35mm',
     maxAperture:1.4, minAperture:16, weight:415, length:86.5, diameter:74.5,
     filterThread:62, minFocusDist:27, maxMagnification:0.18,
@@ -709,7 +709,7 @@ const LENSES = {
   },
 
   'z-40mm-f2': {
-    name:'NIKKOR Z 40mm f/2', manufacturer:'Nikon', line:'NIKKOR Z', type:'Prime', asin:'B09G57BXZ4',
+    name:'NIKKOR Z 40mm f/2', manufacturer:'Nikon', line:'NIKKOR Z', type:'Prime', mount:'z', asin:'B09G57BXZ4',
     focalLength:40, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'40mm',
     maxAperture:2.0, minAperture:16, weight:170, length:45.5, diameter:70.0,
     filterThread:52, minFocusDist:29, maxMagnification:0.17,
@@ -723,7 +723,7 @@ const LENSES = {
   },
 
   'z-40mm-f2-se': {
-    name:'NIKKOR Z 40mm f/2 (SE)', manufacturer:'Nikon', line:'NIKKOR Z', type:'Prime', asin:'B0BLTDSVM2',
+    name:'NIKKOR Z 40mm f/2 (SE)', manufacturer:'Nikon', line:'NIKKOR Z', type:'Prime', mount:'z', asin:'B0BLTDSVM2',
     focalLength:40, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'40mm',
     maxAperture:2.0, minAperture:16, weight:170, length:45.5, diameter:71.5,
     filterThread:52, minFocusDist:29, maxMagnification:0.17,
@@ -737,7 +737,7 @@ const LENSES = {
   },
 
   'z-50mm-f1-4': {
-    name:'NIKKOR Z 50mm f/1.4', manufacturer:'Nikon', line:'NIKKOR Z', type:'Prime', asin:'B0DGHTDNY7',
+    name:'NIKKOR Z 50mm f/1.4', manufacturer:'Nikon', line:'NIKKOR Z', type:'Prime', mount:'z', asin:'B0DGHTDNY7',
     focalLength:50, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'50mm',
     maxAperture:1.4, minAperture:16, weight:420, length:86.5, diameter:74.5,
     filterThread:62, minFocusDist:37, maxMagnification:0.18,
@@ -751,7 +751,7 @@ const LENSES = {
   },
 
   'z-50mm-f2-8-mc': {
-    name:'NIKKOR Z MC 50mm f/2.8', manufacturer:'Nikon', line:'NIKKOR Z', type:'Prime', asin:'B096DVRX22',
+    name:'NIKKOR Z MC 50mm f/2.8', manufacturer:'Nikon', line:'NIKKOR Z', type:'Prime', mount:'z', asin:'B096DVRX22',
     focalLength:50, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'50mm',
     maxAperture:2.8, minAperture:22, weight:260, length:66.0, diameter:74.5,
     filterThread:46, minFocusDist:16, maxMagnification:1.0,
@@ -766,7 +766,7 @@ const LENSES = {
 
   /* ── DX Primes ── */
   'z-dx-24mm-f1-7': {
-    name:'NIKKOR Z DX 24mm f/1.7', manufacturer:'Nikon', line:'DX', type:'Prime', asin:'B0C6P4CTTT',
+    name:'NIKKOR Z DX 24mm f/1.7', manufacturer:'Nikon', line:'DX', type:'Prime', mount:'z', asin:'B0C6P4CTTT',
     focalLength:24, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'36mm',
     maxAperture:1.7, minAperture:16, weight:135, length:40.0, diameter:70.0,
     filterThread:46, minFocusDist:18, maxMagnification:0.20,
@@ -780,7 +780,7 @@ const LENSES = {
   },
 
   'z-dx-mc-35mm-f17': {
-    name:'NIKKOR Z DX MC 35mm f/1.7', manufacturer:'Nikon', line:'DX', type:'Prime', asin:'B0FWD1MZ8P',
+    name:'NIKKOR Z DX MC 35mm f/1.7', manufacturer:'Nikon', line:'DX', type:'Prime', mount:'z', asin:'B0FWD1MZ8P',
     focalLength:35, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'53mm',
     maxAperture:1.7, minAperture:22, weight:220, length:72.0, diameter:70.0,
     filterThread:52, minFocusDist:160, maxMagnification:0.67,
@@ -795,7 +795,7 @@ const LENSES = {
 
   /* ── S-Line Zooms (cont.) ── */
   'z-14-24mm-f2-8-s': {
-    name:'NIKKOR Z 14-24mm f/2.8 S', manufacturer:'Nikon', line:'S-Line', type:'Zoom', asin:'B08J7FHHWX',
+    name:'NIKKOR Z 14-24mm f/2.8 S', manufacturer:'Nikon', line:'S-Line', type:'Zoom', mount:'z', asin:'B08J7FHHWX',
     focalLength:null, focalLengthMin:14, focalLengthMax:24, focalLengthEquiv:'14-24mm',
     maxAperture:2.8, minAperture:22, weight:650, length:124.5, diameter:88.5,
     filterThread:112, minFocusDist:28, maxMagnification:0.13,
@@ -809,7 +809,7 @@ const LENSES = {
   },
 
   'z-14-30mm-f4-s': {
-    name:'NIKKOR Z 14-30mm f/4 S', manufacturer:'Nikon', line:'S-Line', type:'Zoom', asin:'B07MS6299X',
+    name:'NIKKOR Z 14-30mm f/4 S', manufacturer:'Nikon', line:'S-Line', type:'Zoom', mount:'z', asin:'B07MS6299X',
     focalLength:null, focalLengthMin:14, focalLengthMax:30, focalLengthEquiv:'14-30mm',
     maxAperture:4.0, minAperture:22, weight:485, length:85.0, diameter:89.0,
     filterThread:82, minFocusDist:28, maxMagnification:0.16,
@@ -823,7 +823,7 @@ const LENSES = {
   },
 
   'z-24-70mm-f4-s': {
-    name:'NIKKOR Z 24-70mm f/4 S', manufacturer:'Nikon', line:'S-Line', type:'Zoom', asin:'B07GPX4HK5',
+    name:'NIKKOR Z 24-70mm f/4 S', manufacturer:'Nikon', line:'S-Line', type:'Zoom', mount:'z', asin:'B07GPX4HK5',
     focalLength:null, focalLengthMin:24, focalLengthMax:70, focalLengthEquiv:'24-70mm',
     maxAperture:4.0, minAperture:22, weight:500, length:88.5, diameter:77.5,
     filterThread:72, minFocusDist:30, maxMagnification:0.30,
@@ -837,7 +837,7 @@ const LENSES = {
   },
 
   'z-24-120mm-f4-s': {
-    name:'NIKKOR Z 24-120mm f/4 S', manufacturer:'Nikon', line:'S-Line', type:'Zoom', asin:'B09KHB76TP',
+    name:'NIKKOR Z 24-120mm f/4 S', manufacturer:'Nikon', line:'S-Line', type:'Zoom', mount:'z', asin:'B09KHB76TP',
     focalLength:null, focalLengthMin:24, focalLengthMax:120, focalLengthEquiv:'24-120mm',
     maxAperture:4.0, minAperture:22, weight:630, length:118.0, diameter:84.0,
     filterThread:77, minFocusDist:35, maxMagnification:0.39,
@@ -851,7 +851,7 @@ const LENSES = {
   },
 
   'z-100-400mm-f4-5-5-6-vr-s': {
-    name:'NIKKOR Z 100-400mm f/4.5-5.6 VR S', manufacturer:'Nikon', line:'S-Line', type:'Zoom', asin:'B09KH9X5DL',
+    name:'NIKKOR Z 100-400mm f/4.5-5.6 VR S', manufacturer:'Nikon', line:'S-Line', type:'Zoom', mount:'z', asin:'B09KH9X5DL',
     focalLength:null, focalLengthMin:100, focalLengthMax:400, focalLengthEquiv:'100-400mm',
     maxAperture:4.5, minAperture:32, weight:1435, length:222.0, diameter:98.0,
     filterThread:77, minFocusDist:75, maxMagnification:0.38,
@@ -866,7 +866,7 @@ const LENSES = {
 
   /* ── Standard / Travel Zooms (non-S, FX) ── */
   'z-17-28mm-f2-8': {
-    name:'NIKKOR Z 17-28mm f/2.8', manufacturer:'Nikon', line:'NIKKOR Z', type:'Zoom', asin:'B0BFTX4DS7',
+    name:'NIKKOR Z 17-28mm f/2.8', manufacturer:'Nikon', line:'NIKKOR Z', type:'Zoom', mount:'z', asin:'B0BFTX4DS7',
     focalLength:null, focalLengthMin:17, focalLengthMax:28, focalLengthEquiv:'17-28mm',
     maxAperture:2.8, minAperture:22, weight:450, length:101.0, diameter:75.0,
     filterThread:67, minFocusDist:19, maxMagnification:0.19,
@@ -880,7 +880,7 @@ const LENSES = {
   },
 
   'z-24-50mm-f4-6-3': {
-    name:'NIKKOR Z 24-50mm f/4-6.3', manufacturer:'Nikon', line:'NIKKOR Z', type:'Zoom', asin:'B08D8QK5LP',
+    name:'NIKKOR Z 24-50mm f/4-6.3', manufacturer:'Nikon', line:'NIKKOR Z', type:'Zoom', mount:'z', asin:'B08D8QK5LP',
     focalLength:null, focalLengthMin:24, focalLengthMax:50, focalLengthEquiv:'24-50mm',
     maxAperture:4.0, minAperture:22, weight:195, length:51.0, diameter:73.5,
     filterThread:52, minFocusDist:35, maxMagnification:0.17,
@@ -894,7 +894,7 @@ const LENSES = {
   },
 
   'z-24-105mm-f4-71': {
-    name:'NIKKOR Z 24-105mm f/4-7.1', manufacturer:'Nikon', line:'NIKKOR Z', type:'Zoom', asin:'B0GFC89WDP',
+    name:'NIKKOR Z 24-105mm f/4-7.1', manufacturer:'Nikon', line:'NIKKOR Z', type:'Zoom', mount:'z', asin:'B0GFC89WDP',
     focalLength:null, focalLengthMin:24, focalLengthMax:105, focalLengthEquiv:'24-105mm',
     maxAperture:4.0, minAperture:22, weight:350, length:106.5, diameter:73.5,
     filterThread:67, minFocusDist:200, maxMagnification:0.5,
@@ -909,7 +909,7 @@ const LENSES = {
 
   /* ── FX Video Power Zoom ── */
   'z-28-135mm-f4-pz': {
-    name:'NIKKOR Z 28-135mm f/4 PZ', manufacturer:'Nikon', line:'NIKKOR Z', type:'Zoom', asin:'B0F561J59R',
+    name:'NIKKOR Z 28-135mm f/4 PZ', manufacturer:'Nikon', line:'NIKKOR Z', type:'Zoom', mount:'z', asin:'B0F561J59R',
     focalLength:null, focalLengthMin:28, focalLengthMax:135, focalLengthEquiv:'28-135mm',
     maxAperture:4.0, minAperture:22, weight:1120, length:177.5, diameter:105.0,
     filterThread:95, minFocusDist:340, maxMagnification:0.25,
@@ -923,7 +923,7 @@ const LENSES = {
   },
 
   'z-24-200mm-f4-6-3-vr': {
-    name:'NIKKOR Z 24-200mm f/4-6.3 VR', manufacturer:'Nikon', line:'NIKKOR Z', type:'Zoom', asin:'B084QP747Q',
+    name:'NIKKOR Z 24-200mm f/4-6.3 VR', manufacturer:'Nikon', line:'NIKKOR Z', type:'Zoom', mount:'z', asin:'B084QP747Q',
     focalLength:null, focalLengthMin:24, focalLengthMax:200, focalLengthEquiv:'24-200mm',
     maxAperture:4.0, minAperture:22, weight:570, length:114.0, diameter:76.5,
     filterThread:67, minFocusDist:50, maxMagnification:0.28,
@@ -937,7 +937,7 @@ const LENSES = {
   },
 
   'z-28-75mm-f2-8': {
-    name:'NIKKOR Z 28-75mm f/2.8', manufacturer:'Nikon', line:'NIKKOR Z', type:'Zoom', asin:'B09NLBL2F1',
+    name:'NIKKOR Z 28-75mm f/2.8', manufacturer:'Nikon', line:'NIKKOR Z', type:'Zoom', mount:'z', asin:'B09NLBL2F1',
     focalLength:null, focalLengthMin:28, focalLengthMax:75, focalLengthEquiv:'28-75mm',
     maxAperture:2.8, minAperture:22, weight:565, length:120.5, diameter:75.0,
     filterThread:67, minFocusDist:19, maxMagnification:0.34,
@@ -951,7 +951,7 @@ const LENSES = {
   },
 
   'z-28-400mm-f4-8-vr': {
-    name:'NIKKOR Z 28-400mm f/4-8 VR', manufacturer:'Nikon', line:'NIKKOR Z', type:'Zoom', asin:'B0CZ4JX9JW',
+    name:'NIKKOR Z 28-400mm f/4-8 VR', manufacturer:'Nikon', line:'NIKKOR Z', type:'Zoom', mount:'z', asin:'B0CZ4JX9JW',
     focalLength:null, focalLengthMin:28, focalLengthMax:400, focalLengthEquiv:'28-400mm',
     maxAperture:4.0, minAperture:32, weight:725, length:142.0, diameter:85.0,
     filterThread:77, minFocusDist:20, maxMagnification:0.35,
@@ -966,7 +966,7 @@ const LENSES = {
 
   /* ── Telephoto / Super-Telephoto ── */
   'z-70-180mm-f2-8': {
-    name:'NIKKOR Z 70-180mm f/2.8', manufacturer:'Nikon', line:'NIKKOR Z', type:'Zoom', asin:'B0C8QL89L5',
+    name:'NIKKOR Z 70-180mm f/2.8', manufacturer:'Nikon', line:'NIKKOR Z', type:'Zoom', mount:'z', asin:'B0C8QL89L5',
     focalLength:null, focalLengthMin:70, focalLengthMax:180, focalLengthEquiv:'70-180mm',
     maxAperture:2.8, minAperture:22, weight:795, length:151.0, diameter:83.5,
     filterThread:67, minFocusDist:27, maxMagnification:0.48,
@@ -980,7 +980,7 @@ const LENSES = {
   },
 
   'z-180-600mm-f5-6-6-3-vr': {
-    name:'NIKKOR Z 180-600mm f/5.6-6.3 VR', manufacturer:'Nikon', line:'NIKKOR Z', type:'Zoom', asin:'B0C8QFSPFQ',
+    name:'NIKKOR Z 180-600mm f/5.6-6.3 VR', manufacturer:'Nikon', line:'NIKKOR Z', type:'Zoom', mount:'z', asin:'B0C8QFSPFQ',
     focalLength:null, focalLengthMin:180, focalLengthMax:600, focalLengthEquiv:'180-600mm',
     maxAperture:5.6, minAperture:32, weight:2140, length:315.5, diameter:110.0,
     filterThread:95, minFocusDist:130, maxMagnification:0.25,
@@ -994,7 +994,7 @@ const LENSES = {
   },
 
   'z-400mm-f4-5-vr-s': {
-    name:'NIKKOR Z 400mm f/4.5 VR S', manufacturer:'Nikon', line:'S-Line', type:'Prime', asin:'B0B52C7Z7D',
+    name:'NIKKOR Z 400mm f/4.5 VR S', manufacturer:'Nikon', line:'S-Line', type:'Prime', mount:'z', asin:'B0B52C7Z7D',
     focalLength:400, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'400mm',
     maxAperture:4.5, minAperture:32, weight:1245, length:234.5, diameter:104.0,
     filterThread:95, minFocusDist:250, maxMagnification:0.16,
@@ -1008,7 +1008,7 @@ const LENSES = {
   },
 
   'z-400mm-f2-8-tc-vr-s': {
-    name:'NIKKOR Z 400mm f/2.8 TC VR S', manufacturer:'Nikon', line:'S-Line', type:'Prime', asin:'B09QP4SSYW',
+    name:'NIKKOR Z 400mm f/2.8 TC VR S', manufacturer:'Nikon', line:'S-Line', type:'Prime', mount:'z', asin:'B09QP4SSYW',
     focalLength:400, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'400mm (560mm w/ TC)',
     maxAperture:2.8, minAperture:22, weight:2950, length:380.0, diameter:156.0,
     filterThread:46, minFocusDist:250, maxMagnification:0.16,
@@ -1022,7 +1022,7 @@ const LENSES = {
   },
 
   'z-600mm-f6-3-vr-s-pf': {
-    name:'NIKKOR Z 600mm f/6.3 VR S (PF)', manufacturer:'Nikon', line:'S-Line', type:'Prime', asin:'B0CKTYF2ZZ',
+    name:'NIKKOR Z 600mm f/6.3 VR S (PF)', manufacturer:'Nikon', line:'S-Line', type:'Prime', mount:'z', asin:'B0CKTYF2ZZ',
     focalLength:600, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'600mm',
     maxAperture:6.3, minAperture:32, weight:1470, length:278.0, diameter:106.5,
     filterThread:95, minFocusDist:400, maxMagnification:0.16,
@@ -1036,7 +1036,7 @@ const LENSES = {
   },
 
   'z-600mm-f4-tc-vr-s': {
-    name:'NIKKOR Z 600mm f/4 TC VR S', manufacturer:'Nikon', line:'S-Line', type:'Prime', asin:'B0BL5FKJF7',
+    name:'NIKKOR Z 600mm f/4 TC VR S', manufacturer:'Nikon', line:'S-Line', type:'Prime', mount:'z', asin:'B0BL5FKJF7',
     focalLength:600, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'600mm (840mm w/ TC)',
     maxAperture:4.0, minAperture:22, weight:3260, length:437.0, diameter:165.0,
     filterThread:46, minFocusDist:440, maxMagnification:0.14,
@@ -1050,7 +1050,7 @@ const LENSES = {
   },
 
   'z-800mm-f6-3-vr-s-pf': {
-    name:'NIKKOR Z 800mm f/6.3 VR S (PF)', manufacturer:'Nikon', line:'S-Line', type:'Prime', asin:'B09X8TBSFZ',
+    name:'NIKKOR Z 800mm f/6.3 VR S (PF)', manufacturer:'Nikon', line:'S-Line', type:'Prime', mount:'z', asin:'B09X8TBSFZ',
     focalLength:800, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'800mm',
     maxAperture:6.3, minAperture:32, weight:2385, length:385.0, diameter:140.0,
     filterThread:46, minFocusDist:500, maxMagnification:0.16,
@@ -1065,7 +1065,7 @@ const LENSES = {
 
   /* ── DX Zooms ── */
   'z-dx-12-28mm-pz-vr': {
-    name:'NIKKOR Z DX 12-28mm f/3.5-5.6 PZ VR', manufacturer:'Nikon', line:'DX', type:'Zoom', asin:'B0C2RHKLDK',
+    name:'NIKKOR Z DX 12-28mm f/3.5-5.6 PZ VR', manufacturer:'Nikon', line:'DX', type:'Zoom', mount:'z', asin:'B0C2RHKLDK',
     focalLength:null, focalLengthMin:12, focalLengthMax:28, focalLengthEquiv:'18-42mm',
     maxAperture:3.5, minAperture:22, weight:205, length:63.5, diameter:72.0,
     filterThread:67, minFocusDist:19, maxMagnification:0.21,
@@ -1079,7 +1079,7 @@ const LENSES = {
   },
 
   'z-dx-16-50mm-vr': {
-    name:'NIKKOR Z DX 16-50mm f/3.5-6.3 VR', manufacturer:'Nikon', line:'DX', type:'Zoom', asin:'B07YX95XJL',
+    name:'NIKKOR Z DX 16-50mm f/3.5-6.3 VR', manufacturer:'Nikon', line:'DX', type:'Zoom', mount:'z', asin:'B07YX95XJL',
     focalLength:null, focalLengthMin:16, focalLengthMax:50, focalLengthEquiv:'24-75mm',
     maxAperture:3.5, minAperture:22, weight:135, length:32.0, diameter:70.0,
     filterThread:46, minFocusDist:20, maxMagnification:0.20,
@@ -1097,7 +1097,7 @@ const LENSES = {
      new enough to surface in "announced 2026" searches). First DX lens with a
      metal, weather-sealed mount and constant f/2.8 aperture. */
   'z-dx-16-50mm-f28-vr': {
-    name:'NIKKOR Z DX 16-50mm f/2.8 VR', manufacturer:'Nikon', line:'DX', type:'Zoom', asin:'B0FWD8HPVV',
+    name:'NIKKOR Z DX 16-50mm f/2.8 VR', manufacturer:'Nikon', line:'DX', type:'Zoom', mount:'z', asin:'B0FWD8HPVV',
     focalLength:null, focalLengthMin:16, focalLengthMax:50, focalLengthEquiv:'24-75mm',
     maxAperture:2.8, minAperture:22, weight:330, length:88.0, diameter:74.5,
     filterThread:67, minFocusDist:150, maxMagnification:0.24,
@@ -1111,7 +1111,7 @@ const LENSES = {
   },
 
   'z-dx-18-140mm-vr': {
-    name:'NIKKOR Z DX 18-140mm f/3.5-6.3 VR', manufacturer:'Nikon', line:'DX', type:'Zoom', asin:'B09JBJKRBZ',
+    name:'NIKKOR Z DX 18-140mm f/3.5-6.3 VR', manufacturer:'Nikon', line:'DX', type:'Zoom', mount:'z', asin:'B09JBJKRBZ',
     focalLength:null, focalLengthMin:18, focalLengthMax:140, focalLengthEquiv:'27-210mm',
     maxAperture:3.5, minAperture:22, weight:315, length:90.0, diameter:73.0,
     filterThread:62, minFocusDist:20, maxMagnification:0.33,
@@ -1125,7 +1125,7 @@ const LENSES = {
   },
 
   'z-dx-50-250mm-vr': {
-    name:'NIKKOR Z DX 50-250mm f/4.5-6.3 VR', manufacturer:'Nikon', line:'DX', type:'Zoom', asin:'B07YX9KYQZ',
+    name:'NIKKOR Z DX 50-250mm f/4.5-6.3 VR', manufacturer:'Nikon', line:'DX', type:'Zoom', mount:'z', asin:'B07YX9KYQZ',
     focalLength:null, focalLengthMin:50, focalLengthMax:250, focalLengthEquiv:'75-375mm',
     maxAperture:4.5, minAperture:22, weight:405, length:110.0, diameter:74.0,
     filterThread:62, minFocusDist:50, maxMagnification:0.23,
@@ -1153,7 +1153,7 @@ const LENSES = {
      per the "USD = RRP, not a sale price" convention. */
   'sigma-16mm-f14': {
     name:'Sigma 16mm f/1.4 DC DN', manufacturer:'Sigma', line:'Contemporary', type:'Prime',
-    focalLength:16, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'24mm',
+    mount:'z', focalLength:16, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'24mm',
     maxAperture:1.4, minAperture:16, weight:420, length:94.3, diameter:72.2,
     filterThread:67, minFocusDist:25, maxMagnification:0.1,
     elements:16, groups:13, blades:9, afType:'Stepping Motor',
@@ -1167,7 +1167,7 @@ const LENSES = {
 
   'sigma-30mm-f14': {
     name:'Sigma 30mm f/1.4 DC DN', manufacturer:'Sigma', line:'Contemporary', type:'Prime',
-    focalLength:30, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'45mm',
+    mount:'z', focalLength:30, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'45mm',
     maxAperture:1.4, minAperture:16, weight:285, length:75.3, diameter:70,
     filterThread:52, minFocusDist:30, maxMagnification:0.14,
     elements:9, groups:7, blades:9, afType:'Stepping Motor',
@@ -1181,7 +1181,7 @@ const LENSES = {
 
   'sigma-56mm-f14': {
     name:'Sigma 56mm f/1.4 DC DN', manufacturer:'Sigma', line:'Contemporary', type:'Prime',
-    focalLength:56, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'84mm',
+    mount:'z', focalLength:56, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'84mm',
     maxAperture:1.4, minAperture:16, weight:295, length:61.5, diameter:70,
     filterThread:55, minFocusDist:50, maxMagnification:0.14,
     elements:10, groups:6, blades:9, afType:'Stepping Motor',
@@ -1197,7 +1197,7 @@ const LENSES = {
   /* Optical specs shared with the E-mount versions (verified); Z APS-C = 1.5×. */
   'viltrox-13mm-f14': {
     name:'Viltrox AF 13mm f/1.4', manufacturer:'Viltrox', line:'AF', type:'Prime',
-    focalLength:13, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'20mm',
+    mount:'z', focalLength:13, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'20mm',
     maxAperture:1.4, minAperture:16, weight:420, length:90, diameter:74,
     filterThread:67, minFocusDist:22, maxMagnification:0.1,
     elements:14, groups:11, blades:9, afType:'STM',
@@ -1211,7 +1211,7 @@ const LENSES = {
 
   'viltrox-16mm-f18': {
     name:'Viltrox AF 16mm f/1.8', manufacturer:'Viltrox', line:'Pro', type:'Prime',
-    focalLength:16, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'16mm',
+    mount:'z', focalLength:16, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'16mm',
     maxAperture:1.8, minAperture:22, weight:550, length:101, diameter:85.2,
     filterThread:77, minFocusDist:27, maxMagnification:0.1,
     elements:15, groups:12, blades:9, afType:'STM',
@@ -1225,7 +1225,7 @@ const LENSES = {
 
   'viltrox-27mm-f12': {
     name:'Viltrox AF 27mm f/1.2 Pro', manufacturer:'Viltrox', line:'Pro', type:'Prime',
-    focalLength:27, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'41mm',
+    mount:'z', focalLength:27, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'41mm',
     maxAperture:1.2, minAperture:16, weight:560, length:92, diameter:82,
     filterThread:67, minFocusDist:28, maxMagnification:0.15,
     elements:15, groups:11, blades:11, afType:'STM',
@@ -1238,7 +1238,7 @@ const LENSES = {
 
   'viltrox-33mm-f14': {
     name:'Viltrox AF 33mm f/1.4', manufacturer:'Viltrox', line:'AF', type:'Prime',
-    focalLength:33, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'50mm',
+    mount:'z', focalLength:33, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'50mm',
     maxAperture:1.4, minAperture:16, weight:270, length:72, diameter:65,
     filterThread:52, minFocusDist:40, maxMagnification:0.1,
     elements:10, groups:9, blades:9, afType:'STM',
@@ -1252,7 +1252,7 @@ const LENSES = {
 
   'viltrox-56mm-f14': {
     name:'Viltrox AF 56mm f/1.4', manufacturer:'Viltrox', line:'AF', type:'Prime',
-    focalLength:56, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'84mm',
+    mount:'z', focalLength:56, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'84mm',
     maxAperture:1.4, minAperture:16, weight:320, length:72, diameter:65,
     filterThread:52, minFocusDist:60, maxMagnification:0.1,
     elements:10, groups:9, blades:9, afType:'STM',
@@ -1274,7 +1274,7 @@ const LENSES = {
      stocks it new at $329 as of this check. */
   'viltrox-85mm-f18-ii': {
     name:'Viltrox AF 85mm f/1.8', manufacturer:'Viltrox', line:'AF', type:'Prime',
-    focalLength:85, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'85mm',
+    mount:'z', focalLength:85, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'85mm',
     maxAperture:1.8, minAperture:16, weight:371, length:92, diameter:80,
     filterThread:72, minFocusDist:80, maxMagnification:0.12,
     elements:10, groups:7, blades:9, afType:'STM',
@@ -1291,7 +1291,7 @@ const LENSES = {
      on its own Z-mount product page (viltrox.com/products/<slug>). ── */
   'viltrox-90mm-f22-evo': {
     name:'Viltrox AF 90mm F2.2 EVO', manufacturer:'Viltrox', line:'EVO', type:'Prime',
-    focalLength:90, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'135mm',
+    mount:'z', focalLength:90, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'135mm',
     maxAperture:2.2, minAperture:16, weight:345, length:78, diameter:69,
     filterThread:58, minFocusDist:74, maxMagnification:0.14,
     elements:10, groups:8, blades:null, afType:'STM',
@@ -1305,7 +1305,7 @@ const LENSES = {
 
   'viltrox-75mm-f18-evo': {
     name:'Viltrox AF 75mm F1.8 EVO', manufacturer:'Viltrox', line:'EVO', type:'Prime',
-    focalLength:75, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'113mm',
+    mount:'z', focalLength:75, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'113mm',
     maxAperture:1.8, minAperture:16, weight:355, length:78, diameter:69,
     filterThread:58, minFocusDist:74, maxMagnification:0.12,
     elements:11, groups:9, blades:null, afType:'STM',
@@ -1319,7 +1319,7 @@ const LENSES = {
 
   'viltrox-56mm-f12-pro': {
     name:'Viltrox AF 56mm F1.2 Pro', manufacturer:'Viltrox', line:'Pro', type:'Prime',
-    focalLength:56, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'84mm',
+    mount:'z', focalLength:56, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'84mm',
     maxAperture:1.2, minAperture:16, weight:595, length:94.1, diameter:78.4,
     filterThread:67, minFocusDist:50, maxMagnification:0.13,
     elements:13, groups:8, blades:null, afType:'VCM',
@@ -1333,7 +1333,7 @@ const LENSES = {
 
   'viltrox-9mm-f28-air': {
     name:'Viltrox AF 9mm F2.8 Air', manufacturer:'Viltrox', line:'Air', type:'Prime',
-    focalLength:9, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'14mm',
+    mount:'z', focalLength:9, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'14mm',
     maxAperture:2.8, minAperture:16, weight:190, length:58.4, diameter:65,
     filterThread:58, minFocusDist:13, maxMagnification:0.15,
     elements:13, groups:11, blades:null, afType:'STM',
@@ -1347,7 +1347,7 @@ const LENSES = {
 
   'viltrox-15mm-f17-air': {
     name:'Viltrox AF 15mm F1.7 Air', manufacturer:'Viltrox', line:'Air', type:'Prime',
-    focalLength:15, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'23mm',
+    mount:'z', focalLength:15, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'23mm',
     maxAperture:1.7, minAperture:16, weight:195, length:58.5, diameter:65,
     filterThread:58, minFocusDist:23, maxMagnification:0.1,
     elements:12, groups:10, blades:null, afType:'STM',
@@ -1361,7 +1361,7 @@ const LENSES = {
 
   'viltrox-25mm-f17-air': {
     name:'Viltrox AF 25mm F1.7 Air', manufacturer:'Viltrox', line:'Air', type:'Prime',
-    focalLength:25, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'38mm',
+    mount:'z', focalLength:25, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'38mm',
     maxAperture:1.7, minAperture:16, weight:180, length:56.4, diameter:64,
     filterThread:52, minFocusDist:30, maxMagnification:0.11,
     elements:12, groups:10, blades:9, afType:'STM',
@@ -1375,7 +1375,7 @@ const LENSES = {
 
   'viltrox-35mm-f17-air': {
     name:'Viltrox AF 35mm F1.7 Air', manufacturer:'Viltrox', line:'Air', type:'Prime',
-    focalLength:35, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'53mm',
+    mount:'z', focalLength:35, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'53mm',
     maxAperture:1.7, minAperture:16, weight:180, length:56.4, diameter:64,
     filterThread:52, minFocusDist:33, maxMagnification:0.13,
     elements:11, groups:9, blades:9, afType:'STM',
@@ -1389,7 +1389,7 @@ const LENSES = {
 
   'viltrox-23mm-f14': {
     name:'Viltrox AF 23mm F1.4', manufacturer:'Viltrox', line:'AF', type:'Prime',
-    focalLength:23, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'35mm',
+    mount:'z', focalLength:23, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'35mm',
     maxAperture:1.4, minAperture:16, weight:300, length:73, diameter:69,
     filterThread:52, minFocusDist:30, maxMagnification:0.1,
     elements:11, groups:10, blades:9, afType:'STM',
@@ -1403,7 +1403,7 @@ const LENSES = {
 
   'viltrox-75mm-f12-pro': {
     name:'Viltrox AF 75mm F1.2 Pro', manufacturer:'Viltrox', line:'Pro', type:'Prime',
-    focalLength:75, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'113mm',
+    mount:'z', focalLength:75, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'113mm',
     maxAperture:1.2, minAperture:16, weight:710, length:102, diameter:87,
     filterThread:77, minFocusDist:88, maxMagnification:0.1,
     elements:16, groups:11, blades:11, afType:'STM',
@@ -1417,7 +1417,7 @@ const LENSES = {
 
   'viltrox-56mm-f17-air': {
     name:'Viltrox AF 56mm F1.7 Air', manufacturer:'Viltrox', line:'Air', type:'Prime',
-    focalLength:56, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'84mm',
+    mount:'z', focalLength:56, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'84mm',
     maxAperture:1.7, minAperture:16, weight:187, length:55.9, diameter:68,
     filterThread:52, minFocusDist:55, maxMagnification:0.11,
     elements:11, groups:9, blades:9, afType:'STM',
@@ -1458,7 +1458,7 @@ const LENSES = {
      research/lenses.md for full citations. */
   'tamron-17-70mm-f28': {
     name:'Tamron 17-70mm f/2.8 Di III-A VC RXD', manufacturer:'Tamron', line:'Di III-A', type:'Zoom',
-    focalLength:null, focalLengthMin:17, focalLengthMax:70, focalLengthEquiv:'26-105mm',
+    mount:'z', focalLength:null, focalLengthMin:17, focalLengthMax:70, focalLengthEquiv:'26-105mm',
     maxAperture:2.8, minAperture:22, weight:540, length:121.3, diameter:74.6,
     filterThread:67, minFocusDist:19, maxMagnification:0.21,
     elements:16, groups:12, blades:9, afType:'Stepping Motor',
@@ -1474,7 +1474,7 @@ const LENSES = {
 
   'tamron-18-300mm-f35-63': {
     name:'Tamron 18-300mm f/3.5-6.3 Di III-A VC VXD', manufacturer:'Tamron', line:'Di III-A', type:'Zoom',
-    focalLength:null, focalLengthMin:18, focalLengthMax:300, focalLengthEquiv:'27-450mm',
+    mount:'z', focalLength:null, focalLengthMin:18, focalLengthMax:300, focalLengthEquiv:'27-450mm',
     maxAperture:3.5, minAperture:22, weight:635, length:127.6, diameter:75.5,
     filterThread:67, minFocusDist:15, maxMagnification:0.5,
     elements:19, groups:15, blades:7, afType:'Linear Motor',
@@ -1487,7 +1487,7 @@ const LENSES = {
 
   'tamron-35-150mm-f2-28': {
     name:'Tamron 35-150mm f/2-2.8 Di III VXD', manufacturer:'Tamron', line:'Di III', type:'Zoom',
-    focalLength:null, focalLengthMin:35, focalLengthMax:150, focalLengthEquiv:'35-150mm',
+    mount:'z', focalLength:null, focalLengthMin:35, focalLengthMax:150, focalLengthEquiv:'35-150mm',
     maxAperture:2.0, minAperture:22, weight:1190, length:160.1, diameter:89.2,
     filterThread:82, minFocusDist:33, maxMagnification:0.18,
     elements:21, groups:15, blades:9, afType:'Linear Motor',
@@ -1505,7 +1505,7 @@ const LENSES = {
 
   'tamron-50-400mm-f45-63': {
     name:'Tamron 50-400mm f/4.5-6.3 Di III VC VXD', manufacturer:'Tamron', line:'Di III', type:'Zoom',
-    focalLength:null, focalLengthMin:50, focalLengthMax:400, focalLengthEquiv:'50-400mm',
+    mount:'z', focalLength:null, focalLengthMin:50, focalLengthMax:400, focalLengthEquiv:'50-400mm',
     maxAperture:4.5, minAperture:22, weight:1180, length:185.8, diameter:88.5,
     filterThread:67, minFocusDist:25, maxMagnification:0.5,
     elements:24, groups:18, blades:9, afType:'Linear Motor',
@@ -1522,7 +1522,7 @@ const LENSES = {
 
   'tamron-70-300mm-f45-63': {
     name:'Tamron 70-300mm f/4.5-6.3 Di III RXD', manufacturer:'Tamron', line:'Di III', type:'Zoom',
-    focalLength:null, focalLengthMin:70, focalLengthMax:300, focalLengthEquiv:'70-300mm',
+    mount:'z', focalLength:null, focalLengthMin:70, focalLengthMax:300, focalLengthEquiv:'70-300mm',
     maxAperture:4.5, minAperture:22, weight:580, length:150.3, diameter:77,
     filterThread:67, minFocusDist:80, maxMagnification:0.2,
     elements:15, groups:10, blades:7, afType:'Stepping Motor',
@@ -1542,7 +1542,7 @@ const LENSES = {
 
   'tamron-150-500mm-f5-67': {
     name:'Tamron 150-500mm f/5-6.7 Di III VC VXD', manufacturer:'Tamron', line:'Di III', type:'Zoom',
-    focalLength:null, focalLengthMin:150, focalLengthMax:500, focalLengthEquiv:'150-500mm',
+    mount:'z', focalLength:null, focalLengthMin:150, focalLengthMax:500, focalLengthEquiv:'150-500mm',
     maxAperture:5.0, minAperture:22, weight:1720, length:212.3, diameter:93,
     filterThread:82, minFocusDist:60, maxMagnification:0.32,
     elements:25, groups:16, blades:7, afType:'Linear Motor',
@@ -1563,7 +1563,7 @@ const LENSES = {
      search) — see header comment above and research/lenses.md. */
   'tamron-12-20mm-f28': {
     name:'Tamron 12-20mm f/2.8 Di III VXD', manufacturer:'Tamron', line:'Di III', type:'Zoom',
-    focalLength:null, focalLengthMin:12, focalLengthMax:20, focalLengthEquiv:'12-20mm',
+    mount:'z', focalLength:null, focalLengthMin:12, focalLengthMax:20, focalLengthEquiv:'12-20mm',
     maxAperture:2.8, minAperture:16, weight:585, length:121.3, diameter:90,
     filterThread:null, minFocusDist:18, maxMagnification:0.17,
     elements:17, groups:12, blades:12, afType:'Linear Motor',
@@ -1580,7 +1580,7 @@ const LENSES = {
 
   'tamron-16-30mm-f28-g2': {
     name:'Tamron 16-30mm f/2.8 Di III VXD G2', manufacturer:'Tamron', line:'Di III', type:'Zoom',
-    focalLength:null, focalLengthMin:16, focalLengthMax:30, focalLengthEquiv:'16-30mm',
+    mount:'z', focalLength:null, focalLengthMin:16, focalLengthMax:30, focalLengthEquiv:'16-30mm',
     maxAperture:2.8, minAperture:16, weight:450, length:103.9, diameter:74.8,
     filterThread:67, minFocusDist:19, maxMagnification:0.19,
     elements:16, groups:12, blades:9, afType:'Linear Motor',
@@ -1597,7 +1597,7 @@ const LENSES = {
 
   'tamron-28-75mm-f28-g2': {
     name:'Tamron 28-75mm f/2.8 Di III VXD G2', manufacturer:'Tamron', line:'Di III', type:'Zoom',
-    focalLength:null, focalLengthMin:28, focalLengthMax:75, focalLengthEquiv:'28-75mm',
+    mount:'z', focalLength:null, focalLengthMin:28, focalLengthMax:75, focalLengthEquiv:'28-75mm',
     maxAperture:2.8, minAperture:22, weight:550, length:119.8, diameter:75.8,
     filterThread:67, minFocusDist:18, maxMagnification:0.37,
     elements:17, groups:15, blades:9, afType:'Linear Motor',
@@ -1614,7 +1614,7 @@ const LENSES = {
 
   'tamron-35-100mm-f28': {
     name:'Tamron 35-100mm f/2.8 Di III VXD', manufacturer:'Tamron', line:'Di III', type:'Zoom',
-    focalLength:null, focalLengthMin:35, focalLengthMax:100, focalLengthEquiv:'35-100mm',
+    mount:'z', focalLength:null, focalLengthMin:35, focalLengthMax:100, focalLengthEquiv:'35-100mm',
     maxAperture:2.8, minAperture:22, weight:575, length:121.5, diameter:80.6,
     filterThread:67, minFocusDist:22, maxMagnification:0.3,
     elements:15, groups:13, blades:9, afType:'Linear Motor',
@@ -1631,7 +1631,7 @@ const LENSES = {
 
   'tamron-70-180mm-f28-g2': {
     name:'Tamron 70-180mm f/2.8 Di III VC VXD G2', manufacturer:'Tamron', line:'Di III', type:'Zoom',
-    focalLength:null, focalLengthMin:70, focalLengthMax:180, focalLengthEquiv:'70-180mm',
+    mount:'z', focalLength:null, focalLengthMin:70, focalLengthMax:180, focalLengthEquiv:'70-180mm',
     maxAperture:2.8, minAperture:22, weight:865, length:158.7, diameter:83,
     filterThread:67, minFocusDist:30, maxMagnification:0.38,
     elements:20, groups:15, blades:9, afType:'Linear Motor',
@@ -1648,7 +1648,7 @@ const LENSES = {
 
   'tamron-90mm-f28-macro': {
     name:'Tamron 90mm f/2.8 Di III Macro VXD', manufacturer:'Tamron', line:'Di III', type:'Prime',
-    focalLength:90, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'90mm',
+    mount:'z', focalLength:90, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'90mm',
     maxAperture:2.8, minAperture:16, weight:640, length:128.5, diameter:79.2,
     filterThread:67, minFocusDist:23, maxMagnification:1.0,
     elements:15, groups:12, blades:12, afType:'Linear Motor',
@@ -1666,7 +1666,7 @@ const LENSES = {
   /* ── Laowa (Z mount manual-focus specialty) ── */
   'laowa-90mm-f28-macro': {
     name:'Laowa 90mm f/2.8 2x Ultra Macro APO', manufacturer:'Laowa', line:'Ultra Macro APO', type:'Prime',
-    focalLength:90, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'90mm',
+    mount:'z', focalLength:90, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'90mm',
     maxAperture:2.8, minAperture:22, weight:619, length:120, diameter:74,
     filterThread:67, minFocusDist:20.5, maxMagnification:2.0,
     elements:13, groups:10, blades:13, afType:'Manual',
@@ -1681,7 +1681,7 @@ const LENSES = {
 
   'laowa-15mm-f2': {
     name:'Laowa 15mm f/2 Zero-D', manufacturer:'Laowa', line:'Zero-D', type:'Prime',
-    focalLength:15, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'15mm',
+    mount:'z', focalLength:15, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'15mm',
     maxAperture:2.0, minAperture:22, weight:500, length:82, diameter:66,
     filterThread:72, minFocusDist:15, maxMagnification:0.1,
     elements:12, groups:9, blades:5, afType:'Manual',
@@ -1696,7 +1696,7 @@ const LENSES = {
 
   'laowa-10mm-f4-cookie': {
     name:'Laowa 10mm f/4 Cookie', manufacturer:'Laowa', line:'Cookie', type:'Prime',
-    focalLength:10, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'15mm',
+    mount:'z', focalLength:10, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'15mm',
     maxAperture:4.0, minAperture:22, weight:130, length:25, diameter:54,
     filterThread:37, minFocusDist:10, maxMagnification:0.1,
     elements:12, groups:8, blades:5, afType:'Manual',
@@ -1719,7 +1719,7 @@ const LENSES = {
      research/lenses.md for the full per-lens source ledger. */
   'laowa-10mm-f28-af': {
     name:'Laowa 10mm f/2.8 Zero-D FF', manufacturer:'Laowa', line:'Zero-D', type:'Prime',
-    focalLength:10, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'10mm',
+    mount:'z', focalLength:10, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'10mm',
     maxAperture:2.8, minAperture:22, weight:420, length:70.8, diameter:82,
     filterThread:77, minFocusDist:12, maxMagnification:0.24,
     elements:15, groups:9, blades:5, afType:'Stepping Motor',
@@ -1737,7 +1737,7 @@ const LENSES = {
 
   'laowa-12mm-f28-lite-zero-d': {
     name:'Laowa 12mm f/2.8 Lite Zero-D FF', manufacturer:'Laowa', line:'Lite Zero-D', type:'Prime',
-    focalLength:12, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'12mm',
+    mount:'z', focalLength:12, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'12mm',
     maxAperture:2.8, minAperture:22, weight:390, length:84.6, diameter:74.8,
     filterThread:72, minFocusDist:14, maxMagnification:0.2,
     elements:16, groups:9, blades:5, afType:'Stepping Motor',
@@ -1755,7 +1755,7 @@ const LENSES = {
 
   'laowa-8-15mm-f28-fisheye': {
     name:'Laowa 8-15mm f/2.8 FF Zoom Fisheye', manufacturer:'Laowa', line:'Zoom Fisheye', type:'Zoom',
-    focalLength:null, focalLengthMin:8, focalLengthMax:15, focalLengthEquiv:'8-15mm',
+    mount:'z', focalLength:null, focalLengthMin:8, focalLengthMax:15, focalLengthEquiv:'8-15mm',
     maxAperture:2.8, minAperture:22, weight:650, length:94.5, diameter:76.4,
     filterThread:null, minFocusDist:16, maxMagnification:0.23,
     elements:13, groups:9, blades:9, afType:'Manual',
@@ -1773,7 +1773,7 @@ const LENSES = {
 
   'laowa-argus-28mm-f12': {
     name:'Laowa Argus 28mm f/1.2 FF', manufacturer:'Laowa', line:'Argus', type:'Prime',
-    focalLength:28, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'28mm',
+    mount:'z', focalLength:28, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'28mm',
     maxAperture:1.2, minAperture:16, weight:562, length:106.31, diameter:68.5,
     filterThread:62, minFocusDist:50, maxMagnification:0.073,
     elements:13, groups:7, blades:13, afType:'Manual',
@@ -1791,7 +1791,7 @@ const LENSES = {
 
   'laowa-15mm-f45-macro': {
     name:'Laowa 15mm f/4.5 0.5X Wide Angle Macro', manufacturer:'Laowa', line:'Wide Angle Macro', type:'Prime',
-    focalLength:15, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'15mm',
+    mount:'z', focalLength:15, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'15mm',
     maxAperture:4.5, minAperture:32, weight:308, length:47.7, diameter:70,
     filterThread:62, minFocusDist:12.9, maxMagnification:0.5,
     elements:16, groups:11, blades:5, afType:'Manual',
@@ -1809,7 +1809,7 @@ const LENSES = {
 
   'laowa-15mm-f5-cookie': {
     name:'Laowa 15mm f/5 Cookie FF', manufacturer:'Laowa', line:'Cookie', type:'Prime',
-    focalLength:15, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'15mm',
+    mount:'z', focalLength:15, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'15mm',
     maxAperture:5.0, minAperture:22, weight:138, length:35.2, diameter:53,
     filterThread:39, minFocusDist:12, maxMagnification:0.2,
     elements:13, groups:9, blades:5, afType:'Manual',
@@ -1827,7 +1827,7 @@ const LENSES = {
 
   'laowa-8-16mm-f35-5': {
     name:'Laowa 8-16mm f/3.5-5 Zoom CF', manufacturer:'Laowa', line:'Zoom CF', type:'Zoom',
-    focalLength:null, focalLengthMin:8, focalLengthMax:16, focalLengthEquiv:'12-24mm',
+    mount:'z', focalLength:null, focalLengthMin:8, focalLengthMax:16, focalLengthEquiv:'12-24mm',
     maxAperture:3.5, minAperture:16, weight:463, length:88.53, diameter:88.4,
     filterThread:86, minFocusDist:20, maxMagnification:0.125,
     elements:16, groups:12, blades:5, afType:'Manual',
@@ -1845,7 +1845,7 @@ const LENSES = {
 
   'laowa-58mm-f28-2x-macro': {
     name:'Laowa 58mm f/2.8 2X Ultra-Macro APO', manufacturer:'Laowa', line:'Ultra Macro APO', type:'Prime',
-    focalLength:58, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'58mm',
+    mount:'z', focalLength:58, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'58mm',
     maxAperture:2.8, minAperture:22, weight:595, length:117, diameter:74,
     filterThread:67, minFocusDist:18.5, maxMagnification:2.0,
     elements:14, groups:11, blades:13, afType:'Manual',
@@ -1863,7 +1863,7 @@ const LENSES = {
 
   'laowa-65mm-f28-2x-macro': {
     name:'Laowa 65mm f/2.8 2x Ultra Macro APO', manufacturer:'Laowa', line:'Ultra Macro APO', type:'Prime',
-    focalLength:65, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'98mm',
+    mount:'z', focalLength:65, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'98mm',
     maxAperture:2.8, minAperture:22, weight:335, length:100, diameter:57,
     filterThread:52, minFocusDist:17, maxMagnification:2.0,
     elements:14, groups:10, blades:9, afType:'Manual',
@@ -1881,7 +1881,7 @@ const LENSES = {
 
   'laowa-10-18mm-f45-56': {
     name:'Laowa 10-18mm f/4.5-5.6 Zoom', manufacturer:'Laowa', line:'Zoom', type:'Zoom',
-    focalLength:null, focalLengthMin:10, focalLengthMax:18, focalLengthEquiv:'10-18mm',
+    mount:'z', focalLength:null, focalLengthMin:10, focalLengthMax:18, focalLengthEquiv:'10-18mm',
     maxAperture:4.5, minAperture:22, weight:496, length:90.9, diameter:70,
     filterThread:null, minFocusDist:15, maxMagnification:0.25,
     elements:14, groups:10, blades:5, afType:'Manual',
@@ -1899,7 +1899,7 @@ const LENSES = {
 
   'laowa-25mm-f28-25-5x-macro': {
     name:'Laowa 25mm f/2.8 2.5-5X Ultra Macro', manufacturer:'Laowa', line:'Ultra Macro', type:'Prime',
-    focalLength:25, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'25mm',
+    mount:'z', focalLength:25, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'25mm',
     maxAperture:2.8, minAperture:16, weight:400, length:65, diameter:82,
     filterThread:null, minFocusDist:17.3, maxMagnification:5.0,
     elements:8, groups:6, blades:8, afType:'Manual',
@@ -1917,7 +1917,7 @@ const LENSES = {
 
   'laowa-100mm-f28-2x-macro': {
     name:'Laowa 100mm f/2.8 2x Ultra Macro APO', manufacturer:'Laowa', line:'Ultra Macro APO', type:'Prime',
-    focalLength:100, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'100mm',
+    mount:'z', focalLength:100, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'100mm',
     maxAperture:2.8, minAperture:22, weight:650, length:155, diameter:72,
     filterThread:67, minFocusDist:24.7, maxMagnification:2.0,
     elements:12, groups:10, blades:13, afType:'Manual',
@@ -1935,7 +1935,7 @@ const LENSES = {
 
   'laowa-argus-33mm-f095': {
     name:'Laowa Argus 33mm f/0.95 CF APO', manufacturer:'Laowa', line:'Argus', type:'Prime',
-    focalLength:33, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'50mm',
+    mount:'z', focalLength:33, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'50mm',
     maxAperture:0.95, minAperture:16, weight:590, length:83, diameter:71.5,
     filterThread:62, minFocusDist:35, maxMagnification:0.125,
     elements:14, groups:9, blades:9, afType:'Manual',
@@ -1953,7 +1953,7 @@ const LENSES = {
 
   'laowa-17mm-f4-tilt-shift': {
     name:'Laowa 17mm f/4 Zero-D Tilt-Shift / Shift', manufacturer:'Laowa', line:'Tilt-Shift', type:'Prime',
-    focalLength:17, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'17mm',
+    mount:'z', focalLength:17, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'17mm',
     maxAperture:4.0, minAperture:22, weight:810, length:93, diameter:111,
     filterThread:86, minFocusDist:25, maxMagnification:0.131,
     elements:18, groups:12, blades:14, afType:'Manual',
@@ -1971,7 +1971,7 @@ const LENSES = {
 
   'laowa-35mm-f28-tilt-shift-macro': {
     name:'Laowa 35mm f/2.8 Zero-D Tilt-Shift 0.5x Macro', manufacturer:'Laowa', line:'Tilt-Shift Macro', type:'Prime',
-    focalLength:35, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'35mm',
+    mount:'z', focalLength:35, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'35mm',
     maxAperture:2.8, minAperture:22, weight:1350, length:148.9, diameter:104.9,
     filterThread:77, minFocusDist:22.8, maxMagnification:0.5,
     elements:14, groups:12, blades:15, afType:'Manual',
@@ -1989,7 +1989,7 @@ const LENSES = {
 
   'laowa-55mm-f28-tilt-shift-macro': {
     name:'Laowa 55mm f/2.8 Tilt-shift 1X Macro', manufacturer:'Laowa', line:'Tilt-Shift Macro', type:'Prime',
-    focalLength:55, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'55mm',
+    mount:'z', focalLength:55, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'55mm',
     maxAperture:2.8, minAperture:22, weight:1345, length:168.5, diameter:85,
     filterThread:77, minFocusDist:27, maxMagnification:1.0,
     elements:14, groups:11, blades:15, afType:'Manual',
@@ -2007,7 +2007,7 @@ const LENSES = {
 
   'laowa-100mm-f28-tilt-shift-macro': {
     name:'Laowa 100mm f/2.8 Tilt-shift 1X Macro', manufacturer:'Laowa', line:'Tilt-Shift Macro', type:'Prime',
-    focalLength:100, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'100mm',
+    mount:'z', focalLength:100, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'100mm',
     maxAperture:2.8, minAperture:22, weight:1215, length:162, diameter:85,
     filterThread:77, minFocusDist:32, maxMagnification:1.0,
     elements:13, groups:10, blades:15, afType:'Manual',
@@ -2025,7 +2025,7 @@ const LENSES = {
 
   'laowa-15mm-f45-shift': {
     name:'Laowa 15mm f/4.5 Zero-D Shift', manufacturer:'Laowa', line:'Zero-D Shift', type:'Prime',
-    focalLength:15, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'15mm',
+    mount:'z', focalLength:15, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'15mm',
     maxAperture:4.5, minAperture:22, weight:597, length:103, diameter:79,
     filterThread:null, minFocusDist:20, maxMagnification:0.2,
     elements:17, groups:11, blades:14, afType:'Manual',
@@ -2043,7 +2043,7 @@ const LENSES = {
 
   'laowa-20mm-f4-shift': {
     name:'Laowa 20mm f/4 Zero-D Shift', manufacturer:'Laowa', line:'Zero-D Shift', type:'Prime',
-    focalLength:20, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'20mm',
+    mount:'z', focalLength:20, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'20mm',
     maxAperture:4.0, minAperture:22, weight:747, length:91, diameter:95,
     filterThread:82, minFocusDist:25, maxMagnification:0.17,
     elements:16, groups:11, blades:14, afType:'Manual',
@@ -2061,7 +2061,7 @@ const LENSES = {
 
   'laowa-12-24mm-f56-shift': {
     name:'Laowa 12-24mm f/5.6 Zoom Shift CF', manufacturer:'Laowa', line:'Zoom Shift', type:'Zoom',
-    focalLength:null, focalLengthMin:12, focalLengthMax:24, focalLengthEquiv:'18-36mm',
+    mount:'z', focalLength:null, focalLengthMin:12, focalLengthMax:24, focalLengthEquiv:'18-36mm',
     maxAperture:5.6, minAperture:22, weight:575, length:98.91, diameter:80,
     filterThread:77, minFocusDist:15, maxMagnification:0.4,
     elements:15, groups:11, blades:9, afType:'Manual',
@@ -2079,7 +2079,7 @@ const LENSES = {
 
   'laowa-85mm-f56-2x-macro': {
     name:'Laowa 85mm f/5.6 2x Ultra Macro APO', manufacturer:'Laowa', line:'Ultra Macro APO', type:'Prime',
-    focalLength:85, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'85mm',
+    mount:'z', focalLength:85, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'85mm',
     maxAperture:5.6, minAperture:22, weight:314, length:81, diameter:53,
     filterThread:46, minFocusDist:16.3, maxMagnification:2.0,
     elements:13, groups:9, blades:7, afType:'Manual',
@@ -2104,7 +2104,7 @@ const LENSES = {
      this round, independent of the removed entry) lists exactly 2: */
   'samyang-14mm-f28': {
     name:'Samyang 14mm F2.8 Z', manufacturer:'Samyang', line:'MF', type:'Prime',
-    focalLength:14, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'14mm',
+    mount:'z', focalLength:14, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'14mm',
     maxAperture:2.8, minAperture:22, weight:810, length:124.1, diameter:87,
     filterThread:null, minFocusDist:28, maxMagnification:0.08,
     elements:14, groups:10, blades:6, afType:'Manual',
@@ -2121,7 +2121,7 @@ const LENSES = {
 
   'samyang-85mm-f14': {
     name:'Samyang 85mm F1.4 Z', manufacturer:'Samyang', line:'MF', type:'Prime',
-    focalLength:85, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'85mm',
+    mount:'z', focalLength:85, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'85mm',
     maxAperture:1.4, minAperture:22, weight:740, length:102.7, diameter:78,
     filterThread:72, minFocusDist:100, maxMagnification:0.09,
     elements:9, groups:7, blades:8, afType:'Manual',
@@ -2139,7 +2139,7 @@ const LENSES = {
   /* ── Viltrox full-frame Z primes ── */
   'viltrox-24mm-f18': {
     name:'Viltrox AF 24mm f/1.8', manufacturer:'Viltrox', line:'AF', type:'Prime',
-    focalLength:24, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'24mm',
+    mount:'z', focalLength:24, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'24mm',
     maxAperture:1.8, minAperture:16, weight:370, length:92, diameter:65,
     filterThread:55, minFocusDist:30, maxMagnification:0.1,
     elements:11, groups:9, blades:9, afType:'STM',
@@ -2152,7 +2152,7 @@ const LENSES = {
 
   'viltrox-35mm-f18-evo': {
     name:'Viltrox AF 35mm f/1.8 EVO', manufacturer:'Viltrox', line:'EVO', type:'Prime',
-    focalLength:35, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'35mm',
+    mount:'z', focalLength:35, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'35mm',
     maxAperture:1.8, minAperture:16, weight:375, length:78, diameter:69,
     filterThread:58, minFocusDist:34, maxMagnification:0.1,
     elements:13, groups:10, blades:9, afType:'STM',
@@ -2166,7 +2166,7 @@ const LENSES = {
 
   'viltrox-40mm-f25-air': {
     name:'Viltrox AF 40mm f/2.5 Air', manufacturer:'Viltrox', line:'Air', type:'Prime',
-    focalLength:40, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'40mm',
+    mount:'z', focalLength:40, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'40mm',
     maxAperture:2.5, minAperture:16, weight:180, length:55.9, diameter:68,
     filterThread:52, minFocusDist:34, maxMagnification:0.1,
     elements:10, groups:6, blades:7, afType:'STM',
@@ -2180,7 +2180,7 @@ const LENSES = {
 
   'viltrox-85mm-f20-evo': {
     name:'Viltrox AF 85mm f/2.0 EVO', manufacturer:'Viltrox', line:'EVO', type:'Prime',
-    focalLength:85, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'85mm',
+    mount:'z', focalLength:85, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'85mm',
     maxAperture:2.0, minAperture:16, weight:360, length:78, diameter:69,
     filterThread:58, minFocusDist:740, maxMagnification:0.13,
     elements:10, groups:8, blades:9, afType:'STM',
@@ -2194,7 +2194,7 @@ const LENSES = {
 
   'viltrox-85mm-f14-pro': {
     name:'Viltrox AF 85mm f/1.4 Pro', manufacturer:'Viltrox', line:'Pro', type:'Prime',
-    focalLength:85, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'85mm',
+    mount:'z', focalLength:85, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'85mm',
     maxAperture:1.4, minAperture:16, weight:835, length:110.6, diameter:84.5,
     filterThread:77, minFocusDist:790, maxMagnification:0.13,
     elements:15, groups:11, blades:11, afType:'VCM',
@@ -2209,7 +2209,7 @@ const LENSES = {
   /* ── Viltrox full-frame Z primes, round 2 additions (2026-08-30) ── */
   'viltrox-26mm-f28-evo': {
     name:'Viltrox AF 26mm F2.8 EVO', manufacturer:'Viltrox', line:'EVO', type:'Prime',
-    focalLength:26, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'26mm',
+    mount:'z', focalLength:26, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'26mm',
     maxAperture:2.8, minAperture:16, weight:170, length:25.8, diameter:69.4,
     filterThread:43, minFocusDist:20, maxMagnification:0.2,
     elements:8, groups:6, blades:9, afType:'STM',
@@ -2223,7 +2223,7 @@ const LENSES = {
 
   'viltrox-55mm-f18-evo': {
     name:'Viltrox AF 55mm F1.8 EVO', manufacturer:'Viltrox', line:'EVO', type:'Prime',
-    focalLength:55, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'55mm',
+    mount:'z', focalLength:55, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'55mm',
     maxAperture:1.8, minAperture:16, weight:390, length:78, diameter:69,
     filterThread:58, minFocusDist:43, maxMagnification:0.16,
     elements:13, groups:9, blades:null, afType:'STM',
@@ -2237,7 +2237,7 @@ const LENSES = {
 
   'viltrox-50mm-f14-pro': {
     name:'Viltrox AF 50mm F1.4 Pro', manufacturer:'Viltrox', line:'Pro', type:'Prime',
-    focalLength:50, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'50mm',
+    mount:'z', focalLength:50, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'50mm',
     maxAperture:1.4, minAperture:16, weight:830, length:113, diameter:84.5,
     filterThread:77, minFocusDist:45, maxMagnification:0.145,
     elements:15, groups:11, blades:9, afType:'VCM',
@@ -2251,7 +2251,7 @@ const LENSES = {
 
   'viltrox-35mm-f12-lab': {
     name:'Viltrox AF 35mm F1.2 LAB', manufacturer:'Viltrox', line:'LAB', type:'Prime',
-    focalLength:35, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'35mm',
+    mount:'z', focalLength:35, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'35mm',
     maxAperture:1.2, minAperture:16, weight:970, length:123.5, diameter:89.2,
     filterThread:77, minFocusDist:34, maxMagnification:0.17,
     elements:15, groups:10, blades:null, afType:'VCM',
@@ -2265,7 +2265,7 @@ const LENSES = {
 
   'viltrox-135mm-f18-lab': {
     name:'Viltrox AF 135mm F1.8 LAB', manufacturer:'Viltrox', line:'LAB', type:'Prime',
-    focalLength:135, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'135mm',
+    mount:'z', focalLength:135, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'135mm',
     maxAperture:1.8, minAperture:16, weight:1265, length:147.6, diameter:93,
     filterThread:82, minFocusDist:72, maxMagnification:0.25,
     elements:14, groups:9, blades:11, afType:'VCM',
@@ -2279,7 +2279,7 @@ const LENSES = {
 
   'viltrox-14mm-f4-air': {
     name:'Viltrox AF 14mm F4.0 Air', manufacturer:'Viltrox', line:'Air', type:'Prime',
-    focalLength:14, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'14mm',
+    mount:'z', focalLength:14, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'14mm',
     maxAperture:4.0, minAperture:16, weight:185, length:58.4, diameter:68,
     filterThread:58, minFocusDist:13, maxMagnification:0.23,
     elements:12, groups:9, blades:null, afType:'STM',
@@ -2293,7 +2293,7 @@ const LENSES = {
 
   'viltrox-28mm-f45': {
     name:'Viltrox AF 28mm F4.5', manufacturer:'Viltrox', line:'AF', type:'Prime',
-    focalLength:28, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'28mm',
+    mount:'z', focalLength:28, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'28mm',
     maxAperture:4.5, minAperture:4.5, weight:80, length:16.8, diameter:65.3,
     filterThread:null, minFocusDist:35, maxMagnification:0.1,
     elements:6, groups:6, blades:null, afType:'VCM',
@@ -2307,7 +2307,7 @@ const LENSES = {
 
   'viltrox-50mm-f2-air': {
     name:'Viltrox AF 50mm F2.0 Air', manufacturer:'Viltrox', line:'Air', type:'Prime',
-    focalLength:50, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'50mm',
+    mount:'z', focalLength:50, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'50mm',
     maxAperture:2.0, minAperture:16, weight:220, length:58.6, diameter:68,
     filterThread:58, minFocusDist:51, maxMagnification:0.11,
     elements:13, groups:9, blades:9, afType:'STM',
@@ -2321,7 +2321,7 @@ const LENSES = {
 
   'viltrox-20mm-f28-air': {
     name:'Viltrox AF 20mm F2.8', manufacturer:'Viltrox', line:'Air', type:'Prime',
-    focalLength:20, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'20mm',
+    mount:'z', focalLength:20, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'20mm',
     maxAperture:2.8, minAperture:16, weight:173, length:60.8, diameter:68,
     filterThread:52, minFocusDist:19, maxMagnification:0.17,
     elements:10, groups:8, blades:7, afType:'STM',
@@ -2335,7 +2335,7 @@ const LENSES = {
 
   'viltrox-28mm-f18': {
     name:'Viltrox AF 28mm F1.8', manufacturer:'Viltrox', line:'AF', type:'Prime',
-    focalLength:28, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'28mm',
+    mount:'z', focalLength:28, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'28mm',
     maxAperture:1.8, minAperture:16, weight:367, length:88.2, diameter:70,
     filterThread:55, minFocusDist:37, maxMagnification:0.1,
     elements:11, groups:9, blades:9, afType:'STM',
@@ -2349,7 +2349,7 @@ const LENSES = {
 
   'viltrox-20mm-f18-mf': {
     name:'Viltrox MF 20mm F1.8', manufacturer:'Viltrox', line:'MF', type:'Prime',
-    focalLength:20, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'20mm',
+    mount:'z', focalLength:20, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'20mm',
     maxAperture:1.8, minAperture:16, weight:782, length:104, diameter:76.8,
     filterThread:82, minFocusDist:25, maxMagnification:null,
     elements:12, groups:9, blades:14, afType:'Manual',
@@ -2364,7 +2364,7 @@ const LENSES = {
   /* ── Voigtländer (native Z manual-focus) ── */
   'voigtlander-apo-lanthar-50mm-f2': {
     name:'Voigtländer APO-Lanthar 50mm f/2 Aspherical II Z', manufacturer:'Voigtländer', line:'APO-Lanthar', type:'Prime',
-    focalLength:50, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'50mm',
+    mount:'z', focalLength:50, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'50mm',
     maxAperture:2.0, minAperture:16, weight:370, length:64.3, diameter:63,
     filterThread:58, minFocusDist:45, maxMagnification:0.15,
     elements:10, groups:8, blades:12, afType:'Manual',
@@ -2381,7 +2381,7 @@ const LENSES = {
 
   'voigtlander-nokton-40mm-f12': {
     name:'Voigtländer Nokton 40mm f/1.2 Z', manufacturer:'Voigtländer', line:'Nokton', type:'Prime',
-    focalLength:40, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'40mm',
+    mount:'z', focalLength:40, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'40mm',
     maxAperture:1.2, minAperture:22, weight:315, length:53.9, diameter:67.6,
     filterThread:58, minFocusDist:35, maxMagnification:0.1,
     elements:8, groups:6, blades:10, afType:'Manual',
@@ -2411,7 +2411,7 @@ const LENSES = {
      sourced). Flagged in PROGRESS.md for a follow-up retail-price pass. ── */
   'voigtlander-super-wide-heliar-15mm-f45': {
     name:'Voigtländer Super Wide Heliar 15mm f/4.5 Aspherical Z', manufacturer:'Voigtländer', line:'Heliar', type:'Prime',
-    focalLength:15, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'15mm',
+    mount:'z', focalLength:15, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'15mm',
     maxAperture:4.5, minAperture:22, weight:290, length:67.0, diameter:67.6,
     filterThread:58, minFocusDist:12.6, maxMagnification:null,
     elements:11, groups:9, blades:null, afType:'Manual',
@@ -2427,7 +2427,7 @@ const LENSES = {
 
   'voigtlander-nokton-d23mm-f12': {
     name:'Voigtländer Nokton D23mm f/1.2 Z', manufacturer:'Voigtländer', line:'Nokton', type:'Prime',
-    focalLength:23, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'35mm',
+    mount:'z', focalLength:23, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'35mm',
     maxAperture:1.2, minAperture:16, weight:240, length:45.2, diameter:65.8,
     filterThread:46, minFocusDist:18, maxMagnification:null,
     elements:10, groups:6, blades:12, afType:'Manual',
@@ -2443,7 +2443,7 @@ const LENSES = {
 
   'voigtlander-nokton-28mm-f15': {
     name:'Voigtländer Nokton 28mm f/1.5 Aspherical Z', manufacturer:'Voigtländer', line:'Nokton', type:'Prime',
-    focalLength:28, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'28mm',
+    mount:'z', focalLength:28, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'28mm',
     maxAperture:1.5, minAperture:16, weight:360, length:57.0, diameter:67.6,
     filterThread:52, minFocusDist:28, maxMagnification:null,
     elements:10, groups:8, blades:12, afType:'Manual',
@@ -2459,7 +2459,7 @@ const LENSES = {
 
   'voigtlander-apo-lanthar-28mm-f2': {
     name:'Voigtländer APO-Lanthar 28mm f/2 Aspherical Z', manufacturer:'Voigtländer', line:'APO-Lanthar', type:'Prime',
-    focalLength:28, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'28mm',
+    mount:'z', focalLength:28, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'28mm',
     maxAperture:2.0, minAperture:16, weight:350, length:60.0, diameter:68.8,
     filterThread:58, minFocusDist:28, maxMagnification:0.145,
     elements:12, groups:8, blades:null, afType:'Manual',
@@ -2475,7 +2475,7 @@ const LENSES = {
 
   'voigtlander-nokton-d35mm-f12': {
     name:'Voigtländer Nokton D35mm f/1.2 Z', manufacturer:'Voigtländer', line:'Nokton', type:'Prime',
-    focalLength:35, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'53mm',
+    mount:'z', focalLength:35, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'53mm',
     maxAperture:1.2, minAperture:16, weight:230, length:41.0, diameter:65.8,
     filterThread:46, minFocusDist:30, maxMagnification:0.149,
     elements:8, groups:6, blades:null, afType:'Manual',
@@ -2491,7 +2491,7 @@ const LENSES = {
 
   'voigtlander-macro-apo-ultron-d35mm-f2': {
     name:'Voigtländer Macro APO-Ultron D35mm f/2 Z', manufacturer:'Voigtländer', line:'APO-Ultron', type:'Prime',
-    focalLength:35, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'53mm',
+    mount:'z', focalLength:35, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'53mm',
     maxAperture:2.0, minAperture:22, weight:290, length:56.7, diameter:67.7,
     filterThread:52, minFocusDist:16.3, maxMagnification:0.5,
     elements:9, groups:6, blades:10, afType:'Manual',
@@ -2507,7 +2507,7 @@ const LENSES = {
 
   'voigtlander-apo-lanthar-35mm-f2': {
     name:'Voigtländer APO-Lanthar 35mm f/2 Aspherical II Z', manufacturer:'Voigtländer', line:'APO-Lanthar', type:'Prime',
-    focalLength:35, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'35mm',
+    mount:'z', focalLength:35, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'35mm',
     maxAperture:2.0, minAperture:16, weight:360, length:70.4, diameter:67.6,
     filterThread:58, minFocusDist:35, maxMagnification:null,
     elements:11, groups:9, blades:12, afType:'Manual',
@@ -2523,7 +2523,7 @@ const LENSES = {
 
   'voigtlander-septon-40mm-f2': {
     name:'Voigtländer Septon 40mm f/2 Aspherical Z', manufacturer:'Voigtländer', line:'Septon', type:'Prime',
-    focalLength:40, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'40mm',
+    mount:'z', focalLength:40, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'40mm',
     maxAperture:2.0, minAperture:16, weight:205, length:32, diameter:68.3,
     filterThread:52, minFocusDist:30, maxMagnification:null,
     elements:7, groups:6, blades:null, afType:'Manual',
@@ -2539,7 +2539,7 @@ const LENSES = {
 
   'voigtlander-nokton-50mm-f10': {
     name:'Voigtländer Nokton 50mm f/1.0 Aspherical Z', manufacturer:'Voigtländer', line:'Nokton', type:'Prime',
-    focalLength:50, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'50mm',
+    mount:'z', focalLength:50, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'50mm',
     maxAperture:1.0, minAperture:16, weight:598, length:66.6, diameter:67.6,
     filterThread:62, minFocusDist:45, maxMagnification:null,
     elements:9, groups:7, blades:12, afType:'Manual',
@@ -2555,7 +2555,7 @@ const LENSES = {
 
   'voigtlander-macro-apo-lanthar-65mm-f2': {
     name:'Voigtländer Macro APO-Lanthar 65mm f/2 Aspherical Z', manufacturer:'Voigtländer', line:'APO-Lanthar', type:'Prime',
-    focalLength:65, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'65mm',
+    mount:'z', focalLength:65, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'65mm',
     maxAperture:2.0, minAperture:22, weight:618, length:88.8, diameter:78,
     filterThread:67, minFocusDist:31, maxMagnification:0.5,
     elements:10, groups:8, blades:10, afType:'Manual',
@@ -2571,7 +2571,7 @@ const LENSES = {
 
   'voigtlander-portrait-heliar-75mm-f18': {
     name:'Voigtländer Portrait Heliar 75mm f/1.8 Z', manufacturer:'Voigtländer', line:'Heliar', type:'Prime',
-    focalLength:75, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'75mm',
+    mount:'z', focalLength:75, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'75mm',
     maxAperture:1.8, minAperture:11, weight:580, length:88.0, diameter:70.0,
     filterThread:62, minFocusDist:70, maxMagnification:null,
     elements:6, groups:3, blades:null, afType:'Manual',
@@ -2588,7 +2588,7 @@ const LENSES = {
   /* ── Other (Yongnuo AF + budget makers) ── */
   'yongnuo-35mm-f2': {
     name:'Yongnuo YN35mm f/2Z DF DSM', manufacturer:'Yongnuo', line:'DF DSM', type:'Prime',
-    focalLength:35, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'35mm',
+    mount:'z', focalLength:35, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'35mm',
     maxAperture:2.0, minAperture:16, weight:290, length:73, diameter:68,
     filterThread:52, minFocusDist:35, maxMagnification:0.13,
     elements:9, groups:8, blades:7, afType:'Stepping Motor (DSM)',
@@ -2602,7 +2602,7 @@ const LENSES = {
 
   'yongnuo-50mm-f18': {
     name:'Yongnuo YN50mm f/1.8Z DF DSM', manufacturer:'Yongnuo', line:'DF DSM', type:'Prime',
-    focalLength:50, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'50mm',
+    mount:'z', focalLength:50, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'50mm',
     maxAperture:1.8, minAperture:16, weight:417, length:87, diameter:68,
     filterThread:58, minFocusDist:45, maxMagnification:0.14,
     elements:11, groups:8, blades:9, afType:'Stepping Motor (DSM)',
@@ -2621,7 +2621,7 @@ const LENSES = {
 
   'ttartisan-27mm-f28': {
     name:'TTArtisan AF 27mm f/2.8', manufacturer:'TTArtisan', line:'AF', type:'Prime',
-    focalLength:27, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'41mm',
+    mount:'z', focalLength:27, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'41mm',
     maxAperture:2.8, minAperture:16, weight:93, length:41, diameter:64,
     filterThread:39, minFocusDist:35, maxMagnification:0.1,
     elements:6, groups:5, blades:7, afType:'STM',
@@ -2635,7 +2635,7 @@ const LENSES = {
 
   'ttartisan-17mm-f18-air': {
     name:'TTArtisan AF 17mm f/1.8 Air', manufacturer:'TTArtisan', line:'Air', type:'Prime',
-    focalLength:17, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'26mm',
+    mount:'z', focalLength:17, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'26mm',
     maxAperture:1.8, minAperture:16, weight:170, length:51, diameter:65,
     filterThread:52, minFocusDist:18, maxMagnification:null,
     elements:14, groups:10, blades:6, afType:'STM',
@@ -2652,7 +2652,7 @@ const LENSES = {
 
   'ttartisan-23mm-f18': {
     name:'TTArtisan AF 23mm f/1.8', manufacturer:'TTArtisan', line:'AF', type:'Prime',
-    focalLength:23, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'35mm',
+    mount:'z', focalLength:23, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'35mm',
     maxAperture:1.8, minAperture:16, weight:210, length:62, diameter:64,
     filterThread:52, minFocusDist:30, maxMagnification:null,
     elements:11, groups:9, blades:9, afType:'STM',
@@ -2669,7 +2669,7 @@ const LENSES = {
 
   'ttartisan-35mm-f18-ii': {
     name:'TTArtisan AF 35mm f/1.8 II', manufacturer:'TTArtisan', line:'AF', type:'Prime',
-    focalLength:35, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'53mm',
+    mount:'z', focalLength:35, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'53mm',
     maxAperture:1.8, minAperture:16, weight:185, length:51, diameter:66,
     filterThread:52, minFocusDist:40, maxMagnification:null,
     elements:10, groups:7, blades:9, afType:'STM',
@@ -2686,7 +2686,7 @@ const LENSES = {
 
   'ttartisan-40mm-f2': {
     name:'TTArtisan AF 40mm f/2', manufacturer:'TTArtisan', line:'AF', type:'Prime',
-    focalLength:40, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'40mm',
+    mount:'z', focalLength:40, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'40mm',
     maxAperture:2.0, minAperture:16, weight:171, length:46, diameter:65,
     filterThread:52, minFocusDist:40, maxMagnification:null,
     elements:9, groups:6, blades:7, afType:'STM',
@@ -2703,7 +2703,7 @@ const LENSES = {
 
   'ttartisan-50mm-f18-neo': {
     name:'TTArtisan AF 50mm f/1.8 Neo', manufacturer:'TTArtisan', line:'Neo', type:'Prime',
-    focalLength:50, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'50mm',
+    mount:'z', focalLength:50, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'50mm',
     maxAperture:1.8, minAperture:16, weight:162, length:54, diameter:66,
     filterThread:52, minFocusDist:48, maxMagnification:null,
     elements:12, groups:8, blades:7, afType:'STM',
@@ -2720,7 +2720,7 @@ const LENSES = {
 
   'ttartisan-56mm-f18': {
     name:'TTArtisan AF 56mm f/1.8', manufacturer:'TTArtisan', line:'AF', type:'Prime',
-    focalLength:56, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'84mm',
+    mount:'z', focalLength:56, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'84mm',
     maxAperture:1.8, minAperture:16, weight:239, length:70, diameter:65,
     filterThread:52, minFocusDist:50, maxMagnification:null,
     elements:10, groups:9, blades:9, afType:'STM',
@@ -2737,7 +2737,7 @@ const LENSES = {
 
   'ttartisan-75mm-f2': {
     name:'TTArtisan AF 75mm f/2', manufacturer:'TTArtisan', line:'AF', type:'Prime',
-    focalLength:75, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'75mm',
+    mount:'z', focalLength:75, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'75mm',
     maxAperture:2.0, minAperture:16, weight:333, length:76, diameter:67,
     filterThread:62, minFocusDist:75, maxMagnification:null,
     elements:10, groups:7, blades:9, afType:'STM',
@@ -2754,7 +2754,7 @@ const LENSES = {
 
   'ttartisan-85mm-f18-neo': {
     name:'TTArtisan AF 85mm f/1.8 Neo', manufacturer:'TTArtisan', line:'Neo', type:'Prime',
-    focalLength:85, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'85mm',
+    mount:'z', focalLength:85, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'85mm',
     maxAperture:1.8, minAperture:16, weight:335, length:92, diameter:70,
     filterThread:62, minFocusDist:80, maxMagnification:null,
     elements:12, groups:8, blades:11, afType:'STM',
@@ -2771,7 +2771,7 @@ const LENSES = {
 
   '7artisans-27mm-f28': {
     name:'7Artisans AF 27mm f/2.8', manufacturer:'7Artisans', line:'AF', type:'Prime',
-    focalLength:27, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'41mm',
+    mount:'z', focalLength:27, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'41mm',
     maxAperture:2.8, minAperture:16, weight:172, length:48, diameter:64,
     filterThread:52, minFocusDist:30, maxMagnification:0.1,
     elements:6, groups:5, blades:6, afType:'STM',
@@ -2785,7 +2785,7 @@ const LENSES = {
 
   '7artisans-10mm-f28': {
     name:'7Artisans AF 10mm f/2.8', manufacturer:'7Artisans', line:'AF', type:'Prime',
-    focalLength:10, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'15mm',
+    mount:'z', focalLength:10, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'15mm',
     maxAperture:2.8, minAperture:16, weight:232, length:72, diameter:69,
     filterThread:62, minFocusDist:30, maxMagnification:null,
     elements:11, groups:10, blades:7, afType:'STM',
@@ -2803,7 +2803,7 @@ const LENSES = {
 
   '7artisans-25mm-f18-lite': {
     name:'7Artisans AF 25mm f/1.8 Lite', manufacturer:'7Artisans', line:'Lite', type:'Prime',
-    focalLength:25, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'38mm',
+    mount:'z', focalLength:25, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'38mm',
     maxAperture:1.8, minAperture:16, weight:183, length:51, diameter:67,
     filterThread:58, minFocusDist:25, maxMagnification:null,
     elements:8, groups:5, blades:9, afType:'STM',
@@ -2821,7 +2821,7 @@ const LENSES = {
 
   '7artisans-35mm-f18-lite': {
     name:'7Artisans AF 35mm f/1.8 Lite', manufacturer:'7Artisans', line:'Lite', type:'Prime',
-    focalLength:35, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'53mm',
+    mount:'z', focalLength:35, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'53mm',
     maxAperture:1.8, minAperture:16, weight:181, length:51, diameter:67,
     filterThread:58, minFocusDist:35, maxMagnification:null,
     elements:7, groups:6, blades:9, afType:'STM',
@@ -2839,7 +2839,7 @@ const LENSES = {
 
   '7artisans-50mm-f18-lite': {
     name:'7Artisans AF 50mm f/1.8 Lite', manufacturer:'7Artisans', line:'Lite', type:'Prime',
-    focalLength:50, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'75mm',
+    mount:'z', focalLength:50, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'75mm',
     maxAperture:1.8, minAperture:16, weight:178, length:51, diameter:67,
     filterThread:58, minFocusDist:55, maxMagnification:null,
     elements:6, groups:5, blades:9, afType:'STM',
@@ -2857,7 +2857,7 @@ const LENSES = {
 
   '7artisans-35mm-f18': {
     name:'7Artisans AF 35mm f/1.8', manufacturer:'7Artisans', line:'AF', type:'Prime',
-    focalLength:35, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'35mm',
+    mount:'z', focalLength:35, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'35mm',
     maxAperture:1.8, minAperture:16, weight:426, length:94, diameter:72,
     filterThread:62, minFocusDist:40, maxMagnification:null,
     elements:11, groups:8, blades:11, afType:'STM',
@@ -2875,7 +2875,7 @@ const LENSES = {
 
   '7artisans-40mm-f25-lite': {
     name:'7Artisans AF 40mm f/2.5 LITE', manufacturer:'7Artisans', line:'Lite', type:'Prime',
-    focalLength:40, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'40mm',
+    mount:'z', focalLength:40, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'40mm',
     maxAperture:2.5, minAperture:16, weight:90, length:40, diameter:63,
     filterThread:46, minFocusDist:40, maxMagnification:null,
     elements:7, groups:6, blades:9, afType:'STM',
@@ -2893,7 +2893,7 @@ const LENSES = {
 
   '7artisans-50mm-f18': {
     name:'7Artisans AF 50mm f/1.8', manufacturer:'7Artisans', line:'AF', type:'Prime',
-    focalLength:50, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'50mm',
+    mount:'z', focalLength:50, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'50mm',
     maxAperture:1.8, minAperture:16, weight:420, length:100, diameter:72,
     filterThread:62, minFocusDist:50, maxMagnification:null,
     elements:11, groups:9, blades:11, afType:'STM',
@@ -2911,7 +2911,7 @@ const LENSES = {
 
   '7artisans-85mm-f18': {
     name:'7Artisans AF 85mm f/1.8', manufacturer:'7Artisans', line:'AF', type:'Prime',
-    focalLength:85, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'85mm',
+    mount:'z', focalLength:85, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'85mm',
     maxAperture:1.8, minAperture:16, weight:452, length:100, diameter:72,
     filterThread:62, minFocusDist:80, maxMagnification:null,
     elements:10, groups:7, blades:11, afType:'STM',
@@ -2929,7 +2929,7 @@ const LENSES = {
 
   'meike-85mm-f18': {
     name:'Meike 85mm f/1.8 Full Frame AF', manufacturer:'Meike', line:'AF', type:'Prime',
-    focalLength:85, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'85mm',
+    mount:'z', focalLength:85, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'85mm',
     maxAperture:1.8, minAperture:22, weight:386, length:92, diameter:80,
     filterThread:67, minFocusDist:85, maxMagnification:0.12,
     elements:null, groups:null, blades:9, afType:'STM',
@@ -2943,7 +2943,7 @@ const LENSES = {
 
   'meike-85mm-f18-se-ii': {
     name:'Meike AF 85mm f/1.8 SE Mark II', manufacturer:'Meike', line:'SE', type:'Prime',
-    focalLength:85, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'85mm',
+    mount:'z', focalLength:85, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'85mm',
     maxAperture:1.8, minAperture:16, weight:369, length:100.2, diameter:76,
     filterThread:62, minFocusDist:650, maxMagnification:0.17,
     elements:11, groups:7, blades:11, afType:'STM',
@@ -2961,7 +2961,7 @@ const LENSES = {
      research/lenses.md's "Yongnuo + Meike batch" section for full citations. */
   'yongnuo-11mm-f18': {
     name:'Yongnuo YN11mm F1.8 DA DSM WL', manufacturer:'Yongnuo', line:'DA DSM WL', type:'Prime',
-    focalLength:11, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'17mm',
+    mount:'z', focalLength:11, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'17mm',
     maxAperture:1.8, minAperture:16, weight:260, length:69, diameter:64,
     filterThread:58, minFocusDist:15, maxMagnification:0.15,
     elements:10, groups:9, blades:7, afType:'Stepping Motor (DSM)',
@@ -2979,7 +2979,7 @@ const LENSES = {
 
   'yongnuo-23mm-f14': {
     name:'Yongnuo YN23mm F1.4 DA DSM WL Pro', manufacturer:'Yongnuo', line:'DA DSM WL Pro', type:'Prime',
-    focalLength:23, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'35mm',
+    mount:'z', focalLength:23, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'35mm',
     maxAperture:1.4, minAperture:16, weight:273, length:69, diameter:64,
     filterThread:58, minFocusDist:30, maxMagnification:0.1,
     elements:11, groups:9, blades:9, afType:'Stepping Motor (DSM)',
@@ -2997,7 +2997,7 @@ const LENSES = {
 
   'yongnuo-33mm-f14': {
     name:'Yongnuo YN33mm F1.4 DA DSM WL Pro', manufacturer:'Yongnuo', line:'DA DSM WL Pro', type:'Prime',
-    focalLength:33, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'50mm',
+    mount:'z', focalLength:33, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'50mm',
     maxAperture:1.4, minAperture:16, weight:378, length:89, diameter:59,
     filterThread:58, minFocusDist:40, maxMagnification:0.1,
     elements:11, groups:9, blades:9, afType:'Stepping Motor (DSM)',
@@ -3015,7 +3015,7 @@ const LENSES = {
 
   'yongnuo-35mm-f18': {
     name:'Yongnuo YN35mm F1.8 DA DSM WL', manufacturer:'Yongnuo', line:'DA DSM WL', type:'Prime',
-    focalLength:35, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'53mm',
+    mount:'z', focalLength:35, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'53mm',
     maxAperture:1.8, minAperture:16, weight:182, length:64, diameter:68,
     filterThread:52, minFocusDist:30, maxMagnification:0.15,
     elements:10, groups:8, blades:7, afType:'Stepping Motor (DSM)',
@@ -3033,7 +3033,7 @@ const LENSES = {
 
   'yongnuo-50mm-f18-da': {
     name:'Yongnuo YN50mm F1.8Z DA DSM', manufacturer:'Yongnuo', line:'DA DSM', type:'Prime',
-    focalLength:50, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'75mm',
+    mount:'z', focalLength:50, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'75mm',
     maxAperture:1.8, minAperture:16, weight:148, length:67, diameter:60,
     filterThread:49, minFocusDist:45, maxMagnification:0.14,
     elements:8, groups:7, blades:7, afType:'Stepping Motor (DSM)',
@@ -3051,7 +3051,7 @@ const LENSES = {
 
   'yongnuo-56mm-f14': {
     name:'Yongnuo YN56mm F1.4 DA DSM WL Pro', manufacturer:'Yongnuo', line:'DA DSM WL Pro', type:'Prime',
-    focalLength:56, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'84mm',
+    mount:'z', focalLength:56, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'84mm',
     maxAperture:1.4, minAperture:16, weight:378, length:89, diameter:69,
     filterThread:58, minFocusDist:40, maxMagnification:0.11,
     elements:11, groups:9, blades:9, afType:'Stepping Motor (DSM)',
@@ -3069,7 +3069,7 @@ const LENSES = {
 
   'yongnuo-85mm-f18': {
     name:'Yongnuo YN85mm F1.8Z DF DSM', manufacturer:'Yongnuo', line:'DF DSM', type:'Prime',
-    focalLength:85, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'85mm',
+    mount:'z', focalLength:85, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'85mm',
     maxAperture:1.8, minAperture:16, weight:405, length:88, diameter:67,
     filterThread:58, minFocusDist:80, maxMagnification:0.13,
     elements:9, groups:8, blades:7, afType:'Stepping Motor (DSM)',
@@ -3087,7 +3087,7 @@ const LENSES = {
 
   'meike-24mm-f14': {
     name:'Meike 24mm F1.4 MIX Full Frame AF', manufacturer:'Meike', line:'MIX', type:'Prime',
-    focalLength:24, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'24mm',
+    mount:'z', focalLength:24, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'24mm',
     maxAperture:1.4, minAperture:16, weight:550, length:107, diameter:79,
     filterThread:72, minFocusDist:28, maxMagnification:null,
     elements:15, groups:12, blades:11, afType:'STM',
@@ -3105,7 +3105,7 @@ const LENSES = {
 
   'meike-35mm-f18-pro': {
     name:'Meike 35mm F1.8 Pro AF STM', manufacturer:'Meike', line:'Pro', type:'Prime',
-    focalLength:35, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'35mm',
+    mount:'z', focalLength:35, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'35mm',
     maxAperture:1.8, minAperture:16, weight:404, length:93, diameter:74,
     filterThread:58, minFocusDist:35, maxMagnification:0.13,
     elements:12, groups:10, blades:9, afType:'STM',
@@ -3124,7 +3124,7 @@ const LENSES = {
 
   'meike-50mm-f18': {
     name:'Meike 50mm F1.8 AF STM', manufacturer:'Meike', line:'SE', type:'Prime',
-    focalLength:50, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'50mm',
+    mount:'z', focalLength:50, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'50mm',
     maxAperture:1.8, minAperture:16, weight:382, length:59.5, diameter:68.6,
     filterThread:58, minFocusDist:63, maxMagnification:null,
     elements:11, groups:7, blades:9, afType:'STM',
@@ -3143,7 +3143,7 @@ const LENSES = {
 
   'meike-85mm-f18-pro': {
     name:'Meike 85mm F1.8 Pro AF STM', manufacturer:'Meike', line:'Pro', type:'Prime',
-    focalLength:85, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'85mm',
+    mount:'z', focalLength:85, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'85mm',
     maxAperture:1.8, minAperture:16, weight:389, length:97, diameter:76,
     filterThread:62, minFocusDist:85, maxMagnification:null,
     elements:11, groups:8, blades:9, afType:'STM',

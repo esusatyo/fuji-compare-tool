@@ -11,10 +11,10 @@ Worked on one branch (`add-mount-filter`) and shipped as **one PR**. Each group 
 
 ## 2. Per-item mount data
 
-- [ ] 2.1 Write a throwaway seeding script in the scratchpad (not committed) that derives each camera's mount from `sensorType` and each lens's from its dropdown group, and inserts a `mount:` token into all six data files
-- [ ] 2.2 Run it, then read the whole diff — confirm 137 cameras and 673 lenses each gained exactly one token and nothing else moved
-- [ ] 2.3 Hand-check the judgement calls: `x100vi`, `x-half` and the X100 line → `x`; `gfx100rf` → `g`; `l10` → `mft`; `bs1h` → `l`; `bgh1` → `mft`; both `sd-quattro` bodies → `sa`; every Canon RF-S lens → `rf` (same mount, not a separate one)
-- [ ] **Checkpoint B** — `npm test` green (tests don't require the field yet, so this only proves nothing broke). Commit: *"Record the mount on every camera and lens"*
+- [x] 2.1 Write a throwaway seeding script in the scratchpad (not committed) that derives each camera's mount from `sensorType` and each lens's from its dropdown group, and inserts a `mount:` token into all six data files
+- [x] 2.2 Run it, then prove mechanically that nothing else moved: stripping every inserted `mount:'…', ` token from each file reproduces the HEAD version byte-for-byte (stronger than reading 810 near-identical diff hunks, and far cheaper)
+- [x] 2.3 Hand-check the judgement calls: `x100vi`, `x-half` and the X100 line → `x`; `gfx100rf` → `g`; `l10` → `mft`; `bs1h` → `l`; `bgh1` → `mft`; both `sd-quattro` bodies → `sa`; every Canon RF-S lens → `rf` (same mount, not a separate one)
+- [x] **Checkpoint B** — `npm test` green (tests don't require the field yet, so this only proves nothing broke). Commit: *"Record the mount on every camera and lens"*
 
 ## 3. Tier 1 tests
 
