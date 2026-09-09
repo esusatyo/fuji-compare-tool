@@ -78,4 +78,4 @@ The riskiest group — it touches the slot-count path that PR #51 already found 
 - [x] 9.3 `node scripts/generate-seo.js` produces no diff
 - [x] 9.4 `openspec validate add-mount-filter --strict`
 - [x] 9.5 Final manual pass: all six brands, both tabs, both themes, desktop and mobile widths
-- [ ] **Checkpoint I** — open one PR from `add-mount-filter` covering the whole change
+- [x] **Checkpoint I** — open one PR from `add-mount-filter` covering the whole change — https://github.com/esusatyo/fuji-compare-tool/pull/52
