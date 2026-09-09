@@ -20,6 +20,24 @@ for (const brand of allBrands) {
     assert.ok(cfg.mount.trim(), 'mount is empty');
   });
 
+  // `mount` is landing-tile copy naming the brand's headline mount; `mounts` is the
+  // machine-readable list the mount filter reads and every item's `mount` id comes
+  // from. They are deliberately different: Fujifilm's tile says "X-Mount" while the
+  // brand spans X and G.
+  test(`[${brand}] BRAND_CONFIG.mounts is a well-formed, ordered mount list`, () => {
+    assert.ok(Array.isArray(cfg.mounts) && cfg.mounts.length,
+      'mounts must be a non-empty array');
+    const ids = new Set();
+    for (const m of cfg.mounts) {
+      assert.equal(typeof m.id, 'string', 'each mount needs a string id');
+      assert.ok(/^[a-z0-9-]+$/.test(m.id), `mount id "${m.id}" must be kebab-case`);
+      assert.equal(typeof m.label, 'string', `mount "${m.id}" needs a string label`);
+      assert.ok(m.label.trim(), `mount "${m.id}" has an empty label`);
+      assert.ok(!ids.has(m.id), `mount id "${m.id}" is declared twice`);
+      ids.add(m.id);
+    }
+  });
+
   test(`[${brand}] heroCamera (landing-tile showcase) resolves to a real, current camera`, () => {
     assert.equal(typeof cfg.heroCamera, 'string', 'heroCamera must be a camera slug string');
     const cam = data.CAMERAS[cfg.heroCamera];

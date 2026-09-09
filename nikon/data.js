@@ -10,7 +10,10 @@ const BRAND_CONFIG = {
   slug:        'nikon',
   families:    ['Z System'],
   brandSections: ['nikon'],
+  // `mount` is the landing-tile headline label; `mounts` is the machine-readable
+  // list every item's `mount` id must come from, and the order the filter chips render in.
   mount:       'Z-Mount',
+  mounts:      [{ id:'z', label:'Z-Mount' }],
   // Landing-tile showcase camera: not the true flagship (that's the Z9) —
   // the only freely-licensed Z9 photo found shows it in a shop with a large
   // telephoto attached, which reads poorly as a tile thumbnail. The Z6 III

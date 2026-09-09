@@ -10,7 +10,10 @@ const BRAND_CONFIG = {
   slug:        'panasonic',
   families:    ['Lumix S (L-Mount)', 'Lumix G (Micro Four Thirds)'],
   brandSections: ['panasonic'],
+  // `mount` is the landing-tile headline label; `mounts` is the machine-readable
+  // list every item's `mount` id must come from, and the order the filter chips render in.
   mount:       'L-Mount / MFT',
+  mounts:      [{ id:'l', label:'L-Mount' }, { id:'mft', label:'Micro Four Thirds' }],
   heroCamera:  's1r-ii',
   cameras: {
     heroEyebrow:  'Lumix S & G',
@@ -630,7 +633,8 @@ const DROPDOWN_GROUPS = [
   { label: '── Lumix GH — Micro Four Thirds ──',   ids: ['gh7', 'gh6', 'gh5-ii', 'gh5'] },
   { label: '── Lumix G — Micro Four Thirds ──',    ids: ['g9-ii', 'g100d', 'g97', 'g100', 'g9', 'gx9', 'g95'] },
   { label: '── Lumix Compact (fixed-lens) ──',     ids: ['l10'] },
-  { label: '── Lumix Box (cinema / live event) ──', ids: ['bs1h', 'bgh1'] },
+  { label: '── Lumix Box — L-Mount (cinema / live event) ──', ids: ['bs1h'] },
+  { label: '── Lumix Box — MFT (cinema / live event) ──',    ids: ['bgh1'] },
 ];
 
 // ─────────────────────────────────────────────

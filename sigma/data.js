@@ -10,7 +10,10 @@ const BRAND_CONFIG = {
   slug:        'sigma',
   families:    ['L-Mount Mirrorless'],
   brandSections: ['sigma'],
+  // `mount` is the landing-tile headline label; `mounts` is the machine-readable
+  // list every item's `mount` id must come from, and the order the filter chips render in.
   mount:       'L-Mount',
+  mounts:      [{ id:'l', label:'L-Mount' }, { id:'sa', label:'SA-Mount' }],
   heroCamera:  'bf',
   cameras: {
     heroEyebrow:  'BF & fp Series',

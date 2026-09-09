@@ -10,7 +10,10 @@ const BRAND_CONFIG = {
   slug:        'fujifilm',
   families:    ['X Series', 'GFX'],
   brandSections: ['fujifilm'],
+  // `mount` is the landing-tile headline label; `mounts` is the machine-readable
+  // list every item's `mount` id must come from, and the order the filter chips render in.
   mount:       'X-Mount',
+  mounts:      [{ id:'x', label:'X-Mount' }, { id:'g', label:'G-Mount' }],
   heroCamera:  'x-h2',
   cameras: {
     heroEyebrow:  'X Series & GFX',

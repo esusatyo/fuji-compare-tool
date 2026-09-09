@@ -10,7 +10,10 @@ const BRAND_CONFIG = {
   slug:        'canon',
   families:    ['EOS R System'],
   brandSections: ['canon'],
+  // `mount` is the landing-tile headline label; `mounts` is the machine-readable
+  // list every item's `mount` id must come from, and the order the filter chips render in.
   mount:       'RF-Mount',
+  mounts:      [{ id:'rf', label:'RF-Mount' }],
   heroCamera:  'eos-r1',
   cameras: {
     heroEyebrow:  'EOS R System',

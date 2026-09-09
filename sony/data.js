@@ -10,7 +10,10 @@ const BRAND_CONFIG = {
   slug:        'sony',
   families:    ['E-mount System'],
   brandSections: ['sony'],
+  // `mount` is the landing-tile headline label; `mounts` is the machine-readable
+  // list every item's `mount` id must come from, and the order the filter chips render in.
   mount:       'E-Mount',
+  mounts:      [{ id:'e', label:'E-Mount' }],
   heroCamera:  'a1-ii',
   cameras: {
     heroEyebrow:  'Alpha E-mount System',
