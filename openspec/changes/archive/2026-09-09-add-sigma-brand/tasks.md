@@ -208,7 +208,7 @@
 - [x] 10.5 `openspec validate add-sigma-brand --strict` **and**
   `openspec validate expand-correctness-tests --strict`.
 - [x] 10.6 Opened PR #51.
-- [ ] 10.7 After merge: archive `add-sigma-brand` (`/opsx:archive`); tick the
+- [x] 10.7 After merge (PR #51 merged 2026-09-09): archived; ticked the
   delivered tasks in `expand-correctness-tests` and leave it open for its
   remaining scope; propose the follow-up `add-thirdparty-lenses-sigma`
   (Panasonic, Leica, Samyang, Viltrox, Laowa L-Mount).

@@ -15,16 +15,22 @@
 
 ## 4. Offline link hygiene (Tier 1)
 
-> **Delivered early by the `add-sigma-brand` PR** (owner decision 2026-09-07 —
-> one PR). That change creates the repo's first same-mount duplicate URLs and
-> ASINs, so this group ships with it as its group 9. Tick these off when that PR
-> merges; the rest of this change (groups 1–3, 5, 6) remains open.
+> **DELIVERED — shipped in PR #51, merged 2026-09-09.** `tests/data/links-offline.test.js`
+> is live. Note the guard ended up materially different from the original plan:
+> duplication in this dataset is usually legitimate (one maker page and photo
+> serve every mount; 98 such cross-brand duplicates exist), so URL uniqueness is
+> scoped WITHIN a brand behind a reviewed allowlist, and the ASIN check verifies
+> coherence (same manufacturer, same optical signature) rather than uniqueness.
+> Task 4.6 remains open: the stale `buyUrl` specs in `openspec/specs/` are
+> retired by this change's REMOVED/ADDED deltas, which OpenSpec applies when
+> THIS change is archived — not when the tests shipped.
+> The rest of this change (groups 1–3, 5, 6) remains open.
 
-- [ ] 4.1 Add `tests/data/links-offline.test.js`: every `imageUrl`/`productUrl` parses with `new URL()`, is `https`, and its host is in `ALLOWED_HOSTS`. (`buyUrl` does not exist in the data — 0 items carry one; do not test for it.)
-- [ ] 4.2 Assert every `imageUrl` path ends with an image extension from `IMAGE_EXT`.
-- [ ] 4.3 Assert no `imageUrl`/`productUrl` is shared by two distinct ids **within the same brand**, minus a reviewed `KNOWN_SHARED_LINKS` allowlist. Do **not** compare across brands (98 legitimate cross-brand duplicates). Seed the allowlist from the 6 existing within-brand pairs after reviewing each.
-- [ ] 4.4 Assert entries sharing an `asin` agree on `manufacturer` and have closely-similar `name`s (normalised compare, e.g. token overlap ignoring mount words).
-- [ ] 4.5 Ratchet ASIN coverage: assert the count of non-discontinued items lacking an `asin` stays at or below a recorded baseline (56 of 670 as of 2026-09-07).
+- [x] 4.1 Add `tests/data/links-offline.test.js`: every `imageUrl`/`productUrl` parses with `new URL()`, is `https`, and its host is in `ALLOWED_HOSTS`. (`buyUrl` does not exist in the data — 0 items carry one; do not test for it.)
+- [x] 4.2 Assert every `imageUrl` path ends with an image extension from `IMAGE_EXT`.
+- [x] 4.3 Assert no `imageUrl`/`productUrl` is shared by two distinct ids **within the same brand**, minus a reviewed `KNOWN_SHARED_LINKS` allowlist. Do **not** compare across brands (98 legitimate cross-brand duplicates). Seed the allowlist from the 6 existing within-brand pairs after reviewing each.
+- [x] 4.4 Assert entries sharing an `asin` agree on `manufacturer` and have closely-similar `name`s (normalised compare, e.g. token overlap ignoring mount words).
+- [x] 4.5 Ratchet ASIN coverage: assert the count of non-discontinued items lacking an `asin` stays at or below a recorded baseline (56 of 670 as of 2026-09-07).
 - [ ] 4.6 Retire the stale `buyUrl` capability specs: apply the REMOVED delta for `brand-engine`'s "Buy button disabled when no URL provided" and `canon-eos-r`'s "Buy button handling for Canon items", and the ADDED `brand-engine` requirement describing the real per-currency/ASIN behaviour. Both live specs currently mandate a disabled Buy state the engine has never implemented since the migration.
 
 ## 5. Data plausibility (Tier 1)
