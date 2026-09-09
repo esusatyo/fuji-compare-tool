@@ -557,11 +557,23 @@ function buildBrandSwitcher() {
 // the camera slot pickers. Hidden below the mobile breakpoint via CSS
 // — narrow viewports are clamped to 2 regardless (see effectiveSlots),
 // so the control has nothing useful to offer there.
+// A stable wrapper, because the field's contents depend on the active mount
+// filter and are re-rendered with everything else.
+function buildSlotCountSlot() {
+  return `<div id="slot-count-slot">${buildSlotCountField()}</div>`;
+}
+
 function buildSlotCountField() {
   if (MAX_SLOTS <= MIN_SLOTS) return '';
+  // An active mount filter caps what the table can show. When the cap leaves no
+  // real choice the control is dropped rather than offering counts that would
+  // silently clamp — `slotChoice` is untouched, so it returns intact on "All".
+  const cap = Math.min(MAX_SLOTS, availableCount());
+  if (cap <= MIN_SLOTS) return '';
   let options = '';
-  for (let n = MIN_SLOTS; n <= MAX_SLOTS; n++) {
-    options += `<option value="${n}"${n === slotChoice ? ' selected' : ''}>${n}</option>`;
+  const shown = Math.min(slotChoice, cap);
+  for (let n = MIN_SLOTS; n <= cap; n++) {
+    options += `<option value="${n}"${n === shown ? ' selected' : ''}>${n}</option>`;
   }
   return `<div class="slot-count-field">
     <label for="slot-count-select">Cameras to compare</label>
@@ -655,7 +667,7 @@ function injectBody() {
   <div class="compare-grid" id="compare-grid-header">
     <div class="compare-label-cell${MAX_SLOTS > MIN_SLOTS ? ' compare-label-cell--compare' : ''}">
       <span class="compare-label-text">Compare</span>
-      ${buildSlotCountField()}
+      ${buildSlotCountSlot()}
     </div>
     ${Array.from({ length: MAX_SLOTS }, (_, i) =>
       `<div class="compare-slot${i === 2 && !IS_COMPARE ? ' slot-3-hide' : ''}" id="slot-${i}"></div>`).join('\n    ')}
@@ -811,6 +823,10 @@ function renderSlot(slotIndex) {
 // ─────────────────────────────────────────────
 function computeWinners(spec) {
   const vals = cfg().selectedIds().slice(0, numSlots).map(id => spec.fn(cfg().items[id]));
+  // One column wins every row it has a value for, which is noise rather than
+  // information. A single slot only happens under a mount filter that offers
+  // one item.
+  if (numSlots < 2) return vals.map(() => false);
   if (!spec.higherBetter && !spec.lowerBetter) return vals.map(() => false);
   const nums = vals.map(v => typeof v === 'number' ? v : null);
   if (nums.every(v => v === null)) return vals.map(() => false);
@@ -901,6 +917,9 @@ function renderAll() {
   const filterSlot = document.getElementById('mount-filter-slot');
   if (filterSlot) filterSlot.innerHTML = buildMountFilterHTML();
 
+  const countSlot = document.getElementById('slot-count-slot');
+  if (countSlot) countSlot.innerHTML = buildSlotCountField();
+
   for (let i = 0; i < MAX_SLOTS; i++) {
     const el = document.getElementById(`slot-${i}`);
     if (el) el.style.display = i < numSlots ? '' : 'none';
@@ -968,7 +987,11 @@ function attachEventListeners() {
     renderAll();
   });
 
-  document.getElementById('slot-count-select')?.addEventListener('change', e => {
+  // Delegated: the select is re-rendered whenever the mount filter changes what
+  // counts it can honestly offer, so a listener bound to the element itself
+  // would be orphaned after the first re-render.
+  document.getElementById('slot-count-slot')?.addEventListener('change', e => {
+    if (e.target.id !== 'slot-count-select') return;
     const n = parseInt(e.target.value, 10);
     if (!n || n === slotChoice) return;
     slotChoice = n;

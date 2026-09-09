@@ -41,11 +41,11 @@ Worked on one branch (`add-mount-filter`) and shipped as **one PR**. Each group 
 The riskiest group — it touches the slot-count path that PR #51 already found sharp edges in. Kept separate so it can be reviewed and reverted on its own.
 
 - [x] 5.1 Clamp the effective slot count to the number of items the active mount offers, floor of 1, without disturbing the existing viewport clamp — **pulled forward into group 4**: Sigma's SA-Mount has 2 cameras against a 3-slot layout, so without the clamp the third slot keeps an L-Mount camera the filter claims to have excluded. Correctness today, not future-proofing
-- [ ] 5.2 Suppress winner highlighting in `computeWinners()` when only one slot renders
-- [ ] 5.3 Restore the user's chosen slot count when the filter returns to `All`
-- [ ] 5.4 Handle the "Cameras to compare" select while a single-item mount is active — it must not offer a count the filter cannot fill
-- [ ] 5.5 Add the one-column grid case to `engine.css` (`--num-slots: 1`)
-- [ ] **Checkpoint E** — `npm test` green; manually verify by temporarily filtering a brand to a one-item mount (no real one exists, so drive it from a scratchpad fixture). Commit: *"Render a single-slot table when a mount offers one item"*
+- [x] 5.2 Suppress winner highlighting in `computeWinners()` when only one slot renders
+- [x] 5.3 Restore the user's chosen slot count when the filter returns to `All`
+- [x] 5.4 Handle the "Cameras to compare" select while a single-item mount is active — it must not offer a count the filter cannot fill
+- [x] 5.5 Add the one-column grid case to `engine.css` (`--num-slots: 1`) — **no change needed**: the grid is already `repeat(var(--num-slots), 1fr)`, which collapses to one column on its own. Verified rather than assumed
+- [x] **Checkpoint E** — `npm test` green; manually verify by temporarily filtering a brand to a one-item mount (no real one exists, so drive it from a scratchpad fixture). Commit: *"Render a single-slot table when a mount offers one item"*
 
 ## 6. Styling
 
