@@ -96,9 +96,16 @@ const MOUNTS_BY_ID = (() => {
 // visible under that filter chip (an X100VI belongs in the X list), but
 // printing "X-Mount" in a spec row would claim something untrue — so name the
 // system instead, which is still the useful comparison against an X-T5.
-// `system` is the line's own name where the mount label is not it — Fujifilm's
-// G-Mount bodies are the GFX line, and nobody calls them "G".
-function mountLabel(cam) {
+function mountName(mountId) {
+  const m = MOUNTS_BY_ID[mountId];
+  return m ? m.label : mountId;
+}
+
+// Cameras only. A lens always has a real mount, so it uses mountName directly;
+// a body may not, which is what this handles. `system` is the line's own name
+// where the mount label is not it — Fujifilm's G-Mount bodies are the GFX line,
+// and nobody calls them "G".
+function cameraMountLabel(cam) {
   const m = MOUNTS_BY_ID[cam.mount];
   if (!m) return cam.mount;
   if (cam.lensType !== 'Fixed') return m.label;
@@ -212,7 +219,7 @@ const SPEC_SECTIONS = [
   {
     id: 'lens', label: 'Lens System',
     specs: [
-      { key: 'mount',        label: 'Lens Mount',       type: 'text',    fn: c => mountLabel(c) },
+      { key: 'mount',        label: 'Lens Mount',       type: 'text',    fn: c => cameraMountLabel(c) },
       { key: 'lensType',     label: 'Lens Type',        type: 'text',    fn: c => c.lensType },
       { key: 'lensSpec',     label: 'Fixed Lens',       type: 'text',    fn: c => c.lensSpec || '—' },
     ]
@@ -373,6 +380,7 @@ const LENS_SPEC_SECTIONS = [
     specs: [
       { key: 'manufacturer', label: 'Manufacturer',    type: 'text',   fn: l => l.manufacturer },
       { key: 'line',         label: 'Lens Line',       type: 'text',   fn: l => l.line },
+      { key: 'mount',        label: 'Mount',           type: 'text',   fn: l => mountName(l.mount) },
       { key: 'lensType',     label: 'Type',            type: 'text',   fn: l => l.type },
       { key: 'year',         label: 'Year Introduced', type: 'text',   fn: l => l.year },
       { key: 'status',       label: 'Status',          type: 'text',   fn: l => l.discontinued ? '🔴 Discontinued' : '🟢 Current' },

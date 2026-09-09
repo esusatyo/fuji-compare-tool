@@ -213,10 +213,13 @@ test('[panasonic] the mobile 2-slot clamp still applies under a filter', () => {
 });
 
 // ── 7. the Lens Mount spec row ──────────────────────────────────────
-const mountRow = doc => {
-  const label = [...doc.querySelectorAll('.spec-label')].find(l => l.textContent === 'Lens Mount');
+const rowNamed = (doc, name) => {
+  const label = [...doc.querySelectorAll('.spec-label')].find(l => l.textContent === name);
   return label && [...label.parentElement.querySelectorAll('.spec-value')].map(v => v.textContent);
 };
+// The camera table says "Lens Mount"; on the lens table "Mount" is unambiguous.
+const mountRow = doc => rowNamed(doc, 'Lens Mount');
+const lensMountRow = doc => rowNamed(doc, 'Mount');
 
 test('[panasonic] the spec table names each camera\'s mount', () => {
   assert.deepEqual(mountRow(page('panasonic').document),
@@ -233,6 +236,23 @@ test('[fujifilm] fixed-lens bodies name their system, not a mount', () => {
   const doc = page('fujifilm', { hash: '#cameras=x100vi,gfx100rf,x-t5' }).document;
   assert.deepEqual(mountRow(doc),
     ['Fixed lens (X system)', 'Fixed lens (GFX system)', 'X-Mount']);
+});
+
+// The case that motivated the row: with the filter on "All", a GF lens can sit
+// beside XF glass, and nothing else in the table says which is which.
+test('[fujifilm] the lens table names the mount of a mixed comparison', () => {
+  const doc = page('fujifilm', { hash: '#lenses=gf23mm-f4,xf-35mm-f14,sigma-56mm-f14' }).document;
+  assert.deepEqual(lensMountRow(doc), ['G-Mount', 'X-Mount', 'X-Mount']);
+});
+
+test('[panasonic] the lens row distinguishes L-Mount from MFT', () => {
+  assert.deepEqual(lensMountRow(page('panasonic', { hash: '#lenses' }).document),
+    ['L-Mount', 'L-Mount', 'Micro Four Thirds']);
+});
+
+test('[sony] a single-mount brand still labels its lenses', () => {
+  assert.deepEqual(lensMountRow(page('sony', { hash: '#lenses' }).document),
+    ['E-Mount', 'E-Mount', 'E-Mount']);
 });
 
 test('[compare] the row resolves labels across brands', () => {
