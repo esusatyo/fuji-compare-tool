@@ -211,9 +211,17 @@ body {
 }
 .mount-chips::-webkit-scrollbar { display: none; }
 
+/* One height at every width. The chip is a touch target, so it does not shrink
+   with the breakpoint the way the header buttons do — and a chip that changed
+   height as the viewport crossed 600px made the sticky header jump. inline-flex
+   because a bare button with a min-height does not reliably centre its label. */
 .mount-chip {
   flex-shrink: 0;
-  padding: 5px 12px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 36px;
+  padding: 6px 13px;
   font-size: 12px;
   font-weight: 600;
   color: var(--text-secondary);
@@ -651,12 +659,10 @@ footer a:hover { text-decoration: underline; }
   .brand-wordmark { display: none; }
   #site-header { padding: 0 10px; gap: 6px; justify-content: center; }
   .mode-btn { padding: 5px 9px; font-size: 11px; }
-  /* The row can wrap to two lines here; keep the chips comfortably tappable
-     rather than shrinking them to match the header buttons. The 40px floor is
-     deliberate — the header's own controls are ~26px tall and have a standing
-     bug report about being hard to hit on a real iPad. */
+  /* Only the row padding and the label tighten here — the chips keep the size
+     they have at every other width (see .mount-chip), so nothing jumps as the
+     viewport crosses the breakpoint. */
   .mount-filter { padding: 8px 10px; gap: 8px; }
-  .mount-chip { padding: 7px 13px; font-size: 11px; min-height: 40px; }
   .mount-filter-label { font-size: 10px; }
   .header-select { padding: 5px 6px; font-size: 11px; }
   /* The viewport already clamps to 2 slots here (effectiveSlots), so

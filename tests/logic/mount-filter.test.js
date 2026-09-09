@@ -180,6 +180,17 @@ test('[panasonic] the label sits outside the scrolling chip track', () => {
     'the label must stay outside the track, or it scrolls away with the chips');
 });
 
+// The chip is a touch target, so its size is set once and the responsive block
+// must not override it — a chip that changed height at 600px made the sticky
+// header jump as the viewport crossed the breakpoint.
+test('the mobile block never resizes a mount chip', () => {
+  const css = require('fs').readFileSync(require('path').join(__dirname, '..', '..', 'engine.css'), 'utf8');
+  const mobile = css.slice(css.indexOf('@media (max-width: 599px)'));
+  const chipRules = mobile.split('\n').filter(l => /^\s*\.mount-chip[\s,{]/.test(l));
+  assert.deepEqual(chipRules, [],
+    `.mount-chip must keep one size at every width; found in the mobile block:\n${chipRules.join('\n')}`);
+});
+
 test('[panasonic] chips carry their pressed state for assistive tech', () => {
   const doc = page('panasonic').document;
   const pressed = () => [...doc.querySelectorAll('.mount-chip')]
