@@ -18,12 +18,12 @@ Worked on one branch (`add-mount-filter`) and shipped as **one PR**. Each group 
 
 ## 3. Tier 1 tests
 
-- [ ] 3.1 Add `mount` validation to `tests/helpers/schema.js` — required on every camera and lens, must be an id declared in the brand's `mounts`
-- [ ] 3.2 Create `tests/data/mounts.test.js`: every declared mount id is used by at least one item, and every item resolves to a declared id
-- [ ] 3.3 Add the per-group agreement test — every dropdown group's members share one mount, in all six brands
-- [ ] 3.4 Add the camera re-derivation test — `mount` must agree with what `sensorType` implies, using the mapping in design decision 6
-- [ ] 3.5 Sanity-check the guards actually bite: temporarily mistype one camera's mount and one lens's group, confirm each named failure, then revert
-- [ ] **Checkpoint C** — `npm run test:data` green with no engine changes yet. Commit: *"Add Tier 1 guards for per-item mounts"*
+- [x] 3.1 Add `mount` validation to `tests/helpers/schema.js` — required on every camera and lens, must be an id declared in the brand's `mounts`
+- [x] 3.2 Create `tests/data/mounts.test.js`: every declared mount id is used by at least one item, and every item resolves to a declared id
+- [x] 3.3 Add the per-group agreement test — every dropdown group's members share one mount, in all six brands
+- [x] 3.4 Add the camera re-derivation test — `mount` must agree with what `sensorType` implies, using the mapping in design decision 6
+- [x] 3.5 Sanity-check the guards actually bite: temporarily mistype one camera's mount and one lens's group, confirm each named failure, then revert
+- [x] **Checkpoint C** — `npm run test:data` green with no engine changes yet. Commit: *"Add Tier 1 guards for per-item mounts"*
 
 ## 4. Engine: chip row and filtering
 

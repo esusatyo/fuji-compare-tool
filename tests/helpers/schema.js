@@ -208,13 +208,28 @@ function checkSources(obj) {
   return errs;
 }
 
+// ── MOUNT ───────────────────────────────────
+// Every camera and lens records the mount it belongs to. `mountIds` is the
+// brand's declared `BRAND_CONFIG.mounts` ids; when supplied, membership is
+// checked too. It is optional only so the guard fixtures can validate a single
+// item without a brand in hand.
+function checkMount(obj, mountIds) {
+  const errs = checkField(obj, 'mount', { type: 'string' });
+  if (errs.length) return errs;
+  if (mountIds && !mountIds.includes(obj.mount)) {
+    return [`"mount" = ${JSON.stringify(obj.mount)} — not one of this brand's declared mounts (${mountIds.join(', ')})`];
+  }
+  return [];
+}
+
 // ── CAMERA ──────────────────────────────────
-function validateCamera(id, cam, brandSections = []) {
+function validateCamera(id, cam, brandSections = [], mountIds = null) {
   const e = [];
   const add = (arr) => arr.forEach(m => e.push(m));
 
   add(checkField(cam, 'name', { type: 'string' }));
   add(checkField(cam, 'series', { type: 'string' }));
+  add(checkMount(cam, mountIds));
   add(checkField(cam, 'tagline', { type: 'string' }));
   // Floor matches the lens floor below. Sigma's DP compacts start in 2008, and
   // the bound is only a fat-finger guard (`year: 210`), not a scoping rule.
@@ -310,7 +325,7 @@ function validateCamera(id, cam, brandSections = []) {
 }
 
 // ── LENS ────────────────────────────────────
-function validateLens(id, lens) {
+function validateLens(id, lens, mountIds = null) {
   const e = [];
   const add = (arr) => arr.forEach(m => e.push(m));
 
@@ -318,6 +333,7 @@ function validateLens(id, lens) {
   add(checkField(lens, 'manufacturer', { type: 'string' }));
   add(checkField(lens, 'line', { type: 'string' }));
   add(checkField(lens, 'type', { type: 'string', oneOf: ['Prime', 'Zoom'] }));
+  add(checkMount(lens, mountIds));
   add(checkField(lens, 'focalLengthEquiv', { type: 'string' }));
 
   if (lens.type === 'Prime') {
@@ -367,6 +383,6 @@ function validateLens(id, lens) {
 }
 
 module.exports = {
-  validateCamera, validateLens, checkField, checkPrices, checkAsin,
+  validateCamera, validateLens, checkField, checkPrices, checkAsin, checkMount,
   CURRENCIES, HTTPS_URL, HEX_COLOR,
 };

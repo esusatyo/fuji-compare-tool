@@ -7,11 +7,12 @@ const { validateCamera, validateLens } = require('../helpers/schema');
 for (const brand of brandDirs()) {
   const { data } = loadBrand(brand);
   const brandSections = data.BRAND_CONFIG.brandSections || [];
+  const mountIds = (data.BRAND_CONFIG.mounts || []).map(m => m.id);
 
   test(`[${brand}] cameras conform to schema`, () => {
     const problems = [];
     for (const [id, cam] of Object.entries(data.CAMERAS)) {
-      problems.push(...validateCamera(id, cam, brandSections));
+      problems.push(...validateCamera(id, cam, brandSections, mountIds));
     }
     assert.deepEqual(problems, [], `\n${problems.join('\n')}`);
   });
@@ -19,7 +20,7 @@ for (const brand of brandDirs()) {
   test(`[${brand}] lenses conform to schema`, () => {
     const problems = [];
     for (const [id, lens] of Object.entries(data.LENSES)) {
-      problems.push(...validateLens(id, lens));
+      problems.push(...validateLens(id, lens, mountIds));
     }
     assert.deepEqual(problems, [], `\n${problems.join('\n')}`);
   });
