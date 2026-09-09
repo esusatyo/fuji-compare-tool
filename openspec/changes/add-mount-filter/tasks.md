@@ -56,13 +56,13 @@ The riskiest group — it touches the slot-count path that PR #51 already found 
 
 ## 7. Tier 2 tests
 
-- [ ] 7.1 jsdom: chip row present for Fujifilm/Panasonic/Sigma, absent for Canon/Nikon/Sony and for `compare/`
-- [ ] 7.2 jsdom: activating a chip restricts every slot dropdown to that mount
-- [ ] 7.3 jsdom: auto-swap replaces out-of-mount slots, preserves in-mount ones, produces no duplicate selection, and updates the hash
-- [ ] 7.4 jsdom: Sigma lenses tab renders no chip row; Sigma cameras tab renders both chips
-- [ ] 7.5 jsdom: mode toggle carries the active mount when it qualifies and falls back to `All` when it does not
-- [ ] 7.6 jsdom: single-slot rendering — one slot, `--num-slots: 1`, no winner classes, slot count restored on `All`
-- [ ] **Checkpoint G** — `npm test` green. Commit: *"Add Tier 2 coverage for the mount filter"*
+- [x] 7.1 jsdom: chip row present for Fujifilm/Panasonic/Sigma, absent for Canon/Nikon/Sony and for `compare/`
+- [x] 7.2 jsdom: activating a chip restricts every slot dropdown to that mount
+- [x] 7.3 jsdom: auto-swap replaces out-of-mount slots, preserves in-mount ones, produces no duplicate selection, and updates the hash
+- [x] 7.4 jsdom: Sigma lenses tab renders no chip row; Sigma cameras tab renders both chips
+- [x] 7.5 jsdom: mode toggle carries the active mount when it qualifies and falls back to `All` when it does not
+- [x] 7.6 jsdom: single-slot rendering — one slot, `--num-slots: 1`, no winner classes, slot count restored on `All`
+- [x] **Checkpoint G** — `npm test` green. Commit: *"Add Tier 2 coverage for the mount filter"*
 
 ## 8. Docs
 
