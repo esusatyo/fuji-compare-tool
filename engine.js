@@ -468,7 +468,7 @@ function getNumSlots() {
 let activeMount = null;
 
 function mountsForMode(mode) {
-  const declared = (BRAND_CONFIG.mounts || []);
+  const declared = BRAND_CONFIG.mounts || [];
   if (declared.length < 2) return [];
   const items = MODE_CONFIG[mode].items;
   const present = new Set(Object.values(items).map(it => it.mount));
@@ -557,12 +557,12 @@ function buildBrandSwitcher() {
 // the camera slot pickers. Hidden below the mobile breakpoint via CSS
 // — narrow viewports are clamped to 2 regardless (see effectiveSlots),
 // so the control has nothing useful to offer there.
-// A stable wrapper, because the field's contents depend on the active mount
-// filter and are re-rendered with everything else.
 function buildSlotCountSlot() {
   return `<div id="slot-count-slot">${buildSlotCountField()}</div>`;
 }
 
+// Wrapped above, because the field's contents depend on the active mount
+// filter and so are re-rendered with everything else.
 function buildSlotCountField() {
   if (MAX_SLOTS <= MIN_SLOTS) return '';
   // An active mount filter caps what the table can show. When the cap leaves no
