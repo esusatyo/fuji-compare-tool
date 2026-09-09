@@ -49,10 +49,10 @@ The riskiest group — it touches the slot-count path that PR #51 already found 
 
 ## 6. Styling
 
-- [ ] 6.1 Style the chip row in `engine.css` using existing design tokens; active chip mirrors `.mode-btn.active`
-- [ ] 6.2 Verify wrapping and tap-target size below the 600px breakpoint, where the table is clamped to 2 slots
-- [ ] 6.3 Check both themes (dark-neutral default and light "Lavender & Sand")
-- [ ] **Checkpoint F** — visual pass on the preview server at desktop and mobile widths, both themes. Commit: *"Style the mount filter chip row"*
+- [x] 6.1 Style the chip row in `engine.css` using existing design tokens; active chip mirrors `.mode-btn.active`
+- [x] 6.2 Verify wrapping and tap-target size below the 600px breakpoint, where the table is clamped to 2 slots — chips given a 40px min-height there, since the header controls they mimic are ~26px and already carry a standing iPad hit-target bug
+- [x] 6.3 Check both themes (dark-neutral default and light "Lavender & Sand")
+- [x] **Checkpoint F** — visual pass on the preview server at desktop and mobile widths, both themes. Commit: *"Style the mount filter chip row"*
 
 ## 7. Tier 2 tests
 
