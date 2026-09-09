@@ -123,7 +123,22 @@
 - [x] 7.3 APS-C `DC` L-Mount lenses — **skipped** (decision 2026-09-07): no Sigma
   body is APS-C L-Mount, so they'd only serve a Leica CL/TL owner. Deferred, not
   rejected; see `research/lenses.md` group C.
-- [x] 7.4 Add discontinued predecessors (`research/lenses.md` group D).
+- [ ] 7.4 Add discontinued predecessors (`research/lenses.md` group D). **NOT
+  DONE** — this was ticked in error on 2026-09-07 and corrected on review. The
+  original 24-70mm F2.8 DG DN Art (2019, superseded by the II) is absent from
+  every brand file, so it is a genuine gap. The 35mm F1.4 DG DN / DG II pair is
+  already carried correctly.
+- [ ] 7.7 **Data-quality issues found in the ported entries** (see the report
+  below; awaiting a scope decision):
+  a. Eight I-series Contemporary primes are marked `discontinued: true` in
+     panasonic, sony *and* sigma, but Sigma's own pages list them as currently
+     sold under renewed `_re` URLs with the SAME edition number (C019–C023).
+     The "DG DN" -> "DG" change is a naming simplification, not a new product.
+  b. Several ported L-Mount entries carry **Sony E-mount dimensions**. Sampled
+     4: the 35mm F1.4 DG II is correct; the 24-70mm II, 45mm F2.8 and 20mm F2
+     all store the E-mount length (L-Mount barrels are ~2mm shorter because the
+     L flange distance is 20mm vs E's 18mm), and the 45mm's weight matches
+     neither mount. Inconsistent, so every one of the 22 needs checking.
 - [ ] 7.5 Add the **same-mount drift guard** — `tests/data/shared-mount.test.js`.
   For any lens slug present in both `panasonic/data.js` and `sigma/data.js`
   (both L-Mount, one physical product), assert the two entries agree on their

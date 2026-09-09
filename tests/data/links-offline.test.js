@@ -53,11 +53,16 @@ const KNOWN_SHARED_LINKS = new Map([
   ['panasonic productUrl https://www.venuslens.net/product/laowa-90mm-f-2-8-2x-macro-apo/', 2],
 ]);
 
-// Non-discontinued items without an ASIN, as of 2026-09-07 (was 74 before the
-// Sigma ASIN pass; tighten this whenever coverage improves). A null ASIN is a
-// degraded Buy link (the engine falls back to an Amazon search), not a broken
-// one — so this ratchets downward rather than demanding zero.
-const ASIN_GAP_BASELINE = 61;
+// Non-discontinued items without an ASIN. A null ASIN is a degraded Buy link
+// (the engine falls back to an Amazon search), not a broken one — so this
+// ratchets downward rather than demanding zero.
+//
+// History: 74 before the Sigma ASIN pass -> 61 after it. Rebased to 86 on
+// 2026-09-09 when 25 lenses were corrected from `discontinued: true` to current
+// (8 I-series primes across panasonic/sigma/sony, plus Sony's 35mm F1.4 DG DN).
+// That grew the denominator; it is NOT a coverage regression. Rebase only for a
+// population change like this, and say why — otherwise tighten, never loosen.
+const ASIN_GAP_BASELINE = 86;
 
 const allItems = () => brandDirs().flatMap(brand => {
   const { data } = loadBrand(brand);
