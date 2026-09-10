@@ -53,7 +53,7 @@ test('cameras only: no mode toggle, slot-count dropdown instead', () => {
   assert.deepEqual(opts.map(o => o.value), ['2', '3', '4']);
   assert.equal(sel.value, '3', 'default choice 3 is selected');
   const label = window.document.querySelector(`label[for="slot-count-select"]`);
-  assert.equal(label.textContent, 'Cameras to compare');
+  assert.equal(label.textContent, 'Compare');
   assert.ok(
     window.document.querySelector('.compare-label-cell').contains(sel),
     'slot-count control lives inside the Compare label cell');

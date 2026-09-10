@@ -61,8 +61,11 @@
   --stripe: rgba(0,0,0,0.02);
 }
 
+/* `clip`, not `hidden`: `hidden` on body makes it a scroll container that
+   never scrolls (the viewport does), so every sticky header stuck inside it
+   and scrolled away with the page. `clip` crops without that side effect. */
 html, body {
-  overflow-x: hidden;
+  overflow-x: clip;
 }
 
 body {
@@ -264,9 +267,9 @@ body {
   border-right: 1px solid var(--border);
 }
 
-/* One label at a time: when the "Cameras to compare" field is visible
-   (desktop, --compare modifier present) the "Compare" text is hidden;
-   the mobile breakpoint hides the field and shows "Compare" instead. */
+/* One label at a time: when the slot-count field (itself labelled "Compare")
+   is present, the plain "Compare" text is hidden. The mobile breakpoint
+   hides the whole cell. */
 .compare-label-cell--compare .compare-label-text { display: none; }
 
 .slot-count-field {
@@ -642,16 +645,19 @@ footer a:hover { text-decoration: underline; }
 
 /* ─── RESPONSIVE ─── */
 @media (max-width: 599px) {
-  :root { --label-w: 120px; --num-slots: 2; }
+  :root { --num-slots: 2; }
   .slot-3-hide { display: none !important; }
   .hero-title { font-size: 22px; }
   .cam-image-wrap { width: 80px; height: 64px; }
   .slot-price { font-size: 13px; }
-  /* Hide the wordmark text only, not the whole lockup — .header-brand
-     also carries .header-title (brand name / "Lens Compare") on brand
-     pages, and is the *only* header content on the root page, so hiding
-     it outright left the root page's mobile header completely empty. */
-  .brand-wordmark { display: none; }
+  /* Hide the wordmark text only, not the whole lockup — .header-brand is
+     the *only* header content on the root page, so hiding it outright left
+     the root page's mobile header completely empty. The context label
+     (brand name / "Lens Compare") only ever showed truncated here, so it
+     goes too, with its separator; vs-pages' .header-back link stays. */
+  .brand-wordmark,
+  .header-title,
+  .header-sep:has(+ .header-title) { display: none; }
   #site-header { padding: 0 10px; gap: 6px; justify-content: center; }
   .mode-btn { padding: 5px 9px; font-size: 11px; }
   /* Only the row padding and the label tighten here — the chips keep the size
@@ -660,13 +666,14 @@ footer a:hover { text-decoration: underline; }
   .mount-filter { padding: 8px 10px; gap: 8px; }
   .mount-filter-label { font-size: 10px; }
   .header-select { padding: 5px 6px; font-size: 11px; }
-  /* The viewport already clamps to 2 slots here (effectiveSlots), so
-     the "cameras to compare" choice has nothing to offer — hide it and
-     show the plain "Compare" label in its place. */
-  .slot-count-field { display: none; }
-  .compare-label-cell--compare .compare-label-text { display: inline; }
-}
-
-@media (max-width: 400px) {
-  :root { --label-w: 100px; }
+  /* The viewport already clamps to 2 slots here (effectiveSlots), so the
+     label cell's slot-count choice has nothing to offer — drop the whole
+     cell and give its width to the product columns. Spec rows drop their
+     label column to match (the label spans the row, values sit beneath),
+     or the value columns would no longer line up under the slots. */
+  .compare-label-cell { display: none; }
+  .compare-grid, .spec-row { grid-template-columns: repeat(var(--num-slots), 1fr); }
+  .compare-slot:nth-child(2) { border-left: none; }
+  .spec-label { grid-column: 1 / -1; border-right: none; padding: 10px 12px 0; }
+  .spec-value { padding-top: 6px; }
 }

@@ -86,10 +86,22 @@ test('compare label cell carries both labels in markup, CSS shows exactly one', 
   // Desktop: "Compare" hidden while the field shows.
   assert.match(css, /\.compare-label-cell--compare \.compare-label-text \{ display: none; \}/,
     'engine.css must hide .compare-label-text when the slot-count field is visible');
-  // Mobile breakpoint: field hidden, "Compare" re-shown.
+  // Mobile breakpoint: the whole cell goes (the viewport is clamped to 2).
   const mobile = css.slice(css.indexOf('@media (max-width: 599px)'));
-  assert.match(mobile, /\.slot-count-field \{ display: none; \}/,
-    'mobile breakpoint must hide the slot-count field');
-  assert.match(mobile, /\.compare-label-cell--compare \.compare-label-text \{ display: inline; \}/,
-    'mobile breakpoint must re-show the Compare label');
+  assert.match(mobile, /\.compare-label-cell \{ display: none; \}/,
+    'mobile breakpoint must hide the Compare label cell');
+});
+
+// ─── Sticky headers. jsdom has no layout, so this guards the cause of the
+// one real regression: overflow-x `hidden`/`auto`/`scroll` on html or body
+// turns body into a scroll container that never scrolls, and every sticky
+// header inside it scrolls away with the page. ───
+test('html/body overflow-x does not break the sticky headers', () => {
+  const fs = require('fs');
+  const path = require('path');
+  const css = fs.readFileSync(path.resolve(__dirname, '..', '..', 'engine.css'), 'utf8');
+  const rule = css.match(/html, body \{([^}]*)\}/);
+  assert.ok(rule, 'html, body rule not found in engine.css');
+  assert.doesNotMatch(rule[1], /overflow(-x)?:\s*(hidden|auto|scroll)/,
+    'use overflow-x: clip — hidden/auto/scroll make body a scroll container');
 });

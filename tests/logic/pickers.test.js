@@ -17,8 +17,8 @@ function optionsOf(select) {
 // the rule directly. Below the mobile breakpoint the viewport already
 // clamps to 2 slots regardless of slotChoice (see effectiveSlots in
 // engine.js), so the dropdown has nothing left to offer there and should
-// be hidden, on every page.
-test('"Cameras to compare" dropdown is hidden below the mobile breakpoint', () => {
+// be hidden — along with the whole label cell that holds it — on every page.
+test('Compare label cell (and its slot-count dropdown) is hidden below the mobile breakpoint', () => {
   const css = fs.readFileSync(path.join(ROOT, 'engine.css'), 'utf8');
   const dom = new JSDOM('<style></style>');
   const styleEl = dom.window.document.querySelector('style');
@@ -26,9 +26,16 @@ test('"Cameras to compare" dropdown is hidden below the mobile breakpoint', () =
   const mediaRule = [...styleEl.sheet.cssRules]
     .find(r => r.media && r.conditionText && r.conditionText.includes('599px'));
   assert.ok(mediaRule, 'mobile breakpoint media query not found in engine.css');
-  const rule = [...mediaRule.cssRules].find(r => r.selectorText === '.slot-count-field');
-  assert.ok(rule, '.slot-count-field has no rule inside the mobile media query');
+  const rule = [...mediaRule.cssRules].find(r => r.selectorText === '.compare-label-cell');
+  assert.ok(rule, '.compare-label-cell has no rule inside the mobile media query');
   assert.equal(rule.style.display, 'none');
+  // With the label column gone from the header, the spec rows must drop it
+  // too or the value columns stop lining up under the slots.
+  const grid = [...mediaRule.cssRules].find(r => r.selectorText === '.compare-grid, .spec-row');
+  assert.ok(grid, 'header grid and spec rows must share one mobile column template');
+  // jsdom's CSSOM has no gridTemplateColumns accessor, so read the text.
+  assert.match(grid.style.cssText, /grid-template-columns/);
+  assert.doesNotMatch(grid.style.cssText, /label-w/);
 });
 
 for (const brand of brandDirs()) {
@@ -128,7 +135,7 @@ for (const brand of brandDirs()) {
     assert.equal(window.localStorage.getItem('brand'), other);
   });
 
-  test(`[${brand}] "Cameras to compare" dropdown offers 2 and 3, defaults to 3`, () => {
+  test(`[${brand}] "Compare" dropdown offers 2 and 3, defaults to 3`, () => {
     const { window } = loadBrand(brand, { engine: true });
     const sel = window.document.getElementById('slot-count-select');
     assert.ok(sel, 'slot-count-select missing on a brand page');
@@ -136,7 +143,7 @@ for (const brand of brandDirs()) {
       'brand pages cap out at 3 slots, unlike the compare page\'s 2-4');
     assert.equal(sel.value, '3', 'brand pages default to 3 visible slots');
     const label = window.document.querySelector('label[for="slot-count-select"]');
-    assert.equal(label.textContent, 'Cameras to compare');
+    assert.equal(label.textContent, 'Compare');
   });
 
   test(`[${brand}] choosing 2 in the dropdown hides the third slot`, () => {

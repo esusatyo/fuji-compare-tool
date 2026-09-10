@@ -6,8 +6,9 @@
 // and declares window.COMPARE_CONFIG, which switches the engine into
 // cross-brand mode: cameras only, brand-namespaced item ids
 // ('fujifilm:x-t5'), and up to 4 slots. Every page — brand or compare —
-// offers a "Cameras to compare" dropdown (2..MAX_SLOTS); it's hidden
-// below the mobile breakpoint, where the viewport clamps to 2 anyway.
+// offers a "Compare" slot-count dropdown (2..MAX_SLOTS); it's hidden, with
+// its whole label cell, below the mobile breakpoint, where the viewport
+// clamps to 2 anyway.
 // ─────────────────────────────────────────────
 
 // ─────────────────────────────────────────────
@@ -612,8 +613,8 @@ function buildSlotCountField() {
     options += `<option value="${n}"${n === shown ? ' selected' : ''}>${n}</option>`;
   }
   return `<div class="slot-count-field">
-    <label for="slot-count-select">Cameras to compare</label>
-    <select id="slot-count-select" class="slot-count-select" aria-label="Number of cameras to compare">${options}</select>
+    <label for="slot-count-select">Compare</label>
+    <select id="slot-count-select" class="slot-count-select" aria-label="Number of items to compare">${options}</select>
   </div>`;
 }
 
