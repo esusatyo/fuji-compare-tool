@@ -126,11 +126,23 @@ const KNOWN_IMAGE_GAPS = {
     // one combined page whose sole product image (a "stage" hero banner)
     // 403s to curl even from a same-origin fetch inside a real browser tab —
     // reconfirmed 2026-08-17, still blocked.
+    // Re-checked 2026-09-11 (image-refresh pass): this time Commons searches
+    // (not just the dead manufacturer page) surface real candidates for all
+    // three, but every one turns out to be the Sony E-mount copy, not X —
+    // 12mm: File:Zeiss Touit Distagon 12mm 2,8 Lens.jpg, own description
+    // reads "for Sony E-Mount"; 32mm: File:NEX-5T with ZEISS touit 32mm
+    // F1.8.jpg, pictured mounted on a Sony NEX-5T body; 50mm:
+    // File:Zeiss-touit-28-50m.jpg, barrel visibly printed "E-mount" at full
+    // resolution (verified by downloading and reading the image). Commons
+    // appears to have no X-mount Touit photography at all. Still gaps.
     'zeiss-touit-12mm-f28', 'zeiss-touit-32mm-f18', 'zeiss-touit-50mm-f28',
     // viltrox-85mm-f18 (plain original, not Air/Pro/EVO): discontinued,
     // superseded by the II; Viltrox pulled its own listing and no Commons
     // candidate exists ("Viltrox 85mm f1.8 X" search: zero results, checked
-    // 2026-08-17).
+    // 2026-08-17). Re-checked 2026-09-11: viltrox.com's own site search for
+    // "85mm f1.8 fuji x" still resolves only to the II product page; Commons'
+    // Category:Viltrox lenses (4 files total) has none of this model in any
+    // mount. Still a gap.
     'viltrox-85mm-f18',
     // Samyang manual-lens line (10 of 11 — only samyang-75mm-f18 above
     // resolved): samyangus.com's product pages for these list "Fuji X" as a
@@ -143,6 +155,25 @@ const KNOWN_IMAGE_GAPS = {
     // 135mm f/2 — no "sony"/"canon"/"nikon" tag, but the visible bayonet ring
     // has no legible brand text to confirm X specifically, so left gapped
     // rather than guess). Checked 2026-08-17.
+    // Re-checked 2026-09-11 (image-refresh pass, Commons this time rather
+    // than samyangus.com): scripts/fetch-images-commons.js's strict-token
+    // search surfaced two new hits, both rejected on inspection —
+    // "Samyang 14mm f2.8 lens - Diliff.jpg" (own description: "lens with a
+    // Canon mount" — the same wrong-mount problem as the 2026-08-16 rejection,
+    // just a different file) and "Samyang 85mm f1.4 as if umc 02.jpg" (looked
+    // promising — a front 3/4 studio shot with no rear mount visible in that
+    // frame — but it's part of a numbered series by the same photographer;
+    // frames 04/05 in that same series show the rear mount with a glued-on
+    // EMF electronic contact chip, a well-known Canon-EF-only manual-lens
+    // modification, confirming the whole series — including 02 — is the
+    // Canon copy, not X). No product-photo candidate turned up on Commons at
+    // all for 8mm/10mm/16mm/85mm-f1.8/100mm-macro/135mm/300mm (targeted
+    // per-model searches returned only sample photography, unrelated lenses,
+    // or — for 135mm — an astrophotography rig where the lens is
+    // bracket-mounted to a dedicated astro camera via a T-mount adapter, so
+    // the retail bayonet isn't visible/identifiable). 12mm-ncscs's Commons
+    // file was re-confirmed rather than re-found: its description literally
+    // states "for Sony-E Mount APSC cameras". All still gaps.
     'samyang-8mm-f28', 'samyang-10mm-f28',
     // samyang-12mm-f2-ncscs: Commons candidate's barrel is legibly stamped
     // "NCS CS E" — the Sony E-mount copy, not X. samyang-14mm-f28: candidate's
