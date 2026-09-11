@@ -28,23 +28,26 @@ const KNOWN_IMAGE_GAPS = {
     // rfs-14-30mm-f4-63-is-stm-pz) resolved the same day via canon.com.au
     // product-carousel images, barrel text visually confirmed for every one.
     //
-    // rf-800mm-f56-l-is-usm and rf-1200mm-f8-l-is-usm's Commons candidate
-    // (used only for the 800) has no legible model text on the barrel, and
-    // Canon's super-teles (400/2.8, 600/4, 800/5.6, 1200/8) look near-identical
-    // in a field shot — rejected, stays a gap. Re-checked 2026-08-16 at full
-    // resolution (crop of the front barrel): still blank, no printed
-    // designation anywhere visible. The focus-limiter switch reads
-    // "2.6m-20m", far closer to the 400mm f/2.8's ~2.5m MFD than the 800mm
-    // f/5.6's ~6m — actively suggests this is a mislabeled 400mm f/2.8
-    // photo, not weak evidence either way. rf-1200mm-f8-l-is-usm itself
-    // resolved 2026-08-17 via its own canon.com.au page instead.
-    'rf-800mm-f56-l-is-usm',
-    // viltrox-85mm-f18 (RF II): Viltrox pulled this lens from their own site
-    // entirely — Canon blocks third-party AF lens licensing on RF, so
-    // viltroxcamera.com now only lists the Sony E-mount version. No official
-    // manufacturer page exists to source from; B&H/retailer photos aren't an
-    // acceptable substitute per this skill's sourcing tiers. Stays a gap
-    // until Viltrox (or Canon's policy) changes.
+    // rf-800mm-f56-l-is-usm RESOLVED 2026-09-11 (Commons, CC BY-SA 4.0,
+    // File:Canon_RF_800mm_f5.6L_IS_USM.jpg by Dinkun Chen). The prior
+    // rejection (2026-08-16) reasoned the barrel's "2.6m-20m" focus-limiter
+    // switch reading was "far closer to the 400mm f/2.8's ~2.5m MFD than the
+    // 800mm f/5.6's ~6m" — that ~6m figure was wrong, borrowed from the
+    // unrelated budget RF800mm F11 IS STM. Canon's own published spec (and
+    // this dataset's own minFocusDist:260 for this item) puts the RF 800mm
+    // f/5.6L IS USM's true MFD at exactly 2.6m — an exact match to the
+    // switch reading visible in the photo (re-verified at full crop
+    // resolution), not merely close, and distinct from the 400mm f/2.8
+    // (2.5m), 600mm f/4 (4.2m), and 1200mm f/8 (4.3m). Accepted.
+    //
+    // viltrox-85mm-f18 (RF II): re-checked 2026-09-11, still a gap. Viltrox's
+    // own store (viltrox.com) site search for "85mm RF" lists the F1.8 II,
+    // F1.4 Pro, and F2.0 EVO variants only in Sony E / Nikon Z / Fujifilm X —
+    // no Canon RF option on any of them. Canon still blocks third-party AF
+    // lens licensing on RF, so no official manufacturer page exists to
+    // source from; B&H/retailer photos aren't an acceptable substitute per
+    // this skill's sourcing tiers. Stays a gap until Viltrox (or Canon's
+    // policy) changes.
     'viltrox-85mm-f18',
     // yongnuo-35mm-f2, yongnuo-85mm-f18: resolved 2026-08-17 (Tier 3,
     // yongnuo.eu — both images carry an explicit "R mount / Full Frame"
