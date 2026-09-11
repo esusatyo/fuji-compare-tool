@@ -28,6 +28,22 @@ const MAX_SLOTS = 4;
 function brandOf(id) {
   return IS_COMPARE ? id.split(':')[0] : BRAND_CONFIG.slug;
 }
+
+// Anonymous interaction events — analytics.js defines window.trackEvent and
+// documents the path grammar. Absent (tests, blocked counter) means no-op.
+function track(path, title) {
+  if (typeof window.trackEvent === 'function') window.trackEvent(path, title);
+}
+
+// Event paths always name the brand: a brand page's bare slug is qualified,
+// a compare-page id already is.
+function trackKey(id) {
+  return IS_COMPARE ? id : `${BRAND_CONFIG.slug}:${id}`;
+}
+
+function trackPage() {
+  return IS_COMPARE ? 'compare' : BRAND_CONFIG.slug;
+}
 function brandDataOf(id) {
   return (IS_COMPARE ? REGISTRY[brandOf(id)] : ACTIVE_BRAND) || null;
 }
@@ -1010,6 +1026,9 @@ function attachSlotListeners() {
       const holder = ids.indexOf(e.target.value);
       if (holder >= numSlots) cfg().setSelectedId(holder, ids[slotIdx]);
       cfg().setSelectedId(slotIdx, e.target.value);
+      const picked = e.target.value;
+      track(`${currentMode === 'lenses' ? 'lens' : 'camera'}-swap:${trackKey(picked)}`,
+        `${brandNameOf(picked)} ${cfg().items[picked].name}`);
       updateHash();
       renderAll();
     });
@@ -1064,8 +1083,22 @@ function attachEventListeners() {
     if (!btn) return;
     const id = btn.dataset.mount || null;
     if (id === activeMount) return;
+    track(`mount-filter:${BRAND_CONFIG.slug}:${id || 'all'}`, `Mount filter: ${btn.textContent}`);
     applyMountFilter(id);
   });
+
+  // Delegated: slot headers are re-rendered on every change. A middle-click
+  // opens the link too, so it counts; a right-click (also an auxclick) doesn't.
+  const onBuy = e => {
+    if (e.type === 'auxclick' && e.button !== 1) return;
+    const buy = e.target.closest('.slot-buy');
+    if (!buy) return;
+    const slot = buy.closest('.compare-slot');
+    const id = slot && cfg().selectedIds()[Number(slot.id.replace('slot-', ''))];
+    if (id) track(`buy-click:tool:${trackKey(id)}`, `Buy: ${brandNameOf(id)} ${cfg().items[id].name}`);
+  };
+  document.getElementById('compare-header')?.addEventListener('click', onBuy);
+  document.getElementById('compare-header')?.addEventListener('auxclick', onBuy);
 
   document.getElementById('currency-select').addEventListener('change', e => {
     currentCurrency = e.target.value;
@@ -1089,6 +1122,7 @@ function attachEventListeners() {
     const btn = e.target.closest('.mode-btn');
     if (!btn || btn.dataset.mode === currentMode) return;
     currentMode = btn.dataset.mode;
+    track(`mode-switch:${trackPage()}:${currentMode}`, `Mode: ${btn.textContent}`);
     if (!IS_COMPARE) slotChoice = brandSlotChoice(currentMode);
     // A mount with no chip in the destination mode cannot stay active — Sigma's
     // SA-Mount has bodies but no lenses, so switching to Lenses drops to "All".
@@ -1113,11 +1147,16 @@ function attachEventListeners() {
 
   document.getElementById('brand-switcher')?.addEventListener('change', e => {
     const slug = e.target.value;
+    // count.js sends with sendBeacon, so the event survives the navigation.
     if (slug === '__compare') {
-      if (!IS_COMPARE) location.href = `../compare/`;
+      if (!IS_COMPARE) {
+        track(`brand-switch:${trackPage()}:compare`, 'Brand switch: All brands');
+        location.href = `../compare/`;
+      }
       return;
     }
     if (!slug || slug === BRAND_CONFIG.slug) return;
+    track(`brand-switch:${trackPage()}:${slug}`, `Brand switch: ${slug}`);
     localStorage.setItem('brand', slug);
     location.href = `../${slug}/${brandSwitchHash()}`;
   });

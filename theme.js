@@ -54,6 +54,11 @@
   document.addEventListener('click', function (e) {
     var btn = e.target.closest('.theme-toggle .theme-btn');
     if (!btn) return;
-    setPref(btn.dataset.themePref);
+    var pref = btn.dataset.themePref;
+    // Only a real change is an event (analytics.js defines trackEvent).
+    if (pref !== getPref() && typeof window.trackEvent === 'function') {
+      window.trackEvent('theme:' + pref, 'Theme: ' + pref);
+    }
+    setPref(pref);
   });
 })();
