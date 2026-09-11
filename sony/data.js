@@ -18,7 +18,7 @@ const BRAND_CONFIG = {
   cameras: {
     heroEyebrow:  'Alpha E-mount System',
     heroTitle:    '<span>Sony</span> Camera Comparison',
-    heroSubtitle: 'Compare up to 3 Sony Alpha cameras side-by-side across the full lineup',
+    heroSubtitle: 'Compare up to 4 Sony Alpha cameras side-by-side across the full lineup',
     headerTitle:  'Sony',
     defaultSelected: ['a7-iv', 'a6700', 'a7c-ii'],
   },

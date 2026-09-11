@@ -18,7 +18,7 @@ const BRAND_CONFIG = {
   cameras: {
     heroEyebrow:  'X Series & GFX',
     heroTitle:    '<span>Fujifilm</span> Camera Comparison',
-    heroSubtitle: 'Compare up to 3 cameras side-by-side across all generations',
+    heroSubtitle: 'Compare up to 4 cameras side-by-side across all generations',
     headerTitle:  'Fujifilm',
     defaultSelected: ['x-s20', 'x-t50', 'x100vi'],
   },

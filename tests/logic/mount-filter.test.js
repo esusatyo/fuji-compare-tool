@@ -12,7 +12,11 @@ const { loadCompare } = require('../helpers/load-compare');
 
 const page = (brand, opts = {}) => loadBrand(brand, { engine: true, ...opts }).window;
 const chip = (doc, mount) => doc.querySelector(`.mount-chip[data-mount="${mount}"]`);
-const selected = doc => [...doc.querySelectorAll('.slot-select')].map(s => s.value).filter(Boolean);
+// The engine's own selection for the slots on screen. Not the <select> values:
+// a slot holding an item the filter hides still renders a picker, which falls
+// back to showing its first option — exactly the contradiction under test.
+const selected = doc => doc.defaultView.cfg().selectedIds()
+  .slice(0, Number(doc.documentElement.style.getPropertyValue('--num-slots')));
 const options = doc => [...doc.querySelectorAll('.slot-select')[0].options].map(o => o.value);
 
 // ── 1. who gets a row ───────────────────────────────────────────────
@@ -147,6 +151,20 @@ test('[sigma] a mount offering one item renders a single slot', () => {
   assert.equal(doc.documentElement.style.getPropertyValue('--num-slots'), '1');
   assert.equal(doc.querySelector('.spec-row').querySelectorAll('.spec-value').length, 1);
   assert.equal(doc.getElementById('slot-1').style.display, 'none');
+  assert.equal(selected(doc).join(','), 'sd-quattro-h');
+});
+
+// Every page keeps MAX_SLOTS items in memory, so a hidden slot can hold the
+// mount's only item. It has to reach the visible slot, not stay reserved there.
+test('[sigma] a hidden slot holding the mount\'s only item hands it to the visible slot', () => {
+  // Four slots with the lone SA body last, then back to three: it sits hidden.
+  const window = page('sigma', { patchData: oneItemSA, hash: '#cameras=bf,fp-l,fp,sd-quattro-h' });
+  const doc = window.document;
+  const count = doc.getElementById('slot-count-select');
+  count.value = '3';
+  count.dispatchEvent(new window.Event('change', { bubbles: true }));
+  assert.equal(window.cfg().selectedIds()[3], 'sd-quattro-h', 'fixture: the SA body is in hidden slot 3');
+  chip(doc, 'sa').click();
   assert.equal(selected(doc).join(','), 'sd-quattro-h');
 });
 

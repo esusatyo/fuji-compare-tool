@@ -18,7 +18,7 @@ const BRAND_CONFIG = {
   cameras: {
     heroEyebrow:  'EOS R System',
     heroTitle:    '<span>Canon</span> Camera Comparison',
-    heroSubtitle: 'Compare up to 3 EOS R cameras side-by-side across the full lineup',
+    heroSubtitle: 'Compare up to 4 EOS R cameras side-by-side across the full lineup',
     headerTitle:  'Canon',
     defaultSelected: ['eos-r5-ii', 'eos-r6-ii', 'eos-r8'],
   },
