@@ -412,7 +412,7 @@ function amazonBuyUrlUSD(brandName, cam) {
 // Product card: photo (with placeholder fallback), USD price, View + Buy.
 // `displayName` optionally overrides the shown name (cross-brand pages
 // prefix the brand so two same-named models can't be confused).
-function productCardHTML(data, brandName, c, displayName) {
+function productCardHTML(data, brandName, slug, c, displayName) {
   const usdPrice = (c.prices && c.prices.USD != null) ? `$${c.prices.USD.toLocaleString('en-US')}` : '—';
   const shown = displayName || c.name;
   const sc = (data.SERIES_COLORS && data.SERIES_COLORS[c.series]) || { bg: '#222', text: '#ccc' };
@@ -425,7 +425,10 @@ function productCardHTML(data, brandName, c, displayName) {
   const viewBtn = viewURL
     ? `<a class="vs-view" href="${esc(viewURL)}" target="_blank" rel="noopener">View &#8599;</a>`
     : `<span class="vs-view na">Discontinued</span>`;
-  const buyBtn = `<a class="vs-buy" href="${esc(amazonBuyUrlUSD(brandName, c))}" target="_blank" rel="noopener">Buy &#8599;</a>`;
+  // data-goatcounter-click: counted by count.js on click (see analytics.js for
+  // the event grammar). The title keeps the dashboard readable — without one
+  // GoatCounter falls back to the link's innerHTML.
+  const buyBtn = `<a class="vs-buy" href="${esc(amazonBuyUrlUSD(brandName, c))}" target="_blank" rel="noopener" data-goatcounter-click="buy-click:vs:${esc(data.BRAND_CONFIG.slug)}:${esc(slug)}" data-goatcounter-title="Buy: ${esc(brandName)} ${esc(c.name)}">Buy &#8599;</a>`;
   return `        <div class="vs-product">
           <div class="vs-photo">${photo}</div>
           <div class="vs-pname">${esc(shown)}</div>
@@ -453,8 +456,8 @@ function vsPageHTML(brand, data, site, aId, bId, allPairs) {
   }).join('\n');
 
   const productsHTML = `      <div class="vs-products">
-${productCardHTML(data, brandName, a)}
-${productCardHTML(data, brandName, b)}
+${productCardHTML(data, brandName, aId, a)}
+${productCardHTML(data, brandName, bId, b)}
       </div>`;
   const summary = vsSummary(`${brandName} ${a.name}`, a, b.name, b);
 
@@ -486,6 +489,7 @@ ${related.map(([x, y]) =>
   <!-- Umami analytics — temporarily disabled, kept for re-enabling.
   <script defer src="https://cloud.umami.is/script.js" data-website-id="365e9ee6-1fb5-4a0d-9c74-f6255522a196"></script> -->
   <script data-goatcounter="https://esusatyo.goatcounter.com/count" defer src="https://gc.zgo.at/count.js"></script>
+  <script defer src="../../analytics.js"></script>
   ${assetLinks('../../')}
   <link rel="stylesheet" href="../../engine.css">
   <style>
@@ -508,7 +512,7 @@ ${related.map(([x, y]) =>
   <main class="vs-main">
 ${productsHTML}
     <p class="vs-summary">${esc(summary)}</p>
-    <a class="vs-cta" href="../#cameras=${aId},${bId}"><span class="play">&#9654;</span> Compare these interactively</a>
+    <a class="vs-cta" href="../#cameras=${aId},${bId}" data-goatcounter-click="vs-to-interactive:${brand}:${aId}-vs-${bId}" data-goatcounter-title="Compare interactively: ${esc(title)}"><span class="play">&#9654;</span> Compare these interactively</a>
     <div class="vs-card">
       <table>
         <thead>
@@ -723,6 +727,7 @@ ${related.map(x => `        <li><a href="${cleanHref(path.basename(x.file))}">${
   <!-- Umami analytics — temporarily disabled, kept for re-enabling.
   <script defer src="https://cloud.umami.is/script.js" data-website-id="365e9ee6-1fb5-4a0d-9c74-f6255522a196"></script> -->
   <script data-goatcounter="https://esusatyo.goatcounter.com/count" defer src="https://gc.zgo.at/count.js"></script>
+  <script defer src="../analytics.js"></script>
   ${assetLinks('../')}
   <link rel="stylesheet" href="../engine.css">
   <style>
@@ -744,11 +749,11 @@ ${related.map(x => `        <li><a href="${cleanHref(path.basename(x.file))}">${
   </div>
   <main class="vs-main">
       <div class="vs-products">
-${productCardHTML(a.data, a.brandName, a.cam, fullName(a))}
-${productCardHTML(b.data, b.brandName, b.cam, fullName(b))}
+${productCardHTML(a.data, a.brandName, a.slug, a.cam, fullName(a))}
+${productCardHTML(b.data, b.brandName, b.slug, b.cam, fullName(b))}
       </div>
     <p class="vs-summary">${esc(summary)}</p>
-    <a class="vs-cta" href="../compare/${compareHash}"><span class="play">&#9654;</span> Compare these interactively</a>
+    <a class="vs-cta" href="../compare/${compareHash}" data-goatcounter-click="vs-to-interactive:cross:${a.brand}-${a.slug}-vs-${b.brand}-${b.slug}" data-goatcounter-title="Compare interactively: ${esc(title)}"><span class="play">&#9654;</span> Compare these interactively</a>
     <div class="vs-card">
       <table>
         <thead>
@@ -942,7 +947,7 @@ function allBrandsPhotoHTML() {
 function rootBodyBlock(site, brands, crossSample = []) {
   // No stripe override: the all-brands card takes the shared accent.
   const compareCard = `        <li class="brand-card">
-          <a href="./compare/">
+          <a href="./compare/" data-goatcounter-click="brand-pick:compare" data-goatcounter-title="Brand pick: All brands">
             ${allBrandsPhotoHTML()}
             <div class="brand-card-body">
               <div class="brand-name">All Brands</div>
@@ -953,7 +958,7 @@ function rootBodyBlock(site, brands, crossSample = []) {
         </li>`;
   const cards = [compareCard, ...brands.map(br =>
     `        <li class="brand-card" style="--card-accent: ${esc(BRAND_CARD_ACCENTS[br.slug] || '#B48CE0')}">
-          <a href="./${br.slug}/">
+          <a href="./${br.slug}/" data-goatcounter-click="brand-pick:${br.slug}" data-goatcounter-title="Brand pick: ${esc(br.name)}">
             ${brandPhotoHTML(br.name, br.heroCamera)}
             <div class="brand-card-body">
               <div class="brand-name">${esc(br.name)}</div>
