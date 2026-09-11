@@ -207,6 +207,15 @@ const KNOWN_IMAGE_GAPS = {
     // own storefront but still sold new by B&H (productUrl updated to that
     // listing); still no official product photo to source, so the image gap
     // stands under this same (unchanged) slug.
+    // Re-checked 2026-09-11 (image refresh pass): viltrox.com's current
+    // "85mm" search (126 results) still lists only "AF 85mm F1.8 II" (Sony
+    // E / Fuji X) and "AF 85mm F1.4 Pro" / "AF 85mm F2.0 EVO" for Nikon Z —
+    // no plain AF 85mm F1.8 (STM, non-Pro/EVO/II) Z-mount SKU exists on the
+    // storefront to source a page photo from. Commons' "Viltrox Z-mount
+    // lenses" > "Viltrox AF 85/1.8 Z" category holds only a "Taken with"
+    // subcategory (photos shot using the lens, not of it) — no product
+    // photo. B&H still stocks the lens but retailer photos aren't an
+    // acceptable source per this skill. Still a gap.
     'viltrox-85mm-f18-ii',
     // tamron-17-70mm-f28 has a Commons candidate (File:Tamron 17-70mm F 2.8
     // Di III-A VC RXD (Model B070) (50829297527).jpg) but it's dated
@@ -218,6 +227,17 @@ const KNOWN_IMAGE_GAPS = {
     // rear-mount closeup (b061e_mount.png) show a generic bayonet with no
     // "Nikon Z"/mount-identifying text or shape — Tamron does not publish
     // visually mount-distinguishable photography for either lens.
+    // Re-checked 2026-09-11 (image refresh pass): re-ran both the automated
+    // Commons matcher and manual API searches (site search, category sweep
+    // of "Tamron Z-mount lenses" and "Tamron lenses") — the only 17-70mm hit
+    // is still the same pre-2026 Sony-E-era file; no 18-300mm file exists on
+    // Commons at all, and neither model has a "…Nikon Z…"-suffixed filename
+    // the way the resolved tamron-35-150mm-f2-28 entry does (its Commons
+    // file is explicitly captioned "(model A058Z)"). Also loaded both
+    // tamron.com product pages live in a browser: the "SONY E / NIKON Z /
+    // FUJIFILM X / CANON RF" mount badges are static text, not a selector —
+    // clicking "NIKON Z" doesn't swap the hero image, and the gallery still
+    // has no rear-mount shot. Both remain genuine gaps.
     'tamron-17-70mm-f28', 'tamron-18-300mm-f35-63',
     // The 34 round-2 third-party Nikon Z entries whose images were deferred
     // in the Aug 2026 lens-entry batches (21 Laowa, 7 Yongnuo, 4 Meike,
