@@ -18,7 +18,7 @@ const BRAND_CONFIG = {
   cameras: {
     heroEyebrow:  'Lumix S & G',
     heroTitle:    '<span>Panasonic</span> Camera Comparison',
-    heroSubtitle: 'Compare up to 3 Panasonic Lumix cameras side-by-side — full-frame L-Mount and Micro Four Thirds',
+    heroSubtitle: 'Compare up to 4 Panasonic Lumix cameras side-by-side — full-frame L-Mount and Micro Four Thirds',
     headerTitle:  'Panasonic',
     defaultSelected: ['s5-ii', 's1r-ii', 'gh7'],
   },

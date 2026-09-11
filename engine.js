@@ -5,9 +5,10 @@
 // register exactly one brand. compare/index.html registers all brands
 // and declares window.COMPARE_CONFIG, which switches the engine into
 // cross-brand mode: cameras only, brand-namespaced item ids
-// ('fujifilm:x-t5'), and up to 4 slots. Every page — brand or compare —
-// offers a "Cameras to compare" dropdown (2..MAX_SLOTS); it's hidden
-// below the mobile breakpoint, where the viewport clamps to 2 anyway.
+// ('fujifilm:x-t5'). Every page — brand or compare — offers a "Compare"
+// slot-count dropdown (2..MAX_SLOTS, so up to 4); it's hidden, with its
+// whole label cell, below the mobile breakpoint, where the viewport clamps
+// to 2 anyway.
 // ─────────────────────────────────────────────
 
 // ─────────────────────────────────────────────
@@ -18,7 +19,7 @@ const COMPARE_CONFIG = window.COMPARE_CONFIG || null;
 const IS_COMPARE = !!COMPARE_CONFIG;
 const ACTIVE_BRAND = IS_COMPARE ? null : REGISTRY[Object.keys(REGISTRY)[0]];
 const MIN_SLOTS = 2;
-const MAX_SLOTS = IS_COMPARE ? 4 : 3;
+const MAX_SLOTS = 4;
 
 // Cross-brand ids are '<brand>:<slug>'; brand-page ids are bare slugs
 // owned by the page's brand. Every per-item lookup that depends on the
@@ -456,12 +457,12 @@ function cfg() { return MODE_CONFIG[currentMode]; }
 // STATE
 // ─────────────────────────────────────────────
 let currentMode = 'cameras';
-let selectedCameraIds = [...BRAND_CONFIG.cameras.defaultSelected];
-let selectedLensIds   = [...BRAND_CONFIG.lenses.defaultSelected];
+let selectedCameraIds = withFillers(BRAND_CONFIG.cameras.defaultSelected, 'cameras');
+let selectedLensIds   = withFillers(BRAND_CONFIG.lenses.defaultSelected, 'lenses');
 let currentCurrency = 'AUD';
-// slotChoice is the user's picked slot count (2..MAX_SLOTS — 3 on brand
-// pages, 4 on the compare page). numSlots is what the viewport allows
-// right now (effectiveSlots clamps to 2 below the mobile breakpoint).
+// slotChoice is the user's picked slot count (2..MAX_SLOTS). numSlots is
+// what the viewport allows right now (effectiveSlots clamps to 2 below the
+// mobile breakpoint).
 // A brand page takes its slot count from the mode's `defaultSelected`: a brand
 // with only two cameras declares two ids and gets a two-slot layout. Previously
 // this was hardcoded to 3, which meant any brand with fewer than three defaults
@@ -469,6 +470,24 @@ let currentCurrency = 'AUD';
 function brandSlotChoice(mode) {
   const n = (BRAND_CONFIG[mode] && BRAND_CONFIG[mode].defaultSelected || []).length;
   return Math.min(Math.max(n, MIN_SLOTS), MAX_SLOTS);
+}
+
+// Brands declare three defaults per mode, but every page offers MAX_SLOTS.
+// Each slot without an item takes the first one, in dropdown order, not
+// already selected — so choosing 4 always reveals a real, distinct item. It
+// prefers the first slot's mount, so an X-Mount comparison grows by another X
+// body rather than a GFX. A catalogue too small to fill every slot leaves
+// holes, which availableCount() keeps off screen.
+function withFillers(ids, mode) {
+  const out = Array.from({ length: MAX_SLOTS }, (_, i) => ids[i]);
+  const first = MODE_CONFIG[mode].items[out.find(Boolean)];
+  const sameMount = first ? itemsInMount(mode, first.mount) : [];
+  const pool = [...new Set([...sameMount, ...itemsInMount(mode, null)])]
+    .filter(id => !out.includes(id));
+  for (let i = 0; i < MAX_SLOTS; i++) {
+    if (out[i] === undefined && pool.length) out[i] = pool.shift();
+  }
+  return out;
 }
 
 let slotChoice = IS_COMPARE
@@ -528,20 +547,24 @@ function itemsInMount(mode, mountId) {
   return ids;
 }
 
-// How many items the active filter leaves to fill slots with. Unfiltered this
-// is unbounded — the viewport and the user's choice are the only limits.
+// How many items the active filter — or, unfiltered, the whole catalogue —
+// leaves to fill slots with. Unfiltered it only binds for a catalogue smaller
+// than MAX_SLOTS, which would otherwise render an empty slot and throw.
 function availableCount() {
-  return activeMount ? itemsInMount(currentMode, activeMount).length : Infinity;
+  return itemsInMount(currentMode, activeMount).length;
 }
 
 // ─────────────────────────────────────────────
 // URL STATE (shareable comparison hashes)
 //
-// Grammar: #<mode> or #<mode>=<slug>,<slug>,<slug>. Bare-mode and empty
-// hashes keep their legacy meaning — mode only, default selection — and
-// the hash is never written until the user first interacts, so a plain
-// visit keeps a clean URL. Unknown slugs fall back per-slot to the
-// brand's defaults rather than rejecting the whole hash.
+// Grammar: #<mode> or #<mode>=<slug>,<slug>[,…]. The entries are exactly the
+// items on screen, so their count is the slot count (clamped to
+// MIN_SLOTS..MAX_SLOTS on load). Bare-mode and empty hashes keep their legacy
+// meaning — mode only, default selection — and no selection is written until
+// the user first interacts, so a plain visit keeps a clean URL. Once one is
+// there it follows the screen: a viewport clamp, resize or mount filter that
+// changes how many slots show rewrites it. Unknown slugs fall back per-slot
+// to the brand's defaults rather than rejecting the whole hash.
 // ─────────────────────────────────────────────
 function parseHash(hash) {
   const m = /^#(cameras|lenses)(?:=(.*))?$/.exec(hash || '');
@@ -550,22 +573,25 @@ function parseHash(hash) {
   if (m[2] === undefined) return { mode, ids: null };
   const items = MODE_CONFIG[mode].items;
   const given = m[2].split(',');
-  const ids = BRAND_CONFIG[mode].defaultSelected.map(
-    (def, i) => (items[given[i]] ? given[i] : def)
-  );
-  // On the compare page the entry count also carries the slot count.
-  const count = IS_COMPARE
-    ? Math.min(Math.max(given.length, MIN_SLOTS), MAX_SLOTS)
-    : undefined;
-  return { mode, ids, count };
+  const defaults = BRAND_CONFIG[mode].defaultSelected;
+  const ids = withFillers(Array.from({ length: MAX_SLOTS },
+    (_, i) => (items[given[i]] ? given[i] : defaults[i])), mode);
+  const count = Math.min(Math.max(given.length, MIN_SLOTS), MAX_SLOTS);
+  return { mode, ids, count, given: given.length };
 }
 
+// Only the slots on screen: a link shared from a phone opens as the two items
+// its sender saw, not with others they never did. The hidden choices stay in
+// memory, so widening the window brings them (and their slugs) back.
 function updateHash() {
-  const ids = cfg().selectedIds();
-  // Compare page: write the user's chosen count (not the responsive
-  // clamp), mirroring the brand-page rule of always writing all slugs.
-  const shown = IS_COMPARE ? ids.slice(0, slotChoice) : ids;
+  const shown = cfg().selectedIds().slice(0, numSlots);
   history.replaceState(null, '', `#${currentMode}=${shown.join(',')}`);
+}
+
+// Keep an existing selection hash in step with the screen. A clean or
+// mode-only URL is left alone until the user interacts.
+function syncHash() {
+  if (location.hash.includes('=')) updateHash();
 }
 
 // Selection slugs are brand-specific — carry only the mode across brands.
@@ -587,8 +613,8 @@ function buildBrandSwitcher() {
   return `<select class="brand-switcher header-select" id="brand-switcher" aria-label="Brand">${allOpt}${options}</select>`;
 }
 
-// Reusable on every page (brand pages max out at MAX_SLOTS=3, the
-// compare page at 4): lets the user choose how many slots to show,
+// Reusable on every page (2..MAX_SLOTS): lets the user choose how many
+// slots to show,
 // rendered under the "Compare" label so it sits in the same row as
 // the camera slot pickers. Hidden below the mobile breakpoint via CSS
 // — narrow viewports are clamped to 2 regardless (see effectiveSlots),
@@ -612,8 +638,8 @@ function buildSlotCountField() {
     options += `<option value="${n}"${n === shown ? ' selected' : ''}>${n}</option>`;
   }
   return `<div class="slot-count-field">
-    <label for="slot-count-select">Cameras to compare</label>
-    <select id="slot-count-select" class="slot-count-select" aria-label="Number of cameras to compare">${options}</select>
+    <label for="slot-count-select">Compare</label>
+    <select id="slot-count-select" class="slot-count-select" aria-label="Number of items to compare">${options}</select>
   </div>`;
 }
 
@@ -977,6 +1003,12 @@ function attachSlotListeners() {
   document.querySelectorAll('.slot-select').forEach(sel => {
     sel.addEventListener('change', e => {
       const slotIdx = parseInt(e.target.dataset.slot);
+      // Pickers only disable items held by *visible* slots, so the pick may be
+      // sitting in a hidden one. Hand that slot the item this one gives up, or
+      // revealing it later would show the same item twice.
+      const ids = cfg().selectedIds();
+      const holder = ids.indexOf(e.target.value);
+      if (holder >= numSlots) cfg().setSelectedId(holder, ids[slotIdx]);
       cfg().setSelectedId(slotIdx, e.target.value);
       updateHash();
       renderAll();
@@ -993,13 +1025,24 @@ function swapOutOfMountSlots() {
   if (!activeMount) return false;
   const ids = cfg().selectedIds();
   const inMount = id => cfg().items[id] && cfg().items[id].mount === activeMount;
-  const taken = new Set(ids.filter(inMount));
-  const pool = itemsInMount(currentMode, activeMount).filter(id => !taken.has(id));
-  let next = 0, changed = false;
+  const pool = itemsInMount(currentMode, activeMount).filter(id => !ids.includes(id));
+  let changed = false;
   for (let i = 0; i < ids.length; i++) {
     if (inMount(ids[i])) continue;
-    if (next >= pool.length) break; // fewer items than slots; the clamp hides the rest
-    cfg().setSelectedId(i, pool[next++]);
+    if (pool.length) {
+      cfg().setSelectedId(i, pool.shift());
+      changed = true;
+      continue;
+    }
+    // No free item left: pull one forward from a later slot. The clamp keeps
+    // the leftmost slots on screen, and a hidden slot holding the mount's only
+    // item would otherwise leave a visible one showing an out-of-mount item.
+    let j = ids.length - 1;
+    while (j > i && !inMount(ids[j])) j--;
+    if (j === i) break; // fewer items than slots; the clamp hides the rest
+    const pulled = ids[j];
+    cfg().setSelectedId(j, ids[i]);
+    cfg().setSelectedId(i, pulled);
     changed = true;
   }
   return changed;
@@ -1007,8 +1050,10 @@ function swapOutOfMountSlots() {
 
 function applyMountFilter(mountId) {
   activeMount = mountId;
-  if (swapOutOfMountSlots()) updateHash();
+  const swapped = swapOutOfMountSlots();
   numSlots = getNumSlots();
+  // The filter can change how many slots show, and the hash lists exactly those.
+  if (swapped) updateHash(); else syncHash();
   renderAll();
 }
 
@@ -1081,6 +1126,7 @@ function attachEventListeners() {
     const n = getNumSlots();
     if (n !== numSlots) {
       numSlots = n;
+      syncHash();
       renderAll();
     }
   });
@@ -1100,18 +1146,10 @@ function attachEventListeners() {
   // Generate body HTML
   injectBody();
 
-  // Restore mode + selection from the hash (never rewrites it on load)
+  // Restore mode + selection from the hash
   const initial = parseHash(location.hash);
-  if (initial.ids) {
-    if (initial.mode === 'cameras') selectedCameraIds = initial.ids;
-    else if (!IS_COMPARE) selectedLensIds = initial.ids;
-  }
-  if (IS_COMPARE && initial.count) {
-    slotChoice = initial.count;
-    const countSel = document.getElementById('slot-count-select');
-    if (countSel) countSel.value = String(slotChoice);
-  }
-  if (initial.mode === 'lenses' && !IS_COMPARE) {
+  const restoresLenses = initial.mode === 'lenses' && !IS_COMPARE;
+  if (restoresLenses) {
     currentMode = 'lenses';
     slotChoice = brandSlotChoice('lenses');
     document.querySelectorAll('.mode-btn').forEach(b => {
@@ -1122,8 +1160,20 @@ function attachEventListeners() {
     document.getElementById('hero-subtitle').textContent = cfg().heroSubtitle;
     document.getElementById('header-title').textContent = cfg().headerTitle;
   }
+  // A selection hash names what was on screen, so its entry count is the slot
+  // count — it overrides the mode's default.
+  const restored = initial.ids && (initial.mode === 'cameras' || restoresLenses);
+  if (restored) {
+    if (initial.mode === 'cameras') selectedCameraIds = initial.ids;
+    else selectedLensIds = initial.ids;
+    slotChoice = initial.count;
+  }
 
   numSlots = getNumSlots();
+  // Rewritten only when the screen can't show what the link names — a phone
+  // opening a three-item link shows two, and the URL says so. A link that
+  // fits is left exactly as it arrived.
+  if (restored && initial.given !== numSlots) updateHash();
   attachEventListeners();
   renderAll();
 })();

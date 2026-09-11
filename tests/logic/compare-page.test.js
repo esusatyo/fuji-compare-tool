@@ -53,7 +53,7 @@ test('cameras only: no mode toggle, slot-count dropdown instead', () => {
   assert.deepEqual(opts.map(o => o.value), ['2', '3', '4']);
   assert.equal(sel.value, '3', 'default choice 3 is selected');
   const label = window.document.querySelector(`label[for="slot-count-select"]`);
-  assert.equal(label.textContent, 'Cameras to compare');
+  assert.equal(label.textContent, 'Compare');
   assert.ok(
     window.document.querySelector('.compare-label-cell').contains(sel),
     'slot-count control lives inside the Compare label cell');
@@ -222,12 +222,16 @@ test('slot-count change is reflected in the hash', () => {
   assert.equal(window.location.hash, `#cameras=${DEFAULTS.join(',')}`);
 });
 
-test('mobile clamp does not truncate the written hash', () => {
+test('the hash lists only the slots on screen, and follows the viewport', () => {
   const { window } = loadCompare({ width: 500, hash: `#cameras=${DEFAULTS.join(',')}` });
   assert.equal(visibleSlots(window).length, 2);
+  assert.equal(window.location.hash, `#cameras=${DEFAULTS.slice(0, 2).join(',')}`,
+    'a four-item link opened on a phone is rewritten to the two it shows');
   setSlot(window, 0, 'panasonic:s5-ii');
-  const written = window.location.hash.split('=')[1].split(',');
-  assert.equal(written.length, 4, 'all four chosen ids written while only 2 visible');
+  assert.equal(window.location.hash, `#cameras=panasonic:s5-ii,${DEFAULTS[1]}`);
+  resizeTo(window, 1200);
+  assert.equal(visibleSlots(window).length, 4, 'the hidden choices survive in memory');
+  assert.equal(window.location.hash, `#cameras=panasonic:s5-ii,${DEFAULTS.slice(1).join(',')}`);
 });
 
 test('deep link restores selection and slot count without rewriting the hash', () => {
@@ -235,7 +239,7 @@ test('deep link restores selection and slot count without rewriting the hash', (
   const { window } = loadCompare({ hash });
   assert.equal(visibleSlots(window).length, 2, 'two entries → two slots');
   assert.deepEqual([0, 1].map(i => slotSelect(window, i).value), ['fujifilm:x100vi', 'sony:a6700']);
-  assert.equal(window.location.hash, hash, 'init never rewrites the hash');
+  assert.equal(window.location.hash, hash, 'a link that fits the screen is not rewritten');
 });
 
 test('four-camera deep link renders four slots', () => {
