@@ -308,6 +308,12 @@ const KNOWN_IMAGE_GAPS = {
     // briefly applied it to panasonic/data.js on 2026-09-06 before this was
     // caught and reverted. Still a genuine gap.
     'omsystem-100-400mm-f5-63-ii',
+    // 2026-09-12 image-refresh pass: re-ran scripts/fetch-images-commons.js
+    // panasonic lenses (dry run) for all three remaining gaps above — 0/3
+    // candidates found, same result as the 2026-09-06 pass. A follow-up direct
+    // Commons API search hit the same IP-wide search-API rate limiting/garbled
+    // responses documented for other brands this round, so no further manual
+    // digging was done beyond the one pass. All three stay genuine gaps.
   ]),
   sony: new Set([
     // tamron-70-300mm: the only Commons file is the Nikon Z version (Model
