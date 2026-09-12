@@ -276,6 +276,10 @@ const KNOWN_IMAGE_GAPS = {
     // this pass. e-m1/e-m1-ii/e-m1x/e-m1-iii all have real, visually
     // verified Commons photos -- not gapped.
     'e-m1-iii-astro',
+    // e-pl8, e-pl9, e-pl10: task 4.5. No Commons category/candidate found
+    // for these three in this pass, unlike the rest of the PEN Lite/Mini
+    // tail (9 of 11 have real, visually-verified Commons photos).
+    'e-pl8', 'e-pl9', 'e-pl10',
   ]),
   panasonic: new Set([
     // Cameras: all resolved (see git history — Commons sweeps plus Tier 3

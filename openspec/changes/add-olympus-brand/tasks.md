@@ -250,7 +250,20 @@
   never officially sold in North America (PetaPixel) — its stored USD is a
   flagged grey-market estimate, the one exception to every other body in
   this batch having a genuine launch MSRP. `npm test`: 685/685 green.
-- [ ] 4.5 **Batch E — PEN Lite (E-PL) and PEN Mini (E-PM) tail.**
+- [x] 4.5 **Batch E done — PEN Lite (E-PL1–10) and PEN Mini (E-PM1–2), 11
+  bodies.** All discontinued. 8 of 11 have real, visually-verified Commons
+  photos (E-PL8/E-PL9/E-PL10 are genuine, documented image gaps — no
+  candidate found). Confirmed IBIS reached this tail's E-PL3/E-PM1
+  **earlier** than the flagship E-P line's own E-P5 (2013) — a real,
+  non-obvious cross-line inconsistency, not an error, sourced independently
+  per body rather than assumed to follow the E-P line's timeline. This
+  batch leans on more flagged/estimated fields (dimensions, battery life,
+  some computational features on the newer E-PL8–10) than earlier batches,
+  consolidated per-camera in each `specSources` note rather than chased
+  individually — a deliberate pacing tradeoff for this long consumer tail,
+  disclosed rather than hidden. **This closes all of Group 4 (camera data)
+  — 35 of 42 planned Olympus cameras entered; only the 7 Tough/TG bodies
+  remain.** `npm test`: 685/685 green.
 - [ ] 4.6 After each batch: extend `CAMERA_ORDER` (must match `CAMERAS` exactly)
   and `DROPDOWN_GROUPS` (every camera in exactly one group), then
   `npm run test:data`. Discontinued bodies may be USD-only and may have
