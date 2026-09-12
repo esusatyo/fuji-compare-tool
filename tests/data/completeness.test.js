@@ -28,23 +28,26 @@ const KNOWN_IMAGE_GAPS = {
     // rfs-14-30mm-f4-63-is-stm-pz) resolved the same day via canon.com.au
     // product-carousel images, barrel text visually confirmed for every one.
     //
-    // rf-800mm-f56-l-is-usm and rf-1200mm-f8-l-is-usm's Commons candidate
-    // (used only for the 800) has no legible model text on the barrel, and
-    // Canon's super-teles (400/2.8, 600/4, 800/5.6, 1200/8) look near-identical
-    // in a field shot — rejected, stays a gap. Re-checked 2026-08-16 at full
-    // resolution (crop of the front barrel): still blank, no printed
-    // designation anywhere visible. The focus-limiter switch reads
-    // "2.6m-20m", far closer to the 400mm f/2.8's ~2.5m MFD than the 800mm
-    // f/5.6's ~6m — actively suggests this is a mislabeled 400mm f/2.8
-    // photo, not weak evidence either way. rf-1200mm-f8-l-is-usm itself
-    // resolved 2026-08-17 via its own canon.com.au page instead.
-    'rf-800mm-f56-l-is-usm',
-    // viltrox-85mm-f18 (RF II): Viltrox pulled this lens from their own site
-    // entirely — Canon blocks third-party AF lens licensing on RF, so
-    // viltroxcamera.com now only lists the Sony E-mount version. No official
-    // manufacturer page exists to source from; B&H/retailer photos aren't an
-    // acceptable substitute per this skill's sourcing tiers. Stays a gap
-    // until Viltrox (or Canon's policy) changes.
+    // rf-800mm-f56-l-is-usm RESOLVED 2026-09-11 (Commons, CC BY-SA 4.0,
+    // File:Canon_RF_800mm_f5.6L_IS_USM.jpg by Dinkun Chen). The prior
+    // rejection (2026-08-16) reasoned the barrel's "2.6m-20m" focus-limiter
+    // switch reading was "far closer to the 400mm f/2.8's ~2.5m MFD than the
+    // 800mm f/5.6's ~6m" — that ~6m figure was wrong, borrowed from the
+    // unrelated budget RF800mm F11 IS STM. Canon's own published spec (and
+    // this dataset's own minFocusDist:260 for this item) puts the RF 800mm
+    // f/5.6L IS USM's true MFD at exactly 2.6m — an exact match to the
+    // switch reading visible in the photo (re-verified at full crop
+    // resolution), not merely close, and distinct from the 400mm f/2.8
+    // (2.5m), 600mm f/4 (4.2m), and 1200mm f/8 (4.3m). Accepted.
+    //
+    // viltrox-85mm-f18 (RF II): re-checked 2026-09-11, still a gap. Viltrox's
+    // own store (viltrox.com) site search for "85mm RF" lists the F1.8 II,
+    // F1.4 Pro, and F2.0 EVO variants only in Sony E / Nikon Z / Fujifilm X —
+    // no Canon RF option on any of them. Canon still blocks third-party AF
+    // lens licensing on RF, so no official manufacturer page exists to
+    // source from; B&H/retailer photos aren't an acceptable substitute per
+    // this skill's sourcing tiers. Stays a gap until Viltrox (or Canon's
+    // policy) changes.
     'viltrox-85mm-f18',
     // yongnuo-35mm-f2, yongnuo-85mm-f18: resolved 2026-08-17 (Tier 3,
     // yongnuo.eu — both images carry an explicit "R mount / Full Frame"
@@ -123,11 +126,23 @@ const KNOWN_IMAGE_GAPS = {
     // one combined page whose sole product image (a "stage" hero banner)
     // 403s to curl even from a same-origin fetch inside a real browser tab —
     // reconfirmed 2026-08-17, still blocked.
+    // Re-checked 2026-09-11 (image-refresh pass): this time Commons searches
+    // (not just the dead manufacturer page) surface real candidates for all
+    // three, but every one turns out to be the Sony E-mount copy, not X —
+    // 12mm: File:Zeiss Touit Distagon 12mm 2,8 Lens.jpg, own description
+    // reads "for Sony E-Mount"; 32mm: File:NEX-5T with ZEISS touit 32mm
+    // F1.8.jpg, pictured mounted on a Sony NEX-5T body; 50mm:
+    // File:Zeiss-touit-28-50m.jpg, barrel visibly printed "E-mount" at full
+    // resolution (verified by downloading and reading the image). Commons
+    // appears to have no X-mount Touit photography at all. Still gaps.
     'zeiss-touit-12mm-f28', 'zeiss-touit-32mm-f18', 'zeiss-touit-50mm-f28',
     // viltrox-85mm-f18 (plain original, not Air/Pro/EVO): discontinued,
     // superseded by the II; Viltrox pulled its own listing and no Commons
     // candidate exists ("Viltrox 85mm f1.8 X" search: zero results, checked
-    // 2026-08-17).
+    // 2026-08-17). Re-checked 2026-09-11: viltrox.com's own site search for
+    // "85mm f1.8 fuji x" still resolves only to the II product page; Commons'
+    // Category:Viltrox lenses (4 files total) has none of this model in any
+    // mount. Still a gap.
     'viltrox-85mm-f18',
     // Samyang manual-lens line (10 of 11 — only samyang-75mm-f18 above
     // resolved): samyangus.com's product pages for these list "Fuji X" as a
@@ -140,6 +155,25 @@ const KNOWN_IMAGE_GAPS = {
     // 135mm f/2 — no "sony"/"canon"/"nikon" tag, but the visible bayonet ring
     // has no legible brand text to confirm X specifically, so left gapped
     // rather than guess). Checked 2026-08-17.
+    // Re-checked 2026-09-11 (image-refresh pass, Commons this time rather
+    // than samyangus.com): scripts/fetch-images-commons.js's strict-token
+    // search surfaced two new hits, both rejected on inspection —
+    // "Samyang 14mm f2.8 lens - Diliff.jpg" (own description: "lens with a
+    // Canon mount" — the same wrong-mount problem as the 2026-08-16 rejection,
+    // just a different file) and "Samyang 85mm f1.4 as if umc 02.jpg" (looked
+    // promising — a front 3/4 studio shot with no rear mount visible in that
+    // frame — but it's part of a numbered series by the same photographer;
+    // frames 04/05 in that same series show the rear mount with a glued-on
+    // EMF electronic contact chip, a well-known Canon-EF-only manual-lens
+    // modification, confirming the whole series — including 02 — is the
+    // Canon copy, not X). No product-photo candidate turned up on Commons at
+    // all for 8mm/10mm/16mm/85mm-f1.8/100mm-macro/135mm/300mm (targeted
+    // per-model searches returned only sample photography, unrelated lenses,
+    // or — for 135mm — an astrophotography rig where the lens is
+    // bracket-mounted to a dedicated astro camera via a T-mount adapter, so
+    // the retail bayonet isn't visible/identifiable). 12mm-ncscs's Commons
+    // file was re-confirmed rather than re-found: its description literally
+    // states "for Sony-E Mount APSC cameras". All still gaps.
     'samyang-8mm-f28', 'samyang-10mm-f28',
     // samyang-12mm-f2-ncscs: Commons candidate's barrel is legibly stamped
     // "NCS CS E" — the Sony E-mount copy, not X. samyang-14mm-f28: candidate's
@@ -173,6 +207,15 @@ const KNOWN_IMAGE_GAPS = {
     // own storefront but still sold new by B&H (productUrl updated to that
     // listing); still no official product photo to source, so the image gap
     // stands under this same (unchanged) slug.
+    // Re-checked 2026-09-11 (image refresh pass): viltrox.com's current
+    // "85mm" search (126 results) still lists only "AF 85mm F1.8 II" (Sony
+    // E / Fuji X) and "AF 85mm F1.4 Pro" / "AF 85mm F2.0 EVO" for Nikon Z —
+    // no plain AF 85mm F1.8 (STM, non-Pro/EVO/II) Z-mount SKU exists on the
+    // storefront to source a page photo from. Commons' "Viltrox Z-mount
+    // lenses" > "Viltrox AF 85/1.8 Z" category holds only a "Taken with"
+    // subcategory (photos shot using the lens, not of it) — no product
+    // photo. B&H still stocks the lens but retailer photos aren't an
+    // acceptable source per this skill. Still a gap.
     'viltrox-85mm-f18-ii',
     // tamron-17-70mm-f28 has a Commons candidate (File:Tamron 17-70mm F 2.8
     // Di III-A VC RXD (Model B070) (50829297527).jpg) but it's dated
@@ -184,6 +227,17 @@ const KNOWN_IMAGE_GAPS = {
     // rear-mount closeup (b061e_mount.png) show a generic bayonet with no
     // "Nikon Z"/mount-identifying text or shape — Tamron does not publish
     // visually mount-distinguishable photography for either lens.
+    // Re-checked 2026-09-11 (image refresh pass): re-ran both the automated
+    // Commons matcher and manual API searches (site search, category sweep
+    // of "Tamron Z-mount lenses" and "Tamron lenses") — the only 17-70mm hit
+    // is still the same pre-2026 Sony-E-era file; no 18-300mm file exists on
+    // Commons at all, and neither model has a "…Nikon Z…"-suffixed filename
+    // the way the resolved tamron-35-150mm-f2-28 entry does (its Commons
+    // file is explicitly captioned "(model A058Z)"). Also loaded both
+    // tamron.com product pages live in a browser: the "SONY E / NIKON Z /
+    // FUJIFILM X / CANON RF" mount badges are static text, not a selector —
+    // clicking "NIKON Z" doesn't swap the hero image, and the gallery still
+    // has no rear-mount shot. Both remain genuine gaps.
     'tamron-17-70mm-f28', 'tamron-18-300mm-f35-63',
     // The 34 round-2 third-party Nikon Z entries whose images were deferred
     // in the Aug 2026 lens-entry batches (21 Laowa, 7 Yongnuo, 4 Meike,
@@ -254,23 +308,38 @@ const KNOWN_IMAGE_GAPS = {
     // briefly applied it to panasonic/data.js on 2026-09-06 before this was
     // caught and reverted. Still a genuine gap.
     'omsystem-100-400mm-f5-63-ii',
+    // 2026-09-12 image-refresh pass: re-ran scripts/fetch-images-commons.js
+    // panasonic lenses (dry run) for all three remaining gaps above — 0/3
+    // candidates found, same result as the 2026-09-06 pass. A follow-up direct
+    // Commons API search hit the same IP-wide search-API rate limiting/garbled
+    // responses documented for other brands this round, so no further manual
+    // digging was done beyond the one pass. All three stay genuine gaps.
   ]),
   sony: new Set([
     // tamron-70-300mm: the only Commons file is the Nikon Z version (Model
     // A047Z); the Sony-E variant is A047, so this stays gapped here even though
-    // the Nikon entry now carries that photo.
+    // the Nikon entry now carries that photo. Re-confirmed 2026-09-12
+    // (image-refresh pass): scripts/fetch-images-commons.js's fuzzy search
+    // resurfaced the same A047Z/"Nikon Z" file as its only hit — still the
+    // wrong mount, still gapped.
     'tamron-70-300mm-f45-63',
     // Tamron FE zooms — tamron-17-70mm-f28 and tamron-70-180mm-f28-g2 resolved
     // 2026-08-15 (Commons, mount confirmed via filename/description).
     // tamron-35-150mm-f2-28's only Commons candidate explicitly says "Nikon Z"
-    // in the filename — wrong mount, rejected. tamron-16-30mm-f28-g2,
-    // tamron-20-40mm-f28, and tamron-12-20mm-f28 checked directly on
-    // tamron-americas.com 2026-08-17: each product page is a shared
-    // Sony-E-and-Nikon-Z listing (e.g. page title "...for Sony E & Nikon
-    // Z-Mount") with no dedicated hero product photo at all, only spec
-    // diagrams/icons — consistent with the mount-indistinguishable
-    // photography already confirmed for Tamron's Nikon Z entries.
-    'tamron-16-30mm-f28-g2', 'tamron-20-40mm-f28', 'tamron-35-150mm-f2-28',
+    // in the filename — wrong mount, rejected. tamron-16-30mm-f28-g2 and
+    // tamron-12-20mm-f28 checked directly on tamron-americas.com 2026-08-17:
+    // each product page is a shared Sony-E-and-Nikon-Z listing (e.g. page
+    // title "...for Sony E & Nikon Z-Mount") with no dedicated hero product
+    // photo at all, only spec diagrams/icons — consistent with the
+    // mount-indistinguishable photography already confirmed for Tamron's
+    // Nikon Z entries. tamron-20-40mm-f28 resolved 2026-09-12 (Commons; see
+    // below — it turned out NOT to share this dual-mount problem).
+    // Re-checked 2026-09-12 (image-refresh pass): fresh Commons category +
+    // search queries for tamron-16-30mm-f28-g2, tamron-35-150mm-f2-28 and
+    // tamron-12-20mm-f28 (by name and by Tamron model code) returned zero
+    // file hits for any of the three — still no Commons coverage at all,
+    // not just a wrong-mount rejection. All three stay gapped.
+    'tamron-16-30mm-f28-g2', 'tamron-35-150mm-f2-28',
     'tamron-12-20mm-f28',
     // Samyang — samyang-35mm-f18 and samyang-135mm-f18 resolved 2026-08-15
     // (Commons). samyang-24mm-f18, samyang-45mm-f18, samyang-75mm-f18 resolved
@@ -295,6 +364,10 @@ const KNOWN_IMAGE_GAPS = {
     // application/octet-stream — fails this repo's own image-link check, and
     // no working /PDP/DI/ equivalent exists for either model (checked both
     // pages' DOM directly, only a generic cashback banner uses that path).
+    // Re-checked 2026-09-12 (image-refresh pass): scripts/fetch-images-commons.js
+    // plus manual Commons category/search queries ("Sony FX5", "ILME-FX5",
+    // "Sony FX2 cinema line") returned zero file hits for either model —
+    // still no Commons coverage at all. Both stay gapped.
     'fx5', 'fx2',
     // Lens batch resolved 2026-08-17 via Tier 3 — electronics.sony.com's
     // 1WorldSync-syndicated product gallery (cdn.cs.1worldsync.com
@@ -317,18 +390,38 @@ const KNOWN_IMAGE_GAPS = {
     // product-gallery block on their electronics.sony.com pages at all — a
     // real distinction from Sony's *camera* PDP pages, where that same N.jpg
     // path IS the product photo (used successfully for a7-v/a6100 above).
-    // fe-70-200mm-f4-macro-g-oss-ii, fe-200-600mm-f56-63-g-oss (Commons
-    // Restrictions:"personality" — explicit reject), and fe-400-800mm-f63-8-g-oss
-    // have no 1WorldSync block either. fe-28-70mm-f35-56-oss-ii's stored
-    // productUrl 404'd — fixed to the correct sel28702 slug (found via
-    // search) — but that corrected page also has no product-gallery block.
-    // e-16-50mm-f35-56-pz-oss-ii's stored productUrl (selp1650-2) also
-    // 404s; a search only surfaces the ORIGINAL (non-II) selp1650 SKU page,
-    // not a distinct current URL for the "II" revision — left unfixed rather
-    // than risk attaching the wrong product's URL, and stays gapped.
+    // fe-400-800mm-f63-8-g-oss has no 1WorldSync block either.
+    // fe-28-70mm-f35-56-oss-ii's stored productUrl 404'd — fixed to the
+    // correct sel28702 slug (found via search) — but that corrected page
+    // also has no product-gallery block. e-16-50mm-f35-56-pz-oss-ii's
+    // stored productUrl (selp1650-2) also 404s; a search only surfaces the
+    // ORIGINAL (non-II) selp1650 SKU page, not a distinct current URL for
+    // the "II" revision — left unfixed rather than risk attaching the wrong
+    // product's URL, and stays gapped.
+    // fe-70-200mm-f4-macro-g-oss-ii and fe-200-600mm-f56-63-g-oss resolved
+    // 2026-09-12 (Commons) — see their data.js entries; the earlier
+    // "Restrictions:personality — explicit reject" note on the 70-200 was
+    // about a *different* Commons candidate than the one ultimately used.
+    //
+    // Re-checked 2026-09-12 (image-refresh pass), electronics.sony.com's own
+    // page confirmed live via a real browser (curl/WebFetch are both
+    // Akamai-blocked with a 403 on this host — not a licensing signal, just
+    // bot-detection): fe-300mm-f28-gm and fe-28-70mm-f2-gm's product pages
+    // were re-inspected end-to-end via the rendered DOM. Both do have a
+    // genuine studio product photo, but only on the cloudfront.net
+    // /converted/<id>_..._converted.webp path, which serves Content-Type
+    // application/octet-stream (confirmed via curl -I) — same failure as the
+    // documented fx5/fx2 case, fails tests/links/links.test.js's image/*
+    // check. The PDP/DI/Lenses/<SKU>/desktop/N.jpg images on both pages are
+    // confirmed still marketing-only (tennis player / "G MASTER" logo card /
+    // ballet studio — viewed directly, not guessed). No Commons category or
+    // search hit exists for fe-100-400mm-f45-gm-oss (a brand-new 2026
+    // release — expected), fe-100-400mm-f56-8-oss, fe-16-25mm-f28-g,
+    // fe-24-50mm-f28-g, fe-400-800mm-f63-8-g-oss, fe-28-70mm-f35-56-oss-ii,
+    // or e-16-50mm-f35-56-pz-oss-ii either (tried by lens name and by SKU).
+    // All seven stay gapped alongside the two confirmed-marketing-only pages.
     'fe-300mm-f28-gm', 'fe-28-70mm-f2-gm', 'fe-100-400mm-f45-gm-oss',
     'fe-100-400mm-f56-8-oss', 'fe-16-25mm-f28-g', 'fe-24-50mm-f28-g',
-    'fe-70-200mm-f4-macro-g-oss-ii', 'fe-200-600mm-f56-63-g-oss',
     'fe-400-800mm-f63-8-g-oss', 'fe-28-70mm-f35-56-oss-ii',
     'e-16-50mm-f35-56-pz-oss-ii',
   ]),
