@@ -252,6 +252,22 @@ const KNOWN_IMAGE_GAPS = {
     // shots used show either no mount plate or an unmarked bayonet, nothing
     // contradicting Nikon Z.
   ]),
+  olympus: new Set([
+    // om-1-ii: entered early (task 2, to satisfy BRAND_CONFIG.heroCamera
+    // before any other camera data existed) with imageUrl:null rather than
+    // guess. explore.omsystem.com/us/en/om-1-mark-ii's only image asset is a
+    // dimension diagram (om-1-mark-ii-specs_o_85.webp) — downloaded and
+    // visually inspected: measurement callouts overlaid on the body, not a
+    // clean product photo. As the landing-tile hero camera this is the
+    // highest-priority gap to resolve in task 8 (Commons or an official
+    // clean studio shot), not just another item in the sweep.
+    'om-1-ii',
+    // om-3, om-5-ii: entered the same way (task 2, same forcing reason) with
+    // imageUrl:null -- not individually checked for a Commons/official photo
+    // yet (this whole batch was pulled forward for the render-test camera
+    // count, not a dedicated image-sourcing pass). Genuine gaps for task 8.
+    'om-3', 'om-5-ii',
+  ]),
   panasonic: new Set([
     // Cameras: all resolved (see git history — Commons sweeps plus Tier 3
     // manufacturer hotlinks for l10/s1-ii/s5-iix/g97/g95/bgh1, the last of

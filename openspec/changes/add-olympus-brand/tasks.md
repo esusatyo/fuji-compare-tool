@@ -85,44 +85,115 @@
 
 ## 2. Scaffold the Olympus brand directory
 
-- [ ] 2.1 `cp panasonic/index.html olympus/index.html`; update the `<title>`
-  ("Olympus Camera & Lens Comparison").
-- [ ] 2.2 Create `olympus/data.js` from `panasonic/data.js`, keeping the registry
-  IIFE wrap; set the key to `window.BRAND_DATA['olympus']`. Fill `BRAND_CONFIG`
-  (incl. `mounts: [{ id:'mft', label:'Micro Four Thirds' }]` byte-identical to
-  Panasonic's, `mount: 'Micro Four Thirds'`, `brandSections: ['olympus']`) and
-  `SERIES_COLORS`; leave `CAMERAS`, `CAMERA_ORDER`, `DROPDOWN_GROUPS`, `LENSES`,
-  `LENS_DROPDOWN_GROUPS` empty.
-- [ ] 2.3 `node --check olympus/data.js`.
+- [x] 2.1 Copied `panasonic/index.html` → `olympus/index.html`, title updated
+  to "Olympus Camera & Lens Comparison". SEO marker blocks left as stale
+  Panasonic content on purpose — `generate-seo.js` fully replaces everything
+  between the `seo:begin`/`seo:end` and `seo:body:begin`/`seo:body:end`
+  markers (verified, not append), so it's fully rewritten at task 9.1 once
+  real data exists.
+- [x] 2.2 Created `olympus/data.js` from `panasonic/data.js`'s structure,
+  registry key `window.BRAND_DATA['olympus']`. `BRAND_CONFIG` filled per
+  research/decisions.md (mount/mounts, `heroCamera: 'om-1-ii'`, hero copy,
+  footer links) and all **9** `SERIES_COLORS` entries from decisions.md §9.
+  `REGISTERED_BRANDS` filled with all 7 brands in Olympus's own file (the
+  other 6 files' lists are task 3.1).
+  **Correction — `CAMERAS`/`LENSES` did NOT stay empty, discovered here**:
+  the pre-commit hook unconditionally runs `generate-seo.js` (which crashes,
+  not just fails a test) on any commit touching a brand's `data.js`, and it
+  crashes immediately on an unresolvable `heroCamera`. That cascaded —
+  `defaultSelected` needing ids that resolve, `curatedPairs()` needing ≥2
+  cameras to produce a vs-page pair — so this commit necessarily pulls
+  forward a minimal, **properly researched** (not stubbed) slice of tasks 4
+  and 5. **Final scope after the render-logic tests demanded ≥4 distinct
+  items** (see 2.3): 4 cameras (`om-1-ii`, `om-3`, `om-5-ii` current +
+  `om-1` discontinued) and 4 lenses (`omsystem-25mm-f12-pro`,
+  `omsystem-12-40mm-f28-pro`, `omsystem-45mm-f12-pro`, `omsystem-17mm-f18` —
+  all 4 already re-verified unchanged in task 1.5, zero new lens research).
+  `om-1` was chosen as the minimal second camera (not arbitrary) because
+  `romanLine()` groups it with `om-1-ii` into one automatic vs-page pair.
+  Full account in research/decisions.md §12. Two real errors caught doing
+  this properly rather than stubbing: `om-1-ii`'s width (138.8→134.8mm) and
+  EVF magnification (1.65×→0.83×) were both text-fetch misreads, caught by
+  visually inspecting the dimension-diagram image directly. A pricing error
+  also caught twice more on `om-3`/`om-5-ii`: a product-page fetch reported
+  each camera's *current sale price* as if it were the list price; the
+  original task 1.1 catalogue-listing research (which preserved the
+  strikethrough list-vs-sale distinction in text) had the correct list
+  prices all along. Tasks 4.1 and 5.1 below are updated to reflect these
+  eight items as already done.
+- [x] 2.3 `node --check olympus/data.js` passes. Getting to a fully green
+  `npm test` needed more than `heroCamera` resolving: `defaultSelected` ids
+  had to resolve (`referential.test.js`), and `generate-seo.js`'s
+  `curatedPairs()` needs **≥2 cameras** to produce even one vs-page pair, then
+  the jsdom render-logic suite needs **≥4 distinct cameras and ≥4 distinct
+  lenses** to exercise slot-picker dedup (`[olympus] renders four slot
+  pickers`, `changing a slot updates dedup in siblings`, etc.) — confirmed by
+  running `node scripts/generate-seo.js` directly (safe and idempotent; the
+  hook does the same automatically) and re-running the suite twice, first at
+  2 cameras/1 lens (17 logic failures) then at 4/4 (0 failures). Also
+  discovered and fixed a hardcoded brand-optgroup-label list in
+  `tests/logic/compare-page.test.js` (line 65) that task 3.3's own
+  description didn't anticipate — same fix pattern as 3.4's
+  `root-redirect.test.js` case, just not called out as its own subtask
+  originally.
 
 ## 3. Wire registration, engine section and schema (before bulk data)
 
-- [ ] 3.1 Add `{ slug: 'olympus', name: 'Olympus' }` to `REGISTERED_BRANDS` in
-  **all seven** `data.js` files (identical sets — `config.test.js` enforces).
-- [ ] 3.2 Add `'olympus'` to `VALID_BRANDS` in the root `index.html`.
-- [ ] 3.3 Add `<script src="../olympus/data.js"></script>` to
-  `compare/index.html`, before `engine.js`.
-- [ ] 3.4 Add an `[olympus]` case to `tests/logic/root-redirect.test.js`.
-- [ ] 3.5 Add the `brand: 'olympus'` "Computational Photography" section to
+- [x] 3.1 Added `{ slug: 'olympus', name: 'Olympus' }` to `REGISTERED_BRANDS`
+  in **all seven** `data.js` files (identical sets — `config.test.js`
+  enforces).
+- [x] 3.2 Added `'olympus'` to `VALID_BRANDS` in the root `index.html`.
+- [x] 3.3 Added `<script src="../olympus/data.js"></script>` to
+  `compare/index.html`, before `engine.js`. Also fixed the hardcoded brand
+  list in `tests/logic/compare-page.test.js` (see 2.3's note) — not
+  originally scoped here, but the same wiring point in practice.
+- [x] 3.4 Added an `[olympus]` case to `tests/logic/root-redirect.test.js`,
+  plus `'olympus'` to that file's crawlable-landing-content brand list
+  (a second assertion in the same test file, not originally called out).
+- [x] 3.5 Added the `brand: 'olympus'` "Computational Photography" section to
   `SPEC_SECTIONS` in `engine.js` — `liveND`, `hiResShot`, `proCapture`,
   `liveComposite` (design §5).
-- [ ] 3.6 Add the `brandSections.includes('olympus')` branch to
+- [x] 3.6 Added the `brandSections.includes('olympus')` branch to
   `tests/helpers/schema.js` validating those four fields.
-- [ ] 3.7 Add `BRAND_CARD_ACCENTS['olympus']` in `scripts/generate-seo.js` — a
-  teal, not a blue (design §6).
-- [ ] 3.8 Confirm `MANUFACTURER_COLORS` needs **no change** — `OM System`,
+- [x] 3.7 Added `BRAND_CARD_ACCENTS['olympus']` in `scripts/generate-seo.js`
+  — `#5fd0c8`, matching `MANUFACTURER_COLORS['OM System']` (design §6). This
+  really was higher-priority than it looked: task 2.2's forced early
+  `generate-seo.js` run had already rendered a live landing-page
+  Olympus tile using the generator's fallback color (`#B48CE0`, a lavender —
+  visible in the committed `index.html` diff), not yet the intended teal.
+- [x] 3.8 Confirmed `MANUFACTURER_COLORS` needs **no change** — `OM System`,
   `Panasonic`, `Sigma`, `Laowa`, `Voigtländer` all already present.
-- [ ] 3.9 `npm test` — green with an empty Olympus dataset except the
-  known-failing `heroCamera` assertion; land 4.1 in the same commit if it blocks.
+- [x] 3.9 `npm test` — **685/685 green.**
 
 ## 4. Camera data, in batches
 
-> First green checkpoint needs **≥4 cameras** with `defaultSelected` naming 3 of
-> them (the engine renders 3 slots; the picker-dedup logic test needs a 4th).
+> First green checkpoint needed **≥4 cameras** with `defaultSelected` naming 3
+> of them — turned out to also need `curatedPairs()` to have ≥2 cameras and
+> the render-logic suite to have ≥4 *distinct* cameras (see task 2.3's note).
+> **4 of the planned 5-camera Batch A are already entered** (task 2.2/2.3,
+> forced early) — only OM-3 ASTRO and the brand-new PEN remain below.
 
-- [ ] 4.1 **Batch A — current OM System bodies** (~5): OM-1 Mark II, OM-1, OM-3,
-  OM-5 Mark II, OM-5. All 7 currencies required. Set `heroCamera` to whichever
-  has a clean freely-licensed or official product photo. `npm run test:data`.
+- [x] 4.1a `om-1-ii`, `om-3`, `om-5-ii` (current) and `om-1` (discontinued) —
+  entered in task 2.2/2.3 (forced early by the pre-commit hook cascade).
+  `om-1-ii`/`om-3`/`om-5-ii` each have full 7-currency, T1-sourced entries
+  (every regional price fetched directly from that region's own
+  explore.omsystem.com store, not an aggregator) incl. Olympus-specific
+  fields; `om-1` has a solid T2 entry (Wikipedia, cross-checked) but its
+  `liveND`/`ibisStops` launch-era figures and inferred Bluetooth version are
+  flagged lower-confidence in its `specSources` note. `om-3`'s `cardSlots`
+  count and `batteryLife` (left `null`, schema allows it) weren't stated on
+  the fetched page — worth a firmer look whenever this batch is next
+  touched, though neither blocks anything today. `defaultSelected` is
+  already the full 3 ids (`om-1-ii`, `om-3`, `om-5-ii`) for both cameras and
+  lenses. `heroCamera` is already set (`om-1-ii`) — its image is a separate,
+  tracked gap (`KNOWN_IMAGE_GAPS['olympus']`) for task 8, not a reason to
+  reconsider the choice.
+- [ ] 4.1b **Remainder of Batch A**: OM-3 ASTRO and the brand-new 2026 PEN
+  (`pen-om`). All 7 currencies required for OM-3 ASTRO; `pen-om` expected to
+  need `priceIncomplete: true` (4 days old at research time, see
+  decisions.md §4). Add `om-5`, the original OM-5 (OM-5 Mark II's own
+  predecessor, same "auto-pairs via `romanLine()`" reasoning as `om-1`), to
+  the discontinued side while here. `npm run test:data`.
 - [ ] 4.2 **Batch B — OM-D E-M1 line** (E-M1X, E-M1 III, E-M1 II, E-M1).
 - [ ] 4.3 **Batch C — OM-D E-M5 / E-M10 lines.**
 - [ ] 4.4 **Batch D — PEN-F and the E-P line.**
@@ -134,10 +205,14 @@
 
 ## 5. First-party M.Zuiko lens data
 
-- [ ] 5.1 **Port the 11 existing entries** from `panasonic/data.js` verbatim
-  into `olympus/data.js` (optic fields + `prices.USD` must match exactly —
-  group 6 enforces it). All 11 re-verified current/unchanged in task 1.5
-  except `omsystem-25mm-f18`. Apply its locked resolution (decisions.md §10)
+- [ ] 5.1 **Port the remaining 7 of 11 existing entries** from
+  `panasonic/data.js` verbatim into `olympus/data.js` (optic fields +
+  `prices.USD` must match exactly — group 6 enforces it).
+  `omsystem-25mm-f12-pro`, `omsystem-12-40mm-f28-pro`, `omsystem-45mm-f12-pro`,
+  and `omsystem-17mm-f18` are **already ported** (task 2.2/2.3, forced early
+  by the pre-commit hook cascade — see its correction note). All 11
+  re-verified current/unchanged in task 1.5 except `omsystem-25mm-f18`.
+  Apply its locked resolution (decisions.md §10)
   **in both files**: add a new `omsystem-25mm-f18-ii` entry (current, $549.99,
   full T1 specs — source the year here) to both `olympus/data.js` and
   `panasonic/data.js`, and flip the existing `omsystem-25mm-f18` to

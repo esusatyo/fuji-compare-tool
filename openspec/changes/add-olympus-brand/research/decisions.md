@@ -217,3 +217,93 @@ None of E-M1 / E-M1 II / E-M1X / E-M1 III / E-M5 / E-M5 II / E-M5 III / E-M10 /
 E-M10 II / E-M10 III appear on `explore.omsystem.com/us/en/cameras` — all get
 `discontinued: true`. Only E-M10 IV has the documented regional wrinkle above;
 the rest have no comparable "manufacturer said otherwise" counter-signal found.
+
+## 12. Tasks 2/4/5 got interleaved — the pre-commit hook forced it, task 1.5's research paid it back
+
+**What happened.** Task 2.2's scaffold commit (empty `CAMERAS`/`LENSES`, per
+plan) hit CLAUDE.md's pre-commit hook, which unconditionally runs
+`generate-seo.js` on any commit touching a brand's `data.js` — and that
+script **crashes** (not just fails a test) when `BRAND_CONFIG.heroCamera`
+doesn't resolve to a real camera. This cascaded through three more
+requirements before a commit could go through cleanly:
+`BRAND_CONFIG.cameras/lenses.defaultSelected` needing ids that resolve
+(`referential.test.js`), and `scripts/generate-seo.js`'s `curatedPairs()`
+needing **≥2 cameras** to produce even one vs-page pair
+(`[olympus] curated pairs are sane`, requires `pairs.length > 0`).
+
+**The resolution chosen, and why each piece was the minimal, non-arbitrary
+choice:**
+- `om-1-ii` as `heroCamera` — already the plan (design.md), fully sourced
+  properly (T1 spec sheet, all 7 currencies from official regional stores
+  fetched directly, not aggregators) rather than stubbed, because a stub
+  would just need redoing at task 4.1 for no time saved.
+- `om-1` (the original) as the second camera — not arbitrary: `romanLine()`
+  in `generate-seo.js` groups `'om-1-ii'` and `'om-1'` under the same stem
+  (`om-1`, gens 2 and 1), so adding it makes `curatedPairs()`'s Rule 1
+  auto-generate exactly the pair a reader would actually want
+  (OM-1 Mark II vs OM-1), rather than an unrelated forced pairing.
+  Discontinued, so only needs USD pricing — the lighter research lift.
+- `omsystem-25mm-f12-pro` as the one lens — already fully re-verified
+  unchanged in task 1.5, so porting it right now added zero new research,
+  just moved already-finished work a few tasks earlier than planned.
+
+**Two real research errors caught in the process, from doing this properly
+instead of stubbing.** `om-1-ii`'s official spec page, text-fetched, reported
+width 138.8mm and EVF magnification 1.48–1.65×. Both were wrong:
+- The dimension-diagram image on the same page — downloaded and viewed
+  directly (the same discipline used to reject the earlier hero-image
+  candidate, §8) — clearly labels the width **134.8mm**, not 138.8. A
+  single-digit text-extraction error.
+- 1.48–1.65× magnification is physically implausible for this class of EVF
+  (flagship mirrorless optical magnifications run ~0.7–0.9×) and turned out
+  to be a misread of unrelated page content. The OM-1 Mark II shares its
+  finder with the original OM-1, whose magnification is independently
+  well-documented at **0.83×** (0.74× selectable) — used instead, and
+  `om-1`'s own entry (sourced from Wikipedia, cross-checked) independently
+  confirms 0.83× for the shared optic.
+- Lesson generalized: a camera's own official spec page is not
+  self-verifying just because it's T1 — a value that looks physically
+  implausible (or a dimension that can be cross-read off a diagram) is worth
+  the extra check before it goes in.
+
+**What's still soft.** `om-1`'s entry is solid (T2, Wikipedia,
+cross-checked for battery/burst) but its `liveND`/`ibisStops` figures are the
+*launch-era* values read from a comparison snippet describing Mark II's
+*improvement over* them — genuinely lower confidence than the rest of the
+entry, flagged in its own `specSources` note rather than silently treated as
+equally solid. `om-1` also has no live product page (`productUrl: null`) —
+not confirmed gone, just not found in this pass.
+
+**The scope grew a second time, for the same reason.** Reaching 2 cameras
+and 1 lens fixed the hook's crash and `referential.test.js`, but running the
+**full** `npm test` (not just `test:data`) surfaced 17 more failures — the
+jsdom render-logic suite exercises slot-picker dedup and needs **≥4 distinct
+cameras and ≥4 distinct lenses**, not just ≥2. Rather than stub placeholder
+items to hit the count, this was resolved the same way as the first round:
+properly source the rest of the already-planned "Batch A" (`om-3`, `om-5-ii`
+— both current, full 7-currency T1 entries) and port 3 more already-verified
+(task 1.5) lenses (`omsystem-12-40mm-f28-pro`, `omsystem-45mm-f12-pro`,
+`omsystem-17mm-f18`) — zero new lens research, and the two cameras are work
+task 4.1 needed doing anyway.
+
+**A third research error, same shape as the first two.** Both `om-3`'s and
+`om-5-ii`'s individual product-page fetches reported their *current
+promotional sale price* as the "official list price" — $1,699.99 for OM-3
+(actual list: $1,999.99) and $1,049.99 for OM-5 II (actual list: $1,199.99).
+Task 1.1's original research already had the correct figures, because that
+fetch captured the store's category-listing page, which preserves the
+strikethrough list-vs-sale distinction in its text output; the later
+individual product-page fetches evidently don't reliably surface that same
+distinction. **Generalized lesson, now with three independent instances
+(width, EVF magnification, list price):** a single T1 fetch is not
+self-verifying. Cross-check against whichever earlier source captured the
+same fact by a different path — here, an older category-page listing beat a
+newer, more "targeted" product-page fetch.
+
+**Consequence for the task list.** Tasks 4.1 and 5.1 are updated in place to
+mark `om-1-ii`, `om-1`, `om-3`, `om-5-ii`, and 4 ported lenses
+(`omsystem-25mm-f12-pro`, `omsystem-12-40mm-f28-pro`, `omsystem-45mm-f12-pro`,
+`omsystem-17mm-f18`) done rather than leave them looking unstarted — the
+tasks.md checkboxes are the resumability contract, and a future session (or
+a shorter-context one) must be able to trust them without cross-referencing
+this file first.

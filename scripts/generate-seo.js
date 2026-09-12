@@ -913,6 +913,10 @@ const BRAND_CARD_ACCENTS = {
   panasonic: '#0046ad',
   sony:      '#ff6a00',
   sigma:     '#8f9bd8',
+  // Teal, matching MANUFACTURER_COLORS['OM System'] (engine.js) — a
+  // Panasonic-blue-adjacent hue would read as one brand next to Panasonic's
+  // own #0046ad stripe on the landing page.
+  olympus:   '#5fd0c8',
 };
 
 // Landing brand-card photo: a real product photo of the brand's showcase

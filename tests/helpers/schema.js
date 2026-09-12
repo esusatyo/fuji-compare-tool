@@ -320,6 +320,12 @@ function validateCamera(id, cam, brandSections = [], mountIds = null) {
     add(checkField(cam, 'dualNativeIso', { type: 'boolean' }));
     add(checkField(cam, 'proResInternal', { type: 'boolean' }));
   }
+  if (brandSections.includes('olympus')) {
+    add(checkField(cam, 'liveND', { type: 'string', nullable: true }));
+    add(checkField(cam, 'hiResShot', { type: 'string', nullable: true }));
+    add(checkField(cam, 'proCapture', { type: 'boolean' }));
+    add(checkField(cam, 'liveComposite', { type: 'boolean' }));
+  }
 
   return e.map(m => `${id}: ${m}`);
 }
