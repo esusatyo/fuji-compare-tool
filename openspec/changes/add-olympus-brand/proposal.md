@@ -37,12 +37,13 @@ shared-mount brand pair, which needs the same drift guard L-Mount already has.
   brand here starts at its mirrorless system, never the company's camera
   history — and the **Olympus Air A01** is excluded as a separate scope call
   (design.md §1).
-- **First-party M.Zuiko lens data (~30, current catalogue)** — every current PRO
-  lens plus the current Premium/standard primes and zooms. This closes the PRO
-  gap a prior audit documented; note that audit's own arithmetic is inconsistent
-  ("6 of 12 present" but 8 listed missing = 14), so the true PRO count is
-  resolved against the live catalogue in task 1.2 rather than asserted here.
-  11 entries port directly from `panasonic/data.js`, 6 of them PRO.
+- **First-party M.Zuiko lens data (28, current catalogue, confirmed in task
+  1.2)** — every current PRO lens (16, not the 12 a prior audit's inconsistent
+  arithmetic implied) plus the current Premium/standard/macro/superzoom line
+  (12). 11 entries port directly from `panasonic/data.js` (6 PRO, 5 non-PRO);
+  the other 17 are genuinely new research, including a surprising first-party
+  150-600mm super-telephoto zoom and the new PEN's 14-42mm kit lens. See
+  `research/lenses.md`.
   Discontinued M.Zuiko glass is deliberately deferred.
 - **Third-party MFT lenses in the same change (owner decision, 2026-09-12)** —
   Panasonic's 28 current Lumix G / Leica DG lenses become third-party entries on

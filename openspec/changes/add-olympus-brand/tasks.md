@@ -45,14 +45,17 @@
   PEN (`E-P`, `E-PL`, `E-PM`, `PEN-F`), OM-D (`E-M1`, `E-M1X`, `E-M5`, `E-M10`),
   OM System (`OM-1`, `OM-1 II`, `OM-5`, `OM-5 II`, `OM-3`). Record the Four
   Thirds DSLR exclusion and its reasoning inline.
-- [ ] 1.2 Enumerate the **current** M.Zuiko catalogue → `research/lenses.md`
-  (~30). Mark which of the 11 already in `panasonic/data.js` port directly, and
-  flag the 8 missing PRO lenses a prior audit identified (7-14mm F2.8, 12-45mm
-  F4, 8-25mm F4, 50-200mm F2.8 IS, 90mm F3.5 Macro IS, 150-400mm F4.5 TC1.25X IS,
-  300mm F4 IS, 8mm F1.8 Fisheye). **Resolve the PRO-count discrepancy here**:
-  that audit says "6 of 12 current PRO lenses" but lists 8 missing — 6 + 8 = 14,
-  so its total or its list is wrong. Count the live `m-zuiko-pro` collection
-  page and record the real figure; 6 PRO entries exist in `panasonic/data.js`.
+- [x] 1.2 Enumerated the **current** M.Zuiko catalogue → `research/lenses.md`.
+  **Done: 28 current lenses** (16 PRO + 12 non-PRO), 11 already ported, 17
+  genuinely new. **PRO-count discrepancy resolved**: real total is 16, not 12
+  — the prior audit's 8-item missing list was accurate, its "of 12"
+  denominator wasn't (missed 20mm F1.4 PRO and the older 40-150mm F2.8 PRO
+  entirely). Two teleconverters (MC-14, MC-20) explicitly excluded — not
+  modeled as lenses anywhere in this dataset. Also caught a near-miss: the
+  catalogue grid never surfaces the plain 45mm F1.8, which looked like a
+  second silent discontinuation matching the confirmed 25mm F1.8→II case —
+  but its individual product pages are live, so treated as a scrape gap, not
+  a real status change (decisions.md §8).
 - [ ] 1.3 Fix entry conventions — series labels + `SERIES_COLORS`, slug scheme,
   the Olympus field set, MFT 2.0× equivalence, pricing/image rules →
   `research/decisions.md`.

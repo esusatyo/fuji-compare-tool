@@ -97,7 +97,37 @@ revisit if it reads as too narrow, not re-raised as its own question — it's a
 boundary-drawing detail within an already-answered scope decision, the same
 kind of call the DSLR exclusion already makes without separate sign-off.
 
-## 7. Discontinued-status baseline for the whole 2013–2020 E-M lineage
+## 7. Teleconverters excluded from the lens catalogue (task 1.2)
+
+**Decision.** The MC-14 (1.4×) and MC-20 (2×) M.Zuiko teleconverters are
+**not** entered as `LENSES`. No brand in this dataset models a teleconverter
+as a lens entry — the schema's `focalLength`/`maxAperture` fields describe an
+independent optic, and a teleconverter has neither on its own. This is
+consistent practice, not a new exception carved out for Olympus.
+
+## 8. A scrape gap almost produced a false "discontinued" call on 45mm F1.8
+
+**Finding.** `explore.omsystem.com`'s "all lenses" catalogue grid — fetched
+across all pages, 27 unique lenses + 2 teleconverters accounted for, matching
+its own stated total of 29 — never surfaces the plain **45mm F1.8** (non-PRO
+Premium prime, already ported from `panasonic/data.js` as `omsystem-45mm-f18`).
+That absence looked like discontinuation, matching the pattern already
+confirmed for 25mm F1.8 → II.
+
+**But** a direct search found the lens has **live individual product pages**
+today (`m-zuiko-45mm-f1-8-black` and `-silver`), with no "II" successor
+anywhere. The catalogue-grid absence is most likely a fetch/rendering
+limitation (a JS-driven grid a text-mode fetch parses incompletely), not a
+real business signal.
+
+**Decision.** Do not mark `omsystem-45mm-f18` discontinued on the strength of
+this grid absence. Re-confirm directly against its own product page at task 5
+entry time — the individual page, not the category grid, is the source of
+truth here. Recorded as a general lesson too: a catalogue *grid* page can
+under-report where a single *product* page would not; when the two disagree,
+trust the product page.
+
+## 9. Discontinued-status baseline for the whole 2013–2020 E-M lineage
 
 None of E-M1 / E-M1 II / E-M1X / E-M1 III / E-M5 / E-M5 II / E-M5 III / E-M10 /
 E-M10 II / E-M10 III appear on `explore.omsystem.com/us/en/cameras` — all get
