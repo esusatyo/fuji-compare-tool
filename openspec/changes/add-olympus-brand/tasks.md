@@ -264,10 +264,30 @@
   disclosed rather than hidden. **This closes all of Group 4 (camera data)
   — 35 of 42 planned Olympus cameras entered; only the 7 Tough/TG bodies
   remain.** `npm test`: 685/685 green.
-- [ ] 4.6 After each batch: extend `CAMERA_ORDER` (must match `CAMERAS` exactly)
+- [x] 4.6 After each batch: extend `CAMERA_ORDER` (must match `CAMERAS` exactly)
   and `DROPDOWN_GROUPS` (every camera in exactly one group), then
   `npm run test:data`. Discontinued bodies may be USD-only and may have
-  `asin: null` without touching the ratchet.
+  `asin: null` without touching the ratchet. **This was a standing per-batch
+  practice, not a one-time task** — followed after every batch 4.1–4.7, not
+  just once. Marked done now that all camera batches are complete.
+- [x] 4.7 **Tough/TG line, 7 fixed-lens bodies — closes Group 4 entirely.**
+  This never got its own task number in the original plan (Tough was a
+  scope addition from task 1.4, decided after 4.1–4.6 were already drafted
+  against the ~35-camera pre-Tough estimate) — added here rather than left
+  implicit. TG-1 through TG-7; only TG-7 is current (full 7-currency entry,
+  the SGD figure resolved from a list-vs-sale-promo distinction same as
+  every other current camera; JPY is the softest figure in the whole
+  dataset, a T4 aggregator lowest-price with no firmer source found).
+  3 of 7 have real, visually-verified Commons product photos; TG-1–4 are
+  genuine gaps (Commons only has "taken with" subcategories — photos shot
+  *by* these cameras, not *of* them). Resolved TG-1's and TG-3's price gaps
+  left open since task 1.1 ($399, $349). All 7 declare `mount: 'mft'` per
+  the design.md §6 / decisions.md §6 precedent (x-hf1), despite the 1/2.3"
+  sensor genuinely not matching Micro Four Thirds — confirmed this doesn't
+  trip the mount↔sensor cross-check since Olympus is single-mount and
+  `mounts.test.js`'s `SENSOR_RULES` only applies to multi-mount brands.
+  **This closes Group 4 (camera data) completely: all 42 planned Olympus
+  cameras are now entered.** `npm test`: 685/685 green.
 
 ## 5. First-party M.Zuiko lens data
 
