@@ -72,12 +72,16 @@
   not a compatibility claim. Corrected `design.md` §1, `proposal.md`, and the
   spec delta, which all previously assumed the recommended (Tough-excluded)
   outcome. `openspec validate --strict` still passes.
-- [ ] 1.5 Re-verify the 11 portable M.Zuiko entries against the live catalogue —
-  still sold, specs unchanged, `discontinued` accurate. Carry forward the open
-  **`omsystem-25mm-f18` → `25mm F1.8 II`** question from the prior audit: the US
-  store now sells a redesigned II (156g vs the stored 136g), which per the
-  coexisting-revisions rule points at a **new entry + the original flipped to
-  discontinued**, in both files. Decide it here, don't discover it at port time.
+- [x] 1.5 Re-verified all 11 portable M.Zuiko entries. **10 of 11 unchanged**
+  — every price matches the current store list price exactly (never the
+  active sale price). Also fully closed the §8 near-miss: `omsystem-45mm-f18`
+  confirmed current and unchanged ($479.99, in stock, no II exists — a
+  reviewer's own comment on the product page confirms this by wishing for
+  one). **The 11th (`omsystem-25mm-f18`) is a confirmed genuine redesign**;
+  resolution locked in decisions.md §10 for task 5.1 to execute without
+  re-deciding: new `omsystem-25mm-f18-ii` entry + original flipped
+  `discontinued: true`, in **both** `olympus/data.js` and `panasonic/data.js`.
+  **Group 1 research is now complete (1.1–1.5 all done).**
 
 ## 2. Scaffold the Olympus brand directory
 
@@ -131,8 +135,15 @@
 ## 5. First-party M.Zuiko lens data
 
 - [ ] 5.1 **Port the 11 existing entries** from `panasonic/data.js` verbatim
-  (optic fields + `prices.USD` must match exactly — group 6 enforces it), then
-  apply the 1.5 verdict on `omsystem-25mm-f18`.
+  into `olympus/data.js` (optic fields + `prices.USD` must match exactly —
+  group 6 enforces it). All 11 re-verified current/unchanged in task 1.5
+  except `omsystem-25mm-f18`. Apply its locked resolution (decisions.md §10)
+  **in both files**: add a new `omsystem-25mm-f18-ii` entry (current, $549.99,
+  full T1 specs — source the year here) to both `olympus/data.js` and
+  `panasonic/data.js`, and flip the existing `omsystem-25mm-f18` to
+  `discontinued: true` in both. This is a Panasonic-file edit inside the
+  Olympus PR, same as how onboarding Sigma fixed Panasonic's stale Sigma
+  dimensions — not a separate follow-up.
 - [ ] 5.2 **The 8 missing PRO lenses** from task 1.2 — full T1 specs from
   explore.omsystem.com.
 - [ ] 5.3 **Remaining current Premium / standard primes and zooms** to reach the

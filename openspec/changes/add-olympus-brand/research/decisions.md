@@ -172,7 +172,46 @@ image. The brand-new `pen-om` and its 14-42mm kit lens are the only items
 expected to need `priceIncomplete` from genuine unavailability rather than
 research effort — see §4.
 
-## 10. Discontinued-status baseline for the whole 2013–2020 E-M lineage
+## 10. Task 1.5 — the 11 portable entries re-verified; 25mm F1.8→II resolution locked for task 5.1
+
+**Re-verification result: 10 of 11 unchanged, all prices match current
+store list prices exactly** (never the active sale price, per the standing
+convention). No status or spec corrections needed for: `omsystem-12-40mm-f28-pro`
+($1,199.99, temporarily out of stock but still catalogued — not treated as
+discontinued, same restraint as the existing Canon RF 20mm f/1.4L stock-out
+precedent), `omsystem-40-150mm-f4-pro` ($1,099.99), `omsystem-12-100mm-f4-pro`
+($1,699.99), `omsystem-17mm-f12-pro` ($1,599.99), `omsystem-25mm-f12-pro`
+($1,599.99), `omsystem-45mm-f12-pro` ($1,599.99), `omsystem-60mm-f28-macro`
+($649.99), `omsystem-100-400mm-f5-63-ii` ($1,699.99), `omsystem-17mm-f18`
+($649.99). **`omsystem-45mm-f18` is fully confirmed current and unchanged**
+($479.99 list price matches the stored $479 exactly; in stock; no "II" exists
+— a reviewer on the product page itself wishes for a weather-sealed Mark II,
+confirming by absence that one doesn't exist today) — closes §8's open
+question with no action needed.
+
+**The 11th, `omsystem-25mm-f18`, is confirmed a genuine redesign**, not a
+research artifact: the current 25mm F1.8 II is a real, different product
+(156g vs the original's 136g, per the prior audit's finding), priced $549.99,
+and the original non-II is no longer sold in the US (only the II appears
+anywhere in the current catalogue).
+
+**Resolution, locked for task 5.1** (per
+[[lens-revisions-are-coexisting-entries]] — a genuine optical/mechanical
+redesign gets a new entry, not an in-place edit):
+1. Add a new `omsystem-25mm-f18-ii` entry (current, $549.99, full T1 specs
+   sourced at 5.1 — year not yet confirmed, resolve then) to **both**
+   `olympus/data.js` and `panasonic/data.js`.
+2. Flip the existing `omsystem-25mm-f18` to `discontinued: true` in **both**
+   files — it stays (per the coexisting-revisions convention), it just stops
+   claiming to be current.
+3. This mirrors exactly what the Sigma onboarding did to Panasonic's Sigma
+   L-Mount dimension errors: onboarding a shared-mount brand is the moment
+   stale data in the *other* file surfaces, and both files get fixed in this
+   same PR — not deferred to a separate Panasonic-only change.
+
+This closes Group 1 research (1.1–1.5 all done).
+
+## 11. Discontinued-status baseline for the whole 2013–2020 E-M lineage
 
 None of E-M1 / E-M1 II / E-M1X / E-M1 III / E-M5 / E-M5 II / E-M5 III / E-M10 /
 E-M10 II / E-M10 III appear on `explore.omsystem.com/us/en/cameras` — all get
