@@ -285,6 +285,11 @@ const KNOWN_IMAGE_GAPS = {
     // product photos found. tg-5/tg-6/tg-7 all have real, visually-verified
     // Commons product photos -- not gapped.
     'tg-1', 'tg-2', 'tg-3', 'tg-4',
+    // omsystem-100-400mm-f5-63-ii: task 5.1. Same shared-mount lens/gap as
+    // panasonic's identical entry below — explore.omsystem.com's product
+    // page only serves a leftover first-gen tech-spec asset (160mm/⌀72mm),
+    // inconsistent with this entry's actual 205.6mm length. Genuine gap.
+    'omsystem-100-400mm-f5-63-ii',
   ]),
   panasonic: new Set([
     // Cameras: all resolved (see git history — Commons sweeps plus Tier 3

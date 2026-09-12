@@ -291,7 +291,7 @@
 
 ## 5. First-party M.Zuiko lens data
 
-- [ ] 5.1 **Port the remaining 7 of 11 existing entries** from
+- [x] 5.1 **Port the remaining 7 of 11 existing entries** from
   `panasonic/data.js` verbatim into `olympus/data.js` (optic fields +
   `prices.USD` must match exactly — group 6 enforces it).
   `omsystem-25mm-f12-pro`, `omsystem-12-40mm-f28-pro`, `omsystem-45mm-f12-pro`,
@@ -305,6 +305,27 @@
   `discontinued: true` in both. This is a Panasonic-file edit inside the
   Olympus PR, same as how onboarding Sigma fixed Panasonic's stale Sigma
   dimensions — not a separate follow-up.
+  **Done**: ported `omsystem-40-150mm-f4-pro`, `omsystem-12-100mm-f4-pro`,
+  `omsystem-100-400mm-f5-63-ii`, `omsystem-17mm-f12-pro`,
+  `omsystem-60mm-f28-macro` verbatim into `olympus/data.js` (6th/7th already
+  ported: the 25mm f/1.8 pair below), completing all 11. Applied the locked
+  25mm f/1.8→II resolution to **both** `olympus/data.js` and
+  `panasonic/data.js`: flipped `omsystem-25mm-f18` to `discontinued:true` in
+  both, and added the new `omsystem-25mm-f18-ii` entry (156g, 9E/7G, IPX1
+  sealing, $549 USD, `priceIncomplete:true` — only USD confirmed,
+  `imageSource` T1-cited to explore.omsystem.com) identically to both files.
+  Built `LENS_DROPDOWN_GROUPS` in `olympus/data.js` across all 11 lenses
+  (`── M.Zuiko PRO ──` / `── M.Zuiko Primes ──` / `── M.Zuiko Zooms ──`);
+  added `omsystem-25mm-f18-ii` to panasonic's existing
+  `'── OM System Primes (MFT) ──'` group. `omsystem-100-400mm-f5-63-ii` has
+  no product image (leftover first-gen tech-spec asset only, wrong
+  dimensions per panasonic's existing note) — added to
+  `KNOWN_IMAGE_GAPS['olympus']` in `tests/data/completeness.test.js`
+  alongside panasonic's identical pre-existing gap for the same lens. Fixed
+  a self-introduced copy/paste bug (stray trailing `]` after the new
+  `imageSource` object literal) in both files via `node --check`.
+  `node scripts/generate-seo.js` + `npm test`: 685/685 green.
+  `openspec validate add-olympus-brand --strict`: valid.
 - [ ] 5.2 **The 8 missing PRO lenses** from task 1.2 — full T1 specs from
   explore.omsystem.com.
 - [ ] 5.3 **Remaining current Premium / standard primes and zooms** to reach the

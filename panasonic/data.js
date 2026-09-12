@@ -1921,22 +1921,38 @@ const LENSES = {
     priceIncomplete:true,
     productUrl:'https://explore.omsystem.com/us/en/m-zuiko-17mm-f1-8-ii',
   },
+  // Confirmed a genuine redesign (task 1.5/5.1 of add-olympus-brand, 2026-09-13):
+  // the current 25mm F1.8 II is a different physical product (156g vs this
+  // entry's 136g, IPX1 sealing added), not a cosmetic refresh -- resolved per
+  // the coexisting-revisions convention: flipped to discontinued, new II
+  // entry added below, matching the parallel fix in olympus/data.js in the
+  // same commit (shared-mount.test.js requires both files to agree).
   'omsystem-25mm-f18': {
     name:'OM System M.Zuiko 25mm f/1.8', manufacturer:'OM System', line:'Premium', type:'Prime',
     mount:'mft', focalLength:25, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'50mm',
     maxAperture:1.8, minAperture:22, weight:136, length:41, diameter:56,
     filterThread:46, minFocusDist:25, maxMagnification:0.12,
     elements:9, groups:7, blades:7, afType:'Stepping Motor',
-    weatherSealed:false, ois:false, oisStops:null, year:2014, discontinued:false,
+    weatherSealed:false, ois:false, oisStops:null, year:2014, discontinued:true,
     imageUrl:'https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/2016_0212_Olympus_mft_25mm1.8.jpg/500px-2016_0212_Olympus_mft_25mm1.8.jpg',
     imageCredit:{author:"Takeaway", licence:"CC BY-SA 4.0", licenceUrl:"https://creativecommons.org/licenses/by-sa/4.0", source:"https://commons.wikimedia.org/wiki/File:2016_0212_Olympus_mft_25mm1.8.jpg"},
     asin:null,
-    prices:{USD:399,AUD:null,EUR:null,GBP:null,JPY:null,CAD:null,SGD:null},
-    priceIncomplete:true,
-    // US store URL 404s — explore.omsystem.com/us/en/ now serves a redesigned
-    // "25mm F1.8 II" instead (see open-data-questions memory); left null rather
-    // than link to a page that doesn't match this entry's specs.
+    prices:{USD:399},
     productUrl:null,
+  },
+  'omsystem-25mm-f18-ii': {
+    name:'OM System M.Zuiko 25mm f/1.8 II', manufacturer:'OM System', line:'Premium', type:'Prime',
+    mount:'mft', focalLength:25, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'50mm',
+    maxAperture:1.8, minAperture:22, weight:156, length:42, diameter:59.4,
+    filterThread:46, minFocusDist:25, maxMagnification:0.12,
+    elements:9, groups:7, blades:7, afType:'Stepping Motor (MSC)',
+    weatherSealed:true, ois:false, oisStops:null, year:2025, discontinued:false,
+    imageUrl:'https://nala.explore.omsystem.com/media/catalog/product/2/5/25mm_f1.8_ii-om_-_tech.webp',
+    imageSource: { url:'https://explore.omsystem.com/us/en/m-zuiko-25mm-f1-8-ii', tier:'T1', note:'official OM System explore.omsystem.com product page, same asset-naming convention as this brand\'s other OM System PRO/Premium entries. A genuine optical/mechanical redesign, not cosmetic: 156g vs the original\'s 136g, IPX1 weather sealing added (the original has none), same 9-elements/7-groups optical formula per the official spec sheet.', date:'2026-09-13' },
+    asin:null,
+    prices:{USD:549,AUD:null,EUR:null,GBP:null,JPY:null,CAD:null,SGD:null},
+    priceIncomplete:true,
+    productUrl:'https://explore.omsystem.com/us/en/m-zuiko-25mm-f1-8-ii',
   },
   'omsystem-45mm-f18': {
     name:'OM System M.Zuiko 45mm f/1.8', manufacturer:'OM System', line:'Premium', type:'Prime',
@@ -2050,7 +2066,7 @@ const LENS_DROPDOWN_GROUPS = [
   { label: '── Laowa (L-Mount) ──', ids: ['laowa-15mm-f2-l', 'laowa-17mm-f4-tilt-shift-l', 'laowa-90mm-f28-macro-l', 'laowa-180mm-f45-macro-l'] },
   { label: '── Viltrox (L-Mount) ──', ids: ['viltrox-16mm-f18-l', 'viltrox-28mm-f45-l'] },
   { label: '── Samyang (L-Mount) ──', ids: ['samyang-14-24mm-f28-l'] },
-  { label: '── OM System Primes (MFT) ──', ids: ['omsystem-17mm-f12-pro', 'omsystem-25mm-f12-pro', 'omsystem-45mm-f12-pro', 'omsystem-60mm-f28-macro', 'omsystem-17mm-f18', 'omsystem-25mm-f18', 'omsystem-45mm-f18'] },
+  { label: '── OM System Primes (MFT) ──', ids: ['omsystem-17mm-f12-pro', 'omsystem-25mm-f12-pro', 'omsystem-45mm-f12-pro', 'omsystem-60mm-f28-macro', 'omsystem-17mm-f18', 'omsystem-25mm-f18', 'omsystem-25mm-f18-ii', 'omsystem-45mm-f18'] },
   { label: '── OM System Zooms (MFT) ──', ids: ['omsystem-12-40mm-f28-pro', 'omsystem-40-150mm-f4-pro', 'omsystem-12-100mm-f4-pro', 'omsystem-100-400mm-f5-63-ii'] },
   { label: '── Sigma (MFT) ──', ids: ['sigma-16mm-f14-mft', 'sigma-30mm-f14-mft', 'sigma-56mm-f14-mft'] },
   { label: '── Voigtländer & Laowa (MFT) ──', ids: ['voigtlander-nokton-25mm-f095', 'laowa-7-5mm-f2-mft', 'laowa-90mm-f28-macro-mft'] },
