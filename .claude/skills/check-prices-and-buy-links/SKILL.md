@@ -3,7 +3,7 @@ name: check-prices-and-buy-links
 description: Periodically verify the camera/lens dataset's Buy links and prices. Confirms the currency-aware Amazon buy-link wiring is intact, fills in missing per-item Amazon ASINs so Buy buttons hit the product page (not search), checks current real-world prices for every live camera and lens, and runs the live link checker to catch dead product/image URLs — proposing/applying updates plus test runs. Use when the user wants to re-check prices and buy links, fill in ASINs, refresh pricing, or run the periodic price/link audit.
 metadata:
   author: fuji-compare-tool
-  version: "1.3"
+  version: "1.4"
 ---
 
 Verify the **Buy links**, **prices**, and **link liveness** in the brand data
@@ -108,7 +108,9 @@ so they stay in lockstep.
   price, **not** transient street/sale prices. Use the official store or B&H
   "list price", not Canon Price Watch / CamelCamelCamel street figures.
 - **Non-USD** values are approximate, derived from USD by regional ratios
-  (see `scripts/compute-prices.js`) **unless a real local RRP is confirmed**.
+  (see `scripts/compute-prices.js`) **unless a real local RRP is confirmed**
+  (see step 2 for how to catch these opportunistically without a dedicated
+  per-currency pass).
 - US tariff-driven price changes are **US-only** — change `USD` and leave the
   other currencies unless you confirm a matching local change.
 
@@ -150,22 +152,54 @@ so they stay in lockstep.
      `asin`), so the shopper always sees Amazon's real-time price regardless of
      the stored `prices` figure. Filling ASINs (Part A) is often higher-value
      than chasing an unconfirmable list price.
+   - **Capture other currencies opportunistically — don't hunt for them.**
+     While fetching a source for the USD figure, check whether it already
+     shows a non-USD price too. A single lineup-wide hike/rollback
+     announcement often carries several regions in one table (rumor sites
+     like nikonrumors.com / sonyalpharumors.com routinely publish a full
+     before/after price table spanning multiple currencies for one pricing
+     event), and a dealer-aggregator page or manufacturer press release can
+     do the same. If a non-USD figure is sitting right there on the page
+     you're already reading for USD, record it with its own citation — it's
+     free, no extra request needed. But don't make a **separate trip** to a
+     currency's own regional storefront (e.g. canon.com.au purely for AUD)
+     during a routine USD-focused run — that multiplies the research cost by
+     one full pass per currency and belongs in a dedicated non-USD audit if
+     the user asks for one, not a standard price/buy-link pass.
+   - **A currency caught this way still needs its own attribution.** A US
+     tariff move is a US-only mechanism — even when a non-USD figure appears
+     on the same page, confirm it reads as the *current* regional price (not
+     a stale number left in an old table) before treating it as confirmed,
+     and never assume a US-specific event also moved other currencies just
+     because they're printed near each other.
 
-3. **Present findings BEFORE editing**, grouped per brand:
+3. **Present findings BEFORE editing**, grouped per brand. State each
+   changed item's non-USD status explicitly — `not examined` (routine pass,
+   no non-USD research attempted) is a different claim from `confirmed
+   unchanged` (a non-USD figure was actually seen this pass and still
+   matches), and the difference matters to whoever reads this later:
    ```
    ## Fujifilm — price changes (N)
-   - X100VI  USD 1599 → 1799   src: <official/B&H url>   (US tariff hike; non-USD unchanged)
-   - (no confirmed AUD/EUR/… changes)
+   - X100VI  USD 1599 → 1799   src: <official/B&H url>        (non-USD: not examined)
+   - Z9      USD 5000 → 5899   src: <hike-table url>           (non-USD: AUD 7799 confirmed unchanged, same source)
+   - (no confirmed AUD/EUR/… changes beyond what's listed above)
    ## Fujifilm — no change (verified)
    - X-E5 1699, X-M5 899, …
    ## Needs confirmation
    - <model> — saw $X in a deal post; couldn't confirm as new list price
    ```
-   Cite a source URL for every proposed change.
+   Cite a source URL for every proposed change, USD or otherwise.
 
 4. **Get approval, then apply.** Edit the `prices:{…}` object for each slug.
-   - Change only the currencies you confirmed (usually just `USD`).
-   - Each `prices:{…}` line is unique, so a targeted Edit is safe.
+   - Change only the currencies you actually confirmed — usually just `USD`,
+     but apply any non-USD figure you opportunistically confirmed too (step
+     2), each with its own citation.
+   - Each `prices:{…}` line is unique, so a targeted Edit is safe — **except**
+     when two unrelated items happen to share an identical `prices:{…}`
+     tuple (seen repeatedly in practice: several lenses in one brand can
+     launch at the exact same price point). Before editing, confirm the
+     match is unique to your target; if not, widen the edit to include a
+     line that is unique to it (e.g. `name:` or `asin:`).
    - For a brand-new model where only USD is known, you may run
      `node scripts/compute-prices.js <brand>` or hand-fill ratio-derived
      non-USD figures following neighbouring magnitudes. Note what's derived.
