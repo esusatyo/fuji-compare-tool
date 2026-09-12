@@ -1473,12 +1473,126 @@ const LENSES = {
     priceIncomplete:true,
     productUrl:'https://explore.omsystem.com/us/en/m-zuiko-ed-150-400mm-f4-5-tc1-25x-is-pro',
   },
+
+  /* ── Task 5.3 — the 7 remaining current non-PRO lenses (research/lenses.md).
+     Same sourcing method as task 5.2: official explore.omsystem.com pages
+     for price/weight/dimensions/image, DPReview's specifications pages for
+     anything the official page didn't carry (elements/groups/diameter/
+     magnification/AF-motor/year). DPReview's own spec tables for this batch
+     (12-200mm, 9-18mm II, 14-150mm II, 75-300mm II) categorize the AF drive
+     as "Micromotor", distinct from the Stepping Motor/MSC terms used by this
+     file's PRO/Premium lenses -- kept as sourced, not normalized, since it's
+     a real distinct drive type on these older/budget optics. ── */
+  'omsystem-30mm-f35-macro': {
+    name:'OM System M.Zuiko 30mm f/3.5 Macro', manufacturer:'OM System', line:'Macro', type:'Prime',
+    mount:'mft', focalLength:30, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'60mm',
+    maxAperture:3.5, minAperture:22, weight:128, length:60, diameter:57,
+    filterThread:46, minFocusDist:10, maxMagnification:1.25,
+    elements:7, groups:6, blades:7, afType:'MSC',
+    weatherSealed:false, ois:false, oisStops:null, year:2016, discontinued:false,
+    imageUrl:'https://nala.explore.omsystem.com/media/catalog/product/3/0/30mm_f3.5_macro-om_2.webp',
+    imageSource: { url:'https://explore.omsystem.com/us/en/m-zuiko-ed-30mm-f3-5-macro', tier:'T1', note:'official OM System explore.omsystem.com product page for price/image; diameter/length/elements/groups/magnification/min-focus cross-checked against DPReview\'s specifications page (native 1.25x magnification, not the "2.5x 35mm equivalent" marketing figure quoted elsewhere)', date:'2026-09-13' },
+    asin:'B01ERLMUD2',
+    prices:{USD:419,AUD:null,EUR:null,GBP:null,JPY:null,CAD:null,SGD:null},
+    priceIncomplete:true,
+    productUrl:'https://explore.omsystem.com/us/en/m-zuiko-ed-30mm-f3-5-macro',
+  },
+  'omsystem-14-42mm-f35-56-iii': {
+    name:'OM System M.Zuiko 14-42mm f/3.5-5.6 III', manufacturer:'OM System', line:'M.Zuiko', type:'Zoom',
+    mount:'mft', focalLength:null, focalLengthMin:14, focalLengthMax:42, focalLengthEquiv:'28-84mm',
+    maxAperture:3.5, minAperture:22, weight:125, length:50.5, diameter:60,
+    filterThread:46, minFocusDist:13, maxMagnification:0.53,
+    elements:8, groups:7, blades:7, afType:'Stepping Motor (MSC)',
+    weatherSealed:true, ois:false, oisStops:null, year:2025, discontinued:false,
+    // Late-Oct-2025 launch, the kit zoom bundled with the new PEN body
+    // (research/lenses.md). Sold standalone at retail (B&H, model
+    // V336070BW000) but has no dedicated US explore.omsystem.com product
+    // page of its own -- it only appears there inside PEN camera-kit pages
+    // -- and no Commons/official standalone product photo was found either.
+    // GBP/AUD from Digital Camera World's review, independent of the USD
+    // figure (also corroborated by the same review).
+    imageUrl:null,
+    asin:null,
+    prices:{USD:350,AUD:479,EUR:null,GBP:349,JPY:null,CAD:null,SGD:null},
+    priceIncomplete:true,
+    productUrl:'https://www.bhphotovideo.com/c/product/1998136-REG/om_system_v336070bw000_m_zuiko_digital_14_42mm_f_3_5_5_6.html',
+  },
+  'omsystem-9-18mm-f4-56-ii': {
+    name:'OM System M.Zuiko 9-18mm f/4-5.6 II', manufacturer:'OM System', line:'M.Zuiko', type:'Zoom',
+    mount:'mft', focalLength:null, focalLengthMin:9, focalLengthMax:18, focalLengthEquiv:'18-36mm',
+    maxAperture:4.0, minAperture:22, weight:154, length:49.3, diameter:56.2,
+    filterThread:52, minFocusDist:25, maxMagnification:0.1,
+    elements:12, groups:8, blades:7, afType:'Micromotor',
+    weatherSealed:false, ois:false, oisStops:null, year:2024, discontinued:false,
+    imageUrl:'https://nala.explore.omsystem.com/media/catalog/product/9/-/9-18mm_f4.0-5.6_ii-om_-_tech.webp',
+    imageSource: { url:'https://explore.omsystem.com/us/en/m-zuiko-ed-9-18mm-f4-0-5-6-ii', tier:'T1', note:'official OM System explore.omsystem.com product page for price/weight/filter/image; diameter/elements/groups/magnification/AF-motor/year cross-checked against DPReview\'s specifications page', date:'2026-09-13' },
+    asin:'B0CS4HCH5Z',
+    prices:{USD:839,AUD:null,EUR:null,GBP:null,JPY:null,CAD:null,SGD:null},
+    priceIncomplete:true,
+    productUrl:'https://explore.omsystem.com/us/en/m-zuiko-ed-9-18mm-f4-0-5-6-ii',
+  },
+  'omsystem-14-150mm-f4-56-ii': {
+    name:'OM System M.Zuiko 14-150mm f/4-5.6 II', manufacturer:'OM System', line:'M.Zuiko', type:'Zoom',
+    mount:'mft', focalLength:null, focalLengthMin:14, focalLengthMax:150, focalLengthEquiv:'28-300mm',
+    maxAperture:4.0, minAperture:22, weight:285, length:83, diameter:63.5,
+    filterThread:58, minFocusDist:50, maxMagnification:0.22,
+    elements:15, groups:11, blades:7, afType:'Micromotor',
+    weatherSealed:true, ois:false, oisStops:null, year:2015, discontinued:false,
+    imageUrl:'https://nala.explore.omsystem.com/media/catalog/product/1/4/14-150mm_f4.0-5.6_ii-om-_main.webp',
+    imageSource: { url:'https://explore.omsystem.com/us/en/m-14-150mm-f4-0-5-6-ii', tier:'T1', note:'official OM System explore.omsystem.com product page for price/weight/filter/weather-sealing/image; diameter/length/elements/groups/magnification/AF-motor/year cross-checked against DPReview\'s specifications page', date:'2026-09-13' },
+    asin:'B0BZPGM2TD',
+    prices:{USD:779,AUD:null,EUR:null,GBP:null,JPY:null,CAD:null,SGD:null},
+    priceIncomplete:true,
+    productUrl:'https://explore.omsystem.com/us/en/m-14-150mm-f4-0-5-6-ii',
+  },
+  'omsystem-75-300mm-f48-67-ii': {
+    name:'OM System M.Zuiko 75-300mm f/4.8-6.7 II', manufacturer:'OM System', line:'M.Zuiko', type:'Zoom',
+    mount:'mft', focalLength:null, focalLengthMin:75, focalLengthMax:300, focalLengthEquiv:'150-600mm',
+    maxAperture:4.8, minAperture:22, weight:423, length:116.5, diameter:69,
+    filterThread:58, minFocusDist:90, maxMagnification:0.18,
+    elements:18, groups:13, blades:7, afType:'Micromotor',
+    weatherSealed:false, ois:false, oisStops:null, year:2013, discontinued:false,
+    imageUrl:'https://nala.explore.omsystem.com/media/catalog/product/7/5/75-300mm_f4.8-6.7_ii-om_-_main.webp',
+    imageSource: { url:'https://explore.omsystem.com/us/en/m-zuiko-ed-75-300mm-f4-8-6-7-ii', tier:'T1', note:'official OM System explore.omsystem.com product page for price/weight/filter/image; diameter/elements/groups/magnification/AF-motor/year cross-checked against DPReview\'s specifications page', date:'2026-09-13' },
+    asin:'B0CCDDRF8C',
+    prices:{USD:649,AUD:null,EUR:null,GBP:null,JPY:null,CAD:null,SGD:null},
+    priceIncomplete:true,
+    productUrl:'https://explore.omsystem.com/us/en/m-zuiko-ed-75-300mm-f4-8-6-7-ii',
+  },
+  'omsystem-12-200mm-f35-63': {
+    name:'OM System M.Zuiko 12-200mm f/3.5-6.3', manufacturer:'OM System', line:'M.Zuiko', type:'Zoom',
+    mount:'mft', focalLength:null, focalLengthMin:12, focalLengthMax:200, focalLengthEquiv:'24-400mm',
+    maxAperture:3.5, minAperture:22, weight:455, length:100, diameter:78,
+    filterThread:72, minFocusDist:22, maxMagnification:0.46,
+    elements:16, groups:11, blades:7, afType:'Stepping Motor',
+    weatherSealed:true, ois:false, oisStops:null, year:2019, discontinued:false,
+    imageUrl:'https://nala.explore.omsystem.com/media/catalog/product/1/2/12-200mm_f3.5-6.3-om_-_main.webp',
+    imageSource: { url:'https://explore.omsystem.com/us/en/m-zuiko-ed-12-200mm-f3-5-6-3', tier:'T1', note:'official OM System explore.omsystem.com product page for price/filter/image; weight/diameter/length/elements/groups/magnification/AF-motor/year cross-checked against DPReview\'s specifications page (0.46x magnification confirmed native, not 35mm-equivalent, directly on that page)', date:'2026-09-13' },
+    asin:'B0D6GP77QF',
+    prices:{USD:1099,AUD:null,EUR:null,GBP:null,JPY:null,CAD:null,SGD:null},
+    priceIncomplete:true,
+    productUrl:'https://explore.omsystem.com/us/en/m-zuiko-ed-12-200mm-f3-5-6-3',
+  },
+  'omsystem-150-600mm-f5-63-is': {
+    name:'OM System M.Zuiko 150-600mm f/5-6.3 IS', manufacturer:'OM System', line:'M.Zuiko', type:'Zoom',
+    mount:'mft', focalLength:null, focalLengthMin:150, focalLengthMax:600, focalLengthEquiv:'300-1200mm',
+    maxAperture:5.0, minAperture:22, weight:2065, length:264.4, diameter:109.4,
+    filterThread:95, minFocusDist:56, maxMagnification:0.7,
+    elements:25, groups:15, blades:9, afType:'Stepping Motor',
+    weatherSealed:true, ois:true, oisStops:7.0, year:2024, discontinued:false,
+    imageUrl:'https://nala.explore.omsystem.com/media/catalog/product/transparent/1/5/150-600mm-product-image_o_85.webp',
+    imageSource: { url:'https://explore.omsystem.com/us/en/m-zuiko-ed-150-600mm-f5-0-6-3-is', tier:'T1', note:'official OM System explore.omsystem.com product page for price/weight/dimensions/filter/IS-stops/image; elements/groups/AF-motor cross-checked against DPReview\'s specifications page', date:'2026-09-13' },
+    asin:'B0CS4F5YZP',
+    prices:{USD:2999,AUD:null,EUR:null,GBP:null,JPY:null,CAD:null,SGD:null},
+    priceIncomplete:true,
+    productUrl:'https://explore.omsystem.com/us/en/m-zuiko-ed-150-600mm-f5-0-6-3-is',
+  },
 };
 
 const LENS_DROPDOWN_GROUPS = [
   { label: '── M.Zuiko PRO ──', ids: ['omsystem-7-14mm-f28-pro', 'omsystem-8mm-f18-fisheye-pro', 'omsystem-8-25mm-f4-pro', 'omsystem-17mm-f12-pro', 'omsystem-20mm-f14-pro', 'omsystem-25mm-f12-pro', 'omsystem-45mm-f12-pro', 'omsystem-12-40mm-f28-pro', 'omsystem-40-150mm-f28-pro', 'omsystem-40-150mm-f4-pro', 'omsystem-50-200mm-f28-is-pro', 'omsystem-90mm-f35-macro-is-pro', 'omsystem-12-100mm-f4-pro', 'omsystem-300mm-f4-is-pro', 'omsystem-150-400mm-f45-tc125x-is-pro'] },
-  { label: '── M.Zuiko Primes ──', ids: ['omsystem-17mm-f18', 'omsystem-25mm-f18', 'omsystem-25mm-f18-ii', 'omsystem-45mm-f18', 'omsystem-60mm-f28-macro'] },
-  { label: '── M.Zuiko Zooms ──', ids: ['omsystem-100-400mm-f5-63-ii'] },
+  { label: '── M.Zuiko Primes ──', ids: ['omsystem-17mm-f18', 'omsystem-25mm-f18', 'omsystem-25mm-f18-ii', 'omsystem-45mm-f18', 'omsystem-60mm-f28-macro', 'omsystem-30mm-f35-macro'] },
+  { label: '── M.Zuiko Zooms ──', ids: ['omsystem-100-400mm-f5-63-ii', 'omsystem-14-42mm-f35-56-iii', 'omsystem-9-18mm-f4-56-ii', 'omsystem-14-150mm-f4-56-ii', 'omsystem-75-300mm-f48-67-ii', 'omsystem-12-200mm-f35-63', 'omsystem-150-600mm-f5-63-is'] },
 ];
 
 return { BRAND_CONFIG, SERIES_COLORS, CAMERAS, CAMERA_ORDER,

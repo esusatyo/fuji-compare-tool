@@ -348,11 +348,29 @@
   `LENS_DROPDOWN_GROUPS`'s `── M.Zuiko PRO ──` group (now 15 lenses).
   `node scripts/generate-seo.js` + `npm test`: 685/685 green.
   `openspec validate add-olympus-brand --strict`: valid.
-- [ ] 5.3 **Remaining current Premium / standard primes and zooms** to reach the
+- [x] 5.3 **Remaining current Premium / standard primes and zooms** to reach the
   ~30 target.
-- [ ] 5.4 Build `LENS_DROPDOWN_GROUPS` (`── M.Zuiko PRO ──`, `── M.Zuiko
+  **Done**: entered the last 7 non-PRO lenses from research/lenses.md —
+  `omsystem-30mm-f35-macro`, `omsystem-14-42mm-f35-56-iii`,
+  `omsystem-9-18mm-f4-56-ii`, `omsystem-14-150mm-f4-56-ii`,
+  `omsystem-75-300mm-f48-67-ii`, `omsystem-12-200mm-f35-63`,
+  `omsystem-150-600mm-f5-63-is`. Same official-page-plus-DPReview sourcing
+  method as 5.2. `omsystem-14-42mm-f35-56-iii` (a late-Oct-2025 launch, kit-
+  only in the US OM System store, no standalone Amazon listing yet) has
+  `imageUrl:null`/`asin:null` and a `KNOWN_IMAGE_GAPS['olympus']` entry —
+  the only genuine gap in this batch; its `productUrl` points to its B&H
+  standalone SKU page since no dedicated OM System US page exists for it.
+  **This completes all 28 planned current M.Zuiko lenses** (16 PRO + 12
+  non-PRO). `node scripts/generate-seo.js` + `npm test`: 685/685 green.
+  `openspec validate add-olympus-brand --strict`: valid.
+- [x] 5.4 Build `LENS_DROPDOWN_GROUPS` (`── M.Zuiko PRO ──`, `── M.Zuiko
   Primes ──`, `── M.Zuiko Zooms ──`); every lens in exactly one group.
   `npm run test:data` after each batch.
+  **Done incrementally** alongside 5.1–5.3 rather than as a separate final
+  pass — each batch's lenses were added to their group in the same commit
+  as the lens data, and `referential.test.js`'s "every lens in exactly one
+  group" check has stayed green throughout. Final shape: PRO (15), Primes
+  (6), Zooms (7) = all 28 lenses accounted for.
 
 ## 6. Shared-mount guard (land with the first ported lens)
 

@@ -290,6 +290,13 @@ const KNOWN_IMAGE_GAPS = {
     // page only serves a leftover first-gen tech-spec asset (160mm/⌀72mm),
     // inconsistent with this entry's actual 205.6mm length. Genuine gap.
     'omsystem-100-400mm-f5-63-ii',
+    // omsystem-14-42mm-f35-56-iii: task 5.3. A late-Oct-2025 launch sold
+    // only inside PEN camera kits on the US explore.omsystem.com site (no
+    // standalone product page there to source a photo from) and not yet
+    // listed standalone on Amazon either — B&H carries the standalone SKU
+    // but no image was sourced from its (WebFetch-blocked) product page.
+    // Genuine gap.
+    'omsystem-14-42mm-f35-56-iii',
   ]),
   panasonic: new Set([
     // Cameras: all resolved (see git history — Commons sweeps plus Tier 3
