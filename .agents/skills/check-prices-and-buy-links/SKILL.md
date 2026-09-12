@@ -3,7 +3,7 @@ name: check-prices-and-buy-links
 description: Periodically verify the camera/lens dataset's Buy links and prices. Confirms the currency-aware Amazon buy-link wiring is intact, fills in missing per-item Amazon ASINs so Buy buttons hit the product page (not search), checks current real-world prices for every live camera and lens, and runs the live link checker to catch dead product/image URLs — proposing/applying updates plus test runs. Use when the user wants to re-check prices and buy links, fill in ASINs, refresh pricing, or run the periodic price/link audit.
 metadata:
   author: fuji-compare-tool
-  version: "1.4"
+  version: "1.5"
 ---
 
 Verify the **Buy links**, **prices**, and **link liveness** in the brand data
@@ -135,6 +135,20 @@ so they stay in lockstep.
 
 2. **Research current US list prices** with WebSearch / WebFetch, brand by brand.
    - Anchor on the **official brand store** and **B&H** product pages.
+   - **Confirm every proposed change from at least two independent sources
+     where possible** — e.g. official store + B&H, or two different
+     retailers/aggregators independently showing the same figure — before
+     treating it as a firm change. A source that itself *cites* other
+     retailers (a rumor-site hike table linking B&H/Amazon/Adorama, say)
+     still only counts as one source until you independently spot-check at
+     least one of those cited links yourself; don't take the citation's word
+     for it. Two aggregator pages built from the same underlying feed aren't
+     independent either — the second source needs a genuinely different
+     origin. If a real attempt at a second source comes up empty (bot-blocked,
+     no other listing exists), the item goes under `Needs confirmation` in
+     step 3's report, not the headline `price changes` list — this data ships
+     on a live, public comparison site, so a change shouldn't rest on one page
+     alone when a second source is reachable.
    - Watch for **broad price changes**: e.g. Fujifilm's 2025 US tariff hikes
      raised most X-series list prices (X100VI $1599→$1799, X-T5 →$1999, etc.);
      Fujifilm also *cut* the X half list price ($849→$649). Search
@@ -173,22 +187,26 @@ so they stay in lockstep.
      and never assume a US-specific event also moved other currencies just
      because they're printed near each other.
 
-3. **Present findings BEFORE editing**, grouped per brand. State each
-   changed item's non-USD status explicitly — `not examined` (routine pass,
-   no non-USD research attempted) is a different claim from `confirmed
+3. **Present findings BEFORE editing**, grouped per brand. Cite **both**
+   sources for every headline change (step 2's two-source rule) and state
+   each changed item's non-USD status explicitly — `not examined` (routine
+   pass, no non-USD research attempted) is a different claim from `confirmed
    unchanged` (a non-USD figure was actually seen this pass and still
    matches), and the difference matters to whoever reads this later:
    ```
-   ## Fujifilm — price changes (N)
-   - X100VI  USD 1599 → 1799   src: <official/B&H url>        (non-USD: not examined)
-   - Z9      USD 5000 → 5899   src: <hike-table url>           (non-USD: AUD 7799 confirmed unchanged, same source)
+   ## Fujifilm — price changes (N, 2 sources each)
+   - X100VI  USD 1599 → 1799   src: <official url>, <B&H url>        (non-USD: not examined)
+   - Z9      USD 5000 → 5899   src: <hike-table url>, <retailer url spot-checked>   (non-USD: AUD 7799 confirmed unchanged, same source)
    - (no confirmed AUD/EUR/… changes beyond what's listed above)
    ## Fujifilm — no change (verified)
    - X-E5 1699, X-M5 899, …
    ## Needs confirmation
    - <model> — saw $X in a deal post; couldn't confirm as new list price
+   - <model> — USD $X confirmed via only one source; a genuinely independent
+     second source was bot-blocked or unreachable despite a real attempt
    ```
-   Cite a source URL for every proposed change, USD or otherwise.
+   Cite a source URL for every proposed change, USD or otherwise — and for
+   headline changes, both of the two sources that confirmed it.
 
 4. **Get approval, then apply.** Edit the `prices:{…}` object for each slug.
    - Change only the currencies you actually confirmed — usually just `USD`,
