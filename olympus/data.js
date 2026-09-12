@@ -1318,10 +1318,165 @@ const LENSES = {
     priceIncomplete:true,
     productUrl:'https://explore.omsystem.com/us/en/m-zuiko-25mm-f1-8-ii',
   },
+
+  /* ── Task 5.2 — the 10 genuinely-new PRO lenses missing from the ported
+     set. Specs sourced from explore.omsystem.com's official product pages
+     (weight/length/filter/price/image) cross-checked against DPReview's
+     specifications pages and (where DPReview lacked a figure) Wikipedia or
+     independent press coverage for elements/groups/diameter/magnification/
+     year/IS-stops -- see research/decisions.md for anything non-obvious. IS
+     stops follow this file's existing 12-100mm/100-400mm-II convention:
+     the 5-axis Sync IS figure (paired with a compatible body), not the
+     lens-alone figure, matching what those two entries already store. ── */
+  'omsystem-7-14mm-f28-pro': {
+    name:'OM System M.Zuiko 7-14mm f/2.8 PRO', manufacturer:'OM System', line:'PRO', type:'Zoom',
+    mount:'mft', focalLength:null, focalLengthMin:7, focalLengthMax:14, focalLengthEquiv:'14-28mm',
+    maxAperture:2.8, minAperture:22, weight:534, length:106, diameter:79,
+    filterThread:null, minFocusDist:20, maxMagnification:0.12,
+    elements:14, groups:11, blades:7, afType:'Stepping Motor',
+    weatherSealed:true, ois:false, oisStops:null, year:2015, discontinued:false,
+    imageUrl:'https://nala.explore.omsystem.com/media/catalog/product/7/-/7-14mm_f2.8_pro-om.webp',
+    imageSource: { url:'https://explore.omsystem.com/us/en/m-zuiko-ed-7-14mm-f2-8-pro', tier:'T1', note:'official OM System explore.omsystem.com product page for price/weight/dimensions/image; no front filter thread by design (bulbous front element); elements/groups/magnification cross-checked against DPReview\'s specifications page', date:'2026-09-13' },
+    asin:'B0H3QMK6M4',
+    prices:{USD:1699,AUD:null,EUR:null,GBP:null,JPY:null,CAD:null,SGD:null},
+    priceIncomplete:true,
+    productUrl:'https://explore.omsystem.com/us/en/m-zuiko-ed-7-14mm-f2-8-pro',
+  },
+  'omsystem-8mm-f18-fisheye-pro': {
+    name:'OM System M.Zuiko 8mm f/1.8 Fisheye PRO', manufacturer:'OM System', line:'PRO', type:'Prime',
+    mount:'mft', focalLength:8, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'16mm',
+    maxAperture:1.8, minAperture:22, weight:314, length:80, diameter:62,
+    filterThread:null, minFocusDist:12, maxMagnification:0.2,
+    elements:17, groups:15, blades:7, afType:'Stepping Motor',
+    weatherSealed:true, ois:false, oisStops:null, year:2015, discontinued:false,
+    imageUrl:'https://nala.explore.omsystem.com/media/catalog/product/8/m/8mm_f1.8_fisheye_pro-om_-_main.webp',
+    imageSource: { url:'https://explore.omsystem.com/us/en/m-zuiko-ed-8mm-f1-8-fisheye-pro', tier:'T1', note:'official OM System explore.omsystem.com product page for price/weight/dimensions/image; 180-degree fisheye has no front filter thread; elements/groups/magnification cross-checked against DPReview\'s specifications page', date:'2026-09-13' },
+    asin:'B00WENHV2G',
+    prices:{USD:1299,AUD:null,EUR:null,GBP:null,JPY:null,CAD:null,SGD:null},
+    priceIncomplete:true,
+    productUrl:'https://explore.omsystem.com/us/en/m-zuiko-ed-8mm-f1-8-fisheye-pro',
+  },
+  'omsystem-8-25mm-f4-pro': {
+    name:'OM System M.Zuiko 8-25mm f/4 PRO', manufacturer:'OM System', line:'PRO', type:'Zoom',
+    mount:'mft', focalLength:null, focalLengthMin:8, focalLengthMax:25, focalLengthEquiv:'16-50mm',
+    maxAperture:4.0, minAperture:22, weight:411, length:89, diameter:77,
+    filterThread:72, minFocusDist:23, maxMagnification:0.14,
+    elements:16, groups:10, blades:7, afType:'Linear Motor',
+    weatherSealed:true, ois:false, oisStops:null, year:2021, discontinued:false,
+    imageUrl:'https://nala.explore.omsystem.com/media/catalog/product/8/-/8-25mm_f4.0_pro-om_-_main.webp',
+    imageSource: { url:'https://explore.omsystem.com/us/en/m-zuiko-ed-8-25mm-f4-pro', tier:'T1', note:'official OM System explore.omsystem.com product page for price/weight/filter/image; length/diameter/elements/groups/magnification/AF-motor cross-checked against DPReview\'s specifications page', date:'2026-09-13' },
+    asin:'B0DLY8973F',
+    prices:{USD:1299,AUD:null,EUR:null,GBP:null,JPY:null,CAD:null,SGD:null},
+    priceIncomplete:true,
+    productUrl:'https://explore.omsystem.com/us/en/m-zuiko-ed-8-25mm-f4-pro',
+  },
+  'omsystem-20mm-f14-pro': {
+    name:'OM System M.Zuiko 20mm f/1.4 PRO', manufacturer:'OM System', line:'PRO', type:'Prime',
+    mount:'mft', focalLength:20, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'40mm',
+    maxAperture:1.4, minAperture:22, weight:247, length:62, diameter:63.4,
+    filterThread:58, minFocusDist:25, maxMagnification:0.11,
+    elements:11, groups:10, blades:9, afType:'Stepping Motor',
+    weatherSealed:true, ois:false, oisStops:null, year:2021, discontinued:false,
+    imageUrl:'https://nala.explore.omsystem.com/media/catalog/product/2/0/20mm_f1.4_pro-om_1.webp',
+    imageSource: { url:'https://explore.omsystem.com/us/en/m-zuiko-ed-20mm-f1-4-pro', tier:'T1', note:'official OM System explore.omsystem.com product page for price/weight/length/filter/image (IPX1-rated weather sealing, the first OM System-branded lens); diameter/elements/groups/magnification/AF-motor cross-checked against DPReview\'s specifications page', date:'2026-09-13' },
+    asin:'B09KX1ZVD2',
+    prices:{USD:899,AUD:null,EUR:null,GBP:null,JPY:null,CAD:null,SGD:null},
+    priceIncomplete:true,
+    productUrl:'https://explore.omsystem.com/us/en/m-zuiko-ed-20mm-f1-4-pro',
+  },
+  'omsystem-40-150mm-f28-pro': {
+    name:'OM System M.Zuiko 40-150mm f/2.8 PRO', manufacturer:'OM System', line:'PRO', type:'Zoom',
+    mount:'mft', focalLength:null, focalLengthMin:40, focalLengthMax:150, focalLengthEquiv:'80-300mm',
+    maxAperture:2.8, minAperture:22, weight:880, length:160, diameter:79,
+    filterThread:72, minFocusDist:70, maxMagnification:0.21,
+    elements:16, groups:10, blades:9, afType:'Dual VCM (MSC)',
+    weatherSealed:true, ois:false, oisStops:null, year:2014, discontinued:false,
+    // Coexists with the newer, smaller, lighter omsystem-40-150mm-f4-pro --
+    // both current, separate products (research/lenses.md). Weight/diameter
+    // pinned to Wikipedia's infobox after the official page and a press
+    // search disagreed with each other (760g vs 880g); Wikipedia's 880g/79mm
+    // matches this lens's well-documented "nearly 1kg" reputation.
+    imageUrl:'https://nala.explore.omsystem.com/media/catalog/product/4/0/40-150mm_f2.8_pro-om.webp',
+    imageSource: { url:'https://explore.omsystem.com/us/en/m-zuiko-ed-40-150mm-f2-8-pro', tier:'T1', note:'official OM System explore.omsystem.com product page for price/filter/image; weight/length/diameter/magnification/year cross-checked against Wikipedia\'s infobox and DPReview after the official page and a press aggregator disagreed on weight (880g per Wikipedia, used here)', date:'2026-09-13' },
+    asin:'B0CLDYGSVK',
+    prices:{USD:1799,AUD:null,EUR:null,GBP:null,JPY:null,CAD:null,SGD:null},
+    priceIncomplete:true,
+    productUrl:'https://explore.omsystem.com/us/en/m-zuiko-ed-40-150mm-f2-8-pro',
+  },
+  'omsystem-90mm-f35-macro-is-pro': {
+    name:'OM System M.Zuiko 90mm f/3.5 Macro IS PRO', manufacturer:'OM System', line:'PRO', type:'Prime',
+    mount:'mft', focalLength:90, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'180mm',
+    maxAperture:3.5, minAperture:22, weight:453, length:136, diameter:69.8,
+    filterThread:62, minFocusDist:22.4, maxMagnification:2.0,
+    elements:18, groups:13, blades:7, afType:'MSC',
+    weatherSealed:true, ois:true, oisStops:7.0, year:2023, discontinued:false,
+    // maxMagnification is native (2.0x = life-size on the MFT sensor); the
+    // marketing "4x" figure quoted everywhere is the 35mm-equivalent framing,
+    // consistent with how this file stores every other magnification figure.
+    // Weight corroborated by two independent reviews (Amateur Photographer,
+    // Photo Review) after the official page's AI-summarized figure (381g)
+    // looked implausibly light for a magnesium-alloy PRO macro lens.
+    imageUrl:'https://nala.explore.omsystem.com/media/catalog/product/9/0/90mm_f3.5_macro_is_pro-om.webp',
+    imageSource: { url:'https://explore.omsystem.com/us/en/m-zuiko-ed-90mm-f3-5-macro-is-pro', tier:'T1', note:'official OM System explore.omsystem.com product page for price/filter/image; weight/diameter cross-checked against two independent reviews (Amateur Photographer, Photo Review Australia); elements/groups/IS-stops cross-checked against DPReview and press coverage', date:'2026-09-13' },
+    asin:'B0BT287LP6',
+    prices:{USD:1799,AUD:null,EUR:null,GBP:null,JPY:null,CAD:null,SGD:null},
+    priceIncomplete:true,
+    productUrl:'https://explore.omsystem.com/us/en/m-zuiko-ed-90mm-f3-5-macro-is-pro',
+  },
+  'omsystem-300mm-f4-is-pro': {
+    name:'OM System M.Zuiko 300mm f/4 IS PRO', manufacturer:'OM System', line:'PRO', type:'Prime',
+    mount:'mft', focalLength:300, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'600mm',
+    maxAperture:4.0, minAperture:22, weight:1270, length:227, diameter:92.5,
+    filterThread:77, minFocusDist:140, maxMagnification:0.48,
+    elements:17, groups:10, blades:9, afType:'MSC',
+    weatherSealed:true, ois:true, oisStops:6.0, year:2016, discontinued:false,
+    imageUrl:'https://nala.explore.omsystem.com/media/catalog/product/3/0/300mm_f4.0_is_pro-oly_1.webp',
+    imageSource: { url:'https://explore.omsystem.com/us/en/m-zuiko-ed-300mm-f4-0-is-pro', tier:'T1', note:'official OM System explore.omsystem.com product page for price/weight/dimensions/filter/image; MSC autofocus branding and the 5-axis Sync IS stops figure confirmed via DPReview and Imaging Resource', date:'2026-09-13' },
+    asin:'B01950SVHY',
+    prices:{USD:3599,AUD:null,EUR:null,GBP:null,JPY:null,CAD:null,SGD:null},
+    priceIncomplete:true,
+    productUrl:'https://explore.omsystem.com/us/en/m-zuiko-ed-300mm-f4-0-is-pro',
+  },
+  'omsystem-50-200mm-f28-is-pro': {
+    name:'OM System M.Zuiko 50-200mm f/2.8 IS PRO', manufacturer:'OM System', line:'PRO', type:'Zoom',
+    mount:'mft', focalLength:null, focalLengthMin:50, focalLengthMax:200, focalLengthEquiv:'100-400mm',
+    maxAperture:2.8, minAperture:22, weight:1075, length:225.8, diameter:91.4,
+    filterThread:77, minFocusDist:78, maxMagnification:0.25,
+    elements:21, groups:13, blades:9, afType:'Linear Motor (MSC)',
+    weatherSealed:true, ois:true, oisStops:7.0, year:2025, discontinued:false,
+    // 2025-09 launch (world's only fully weather-sealed 100-400mm-equiv f/2.8
+    // zoom). maxMagnification is native at 200mm (0.25x = 0.5x 35mm-equiv,
+    // same native-vs-equivalent convention as the 90mm Macro PRO above).
+    imageUrl:'https://nala.explore.omsystem.com/media/catalog/product/5/0/50-200mm_f2.8_is_pro-om_1.webp',
+    imageSource: { url:'https://explore.omsystem.com/us/en/m-zuiko-ed-50-200mm-f2-8-is-pro', tier:'T1', note:'official OM System explore.omsystem.com product page for price/weight/filter/IS-stops/image; diameter/elements/groups/magnification/AF-motor cross-checked against B&H\'s listing and launch-day press coverage (PetaPixel, Amateur Photographer)', date:'2026-09-13' },
+    asin:'B0FQJZCMC4',
+    prices:{USD:3699,AUD:null,EUR:null,GBP:null,JPY:null,CAD:null,SGD:null},
+    priceIncomplete:true,
+    productUrl:'https://explore.omsystem.com/us/en/m-zuiko-ed-50-200mm-f2-8-is-pro',
+  },
+  'omsystem-150-400mm-f45-tc125x-is-pro': {
+    name:'OM System M.Zuiko 150-400mm f/4.5 TC1.25x IS PRO', manufacturer:'OM System', line:'PRO', type:'Zoom',
+    mount:'mft', focalLength:null, focalLengthMin:150, focalLengthMax:400, focalLengthEquiv:'300-800mm',
+    maxAperture:4.5, minAperture:22, weight:1875, length:314, diameter:116,
+    filterThread:95, minFocusDist:130, maxMagnification:0.29,
+    elements:28, groups:17, blades:9, afType:'Linear Motor (MSC)',
+    weatherSealed:true, ois:true, oisStops:8.0, year:2022, discontinued:false,
+    // Built-in 1.25x teleconverter (native 187.5-500mm / 375-1000mm equiv
+    // when engaged) has no dedicated schema field -- stored as the base
+    // 150-400mm/300-800mm-equiv spec, same treatment as any other lens with
+    // an accessory mode this schema doesn't model (e.g. teleconverters
+    // themselves are excluded entirely per research/lenses.md).
+    imageUrl:'https://nala.explore.omsystem.com/media/catalog/product/1/5/150-400mm_f4.5_tc1.25x_is_pro-om_1.webp',
+    imageSource: { url:'https://explore.omsystem.com/us/en/m-zuiko-ed-150-400mm-f4-5-tc1-25x-is-pro', tier:'T1', note:'official OM System explore.omsystem.com product page for price/weight/length/filter/IS-stops/image; diameter (116mm) and magnification cross-checked against Neocamera\'s spec listing, year against contemporaneous 2022 press coverage (Photo Rumors, Amateur Photographer)', date:'2026-09-13' },
+    asin:'B0C9L2NWY4',
+    prices:{USD:8999,AUD:null,EUR:null,GBP:null,JPY:null,CAD:null,SGD:null},
+    priceIncomplete:true,
+    productUrl:'https://explore.omsystem.com/us/en/m-zuiko-ed-150-400mm-f4-5-tc1-25x-is-pro',
+  },
 };
 
 const LENS_DROPDOWN_GROUPS = [
-  { label: '── M.Zuiko PRO ──', ids: ['omsystem-17mm-f12-pro', 'omsystem-25mm-f12-pro', 'omsystem-45mm-f12-pro', 'omsystem-12-40mm-f28-pro', 'omsystem-40-150mm-f4-pro', 'omsystem-12-100mm-f4-pro'] },
+  { label: '── M.Zuiko PRO ──', ids: ['omsystem-7-14mm-f28-pro', 'omsystem-8mm-f18-fisheye-pro', 'omsystem-8-25mm-f4-pro', 'omsystem-17mm-f12-pro', 'omsystem-20mm-f14-pro', 'omsystem-25mm-f12-pro', 'omsystem-45mm-f12-pro', 'omsystem-12-40mm-f28-pro', 'omsystem-40-150mm-f28-pro', 'omsystem-40-150mm-f4-pro', 'omsystem-50-200mm-f28-is-pro', 'omsystem-90mm-f35-macro-is-pro', 'omsystem-12-100mm-f4-pro', 'omsystem-300mm-f4-is-pro', 'omsystem-150-400mm-f45-tc125x-is-pro'] },
   { label: '── M.Zuiko Primes ──', ids: ['omsystem-17mm-f18', 'omsystem-25mm-f18', 'omsystem-25mm-f18-ii', 'omsystem-45mm-f18', 'omsystem-60mm-f28-macro'] },
   { label: '── M.Zuiko Zooms ──', ids: ['omsystem-100-400mm-f5-63-ii'] },
 ];

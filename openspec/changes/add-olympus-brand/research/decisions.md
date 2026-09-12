@@ -436,3 +436,50 @@ dataset's own established convention**, found by looking at what a sibling
 brand already stores for the same field. A number that's internally
 plausible can still be wrong relative to the contract the rest of the site
 depends on.
+
+## 16. Task 5.2: the 10 new PRO lenses — official pages under-specify hard
+numbers, and `oisStops` silently means the Sync-IS figure, not the lens-alone one
+
+None of the 10 official explore.omsystem.com PRO-lens product pages carry a
+full spec sheet (no elements/groups, often no diameter, min aperture, year,
+or AF motor type — just weight/length/filter/price/marketing copy). Every
+entry in this batch needed a second pass through DPReview's dedicated
+`/specifications` pages, Wikipedia infoboxes, or independent press (Photo
+Review, Amateur Photographer, PetaPixel, Neocamera) to fill the gaps a T1
+source alone couldn't answer — consistent with CLAUDE.md's rule that a
+second source is warranted when the first is ambiguous or incomplete, not
+just when it looks wrong.
+
+**Two real conflicts surfaced and were resolved by preferring the
+better-corroborated figure, not the official page:**
+- `omsystem-40-150mm-f28-pro` (2014): the official page's AI-summarized
+  weight (760g) turned out to be a probable mix-up with its sibling
+  `omsystem-40-150mm-f4-pro`'s spec block on the same category page.
+  Wikipedia's infobox (880g / 79mm diameter / 0.21× magnification) is used
+  instead — a dedicated, sourced infobox beats a scraped marketing page.
+- `omsystem-90mm-f35-macro-is-pro` (2023): the official page's summarized
+  weight (381g) looked implausibly light for a magnesium-alloy PRO macro
+  lens; two independent reviews (Amateur Photographer, Photo Review
+  Australia) both give 453g independently, which is used instead.
+
+**`oisStops` convention resolved definitively.** Task 5.1 stored `6.5` for
+the already-shipped `omsystem-12-100mm-f4-pro` without recording which of
+the lens's two published IS ratings that was. Re-checked here by fetching
+the exact sentence on that lens's own official page: **"Up to 5 EV steps
+Lens IS" alone vs. "Up to 6.5 EV steps 5-axis Sync IS"** paired with a
+compatible body — the stored `6.5` is the **Sync-IS** figure, not the
+lens-alone one. All 10 new IS lenses in this batch (`90mm-f35-macro`,
+`300mm-f4`, `50-200mm-f28`, `150-400mm-f45-tc125x`) follow that same
+resolved convention (Sync-IS number), for consistency with the two entries
+that shipped before this was pinned down explicitly.
+
+**Built-in teleconverter (150-400mm F4.5 TC1.25X) has no schema field**,
+same treatment as the MC-14/MC-20 accessory teleconverters excluded
+entirely in task 1.2 (§7) — stored as the lens's base 150-400mm/300-800mm-
+equivalent spec only, with a comment noting the TC-engaged numbers
+(187.5-500mm native / 375-1,000mm equivalent at f/5.6) are not modeled.
+
+**40-150mm F2.8 PRO's year is 2014** per Wikipedia's infobox ("Introduction
+Year: September 2014"), not 2013 as an initial DPReview-summarized search
+suggested (which was conflating the 2013 photokina *announcement* of the
+PRO-series roadmap with this specific lens's actual introduction).

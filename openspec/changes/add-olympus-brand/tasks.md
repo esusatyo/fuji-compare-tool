@@ -326,8 +326,28 @@
   `imageSource` object literal) in both files via `node --check`.
   `node scripts/generate-seo.js` + `npm test`: 685/685 green.
   `openspec validate add-olympus-brand --strict`: valid.
-- [ ] 5.2 **The 8 missing PRO lenses** from task 1.2 — full T1 specs from
-  explore.omsystem.com.
+- [x] 5.2 **The 10 missing PRO lenses** from task 1.2 (research/lenses.md's
+  refined count, not the original audit's "8") — full specs from
+  explore.omsystem.com, cross-checked against DPReview/Wikipedia/press
+  where the official page didn't carry a hard number (decisions.md §16).
+  **Done**: entered `omsystem-7-14mm-f28-pro`, `omsystem-8mm-f18-fisheye-pro`,
+  `omsystem-8-25mm-f4-pro`, `omsystem-20mm-f14-pro`,
+  `omsystem-40-150mm-f28-pro`, `omsystem-90mm-f35-macro-is-pro`,
+  `omsystem-300mm-f4-is-pro`, `omsystem-50-200mm-f28-is-pro`,
+  `omsystem-150-400mm-f45-tc125x-is-pro` — 9 new lens objects (the 10th,
+  the 40-150mm F2.8/F4 pair, was 1 lens already counted: `omsystem-40-150mm-f4-pro`
+  ported in 5.1, `omsystem-40-150mm-f28-pro` is its separate current sibling
+  entered here). Resolved two official-page/independent-source weight
+  conflicts by preferring the better-corroborated figure (decisions.md §16).
+  Pinned down the `oisStops` convention retroactively (it's the Sync-IS
+  figure, confirmed against the exact wording on 12-100mm PRO's own page,
+  not the lens-alone figure) and applied it consistently across all 4 new
+  IS lenses. All 10 have real Amazon ASINs (verified plain listings, no
+  bundle/Renewed/international) and official hotlinked product photos (no
+  new `KNOWN_IMAGE_GAPS` entries needed). Added all 10 to
+  `LENS_DROPDOWN_GROUPS`'s `── M.Zuiko PRO ──` group (now 15 lenses).
+  `node scripts/generate-seo.js` + `npm test`: 685/685 green.
+  `openspec validate add-olympus-brand --strict`: valid.
 - [ ] 5.3 **Remaining current Premium / standard primes and zooms** to reach the
   ~30 target.
 - [ ] 5.4 Build `LENS_DROPDOWN_GROUPS` (`── M.Zuiko PRO ──`, `── M.Zuiko
