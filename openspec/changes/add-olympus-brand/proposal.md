@@ -27,12 +27,16 @@ shared-mount brand pair, which needs the same drift guard L-Mount already has.
     `window.BRAND_DATA['olympus']` registration IIFE.
   - `olympus/index.html` — thin loader of `../engine.css`, `./data.js`,
     `../engine.js`.
-- **Olympus camera data (~35–40 bodies, exact count set in task 1.1)** — the
-  full Micro Four Thirds mirrorless lineage: PEN (`E-P`, `E-PL`, `E-PM`,
-  `PEN-F`), OM-D (`E-M1`, `E-M1X`, `E-M5`, `E-M10`), and the current OM System
-  bodies (`OM-1`, `OM-1 Mark II`, `OM-5`, `OM-5 Mark II`, `OM-3`). Olympus's
-  **Four Thirds DSLRs (E-1…E-5) are excluded** — every brand here starts at its
-  mirrorless system, never the company's camera history.
+- **Olympus camera data (42 bodies, confirmed in task 1.1/1.4)** — 35 Micro
+  Four Thirds mirrorless bodies (PEN `E-P`/`E-PL`/`E-PM`/`PEN-F`, OM-D
+  `E-M1`/`E-M5`/`E-M10` lines, and current OM System `OM-1 Mark II`, `OM-3`,
+  `OM-3 ASTRO`, `OM-5 Mark II`, plus the brand-new 2026-09-09 `PEN`) **plus 7
+  fixed-lens Tough/TG bodies** (`TG-1`…`TG-7`), included on the owner's
+  explicit call against the onboarding skill's default recommendation — see
+  design.md §1. Olympus's **Four Thirds DSLRs (E-1…E-5) are excluded** — every
+  brand here starts at its mirrorless system, never the company's camera
+  history — and the **Olympus Air A01** is excluded as a separate scope call
+  (design.md §1).
 - **First-party M.Zuiko lens data (~30, current catalogue)** — every current PRO
   lens plus the current Premium/standard primes and zooms. This closes the PRO
   gap a prior audit documented; note that audit's own arithmetic is inconsistent

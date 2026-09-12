@@ -42,17 +42,27 @@ colour distinct from Panasonic's blue.
 - **WHEN** a visitor opens `/compare/` and selects an `olympus:<slug>` camera
 - **THEN** that camera renders in its slot alongside cameras from other brands
 
-### Requirement: Olympus camera dataset covers the Micro Four Thirds mirrorless lineage
+### Requirement: Olympus camera dataset covers the Micro Four Thirds mirrorless lineage and the Tough compact line
 
 The Olympus dataset SHALL cover the Micro Four Thirds mirrorless bodies Olympus
 and OM Digital Solutions have released, spanning the PEN line (`E-P`, `E-PL`,
 `E-PM`, `PEN-F`), the OM-D line (`E-M1`, `E-M1X`, `E-M5`, `E-M10`) and the
-current OM System bodies (`OM-1`, `OM-1 Mark II`, `OM-5`, `OM-5 Mark II`,
-`OM-3`).
+current OM System bodies (`OM-1`, `OM-1 Mark II`, `OM-3`, `OM-3 ASTRO`,
+`OM-5`, `OM-5 Mark II`, and the 2026 `PEN`).
 
-Olympus's Four Thirds DSLRs (`E-1` through `E-5`) SHALL NOT be included. Every
-brand on the site begins at its mirrorless system rather than the company's
-camera history.
+The dataset SHALL additionally cover the numbered Tough/TG line (`TG-1`
+through `TG-7`) as fixed-lens (`lensType: 'Fixed'`) cameras. Every Tough body
+SHALL declare `mount: 'mft'` — Olympus's sole declared mount — even though its
+sensor format does not match Micro Four Thirds, on the same precedent already
+established by Fujifilm's 1"-sensor `x-hf1`: on a brand where
+`tests/data/mounts.test.js` `SENSOR_RULES` defines no entry (single-mount
+brands have nothing to cross-check), `mount` functions as a brand/system
+identity tag, not a physical-compatibility assertion.
+
+Olympus's Four Thirds DSLRs (`E-1` through `E-5`) and the Olympus Air A01
+SHALL NOT be included. Every brand on the site begins at its mirrorless
+system rather than the company's camera history, and the Air A01 lacks a
+screen, EVF or shutter button that the schema's required camera fields assume.
 
 The brand SHALL be presented under the single name `Olympus` covering both the
 Olympus and OM System eras, because the mount, lens line and body lineage are
@@ -69,6 +79,12 @@ resolve to a current OM System body.
 
 - **WHEN** `tests/data/config.test.js` validates `BRAND_CONFIG.heroCamera`
 - **THEN** it resolves to a camera in `CAMERAS` whose `discontinued` is `false`
+
+#### Scenario: A fixed-lens Tough body still declares the brand's mount
+
+- **WHEN** a Tough/TG camera is validated against `BRAND_CONFIG.mounts`
+- **THEN** its declared `mount: 'mft'` passes, because Olympus is a
+  single-mount brand and no `SENSOR_RULES` entry exists to contradict it
 
 ### Requirement: Olympus declares the shared Micro Four Thirds mount identically
 

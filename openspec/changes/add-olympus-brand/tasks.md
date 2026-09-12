@@ -56,9 +56,16 @@
 - [ ] 1.3 Fix entry conventions — series labels + `SERIES_COLORS`, slug scheme,
   the Olympus field set, MFT 2.0× equivalence, pricing/image rules →
   `research/decisions.md`.
-- [ ] 1.4 **Raise the two scope questions with the owner** (design §1): the
-  Olympus Air A01, and the Tough/Stylus compacts. Record the verdicts in
-  `research/decisions.md` before any body is entered.
+- [x] 1.4 **Raised the two scope questions with the owner** (design §1) —
+  **verdicts**: Air A01 **excluded** (matches recommendation); Tough/TG
+  **included** (against the recommendation). Researched and enumerated the 7
+  TG-1…TG-7 bodies into `research/cameras.md` (total now **42**, up from 35).
+  Resolved the resulting `mount` question — Tough's 1/2.3" sensor doesn't
+  match MFT, but Fujifilm's `x-hf1` (1" sensor, tagged `mount: 'x'`) is
+  existing precedent that the field is a brand tag on single-mount brands,
+  not a compatibility claim. Corrected `design.md` §1, `proposal.md`, and the
+  spec delta, which all previously assumed the recommended (Tough-excluded)
+  outcome. `openspec validate --strict` still passes.
 - [ ] 1.5 Re-verify the 11 portable M.Zuiko entries against the live catalogue —
   still sold, specs unchanged, `discontinued` accurate. Carry forward the open
   **`omsystem-25mm-f18` → `25mm F1.8 II`** question from the prior audit: the US

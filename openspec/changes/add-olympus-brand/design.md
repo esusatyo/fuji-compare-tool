@@ -39,16 +39,24 @@ Sony 2013, Panasonic 2017, Fujifilm 2011, Sigma's DSLRs likewise dropped. Olympu
 does not become the exception.
 
 **Two scope questions deliberately raised rather than assumed** (per the
-"box/cinema cameras: ask first" precedent; resolved in task 1.4):
-- **Olympus Air A01** (2015) — a lens-style MFT body with no screen, EVF or
-  shutter button, driven by a phone. It is genuinely mirrorless and genuinely
-  interchangeable-lens, but `lcdSize`/`lcdType` are required strings and
-  `evfType` is nullable-but-present. It would need placeholder copy in three
-  required fields.
-- **Tough / Stylus compacts (TG series)** — out of scope in the recommendation:
-  they are rugged fixed-lens compacts on small sensors. The site's `lensType:
-  'Fixed'` precedents (Fujifilm X100, Sigma DP) are all large-sensor enthusiast
-  compacts, which is a different product class.
+"box/cinema cameras: ask first" precedent; resolved in task 1.4, 2026-09-12):
+- **Olympus Air A01** (2015) — **excluded**, matching the recommendation. A
+  lens-style MFT body with no screen, EVF or shutter button, driven by a
+  phone. It is genuinely mirrorless and genuinely interchangeable-lens, but
+  `lcdSize`/`lcdType` are required strings and `evfType` is
+  nullable-but-present — it would need placeholder copy in three required
+  fields no other camera on the site needs.
+- **Tough / TG series** — **included, against the recommendation.** The
+  recommendation called these a different product class from the site's
+  existing fixed-lens precedents (Fujifilm X100, Sigma DP — large-sensor
+  enthusiast compacts vs. Tough's rugged 1/2.3" sensor), and that's still
+  true; the owner chose to include them anyway. This makes Olympus the site's
+  first brand with a small-sensor fixed-lens line, and creates a real
+  `mount`-field question — see research/decisions.md §6, resolved via an
+  existing precedent (Fujifilm's 1"-sensor `x-hf1` already tags `mount: 'x'`
+  despite an equally genuine sensor-size mismatch, because the field is a
+  brand/system tag on single-mount brands, not a physical-compatibility
+  assertion). 7 TG-1…TG-7 bodies added; research/cameras.md.
 
 ---
 

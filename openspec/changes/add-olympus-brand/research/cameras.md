@@ -8,8 +8,10 @@ data-entry time (task 4); everything else here is enumeration-grade, not
 entry-grade — full specs and 2-source price verification happen per CLAUDE.md
 in the batch tasks, not here.
 
-**Total: 35 confirmed mirrorless MFT bodies**, pending the two scope questions
-raised in task 1.4 (Olympus Air A01, Tough/Stylus compacts — not counted below).
+**Total: 42 confirmed bodies** (35 mirrorless MFT + 7 fixed-lens Tough/TG),
+after task 1.4's owner verdicts: **Olympus Air A01 excluded**, **Tough/TG
+included** (against the recommendation — see decisions.md §6 for the mount-
+tagging consequence this creates).
 
 ## PEN (E-P) — 5
 
@@ -98,6 +100,34 @@ price — same convention as every other brand's `priceSource` (Sony's
 Original/list-vs-sale precedent). `pen-om` is used as the slug (not bare `pen`)
 because "PEN" collides with the `PEN` line's own colloquial name and is
 unambiguous once the site groups it under "OM System" in `SERIES_COLORS`.
+
+## Tough (TG) — 7 (owner-approved addition, task 1.4)
+
+Fixed-lens, waterproof/rugged 1/2.3" compacts. `lensType: 'Fixed'`,
+`mount: 'mft'` per the mount-tagging convention in decisions.md §6 — the
+sensor is genuinely not MFT-sized, but the field is a brand/system tag, not a
+literal compatibility claim, and Olympus has only one mount to tag anything
+with.
+
+| slug | name | year | discontinued | launch USD |
+|---|---|---|---|---|
+| tg-1 | Tough TG-1 iHS | 2012 | true | TBD |
+| tg-2 | Tough TG-2 iHS | 2013 | true | $379.99 |
+| tg-3 | Tough TG-3 | 2014 | true | TBD |
+| tg-4 | Tough TG-4 | 2015 | true | TBD |
+| tg-5 | Tough TG-5 | 2017 | true | TBD |
+| tg-6 | Tough TG-6 | 2019 | true | $449 |
+| tg-7 | Tough TG-7 | 2023 | false | $549 |
+
+**Scope interpretation applied**: the numbered TG-1…TG-7 line only. The earlier
+"Stylus Tough" naming (pre-2012 models like the Tough 6000/8000, non-numbered
+or differently-numbered) is treated as a separate, older product generation
+and excluded — the same reasoning that excludes the Four Thirds DSLRs from the
+interchangeable-lens side. Flagged explicitly rather than silently drawn; open
+to revisiting if that reads as too narrow.
+
+TG-6 was formally discontinued (Aug 2023, per OM System's Japan store) when
+TG-7 launched a month later — the only Tough body still current is TG-7.
 
 ## Surprises this research turned up (would have been missed from memory alone)
 

@@ -61,7 +61,43 @@ with `priceIncomplete: true` when entered (task 4), per CLAUDE.md's standing
 allowance for very recently released items. Not a research gap to chase harder
 right now; revisit at the next price/ASIN pass once retailers list it.
 
-## 5. Discontinued-status baseline for the whole 2013–2020 E-M lineage
+## 5. Owner verdicts on the two scope questions (task 1.4, 2026-09-12)
+
+- **Olympus Air A01 — excluded**, matching the recommendation. It has no
+  screen, EVF, or shutter button (phone-driven), which would need placeholder
+  conventions in three required schema fields no other camera on the site uses.
+- **Tough / TG series — included**, against the recommendation. Real
+  consequence: this is the site's first small-sensor (1/2.3") fixed-lens
+  camera class, on a brand that otherwise spans an actual interchangeable
+  MFT mount. See §6 for how that's reconciled with the `mount` field.
+
+## 6. Tough/TG bodies get `mount: 'mft'` — a real sensor-size mismatch, resolved by existing precedent
+
+**Decision.** All 7 Tough/TG cameras take `mount: 'mft'`, Olympus's only
+declared mount — even though a 1/2.3" sensor is roughly 8× smaller in area
+than Micro Four Thirds and shares no physical compatibility with it.
+
+**Why this isn't a schema violation.** The codebase already has this exact
+pattern: Fujifilm's `x-hf1` ("X Half") carries a **1" sensor**
+(`sensorType: '1" Primary Color CMOS'`) — genuinely not APS-C — but is tagged
+`mount: 'x'`, the same id as every interchangeable X-mount body.
+`tests/data/mounts.test.js`'s `SENSOR_RULES` table, which cross-checks a
+camera's `mount` against its `sensorType` text, **only exists for brands
+spanning more than one mount** (its own comment: "elsewhere there is nothing
+to tell apart"). Olympus declares one mount, so there is no sensor-agreement
+rule to satisfy or violate — `mount` here functions as a brand/system identity
+tag for grouping and the mount-filter UI, not a literal physical-compatibility
+assertion. `lensType: 'Fixed'` already carries the "this isn't interchangeable"
+signal; `mount` doesn't need to re-encode it.
+
+**Scope interpretation, not asked separately:** "Tough/TG series" is read as
+the numbered TG-1 through TG-7 line specifically, not the older pre-2012
+"Stylus Tough" naming. Documented in cameras.md as an interpretation to
+revisit if it reads as too narrow, not re-raised as its own question — it's a
+boundary-drawing detail within an already-answered scope decision, the same
+kind of call the DSLR exclusion already makes without separate sign-off.
+
+## 7. Discontinued-status baseline for the whole 2013–2020 E-M lineage
 
 None of E-M1 / E-M1 II / E-M1X / E-M1 III / E-M5 / E-M5 II / E-M5 III / E-M10 /
 E-M10 II / E-M10 III appear on `explore.omsystem.com/us/en/cameras` — all get
