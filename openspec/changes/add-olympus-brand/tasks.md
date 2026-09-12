@@ -31,9 +31,17 @@
 
 ## 1. Research & source the Olympus lineup
 
-- [ ] 1.1 Enumerate every Micro Four Thirds mirrorless body Olympus / OM System
+- [x] 1.1 Enumerate every Micro Four Thirds mirrorless body Olympus / OM System
   has released → `research/cameras.md` as
-  `slug | name | series | year | discontinued | launch USD`. Expect ~35–40:
+  `slug | name | series | year | discontinued | launch USD`. **Done: 35
+  confirmed bodies** (pending 1.4's two scope questions). Two live-research
+  catches that would have been missed from memory: a brand-new
+  interchangeable-lens "PEN" launched 2026-09-09 (4 days before this research),
+  and the OM-3 ASTRO is a genuinely distinct IR-modified SKU, not a color
+  variant — both documented in `research/decisions.md`. Several 2010s PEN
+  Lite/Mini launch prices are marked TBD, to be sourced with 2 independent
+  citations at actual data-entry time (task 4), consistent with CLAUDE.md's
+  sourcing bar not applying to enumeration-grade research.
   PEN (`E-P`, `E-PL`, `E-PM`, `PEN-F`), OM-D (`E-M1`, `E-M1X`, `E-M5`, `E-M10`),
   OM System (`OM-1`, `OM-1 II`, `OM-5`, `OM-5 II`, `OM-3`). Record the Four
   Thirds DSLR exclusion and its reasoning inline.
