@@ -188,13 +188,22 @@
   lenses. `heroCamera` is already set (`om-1-ii`) — its image is a separate,
   tracked gap (`KNOWN_IMAGE_GAPS['olympus']`) for task 8, not a reason to
   reconsider the choice.
-- [ ] 4.1b **Remainder of Batch A**: OM-3 ASTRO and the brand-new 2026 PEN
-  (`pen-om`). All 7 currencies required for OM-3 ASTRO; `pen-om` expected to
-  need `priceIncomplete: true` (4 days old at research time, see
-  decisions.md §4). Add `om-5`, the original OM-5 (OM-5 Mark II's own
-  predecessor, same "auto-pairs via `romanLine()`" reasoning as `om-1`), to
-  the discontinued side while here. `npm run test:data`.
+- [x] 4.1b **Batch A complete**: `om-3-astro` and the brand-new 2026 `pen-om`
+  entered, plus `om-5` (the original, OM-5 Mark II's own predecessor — same
+  `romanLine()` auto-pairing reasoning as `om-1`). **Correction: cameras have
+  no `priceIncomplete` escape** (confirmed — it's lens-only in
+  `completeness.test.js`), so `pen-om`'s 4-day-old regional gaps (JPY, SGD)
+  and `om-3-astro`'s (JPY, SGD, and an AUD figure a stale/wrong direct fetch
+  first got badly wrong — corrected against 2 independent press sources) were
+  filled with ratio-derived approximations instead, clearly flagged in each
+  `priceSource` note for a real-source pass later — not left null, not
+  glossed over as solid. Also caught: an "E-M1 Mark III ASTRO" exists too —
+  noted for task 4.2. `om-5` has a real, visually-verified Commons photo
+  (same photographer as `om-1`'s). `npm test`: 685/685 green — Batch A's 5
+  cameras + 2 predecessors (`om-1`, `om-5`) are all in, `DROPDOWN_GROUPS` now
+  splits OM System-current / PEN-current / discontinued.
 - [ ] 4.2 **Batch B — OM-D E-M1 line** (E-M1X, E-M1 III, E-M1 II, E-M1).
+  Check the E-M1 Mark III ASTRO lead found in 4.1b before starting.
 - [ ] 4.3 **Batch C — OM-D E-M5 / E-M10 lines.**
 - [ ] 4.4 **Batch D — PEN-F and the E-P line.**
 - [ ] 4.5 **Batch E — PEN Lite (E-PL) and PEN Mini (E-PM) tail.**

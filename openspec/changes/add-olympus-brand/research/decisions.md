@@ -307,3 +307,48 @@ mark `om-1-ii`, `om-1`, `om-3`, `om-5-ii`, and 4 ported lenses
 tasks.md checkboxes are the resumability contract, and a future session (or
 a shorter-context one) must be able to trust them without cross-referencing
 this file first.
+
+## 13. Task 4.1b (Batch A completion): cameras have no `priceIncomplete` escape, and a fourth fetch error
+
+**Finding, more consequential than it first looked.** `priceIncomplete` —
+the flag that lets a lens ship with partial regional pricing — is **lens-only**
+in `completeness.test.js`; the camera currency-completeness check has no such
+exemption. This directly contradicted §4's original plan for `pen-om`
+("regional prices... left `null` with `priceIncomplete: true`"), written
+before this was checked against the actual test. Real consequence: both
+`pen-om` (4 days old at research time) and `om-3-astro` (a March 2026
+specialty product not yet confirmed sold in Japan or Singapore) needed a
+genuine value in **every** currency field with no escape hatch available.
+
+**Decision.** Where no real regional figure exists yet, derive one from the
+item's own confirmed USD-to-other-currency ratios (or, for `pen-om`, a
+same-brand sibling's ratios) rather than leave the field null and fail the
+test, or invent a currency with no basis at all. This mirrors
+`scripts/compute-prices.js`'s own sanctioned purpose (task 8.5) — the same
+mechanism, applied a few tasks early because the test gate doesn't wait.
+Every ratio-derived figure is flagged in its own `priceSource` note, naming
+which real figures the ratio came from, so a real-source pass later doesn't
+mistake it for a citation.
+
+**A fourth fetch error, same family as §12's three.** A direct fetch of
+`om-3-astro`'s Australian store page returned **$2,659** — numerically
+identical to the *regular* OM-3's AUD price, and inconsistent with every
+other currency's pattern (ASTRO costs meaningfully more than OM-3 everywhere
+else confirmed: 25% more in the US, 10% in the EU, 27% in the UK). That
+inconsistency is what triggered a second check rather than accepting the
+number — a search against two independent Australian photography press
+outlets (Australian Photography, Photo Review) covering the official
+announcement gave the real figure, **$3,399**. The fetch was very likely a
+stale or wrongly-cached page, not a hallucination, but the effect is the
+same: a number matching the wrong product is a plausible-looking wrong
+answer. **Running lesson, now four for four:** an official-source fetch that
+disagrees with a pattern everything else in the same entry establishes is
+worth a second look before it goes in, regardless of how authoritative the
+domain is.
+
+**Bonus find, not yet acted on.** Searching for OM-3 ASTRO's Australian
+price surfaced a product called "E-M1 Mark III ASTRO" on OM System's own AU
+store — a prior astro-modified variant, apparently of the E-M1 Mark III.
+Not researched further this session; flagged for whoever starts task 4.2
+(the E-M1 line batch) to check before assuming the OM-3 ASTRO is the only
+astro-modified body in scope.

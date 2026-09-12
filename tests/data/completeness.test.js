@@ -267,6 +267,10 @@ const KNOWN_IMAGE_GAPS = {
     // yet (this whole batch was pulled forward for the render-test camera
     // count, not a dedicated image-sourcing pass). Genuine gaps for task 8.
     'om-3', 'om-5-ii',
+    // om-3-astro, pen-om: task 4.1b, same reasoning. pen-om is a 2026-09-09
+    // launch (4 days old at research time) -- no image expected to exist
+    // anywhere free/official yet. om-3-astro (March 2026) similarly untried.
+    'om-3-astro', 'pen-om',
   ]),
   panasonic: new Set([
     // Cameras: all resolved (see git history — Commons sweeps plus Tier 3
