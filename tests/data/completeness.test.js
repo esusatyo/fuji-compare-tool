@@ -271,6 +271,11 @@ const KNOWN_IMAGE_GAPS = {
     // launch (4 days old at research time) -- no image expected to exist
     // anywhere free/official yet. om-3-astro (March 2026) similarly untried.
     'om-3-astro', 'pen-om',
+    // e-m1-iii-astro: task 4.2. A niche JP/UK/EU-market specialty product;
+    // no Commons category found and no clean official studio shot tried
+    // this pass. e-m1/e-m1-ii/e-m1x/e-m1-iii all have real, visually
+    // verified Commons photos -- not gapped.
+    'e-m1-iii-astro',
   ]),
   panasonic: new Set([
     // Cameras: all resolved (see git history — Commons sweeps plus Tier 3

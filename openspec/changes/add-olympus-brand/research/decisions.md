@@ -352,3 +352,33 @@ store — a prior astro-modified variant, apparently of the E-M1 Mark III.
 Not researched further this session; flagged for whoever starts task 4.2
 (the E-M1 line batch) to check before assuming the OM-3 ASTRO is the only
 astro-modified body in scope.
+
+## 14. Task 4.2: a Commons category name is not proof of subject — two more catches
+
+Verifying every image candidate by downloading and viewing it (not trusting
+the filename or category) caught two real mismatches in this batch, beyond
+the fetch-accuracy errors already logged in §§12–13:
+
+- **A museum-display photo, not a product photo.** The first `e-m1`
+  candidate, correctly filed under Category:Olympus E-M1, turned out to be a
+  photo of the camera's internal magnesium *chassis* in a glass display
+  case (labeled "OLYMPUS OM-D E-M1 マグネシウムボディー") — a real, on-topic
+  Commons photo, just not a usable product shot for a card image. Rejected;
+  a second candidate resolved it.
+- **A body-shape mismatch despite a matching category and filename.** The
+  first `e-m1x` candidate was filed under Category:Olympus E-M1X, but the
+  photo showed a slim, single-hand-grip body — the E-M1X's actual, well-known
+  design feature is a much bulkier *built-in vertical grip*. A wrong photo in
+  a correctly-named category is a real, if presumably honest, filing mistake
+  somewhere upstream (commons categorization is user-maintained), not
+  something a filename/category check alone would ever catch. A second
+  candidate showed the correct bulky integrated-grip body with an "E-M1X"
+  badge visible, confirming both the rejection and the replacement.
+
+**Generalized lesson, extending §§12–13's "don't trust a single fetch":** the
+same discipline applies to images. A filename or category naming the right
+product is necessary but not sufficient — actually looking at the image
+against something you independently know about the product (its shape, its
+badging, whether it's a finished product at all) is the only thing that
+actually catches a mismatch. This cost two extra fetch-and-view rounds in
+this batch alone; worth the cost given what it would have shipped otherwise.

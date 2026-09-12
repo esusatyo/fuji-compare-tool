@@ -202,8 +202,24 @@
   (same photographer as `om-1`'s). `npm test`: 685/685 green — Batch A's 5
   cameras + 2 predecessors (`om-1`, `om-5`) are all in, `DROPDOWN_GROUPS` now
   splits OM System-current / PEN-current / discontinued.
-- [ ] 4.2 **Batch B — OM-D E-M1 line** (E-M1X, E-M1 III, E-M1 II, E-M1).
-  Check the E-M1 Mark III ASTRO lead found in 4.1b before starting.
+- [x] 4.2 **Batch B done — OM-D E-M1 line, 5 bodies** (E-M1, E-M1 Mark II,
+  E-M1X, E-M1 Mark III, and the E-M1 Mark III ASTRO lead from 4.1b —
+  confirmed real, same astro-modification pattern as OM-3 ASTRO, own entry).
+  All discontinued, USD-only required. 4 of 5 have real, visually-verified
+  Commons photos (one rejected candidate was a museum chassis-display photo,
+  not a product shot; one rejected candidate for E-M1X was visually the
+  wrong body shape — slim single-grip, not E-M1X's distinctive bulky
+  integrated grip — despite matching the category name; a second candidate
+  for each resolved both). E-M1 Mark III ASTRO stays a genuine image gap.
+  Verified the Olympus-specific feature timeline before assigning fields
+  rather than assuming: Pro Capture and High Res Shot both launched with
+  E-M1 Mark II (2016), so the original E-M1 (2013) has neither; Live ND
+  wasn't confirmed present before E-M1X (2019). Caught and corrected a
+  fifth instance of the EVF-magnification fetch error (E-M1X) using the
+  same "physically implausible number, cross-check against the source's own
+  second figure" fix as om-1-ii. `npm test`: 685/685 green — no new vs-pages
+  generate for this batch (`curatedPairs()`'s successor rule requires the
+  newer camera in a pair to be current; all 5 are discontinated).
 - [ ] 4.3 **Batch C — OM-D E-M5 / E-M10 lines.**
 - [ ] 4.4 **Batch D — PEN-F and the E-P line.**
 - [ ] 4.5 **Batch E — PEN Lite (E-PL) and PEN Mini (E-PM) tail.**
