@@ -127,7 +127,52 @@ truth here. Recorded as a general lesson too: a catalogue *grid* page can
 under-report where a single *product* page would not; when the two disagree,
 trust the product page.
 
-## 9. Discontinued-status baseline for the whole 2013–2020 E-M lineage
+## 9. Entry conventions (task 1.3)
+
+**Series labels + `SERIES_COLORS`.** Nine series, not the five design.md
+originally sketched — Tough wasn't in scope when that estimate was written.
+Each camera's `series` string names its product family as printed on the
+body, not its corporate era, so the brand-new `pen-om` gets `series: 'PEN'`
+(grouped with `e-p1`…`e-p7` by name) even though `research/cameras.md`
+organized it under an "OM System" research heading for enumeration
+convenience — that heading was a documentation grouping, not a `series` value.
+
+| Series | Members | Color pair (bg / text) |
+|---|---|---|
+| PEN | e-p1, e-p2, e-p3, e-p5, e-p7, pen-om | `#2a2015` / `#d4a55a` (warm brass) |
+| PEN-F | pen-f | `#1f1a12` / `#c9a876` (darker brass, retro) |
+| PEN Lite | e-pl1…e-pl10 | `#241f28` / `#a88fc0` (muted lavender) |
+| PEN Mini | e-pm1, e-pm2 | `#1c1a20` / `#8878a0` (deeper lavender) |
+| OM-D E-M1 | e-m1, e-m1-ii, e-m1x, e-m1-iii | `#1a1f26` / `#6fa8d8` (steel blue, pro tier) |
+| OM-D E-M5 | e-m5, e-m5-ii, e-m5-iii | `#151f1c` / `#5cb88a` (teal-green, enthusiast) |
+| OM-D E-M10 | e-m10, e-m10-ii, e-m10-iii, e-m10-iv | `#1a2016` / `#8ac05c` (lighter green, entry) |
+| OM System | om-1, om-1-ii, om-3, om-3-astro, om-5, om-5-ii | `#0a1f26` / `#5fd0c8` (same teal family as `MANUFACTURER_COLORS['OM System']`, for visual continuity between the camera picker and the lens cards) |
+| Tough | tg-1…tg-7 | `#1f1810` / `#e0954a` (safety orange, rugged/outdoor) |
+
+**Slug scheme.** Kebab-case, lowercase, Roman-numeral generation suffixes
+abbreviated (`e-m1-ii` not `e-m1-mark-ii` or `e-m1ii`), matching the pattern
+already used across `research/cameras.md`. `pen-om` (not bare `pen`) avoids
+colliding with the PEN *line*'s own name in prose and dropdown labels.
+
+**Field set.** No Olympus-specific camera fields beyond the four already
+specified in design.md §5 (`liveND`, `hiResShot`, `proCapture`,
+`liveComposite`). Every other field is the standard schema.js set — nothing
+about this brand needs a schema exception.
+
+**2.0× MFT equivalence.** Applies uniformly to every lens's `focalLengthEquiv`
+— no exceptions (unlike Canon's dual-fisheye lenses, nothing in the current
+M.Zuiko or ported third-party catalogue is a specialty lens where a crop
+multiplier would mislead).
+
+**Pricing/image rules.** No deviation from the site-wide rules in CLAUDE.md:
+7-currency pricing for current items, `priceIncomplete: true` for a current
+item with partial regional coverage (already the case for all 45 ported MFT
+lenses), `KNOWN_IMAGE_GAPS['olympus']` for anything without a free/official
+image. The brand-new `pen-om` and its 14-42mm kit lens are the only items
+expected to need `priceIncomplete` from genuine unavailability rather than
+research effort — see §4.
+
+## 10. Discontinued-status baseline for the whole 2013–2020 E-M lineage
 
 None of E-M1 / E-M1 II / E-M1X / E-M1 III / E-M5 / E-M5 II / E-M5 III / E-M10 /
 E-M10 II / E-M10 III appear on `explore.omsystem.com/us/en/cameras` — all get

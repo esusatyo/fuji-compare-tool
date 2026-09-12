@@ -56,9 +56,12 @@
   second silent discontinuation matching the confirmed 25mm F1.8→II case —
   but its individual product pages are live, so treated as a scrape gap, not
   a real status change (decisions.md §8).
-- [ ] 1.3 Fix entry conventions — series labels + `SERIES_COLORS`, slug scheme,
-  the Olympus field set, MFT 2.0× equivalence, pricing/image rules →
-  `research/decisions.md`.
+- [x] 1.3 Fixed entry conventions in `research/decisions.md` §9: **9 series**
+  (not design.md's original 5 — Tough adds a bucket) with a color pair each;
+  kebab-case slug scheme with abbreviated Roman-numeral suffixes; confirmed no
+  Olympus-specific field beyond the 4 already in design.md §5; confirmed no
+  exceptions to the standard 2.0× MFT equivalence or the site-wide
+  pricing/image rules.
 - [x] 1.4 **Raised the two scope questions with the owner** (design §1) —
   **verdicts**: Air A01 **excluded** (matches recommendation); Tough/TG
   **included** (against the recommendation). Researched and enumerated the 7
