@@ -220,7 +220,23 @@
   second figure" fix as om-1-ii. `npm test`: 685/685 green — no new vs-pages
   generate for this batch (`curatedPairs()`'s successor rule requires the
   newer camera in a pair to be current; all 5 are discontinated).
-- [ ] 4.3 **Batch C — OM-D E-M5 / E-M10 lines.**
+- [x] 4.3 **Batch C done — OM-D E-M5 / E-M10 lines, 7 bodies** (E-M5, E-M5 II,
+  E-M5 III, E-M10, E-M10 II, E-M10 III, E-M10 IV). All discontinued
+  (E-M10 IV's status re-confirmed absent from the official store, 8 months
+  after the "no plans" statement — decisions.md §2 closed). All 7 have real,
+  visually-verified Commons photos, 5 with explicit model badges legible in
+  the shot. Resolved the one lingering price gap from task 1.1 (E-M10 III:
+  $649, not the originally-guessed-at $699).
+  **Found and fixed a real, retroactive bug**: `evfMag` had been stored
+  inconsistently — official Olympus spec pages state *raw* MFT-relative
+  magnification, but the site-wide convention (confirmed against Panasonic/
+  Sony) is 35mm-equivalent. This wasn't just a naming nuance for the new
+  batch — it meant **5 already-committed cameras were wrong**
+  (`om-3`/`om-3-astro`/`om-5`/`om-5-ii` at `1.37`, `pen-om` at `1.15`), fixed
+  in this same commit with real corroborating citations (not just arithmetic)
+  for 4 of the 5; `pen-om`'s is a flagged derived estimate, the one exception.
+  Full account in decisions.md §15 — required reading before entering any
+  further Olympus camera's EVF spec. `npm test`: 685/685 green.
 - [ ] 4.4 **Batch D — PEN-F and the E-P line.**
 - [ ] 4.5 **Batch E — PEN Lite (E-PL) and PEN Mini (E-PM) tail.**
 - [ ] 4.6 After each batch: extend `CAMERA_ORDER` (must match `CAMERAS` exactly)

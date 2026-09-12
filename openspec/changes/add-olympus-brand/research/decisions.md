@@ -382,3 +382,57 @@ against something you independently know about the product (its shape, its
 badging, whether it's a finished product at all) is the only thing that
 actually catches a mismatch. This cost two extra fetch-and-view rounds in
 this batch alone; worth the cost given what it would have shipped otherwise.
+
+## 15. `evfMag` was stored inconsistently — raw magnification vs. 35mm-equivalent — and five already-committed cameras were wrong
+
+**What happened.** Official OM System spec pages state EVF magnification as
+**raw** (MFT-sensor-relative) magnification — figures like "1.37x" or
+"approximately 1.10x–1.23x". Independent reviews (DPReview, Cameralabs,
+Amateur Photographer) instead quote the **35mm-equivalent** figure — the
+same optic's magnification rescaled for cross-format comparison, always in
+the roughly 0.5–0.9× range regardless of sensor size. Both numbers describe
+the same real EVF; neither is "wrong" on its own, they're just different
+conventions, and MFT's 2.0× crop means raw ≈ 2× the equivalent figure.
+
+Task 4.2 already corrected two entries (`om-1-ii`, `e-m1x`) by recognizing
+1.4–1.65× as physically implausible for *this camera class specifically* and
+substituting a lower figure a search happened to also surface. That
+reasoning was too narrow — it only caught the error when a second, plausible
+number appeared in the same search result. It did **not** stop me from
+storing raw figures on five more cameras in the very same session
+(`om-3`, `om-3-astro`, `om-5`, `om-5-ii` at `1.37`; `pen-om` at `1.15`),
+because on their own those numbers don't look obviously wrong.
+
+**What actually settled it:** checking what convention the *rest of the
+site* already uses. Panasonic's and Sony's full-frame entries all store
+`evfMag` in the 0.70–0.90× range — the 35mm-equivalent convention (for a
+full-frame sensor the two conventions coincide, so this alone doesn't prove
+the choice, but the specific well-known values confirm it's the industry
+"headline" figure, not a raw one). That makes 35mm-equivalent the site-wide
+contract, and every Olympus entry needs to match it for cross-brand
+comparison to mean anything — a MFT camera's EVF should not look
+artificially "bigger" than a full-frame camera's on this row just because
+one brand's spec sheet quotes a different convention.
+
+**Fixed, all five, with corroborating citations, not just recomputation:**
+`om-3`/`om-3-astro` → 0.68× (DPReview + Cameralabs, both independently
+citing 0.68–0.69× equivalent for this exact EVF); `om-5`/`om-5-ii` → 0.68×
+(DPReview explicit, unchanged from the original OM-5); `pen-om` → 0.58×,
+flagged as the one **derived** figure in this set (raw 1.15 ÷ 2.0), because
+no independent review has computed this 4-day-old body's own equivalent yet.
+
+**Applied proactively to the whole E-M5/E-M10 batch entered in the same
+commit** — every `evfMag` in this batch was checked against the 0.5–0.9×
+range before being written, and two (`e-m5-ii`'s `1.48x`→confirmed `0.74x`
+direct citation; `e-m10-ii`/`e-m10-iii`'s `1.23x`→confirmed `0.62x` via
+targeted follow-up searches) were caught and resolved *before* being
+committed wrong, rather than after — this section exists precisely so the
+next camera entered doesn't repeat it.
+
+**Generalized lesson, sharpened from §§12–14:** it's not enough to
+sanity-check a number in isolation (§§12–13) or an image against known
+product facts (§14) — sometimes the check has to be against **this
+dataset's own established convention**, found by looking at what a sibling
+brand already stores for the same field. A number that's internally
+plausible can still be wrong relative to the contract the rest of the site
+depends on.
