@@ -374,11 +374,17 @@
 
 ## 6. Shared-mount guard (land with the first ported lens)
 
-- [ ] 6.1 Add `['panasonic', 'olympus', 'Micro Four Thirds']` to
+- [x] 6.1 Add `['panasonic', 'olympus', 'Micro Four Thirds']` to
   `SAME_MOUNT_BRANDS` in `tests/data/shared-mount.test.js`.
-- [ ] 6.2 Run it and drive the disagreement list to zero. Treat every diff as a
+- [x] 6.2 Run it and drive the disagreement list to zero. Treat every diff as a
   real question — which file is right? — not as something to paper over. This is
   the pass that catches a stale price or a wrong barrel dimension.
+  **Done**: the new `[panasonic ↔ olympus] shared Micro Four Thirds lenses
+  agree on the optic` test passed on the first run, zero disagreements —
+  the verbatim-port discipline followed since task 2.2 (and the deliberate
+  both-files edit for the 25mm f/1.8→II split in task 5.1) paid off here.
+  `npm test`: 686/686 green (685 + 1 new shared-mount test).
+  `openspec validate add-olympus-brand --strict`: valid.
 
 ## 7. Third-party MFT lenses (owner-approved into this change)
 
