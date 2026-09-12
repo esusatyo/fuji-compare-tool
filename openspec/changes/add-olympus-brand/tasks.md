@@ -237,7 +237,19 @@
   for 4 of the 5; `pen-om`'s is a flagged derived estimate, the one exception.
   Full account in decisions.md §15 — required reading before entering any
   further Olympus camera's EVF spec. `npm test`: 685/685 green.
-- [ ] 4.4 **Batch D — PEN-F and the E-P line.**
+- [x] 4.4 **Batch D done — PEN-F and the E-P line, 6 bodies** (PEN-F, E-P1,
+  E-P2, E-P3, E-P5, E-P7). All discontinued; all 6 have real,
+  visually-verified Commons photos (4 with explicit "OLYMPUS PEN"/model
+  badges legible). Confirmed a real, non-obvious hardware fact rather than
+  assuming it: **none of the E-P bodies ever had a built-in EVF** — the
+  whole line used an accessory hot-shoe port for an optional external
+  finder, so `evfType`/`evfDots`/`evfMag` are correctly `null` throughout,
+  not a research gap. Also confirmed E-P3 has **no IBIS at all** (explicit),
+  and inferred the same for the older E-P1/E-P2 (IBIS didn't reach this line
+  until the 2013 E-P5) rather than assuming every camera has some. E-P7 was
+  never officially sold in North America (PetaPixel) — its stored USD is a
+  flagged grey-market estimate, the one exception to every other body in
+  this batch having a genuine launch MSRP. `npm test`: 685/685 green.
 - [ ] 4.5 **Batch E — PEN Lite (E-PL) and PEN Mini (E-PM) tail.**
 - [ ] 4.6 After each batch: extend `CAMERA_ORDER` (must match `CAMERAS` exactly)
   and `DROPDOWN_GROUPS` (every camera in exactly one group), then
