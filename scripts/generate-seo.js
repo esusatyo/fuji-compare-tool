@@ -423,7 +423,7 @@ function productCardHTML(data, brandName, slug, c, displayName) {
     : `<div class="vs-ph" style="${phStyle}">${esc(c.name)}</div>`;
   const viewURL = (c.productUrl && !c.productUrl.endsWith('/cameras/')) ? c.productUrl : null;
   const viewBtn = viewURL
-    ? `<a class="vs-view" href="${esc(viewURL)}" target="_blank" rel="noopener">View &#8599;</a>`
+    ? `<a class="vs-view" href="${esc(viewURL)}" target="_blank" rel="noopener" data-goatcounter-click="view-product:vs:${esc(data.BRAND_CONFIG.slug)}:${esc(slug)}" data-goatcounter-title="View: ${esc(brandName)} ${esc(c.name)}">View &#8599;</a>`
     : `<span class="vs-view na">Discontinued</span>`;
   // data-goatcounter-click: counted by count.js on click (see analytics.js for
   // the event grammar). The title keeps the dashboard readable — without one
@@ -467,7 +467,7 @@ ${productCardHTML(data, brandName, bId, b)}
       <h2>Related comparisons</h2>
       <ul>
 ${related.map(([x, y]) =>
-    `        <li><a href="${x}-vs-${y}">${esc(brandName)} ${esc(cams[x].name)} vs ${esc(cams[y].name)}</a></li>`).join('\n')}
+    `        <li><a href="${x}-vs-${y}" data-goatcounter-click="vs-related:${brand}:${x}-vs-${y}" data-goatcounter-title="Related: ${esc(cams[x].name)} vs ${esc(cams[y].name)}">${esc(brandName)} ${esc(cams[x].name)} vs ${esc(cams[y].name)}</a></li>`).join('\n')}
       </ul>
     </section>` : '';
 
@@ -709,7 +709,7 @@ function crossVsPageHTML(site, m, all) {
     <section class="vs-related">
       <h2>Related comparisons</h2>
       <ul>
-${related.map(x => `        <li><a href="${cleanHref(path.basename(x.file))}">${esc(crossTitle(x))}</a></li>`).join('\n')}
+${related.map(x => `        <li><a href="${cleanHref(path.basename(x.file))}" data-goatcounter-click="vs-related:cross:${path.basename(x.file, '.html')}" data-goatcounter-title="Related: ${esc(crossTitle(x))}">${esc(crossTitle(x))}</a></li>`).join('\n')}
       </ul>
     </section>` : '';
 

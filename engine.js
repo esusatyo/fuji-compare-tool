@@ -997,6 +997,9 @@ function renderTable() {
       const toggle = hdr.querySelector('.section-toggle');
       body.classList.toggle('collapsed');
       toggle.classList.toggle('open');
+      // Which spec groups people open says what they actually compare on.
+      track(`spec-section:${id}:${body.classList.contains('collapsed') ? 'close' : 'open'}`,
+        `Spec section: ${id}`);
     });
   });
 }
@@ -1100,19 +1103,24 @@ function attachEventListeners() {
 
   // Delegated: slot headers are re-rendered on every change. A middle-click
   // opens the link too, so it counts; a right-click (also an auxclick) doesn't.
-  const onBuy = e => {
+  // `a.slot-link` excludes the plain <span class="slot-link na"> placeholder.
+  const onSlotLink = e => {
     if (e.type === 'auxclick' && e.button !== 1) return;
-    const buy = e.target.closest('.slot-buy');
-    if (!buy) return;
-    const slot = buy.closest('.compare-slot');
+    const link = e.target.closest('.slot-buy, a.slot-link');
+    if (!link) return;
+    const slot = link.closest('.compare-slot');
     const id = slot && cfg().selectedIds()[Number(slot.id.replace('slot-', ''))];
-    if (id) track(`buy-click:tool:${trackKey(id)}`, `Buy: ${brandNameOf(id)} ${cfg().items[id].name}`);
+    if (!id) return;
+    const buy = link.classList.contains('slot-buy');
+    track(`${buy ? 'buy-click' : 'view-product'}:tool:${trackKey(id)}`,
+      `${buy ? 'Buy' : 'View'}: ${brandNameOf(id)} ${cfg().items[id].name}`);
   };
-  document.getElementById('compare-header')?.addEventListener('click', onBuy);
-  document.getElementById('compare-header')?.addEventListener('auxclick', onBuy);
+  document.getElementById('compare-header')?.addEventListener('click', onSlotLink);
+  document.getElementById('compare-header')?.addEventListener('auxclick', onSlotLink);
 
   document.getElementById('currency-select').addEventListener('change', e => {
     currentCurrency = e.target.value;
+    track(`currency:${currentCurrency}`, `Currency: ${currentCurrency}`);
     renderAll();
   });
 
