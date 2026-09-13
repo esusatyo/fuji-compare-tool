@@ -1,7 +1,7 @@
 ## 1. Schema
 
-- [ ] 1.1 Add optional `title` field to `checkCitation()` in `tests/helpers/schema.js` (non-empty string when present); update the doc comment above `checkSources()` to mention it
-- [ ] 1.2 Add a data-tier test asserting: citation with `title` validates, citation without `title` validates, empty-string `title` is rejected
+- [x] 1.1 Add optional `title` field to `checkCitation()` in `tests/helpers/schema.js` (non-empty string when present); update the doc comment above `checkSources()` to mention it
+- [x] 1.2 Add a data-tier test asserting: citation with `title` validates, citation without `title` validates, empty-string `title` is rejected
 
 ## 2. Reference collector (engine.js)
 
