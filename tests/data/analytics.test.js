@@ -81,3 +81,21 @@ test('landing brand cards declare brand-pick events', () => {
     assert.match(c, /data-goatcounter-click="brand-pick:[a-z]+"/, c);
   }
 });
+
+test('landing "Popular comparisons" and "My favourite pages" links declare their events', () => {
+  const body = fs.readFileSync(path.join(ROOT, 'index.html'), 'utf8').split('seo:body:begin')[1] || '';
+  const list = heading => {
+    const m = body.match(new RegExp(`<h2>${heading}</h2>\\s*<ul class="cluster">([\\s\\S]*?)</ul>`));
+    assert.ok(m, `expected a "${heading}" list on the landing page`);
+    return m[1].match(/<a [^>]*>/g) || [];
+  };
+  const popular = list('Popular comparisons');
+  // Deliberately a short hand-picked set, not every curated pair.
+  assert.ok(popular.length >= 8 && popular.length <= 12,
+    `expected 8-12 popular links, got ${popular.length}`);
+  for (const a of popular) assert.match(a, /data-goatcounter-click="popular:[a-z]+:[^"]+"/, a);
+
+  const favourites = list('My favourite pages');
+  assert.ok(favourites.length > 0, 'expected at least one favourite link');
+  for (const a of favourites) assert.match(a, /data-goatcounter-click="favourite:[a-z]+:[^"]+"/, a);
+});

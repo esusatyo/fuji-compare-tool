@@ -1007,12 +1007,12 @@ function rootBodyBlock(site, brands, crossSample = [], favourites = []) {
   )].join('\n');
   const cluster = [
     ...crossSample.map(m =>
-      `        <li><a href="./${cleanHref(m.file)}">${esc(crossTitle(m))}</a></li>`),
+      `        <li><a href="./${cleanHref(m.file)}" data-goatcounter-click="popular:cross:${path.basename(m.file, '.html')}" data-goatcounter-title="Popular: ${esc(crossTitle(m))}">${esc(crossTitle(m))}</a></li>`),
     // One per brand — its curated list is ordered strongest-first — so the
     // cluster stays a short hand-picked set rather than a wall of links.
     ...brands.flatMap(br =>
       br.samplePairs.slice(0, 1).map(p =>
-        `        <li><a href="./${br.slug}/vs/${p.a}-vs-${p.b}">${esc(br.name)} ${esc(p.aName)} vs ${esc(p.bName)}</a></li>`)),
+        `        <li><a href="./${br.slug}/vs/${p.a}-vs-${p.b}" data-goatcounter-click="popular:${br.slug}:${p.a}-vs-${p.b}" data-goatcounter-title="Popular: ${esc(br.name)} ${esc(p.aName)} vs ${esc(p.bName)}">${esc(br.name)} ${esc(p.aName)} vs ${esc(p.bName)}</a></li>`)),
   ].join('\n');
   const favouriteList = favourites.map(f =>
     `        <li><a href="${f.href}" data-goatcounter-click="${f.event}" data-goatcounter-title="Favourite: ${esc(f.label)}">${esc(f.label)}</a></li>`).join('\n');
