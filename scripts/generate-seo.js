@@ -992,7 +992,6 @@ function rootBodyBlock(site, brands, crossSample = []) {
   </header>
   <div class="page-hero">
     <h1 class="hero-title">${esc(site.siteName)}</h1>
-    <p class="hero-subtitle">Side-by-side camera &amp; lens comparisons — specs, prices and buy links in seven currencies.</p>
   </div>
   <main class="landing">
     <section class="landing-intro">
