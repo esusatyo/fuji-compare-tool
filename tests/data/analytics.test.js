@@ -69,8 +69,21 @@ test('vs-page Buy and "Compare interactively" links declare their GoatCounter ev
     for (const a of ctas) {
       if (!/data-goatcounter-click="vs-to-interactive:[a-z]+:[^":]+-vs-[^":]+"/.test(a)) bad.push(`${rel}: ${a}`);
     }
+    // Live View links only — a discontinued camera renders <span class="vs-view na">.
+    for (const a of html.match(/<a class="vs-view"[^>]*>/g) || []) {
+      if (!/data-goatcounter-click="view-product:vs:[a-z]+:[^":]+"/.test(a)) bad.push(`${rel}: ${a}`);
+    }
+    for (const a of html.match(/<li><a href="[^"]*-vs-[^"]*"[^>]*>/g) || []) {
+      if (!/data-goatcounter-click="vs-related:[a-z]+:[^":]+-vs-[^":]+"/.test(a)) bad.push(`${rel}: ${a}`);
+    }
   }
   assert.deepEqual(bad, []);
+});
+
+test('related-comparison links are actually present to be counted', () => {
+  const withRelated = pages.filter(p => /(^|\/)vs\//.test(p.rel) && p.html.includes('vs-related:'));
+  assert.ok(withRelated.length > 100,
+    `expected most vs-pages to carry counted related links, got ${withRelated.length}`);
 });
 
 test('landing brand cards declare brand-pick events', () => {
