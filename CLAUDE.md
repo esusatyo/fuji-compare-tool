@@ -34,9 +34,9 @@ Key conventions:
 
 ## Mounts
 
-Every camera and lens carries a **`mount`** id, and every `BRAND_CONFIG` declares the `mounts` it spans: `[{ id, label }]`, in the order the filter chips render. Ids: Fujifilm `x`/`g`, Panasonic `l`/`mft`, Sigma `l`/`sa`, Canon `rf`, Nikon `z`, Sony `e`.
+Every camera and lens carries a **`mount`** id, and every `BRAND_CONFIG` declares the `mounts` it spans: `[{ id, label }]`, in the order the filter chips render. Ids: Fujifilm `x`/`g`, Panasonic `l`/`mft`, Sigma `l`/`sa`, Canon `rf`, Nikon `z`, Sony `e`, Olympus `mft`.
 
-The field used to be deliberately absent — "the brand file implies the mount" — which held while one brand meant one mount. Fujifilm (X + GFX), Panasonic (L + MFT) and Sigma (L + SA) broke that, and the mount survived only as prose inside dropdown group labels, where neither the UI nor a test could read it. It is now stored per item, on **every** brand: the redundancy on the three single-mount brands buys an unconditional rule — *every item declares its mount* — instead of one qualified with "…if the brand spans more than one".
+The field used to be deliberately absent — "the brand file implies the mount" — which held while one brand meant one mount. Fujifilm (X + GFX), Panasonic (L + MFT) and Sigma (L + SA) broke that, and the mount survived only as prose inside dropdown group labels, where neither the UI nor a test could read it. It is now stored per item, on **every** brand: the redundancy on the four single-mount brands (Canon, Nikon, Sony, Olympus) buys an unconditional rule — *every item declares its mount* — instead of one qualified with "…if the brand spans more than one".
 
 Rules a test enforces (`tests/data/mounts.test.js`, `tests/helpers/schema.js`):
 - Every camera and lens declares a `mount` that its brand declares in `mounts`, and every declared mount is used by something.
