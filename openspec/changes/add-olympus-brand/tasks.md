@@ -544,8 +544,10 @@
 
 ## 11. Ship & close out
 
-- [ ] 11.1 One PR, per the standing constraint. No session link in the
+- [x] 11.1 One PR, per the standing constraint. No session link in the
   description.
+  **Done**: [PR #59](https://github.com/esusatyo/fuji-compare-tool/pull/59),
+  `add-olympus-brand` → `main`. 21 commits, one PR, no session link.
 - [ ] 11.2 After merge, `/opsx:archive` so the delta spec syncs into
   `openspec/specs/`.
 - [ ] 11.3 Open the follow-up: discontinued M.Zuiko glass, and the reciprocal
