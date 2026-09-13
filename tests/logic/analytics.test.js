@@ -116,6 +116,21 @@ test('[fujifilm] a middle-click on Buy counts; a right-click does not', () => {
   assert.deepEqual(calls, [`buy-click:tool:fujifilm:${window.cfg().selectedIds()[0]}`]);
 });
 
+test('[fujifilm] a reference link click reports reference-click:<kind>:<hostname>', () => {
+  const window = brandPage('fujifilm');
+  const id = window.cfg().selectedIds()[0];
+  // productUrl cleared so this specSources entry can't collide with it and
+  // get deduplicated away (see the Spec-source/Product-page dedup rule).
+  window.__BRAND__.CAMERAS[id].productUrl = null;
+  window.__BRAND__.CAMERAS[id].specSources = [
+    { url: 'https://www.fujifilm-x.com/global/products/cameras/x-t5/', tier: 'T1', title: 'Official product page' },
+  ];
+  window.renderAll();
+  const calls = record(window);
+  window.document.querySelector('a.ref-link[data-ref-kind="spec"]').click();
+  assert.deepEqual(calls, ['reference-click:spec:fujifilm-x.com']);
+});
+
 test('[fujifilm] brand switcher reports brand-switch to a brand and to All brands', () => {
   const window = brandPage('fujifilm');
   const calls = record(window);

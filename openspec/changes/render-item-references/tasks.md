@@ -5,23 +5,23 @@
 
 ## 2. Reference collector (engine.js)
 
-- [ ] 2.1 Implement `collectReferences(item)` in `engine.js`: returns four rows (`spec`, `price`, `image`, `product`), each `{label, entries: [{text, url}]}`
-- [ ] 2.2 Spec row from `item.specSources[]`; Price row from `item.priceSource`; Image row from `item.imageSource`, falling back to `item.imageCredit.source`; Product row from `item.productUrl` (skip URLs ending `/cameras/`)
-- [ ] 2.3 `text` = citation `title` when present, else URL with scheme + leading `www.` stripped
-- [ ] 2.4 Dedup: drop a Spec source entry whose `url` equals `item.productUrl` (still shown once, in Product row)
+- [x] 2.1 Implement `collectReferences(item)` in `engine.js`: returns four rows (`spec`, `price`, `image`, `product`), each `{label, entries: [{text, url}]}`
+- [x] 2.2 Spec row from `item.specSources[]`; Price row from `item.priceSource`; Image row from `item.imageSource`, falling back to `item.imageCredit.source`; Product row from `item.productUrl` (skip URLs ending `/cameras/`)
+- [x] 2.3 `text` = citation `title` when present, else URL with scheme + leading `www.` stripped
+- [x] 2.4 Dedup: drop a Spec source entry whose `url` equals `item.productUrl` (still shown once, in Product row)
 
 ## 3. Interactive-page rendering (engine.js + engine.css)
 
-- [ ] 3.1 In `renderTable()`, append a References section after all `SPEC_SECTIONS`, reusing `spec-section`/`section-header`/`section-body`/`spec-row`/`spec-value` markup
-- [ ] 3.2 References header renders without `.section-toggle` and without a click listener; body never receives `.collapsed`
-- [ ] 3.3 Each row renders one cell per visible slot; multiple entries in a cell stack as separate `.ref-link` elements; empty cell renders "—"; no `.winner` class applied
-- [ ] 3.4 Reference links: `target="_blank" rel="noopener nofollow" title="<full url>"`, href-escaped
-- [ ] 3.5 Add `.ref-link` CSS: `display:block; overflow:hidden; text-overflow:ellipsis; white-space:nowrap`; `min-width:0` on the containing `.spec-value` for reference rows so ellipsis can take effect inside the existing grid
+- [x] 3.1 In `renderTable()`, append a References section after all `SPEC_SECTIONS`, reusing `spec-section`/`section-header`/`section-body`/`spec-row`/`spec-value` markup
+- [x] 3.2 References header renders without `.section-toggle` and without a click listener; body never receives `.collapsed`
+- [x] 3.3 Each row renders one cell per visible slot; multiple entries in a cell stack as separate `.ref-link` elements; empty cell renders "—"; no `.winner` class applied
+- [x] 3.4 Reference links: `target="_blank" rel="noopener nofollow" title="<full url>"`
+- [x] 3.5 Add `.ref-link` CSS: `display:block; overflow:hidden; text-overflow:ellipsis; white-space:nowrap`; `min-width:0` on the containing `.spec-value` for reference rows so ellipsis can take effect inside the existing grid
 
 ## 4. Analytics + privacy
 
-- [ ] 4.1 Reference link clicks call `track('reference-click:<row-kind>:<hostname>')` (interactive pages)
-- [ ] 4.2 Add one line to `privacy.html` documenting the `reference-click` event alongside existing tracked interactions
+- [x] 4.1 Reference link clicks call `track('reference-click:<row-kind>:<hostname>')` (interactive pages), delegated on `#compare-table`
+- [x] 4.2 Updated `privacy.html`'s tracked-events and outbound-links paragraphs to mention References links
 
 ## 5. Static vs-pages (scripts/generate-seo.js)
 
@@ -32,8 +32,8 @@
 
 ## 6. Tests
 
-- [ ] 6.1 Logic tier: References section renders last, 4 labelled rows, "—" for empty cells, no collapse toggle/behavior, escaping, Product-page fallback + dedup, multi-entry stacking
-- [ ] 6.2 Logic tier: 4-slot compare page mixing brands shows each slot's own references independent of the others
+- [x] 6.1 Logic tier: References section renders last, 4 labelled rows, "—" for empty cells, no collapse toggle/behavior, Product-page fallback + dedup, multi-entry stacking, title fallback, safe link attributes, reference-click tracking (`tests/logic/references.test.js` + `tests/logic/analytics.test.js`) — engine.js side done; generator-side escaping covered when task 5 lands (generate-seo.js already runs everything through `esc()`)
+- [x] 6.2 Logic tier: compare page mixing brands shows each slot's own references independent of the others
 - [ ] 6.3 Logic tier: parity test — `engine.js`'s and `generate-seo.js`'s collectors return identical output for the same sample items (pull a few real items per brand covering: full coverage, zero-`specSources` coverage, Commons `imageCredit`, spec-source-equals-product-url)
 - [ ] 6.4 `npm run test:links` — record any newly-checked spec/price/image source URLs that fail; do not fix in this change (list them in the PR description as follow-up leads)
 

@@ -947,6 +947,64 @@ function formatVal(spec, item) {
 }
 
 // ─────────────────────────────────────────────
+// COLLECT REFERENCES
+// Four fixed rows per item, sourced from the citation fields a refresh/
+// price-check pass may have recorded: specSources[]/priceSource/imageSource
+// (or imageCredit.source for a Commons photo), plus productUrl — which is
+// populated on every item — as both its own row and the fallback that
+// guarantees at least one reference always renders.
+// ─────────────────────────────────────────────
+const REFERENCE_ROWS = [
+  { key: 'spec', label: 'Spec source' },
+  { key: 'price', label: 'Price source' },
+  { key: 'image', label: 'Image source' },
+  { key: 'product', label: 'Product page' },
+];
+
+// A citation's reader-facing label: its `title` when a research pass
+// recorded one, else the bare URL (scheme + leading www. stripped) so an
+// untitled citation is still useful today. `note` is internal research
+// commentary and is never used here.
+function citationText(c) {
+  return c.title || c.url.replace(/^https?:\/\/(www\.)?/, '');
+}
+
+function refHostname(url) {
+  try { return new URL(url).hostname.replace(/^www\./, ''); } catch { return url; }
+}
+
+function collectReferences(item) {
+  const rows = { spec: [], price: [], image: [], product: [] };
+  if (!item) return rows;
+
+  // Matches the /cameras/ index-URL skip already used for the slot's View
+  // Product link (renderSlot) so References never links a generic listing.
+  const productUrl = (item.productUrl && !item.productUrl.endsWith('/cameras/'))
+    ? item.productUrl : null;
+
+  for (const c of (item.specSources || [])) {
+    if (productUrl && c.url === productUrl) continue; // shown once, in Product page
+    rows.spec.push({ text: citationText(c), url: c.url });
+  }
+
+  if (item.priceSource) {
+    rows.price.push({ text: citationText(item.priceSource), url: item.priceSource.url });
+  }
+
+  const imageSource = item.imageSource
+    || (item.imageCredit && item.imageCredit.source ? { url: item.imageCredit.source } : null);
+  if (imageSource) {
+    rows.image.push({ text: citationText(imageSource), url: imageSource.url });
+  }
+
+  if (productUrl) {
+    rows.product.push({ text: citationText({ url: productUrl }), url: productUrl });
+  }
+
+  return rows;
+}
+
+// ─────────────────────────────────────────────
 // RENDER COMPARE TABLE
 // Brand-tagged sections: on a brand page, shown iff the tag is in
 // BRAND_CONFIG.brandSections; in cross-brand mode, shown iff any
@@ -956,6 +1014,42 @@ function sectionVisible(section) {
   if (!section.brand) return true;
   if (!IS_COMPARE) return BRAND_CONFIG.brandSections.includes(section.brand);
   return cfg().selectedIds().slice(0, numSlots).some(id => brandOf(id) === section.brand);
+}
+
+function renderRefLinks(refs, kind) {
+  if (!refs.length) return `<span class="cross">—</span>`;
+  return refs.map(r =>
+    `<a class="ref-link" href="${r.url}" target="_blank" rel="noopener nofollow" title="${r.url}" data-ref-kind="${kind}">${r.text}</a>`
+  ).join('');
+}
+
+// Always expanded (no toggle, no data-section): unlike other sections,
+// this one isn't collapsible — see the renderTable() listener loop below,
+// which deliberately excludes .refs-section headers.
+function renderReferencesSection() {
+  const refsPerSlot = [];
+  for (let i = 0; i < numSlots; i++) {
+    refsPerSlot.push(collectReferences(cfg().items[cfg().selectedIds()[i]]));
+  }
+
+  let html = `<div class="spec-section refs-section">
+    <div class="section-header refs-header">
+      <span class="section-title">References</span>
+    </div>
+    <div class="section-body">`;
+
+  for (const row of REFERENCE_ROWS) {
+    html += `<div class="spec-row">
+      <div class="spec-label">${row.label}</div>`;
+    for (let i = 0; i < numSlots; i++) {
+      const slotHide = (i === 2 && numSlots < 3) ? ' slot-3-hide' : '';
+      html += `<div class="spec-value ref-cell${slotHide}">${renderRefLinks(refsPerSlot[i][row.key], row.key)}</div>`;
+    }
+    html += `</div>`;
+  }
+
+  html += `</div></div>`;
+  return html;
 }
 
 function renderTable() {
@@ -988,9 +1082,13 @@ function renderTable() {
     html += `</div></div>`;
   }
 
+  html += renderReferencesSection();
+
   table.innerHTML = html;
 
-  document.querySelectorAll('.section-header').forEach(hdr => {
+  // .refs-section is deliberately excluded — it has no toggle and stays
+  // expanded (see renderReferencesSection()).
+  document.querySelectorAll('.spec-section:not(.refs-section) > .section-header').forEach(hdr => {
     hdr.addEventListener('click', () => {
       const id = hdr.dataset.section;
       const body = document.getElementById(`body-${id}`);
@@ -1117,6 +1215,16 @@ function attachEventListeners() {
   };
   document.getElementById('compare-header')?.addEventListener('click', onSlotLink);
   document.getElementById('compare-header')?.addEventListener('auxclick', onSlotLink);
+
+  // Delegated on the table container, which persists across renderTable()
+  // rebuilding its innerHTML (unlike .section-header, which is re-attached
+  // per render since the whole element is recreated).
+  document.getElementById('compare-table')?.addEventListener('click', e => {
+    const link = e.target.closest('a.ref-link');
+    if (!link) return;
+    track(`reference-click:${link.dataset.refKind}:${refHostname(link.href)}`,
+      `Reference: ${link.textContent}`);
+  });
 
   document.getElementById('currency-select').addEventListener('change', e => {
     currentCurrency = e.target.value;
