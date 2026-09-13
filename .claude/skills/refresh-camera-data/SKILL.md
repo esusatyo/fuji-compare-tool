@@ -383,13 +383,18 @@ the test result, and any items left under "Needs confirmation" for the user to d
 - **Never exclude a real, enumerated model just because it looks discontinued or hard to
   buy.** Use `discontinued:true`, not omission — see the completeness-diff section above.
 - **Always cite a source URL** for every applied change — and record it durably, not
-  just in the chat summary. The owner intends to surface sources on the site so
-  readers can cross-check, so a citation that lives only in a transcript is lost work.
-  Write each one into the change's `research/sources.md` **as you read it**, with what
-  it was used for and its reliability class (T1 maker's own site incl. official
-  regional sites · T2 independent review/measurement · T3 retailer, price and
-  availability only · T4 aggregator, tables only · NEWS dated announcement, `year`
-  only). Populate `specSources` on the entry where the field exists.
+  just in the chat summary. The site renders these as clickable "Spec source"/"Price
+  source" references on the comparison page, so a citation that lives only in a
+  transcript never reaches the reader. Write each one into the change's
+  `research/sources.md` **as you read it**, with what it was used for and its
+  reliability class (T1 maker's own site incl. official regional sites · T2
+  independent review/measurement · T3 retailer, price and availability only · T4
+  aggregator, tables only · NEWS dated announcement, `year` only). Populate
+  `specSources`/`priceSource` on the entry where the field exists, as
+  `{ url, tier, date, title }` — give `title` a short reader-facing label (e.g.
+  `"Fujifilm X-T5 official product page"`); untitled citations still validate and
+  render (falling back to a bare hostname on the page), but a real title reads
+  better.
 - **Keep sources for facts you rejected**, with the reason. "This page says 638 g and
   we didn't use it because that's the DSLR row" is what stops the next run
   "correcting" a right value to a wrong one.

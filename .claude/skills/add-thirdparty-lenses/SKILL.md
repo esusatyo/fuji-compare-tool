@@ -233,10 +233,15 @@ Three rules that matter more than the format:
    attribution* was ~30% wrong — it listed six lenses under Canon RF that the
    makers don't sell in RF. Trust a source per-field, and **always confirm mount
    availability against the maker.**
-3. **Populate `specSources`** on the entry itself where the field exists, so
-   provenance ships with the data rather than only in the change folder. A
-   composite entry (dimensions from one source, blades from another) is exactly
-   what it's for.
+3. **Populate `specSources`/`priceSource`/`imageSource`** on the entry itself
+   where the field exists, so provenance ships with the data rather than only
+   in the change folder — the site renders these as clickable references on
+   the comparison page. A composite entry (dimensions from one source, blades
+   from another) is exactly what it's for. Each citation is
+   `{ url, tier, date, title }`; give `title` a short reader-facing label
+   (e.g. `"Sigma global product page"`) — untitled citations still validate
+   and render (falling back to a bare hostname on the page), but a real title
+   reads better.
 
 Note the traps already found, so they aren't rediscovered: lensfinder.org
 **soft-404s** (any slug returns 200 — only sitemap-listed URLs are real, which

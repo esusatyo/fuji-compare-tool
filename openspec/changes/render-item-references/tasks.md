@@ -39,9 +39,9 @@
 
 ## 7. Skill doc updates (groundwork for next sweep)
 
-- [ ] 7.1 `refresh-camera-data` skill: instruct citations to include `title` going forward
-- [ ] 7.2 `check-prices-and-buy-links` skill: same, for `priceSource`
-- [ ] 7.3 `add-thirdparty-lenses` skill: same, for `specSources`/`priceSource`/`imageSource` on new entries
+- [x] 7.1 `refresh-camera-data` skill: instruct citations to include `title` going forward (`.claude/skills/` and `.agents/skills/` mirrors)
+- [x] 7.2 `check-prices-and-buy-links` skill: same, for `priceSource` (`.claude/skills/` and `.agents/skills/` mirrors)
+- [x] 7.3 `add-thirdparty-lenses` skill: same, for `specSources`/`priceSource`/`imageSource` on new entries (`.claude/skills/` and `.agents/skills/` mirrors)
 
 ## 8. Verify
 

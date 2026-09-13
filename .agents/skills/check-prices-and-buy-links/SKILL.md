@@ -291,5 +291,12 @@ npm test
 - **Don't reintroduce `buyUrl` fields** — buy links are generated; adding static
   ones would silently break currency-awareness.
 - **Don't reformat** unrelated parts of `data.js`; touch only the fields that change.
-- **Always cite a source URL** for every applied price change.
+- **Always cite a source URL** for every applied price change — and record it
+  durably on the entry as `priceSource: { url, tier, date, title }`, not just
+  in the chat summary or PR description: the site now renders these as a
+  clickable "Price source" reference on the comparison page, so a citation
+  that lives only in a transcript never reaches the reader. Give `title` a
+  short reader-facing label (e.g. `"Adorama listing"`, `"Fujifilm EU price
+  list"`) — untitled citations still work (they fall back to a bare hostname
+  on the page) but a real title reads better.
 - Run manually; don't schedule, commit, or push unless the user asks.
