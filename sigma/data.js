@@ -43,6 +43,7 @@ const REGISTERED_BRANDS = [
   { slug: 'nikon',     name: 'Nikon' },
   { slug: 'panasonic', name: 'Panasonic' },
   { slug: 'sigma',     name: 'Sigma' },
+  { slug: 'olympus',   name: 'Olympus' },
 ];
 
 // ─────────────────────────────────────────────

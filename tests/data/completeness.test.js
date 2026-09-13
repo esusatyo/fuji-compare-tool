@@ -252,6 +252,48 @@ const KNOWN_IMAGE_GAPS = {
     // shots used show either no mount plate or an unmarked bayonet, nothing
     // contradicting Nikon Z.
   ]),
+  olympus: new Set([
+    // om-1-ii, om-5-ii: RESOLVED task 8.1 -- real Commons photos found via
+    // scripts/fetch-images-commons.js, downloaded and visually verified.
+    // om-3: entered task 2 (forcing reason: needed a 4th camera for the
+    // render-logic test count) with imageUrl:null -- no Commons/official
+    // photo found in the task 8.1 sweep either. Genuine gap.
+    'om-3',
+    // om-3-astro, pen-om: task 4.1b, same reasoning. pen-om is a 2026-09-09
+    // launch (4 days old at research time) -- no image expected to exist
+    // anywhere free/official yet. om-3-astro (March 2026) similarly untried.
+    'om-3-astro', 'pen-om',
+    // e-m1-iii-astro: task 4.2. A niche JP/UK/EU-market specialty product;
+    // no Commons category found and no clean official studio shot tried
+    // this pass. e-m1/e-m1-ii/e-m1x/e-m1-iii all have real, visually
+    // verified Commons photos -- not gapped.
+    'e-m1-iii-astro',
+    // e-pl8, e-pl9, e-pl10: task 4.5. No Commons category/candidate found
+    // for these three in this pass, unlike the rest of the PEN Lite/Mini
+    // tail (9 of 11 have real, visually-verified Commons photos).
+    'e-pl8', 'e-pl9', 'e-pl10',
+    // tg-1, tg-2, tg-3, tg-4: task 4.6. Commons only has "Taken with"
+    // subcategories for these (photos shot BY the camera), no actual
+    // product photos found. tg-5/tg-6/tg-7 all have real, visually-verified
+    // Commons product photos -- not gapped.
+    'tg-1', 'tg-2', 'tg-3', 'tg-4',
+    // omsystem-100-400mm-f5-63-ii: task 5.1. Same shared-mount lens/gap as
+    // panasonic's identical entry below — explore.omsystem.com's product
+    // page only serves a leftover first-gen tech-spec asset (160mm/⌀72mm),
+    // inconsistent with this entry's actual 205.6mm length. Genuine gap.
+    'omsystem-100-400mm-f5-63-ii',
+    // omsystem-14-42mm-f35-56-iii: task 5.3. A late-Oct-2025 launch sold
+    // only inside PEN camera kits on the US explore.omsystem.com site (no
+    // standalone product page there to source a photo from) and not yet
+    // listed standalone on Amazon either — B&H carries the standalone SKU
+    // but no image was sourced from its (WebFetch-blocked) product page.
+    // Genuine gap.
+    'omsystem-14-42mm-f35-56-iii',
+    // lumix-g-12-32mm-f3-5-5-6: task 7.1, ported verbatim (same mount, same
+    // physical product) from panasonic/data.js's identical entry below,
+    // gap and all — see that entry's note for why no photo was found.
+    'lumix-g-12-32mm-f3-5-5-6',
+  ]),
   panasonic: new Set([
     // Cameras: all resolved (see git history — Commons sweeps plus Tier 3
     // manufacturer hotlinks for l10/s1-ii/s5-iix/g97/g95/bgh1, the last of

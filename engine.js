@@ -386,6 +386,17 @@ const SPEC_SECTIONS = [
       { key: 'lLog',            label: 'L-Log',             type: 'boolean', fn: c => c.lLog },
     ]
   },
+  // ── Olympus-specific ──
+  {
+    id: 'olympus', label: 'Computational Photography',
+    brand: 'olympus',
+    specs: [
+      { key: 'liveND',        label: 'Live ND',          type: 'text',    fn: c => c.liveND || '—' },
+      { key: 'hiResShot',     label: 'High Res Shot',    type: 'text',    fn: c => c.hiResShot || '—' },
+      { key: 'proCapture',    label: 'Pro Capture',      type: 'boolean', fn: c => c.proCapture },
+      { key: 'liveComposite', label: 'Live Composite',   type: 'boolean', fn: c => c.liveComposite },
+    ]
+  },
 ];
 
 // ─────────────────────────────────────────────

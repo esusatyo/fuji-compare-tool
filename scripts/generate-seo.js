@@ -636,6 +636,10 @@ const CROSS_BRAND_MATCHUPS = [
   [['fujifilm', 'x-m5'], ['canon', 'eos-r50']],
   [['panasonic', 'g100d'], ['sony', 'zv-e10-ii']],
   [['panasonic', 'g100d'], ['nikon', 'z30']],
+  // Micro Four Thirds & cross-format enthusiast hybrids
+  [['olympus', 'om-1-ii'], ['panasonic', 'gh7']],
+  [['olympus', 'om-3'], ['panasonic', 'g9-ii']],
+  [['olympus', 'om-1-ii'], ['fujifilm', 'x-h2s']],
 ];
 
 // Resolve, validate and canonicalize the curated matchups against the
@@ -913,6 +917,10 @@ const BRAND_CARD_ACCENTS = {
   panasonic: '#0046ad',
   sony:      '#ff6a00',
   sigma:     '#8f9bd8',
+  // Teal, matching MANUFACTURER_COLORS['OM System'] (engine.js) — a
+  // Panasonic-blue-adjacent hue would read as one brand next to Panasonic's
+  // own #0046ad stripe on the landing page.
+  olympus:   '#5fd0c8',
 };
 
 // Landing brand-card photo: a real product photo of the brand's showcase

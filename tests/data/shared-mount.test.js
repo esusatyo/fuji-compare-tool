@@ -17,11 +17,12 @@ const assert = require('node:assert/strict');
 const { loadBrand } = require('../helpers/load-brand');
 
 // [brandA, brandB, mount]. The only mounts on this site that span two makers
-// are L-Mount (Panasonic/Sigma, plus Leica if ever added) and Micro Four Thirds
-// (Panasonic/OM System if ever added) — so adding a row is all a future
+// are L-Mount (Panasonic/Sigma, plus Leica if ever added) and Micro Four
+// Thirds (Panasonic/OM System) — so adding a row is all a future
 // mount-sharing brand needs.
 const SAME_MOUNT_BRANDS = [
   ['panasonic', 'sigma', 'L-Mount'],
+  ['panasonic', 'olympus', 'Micro Four Thirds'],
 ];
 
 // Everything that is a property of the optic rather than of the listing.
