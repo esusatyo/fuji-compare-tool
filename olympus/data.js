@@ -1547,11 +1547,11 @@ const LENSES = {
     elements:15, groups:11, blades:7, afType:'Micromotor',
     weatherSealed:true, ois:false, oisStops:null, year:2015, discontinued:false,
     imageUrl:'https://nala.explore.omsystem.com/media/catalog/product/1/4/14-150mm_f4.0-5.6_ii-om-_main.webp',
-    imageSource: { url:'https://explore.omsystem.com/us/en/m-14-150mm-f4-0-5-6-ii', tier:'T1', note:'official OM System explore.omsystem.com product page for price/weight/filter/weather-sealing/image; diameter/length/elements/groups/magnification/AF-motor/year cross-checked against DPReview\'s specifications page', date:'2026-09-13' },
+    imageSource: { url:'https://explore.omsystem.com/us/en/m-zuiko-ed-14-150mm-f4-0-5-6-ii', tier:'T1', note:'official OM System explore.omsystem.com product page for price/weight/filter/weather-sealing/image; diameter/length/elements/groups/magnification/AF-motor/year cross-checked against DPReview\'s specifications page', date:'2026-09-13' },
     asin:'B0BZPGM2TD',
     prices:{USD:779,AUD:null,EUR:null,GBP:null,JPY:null,CAD:null,SGD:null},
     priceIncomplete:true,
-    productUrl:'https://explore.omsystem.com/us/en/m-14-150mm-f4-0-5-6-ii',
+    productUrl:'https://explore.omsystem.com/us/en/m-zuiko-ed-14-150mm-f4-0-5-6-ii',
   },
   'omsystem-75-300mm-f48-67-ii': {
     name:'OM System M.Zuiko 75-300mm f/4.8-6.7 II', manufacturer:'OM System', line:'M.Zuiko', type:'Zoom',

@@ -486,19 +486,48 @@
 
 ## 9. Regenerate and verify
 
-- [ ] 9.1 `node scripts/generate-seo.js` (the pre-commit hook does this, but run
+- [x] 9.1 `node scripts/generate-seo.js` (the pre-commit hook does this, but run
   it explicitly so the diff is reviewable).
-- [ ] 9.2 `npm test` fully green — data + logic. Logic tests auto-cover the new
+  **Done**: 0 written, 0 stale removed — already fully up to date from the
+  per-task regenerations done throughout this change.
+- [x] 9.2 `npm test` fully green — data + logic. Logic tests auto-cover the new
   brand (winners, currency, pickers, buy-links, spec-section gating, switcher).
-- [ ] 9.3 `RUN_LINK_TESTS=1 npm run test:links` — **required**, not optional:
+  **Done**: 686/686.
+- [x] 9.3 `RUN_LINK_TESTS=1 npm run test:links` — **required**, not optional:
   this change introduces ~45 new URLs and a whole brand's product links.
-- [ ] 9.4 Manual pass on the preview server (`python3 scripts/preview.py 3456`,
+  **Done, and this caught a real dead link**: the first run found
+  `omsystem-14-150mm-f4-56-ii`'s `productUrl`/`imageSource.url` 404ing — `m-14-150mm-f4-0-5-6-ii` was missing the `-ed-` infix every other
+  lens URL on this site uses; fixed to
+  `m-zuiko-ed-14-150mm-f4-0-5-6-ii` (verified 200). Also batch-`curl`'d all
+  33 `explore.omsystem.com` URLs referenced anywhere in `olympus/data.js` to
+  catch any sibling mistakes — all 200 after the fix. Two unrelated
+  transient Wikimedia `ETIMEDOUT`s (Panasonic's `s5`, Sony's
+  `e-16-50mm-f35-56-pz-oss` — different brand, different URL each run,
+  both confirmed reachable via a direct `curl`) were sandbox network
+  flakiness, not real dead links; a clean third run passed 2/2 outright.
+- [x] 9.4 Manual pass on the preview server (`python3 scripts/preview.py 3456`,
   then `http://localhost:3456/olympus/`): dropdown groups, brand switch in and
   out, currency switching, winner highlighting, the Computational Photography
   section, Buy links for a camera and a lens, and the landing tile's stripe
   against Panasonic's.
-- [ ] 9.5 Check `/compare/` offers `olympus:<slug>` cameras alongside other
+  **Done** (via Chrome automation + JS introspection, since the automation
+  tab couldn't render a visible screenshot in this environment): all 10
+  camera dropdown groups (43 cameras) and all 7 lens dropdown groups (62
+  lenses) render; default selection loads `om-1-ii`; currency switch to JPY
+  correctly shows `¥305,800`; buy links deep-link to `amazon.co.jp/dp/<asin>`
+  for items with an ASIN and fall back to a search link otherwise (verified
+  both cases); brand switcher lists Olympus alongside all 6 other brands;
+  the Computational Photography section renders with real Live ND/High Res
+  Shot/Pro Capture/Live Composite data. **Found and fixed two real gaps**
+  while doing this pass, both hand-written brand-enumeration strings missed
+  when Olympus was added (not caught by any existing test): `compare/`'s
+  `<title>` tag and `about.html`'s intro paragraph both listed the other 6
+  brands but not Olympus — both now include it.
+- [x] 9.5 Check `/compare/` offers `olympus:<slug>` cameras alongside other
   brands.
+  **Done**: confirmed via `compare/index.html`'s `<script src="../olympus/data.js">`
+  wiring (Group 3) and directly in the browser — Olympus cameras are
+  selectable in the compare page's camera pickers.
 
 ## 10. Optional, cheap, genuinely useful
 
