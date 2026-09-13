@@ -88,12 +88,15 @@ const CAMERAS = {
     name:'OM-1 Mark II', series:'OM System', mount:'mft', year:2024, discontinued:false,
     tagline:'Stacked BSI Flagship with Live ND & Pro Capture',
     productUrl:'https://explore.omsystem.com/us/en/om-1-mark-ii',
-    // imageUrl intentionally null — see KNOWN_IMAGE_GAPS['olympus'] in
-    // tests/data/completeness.test.js. The only image asset on the official
-    // product page is a dimension diagram, downloaded and visually
-    // inspected, not a usable product photo. Highest-priority gap for task 8.
-    imageUrl:null,
-    asin:null,
+    // task 8.1: the official product page's only image asset is a dimension
+    // diagram (see the now-superseded note this replaces), but Commons has
+    // a genuine clean studio product photo found via
+    // scripts/fetch-images-commons.js -- downloaded and visually inspected
+    // (front-on studio shot, clear "OM-1"/"OM SYSTEM" badging, dark
+    // background matching this brand's other OM System product photography).
+    imageUrl:'https://upload.wikimedia.org/wikipedia/commons/thumb/1/15/Om_System_OM-1_Mark_II_-_53487466392.jpg/500px-Om_System_OM-1_Mark_II_-_53487466392.jpg',
+    imageCredit:{author:"Henry Söderlund", licence:"CC BY 2.0", licenceUrl:"https://creativecommons.org/licenses/by/2.0/", source:"https://commons.wikimedia.org/wiki/File:Om_System_OM-1_Mark_II_-_53487466392.jpg"},
+    asin:'B0CS4NMS53',
     prices:{USD:2399,AUD:3499,EUR:2399,GBP:1699,JPY:305800,CAD:2799,SGD:2999},
     priceSource: { url:'https://explore.omsystem.com/us/en/om-1-mark-ii', tier:'T1', note:'Direct fetch of each official regional store: US $2,399.99 (list, before the current $1,999.99 promo), AU $3,499.00 (explore.omsystem.com/au), EUR €2,399.00 (explore.omsystem.com/ie — no working /de path found), GBP £1,699.00 (explore.omsystem.com/gb — reflects a genuine price cut per contemporary press coverage, not a temporary promo), JPY ¥305,800 tax-included (jp.omsystem.com official store, not a price-aggregator minimum), CAD $2,799.99 (explore.omsystem.com/ca). SGD $2,999 is the one non-T1 figure — no OM System-branded SG storefront found; sourced from an authorized Singapore dealer.', date:'2026-09-12' },
     specSources: [ { url:'https://explore.omsystem.com/us/en/om-1-mark-ii', tier:'T1', note:'Official spec sheet: sensor, processor, weather sealing, LCD/EVF dots, AF, IBIS, burst/buffer, video, connectivity, storage, battery, and the Live ND / High Res Shot / Pro Capture / Live Composite figures used below. Width and EVF magnification corrected from this fetch\'s mis-parsed text (138.8mm, 1.48-1.65x) after the official dimension-diagram image (viewed directly) showed 134.8mm, and independent corroboration confirmed 0.83x magnification (0.74x selectable) -- the same finder as the original OM-1, which this body shares.', date:'2026-09-12' } ],
@@ -174,8 +177,13 @@ const CAMERAS = {
     name:'OM-5 Mark II', series:'OM System', mount:'mft', year:2025, discontinued:false,
     tagline:'Compact Weather-Sealed Travel Body',
     productUrl:'https://explore.omsystem.com/us/en/om-5-mark-ii',
-    imageUrl:null,
-    asin:null,
+    // task 8.1: found via scripts/fetch-images-commons.js, downloaded and
+    // visually inspected -- a real trade-show/demo-unit photo (visible
+    // display stand and tether cable), not a clean studio shot, but
+    // correctly identified: clear "OM-5"/"OM SYSTEM" front badging.
+    imageUrl:'https://upload.wikimedia.org/wikipedia/commons/thumb/7/7d/OM_System_OM-5_Mark_II_4_jul_2025b.jpg/500px-OM_System_OM-5_Mark_II_4_jul_2025b.jpg',
+    imageCredit:{author:"昼落ち", licence:"CC0 1.0", licenceUrl:"https://creativecommons.org/publicdomain/zero/1.0/deed.en", source:"https://commons.wikimedia.org/wiki/File:OM_System_OM-5_Mark_II_4_jul_2025b.jpg"},
+    asin:'B0FDH2NJHW',
     prices:{USD:1199,AUD:1699,EUR:1299,GBP:880,JPY:144800,CAD:1699,SGD:1699},
     priceSource: { url:'https://explore.omsystem.com/us/en/om-5-mark-ii', tier:'T1', note:'Direct fetch of each official regional store: US $1,199.99 (list, before the current $1,049.99 promo), AU $1,699.00, EUR €1,299.00 (explore.omsystem.com/ie), GBP £880.00, CAD $1,699.99 -- all explore.omsystem.com direct. JPY has no manufacturer RRP at all (jp.omsystem.com\'s own price field reads "オープン" / open price, deliberately unset); ¥144,800 is a representative current Japanese retail price (kakaku.com aggregation across colorways, not the site\'s lowest ¥119,798 outlier). SGD $1,699 is the higher end of a $1,399-1,699 spread across several Singapore dealers -- used as the more list-like figure, consistent with using list over promotional prices throughout this entry.', date:'2026-09-12' },
     specSources: [ { url:'https://explore.omsystem.com/us/en/om-5-mark-ii', tier:'T1', note:'Official spec sheet. cardSlots count not stated, left generic rather than guessed -- confirm in the real task 4.1 pass.', date:'2026-09-12' }, { url:'https://www.dpreview.com/reviews/om-system-om-5-mark-ii-in-depth-review/', tier:'T2', note:'evfMag corrected 2026-09-13: 1.37x was the raw (MFT-relative) figure; DPReview explicitly states 0.68x 35mm-equivalent, unchanged from the original OM-5. Same convention-mismatch fix applied across every Olympus camera entered this session -- see decisions.md #15.', date:'2026-09-13' } ],
@@ -1083,7 +1091,7 @@ const CAMERAS = {
     productUrl:'https://explore.omsystem.com/us/en/tg-7',
     imageUrl:'https://upload.wikimedia.org/wikipedia/commons/8/88/Om_System_Tough_TG-7_by_Henry_Söderlund.jpg',
     imageCredit:{author:"Henry Söderlund", licence:"CC BY 2.0", licenceUrl:"https://creativecommons.org/licenses/by/2.0/", source:"https://commons.wikimedia.org/wiki/File:Om_System_Tough_TG-7_by_Henry_Söderlund.jpg"},
-    asin:null,
+    asin:'B0CH1QPT77',
     prices:{USD:549,AUD:699,EUR:519,GBP:449,JPY:54698,CAD:699,SGD:809},
     priceSource: { url:'https://explore.omsystem.com/us/en/tg-7', tier:'T1', note:'US $549 (Sept 2023 launch, confirmed unchanged), AU $699.00, EUR €519.00 (explore.omsystem.com/ie), GBP £449.00, CAD $699.99 -- all explore.omsystem.com direct. SGD $809.00 is Alan Photo\'s (authorized SG dealer) list price, before an active $649 promo -- same list-not-sale convention as every other entry. JPY ¥54,698 is a T4 kakaku.com aggregator LOWEST price, not a confirmed official RRP -- notably below the USD-equivalent of the other regions, the softest figure in this entry, flagged for a firmer source later.', date:'2026-09-13' },
     specSources: [ { url:'https://www.neocamera.com/camera/olympus/tg7', tier:'T2', note:'Sensor (12MP, unchanged from tg-5/tg-6), TruePic VIII, dimensions (113.9x65.8x32.7mm per a kakaku.com spec citation), weight (249g w/ battery+card), 1.04M-dot LCD, CIPA battery (330, LI-92B), 4K/30p video, WiFi+Bluetooth, and -- the headline change -- USB-C charging, all confirmed via OM System\'s own official spec sheet and independent review corroboration.', date:'2026-09-13' } ],
@@ -1254,7 +1262,7 @@ const LENSES = {
     weatherSealed:true, ois:false, oisStops:null, year:2017, discontinued:false,
     imageUrl:'https://nala.explore.omsystem.com/media/catalog/product/transparent/v/3/v311100bw000_specs_1.webp',
     imageSource: { url:'https://explore.omsystem.com/us/en/m-zuiko-ed-17mm-f1-2-pro', tier:'T1', note:'official OM System explore.omsystem.com product page; barrel reads "OLYMPUS M.ZUIKO DIGITAL 17mm 1:1.2" and "17mm 1:1.2 PRO" (Olympus branding persists on this pre-2021 PRO lens even under OM System ownership)', date:'2026-08-17' },
-    asin:null,
+    asin:'B0767MMV1Q',
     prices:{USD:1599,AUD:null,EUR:null,GBP:null,JPY:null,CAD:null,SGD:null},
     priceIncomplete:true,
     productUrl:'https://explore.omsystem.com/us/en/m-zuiko-ed-17mm-f1-2-pro',
@@ -1977,7 +1985,7 @@ const LENSES = {
     elements:13, groups:9, blades:7, afType:'Manual',
     weatherSealed:false, ois:false, oisStops:null, year:2017, discontinued:false,
     imageUrl:'https://www.venuslens.net/wp-content/uploads/2017/03/shutterstock_131587922SC2-copy-700x467.jpg',
-    imageSource: { url:'https://www.venuslens.net/product/laowa-7-5mm-f2/', tier:'T1', note:'official Venus Optics/Laowa store, MFT-only product page; barrel aperture ring reads "2, 2.8, 4, 5.6, 8, 11..." confirming the f/2 still-photo lens, not the T2.1 cine variant (a same-focal-length cine SKU exists on the same site and was rejected during sourcing)', date:'2026-08-17' }, asin:null,
+    imageSource: { url:'https://www.venuslens.net/product/laowa-7-5mm-f2/', tier:'T1', note:'official Venus Optics/Laowa store, MFT-only product page; barrel aperture ring reads "2, 2.8, 4, 5.6, 8, 11..." confirming the f/2 still-photo lens, not the T2.1 cine variant (a same-focal-length cine SKU exists on the same site and was rejected during sourcing)', date:'2026-08-17' }, asin:'B073BR5N2K',
     prices:{USD:499,AUD:null,EUR:null,GBP:null,JPY:null,CAD:null,SGD:null},
     priceIncomplete:true, productUrl:'https://www.venuslens.net/product/laowa-7-5mm-f2/',
   },

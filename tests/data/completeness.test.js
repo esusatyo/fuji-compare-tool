@@ -253,20 +253,12 @@ const KNOWN_IMAGE_GAPS = {
     // contradicting Nikon Z.
   ]),
   olympus: new Set([
-    // om-1-ii: entered early (task 2, to satisfy BRAND_CONFIG.heroCamera
-    // before any other camera data existed) with imageUrl:null rather than
-    // guess. explore.omsystem.com/us/en/om-1-mark-ii's only image asset is a
-    // dimension diagram (om-1-mark-ii-specs_o_85.webp) — downloaded and
-    // visually inspected: measurement callouts overlaid on the body, not a
-    // clean product photo. As the landing-tile hero camera this is the
-    // highest-priority gap to resolve in task 8 (Commons or an official
-    // clean studio shot), not just another item in the sweep.
-    'om-1-ii',
-    // om-3, om-5-ii: entered the same way (task 2, same forcing reason) with
-    // imageUrl:null -- not individually checked for a Commons/official photo
-    // yet (this whole batch was pulled forward for the render-test camera
-    // count, not a dedicated image-sourcing pass). Genuine gaps for task 8.
-    'om-3', 'om-5-ii',
+    // om-1-ii, om-5-ii: RESOLVED task 8.1 -- real Commons photos found via
+    // scripts/fetch-images-commons.js, downloaded and visually verified.
+    // om-3: entered task 2 (forcing reason: needed a 4th camera for the
+    // render-logic test count) with imageUrl:null -- no Commons/official
+    // photo found in the task 8.1 sweep either. Genuine gap.
+    'om-3',
     // om-3-astro, pen-om: task 4.1b, same reasoning. pen-om is a 2026-09-09
     // launch (4 days old at research time) -- no image expected to exist
     // anywhere free/official yet. om-3-astro (March 2026) similarly untried.

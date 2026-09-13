@@ -414,26 +414,75 @@
 
 ## 8. Images & pricing finalisation
 
-- [ ] 8.1 `node scripts/fetch-images-commons.js olympus cameras` **without**
+- [x] 8.1 `node scripts/fetch-images-commons.js olympus cameras` **without**
   `--apply` first; eyeball the `id -> url` map (a model code appearing only in a
   trailing `(...)` is the capture camera, not the subject). Then `--apply`.
   Olympus bodies are unusually well covered on Commons — expect a high hit rate.
-- [ ] 8.2 Same for lenses; expect a low hit rate. Everything unresolved goes in
+  **Done**: dry run found 2 hits (`om-1-ii`, `om-5-ii`) out of 13 gaps; both
+  downloaded and visually verified (clean studio shot for om-1-ii; a real
+  but trade-show/demo-unit photo for om-5-ii, correctly identified by its
+  badging). `--apply` non-deterministically only picked up `om-5-ii` on the
+  actual run (the Commons search API's `om-1-ii` hit didn't reappear
+  between the dry run and `--apply`), so `om-1-ii` was applied manually with
+  the same already-verified URL. Both got full `imageCredit` blocks (fetched
+  from their Commons file pages) and were removed from
+  `KNOWN_IMAGE_GAPS['olympus']`. Remaining 11 cameras stay genuine gaps
+  (`om-3` re-confirmed no hit in this pass too).
+- [x] 8.2 Same for lenses; expect a low hit rate. Everything unresolved goes in
   `KNOWN_IMAGE_GAPS['olympus']` in `tests/data/completeness.test.js` with a
   comment saying what was tried.
-- [ ] 8.3 `node scripts/verify-images.js olympus`.
-- [ ] 8.4 Watch the per-brand `no two items share a product image` guard — ported
+  **Done**: dry run found 0 hits for all 3 lens gaps
+  (`omsystem-100-400mm-f5-63-ii`, `omsystem-14-42mm-f35-56-iii`,
+  `lumix-g-12-32mm-f3-5-5-6`) — matches expectations, all already documented
+  in `KNOWN_IMAGE_GAPS['olympus']` from tasks 5.1/5.3/7.1.
+- [x] 8.3 `node scripts/verify-images.js olympus`.
+  **Done**: 23 "bad" results, all false alarms, none require a fix.
+  21 are `upload.wikimedia.org` URLs failing with `[0 rate-limited/error]`
+  — spot-checked one directly (`e-m1x`) via a real browser-context fetch:
+  loads fine, correctly shows the Olympus E-M1X body. `curl` confirmed the
+  same URL returns HTTP 429 from this sandbox's IP — a pre-existing
+  sandbox/Wikimedia rate-limiting artifact (matches the prior documented
+  "sandbox fetch() host-reachability gap" finding from the Sep 2026 image
+  refresh run), not a broken image. The other 2 are the two Laowa MFT
+  lenses' `venuslens.net` images returning HTTP 403 — `curl` confirmed this
+  is a Cloudflare bot-challenge (`cf-mitigated: challenge`), not a missing
+  file; the identical URLs already exist unflagged in `panasonic/data.js`,
+  so this is inherited from that pre-existing (non-Olympus) entry, not a
+  regression from this port.
+- [x] 8.4 Watch the per-brand `no two items share a product image` guard — ported
   entries reusing one maker studio shot across near-identical SKUs need a
   `SHARED_IMAGE_OK['olympus']` group, as Panasonic has for the Laowa 90mm.
   (Cross-brand reuse of the same URL is explicitly fine and unchecked.)
-- [ ] 8.5 `node scripts/compute-prices.js olympus cameras` for missing regional
+  **Done**: `npm test`'s existing "no two items share a product image" check
+  passed clean throughout this whole change — no `SHARED_IMAGE_OK['olympus']`
+  entry needed.
+- [x] 8.5 `node scripts/compute-prices.js olympus cameras` for missing regional
   RRPs; confirmed figures go in `scripts/price-overrides/olympus.json`. Current
   lenses without regional pricing take `priceIncomplete: true` — all 45 ported
   entries already carry it.
-- [ ] 8.6 **ASIN pass**, via the `check-prices-and-buy-links` skill. Re-check the
+  **Done**: `compute-prices.js olympus cameras` filled 0 gaps — verified
+  separately that every current camera already carries all 7 currencies
+  (the extensive per-camera pricing research done throughout Group 4 already
+  closed this out) and every current lens with a currency gap already
+  carries `priceIncomplete:true` (62/62 lenses checked). No
+  `scripts/price-overrides/olympus.json` entries needed.
+- [x] 8.6 **ASIN pass**, via the `check-prices-and-buy-links` skill. Re-check the
   ratchet margin here and report it explicitly; rebase `ASIN_GAP_BASELINE` only
   if the population genuinely grew, with the reason written into the comment
   block that already records the 74 → 61 → 86 history.
+  **Done**: found and verified (plain listing, not bundle/Renewed/
+  international) 5 real ASINs — `om-1-ii` (B0CS4NMS53), `om-5-ii`
+  (B0FDH2NJHW), `tg-7` (B0CH1QPT77), `omsystem-17mm-f12-pro` (B0767MMV1Q),
+  `laowa-7-5mm-f2-mft` (B073BR5N2K) — dropping olympus's current-item ASIN
+  gap from 11 to 6. Site-wide `ASIN_GAP_BASELINE` count: **68 → 63**
+  (baseline 86, margin now 23) — no rebase needed, coverage improved.
+  Remaining 6 gaps: `om-3-astro`/`pen-om`/`laowa-90mm-f28-macro-mft` are
+  confirmed genuinely not sold on Amazon (specialty/made-to-order/too-new
+  products, each independently confirmed); `om-3`/`omsystem-25mm-f18-ii`/
+  `omsystem-14-42mm-f35-56-iii` are undetermined, not confirmed absent —
+  this session's WebSearch quota (200/turn) was exhausted mid-pass and
+  Amazon's search pages 503'd every WebFetch retry. Worth a follow-up pass,
+  not a blocker (asin:null always renders a working search-link buy button).
 
 ## 9. Regenerate and verify
 
