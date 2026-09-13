@@ -35,7 +35,14 @@
 - [x] 6.1 Logic tier: References section renders last, 4 labelled rows, "—" for empty cells, no collapse toggle/behavior, Product-page fallback + dedup, multi-entry stacking, title fallback, safe link attributes, reference-click tracking (`tests/logic/references.test.js` + `tests/logic/analytics.test.js`) — engine.js side done; generator-side escaping covered when task 5 lands (generate-seo.js already runs everything through `esc()`)
 - [x] 6.2 Logic tier: compare page mixing brands shows each slot's own references independent of the others
 - [x] 6.3 Logic tier: parity test (`tests/logic/references-parity.test.js`) — engine.js's and generate-seo.js's collectors return identical output across 7 fixtures (full coverage, productUrl-only, Commons imageCredit fallback, spec-source-equals-productUrl dedup, untitled-citation fallback, /cameras/ index skip, multi-entry ordering)
-- [ ] 6.4 `npm run test:links` — record any newly-checked spec/price/image source URLs that fail; do not fix in this change (list them in the PR description as follow-up leads)
+- [x] 6.4 `npm run test:links` (`RUN_LINK_TESTS=1`, ~6 min against live data) — of 80 total failures, 52 are `product`/`image` kind (pre-existing, unrelated to this change, not investigated further here). The 28 newly-checked (`spec-source`/`price-source`/`image-source`) failures split into:
+  - **5 confirmed dead (real 404s), not fixed per scope decision — follow-up leads for the next refresh/price-check sweep:**
+    - `nikon/lens/laowa-58mm-f28-2x-macro` specSources: digitalcameraworld.com laowa-58mm review
+    - `nikon/lens/laowa-10-18mm-f45-56` specSources: nikonrumors.com 2019 announcement
+    - `nikon/lens/laowa-35mm-f28-tilt-shift-macro` specSources: nikonrumors.com 2025 announcement
+    - `nikon/lens/laowa-55mm-f28-tilt-shift-macro` specSources: fstoppers.com review
+    - `olympus/camera/tg-1` specSources: en.wikipedia.org/wiki/Olympus_Tough_TG-1
+  - **23 are ETIMEDOUT/TLS errors** (17 price-source, mostly `voigtlaender.de` `UNABLE_TO_VERIFY_LEAF_SIGNATURE` + `fuji-store.de`/`x-kamera.de` ETIMEDOUT; 6 image-source, all `commons.wikimedia.org` ETIMEDOUT) — same failure signature as the documented sandbox fetch()-reachability gap in the `image-refresh-run-sep-2026` project memory (this sandbox can't reach some hosts that are fine from a real browser/network). **Not confirmed dead** — flagged for re-verification from outside this sandbox, not asserted as broken.
 
 ## 7. Skill doc updates (groundwork for next sweep)
 
@@ -45,6 +52,6 @@
 
 ## 8. Verify
 
-- [ ] 8.1 `npm test` green (data + logic tiers)
-- [ ] 8.2 Browser check via preview server: a brand page, the 4-slot compare page, and one vs-page, each in light and dark theme and at phone width (~400px) — confirm truncation, "—" cells, always-expanded section, and clickable links
-- [ ] 8.3 `openspec validate render-item-references --strict` passes
+- [x] 8.1 `npm test` green (data + logic tiers) — 713/713
+- [x] 8.2 Browser check via preview server (worktree, port 3901): Fujifilm brand page, cross-brand compare page (mixed Fujifilm/Sony/Canon slots), a same-brand vs-page, and a cross-brand vs-page — confirmed the always-expanded References section (click-to-collapse is a no-op), "—" for empty cells, per-slot independence on the compare page, and CSS ellipsis truncation (verified with a GFX100 II selection, whose spec/price/image-source URLs are long enough to truncate even at desktop column width) in both light and dark theme. **Caveat:** could not verify at an actual ~400px phone viewport — `resize_window` in this Chrome-automation harness doesn't propagate to the rendered/screenshotted viewport (a known limitation, not new to this change: see the `chrome-automation-tab-is-hidden` project memory). The truncation CSS itself (`overflow:hidden`/`text-overflow:ellipsis`/`min-width:0`, `table-layout:fixed` on vs-pages) isn't viewport-width-dependent — it already triggers correctly on a narrow *column*, which is what a phone width also produces — but the mobile grid/stacking breakpoint (`engine.css`'s `<600px` rules) was not independently confirmed on a real narrow viewport for this section. Flagging for the user to spot-check on a real device/window before considering this fully verified.
+- [x] 8.3 `openspec validate render-item-references --strict` passes
