@@ -531,9 +531,16 @@
 
 ## 10. Optional, cheap, genuinely useful
 
-- [ ] 10.1 Add a handful of `CROSS_BRAND_MATCHUPS` in `scripts/generate-seo.js`
+- [x] 10.1 Add a handful of `CROSS_BRAND_MATCHUPS` in `scripts/generate-seo.js`
   — `om-1-ii` vs `gh7`, `om-3` vs `g9-ii`, an OM-1 II vs X-H2S — then rerun the
   generator. No per-brand quota exists, so this is a pure SEO add.
+  **Done**: added exactly those 3 pairs under a new "Micro Four Thirds &
+  cross-format enthusiast hybrids" comment section. `node scripts/generate-seo.js`
+  produced the 3 new vs-pages (`olympus-om-1-ii-vs-panasonic-gh7`,
+  `olympus-om-3-vs-panasonic-g9-ii`, `olympus-om-1-ii-vs-fujifilm-x-h2s`) plus
+  regenerated the reciprocal pages on the Panasonic/Fujifilm side that now
+  list a new "also compared with" entry. `npm test`: 686/686 green.
+  `openspec validate --strict`: valid.
 
 ## 11. Ship & close out
 
