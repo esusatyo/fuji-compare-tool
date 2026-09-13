@@ -995,6 +995,19 @@ function rootBodyBlock(site, brands, crossSample = []) {
     <p class="hero-subtitle">Side-by-side camera &amp; lens comparisons — specs, prices and buy links in seven currencies.</p>
   </div>
   <main class="landing">
+    <section class="landing-intro">
+      <p>Compare Camera Specs is a free tool for comparing mirrorless cameras and lenses
+         side by side. Put up to four of them next to each other and see every spec — sensor,
+         autofocus, stabilisation, video, size and weight — with prices in seven currencies.</p>
+      <p>Buying a camera or a lens should be fun. I have been taking photographs for 25 years,
+         and I still get excited every time I get a new one. But manufacturers' own sites are
+         often incomplete, bury the details in enormous PDFs, and leave pricing scattered all
+         over the place. I built Compare Camera Specs so that you don't have to do that
+         digging yourself.</p>
+      <p>Pick a brand below, or choose All Brands if you are shopping across brands.
+         Happy browsing!</p>
+      <p class="landing-intro-sig">Made in Sydney, Australia.</p>
+    </section>
     <section>
       <h2>Choose a brand</h2>
       <ul class="brand-grid">
