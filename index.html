@@ -13,6 +13,14 @@
     .landing h2 { font-size: 15px; text-transform: uppercase; letter-spacing: .06em;
                   color: var(--text-secondary); margin-bottom: 16px; font-weight: 700; }
 
+    /* Intro copy: the page's only prose, so it gets a readable measure
+       rather than the full card-grid width. */
+    .landing-intro { max-width: 68ch; }
+    .landing-intro p { color: var(--text-secondary); font-size: 15px; line-height: 1.65;
+                       margin: 0 0 12px; }
+    .landing-intro p:last-child { margin-bottom: 0; }
+    .landing-intro-sig { font-size: 13px; opacity: .85; }
+
     .brand-grid { list-style: none; display: grid; gap: 16px;
                   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); }
     .brand-card { position: relative; background: var(--bg-surface); border: 1px solid var(--border);
@@ -132,9 +140,21 @@
   </header>
   <div class="page-hero">
     <h1 class="hero-title">Compare Camera Specs</h1>
-    <p class="hero-subtitle">Side-by-side camera &amp; lens comparisons — specs, prices and buy links in seven currencies.</p>
   </div>
   <main class="landing">
+    <section class="landing-intro">
+      <p>Compare Camera Specs is a free tool for comparing mirrorless cameras and lenses
+         side by side. Put up to four of them next to each other and see every spec — sensor,
+         autofocus, stabilisation, video, size and weight — with prices in seven currencies.</p>
+      <p>Buying a camera or a lens should be fun. I have been taking photographs for 25 years,
+         and I still get excited every time I get a new one. But manufacturers' own sites are
+         often incomplete, bury the details in enormous PDFs, and leave pricing scattered all
+         over the place. I built Compare Camera Specs so that you don't have to do that
+         digging yourself.</p>
+      <p>Pick a brand below, or choose All Brands if you are shopping across brands.
+         Happy browsing!</p>
+      <p class="landing-intro-sig">Made in Sydney, Australia.</p>
+    </section>
     <section>
       <h2>Choose a brand</h2>
       <ul class="brand-grid">
@@ -228,35 +248,26 @@
       </ul>
     </section>
     <section>
+      <h2>My favourite pages</h2>
+      <ul class="cluster">
+        <li><a href="./fujifilm/#cameras=x-s20,x-t5,x-m5" data-goatcounter-click="favourite:fujifilm:x-s20-vs-x-t5-vs-x-m5" data-goatcounter-title="Favourite: Fujifilm X-S20 vs X-T5 vs X-M5">Fujifilm X-S20 vs X-T5 vs X-M5</a></li>
+        <li><a href="./fujifilm/#lenses=xc-13-33mm-f35-63,xc-15-45mm-f35-56,xf-23mm-f2" data-goatcounter-click="favourite:fujifilm:xc-13-33mm-f35-63-vs-xc-15-45mm-f35-56-vs-xf-23mm-f2" data-goatcounter-title="Favourite: Fujifilm XC 13-33mm f/3.5-6.3 OIS vs XC 15-45mm f/3.5-5.6 OIS PZ vs XF 23mm f/2 R WR">Fujifilm XC 13-33mm f/3.5-6.3 OIS vs XC 15-45mm f/3.5-5.6 OIS PZ vs XF 23mm f/2 R WR</a></li>
+      </ul>
+    </section>
+    <section>
       <h2>Popular comparisons</h2>
       <ul class="cluster">
-        <li><a href="./vs/sony-a9-iii-vs-canon-eos-r1">Sony A9 III vs Canon EOS R1</a></li>
-        <li><a href="./vs/canon-eos-r1-vs-nikon-z9">Canon EOS R1 vs Nikon Z9</a></li>
-        <li><a href="./vs/sony-a1-ii-vs-nikon-z9">Sony A1 II vs Nikon Z9</a></li>
-        <li><a href="./vs/sony-a1-ii-vs-canon-eos-r1">Sony A1 II vs Canon EOS R1</a></li>
-        <li><a href="./vs/sony-a1-ii-vs-canon-eos-r5-ii">Sony A1 II vs Canon EOS R5 Mark II</a></li>
-        <li><a href="./vs/canon-eos-r5-ii-vs-sony-a7r-v">Canon EOS R5 Mark II vs Sony A7R V</a></li>
-        <li><a href="./canon/vs/eos-r5-ii-vs-eos-r5">Canon EOS R5 Mark II vs EOS R5</a></li>
-        <li><a href="./canon/vs/eos-r6-v-vs-eos-r6-iii">Canon EOS R6 V vs EOS R6 Mark III</a></li>
-        <li><a href="./canon/vs/eos-r6-iii-vs-eos-r6-ii">Canon EOS R6 Mark III vs EOS R6 Mark II</a></li>
-        <li><a href="./fujifilm/vs/x100vi-vs-x100v">Fujifilm X100VI vs X100V</a></li>
-        <li><a href="./fujifilm/vs/x-t30iii-vs-x-t30ii">Fujifilm X-T30 III vs X-T30 II</a></li>
-        <li><a href="./fujifilm/vs/x-h2-vs-x-h1">Fujifilm X-H2 vs X-H1</a></li>
-        <li><a href="./nikon/vs/z6-iii-vs-z6-ii">Nikon Z6 III vs Z6 II</a></li>
-        <li><a href="./nikon/vs/z6-ii-vs-z6">Nikon Z6 II vs Z6</a></li>
-        <li><a href="./nikon/vs/z5-ii-vs-z5">Nikon Z5 II vs Z5</a></li>
-        <li><a href="./olympus/vs/om-1-ii-vs-om-1">Olympus OM-1 Mark II vs OM-1</a></li>
-        <li><a href="./olympus/vs/om-5-ii-vs-om-5">Olympus OM-5 Mark II vs OM-5</a></li>
-        <li><a href="./olympus/vs/om-3-vs-om-1">Olympus OM-3 vs OM-1</a></li>
-        <li><a href="./panasonic/vs/s1r-ii-vs-s1r">Panasonic Lumix S1R II vs Lumix S1R</a></li>
-        <li><a href="./panasonic/vs/s5-ii-vs-s5">Panasonic Lumix S5 II vs Lumix S5</a></li>
-        <li><a href="./panasonic/vs/s1-ii-vs-s1">Panasonic Lumix S1 II vs Lumix S1</a></li>
-        <li><a href="./sigma/vs/bf-vs-fp-l">Sigma BF vs fp L</a></li>
-        <li><a href="./sigma/vs/fp-l-vs-fp">Sigma fp L vs fp</a></li>
-        <li><a href="./sigma/vs/bf-vs-fp">Sigma BF vs fp</a></li>
-        <li><a href="./sony/vs/a7-v-vs-a7-iv">Sony A7 V vs A7 IV</a></li>
-        <li><a href="./sony/vs/a7-iv-vs-a7-iii">Sony A7 IV vs A7 III</a></li>
-        <li><a href="./sony/vs/a7-iii-vs-a7-ii">Sony A7 III vs A7 II</a></li>
+        <li><a href="./vs/sony-a9-iii-vs-canon-eos-r1" data-goatcounter-click="popular:cross:sony-a9-iii-vs-canon-eos-r1" data-goatcounter-title="Popular: Sony A9 III vs Canon EOS R1">Sony A9 III vs Canon EOS R1</a></li>
+        <li><a href="./vs/canon-eos-r1-vs-nikon-z9" data-goatcounter-click="popular:cross:canon-eos-r1-vs-nikon-z9" data-goatcounter-title="Popular: Canon EOS R1 vs Nikon Z9">Canon EOS R1 vs Nikon Z9</a></li>
+        <li><a href="./vs/sony-a1-ii-vs-nikon-z9" data-goatcounter-click="popular:cross:sony-a1-ii-vs-nikon-z9" data-goatcounter-title="Popular: Sony A1 II vs Nikon Z9">Sony A1 II vs Nikon Z9</a></li>
+        <li><a href="./vs/sony-a1-ii-vs-canon-eos-r1" data-goatcounter-click="popular:cross:sony-a1-ii-vs-canon-eos-r1" data-goatcounter-title="Popular: Sony A1 II vs Canon EOS R1">Sony A1 II vs Canon EOS R1</a></li>
+        <li><a href="./canon/vs/eos-r5-ii-vs-eos-r5" data-goatcounter-click="popular:canon:eos-r5-ii-vs-eos-r5" data-goatcounter-title="Popular: Canon EOS R5 Mark II vs EOS R5">Canon EOS R5 Mark II vs EOS R5</a></li>
+        <li><a href="./fujifilm/vs/x100vi-vs-x100v" data-goatcounter-click="popular:fujifilm:x100vi-vs-x100v" data-goatcounter-title="Popular: Fujifilm X100VI vs X100V">Fujifilm X100VI vs X100V</a></li>
+        <li><a href="./nikon/vs/z6-iii-vs-z6-ii" data-goatcounter-click="popular:nikon:z6-iii-vs-z6-ii" data-goatcounter-title="Popular: Nikon Z6 III vs Z6 II">Nikon Z6 III vs Z6 II</a></li>
+        <li><a href="./olympus/vs/om-1-ii-vs-om-1" data-goatcounter-click="popular:olympus:om-1-ii-vs-om-1" data-goatcounter-title="Popular: Olympus OM-1 Mark II vs OM-1">Olympus OM-1 Mark II vs OM-1</a></li>
+        <li><a href="./panasonic/vs/s1r-ii-vs-s1r" data-goatcounter-click="popular:panasonic:s1r-ii-vs-s1r" data-goatcounter-title="Popular: Panasonic Lumix S1R II vs Lumix S1R">Panasonic Lumix S1R II vs Lumix S1R</a></li>
+        <li><a href="./sigma/vs/bf-vs-fp-l" data-goatcounter-click="popular:sigma:bf-vs-fp-l" data-goatcounter-title="Popular: Sigma BF vs fp L">Sigma BF vs fp L</a></li>
+        <li><a href="./sony/vs/a7-v-vs-a7-iv" data-goatcounter-click="popular:sony:a7-v-vs-a7-iv" data-goatcounter-title="Popular: Sony A7 V vs A7 IV">Sony A7 V vs A7 IV</a></li>
       </ul>
     </section>
   </main>

@@ -950,9 +950,37 @@ function allBrandsPhotoHTML() {
   return `<div class="brand-photo brand-photo--all">${logoMark(40)}</div>`;
 }
 
+// Hand-picked entry points into the interactive tool. These are hash links,
+// so the comparison opens already populated (the engine reads
+// #<mode>=<slug>,<slug>,…). Slugs are resolved against the brand data here, so
+// a renamed camera or lens fails the build instead of silently degrading to
+// the page's default selection.
+const FAVOURITE_LINKS = [
+  { brand: 'fujifilm', mode: 'cameras', slugs: ['x-s20', 'x-t5', 'x-m5'] },
+  { brand: 'fujifilm', mode: 'lenses', slugs: ['xc-13-33mm-f35-63', 'xc-15-45mm-f35-56', 'xf-23mm-f2'] },
+];
+
+function resolveFavourites(brandData, favourites = FAVOURITE_LINKS) {
+  return favourites.map(f => {
+    const data = brandData[f.brand];
+    if (!data) throw new Error(`FAVOURITE_LINKS: unknown brand '${f.brand}'`);
+    const items = f.mode === 'lenses' ? data.LENSES : data.CAMERAS;
+    const names = f.slugs.map(slug => {
+      const item = items[slug];
+      if (!item) throw new Error(`FAVOURITE_LINKS: unknown ${f.mode} '${f.brand}:${slug}'`);
+      return item.name;
+    });
+    return {
+      href: `./${f.brand}/#${f.mode}=${f.slugs.join(',')}`,
+      label: `${data.BRAND_CONFIG.name} ${names.join(' vs ')}`,
+      event: `favourite:${f.brand}:${f.slugs.join('-vs-')}`,
+    };
+  });
+}
+
 // Crawlable landing content for the root page: brand cards with live counts
 // plus a sample of vs-pages, so the root passes authority into the cluster.
-function rootBodyBlock(site, brands, crossSample = []) {
+function rootBodyBlock(site, brands, crossSample = [], favourites = []) {
   // No stripe override: the all-brands card takes the shared accent.
   const compareCard = `        <li class="brand-card">
           <a href="./compare/" data-goatcounter-click="brand-pick:compare" data-goatcounter-title="Brand pick: All brands">
@@ -979,11 +1007,15 @@ function rootBodyBlock(site, brands, crossSample = []) {
   )].join('\n');
   const cluster = [
     ...crossSample.map(m =>
-      `        <li><a href="./${cleanHref(m.file)}">${esc(crossTitle(m))}</a></li>`),
+      `        <li><a href="./${cleanHref(m.file)}" data-goatcounter-click="popular:cross:${path.basename(m.file, '.html')}" data-goatcounter-title="Popular: ${esc(crossTitle(m))}">${esc(crossTitle(m))}</a></li>`),
+    // One per brand — its curated list is ordered strongest-first — so the
+    // cluster stays a short hand-picked set rather than a wall of links.
     ...brands.flatMap(br =>
-      br.samplePairs.map(p =>
-        `        <li><a href="./${br.slug}/vs/${p.a}-vs-${p.b}">${esc(br.name)} ${esc(p.aName)} vs ${esc(p.bName)}</a></li>`)),
+      br.samplePairs.slice(0, 1).map(p =>
+        `        <li><a href="./${br.slug}/vs/${p.a}-vs-${p.b}" data-goatcounter-click="popular:${br.slug}:${p.a}-vs-${p.b}" data-goatcounter-title="Popular: ${esc(br.name)} ${esc(p.aName)} vs ${esc(p.bName)}">${esc(br.name)} ${esc(p.aName)} vs ${esc(p.bName)}</a></li>`)),
   ].join('\n');
+  const favouriteList = favourites.map(f =>
+    `        <li><a href="${f.href}" data-goatcounter-click="${f.event}" data-goatcounter-title="Favourite: ${esc(f.label)}">${esc(f.label)}</a></li>`).join('\n');
   return `${SEO_BODY_BEGIN}
   <header id="site-header">
     <div class="header-brand">
@@ -992,13 +1024,31 @@ function rootBodyBlock(site, brands, crossSample = []) {
   </header>
   <div class="page-hero">
     <h1 class="hero-title">${esc(site.siteName)}</h1>
-    <p class="hero-subtitle">Side-by-side camera &amp; lens comparisons — specs, prices and buy links in seven currencies.</p>
   </div>
   <main class="landing">
+    <section class="landing-intro">
+      <p>Compare Camera Specs is a free tool for comparing mirrorless cameras and lenses
+         side by side. Put up to four of them next to each other and see every spec — sensor,
+         autofocus, stabilisation, video, size and weight — with prices in seven currencies.</p>
+      <p>Buying a camera or a lens should be fun. I have been taking photographs for 25 years,
+         and I still get excited every time I get a new one. But manufacturers' own sites are
+         often incomplete, bury the details in enormous PDFs, and leave pricing scattered all
+         over the place. I built Compare Camera Specs so that you don't have to do that
+         digging yourself.</p>
+      <p>Pick a brand below, or choose All Brands if you are shopping across brands.
+         Happy browsing!</p>
+      <p class="landing-intro-sig">Made in Sydney, Australia.</p>
+    </section>
     <section>
       <h2>Choose a brand</h2>
       <ul class="brand-grid">
 ${cards}
+      </ul>
+    </section>
+    <section>
+      <h2>My favourite pages</h2>
+      <ul class="cluster">
+${favouriteList}
       </ul>
     </section>
     <section>
@@ -1275,7 +1325,7 @@ function buildAll() {
   }
   let rootHtml = fs.readFileSync(path.join(ROOT, 'index.html'), 'utf8');
   rootHtml = withHeadBlock(rootHtml, rootHeadBlock(site, brandNames), 'index.html');
-  rootHtml = withBodyBlock(rootHtml, rootBodyBlock(site, brandInfo, matchups.slice(0, 6)), 'index.html');
+  rootHtml = withBodyBlock(rootHtml, rootBodyBlock(site, brandInfo, matchups.slice(0, 4), resolveFavourites(brandData)), 'index.html');
   files.set('index.html', rootHtml);
   files.set('sitemap.xml', sitemapXML(site, sitemapPaths));
   files.set('robots.txt', robotsTxt(site));
