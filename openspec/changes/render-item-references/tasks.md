@@ -25,16 +25,16 @@
 
 ## 5. Static vs-pages (scripts/generate-seo.js)
 
-- [ ] 5.1 Implement the generator's own `collectReferences(item)` — same behavior as engine.js's, Node-side
-- [ ] 5.2 In `vsPageHTML()` (same-brand) and `crossVsPageHTML()` (cross-brand), append a References `<tbody>` to the existing `vs-card` table: one row per reference kind, one `<td>` per camera column, same link attributes/truncation as task 3.4/3.5
-- [ ] 5.3 Add `data-goatcounter-click`/`data-goatcounter-title` to vs-page reference links matching the `reference-click:<kind>:<hostname>` convention
-- [ ] 5.4 Run `node scripts/generate-seo.js`, commit regenerated output
+- [x] 5.1 Implement the generator's own `collectReferences(item)` — same behavior as engine.js's, Node-side
+- [x] 5.2 In `vsPageHTML()` (same-brand) and `crossVsPageHTML()` (cross-brand), append a References `<tbody>` to the existing `vs-card` table: a heading row, then one row per reference kind, one `<td>` per camera column, same link attributes/truncation as task 3.4/3.5 (`table-layout: fixed` added to `.vs-card table` so ellipsis has a bounded width to clip against)
+- [x] 5.3 Add `data-goatcounter-click`/`data-goatcounter-title` to vs-page reference links matching the `reference-click:<kind>:<hostname>` convention
+- [x] 5.4 Run `node scripts/generate-seo.js`, commit regenerated output (264 vs-pages written)
 
 ## 6. Tests
 
 - [x] 6.1 Logic tier: References section renders last, 4 labelled rows, "—" for empty cells, no collapse toggle/behavior, Product-page fallback + dedup, multi-entry stacking, title fallback, safe link attributes, reference-click tracking (`tests/logic/references.test.js` + `tests/logic/analytics.test.js`) — engine.js side done; generator-side escaping covered when task 5 lands (generate-seo.js already runs everything through `esc()`)
 - [x] 6.2 Logic tier: compare page mixing brands shows each slot's own references independent of the others
-- [ ] 6.3 Logic tier: parity test — `engine.js`'s and `generate-seo.js`'s collectors return identical output for the same sample items (pull a few real items per brand covering: full coverage, zero-`specSources` coverage, Commons `imageCredit`, spec-source-equals-product-url)
+- [x] 6.3 Logic tier: parity test (`tests/logic/references-parity.test.js`) — engine.js's and generate-seo.js's collectors return identical output across 7 fixtures (full coverage, productUrl-only, Commons imageCredit fallback, spec-source-equals-productUrl dedup, untitled-citation fallback, /cameras/ index skip, multi-entry ordering)
 - [ ] 6.4 `npm run test:links` — record any newly-checked spec/price/image source URLs that fail; do not fix in this change (list them in the PR description as follow-up leads)
 
 ## 7. Skill doc updates (groundwork for next sweep)

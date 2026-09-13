@@ -174,6 +174,78 @@ const VS_ROWS = [
   ['Lens mount', c => c.lensType],
 ];
 
+// ─── References (Spec/Price/Image/Product source citations) ────
+// Mirrors engine.js's collectReferences()/citationText()/refHostname() —
+// duplicated rather than shared because engine.js is a browser-only script
+// (window/document globals, no module.exports) that this Node generator
+// cannot require(). tests/logic/references.test.js's parity test keeps the
+// two implementations in sync.
+const REFERENCE_ROWS = [
+  { key: 'spec', label: 'Spec source' },
+  { key: 'price', label: 'Price source' },
+  { key: 'image', label: 'Image source' },
+  { key: 'product', label: 'Product page' },
+];
+
+function citationText(c) {
+  return c.title || c.url.replace(/^https?:\/\/(www\.)?/, '');
+}
+
+function refHostname(url) {
+  try { return new URL(url).hostname.replace(/^www\./, ''); } catch { return url; }
+}
+
+function collectReferences(item) {
+  const rows = { spec: [], price: [], image: [], product: [] };
+  if (!item) return rows;
+
+  // Matches the /cameras/ index-URL skip already used for productCardHTML's
+  // View link, so References never links a generic brand listing.
+  const productUrl = (item.productUrl && !item.productUrl.endsWith('/cameras/'))
+    ? item.productUrl : null;
+
+  for (const c of (item.specSources || [])) {
+    if (productUrl && c.url === productUrl) continue; // shown once, in Product page
+    rows.spec.push({ text: citationText(c), url: c.url });
+  }
+
+  if (item.priceSource) {
+    rows.price.push({ text: citationText(item.priceSource), url: item.priceSource.url });
+  }
+
+  const imageSource = item.imageSource
+    || (item.imageCredit && item.imageCredit.source ? { url: item.imageCredit.source } : null);
+  if (imageSource) {
+    rows.image.push({ text: citationText(imageSource), url: imageSource.url });
+  }
+
+  if (productUrl) {
+    rows.product.push({ text: citationText({ url: productUrl }), url: productUrl });
+  }
+
+  return rows;
+}
+
+function refLinkHTML(r, kind) {
+  return `<a class="vs-ref-link" href="${esc(r.url)}" target="_blank" rel="noopener nofollow" title="${esc(r.url)}" data-goatcounter-click="reference-click:${kind}:${esc(refHostname(r.url))}" data-goatcounter-title="Reference: ${esc(r.text)}">${esc(r.text)}</a>`;
+}
+
+function refCellHTML(refs, kind) {
+  if (!refs.length) return '—';
+  return refs.map(r => refLinkHTML(r, kind)).join('');
+}
+
+// A second <tbody> appended below the spec rows in the same vs-card table
+// (not a separate card) — a heading row, then the four reference rows.
+function referenceRowsHTML(itemA, itemB) {
+  const [refsA, refsB] = [collectReferences(itemA), collectReferences(itemB)];
+  const heading = `      <tr class="vs-refs-heading"><th colspan="3" scope="colgroup">References</th></tr>`;
+  const rows = REFERENCE_ROWS.map(row =>
+    `      <tr><th scope="row">${esc(row.label)}</th><td class="vs-ref-cell">${refCellHTML(refsA[row.key], row.key)}</td><td class="vs-ref-cell">${refCellHTML(refsB[row.key], row.key)}</td></tr>`,
+  ).join('\n');
+  return `${heading}\n${rows}`;
+}
+
 // ─── Vs-page "quick take" summary ────────────
 // One visible, strictly factual sentence per vs-page: crawlers that don't
 // render JS (GPTBot, ClaudeBot, PerplexityBot, CCBot, OAI-SearchBot — as
@@ -249,7 +321,11 @@ const VS_CSS = `
 
   .vs-card { background: var(--bg-surface); border: 1px solid var(--border); border-radius: var(--radius);
              box-shadow: var(--shadow); overflow: hidden; }
-  .vs-card table { border-collapse: collapse; width: 100%; }
+  /* Fixed layout: value columns must have a bounded width for .vs-ref-link's
+     ellipsis to take effect (auto layout would just grow the column instead
+     of clipping). Existing spec rows wrap onto a 2nd line instead of
+     overflowing, which is fine — none of VS_ROWS' values are long. */
+  .vs-card table { border-collapse: collapse; width: 100%; table-layout: fixed; }
   .vs-card thead th { background: var(--bg-surface-2); color: var(--text-primary); font-weight: 600; font-size: 14px;
                       padding: 14px 12px; text-align: center; }
   .vs-card thead th:first-child { text-align: left; font-weight: 500; color: var(--text-secondary); font-size: 12px; }
@@ -258,6 +334,15 @@ const VS_CSS = `
   .vs-card td { text-align: center; font-size: 13px; color: var(--text-primary); padding: 11px 12px; font-weight: 500; }
   .vs-card tbody tr { border-top: 1px solid var(--border); }
   .vs-card tbody tr:nth-child(odd) { background: rgba(255,255,255,.02); }
+
+  .vs-refs-heading th { background: var(--bg-surface-2); color: var(--text-secondary); font-size: 11px;
+                        font-weight: 700; text-transform: uppercase; letter-spacing: .08em;
+                        text-align: left; padding: 10px 16px; }
+  .vs-ref-cell { text-align: left; overflow: hidden; }
+  .vs-ref-link { display: block; max-width: 100%; overflow: hidden; text-overflow: ellipsis;
+                 white-space: nowrap; font-size: 12px; color: var(--accent-primary); text-decoration: none; }
+  .vs-ref-link:hover { text-decoration: underline; }
+  .vs-ref-link + .vs-ref-link { margin-top: 4px; }
 
   .vs-note { color: var(--text-secondary); font-size: 12px; margin: 16px 2px 0; }
 
@@ -521,6 +606,9 @@ ${productsHTML}
         <tbody>
 ${rows}
         </tbody>
+        <tbody class="vs-refs">
+${referenceRowsHTML(a, b)}
+        </tbody>
       </table>
     </div>
     <p class="vs-note">Prices shown are approximate manufacturer list prices (RRP) in USD and may differ from live retail prices.</p>${relatedHTML}
@@ -765,6 +853,9 @@ ${productCardHTML(b.data, b.brandName, b.slug, b.cam, fullName(b))}
         </thead>
         <tbody>
 ${rows}
+        </tbody>
+        <tbody class="vs-refs">
+${referenceRowsHTML(a.cam, b.cam)}
         </tbody>
       </table>
     </div>
@@ -1357,4 +1448,4 @@ if (require.main === module) {
   console.log(`generate-seo: ${files.size} artifacts (${written} written, ${removed} stale removed)`);
 }
 
-module.exports = { siteConfig, curatedPairs, relatedPairs, vsPageHTML, vsSummary, vsSummaryFacts, resolveMatchups, crossVsPageHTML, crossTitle, CROSS_BRAND_MATCHUPS, compareHeadBlock, compareBodyBlock, brandHeadBlock, rootHeadBlock, brandBodyBlock, rootBodyBlock, withHeadBlock, withBodyBlock, sitemapXML, robotsTxt, buildAll, SEO_BEGIN, SEO_END, SEO_BODY_BEGIN, SEO_BODY_END, ID_HEAD_BEGIN, ID_HEAD_END, ID_HEADER_BEGIN, ID_HEADER_END, ID_FOOTER_BEGIN, ID_FOOTER_END, identityToken, logoMark, cleanUrl, cleanHref, themeToggleHTML };
+module.exports = { siteConfig, curatedPairs, relatedPairs, vsPageHTML, vsSummary, vsSummaryFacts, resolveMatchups, crossVsPageHTML, crossTitle, CROSS_BRAND_MATCHUPS, compareHeadBlock, compareBodyBlock, brandHeadBlock, rootHeadBlock, brandBodyBlock, rootBodyBlock, withHeadBlock, withBodyBlock, sitemapXML, robotsTxt, buildAll, SEO_BEGIN, SEO_END, SEO_BODY_BEGIN, SEO_BODY_END, ID_HEAD_BEGIN, ID_HEAD_END, ID_HEADER_BEGIN, ID_HEADER_END, ID_FOOTER_BEGIN, ID_FOOTER_END, identityToken, logoMark, cleanUrl, cleanHref, themeToggleHTML, collectReferences, citationText, refHostname, REFERENCE_ROWS };
