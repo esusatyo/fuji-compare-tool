@@ -388,13 +388,29 @@
 
 ## 7. Third-party MFT lenses (owner-approved into this change)
 
-- [ ] 7.1 Port Panasonic's **28 current Lumix G / Leica DG** lenses as
+- [x] 7.1 Port Panasonic's **28 current Lumix G / Leica DG** lenses as
   third-party entries; `manufacturer: 'Panasonic'`, group
   `── LUMIX G (MFT) ──` (split Primes/Zooms if it reads long).
-- [ ] 7.2 Port the remaining **6 MFT third parties** — Sigma ×3, Laowa ×2,
+  **Done**: extracted all 28 current entries (`discontinued:false`) verbatim
+  from `panasonic/data.js` by brace-matched block (not hand-retyped, to
+  guarantee byte-for-byte field agreement) — the one discontinued LUMIX G X
+  Vario 35-100mm F2.8 II is excluded, matching this change's current-
+  catalogue scope. Split into `── LUMIX G Primes (MFT) ──` (13) and
+  `── LUMIX G Zooms (MFT) ──` (15), reusing panasonic/data.js's exact group
+  labels/membership (minus the excluded discontinued lens) for consistency.
+- [x] 7.2 Port the remaining **6 MFT third parties** — Sigma ×3, Laowa ×2,
   Voigtländer ×1 — into `── Sigma (MFT) ──` and
   `── Laowa & Voigtländer (MFT) ──`.
-- [ ] 7.3 Re-run group 6; the shared set is now ~45 ids. `npm run test:data`.
+  **Done**: same verbatim-extraction method, same group labels as
+  panasonic/data.js. `lumix-g-12-32mm-f3-5-5-6`'s pre-existing image gap
+  carried over into `KNOWN_IMAGE_GAPS['olympus']` (ported gap and all, same
+  physical product with no photo in either file).
+- [x] 7.3 Re-run group 6; the shared set is now ~45 ids. `npm run test:data`.
+  **Done**: shared set is exactly 45 (11 M.Zuiko + 34 third-party). Zero
+  disagreements — `node --test tests/data/shared-mount.test.js` green on
+  the first run, same as task 6.2.
+  `node scripts/generate-seo.js` + `npm test`: 686/686 green.
+  `openspec validate add-olympus-brand --strict`: valid.
 
 ## 8. Images & pricing finalisation
 

@@ -297,6 +297,10 @@ const KNOWN_IMAGE_GAPS = {
     // but no image was sourced from its (WebFetch-blocked) product page.
     // Genuine gap.
     'omsystem-14-42mm-f35-56-iii',
+    // lumix-g-12-32mm-f3-5-5-6: task 7.1, ported verbatim (same mount, same
+    // physical product) from panasonic/data.js's identical entry below,
+    // gap and all — see that entry's note for why no photo was found.
+    'lumix-g-12-32mm-f3-5-5-6',
   ]),
   panasonic: new Set([
     // Cameras: all resolved (see git history — Commons sweeps plus Tier 3
