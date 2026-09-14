@@ -85,10 +85,12 @@ that format is a separate property.
 it's a typo guard, not a scoping rule.
 
 - **Cameras**: M8 (2006) is in scope → camera floor becomes **2006**.
-- **Lenses**: `year` = introduction of the **optical design currently sold**
-  (e.g. a current Summicron-M whose design dates from the 1990s). The lens floor
-  is lowered to the oldest such design found in task 1.2, with a comment naming
-  the lens that set it. If no current M design predates 2008 the floor stays.
+- **Lenses**: `year` = release year of the **version currently sold**, not the
+  year its optical formula first appeared. (Revised in task 1.2: the design-year
+  reading would put the current Summicron-M 50 at 1979, gutting the floor's
+  value as a typo guard, and it isn't what the Year row means for any other
+  brand.) The lens floor is lowered to the oldest `year` actually entered, with
+  a comment naming that lens; the estimate from task 1.2 is the late 1990s.
 
 Both are one-line `min` changes with comments, landed in group 4 before any
 item that needs them.

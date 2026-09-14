@@ -43,7 +43,11 @@
   Treat that list as a checklist to verify, not as fact — confirm each exists,
   its year, and whether it's still sold on leica-camera.com. Note special/
   limited editions as excluded unless optically or functionally distinct.
-- [ ] 1.2 Enumerate lenses → `research/lenses.md` as
+- [x] 1.2 **Done: ~48–49 lenses** (M 25, SL 16–17, TL 7) in
+  `research/lenses.md`; Summicron-M 66 (limited) and discontinued WATE / 18 /
+  75 Summilux excluded; ⚠ status checks listed for entry. `year` convention
+  revised to version year (design §5, decisions §5).
+  Enumerate lenses → `research/lenses.md` as
   `slug | name | line | mount | type | focal | aperture | design year | current`:
   current M lenses, current SL lenses (APO-Summicron-SL, Summilux-SL,
   Vario-Elmarit-SL, Summicron-SL f/2 series, …), and all TL lenses (for 1.4).

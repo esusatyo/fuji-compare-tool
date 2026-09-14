@@ -70,3 +70,24 @@ so answering first saves 1.2 from researching lenses that might be dropped.
 - **TL lenses: included; discontinued SL lenses: excluded** (recommended).
 - Knock-on: series `X`, `D-Lux`, `V-Lux`, `C-Lux` all map to `l` + `lensType:
   'Fixed'`; design §3's regex gains `X`. Total bodies: **52**.
+
+## 5. Task 1.2 — lens enumeration calls (2026-09-14)
+
+- **~48–49 lenses**: M 25, SL 16–17, TL 7 (`research/lenses.md`).
+- **`year` = version year, not design year** (design §5 revised). The Summicron-M
+  50 f/2 formula dates from 1979, but the lens on sale is a later version; the
+  site's Year row means "when this product came out" for every other brand.
+- **Classic Line reissues are regular catalogue lenses**, not editions: Summaron-M
+  28, Thambar-M 90, Noctilux-M 50 f/1.2, Summilux-M 35 "Steel Rim", Summilux-M 50
+  Classic. The Summicron-M 66 is the exception (660-unit limited edition) → out.
+- **A dealer listing isn't proof a lens is current**: the Tri-Elmar-M 16-18-21 is
+  still listed (out of stock) but was discontinued in January 2025. The reverse
+  also happens: Summilux-M 24 and Summilux-M 90 have live leica-camera.com pages
+  but aren't on the dealer page. Every ⚠ status gets a leica-camera.com product
+  page check at entry.
+- **Summilux-SL 50 f/1.4 has two lenses with the same name** (2015 original,
+  2026 compact redesign). Per the lens-revisions memory they're separate entries;
+  the original is only in scope if Leica still sells it.
+- **Access notes**: alikgriffin.com returns 403; the dealer's SL collection URL
+  guesses 404; Leica's 2016–2017 press-release archive URLs return navigation
+  only. DPReview launch articles were the reliable TL source.
