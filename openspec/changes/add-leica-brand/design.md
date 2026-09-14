@@ -1,0 +1,129 @@
+# Design — Add Leica Brand
+
+Owner decisions from the 2026-09-14 kickoff are logged in
+`research/decisions.md` §1. Anything marked **(task N)** is decided during that
+task and written back here.
+
+---
+
+## 1. Scope: five lines, one brand
+
+**Decision.** One `leica` brand covering SL, TL/CL, M digital, Q and the
+fixed-lens compacts. The owner explicitly included all five.
+
+- **S system excluded** — the S (Typ 006/007) and S3 are medium-format DSLRs;
+  every brand here is mirrorless-only.
+- **Film M bodies excluded** (M6, M-A, MP) — the dataset is digital cameras.
+- **Digital M rangefinders are in**, although "mirrorless" is usually said of
+  EVF bodies: they have no reflex mirror, and the owner included them.
+- **Open scope questions for task 1.4** (not decided here):
+  Leica X / X Vario / X-U (APS-C fixed-lens compacts), SOFORT / SOFORT 2
+  (hybrid instant), and whether discontinued SL / TL lenses are entered.
+  The TL bodies are all discontinued; a TL body with no TL lenses would still
+  be valid data but a thin lens page.
+
+## 2. Mounts: `l` reused exactly, new `m`, fixed lenses by precedent
+
+`mounts: [{ id:'l', label:'L-Mount' }, { id:'m', label:'M-Mount' }]`.
+
+- `l` must be byte-identical to Panasonic/Sigma's entry —
+  `mounts.test.js` "a mount id means the same thing in every brand".
+- `m` is new site-wide; no collision.
+- **Fixed-lens bodies (Q, compacts)**: `mount: 'l'` + `lensType: 'Fixed'`,
+  rendered by `cameraMountLabel()` as "Fixed lens (L-Mount system)". This is the
+  X100 / Sigma DP / Olympus TG precedent — the field is a system tag, not a
+  compatibility claim. The owner considered a new `fixed` id and chose
+  precedent (2026-09-14). Consequence, accepted: Q3 appears under the L-Mount
+  filter chip, as X100VI does under X-Mount.
+- `BRAND_CONFIG.mount` (landing-tile headline) = `'L-Mount'` or
+  `'L-Mount & M-Mount'` — **(task 1.3)**.
+- Fixed-lens bodies get their **own dropdown groups** so no group spans two
+  mounts; they'd only share `l` groups with SL anyway, but grouping by line
+  keeps labels truthful.
+
+## 3. `SENSOR_RULES`: discriminate by `series`, not `sensorType`
+
+The rule table maps `sensorType` regex → mount. SL3, M11 and Q3 all carry a
+60 MP full-frame BSI sensor, so no `sensorType` regex can tell `l` from `m`.
+
+**Decision.** Allow a rule to test a different camera field, and give Leica
+rules on `series`:
+
+```js
+leica: [[/^M/, 'm', 'series'], [/^(SL|TL|CL|Q|D-Lux|V-Lux|C-Lux)/, 'l', 'series']],
+```
+
+A third tuple element names the field (default `sensorType`, so existing rows
+don't change). `series` is set independently of `mount` at entry time and also
+drives `SERIES_COLORS`, so it's a genuine second witness. Series strings are
+fixed in task 1.3 and must satisfy these regexes.
+
+## 4. `LENS_CROP`: per-line override for TL
+
+`LENS_CROP` is per mount. TL lenses are APS-C (1.5×) on the same `l` mount as
+full-frame SL lenses (1.0×), so a flat `{ l: 1.0 }` fails every TL lens, and
+`{ l: [1.0, 1.5] }` would wave through a mistyped equivalent on either.
+
+**Decision.** Add an optional `LENS_CROP_BY_LINE` table consulted first:
+
+```js
+const LENS_CROP = { …, leica: { l: 1.0, m: 1.0 } };
+const LENS_CROP_BY_LINE = { leica: { TL: 1.5 } };
+```
+
+This matches CLAUDE.md's rule that APS-C and full-frame share one mount and
+that format is a separate property.
+
+## 5. Year floors
+
+`schema.js` bounds `year` to 2008–2027 for cameras and lenses; the comment says
+it's a typo guard, not a scoping rule.
+
+- **Cameras**: M8 (2006) is in scope → camera floor becomes **2006**.
+- **Lenses**: `year` = introduction of the **optical design currently sold**
+  (e.g. a current Summicron-M whose design dates from the 1990s). The lens floor
+  is lowered to the oldest such design found in task 1.2, with a comment naming
+  the lens that set it. If no current M design predates 2008 the floor stays.
+
+Both are one-line `min` changes with comments, landed in group 4 before any
+item that needs them.
+
+## 6. Leica-specific spec section
+
+Candidates (**confirmed in task 1.3** against what's actually sourceable for
+every body):
+
+- `monochrom` — monochrome-only sensor (M Monochrom, Q2/Q3 Monochrom).
+- `focusingSystem` — `'Rangefinder'` / `'EVF'` / `'Rangefinder + EVF'`.
+- `contentCredentials` — CAI content credentials (M11-P, SL3-S, …).
+- `internalStorageGB` — built-in memory (M11 family, Q3 family).
+
+Each gets a `brandSections.includes('leica')` schema branch. Fields that can't
+be sourced for older bodies are dropped rather than left mostly null.
+
+## 7. Pricing, ASINs, images
+
+- **Prices**: Leica's own regional online stores are the authoritative list
+  price. Record list price, never sale price (Olympus lesson: product pages
+  can show a sale price as if it were list). Discontinued items may be USD-only.
+- **ASINs**: Leica sells mostly through its own stores and authorised dealers.
+  Items with no plain first-party Amazon listing stay `asin: null`. The baseline
+  is rebased in a dedicated commit listing each item (owner approved).
+- **Images**: Wikimedia Commons via `fetch-images-commons.js`; gaps go to
+  `KNOWN_IMAGE_GAPS.leica`.
+
+## 8. Series, grouping and landing-tile accent
+
+- Series (fixed in task 1.3): expected `SL`, `TL`, `CL`, `M`, `M Monochrom`,
+  `Q`, compacts per line. Each gets a `SERIES_COLORS` pair.
+- `BRAND_CARD_ACCENTS.leica`: **not** a red. Canon and Fujifilm already share
+  `#cc0000`, and a third red stripe would read as one brand. A chrome/silver
+  neutral (proposed `#b8b2a7`) — **(task 3.5)**.
+- `MANUFACTURER_COLORS['Leica']` already exists (lens cards) and is reused.
+
+## 9. What this change does not do
+
+- No third-party L-Mount or M-Mount lenses (Voigtländer, Zeiss, Sigma, …) —
+  follow-up change, which also adds the `SAME_MOUNT_BRANDS` row.
+- No discontinued M lenses (owner call).
+- No retagging of other brands' fixed-lens cameras.
