@@ -127,3 +127,22 @@ test('a null or absent ASIN is accepted', () => {
   assert.equal(validateCamera('null-asin', camera({ asin: null }), []).length, 0);
   assert.equal(validateCamera('no-asin', without(GOOD_CAMERA[1], 'asin'), []).length, 0);
 });
+
+// ── Citation title (specSources/priceSource/imageSource) ────────────
+
+const CITATION_URL = 'https://www.fujifilm-x.com/global/products/cameras/x-t5/';
+
+test('a citation with a title is accepted', () => {
+  const withTitle = camera({ specSources: [{ url: CITATION_URL, tier: 'T1', title: 'Fujifilm X-T5 official product page' }] });
+  assert.deepEqual(validateCamera('good-title', withTitle, []), []);
+});
+
+test('a citation without a title is still accepted', () => {
+  const noTitle = camera({ specSources: [{ url: CITATION_URL, tier: 'T1' }] });
+  assert.deepEqual(validateCamera('no-title', noTitle, []), []);
+});
+
+test('an empty-string citation title is rejected', () => {
+  const bad = camera({ specSources: [{ url: CITATION_URL, tier: 'T1', title: '' }] });
+  reports(validateCamera('empty-title', bad, []), 'title');
+});

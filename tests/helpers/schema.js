@@ -147,11 +147,15 @@ const SOURCE_TIERS = ['T1', 'T2', 'T3', 'T4', 'NEWS'];
 const DATE_RE = /^\d{4}-\d{2}-\d{2}$/;
 
 /**
- * Validate a single `{url, tier, note, date}` citation object shared by both
- * `specSources` entries and `priceSource`. `tier` follows the refresh-camera-data
- * skill's own reliability classes: T1 maker's own site (incl. official regional
- * sites), T2 independent review/measurement, T3 retailer (price/availability
- * only), T4 aggregator (tables only), NEWS dated announcement (year only).
+ * Validate a single `{url, tier, note, date, title}` citation object shared by
+ * both `specSources` entries and `priceSource`. `tier` follows the
+ * refresh-camera-data skill's own reliability classes: T1 maker's own site
+ * (incl. official regional sites), T2 independent review/measurement, T3
+ * retailer (price/availability only), T4 aggregator (tables only), NEWS dated
+ * announcement (year only). `title` is an optional reader-facing label (e.g.
+ * "Fujifilm X-E5 official product page") rendered on the comparison pages'
+ * References section — unlike `note`, which is internal research commentary
+ * and is never rendered.
  */
 function checkCitation(c, label) {
   if (typeof c !== 'object' || c === null || Array.isArray(c)) return [`"${label}" should be an object`];
@@ -160,7 +164,8 @@ function checkCitation(c, label) {
   if (!SOURCE_TIERS.includes(c.tier)) errs.push(`"${label}.tier" must be one of ${SOURCE_TIERS.join('/')}, got ${JSON.stringify(c.tier)}`);
   if (c.note != null && (typeof c.note !== 'string' || c.note.trim() === '')) errs.push(`"${label}.note" must be a non-empty string when present`);
   if (c.date != null && (typeof c.date !== 'string' || !DATE_RE.test(c.date))) errs.push(`"${label}.date" must be YYYY-MM-DD when present`);
-  const FIELDS = ['url', 'tier', 'note', 'date'];
+  if (c.title != null && (typeof c.title !== 'string' || c.title.trim() === '')) errs.push(`"${label}.title" must be a non-empty string when present`);
+  const FIELDS = ['url', 'tier', 'note', 'date', 'title'];
   for (const k of Object.keys(c)) if (!FIELDS.includes(k)) errs.push(`"${label}.${k}" is not a recognised field`);
   return errs;
 }
