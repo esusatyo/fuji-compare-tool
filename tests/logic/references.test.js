@@ -150,6 +150,35 @@ test('[fujifilm] reference links open safely in a new tab and show the full URL 
   assert.equal(link.title, cam.productUrl);
 });
 
+test('[fujifilm] a citation\'s internal note is never rendered anywhere on the page', () => {
+  const { window } = loadBrand('fujifilm', { engine: true });
+  const id = window.cfg().selectedIds()[0];
+  const cam = window.__BRAND__.CAMERAS[id];
+  const SENTINEL = 'INTERNAL-RESEARCH-NOTE-NEVER-SHOWN';
+  cam.productUrl = null;
+  cam.specSources = [{ url: 'https://a.example/spec', tier: 'T1', note: SENTINEL }];
+  cam.priceSource = { url: 'https://b.example/price', tier: 'T3', note: SENTINEL };
+  cam.imageSource = { url: 'https://c.example/image', tier: 'T2', note: SENTINEL };
+  window.renderAll();
+
+  assert.doesNotMatch(window.document.body.innerHTML, new RegExp(SENTINEL),
+    'note text leaked into the rendered page');
+});
+
+// ── Lenses mode ──────────────────────────────────────────────────────
+
+test('[fujifilm] References also renders for lens items, not just cameras', () => {
+  const { window } = loadBrand('fujifilm', { engine: true, hash: '#lenses' });
+  const refs = referencesSection(window);
+  assert.equal(refs.querySelector('.section-title').textContent, 'References');
+  const id = window.cfg().selectedIds()[0];
+  const lens = window.__BRAND__.LENSES[id];
+  lens.productUrl = 'https://www.fujifilm-x.com/global/products/lenses/example/';
+  window.renderAll();
+  const link = refCell(window, 'Product page', 0).querySelector('a.ref-link');
+  assert.equal(link.href, lens.productUrl);
+});
+
 // ── Compare page: mixed brands ──────────────────────────────────────
 
 test('[compare] each slot shows its own item\'s references, independent of the other slots', () => {

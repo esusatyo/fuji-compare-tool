@@ -7,7 +7,7 @@ const assert = require('node:assert/strict');
 const fs = require('fs');
 const path = require('path');
 const { loadBrand, brandDirs, ROOT } = require('../helpers/load-brand');
-const { buildAll, curatedPairs, siteConfig, vsSummary, vsSummaryFacts,
+const { buildAll, curatedPairs, siteConfig, vsSummary, vsSummaryFacts, referenceRowsHTML,
         ID_HEAD_BEGIN, ID_HEAD_END, ID_HEADER_BEGIN, ID_HEADER_END } = require('../../scripts/generate-seo');
 
 const generated = buildAll();
@@ -131,6 +131,51 @@ test('every vs-page (same-brand and cross-brand) carries a real, visible quick-t
     assert.match(text, /\$[\d,]+/, `${rel}: summary has no price — "${text}"`);
     assert.doesNotMatch(text, /undefined|null|NaN/, `${rel}: summary leaked a bad value — "${text}"`);
   }
+});
+
+// Only the parity between engine.js's and generate-seo.js's collectReferences()
+// is unit-tested elsewhere (tests/logic/references-parity.test.js) — this checks
+// the actual generated HTML those collectors feed into, so a broken
+// referenceRowsHTML()/vsPageHTML() wiring can't hide behind a green parity test
+// and a green "committed matches regenerated" staleness check (which only
+// proves self-consistency, not correctness).
+test('every vs-page carries a well-formed References block inside the vs-card table', () => {
+  const REF_LABELS = ['Spec source', 'Price source', 'Image source', 'Product page'];
+  let sawEmptyCell = false;
+  for (const [rel, content] of generated) {
+    if (!/(^|\/)vs\/.*\.html$/.test(rel)) continue;
+    assert.ok(content.includes('<tr class="vs-refs-heading">'),
+      `${rel}: missing the References heading row`);
+    assert.equal((content.match(/<tbody class="vs-refs">/g) || []).length, 1,
+      `${rel}: expected exactly one References tbody`);
+    const rowLabels = [...content.matchAll(/<tr><th scope="row">([^<]+)<\/th>/g)].map(m => m[1]);
+    for (const label of REF_LABELS) {
+      assert.ok(rowLabels.includes(label), `${rel}: missing the "${label}" row`);
+    }
+    for (const link of content.matchAll(/<a class="vs-ref-link"[^>]*>/g)) {
+      assert.match(link[0], /target="_blank"/, `${rel}: a vs-ref-link is missing target="_blank"`);
+      assert.match(link[0], /rel="noopener nofollow"/, `${rel}: a vs-ref-link is missing rel="noopener nofollow"`);
+      assert.match(link[0], /data-goatcounter-click="reference-click:/,
+        `${rel}: a vs-ref-link is missing its tracked click event`);
+    }
+    if (/<td class="vs-ref-cell">—<\/td>/.test(content)) sawEmptyCell = true;
+  }
+  // Not every brand has full citation coverage yet (Panasonic/Sigma have none) —
+  // confirms the "—" empty-cell path is actually exercised across the real
+  // corpus, not just in the synthetic-fixture unit tests.
+  assert.ok(sawEmptyCell, 'expected at least one "—" empty References cell across all vs-pages');
+});
+
+test('referenceRowsHTML never renders a citation\'s internal note, only its title/url', () => {
+  const SENTINEL = 'INTERNAL-RESEARCH-NOTE-NEVER-SHOWN';
+  const withNote = {
+    productUrl: null,
+    specSources: [{ url: 'https://a.example/spec', tier: 'T1', note: SENTINEL }],
+    priceSource: { url: 'https://b.example/price', tier: 'T3', note: SENTINEL },
+    imageSource: { url: 'https://c.example/image', tier: 'T2', note: SENTINEL },
+  };
+  const html = referenceRowsHTML(withNote, withNote);
+  assert.doesNotMatch(html, new RegExp(SENTINEL), 'note text leaked into rendered References HTML');
 });
 
 test('vsSummary: only facts that actually differ are surfaced, in priority order, capped at two', () => {

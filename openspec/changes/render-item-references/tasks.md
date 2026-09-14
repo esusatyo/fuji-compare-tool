@@ -50,6 +50,12 @@
 - [x] 7.2 `check-prices-and-buy-links` skill: same, for `priceSource` (`.claude/skills/` and `.agents/skills/` mirrors)
 - [x] 7.3 `add-thirdparty-lenses` skill: same, for `specSources`/`priceSource`/`imageSource` on new entries (`.claude/skills/` and `.agents/skills/` mirrors)
 
+## 8a. Post-review test hardening
+
+- [x] Added `every vs-page carries a well-formed References block inside the vs-card table` (`tests/data/seo.test.js`) — walks all 264 generated vs-pages and asserts the References heading, all four labelled rows, exactly one `vs-refs` tbody, safe/tracked link attributes on every `vs-ref-link`, and that the "—" empty-cell path is actually exercised somewhere in the real corpus. Closes the gap where only the collector-level parity test covered the generator side, not the actual HTML it produces.
+- [x] Added `referenceRowsHTML never renders a citation's internal note, only its title/url` (`tests/data/seo.test.js`) and its engine.js counterpart (`tests/logic/references.test.js`) — a sentinel `note` string on all three citation types must never appear in rendered output on either page type.
+- [x] Added `[fujifilm] References also renders for lens items, not just cameras` (`tests/logic/references.test.js`) — Lenses mode was previously exercised only manually, not by any automated test.
+
 ## 8. Verify
 
 - [x] 8.1 `npm test` green (data + logic tiers) — 713/713
