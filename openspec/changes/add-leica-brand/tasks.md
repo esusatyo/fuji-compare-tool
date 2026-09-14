@@ -54,7 +54,10 @@
   section's final field list (design §6); `BRAND_CONFIG.mount` string; hero
   camera; `afType` for manual lenses (use `'Manual'`, the site's dominant value).
   Update design.md where a candidate changed.
-- [ ] 1.4 **Raise the open scope questions with the owner** and log verdicts:
+- [x] 1.4 **Done before 1.2 (decisions §4):** large-sensor compacts only
+  (6), Leica X included (6), SOFORT 2 excluded, TL lenses included, old SL
+  lenses excluded → **52 bodies**. Proposal, design, spec and cameras.md updated.
+  **Raise the open scope questions with the owner** and log verdicts:
   Leica X / X Vario / X-U; SOFORT / SOFORT 2; discontinued TL lenses;
   discontinued SL lenses. Update proposal/design/spec and the 1.1/1.2 research
   to match. `openspec validate add-leica-brand --strict`.
@@ -125,7 +128,9 @@
 - [ ] 5.4 **Batch D — M10 family.**
 - [ ] 5.5 **Batch E — M11 family + M EV1.**
 - [ ] 5.6 **Batch F — Q line** (`lensType: 'Fixed'`, `mount: 'l'`).
-- [ ] 5.7 **Batch G — fixed-lens compacts** (+ Leica X / SOFORT if 1.4 says so).
+- [ ] 5.7 **Batch G — Leica X** (X1, X2, X Vario, X-E, X Typ 113, X-U).
+- [ ] 5.7b **Batch H — large-sensor compacts** (D-Lux Typ 109 / 7 / 8,
+  V-Lux Typ 114 / 5, C-Lux).
 - [ ] 5.8 Final camera pass: `CAMERA_ORDER` newest-first within line,
   `defaultSelected` sanity, `npm test` green.
 
@@ -140,7 +145,7 @@
 - [ ] 6.3 **Batch C — M: Noctilux + Summilux-M.**
 - [ ] 6.4 **Batch D — M: Summicron-M + APO-Summicron-M.**
 - [ ] 6.5 **Batch E — M: Elmarit-M, Elmar-M, Tri-Elmar, Super-Elmar, remaining.**
-- [ ] 6.6 **Batch F — TL lenses** (only if task 1.4 includes them).
+- [ ] 6.6 **Batch F — TL lenses** (all, incl. discontinued — task 1.4).
 - [ ] 6.7 Final lens pass: group order and `defaultSelected`, `npm test` green.
 
 ## 7. Images & pricing finalisation

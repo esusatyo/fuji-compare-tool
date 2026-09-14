@@ -45,14 +45,16 @@ MUST declare one of them. Fixed-lens cameras MUST use `mount: 'l'` with
 
 ### Requirement: Leica dataset scope
 
-The Leica dataset SHALL contain mirrorless digital bodies from the SL, TL/CL,
-M, Q and fixed-lens compact lines, and MUST NOT contain S-system DSLRs or film
-cameras. First-party M lenses MUST be limited to lenses currently sold by Leica.
+The Leica dataset SHALL contain digital bodies from the SL, TL/CL, M, Q and
+Leica X lines and the large-sensor (1-inch or larger) D-Lux, V-Lux and C-Lux
+compacts, and MUST NOT contain S-system DSLRs, film cameras, SOFORT instant
+cameras or small-sensor compacts. First-party M and SL lenses MUST be limited
+to lenses currently sold by Leica; TL lenses MAY be discontinued.
 
 #### Scenario: Excluded bodies stay out
 
 - **WHEN** the dataset is loaded
-- **THEN** it contains no S-system or film M camera
+- **THEN** it contains no S-system, film M, SOFORT or small-sensor compact camera
 
 ### Requirement: Year floors accommodate Leica
 

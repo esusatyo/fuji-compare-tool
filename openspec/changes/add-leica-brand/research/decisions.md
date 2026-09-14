@@ -55,3 +55,18 @@ number and date. Newest at the bottom.
   leica-camera.com press URLs and Wikipedia pages fetch fine.
 - For task 1.2: Leica announced the **Summicron-M 66 f/2** (Classic Line) on
   2026-09-03; confirm whether it's a regular catalogue lens or limited edition.
+
+## 4. Task 1.4 — owner scope verdicts (2026-09-14), taken before task 1.2
+
+Done out of order on purpose: three of the four questions only needed task
+1.1's camera list, and the fourth (TL lenses) decides what task 1.2 enumerates,
+so answering first saves 1.2 from researching lenses that might be dropped.
+
+- **Compacts: large-sensor only** (recommended) — D-Lux (Typ 109) / 7 / 8
+  (4/3), V-Lux (Typ 114) / 5 and C-Lux (1"). The 2008–2012 small-sensor
+  Panasonic twins are out.
+- **Leica X: included** (recommended) — 6 bodies, 2009–2016.
+- **SOFORT 2: excluded** (recommended).
+- **TL lenses: included; discontinued SL lenses: excluded** (recommended).
+- Knock-on: series `X`, `D-Lux`, `V-Lux`, `C-Lux` all map to `l` + `lensType:
+  'Fixed'`; design §3's regex gains `X`. Total bodies: **52**.

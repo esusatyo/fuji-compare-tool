@@ -30,14 +30,16 @@ brand with a current lens catalogue whose designs predate the 2008 year floor.
     -P, -D, -E, -R variants and the EVF-based M EV1.
   - **Q** (full-frame, fixed lens): Q (Typ 116), Q2, Q2 Monochrom, Q3, Q3 43,
     Q3 Monochrom.
-  - **Compacts** (fixed lens, largely Panasonic-derived): D-Lux, V-Lux, C-Lux
-    lines within the year floor.
+  - **Large-sensor compacts** (fixed lens, Panasonic-derived): D-Lux (Typ 109),
+    D-Lux 7, D-Lux 8, V-Lux (Typ 114), V-Lux 5, C-Lux (owner, task 1.4).
+  - **Leica X** (APS-C fixed lens): X1, X2, X Vario, X-E (Typ 102),
+    X (Typ 113), X-U (Typ 113) (owner, task 1.4).
   - **Excluded**: the S system (medium-format DSLRs — mirrorless-only rule),
-    film M bodies (M6, M-A, MP), and anything before the year floor. Leica X
-    (fixed-lens APS-C), SOFORT and discontinued SL/TL lenses are **open scope
-    questions** raised with the owner in task 1.4.
+    film M bodies (M6, M-A, MP), small-sensor 2008–2012 compacts, SOFORT 2
+    (instant print), and anything before the year floor.
 - **First-party lens data** — **current** M lenses only (owner call), current
-  SL lenses, and TL lenses per task 1.4.
+  SL lenses, and **all TL lenses** so the discontinued TL/CL bodies have native
+  glass. Discontinued SL lenses are out (owner, task 1.4).
 - **Two mounts**: `l` (reusing Panasonic/Sigma's `L-Mount` id exactly) and a new
   `m` (`M-Mount`). Fixed-lens bodies follow the existing precedent — system
   mount id plus `lensType: 'Fixed'` (owner call, 2026-09-14).

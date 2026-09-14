@@ -16,11 +16,16 @@ fixed-lens compacts. The owner explicitly included all five.
 - **Film M bodies excluded** (M6, M-A, MP) — the dataset is digital cameras.
 - **Digital M rangefinders are in**, although "mirrorless" is usually said of
   EVF bodies: they have no reflex mirror, and the owner included them.
-- **Open scope questions for task 1.4** (not decided here):
-  Leica X / X Vario / X-U (APS-C fixed-lens compacts), SOFORT / SOFORT 2
-  (hybrid instant), and whether discontinued SL / TL lenses are entered.
-  The TL bodies are all discontinued; a TL body with no TL lenses would still
-  be valid data but a thin lens page.
+- **Task 1.4 verdicts (owner, 2026-09-14):**
+  - Compacts: **large-sensor only** — D-Lux (Typ 109), D-Lux 7, D-Lux 8,
+    V-Lux (Typ 114), V-Lux 5, C-Lux. The small-sensor 2008–2012 generations
+    are out.
+  - **Leica X included** — X1, X2, X Vario, X-E (Typ 102), X (Typ 113),
+    X-U (Typ 113). Same class as Fujifilm X100 / Sigma DP.
+  - **SOFORT 2 excluded** — an instant-print camera; most spec rows would be
+    empty.
+  - **TL lenses included**, discontinued SL lenses not — without TL lenses the
+    all-discontinued TL/CL bodies would have no native glass on the page.
 
 ## 2. Mounts: `l` reused exactly, new `m`, fixed lenses by precedent
 
@@ -50,7 +55,7 @@ The rule table maps `sensorType` regex → mount. SL3, M11 and Q3 all carry a
 rules on `series`:
 
 ```js
-leica: [[/^M/, 'm', 'series'], [/^(SL|TL|CL|Q|D-Lux|V-Lux|C-Lux)/, 'l', 'series']],
+leica: [[/^M/, 'm', 'series'], [/^(SL|TL|CL|Q|X|D-Lux|V-Lux|C-Lux)/, 'l', 'series']],
 ```
 
 A third tuple element names the field (default `sensorType`, so existing rows

@@ -70,27 +70,34 @@ Series note: Q Monochrom bodies stay `Q` (not `Q Monochrom`) unless task 1.3
 decides otherwise — the M line splits Monochrom because it spans four sensor
 generations; the Q line is short enough that the flag field (design §6) suffices.
 
-## Candidates pending the task 1.4 scope questions
+## Leica X — APS-C fixed lens (`mount: 'l'`, `lensType: 'Fixed'`) — admitted in task 1.4
 
-**Compacts** (owner included "rebadged compacts"; *which generations* is open —
-the older ones are small-sensor Panasonic twins, like Olympus's TG call):
+| slug | name | series | year | discontinued | launch USD | source |
+|---|---|---|---|---|---|---|
+| x1 | X1 | X | 2009 | true | TBD | search summary (2009-09-09) — verify |
+| x2 | X2 | X | 2012 | true | TBD | search summary (May 2012) — verify |
+| x-vario | X Vario (Typ 107) | X | 2013 | true | TBD | search summary (Jun 2013) — verify |
+| x-e-typ-102 | X-E (Typ 102) | X | 2014 | true | TBD | Red Dot Forum (Photokina 2014) — verify |
+| x-typ-113 | X (Typ 113) | X | 2014 | true | TBD | Red Dot Forum (Photokina 2014) |
+| x-u-typ-113 | X-U (Typ 113) | X | 2016 | true | TBD | Wikipedia Leica X-U (2016-01-20) |
 
-| name | year | notes |
-|---|---|---|
-| D-Lux 8 | 2024 | current; 4/3 sensor |
-| D-Lux 7 | 2018 | 4/3 sensor |
-| D-Lux (Typ 109) | 2014 | 4/3 sensor |
-| D-Lux 6 / D-Lux 5 / D-Lux 4 | 2012 / 2010 / 2008 | small sensor |
-| V-Lux 5 | ⚠ 2019 vs 2020 | 1" sensor |
-| V-Lux (Typ 114) | 2014 | 1" sensor |
-| V-Lux 4 / 3 / 2 | 2012 / 2011 / 2010 | small sensor |
-| C-Lux | 2018 | 1" sensor |
-| C-Lux 3 | 2008 | small sensor |
+X-E (Typ 102) is widely reported as a lightly revised X2; confirm at entry that
+it's a distinct model rather than a cosmetic edition (decisions §3's rule).
 
-**Leica X** (APS-C fixed lens): X1 (2009), X2 (2012), X Vario (2013),
-X-E (Typ 102) (2014), X (Typ 113) (2014), X-U (Typ 113) (2016).
+## Compacts — large-sensor only (`mount: 'l'`, `lensType: 'Fixed'`) — admitted in task 1.4
 
-**SOFORT 2** — hybrid digital/instant, current. SOFORT (2016) is film-only → out.
+| slug | name | series | year | discontinued | launch USD | source |
+|---|---|---|---|---|---|---|
+| d-lux-typ-109 | D-Lux (Typ 109) | D-Lux | 2014 | true | TBD | Photography Blog review; search (Sep 2014) — 4/3 sensor |
+| d-lux-7 | D-Lux 7 | D-Lux | 2018 | true | TBD | RTINGS; search (2018) — 4/3 sensor |
+| d-lux-8 | D-Lux 8 | D-Lux | 2024 | false | TBD | leica-camera.com press (Jul 2024); current — 4/3 sensor |
+| v-lux-typ-114 | V-Lux (Typ 114) | V-Lux | 2014 | true | TBD | search — 1" sensor, verify |
+| v-lux-5 | V-Lux 5 | V-Lux | ⚠ 2019 vs 2020 | true | TBD | Red Dot Forum (Aug 2019) vs search summary (Jan 2020) |
+| c-lux | C-Lux | C-Lux | 2018 | true | TBD | search — 1" sensor, verify |
+
+**Excluded by task 1.4**: small-sensor D-Lux 4/5/6 (2008/2010/2012), V-Lux
+2/3/4 (2010–2012), C-Lux 3 (2008); SOFORT 2 (instant print). SOFORT (2016) is
+film-only anyway.
 
 ## Excluded (with reason)
 
@@ -106,8 +113,7 @@ X-E (Typ 102) (2014), X (Typ 113) (2014), X-U (Typ 113) (2016).
 
 ## Counts
 
-Core lines: SL 6 + TL/CL 4 + M 23 + Q 7 = **40 bodies**, plus whatever task 1.4
-admits from the compact / X / SOFORT candidates.
+SL 6 + TL/CL 4 + M 23 + Q 7 + X 6 + compacts 6 = **52 bodies** (after task 1.4).
 
 ## Sources
 
