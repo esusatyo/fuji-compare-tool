@@ -35,3 +35,23 @@ number and date. Newest at the bottom.
 - Leica's catalogue pages (`/photography/lenses/m`, `/sl`) render product lists
   client-side; WebFetch sees only navigation. Use per-product pages, the
   regional online store, or Wikipedia/DPReview lists as the enumeration spine.
+
+## 3. Task 1.1 — camera enumeration calls (2026-09-14)
+
+- **40 core bodies** (SL 6, TL/CL 4, M 23, Q 7); compact / Leica X / SOFORT
+  candidates listed separately in `research/cameras.md` for task 1.4.
+- **Special editions excluded** — Leica issues many cosmetic editions (Titanium,
+  Black Paint, Reporter, Metal Gray, anniversary); only functionally or
+  optically distinct bodies are entries. Monochrom variants *are* distinct
+  (different sensor) and get entries.
+- **Rumoured bodies excluded** (Q3 43 Monochrom, M11-R, M12). A 2026-09-02
+  roundup lists them as unannounced; re-check before ship (task 8.2).
+- **M series split `M` / `M Monochrom`; Q stays one `Q` series** (reasoning in
+  `research/cameras.md`) — provisional until task 1.3.
+- **Three source conflicts** flagged ⚠ for resolution at entry: M-P (Typ 240)
+  year, V-Lux 5 year, Q2 Monochrom exact RRP.
+- **Access notes**: cameradecision.com returns 403 and macfilos.com 401 to
+  WebFetch; Leica's newsroom index is client-rendered. Individual
+  leica-camera.com press URLs and Wikipedia pages fetch fine.
+- For task 1.2: Leica announced the **Summicron-M 66 f/2** (Classic Line) on
+  2026-09-03; confirm whether it's a regular catalogue lens or limited edition.

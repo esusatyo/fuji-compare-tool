@@ -29,7 +29,11 @@
 
 ## 1. Research & source the Leica lineup
 
-- [ ] 1.1 Enumerate every in-scope Leica body → `research/cameras.md` as
+- [x] 1.1 **Done: 40 core bodies** (SL 6, TL/CL 4, M 23, Q 7) in
+  `research/cameras.md`, plus compact / Leica X / SOFORT candidates held for
+  task 1.4. Special editions and rumoured bodies excluded; 3 source conflicts
+  flagged ⚠ (decisions §3).
+  Enumerate every in-scope Leica body → `research/cameras.md` as
   `slug | name | series | mount | lensType | year | discontinued | launch USD`.
   Lines: SL (Typ 601, SL2, SL2-S, SL3, SL3-S, SL3-P), T/TL/TL2/CL, digital M
   (M8, M8.2, M9, M9-P, M-E 220, M Monochrom, M Typ 240/262/M-P, M-D 262,
