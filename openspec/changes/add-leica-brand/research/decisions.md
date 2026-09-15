@@ -71,6 +71,26 @@ so answering first saves 1.2 from researching lenses that might be dropped.
 - Knock-on: series `X`, `D-Lux`, `V-Lux`, `C-Lux` all map to `l` + `lensType:
   'Fixed'`; design §3's regex gains `X`. Total bodies: **52**.
 
+## 5b. Task 1.5 — price sources per currency (2026-09-15)
+
+Leica's own site is a working online store for only 3 of the 7 site currencies;
+the rest need a separate authorized-dealer source or fall back to
+`compute-prices.js` / `priceIncomplete`.
+
+| Currency | Source | Notes |
+|---|---|---|
+| USD | leica-camera.com/en-US | full store, list price shown |
+| GBP | leica-camera.com/en-GB | full store, VAT-inclusive |
+| EUR | leica-camera.com/de-DE | full store, VAT-inclusive (Germany as the EUR reference, matching the other brands' convention) |
+| AUD | leica-store.com.au | leica-camera.com/en-AU is informational-only and links out to this authorized retailer |
+| SGD | leica-store.sg | leica-camera.com/en-SG is informational-only and links out to this authorized retailer |
+| JPY | store.leica-camera.jp | linked from leica-camera.com/ja-JP as "Official Leica Camera Japan Online Store" |
+| CAD | vistek.ca | **no Leica-run Canadian store** — leica-camera.com/en-CA serves the generic `/en-int/` page with no CAD. Vistek is confirmed as an authorized Leica dealer (listed on leica-camera.com's own dealer-locator page) and stocks current SL bodies with CAD pricing (e.g. SL3-P at CAD $9,435 — spot-checked, re-verify per item at entry) |
+
+Where an item's CAD (or any currency) can't be confirmed via these sources,
+follow CLAUDE.md as normal: `compute-prices.js` for an approximate figure, or
+`priceIncomplete: true` (lenses) / a documented substitute source (cameras).
+
 ## 5a. Task 1.3 — entry conventions (2026-09-15)
 
 - **10 series**, each satisfying design §3's regex (`/^M/` → `m`; everything

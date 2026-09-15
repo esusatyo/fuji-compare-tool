@@ -70,7 +70,12 @@
   Leica X / X Vario / X-U; SOFORT / SOFORT 2; discontinued TL lenses;
   discontinued SL lenses. Update proposal/design/spec and the 1.1/1.2 research
   to match. `openspec validate add-leica-brand --strict`.
-- [ ] 1.5 Map price sources: confirm Leica's regional online stores for
+- [x] 1.5 **Done (decisions §5b):** USD/GBP/EUR have full Leica-run stores
+  (en-US, en-GB, de-DE). AUD/SGD/JPY route to authorized third-party stores
+  Leica's own site links out to (leica-store.com.au, leica-store.sg,
+  store.leica-camera.jp). CAD has no Leica-run store at all — Vistek
+  (confirmed authorized dealer) is the source, spot-checked on the SL3-P.
+  Map price sources: confirm Leica's regional online stores for
   US/AU/EU(DE)/UK/JP/CA/SG list prices, and which regions don't sell online
   (→ `priceIncomplete` for lenses, or a documented source for cameras).
 
