@@ -52,7 +52,12 @@
   current M lenses, current SL lenses (APO-Summicron-SL, Summilux-SL,
   Vario-Elmarit-SL, Summicron-SL f/2 series, …), and all TL lenses (for 1.4).
   Record the oldest current M design's year (sets design §5's lens floor).
-- [ ] 1.3 Fix entry conventions in `research/decisions.md`: series strings
+- [x] 1.3 **Done (decisions §5a):** 10 series + colors, slug scheme (already
+  in use), dropdown groups (9 camera, 6 lens), Leica spec section confirmed as
+  design §6's 4 fields, `mount: 'L-Mount'` (corrected from design's guess),
+  `heroCamera: 'sl3'` (tentative), `afType` rule, Summilux-SL 50 resolved to
+  one entry (current only).
+  Fix entry conventions in `research/decisions.md`: series strings
   (must satisfy design §3's regexes) + `SERIES_COLORS` pairs; slug scheme
   (e.g. `m11-p`, `summilux-m-35mm-f14-asph`); dropdown groups; the Leica spec
   section's final field list (design §6); `BRAND_CONFIG.mount` string; hero
@@ -109,8 +114,8 @@
 - [ ] 4.2 `mounts.test.js`: add `LENS_CROP.leica` and `LENS_CROP_BY_LINE`
   (design §4). Same fail-then-revert probe with a TL lens tagged 1.0×.
 - [ ] 4.3 `schema.js`: camera year floor → 2006 with comment (M8); lens floor
-  → the year from task 1.2 with comment naming the lens. Skip the lens change
-  if no current design predates 2008.
+  → the oldest `year` actually entered (version-year convention, decisions
+  §5), with a comment naming that lens.
 - [ ] 4.4 Add `m` to `BRAND_CONFIG.mounts` together with the first M-mount item
   (the "every declared mount is used" test forbids declaring it earlier) — so
   this task lands with task 5.3's first commit; tick it there.
@@ -144,11 +149,11 @@
 > group), `KNOWN_IMAGE_GAPS`, `npm run test:data`. `manufacturer: 'Leica'`.
 > Lenses may use `priceIncomplete: true`.
 
-- [ ] 6.1 **Batch A — SL primes** (APO-Summicron-SL, Summilux-SL, Summicron-SL).
-- [ ] 6.2 **Batch B — SL zooms** (Vario-Elmarit-SL, Vario-Elmar-SL, Super-Vario-Elmar-SL, APO-Vario-Elmarit-SL).
-- [ ] 6.3 **Batch C — M: Noctilux + Summilux-M.**
+- [ ] 6.1 **Batch A — SL primes** (Super-APO/APO-Summicron-SL, Summilux-SL, APO-Macro-Elmarit-SL).
+- [ ] 6.2 **Batch B — SL zooms** (Super-Vario-Elmarit-SL, Super-Vario-Elmar-SL, Vario-Elmarit-SL ×3, APO-Vario-Elmarit-SL, Vario-Elmar-SL).
+- [ ] 6.3 **Batch C — M: Noctilux-M + Summilux-M** (incl. Classic Line reissues).
 - [ ] 6.4 **Batch D — M: Summicron-M + APO-Summicron-M.**
-- [ ] 6.5 **Batch E — M: Elmarit-M, Elmar-M, Tri-Elmar, Super-Elmar, remaining.**
+- [ ] 6.5 **Batch E — M: remaining** (Elmarit-M, Summaron-M, Macro-Elmar-M, Thambar-M, APO-Telyt-M).
 - [ ] 6.6 **Batch F — TL lenses** (all, incl. discontinued — task 1.4).
 - [ ] 6.7 Final lens pass: group order and `defaultSelected`, `npm test` green.
 

@@ -71,6 +71,59 @@ so answering first saves 1.2 from researching lenses that might be dropped.
 - Knock-on: series `X`, `D-Lux`, `V-Lux`, `C-Lux` all map to `l` + `lensType:
   'Fixed'`; design §3's regex gains `X`. Total bodies: **52**.
 
+## 5a. Task 1.3 — entry conventions (2026-09-15)
+
+- **10 series**, each satisfying design §3's regex (`/^M/` → `m`; everything
+  else → `l`): `SL`, `TL`, `CL`, `M`, `M Monochrom`, `Q`, `X`, `D-Lux`, `V-Lux`,
+  `C-Lux`. T (Typ 701)/TL/TL2 share series `TL`; CL is its own series (one
+  body) so its dropdown group can carry an honest label.
+- **`SERIES_COLORS`** (dark bg + a distinct accent per series, matching the
+  site's existing dark-card pattern):
+  ```
+  SL:           { bg: '#1c1c1c', text: '#d64541' }  // graphite / Leica red
+  TL:           { bg: '#242320', text: '#c9a876' }  // bronze
+  CL:           { bg: '#1e2420', text: '#8fae8f' }  // olive
+  M:            { bg: '#141414', text: '#c0c0c8' }  // silver chrome
+  'M Monochrom':{ bg: '#0d0d0d', text: '#9a9a9a' }  // grayscale
+  Q:            { bg: '#1a1a1a', text: '#4fa8d8' }  // blue
+  X:            { bg: '#22201c', text: '#d9b45c' }  // amber
+  'D-Lux':      { bg: '#1c1f24', text: '#6f9bd0' }  // steel blue
+  'V-Lux':      { bg: '#241c20', text: '#c98fae' }  // mauve
+  'C-Lux':      { bg: '#201c24', text: '#a68fd0' }  // violet
+  ```
+- **Slug scheme** — already used consistently in `research/cameras.md` and
+  `research/lenses.md`: cameras kebab-case the model name (`m11-p`, `q3-43`,
+  `d-lux-8`, `x-u-typ-113`); lenses are
+  `<line>-<focal>mm-f<aperture-digits>[-asph][-qualifier]`
+  (`summicron-m-50mm-f2`, `apo-summicron-sl-21mm-f2-asph`).
+- **Dropdown groups** (camera): `── SL ──`, `── TL / CL ──`, `── M ──`,
+  `── M Monochrom ──`, `── Q ──`, `── Leica X ──`, `── D-Lux ──`,
+  `── V-Lux ──`, `── C-Lux ──`. All but `── M ──`/`── M Monochrom ──` are
+  mount `l` — satisfies "one group, one mount." Newest-first within each group.
+- **Dropdown groups** (lens): `── SL Primes ──`, `── SL Zooms ──`,
+  `── Noctilux-M & Summilux-M ──`, `── Summicron-M & APO-Summicron-M ──`,
+  `── M Wide-Angle & Tele (Elmarit / Elmar) ──`, `── TL Lenses ──`.
+- **Leica spec section — confirmed as design §6's 4 candidates**, all
+  sourceable across the dataset: `monochrom` (bool), `focusingSystem`
+  (`'Rangefinder'` / `'EVF'` / `'Rangefinder + EVF'` — M bodies are
+  `Rangefinder` except the EVF-only M EV1; SL/Q are `EVF`; CL has a small
+  built-in EVF, TL/X do not), `contentCredentials` (bool — true only from
+  M11-P/SL3-S/Q3-era bodies on), `internalStorageGB` (nullable — only the
+  M11 and Q3 families have any).
+- **`BRAND_CONFIG.mount` = `'L-Mount'`** (not `'L-Mount & M-Mount'` as design
+  §2 speculated) — matches the established single-headline-mount convention
+  CLAUDE.md documents for Fujifilm, and Sigma's own precedent (its tile also
+  says `'L-Mount'` despite also spanning SA-Mount). Corrected in design.md.
+- **`heroCamera`: tentatively `'sl3'`** — current, well-covered by press
+  photography; confirmed or swapped once task 7's image search runs.
+- **`afType`**: M lenses = `'Manual'` (already decided). SL lenses take their
+  real official AF-system name per lens at entry (e.g. "Dual Synchro Drive"
+  for the Super-APO-Summicron-SL 21) — no blanket default.
+- **Summilux-SL 50 duplicate-name resolved**: only the current (2026,
+  compact) version is entered. The discontinued 2015 original falls under
+  task 1.4's "no discontinued SL lenses," so it is not a lens-revision pair
+  here — just one current lens.
+
 ## 5. Task 1.2 — lens enumeration calls (2026-09-14)
 
 - **~48–49 lenses**: M 25, SL 16–17, TL 7 (`research/lenses.md`).

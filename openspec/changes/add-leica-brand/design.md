@@ -40,8 +40,9 @@ fixed-lens compacts. The owner explicitly included all five.
   compatibility claim. The owner considered a new `fixed` id and chose
   precedent (2026-09-14). Consequence, accepted: Q3 appears under the L-Mount
   filter chip, as X100VI does under X-Mount.
-- `BRAND_CONFIG.mount` (landing-tile headline) = `'L-Mount'` or
-  `'L-Mount & M-Mount'` — **(task 1.3)**.
+- `BRAND_CONFIG.mount` (landing-tile headline) = **`'L-Mount'`** — task 1.3
+  confirmed this matches the established single-headline-mount convention
+  (Sigma's tile also says `'L-Mount'` alone despite spanning SA-Mount too).
 - Fixed-lens bodies get their **own dropdown groups** so no group spans two
   mounts; they'd only share `l` groups with SL anyway, but grouping by line
   keeps labels truthful.
@@ -97,16 +98,17 @@ item that needs them.
 
 ## 6. Leica-specific spec section
 
-Candidates (**confirmed in task 1.3** against what's actually sourceable for
-every body):
+**Confirmed in task 1.3** — all four candidates are sourceable:
 
 - `monochrom` — monochrome-only sensor (M Monochrom, Q2/Q3 Monochrom).
-- `focusingSystem` — `'Rangefinder'` / `'EVF'` / `'Rangefinder + EVF'`.
-- `contentCredentials` — CAI content credentials (M11-P, SL3-S, …).
-- `internalStorageGB` — built-in memory (M11 family, Q3 family).
+- `focusingSystem` — `'Rangefinder'` / `'EVF'` / `'Rangefinder + EVF'`. M
+  bodies are `Rangefinder` except the EVF-only M EV1; SL/Q are `EVF`; CL has a
+  small built-in EVF; TL/X have none (nullable would be wrong — call it `EVF`
+  only if built in, per the accessory-vs-built-in distinction).
+- `contentCredentials` — CAI content credentials (M11-P, SL3-S, Q3-era on).
+- `internalStorageGB` — nullable; only M11 and Q3 families have any.
 
-Each gets a `brandSections.includes('leica')` schema branch. Fields that can't
-be sourced for older bodies are dropped rather than left mostly null.
+Each gets a `brandSections.includes('leica')` schema branch.
 
 ## 7. Pricing, ASINs, images
 
