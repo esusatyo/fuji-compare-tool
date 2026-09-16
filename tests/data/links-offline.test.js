@@ -25,7 +25,7 @@ const ALLOWED_HOSTS = [
   'viltrox.com', 'venuslens.net', 'ttartisan.store', 'ttartisan.com', '7artisans.store',
   'samyangus.com', 'lksamyang.com', 'tamron-americas.com', 'tamron.com',
   'meikeglobal.com', 'yongnuo.eu', 'hkyongnuo.com', 'omsystem.com', 'zeiss.com',
-  'laowa.com.au', 'laowalenses.ca', 'pergear.com', 'voigtlaender.de',
+  'laowa.com.au', 'laowalenses.ca', 'pergear.com', 'voigtlaender.de', 'leica-camera.com',
   // CDNs and storefront hosts backing the above.
   'cdn.shopify.com', 'commercetools.com', 'cs.1worldsync.com', 'cloudfront.net',
   'foto-erhardt.de', 'contentstack.io', 'etoren.com', 'bhphotovideo.com',

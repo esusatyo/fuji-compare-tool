@@ -1012,6 +1012,10 @@ const BRAND_CARD_ACCENTS = {
   // Panasonic-blue-adjacent hue would read as one brand next to Panasonic's
   // own #0046ad stripe on the landing page.
   olympus:   '#5fd0c8',
+  // Canon and Fujifilm already share '#cc0000' — a third red stripe would
+  // read as one brand on the landing page, so Leica gets a chrome/silver
+  // neutral instead (openspec/changes/add-leica-brand/design.md §8).
+  leica:     '#b8b2a7',
 };
 
 // Landing brand-card photo: a real product photo of the brand's showcase

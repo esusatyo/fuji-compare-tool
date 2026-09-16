@@ -1,0 +1,252 @@
+// Registered into the shared brand-data registry so multiple brand files
+// can load on one page (see compare/).
+window.BRAND_DATA = window.BRAND_DATA || {};
+window.BRAND_DATA['leica'] = (() => {
+// ─────────────────────────────────────────────
+// LEICA BRAND CONFIG
+//
+// Leica spans two mounts that don't distinguish by sensor size the way every
+// other multi-mount brand here does — SL (full-frame), M (full-frame) and Q
+// (full-frame, fixed lens) all share one sensor format, so mounts.test.js
+// tells them apart by `series` instead of `sensorType`. See
+// openspec/changes/add-leica-brand/design.md §§2–3.
+//
+// `mounts` only lists 'l' for now — 'm' (M-Mount) is added once the first
+// M-mount camera lands (task 5.3), since a declared-but-unused mount fails
+// the "every declared mount is used" guard.
+// ─────────────────────────────────────────────
+const BRAND_CONFIG = {
+  name:        'Leica',
+  slug:        'leica',
+  families:    ['SL (Full-Frame L-Mount)', 'TL / CL (APS-C L-Mount)', 'M (Digital Rangefinder)', 'Q (Full-Frame Compact)', 'Leica X (APS-C Compact)', 'D-Lux / V-Lux / C-Lux (Compact)'],
+  brandSections: ['leica'],
+  // `mount` is the landing-tile headline label; `mounts` is the machine-readable
+  // list every item's `mount` id must come from, and the order the filter chips render in.
+  // 'L-Mount' alone (not 'L-Mount & M-Mount') matches the site's established
+  // single-headline-mount convention — see Sigma's own tile, which also says
+  // just 'L-Mount' despite spanning SA-Mount too.
+  mount:       'L-Mount',
+  mounts:      [{ id:'l', label:'L-Mount' }],
+  heroCamera:  'sl3',
+  cameras: {
+    heroEyebrow:  'SL, M, Q & More',
+    heroTitle:    '<span>Leica</span> Camera Comparison',
+    heroSubtitle: 'Compare Leica SL, M, Q and compact cameras side-by-side — price, sensor, autofocus, stabilization and video, in seven currencies',
+    headerTitle:  'Leica',
+    defaultSelected: ['sl3', 'sl3-s', 'sl3-p'],
+  },
+  lenses: {
+    heroEyebrow:  'SL & M Lenses',
+    heroTitle:    '<span>Leica</span> Lens Comparison',
+    heroSubtitle: 'Compare Leica SL, M and TL lenses side-by-side',
+    headerTitle:  'Lens Compare',
+    defaultSelected: ['apo-summicron-sl-50mm-f2-asph', 'super-apo-summicron-sl-21mm-f2-asph', 'vario-elmarit-sl-24-70mm-f28-asph'],
+  },
+  footerLinks: [
+    { label: 'Leica SL Cameras', url: 'https://leica-camera.com/en-US/photography/cameras/sl' },
+    { label: 'Leica SL Lenses',  url: 'https://leica-camera.com/en-US/photography/lenses/sl' },
+    { label: 'DPReview Leica',   url: 'https://www.dpreview.com/products/leica' },
+  ],
+};
+
+const REGISTERED_BRANDS = [
+  { slug: 'fujifilm',  name: 'Fujifilm' },
+  { slug: 'canon',     name: 'Canon' },
+  { slug: 'sony',      name: 'Sony' },
+  { slug: 'nikon',     name: 'Nikon' },
+  { slug: 'panasonic', name: 'Panasonic' },
+  { slug: 'sigma',     name: 'Sigma' },
+  { slug: 'olympus',   name: 'Olympus' },
+  { slug: 'leica',     name: 'Leica' },
+];
+
+// ─────────────────────────────────────────────
+// SERIES COLORS (for camera placeholder cards)
+// All 10 series declared up front (openspec/changes/add-leica-brand/
+// research/decisions.md §5a) even though only SL is populated so far —
+// referential.test.js only flags a USED series with no color entry, never
+// the reverse, so this is safe ahead of the later camera batches.
+// ─────────────────────────────────────────────
+const SERIES_COLORS = {
+  'SL':            { bg: '#1c1c1c', text: '#d64541' },
+  'TL':            { bg: '#242320', text: '#c9a876' },
+  'CL':            { bg: '#1e2420', text: '#8fae8f' },
+  'M':             { bg: '#141414', text: '#c0c0c8' },
+  'M Monochrom':   { bg: '#0d0d0d', text: '#9a9a9a' },
+  'Q':             { bg: '#1a1a1a', text: '#4fa8d8' },
+  'X':             { bg: '#22201c', text: '#d9b45c' },
+  'D-Lux':         { bg: '#1c1f24', text: '#6f9bd0' },
+  'V-Lux':         { bg: '#241c20', text: '#c98fae' },
+  'C-Lux':         { bg: '#201c24', text: '#a68fd0' },
+};
+
+// ─────────────────────────────────────────────
+// CAMERA DATABASE — Leica SL, M, Q, X & compact mirrorless.
+//
+// SL — full-frame L-Mount, interchangeable lens.
+// ─────────────────────────────────────────────
+const CAMERAS = {
+  'sl3-p': {
+    name:'SL3-P', series:'SL', mount:'l', year:2026, discontinued:false,
+    tagline:"The most comprehensive SL-System camera to date — 44MP resolution, 8K video, and Leica's fastest hybrid autofocus.",
+    productUrl:'https://leica-camera.com/en-US/photography/cameras/sl/sl3-p-black',
+    imageUrl:'https://leica-camera.com/sites/default/files/styles/meta_tag_product_image/public/pm-27861-10664_Leica_SL3-P_front_cap_1920px.webp?itok=17suNuRP',
+    imageSource:{url:'https://leica-camera.com/en-US/photography/cameras/sl/sl3-p-black', tier:'T1', date:'2026-09-15', title:'Leica SL3-P official product page'},
+    asin:null,
+    prices:{USD:6690,AUD:10500,EUR:5990,GBP:5150,JPY:1100000,CAD:9435,SGD:8800},
+    sensorMP:44.9, sensorType:'Full-frame BSI CMOS', processor:'Leica Maestro IV',
+    width:141.2, height:108, depth:84.6, weight:852, weatherSealed:true,
+    lcdSize:'3.2"', lcdDots:2332800, lcdType:'Tilting Touch',
+    evfType:'OLED', evfDots:5760000, evfMag:0.76,
+    faceDetection:true, subjectDetection:'Human (eye/face/body), animal (eye/body), and car/vehicle detection with AI subject tracking', maxBurst:40,
+    ibis:true, ibisStops:5,
+    maxVideoRes:'8K/30p (7680x4320)', logVideo:true,
+    monochrom:false, focusingSystem:'EVF', contentCredentials:true, internalStorageGB:null,
+    bluetooth:'5.0', wifi:true,
+    cardSlots:'CFexpress Type B + SD UHS-II', batteryLife:383, usbCharging:true,
+    lensType:'Interchangeable', lensSpec:null,
+  },
+  'sl3-s': {
+    name:'SL3-S', series:'SL', mount:'l', year:2025, discontinued:false,
+    tagline:'The fast and flexible full-frame system camera for photography and video production.',
+    productUrl:'https://leica-camera.com/en-US/photography/cameras/sl/sl3-s-black',
+    imageUrl:'https://leica-camera.com/sites/default/files/styles/meta_tag_product_image/public/pm-14662-10643_Leica_SL3-S_frontal_cap_1920px.webp?itok=XN3Lq1Oo',
+    imageSource:{url:'https://leica-camera.com/en-US/photography/cameras/sl/sl3-s-black', tier:'T1', date:'2026-09-15', title:'Leica SL3-S official product page'},
+    asin:null,
+    prices:{USD:5295,AUD:9300,EUR:5190,GBP:4500,JPY:946000,CAD:7990,SGD:7500},
+    sensorMP:24.6, sensorType:'Full-frame BSI CMOS', processor:'Leica Maestro IV',
+    width:141.2, height:108, depth:82.7, weight:852, weatherSealed:true,
+    lcdSize:'3.2"', lcdDots:2332800, lcdType:'Tilting Touch',
+    evfType:'OLED', evfDots:5760000, evfMag:0.76,
+    faceDetection:true, subjectDetection:'Person and animal (beta) detection with AI-based subject tracking', maxBurst:30,
+    ibis:true, ibisStops:5.5,
+    maxVideoRes:'6K/30p (5952x3968)', logVideo:true,
+    monochrom:false, focusingSystem:'EVF', contentCredentials:true, internalStorageGB:null,
+    bluetooth:'5.0', wifi:true,
+    cardSlots:'CFexpress Type B + SD UHS-II', batteryLife:315, usbCharging:true,
+    lensType:'Interchangeable', lensSpec:null,
+  },
+  'sl3': {
+    name:'SL3', series:'SL', mount:'l', year:2024, discontinued:false,
+    tagline:'A mirrorless full-frame camera combining exceptional image quality at 60 megapixels with intuitive operation.',
+    productUrl:'https://leica-camera.com/en-US/photography/cameras/sl/sl3-black',
+    imageUrl:'https://leica-camera.com/sites/default/files/styles/meta_tag_product_image/public/pm-14571-10607_Leica_SL3_frontal_cap_1920px.png?itok=Vf16HuVP',
+    imageSource:{url:'https://leica-camera.com/en-US/photography/cameras/sl/sl3-black', tier:'T1', date:'2026-09-15', title:'Leica SL3 official product page'},
+    asin:null,
+    prices:{USD:6995,AUD:12500,EUR:6990,GBP:5920,JPY:1276000,CAD:10555,SGD:10400},
+    sensorMP:60.3, sensorType:'Full-frame BSI CMOS', processor:'Leica Maestro IV',
+    width:141.2, height:108, depth:84.6, weight:854, weatherSealed:true,
+    lcdSize:'3.2"', lcdDots:2332800, lcdType:'Tilting Touch',
+    evfType:'OLED', evfDots:5760000, evfMag:0.76,
+    faceDetection:true, subjectDetection:'Person and animal (beta) detection with AI-based subject tracking', maxBurst:15,
+    ibis:true, ibisStops:5,
+    maxVideoRes:'8K/30p (8192x4320)', logVideo:true,
+    monochrom:false, focusingSystem:'EVF', contentCredentials:false, internalStorageGB:null,
+    bluetooth:'5.0', wifi:true,
+    cardSlots:'CFexpress Type B + SD UHS-II', batteryLife:260, usbCharging:true,
+    lensType:'Interchangeable', lensSpec:null,
+  },
+  'sl2-s': {
+    name:'SL2-S', series:'SL', mount:'l', year:2020, discontinued:true,
+    tagline:"Leica's most versatile camera for photography and videography.",
+    // No current official Leica page — removed from leica-camera.com post-
+    // discontinuation; B&H is used as the productUrl instead (design §7).
+    productUrl:'https://www.bhphotovideo.com/c/product/1609644-REG/leica_10880_sl2_s_mirrorless_digital_camera.html',
+    imageUrl:'https://upload.wikimedia.org/wikipedia/commons/f/f5/Leica_SL2-S_Typ-Nr._9584.jpg',
+    imageCredit:{author:'Ferencvizi', licence:'CC BY-SA 4.0', licenceUrl:'https://creativecommons.org/licenses/by-sa/4.0/', source:'https://commons.wikimedia.org/wiki/File:Leica_SL2-S_Typ-Nr._9584.jpg'},
+    asin:null,
+    prices:{USD:4895,AUD:null,EUR:null,GBP:null,JPY:null,CAD:null,SGD:null},
+    sensorMP:24.6, sensorType:'Full-frame BSI CMOS', processor:'Leica Maestro III',
+    width:146, height:107, depth:83, weight:931, weatherSealed:true,
+    lcdSize:'3.2"', lcdDots:2100000, lcdType:'Fixed Touch',
+    evfType:'OLED', evfDots:5760000, evfMag:0.78,
+    faceDetection:true, subjectDetection:null, maxBurst:25,
+    ibis:true, ibisStops:5.5,
+    maxVideoRes:'4K/60p (3840x2160)', logVideo:true,
+    monochrom:false, focusingSystem:'EVF', contentCredentials:false, internalStorageGB:null,
+    bluetooth:'4.2', wifi:true,
+    cardSlots:'Dual SD UHS-II', batteryLife:510, usbCharging:true,
+    lensType:'Interchangeable', lensSpec:null,
+  },
+};
+
+// Newest-first within each group (openspec/changes/add-leica-brand/
+// research/decisions.md §5a). Only the SL group exists so far — TL/CL, M,
+// M Monochrom, Q, Leica X, D-Lux, V-Lux and C-Lux land in later batches
+// (tasks 5.2–5.7b).
+const CAMERA_ORDER = ['sl3-p', 'sl3-s', 'sl3', 'sl2-s'];
+
+const DROPDOWN_GROUPS = [
+  { label: '── SL ──', ids: ['sl3-p', 'sl3-s', 'sl3', 'sl2-s'] },
+];
+
+// ─────────────────────────────────────────────
+// LENS DATABASE — first-party Leica SL & M lenses (+ TL, task 6.6).
+// ─────────────────────────────────────────────
+const LENSES = {
+  'super-apo-summicron-sl-21mm-f2-asph': {
+    name:'Leica Super-APO-Summicron-SL 21mm f/2 ASPH.', manufacturer:'Leica', line:'SL', type:'Prime',
+    mount:'l', focalLength:21, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'21mm',
+    maxAperture:2, minAperture:22, weight:789, length:102, diameter:73,
+    filterThread:67, minFocusDist:21, maxMagnification:0.19,
+    elements:14, groups:11, blades:null, afType:'Dual Syncro Drive (DSD)',
+    weatherSealed:true, ois:false, oisStops:null, year:2023, discontinued:false,
+    imageUrl:'https://leica-camera.com/sites/default/files/styles/meta_tag_product_image/public/pm-102246-11181_Super-APO-Summicron-SL_21_f2_upright.png',
+    imageSource:{url:'https://leica-camera.com/en-US/photography/lenses/sl/super-apo-summicron-sl-21-f2-asph', tier:'T1', date:'2026-09-16', title:'Leica Super-APO-Summicron-SL 21mm f/2 ASPH. official product page'},
+    asin:null,
+    prices:{USD:5950,AUD:9800,EUR:5490,GBP:4850,JPY:1001000,CAD:8390,SGD:8150},
+    productUrl:'https://leica-camera.com/en-US/photography/lenses/sl/super-apo-summicron-sl-21-f2-asph',
+  },
+  'apo-summicron-sl-50mm-f2-asph': {
+    name:'Leica APO-Summicron-SL 50mm f/2 ASPH.', manufacturer:'Leica', line:'SL', type:'Prime',
+    mount:'l', focalLength:50, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'50mm',
+    maxAperture:2, minAperture:22, weight:740, length:102, diameter:73,
+    filterThread:67, minFocusDist:35, maxMagnification:0.2,
+    elements:12, groups:10, blades:null, afType:'Dual Syncro Drive (DSD)',
+    weatherSealed:true, ois:false, oisStops:null, year:2019, discontinued:false,
+    imageUrl:'https://leica-camera.com/sites/default/files/styles/meta_tag_product_image/public/pm-27850-11185__APO-Summicron-SL_50_f2_0.png',
+    imageSource:{url:'https://leica-camera.com/en-US/photography/lenses/sl/apo-summicron-sl-50mm-f2-asph-black', tier:'T1', date:'2026-09-16', title:'Leica APO-Summicron-SL 50mm f/2 ASPH. official product page'},
+    asin:null,
+    prices:{USD:5450,AUD:8900,EUR:4990,GBP:4390,JPY:913000,CAD:7685,SGD:7450},
+    productUrl:'https://leica-camera.com/en-US/photography/lenses/sl/apo-summicron-sl-50mm-f2-asph-black',
+  },
+  'summilux-sl-50mm-f14-asph': {
+    name:'Leica Summilux-SL 50mm f/1.4 ASPH.', manufacturer:'Leica', line:'SL', type:'Prime',
+    mount:'l', focalLength:50, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'50mm',
+    maxAperture:1.4, minAperture:16, weight:584, length:75.5, diameter:74,
+    filterThread:67, minFocusDist:50, maxMagnification:0.13,
+    elements:11, groups:6, blades:11, afType:'Precision voice-coil drive',
+    weatherSealed:true, ois:false, oisStops:null, year:2026, discontinued:false,
+    imageUrl:'https://leica-camera.com/sites/default/files/styles/meta_tag_product_image/public/pm-28332-11195_Leica_Summilux-SL_50_f_1_4_upright_1920px.webp',
+    imageSource:{url:'https://leica-camera.com/en-US/photography/lenses/sl/summilux-sl-50mm-f1-4-asph-black-anodized-finish', tier:'T1', date:'2026-09-16', title:'Leica Summilux-SL 50mm f/1.4 ASPH. official product page'},
+    asin:null,
+    // JPY/SGD not yet published — the 2026 compact redesign ships "autumn
+    // 2026" and neither regional store has opened pricing/ordering yet
+    // (confirmed on both store.leica-camera.jp and leica-store.sg,
+    // 2026-09-16). Re-check closer to ship.
+    prices:{USD:4950,AUD:7900,EUR:4500,GBP:3890,JPY:null,CAD:6980,SGD:null},
+    priceIncomplete:true,
+    productUrl:'https://leica-camera.com/en-US/photography/lenses/sl/summilux-sl-50mm-f1-4-asph-black-anodized-finish',
+  },
+  'vario-elmarit-sl-24-70mm-f28-asph': {
+    name:'Leica Vario-Elmarit-SL 24-70mm f/2.8 ASPH.', manufacturer:'Leica', line:'SL', type:'Zoom',
+    mount:'l', focalLength:null, focalLengthMin:24, focalLengthMax:70, focalLengthEquiv:'24-70mm',
+    maxAperture:2.8, minAperture:22, weight:856, length:123, diameter:88,
+    filterThread:82, minFocusDist:18, maxMagnification:0.35,
+    elements:19, groups:15, blades:11, afType:'Stepping motor',
+    weatherSealed:true, ois:false, oisStops:null, year:2021, discontinued:false,
+    imageUrl:'https://leica-camera.com/sites/default/files/styles/meta_tag_product_image/public/pm-15167-11189__Vario-Elmarit-SL_24-70_f2_8.png',
+    imageSource:{url:'https://leica-camera.com/en-US/photography/lenses/sl/vario-elmarit-sl-24-70-f2-8-asph-black-finish', tier:'T1', date:'2026-09-16', title:'Leica Vario-Elmarit-SL 24-70mm f/2.8 ASPH. official product page'},
+    asin:null,
+    prices:{USD:3205,AUD:5300,EUR:2950,GBP:2590,JPY:539000,CAD:4520,SGD:4350},
+    productUrl:'https://leica-camera.com/en-US/photography/lenses/sl/vario-elmarit-sl-24-70-f2-8-asph-black-finish',
+  },
+};
+
+const LENS_DROPDOWN_GROUPS = [
+  { label: '── SL Primes ──', ids: ['super-apo-summicron-sl-21mm-f2-asph', 'apo-summicron-sl-50mm-f2-asph', 'summilux-sl-50mm-f14-asph'] },
+  { label: '── SL Zooms ──',  ids: ['vario-elmarit-sl-24-70mm-f28-asph'] },
+];
+
+return { BRAND_CONFIG, SERIES_COLORS, CAMERAS, CAMERA_ORDER, DROPDOWN_GROUPS, LENSES, LENS_DROPDOWN_GROUPS, REGISTERED_BRANDS };
+})();

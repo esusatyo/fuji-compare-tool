@@ -81,34 +81,53 @@
 
 ## 2. Scaffold the Leica brand directory
 
-- [ ] 2.1 Copy `sigma/index.html` → `leica/index.html`, update the `<title>`.
+- [x] 2.1 Copy `sigma/index.html` → `leica/index.html`, update the `<title>`.
   Leave SEO marker blocks for `generate-seo.js` to rewrite in task 8.1.
-- [ ] 2.2 Create `leica/data.js` from `sigma/data.js`'s structure with registry
+- [x] 2.2 Create `leica/data.js` from `sigma/data.js`'s structure with registry
   key `'leica'`: `BRAND_CONFIG` (name, slug, families, `brandSections: []` for
   now, `mount`, `mounts` per design §2, `heroCamera`, hero copy,
   `defaultSelected`, footer links), `SERIES_COLORS`, `REGISTERED_BRANDS` (all
   eight). **Seed ≥4 current SL-line cameras and ≥4 current SL lenses, fully
   researched** (decisions §2 explains why a stub seed can't commit). Keep the
   seed on `l` so group 4's rule changes aren't needed yet.
-- [ ] 2.3 `node --check leica/data.js`; `node scripts/generate-seo.js`;
+  **Done:** seeded `sl3`, `sl3-s`, `sl3-p` (current) + `sl2-s` (discontinued),
+  and 3 SL primes + 1 SL zoom — via 2 sequential single research agents
+  (parallel research paused mid-run per owner instruction to conserve tokens;
+  the lens agent also hit a session rate limit once and was cleanly retried).
+  All prices/specs sourced from Leica's own regional stores + DPReview/
+  retailer corroboration; no fabricated ASINs (agents reported "no confident
+  ASIN" rather than guessing where Amazon only had used/bundle listings).
+- [x] 2.3 `node --check leica/data.js`; `node scripts/generate-seo.js`;
   `npm test` green (may need group 3 pulled forward — if so, note it here).
+  **Pulled forward, same commit** (mirrors the Olympus precedent at its own
+  task 2.3): task 3.1 (`REGISTERED_BRANDS` synced in all 7 other `data.js`
+  files) and task 4.5 (Leica `SPEC_SECTIONS` entry + `schema.js` branch) —
+  both were needed for `npm test` to pass at all, not just to look complete.
+  Also added `leica-camera.com` to `ALLOWED_HOSTS` in
+  `tests/data/links-offline.test.js` (not originally its own task). **791/791
+  green.**
 
 ## 3. Wire registration (before bulk data)
 
-- [ ] 3.1 Add `{ slug: 'leica', name: 'Leica' }` to `REGISTERED_BRANDS` in all
-  eight `data.js` files.
-- [ ] 3.2 Add `'leica'` to `VALID_BRANDS` in root `index.html`.
-- [ ] 3.3 Add `<script src="../leica/data.js"></script>` to `compare/index.html`
+- [x] 3.1 Add `{ slug: 'leica', name: 'Leica' }` to `REGISTERED_BRANDS` in all
+  eight `data.js` files. **Done in task 2.3's commit** (see above).
+- [x] 3.2 Add `'leica'` to `VALID_BRANDS` in root `index.html`.
+- [x] 3.3 Add `<script src="../leica/data.js"></script>` to `compare/index.html`
   before `engine.js`; check `tests/logic/compare-page.test.js` for a hardcoded
-  brand list.
-- [ ] 3.4 `tests/logic/root-redirect.test.js`: add a `[root] valid stored brand
+  brand list. **Found one** — the dropdown-groups assertion hardcoded all 8
+  (now 9) brand labels; added `'Leica'`.
+- [x] 3.4 `tests/logic/root-redirect.test.js`: add a `[root] valid stored brand
   "leica"` case **and** `'leica'` to the crawlable-landing brand list (line ~105).
-- [ ] 3.5 `BRAND_CARD_ACCENTS.leica` in `scripts/generate-seo.js` — non-red
-  (design §8); add a comment explaining why.
-- [ ] 3.6 Confirm `MANUFACTURER_COLORS['Leica']` needs no change.
-- [ ] 3.7 Add `KNOWN_IMAGE_GAPS.leica` in `tests/data/completeness.test.js` if
-  the seed has image gaps.
-- [ ] 3.8 `npm test` green.
+- [x] 3.5 `BRAND_CARD_ACCENTS.leica` in `scripts/generate-seo.js` — non-red
+  (design §8); add a comment explaining why. Used `#b8b2a7` (chrome/silver).
+- [x] 3.6 Confirm `MANUFACTURER_COLORS['Leica']` needs no change. Confirmed —
+  already present in `engine.js` (used for lens placeholder cards).
+- [x] 3.7 Add `KNOWN_IMAGE_GAPS.leica` in `tests/data/completeness.test.js` if
+  the seed has image gaps. **Not needed** — all 8 seed items have a real
+  `imageUrl` (3 leica-camera.com hotlinks + 1 Commons photo for cameras; 4
+  leica-camera.com hotlinks for lenses).
+- [x] 3.8 `npm test` green. **792/792.** (3.2–3.8 bundled into one commit —
+  pure mechanical wiring with no independent research value split apart.)
 
 ## 4. Test-rule adaptations (before any M, TL, Q or pre-2008 item)
 
@@ -124,9 +143,10 @@
 - [ ] 4.4 Add `m` to `BRAND_CONFIG.mounts` together with the first M-mount item
   (the "every declared mount is used" test forbids declaring it earlier) — so
   this task lands with task 5.3's first commit; tick it there.
-- [ ] 4.5 Leica spec section: `SPEC_SECTIONS` entry `brand: 'leica'` in
+- [x] 4.5 Leica spec section: `SPEC_SECTIONS` entry `brand: 'leica'` in
   `engine.js`, `schema.js` branch, `brandSections: ['leica']`, and backfill the
-  fields on the seeded cameras. `npm test` green.
+  fields on the seeded cameras. `npm test` green. **Done in task 2.3's commit**
+  (see above) — the seed cameras needed it to validate at all.
 
 ## 5. Camera data, in batches
 

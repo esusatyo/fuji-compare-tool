@@ -397,6 +397,17 @@ const SPEC_SECTIONS = [
       { key: 'liveComposite', label: 'Live Composite',   type: 'boolean', fn: c => c.liveComposite },
     ]
   },
+  // ── Leica-specific ──
+  {
+    id: 'leica', label: 'Leica System',
+    brand: 'leica',
+    specs: [
+      { key: 'monochrom',          label: 'Monochrome Sensor',   type: 'boolean', fn: c => c.monochrom },
+      { key: 'focusingSystem',     label: 'Focusing System',     type: 'text',    fn: c => c.focusingSystem || '—' },
+      { key: 'contentCredentials', label: 'Content Credentials', type: 'boolean', fn: c => c.contentCredentials },
+      { key: 'internalStorageGB',  label: 'Internal Storage',    type: 'number',  higherBetter: true, fn: c => c.internalStorageGB, fmt: v => v == null ? '—' : v + ' GB' },
+    ]
+  },
 ];
 
 // ─────────────────────────────────────────────

@@ -331,6 +331,12 @@ function validateCamera(id, cam, brandSections = [], mountIds = null) {
     add(checkField(cam, 'proCapture', { type: 'boolean' }));
     add(checkField(cam, 'liveComposite', { type: 'boolean' }));
   }
+  if (brandSections.includes('leica')) {
+    add(checkField(cam, 'monochrom', { type: 'boolean' }));
+    add(checkField(cam, 'focusingSystem', { type: 'string' }));
+    add(checkField(cam, 'contentCredentials', { type: 'boolean' }));
+    add(checkField(cam, 'internalStorageGB', { type: 'number', nullable: true, min: 0 }));
+  }
 
   return e.map(m => `${id}: ${m}`);
 }
