@@ -183,6 +183,12 @@ const KNOWN_IMAGE_GAPS = {
     'samyang-14mm-f28', 'samyang-16mm-f2', 'samyang-85mm-f14', 'samyang-85mm-f18',
     'samyang-100mm-f28-macro', 'samyang-135mm-f2', 'samyang-300mm-f63',
   ]),
+  leica: new Set([
+    // tl, tl2: task 5.2. No bare-body product photo survives on Leica's own
+    // site (both discontinued, pages removed) or on Wikimedia Commons — the
+    // T (Typ 701) and CL each had one, TL/TL2 have none. Re-check in task 7.
+    'tl', 'tl2',
+  ]),
   nikon: new Set([
     // Cameras: all 10 resolved 2026-08-15 (Commons photos sourced + applied).
     // Lenses — re-run 2026-08-15 (Nikon+Panasonic lens image pass): z-dx-16-50mm-vr

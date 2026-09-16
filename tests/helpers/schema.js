@@ -335,7 +335,9 @@ function validateCamera(id, cam, brandSections = [], mountIds = null) {
   }
   if (brandSections.includes('leica')) {
     add(checkField(cam, 'monochrom', { type: 'boolean' }));
-    add(checkField(cam, 'focusingSystem', { type: 'string' }));
+    // Nullable: the T/TL/TL2 genuinely have neither a rangefinder nor a
+    // built-in EVF (only an optional clip-on Visoflex accessory existed).
+    add(checkField(cam, 'focusingSystem', { type: 'string', nullable: true }));
     add(checkField(cam, 'contentCredentials', { type: 'boolean' }));
     add(checkField(cam, 'internalStorageGB', { type: 'number', nullable: true, min: 0 }));
   }

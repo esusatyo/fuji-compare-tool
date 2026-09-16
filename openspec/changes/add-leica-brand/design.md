@@ -101,10 +101,12 @@ item that needs them.
 **Confirmed in task 1.3** — all four candidates are sourceable:
 
 - `monochrom` — monochrome-only sensor (M Monochrom, Q2/Q3 Monochrom).
-- `focusingSystem` — `'Rangefinder'` / `'EVF'` / `'Rangefinder + EVF'`. M
-  bodies are `Rangefinder` except the EVF-only M EV1; SL/Q are `EVF`; CL has a
-  small built-in EVF; TL/X have none (nullable would be wrong — call it `EVF`
-  only if built in, per the accessory-vs-built-in distinction).
+- `focusingSystem` — `'Rangefinder'` / `'EVF'` / `'Rangefinder + EVF'` / `null`.
+  M bodies are `Rangefinder` except the EVF-only M EV1; SL/Q/CL are `EVF`
+  (built-in); **T/TL/TL2 are `null`** (task 5.2 correction — they have
+  neither a rangefinder nor a built-in EVF, only an optional clip-on
+  Visoflex accessory, so `null` is the honest value and the field is
+  nullable in schema.js, not the three-enum-only field this originally said).
 - `contentCredentials` — CAI content credentials (M11-P, SL3-S, Q3-era on).
 - `internalStorageGB` — nullable; only M11 and Q3 families have any.
 

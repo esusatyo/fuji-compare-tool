@@ -170,7 +170,17 @@
   `sl-typ-601` ($7,450, no IBIS). Images from Wikimedia Commons (both
   camera+lens shots, not bare body — accepted, no bare-body Commons photo
   exists for either). `npm test`: 792/792.
-- [ ] 5.2 **Batch B — T / TL / TL2 / CL.**
+- [x] 5.2 **Batch B — T / TL / TL2 / CL.** `cl` corrected to its own `series:
+  'CL'` (research agent had grouped it under `'TL'`, against this file's own
+  task-1.3 decision to split them for a truthful dropdown label).
+  `focusingSystem` made nullable in schema.js — T/TL/TL2 have neither a
+  rangefinder nor a built-in EVF (design §6 corrected to match). TL/TL2 have
+  no findable product image (Leica's pages for these are gone, no bare-body
+  Commons photo exists) → `KNOWN_IMAGE_GAPS.leica`. T (Typ 701) and CL do
+  have Commons photos — T's is a verified direct-URL fetch (my first attempt
+  guessed a thumbnail path that was wrong; corrected before committing). CL's
+  is a Wikipedia-infobox-quality retail-display shot, accepted for now,
+  revisit in task 7 if a better one turns up. `npm test`: 792/792.
 - [ ] 5.3 **Batch C — M8 → M (Typ 240) era** (M8, M8.2, M9, M9-P, M-E,
   M Monochrom, M 240/262, M-P, M-D, M Monochrom 246). Lands `m` (task 4.4).
 - [ ] 5.4 **Batch D — M10 family.**
