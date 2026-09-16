@@ -198,6 +198,9 @@ const KNOWN_IMAGE_GAPS = {
     // infobox source, which has an empty image= for X Vario) — only
     // "taken with this camera" photo subcategories. Re-check in task 7.
     'x-vario', 'x-e-typ-102',
+    // v-lux-typ-114: task 5.7b. No dedicated Commons product photo — only
+    // ~925 "taken with this camera" files. Re-check in task 7.
+    'v-lux-typ-114',
   ]),
   nikon: new Set([
     // Cameras: all 10 resolved 2026-08-15 (Commons photos sourced + applied).

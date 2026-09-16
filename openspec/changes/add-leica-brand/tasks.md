@@ -209,8 +209,20 @@
   X-E (checked Commons categories/search + Wikipedia infobox source) →
   `KNOWN_IMAGE_GAPS.leica`. The other 4 images verified directly (URL +
   author + licence) before writing. `npm test`: 792/792 first try.
-- [ ] 5.7b **Batch H — large-sensor compacts** (D-Lux Typ 109 / 7 / 8,
-  V-Lux Typ 114 / 5, C-Lux).
+- [x] 5.7b **Batch H — large-sensor compacts** (D-Lux Typ 109 / 7 / 8,
+  V-Lux Typ 114 / 5, C-Lux). D-Lux 8 current (full 7-currency pricing), the
+  other 5 discontinued. Resolved a real image-identity ambiguity: Commons
+  categorizes the D-Lux Typ 109 photo under "Leica D-Lux 6" (a different,
+  smaller-sensor camera not in scope), but the file's own description said
+  "type 109" — downloaded and visually inspected the lens-barrel text
+  ("DC VARIO-SUMMILUX 1:1.7-2.8/10.9-34 ASPH.", the Typ 109's exact formula,
+  not the D-Lux 6's), confirming the description was right and the category
+  wrong. Also visually confirmed the D-Lux 8 and Q3-generation product
+  photos genuinely show those cameras (lens-barrel text again). No image for
+  V-Lux (Typ 114) → `KNOWN_IMAGE_GAPS.leica`. `npm test`: 792/792.
+  **29 of 52 planned cameras now entered** (all non-M-mount lines: SL, TL/CL,
+  Q, Leica X, compacts); the 23 M-mount bodies (5.3–5.5) remain before 5.8's
+  final pass.
 - [ ] 5.8 Final camera pass: `CAMERA_ORDER` newest-first within line,
   `defaultSelected` sanity, `npm test` green.
 
