@@ -26,6 +26,10 @@ const ALLOWED_HOSTS = [
   'samyangus.com', 'lksamyang.com', 'tamron-americas.com', 'tamron.com',
   'meikeglobal.com', 'yongnuo.eu', 'hkyongnuo.com', 'omsystem.com', 'zeiss.com',
   'laowa.com.au', 'laowalenses.ca', 'pergear.com', 'voigtlaender.de', 'leica-camera.com',
+  // DPReview: used as productUrl for a handful of discontinued Leica Q
+  // bodies whose own leica-camera.com pages are gone (task 5.6). Already
+  // trusted as a footerLinks source across several brands.
+  'dpreview.com',
   // CDNs and storefront hosts backing the above.
   'cdn.shopify.com', 'commercetools.com', 'cs.1worldsync.com', 'cloudfront.net',
   'foto-erhardt.de', 'contentstack.io', 'etoren.com', 'bhphotovideo.com',

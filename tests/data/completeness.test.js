@@ -188,6 +188,11 @@ const KNOWN_IMAGE_GAPS = {
     // site (both discontinued, pages removed) or on Wikimedia Commons — the
     // T (Typ 701) and CL each had one, TL/TL2 have none. Re-check in task 7.
     'tl', 'tl2',
+    // q-p: task 5.6. Same reasoning — Leica's Q-P product page is gone and
+    // no Wikimedia Commons photo exists specifically for this model
+    // (checked Category:Leica_Q_(Type_116) and Commons search). Re-check
+    // in task 7.
+    'q-p',
   ]),
   nikon: new Set([
     // Cameras: all 10 resolved 2026-08-15 (Commons photos sourced + applied).

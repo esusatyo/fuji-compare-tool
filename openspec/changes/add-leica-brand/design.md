@@ -108,7 +108,11 @@ item that needs them.
   Visoflex accessory, so `null` is the honest value and the field is
   nullable in schema.js, not the three-enum-only field this originally said).
 - `contentCredentials` — CAI content credentials (M11-P, SL3-S, Q3-era on).
-- `internalStorageGB` — nullable; only M11 and Q3 families have any.
+- `internalStorageGB` — nullable. **Corrected in task 5.6**: the Q3 family
+  has no built-in storage — Leica's own spec sheets list only an 8GB
+  *buffer* (temporary burst memory, not storage), confirmed for Q3, Q3 43
+  and Q3 Monochrom, so all three are `null`. Whether the M11 family has any
+  is unverified until task 5.5 researches it; don't assume it does.
 
 Each gets a `brandSections.includes('leica')` schema branch.
 

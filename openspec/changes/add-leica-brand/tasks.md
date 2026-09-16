@@ -185,7 +185,21 @@
   M Monochrom, M 240/262, M-P, M-D, M Monochrom 246). Lands `m` (task 4.4).
 - [ ] 5.4 **Batch D — M10 family.**
 - [ ] 5.5 **Batch E — M11 family + M EV1.**
-- [ ] 5.6 **Batch F — Q line** (`lensType: 'Fixed'`, `mount: 'l'`).
+- [x] 5.6 **Batch F — Q line** (`lensType: 'Fixed'`, `mount: 'l'`), all 7
+  bodies. Corrects design §6's assumption that the Q3 family has built-in
+  storage — Leica's spec sheets list only an 8GB *buffer* (burst memory, not
+  storage), so `internalStorageGB` is `null` for Q3/Q3 43/Q3 Monochrom (the
+  M11 family, still unresearched, isn't assumed either way). Current-body
+  prices reflect the March 2026 US price increase (site convention is
+  current list price, not launch price — Q3 launched at $5,995, is $7,350
+  now). `q-p` has no findable image (Leica's page is gone, no Commons photo
+  exists for this model specifically) → `KNOWN_IMAGE_GAPS.leica`. 3
+  discontinued bodies (`q2`, `q2-monochrom`, `q-typ-116`) use DPReview as
+  `productUrl` since their Leica pages are gone too — added `dpreview.com`
+  to the offline-link-test host allowlist (already trusted as a footer-link
+  source across several brands). All Commons/manufacturer image URLs
+  verified directly before writing, catching nothing wrong this time.
+  `npm test`: 792/792.
 - [ ] 5.7 **Batch G — Leica X** (X1, X2, X Vario, X-E, X Typ 113, X-U).
 - [ ] 5.7b **Batch H — large-sensor compacts** (D-Lux Typ 109 / 7 / 8,
   V-Lux Typ 114 / 5, C-Lux).
