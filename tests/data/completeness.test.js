@@ -193,6 +193,11 @@ const KNOWN_IMAGE_GAPS = {
     // (checked Category:Leica_Q_(Type_116) and Commons search). Re-check
     // in task 7.
     'q-p',
+    // x-vario, x-e-typ-102: task 5.7. No Commons product photo exists for
+    // either (checked their Commons categories/search and the Wikipedia
+    // infobox source, which has an empty image= for X Vario) — only
+    // "taken with this camera" photo subcategories. Re-check in task 7.
+    'x-vario', 'x-e-typ-102',
   ]),
   nikon: new Set([
     // Cameras: all 10 resolved 2026-08-15 (Commons photos sourced + applied).

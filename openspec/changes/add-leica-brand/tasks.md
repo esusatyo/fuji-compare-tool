@@ -200,7 +200,15 @@
   source across several brands). All Commons/manufacturer image URLs
   verified directly before writing, catching nothing wrong this time.
   `npm test`: 792/792.
-- [ ] 5.7 **Batch G — Leica X** (X1, X2, X Vario, X-E, X Typ 113, X-U).
+- [x] 5.7 **Batch G — Leica X** (X1, X2, X Vario, X-E, X Typ 113, X-U), all
+  discontinued APS-C fixed-lens compacts. Confirmed X-E (Typ 102) is a real,
+  distinct SKU (own price/launch), even though its technical specs are
+  identical to the X2's (same sensor/lens/dimensions/battery per Leica's own
+  datasheet) — only the finish and price differ, so it stays a separate
+  entry rather than being folded into X2. No image found for X Vario or
+  X-E (checked Commons categories/search + Wikipedia infobox source) →
+  `KNOWN_IMAGE_GAPS.leica`. The other 4 images verified directly (URL +
+  author + licence) before writing. `npm test`: 792/792 first try.
 - [ ] 5.7b **Batch H — large-sensor compacts** (D-Lux Typ 109 / 7 / 8,
   V-Lux Typ 114 / 5, C-Lux).
 - [ ] 5.8 Final camera pass: `CAMERA_ORDER` newest-first within line,
