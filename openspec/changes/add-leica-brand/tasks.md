@@ -210,7 +210,17 @@
   `KNOWN_IMAGE_GAPS.leica`. `npm test`: 792/792.
   **All 6 batch-5.3 sub-groups plus M8.2/M9's gap are now the only M-era
   research left open** (batches 5.4 M10 family, 5.5 M11 + M EV1).
-- [ ] 5.4 **Batch D — M10 family.**
+- [x] 5.4 **Batch D — M10 family**: M10, M10-P, M10-D, M10 Monochrom, M10-R
+  — all 5 entered. Caught and rejected a DPReview database anomaly: its
+  M10-R spec table claims a "fully articulated" touchscreen and weather
+  sealing, contradicting every review and Wikipedia (no M-series body
+  through M11 has ever had an articulating screen) — treated as a data
+  error and not carried forward, documented inline. `maxBurst` for
+  M10-R/M10 Monochrom isn't independently published by any source found;
+  inferred at 5fps from the shared M10-family shutter mechanism (confirmed
+  on M10/M10-P/M10-D), documented as an inference. `bluetooth: false` for
+  all 5 (Leica added Bluetooth starting with the M11, not this generation).
+  All 5 images verified directly. `npm test`: 792/792.
 - [ ] 5.5 **Batch E — M11 family + M EV1.**
 - [x] 5.6 **Batch F — Q line** (`lensType: 'Fixed'`, `mount: 'l'`), all 7
   bodies. Corrects design §6's assumption that the Q3 family has built-in
