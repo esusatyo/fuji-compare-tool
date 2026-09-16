@@ -149,9 +149,9 @@
   lower it, naming the lens, if one ever doesn't. Updated the
   `schema-guards.test.js` fixture pinning the old 2007/2008 bounds to
   2005/2006 to match.
-- [ ] 4.4 Add `m` to `BRAND_CONFIG.mounts` together with the first M-mount item
-  (the "every declared mount is used" test forbids declaring it earlier) — so
-  this task lands with task 5.3's first commit; tick it there.
+- [x] 4.4 Add `m` to `BRAND_CONFIG.mounts` together with the first M-mount item
+  (the "every declared mount is used" test forbids declaring it earlier).
+  **Done in task 5.3a's commit** (see there).
 - [x] 4.5 Leica spec section: `SPEC_SECTIONS` entry `brand: 'leica'` in
   `engine.js`, `schema.js` branch, `brandSections: ['leica']`, and backfill the
   fields on the seeded cameras. `npm test` green. **Done in task 2.3's commit**
@@ -181,8 +181,15 @@
   guessed a thumbnail path that was wrong; corrected before committing). CL's
   is a Wikipedia-infobox-quality retail-display shot, accepted for now,
   revisit in task 7 if a better one turns up. `npm test`: 792/792.
-- [ ] 5.3 **Batch C — M8 → M (Typ 240) era** (M8, M8.2, M9, M9-P, M-E,
-  M Monochrom, M 240/262, M-P, M-D, M Monochrom 246). Lands `m` (task 4.4).
+- [~] 5.3a **M8 → M9-P era, first half**: M8, M9-P, M-E (Typ 220), M
+  Monochrom entered — 4 of the 6 planned for this sub-batch. **M8.2 and M9
+  skipped**: both have a solidly sourced UK price but no citable US dollar
+  figure found after extensive effort (decisions §6); `prices.USD` has no
+  nullable escape, so entering either would mean guessing. Flagged as a
+  named follow-up before task 5.8. Lands the `m` mount (task 4.4) —
+  `BRAND_CONFIG.mounts` now declares both `l` and `m`. `npm test`: 792/792,
+  first try. Remaining M 240/262-era bodies (M 240, M-P 240, M-D 262,
+  M Monochrom 246, M262, M-E 240) are batch 5.3b, still open.
 - [ ] 5.4 **Batch D — M10 family.**
 - [ ] 5.5 **Batch E — M11 family + M EV1.**
 - [x] 5.6 **Batch F — Q line** (`lensType: 'Fixed'`, `mount: 'l'`), all 7

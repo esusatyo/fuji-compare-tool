@@ -161,6 +161,32 @@ follow CLAUDE.md as normal: `compute-prices.js` for an approximate figure, or
 - **Summilux-SL 50 f/1.4 has two lenses with the same name** (2015 original,
   2026 compact redesign). Per the lens-revisions memory they're separate entries;
   the original is only in scope if Leica still sells it.
+## 6. Task 5.3 — M8.2 and M9 US launch price unsourceable, skipped for now (2026-09-17)
+
+`prices.USD` is non-nullable (schema.js requires a positive number for every
+item, discontinued or not) — unlike every other currency, it has no
+`priceIncomplete`-style escape. The M8 ($4,795), M9-P ($7,995), M-E Typ 220
+($5,450) and M Monochrom ($7,950) all have solidly sourced US launch prices
+(DPReview review/announcement pages, one with an exact quote). **M8.2 and M9
+do not** — both surface reliably in UK pricing (£s) across DPReview's
+announcement articles, but no source found states a US dollar figure.
+
+Tried, across a research agent plus my own follow-up: DPReview (live review
++ specs + ~15 archived Wayback snapshots), Wikipedia (EN + DE), Ken Rockwell
+(blocked), Imaging Resource (blocked), B&H (blocked), PetaPixel (404),
+PhotographyBlog (404), Red Dot Forum (404), camera-wiki.org (no price),
+Leica Rumors (404), general web search (WebSearch quota exhausted this
+session). The ~$6,995 figure often repeated for the M9 online has no
+citable primary source I could find.
+
+**Decision: skip both from this batch rather than enter a guessed number**
+(CLAUDE.md's "if a non-nullable field can't be sourced, skip rather than
+guess," generalized from lenses to this case). Batch 5.3 shipped 4 of its
+planned 6 cameras (M8, M9-P, M-E Typ 220, M Monochrom). M8.2 and M9 are a
+named follow-up — try again with a fresh WebSearch budget, or ask the owner
+if they have a source, before task 5.8's final camera pass. This does not
+block landing the `m` mount (task 4.4), since M8 alone is enough to use it.
+
 - **Access notes**: alikgriffin.com returns 403; the dealer's SL collection URL
   guesses 404; Leica's 2016–2017 press-release archive URLs return navigation
   only. DPReview launch articles were the reliable TL source.
