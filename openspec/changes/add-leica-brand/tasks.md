@@ -164,7 +164,12 @@
 > `KNOWN_IMAGE_GAPS`, then `npm run test:data`. Current bodies need all 7
 > currencies; discontinued may be USD-only.
 
-- [ ] 5.1 **Batch A — SL line** (remaining SL bodies after the seed).
+- [x] 5.1 **Batch A — SL line** (remaining SL bodies after the seed): `sl2`
+  ($5,995, IBIS 5.5 stops — confirmed the SL2 does have IBIS, contrary to
+  this file's own earlier assumption that it started with the SL2-S) and
+  `sl-typ-601` ($7,450, no IBIS). Images from Wikimedia Commons (both
+  camera+lens shots, not bare body — accepted, no bare-body Commons photo
+  exists for either). `npm test`: 792/792.
 - [ ] 5.2 **Batch B — T / TL / TL2 / CL.**
 - [ ] 5.3 **Batch C — M8 → M (Typ 240) era** (M8, M8.2, M9, M9-P, M-E,
   M Monochrom, M 240/262, M-P, M-D, M Monochrom 246). Lands `m` (task 4.4).

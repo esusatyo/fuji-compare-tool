@@ -168,16 +168,56 @@ const CAMERAS = {
     cardSlots:'Dual SD UHS-II', batteryLife:510, usbCharging:true,
     lensType:'Interchangeable', lensSpec:null,
   },
+  'sl2': {
+    name:'SL2', series:'SL', mount:'l', year:2019, discontinued:true,
+    tagline:'A 47MP full-frame flagship with in-body stabilization, IP54 sealing, and pro-grade 5K/4K video.',
+    productUrl:'https://www.bhphotovideo.com/c/product/1639034-REG/leica_10888_sl2_mirrorless_digital_camera.html',
+    imageUrl:'https://upload.wikimedia.org/wikipedia/commons/a/a4/Leica_SL2.jpg',
+    imageCredit:{author:'Jack Baty', licence:'CC BY-SA 2.0', licenceUrl:'https://creativecommons.org/licenses/by-sa/2.0/', source:'https://commons.wikimedia.org/wiki/File:Leica_SL2.jpg'},
+    asin:null,
+    prices:{USD:5995,AUD:null,EUR:null,GBP:null,JPY:null,CAD:null,SGD:null},
+    sensorMP:47.3, sensorType:'Full-frame CMOS (BSI)', processor:'Maestro III',
+    width:146, height:107, depth:42, weight:840, weatherSealed:true,
+    lcdSize:'3.2"', lcdDots:2100000, lcdType:'Fixed Touch',
+    evfType:'EVF', evfDots:5760000, evfMag:0.78,
+    faceDetection:true, subjectDetection:null, maxBurst:20,
+    ibis:true, ibisStops:5.5,
+    maxVideoRes:'5K (30p) / 4K UHD (60p)', logVideo:true,
+    monochrom:false, focusingSystem:'EVF', contentCredentials:false, internalStorageGB:null,
+    bluetooth:'4.2', wifi:true,
+    cardSlots:'2x SD/SDHC/SDXC (UHS-II)', batteryLife:370, usbCharging:true,
+    lensType:'Interchangeable', lensSpec:null,
+  },
+  'sl-typ-601': {
+    name:'SL (Typ 601)', series:'SL', mount:'l', year:2015, discontinued:true,
+    tagline:"Leica's first L-Mount full-frame mirrorless — a rugged, all-metal professional system camera.",
+    productUrl:'https://www.bhphotovideo.com/c/product/1192093-REG/leica_10850_sl_typ_601_mirrorless.html',
+    imageUrl:'https://upload.wikimedia.org/wikipedia/commons/8/8d/Leica_SL.jpg',
+    imageCredit:{author:'GodeNehler', licence:'CC BY-SA 4.0', licenceUrl:'https://creativecommons.org/licenses/by-sa/4.0/', source:'https://commons.wikimedia.org/wiki/File:Leica_SL.jpg'},
+    asin:null,
+    prices:{USD:7450,AUD:null,EUR:null,GBP:null,JPY:null,CAD:null,SGD:null},
+    sensorMP:24, sensorType:'Full-frame CMOS', processor:'Maestro II',
+    width:147, height:104, depth:39, weight:847, weatherSealed:true,
+    lcdSize:'3.0"', lcdDots:1040000, lcdType:'Fixed Touch',
+    evfType:'LCOS EVF', evfDots:4400000, evfMag:0.8,
+    faceDetection:true, subjectDetection:null, maxBurst:11,
+    ibis:false, ibisStops:null,
+    maxVideoRes:'4K (4096x2160 24p) / UHD 4K 24/25/30p', logVideo:false,
+    monochrom:false, focusingSystem:'EVF', contentCredentials:false, internalStorageGB:2,
+    bluetooth:false, wifi:true,
+    cardSlots:'2x SD/SDHC/SDXC (UHS-II slot 1, UHS-I slot 2)', batteryLife:400, usbCharging:false,
+    lensType:'Interchangeable', lensSpec:null,
+  },
 };
 
 // Newest-first within each group (openspec/changes/add-leica-brand/
 // research/decisions.md §5a). Only the SL group exists so far — TL/CL, M,
 // M Monochrom, Q, Leica X, D-Lux, V-Lux and C-Lux land in later batches
 // (tasks 5.2–5.7b).
-const CAMERA_ORDER = ['sl3-p', 'sl3-s', 'sl3', 'sl2-s'];
+const CAMERA_ORDER = ['sl3-p', 'sl3-s', 'sl3', 'sl2-s', 'sl2', 'sl-typ-601'];
 
 const DROPDOWN_GROUPS = [
-  { label: '── SL ──', ids: ['sl3-p', 'sl3-s', 'sl3', 'sl2-s'] },
+  { label: '── SL ──', ids: ['sl3-p', 'sl3-s', 'sl3', 'sl2-s', 'sl2', 'sl-typ-601'] },
 ];
 
 // ─────────────────────────────────────────────
