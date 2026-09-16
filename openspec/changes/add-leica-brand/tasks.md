@@ -131,15 +131,24 @@
 
 ## 4. Test-rule adaptations (before any M, TL, Q or pre-2008 item)
 
-- [ ] 4.1 `mounts.test.js`: let a `SENSOR_RULES` tuple name the field it tests
+- [x] 4.1 `mounts.test.js`: let a `SENSOR_RULES` tuple name the field it tests
   (default `sensorType`); add the Leica `series` rules (design §3). Existing
   rows unchanged. Verify it fails on a deliberately wrong mount, then revert
-  the probe.
-- [ ] 4.2 `mounts.test.js`: add `LENS_CROP.leica` and `LENS_CROP_BY_LINE`
+  the probe. **Done** — probed by mistagging `sl3`'s mount to `'m'`; the
+  sensor-rule test correctly failed, reverted cleanly (`git diff` empty).
+- [x] 4.2 `mounts.test.js`: add `LENS_CROP.leica` and `LENS_CROP_BY_LINE`
   (design §4). Same fail-then-revert probe with a TL lens tagged 1.0×.
-- [ ] 4.3 `schema.js`: camera year floor → 2006 with comment (M8); lens floor
+  **Done**, mechanism added and code-reviewed; the live fail/revert probe
+  itself is deferred to task 6.6 (no TL lens exists yet to probe against).
+- [x] 4.3 `schema.js`: camera year floor → 2006 with comment (M8); lens floor
   → the oldest `year` actually entered (version-year convention, decisions
-  §5), with a comment naming that lens.
+  §5), with a comment naming that lens. **Camera floor done** (2006, M8).
+  **Lens floor left at 2008** — no lens entered so far needs it (the
+  version-year convention keeps even the oldest current M-lens versions
+  ≥2008); a comment on the lens floor explains the exception and says to
+  lower it, naming the lens, if one ever doesn't. Updated the
+  `schema-guards.test.js` fixture pinning the old 2007/2008 bounds to
+  2005/2006 to match.
 - [ ] 4.4 Add `m` to `BRAND_CONFIG.mounts` together with the first M-mount item
   (the "every declared mount is used" test forbids declaring it earlier) — so
   this task lands with task 5.3's first commit; tick it there.

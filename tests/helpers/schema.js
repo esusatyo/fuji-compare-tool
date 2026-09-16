@@ -236,9 +236,11 @@ function validateCamera(id, cam, brandSections = [], mountIds = null) {
   add(checkField(cam, 'series', { type: 'string' }));
   add(checkMount(cam, mountIds));
   add(checkField(cam, 'tagline', { type: 'string' }));
-  // Floor matches the lens floor below. Sigma's DP compacts start in 2008, and
-  // the bound is only a fat-finger guard (`year: 210`), not a scoping rule.
-  add(checkField(cam, 'year', { type: 'number', min: 2008, max: 2027 }));
+  // Floor matched the lens floor below until the Leica M8 (2006) — the
+  // earliest digital body on the site — needed a lower one. Sigma's DP
+  // compacts start in 2008; the bound is only a fat-finger guard
+  // (`year: 210`), not a scoping rule.
+  add(checkField(cam, 'year', { type: 'number', min: 2006, max: 2027 }));
   add(checkField(cam, 'discontinued', { type: 'boolean' }));
 
   add(checkField(cam, 'sensorMP', { type: 'number', min: 1, max: 200 }));
@@ -383,8 +385,14 @@ function validateLens(id, lens, mountIds = null) {
   add(checkField(lens, 'filterThread', { type: 'number', nullable: true, min: 1 }));
 
   // Floor is 2008, when Micro Four Thirds launched — the earliest mount any
-  // brand here covers. Panasonic's LUMIX G Vario 7-14mm F4 (2009) sits below
-  // the 2010 bound this used to carry; the bound is only a typo guard.
+  // brand here covers, except Leica's M-Mount (see the camera floor above,
+  // which drops to 2006 for the M8). No lens entered yet is old enough to
+  // need the same drop — `year` means the release year of the version
+  // currently sold (CLAUDE.md), not its optical formula's origin, so even
+  // Leica's oldest current M-lens versions land within this range. Lower
+  // this floor, with a comment naming the lens, if one ever doesn't.
+  // Panasonic's LUMIX G Vario 7-14mm F4 (2009) sits below the 2010 bound
+  // this used to carry; the bound is only a typo guard.
   add(checkField(lens, 'year', { type: 'number', min: 2008, max: 2027 }));
   add(checkField(lens, 'discontinued', { type: 'boolean' }));
 

@@ -29,6 +29,14 @@ const LENS_CROP = {
   fujifilm:  { x: 1.5, g: 0.79 },
   panasonic: { l: 1.0, mft: 2.0 },
   sigma:     { l: 1.0 },
+  leica:     { l: 1.0, m: 1.0 },
+};
+// Override by lens `line` before falling back to LENS_CROP[brand][mount].
+// Leica's TL lenses are APS-C (1.5×) but share the `l` mount with full-frame
+// SL glass (1.0×) — CLAUDE.md's rule that format and mount are separate
+// properties, so the mount-keyed table alone can't tell them apart.
+const LENS_CROP_BY_LINE = {
+  leica: { TL: 1.5 },
 };
 // Generous next to the spread actually seen (worst case 1.467 against 1.5, from
 // rounding a 14mm APS-C lens to "21mm"), and nowhere near wide enough to blur
@@ -39,6 +47,11 @@ const SENSOR_RULES = {
   fujifilm:  [[/43\.8×32\.9mm GFX/, 'g'], [/X-Trans|Bayer CMOS|1" Primary Color/, 'x']],
   panasonic: [[/Micro Four Thirds/, 'mft'], [/Full-frame/, 'l']],
   sigma:     [[/Foveon/, 'sa'], [/Full-frame/, 'l']],
+  // SL, M and Q all share one full-frame sensor, so sensorType can't tell
+  // them apart — test `series` instead (a third tuple element names the
+  // field; default stays 'sensorType' so the other brands' rows are
+  // untouched). See openspec/changes/add-leica-brand/design.md §3.
+  leica:     [[/^M/, 'm', 'series'], [/^(SL|TL|CL|Q|X|D-Lux|V-Lux|C-Lux)/, 'l', 'series']],
 };
 
 // The "Lens Mount" spec row resolves a label from the item's mount id alone,
@@ -123,7 +136,8 @@ for (const brand of brandDirs()) {
           `${JSON.stringify(lens.focalLengthEquiv)} and focal length ${native}`);
         continue;
       }
-      const expected = crops[lens.mount];
+      const byLine = LENS_CROP_BY_LINE[brand] && LENS_CROP_BY_LINE[brand][lens.line];
+      const expected = byLine !== undefined ? byLine : crops[lens.mount];
       if (expected === undefined) {
         problems.push(`${id}: mount ${JSON.stringify(lens.mount)} has no crop factor in ` +
           'LENS_CROP — add one so its lenses stay checkable');
@@ -150,9 +164,10 @@ for (const brand of brandDirs()) {
       if (!rules) {
         derived = declared[0]; // single-mount brand
       } else {
-        const hit = rules.find(([re]) => re.test(cam.sensorType));
+        const hit = rules.find(([re, , field]) => re.test(cam[field || 'sensorType']));
         if (!hit) {
-          problems.push(`${id}: sensorType ${JSON.stringify(cam.sensorType)} matches no rule — ` +
+          const field = rules[0]?.[2] || 'sensorType';
+          problems.push(`${id}: ${field} ${JSON.stringify(cam[field])} matches no rule — ` +
             'add one to SENSOR_RULES so the mount stays checkable');
           continue;
         }
