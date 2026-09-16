@@ -201,6 +201,11 @@ const KNOWN_IMAGE_GAPS = {
     // v-lux-typ-114: task 5.7b. No dedicated Commons product photo — only
     // ~925 "taken with this camera" files. Re-check in task 7.
     'v-lux-typ-114',
+    // m-monochrom-typ-246, m-e-typ-240: task 5.3b. Every Commons file
+    // findable under these names is actually the earlier camera it
+    // succeeded (the CCD M Monochrom predates the Typ 246; the Typ 220
+    // predates this M-E). Re-check in task 7.
+    'm-monochrom-typ-246', 'm-e-typ-240',
   ]),
   nikon: new Set([
     // Cameras: all 10 resolved 2026-08-15 (Commons photos sourced + applied).

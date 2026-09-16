@@ -748,6 +748,144 @@ const CAMERAS = {
     cardSlots:'1x SD/SDHC', batteryLife:null, usbCharging:false,
     lensType:'Interchangeable', lensSpec:null,
   },
+  'm-monochrom-typ-246': {
+    name:'M Monochrom (Typ 246)', series:'M Monochrom', mount:'m', year:2015, discontinued:true,
+    tagline:'CMOS successor to the original M Monochrom, adding live view and 1080p black-and-white video.',
+    productUrl:'https://www.dpreview.com/products/leica/compacts/leica_m_monochrom_typ246',
+    // No verified free-licence Commons photo of the Typ 246 body exists —
+    // every "Leica M Monochrom" file found on Commons predates its 2015
+    // release (the earlier CCD M Monochrom's photos). See KNOWN_IMAGE_GAPS.
+    imageUrl:null,
+    asin:null,
+    prices:{USD:7450,AUD:null,EUR:null,GBP:null,JPY:null,CAD:null,SGD:null},
+    sensorMP:24, sensorType:'Full-frame CMOS, monochrome (no color filter array)', processor:'Leica Maestro',
+    width:139, height:80, depth:42, weight:680, weatherSealed:false,
+    lcdSize:'3.0"', lcdDots:921000, lcdType:'Fixed',
+    evfType:null, evfDots:null, evfMag:null,
+    faceDetection:false, subjectDetection:null, maxBurst:3,
+    ibis:false, ibisStops:null,
+    maxVideoRes:'1080p (24p/25p)', logVideo:false,
+    monochrom:true, focusingSystem:'Rangefinder', contentCredentials:false, internalStorageGB:null,
+    bluetooth:false, wifi:false,
+    cardSlots:'1x SD/SDHC/SDXC', batteryLife:null, usbCharging:false,
+    lensType:'Interchangeable', lensSpec:null,
+  },
+  'm-e-typ-240': {
+    name:'M-E (Typ 240)', series:'M', mount:'m', year:2019, discontinued:true,
+    tagline:'A budget re-release on the Typ 240 platform, limited to 700 units finished in anthracite paint.',
+    productUrl:'https://www.dpreview.com/products/leica/slrs/leica_m-e_typ240',
+    // No verified free-licence Commons photo — every "Leica M-E" file found
+    // is the earlier 2012 Typ 220. See KNOWN_IMAGE_GAPS.
+    imageUrl:null,
+    asin:null,
+    prices:{USD:3999,AUD:null,EUR:null,GBP:null,JPY:null,CAD:null,SGD:null},
+    sensorMP:24, sensorType:'Full-frame CMOS', processor:'Leica Maestro',
+    width:138.6, height:80, depth:42, weight:680, weatherSealed:true,
+    lcdSize:'3.0"', lcdDots:921000, lcdType:'Fixed',
+    evfType:null, evfDots:null, evfMag:null,
+    faceDetection:false, subjectDetection:null, maxBurst:3,
+    ibis:false, ibisStops:null,
+    maxVideoRes:'1080p (24p/25p)', logVideo:false,
+    monochrom:false, focusingSystem:'Rangefinder', contentCredentials:false, internalStorageGB:null,
+    // wifi: single-sourced to PetaPixel's launch article; DPReview's spec
+    // table for this model omits a Wireless row entirely (neither confirms
+    // nor denies). No contradicting source found.
+    bluetooth:false, wifi:true,
+    cardSlots:'1x SD/SDHC/SDXC', batteryLife:null, usbCharging:false,
+    lensType:'Interchangeable', lensSpec:null,
+  },
+  'm-d-typ-262': {
+    name:'M-D (Typ 262)', series:'M', mount:'m', year:2016, discontinued:true,
+    tagline:'No LCD screen at all — fully manual shooting with exposure metering only, no image review.',
+    productUrl:'https://en.wikipedia.org/wiki/Leica_M-D',
+    // Commons categorizes this file as "Leica M-D Typ 262" (matching
+    // Wikipedia's own infobox use), even though the uploader's own
+    // description text says "Leica M (Typ 262)" — a labeling slip, not a
+    // wrong camera: the photo itself visibly shows no rear LCD screen,
+    // the M-D's one unmistakable, un-fakeable identifying feature. Verified
+    // visually 2026-09-17.
+    imageUrl:'https://upload.wikimedia.org/wikipedia/commons/b/bf/Leica_M-D.jpg',
+    imageCredit:{author:'Guido van Nispen', licence:'CC BY 2.0', licenceUrl:'https://creativecommons.org/licenses/by/2.0/', source:'https://commons.wikimedia.org/wiki/File:Leica_M-D.jpg'},
+    asin:null,
+    prices:{USD:5995,AUD:null,EUR:null,GBP:null,JPY:null,CAD:null,SGD:null},
+    sensorMP:24, sensorType:'Full-frame CMOS', processor:'Leica Maestro',
+    width:138.6, height:80, depth:42, weight:680, weatherSealed:false,
+    lcdSize:'None', lcdDots:null, lcdType:'None',
+    evfType:null, evfDots:null, evfMag:null,
+    faceDetection:false, subjectDetection:null, maxBurst:3,
+    ibis:false, ibisStops:null,
+    maxVideoRes:'None', logVideo:false,
+    monochrom:false, focusingSystem:'Rangefinder', contentCredentials:false, internalStorageGB:null,
+    bluetooth:false, wifi:false,
+    cardSlots:'1x SD/SDHC/SDXC', batteryLife:null, usbCharging:false,
+    lensType:'Interchangeable', lensSpec:null,
+  },
+  'm-typ-262': {
+    name:'M (Typ 262)', series:'M', mount:'m', year:2015, discontinued:true,
+    tagline:'A stripped-back Typ 262 platform with no video, no live view, a quieter shutter, and a lower price.',
+    productUrl:'https://www.dpreview.com/products/leica/slrs/leica_m_typ262',
+    imageUrl:'https://upload.wikimedia.org/wikipedia/commons/1/14/Leica_M_%28Typ_262%29_front_with_a_Leitz_28mm_Elmarit_lens.jpg',
+    imageCredit:{author:'Matthew T Rader', licence:'CC BY-SA 4.0', licenceUrl:'https://creativecommons.org/licenses/by-sa/4.0/', source:'https://commons.wikimedia.org/wiki/File:Leica_M_(Typ_262)_front_with_a_Leitz_28mm_Elmarit_lens.jpg'},
+    asin:null,
+    prices:{USD:5195,AUD:null,EUR:null,GBP:null,JPY:null,CAD:null,SGD:null},
+    sensorMP:24, sensorType:'Full-frame CMOS', processor:'Leica Maestro',
+    width:139, height:80, depth:42, weight:680, weatherSealed:false,
+    lcdSize:'3.0"', lcdDots:921000, lcdType:'Fixed',
+    evfType:null, evfDots:null, evfMag:null,
+    faceDetection:false, subjectDetection:null, maxBurst:3,
+    ibis:false, ibisStops:null,
+    maxVideoRes:'None', logVideo:false,
+    monochrom:false, focusingSystem:'Rangefinder', contentCredentials:false, internalStorageGB:null,
+    bluetooth:false, wifi:false,
+    cardSlots:'1x SD/SDHC/SDXC', batteryLife:null, usbCharging:false,
+    lensType:'Interchangeable', lensSpec:null,
+  },
+  'm-p-typ-240': {
+    name:'M-P (Typ 240)', series:'M', mount:'m', year:2014, discontinued:true,
+    tagline:'A professional Typ 240 variant with a larger buffer, sapphire display cover, and no red-dot logo.',
+    productUrl:'https://www.dpreview.com/products/leica/slrs/leica_mp_typ240',
+    imageUrl:'https://upload.wikimedia.org/wikipedia/commons/4/4c/Leica_M-P_%28Typ_240%29_schwarz.jpg',
+    imageCredit:{author:'Ferencvizi', licence:'CC BY-SA 4.0', licenceUrl:'https://creativecommons.org/licenses/by-sa/4.0/', source:'https://commons.wikimedia.org/wiki/File:Leica_M-P_(Typ_240)_schwarz.jpg'},
+    asin:null,
+    prices:{USD:7950,AUD:null,EUR:null,GBP:null,JPY:null,CAD:null,SGD:null},
+    sensorMP:24, sensorType:'Full-frame CMOS', processor:'Leica Maestro',
+    width:139, height:80, depth:42, weight:680, weatherSealed:true,
+    lcdSize:'3.0"', lcdDots:920000, lcdType:'Fixed',
+    evfType:null, evfDots:null, evfMag:null,
+    faceDetection:false, subjectDetection:null, maxBurst:3,
+    ibis:false, ibisStops:null,
+    maxVideoRes:'1080p (24p/25p)', logVideo:false,
+    // internalStorageGB: the 2GB figure sometimes quoted for the M-P is a
+    // working buffer for burst shooting, not persistent storage.
+    monochrom:false, focusingSystem:'Rangefinder', contentCredentials:false, internalStorageGB:null,
+    bluetooth:false, wifi:false,
+    cardSlots:'1x SD/SDHC/SDXC', batteryLife:null, usbCharging:false,
+    lensType:'Interchangeable', lensSpec:null,
+  },
+  'm-typ-240': {
+    name:'M (Typ 240)', series:'M', mount:'m', year:2012, discontinued:true,
+    tagline:"Leica's first CMOS M — full-frame live view and 1080p video in a rangefinder body.",
+    productUrl:'https://www.dpreview.com/products/leica/slrs/leica_m240',
+    imageUrl:'https://upload.wikimedia.org/wikipedia/commons/b/b2/Leica_M-240-P4140434-black.jpg',
+    imageCredit:{author:'Rama', licence:'CC BY-SA 3.0 FR', licenceUrl:'https://creativecommons.org/licenses/by-sa/3.0/fr/deed.en', source:'https://commons.wikimedia.org/wiki/File:Leica_M-240-P4140434-black.jpg'},
+    asin:null,
+    // Derived, not directly stated: two independent sources (a DPReview
+    // article and Wikipedia) both give the M-P (Typ 240)'s $7,950 as
+    // "$1,000 more than the standard M (Typ 240)", implying $6,950. No
+    // source states $6,950 as a standalone figure.
+    prices:{USD:6950,AUD:null,EUR:null,GBP:null,JPY:null,CAD:null,SGD:null},
+    sensorMP:24, sensorType:'Full-frame CMOS', processor:'Leica Maestro',
+    width:139, height:80, depth:42, weight:680, weatherSealed:true,
+    lcdSize:'3.0"', lcdDots:920000, lcdType:'Fixed',
+    evfType:null, evfDots:null, evfMag:null,
+    faceDetection:false, subjectDetection:null, maxBurst:3,
+    ibis:false, ibisStops:null,
+    maxVideoRes:'1080p (24p/25p)', logVideo:false,
+    monochrom:false, focusingSystem:'Rangefinder', contentCredentials:false, internalStorageGB:null,
+    bluetooth:false, wifi:false,
+    cardSlots:'1x SD/SDHC/SDXC', batteryLife:null, usbCharging:false,
+    lensType:'Interchangeable', lensSpec:null,
+  },
 };
 
 // Newest-first within each group (openspec/changes/add-leica-brand/
@@ -762,8 +900,8 @@ const CAMERA_ORDER = [
   'd-lux-8', 'd-lux-7', 'd-lux-typ-109',
   'v-lux-5', 'v-lux-typ-114',
   'c-lux',
-  'm-e-typ-220', 'm9-p', 'm8',
-  'm-monochrom',
+  'm-e-typ-240', 'm-d-typ-262', 'm-typ-262', 'm-p-typ-240', 'm-e-typ-220', 'm-typ-240', 'm9-p', 'm8',
+  'm-monochrom-typ-246', 'm-monochrom',
 ];
 
 const DROPDOWN_GROUPS = [
@@ -774,8 +912,8 @@ const DROPDOWN_GROUPS = [
   { label: '── D-Lux ──', ids: ['d-lux-8', 'd-lux-7', 'd-lux-typ-109'] },
   { label: '── V-Lux ──', ids: ['v-lux-5', 'v-lux-typ-114'] },
   { label: '── C-Lux ──', ids: ['c-lux'] },
-  { label: '── M ──', ids: ['m-e-typ-220', 'm9-p', 'm8'] },
-  { label: '── M Monochrom ──', ids: ['m-monochrom'] },
+  { label: '── M ──', ids: ['m-e-typ-240', 'm-d-typ-262', 'm-typ-262', 'm-p-typ-240', 'm-e-typ-220', 'm-typ-240', 'm9-p', 'm8'] },
+  { label: '── M Monochrom ──', ids: ['m-monochrom-typ-246', 'm-monochrom'] },
 ];
 
 // ─────────────────────────────────────────────

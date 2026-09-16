@@ -188,8 +188,28 @@
   nullable escape, so entering either would mean guessing. Flagged as a
   named follow-up before task 5.8. Lands the `m` mount (task 4.4) —
   `BRAND_CONFIG.mounts` now declares both `l` and `m`. `npm test`: 792/792,
-  first try. Remaining M 240/262-era bodies (M 240, M-P 240, M-D 262,
-  M Monochrom 246, M262, M-E 240) are batch 5.3b, still open.
+  first try.
+- [x] 5.3b **M Typ 240/262 generation, second half**: M (Typ 240), M-P
+  (Typ 240), M Monochrom (Typ 246), M (Typ 262), M-D (Typ 262), M-E
+  (Typ 240) — all 6 entered. Corrected two brief assumptions with sourced
+  evidence: the M Monochrom (Typ 246) DOES record 1080p B&W video (3
+  independent sources; only Typ 262/M-D lack video in this generation), and
+  `weatherSealed` is `true` for M (Typ 240)/M-P (Typ 240)/M-E (Typ 240) per
+  DPReview's own spec tables (`false` only for the CCD-era bodies and the
+  Typ-262 pair, which no source claims are sealed). M (Typ 240)'s $6,950
+  price is **derived**, not directly stated — two independent sources
+  (DPReview + Wikipedia) both state the M-P is "$1,000 more than the
+  standard M (Typ 240)" from its confirmed $7,950, so $6,950 follows by
+  arithmetic from two sourced facts, documented inline as derived rather
+  than presented as directly cited. M-D (Typ 262)'s candidate image had the
+  same kind of identity question as the D-Lux 6/109 mixup in task 5.7b —
+  its own description text says "M (Typ 262)" but Commons/Wikipedia
+  category it as M-D — resolved the same way, by visually confirming the
+  M-D's one unmistakable tell (no rear LCD) is actually visible in the
+  photo. No image for M Monochrom (Typ 246) or M-E (Typ 240) →
+  `KNOWN_IMAGE_GAPS.leica`. `npm test`: 792/792.
+  **All 6 batch-5.3 sub-groups plus M8.2/M9's gap are now the only M-era
+  research left open** (batches 5.4 M10 family, 5.5 M11 + M EV1).
 - [ ] 5.4 **Batch D — M10 family.**
 - [ ] 5.5 **Batch E — M11 family + M EV1.**
 - [x] 5.6 **Batch F — Q line** (`lensType: 'Fixed'`, `mount: 'l'`), all 7
