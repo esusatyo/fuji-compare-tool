@@ -30,6 +30,11 @@ const ALLOWED_HOSTS = [
   // bodies whose own leica-camera.com pages are gone (task 5.6). Already
   // trusted as a footerLinks source across several brands.
   'dpreview.com',
+  // bigcommerce.com (leicacamerausa.com's storefront CDN): used for the
+  // APO-Summicron-SL 75mm's image — leica-camera.com's own og:image for
+  // that lens is broken (points to an unrelated product), verified
+  // visually against this CDN photo instead (task 6.1/6.2).
+  'bigcommerce.com',
   // CDNs and storefront hosts backing the above.
   'cdn.shopify.com', 'commercetools.com', 'cs.1worldsync.com', 'cloudfront.net',
   'foto-erhardt.de', 'contentstack.io', 'etoren.com', 'bhphotovideo.com',
@@ -66,7 +71,26 @@ const KNOWN_SHARED_LINKS = new Map([
 // (8 I-series primes across panasonic/sigma/sony, plus Sony's 35mm F1.4 DG DN).
 // That grew the denominator; it is NOT a coverage regression. Rebase only for a
 // population change like this, and say why — otherwise tighten, never loosen.
-const ASIN_GAP_BASELINE = 86;
+//
+// Rebased to 87 on 2026-09-18 (owner-approved at the add-leica-brand kickoff):
+// Leica sells almost entirely through its own stores, not Amazon, so its
+// current items overwhelmingly lack a genuine plain-new ASIN (confirmed
+// per-item during research — Amazon listings found were consistently
+// used-only, bundles, or nonexistent). This is a narrow, incremental rebase
+// (+1) covering only what today's Leica lens batch (task 6.1/6.2) actually
+// needs; the full Leica ASIN pass + a final rebase happens at task 7.6, once
+// every current Leica item (including the M-mount lenses still to come) has
+// had a real attempt. Current Leica items counted against this baseline as
+// of this rebase: sl3-p, sl3-s, sl3, q3-monochrom, d-lux-8, m-ev1, m11-d,
+// m11-p, m11-monochrom, m11, super-apo-summicron-sl-21mm-f2-asph,
+// apo-summicron-sl-50mm-f2-asph, summilux-sl-50mm-f14-asph,
+// vario-elmarit-sl-24-70mm-f28-asph, apo-summicron-sl-28mm-f2-asph,
+// apo-summicron-sl-35mm-f2-asph, apo-summicron-sl-75mm-f2-asph,
+// apo-summicron-sl-90mm-f2-asph, apo-macro-elmarit-sl-100mm-f28,
+// super-vario-elmarit-sl-14-24mm-f28-asph,
+// super-vario-elmar-sl-16-35mm-f35-45-asph, vario-elmarit-sl-70-200mm-f28-asph,
+// apo-vario-elmarit-sl-90-280mm-f28-4, vario-elmar-sl-100-400mm-f5-63 (24 items).
+const ASIN_GAP_BASELINE = 87;
 
 const allItems = () => brandDirs().flatMap(brand => {
   const { data } = loadBrand(brand);

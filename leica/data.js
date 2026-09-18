@@ -1200,11 +1200,181 @@ const LENSES = {
     prices:{USD:3205,AUD:5300,EUR:2950,GBP:2590,JPY:539000,CAD:4520,SGD:4350},
     productUrl:'https://leica-camera.com/en-US/photography/lenses/sl/vario-elmarit-sl-24-70-f2-8-asph-black-finish',
   },
+  'apo-summicron-sl-28mm-f2-asph': {
+    name:'Leica APO-Summicron-SL 28mm f/2 ASPH.', manufacturer:'Leica', line:'SL', type:'Prime',
+    mount:'l', focalLength:28, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'28mm',
+    maxAperture:2, minAperture:22, weight:700, length:102, diameter:73,
+    filterThread:67, minFocusDist:24, maxMagnification:0.2,
+    elements:13, groups:10, blades:null, afType:'Dual Syncro Drive (DSD)',
+    weatherSealed:true, ois:false, oisStops:null, year:2021, discontinued:false,
+    imageUrl:'https://leica-camera.com/sites/default/files/styles/meta_tag_product_image/public/pm-41751-11183__APO-Summicron-SL_28_f2.png?itok=84RbiKIQ',
+    imageSource:{url:'https://leica-camera.com/en-US/photography/lenses/sl/apo-summicron-sl-28-f2-asph-black-finish', tier:'T1', date:'2026-09-18', title:'Leica APO-Summicron-SL 28mm f/2 ASPH. official product page'},
+    asin:null,
+    // CAD not found — Vistek does not carry this lens new (checked twice).
+    prices:{USD:5650,AUD:9300,EUR:5190,GBP:4650,JPY:946000,CAD:null,SGD:7750},
+    priceIncomplete:true,
+    productUrl:'https://leica-camera.com/en-US/photography/lenses/sl/apo-summicron-sl-28-f2-asph-black-finish',
+  },
+  'apo-summicron-sl-35mm-f2-asph': {
+    name:'Leica APO-Summicron-SL 35mm f/2 ASPH.', manufacturer:'Leica', line:'SL', type:'Prime',
+    mount:'l', focalLength:35, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'35mm',
+    maxAperture:2, minAperture:22, weight:750, length:102, diameter:73,
+    filterThread:67, minFocusDist:27, maxMagnification:0.2,
+    elements:13, groups:11, blades:null, afType:'Dual Syncro Drive (DSD)',
+    weatherSealed:true, ois:false, oisStops:null, year:2019, discontinued:false,
+    imageUrl:'https://leica-camera.com/sites/default/files/styles/meta_tag_product_image/public/pm-27849-11184__APO-Summicron-SL_35_f2_1_0.png?itok=pVQ_ONnM',
+    imageSource:{url:'https://leica-camera.com/en-US/photography/lenses/sl/apo-summicron-sl-35mm-f2-asph', tier:'T1', date:'2026-09-18', title:'Leica APO-Summicron-SL 35mm f/2 ASPH. official product page'},
+    asin:null,
+    prices:{USD:5560,AUD:8900,EUR:4990,GBP:4390,JPY:913000,CAD:7840,SGD:7450},
+    productUrl:'https://leica-camera.com/en-US/photography/lenses/sl/apo-summicron-sl-35mm-f2-asph',
+  },
+  'apo-summicron-sl-75mm-f2-asph': {
+    name:'Leica APO-Summicron-SL 75mm f/2 ASPH.', manufacturer:'Leica', line:'SL', type:'Prime',
+    mount:'l', focalLength:75, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'75mm',
+    maxAperture:2, minAperture:22, weight:720, length:102, diameter:73,
+    filterThread:67, minFocusDist:50, maxMagnification:0.2,
+    elements:11, groups:9, blades:null, afType:'Dual Syncro Drive (DSD)',
+    weatherSealed:true, ois:false, oisStops:null, year:2018, discontinued:false,
+    // leica-camera.com's own og:image for this lens is broken (points to an
+    // unrelated loupe/magnifier product, confirmed on reload) — sourced
+    // from leicacamerausa.com's storefront CDN instead, visually verified
+    // 2026-09-18 (barrel print reads "75").
+    imageUrl:'https://cdn11.bigcommerce.com/s-r16b86mn51/images/stencil/500x659/products/6531/19492/11178-01-Leica-APO-Summicron-SL-75mm-ASPH_front__64642.1564749914.1280.1280__15847.1653588148.jpg?c=2',
+    imageSource:{url:'https://leicacamerausa.com/leica-apo-summicron-sl-75mm-f-2-asph.html', tier:'T1', date:'2026-09-18', title:'Leica APO-Summicron-SL 75mm f/2 ASPH. — Leica Camera USA'},
+    asin:null,
+    prices:{USD:5775,AUD:9300,EUR:5190,GBP:4500,JPY:946000,CAD:8145,SGD:7750},
+    productUrl:'https://leica-camera.com/en-US/photography/lenses/sl/apo-summicron-sl-75mm-f2-asph-black',
+  },
+  'apo-summicron-sl-90mm-f2-asph': {
+    name:'Leica APO-Summicron-SL 90mm f/2 ASPH.', manufacturer:'Leica', line:'SL', type:'Prime',
+    mount:'l', focalLength:90, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'90mm',
+    maxAperture:2, minAperture:22, weight:700, length:102, diameter:73,
+    filterThread:67, minFocusDist:60, maxMagnification:0.2,
+    elements:11, groups:9, blades:null, afType:'Dual Syncro Drive (DSD)',
+    weatherSealed:true, ois:false, oisStops:null, year:2018, discontinued:false,
+    imageUrl:'https://leica-camera.com/sites/default/files/styles/meta_tag_product_image/public/pm-27851-11179__APO-Summicron-SL_90_f2_0.png?itok=Q0N4hegs',
+    imageSource:{url:'https://leica-camera.com/en-US/photography/lenses/sl/apo-summicron-sl-90mm-f2-asph-black', tier:'T1', date:'2026-09-18', title:'Leica APO-Summicron-SL 90mm f/2 ASPH. official product page'},
+    asin:null,
+    prices:{USD:6200,AUD:9600,EUR:5390,GBP:4750,JPY:990000,CAD:8740,SGD:8150},
+    productUrl:'https://leica-camera.com/en-US/photography/lenses/sl/apo-summicron-sl-90mm-f2-asph-black',
+  },
+  'apo-macro-elmarit-sl-100mm-f28': {
+    name:'Leica APO-Macro-Elmarit-SL 100mm f/2.8', manufacturer:'Leica', line:'SL', type:'Prime',
+    mount:'l', focalLength:100, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'100mm',
+    maxAperture:2.8, minAperture:22, weight:801, length:137, diameter:77,
+    filterThread:67, minFocusDist:30, maxMagnification:1,
+    elements:17, groups:12, blades:9,
+    // afType: Leica's own pages describe only "a precise autofocus system
+    // with focus limiter", never naming a motor — generic 'Autofocus'
+    // rather than guessing a specific system name.
+    afType:'Autofocus',
+    weatherSealed:true, ois:false, oisStops:null, year:2026, discontinued:false,
+    imageUrl:'https://leica-camera.com/sites/default/files/styles/meta_tag_product_image/public/pm-28327-11125_APO_Macro-Elmarit-SL_f2_8_100_upright_1920px.webp?itok=KJQn4Shc',
+    imageSource:{url:'https://leica-camera.com/en-US/photography/lenses/sl/apo-macro-elmarit-sl-100mm-f2-8-black', tier:'T1', date:'2026-09-18', title:'Leica APO-Macro-Elmarit-SL 100mm f/2.8 official product page'},
+    asin:null,
+    prices:{USD:2700,AUD:4400,EUR:2450,GBP:2110,JPY:451000,CAD:3805,SGD:3650},
+    productUrl:'https://leica-camera.com/en-US/photography/lenses/sl/apo-macro-elmarit-sl-100mm-f2-8-black',
+  },
+  'super-vario-elmarit-sl-14-24mm-f28-asph': {
+    name:'Leica Super-Vario-Elmarit-SL 14-24mm f/2.8 ASPH.', manufacturer:'Leica', line:'SL', type:'Zoom',
+    mount:'l', focalLength:null, focalLengthMin:14, focalLengthMax:24, focalLengthEquiv:'14-24mm',
+    maxAperture:2.8, minAperture:22, weight:855, length:131, diameter:85,
+    filterThread:null, minFocusDist:28, maxMagnification:0.135,
+    elements:18, groups:13, blades:null,
+    // afType: Leica's pages describe only "a quick, quiet AF system", no
+    // motor name given.
+    afType:'Autofocus',
+    weatherSealed:true, ois:false, oisStops:null, year:2023, discontinued:false,
+    imageUrl:'https://leica-camera.com/sites/default/files/styles/meta_tag_product_image/public/pm-101461-11194_Super-Vario-Elmarit-SL_14-24_f2_8_upright.png?itok=30FLYeAg',
+    imageSource:{url:'https://leica-camera.com/en-US/photography/lenses/sl/leica-super-vario-elmarit-sl-14-24-f28-asph-black-anodized-finish', tier:'T1', date:'2026-09-18', title:'Leica Super-Vario-Elmarit-SL 14-24mm f/2.8 ASPH. official product page'},
+    asin:null,
+    prices:{USD:2950,AUD:4800,EUR:2690,GBP:2350,JPY:495000,CAD:4160,SGD:3990},
+    productUrl:'https://leica-camera.com/en-US/photography/lenses/sl/leica-super-vario-elmarit-sl-14-24-f28-asph-black-anodized-finish',
+  },
+  'super-vario-elmar-sl-16-35mm-f35-45-asph': {
+    name:'Leica Super-Vario-Elmar-SL 16-35mm f/3.5-4.5 ASPH.', manufacturer:'Leica', line:'SL', type:'Zoom',
+    mount:'l', focalLength:null, focalLengthMin:16, focalLengthMax:35, focalLengthEquiv:'16-35mm',
+    maxAperture:3.5, minAperture:22, weight:990, length:123, diameter:88,
+    filterThread:82, minFocusDist:25, maxMagnification:0.27,
+    elements:18, groups:12, blades:null,
+    // afType: Leica's own copy describes "a specially developed motor
+    // concept consisting of a stepper motor and a linear guide" — a
+    // different, unbadged system from the Summicron-SL line's DSD.
+    afType:'Stepping Motor + Linear Guide',
+    weatherSealed:true, ois:false, oisStops:null, year:2018, discontinued:false,
+    // Current, but out of stock on leicacamerausa.com specifically ("back
+    // in stock" notify form) while in stock in DE/GB/JP/AU/SG/CA — treated
+    // as a regional inventory gap, not a discontinuation.
+    imageUrl:'https://leica-camera.com/sites/default/files/styles/meta_tag_product_image/public/pm-19513-11177__Super-Vario-Elmar-SL_16-35_f3_5-4_5.png?itok=ciQIrSmc',
+    imageSource:{url:'https://leica-camera.com/en-US/photography/lenses/sl/super-vario-elmar-sl-16-35mm-f3-5-4-5-asph-black', tier:'T1', date:'2026-09-18', title:'Leica Super-Vario-Elmar-SL 16-35mm f/3.5-4.5 ASPH. official product page'},
+    asin:null,
+    prices:{USD:6845,AUD:10200,EUR:5990,GBP:5350,JPY:1100000,CAD:9650,SGD:9050},
+    productUrl:'https://leica-camera.com/en-US/photography/lenses/sl/super-vario-elmar-sl-16-35mm-f3-5-4-5-asph-black',
+  },
+  'vario-elmarit-sl-70-200mm-f28-asph': {
+    name:'Leica Vario-Elmarit-SL 70-200mm f/2.8 ASPH.', manufacturer:'Leica', line:'SL', type:'Zoom',
+    mount:'l', focalLength:null, focalLengthMin:70, focalLengthMax:200, focalLengthEquiv:'70-200mm',
+    maxAperture:2.8, minAperture:22, weight:1540, length:207, diameter:89,
+    filterThread:82, minFocusDist:100, maxMagnification:0.196,
+    elements:20, groups:15, blades:null,
+    // afType: Leica's pages describe only "internal focusing", no motor
+    // name given.
+    afType:'Autofocus',
+    weatherSealed:true, ois:true, oisStops:null, year:2024, discontinued:false,
+    // Current, but showing as unavailable-online in DE/GB specifically
+    // (in-store reserve only) while in stock in US/JP/AU/CA — a regional
+    // inventory gap, not a discontinuation. No standalone SGD listing found
+    // (Singapore only bundles it with a teleconverter).
+    imageUrl:'https://leica-camera.com/sites/default/files/styles/meta_tag_product_image/public/pm-20382-11096_Leica_Vario-Elmarit-SL_70-200_f_2_8_upright_1920px.png?itok=n_YgewDs',
+    imageSource:{url:'https://leica-camera.com/en-US/photography/lenses/sl/vario-elmarit-sl-70-200-f28-asph-black-anodized-finish', tier:'T1', date:'2026-09-18', title:'Leica Vario-Elmarit-SL 70-200mm f/2.8 ASPH. official product page'},
+    asin:null,
+    prices:{USD:3550,AUD:5800,EUR:3250,GBP:2880,JPY:594000,CAD:5005,SGD:null},
+    priceIncomplete:true,
+    productUrl:'https://leica-camera.com/en-US/photography/lenses/sl/vario-elmarit-sl-70-200-f28-asph-black-anodized-finish',
+  },
+  'apo-vario-elmarit-sl-90-280mm-f28-4': {
+    name:'Leica APO-Vario-Elmarit-SL 90-280mm f/2.8-4', manufacturer:'Leica', line:'SL', type:'Zoom',
+    mount:'l', focalLength:null, focalLengthMin:90, focalLengthMax:280, focalLengthEquiv:'90-280mm',
+    maxAperture:2.8, minAperture:22, weight:1710, length:238, diameter:88,
+    filterThread:82, minFocusDist:60, maxMagnification:0.208,
+    elements:23, groups:17, blades:null, afType:'Dual Syncro Drive (DSD)',
+    weatherSealed:true, ois:true, oisStops:3.5, year:2016, discontinued:false,
+    imageUrl:'https://leica-camera.com/sites/default/files/styles/meta_tag_product_image/public/pm-18202-11175__APO-Vario-Elmarit-SL_90-280_f2_8-4.png?itok=TvITex23',
+    imageSource:{url:'https://leica-camera.com/en-US/photography/lenses/sl/apo-vario-elmarit-sl-90-280mm-f2-8-4-black', tier:'T1', date:'2026-09-18', title:'Leica APO-Vario-Elmarit-SL 90-280mm f/2.8-4 official product page'},
+    asin:null,
+    prices:{USD:7805,AUD:12900,EUR:7190,GBP:6250,JPY:1320000,CAD:11005,SGD:10700},
+    productUrl:'https://leica-camera.com/en-US/photography/lenses/sl/apo-vario-elmarit-sl-90-280mm-f2-8-4-black',
+  },
+  'vario-elmar-sl-100-400mm-f5-63': {
+    name:'Leica Vario-Elmar-SL 100-400mm f/5-6.3', manufacturer:'Leica', line:'SL', type:'Zoom',
+    mount:'l', focalLength:null, focalLengthMin:100, focalLengthMax:400, focalLengthEquiv:'100-400mm',
+    maxAperture:5, minAperture:22, weight:1530, length:198, diameter:88,
+    filterThread:82, minFocusDist:159, maxMagnification:0.244,
+    elements:22, groups:16, blades:null,
+    // afType: Leica's pages describe only "optical image stabilisation and
+    // precise autofocus", no motor name given.
+    afType:'Autofocus',
+    weatherSealed:true, ois:true, oisStops:null, year:2023, discontinued:false,
+    // No standalone SGD listing found (Singapore only bundles it with a teleconverter).
+    imageUrl:'https://leica-camera.com/sites/default/files/styles/meta_tag_product_image/public/pm-91596-11191_Vario-Elmar-SL_100-400_front_PIM.png?itok=wsKuClEk',
+    imageSource:{url:'https://leica-camera.com/en-US/photography/lenses/sl/vario-elmar-sl-100-400-f5-6-3', tier:'T1', date:'2026-09-18', title:'Leica Vario-Elmar-SL 100-400mm f/5-6.3 official product page'},
+    asin:null,
+    prices:{USD:2590,AUD:4300,EUR:2390,GBP:2150,JPY:440000,CAD:3650,SGD:null},
+    priceIncomplete:true,
+    productUrl:'https://leica-camera.com/en-US/photography/lenses/sl/vario-elmar-sl-100-400-f5-6-3',
+  },
 };
 
 const LENS_DROPDOWN_GROUPS = [
-  { label: '── SL Primes ──', ids: ['super-apo-summicron-sl-21mm-f2-asph', 'apo-summicron-sl-50mm-f2-asph', 'summilux-sl-50mm-f14-asph'] },
-  { label: '── SL Zooms ──',  ids: ['vario-elmarit-sl-24-70mm-f28-asph'] },
+  { label: '── SL Primes ──', ids: [
+    'super-apo-summicron-sl-21mm-f2-asph', 'apo-summicron-sl-28mm-f2-asph', 'apo-summicron-sl-35mm-f2-asph',
+    'summilux-sl-50mm-f14-asph', 'apo-summicron-sl-50mm-f2-asph', 'apo-summicron-sl-75mm-f2-asph',
+    'apo-summicron-sl-90mm-f2-asph', 'apo-macro-elmarit-sl-100mm-f28',
+  ] },
+  { label: '── SL Zooms ──', ids: [
+    'super-vario-elmarit-sl-14-24mm-f28-asph', 'super-vario-elmar-sl-16-35mm-f35-45-asph', 'vario-elmarit-sl-24-70mm-f28-asph',
+    'vario-elmarit-sl-70-200mm-f28-asph', 'apo-vario-elmarit-sl-90-280mm-f28-4', 'vario-elmar-sl-100-400mm-f5-63',
+  ] },
 ];
 
 return { BRAND_CONFIG, SERIES_COLORS, CAMERAS, CAMERA_ORDER, DROPDOWN_GROUPS, LENSES, LENS_DROPDOWN_GROUPS, REGISTERED_BRANDS };

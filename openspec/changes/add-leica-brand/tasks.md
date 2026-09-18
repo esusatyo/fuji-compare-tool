@@ -295,8 +295,26 @@
 > group), `KNOWN_IMAGE_GAPS`, `npm run test:data`. `manufacturer: 'Leica'`.
 > Lenses may use `priceIncomplete: true`.
 
-- [ ] 6.1 **Batch A — SL primes** (Super-APO/APO-Summicron-SL, Summilux-SL, APO-Macro-Elmarit-SL).
-- [ ] 6.2 **Batch B — SL zooms** (Super-Vario-Elmarit-SL, Super-Vario-Elmar-SL, Vario-Elmarit-SL ×3, APO-Vario-Elmarit-SL, Vario-Elmar-SL).
+- [x] 6.1 + 6.2 **SL primes + zooms, combined** (already had 3 primes + 1 zoom
+  from the task-2.2 seed): added the remaining 5 primes (APO-Summicron-SL
+  28/35/75/90mm, APO-Macro-Elmarit-SL 100mm) and 5 zooms
+  (Super-Vario-Elmarit-SL 14-24mm, Super-Vario-Elmar-SL 16-35mm,
+  Vario-Elmarit-SL 70-200mm, APO-Vario-Elmarit-SL 90-280mm, Vario-Elmar-SL
+  100-400mm) — SL lens lineup now complete, all current. Two are
+  current-but-regionally-constrained (16-35mm out of US web stock, 70-200mm
+  out of DE/GB web stock) rather than discontinued — treated as inventory
+  gaps, not status changes. `afType` uses the site's existing generic
+  `'Autofocus'` fallback for 3 zooms + the 100mm macro, where Leica's own
+  pages never name a specific motor (checked, not guessed). Fixed a broken
+  `og:image` on Leica's own 75mm page (points to an unrelated product) by
+  sourcing that one image from leicacamerausa.com's CDN instead, verified
+  visually (lens barrel print reads "75") — added `bigcommerce.com` to the
+  offline-link host allowlist. CAD (28mm) and SGD (70-200mm, 100-400mm) gaps
+  → `priceIncomplete: true`, genuinely unavailable rather than unchecked.
+  **Crossed `ASIN_GAP_BASELINE`** (86 → 87, +1) — a narrow, documented,
+  owner-pre-approved rebase, not the full task 7.6 pass (still to come once
+  every current Leica item, including upcoming M lenses, has had a real
+  ASIN search). `npm test`: 792/792.
 - [ ] 6.3 **Batch C — M: Noctilux-M + Summilux-M** (incl. Classic Line reissues).
 - [ ] 6.4 **Batch D — M: Summicron-M + APO-Summicron-M.**
 - [ ] 6.5 **Batch E — M: remaining** (Elmarit-M, Summaron-M, Macro-Elmar-M, Thambar-M, APO-Telyt-M).
