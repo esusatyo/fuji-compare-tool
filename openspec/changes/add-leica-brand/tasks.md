@@ -376,11 +376,16 @@
 - [ ] 8.5 `/compare/`: `leica:<slug>` cameras selectable; Leica section shows
   "—" for other brands' cameras.
 
-## 9. Optional
+## 9. Optional — SKIPPED (owner call, 2026-09-18)
 
-- [ ] 9.1 A few `CROSS_BRAND_MATCHUPS` (e.g. Q3 vs Fujifilm GFX100RF / Sony
+- [x] 9.1 A few `CROSS_BRAND_MATCHUPS` (e.g. Q3 vs Fujifilm GFX100RF / Sony
   RX1R III, SL3 vs Panasonic S1R II / Sigma fp L) — only pairs whose data is
-  in the dataset.
+  in the dataset. **Skipped outright** — owner asked to skip step 9 and
+  finish step 6 instead. `generate-seo.js`'s own `curatedPairs()` heuristic
+  already produces same-brand Leica vs-pages automatically (visible in
+  `leica/vs/` throughout this change); this task was only ever about
+  hand-picked *cross*-brand pairs on top of that, which the site works
+  fine without.
 
 ## 10. Ship & close out
 
