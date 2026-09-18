@@ -113,7 +113,9 @@ film-only anyway.
 
 ## Counts
 
-SL 6 + TL/CL 4 + M 23 + Q 7 + X 6 + compacts 6 = **52 bodies** (after task 1.4).
+SL 6 + TL/CL 4 + M 22 + Q 7 + X 6 + compacts 6 = **51 bodies** (after task
+1.4). The "23" this line originally said was an off-by-one miscount — the M
+table above (lines 34–55) has 22 rows; corrected at task 5.8.
 
 ## Sources
 

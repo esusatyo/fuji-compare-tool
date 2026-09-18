@@ -221,7 +221,33 @@
   on M10/M10-P/M10-D), documented as an inference. `bluetooth: false` for
   all 5 (Leica added Bluetooth starting with the M11, not this generation).
   All 5 images verified directly. `npm test`: 792/792.
-- [ ] 5.5 **Batch E — M11 family + M EV1.**
+- [x] 5.5 **Batch E — M11 family + M EV1**: M11, M11 Monochrom, M11-P,
+  M11-D, M EV1 — all 5 entered, all confirmed CURRENT (checked individually
+  against leica-camera.com rather than assumed), so all needed full
+  7-currency pricing. Real findings: internal storage isn't uniform (M11 and
+  M EV1 = 64GB, M11-P/M11-D/M11 Monochrom = 256GB, all confirmed genuine
+  persistent storage alongside the SD slot, not a burst buffer); Content
+  Credentials is true for M11-P/M11-D/M EV1, false for M11/M11 Monochrom;
+  the M EV1 is manual-focus-only despite its built-in EVF (confirmed on its
+  own spec page) — visually verified via its product photo, which shows no
+  optical rangefinder window at all, unlike the M11's. **M11's CAD is
+  derived**: Vistek (this dataset's confirmed CAD dealer) stocks every other
+  M11-family body but not the plain M11; since M11 and M11-P share
+  identical USD/AUD/JPY prices from independent sources, M11-P's confirmed
+  CAD is reused, documented inline as derived. `npm test`: 792/792, first
+  try.
+- [x] 5.8 **Final camera pass.** Count correction: the plan's "52 cameras" /
+  "23 M-mount bodies" figures (proposal.md, several earlier task notes) were
+  an off-by-one from early research — `research/cameras.md`'s M table
+  actually lists 22 rows, making the true total **51 cameras**, matching
+  exactly what's now entered: 49 + the 2 deliberately-skipped M8.2/M9 (still
+  open, decisions §6). `CAMERA_ORDER`/`DROPDOWN_GROUPS` newest-first
+  ordering spot-checked across all 9 groups. `defaultSelected` still
+  resolves (`sl3`/`sl3-s`/`sl3-p`). Tried M8.2/M9 pricing again this session
+  (fresh WebSearch attempt) — still exhausted
+  (`CLAUDE_CODE_MAX_WEB_SEARCHES_PER_SESSION` cap persists across the
+  apparent session-rate-limit resets seen elsewhere in this change); remains
+  a named follow-up, not blocking. `npm test`: 792/792.
 - [x] 5.6 **Batch F — Q line** (`lensType: 'Fixed'`, `mount: 'l'`), all 7
   bodies. Corrects design §6's assumption that the Q3 family has built-in
   storage — Leica's spec sheets list only an 8GB *buffer* (burst memory, not
