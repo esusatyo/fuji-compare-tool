@@ -99,7 +99,13 @@ const KNOWN_SHARED_LINKS = new Map([
 // summilux-m-50mm-f14-asph, summilux-m-50mm-f14-classic. (A 7th researched
 // lens, Summilux-M 90 f/1.5 ASPH, was left OUT of the dataset entirely — no
 // USD price could be sourced anywhere, so it doesn't count here either.)
-const ASIN_GAP_BASELINE = 93;
+// Rebased to 97 on 2026-09-18 (task 6.3b, same batch of work): +4 more
+// current M primes, same reason — summilux-m-21mm-f14-asph,
+// summilux-m-28mm-f14-asph, summilux-m-35mm-f14-steel-rim,
+// summilux-m-35mm-f14-asph. (Summilux-M 24mm f/1.4 ASPH was researched but
+// confirmed discontinued and left out entirely, per task 1.4's scope call —
+// doesn't count here either.)
+const ASIN_GAP_BASELINE = 97;
 
 const allItems = () => brandDirs().flatMap(brand => {
   const { data } = loadBrand(brand);

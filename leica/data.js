@@ -1363,6 +1363,75 @@ const LENSES = {
     priceIncomplete:true,
     productUrl:'https://leica-camera.com/en-US/photography/lenses/sl/vario-elmar-sl-100-400-f5-6-3',
   },
+  'summilux-m-35mm-f14-asph': {
+    name:'Leica Summilux-M 35mm f/1.4 ASPH. FLE II', manufacturer:'Leica', line:'M', type:'Prime',
+    mount:'m', focalLength:35, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'35mm',
+    maxAperture:1.4, minAperture:16, weight:338, length:46, diameter:58,
+    filterThread:46, minFocusDist:40, maxMagnification:0.1124,
+    elements:9, groups:5, blades:11, afType:'Manual',
+    // year: confirmed via Leica's own press release ("Teaneck, September
+    // 15, 2022") — the strongest-sourced year of this batch.
+    weatherSealed:false, ois:false, oisStops:null, year:2022, discontinued:false,
+    imageUrl:'https://leica-camera.com/sites/default/files/styles/meta_tag_product_image/public/pm-14525-11726_Summilux-M_35_front_1920x1440px.png?itok=t_3jLkoi',
+    imageSource:{url:'https://leica-camera.com/en-US/photography/lenses/m/summilux-m-35mm-f1-4-asph-black', tier:'T1', date:'2026-09-18', title:'Leica Summilux-M 35mm f/1.4 ASPH. FLE II official product page'},
+    asin:null,
+    prices:{USD:5650,AUD:10900,EUR:6100,GBP:5400,JPY:1111000,CAD:null,SGD:9050},
+    priceIncomplete:true,
+    productUrl:'https://leica-camera.com/en-US/photography/lenses/m/summilux-m-35mm-f1-4-asph-black',
+  },
+  'summilux-m-35mm-f14-steel-rim': {
+    name:'Leica Summilux-M 35mm f/1.4 "Steel Rim"', manufacturer:'Leica', line:'M', type:'Prime',
+    mount:'m', focalLength:35, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'35mm',
+    maxAperture:1.4, minAperture:16, weight:200, length:35, diameter:66.5,
+    filterThread:46, minFocusDist:100, maxMagnification:0.038,
+    elements:7, groups:5, blades:10, afType:'Manual',
+    // year: confirmed via Amateur Photographer, dated October 20, 2022
+    // (Wikipedia citation), matching the announcement date already on
+    // file from earlier research.
+    weatherSealed:false, ois:false, oisStops:null, year:2022, discontinued:false,
+    imageUrl:'https://leica-camera.com/sites/default/files/styles/meta_tag_product_image/public/pm-19577-11301_Summilux-M_35_front_1920x1440px.png?itok=K1-CFQLr',
+    imageSource:{url:'https://leica-camera.com/en-US/photography/lenses/m/summilux-m-35mm-f1-4', tier:'T1', date:'2026-09-18', title:'Leica Summilux-M 35mm f/1.4 "Steel Rim" official product page'},
+    asin:null,
+    prices:{USD:4900,AUD:7750,EUR:4300,GBP:3800,JPY:792000,CAD:null,SGD:6250},
+    priceIncomplete:true,
+    productUrl:'https://leica-camera.com/en-US/photography/lenses/m/summilux-m-35mm-f1-4',
+  },
+  'summilux-m-28mm-f14-asph': {
+    name:'Leica Summilux-M 28 f/1.4 ASPH.', manufacturer:'Leica', line:'M', type:'Prime',
+    mount:'m', focalLength:28, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'28mm',
+    maxAperture:1.4, minAperture:16, weight:440, length:81, diameter:61,
+    filterThread:49, minFocusDist:70, maxMagnification:0.0457,
+    elements:10, groups:7, blades:null, afType:'Manual',
+    // year: Wikipedia cites a since-dead Camyx article dated 2015-05-28 —
+    // a real citation, not directly re-verified this session.
+    weatherSealed:false, ois:false, oisStops:null, year:2015, discontinued:false,
+    imageUrl:'https://leica-camera.com/sites/default/files/styles/meta_tag_product_image/public/pm-14482-summilux-m_f1_4_28_front_black_2016_300.png?itok=A61jdhEY',
+    imageSource:{url:'https://leica-camera.com/en-US/photography/lenses/m/summilux-m-28mm-f1-4-asph-black', tier:'T1', date:'2026-09-18', title:'Leica Summilux-M 28 f/1.4 ASPH. official product page'},
+    asin:null,
+    prices:{USD:6000,AUD:13400,EUR:7400,GBP:6500,JPY:1353000,CAD:null,SGD:10900},
+    priceIncomplete:true,
+    productUrl:'https://leica-camera.com/en-US/photography/lenses/m/summilux-m-28mm-f1-4-asph-black',
+  },
+  'summilux-m-21mm-f14-asph': {
+    name:'Leica Summilux-M 21 f/1.4 ASPH.', manufacturer:'Leica', line:'M', type:'Prime',
+    mount:'m', focalLength:21, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'21mm',
+    maxAperture:1.4, minAperture:16, weight:580, length:66, diameter:69.5,
+    // No front filter thread — a proprietary drop-in Series VIII filter
+    // slots into the hood instead, per the dealer's spec sheet.
+    filterThread:null, minFocusDist:70, maxMagnification:0.0345,
+    elements:10, groups:8, blades:null, afType:'Manual',
+    // year: lower confidence — inferred from Leica's mfg-code sequence
+    // proximity to a firmly-dated neighboring lens, not a directly fetched
+    // primary announcement source this session. Re-check if a firmer date
+    // turns up.
+    weatherSealed:false, ois:false, oisStops:null, year:2018, discontinued:false,
+    imageUrl:'https://leica-camera.com/sites/default/files/styles/meta_tag_product_image/public/pm-14342-summilux-m_f1_4_21_front_black_2016_300_1.webp?itok=5PlPorjP',
+    imageSource:{url:'https://leica-camera.com/en-US/photography/lenses/m/summilux-m-21mm-f1-4-asph-black', tier:'T1', date:'2026-09-18', title:'Leica Summilux-M 21 f/1.4 ASPH. official product page'},
+    asin:null,
+    prices:{USD:7100,AUD:14900,EUR:8250,GBP:7300,JPY:1507000,CAD:null,SGD:12250},
+    priceIncomplete:true,
+    productUrl:'https://leica-camera.com/en-US/photography/lenses/m/summilux-m-21mm-f1-4-asph-black',
+  },
   'summilux-m-50mm-f14-classic': {
     name:'Leica Summilux-M 50 f/1.4', manufacturer:'Leica', line:'M', type:'Prime',
     mount:'m', focalLength:50, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'50mm',
@@ -1470,6 +1539,7 @@ const LENS_DROPDOWN_GROUPS = [
   ] },
   { label: '── Noctilux-M & Summilux-M ──', ids: [
     'noctilux-m-35mm-f12-asph', 'noctilux-m-50mm-f095-asph', 'noctilux-m-50mm-f12-asph', 'noctilux-m-75mm-f125-asph',
+    'summilux-m-21mm-f14-asph', 'summilux-m-28mm-f14-asph', 'summilux-m-35mm-f14-steel-rim', 'summilux-m-35mm-f14-asph',
     'summilux-m-50mm-f14-asph', 'summilux-m-50mm-f14-classic',
   ] },
 ];

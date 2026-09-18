@@ -328,6 +328,23 @@
   `ASIN_GAP_BASELINE` again (87 → 93, +6, all M primes) — same
   owner-pre-approved incremental rebase as task 6.1/6.2. `npm test`:
   792/792.
+- [x] 6.3b **M: Noctilux-M + Summilux-M, second half** (wide Summilux-M):
+  Summilux-M 21mm f/1.4 ASPH, 28mm f/1.4 ASPH, 35mm f/1.4 "Steel Rim",
+  35mm f/1.4 ASPH FLE II — 4 of 5 researched lenses entered. **Summilux-M
+  24mm f/1.4 ASPH confirmed discontinued** (absent from Leica's official
+  Japan price list and the AU/SG stores, plus explicitly archived on a
+  dealer's site) → out of scope per task 1.4, not entered — the Noctilux-M
+  & Summilux-M group is now complete except the two named follow-ups
+  (Summilux-M 90mm f/1.5 unpriceable, plus 24mm/75mm confirmed
+  discontinued). 21mm/28mm carry lower-confidence years (inferred from
+  Leica's mfg-code sequence, not a directly fetched primary source — one
+  more re-verification attempt made, unsuccessful), flagged inline; the
+  35mm pair's years are solidly sourced (an Amateur Photographer citation
+  and Leica's own press release respectively). Used leica-camera.com's own
+  official USD prices over a dealer's higher "tariff-adjusted" figures,
+  consistent with every other item's sourcing throughout this dataset.
+  Crossed `ASIN_GAP_BASELINE` again (93 → 97, +4) — same
+  owner-pre-approved incremental rebase. `npm test`: 792/792.
 - [ ] 6.4 **Batch D — M: Summicron-M + APO-Summicron-M.**
 - [ ] 6.5 **Batch E — M: remaining** (Elmarit-M, Summaron-M, Macro-Elmar-M, Thambar-M, APO-Telyt-M).
 - [ ] 6.6 **Batch F — TL lenses** (all, incl. discontinued — task 1.4).
