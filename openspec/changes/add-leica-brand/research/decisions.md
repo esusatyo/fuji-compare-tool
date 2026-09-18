@@ -187,6 +187,26 @@ named follow-up — try again with a fresh WebSearch budget, or ask the owner
 if they have a source, before task 5.8's final camera pass. This does not
 block landing the `m` mount (task 4.4), since M8 alone is enough to use it.
 
+## 7. Task 6.3a — two M lenses resolved out of the dataset (2026-09-18)
+
+- **Summilux-M 75mm f/1.4 confirmed discontinued** — a research agent crawled
+  Leica's full site sitemap (~20 locales) and found zero current product
+  pages for it, and it's absent even from an authorized dealer's *archive*
+  of discontinued/special-edition M lenses (meaning it predates that
+  archive). Per task 1.4's scope call ("discontinued M lenses are out"),
+  this lens is simply not entered — not a research gap, a scope exclusion.
+- **Summilux-M 90mm f/1.5 ASPH left out entirely**, despite being genuinely
+  current (live official pages across 16 Leica locales) — no USD price
+  could be sourced anywhere: Leica's own site returns no price for this SKU
+  in US/AU/AT(EUR), has no de-DE page at all, and it isn't stocked at any
+  dealer this dataset otherwise uses (only the UK site had a number, £11,760).
+  `prices.USD` has no nullable escape for any item, camera or lens, so —
+  same principle as the M8.2/M9 camera gap — it's left out rather than
+  guessed. Named follow-up for task 6.7/7.6, alongside M8.2/M9.
+- **Lens year floor lowered to 2004** (schema.js), for the current
+  Summilux-M 50 f/1.4 ASPH — its ASPH optical design genuinely dates to
+  2004, even under the version-year convention.
+
 - **Access notes**: alikgriffin.com returns 403; the dealer's SL collection URL
   guesses 404; Leica's 2016–2017 press-release archive URLs return navigation
   only. DPReview launch articles were the reliable TL source.

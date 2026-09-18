@@ -1363,6 +1363,99 @@ const LENSES = {
     priceIncomplete:true,
     productUrl:'https://leica-camera.com/en-US/photography/lenses/sl/vario-elmar-sl-100-400-f5-6-3',
   },
+  'summilux-m-50mm-f14-classic': {
+    name:'Leica Summilux-M 50 f/1.4', manufacturer:'Leica', line:'M', type:'Prime',
+    mount:'m', focalLength:50, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'50mm',
+    maxAperture:1.4, minAperture:16, weight:417, length:45, diameter:58,
+    filterThread:46, minFocusDist:70, maxMagnification:0.08,
+    elements:7, groups:5, blades:12, afType:'Manual',
+    weatherSealed:false, ois:false, oisStops:null, year:2025, discontinued:false,
+    imageUrl:'https://leica-camera.com/sites/default/files/styles/meta_tag_product_image/public/pm-20355-11714_Leica_Summilux-M_50_f1_4_Classic_upright_1920px.webp?itok=dxyWDctb',
+    imageSource:{url:'https://leica-camera.com/en-US/photography/lenses/m/summilux-m-50-f1-4-silver-chrome-finish', tier:'T1', date:'2026-09-18', title:'Leica Summilux-M 50 f/1.4 (Classic Line) official product page'},
+    asin:null,
+    prices:{USD:3850,AUD:7300,EUR:4050,GBP:3500,JPY:737000,CAD:null,SGD:5900},
+    priceIncomplete:true,
+    productUrl:'https://leica-camera.com/en-US/photography/lenses/m/summilux-m-50-f1-4-silver-chrome-finish',
+  },
+  'summilux-m-50mm-f14-asph': {
+    name:'Leica Summilux-M 50 f/1.4 ASPH.', manufacturer:'Leica', line:'M', type:'Prime',
+    mount:'m', focalLength:50, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'50mm',
+    maxAperture:1.4, minAperture:16, weight:377, length:59.3, diameter:58.6,
+    filterThread:46, minFocusDist:45, maxMagnification:0.156,
+    elements:8, groups:5, blades:11, afType:'Manual',
+    weatherSealed:false, ois:false, oisStops:null, year:2004, discontinued:false,
+    imageUrl:'https://leica-camera.com/sites/default/files/styles/meta_tag_product_image/public/pm-14165-11728_Summilux-M_50_front_1920x1440_1.png?itok=8vgBozrd',
+    imageSource:{url:'https://leica-camera.com/en-US/photography/lenses/m/leica-summilux-m-50-f14-asph-black', tier:'T1', date:'2026-09-18', title:'Leica Summilux-M 50 f/1.4 ASPH. official product page'},
+    asin:null,
+    prices:{USD:4550,AUD:8800,EUR:4850,GBP:4300,JPY:891000,CAD:null,SGD:7200},
+    priceIncomplete:true,
+    productUrl:'https://leica-camera.com/en-US/photography/lenses/m/leica-summilux-m-50-f14-asph-black',
+  },
+  'noctilux-m-75mm-f125-asph': {
+    name:'Leica Noctilux-M 75 f/1.25 ASPH.', manufacturer:'Leica', line:'M', type:'Prime',
+    mount:'m', focalLength:75, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'75mm',
+    maxAperture:1.25, minAperture:16, weight:1055, length:91, diameter:74,
+    filterThread:67, minFocusDist:85, maxMagnification:0.1136,
+    elements:9, groups:6, blades:null, afType:'Manual',
+    weatherSealed:false, ois:false, oisStops:null, year:2017, discontinued:false,
+    imageUrl:'https://leica-camera.com/sites/default/files/styles/meta_tag_product_image/public/pm-14200-11676_Leica-Noctilux-M_1_25-75_ASPH_front_RGB.png?itok=G-u2ubJc',
+    imageSource:{url:'https://leica-camera.com/en-US/photography/lenses/m/noctilux-m-75-f1-25-asph', tier:'T1', date:'2026-09-18', title:'Leica Noctilux-M 75 f/1.25 ASPH. official product page'},
+    asin:null,
+    prices:{USD:11900,AUD:24900,EUR:13750,GBP:12200,JPY:2519000,CAD:null,SGD:20500},
+    priceIncomplete:true,
+    productUrl:'https://leica-camera.com/en-US/photography/lenses/m/noctilux-m-75-f1-25-asph',
+  },
+  'noctilux-m-50mm-f12-asph': {
+    name:'Leica Noctilux-M 50 f/1.2 ASPH.', manufacturer:'Leica', line:'M', type:'Prime',
+    mount:'m', focalLength:50, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'50mm',
+    maxAperture:1.2, minAperture:16, weight:405, length:52, diameter:61,
+    // Leica's own technical-specification table has no filter-thread row at
+    // all for this Classic Line reissue (a 1966-formula 6-element design;
+    // may use a slip-on/series filter rather than a screw thread) — a
+    // secondary source's 49mm claim directly conflicts with that absence,
+    // so left null rather than picked one.
+    filterThread:null, minFocusDist:100, maxMagnification:0.0565,
+    elements:6, groups:4, blades:null, afType:'Manual',
+    weatherSealed:false, ois:false, oisStops:null, year:2021, discontinued:false,
+    imageUrl:'https://leica-camera.com/sites/default/files/styles/meta_tag_product_image/public/pm-40879-Noctilux-M_1_2-50_schwarz_Frontal_copy.png?itok=U6Zb4C70',
+    imageSource:{url:'https://leica-camera.com/en-US/photography/lenses/m/noctilux-m-50-f1-2-asph-black-finish', tier:'T1', date:'2026-09-18', title:'Leica Noctilux-M 50 f/1.2 ASPH. official product page'},
+    asin:null,
+    prices:{USD:8900,AUD:14200,EUR:7850,GBP:7200,JPY:1441000,CAD:null,SGD:12400},
+    priceIncomplete:true,
+    productUrl:'https://leica-camera.com/en-US/photography/lenses/m/noctilux-m-50-f1-2-asph-black-finish',
+  },
+  'noctilux-m-50mm-f095-asph': {
+    name:'Leica Noctilux-M 50 f/0.95 ASPH.', manufacturer:'Leica', line:'M', type:'Prime',
+    mount:'m', focalLength:50, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'50mm',
+    maxAperture:0.95, minAperture:16, weight:700, length:75.1, diameter:73,
+    filterThread:60, minFocusDist:100, maxMagnification:0.059,
+    elements:8, groups:5, blades:null, afType:'Manual',
+    weatherSealed:false, ois:false, oisStops:null, year:2008, discontinued:false,
+    imageUrl:'https://leica-camera.com/sites/default/files/styles/meta_tag_product_image/public/pm-14086-noctilux-m_f0_95_50_front_black_2016_300.png?itok=An93NCbT',
+    imageSource:{url:'https://leica-camera.com/en-US/photography/lenses/m/noctilux-m-50mm-f0-95-asph-black', tier:'T1', date:'2026-09-18', title:'Leica Noctilux-M 50 f/0.95 ASPH. official product page'},
+    asin:null,
+    prices:{USD:10400,AUD:22900,EUR:12700,GBP:11400,JPY:2321000,CAD:null,SGD:18950},
+    priceIncomplete:true,
+    productUrl:'https://leica-camera.com/en-US/photography/lenses/m/noctilux-m-50mm-f0-95-asph-black',
+  },
+  'noctilux-m-35mm-f12-asph': {
+    name:'Leica Noctilux-M 35 f/1.2 ASPH.', manufacturer:'Leica', line:'M', type:'Prime',
+    mount:'m', focalLength:35, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'35mm',
+    maxAperture:1.2, minAperture:16, weight:416, length:50.2, diameter:64.6,
+    filterThread:49, minFocusDist:50, maxMagnification:0.086,
+    elements:10, groups:5, blades:11, afType:'Manual',
+    weatherSealed:false, ois:false, oisStops:null, year:2026, discontinued:false,
+    imageUrl:'https://leica-camera.com/sites/default/files/styles/meta_tag_product_image/public/pm-27376-11635_Leica_Noctilux-M_35_f1_2_ASPH_upright_1920px.webp?itok=oDQDgRl-',
+    imageSource:{url:'https://leica-camera.com/en-US/photography/lenses/m/noctilux-m-35mm-f1-2-asph-black', tier:'T1', date:'2026-09-18', title:'Leica Noctilux-M 35 f/1.2 ASPH. official product page'},
+    asin:null,
+    // USD: leicastoremiami.com (authorized dealer, "In Stock") explicitly
+    // shows $9,650, matching this lens's launch price already recorded in
+    // task 1.1 research; leica-camera.com's own page data layer showed a
+    // lower, likely-stale $8,950 — the dealer figure is used.
+    prices:{USD:9650,AUD:16100,EUR:8950,GBP:7700,JPY:1650000,CAD:null,SGD:13700},
+    priceIncomplete:true,
+    productUrl:'https://leica-camera.com/en-US/photography/lenses/m/noctilux-m-35mm-f1-2-asph-black',
+  },
 };
 
 const LENS_DROPDOWN_GROUPS = [
@@ -1374,6 +1467,10 @@ const LENS_DROPDOWN_GROUPS = [
   { label: '── SL Zooms ──', ids: [
     'super-vario-elmarit-sl-14-24mm-f28-asph', 'super-vario-elmar-sl-16-35mm-f35-45-asph', 'vario-elmarit-sl-24-70mm-f28-asph',
     'vario-elmarit-sl-70-200mm-f28-asph', 'apo-vario-elmarit-sl-90-280mm-f28-4', 'vario-elmar-sl-100-400mm-f5-63',
+  ] },
+  { label: '── Noctilux-M & Summilux-M ──', ids: [
+    'noctilux-m-35mm-f12-asph', 'noctilux-m-50mm-f095-asph', 'noctilux-m-50mm-f12-asph', 'noctilux-m-75mm-f125-asph',
+    'summilux-m-50mm-f14-asph', 'summilux-m-50mm-f14-classic',
   ] },
 ];
 

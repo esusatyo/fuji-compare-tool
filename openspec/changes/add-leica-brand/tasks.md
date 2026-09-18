@@ -315,7 +315,19 @@
   owner-pre-approved rebase, not the full task 7.6 pass (still to come once
   every current Leica item, including upcoming M lenses, has had a real
   ASIN search). `npm test`: 792/792.
-- [ ] 6.3 **Batch C — M: Noctilux-M + Summilux-M** (incl. Classic Line reissues).
+- [x] 6.3a **M: Noctilux-M + Summilux-M, first half** — 6 of 8 researched
+  lenses entered (Noctilux-M 35/50-f0.95/50-f1.2/75mm, Summilux-M
+  50-ASPH/50-Classic). **Summilux-M 75mm f/1.4 confirmed discontinued**
+  (thorough negative search — absent from Leica's entire site and even from
+  a dealer's discontinued-lens archive) → out of scope per task 1.4's
+  "no discontinued M lenses" call, not entered. **Summilux-M 90mm f/1.5
+  ASPH left out entirely** despite being genuinely current — no USD price
+  found anywhere after real effort (decisions §7); named follow-up
+  alongside M8.2/M9. Lens year floor lowered 2008 → 2004 for the current
+  Summilux-M 50 ASPH (its design genuinely dates to 2004). Crossed
+  `ASIN_GAP_BASELINE` again (87 → 93, +6, all M primes) — same
+  owner-pre-approved incremental rebase as task 6.1/6.2. `npm test`:
+  792/792.
 - [ ] 6.4 **Batch D — M: Summicron-M + APO-Summicron-M.**
 - [ ] 6.5 **Batch E — M: remaining** (Elmarit-M, Summaron-M, Macro-Elmar-M, Thambar-M, APO-Telyt-M).
 - [ ] 6.6 **Batch F — TL lenses** (all, incl. discontinued — task 1.4).

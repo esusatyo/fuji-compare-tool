@@ -90,7 +90,16 @@ const KNOWN_SHARED_LINKS = new Map([
 // super-vario-elmarit-sl-14-24mm-f28-asph,
 // super-vario-elmar-sl-16-35mm-f35-45-asph, vario-elmarit-sl-70-200mm-f28-asph,
 // apo-vario-elmarit-sl-90-280mm-f28-4, vario-elmar-sl-100-400mm-f5-63 (24 items).
-const ASIN_GAP_BASELINE = 87;
+//
+// Rebased to 93 on 2026-09-18 (same batch of work, next commit): task 6.3a
+// added 6 more current M lenses (Noctilux-M 35/50-f0.95/50-f1.2/75, and
+// Summilux-M 50-ASPH/50-Classic), all null-ASIN for the same reason —
+// +6 named: noctilux-m-35mm-f12-asph, noctilux-m-50mm-f095-asph,
+// noctilux-m-50mm-f12-asph, noctilux-m-75mm-f125-asph,
+// summilux-m-50mm-f14-asph, summilux-m-50mm-f14-classic. (A 7th researched
+// lens, Summilux-M 90 f/1.5 ASPH, was left OUT of the dataset entirely — no
+// USD price could be sourced anywhere, so it doesn't count here either.)
+const ASIN_GAP_BASELINE = 93;
 
 const allItems = () => brandDirs().flatMap(brand => {
   const { data } = loadBrand(brand);
