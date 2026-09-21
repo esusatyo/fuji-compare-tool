@@ -420,7 +420,16 @@
   needed (one mount, one line). No `ASIN_GAP_BASELINE` impact — the coverage
   check only counts current items, and all 7 are discontinued. `node
   scripts/generate-seo.js` rerun (lens count 35 → 42). `npm test`: 792/792.
-- [ ] 6.7 Final lens pass: group order and `defaultSelected`, `npm test` green.
+- [x] 6.7 Final lens pass: verification only, no data changes needed.
+  `LENS_DROPDOWN_GROUPS` order (SL Primes, SL Zooms, Noctilux-M &
+  Summilux-M, Summicron-M & APO-Summicron-M, M Wide-Angle & Tele, TL Lenses)
+  already matches the sequence decided at task 1.3 (decisions.md line 125
+  names `── TL Lenses ──` as the final group). `defaultSelected` (all 3 SL
+  lenses from the task-2.2 seed) is unaffected by the TL batch and still
+  resolves. `npm test`: 792/792 (confirmed by the pre-commit hook on task
+  6.6's commit). **The full 49-camera / 42-lens Leica lens+camera dataset
+  (sections 1-6) is now complete** — remaining work is images/pricing
+  finalisation (7), regeneration/verification (8), and shipping (10).
 
 ## 7. Images & pricing finalisation
 
