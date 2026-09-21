@@ -1721,6 +1721,108 @@ const LENSES = {
     prices:{USD:3100,AUD:4600,EUR:2550,GBP:2300,JPY:462000,CAD:4370,SGD:3750},
     productUrl:'https://leica-camera.com/en-US/photography/lenses/m/elmarit-m-28mm-f2-8-asph-black',
   },
+  'super-vario-elmar-tl-11-23mm-f35-45-asph': {
+    name:'Leica Super-Vario-Elmar-TL 11-23mm f/3.5-4.5 ASPH.', manufacturer:'Leica', line:'TL', type:'Zoom',
+    mount:'l', focalLength:null, focalLengthMin:11, focalLengthMax:23, focalLengthEquiv:'17-35mm',
+    maxAperture:3.5, minAperture:16, weight:368, length:77, diameter:73,
+    filterThread:67, minFocusDist:20, maxMagnification:0.185,
+    elements:14, groups:11, blades:null, afType:'Autofocus',
+    // Announced with the Leica T system Sept 17 2014; actually shipped Jan
+    // 2015 (ephotozine) — year reflects when it reached customers.
+    weatherSealed:false, ois:false, oisStops:null, year:2015, discontinued:true,
+    imageUrl:'https://leica-camera.com/sites/default/files/2021-10/leica_tl_11-23_black_1512.jpg',
+    imageSource:{url:'https://leica-camera.com/en-US/photography/lenses/cl-tl/super-vario-elmar-tl-11-23mm-f3-5-4-5-asph', tier:'T1', date:'2026-09-21', title:'Leica Super-Vario-Elmar-TL 11-23mm f/3.5-4.5 ASPH. official product page'},
+    asin:null,
+    prices:{USD:1950,AUD:null,EUR:null,GBP:null,JPY:null,CAD:null,SGD:null},
+    productUrl:'https://leica-camera.com/en-US/photography/lenses/cl-tl/super-vario-elmar-tl-11-23mm-f3-5-4-5-asph',
+  },
+  'elmarit-tl-18mm-f28-asph': {
+    name:'Leica Elmarit-TL 18mm f/2.8 ASPH.', manufacturer:'Leica', line:'TL', type:'Prime',
+    mount:'l', focalLength:18, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'27mm',
+    maxAperture:2.8, minAperture:16, weight:80, length:21, diameter:61,
+    filterThread:39, minFocusDist:30, maxMagnification:0.07,
+    elements:8, groups:6, blades:null, afType:'Autofocus',
+    weatherSealed:false, ois:false, oisStops:null, year:2017, discontinued:true,
+    // Image is the silver-anodized finish (the only bare-lens studio shot
+    // found); productUrl is the black-anodized US listing — both variants
+    // were sold, this dataset reports the lens, not a specific finish.
+    imageUrl:'https://leica-camera.com/sites/default/files/2021-10/leica_tl-18mm_silver_1512.jpg',
+    imageSource:{url:'https://leica-camera.com/en-US/photography/lenses/cl-tl/elmarit-tl-18-f2-8-asph-black', tier:'T1', date:'2026-09-21', title:'Leica Elmarit-TL 18mm f/2.8 ASPH. official product page'},
+    asin:null,
+    prices:{USD:1295,AUD:null,EUR:null,GBP:null,JPY:null,CAD:null,SGD:null},
+    productUrl:'https://leica-camera.com/en-US/photography/lenses/cl-tl/elmarit-tl-18-f2-8-asph-black',
+  },
+  'vario-elmar-tl-18-56mm-f35-56-asph': {
+    name:'Leica Vario-Elmar-TL 18-56mm f/3.5-5.6 ASPH.', manufacturer:'Leica', line:'TL', type:'Zoom',
+    mount:'l', focalLength:null, focalLengthMin:18, focalLengthMax:56, focalLengthEquiv:'27-84mm',
+    maxAperture:3.5, minAperture:22, weight:256, length:60, diameter:63,
+    filterThread:52, minFocusDist:30, maxMagnification:0.13,
+    elements:10, groups:7, blades:null, afType:'Stepping Motor',
+    weatherSealed:false, ois:false, oisStops:null, year:2014, discontinued:true,
+    imageUrl:'https://leica-camera.com/sites/default/files/2021-10/leica_tl_18-56_1512.jpg',
+    imageSource:{url:'https://leica-camera.com/en-US/photography/lenses/cl-tl/vario-elmar-tl-18-56mm-f3-5-5-6-asph-black', tier:'T1', date:'2026-09-21', title:'Leica Vario-Elmar-TL 18-56mm f/3.5-5.6 ASPH. official product page'},
+    asin:null,
+    prices:{USD:1750,AUD:null,EUR:null,GBP:null,JPY:null,CAD:null,SGD:null},
+    productUrl:'https://leica-camera.com/en-US/photography/lenses/cl-tl/vario-elmar-tl-18-56mm-f3-5-5-6-asph-black',
+  },
+  'summicron-tl-23mm-f2-asph': {
+    name:'Leica Summicron-TL 23mm f/2 ASPH.', manufacturer:'Leica', line:'TL', type:'Prime',
+    mount:'l', focalLength:23, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'35mm',
+    maxAperture:2, minAperture:16, weight:154, length:37, diameter:63,
+    filterThread:52, minFocusDist:30, maxMagnification:0.08,
+    elements:9, groups:6, blades:null, afType:'Stepping Motor',
+    weatherSealed:false, ois:false, oisStops:null, year:2014, discontinued:true,
+    imageUrl:'https://leica-camera.com/sites/default/files/2021-10/leica_summicron_tl23_f4f4f4_1512.jpg',
+    imageSource:{url:'https://leica-camera.com/en-US/photography/lenses/cl-tl/summicron-tl-23mm-f2-asph-black', tier:'T1', date:'2026-09-21', title:'Leica Summicron-TL 23mm f/2 ASPH. official product page'},
+    asin:null,
+    prices:{USD:1950,AUD:null,EUR:null,GBP:null,JPY:null,CAD:null,SGD:null},
+    productUrl:'https://leica-camera.com/en-US/photography/lenses/cl-tl/summicron-tl-23mm-f2-asph-black',
+  },
+  'summilux-tl-35mm-f14-asph': {
+    name:'Leica Summilux-TL 35mm f/1.4 ASPH.', manufacturer:'Leica', line:'TL', type:'Prime',
+    mount:'l', focalLength:35, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'53mm',
+    maxAperture:1.4, minAperture:16, weight:428, length:77, diameter:70,
+    filterThread:60, minFocusDist:40, maxMagnification:0.106,
+    elements:12, groups:8, blades:null, afType:'Autofocus',
+    weatherSealed:false, ois:false, oisStops:null, year:2016, discontinued:true,
+    imageUrl:'https://leica-camera.com/sites/default/files/2021-10/leica_summilux_tl_35_black_1512.jpg',
+    imageSource:{url:'https://leica-camera.com/en-US/photography/lenses/cl-tl/summilux-tl-35mm-f1-4-asph-black', tier:'T1', date:'2026-09-21', title:'Leica Summilux-TL 35mm f/1.4 ASPH. official product page'},
+    asin:null,
+    prices:{USD:2395,AUD:null,EUR:null,GBP:null,JPY:null,CAD:null,SGD:null},
+    productUrl:'https://leica-camera.com/en-US/photography/lenses/cl-tl/summilux-tl-35mm-f1-4-asph-black',
+  },
+  'apo-vario-elmar-tl-55-135mm-f35-45-asph': {
+    name:'Leica APO-Vario-Elmar-TL 55-135mm f/3.5-4.5 ASPH.', manufacturer:'Leica', line:'TL', type:'Zoom',
+    mount:'l', focalLength:null, focalLengthMin:55, focalLengthMax:135, focalLengthEquiv:'83-203mm',
+    maxAperture:3.5, minAperture:16, weight:500, length:110, diameter:68,
+    filterThread:60, minFocusDist:100, maxMagnification:0.125,
+    elements:12, groups:10, blades:null, afType:'Autofocus',
+    // Announced with the Leica T system Sept 17 2014; actually shipped Jan
+    // 2015 (ephotozine) — year reflects when it reached customers. Leica's
+    // own marketing copy rounds the equivalent range to "80 to 200mm" for a
+    // tidier number; this dataset keeps the computed 1.5x value (83-203mm,
+    // matching every other lens's convention here) — both are within the
+    // crop-factor test's tolerance.
+    weatherSealed:false, ois:false, oisStops:null, year:2015, discontinued:true,
+    imageUrl:'https://leica-camera.com/sites/default/files/2021-10/leica_tl_55-135_1512.jpg',
+    imageSource:{url:'https://leica-camera.com/en-US/photography/lenses/cl-tl/apo-vario-elmar-tl-55-135mm-f3-5-4-5-asph-black', tier:'T1', date:'2026-09-21', title:'Leica APO-Vario-Elmar-TL 55-135mm f/3.5-4.5 ASPH. official product page'},
+    asin:null,
+    prices:{USD:1950,AUD:null,EUR:null,GBP:null,JPY:null,CAD:null,SGD:null},
+    productUrl:'https://leica-camera.com/en-US/photography/lenses/cl-tl/apo-vario-elmar-tl-55-135mm-f3-5-4-5-asph-black',
+  },
+  'apo-macro-elmarit-tl-60mm-f28-asph': {
+    name:'Leica APO-Macro-Elmarit-TL 60mm f/2.8 ASPH.', manufacturer:'Leica', line:'TL', type:'Prime',
+    mount:'l', focalLength:60, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'90mm',
+    maxAperture:2.8, minAperture:32, weight:320, length:89, diameter:68,
+    filterThread:60, minFocusDist:16, maxMagnification:1.0,
+    elements:10, groups:9, blades:null, afType:'Autofocus',
+    weatherSealed:false, ois:false, oisStops:null, year:2016, discontinued:true,
+    imageUrl:'https://leica-camera.com/sites/default/files/2021-10/leica_tl_60m_black_1512.jpg',
+    imageSource:{url:'https://leica-camera.com/en-US/photography/lenses/cl-tl/apo-macro-elmarit-tl-60mm-f2-8-asph-black', tier:'T1', date:'2026-09-21', title:'Leica APO-Macro-Elmarit-TL 60mm f/2.8 ASPH. official product page'},
+    asin:null,
+    prices:{USD:2995,AUD:null,EUR:null,GBP:null,JPY:null,CAD:null,SGD:null},
+    productUrl:'https://leica-camera.com/en-US/photography/lenses/cl-tl/apo-macro-elmarit-tl-60mm-f2-8-asph-black',
+  },
 };
 
 const LENS_DROPDOWN_GROUPS = [
@@ -1744,6 +1846,11 @@ const LENS_DROPDOWN_GROUPS = [
   ] },
   { label: '── M Wide-Angle & Tele (Elmarit / Elmar) ──', ids: [
     'elmarit-m-28mm-f28-asph', 'summaron-m-28mm-f56', 'macro-elmar-m-90mm-f4', 'apo-telyt-m-135mm-f34',
+  ] },
+  { label: '── TL Lenses ──', ids: [
+    'super-vario-elmar-tl-11-23mm-f35-45-asph', 'elmarit-tl-18mm-f28-asph', 'vario-elmar-tl-18-56mm-f35-56-asph',
+    'summicron-tl-23mm-f2-asph', 'summilux-tl-35mm-f14-asph', 'apo-vario-elmar-tl-55-135mm-f35-45-asph',
+    'apo-macro-elmarit-tl-60mm-f28-asph',
   ] },
 ];
 

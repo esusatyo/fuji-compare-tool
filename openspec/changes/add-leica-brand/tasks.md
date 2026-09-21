@@ -394,7 +394,32 @@
   **The M lens catalogue is now complete** except the 3 named follow-ups
   (Summilux-M 90mm f/1.5, unpriceable; Summilux-M 24mm and 75mm,
   discontinued; Thambar-M 90mm f/2.2, discontinued).
-- [ ] 6.6 **Batch F — TL lenses** (all, incl. discontinued — task 1.4).
+- [x] 6.6 **Batch F — TL lenses** (all, incl. discontinued — task 1.4): all 7
+  entered — Summicron-TL 23mm f/2, Vario-Elmar-TL 18-56mm f/3.5-5.6,
+  Super-Vario-Elmar-TL 11-23mm f/3.5-4.5, APO-Vario-Elmar-TL 55-135mm
+  f/3.5-4.5, Summilux-TL 35mm f/1.4, APO-Macro-Elmarit-TL 60mm f/2.8,
+  Elmarit-TL 18mm f/2.8 — all confirmed `discontinued: true` (the whole TL
+  system is dead), all USD-only per CLAUDE.md's discontinued-item rule. Two
+  research agents worked this task across a session boundary: one dispatched
+  last session hit the context clear mid-run but kept running in the
+  background and delivered a complete, sourced report on resume this
+  session; a second, redundant agent I dispatched before noticing the first
+  was still alive was stopped once the first's report landed (one-agent-at-
+  a-time rule). Cross-checked the report's numbers directly against Leica's
+  own live product pages (still up for every one of these despite the
+  system's discontinuation — found the real `cl-tl` URL path, not `tl`) —
+  confirmed weight (80g), length (20.5mm), min-focus (7.9in=20cm) and
+  equivalent-focal-length figures the agent reported, verified all 7
+  leica-camera.com CDN image URLs resolve live (HTTP 200, image/jpeg), and
+  added `imageSource` (T1) citations for every lens now that the product
+  pages are confirmed. One deliberate deviation from Leica's own marketing
+  copy: the 55-135mm's `focalLengthEquiv` uses the computed 1.5× value
+  (83-203mm) rather than Leica's rounded "80 to 200mm" — consistent with
+  every other lens's convention here, and within the crop-factor test's
+  tolerance either way. New `── TL Lenses ──` dropdown group, no split
+  needed (one mount, one line). No `ASIN_GAP_BASELINE` impact — the coverage
+  check only counts current items, and all 7 are discontinued. `node
+  scripts/generate-seo.js` rerun (lens count 35 → 42). `npm test`: 792/792.
 - [ ] 6.7 Final lens pass: group order and `defaultSelected`, `npm test` green.
 
 ## 7. Images & pricing finalisation
