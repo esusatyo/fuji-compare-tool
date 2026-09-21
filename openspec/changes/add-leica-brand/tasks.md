@@ -371,7 +371,29 @@
   `leicastoremiami.com` to the host allowlist. Crossed `ASIN_GAP_BASELINE`
   again (97 → 104, +7) — same owner-pre-approved incremental rebase.
   `npm test`: 792/792.
-- [ ] 6.5 **Batch E — M: remaining** (Elmarit-M, Summaron-M, Macro-Elmar-M, Thambar-M, APO-Telyt-M).
+- [x] 6.5 **M: remaining** — 4 of 5 researched lenses entered (Elmarit-M
+  28mm f/2.8 ASPH, Summaron-M 28mm f/5.6, Macro-Elmar-M 90mm f/4,
+  APO-Telyt-M 135mm f/3.4). **Thambar-M 90mm f/2.2 confirmed discontinued**
+  (4-way corroboration: absent from Leica's live current-catalog page and
+  its own Classic Line page, product URL 404s in every region, and two
+  independent authorized dealers explicitly label it "No Longer
+  Available") → out of scope per task 1.4, not entered. The
+  APO-Telyt-M 135mm's status is the recognisable "dealers say discontinued,
+  Leica's own site says no" pattern that also happened with this exact
+  lens in 2018 — Leica's own live catalog still lists it with a working
+  spec page and no discontinuation notice, so entered as current per the
+  primary-source rule this dataset uses throughout, with the real
+  purchasing friction documented inline rather than silently smoothed
+  over. This time the research agent explicitly checked every dealer page
+  for "No Longer Available"/"Discontinued" labels before using it (a
+  lesson from task 6.4's near-miss) and caught the Elmarit-M's own
+  official spec table showing an internally-impossible diameter, using
+  dealer-corroborated figures instead — both documented inline. Crossed
+  `ASIN_GAP_BASELINE` again (104 → 108, +4) — same owner-pre-approved
+  incremental rebase. `npm test`: 792/792.
+  **The M lens catalogue is now complete** except the 3 named follow-ups
+  (Summilux-M 90mm f/1.5, unpriceable; Summilux-M 24mm and 75mm,
+  discontinued; Thambar-M 90mm f/2.2, discontinued).
 - [ ] 6.6 **Batch F — TL lenses** (all, incl. discontinued — task 1.4).
 - [ ] 6.7 Final lens pass: group order and `defaultSelected`, `npm test` green.
 

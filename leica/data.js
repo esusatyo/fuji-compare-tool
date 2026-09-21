@@ -1642,6 +1642,85 @@ const LENSES = {
     priceIncomplete:true,
     productUrl:'https://leica-camera.com/en-US/photography/lenses/m/apo-summicron-m-90mm-f2-asph-black',
   },
+  'apo-telyt-m-135mm-f34': {
+    // Confirmed on Leica's own live current-catalog page (one of 25
+    // current M lenses) and a working technical-specification page — no
+    // discontinuation notice anywhere on leica-camera.com. Real-world
+    // purchasability is thin (US "Shop Now" redirects to a category page
+    // rather than a cart, B&H/Miami both show "No Longer Available"), the
+    // same "dealers say discontinued, Leica's own site says no" pattern as
+    // a 2018 episode with this same lens — one dealer (Pictureline) shows
+    // a genuine "Out of Stock, notify me" listing at a current price
+    // rather than an archived one, and GB/DE both still show live pricing.
+    // Treated as current per the primary (manufacturer) source, matching
+    // how this dataset treats other regionally-thin-stock items (the SL
+    // 16-35mm and 70-200mm zooms).
+    name:'Leica APO-Telyt-M 135 f/3.4', manufacturer:'Leica', line:'M', type:'Prime',
+    mount:'m', focalLength:135, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'135mm',
+    maxAperture:3.4, minAperture:22, weight:450, length:104.7, diameter:58.5,
+    filterThread:49, minFocusDist:150, maxMagnification:0.111,
+    elements:5, groups:4, blades:null, afType:'Manual',
+    weatherSealed:false, ois:false, oisStops:null, year:1998, discontinued:false,
+    imageUrl:'https://leica-camera.com/sites/default/files/styles/meta_tag_product_image/public/pm-14258-apo-telyt-m_f3_4_135_front_black_2016_300.webp?itok=z7CDP4nP',
+    imageSource:{url:'https://leica-camera.com/en-US/photography/lenses/m/apo-telyt-m-135mm-f3-4-black', tier:'T1', date:'2026-09-21', title:'Leica APO-Telyt-M 135 f/3.4 official product page'},
+    asin:null,
+    // USD from an authorized dealer's current (out-of-stock, not archived)
+    // listing, matching the last confirmed price at a second dealer before
+    // it went "No Longer Available" there. AUD/JPY/SGD/CAD genuinely
+    // unconfirmed after a real search (no listing found, not merely blocked).
+    prices:{USD:4795,AUD:null,EUR:4290,GBP:3750,JPY:null,CAD:null,SGD:null},
+    priceIncomplete:true,
+    productUrl:'https://leica-camera.com/en-US/photography/lenses/m/apo-telyt-m-135mm-f3-4-black',
+  },
+  'macro-elmar-m-90mm-f4': {
+    name:'Leica Macro-Elmar-M 90 f/4', manufacturer:'Leica', line:'M', type:'Prime',
+    mount:'m', focalLength:90, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'90mm',
+    maxAperture:4, minAperture:22, weight:230, length:59, diameter:52,
+    filterThread:39, minFocusDist:80, maxMagnification:0.147,
+    elements:4, groups:4, blades:null, afType:'Manual',
+    // With the dedicated Leica Macro-Adapter-M attached, min focus drops to
+    // 41cm and max magnification rises to 1:2 (0.5) — the fields above are
+    // the native (no-adapter) spec, matching this dataset's convention of
+    // reporting the lens as sold, not an accessory-dependent best case.
+    weatherSealed:false, ois:false, oisStops:null, year:2014, discontinued:false,
+    imageUrl:'https://leica-camera.com/sites/default/files/styles/meta_tag_product_image/public/pm-14277-macro-elmar-m_f4_90_2014_front_black_2016_300.png?itok=4wGKIKw9',
+    imageSource:{url:'https://leica-camera.com/en-US/photography/lenses/m/macro-elmar-m-90mm-f4-black', tier:'T1', date:'2026-09-21', title:'Leica Macro-Elmar-M 90 f/4 official product page'},
+    asin:null,
+    prices:{USD:4490,AUD:6800,EUR:3750,GBP:3300,JPY:682000,CAD:6330,SGD:5600},
+    productUrl:'https://leica-camera.com/en-US/photography/lenses/m/macro-elmar-m-90mm-f4-black',
+  },
+  'summaron-m-28mm-f56': {
+    name:'Leica Summaron-M 28 f/5.6, silver chrome', manufacturer:'Leica', line:'M', type:'Prime',
+    mount:'m', focalLength:28, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'28mm',
+    maxAperture:5.6, minAperture:22, weight:165, length:18, diameter:51,
+    filterThread:34, minFocusDist:100, maxMagnification:0.03,
+    elements:6, groups:4, blades:8, afType:'Manual',
+    // year: Classic Line reissue, announced Photokina, October 2016.
+    weatherSealed:false, ois:false, oisStops:null, year:2016, discontinued:false,
+    imageUrl:'https://leica-camera.com/sites/default/files/styles/meta_tag_product_image/public/pm-19576-18143-summaron-m_f5_6_28_front_silver_2016_300.webp?itok=xKC1hEjS',
+    imageSource:{url:'https://leica-camera.com/en-US/photography/lenses/m/summaron-m-28mm-f5-6-silver', tier:'T1', date:'2026-09-21', title:'Leica Summaron-M 28 f/5.6 official product page'},
+    asin:null,
+    prices:{USD:3600,AUD:5600,EUR:3100,GBP:2750,JPY:572000,CAD:5075,SGD:4550},
+    productUrl:'https://leica-camera.com/en-US/photography/lenses/m/summaron-m-28mm-f5-6-silver',
+  },
+  'elmarit-m-28mm-f28-asph': {
+    // weight/length/diameter: Leica's own live technical-specification
+    // table shows an internally-impossible "30.7mm diameter" with a 39mm
+    // filter thread on the same row — a field-swap bug on Leica's page.
+    // Used the dealer-corroborated, physically-consistent figures instead
+    // (multiple independent authorized dealers agree exactly).
+    name:'Leica Elmarit-M 28 f/2.8 ASPH.', manufacturer:'Leica', line:'M', type:'Prime',
+    mount:'m', focalLength:28, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'28mm',
+    maxAperture:2.8, minAperture:22, weight:175, length:30.7, diameter:52,
+    filterThread:39, minFocusDist:70, maxMagnification:0.045,
+    elements:8, groups:6, blades:10, afType:'Manual',
+    weatherSealed:false, ois:false, oisStops:null, year:2016, discontinued:false,
+    imageUrl:'https://leica-camera.com/sites/default/files/styles/meta_tag_product_image/public/pm-114089-elmarit-m_f2_8_28_front_black_2016_300-1.png?itok=zxQmNqNR',
+    imageSource:{url:'https://leica-camera.com/en-US/photography/lenses/m/elmarit-m-28mm-f2-8-asph-black', tier:'T1', date:'2026-09-21', title:'Leica Elmarit-M 28 f/2.8 ASPH. official product page'},
+    asin:null,
+    prices:{USD:3100,AUD:4600,EUR:2550,GBP:2300,JPY:462000,CAD:4370,SGD:3750},
+    productUrl:'https://leica-camera.com/en-US/photography/lenses/m/elmarit-m-28mm-f2-8-asph-black',
+  },
 };
 
 const LENS_DROPDOWN_GROUPS = [
@@ -1662,6 +1741,9 @@ const LENS_DROPDOWN_GROUPS = [
   { label: '── Summicron-M & APO-Summicron-M ──', ids: [
     'summicron-m-28mm-f2-asph', 'apo-summicron-m-35mm-f2-asph', 'summicron-m-35mm-f2-asph',
     'apo-summicron-m-50mm-f2-asph', 'summicron-m-50mm-f2', 'apo-summicron-m-75mm-f2-asph', 'apo-summicron-m-90mm-f2-asph',
+  ] },
+  { label: '── M Wide-Angle & Tele (Elmarit / Elmar) ──', ids: [
+    'elmarit-m-28mm-f28-asph', 'summaron-m-28mm-f56', 'macro-elmar-m-90mm-f4', 'apo-telyt-m-135mm-f34',
   ] },
 ];
 

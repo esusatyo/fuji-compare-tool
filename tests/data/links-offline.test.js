@@ -114,7 +114,10 @@ const KNOWN_SHARED_LINKS = new Map([
 // apo-summicron-m-35mm-f2-asph, summicron-m-35mm-f2-asph,
 // apo-summicron-m-50mm-f2-asph, summicron-m-50mm-f2,
 // apo-summicron-m-75mm-f2-asph, apo-summicron-m-90mm-f2-asph.
-const ASIN_GAP_BASELINE = 104;
+// Rebased to 108 on 2026-09-21 (task 6.5, same batch): +4 more current M
+// primes, same reason — elmarit-m-28mm-f28-asph, summaron-m-28mm-f56,
+// macro-elmar-m-90mm-f4, apo-telyt-m-135mm-f34.
+const ASIN_GAP_BASELINE = 108;
 
 const allItems = () => brandDirs().flatMap(brand => {
   const { data } = loadBrand(brand);
