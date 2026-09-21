@@ -1525,6 +1525,123 @@ const LENSES = {
     priceIncomplete:true,
     productUrl:'https://leica-camera.com/en-US/photography/lenses/m/noctilux-m-35mm-f1-2-asph-black',
   },
+  'summicron-m-28mm-f2-asph': {
+    // This is the "III" (2023) redesign, mfg 11618 — closer live-view
+    // focus (0.4m vs the prior version's 0.7m) and 10 vs 9 elements/6
+    // groups(same). The prior version, mfg 11604, is explicitly marked
+    // "No Longer Available" by an authorized US dealer — confirmed
+    // discontinued, so per this dataset's lens-revision rule it isn't
+    // entered (CLAUDE.md: a redesign gets a new entry, the old one just
+    // isn't carried forward as current). A research agent's first pass at
+    // this lens accidentally sourced weight/dimensions/price from the old,
+    // discontinued mfg-11604 listing without noticing the "No Longer
+    // Available" label — caught and corrected before writing.
+    name:'Leica Summicron-M 28 f/2 ASPH. III', manufacturer:'Leica', line:'M', type:'Prime',
+    mount:'m', focalLength:28, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'28mm',
+    maxAperture:2, minAperture:16, weight:275, length:55, diameter:58,
+    filterThread:46, minFocusDist:70, maxMagnification:0.0885,
+    elements:9, groups:6, blades:10, afType:'Manual',
+    weatherSealed:false, ois:false, oisStops:null, year:2023, discontinued:false,
+    imageUrl:'https://leicastoremiami.com/cdn/shop/files/11618_Leica_Summicron-M_28_f1_2_black_front_LoRes.jpg?v=1698279315',
+    asin:null,
+    // Current price ($6,000) is up from the $5,295 launch (Oct 2023),
+    // consistent with this dataset's other Leica items' price increases.
+    prices:{USD:6000,AUD:9500,EUR:null,GBP:null,JPY:957000,CAD:null,SGD:6990},
+    priceIncomplete:true,
+    productUrl:'https://leica-camera.com/en-US/photography/lenses/m/summicron-m-28-f2-asph-black',
+  },
+  'apo-summicron-m-35mm-f2-asph': {
+    name:'Leica APO-Summicron-M 35 f/2 ASPH.', manufacturer:'Leica', line:'M', type:'Prime',
+    mount:'m', focalLength:35, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'35mm',
+    maxAperture:2, minAperture:16, weight:320, length:40.9, diameter:53,
+    filterThread:39, minFocusDist:30, maxMagnification:0.18,
+    elements:10, groups:5, blades:11, afType:'Manual',
+    // year: an official Leica datasheet PDF is dated March 2021.
+    weatherSealed:false, ois:false, oisStops:null, year:2021, discontinued:false,
+    imageUrl:'https://leicastoremiami.com/cdn/shop/files/APO-Summicron-M_2-35_ASPH_schwarz_FRONTAL_RGB.jpg',
+    asin:null,
+    prices:{USD:9500,AUD:15100,EUR:null,GBP:null,JPY:1529000,CAD:null,SGD:12650},
+    priceIncomplete:true,
+    productUrl:'https://leica-camera.com/en-US/photography/lenses/m/apo-summicron-m-35-f2-asph-black-anodized-finish',
+  },
+  'summicron-m-35mm-f2-asph': {
+    // "V2" (2016), mfg 11673. The originally-researched mfg 11879 (1997
+    // "V1") is explicitly marked "No Longer Available" / "Discontinued" by
+    // an authorized US dealer — same kind of mistaken-identity catch as
+    // the 28mm above, corrected the same way before writing.
+    name:'Leica Summicron-M 35 f/2 ASPH.', manufacturer:'Leica', line:'M', type:'Prime',
+    mount:'m', focalLength:35, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'35mm',
+    maxAperture:2, minAperture:16, weight:252, length:35.7, diameter:53,
+    filterThread:39, minFocusDist:70, maxMagnification:0.06,
+    elements:7, groups:5, blades:11, afType:'Manual',
+    weatherSealed:false, ois:false, oisStops:null, year:2016, discontinued:false,
+    imageUrl:'https://leicastoremiami.com/cdn/shop/products/Leica_Summicron-M_2_35_ASPH_front_black.jpg?v=1571438653',
+    asin:null,
+    prices:{USD:4275,AUD:6500,EUR:null,GBP:null,JPY:660000,CAD:null,SGD:5350},
+    priceIncomplete:true,
+    productUrl:'https://leica-camera.com/en-US/photography/lenses/m/summicron-m-35mm-f2-asph-black',
+  },
+  'apo-summicron-m-50mm-f2-asph': {
+    // year: confirmed via a Leica Rumors announcement article dated
+    // 2012-05-10.
+    name:'Leica APO-Summicron-M 50 f/2 ASPH.', manufacturer:'Leica', line:'M', type:'Prime',
+    mount:'m', focalLength:50, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'50mm',
+    maxAperture:2, minAperture:16, weight:300, length:47, diameter:53,
+    filterThread:39, minFocusDist:70, maxMagnification:0.09,
+    elements:8, groups:5, blades:null, afType:'Manual',
+    weatherSealed:false, ois:false, oisStops:null, year:2012, discontinued:false,
+    imageUrl:'https://leicastoremiami.com/cdn/shop/products/Leica-50mm-Summicron-APO-blk.jpg?v=1571438525',
+    asin:null,
+    prices:{USD:9945,AUD:15600,EUR:null,GBP:null,JPY:1584000,CAD:null,SGD:12850},
+    priceIncomplete:true,
+    productUrl:'https://leica-camera.com/en-US/photography/lenses/m/apo-summicron-m-50mm-f2-asph-black',
+  },
+  'summicron-m-50mm-f2': {
+    // The 1979 Mandler-era optical formula, still in current production
+    // unchanged — unlike the 28mm/35mm above, no later revision exists at
+    // a different mfg number for this one (checked).
+    name:'Leica Summicron-M 50 f/2', manufacturer:'Leica', line:'M', type:'Prime',
+    mount:'m', focalLength:50, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'50mm',
+    maxAperture:2, minAperture:16, weight:240, length:43.5, diameter:53,
+    filterThread:39, minFocusDist:70, maxMagnification:0.087,
+    elements:6, groups:4, blades:null, afType:'Manual',
+    weatherSealed:false, ois:false, oisStops:null, year:1979, discontinued:false,
+    imageUrl:'https://leicastoremiami.com/cdn/shop/products/Leica-50mm-Summicron-blk.jpg',
+    asin:null,
+    prices:{USD:3205,AUD:4950,EUR:null,GBP:null,JPY:506000,CAD:null,SGD:4050},
+    priceIncomplete:true,
+    productUrl:'https://leica-camera.com/en-US/photography/lenses/m/summicron-m-50mm-f2-black',
+  },
+  'apo-summicron-m-75mm-f2-asph': {
+    // year: multiple sources place the announcement in May 2019.
+    name:'Leica APO-Summicron-M 75 f/2 ASPH.', manufacturer:'Leica', line:'M', type:'Prime',
+    mount:'m', focalLength:75, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'75mm',
+    maxAperture:2, minAperture:16, weight:430, length:66.8, diameter:58,
+    filterThread:49, minFocusDist:77, maxMagnification:0.14,
+    elements:7, groups:5, blades:null, afType:'Manual',
+    weatherSealed:false, ois:false, oisStops:null, year:2019, discontinued:false,
+    imageUrl:'https://leicastoremiami.com/cdn/shop/products/Leica-75mm-Summicron-APO_3fe3b17f-d317-4777-bc54-936536cb9405.jpg',
+    asin:null,
+    prices:{USD:5300,AUD:8400,EUR:null,GBP:null,JPY:847000,CAD:null,SGD:6900},
+    priceIncomplete:true,
+    productUrl:'https://leica-camera.com/en-US/photography/lenses/m/apo-summicron-m-75mm-f2-asph-black',
+  },
+  'apo-summicron-m-90mm-f2-asph': {
+    // year: 1998 — this APO/ASPH redesign replaced the older non-APO
+    // Summicron-M 90 f/2 (1980-1998), confirmed via two independent
+    // searches. Not 2016, which described a different lens entirely.
+    name:'Leica APO-Summicron-M 90 f/2 ASPH.', manufacturer:'Leica', line:'M', type:'Prime',
+    mount:'m', focalLength:90, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'90mm',
+    maxAperture:2, minAperture:16, weight:500, length:78, diameter:64,
+    filterThread:55, minFocusDist:100, maxMagnification:0.11,
+    elements:5, groups:5, blades:null, afType:'Manual',
+    weatherSealed:false, ois:false, oisStops:null, year:1998, discontinued:false,
+    imageUrl:'https://leicastoremiami.com/cdn/shop/products/Leica-90mm-Summicron-APO.jpg?v=1571438526',
+    asin:null,
+    prices:{USD:6095,AUD:9500,EUR:null,GBP:null,JPY:957000,CAD:null,SGD:null},
+    priceIncomplete:true,
+    productUrl:'https://leica-camera.com/en-US/photography/lenses/m/apo-summicron-m-90mm-f2-asph-black',
+  },
 };
 
 const LENS_DROPDOWN_GROUPS = [
@@ -1541,6 +1658,10 @@ const LENS_DROPDOWN_GROUPS = [
     'noctilux-m-35mm-f12-asph', 'noctilux-m-50mm-f095-asph', 'noctilux-m-50mm-f12-asph', 'noctilux-m-75mm-f125-asph',
     'summilux-m-21mm-f14-asph', 'summilux-m-28mm-f14-asph', 'summilux-m-35mm-f14-steel-rim', 'summilux-m-35mm-f14-asph',
     'summilux-m-50mm-f14-asph', 'summilux-m-50mm-f14-classic',
+  ] },
+  { label: '── Summicron-M & APO-Summicron-M ──', ids: [
+    'summicron-m-28mm-f2-asph', 'apo-summicron-m-35mm-f2-asph', 'summicron-m-35mm-f2-asph',
+    'apo-summicron-m-50mm-f2-asph', 'summicron-m-50mm-f2', 'apo-summicron-m-75mm-f2-asph', 'apo-summicron-m-90mm-f2-asph',
   ] },
 ];
 

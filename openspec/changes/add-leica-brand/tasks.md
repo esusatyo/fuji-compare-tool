@@ -345,7 +345,32 @@
   consistent with every other item's sourcing throughout this dataset.
   Crossed `ASIN_GAP_BASELINE` again (93 → 97, +4) — same
   owner-pre-approved incremental rebase. `npm test`: 792/792.
-- [ ] 6.4 **Batch D — M: Summicron-M + APO-Summicron-M.**
+- [x] 6.4 **M: Summicron-M + APO-Summicron-M**, all 7 entered. **Caught a
+  serious research-agent error before writing**: the agent's Summicron-M
+  28mm and 35mm (standard) entries were sourced against the WRONG,
+  discontinued mfg numbers (11604 and 11879 respectively — both explicitly
+  labelled "No Longer Available" by the authorized dealer it used, which it
+  didn't notice) instead of the current "III" (2023, mfg 11618) and "V2"
+  (2016, mfg 11673) revisions. Re-researched both from the correct current
+  SKU: real weight/dimensions/elements/price all differ from what the
+  agent reported (e.g. 28mm's real current price is $6,000, not the
+  discontinued lens's $3,895). This is exactly the lens-revision pattern
+  CLAUDE.md already documents (a redesign gets a new entry, the old one
+  isn't carried forward) — the old mfg numbers are simply not entered.
+  Also corrected two of the agent's low-confidence years with real sources:
+  APO-Summicron-M 90mm is 1998, not 2016 (it replaced the non-APO 1980-1998
+  original); the other 5 years needed no change. GBP and EUR are
+  genuinely unavailable for all 7 this round — leica-camera.com's EN-GB/DE
+  pages loaded but returned no price by any method tried (title/meta/JSON-LD/
+  shop-now variants, ~8 attempts) — `priceIncomplete: true`, not a
+  guessed 0. Lens year floor lowered again, 2004 → 1979, for the
+  Summicron-M 50 f/2 (its 1979 Mandler formula genuinely is the current
+  version — no later revision exists, checked). Two images sourced from
+  leicastoremiami.com (leica-camera.com's own og:image resolved to an
+  unrelated product again, same pattern as the SL 75mm) → added
+  `leicastoremiami.com` to the host allowlist. Crossed `ASIN_GAP_BASELINE`
+  again (97 → 104, +7) — same owner-pre-approved incremental rebase.
+  `npm test`: 792/792.
 - [ ] 6.5 **Batch E — M: remaining** (Elmarit-M, Summaron-M, Macro-Elmar-M, Thambar-M, APO-Telyt-M).
 - [ ] 6.6 **Batch F — TL lenses** (all, incl. discontinued — task 1.4).
 - [ ] 6.7 Final lens pass: group order and `defaultSelected`, `npm test` green.

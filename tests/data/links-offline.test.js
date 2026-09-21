@@ -35,6 +35,10 @@ const ALLOWED_HOSTS = [
   // that lens is broken (points to an unrelated product), verified
   // visually against this CDN photo instead (task 6.1/6.2).
   'bigcommerce.com',
+  // leicastoremiami.com (authorized US dealer): used for two Summicron-M
+  // images where leica-camera.com's own og:image resolves to an unrelated
+  // product (task 6.4) — same recurring pattern as the SL 75mm above.
+  'leicastoremiami.com',
   // CDNs and storefront hosts backing the above.
   'cdn.shopify.com', 'commercetools.com', 'cs.1worldsync.com', 'cloudfront.net',
   'foto-erhardt.de', 'contentstack.io', 'etoren.com', 'bhphotovideo.com',
@@ -105,7 +109,12 @@ const KNOWN_SHARED_LINKS = new Map([
 // summilux-m-35mm-f14-asph. (Summilux-M 24mm f/1.4 ASPH was researched but
 // confirmed discontinued and left out entirely, per task 1.4's scope call —
 // doesn't count here either.)
-const ASIN_GAP_BASELINE = 97;
+// Rebased to 104 on 2026-09-21 (task 6.4, same batch): +7 more current M
+// primes, same reason — summicron-m-28mm-f2-asph,
+// apo-summicron-m-35mm-f2-asph, summicron-m-35mm-f2-asph,
+// apo-summicron-m-50mm-f2-asph, summicron-m-50mm-f2,
+// apo-summicron-m-75mm-f2-asph, apo-summicron-m-90mm-f2-asph.
+const ASIN_GAP_BASELINE = 104;
 
 const allItems = () => brandDirs().flatMap(brand => {
   const { data } = loadBrand(brand);

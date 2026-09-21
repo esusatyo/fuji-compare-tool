@@ -386,14 +386,16 @@ function validateLens(id, lens, mountIds = null) {
   add(checkField(lens, 'diameter', { type: 'number', min: 1, max: 300 }));
   add(checkField(lens, 'filterThread', { type: 'number', nullable: true, min: 1 }));
 
-  // Floor was 2008 (when Micro Four Thirds launched, the earliest mount any
-  // brand here covers) until the Leica Summilux-M 50 f/1.4 ASPH (2004) —
-  // `year` means the release year of the version currently sold (CLAUDE.md),
-  // not its optical formula's origin, but even by that convention this
-  // lens's ASPH version genuinely dates to 2004. Panasonic's LUMIX G Vario
+  // Floor was 2008 (MFT's launch), then 2004 (Leica Summilux-M 50 f/1.4
+  // ASPH), now 1979: the Leica Summicron-M 50 f/2's Mandler-era optical
+  // formula is still the CURRENT version sold today (no later revision
+  // exists at a different mfg number, checked) — under CLAUDE.md's
+  // version-year convention that genuinely makes 1979 the release year of
+  // the version on sale, not a design-history date. The APO-Summicron-M 90
+  // f/2 ASPH (1998) also sits below 2004. Panasonic's LUMIX G Vario
   // 7-14mm F4 (2009) sits below the 2010 bound this used to carry; the
   // bound is only a typo guard.
-  add(checkField(lens, 'year', { type: 'number', min: 2004, max: 2027 }));
+  add(checkField(lens, 'year', { type: 'number', min: 1979, max: 2027 }));
   add(checkField(lens, 'discontinued', { type: 'boolean' }));
 
   add(checkField(lens, 'productUrl', { type: 'url', nullable: true, required: false }));
