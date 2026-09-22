@@ -544,8 +544,18 @@
 
 ## 10. Ship & close out
 
-- [ ] 10.1 One PR. No session link in the description.
+- [x] 10.1 One PR opened: https://github.com/esusatyo/fuji-compare-tool/pull/64
+  (title: "Add Leica as the 8th camera brand"). Caught and fixed a real
+  mistake in the first draft — the body initially included the session link
+  (violating this repo's standing no-session-link-in-PRs rule, restated
+  right here in this very task); corrected via `gh pr edit` before
+  proceeding, confirmed absent by grepping the live PR body.
 - [ ] 10.2 After merge, `/opsx:archive` the change.
-- [ ] 10.3 Propose follow-ups: third-party L/M lenses (+ `SAME_MOUNT_BRANDS`
-  row), discontinued M lenses, and update CLAUDE.md's mount id list with `m`
-  (do this one in 10.1's PR if not already done in task 4.4).
+- [x] 10.3 Follow-ups proposed in the PR description (third-party L/M
+  lenses + `SAME_MOUNT_BRANDS` row, discontinued M lenses as their own
+  change, backfilling `specSources`/`priceSource` for Leica). CLAUDE.md's
+  mount id list updated with Leica `l`/`m` (was still missing entirely —
+  not done at task 4.4 as this task's note assumed) — also added Leica TL
+  to the `focalLengthEquiv` crop-factor line, which had the same gap, and
+  cross-referenced `LENS_CROP_BY_LINE` since Leica is the one brand where
+  the crop isn't a per-mount constant. Included in the same PR.
