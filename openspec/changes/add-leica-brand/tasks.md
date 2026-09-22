@@ -477,14 +477,59 @@
 
 ## 8. Regenerate and verify
 
-- [ ] 8.1 `node scripts/generate-seo.js`; commit generated output.
-- [ ] 8.2 `npm test` fully green.
-- [ ] 8.3 `RUN_LINK_TESTS=1 npm run test:links` — **required** (every URL is new).
-- [ ] 8.4 Manual pass on `python3 scripts/preview.py 3456` → `/leica/`: mount
-  chips (L-Mount / M-Mount), fixed-lens label on Q, dropdown groups, currency
-  switch, winners, Leica section, Buy links, light + dark theme, phone width.
-- [ ] 8.5 `/compare/`: `leica:<slug>` cameras selectable; Leica section shows
-  "—" for other brands' cameras.
+- [x] 8.1 `node scripts/generate-seo.js`: already fresh (0 written) after
+  task 7.6's regeneration.
+- [x] 8.2 `npm test` fully green (792/792).
+- [x] 8.3 `RUN_LINK_TESTS=1 npm run test:links`: ran the full suite (~6 min).
+  **Zero Leica links are dead** — confirmed by reading the test's own
+  "Dead links" assertion output line by line; every Leica URL that shows up
+  in the raw progress log is a `403`/`429` (bot-blocking/rate-limiting on
+  bhphotovideo.com, dpreview.com, upload.wikimedia.org), which this test's
+  own policy treats as a warning, not a failure, since it says nothing about
+  whether a human visitor can reach the link. The suite DID fail overall —
+  18 dead links, but every one is in `fujifilm/`, `nikon/`, or `olympus/`,
+  pre-existing issues with no connection to this branch (a stale
+  fujifilm-x.com lens URL, 6 dead Laowa review-site citations, 10
+  voigtlaender.de pages failing TLS cert verification, one dead Wikipedia
+  redirect for the Olympus TG-1). Left untouched — out of scope for
+  add-leica-brand; worth a separate follow-up session.
+- [x] 8.4 Manual pass via `python3 scripts/preview.py 3456` + the Chrome
+  browser tool (not just curl) on `/leica/`: mount chips (L-Mount/M-Mount)
+  correctly filter cameras and lenses; TL lens (Summicron-TL 23mm) renders
+  "Discontinued", USD-only "Launch:" price label, and the crop-adjusted
+  "Focal Length (35mm eq.)" 23mm→35mm correctly, alongside full-frame SL
+  lenses showing no crop (28mm→28mm) in the same table; "Leica System"
+  section (Monochrome Sensor/Focusing System/Content Credentials/Internal
+  Storage) renders correct per-item data; currency switch (AUD→USD) and
+  dark/light theme both verified live. Noted but not fixed: Leica has no
+  `specSources`/`priceSource` citations (only `imageSource`), so the
+  References section's "Spec source"/"Price source" rows show "—" for every
+  Leica item — this durable-citation feature (already used by other brands)
+  was never populated during Leica's research; flagging as a possible
+  follow-up rather than blocking, since the field is optional and degrades
+  cleanly. **Not verified**: true phone-width layout — `resize_window`
+  doesn't actually resize the viewport in this Chrome-extension automation
+  environment (window stayed 1456×757 regardless), and per the standing
+  memory lesson "Simulated Mobile ≠ Real Device," forcing the breakpoint via
+  a media-query override was deliberately not used as a substitute. The
+  mobile-slot-clamp logic itself is shared, brand-agnostic engine code
+  already covered by `tests/logic/slot-count.test.js` (auto-discovers every
+  brand including Leica, green) — Leica introduces no new layout code — but
+  a real narrow-viewport visual check did not happen this session.
+- [x] 8.5 `/compare/`: all 49 `leica:<slug>` cameras confirmed present in the
+  slot dropdown; selected `leica:sl3` alongside Sony/Canon cameras and
+  confirmed the "Leica System" section renders SL3's real values while the
+  other two brands' cells correctly show "—". **Found and fixed a real,
+  pre-existing bug while here**: `compare/index.html`'s hand-written
+  `<title>` and `COMPARE_CONFIG.heroEyebrow` strings (outside the
+  generate-seo.js-managed block) were stale — the title was missing Leica,
+  and heroEyebrow still listed only the original 5 brands (Canon, Fujifilm,
+  Nikon, Panasonic, Sony), missing Leica *and* Olympus *and* Sigma, meaning
+  this drift predates this branch by (at least) two prior brand additions.
+  The meta description and intro paragraph nearby were already correct,
+  which is what surfaced the inconsistency. Fixed both lines to list all 8
+  brands, matching the already-correct strings. `npm test`: 792/792
+  unaffected (no test covers these two hand-written strings).
 
 ## 9. Optional — SKIPPED (owner call, 2026-09-18)
 
