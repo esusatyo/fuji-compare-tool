@@ -76,48 +76,30 @@ const KNOWN_SHARED_LINKS = new Map([
 // That grew the denominator; it is NOT a coverage regression. Rebase only for a
 // population change like this, and say why — otherwise tighten, never loosen.
 //
-// Rebased to 87 on 2026-09-18 (owner-approved at the add-leica-brand kickoff):
-// Leica sells almost entirely through its own stores, not Amazon, so its
-// current items overwhelmingly lack a genuine plain-new ASIN (confirmed
-// per-item during research — Amazon listings found were consistently
-// used-only, bundles, or nonexistent). This is a narrow, incremental rebase
-// (+1) covering only what today's Leica lens batch (task 6.1/6.2) actually
-// needs; the full Leica ASIN pass + a final rebase happens at task 7.6, once
-// every current Leica item (including the M-mount lenses still to come) has
-// had a real attempt. Current Leica items counted against this baseline as
-// of this rebase: sl3-p, sl3-s, sl3, q3-monochrom, d-lux-8, m-ev1, m11-d,
-// m11-p, m11-monochrom, m11, super-apo-summicron-sl-21mm-f2-asph,
-// apo-summicron-sl-50mm-f2-asph, summilux-sl-50mm-f14-asph,
-// vario-elmarit-sl-24-70mm-f28-asph, apo-summicron-sl-28mm-f2-asph,
-// apo-summicron-sl-35mm-f2-asph, apo-summicron-sl-75mm-f2-asph,
-// apo-summicron-sl-90mm-f2-asph, apo-macro-elmarit-sl-100mm-f28,
-// super-vario-elmarit-sl-14-24mm-f28-asph,
-// super-vario-elmar-sl-16-35mm-f35-45-asph, vario-elmarit-sl-70-200mm-f28-asph,
-// apo-vario-elmarit-sl-90-280mm-f28-4, vario-elmar-sl-100-400mm-f5-63 (24 items).
-//
-// Rebased to 93 on 2026-09-18 (same batch of work, next commit): task 6.3a
-// added 6 more current M lenses (Noctilux-M 35/50-f0.95/50-f1.2/75, and
-// Summilux-M 50-ASPH/50-Classic), all null-ASIN for the same reason —
-// +6 named: noctilux-m-35mm-f12-asph, noctilux-m-50mm-f095-asph,
-// noctilux-m-50mm-f12-asph, noctilux-m-75mm-f125-asph,
-// summilux-m-50mm-f14-asph, summilux-m-50mm-f14-classic. (A 7th researched
-// lens, Summilux-M 90 f/1.5 ASPH, was left OUT of the dataset entirely — no
-// USD price could be sourced anywhere, so it doesn't count here either.)
-// Rebased to 97 on 2026-09-18 (task 6.3b, same batch of work): +4 more
-// current M primes, same reason — summilux-m-21mm-f14-asph,
-// summilux-m-28mm-f14-asph, summilux-m-35mm-f14-steel-rim,
-// summilux-m-35mm-f14-asph. (Summilux-M 24mm f/1.4 ASPH was researched but
-// confirmed discontinued and left out entirely, per task 1.4's scope call —
-// doesn't count here either.)
-// Rebased to 104 on 2026-09-21 (task 6.4, same batch): +7 more current M
-// primes, same reason — summicron-m-28mm-f2-asph,
-// apo-summicron-m-35mm-f2-asph, summicron-m-35mm-f2-asph,
-// apo-summicron-m-50mm-f2-asph, summicron-m-50mm-f2,
-// apo-summicron-m-75mm-f2-asph, apo-summicron-m-90mm-f2-asph.
-// Rebased to 108 on 2026-09-21 (task 6.5, same batch): +4 more current M
-// primes, same reason — elmarit-m-28mm-f28-asph, summaron-m-28mm-f56,
-// macro-elmar-m-90mm-f4, apo-telyt-m-135mm-f34.
-const ASIN_GAP_BASELINE = 108;
+// Rebased to 74 on 2026-09-22 (add-leica-brand, task 7.6 — the real ASIN
+// pass, replacing the change's earlier incremental bumps with one clean
+// final number, per the plan agreed at kickoff). Tasks 6.1-6.5 had pushed
+// this baseline up to 108 as current SL/M lenses were entered with a
+// placeholder null ASIN and a documented assumption ("Leica sells almost
+// entirely through its own stores, not Amazon") rather than a real per-item
+// search. Task 7.6 ran that search for all 45 of Leica's current items and
+// found a genuine plain-new-product ASIN (not a bundle/Renewed/International
+// listing, and — for the M lenses with a currently-sold revision distinct
+// from an older discontinued one — confirmed as the current revision) for
+// 34 of them, applied to the dataset. That cuts Leica's own gap from 45 to
+// 11 and this cross-brand baseline from 108 to 74. Leica's remaining 11, all
+// with no confident ASIN after a genuine attempt: sl3-p (too new, not yet
+// listed), apo-macro-elmarit-sl-100mm-f28 (brand-new, not yet shipping),
+// noctilux-m-35mm-f12-asph, summilux-m-21mm-f14-asph and
+// summilux-m-35mm-f14-steel-rim (no Amazon.com listing found at all),
+// noctilux-m-50mm-f095-asph, summilux-m-50mm-f14-classic, summicron-m-50mm-f2,
+// summaron-m-28mm-f56 and apo-telyt-m-135mm-f34 (the correct lens exists on
+// Amazon only bundled with accessories, no plain listing), and
+// summicron-m-35mm-f2-asph (a candidate ASIN exists but its listing doesn't
+// explicitly confirm the current "V2"/11673 revision rather than its
+// discontinued predecessor — left out per this dataset's lens-revision
+// caution, learned the hard way at task 6.4).
+const ASIN_GAP_BASELINE = 74;
 
 const allItems = () => brandDirs().flatMap(brand => {
   const { data } = loadBrand(brand);

@@ -433,18 +433,47 @@
 
 ## 7. Images & pricing finalisation
 
-- [ ] 7.1 `node scripts/fetch-images-commons.js leica cameras` without
-  `--apply`; eyeball every hit (reject capture-camera matches), then `--apply`,
-  shrink `KNOWN_IMAGE_GAPS.leica`.
-- [ ] 7.2 Same for lenses.
-- [ ] 7.3 `node scripts/verify-images.js leica`; check the no-duplicate-image
-  guard (Monochrom/colour twins may share a Commons photo — they must not).
-- [ ] 7.4 Record image credits as the licence requires (`fetch-image-credits.js`).
-- [ ] 7.5 `node scripts/compute-prices.js leica cameras|lenses` for missing
-  regional RRPs; confirmed regional figures → `scripts/price-overrides/leica.json`.
-- [ ] 7.6 **ASIN pass** via `check-prices-and-buy-links`, then the approved
-  `ASIN_GAP_BASELINE` rebase in its own commit: history comment + named list of
-  Leica items without a verified ASIN.
+- [x] 7.1 `node scripts/fetch-images-commons.js leica cameras` (dry run):
+  re-ran the same 8-item `KNOWN_IMAGE_GAPS.leica` search that was already done
+  at tasks 5.2/5.6/5.7/5.7b — still 8/8 misses, nothing new on Commons since.
+  No change needed; gaps remain accurate.
+- [x] 7.2 Same for lenses: 0/0 — no lens image gaps exist (all 42 already
+  have a real image).
+- [x] 7.3 `node scripts/verify-images.js leica`: flagged 21 "bad" URLs. 20
+  were `upload.wikimedia.org` fetch failures (status `0`) from the script's
+  rapid sequential requests tripping Commons' rate limiter — re-verified all
+  20 individually (spaced out, plus a lighter API-based existence check for
+  the ones still 429'ing even spaced out) and every one is genuinely live.
+  The 21st was real: `apo-summicron-m-35mm-f2-asph`'s leicastoremiami.com
+  image now 404s. Replaced it with leica-camera.com's own og:image for the
+  same lens's product page — its filename embeds mfg 11699, confirming it's
+  this exact current revision, not a mismatch. No duplicate-image collisions
+  (test already covers this, green).
+- [x] 7.4 `node scripts/fetch-image-credits.js leica` (dry run): 29 Commons
+  images resolved, all already carrying correct, current `imageCredit` data
+  (CC BY / CC BY-SA, no unfree licences flagged) — nothing to apply. 54
+  manufacturer/dealer hotlinks correctly left alone (not Commons, no credit
+  needed).
+- [x] 7.5 `node scripts/compute-prices.js leica cameras` and `lenses`: 0
+  filled for both. Confirmed this is expected, not a bug — the script only
+  fills a raw USD-only stub (skips `discontinued` and `priceIncomplete`
+  items by design), and every current Leica item is already either fully
+  priced or deliberately `priceIncomplete` after a real, documented research
+  attempt (same standing as every other brand's 28-113 `priceIncomplete`
+  items) — there was nothing left to synthesize.
+- [x] 7.6 **ASIN pass**: dispatched one research agent (Explore, worktree
+  isolation) for all 45 of Leica's current items lacking an ASIN. Got 34
+  confirmed matches + 11 honest misses (no listing, bundle-only, or an
+  ambiguous lens-revision match withheld per the task-6.4 lesson). Spot-
+  verified 3 of the higher-risk matches live (Q3 Monochrom, Summicron-M
+  28mm "2023 Version", M11-P) before trusting the rest — all matched
+  cleanly; Amazon then started rate-limiting further fetch attempts.
+  Applied all 34 via a scripted per-entry patch (safer than manual edits —
+  several items share an identical `asin:null,` line). Leica's own gap:
+  45 → 11. Cross-brand `ASIN_GAP_BASELINE`: rebased **108 → 74** in one
+  clean commit, replacing the change's 5 incremental bumps with a single
+  final history entry naming the real result and all 11 remaining gaps
+  (`tests/data/links-offline.test.js`). `npm test`: 792/792.
 
 ## 8. Regenerate and verify
 
