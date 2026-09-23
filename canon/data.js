@@ -158,6 +158,29 @@ const CAMERAS = {
     lensType:'Interchangeable', lensSpec:null,
   },
 
+  'eos-r8-ii': {
+    name:'EOS R8 Mark II', series:'EOS R (Full-frame)', mount:'rf', year:2026, discontinued:false,
+    tagline:'First R8 with IBIS, Retro-Inspired Redesign',
+    productUrl:'https://www.usa.canon.com/shop/p/eos-r8-mark-ii-camera-body',
+    imageUrl:null,
+    asin:null,
+    prices:{USD:1899,AUD:2999,EUR:2199,GBP:1699,JPY:296000,CAD:2499,SGD:2799},
+    specSources: [{ url:'https://www.usa.canon.com/newsroom/2026/20260915-consumer', tier:'T1', title:'Canon USA official press release', date:'2026-09-23' }],
+    priceSource: { url:'https://www.usa.canon.com/newsroom/2026/20260915-consumer', tier:'T1', note:'USD $1,899 body-only launch price (kit w/ RF24-50mm f/4.5-6.3 IS STM $2,099); announced 2026-09-15, ships late Oct 2026; AUD/EUR/GBP/JPY/CAD/SGD are ratio-derived, no regional RRP published yet', title:'Canon USA official press release', date:'2026-09-23' },
+    sensorMP:24.2, sensorType:'Full-frame CMOS', processor:'DIGIC X',
+    width:131.4, height:90.0, depth:79.7, weight:546, weatherSealed:true,
+    lcdSize:'3.0"', lcdDots:1620, lcdType:'Vari-angle',
+    evfType:'EVF', evfDots:2.36, evfMag:0.70,
+    faceDetection:true, subjectDetection:'Animal / Bird / Vehicle / Aircraft',
+    ibis:true, ibisStops:7.5, maxBurst:40,
+    maxVideoRes:'4K / 60P',
+    logVideo:true,
+    dpafPoints:4368, clogTiers:'C-Log 3',
+    bluetooth:null, wifi:true,
+    cardSlots:'1× SD UHS-II', batteryLife:340, usbCharging:true,
+    lensType:'Interchangeable', lensSpec:null,
+  },
+
   /* ── EOS R – 2023 ── */
   'eos-r8': {
     name:'EOS R8', series:'EOS R (Full-frame)', mount:'rf', year:2023, discontinued:false,
@@ -166,9 +189,9 @@ const CAMERAS = {
     imageUrl:'https://upload.wikimedia.org/wikipedia/commons/thumb/6/67/Canon_EOS_R8_27_may_2023c.jpg/500px-Canon_EOS_R8_27_may_2023c.jpg',
     imageCredit:{author:"昼落ち", licence:"CC BY-SA 4.0", licenceUrl:"https://creativecommons.org/licenses/by-sa/4.0", source:"https://commons.wikimedia.org/wiki/File:Canon_EOS_R8_27_may_2023c.jpg"},
     asin:'B0BTTTH5G6',
-    prices:{USD:1349,AUD:2299,EUR:1699,GBP:1299,JPY:234000,CAD:1899,SGD:2199},
+    prices:{USD:1449,AUD:2299,EUR:1699,GBP:1299,JPY:226000,CAD:1899,SGD:2099},
     specSources: [{ url:'https://www.canon.com.au/cameras/eos-r8', tier:'T1', note:'AUD $2,199 RRP "according to Canon Australia"', date:'2026-08-09' }],
-    priceSource: { url:'https://www.cpricewatch.com/prices/', tier:'T3', note:'USD $1,499 confirmed flat/consistent across B&H, Adorama, and Canon Store — this resolves the residual uncertainty flagged on 2026-08-09 (the prior $1,649 figure was suspected to be a mixup with the adjacent EOS R7, which is genuinely $1,649); usa.canon.com geo-blocked', date:'2026-08-22' },
+    priceSource: { url:'https://www.cpricewatch.com/product/07796/Canon-EOS-R8-price.html', tier:'T3', note:'USD $1,449 confirmed flat/consistent across B&H, Adorama, Canon Store, and PROCAM. The prior $1,349 figure was a "$300 instant savings" promo that expired 2026-09-06, 9 days before the EOS R8 Mark II launch cleared it off shelves at that price; usa.canon.com geo-blocked so aggregator used', date:'2026-09-23' },
     sensorMP:24.2, sensorType:'Full-frame BSI CMOS', processor:'DIGIC X',
     width:132.5, height:86.1, depth:70.0, weight:461, weatherSealed:false,
     lcdSize:'3.0"', lcdDots:1620, lcdType:'Vari-angle',
@@ -464,7 +487,7 @@ const CAMERAS = {
 
 // Ordered list of camera IDs for dropdowns (newest first)
 const CAMERA_ORDER = [
-  'eos-r6-v','eos-r6-iii',
+  'eos-r8-ii','eos-r6-v','eos-r6-iii',
   'eos-r1','eos-r5-ii',
   'eos-r8','eos-r50','eos-r100',
   'eos-r6-ii','eos-r7','eos-r10','eos-r5c',
@@ -476,7 +499,7 @@ const CAMERA_ORDER = [
 ];
 
 const DROPDOWN_GROUPS = [
-  { label: '── Current 2025–2026 ──',      ids: ['eos-r6-v','eos-r6-iii'] },
+  { label: '── Current 2025–2026 ──',      ids: ['eos-r8-ii','eos-r6-v','eos-r6-iii'] },
   { label: '── Current 2024–2025 ──',      ids: ['eos-r1','eos-r5-ii','eos-r50v'] },
   { label: '── Current 2023 ──',            ids: ['eos-r8','eos-r50','eos-r100'] },
   { label: '── Current 2022 ──',            ids: ['eos-r6-ii','eos-r7','eos-r10','eos-r5c'] },

@@ -49,6 +49,10 @@ const KNOWN_IMAGE_GAPS = {
     // this skill's sourcing tiers. Stays a gap until Viltrox (or Canon's
     // policy) changes.
     'viltrox-85mm-f18',
+    // eos-r8-ii: announced 2026-09-15, added 2026-09-23 refresh — too new for
+    // a freely-licensed Commons photo yet (ships late Oct 2026). Revisit once
+    // review units are out and Commons gets an upload.
+    'eos-r8-ii',
     // yongnuo-35mm-f2, yongnuo-85mm-f18: resolved 2026-08-17 (Tier 3,
     // yongnuo.eu — both images carry an explicit "R mount / Full Frame"
     // badge overlay confirming Canon RF, despite the 85mm page's body copy
