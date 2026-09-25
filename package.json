@@ -5,9 +5,10 @@
   "license": "SEE LICENSE IN LICENSE",
   "private": true,
   "scripts": {
-    "test": "node --test tests/data/*.test.js tests/logic/*.test.js",
+    "test": "node --disable-warning=MODULE_TYPELESS_PACKAGE_JSON --test tests/data/*.test.js tests/logic/*.test.js tests/worker/*.test.js",
     "test:data": "node --test tests/data/*.test.js",
-    "test:logic": "node --test tests/logic/*.test.js",
+    "test:logic": "node --disable-warning=MODULE_TYPELESS_PACKAGE_JSON --test tests/logic/*.test.js",
+    "test:worker": "node --disable-warning=MODULE_TYPELESS_PACKAGE_JSON --test tests/worker/*.test.js",
     "test:links": "RUN_LINK_TESTS=1 node --test --test-concurrency=1 tests/links/*.test.js",
     "test:all": "npm test && npm run test:links",
     "deploy": "wrangler deploy",
