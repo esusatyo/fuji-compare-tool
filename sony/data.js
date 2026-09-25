@@ -1024,6 +1024,34 @@ const LENSES = {
     productUrl:'https://electronics.sony.com/imaging/lenses/full-frame-e-mount/p/sel600f40gm',
   },
 
+  'fe-400mm-f45-gm-oss': {
+    name:'FE 400mm F4.5 GM OSS', manufacturer:'Sony', line:'FE GM', type:'Prime', mount:'e', asin:null,
+    focalLength:400, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'400mm',
+    maxAperture:4.5, minAperture:32, weight:994, length:242.0, diameter:108.0,
+    filterThread:95, minFocusDist:250, maxMagnification:0.18,
+    elements:22, groups:16, blades:11, afType:'XD Linear',
+    weatherSealed:true, ois:true, oisStops:null, year:2026, discontinued:false,
+    imageUrl:null,
+    specSources: [{ url:'https://www.dpreview.com/products/uncategorized/lenses/sony-fe-400mm-f4-5-gm-oss/specifications', tier:'T2', note:'full spec table (MFD, max mag, min aperture F32, filter thread, elements/groups, AF motor)', date:'2026-09-23' }],
+    priceSource: { url:'https://alphauniverse.com/stories/sony-electronics-announces-new-400mm-and-600mm-g-master-supertelephoto-prime-lenses-the-lightest-in-their-class/', tier:'T1', note:'USD $2,699.99 launch price; announced 2026-09-15, ships Oct 2026; AUD/EUR/GBP/JPY/CAD/SGD ratio-derived, no regional RRP published yet', date:'2026-09-23' },
+    prices:{USD:2699,AUD:4199,EUR:3099,GBP:2399,JPY:421000,CAD:3499,SGD:3899},
+    productUrl:'https://electronics.sony.com/imaging/lenses/full-frame-e-mount/p/sel400f45gm',
+  },
+
+  'fe-600mm-f63-gm-oss': {
+    name:'FE 600mm F6.3 GM OSS', manufacturer:'Sony', line:'FE GM', type:'Prime', mount:'e', asin:null,
+    focalLength:600, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'600mm',
+    maxAperture:6.3, minAperture:32, weight:995, length:263.0, diameter:108.0,
+    filterThread:95, minFocusDist:250, maxMagnification:0.25,
+    elements:24, groups:17, blades:11, afType:'XD Linear',
+    weatherSealed:true, ois:true, oisStops:null, year:2026, discontinued:false,
+    imageUrl:null,
+    specSources: [{ url:'https://www.dpreview.com/products/uncategorized/lenses/sony-fe-600mm-f6-3-gm-oss/specifications', tier:'T2', note:'full spec table (MFD, max mag, min aperture F32, filter thread, elements/groups, AF motor)', date:'2026-09-23' }],
+    priceSource: { url:'https://alphauniverse.com/stories/sony-electronics-announces-new-400mm-and-600mm-g-master-supertelephoto-prime-lenses-the-lightest-in-their-class/', tier:'T1', note:'USD $3,699.99 launch price; announced 2026-09-15, ships Oct 2026; AUD/EUR/GBP/JPY/CAD/SGD ratio-derived, no regional RRP published yet', date:'2026-09-23' },
+    prices:{USD:3699,AUD:5799,EUR:4299,GBP:3299,JPY:577000,CAD:4799,SGD:5399},
+    productUrl:'https://electronics.sony.com/imaging/lenses/full-frame-e-mount/p/sel600f63gm',
+  },
+
   /* ── Sony FE G + standard primes ── */
   'fe-16mm-f18-g': {
     name:'FE 16mm F1.8 G', manufacturer:'Sony', line:'FE G', type:'Prime', mount:'e', asin:'B0DYK97L9M',
@@ -2793,6 +2821,7 @@ const LENS_DROPDOWN_GROUPS = [
     'fe-50mm-f28-macro', 'fe-55mm-f18-za', 'fe-85mm-f14-gm-ii', 'fe-85mm-f14-gm',
     'fe-90mm-f28-macro-g', 'fe-100mm-f28-stf-gm', 'fe-100mm-f28-macro-gm', 'fe-135mm-f18-gm',
     'fe-300mm-f28-gm', 'fe-400mm-f28-gm', 'fe-600mm-f4-gm',
+    'fe-400mm-f45-gm-oss', 'fe-600mm-f63-gm-oss',
   ] },
   { label: '── Sony FE Zooms ──',  ids: [
     'fe-12-24mm-f28-gm', 'fe-12-24mm-f4-g', 'fe-16-25mm-f28-g', 'fe-16-35mm-f28-gm-ii',

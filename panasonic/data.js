@@ -733,6 +733,21 @@ const LENSES = {
     productUrl:'https://shop.panasonic.com/products/lumix-s-series-40mm-f2-l-mount-camera-lens',
   },
 
+  'lumix-s-20mm-f2-5': {
+    name:'LUMIX S 20mm F2.5', manufacturer:'Panasonic', line:'LUMIX S', type:'Prime', mount:'l', asin:null,
+    focalLength:20, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'20mm',
+    maxAperture:2.5, minAperture:22, weight:142, length:40.9, diameter:69.4,
+    filterThread:62, minFocusDist:18, maxMagnification:0.15,
+    elements:11, groups:9, blades:7, afType:'Stepping Motor',
+    weatherSealed:true, ois:false, oisStops:null, year:2026, discontinued:false,
+    imageUrl:null,
+    specSources: [{ url:'https://shop.panasonic.com/products/lumix-s-20mm-f2-5-l-mount-camera-lens', tier:'T1', note:'official Panasonic shop.panasonic.com product page; full spec table (11 elem/9 grp incl. 3 ASPH + 3 ED, diameter φ69.4mm confirmed same barrel family as the S 40mm F2 sibling, MFD 0.18m, max mag 0.15x, stepping-motor AF)', date:'2026-09-25' }],
+    priceSource: { url:'https://na.panasonic.com/news/lumix-s-20mm-f2-5-lens-firmware-updates-2026', tier:'T1', note:'announced 2026-09-17; USD $499.99, EUR €499, GBP £429 all from Panasonic\'s own press coverage; AUD/JPY/CAD/SGD not yet published — priceIncomplete', date:'2026-09-25' },
+    prices:{USD:499,AUD:null,EUR:499,GBP:429,JPY:null,CAD:null,SGD:null},
+    priceIncomplete:true,
+    productUrl:'https://shop.panasonic.com/products/lumix-s-20mm-f2-5-l-mount-camera-lens',
+  },
+
   'lumix-s-26mm-f8': {
     name:'LUMIX S 26mm F8', manufacturer:'Panasonic', line:'LUMIX S', type:'Prime', mount:'l', asin:'B0D4SNH275',
     focalLength:26, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'26mm',
@@ -2057,7 +2072,7 @@ const LENSES = {
 };
 
 const LENS_DROPDOWN_GROUPS = [
-  { label: '── LUMIX S Primes (L-Mount) ──', ids: ['lumix-s-18mm-f1-8', 'lumix-s-24mm-f1-8', 'lumix-s-26mm-f8', 'lumix-s-35mm-f1-8', 'lumix-s-40mm-f2', 'lumix-s-50mm-f1-8', 'lumix-s-pro-50mm-f1-4', 'lumix-s-85mm-f1-8', 'lumix-s-100mm-f2-8-macro'] },
+  { label: '── LUMIX S Primes (L-Mount) ──', ids: ['lumix-s-18mm-f1-8', 'lumix-s-20mm-f2-5', 'lumix-s-24mm-f1-8', 'lumix-s-26mm-f8', 'lumix-s-35mm-f1-8', 'lumix-s-40mm-f2', 'lumix-s-50mm-f1-8', 'lumix-s-pro-50mm-f1-4', 'lumix-s-85mm-f1-8', 'lumix-s-100mm-f2-8-macro'] },
   { label: '── LUMIX S Zooms (L-Mount) ──',  ids: ['lumix-s-18-40mm-f4-5-6-3', 'lumix-s-14-28mm-f4-5-6-macro', 'lumix-s-pro-16-35mm-f4', 'lumix-s-20-60mm-f3-5-5-6', 'lumix-s-24-60mm-f2-8', 'lumix-s-24-70mm-f2-8-pro', 'lumix-s-24-105mm-f4-macro', 'lumix-s-28-200mm-f4-7-1-macro', 'lumix-s-pro-70-200mm-f2-8', 'lumix-s-pro-70-200mm-f4', 'lumix-s-70-300mm-f4-5-5-6-macro', 'lumix-s-100-500mm-f5-7-1'] },
   { label: '── LUMIX G Primes (MFT) ──',     ids: ['lumix-g-fisheye-8mm-f3-5', 'leica-dg-9mm-f1-7', 'leica-dg-12mm-f1-4', 'lumix-g-14mm-f2-5-ii', 'leica-dg-15mm-f1-7', 'lumix-g-20mm-f1-7-ii', 'leica-dg-25mm-f1-4-ii', 'lumix-g-25mm-f1-7', 'lumix-g-macro-30mm-f2-8', 'leica-dg-42-5mm-f1-2-nocticron', 'lumix-g-42-5mm-f1-7', 'leica-dg-45mm-f28-macro', 'leica-dg-200mm-f2-8'] },
   { label: '── LUMIX G Zooms (MFT) ──',      ids: ['lumix-g-7-14mm-f4', 'leica-dg-8-18mm-f2-8-4', 'leica-dg-10-25mm-f1-7', 'lumix-g-12-32mm-f3-5-5-6', 'leica-dg-12-60mm-f2-8-4', 'lumix-g-12-60mm-f3-5-5-6', 'lumix-g-12-35mm-f2-8-ii', 'lumix-g-x-pz-14-42mm-f3-5-5-6', 'leica-dg-25-50mm-f1-7', 'lumix-g-35-100mm-f2-8-ii', 'leica-dg-35-100mm-f2-8-power-ois', 'lumix-g-35-100mm-f4-5-6', 'leica-dg-50-200mm-f2-8-4', 'lumix-g-14-140mm-f3-5-5-6-ii', 'lumix-g-100-300mm-f4-5-6-ii', 'leica-dg-100-400mm-f4-6-3-ii'] },
