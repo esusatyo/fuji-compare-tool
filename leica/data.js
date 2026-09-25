@@ -94,6 +94,7 @@ const CAMERAS = {
     imageSource:{url:'https://leica-camera.com/en-US/photography/cameras/sl/sl3-p-black', tier:'T1', date:'2026-09-15', title:'Leica SL3-P official product page'},
     asin:null,
     prices:{USD:6690,AUD:10500,EUR:5990,GBP:5150,JPY:1100000,CAD:9435,SGD:8800},
+    priceSource:{url:'https://leicacamerausa.com/leica-sl3-p.html', tier:'T1', note:'$6,690 list price on leicacamerausa.com (SKU 10664, shown out of stock); Leica Store Miami independently lists the same price.', date:'2026-09-25', title:'Leica Camera USA: Leica SL3-P'},
     sensorMP:44.9, sensorType:'Full-frame BSI CMOS', processor:'Leica Maestro IV',
     width:141.2, height:108, depth:84.6, weight:852, weatherSealed:true,
     lcdSize:'3.2"', lcdDots:2332800, lcdType:'Tilting Touch',
@@ -113,7 +114,8 @@ const CAMERAS = {
     imageUrl:'https://leica-camera.com/sites/default/files/styles/meta_tag_product_image/public/pm-14662-10643_Leica_SL3-S_frontal_cap_1920px.webp?itok=XN3Lq1Oo',
     imageSource:{url:'https://leica-camera.com/en-US/photography/cameras/sl/sl3-s-black', tier:'T1', date:'2026-09-15', title:'Leica SL3-S official product page'},
     asin:'B0DXHZNYRM',
-    prices:{USD:5295,AUD:9300,EUR:5190,GBP:4500,JPY:946000,CAD:7990,SGD:7500},
+    prices:{USD:5665,AUD:9300,EUR:5190,GBP:4500,JPY:946000,CAD:7990,SGD:7500},
+    priceSource:{url:'https://leicacamerausa.com/leica-sl3-s.html', tier:'T1', note:'$5,665 list price on leicacamerausa.com (SKU 10643, shown out of stock); Leica Store Miami independently lists the same price. Replaces an earlier $5,295 figure that pre-dated Leica\'s US price increase.', date:'2026-09-25', title:'Leica Camera USA: Leica SL3-S'},
     sensorMP:24.6, sensorType:'Full-frame BSI CMOS', processor:'Leica Maestro IV',
     width:141.2, height:108, depth:82.7, weight:852, weatherSealed:true,
     lcdSize:'3.2"', lcdDots:2332800, lcdType:'Tilting Touch',
@@ -133,7 +135,8 @@ const CAMERAS = {
     imageUrl:'https://leica-camera.com/sites/default/files/styles/meta_tag_product_image/public/pm-14571-10607_Leica_SL3_frontal_cap_1920px.png?itok=Vf16HuVP',
     imageSource:{url:'https://leica-camera.com/en-US/photography/cameras/sl/sl3-black', tier:'T1', date:'2026-09-15', title:'Leica SL3 official product page'},
     asin:'B0DHYGXQ5G',
-    prices:{USD:6995,AUD:12500,EUR:6990,GBP:5920,JPY:1276000,CAD:10555,SGD:10400},
+    prices:{USD:7485,AUD:12500,EUR:6990,GBP:5920,JPY:1276000,CAD:10555,SGD:10400},
+    priceSource:{url:'https://leicacamerausa.com/leica-sl3.html', tier:'T1', note:'$7,485 list price on leicacamerausa.com (SKU 10607, in stock); Leica Store Miami independently lists the same price. Replaces an earlier $6,995 figure that pre-dated Leica\'s US price increase.', date:'2026-09-25', title:'Leica Camera USA: Leica SL3'},
     sensorMP:60.3, sensorType:'Full-frame BSI CMOS', processor:'Leica Maestro IV',
     width:141.2, height:108, depth:84.6, weight:854, weatherSealed:true,
     lcdSize:'3.2"', lcdDots:2332800, lcdType:'Tilting Touch',
@@ -294,6 +297,7 @@ const CAMERAS = {
     imageSource:{url:'https://leica-camera.com/en-US/photography/cameras/q/q3-monochrom', tier:'T1', date:'2026-09-16', title:'Leica Q3 Monochrom official product page'},
     asin:'B0GP34PRLY',
     prices:{USD:7950,AUD:12600,EUR:6990,GBP:5900,JPY:1287000,CAD:11210,SGD:9990},
+    priceSource:{url:'https://leicacamerausa.com/leica-q3-monochrom.html', tier:'T1', note:'$7,950 list price on leicacamerausa.com (SKU 19200, in stock); Leica Store Miami independently lists the same price.', date:'2026-09-25', title:'Leica Camera USA: Leica Q3 Monochrom'},
     sensorMP:60.3, sensorType:'Full-frame BSI-CMOS monochrome (no color filter array) with Triple Resolution Technology', processor:'Leica Maestro IV',
     width:130, height:80.3, depth:92.6, weight:662, weatherSealed:true,
     lcdSize:'3.0"', lcdDots:1843200, lcdType:'Tilting Touch',
@@ -314,6 +318,7 @@ const CAMERAS = {
     imageSource:{url:'https://leica-camera.com/en-US/photography/cameras/q/q3-43-black', tier:'T1', date:'2026-09-16', title:'Leica Q3 43 official product page'},
     asin:'B0DKG5HW7T',
     prices:{USD:7950,AUD:12600,EUR:6990,GBP:5900,JPY:1287000,CAD:11210,SGD:9990},
+    priceSource:{url:'https://leicacamerausa.com/leica-q3-43.html', tier:'T1', note:'$7,950 list price on leicacamerausa.com (SKU 19084, in stock); Leica Store Miami independently lists the same price.', date:'2026-09-25', title:'Leica Camera USA: Leica Q3 43'},
     sensorMP:60.3, sensorType:'Full-frame BSI-CMOS with Triple Resolution Technology', processor:'Leica Maestro IV',
     width:130, height:80.3, depth:97.6, weight:688, weatherSealed:true,
     lcdSize:'3.0"', lcdDots:1843200, lcdType:'Tilting Touch',
@@ -334,6 +339,7 @@ const CAMERAS = {
     imageSource:{url:'https://leica-camera.com/en-US/photography/cameras/q/q3-black', tier:'T1', date:'2026-09-16', title:'Leica Q3 official product page'},
     asin:'B0CGZ38M6B',
     prices:{USD:7350,AUD:11700,EUR:6490,GBP:5650,JPY:1188000,CAD:10365,SGD:9600},
+    priceSource:{url:'https://leicacamerausa.com/leica-q3-black.html', tier:'T1', note:'$7,350 list price on leicacamerausa.com (SKU 19080, in stock); Leica Store Miami independently lists the same price.', date:'2026-09-25', title:'Leica Camera USA: Leica Q3'},
     sensorMP:60.3, sensorType:'Full-frame BSI-CMOS with Triple Resolution Technology', processor:'Leica Maestro IV',
     width:130, height:80.3, depth:92.6, weight:658, weatherSealed:true,
     lcdSize:'3.0"', lcdDots:1843200, lcdType:'Tilting Touch',
@@ -551,6 +557,7 @@ const CAMERAS = {
     imageSource:{url:'https://leica-camera.com/en-US/photography/cameras/d-lux/d-lux-8', tier:'T1', date:'2026-09-17', title:'Leica D-Lux 8 official product page'},
     asin:'B0DGWHH21F',
     prices:{USD:1915,AUD:2990,EUR:1650,GBP:1450,JPY:297000,CAD:2700,SGD:2450},
+    priceSource:{url:'https://leicacamerausa.com/leica-d-lux-8.html', tier:'T1', note:'$1,915 list price on leicacamerausa.com (SKU 19191, shown out of stock); Leica Store Miami independently lists the same price.', date:'2026-09-25', title:'Leica Camera USA: Leica D-Lux 8'},
     sensorMP:17, sensorType:'Four Thirds CMOS', processor:'Not disclosed',
     width:130, height:69, depth:62, weight:397, weatherSealed:false,
     lcdSize:'3.0"', lcdDots:1843200, lcdType:'Fixed Touch',
@@ -1006,6 +1013,7 @@ const CAMERAS = {
     imageSource:{url:'https://leica-camera.com/en-US/photography/cameras/m/m-ev1-black', tier:'T1', date:'2026-09-18', title:'Leica M EV1 official product page'},
     asin:'B0G498VXKR',
     prices:{USD:9290,AUD:14200,EUR:7950,GBP:6840,JPY:1452000,CAD:13100,SGD:11950},
+    priceSource:{url:'https://leicacamerausa.com/leica-m-ev1.html', tier:'T1', note:'$9,290 list price on leicacamerausa.com (SKU 20229, in stock); Leica Store Miami independently lists the same price.', date:'2026-09-25', title:'Leica Camera USA: Leica M EV1'},
     sensorMP:60.3, sensorType:'Full-frame BSI CMOS', processor:'Leica Maestro III',
     width:139, height:80, depth:38.5, weight:495, weatherSealed:false,
     lcdSize:'2.95"', lcdDots:2332800, lcdType:'Touchscreen',
@@ -1029,6 +1037,7 @@ const CAMERAS = {
     imageSource:{url:'https://leica-camera.com/en-US/photography/cameras/m/m11-d-black', tier:'T1', date:'2026-09-18', title:'Leica M11-D official product page'},
     asin:'B0DHYGRBG6',
     prices:{USD:10950,AUD:17300,EUR:9650,GBP:8500,JPY:1771000,CAD:15440,SGD:14350},
+    priceSource:{url:'https://leicacamerausa.com/leica-m11-d-in-black.html', tier:'T1', note:'$10,950 list price on leicacamerausa.com (SKU 20220, in stock); Leica Store Miami independently lists the same price.', date:'2026-09-25', title:'Leica Camera USA: Leica M11-D'},
     sensorMP:60.3, sensorType:'Full-frame BSI CMOS', processor:'Leica Maestro III',
     width:139, height:80, depth:38.5, weight:539, weatherSealed:false,
     lcdSize:'None', lcdDots:null, lcdType:'None',
@@ -1049,6 +1058,7 @@ const CAMERAS = {
     imageSource:{url:'https://leica-camera.com/en-US/photography/cameras/m/m11-p-black', tier:'T1', date:'2026-09-18', title:'Leica M11-P official product page'},
     asin:'B0CM4BM95F',
     prices:{USD:10400,AUD:16500,EUR:9190,GBP:8200,JPY:1683000,CAD:14665,SGD:13750},
+    priceSource:{url:'https://leicacamerausa.com/leica-m11-p-in-black.html', tier:'T1', note:'$10,400 list price on leicacamerausa.com (SKU 20211, in stock); Leica Store Miami independently lists the same price.', date:'2026-09-25', title:'Leica Camera USA: Leica M11-P'},
     sensorMP:60.3, sensorType:'Full-frame BSI CMOS', processor:'Leica Maestro III',
     width:139, height:80, depth:38.5, weight:530, weatherSealed:false,
     lcdSize:'2.95"', lcdDots:2332800, lcdType:'Touchscreen (sapphire glass)',
@@ -1069,6 +1079,7 @@ const CAMERAS = {
     imageSource:{url:'https://leica-camera.com/en-US/photography/cameras/m/m11-monochrom', tier:'T1', date:'2026-09-18', title:'Leica M11 Monochrom official product page'},
     asin:'B0C7ZDDQBV',
     prices:{USD:11050,AUD:17500,EUR:9750,GBP:8500,JPY:1782000,CAD:15580,SGD:14500},
+    priceSource:{url:'https://leicacamerausa.com/leica-m11-monochrom.html', tier:'T1', note:'$11,050 list price on leicacamerausa.com (SKU 20208, in stock); Leica Store Miami independently lists the same price.', date:'2026-09-25', title:'Leica Camera USA: Leica M11 Monochrom'},
     sensorMP:60.3, sensorType:'Full-frame BSI CMOS, monochrome (no color filter array)', processor:'Leica Maestro III',
     width:139, height:80, depth:38.5, weight:542, weatherSealed:false,
     lcdSize:'2.95"', lcdDots:2332800, lcdType:'Touchscreen (sapphire glass)',
@@ -1095,6 +1106,7 @@ const CAMERAS = {
     // (14665) is used here too rather than left unfilled (cameras have no
     // priceIncomplete escape).
     prices:{USD:10400,AUD:16500,EUR:8750,GBP:7800,JPY:1683000,CAD:14665,SGD:13700},
+    priceSource:{url:'https://leicacamerausa.com/leica-m11-in-glossy-black-finish.html', tier:'T1', note:'$10,400 list price on leicacamerausa.com for the current M11 listing (SKU 20230, glossy black finish, in stock); the original SKU 20200 black finish that this entry links to on leica-camera.com is no longer listed there. Leica Store Miami still lists old-stock SKU 20200 at $8,995, which is not the current list price.', date:'2026-09-25', title:'Leica Camera USA: Leica M11'},
     sensorMP:60.3, sensorType:'Full-frame BSI CMOS', processor:'Leica Maestro III',
     width:139, height:80, depth:38.5, weight:530, weatherSealed:false,
     lcdSize:'2.95"', lcdDots:2332800, lcdType:'Touchscreen',
@@ -1154,6 +1166,7 @@ const LENSES = {
     imageSource:{url:'https://leica-camera.com/en-US/photography/lenses/sl/super-apo-summicron-sl-21-f2-asph', tier:'T1', date:'2026-09-16', title:'Leica Super-APO-Summicron-SL 21mm f/2 ASPH. official product page'},
     asin:'B0D3FJQNFH',
     prices:{USD:5950,AUD:9800,EUR:5490,GBP:4850,JPY:1001000,CAD:8390,SGD:8150},
+    priceSource:{url:'https://leicacamerausa.com/leica-super-apo-summicron-sl-21-f-2-asph.html', tier:'T1', note:'$5,950 list price on leicacamerausa.com (SKU 11181, in stock); Leica Store Miami independently lists the same price.', date:'2026-09-25', title:'Leica Camera USA: Leica Super-APO-Summicron-SL 21mm f/2 ASPH.'},
     productUrl:'https://leica-camera.com/en-US/photography/lenses/sl/super-apo-summicron-sl-21-f2-asph',
   },
   'apo-summicron-sl-50mm-f2-asph': {
@@ -1167,6 +1180,7 @@ const LENSES = {
     imageSource:{url:'https://leica-camera.com/en-US/photography/lenses/sl/apo-summicron-sl-50mm-f2-asph-black', tier:'T1', date:'2026-09-16', title:'Leica APO-Summicron-SL 50mm f/2 ASPH. official product page'},
     asin:'B083W2HXBZ',
     prices:{USD:5450,AUD:8900,EUR:4990,GBP:4390,JPY:913000,CAD:7685,SGD:7450},
+    priceSource:{url:'https://leicacamerausa.com/leica-apo-summicron-sl-50mm-f-2-asph.html', tier:'T1', note:'$5,450 list price on leicacamerausa.com (SKU 11185, in stock); Leica Store Miami independently lists the same price.', date:'2026-09-25', title:'Leica Camera USA: Leica APO-Summicron-SL 50mm f/2 ASPH.'},
     productUrl:'https://leica-camera.com/en-US/photography/lenses/sl/apo-summicron-sl-50mm-f2-asph-black',
   },
   'summilux-sl-50mm-f14-asph': {
@@ -1185,6 +1199,7 @@ const LENSES = {
     // 2026-09-16). Re-check closer to ship.
     prices:{USD:4950,AUD:7900,EUR:4500,GBP:3890,JPY:null,CAD:6980,SGD:null},
     priceIncomplete:true,
+    priceSource:{url:'https://leicacamerausa.com/leica-summilux-sl-50mm-f-1-4_asph.html', tier:'T1', note:'$4,950 list price on leicacamerausa.com (SKU 11195, shown out of stock); Leica Store Miami independently lists the same price.', date:'2026-09-25', title:'Leica Camera USA: Leica Summilux-SL 50mm f/1.4 ASPH.'},
     productUrl:'https://leica-camera.com/en-US/photography/lenses/sl/summilux-sl-50mm-f1-4-asph-black-anodized-finish',
   },
   'vario-elmarit-sl-24-70mm-f28-asph': {
@@ -1198,6 +1213,7 @@ const LENSES = {
     imageSource:{url:'https://leica-camera.com/en-US/photography/lenses/sl/vario-elmarit-sl-24-70-f2-8-asph-black-finish', tier:'T1', date:'2026-09-16', title:'Leica Vario-Elmarit-SL 24-70mm f/2.8 ASPH. official product page'},
     asin:'B097F8DQV8',
     prices:{USD:3205,AUD:5300,EUR:2950,GBP:2590,JPY:539000,CAD:4520,SGD:4350},
+    priceSource:{url:'https://leicacamerausa.com/leica-vario-elmarit-sl-24-70mm-f-2-8-asph.html', tier:'T1', note:'$3,205 list price on leicacamerausa.com (SKU 11189, shown out of stock); Leica Store Miami independently lists the same price.', date:'2026-09-25', title:'Leica Camera USA: Leica Vario-Elmarit-SL 24-70mm f/2.8 ASPH.'},
     productUrl:'https://leica-camera.com/en-US/photography/lenses/sl/vario-elmarit-sl-24-70-f2-8-asph-black-finish',
   },
   'apo-summicron-sl-28mm-f2-asph': {
@@ -1213,6 +1229,7 @@ const LENSES = {
     // CAD not found — Vistek does not carry this lens new (checked twice).
     prices:{USD:5650,AUD:9300,EUR:5190,GBP:4650,JPY:946000,CAD:null,SGD:7750},
     priceIncomplete:true,
+    priceSource:{url:'https://leicacamerausa.com/leica-apo-summicron-sl-28mm-f-2-asph.html', tier:'T1', note:'$5,650 list price on leicacamerausa.com (SKU 11183, in stock); Leica Store Miami independently lists the same price.', date:'2026-09-25', title:'Leica Camera USA: Leica APO-Summicron-SL 28mm f/2 ASPH.'},
     productUrl:'https://leica-camera.com/en-US/photography/lenses/sl/apo-summicron-sl-28-f2-asph-black-finish',
   },
   'apo-summicron-sl-35mm-f2-asph': {
@@ -1226,6 +1243,7 @@ const LENSES = {
     imageSource:{url:'https://leica-camera.com/en-US/photography/lenses/sl/apo-summicron-sl-35mm-f2-asph', tier:'T1', date:'2026-09-18', title:'Leica APO-Summicron-SL 35mm f/2 ASPH. official product page'},
     asin:'B07SL23YXT',
     prices:{USD:5560,AUD:8900,EUR:4990,GBP:4390,JPY:913000,CAD:7840,SGD:7450},
+    priceSource:{url:'https://leicacamerausa.com/leica-apo-summicron-sl-35mm-f-2-asph.html', tier:'T1', note:'$5,560 list price on leicacamerausa.com (SKU 11184, in stock); Leica Store Miami independently lists the same price.', date:'2026-09-25', title:'Leica Camera USA: Leica APO-Summicron-SL 35mm f/2 ASPH.'},
     productUrl:'https://leica-camera.com/en-US/photography/lenses/sl/apo-summicron-sl-35mm-f2-asph',
   },
   'apo-summicron-sl-75mm-f2-asph': {
@@ -1243,6 +1261,7 @@ const LENSES = {
     imageSource:{url:'https://leicacamerausa.com/leica-apo-summicron-sl-75mm-f-2-asph.html', tier:'T1', date:'2026-09-18', title:'Leica APO-Summicron-SL 75mm f/2 ASPH. — Leica Camera USA'},
     asin:'B07G4KRTL8',
     prices:{USD:5775,AUD:9300,EUR:5190,GBP:4500,JPY:946000,CAD:8145,SGD:7750},
+    priceSource:{url:'https://leicacamerausa.com/leica-apo-summicron-sl-75mm-f-2-asph.html', tier:'T1', note:'$5,775 list price on leicacamerausa.com (SKU 11178, in stock); Leica Store Miami independently lists the same price.', date:'2026-09-25', title:'Leica Camera USA: Leica APO-Summicron-SL 75mm f/2 ASPH.'},
     productUrl:'https://leica-camera.com/en-US/photography/lenses/sl/apo-summicron-sl-75mm-f2-asph-black',
   },
   'apo-summicron-sl-90mm-f2-asph': {
@@ -1256,6 +1275,7 @@ const LENSES = {
     imageSource:{url:'https://leica-camera.com/en-US/photography/lenses/sl/apo-summicron-sl-90mm-f2-asph-black', tier:'T1', date:'2026-09-18', title:'Leica APO-Summicron-SL 90mm f/2 ASPH. official product page'},
     asin:'B07KZH7LFJ',
     prices:{USD:6200,AUD:9600,EUR:5390,GBP:4750,JPY:990000,CAD:8740,SGD:8150},
+    priceSource:{url:'https://leicacamerausa.com/leica-apo-summicron-sl-90mm-f-2-asph.html', tier:'T1', note:'$6,200 list price on leicacamerausa.com (SKU 11179, shown out of stock); Leica Store Miami independently lists the same price.', date:'2026-09-25', title:'Leica Camera USA: Leica APO-Summicron-SL 90mm f/2 ASPH.'},
     productUrl:'https://leica-camera.com/en-US/photography/lenses/sl/apo-summicron-sl-90mm-f2-asph-black',
   },
   'apo-macro-elmarit-sl-100mm-f28': {
@@ -1273,6 +1293,7 @@ const LENSES = {
     imageSource:{url:'https://leica-camera.com/en-US/photography/lenses/sl/apo-macro-elmarit-sl-100mm-f2-8-black', tier:'T1', date:'2026-09-18', title:'Leica APO-Macro-Elmarit-SL 100mm f/2.8 official product page'},
     asin:null,
     prices:{USD:2700,AUD:4400,EUR:2450,GBP:2110,JPY:451000,CAD:3805,SGD:3650},
+    priceSource:{url:'https://leicacamerausa.com/leica-apo-macro-elmarit-sl-100mm-f-2-8.html', tier:'T1', note:'$2,700 list price on leicacamerausa.com (SKU 11125, shown out of stock); Leica Store Miami independently lists the same price.', date:'2026-09-25', title:'Leica Camera USA: Leica APO-Macro-Elmarit-SL 100mm f/2.8'},
     productUrl:'https://leica-camera.com/en-US/photography/lenses/sl/apo-macro-elmarit-sl-100mm-f2-8-black',
   },
   'super-vario-elmarit-sl-14-24mm-f28-asph': {
@@ -1289,6 +1310,7 @@ const LENSES = {
     imageSource:{url:'https://leica-camera.com/en-US/photography/lenses/sl/leica-super-vario-elmarit-sl-14-24-f28-asph-black-anodized-finish', tier:'T1', date:'2026-09-18', title:'Leica Super-Vario-Elmarit-SL 14-24mm f/2.8 ASPH. official product page'},
     asin:'B0CQD9G7FQ',
     prices:{USD:2950,AUD:4800,EUR:2690,GBP:2350,JPY:495000,CAD:4160,SGD:3990},
+    priceSource:{url:'https://leicacamerausa.com/leica-super-vario-elmarit-sl-14-24mm-f-2-8-asph.html', tier:'T1', note:'$2,950 list price on leicacamerausa.com (SKU 11194, in stock); Leica Store Miami independently lists the same price.', date:'2026-09-25', title:'Leica Camera USA: Leica Super-Vario-Elmarit-SL 14-24mm f/2.8 ASPH.'},
     productUrl:'https://leica-camera.com/en-US/photography/lenses/sl/leica-super-vario-elmarit-sl-14-24-f28-asph-black-anodized-finish',
   },
   'super-vario-elmar-sl-16-35mm-f35-45-asph': {
@@ -1309,6 +1331,7 @@ const LENSES = {
     imageSource:{url:'https://leica-camera.com/en-US/photography/lenses/sl/super-vario-elmar-sl-16-35mm-f3-5-4-5-asph-black', tier:'T1', date:'2026-09-18', title:'Leica Super-Vario-Elmar-SL 16-35mm f/3.5-4.5 ASPH. official product page'},
     asin:'B07CZ4QM71',
     prices:{USD:6845,AUD:10200,EUR:5990,GBP:5350,JPY:1100000,CAD:9650,SGD:9050},
+    priceSource:{url:'https://leicacamerausa.com/leica-super-vario-elmar-sl-16-35mm-f-3-5-4-5-asph.html', tier:'T1', note:'$6,845 list price on leicacamerausa.com (SKU 11177, shown out of stock); Leica Store Miami independently lists the same price.', date:'2026-09-25', title:'Leica Camera USA: Leica Super-Vario-Elmar-SL 16-35mm f/3.5-4.5 ASPH.'},
     productUrl:'https://leica-camera.com/en-US/photography/lenses/sl/super-vario-elmar-sl-16-35mm-f3-5-4-5-asph-black',
   },
   'vario-elmarit-sl-70-200mm-f28-asph': {
@@ -1330,6 +1353,7 @@ const LENSES = {
     asin:'B0DH9368DS',
     prices:{USD:3550,AUD:5800,EUR:3250,GBP:2880,JPY:594000,CAD:5005,SGD:null},
     priceIncomplete:true,
+    priceSource:{url:'https://leicacamerausa.com/leica-vario-elmarit-sl-70-200mm-f-2-8-asph.html', tier:'T1', note:'$3,550 list price on leicacamerausa.com (SKU 11096, shown out of stock); Leica Store Miami independently lists the same price.', date:'2026-09-25', title:'Leica Camera USA: Leica Vario-Elmarit-SL 70-200mm f/2.8 ASPH.'},
     productUrl:'https://leica-camera.com/en-US/photography/lenses/sl/vario-elmarit-sl-70-200-f28-asph-black-anodized-finish',
   },
   'apo-vario-elmarit-sl-90-280mm-f28-4': {
@@ -1343,6 +1367,7 @@ const LENSES = {
     imageSource:{url:'https://leica-camera.com/en-US/photography/lenses/sl/apo-vario-elmarit-sl-90-280mm-f2-8-4-black', tier:'T1', date:'2026-09-18', title:'Leica APO-Vario-Elmarit-SL 90-280mm f/2.8-4 official product page'},
     asin:'B01E6BFN0K',
     prices:{USD:7805,AUD:12900,EUR:7190,GBP:6250,JPY:1320000,CAD:11005,SGD:10700},
+    priceSource:{url:'https://leicacamerausa.com/leica-apo-vario-elmarit-sl-90-280mm-f-2-8-4.html', tier:'T1', note:'$7,805 list price on leicacamerausa.com (SKU 11175, in stock); Leica Store Miami independently lists the same price.', date:'2026-09-25', title:'Leica Camera USA: Leica APO-Vario-Elmarit-SL 90-280mm f/2.8-4'},
     productUrl:'https://leica-camera.com/en-US/photography/lenses/sl/apo-vario-elmarit-sl-90-280mm-f2-8-4-black',
   },
   'vario-elmar-sl-100-400mm-f5-63': {
@@ -1361,6 +1386,7 @@ const LENSES = {
     asin:'B0BZYCRFCP',
     prices:{USD:2590,AUD:4300,EUR:2390,GBP:2150,JPY:440000,CAD:3650,SGD:null},
     priceIncomplete:true,
+    priceSource:{url:'https://leicacamerausa.com/leica-vario-elmar-sl-100-400-f-5-6-3.html', tier:'T1', note:'$2,590 list price on leicacamerausa.com (SKU 11191, in stock); Leica Store Miami independently lists the same price.', date:'2026-09-25', title:'Leica Camera USA: Leica Vario-Elmar-SL 100-400mm f/5-6.3'},
     productUrl:'https://leica-camera.com/en-US/photography/lenses/sl/vario-elmar-sl-100-400-f5-6-3',
   },
   'summilux-m-35mm-f14-asph': {
@@ -1375,8 +1401,9 @@ const LENSES = {
     imageUrl:'https://leica-camera.com/sites/default/files/styles/meta_tag_product_image/public/pm-14525-11726_Summilux-M_35_front_1920x1440px.png?itok=t_3jLkoi',
     imageSource:{url:'https://leica-camera.com/en-US/photography/lenses/m/summilux-m-35mm-f1-4-asph-black', tier:'T1', date:'2026-09-18', title:'Leica Summilux-M 35mm f/1.4 ASPH. FLE II official product page'},
     asin:'B0BXRNHD2K',
-    prices:{USD:5650,AUD:10900,EUR:6100,GBP:5400,JPY:1111000,CAD:null,SGD:9050},
+    prices:{USD:6900,AUD:10900,EUR:6100,GBP:5400,JPY:1111000,CAD:null,SGD:9050},
     priceIncomplete:true,
+    priceSource:{url:'https://leicacamerausa.com/leica-summilux-m-35mm-f-1-4-asph-black.html', tier:'T1', note:'$6,900 list price on leicacamerausa.com (SKU 11726, in stock); Leica Store Miami independently lists the same price. Replaces an earlier $5,650 figure that pre-dated Leica\'s US price increase.', date:'2026-09-25', title:'Leica Camera USA: Leica Summilux-M 35mm f/1.4 ASPH. FLE II'},
     productUrl:'https://leica-camera.com/en-US/photography/lenses/m/summilux-m-35mm-f1-4-asph-black',
   },
   'summilux-m-35mm-f14-steel-rim': {
@@ -1394,6 +1421,7 @@ const LENSES = {
     asin:null,
     prices:{USD:4900,AUD:7750,EUR:4300,GBP:3800,JPY:792000,CAD:null,SGD:6250},
     priceIncomplete:true,
+    priceSource:{url:'https://leicacamerausa.com/leica-summilux-m-35mm-f-1-4.html', tier:'T1', note:'$4,900 list price on leicacamerausa.com (SKU 11301, in stock); Leica Store Miami independently lists the same price.', date:'2026-09-25', title:'Leica Camera USA: Leica Summilux-M 35mm f/1.4 "Steel Rim"'},
     productUrl:'https://leica-camera.com/en-US/photography/lenses/m/summilux-m-35mm-f1-4',
   },
   'summilux-m-28mm-f14-asph': {
@@ -1408,8 +1436,9 @@ const LENSES = {
     imageUrl:'https://leica-camera.com/sites/default/files/styles/meta_tag_product_image/public/pm-14482-summilux-m_f1_4_28_front_black_2016_300.png?itok=A61jdhEY',
     imageSource:{url:'https://leica-camera.com/en-US/photography/lenses/m/summilux-m-28mm-f1-4-asph-black', tier:'T1', date:'2026-09-18', title:'Leica Summilux-M 28 f/1.4 ASPH. official product page'},
     asin:'B00ZJF4Y5S',
-    prices:{USD:6000,AUD:13400,EUR:7400,GBP:6500,JPY:1353000,CAD:null,SGD:10900},
+    prices:{USD:8555,AUD:13400,EUR:7400,GBP:6500,JPY:1353000,CAD:null,SGD:10900},
     priceIncomplete:true,
+    priceSource:{url:'https://leicacamerausa.com/leica-summilux-m-28mm-f-1-4-asph-black-anodized.html', tier:'T1', note:'$8,555 list price on leicacamerausa.com (SKU 11668, in stock); Leica Store Miami independently lists the same price. Replaces an earlier $6,000 figure that pre-dated Leica\'s US price increase.', date:'2026-09-25', title:'Leica Camera USA: Leica Summilux-M 28 f/1.4 ASPH.'},
     productUrl:'https://leica-camera.com/en-US/photography/lenses/m/summilux-m-28mm-f1-4-asph-black',
   },
   'summilux-m-21mm-f14-asph': {
@@ -1428,8 +1457,9 @@ const LENSES = {
     imageUrl:'https://leica-camera.com/sites/default/files/styles/meta_tag_product_image/public/pm-14342-summilux-m_f1_4_21_front_black_2016_300_1.webp?itok=5PlPorjP',
     imageSource:{url:'https://leica-camera.com/en-US/photography/lenses/m/summilux-m-21mm-f1-4-asph-black', tier:'T1', date:'2026-09-18', title:'Leica Summilux-M 21 f/1.4 ASPH. official product page'},
     asin:null,
-    prices:{USD:7100,AUD:14900,EUR:8250,GBP:7300,JPY:1507000,CAD:null,SGD:12250},
+    prices:{USD:9840,AUD:14900,EUR:8250,GBP:7300,JPY:1507000,CAD:null,SGD:12250},
     priceIncomplete:true,
+    priceSource:{url:'https://leicacamerausa.com/leica-summilux-m-21mm-f-1-4-asph-black-anodized.html', tier:'T1', note:'$9,840 list price on leicacamerausa.com (SKU 11647, shown out of stock); Leica Store Miami independently lists the same price. Replaces an earlier $7,100 figure that pre-dated Leica\'s US price increase.', date:'2026-09-25', title:'Leica Camera USA: Leica Summilux-M 21 f/1.4 ASPH.'},
     productUrl:'https://leica-camera.com/en-US/photography/lenses/m/summilux-m-21mm-f1-4-asph-black',
   },
   'summilux-m-50mm-f14-classic': {
@@ -1442,8 +1472,9 @@ const LENSES = {
     imageUrl:'https://leica-camera.com/sites/default/files/styles/meta_tag_product_image/public/pm-20355-11714_Leica_Summilux-M_50_f1_4_Classic_upright_1920px.webp?itok=dxyWDctb',
     imageSource:{url:'https://leica-camera.com/en-US/photography/lenses/m/summilux-m-50-f1-4-silver-chrome-finish', tier:'T1', date:'2026-09-18', title:'Leica Summilux-M 50 f/1.4 (Classic Line) official product page'},
     asin:null,
-    prices:{USD:3850,AUD:7300,EUR:4050,GBP:3500,JPY:737000,CAD:null,SGD:5900},
+    prices:{USD:4600,AUD:7300,EUR:4050,GBP:3500,JPY:737000,CAD:null,SGD:5900},
     priceIncomplete:true,
+    priceSource:{url:'https://leicacamerausa.com/leica-summilux-m-50mm-f-1-4-chrome.html', tier:'T1', note:'$4,600 list price on leicacamerausa.com (SKU 11714, in stock); Leica Store Miami independently lists the same price. Replaces an earlier $3,850 figure that pre-dated Leica\'s US price increase.', date:'2026-09-25', title:'Leica Camera USA: Leica Summilux-M 50 f/1.4'},
     productUrl:'https://leica-camera.com/en-US/photography/lenses/m/summilux-m-50-f1-4-silver-chrome-finish',
   },
   'summilux-m-50mm-f14-asph': {
@@ -1456,8 +1487,9 @@ const LENSES = {
     imageUrl:'https://leica-camera.com/sites/default/files/styles/meta_tag_product_image/public/pm-14165-11728_Summilux-M_50_front_1920x1440_1.png?itok=8vgBozrd',
     imageSource:{url:'https://leica-camera.com/en-US/photography/lenses/m/leica-summilux-m-50-f14-asph-black', tier:'T1', date:'2026-09-18', title:'Leica Summilux-M 50 f/1.4 ASPH. official product page'},
     asin:'B0C5STP8LR',
-    prices:{USD:4550,AUD:8800,EUR:4850,GBP:4300,JPY:891000,CAD:null,SGD:7200},
+    prices:{USD:5500,AUD:8800,EUR:4850,GBP:4300,JPY:891000,CAD:null,SGD:7200},
     priceIncomplete:true,
+    priceSource:{url:'https://leicacamerausa.com/leica-summilux-m-50mm-f-1-4-asph-black.html', tier:'T1', note:'$5,500 list price on leicacamerausa.com (SKU 11728, in stock); Leica Store Miami independently lists the same price. Replaces an earlier $4,550 figure that pre-dated Leica\'s US price increase.', date:'2026-09-25', title:'Leica Camera USA: Leica Summilux-M 50 f/1.4 ASPH.'},
     productUrl:'https://leica-camera.com/en-US/photography/lenses/m/leica-summilux-m-50-f14-asph-black',
   },
   'noctilux-m-75mm-f125-asph': {
@@ -1470,8 +1502,9 @@ const LENSES = {
     imageUrl:'https://leica-camera.com/sites/default/files/styles/meta_tag_product_image/public/pm-14200-11676_Leica-Noctilux-M_1_25-75_ASPH_front_RGB.png?itok=G-u2ubJc',
     imageSource:{url:'https://leica-camera.com/en-US/photography/lenses/m/noctilux-m-75-f1-25-asph', tier:'T1', date:'2026-09-18', title:'Leica Noctilux-M 75 f/1.25 ASPH. official product page'},
     asin:'B07RM5L53X',
-    prices:{USD:11900,AUD:24900,EUR:13750,GBP:12200,JPY:2519000,CAD:null,SGD:20500},
+    prices:{USD:15615,AUD:24900,EUR:13750,GBP:12200,JPY:2519000,CAD:null,SGD:20500},
     priceIncomplete:true,
+    priceSource:{url:'https://leicacamerausa.com/leica-noctilux-m-75mm-f-1-25-asph-black-anodized.html', tier:'T1', note:'$15,615 list price on leicacamerausa.com (SKU 11676, in stock); Leica Store Miami independently lists the same price. Replaces an earlier $11,900 figure that pre-dated Leica\'s US price increase.', date:'2026-09-25', title:'Leica Camera USA: Leica Noctilux-M 75 f/1.25 ASPH.'},
     productUrl:'https://leica-camera.com/en-US/photography/lenses/m/noctilux-m-75-f1-25-asph',
   },
   'noctilux-m-50mm-f12-asph': {
@@ -1491,6 +1524,7 @@ const LENSES = {
     asin:'B0F16HLFBX',
     prices:{USD:8900,AUD:14200,EUR:7850,GBP:7200,JPY:1441000,CAD:null,SGD:12400},
     priceIncomplete:true,
+    priceSource:{url:'https://leicacamerausa.com/leica-noctilux-m-50-f-1-2-asph-black-anodized.html', tier:'T1', note:'$8,900 list price on leicacamerausa.com (SKU 11686, in stock); Leica Store Miami independently lists the same price.', date:'2026-09-25', title:'Leica Camera USA: Leica Noctilux-M 50 f/1.2 ASPH.'},
     productUrl:'https://leica-camera.com/en-US/photography/lenses/m/noctilux-m-50-f1-2-asph-black-finish',
   },
   'noctilux-m-50mm-f095-asph': {
@@ -1503,8 +1537,9 @@ const LENSES = {
     imageUrl:'https://leica-camera.com/sites/default/files/styles/meta_tag_product_image/public/pm-14086-noctilux-m_f0_95_50_front_black_2016_300.png?itok=An93NCbT',
     imageSource:{url:'https://leica-camera.com/en-US/photography/lenses/m/noctilux-m-50mm-f0-95-asph-black', tier:'T1', date:'2026-09-18', title:'Leica Noctilux-M 50 f/0.95 ASPH. official product page'},
     asin:null,
-    prices:{USD:10400,AUD:22900,EUR:12700,GBP:11400,JPY:2321000,CAD:null,SGD:18950},
+    prices:{USD:14400,AUD:22900,EUR:12700,GBP:11400,JPY:2321000,CAD:null,SGD:18950},
     priceIncomplete:true,
+    priceSource:{url:'https://leicacamerausa.com/leica-noctilux-m-50mm-f-0-95-asph-black-anodized.html', tier:'T1', note:'$14,400 list price on leicacamerausa.com (SKU 11602, in stock); Leica Store Miami independently lists the same price. Replaces an earlier $10,400 figure that pre-dated Leica\'s US price increase.', date:'2026-09-25', title:'Leica Camera USA: Leica Noctilux-M 50 f/0.95 ASPH.'},
     productUrl:'https://leica-camera.com/en-US/photography/lenses/m/noctilux-m-50mm-f0-95-asph-black',
   },
   'noctilux-m-35mm-f12-asph': {
@@ -1523,6 +1558,7 @@ const LENSES = {
     // lower, likely-stale $8,950 — the dealer figure is used.
     prices:{USD:9650,AUD:16100,EUR:8950,GBP:7700,JPY:1650000,CAD:null,SGD:13700},
     priceIncomplete:true,
+    priceSource:{url:'https://leicacamerausa.com/leica-noctilux-m-35mm-f-1-2-asph-black-anodized.html', tier:'T1', note:'$9,650 list price on leicacamerausa.com (SKU 11635, shown out of stock); Leica Store Miami independently lists the same price.', date:'2026-09-25', title:'Leica Camera USA: Leica Noctilux-M 35 f/1.2 ASPH.'},
     productUrl:'https://leica-camera.com/en-US/photography/lenses/m/noctilux-m-35mm-f1-2-asph-black',
   },
   'summicron-m-28mm-f2-asph': {
@@ -1548,6 +1584,7 @@ const LENSES = {
     // consistent with this dataset's other Leica items' price increases.
     prices:{USD:6000,AUD:9500,EUR:null,GBP:null,JPY:957000,CAD:null,SGD:6990},
     priceIncomplete:true,
+    priceSource:{url:'https://leicacamerausa.com/leica-summicron-m-28-f-2-asph-in-black.html', tier:'T1', note:'$6,000 list price on leicacamerausa.com (SKU 11618, in stock); Leica Store Miami independently lists the same price.', date:'2026-09-25', title:'Leica Camera USA: Leica Summicron-M 28 f/2 ASPH. III'},
     productUrl:'https://leica-camera.com/en-US/photography/lenses/m/summicron-m-28-f2-asph-black',
   },
   'apo-summicron-m-35mm-f2-asph': {
@@ -1567,6 +1604,7 @@ const LENSES = {
     asin:'B08Y1M7ZWL',
     prices:{USD:9500,AUD:15100,EUR:null,GBP:null,JPY:1529000,CAD:null,SGD:12650},
     priceIncomplete:true,
+    priceSource:{url:'https://leicacamerausa.com/leica-apo-summicron-m-35mm-f-2-asph-black-anodized.html', tier:'T1', note:'$9,500 list price on leicacamerausa.com (SKU 11699, in stock); Leica Store Miami independently lists the same price.', date:'2026-09-25', title:'Leica Camera USA: Leica APO-Summicron-M 35 f/2 ASPH.'},
     productUrl:'https://leica-camera.com/en-US/photography/lenses/m/apo-summicron-m-35-f2-asph-black-anodized-finish',
   },
   'summicron-m-35mm-f2-asph': {
@@ -1584,6 +1622,7 @@ const LENSES = {
     asin:null,
     prices:{USD:4275,AUD:6500,EUR:null,GBP:null,JPY:660000,CAD:null,SGD:5350},
     priceIncomplete:true,
+    priceSource:{url:'https://leicacamerausa.com/leica-summicron-m-35mm-f-2-asph-black-anodized.html', tier:'T1', note:'$4,275 list price on leicacamerausa.com (SKU 11673, in stock); Leica Store Miami independently lists the same price.', date:'2026-09-25', title:'Leica Camera USA: Leica Summicron-M 35 f/2 ASPH.'},
     productUrl:'https://leica-camera.com/en-US/photography/lenses/m/summicron-m-35mm-f2-asph-black',
   },
   'apo-summicron-m-50mm-f2-asph': {
@@ -1599,6 +1638,7 @@ const LENSES = {
     asin:'B0082ESFA8',
     prices:{USD:9945,AUD:15600,EUR:null,GBP:null,JPY:1584000,CAD:null,SGD:12850},
     priceIncomplete:true,
+    priceSource:{url:'https://leicacamerausa.com/leica-apo-summicron-m-50mm-f-2-asph-black-anodized.html', tier:'T1', note:'$9,945 list price on leicacamerausa.com (SKU 11141, in stock); Leica Store Miami independently lists the same price.', date:'2026-09-25', title:'Leica Camera USA: Leica APO-Summicron-M 50 f/2 ASPH.'},
     productUrl:'https://leica-camera.com/en-US/photography/lenses/m/apo-summicron-m-50mm-f2-asph-black',
   },
   'summicron-m-50mm-f2': {
@@ -1615,6 +1655,7 @@ const LENSES = {
     asin:null,
     prices:{USD:3205,AUD:4950,EUR:null,GBP:null,JPY:506000,CAD:null,SGD:4050},
     priceIncomplete:true,
+    priceSource:{url:'https://leicacamerausa.com/leica-summicron-m-50mm-f-2-black-anodized.html', tier:'T1', note:'$3,205 list price on leicacamerausa.com (SKU 11826, in stock); Leica Store Miami independently lists the same price.', date:'2026-09-25', title:'Leica Camera USA: Leica Summicron-M 50 f/2'},
     productUrl:'https://leica-camera.com/en-US/photography/lenses/m/summicron-m-50mm-f2-black',
   },
   'apo-summicron-m-75mm-f2-asph': {
@@ -1629,6 +1670,7 @@ const LENSES = {
     asin:'B0029WXJZU',
     prices:{USD:5300,AUD:8400,EUR:null,GBP:null,JPY:847000,CAD:null,SGD:6900},
     priceIncomplete:true,
+    priceSource:{url:'https://leicacamerausa.com/leica-apo-summicron-m-75mm-f-2-asph-black-anodized.html', tier:'T1', note:'$5,300 list price on leicacamerausa.com (SKU 11637, in stock); Leica Store Miami independently lists the same price.', date:'2026-09-25', title:'Leica Camera USA: Leica APO-Summicron-M 75 f/2 ASPH.'},
     productUrl:'https://leica-camera.com/en-US/photography/lenses/m/apo-summicron-m-75mm-f2-asph-black',
   },
   'apo-summicron-m-90mm-f2-asph': {
@@ -1645,6 +1687,7 @@ const LENSES = {
     asin:'B000U9KC04',
     prices:{USD:6095,AUD:9500,EUR:null,GBP:null,JPY:957000,CAD:null,SGD:null},
     priceIncomplete:true,
+    priceSource:{url:'https://leicacamerausa.com/leica-apo-summicron-m-90mm-f-2-asph-black-anodized.html', tier:'T1', note:'$6,095 list price on leicacamerausa.com (SKU 11884, in stock); Leica Store Miami independently lists the same price.', date:'2026-09-25', title:'Leica Camera USA: Leica APO-Summicron-M 90 f/2 ASPH.'},
     productUrl:'https://leica-camera.com/en-US/photography/lenses/m/apo-summicron-m-90mm-f2-asph-black',
   },
   'apo-telyt-m-135mm-f34': {
@@ -1675,6 +1718,7 @@ const LENSES = {
     // unconfirmed after a real search (no listing found, not merely blocked).
     prices:{USD:4795,AUD:null,EUR:4290,GBP:3750,JPY:null,CAD:null,SGD:null},
     priceIncomplete:true,
+    priceSource:{url:'https://leicastoremiami.com/products/leica-apo-telyt-m-135mm-f-3-4', tier:'T3', note:'$4,795 at Leica Store Miami (authorized US dealer, in stock). Leica Camera USA does not list this lens, so this is a single dealer source; it matches the stored figure.', date:'2026-09-25', title:'Leica Store Miami listing: Leica APO-Telyt-M 135mm f/3.4'},
     productUrl:'https://leica-camera.com/en-US/photography/lenses/m/apo-telyt-m-135mm-f3-4-black',
   },
   'macro-elmar-m-90mm-f4': {
@@ -1692,6 +1736,7 @@ const LENSES = {
     imageSource:{url:'https://leica-camera.com/en-US/photography/lenses/m/macro-elmar-m-90mm-f4-black', tier:'T1', date:'2026-09-21', title:'Leica Macro-Elmar-M 90 f/4 official product page'},
     asin:'B00KRGN57W',
     prices:{USD:4490,AUD:6800,EUR:3750,GBP:3300,JPY:682000,CAD:6330,SGD:5600},
+    priceSource:{url:'https://leicacamerausa.com/leica-macro-elmar-m-90mm-f-4-black-anodized.html', tier:'T1', note:'$4,490 list price on leicacamerausa.com (SKU 11670, in stock); Leica Store Miami independently lists the same price.', date:'2026-09-25', title:'Leica Camera USA: Leica Macro-Elmar-M 90 f/4'},
     productUrl:'https://leica-camera.com/en-US/photography/lenses/m/macro-elmar-m-90mm-f4-black',
   },
   'summaron-m-28mm-f56': {
@@ -1706,6 +1751,7 @@ const LENSES = {
     imageSource:{url:'https://leica-camera.com/en-US/photography/lenses/m/summaron-m-28mm-f5-6-silver', tier:'T1', date:'2026-09-21', title:'Leica Summaron-M 28 f/5.6 official product page'},
     asin:null,
     prices:{USD:3600,AUD:5600,EUR:3100,GBP:2750,JPY:572000,CAD:5075,SGD:4550},
+    priceSource:{url:'https://leicacamerausa.com/leica-summaron-m-28mm-f-5-6-silver-chrome.html', tier:'T1', note:'$3,600 list price on leicacamerausa.com (SKU 11695, in stock); Leica Store Miami independently lists the same price.', date:'2026-09-25', title:'Leica Camera USA: Leica Summaron-M 28 f/5.6, silver chrome'},
     productUrl:'https://leica-camera.com/en-US/photography/lenses/m/summaron-m-28mm-f5-6-silver',
   },
   'elmarit-m-28mm-f28-asph': {
@@ -1724,6 +1770,7 @@ const LENSES = {
     imageSource:{url:'https://leica-camera.com/en-US/photography/lenses/m/elmarit-m-28mm-f2-8-asph-black', tier:'T1', date:'2026-09-21', title:'Leica Elmarit-M 28 f/2.8 ASPH. official product page'},
     asin:'B01B8EWS4C',
     prices:{USD:3100,AUD:4600,EUR:2550,GBP:2300,JPY:462000,CAD:4370,SGD:3750},
+    priceSource:{url:'https://leicacamerausa.com/leica-elmarit-m-28mm-f-2-8-asph-black-anodized.html', tier:'T1', note:'$3,100 list price on leicacamerausa.com (SKU 11677, in stock); Leica Store Miami independently lists the same price.', date:'2026-09-25', title:'Leica Camera USA: Leica Elmarit-M 28 f/2.8 ASPH.'},
     productUrl:'https://leica-camera.com/en-US/photography/lenses/m/elmarit-m-28mm-f2-8-asph-black',
   },
   'super-vario-elmar-tl-11-23mm-f35-45-asph': {

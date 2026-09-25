@@ -343,6 +343,8 @@
   and Leica's own press release respectively). Used leica-camera.com's own
   official USD prices over a dealer's higher "tariff-adjusted" figures,
   consistent with every other item's sourcing throughout this dataset.
+  **[Superseded by task 7.7: that call was wrong — Leica Camera USA's own
+  store shows the dealer's higher figures, so these prices were corrected.]**
   Crossed `ASIN_GAP_BASELINE` again (93 → 97, +4) — same
   owner-pre-approved incremental rebase. `npm test`: 792/792.
 - [x] 6.4 **M: Summicron-M + APO-Summicron-M**, all 7 entered. **Caught a
@@ -474,6 +476,35 @@
   clean commit, replacing the change's 5 incremental bumps with a single
   final history entry naming the real result and all 11 remaining gaps
   (`tests/data/links-offline.test.js`). `npm test`: 792/792.
+- [x] 7.7 **`priceSource` for all 47 current items** (owner asked to fold
+  this into the PR). Leica's own leica-camera.com pages could not be cited:
+  they render prices client-side, and the only number in their raw HTML is an
+  analytics event with `currency:null` that matched neither my USD nor my EUR
+  consistently. Used **Leica Camera USA** (leicacamerausa.com, Leica Camera
+  Inc.'s own US store, tier T1) instead, which shows plain prices in its HTML
+  (`product:price:amount` meta tag). Joined to my items on the exact product
+  SKU (= Leica order number), then cross-checked against Leica Store Miami's
+  Shopify catalog JSON (authorized US dealer): **the dealer agreed with the
+  maker's store on all 45 items both could be matched on, 0 disagreements.**
+  Result: 36 stored USD prices were already right; **9 were stale and are
+  corrected** — SL3 $6,995→$7,485, SL3-S $5,295→$5,665, Summilux-M 35 ASPH.
+  $5,650→$6,900, Summilux-M 28 $6,000→$8,555, Summilux-M 21 $7,100→$9,840,
+  Summilux-M 50 ASPH. $4,550→$5,500, Summilux-M 50 Classic $3,850→$4,600,
+  Noctilux-M 75 $11,900→$15,615, Noctilux-M 50 f/0.95 $10,400→$14,400.
+  **This corrects task 6.3b's earlier call** ("used leica-camera.com's own
+  official prices over a dealer's higher 'tariff-adjusted' figures"): that
+  premise was wrong — Leica's own US store shows the same higher figures the
+  dealer did, and the "official" number I had used was the stale embedded
+  analytics value. Only USD changed (a US price move stays US-only; non-USD
+  values untouched). Two special cases: `m11` cites the store's current
+  glossy-black listing (SKU 20230, $10,400) since the SKU 20200 this entry
+  links to is no longer listed there (the dealer still shows old-stock 20200
+  at $8,995 — not the list price); `apo-telyt-m-135mm-f34` isn't sold by
+  Leica Camera USA, so it cites Leica Store Miami (tier T3, single dealer
+  source, price matches stored). All 47 cited URLs return HTTP 200 and the
+  Price source row renders on the Leica page (jsdom-checked). Regenerated SEO
+  (the curated vs-page set shifted with the prices: 27 written, 2 removed).
+  `npm test`: 792/792. **`specSources` remains unfilled** (still a follow-up).
 
 ## 8. Regenerate and verify
 
