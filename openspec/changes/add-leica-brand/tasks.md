@@ -504,7 +504,36 @@
   source, price matches stored). All 47 cited URLs return HTTP 200 and the
   Price source row renders on the Leica page (jsdom-checked). Regenerated SEO
   (the curated vs-page set shifted with the prices: 27 written, 2 removed).
-  `npm test`: 792/792. **`specSources` remains unfilled** (still a follow-up).
+  `npm test`: 792/792. (`specSources` followed in 7.8/7.9.)
+- [x] 7.8 **`specSources` for the 47 current items** (owner asked to fold it
+  into this PR). Leica's own pages *are* fetchable for specs, unlike prices:
+  every current item's `<productUrl>/technical-specification` page holds a
+  plain HTML spec table, and every current lens's page links its official
+  **datasheet PDF** (read with `pdftotext`). Parsed both and checked stored
+  values field by field (weight, length, diameter, filter thread,
+  elements/groups, blades; cameras: dimensions, weight) instead of assuming
+  the old research was right. Cited the datasheet PDF for lenses (T1) and the
+  spec page for cameras (T1), each note stating only what was verified
+  (order number, which fields, "without lens hood" basis). 154 datasheet
+  field checks confirm the stored values, 0 mismatches after the fixes below.
+  **Data errors this found and fixed:** (1) Summilux-M 35 "Steel Rim" length
+  35→26 mm (Leica's datasheet and web page both say 26; a dealer listing had
+  35); (2) the **Q3 family stored weight without battery** (658/688/662)
+  while every other Leica camera and the whole site use with-battery — now
+  743/772/746 per Leica's own with/without table; (3) filled maker-stated
+  nullable fields I had left empty: blades for Summilux-M 21 (9),
+  Noctilux-M 75 (11), APO-Summicron-M 50 (11), Summicron-M 50 (10), and
+  filter thread 49 mm + 16 blades for Noctilux-M 50 f/1.2. **Leica's own web
+  spec table has field-swap errors** (Elmarit-M 28 shows length 66/diameter
+  30.7; Summicron-M 35 V2 diameter 30.7; APO-Summicron-M 35 shows the
+  with-hood length) — the datasheets are right and agree with what was
+  stored, and each affected note says so. Two limits stated in the notes: the
+  SL3 line's with-battery weight (854/852/852 g) isn't published by Leica
+  (only 769/768/768 g without battery), so those cite DPReview as a second
+  source (T2, read directly); the Noctilux-M 50 f/1.2 weight (405 g) is in
+  neither Leica sheet, so it cites DPReview's announcement article (T2); the
+  M EV1's table has no dimensions row, so its note doesn't claim size. All 63
+  maker URLs return 200. `npm test`: 792/792.
 
 ## 8. Regenerate and verify
 
