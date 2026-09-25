@@ -470,6 +470,10 @@ const KNOWN_IMAGE_GAPS = {
     'fe-100-400mm-f56-8-oss', 'fe-16-25mm-f28-g', 'fe-24-50mm-f28-g',
     'fe-400-800mm-f63-8-g-oss', 'fe-28-70mm-f35-56-oss-ii',
     'e-16-50mm-f35-56-pz-oss-ii',
+    // fe-400mm-f45-gm-oss, fe-600mm-f63-gm-oss: announced 2026-09-15, added
+    // 2026-09-23 refresh — too new for a freely-licensed Commons photo yet
+    // (ship Oct 2026).
+    'fe-400mm-f45-gm-oss', 'fe-600mm-f63-gm-oss',
   ]),
 };
 
