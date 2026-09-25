@@ -236,9 +236,11 @@ function validateCamera(id, cam, brandSections = [], mountIds = null) {
   add(checkField(cam, 'series', { type: 'string' }));
   add(checkMount(cam, mountIds));
   add(checkField(cam, 'tagline', { type: 'string' }));
-  // Floor matches the lens floor below. Sigma's DP compacts start in 2008, and
-  // the bound is only a fat-finger guard (`year: 210`), not a scoping rule.
-  add(checkField(cam, 'year', { type: 'number', min: 2008, max: 2027 }));
+  // Floor matched the lens floor below until the Leica M8 (2006) — the
+  // earliest digital body on the site — needed a lower one. Sigma's DP
+  // compacts start in 2008; the bound is only a fat-finger guard
+  // (`year: 210`), not a scoping rule.
+  add(checkField(cam, 'year', { type: 'number', min: 2006, max: 2027 }));
   add(checkField(cam, 'discontinued', { type: 'boolean' }));
 
   add(checkField(cam, 'sensorMP', { type: 'number', min: 1, max: 200 }));
@@ -331,6 +333,14 @@ function validateCamera(id, cam, brandSections = [], mountIds = null) {
     add(checkField(cam, 'proCapture', { type: 'boolean' }));
     add(checkField(cam, 'liveComposite', { type: 'boolean' }));
   }
+  if (brandSections.includes('leica')) {
+    add(checkField(cam, 'monochrom', { type: 'boolean' }));
+    // Nullable: the T/TL/TL2 genuinely have neither a rangefinder nor a
+    // built-in EVF (only an optional clip-on Visoflex accessory existed).
+    add(checkField(cam, 'focusingSystem', { type: 'string', nullable: true }));
+    add(checkField(cam, 'contentCredentials', { type: 'boolean' }));
+    add(checkField(cam, 'internalStorageGB', { type: 'number', nullable: true, min: 0 }));
+  }
 
   return e.map(m => `${id}: ${m}`);
 }
@@ -376,10 +386,16 @@ function validateLens(id, lens, mountIds = null) {
   add(checkField(lens, 'diameter', { type: 'number', min: 1, max: 300 }));
   add(checkField(lens, 'filterThread', { type: 'number', nullable: true, min: 1 }));
 
-  // Floor is 2008, when Micro Four Thirds launched — the earliest mount any
-  // brand here covers. Panasonic's LUMIX G Vario 7-14mm F4 (2009) sits below
-  // the 2010 bound this used to carry; the bound is only a typo guard.
-  add(checkField(lens, 'year', { type: 'number', min: 2008, max: 2027 }));
+  // Floor was 2008 (MFT's launch), then 2004 (Leica Summilux-M 50 f/1.4
+  // ASPH), now 1979: the Leica Summicron-M 50 f/2's Mandler-era optical
+  // formula is still the CURRENT version sold today (no later revision
+  // exists at a different mfg number, checked) — under CLAUDE.md's
+  // version-year convention that genuinely makes 1979 the release year of
+  // the version on sale, not a design-history date. The APO-Summicron-M 90
+  // f/2 ASPH (1998) also sits below 2004. Panasonic's LUMIX G Vario
+  // 7-14mm F4 (2009) sits below the 2010 bound this used to carry; the
+  // bound is only a typo guard.
+  add(checkField(lens, 'year', { type: 'number', min: 1979, max: 2027 }));
   add(checkField(lens, 'discontinued', { type: 'boolean' }));
 
   add(checkField(lens, 'productUrl', { type: 'url', nullable: true, required: false }));

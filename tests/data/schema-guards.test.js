@@ -48,19 +48,20 @@ test('known-good lens fixtures report no problems', () => {
 });
 
 // ── Camera year bounds ───────────────────────────────────────────────
-// The floor moved 2010 → 2008 to admit Sigma's DP compacts. These pin both
-// ends so a future widening is a deliberate edit, not an accident.
+// The floor moved 2010 → 2008 to admit Sigma's DP compacts, then 2008 → 2006
+// to admit the Leica M8. These pin both ends so a future widening is a
+// deliberate edit, not an accident.
 
 test('camera year below the floor is rejected', () => {
-  reports(validateCamera('too-old', camera({ year: 2007 }), []), 'year');
+  reports(validateCamera('too-old', camera({ year: 2005 }), []), 'year');
 });
 
 test('camera year above the ceiling is rejected', () => {
   reports(validateCamera('too-new', camera({ year: 2028 }), []), 'year');
 });
 
-test('camera year at the 2008 floor is accepted', () => {
-  const problems = validateCamera('at-floor', camera({ year: 2008 }), []);
+test('camera year at the 2006 floor is accepted', () => {
+  const problems = validateCamera('at-floor', camera({ year: 2006 }), []);
   assert.equal(problems.filter(p => p.includes('year')).length, 0, problems.join('\n'));
 });
 

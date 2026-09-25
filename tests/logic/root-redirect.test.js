@@ -73,6 +73,11 @@ test('[root] valid stored brand "olympus" is honored', () => {
   assert.equal(runRedirect({ stored: 'olympus', hash: '#lenses' }), './olympus/#lenses');
 });
 
+test('[root] valid stored brand "leica" is honored', () => {
+  assert.equal(runRedirect({ stored: 'leica' }), './leica/');
+  assert.equal(runRedirect({ stored: 'leica', hash: '#lenses' }), './leica/#lenses');
+});
+
 test('[root] hash fragment is preserved through the redirect (returning visitor only)', () => {
   assert.equal(runRedirect({ stored: 'fujifilm', hash: '#lenses' }), './fujifilm/#lenses');
   // No stored preference → no redirect, so nothing to preserve.
@@ -102,7 +107,7 @@ test('[root] served HTML contains crawlable landing content (present without JS)
   const html = fs.readFileSync(path.join(ROOT, 'index.html'), 'utf8');
   assert.match(html, /<h1[^>]*>[^<]*Compare Camera Specs[^<]*<\/h1>/, 'landing h1 missing');
   // One brand card link per registered brand.
-  for (const brand of ['canon', 'fujifilm', 'nikon', 'olympus', 'panasonic', 'sigma', 'sony']) {
+  for (const brand of ['canon', 'fujifilm', 'nikon', 'olympus', 'panasonic', 'sigma', 'sony', 'leica']) {
     assert.match(html, new RegExp(`href="\\./${brand}/"`), `landing missing link to ${brand}`);
   }
   // At least one link into the comparison cluster, as a clean URL.

@@ -25,7 +25,20 @@ const ALLOWED_HOSTS = [
   'viltrox.com', 'venuslens.net', 'ttartisan.store', 'ttartisan.com', '7artisans.store',
   'samyangus.com', 'lksamyang.com', 'tamron-americas.com', 'tamron.com',
   'meikeglobal.com', 'yongnuo.eu', 'hkyongnuo.com', 'omsystem.com', 'zeiss.com',
-  'laowa.com.au', 'laowalenses.ca', 'pergear.com', 'voigtlaender.de',
+  'laowa.com.au', 'laowalenses.ca', 'pergear.com', 'voigtlaender.de', 'leica-camera.com',
+  // DPReview: used as productUrl for a handful of discontinued Leica Q
+  // bodies whose own leica-camera.com pages are gone (task 5.6). Already
+  // trusted as a footerLinks source across several brands.
+  'dpreview.com',
+  // bigcommerce.com (leicacamerausa.com's storefront CDN): used for the
+  // APO-Summicron-SL 75mm's image — leica-camera.com's own og:image for
+  // that lens is broken (points to an unrelated product), verified
+  // visually against this CDN photo instead (task 6.1/6.2).
+  'bigcommerce.com',
+  // leicastoremiami.com (authorized US dealer): used for two Summicron-M
+  // images where leica-camera.com's own og:image resolves to an unrelated
+  // product (task 6.4) — same recurring pattern as the SL 75mm above.
+  'leicastoremiami.com',
   // CDNs and storefront hosts backing the above.
   'cdn.shopify.com', 'commercetools.com', 'cs.1worldsync.com', 'cloudfront.net',
   'foto-erhardt.de', 'contentstack.io', 'etoren.com', 'bhphotovideo.com',
@@ -62,7 +75,38 @@ const KNOWN_SHARED_LINKS = new Map([
 // (8 I-series primes across panasonic/sigma/sony, plus Sony's 35mm F1.4 DG DN).
 // That grew the denominator; it is NOT a coverage regression. Rebase only for a
 // population change like this, and say why — otherwise tighten, never loosen.
-const ASIN_GAP_BASELINE = 86;
+//
+// Rebased to 74 on 2026-09-22 (add-leica-brand, task 7.6 — the real ASIN
+// pass, replacing the change's earlier incremental bumps with one clean
+// final number, per the plan agreed at kickoff). Tasks 6.1-6.5 had pushed
+// this baseline up to 108 as current SL/M lenses were entered with a
+// placeholder null ASIN and a documented assumption ("Leica sells almost
+// entirely through its own stores, not Amazon") rather than a real per-item
+// search. Task 7.6 ran that search for all 45 of Leica's current items and
+// found a genuine plain-new-product ASIN (not a bundle/Renewed/International
+// listing, and — for the M lenses with a currently-sold revision distinct
+// from an older discontinued one — confirmed as the current revision) for
+// 34 of them, applied to the dataset. That cuts Leica's own gap from 45 to
+// 11 and this cross-brand baseline from 108 to 74. Leica's remaining 11, all
+// with no confident ASIN after a genuine attempt: sl3-p (too new, not yet
+// listed), apo-macro-elmarit-sl-100mm-f28 (brand-new, not yet shipping),
+// noctilux-m-35mm-f12-asph, summilux-m-21mm-f14-asph and
+// summilux-m-35mm-f14-steel-rim (no Amazon.com listing found at all),
+// noctilux-m-50mm-f095-asph, summilux-m-50mm-f14-classic, summicron-m-50mm-f2,
+// summaron-m-28mm-f56 and apo-telyt-m-135mm-f34 (the correct lens exists on
+// Amazon only bundled with accessories, no plain listing), and
+// summicron-m-35mm-f2-asph (a candidate ASIN exists but its listing doesn't
+// explicitly confirm the current "V2"/11673 revision rather than its
+// discontinued predecessor — left out per this dataset's lens-revision
+// caution, learned the hard way at task 6.4).
+//
+// Rebased to 78 on 2026-09-25 when main (#65, the Sept 2026 camera data
+// refresh) was merged into add-leica-brand: it added four current items that
+// have no ASIN yet — canon/eos-r8-ii, panasonic/lumix-s-20mm-f2-5,
+// sony/fe-400mm-f45-gm-oss, sony/fe-600mm-f63-gm-oss. A population change,
+// not a coverage regression (Leica's own gap stays at 11); each is a
+// candidate for the next ASIN pass.
+const ASIN_GAP_BASELINE = 78;
 
 const allItems = () => brandDirs().flatMap(brand => {
   const { data } = loadBrand(brand);

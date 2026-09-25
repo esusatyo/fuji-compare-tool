@@ -1012,7 +1012,29 @@ const BRAND_CARD_ACCENTS = {
   // Panasonic-blue-adjacent hue would read as one brand next to Panasonic's
   // own #0046ad stripe on the landing page.
   olympus:   '#5fd0c8',
+  // Canon and Fujifilm already share '#cc0000' — a third red stripe would
+  // read as one brand on the landing page, so Leica gets a chrome/silver
+  // neutral instead (openspec/changes/add-leica-brand/design.md §8).
+  leica:     '#b8b2a7',
 };
+
+// Landing card order. Not alphabetical on purpose: Leica sits right after
+// Panasonic (second row of the 4-column desktop grid). A brand missing from
+// this list is appended alphabetically, so onboarding a new brand never drops
+// its card — add its slug here only to place it somewhere specific.
+const LANDING_CARD_ORDER = ['canon', 'fujifilm', 'nikon', 'olympus', 'panasonic', 'leica', 'sigma', 'sony'];
+
+function orderLandingBrands(brands) {
+  const rank = slug => { const i = LANDING_CARD_ORDER.indexOf(slug); return i === -1 ? Infinity : i; };
+  return [...brands].sort((x, y) => (rank(x.slug) - rank(y.slug)) || x.slug.localeCompare(y.slug));
+}
+
+// The "All Brands" tile shows a 2x2 mosaic of showcase photos from different
+// brands (each brand's BRAND_CONFIG.heroCamera photo, so it stays data-driven).
+// Picked for variety of look, not to favour a brand; a brand whose showcase
+// camera has no photo is skipped, and with fewer than two photos the tile
+// falls back to the logo mark.
+const ALL_BRANDS_MOSAIC = ['canon', 'leica', 'panasonic', 'sony'];
 
 // Landing brand-card photo: a real product photo of the brand's showcase
 // camera (BRAND_CONFIG.heroCamera — not necessarily the technical flagship;
@@ -1037,8 +1059,15 @@ function brandPhotoHTML(brandName, heroCamera) {
   return `<div class="brand-photo">${img}${fallback}</div>`;
 }
 
-function allBrandsPhotoHTML() {
-  return `<div class="brand-photo brand-photo--all">${logoMark(40)}</div>`;
+function allBrandsPhotoHTML(brands = []) {
+  const shots = ALL_BRANDS_MOSAIC
+    .map(slug => brands.find(br => br.slug === slug))
+    .filter(br => br && br.heroCamera && br.heroCamera.imageUrl);
+  if (shots.length < 2) return `<div class="brand-photo brand-photo--all">${logoMark(40)}</div>`;
+  // Decorative (alt=""): the link's own text, "All Brands", names the tile.
+  const cells = shots.map(br =>
+    `<span><img src="${esc(br.heroCamera.imageUrl)}" alt="" onerror="this.classList.add('img-broken')"></span>`).join('');
+  return `<div class="brand-photo brand-photo--all brand-photo--mosaic">${cells}</div>`;
 }
 
 // Hand-picked entry points into the interactive tool. These are hash links,
@@ -1075,7 +1104,7 @@ function rootBodyBlock(site, brands, crossSample = [], favourites = []) {
   // No stripe override: the all-brands card takes the shared accent.
   const compareCard = `        <li class="brand-card">
           <a href="./compare/" data-goatcounter-click="brand-pick:compare" data-goatcounter-title="Brand pick: All brands">
-            ${allBrandsPhotoHTML()}
+            ${allBrandsPhotoHTML(brands)}
             <div class="brand-card-body">
               <div class="brand-name">All Brands</div>
               <div class="brand-count">Mix &amp; match 2&ndash;4 cameras from any brand</div>
@@ -1083,7 +1112,7 @@ function rootBodyBlock(site, brands, crossSample = [], favourites = []) {
             </div>
           </a>
         </li>`;
-  const cards = [compareCard, ...brands.map(br =>
+  const cards = [compareCard, ...orderLandingBrands(brands).map(br =>
     `        <li class="brand-card" style="--card-accent: ${esc(BRAND_CARD_ACCENTS[br.slug] || '#B48CE0')}">
           <a href="./${br.slug}/" data-goatcounter-click="brand-pick:${br.slug}" data-goatcounter-title="Brand pick: ${esc(br.name)}">
             ${brandPhotoHTML(br.name, br.heroCamera)}
@@ -1448,4 +1477,4 @@ if (require.main === module) {
   console.log(`generate-seo: ${files.size} artifacts (${written} written, ${removed} stale removed)`);
 }
 
-module.exports = { siteConfig, curatedPairs, relatedPairs, vsPageHTML, vsSummary, vsSummaryFacts, resolveMatchups, crossVsPageHTML, crossTitle, CROSS_BRAND_MATCHUPS, compareHeadBlock, compareBodyBlock, brandHeadBlock, rootHeadBlock, brandBodyBlock, rootBodyBlock, withHeadBlock, withBodyBlock, sitemapXML, robotsTxt, buildAll, SEO_BEGIN, SEO_END, SEO_BODY_BEGIN, SEO_BODY_END, ID_HEAD_BEGIN, ID_HEAD_END, ID_HEADER_BEGIN, ID_HEADER_END, ID_FOOTER_BEGIN, ID_FOOTER_END, identityToken, logoMark, cleanUrl, cleanHref, themeToggleHTML, collectReferences, citationText, refHostname, REFERENCE_ROWS, referenceRowsHTML };
+module.exports = { LANDING_CARD_ORDER, ALL_BRANDS_MOSAIC, orderLandingBrands, allBrandsPhotoHTML, siteConfig, curatedPairs, relatedPairs, vsPageHTML, vsSummary, vsSummaryFacts, resolveMatchups, crossVsPageHTML, crossTitle, CROSS_BRAND_MATCHUPS, compareHeadBlock, compareBodyBlock, brandHeadBlock, rootHeadBlock, brandBodyBlock, rootBodyBlock, withHeadBlock, withBodyBlock, sitemapXML, robotsTxt, buildAll, SEO_BEGIN, SEO_END, SEO_BODY_BEGIN, SEO_BODY_END, ID_HEAD_BEGIN, ID_HEAD_END, ID_HEADER_BEGIN, ID_HEADER_END, ID_FOOTER_BEGIN, ID_FOOTER_END, identityToken, logoMark, cleanUrl, cleanHref, themeToggleHTML, collectReferences, citationText, refHostname, REFERENCE_ROWS, referenceRowsHTML };
