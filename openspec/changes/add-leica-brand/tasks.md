@@ -640,6 +640,27 @@
   (violating this repo's standing no-session-link-in-PRs rule, restated
   right here in this very task); corrected via `gh pr edit` before
   proceeding, confirmed absent by grepping the live PR body.
+- [x] 10.4 **Landing page tweaks (owner request, same PR).** (a) Leica now
+  sits directly after Panasonic on the root page (row 2 of the 4-column
+  desktop grid). Card order was alphabetical by directory name; it is now an
+  explicit `LANDING_CARD_ORDER` in `scripts/generate-seo.js`, applied to the
+  cards only (the "popular comparisons" links keep their own order), and a
+  brand missing from the list is appended alphabetically so a new brand can
+  never lose its card. (b) The "All Brands" tile is now a 2×2 photo mosaic
+  (Canon, Leica, Panasonic, Sony showcase cameras — each brand's
+  `heroCamera` photo, so it stays data-driven) instead of the logo mark;
+  fewer than two available photos falls back to the logo. Photos are
+  decorative (`alt=""`), hide themselves on load failure, and sit in
+  equal-size clipping cells with the brand tiles' dark backdrop (Leica's
+  showcase photo is a transparent PNG). Checked with headless Chrome
+  screenshots at desktop and in a true 390 px iframe (headless
+  `--window-size` alone does not go below ~500 px, so that first "phone"
+  shot was discarded), dark and light themes. New `tests/data/landing.test.js`
+  pins the order, one-card-per-brand, the mosaic and its fallback (verified
+  to fail with Leica back in its old slot). CLAUDE.md's new-brand checklist
+  now mentions `LANDING_CARD_ORDER`. Not fixed, pre-existing and unrelated:
+  the Fujifilm tile's CDN photo intermittently fails to load in headless
+  Chrome and shows its silhouette fallback.
 - [ ] 10.2 After merge, `/opsx:archive` the change.
 - [x] 10.3 Follow-ups proposed in the PR description (third-party L/M
   lenses + `SAME_MOUNT_BRANDS` row, discontinued M lenses as their own
