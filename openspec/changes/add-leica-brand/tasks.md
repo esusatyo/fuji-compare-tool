@@ -534,6 +534,36 @@
   neither Leica sheet, so it cites DPReview's announcement article (T2); the
   M EV1's table has no dimensions row, so its note doesn't claim size. All 63
   maker URLs return 200. `npm test`: 792/792.
+- [x] 7.9 **`specSources` for the 44 discontinued items** (42 cited, 2
+  deliberately left uncited). **TL lenses (7):** all seven have English
+  datasheet PDFs on leica-camera.com; checked field by field, cited (T1), and
+  fixed two errors — Super-Vario-Elmar-TL 11-23 weight 368→386 g (a digit
+  swap) and Elmarit-TL 18 diameter 61→62 mm. **Cameras (35 of 37):** Leica's
+  web pages for discontinued bodies are gone (404 on every regional site
+  tried; its sitemap lists current products only) and most old datasheet
+  PDFs return 502 (per-file — other Leica files served fine at the same
+  time, so not rate limiting). So the evidence is: DPReview "Weight (inc.
+  batteries)" read directly for 33 bodies (T2); Leica's own PDFs where they
+  still serve (Q2, Q2 Monochrom, M10, SL2; T1); Sans Mirror for the SL2-S
+  (T2); Wikipedia spec boxes for the M-D, M-E 220, X2, X-E and M10-P (T4,
+  read directly). **Real errors found and fixed:** Q2 and Q2 Monochrom weight
+  652→734 g (Leica's own sheet prints the reversed label "734/652 g
+  (without/with battery)"; a battery adds weight, and DPReview confirms 734 g
+  inc. batteries — this is how a without-battery number got stored), Q (Typ
+  116) and Q-P 590→640 g, X Vario 628→680 g, SL2 840→916 g (matched neither
+  Leica's 835 g without battery nor DPReview's 916 g with), M10 depth
+  39→38.5 mm per Leica's sheet. With 7.8's Q3 fix, the whole Q line and the
+  rest of the dataset are now on one with-battery weight basis. **Limits, said
+  in each note:** DPReview's tables have no dimensions row, so for 25 bodies
+  only the weight is independently confirmed and the note says the stored
+  size is not; the SL2's with-battery weight rests on DPReview because
+  Leica's sheet gives only 835 g without battery. **Left uncited (no source
+  I could actually read):** M10 Monochrom (DPReview page has no weight row,
+  Leica's PDF 502s) and M-E (Typ 240) (no weight anywhere readable) — both
+  remain unverified. Result: `specSources` on **89 of 91** items, 116 unique
+  URLs; all 79 non-DPReview URLs return 200 and each of the 37 DPReview URLs
+  was read with the fetch tool (DPReview is curl-blocked, so `test:links`
+  will only warn on it). `npm test`: 792/792.
 
 ## 8. Regenerate and verify
 
