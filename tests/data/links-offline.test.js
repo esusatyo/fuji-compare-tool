@@ -99,7 +99,14 @@ const KNOWN_SHARED_LINKS = new Map([
 // explicitly confirm the current "V2"/11673 revision rather than its
 // discontinued predecessor — left out per this dataset's lens-revision
 // caution, learned the hard way at task 6.4).
-const ASIN_GAP_BASELINE = 74;
+//
+// Rebased to 78 on 2026-09-25 when main (#65, the Sept 2026 camera data
+// refresh) was merged into add-leica-brand: it added four current items that
+// have no ASIN yet — canon/eos-r8-ii, panasonic/lumix-s-20mm-f2-5,
+// sony/fe-400mm-f45-gm-oss, sony/fe-600mm-f63-gm-oss. A population change,
+// not a coverage regression (Leica's own gap stays at 11); each is a
+// candidate for the next ASIN pass.
+const ASIN_GAP_BASELINE = 78;
 
 const allItems = () => brandDirs().flatMap(brand => {
   const { data } = loadBrand(brand);

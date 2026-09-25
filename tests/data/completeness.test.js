@@ -49,6 +49,10 @@ const KNOWN_IMAGE_GAPS = {
     // this skill's sourcing tiers. Stays a gap until Viltrox (or Canon's
     // policy) changes.
     'viltrox-85mm-f18',
+    // eos-r8-ii: announced 2026-09-15, added 2026-09-23 refresh — too new for
+    // a freely-licensed Commons photo yet (ships late Oct 2026). Revisit once
+    // review units are out and Commons gets an upload.
+    'eos-r8-ii',
     // yongnuo-35mm-f2, yongnuo-85mm-f18: resolved 2026-08-17 (Tier 3,
     // yongnuo.eu — both images carry an explicit "R mount / Full Frame"
     // badge overlay confirming Canon RF, despite the 85mm page's body copy
@@ -380,6 +384,9 @@ const KNOWN_IMAGE_GAPS = {
     // Commons API search hit the same IP-wide search-API rate limiting/garbled
     // responses documented for other brands this round, so no further manual
     // digging was done beyond the one pass. All three stay genuine gaps.
+    // lumix-s-20mm-f2-5: announced 2026-09-17, added 2026-09-25 refresh — too
+    // new for a freely-licensed Commons photo yet (ships Oct 2026).
+    'lumix-s-20mm-f2-5',
   ]),
   sony: new Set([
     // tamron-70-300mm: the only Commons file is the Nikon Z version (Model
@@ -490,6 +497,10 @@ const KNOWN_IMAGE_GAPS = {
     'fe-100-400mm-f56-8-oss', 'fe-16-25mm-f28-g', 'fe-24-50mm-f28-g',
     'fe-400-800mm-f63-8-g-oss', 'fe-28-70mm-f35-56-oss-ii',
     'e-16-50mm-f35-56-pz-oss-ii',
+    // fe-400mm-f45-gm-oss, fe-600mm-f63-gm-oss: announced 2026-09-15, added
+    // 2026-09-23 refresh — too new for a freely-licensed Commons photo yet
+    // (ship Oct 2026).
+    'fe-400mm-f45-gm-oss', 'fe-600mm-f63-gm-oss',
   ]),
 };
 
