@@ -360,6 +360,9 @@ const KNOWN_IMAGE_GAPS = {
     // Commons API search hit the same IP-wide search-API rate limiting/garbled
     // responses documented for other brands this round, so no further manual
     // digging was done beyond the one pass. All three stay genuine gaps.
+    // lumix-s-20mm-f2-5: announced 2026-09-17, added 2026-09-25 refresh — too
+    // new for a freely-licensed Commons photo yet (ships Oct 2026).
+    'lumix-s-20mm-f2-5',
   ]),
   sony: new Set([
     // tamron-70-300mm: the only Commons file is the Nikon Z version (Model
