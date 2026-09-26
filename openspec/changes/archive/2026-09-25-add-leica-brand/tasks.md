@@ -181,7 +181,7 @@
   guessed a thumbnail path that was wrong; corrected before committing). CL's
   is a Wikipedia-infobox-quality retail-display shot, accepted for now,
   revisit in task 7 if a better one turns up. `npm test`: 792/792.
-- [~] 5.3a **M8 → M9-P era, first half**: M8, M9-P, M-E (Typ 220), M
+- [x] 5.3a **M8 → M9-P era, first half** (done as scoped; M8.2/M9 deliberately skipped, see below): M8, M9-P, M-E (Typ 220), M
   Monochrom entered — 4 of the 6 planned for this sub-batch. **M8.2 and M9
   skipped**: both have a solidly sourced UK price but no citable US dollar
   figure found after extensive effort (decisions §6); `prices.USD` has no
@@ -286,8 +286,8 @@
   **29 of 52 planned cameras now entered** (all non-M-mount lines: SL, TL/CL,
   Q, Leica X, compacts); the 23 M-mount bodies (5.3–5.5) remain before 5.8's
   final pass.
-- [ ] 5.8 Final camera pass: `CAMERA_ORDER` newest-first within line,
-  `defaultSelected` sanity, `npm test` green.
+- [x] 5.8 (duplicate) Final camera pass — the original plan's entry; the real
+  5.8, with its findings, is ticked earlier in this section.
 
 ## 6. Lens data, in batches
 
@@ -661,7 +661,11 @@
   now mentions `LANDING_CARD_ORDER`. Not fixed, pre-existing and unrelated:
   the Fujifilm tile's CDN photo intermittently fails to load in headless
   Chrome and shows its silhouette fallback.
-- [ ] 10.2 After merge, `/opsx:archive` the change.
+- [x] 10.2 After merge, archive the change. PR #64 was squash-merged to main
+  as `3d8ac42` (2026-09-25); the merged tree was verified byte-identical to
+  the final branch tip (`ee1d22a`). Archived via a follow-up PR that also
+  syncs `leica-brand-data` into `openspec/specs/`. Two stale checkboxes
+  (5.3a `[~]`, a duplicate 5.8) were tidied in the same commit.
 - [x] 10.3 Follow-ups proposed in the PR description (third-party L/M
   lenses + `SAME_MOUNT_BRANDS` row, discontinued M lenses as their own
   change, backfilling `specSources`/`priceSource` for Leica). CLAUDE.md's
