@@ -1174,7 +1174,10 @@ const CAMERAS = {
   'm11': {
     name:'M11', series:'M', mount:'m', year:2022, discontinued:false,
     tagline:'A legend reinvented — 60MP full-frame with triple-resolution capture and a slimmer body.',
-    productUrl:'https://leica-camera.com/en-US/photography/cameras/m/m11-black',
+    // productUrl moved 2026-09-26 from .../m11-black (order 20200, the phased-out
+    // original "M11, black"; page still live) to the glossy-black page for the
+    // order 20230 body actually on sale -- the SKU this entry's priceSource cites.
+    productUrl:'https://leica-camera.com/en-US/photography/cameras/m/m11-glossy-black-paint-finish',
     imageUrl:'https://leica-camera.com/sites/default/files/styles/meta_tag_product_image/public/pm-13718-20200__M11_black.png?itok=Ti7ycYK7',
     imageSource:{url:'https://leica-camera.com/en-US/photography/cameras/m/m11-black', tier:'T1', date:'2026-09-18', title:'Leica M11 official product page'},
     asin:'B09QF4TSZF',
@@ -2035,7 +2038,7 @@ const LENSES = {
     weatherSealed:false, ois:false, oisStops:null, year:2011, discontinued:false,
     imageUrl:'https://leica-camera.com/sites/default/files/styles/meta_tag_product_image/public/pm-14545-super-elmar-m_f3_4_21_front_black_2016_300.png?itok=cGI4CJIh',
     imageSource:{url:'https://leica-camera.com/en-US/photography/lenses/m/super-elmar-m-21mm-f3-4-asph-black', tier:'T1', date:'2026-09-26', title:'Leica Super-Elmar-M 21 f/3.4 ASPH. official product page'},
-    asin:null,
+    asin:'B00579W0DE',
     specSources:[{url:'https://leica-camera.com/sites/default/files/pm-14547-Super-Elmar-M21-TechnicalData.pdf', tier:'T1', note:'Leica\'s official datasheet (order no. 11145) confirms weight 279 g, diameter 53 mm, filter E46, 8 elements in 7 groups, focus range 0.7 m, largest ratio 1:29.8, smallest aperture f/16. Its length row is mislabelled (see entry comment).', date:'2026-09-26', title:'Leica datasheet: Leica Super-Elmar-M 21 f/3.4 ASPH.'}],
     prices:{USD:4000,AUD:null,EUR:null,GBP:null,JPY:null,CAD:null,SGD:null},
     priceIncomplete:true,
@@ -2060,7 +2063,7 @@ const LENSES = {
     specSources:[{url:'https://leica-camera.com/sites/default/files/pm-56101-Technical-Data_Summilux-M%2090%20f-1.5%20ASPH_e.pdf', tier:'T1', note:'Leica\'s official datasheet (order no. 11678, Dec 2019) confirms weight 1,010 g, length 91 mm (without extended hood), diameter 74 mm, filter E67, 8 elements in 6 groups, 11 aperture blades, focus range 1 m, largest ratio 1:8.8, smallest aperture f/16; matches the web spec table exactly.', date:'2026-09-26', title:'Leica datasheet: Leica Summilux-M 90 f/1.5 ASPH.'}],
     prices:{USD:14975,AUD:null,EUR:null,GBP:11760,JPY:null,CAD:null,SGD:null},
     priceIncomplete:true,
-    priceSource:{url:'https://leicacamerausa.com/leica-summilux-m-90mm-f-1-5-asph-black-anodized.html', tier:'T1', note:'$14,975 list price on leicacamerausa.com (SKU 11678), shown out of stock) -- single source: Leica Store Miami no longer lists it. GBP 11,760 from the schema.org Offer on leica-camera.com/en-GB (2026-09-26).', date:'2026-09-26', title:'Leica Camera USA'},
+    priceSource:{url:'https://leicacamerausa.com/leica-summilux-m-90mm-f-1-5-asph-black-anodized.html', tier:'T1', note:'$14,975 list price on leicacamerausa.com (SKU 11678), shown out of stock); second source (2026-09-26): Classic Connection, an authorized dealer, lists the same $14,975.00 (Cat #11678, New USA, on backorder) -- Leica Store Miami no longer lists it. GBP 11,760 from the schema.org Offer on leica-camera.com/en-GB (2026-09-26).', date:'2026-09-26', title:'Leica Camera USA'},
     productUrl:'https://leica-camera.com/en-US/photography/lenses/m/summilux-m-90mm-f1-5-asph',
   },
   'super-vario-elmar-tl-11-23mm-f35-45-asph': {
