@@ -111,7 +111,10 @@ const KNOWN_SHARED_LINKS = new Map([
 // yet, in both mounts they launched in (sigma/ and sony/ sigma-85mm-f12-dg,
 // sigma-20-60mm-f28-4-dg). Population change, not a coverage regression;
 // next ASIN pass candidates.
-const ASIN_GAP_BASELINE = 82;
+// Tightened to 78 the same day: the Leica ASIN pass filled four Leica gaps
+// (summicron-m-50mm-f2, apo-telyt-m-135mm-f34, summaron-m-28mm-f56,
+// summilux-m-50mm-f14-classic).
+const ASIN_GAP_BASELINE = 78;
 
 const allItems = () => brandDirs().flatMap(brand => {
   const { data } = loadBrand(brand);

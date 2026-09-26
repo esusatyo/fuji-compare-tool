@@ -1581,7 +1581,7 @@ const LENSES = {
     weatherSealed:false, ois:false, oisStops:null, year:2025, discontinued:false,
     imageUrl:'https://leica-camera.com/sites/default/files/styles/meta_tag_product_image/public/pm-20355-11714_Leica_Summilux-M_50_f1_4_Classic_upright_1920px.webp?itok=dxyWDctb',
     imageSource:{url:'https://leica-camera.com/en-US/photography/lenses/m/summilux-m-50-f1-4-silver-chrome-finish', tier:'T1', date:'2026-09-18', title:'Leica Summilux-M 50 f/1.4 (Classic Line) official product page'},
-    asin:null,
+    asin:'B0F161R8N3',
     specSources:[{url:'https://leica-camera.com/en-US/photography/lenses/m/summilux-m-50-f1-4-silver-chrome-finish/technical-specification', tier:'T1', note:'Leica\'s technical-specification page (order no. 11714) confirms weight 417 g, length 45 mm, diameter 58 mm, filter thread 46 mm, 7 elements in 5 groups, 12 aperture blades. Where the page gives figures without and with the lens hood, the without-hood figure is stored.', date:'2026-09-25', title:'Leica technical specification: Leica Summilux-M 50 f/1.4'}],
     prices:{USD:4600,AUD:7300,EUR:4050,GBP:3500,JPY:737000,CAD:null,SGD:5900},
     priceIncomplete:true,
@@ -1790,7 +1790,7 @@ const LENSES = {
     elements:6, groups:4, blades:10, afType:'Manual',
     weatherSealed:false, ois:false, oisStops:null, year:1979, discontinued:false,
     imageUrl:'https://leicastoremiami.com/cdn/shop/products/Leica-50mm-Summicron-blk.jpg',
-    asin:null,
+    asin:'B00009V3FL',
     specSources:[
       {url:'https://leica-camera.com/sites/default/files/pm-14145-Summicron-M-50-mm-Technical-Data_en.pdf', tier:'T1', note:'Leica\'s official datasheet (order no. 11826) confirms weight 240 g, diameter 53 mm, filter thread 39 mm.', date:'2026-09-25', title:'Leica datasheet: Leica Summicron-M 50 f/2'},
       {url:'https://leica-camera.com/en-US/photography/lenses/m/summicron-m-50mm-f2-black/technical-specification', tier:'T1', note:'Leica\'s web technical-specification page additionally confirms length 43.5 mm, 6 elements in 4 groups, 10 aperture blades.', date:'2026-09-25', title:'Leica technical specification: Leica Summicron-M 50 f/2'},
@@ -1861,7 +1861,7 @@ const LENSES = {
     weatherSealed:false, ois:false, oisStops:null, year:1998, discontinued:false,
     imageUrl:'https://leica-camera.com/sites/default/files/styles/meta_tag_product_image/public/pm-14258-apo-telyt-m_f3_4_135_front_black_2016_300.webp?itok=z7CDP4nP',
     imageSource:{url:'https://leica-camera.com/en-US/photography/lenses/m/apo-telyt-m-135mm-f3-4-black', tier:'T1', date:'2026-09-21', title:'Leica APO-Telyt-M 135 f/3.4 official product page'},
-    asin:null,
+    asin:'B0000AQJ6I',
     // USD from an authorized dealer's current (out-of-stock, not archived)
     // listing, matching the last confirmed price at a second dealer before
     // it went "No Longer Available" there. AUD/JPY/SGD/CAD genuinely
@@ -1907,7 +1907,7 @@ const LENSES = {
     weatherSealed:false, ois:false, oisStops:null, year:2016, discontinued:false,
     imageUrl:'https://leica-camera.com/sites/default/files/styles/meta_tag_product_image/public/pm-19576-18143-summaron-m_f5_6_28_front_silver_2016_300.webp?itok=xKC1hEjS',
     imageSource:{url:'https://leica-camera.com/en-US/photography/lenses/m/summaron-m-28mm-f5-6-silver', tier:'T1', date:'2026-09-21', title:'Leica Summaron-M 28 f/5.6 official product page'},
-    asin:null,
+    asin:'B06WWQJ4W1',
     specSources:[
       {url:'https://leica-camera.com/sites/default/files/pm-14410-Datenblatt_Summaron-M-5.6_28mm_e--2-.pdf', tier:'T1', note:'Leica\'s official datasheet (order no. 11695) confirms weight 165 g, diameter 51 mm, filter thread 34 mm, 8 aperture blades. Where the sheet gives figures without and with the lens hood, the without-hood figure is stored.', date:'2026-09-25', title:'Leica datasheet: Leica Summaron-M 28 f/5.6, silver chrome'},
       {url:'https://leica-camera.com/en-US/photography/lenses/m/summaron-m-28mm-f5-6-silver/technical-specification', tier:'T1', note:'Leica\'s web technical-specification page additionally confirms length 18 mm, 6 elements in 4 groups.', date:'2026-09-25', title:'Leica technical specification: Leica Summaron-M 28 f/5.6, silver chrome'},
