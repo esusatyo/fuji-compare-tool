@@ -1300,6 +1300,88 @@ const LENSES = {
     priceSource:{url:'https://leicacamerausa.com/leica-vario-elmarit-sl-24-70mm-f-2-8-asph.html', tier:'T1', note:'$3,205 list price on leicacamerausa.com (SKU 11189, shown out of stock); Leica Store Miami independently lists the same price.', date:'2026-09-25', title:'Leica Camera USA: Leica Vario-Elmarit-SL 24-70mm f/2.8 ASPH.'},
     productUrl:'https://leica-camera.com/en-US/photography/lenses/sl/vario-elmarit-sl-24-70-f2-8-asph-black-finish',
   },
+  'summicron-sl-35mm-f2-asph': {
+    // Non-APO Summicron-SL (Feb 2023), a lighter/cheaper sibling of the
+    // APO-Summicron-SL 35 (order 11184) -- a distinct product, order 11192.
+    // blades: Leica publishes no blade count for this lens (checked its
+    // datasheet, web spec table and review databases) -- left null.
+    // afType: the datasheet names no motor; PetaPixel and Macfilos both
+    // report a linear motor for this and the 50mm twin.
+    name:'Leica Summicron-SL 35 f/2 ASPH.', manufacturer:'Leica', line:'SL', type:'Prime',
+    mount:'l', focalLength:35, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'35mm',
+    maxAperture:2, minAperture:22, weight:400, length:83, diameter:74.5,
+    filterThread:67, minFocusDist:24, maxMagnification:0.2174,
+    elements:11, groups:9, blades:null, afType:'Linear Motor',
+    weatherSealed:true, ois:false, oisStops:null, year:2023, discontinued:false,
+    imageUrl:'https://leica-camera.com/sites/default/files/styles/meta_tag_product_image/public/pm-88329-11192_Summicron-SL_35_f2_front.png?itok=HM-aRok-',
+    imageSource:{url:'https://leica-camera.com/en-US/photography/lenses/sl/summicron-sl-35mm-f2-asph', tier:'T1', date:'2026-09-26', title:'Leica Summicron-SL 35 f/2 ASPH. official product page'},
+    asin:'B0C153MZ3T',
+    specSources:[{url:'https://leica-camera.com/sites/default/files/pm-90744-EN_Datenblatt%20Summicron-SL%2035%20ASPH.pdf', tier:'T1', note:'Leica\'s official datasheet (order no. 11192, Feb 2023) confirms weight 400 g, length 83 mm, diameter 74.5 mm (without hood), filter E67, 11 elements in 9 groups, focus range 0.24 m, largest scale 1:4.6, dust and splash protected. No blade count published.', date:'2026-09-26', title:'Leica datasheet: Leica Summicron-SL 35 f/2 ASPH.'}],
+    prices:{USD:2690,AUD:4400,EUR:2450,GBP:2190,JPY:451000,CAD:null,SGD:3600},
+    priceIncomplete:true,
+    priceSource:{url:'https://leicacamerausa.com/leica-summicron-sl-35mm-f/2-asph..html', tier:'T1', note:'$2,690 list price on leicacamerausa.com (SKU 11192); Leica Store Miami independently lists the same price. AUD/SGD/JPY from leica-store.com.au, leica-store.sg and store.leica-camera.jp; EUR/GBP from the schema.org Offer on leica-camera.com/de-DE and /en-GB (all 2026-09-26). CAD not readable (vistek.ca blocks automated access).', date:'2026-09-26', title:'Leica Camera USA'},
+    productUrl:'https://leica-camera.com/en-US/photography/lenses/sl/summicron-sl-35mm-f2-asph',
+  },
+  'summicron-sl-50mm-f2-asph': {
+    // Non-APO twin of the Summicron-SL 35 (Feb 2023, order 11193), distinct
+    // from the APO-Summicron-SL 50 (order 11185). blades:11 is dealer-sourced
+    // (MF Camera listing); Leica's datasheet gives no blade count.
+    name:'Leica Summicron-SL 50 f/2 ASPH.', manufacturer:'Leica', line:'SL', type:'Prime',
+    mount:'l', focalLength:50, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'50mm',
+    maxAperture:2, minAperture:22, weight:402, length:83, diameter:74.5,
+    filterThread:67, minFocusDist:45, maxMagnification:0.1351,
+    elements:9, groups:8, blades:11, afType:'Linear Motor',
+    weatherSealed:true, ois:false, oisStops:null, year:2023, discontinued:false,
+    imageUrl:'https://leica-camera.com/sites/default/files/styles/meta_tag_product_image/public/pm-88353-11193_Summicron-SL_50_f2_front.png?itok=P1ZqITTU',
+    imageSource:{url:'https://leica-camera.com/en-US/photography/lenses/sl/summicron-sl-50mm-f2-asph', tier:'T1', date:'2026-09-26', title:'Leica Summicron-SL 50 f/2 ASPH. official product page'},
+    asin:'B0C2TN2P4F',
+    specSources:[{url:'https://leica-camera.com/sites/default/files/pm-90762-EN_Datenblatt%20Summicron-SL%2050%20ASPH.pdf', tier:'T1', note:'Leica\'s official datasheet (order no. 11193, Feb 2023) confirms weight 402 g, length 83 mm, diameter 74.5 mm (without hood), filter E67, 9 elements in 8 groups, focus range 0.45 m, largest scale 1:7.4, dust and splash protected. Blade count not on the sheet (11 per dealer listing).', date:'2026-09-26', title:'Leica datasheet: Leica Summicron-SL 50 f/2 ASPH.'}],
+    prices:{USD:2350,AUD:3800,EUR:2090,GBP:1900,JPY:385000,CAD:null,SGD:3050},
+    priceIncomplete:true,
+    priceSource:{url:'https://leicacamerausa.com/leica-summicron-sl-50mm-f/2-asph..html', tier:'T1', note:'$2,350 list price on leicacamerausa.com (SKU 11193); Leica Store Miami independently lists the same price. AUD/SGD/JPY from leica-store.com.au, leica-store.sg and store.leica-camera.jp; EUR/GBP from the schema.org Offer on leica-camera.com/de-DE and /en-GB (all 2026-09-26). CAD not readable (vistek.ca blocks automated access).', date:'2026-09-26', title:'Leica Camera USA'},
+    productUrl:'https://leica-camera.com/en-US/photography/lenses/sl/summicron-sl-50mm-f2-asph',
+  },
+  'vario-elmarit-sl-24-90mm-f28-4-asph': {
+    // The original SL kit zoom (Oct 2015, with the SL Typ 601), still sold
+    // alongside the 24-70 f/2.8 and 28-70 f/2.8. minFocusDist/maxMagnification
+    // are the best case across the range (0.3 m at 24mm; 1:3.8 at 90mm).
+    // blades:9 is from a Lensrentals teardown + dealer listing, not Leica.
+    name:'Leica Vario-Elmarit-SL 24-90mm f/2.8-4 ASPH.', manufacturer:'Leica', line:'SL', type:'Zoom',
+    mount:'l', focalLength:null, focalLengthMin:24, focalLengthMax:90, focalLengthEquiv:'24-90mm',
+    maxAperture:2.8, minAperture:22, weight:1140, length:138, diameter:88,
+    filterThread:82, minFocusDist:30, maxMagnification:0.2632,
+    elements:18, groups:15, blades:9, afType:'Stepping Motor + Linear Guide',
+    weatherSealed:true, ois:true, oisStops:3.5, year:2015, discontinued:false,
+    imageUrl:'https://leica-camera.com/sites/default/files/styles/meta_tag_product_image/public/pm-27847-11176__Vario-Elmarit-SL_24-90_f2_8-4_0.png?itok=3324EZU7',
+    imageSource:{url:'https://leica-camera.com/en-US/photography/lenses/sl/vario-elmarit-sl-24-90mm-f2-8-4-asph-black', tier:'T1', date:'2026-09-26', title:'Leica Vario-Elmarit-SL 24-90 f/2.8-4 ASPH. official product page'},
+    asin:'B018XM3P7Q',
+    specSources:[{url:'https://leica-camera.com/sites/default/files/pm-55652-Datenblatt_Vario-Elmarit-SL_24-90_en.pdf', tier:'T1', note:'Leica\'s official datasheet (order no. 11176) confirms weight 1,140 g, length 138 mm (at 24mm, without hood), diameter 88 mm, filter E82, 18 elements in 15 groups, working range 0.3 m (24mm) / 0.45 m (90mm), largest ratio 1:7.2 (24mm) / 1:3.8 (90mm), O.I.S. 3.5 stops (CIPA). Announced 2015-10-20 with the SL (Typ 601).', date:'2026-09-26', title:'Leica datasheet: Leica Vario-Elmarit-SL 24-90 f/2.8-4 ASPH.'}],
+    prices:{USD:6310,AUD:10300,EUR:5750,GBP:4900,JPY:1056000,CAD:null,SGD:8500},
+    priceIncomplete:true,
+    priceSource:{url:'https://leicacamerausa.com/leica-vario-elmarit-sl-24-90mm-f-2-8-4-asph.html', tier:'T1', note:'$6,310 list price on leicacamerausa.com (SKU 11176); Leica Store Miami independently lists the same price. AUD/SGD/JPY from leica-store.com.au, leica-store.sg and store.leica-camera.jp; EUR/GBP from the schema.org Offer on leica-camera.com/de-DE and /en-GB (all 2026-09-26). CAD not readable (vistek.ca blocks automated access).', date:'2026-09-26', title:'Leica Camera USA'},
+    productUrl:'https://leica-camera.com/en-US/photography/lenses/sl/vario-elmarit-sl-24-90mm-f2-8-4-asph-black',
+  },
+  'vario-elmarit-sl-28-70mm-f28-asph': {
+    // Announced 2025-06-12, the SL3-S's lighter kit zoom (order 11196).
+    // afType: no source (Leica's page/datasheet or six press outlets) names
+    // the motor, so the file's generic 'Autofocus' is used. Best-case
+    // minFocusDist/maxMagnification are both at 28mm (0.19 m, 1:3.3).
+    // blades:9 from Digital Camera World's review spec table.
+    name:'Leica Vario-Elmarit-SL 28-70mm f/2.8 ASPH.', manufacturer:'Leica', line:'SL', type:'Zoom',
+    mount:'l', focalLength:null, focalLengthMin:28, focalLengthMax:70, focalLengthEquiv:'28-70mm',
+    maxAperture:2.8, minAperture:22, weight:572, length:102, diameter:73,
+    filterThread:67, minFocusDist:19, maxMagnification:0.303,
+    elements:16, groups:12, blades:9, afType:'Autofocus',
+    weatherSealed:true, ois:false, oisStops:null, year:2025, discontinued:false,
+    imageUrl:'https://leica-camera.com/sites/default/files/styles/meta_tag_product_image/public/pm-21931-11196_Leica_Vario-Elmarit-SL_28-70_f_2_8_upright_1920px.webp?itok=FEPC_bvI',
+    imageSource:{url:'https://leica-camera.com/en-US/photography/lenses/sl/vario-elmarit-sl-28-70-f2-8-asph-black', tier:'T1', date:'2026-09-26', title:'Leica Vario-Elmarit-SL 28-70 f/2.8 ASPH. official product page'},
+    asin:'B0FY4CJGX6',
+    specSources:[{url:'https://leica-camera.com/sites/default/files/pm-21944-EN_Datenblatt_Vario-Elmarit-SL_28-70.pdf', tier:'T1', note:'Leica\'s official datasheet (order no. 11196, May 2025) confirms weight 572 g, length 102 mm, diameter 73 mm (without hood; the marketing copy says 72 mm), filter E67, 16 elements in 12 groups, focus range 0.19 m (28mm) / 0.38 m (70mm), largest scale 1:3.3 (28mm), dust and splash protected.', date:'2026-09-26', title:'Leica datasheet: Leica Vario-Elmarit-SL 28-70 f/2.8 ASPH.'}],
+    prices:{USD:2190,AUD:3600,EUR:1990,GBP:1750,JPY:363000,CAD:null,SGD:3000},
+    priceIncomplete:true,
+    priceSource:{url:'https://leicacamerausa.com/leica-vario-elmarit-sl-28-70mm-f-2-8-asph.html', tier:'T1', note:'$2,190 list price on leicacamerausa.com (SKU 11196); Leica Store Miami independently lists the same price. AUD/SGD/JPY from leica-store.com.au, leica-store.sg and store.leica-camera.jp; EUR/GBP from the schema.org Offer on leica-camera.com/de-DE and /en-GB (all 2026-09-26). CAD not readable (vistek.ca blocks automated access).', date:'2026-09-26', title:'Leica Camera USA'},
+    productUrl:'https://leica-camera.com/en-US/photography/lenses/sl/vario-elmarit-sl-28-70-f2-8-asph-black',
+  },
   'apo-summicron-sl-28mm-f2-asph': {
     name:'Leica APO-Summicron-SL 28mm f/2 ASPH.', manufacturer:'Leica', line:'SL', type:'Prime',
     mount:'l', focalLength:28, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'28mm',
@@ -1939,6 +2021,48 @@ const LENSES = {
     priceSource:{url:'https://leicacamerausa.com/leica-elmarit-m-28mm-f-2-8-asph-black-anodized.html', tier:'T1', note:'$3,100 list price on leicacamerausa.com (SKU 11677, in stock); Leica Store Miami independently lists the same price.', date:'2026-09-25', title:'Leica Camera USA: Leica Elmarit-M 28 f/2.8 ASPH.'},
     productUrl:'https://leica-camera.com/en-US/photography/lenses/m/elmarit-m-28mm-f2-8-asph-black',
   },
+  'super-elmar-m-21mm-f34-asph': {
+    // Current since 2011 (order 11145); planned at Leica onboarding but
+    // never entered. Length: the datasheet prints "43/55mm (with/without
+    // Lens hood)", which is backwards -- 43 mm is the bare lens (Photography
+    // Life, Ken Rockwell and Overgaard all agree). blades:9 is dealer-sourced;
+    // Leica's sheet gives no count.
+    name:'Leica Super-Elmar-M 21 f/3.4 ASPH.', manufacturer:'Leica', line:'M', type:'Prime',
+    mount:'m', focalLength:21, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'21mm',
+    maxAperture:3.4, minAperture:16, weight:279, length:43, diameter:53,
+    filterThread:46, minFocusDist:70, maxMagnification:0.0336,
+    elements:8, groups:7, blades:9, afType:'Manual',
+    weatherSealed:false, ois:false, oisStops:null, year:2011, discontinued:false,
+    imageUrl:'https://leica-camera.com/sites/default/files/styles/meta_tag_product_image/public/pm-14545-super-elmar-m_f3_4_21_front_black_2016_300.png?itok=cGI4CJIh',
+    imageSource:{url:'https://leica-camera.com/en-US/photography/lenses/m/super-elmar-m-21mm-f3-4-asph-black', tier:'T1', date:'2026-09-26', title:'Leica Super-Elmar-M 21 f/3.4 ASPH. official product page'},
+    asin:null,
+    specSources:[{url:'https://leica-camera.com/sites/default/files/pm-14547-Super-Elmar-M21-TechnicalData.pdf', tier:'T1', note:'Leica\'s official datasheet (order no. 11145) confirms weight 279 g, diameter 53 mm, filter E46, 8 elements in 7 groups, focus range 0.7 m, largest ratio 1:29.8, smallest aperture f/16. Its length row is mislabelled (see entry comment).', date:'2026-09-26', title:'Leica datasheet: Leica Super-Elmar-M 21 f/3.4 ASPH.'}],
+    prices:{USD:4000,AUD:null,EUR:null,GBP:null,JPY:null,CAD:null,SGD:null},
+    priceIncomplete:true,
+    priceSource:{url:'https://leicacamerausa.com/leica-super-elmar-m-21mm-f-3-4-asph-black-anodized.html', tier:'T1', note:'$4,000 list price on leicacamerausa.com (SKU 11145); Leica Store Miami independently lists the same price. Regional prices not researched.', date:'2026-09-26', title:'Leica Camera USA'},
+    productUrl:'https://leica-camera.com/en-US/photography/lenses/m/super-elmar-m-21mm-f3-4-asph-black',
+  },
+  'summilux-m-90mm-f15-asph': {
+    // Current since Dec 2019 (order 11678). Left out at Leica onboarding
+    // because no USD price could be found; Leica Camera USA now lists it.
+    // Single US source: Leica Store Miami no longer carries it. Not sold on
+    // the AU, SG or JP Leica stores, and Leica Germany has no page for it
+    // (only de-AT/de-CH), so EUR stays null; GBP from leica-camera.com/en-GB.
+    name:'Leica Summilux-M 90 f/1.5 ASPH.', manufacturer:'Leica', line:'M', type:'Prime',
+    mount:'m', focalLength:90, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'90mm',
+    maxAperture:1.5, minAperture:16, weight:1010, length:91, diameter:74,
+    filterThread:67, minFocusDist:100, maxMagnification:0.1136,
+    elements:8, groups:6, blades:11, afType:'Manual',
+    weatherSealed:false, ois:false, oisStops:null, year:2019, discontinued:false,
+    imageUrl:'https://leica-camera.com/sites/default/files/styles/meta_tag_product_image/public/pm-29833-11678_Summilux-M_1_5-90_ASPH_FRONTAL_0.png?itok=0EiwuHO8',
+    imageSource:{url:'https://leica-camera.com/en-US/photography/lenses/m/summilux-m-90mm-f1-5-asph', tier:'T1', date:'2026-09-26', title:'Leica Summilux-M 90 f/1.5 ASPH. official product page'},
+    asin:'B08375D5BC',
+    specSources:[{url:'https://leica-camera.com/sites/default/files/pm-56101-Technical-Data_Summilux-M%2090%20f-1.5%20ASPH_e.pdf', tier:'T1', note:'Leica\'s official datasheet (order no. 11678, Dec 2019) confirms weight 1,010 g, length 91 mm (without extended hood), diameter 74 mm, filter E67, 8 elements in 6 groups, 11 aperture blades, focus range 1 m, largest ratio 1:8.8, smallest aperture f/16; matches the web spec table exactly.', date:'2026-09-26', title:'Leica datasheet: Leica Summilux-M 90 f/1.5 ASPH.'}],
+    prices:{USD:14975,AUD:null,EUR:null,GBP:11760,JPY:null,CAD:null,SGD:null},
+    priceIncomplete:true,
+    priceSource:{url:'https://leicacamerausa.com/leica-summilux-m-90mm-f-1-5-asph-black-anodized.html', tier:'T1', note:'$14,975 list price on leicacamerausa.com (SKU 11678), shown out of stock) -- single source: Leica Store Miami no longer lists it. GBP 11,760 from the schema.org Offer on leica-camera.com/en-GB (2026-09-26).', date:'2026-09-26', title:'Leica Camera USA'},
+    productUrl:'https://leica-camera.com/en-US/photography/lenses/m/summilux-m-90mm-f1-5-asph',
+  },
   'super-vario-elmar-tl-11-23mm-f35-45-asph': {
     name:'Leica Super-Vario-Elmar-TL 11-23mm f/3.5-4.5 ASPH.', manufacturer:'Leica', line:'TL', type:'Zoom',
     mount:'l', focalLength:null, focalLengthMin:11, focalLengthMax:23, focalLengthEquiv:'17-35mm',
@@ -2052,25 +2176,25 @@ const LENSES = {
 
 const LENS_DROPDOWN_GROUPS = [
   { label: '── SL Primes ──', ids: [
-    'super-apo-summicron-sl-21mm-f2-asph', 'apo-summicron-sl-28mm-f2-asph', 'apo-summicron-sl-35mm-f2-asph',
-    'summilux-sl-50mm-f14-asph', 'apo-summicron-sl-50mm-f2-asph', 'apo-summicron-sl-75mm-f2-asph',
+    'super-apo-summicron-sl-21mm-f2-asph', 'apo-summicron-sl-28mm-f2-asph', 'apo-summicron-sl-35mm-f2-asph', 'summicron-sl-35mm-f2-asph',
+    'summilux-sl-50mm-f14-asph', 'apo-summicron-sl-50mm-f2-asph', 'summicron-sl-50mm-f2-asph', 'apo-summicron-sl-75mm-f2-asph',
     'apo-summicron-sl-90mm-f2-asph', 'apo-macro-elmarit-sl-100mm-f28',
   ] },
   { label: '── SL Zooms ──', ids: [
-    'super-vario-elmarit-sl-14-24mm-f28-asph', 'super-vario-elmar-sl-16-35mm-f35-45-asph', 'vario-elmarit-sl-24-70mm-f28-asph',
+    'super-vario-elmarit-sl-14-24mm-f28-asph', 'super-vario-elmar-sl-16-35mm-f35-45-asph', 'vario-elmarit-sl-24-70mm-f28-asph', 'vario-elmarit-sl-28-70mm-f28-asph', 'vario-elmarit-sl-24-90mm-f28-4-asph',
     'vario-elmarit-sl-70-200mm-f28-asph', 'apo-vario-elmarit-sl-90-280mm-f28-4', 'vario-elmar-sl-100-400mm-f5-63',
   ] },
   { label: '── Noctilux-M & Summilux-M ──', ids: [
     'noctilux-m-35mm-f12-asph', 'noctilux-m-50mm-f095-asph', 'noctilux-m-50mm-f12-asph', 'noctilux-m-75mm-f125-asph',
     'summilux-m-21mm-f14-asph', 'summilux-m-28mm-f14-asph', 'summilux-m-35mm-f14-steel-rim', 'summilux-m-35mm-f14-asph',
-    'summilux-m-50mm-f14-asph', 'summilux-m-50mm-f14-classic',
+    'summilux-m-50mm-f14-asph', 'summilux-m-50mm-f14-classic', 'summilux-m-90mm-f15-asph',
   ] },
   { label: '── Summicron-M & APO-Summicron-M ──', ids: [
     'summicron-m-28mm-f2-asph', 'apo-summicron-m-35mm-f2-asph', 'summicron-m-35mm-f2-asph',
     'apo-summicron-m-50mm-f2-asph', 'summicron-m-50mm-f2', 'apo-summicron-m-75mm-f2-asph', 'apo-summicron-m-90mm-f2-asph',
   ] },
   { label: '── M Wide-Angle & Tele (Elmarit / Elmar) ──', ids: [
-    'elmarit-m-28mm-f28-asph', 'summaron-m-28mm-f56', 'macro-elmar-m-90mm-f4', 'apo-telyt-m-135mm-f34',
+    'super-elmar-m-21mm-f34-asph', 'elmarit-m-28mm-f28-asph', 'summaron-m-28mm-f56', 'macro-elmar-m-90mm-f4', 'apo-telyt-m-135mm-f34',
   ] },
   { label: '── TL Lenses ──', ids: [
     'super-vario-elmar-tl-11-23mm-f35-45-asph', 'elmarit-tl-18mm-f28-asph', 'vario-elmar-tl-18-56mm-f35-56-asph',

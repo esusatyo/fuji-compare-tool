@@ -114,7 +114,10 @@ const KNOWN_SHARED_LINKS = new Map([
 // Tightened to 78 the same day: the Leica ASIN pass filled four Leica gaps
 // (summicron-m-50mm-f2, apo-telyt-m-135mm-f34, summaron-m-28mm-f56,
 // summilux-m-50mm-f14-classic).
-const ASIN_GAP_BASELINE = 78;
+// Rebased to 79: six Leica lenses were added; five got ASINs, but
+// leica/super-elmar-m-21mm-f34-asph is only listed on Amazon inside
+// accessory bundles, so it has none yet.
+const ASIN_GAP_BASELINE = 79;
 
 const allItems = () => brandDirs().flatMap(brand => {
   const { data } = loadBrand(brand);
