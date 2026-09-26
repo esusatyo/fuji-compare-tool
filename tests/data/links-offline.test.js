@@ -106,7 +106,18 @@ const KNOWN_SHARED_LINKS = new Map([
 // sony/fe-400mm-f45-gm-oss, sony/fe-600mm-f63-gm-oss. A population change,
 // not a coverage regression (Leica's own gap stays at 11); each is a
 // candidate for the next ASIN pass.
-const ASIN_GAP_BASELINE = 78;
+// Rebased to 82 on 2026-09-26 by the Sigma/Olympus data refresh: two Sigma
+// lenses announced 2026-09-08 and shipping 2026-10-06 have no Amazon listing
+// yet, in both mounts they launched in (sigma/ and sony/ sigma-85mm-f12-dg,
+// sigma-20-60mm-f28-4-dg). Population change, not a coverage regression;
+// next ASIN pass candidates.
+// Tightened to 78 the same day: the Leica ASIN pass filled four Leica gaps
+// (summicron-m-50mm-f2, apo-telyt-m-135mm-f34, summaron-m-28mm-f56,
+// summilux-m-50mm-f14-classic).
+// Rebased to 79: six Leica lenses were added; five got ASINs, but
+// leica/super-elmar-m-21mm-f34-asph is only listed on Amazon inside
+// accessory bundles, so it has none yet.
+const ASIN_GAP_BASELINE = 79;
 
 const allItems = () => brandDirs().flatMap(brand => {
   const { data } = loadBrand(brand);
