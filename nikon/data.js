@@ -307,6 +307,7 @@ const CAMERAS = {
 
   /* ── Z APS-C (DX) ── */
   'z50-ii': {
+    // evfMag is 35mm-equivalent site-wide (2026-09-27): Nikon's "Approx. 1.02x (50 mm lens at infinity)" (nikonusa.com) is native; / 1.5 DX crop = 0.68x 35mm-equivalent.
     name:'Z50 II', series:'Z (APS-C)', mount:'z', year:2024, discontinued:false,
     tagline:'EXPEED 7 Comes to DX',
     productUrl:'https://www.nikonusa.com/p/z50ii/1784/overview',
@@ -318,7 +319,7 @@ const CAMERAS = {
     sensorMP:20.9, sensorType:'APS-C (DX) CMOS', processor:'EXPEED 7',
     width:127.0, height:96.8, depth:66.5, weight:550, weatherSealed:false,
     lcdSize:'3.2"', lcdDots:1040, lcdType:'Vari-angle',
-    evfType:'EVF', evfDots:2.36, evfMag:1.02,
+    evfType:'EVF', evfDots:2.36, evfMag:0.68,
     faceDetection:true, subjectDetection:'9 types (People / Animals / Birds / Vehicles / Aircraft)',
     ibis:false, ibisStops:null, maxBurst:11,
     maxVideoRes:'4K / 60P',
@@ -330,6 +331,7 @@ const CAMERAS = {
   },
 
   'z50': {
+    // evfMag is 35mm-equivalent site-wide (2026-09-27): Nikon's 1.02x (50mm lens at infinity; DPReview spec table) is native; / 1.5 DX crop = 0.68x 35mm-equivalent.
     name:'Z50', series:'Z (APS-C)', mount:'z', year:2019, discontinued:true,
     tagline:'First DX Z Body',
     productUrl:'https://www.nikonusa.com/en/nikon-products/product/mirrorless-cameras/z-50.html',
@@ -339,7 +341,7 @@ const CAMERAS = {
     sensorMP:20.9, sensorType:'APS-C (DX) CMOS', processor:'EXPEED 6',
     width:126.5, height:93.5, depth:60.0, weight:450, weatherSealed:false,
     lcdSize:'3.2"', lcdDots:1040, lcdType:'Tilting',
-    evfType:'EVF', evfDots:2.36, evfMag:1.02,
+    evfType:'EVF', evfDots:2.36, evfMag:0.68,
     faceDetection:true, subjectDetection:'Eye / Animal',
     ibis:false, ibisStops:null, maxBurst:11,
     maxVideoRes:'4K / 30P',
@@ -394,6 +396,7 @@ const CAMERAS = {
   },
 
   'zfc': {
+    // evfMag is 35mm-equivalent site-wide (2026-09-27): Nikon's "Approx. 1.02x (50 mm lens at infinity)" (nikonusa.com) is native; / 1.5 DX crop = 0.68x 35mm-equivalent.
     name:'Zfc', series:'Z (Retro)', mount:'z', year:2021, discontinued:false,
     tagline:'Retro DX Crowd-Pleaser',
     productUrl:'https://www.nikonusa.com/en/nikon-products/product/mirrorless-cameras/z-fc.html',
@@ -403,7 +406,7 @@ const CAMERAS = {
     sensorMP:20.9, sensorType:'APS-C (DX) CMOS', processor:'EXPEED 6',
     width:134.5, height:93.5, depth:43.5, weight:445, weatherSealed:false,
     lcdSize:'3.0"', lcdDots:1040, lcdType:'Vari-angle',
-    evfType:'EVF', evfDots:2.36, evfMag:1.02,
+    evfType:'EVF', evfDots:2.36, evfMag:0.68,
     faceDetection:true, subjectDetection:'Eye / Animal',
     ibis:false, ibisStops:null, maxBurst:11,
     maxVideoRes:'4K / 30P',

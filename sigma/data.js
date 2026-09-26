@@ -140,6 +140,7 @@ const CAMERAS = {
   // comes forward from the deferred Foveon batch. It is fully sourced (Sigma's
   // own spec page + DPReview); the rest of the Foveon line is a follow-up.
   'sd-quattro': {
+    // evfMag is 35mm-equivalent site-wide (2026-09-27): Sigma's "1.10x (50mm F1.4 at infinity)" (sigma-global.com) is native; / 1.5 APS-C crop = 0.73x 35mm-equivalent.
     name:'sd Quattro', series:'sd Quattro', mount:'sa', year:2016, discontinued:true,
     tagline:'Foveon X3 Quattro APS-C',
     productUrl:'https://www.sigma-global.com/en/cameras/sd-quattro/',
@@ -156,7 +157,7 @@ const CAMERAS = {
     // by roughly a battery (~60-80g) relative to other brands.
     width:147, height:95.1, depth:90.8, weight:625, weatherSealed:true,
     lcdSize:'3.0"', lcdDots:1620, lcdType:'Fixed TFT',
-    evfType:'EVF', evfDots:2.36, evfMag:1.10,
+    evfType:'EVF', evfDots:2.36, evfMag:0.73,
     faceDetection:true, subjectDetection:null,
     ibis:false, ibisStops:null, maxBurst:3.6,
     maxVideoRes:'None',
@@ -167,6 +168,7 @@ const CAMERAS = {
     lensType:'Interchangeable', lensSpec:null,
   },
   'sd-quattro-h': {
+    // evfMag is 35mm-equivalent site-wide (2026-09-27): Sigma's "0.96x (50mm F1.4 at infinity)" (sigma-global.com) is native; / 1.3 APS-H crop (Sigma's own figure) = 0.74x 35mm-equivalent.
     name:'sd Quattro H', series:'sd Quattro', mount:'sa', year:2017, discontinued:true,
     tagline:'APS-H Foveon Quattro',
     productUrl:'https://www.sigma-global.com/en/cameras/sd-quattro-h/',
@@ -177,7 +179,7 @@ const CAMERAS = {
     sensorMP:25.5, sensorType:'Foveon X3 Quattro (APS-H, 3-layer)', processor:'Dual TRUE III',
     width:147, height:95.1, depth:90.8, weight:635, weatherSealed:true,
     lcdSize:'3.0"', lcdDots:1620, lcdType:'Fixed TFT',
-    evfType:'EVF', evfDots:2.36, evfMag:0.96,
+    evfType:'EVF', evfDots:2.36, evfMag:0.74,
     faceDetection:true, subjectDetection:null,
     ibis:false, ibisStops:null, maxBurst:3.8,
     maxVideoRes:'None',

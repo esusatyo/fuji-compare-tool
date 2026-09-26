@@ -238,6 +238,7 @@ const CAMERAS = {
     lensType:'Interchangeable', lensSpec:null,
   },
   'cl': {
+    // evfMag is 35mm-equivalent site-wide (2026-09-27): Leica's CL technical data gives 0.74x, already 35mm-equivalent; the previous 1.11 was that figure x 1.5.
     name:'CL', series:'CL', mount:'l', year:2017, discontinued:true,
     tagline:'A rangefinder-styled APS-C mirrorless with a bright built-in EVF and classic Leica dial controls.',
     productUrl:'https://www.bhphotovideo.com/c/product/1376598-REG/leica_19301_cl_mirrorless_digital_camera.html',
@@ -251,7 +252,7 @@ const CAMERAS = {
     sensorMP:24.2, sensorType:'APS-C CMOS', processor:'Maestro II',
     width:131, height:78, depth:45, weight:403, weatherSealed:true,
     lcdSize:'3.0"', lcdDots:1040000, lcdType:'Fixed Touch',
-    evfType:'LCOS EVF', evfDots:2360000, evfMag:1.11,
+    evfType:'LCOS EVF', evfDots:2360000, evfMag:0.74,
     faceDetection:true, subjectDetection:null, maxBurst:10,
     ibis:false, ibisStops:null,
     maxVideoRes:'4K UHD (30p)', logVideo:false,
@@ -670,6 +671,7 @@ const CAMERAS = {
     lensType:'Fixed', lensSpec:'DC Vario-Summilux 10.9-34mm f/1.7-2.8 ASPH. (24-75mm equiv.)',
   },
   'd-lux-typ-109': {
+    // evfMag is 35mm-equivalent site-wide (2026-09-27): 1.39x (DPReview spec table) is native; / 2.0 Four Thirds crop = 0.70x 35mm-equivalent.
     name:'D-Lux (Typ 109)', series:'D-Lux', mount:'l', year:2014, discontinued:true,
     tagline:'The compact camera for creative photographers, with a Four Thirds sensor and fast Vario-Summilux lens.',
     productUrl:'https://www.dpreview.com/products/leica/compacts/leica_dlux109',
@@ -689,7 +691,7 @@ const CAMERAS = {
     sensorMP:12.8, sensorType:'Four Thirds MOS', processor:'Not disclosed',
     width:115, height:66, depth:55, weight:405, weatherSealed:false,
     lcdSize:'3.0"', lcdDots:921000, lcdType:'Fixed',
-    evfType:'LCD', evfDots:2764000, evfMag:1.39,
+    evfType:'LCD', evfDots:2764000, evfMag:0.7,
     faceDetection:true, subjectDetection:null, maxBurst:11,
     ibis:false, ibisStops:null,
     maxVideoRes:'4K UHD (30p/24p)', logVideo:false,
