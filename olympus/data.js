@@ -965,10 +965,14 @@ const CAMERAS = {
     imageUrl:null,
     asin:null,
     prices:{USD:399},
-    specSources: [ { url:'https://en.wikipedia.org/wiki/Olympus_Tough_TG-1', tier:'T2', note:'Sensor, dimensions, weight (230g w/ battery+card), fixed 3.0" LCD, CIPA battery (350), WiFi/Bluetooth absent this generation (GPS present, no wireless transfer yet), 1080p video. Estimated street price $399.99 confirmed via a period DPReview/retailer citation, resolving task 1.1\'s original TBD. ibisStops and exact burst genuinely unconfirmed, left null/flagged rather than guessed.', date:'2026-09-13' } ],
+    // specSources re-pointed 2026-09-26: the previous citation was a
+    // Wikipedia article that does not exist (en.wikipedia.org has no
+    // "Olympus Tough TG-1" page -- test:links 404), so nothing it claimed
+    // had actually been checked against it.
+    specSources: [ { url:'https://www.dpreview.com/products/olympus/compacts/oly_tg1/specifications', tier:'T2', note:'Confirms: 12MP 1/2.3" BSI-CMOS, TruePic VI, 230g inc. batteries, 3.0" 610k-dot screen (lcdDots filled from here), CIPA 350, sensor-shift IS, 25-100mm-equiv f/2.0-4.9, waterproof 12m / shockproof 2m, no wireless, MSRP $399, announced 2012-05-08. Not on this page, so NOT independently confirmed: dimensions (112x67x30), maxBurst 3, 1080p/30 video.', date:'2026-09-26', title:'DPReview Olympus Tough TG-1 iHS specifications' } ],
     sensorMP:12, sensorType:'1/2.3" BSI CMOS', processor:'TruePic VI',
     width:112, height:67, depth:30, weight:230, weatherSealed:true,
-    lcdSize:'3.0"', lcdDots:null, lcdType:'Fixed',
+    lcdSize:'3.0"', lcdDots:610, lcdType:'Fixed',
     evfType:null, evfDots:null, evfMag:null,
     faceDetection:true, subjectDetection:null,
     ibis:true, ibisStops:null, maxBurst:3,
