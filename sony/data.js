@@ -2410,6 +2410,27 @@ const LENSES = {
     productUrl:'https://viltrox.com/products/af-26mm-f2-8-fe',
   },
 
+  'viltrox-28mm-f45': {
+    name:'Viltrox AF 28mm f/4.5 Chip', manufacturer:'Viltrox', line:'Chip', type:'Prime',
+    mount:'e', focalLength:28, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'28mm',
+    maxAperture:4.5, minAperture:4.5, weight:60, length:15.3, diameter:60.3,
+    filterThread:null, minFocusDist:38, maxMagnification:0.11,
+    elements:6, groups:6, blades:null, afType:'VCM',
+    weatherSealed:false, ois:false, oisStops:null, year:2024, discontinued:false,
+    // The first mount this pancake shipped in (Sept/Oct 2024), before the
+    // X (2025), Z (2025) and L (2026) versions; added 2026-09-26 after it
+    // was found missing. Fixed f/4.5 aperture, so minAperture = maxAperture
+    // as on the other three mounts' entries.
+    imageUrl:'https://cdn.shopify.com/s/files/1/0104/0380/7298/files/28mm_F4.5_FE_cover.jpg',
+    imageSource: { url:'https://viltrox.com/products/28mm-f4-5-fe', tier:'T1', note:'official Viltrox store page cover image for the FE version', date:'2026-09-26' },
+    specSources: [{ url:'https://viltrox.com/products/28mm-f4-5-fe', tier:'T1', note:'E-mount spec table: 6 elements/6 groups (2 ED, 2 aspherical), MFD 0.38m, 0.11x, Φ60.3×15.3mm, ~60g, VCM; blades and filter not published', date:'2026-09-26', title:'Viltrox AF 28mm F4.5 FE official page' }],
+    asin:'B0HB32D529',
+    prices:{USD:99,AUD:null,EUR:null,GBP:null,JPY:null,CAD:null,SGD:null},
+    priceIncomplete:true,
+    priceSource: { url:'https://viltrox.com/products/28mm-f4-5-fe', tier:'T1', note:'US $99 on viltrox.com (store listing published 2024-10-14)', date:'2026-09-26', title:'Viltrox store' },
+    productUrl:'https://viltrox.com/products/28mm-f4-5-fe',
+  },
+
   'viltrox-16mm-f18': {
     name:'Viltrox AF 16mm f/1.8 FE', manufacturer:'Viltrox', line:'Pro', type:'Prime',
     mount:'e', focalLength:16, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'16mm',
@@ -2899,7 +2920,7 @@ const LENS_DROPDOWN_GROUPS = [
     'tamron-50-400mm-f45-63', 'tamron-70-180mm-f28-g2', 'tamron-70-300mm-f45-63',
   ] },
   { label: '── Viltrox ──', ids: [
-    'viltrox-13mm-f14', 'viltrox-16mm-f18', 'viltrox-26mm-f28-evo', 'viltrox-27mm-f12', 'viltrox-33mm-f14',
+    'viltrox-13mm-f14', 'viltrox-16mm-f18', 'viltrox-26mm-f28-evo', 'viltrox-27mm-f12', 'viltrox-28mm-f45', 'viltrox-33mm-f14',
     'viltrox-56mm-f14', 'viltrox-85mm-f18-ii',
   ] },
   { label: '── Samyang ──', ids: [
