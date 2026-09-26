@@ -2765,7 +2765,12 @@ const LENSES = {
       { url:'https://ttartisan.store/products/ttartisan-af-85mm-f1-8-neo', tier:'T1', note:'official TTArtisan store; "Neo" line, same simplified/ringless design language as the 50mm Neo sibling. Spec table: focal 85mm, F1.8-F16, Full-frame, 11 blades, 62mm filter, 0.8m MFD, 12E/8G, 29° AoV, weight "Around 332~338g" (stored as 335g midpoint); mount selector lists Sony E/Nikon Z only (no L, unlike the 50mm Neo); Z-mount dims from the page\'s own Size diagram image (E 90.5×70mm, Z 92×70mm — Z is 1.5mm longer)', date:'2026-08-31' },
     ],
     asin:'B0HB313N48',
-    prices:{USD:99,AUD:199,EUR:99,GBP:99,JPY:15000,CAD:99,SGD:99},
+    // Non-USD cleared 2026-09-26: EUR/GBP/CAD/SGD were all 99 (the USD
+    // figure copied across) and AUD/JPY had no source -- the same pattern
+    // fixed on fujifilm/viltrox-28mm-f45-chip.
+    prices:{USD:99,AUD:null,EUR:null,GBP:null,JPY:null,CAD:null,SGD:null},
+    priceIncomplete:true,
+    priceSource: { url:'https://ttartisan.store/products/ttartisan-af-85mm-f1-8-neo', tier:'T1', note:'US $99 for the Nikon Z variant on the official TTArtisan store (same price for Sony E and L)', date:'2026-09-26', title:'TTArtisan store' },
     productUrl:'https://ttartisan.store/products/ttartisan-af-85mm-f1-8-neo',
     imageUrl:'https://ttartisan.store/cdn/shop/files/SKU-E_e906dc60-ef1a-4b6f-8b20-d0edd44d8de5.jpg',
     imageSource: { url:'https://ttartisan.store/products/ttartisan-af-85mm-f1-8-neo', tier:'T1', note:'official TTArtisan store product photo; the page\'s og:image reflects the default Sony E variant (filename "SKU-E_...") rather than the Z-selected one — the theme does not update the OG tag on a client-side mount-selector click. Cosmetically identical across mounts in a front-on shot', date:'2026-08-31' },
