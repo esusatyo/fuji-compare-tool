@@ -117,7 +117,10 @@ const KNOWN_SHARED_LINKS = new Map([
 // Rebased to 79: six Leica lenses were added; five got ASINs, but
 // leica/super-elmar-m-21mm-f34-asph is only listed on Amazon inside
 // accessory bundles, so it has none yet.
-const ASIN_GAP_BASELINE = 79;
+// Rebased to 81 by the post-#68 follow-ups: Panasonic now also carries the
+// two unreleased Sigma L-Mount lenses (panasonic/sigma-85mm-f12-dg,
+// panasonic/sigma-20-60mm-f28-4-dg) -- still no Amazon listing.
+const ASIN_GAP_BASELINE = 81;
 
 const allItems = () => brandDirs().flatMap(brand => {
   const { data } = loadBrand(brand);
