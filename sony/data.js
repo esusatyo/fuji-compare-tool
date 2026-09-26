@@ -2041,6 +2041,23 @@ const LENSES = {
     productUrl:'https://www.sigma-global.com/en/lenses/a020_85_14/',
   },
 
+  'sigma-85mm-f12-dg': {
+    name:'Sigma 85mm f/1.2 DG Art', manufacturer:'Sigma', line:'Art', type:'Prime',
+    mount:'e', focalLength:85, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'85mm',
+    maxAperture:1.2, minAperture:16, weight:905, length:121.7, diameter:87.2,
+    filterThread:82, minFocusDist:84, maxMagnification:0.11,
+    elements:17, groups:12, blades:13, afType:'Dual HLA',
+    weatherSealed:true, ois:false, oisStops:null, year:2026, discontinued:false,
+    imageUrl:'https://www.sigma-global.com/lenses/images/a026_85_12_product_img01.png',
+    imageSource: { url:'https://www.sigma-global.com/en/lenses/a026_85_12/', tier:'T1', note:'official sigma-global.com product page image', date:'2026-09-26' },
+    specSources: [{ url:'https://www.sigma-global.com/en/lenses/a026_85_12/', tier:'T1', note:'Sony E-mount row of the spec table: φ87.2×121.7mm, 905g (L-Mount is 119.7mm); 17 elements/12 groups, 13 blades, F16, MFD 84cm, 1:8.9, φ82mm filter, dual HLA, dust/splash resistant', date:'2026-09-26', title:'Sigma 85mm F1.2 DG Art official product page' }],
+    asin:null,
+    prices:{USD:1599,AUD:null,EUR:null,GBP:null,JPY:null,CAD:null,SGD:null},
+    priceIncomplete:true,
+    priceSource: { url:'https://press.sigmaphoto.com/product/09/sigma-announces-85mm-f1-2-dg-art/', tier:'T1', note:'Sigma America press release 2026-09-08: US retail $1,599 (L-Mount and Sony E), available from 2026-10-06', date:'2026-09-26', title:'Sigma America press release: 85mm F1.2 DG Art' },
+    productUrl:'https://www.sigma-global.com/en/lenses/a026_85_12/',
+  },
+
   'sigma-20mm-f14-dg': {
     name:'Sigma 20mm f/1.4 DG DN Art', manufacturer:'Sigma', line:'Art', type:'Prime',
     mount:'e', focalLength:20, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'20mm',
@@ -2152,6 +2169,23 @@ const LENSES = {
     prices:{USD:989,AUD:null,EUR:null,GBP:null,JPY:null,CAD:null,SGD:null},
     priceIncomplete:true,
     productUrl:'https://www.sigma-global.com/en/lenses/c021_28_70_28/',
+  },
+
+  'sigma-20-60mm-f28-4-dg': {
+    name:'Sigma 20-60mm f/2.8-4 DG Contemporary', manufacturer:'Sigma', line:'Contemporary', type:'Zoom',
+    mount:'e', focalLength:null, focalLengthMin:20, focalLengthMax:60, focalLengthEquiv:'20-60mm',
+    maxAperture:2.8, minAperture:22, weight:375, length:88.0, diameter:72.2,
+    filterThread:67, minFocusDist:15.8, maxMagnification:0.43,
+    elements:15, groups:13, blades:9, afType:'HLA Linear',
+    weatherSealed:true, ois:false, oisStops:null, year:2026, discontinued:false,
+    imageUrl:'https://www.sigma-global.com/lenses/images/c026_20_60_28_4_product_img01.png',
+    imageSource: { url:'https://www.sigma-global.com/en/lenses/c026_20_60_28_4/', tier:'T1', note:'official sigma-global.com product page image', date:'2026-09-26' },
+    specSources: [{ url:'https://www.sigma-global.com/en/lenses/c026_20_60_28_4/', tier:'T1', note:'Sony E-mount row of the spec table: φ72.2×88.0mm, 375g (L-Mount is 86.0mm, 385g); 15 elements/13 groups, 9 blades, F22-32, MFD 15.8cm at 28mm, 1:2.3 at 35mm, φ67mm filter, HLA, dust/splash resistant', date:'2026-09-26', title:'Sigma 20-60mm F2.8-4 DG Contemporary official product page' }],
+    asin:null,
+    prices:{USD:849,AUD:null,EUR:null,GBP:null,JPY:null,CAD:null,SGD:null},
+    priceIncomplete:true,
+    priceSource: { url:'https://press.sigmaphoto.com/product/09/sigma-announces-20-60mm-f2-8-4-dg-contemporary/', tier:'T1', note:'Sigma America press release 2026-09-08: US retail $849 (L-Mount and Sony E), available from 2026-10-06', date:'2026-09-26', title:'Sigma America press release: 20-60mm F2.8-4 DG Contemporary' },
+    productUrl:'https://www.sigma-global.com/en/lenses/c026_20_60_28_4/',
   },
 
   'sigma-28-45mm-f18-dg': {
@@ -2852,10 +2886,10 @@ const LENS_DROPDOWN_GROUPS = [
   { label: '── Sigma (FF Primes) ──', ids: [
     'sigma-20mm-f2-dg', 'sigma-20mm-f14-dg', 'sigma-24mm-f2-dg', 'sigma-24mm-f14-dg', 'sigma-35mm-f2-dg',
     'sigma-35mm-f14-dg', 'sigma-35mm-f14-dg-ii', 'sigma-45mm-f28-dg', 'sigma-50mm-f2-dg', 'sigma-50mm-f14-dg',
-    'sigma-65mm-f2-dg', 'sigma-85mm-f14-dg', 'sigma-90mm-f28-dg', 'sigma-17mm-f4-dg',
+    'sigma-65mm-f2-dg', 'sigma-85mm-f12-dg', 'sigma-85mm-f14-dg', 'sigma-90mm-f28-dg', 'sigma-17mm-f4-dg',
   ] },
   { label: '── Sigma (FF Zooms) ──', ids: [
-    'sigma-16-28mm-f28-dg', 'sigma-28-45mm-f18-dg', 'sigma-28-70mm-f28-dg',
+    'sigma-16-28mm-f28-dg', 'sigma-20-60mm-f28-4-dg', 'sigma-28-45mm-f18-dg', 'sigma-28-70mm-f28-dg',
     'sigma-24-70mm-f28-dg-ii', 'sigma-70-200mm-f28-dg',
     'sigma-100-400mm-f5-63-dg', 'sigma-150-600mm-f5-63-dg',
   ] },

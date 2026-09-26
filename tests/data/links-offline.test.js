@@ -106,11 +106,12 @@ const KNOWN_SHARED_LINKS = new Map([
 // sony/fe-400mm-f45-gm-oss, sony/fe-600mm-f63-gm-oss. A population change,
 // not a coverage regression (Leica's own gap stays at 11); each is a
 // candidate for the next ASIN pass.
-// Rebased to 80 on 2026-09-26 by the Sigma/Olympus data refresh: two Sigma
-// lenses announced 2026-09-08 and shipping 2026-10-06 (sigma/sigma-85mm-f12-dg,
-// sigma/sigma-20-60mm-f28-4-dg) have no Amazon listing yet. Population change,
-// not a coverage regression; next ASIN pass candidates.
-const ASIN_GAP_BASELINE = 80;
+// Rebased to 82 on 2026-09-26 by the Sigma/Olympus data refresh: two Sigma
+// lenses announced 2026-09-08 and shipping 2026-10-06 have no Amazon listing
+// yet, in both mounts they launched in (sigma/ and sony/ sigma-85mm-f12-dg,
+// sigma-20-60mm-f28-4-dg). Population change, not a coverage regression;
+// next ASIN pass candidates.
+const ASIN_GAP_BASELINE = 82;
 
 const allItems = () => brandDirs().flatMap(brand => {
   const { data } = loadBrand(brand);
