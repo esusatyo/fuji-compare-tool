@@ -2088,9 +2088,13 @@ const LENSES = {
     imageUrl:'https://cdn.shopify.com/s/files/1/0104/0380/7298/files/28mm_F4.5_XF-1.png',
     imageSource: { url:'https://viltrox.com/products/af-28mm-f4-5-x', tier:'T1', note:'official Viltrox store page, front view reads "AF 28mm 1:4.5 VCM ASPH ED", side profile reads "AF 28/4.5 XF"', date:'2026-08-17' },
     asin:'B0DWJM15CC',
-    prices:{USD:99,AUD:199,EUR:99,GBP:99,JPY:15000,CAD:99,SGD:99},
+    // Non-USD cleared 2026-09-26: EUR/GBP/CAD/SGD were all 99 (the USD
+    // figure copied across) and AUD/JPY had no source either. USD-only now,
+    // like this lens's Nikon Z and L-Mount entries.
+    prices:{USD:99,AUD:null,EUR:null,GBP:null,JPY:null,CAD:null,SGD:null},
+    priceIncomplete:true,
     specSources: [{ url:'https://viltrox.com/products/af-28mm-f4-5-x', tier:'T1', note:'weight/dimensions/optical formula/mount confirmation', date:'2026-08-15' }],
-    priceSource: { url:'https://viltrox.com/products/af-28mm-f4-5-x', tier:'T1', date:'2026-08-15' },
+    priceSource: { url:'https://viltrox.com/products/af-28mm-f4-5-x', tier:'T1', note:'US $99 on viltrox.com (re-checked 2026-09-26, same price on all four mounts)', date:'2026-09-26', title:'Viltrox store' },
     productUrl:'https://viltrox.com/products/af-28mm-f4-5-x',
   },
   'viltrox-56mm-f12': {
