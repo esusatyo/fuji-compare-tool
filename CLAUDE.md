@@ -4,7 +4,7 @@ Guidance for working in this repository. Keep it short and current — update it
 
 ## What this is
 
-A **zero-dependency static website** that compares cameras and lenses side-by-side (Apple "iPhone compare" style). Multiple camera brands share one rendering engine; each brand is a self-contained data file. Runs from `file://` or any static host — no build step, no runtime dependencies (jsdom is a dev-only test dependency). One caveat since URLs went extensionless (see below): a brand page still *renders* fine from `file://`, but its links to other pages (About, Privacy, vs-pages) only resolve through a server that maps `/page` → `page.html`.
+A **zero-dependency static website** that compares cameras and lenses side-by-side (Apple "iPhone compare" style). Multiple camera brands share one rendering engine; each brand is a self-contained data file. Runs from `file://` or any static host — no build step, no runtime dependencies (jsdom is a dev-only test dependency). Two caveats to that, both cosmetic (the page itself always renders): since URLs went extensionless (see below), a brand page's links to other pages (About, Privacy, vs-pages) only resolve through a server that maps `/page` → `page.html`; and since `_worker.js` (see Architecture) started edge-caching a handful of unreliable image hosts, those specific product photos only load for real through that Worker (the deployed site, or `wrangler dev`) — elsewhere they degrade to the existing colored placeholder.
 
 ## Architecture
 
@@ -17,6 +17,7 @@ A **zero-dependency static website** that compares cameras and lenses side-by-si
 - **`index.html`** (root) — a redirector that sends visitors to a brand directory based on `localStorage['brand']` (`VALID_BRANDS` / `DEFAULT_BRAND`).
 - **`compare/index.html`** — the cross-brand comparison page. Loads every brand's `data.js` plus an inline `window.COMPARE_CONFIG`, which switches the engine into cross-brand mode: cameras only, 2–4 user-adjustable slots (clamped to 2 below the 600px breakpoint), items addressed as `<brand>:<slug>`. Adding a brand means adding its `<script src>` here too.
 - **`engine.js` shared lookups** — `MANUFACTURER_COLORS` (lens card colors, keyed by `manufacturer`) and `SPEC_SECTIONS` (spec rows). A spec section tagged `brand: '<slug>'` renders on a brand page only when that slug is in `BRAND_CONFIG.brandSections`; on the compare page it renders whenever any selected camera belongs to that brand, with foreign cameras' cells showing "—".
+- **`_worker.js`** — the site's only server-side logic, wired in via `wrangler.jsonc`'s `main` (deployed as a Cloudflare Worker in front of the static assets, `env.ASSETS.fetch()` for everything else). Its one job: `/img-cache/<host>/<path>` is an edge-cached proxy for `imageUrl` hosts known to hang (not error) on a meaningful share of requests — `fujifilm-x.b-cdn.net` (Fujifilm's own CDN) currently, found 2026-09-26. A hang can't be caught by `<img onerror>` in `engine.js` (it only fires on an explicit error), so the Worker bounds the origin fetch to 8s and fails fast (502/504) instead, which *does* fire `onerror`. `host` is checked against an explicit allowlist (`ALLOWED_ORIGIN_HOSTS`) — never make this an open passthrough. `engine.js`'s `resolveImageSrc()` rewrites `<img src>` for hosts in its own `PROXIED_IMAGE_HOSTS` list to the `/img-cache/...` form; **keep the two lists in sync by hand** (a Worker and a browser-loaded script can't share a module). `imageUrl` in brand data files stays the real canonical URL — only the rendered `src` differs — so tests, `test:links`, and the References section are unaffected. Route only exists once this file is actually served by the Worker (the deployed site, or `wrangler dev`); under `file://` or `scripts/preview.py` it 404s and those specific images fall back to the colored placeholder (see Local preview below).
 
 Each brand `data.js` is a **standalone browser script** (plain `const` globals inside the registration IIFE, no modules/imports). Don't introduce shared imports between brand files or `engine.js` — the loader and tests depend on this "each brand is one self-contained script" invariant.
 
@@ -56,15 +57,17 @@ The maker's own site — including its official regional sites — is authoritat
 `node --test` + `jsdom`. Run before every commit:
 
 ```bash
-npm test          # data + logic tiers (the gate)
-npm run test:data # Tier 1: schema, referential integrity, config, completeness
-npm run test:logic# Tier 2: jsdom render — winners, currency, pickers, buy-links, redirect
-npm run test:links# opt-in live URL check (RUN_LINK_TESTS=1); slow, network
+npm test           # data + logic + worker tiers (the gate)
+npm run test:data  # Tier 1: schema, referential integrity, config, completeness
+npm run test:logic # Tier 2: jsdom render — winners, currency, pickers, buy-links, redirect, image proxying
+npm run test:worker# Tier "Worker": _worker.js's /img-cache/ proxy in isolation (mocked fetch/caches, no jsdom, no network)
+npm run test:links # opt-in live URL check (RUN_LINK_TESTS=1); slow, network
 ```
 
 - **Tier 1 auto-discovers every brand directory** via `tests/helpers/load-brand.js` — add a brand or lens and it's validated automatically.
 - Referential tests catch orphans/dupes: every dropdown id must resolve, every camera/lens must appear in exactly one dropdown group, `CAMERA_ORDER` must match `CAMERAS`, `defaultSelected` must resolve.
 - Brand-specific camera fields are validated conditionally in `schema.js` under a `brandSections.includes('<slug>')` branch.
+- **Tier "Worker"** (`tests/worker/`) imports `_worker.js` directly (Node's module-syntax auto-detection parses its `export default` fine) and stubs `fetch`/`caches.default`, so it never depends on the real, sometimes-hanging `fujifilm-x.b-cdn.net` — deterministic and fast (<100ms for the whole file). `tests/logic/image-proxy.test.js` (Tier 2) covers the other half: that `engine.js` actually rewrites `<img src>` for proxied hosts and leaves everything else unchanged, plus a check that `engine.js`'s `PROXIED_IMAGE_HOSTS` and `_worker.js`'s `ALLOWED_ORIGIN_HOSTS` haven't drifted apart.
 
 ### Pre-commit hook: automatic SEO regeneration
 
@@ -95,6 +98,8 @@ python3 scripts/preview.py 3456   # then open http://localhost:3456/<brand>/
 ```
 
 Use this rather than `python3 -m http.server`: extensionless URLs need a server that maps `/page` → `page.html`, which the stdlib one doesn't do (every vs-page link 404s). `scripts/preview.py` is stdlib-only, so the repo stays dependency-free. (`.claude/launch.json` runs the same server.)
+
+`scripts/preview.py` doesn't run `_worker.js`, so `/img-cache/...` 404s there — items on `PROXIED_IMAGE_HOSTS` (see `_worker.js` above) render as the colored placeholder locally, not the real photo. To see those for real, `wrangler dev` (`npm run preview`) runs the actual Worker. (If it reload-loops mid-request, pass `--persist-to <dir-outside-the-repo>` — the default `.wrangler/state` cache-object writes live inside the watched `assets.directory` and otherwise trigger a self-reload that kills in-flight requests. Local-dev-only artifact; doesn't happen in production.)
 
 ## Adding / changing things
 

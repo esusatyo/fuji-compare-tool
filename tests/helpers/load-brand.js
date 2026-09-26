@@ -20,7 +20,7 @@ const ROOT = path.resolve(__dirname, '..', '..');
 
 const ENGINE_GLOBALS = [
   'CURRENCY', 'MANUFACTURER_COLORS', 'SPEC_SECTIONS',
-  'LENS_SPEC_SECTIONS', 'MODE_CONFIG',
+  'LENS_SPEC_SECTIONS', 'MODE_CONFIG', 'PROXIED_IMAGE_HOSTS',
 ];
 
 // A jsdom navigation attempt (location.href = …) reports this; it is

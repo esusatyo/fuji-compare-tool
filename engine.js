@@ -804,6 +804,32 @@ function injectBody() {
 }
 
 // ─────────────────────────────────────────────
+// IMAGE SRC RESOLUTION
+//
+// Hosts here are known to hang (not error) on a meaningful share of
+// requests, which <img onerror> below can't catch — a hang never fires
+// it. /img-cache/<host>/<path> is a same-origin edge-cache proxy (see
+// _worker.js) that fetches+caches the real image and fails fast (502/504)
+// on a hang instead, so onerror gets a chance to show the placeholder.
+// Must match _worker.js's ALLOWED_ORIGIN_HOSTS — kept in sync by hand,
+// since a Worker and a browser-loaded script can't share a module.
+//
+// Only takes effect once this file is served by that Worker (the real
+// deployed site, or `wrangler dev`); under file:// or scripts/preview.py
+// the route doesn't exist, so these items fall back to the placeholder
+// there too — a known, accepted local-preview tradeoff (see CLAUDE.md).
+// ─────────────────────────────────────────────
+const PROXIED_IMAGE_HOSTS = new Set(['fujifilm-x.b-cdn.net']);
+
+function resolveImageSrc(url) {
+  try {
+    const u = new URL(url);
+    if (PROXIED_IMAGE_HOSTS.has(u.host)) return `/img-cache/${u.host}${u.pathname}${u.search}`;
+  } catch { /* malformed URL: fall through to the original */ }
+  return url;
+}
+
+// ─────────────────────────────────────────────
 // ITEM PLACEHOLDER (camera or lens)
 // ─────────────────────────────────────────────
 function buildPlaceholder(item, id) {
@@ -829,7 +855,7 @@ function buildPlaceholder(item, id) {
   }
   if (item.imageUrl) {
     const fallback = svgHtml.replace(/'/g, '&#39;').replace(/"/g, '&quot;');
-    return `<img src="${item.imageUrl}" alt="${item.name}" class="cam-photo" onerror="this.outerHTML='${fallback}'">`;
+    return `<img src="${resolveImageSrc(item.imageUrl)}" alt="${item.name}" class="cam-photo" onerror="this.outerHTML='${fallback}'">`;
   }
   return svgHtml;
 }
