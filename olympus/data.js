@@ -1512,19 +1512,21 @@ const LENSES = {
     maxAperture:3.5, minAperture:22, weight:125, length:50.5, diameter:60,
     filterThread:46, minFocusDist:13, maxMagnification:0.53,
     elements:8, groups:7, blades:7, afType:'Stepping Motor (MSC)',
-    weatherSealed:true, ois:false, oisStops:null, year:2025, discontinued:false,
-    // Late-Oct-2025 launch, the kit zoom bundled with the new PEN body
-    // (research/lenses.md). Sold standalone at retail (B&H, model
-    // V336070BW000) but has no dedicated US explore.omsystem.com product
-    // page of its own -- it only appears there inside PEN camera-kit pages
-    // -- and no Commons/official standalone product photo was found either.
+    weatherSealed:true, ois:false, oisStops:null, year:2026, discontinued:false,
+    // Announced 2026-09-09 as the kit zoom of the new PEN body, shipping
+    // mid-October 2026 (was stored as 2025 until the 2026-09-26 refresh;
+    // PetaPixel 2026-09-08, Photo Rumors and PRONEWS all date it Sept 2026).
+    // It now has its own US explore.omsystem.com product page ($349.99,
+    // preorder), which replaced the B&H productUrl and supplied the photo.
     // GBP/AUD from Digital Camera World's review, independent of the USD
     // figure (also corroborated by the same review).
-    imageUrl:null,
+    imageUrl:'https://nala.explore.omsystem.com/media/catalog/product/1/4/14-42mm_f3.5-5.6_iii_black-om_-_main_1.webp',
+    imageSource: { url:'https://explore.omsystem.com/us/en/m-zuiko-14-42mm-f3-5-5-6-iii-black', tier:'T1', note:'official OM System explore.omsystem.com product page main image (black)', date:'2026-09-26' },
+    specSources: [{ url:'https://petapixel.com/2026/09/08/om-systems-updated-14-42mm-kit-lens-is-splashproof-and-focuses-closer/', tier:'NEWS', note:'announcement dated 2026-09-08 -- used for year only', date:'2026-09-26', title:'PetaPixel: OM System updated 14-42mm kit lens' }],
     asin:null,
     prices:{USD:350,AUD:479,EUR:null,GBP:349,JPY:null,CAD:null,SGD:null},
     priceIncomplete:true,
-    productUrl:'https://www.bhphotovideo.com/c/product/1998136-REG/om_system_v336070bw000_m_zuiko_digital_14_42mm_f_3_5_5_6.html',
+    productUrl:'https://explore.omsystem.com/us/en/m-zuiko-14-42mm-f3-5-5-6-iii-black',
   },
   'omsystem-9-18mm-f4-56-ii': {
     name:'OM System M.Zuiko 9-18mm f/4-5.6 II', manufacturer:'OM System', line:'M.Zuiko', type:'Zoom',
