@@ -218,7 +218,11 @@ const CAMERAS = {
     imageUrl:'https://upload.wikimedia.org/wikipedia/commons/8/8d/Leica_SL.jpg',
     imageCredit:{author:'GodeNehler', licence:'CC BY-SA 4.0', licenceUrl:'https://creativecommons.org/licenses/by-sa/4.0/', source:'https://commons.wikimedia.org/wiki/File:Leica_SL.jpg'},
     asin:null,
-    specSources:[{url:'https://www.dpreview.com/products/leica/slrs/leica_sl_typ601/specifications', tier:'T2', note:'DPReview\'s spec table lists "Weight (inc. batteries)" as 847 g, matching the stored figure. Its table has no dimensions row, so the stored size is not independently confirmed by this source.', date:'2026-09-25', title:'DPReview specifications: Leica SL (Typ 601)'}],
+    specSources:[
+      {url:'https://leica-camera.com/sites/default/files/pm-56098-Technical-Data_SL-System_January2018_e.pdf', tier:'T1', note:'Leica\'s official SL-System technical data (January 2018) -- the primary source for the stored 147 × 104 × 39 mm. Leica\'s server returned HTTP 502 for this file on 2026-09-26 (as it does for several older datasheets) and the Wayback Machine has no copy, so the text was not re-read that day; the figure is corroborated verbatim by the Photography Blog citation below. Note the basis: Leica\'s 39 mm depth excludes the grip, unlike the grip-inclusive depths Leica publishes for the SL3 family (84.6 mm), so the two are not directly comparable.', date:'2026-09-26', title:'Leica SL-System technical data (January 2018)'},
+      {url:'https://www.photographyblog.com/reviews/leica_sl_typ_601_review', tier:'T2', note:'The review\'s specifications section reproduces Leica\'s spec sheet: "147 × 104 × 39 mm (W × H × D)/approx. 771/847 g (without/with battery)", matching the stored dimensions and 847 g weight.', date:'2026-09-26', title:'Photography Blog: Leica SL (Typ 601) review'},
+      {url:'https://www.dpreview.com/products/leica/slrs/leica_sl_typ601/specifications', tier:'T2', note:'DPReview\'s spec table lists "Weight (inc. batteries)" as 847 g, matching the stored figure. Its table has no dimensions row, so the stored size is not independently confirmed by this source.', date:'2026-09-25', title:'DPReview specifications: Leica SL (Typ 601)'},
+    ],
     prices:{USD:7450,AUD:null,EUR:null,GBP:null,JPY:null,CAD:null,SGD:null},
     sensorMP:24, sensorType:'Full-frame CMOS', processor:'Maestro II',
     width:147, height:104, depth:39, weight:847, weatherSealed:true,
