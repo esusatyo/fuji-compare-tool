@@ -301,6 +301,7 @@ const CAMERAS = {
   },
 
   'eos-r10': {
+    // evfMag is 35mm-equivalent site-wide (2026-09-27): Canon's 0.95x (50mm lens at infinity) is native; / 1.6 crop = 0.59x 35mm-equivalent (DPReview spec table: 0.95x).
     name:'EOS R10', series:'EOS R (APS-C)', mount:'rf', year:2022, discontinued:false,
     tagline:'Affordable APS-C Fast-Burst',
     productUrl:'https://www.usa.canon.com/cameras/eos-r10',
@@ -312,7 +313,7 @@ const CAMERAS = {
     sensorMP:24.2, sensorType:'APS-C CMOS', processor:'DIGIC X',
     width:122.5, height:87.8, depth:83.4, weight:429, weatherSealed:false,
     lcdSize:'3.0"', lcdDots:1040, lcdType:'Vari-angle',
-    evfType:'EVF', evfDots:2.36, evfMag:0.95,
+    evfType:'EVF', evfDots:2.36, evfMag:0.59,
     faceDetection:true, subjectDetection:'Animal / Bird / Vehicle',
     ibis:false, ibisStops:null, maxBurst:23,
     maxVideoRes:'4K / 60P',

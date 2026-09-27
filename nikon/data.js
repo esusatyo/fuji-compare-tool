@@ -307,6 +307,7 @@ const CAMERAS = {
 
   /* ── Z APS-C (DX) ── */
   'z50-ii': {
+    // evfMag is 35mm-equivalent site-wide (2026-09-27): Nikon's "Approx. 1.02x (50 mm lens at infinity)" (nikonusa.com) is native; / 1.5 DX crop = 0.68x 35mm-equivalent.
     name:'Z50 II', series:'Z (APS-C)', mount:'z', year:2024, discontinued:false,
     tagline:'EXPEED 7 Comes to DX',
     productUrl:'https://www.nikonusa.com/p/z50ii/1784/overview',
@@ -318,7 +319,7 @@ const CAMERAS = {
     sensorMP:20.9, sensorType:'APS-C (DX) CMOS', processor:'EXPEED 7',
     width:127.0, height:96.8, depth:66.5, weight:550, weatherSealed:false,
     lcdSize:'3.2"', lcdDots:1040, lcdType:'Vari-angle',
-    evfType:'EVF', evfDots:2.36, evfMag:1.02,
+    evfType:'EVF', evfDots:2.36, evfMag:0.68,
     faceDetection:true, subjectDetection:'9 types (People / Animals / Birds / Vehicles / Aircraft)',
     ibis:false, ibisStops:null, maxBurst:11,
     maxVideoRes:'4K / 60P',
@@ -330,6 +331,7 @@ const CAMERAS = {
   },
 
   'z50': {
+    // evfMag is 35mm-equivalent site-wide (2026-09-27): Nikon's 1.02x (50mm lens at infinity; DPReview spec table) is native; / 1.5 DX crop = 0.68x 35mm-equivalent.
     name:'Z50', series:'Z (APS-C)', mount:'z', year:2019, discontinued:true,
     tagline:'First DX Z Body',
     productUrl:'https://www.nikonusa.com/en/nikon-products/product/mirrorless-cameras/z-50.html',
@@ -339,7 +341,7 @@ const CAMERAS = {
     sensorMP:20.9, sensorType:'APS-C (DX) CMOS', processor:'EXPEED 6',
     width:126.5, height:93.5, depth:60.0, weight:450, weatherSealed:false,
     lcdSize:'3.2"', lcdDots:1040, lcdType:'Tilting',
-    evfType:'EVF', evfDots:2.36, evfMag:1.02,
+    evfType:'EVF', evfDots:2.36, evfMag:0.68,
     faceDetection:true, subjectDetection:'Eye / Animal',
     ibis:false, ibisStops:null, maxBurst:11,
     maxVideoRes:'4K / 30P',
@@ -394,6 +396,7 @@ const CAMERAS = {
   },
 
   'zfc': {
+    // evfMag is 35mm-equivalent site-wide (2026-09-27): Nikon's "Approx. 1.02x (50 mm lens at infinity)" (nikonusa.com) is native; / 1.5 DX crop = 0.68x 35mm-equivalent.
     name:'Zfc', series:'Z (Retro)', mount:'z', year:2021, discontinued:false,
     tagline:'Retro DX Crowd-Pleaser',
     productUrl:'https://www.nikonusa.com/en/nikon-products/product/mirrorless-cameras/z-fc.html',
@@ -403,7 +406,7 @@ const CAMERAS = {
     sensorMP:20.9, sensorType:'APS-C (DX) CMOS', processor:'EXPEED 6',
     width:134.5, height:93.5, depth:43.5, weight:445, weatherSealed:false,
     lcdSize:'3.0"', lcdDots:1040, lcdType:'Vari-angle',
-    evfType:'EVF', evfDots:2.36, evfMag:1.02,
+    evfType:'EVF', evfDots:2.36, evfMag:0.68,
     faceDetection:true, subjectDetection:'Eye / Animal',
     ibis:false, ibisStops:null, maxBurst:11,
     maxVideoRes:'4K / 30P',
@@ -1836,7 +1839,7 @@ const LENSES = {
     weatherSealed:false, ois:false, oisStops:null, year:2023, discontinued:false,
     specSources: [
       { url:'https://www.venuslens.net/product/laowa-8-16mm-f3-5-5-zoom-cf/', tier:'T1', note:'official Venus Optics/Laowa store; APS-C ("CF" = Cropped Frame) lens — focalLengthEquiv applies the project\'s 1.5× Nikon-Z-DX convention (8-16mm → 12-24mm), consistent with the existing Sigma DC DN Z entries. Full Specifications tab: 16 elements/12 groups, 5 blades, Ø88.4×88.53mm, 463g, 86mm filter, 20cm min focus, 0.125x max mag; Mount dropdown lists Sony E/Fujifilm X/Nikon Z/Canon RF/Canon EF-M.', date:'2026-08-30' },
-      { url:'https://petapixel.com/2023/10/10/laowa-8-16mm-f-3-5-5-zoom-cf-is-a-compact-ultra-wide-angle-zoom-for-aps-c-cameras/', tier:'T2', note:'independent dated announcement (2023-10-10), $549 launch price matches this entry\'s USD.', date:'2026-08-30' },
+      { url:'https://petapixel.com/2023/10/10/laowa-8-16mm-f-3-5-5-zoom-cf-is-a-compact-ultra-wide-aps-c-lens/', tier:'T2', note:'independent dated announcement (2023-10-10; PetaPixel shortened its own slug -- the old "...-for-aps-c-cameras" URL now 404s), $549 launch price and Sony E/Fujifilm X/Nikon Z/Canon RF/Canon EF-M mount list match this entry.', date:'2026-09-26' },
     ],
     imageUrl:'https://www.venuslens.net/wp-content/uploads/2023/10/DSC_6949-PhotoRoom.png-PhotoRoom.png',
     imageSource: { url:'https://www.venuslens.net/product/laowa-8-16mm-f3-5-5-zoom-cf/', tier:'T1', note:'official Venus Optics/Laowa store; Mounts "Nikon Z, Canon RF, Canon EF-M"; front 3/4 studio shot, barrel reads "CF 8-16mm F3.5-5 C-Dreamer"', date:'2026-09-06' },
@@ -1854,7 +1857,7 @@ const LENSES = {
     weatherSealed:false, ois:false, oisStops:null, year:2022, discontinued:false,
     specSources: [
       { url:'https://www.venuslens.net/product/5828-2x-ultra-macro-apo/', tier:'T1', note:'official Venus Optics/Laowa store; Mount dropdown lists Canon RF/Nikon Z/Sony FE/L mount; full Specifications tab: 14 elements/11 groups, 13 blades, Ø74×117mm, 595g, 67mm filter, 18.5cm min focus, 2x max mag.', date:'2026-08-30' },
-      { url:'https://www.digitalcameraworld.com/reviews/laowa-58mm-f28-2x-ultra-macro-apo-review', tier:'T2', note:'independent review confirms Sony E/Canon RF/Nikon Z/L-mount availability and 2022 launch.', date:'2026-08-30' },
+      { url:'https://www.digitalcameraworld.com/news/laowa-58mm-f28-2x-ultra-macro-apo-mirrorless-lens-announced', tier:'T2', note:'independent announcement (2022-09-22; Digital Camera World\'s review URL now 404s, so its own announcement piece is used instead) confirms Sony E/Canon RF/Nikon Z/L-mount availability and 2022 launch.', date:'2026-09-26' },
     ],
     imageUrl:'https://www.venuslens.net/wp-content/uploads/2022/09/58mm-main.jpg',
     imageSource: { url:'https://www.venuslens.net/product/5828-2x-ultra-macro-apo/', tier:'T1', note:'official Venus Optics/Laowa store; Mounts "Nikon Z / L mount"; front 3/4 studio shot, barrel reads "LAOWA FFII 58mm F2.8 CA-Dreamer Macro 2X"', date:'2026-09-06' },
@@ -1890,7 +1893,7 @@ const LENSES = {
     weatherSealed:false, ois:false, oisStops:null, year:2019, discontinued:false,
     specSources: [
       { url:'https://www.venuslens.net/product/laowa-10-18mm-f-4-5-5-6-fe-zoom/', tier:'T1', note:'official Venus Optics/Laowa store; Mount dropdown lists Sony FE/Nikon Z/L mount. Filter is a 37mm *rear* gel thread only ("designed a 37mm filter thread into the back of the lens") — filterThread left null per the schema\'s front-thread-only convention. Specifications tab: 14 elements/10 groups, 5 blades, 90.9mm×Ø70mm, 496g, 15cm min focus, 1:4 (0.25x) max mag.', date:'2026-08-30' },
-      { url:'https://www.nikonrumors.com/2019/07/11/officially-announced-laowa-10-18mm-f-4-5-5-6-and-laowa-15mm-f-2-lenses-for-nikon-z-canon-rf-cameras.aspx/', tier:'T2', note:'independent dated announcement (2019-07-11) of the Nikon Z variant, matching this entry\'s year; phillipreeve.net\'s hands-on review independently confirms f/22 minimum aperture.', date:'2026-08-30' },
+      { url:'https://www.nikonrumors.com/2019/07/11/officially-announced-laowa-10-18mm-f-4-5-5-6-and-laowa-15mm-f-2-zero-d-mirrorless-lenses-for-nikon-z-mount.aspx/', tier:'T2', note:'independent dated announcement (2019-07-11; Nikon Rumors renamed its own slug, dropping "Canon RF" since that variant never shipped) confirms Nikon Z Mount availability, matching this entry\'s year; phillipreeve.net\'s hands-on review independently confirms f/22 minimum aperture.', date:'2026-09-26' },
     ],
     imageUrl:'https://www.venuslens.net/wp-content/uploads/2018/10/DSC06333-1-scaled.jpg',
     imageSource: { url:'https://www.venuslens.net/product/laowa-10-18mm-f-4-5-5-6-fe-zoom/', tier:'T1', note:'official Venus Optics/Laowa store; page states "Nikon Z mounts are available"; front studio shot of the compact ultra-wide zoom, LAOWA-branded', date:'2026-09-06' },
@@ -1980,7 +1983,7 @@ const LENSES = {
     weatherSealed:false, ois:false, oisStops:null, year:2025, discontinued:false,
     specSources: [
       { url:'https://www.laowalenses.ca/product/laowa-35mm-f-2-8-zero-d-tilt-shift-0-5x-macro/', tier:'T1', note:'official Laowa Canada regional store; mounts E/Z(Nikon)/RF/L/GFX/XCD confirmed. Full spec table: 14 elements/12 groups, 15 blades, 77mm filter, 22.8cm min focus, 0.5x max mag, "±10° tilt / ±12mm shift (FF)". Dimensions were scraped as "Ø148.9mm × Ø104.9mm" (both marked diameter); read as length×diameter per the family pattern (its 55mm/100mm siblings are both far longer than wide) — 148.9mm length, 104.9mm diameter.', date:'2026-08-30' },
-      { url:'https://www.nikonrumors.com/2025/11/25/venus-optics-laowa-35mm-f-2-8-zero-d-tilt-shift-0-5x-macro-lens-for-nikon-z-mount-is-now-officially-announced.aspx/', tier:'T2', note:'independent dated announcement (2025-11-25) confirming Nikon Z mount and $1,249 US price, matching this entry.', date:'2026-08-30' },
+      { url:'https://www.nikonrumors.com/2025/11/25/venus-optics-laowa-35mm-f-2-8-zero-d-tilt-shift-0-5x-macro-lens-for-nikon-z-mount-officially-announced.aspx/', tier:'T2', note:'independent dated announcement (2025-11-25; Nikon Rumors trimmed "is-now" from its own slug) confirming Nikon Z mount and $1,249 US price, matching this entry.', date:'2026-09-26' },
     ],
     imageUrl:'https://www.venuslens.net/wp-content/uploads/2025/11/01_VE3528TS-FE-scaled.jpeg',
     imageSource: { url:'https://www.venuslens.net/product/the-laowa-35mm-f-2-8-zero-d-tilt-shift-0-5x-macro/', tier:'T1', note:'official Venus Optics/Laowa store; page lists Nikon Z as an available mount; front studio shot, base reads "LAOWA T/S 35mm F2.8 0.5X"', date:'2026-09-06' },
@@ -1998,7 +2001,7 @@ const LENSES = {
     weatherSealed:false, ois:false, oisStops:null, year:2025, discontinued:false,
     specSources: [
       { url:'https://www.venuslens.net/product/laowa-55mm-f-2-8-tilt-shift-1x-macro/', tier:'T1', note:'official Venus Optics/Laowa store; Mount dropdown lists Sony E/Nikon Z/Canon RF/L Mount/GFX. Specifications tab: Aperture Range F2.8-22, 14 elements/11 groups, 15 blades, 270mm (27cm) min focus, 77mm filter, "Dimension Approx. 168.5mm × Ø85mm" (length × diameter), 1345g, 1:1 (1.0x) magnification, ±10° tilt/±12mm shift.', date:'2026-08-30' },
-      { url:'https://fstoppers.com/reviews/what-can-you-do-tilt-shift-macro-lens-trying-out-laowas-55mm-f28-1x-680199', tier:'T2', note:'independent review (2025-01-19) confirms "comes in Sony E, Nikon Z, Canon R, and [L mount]", corroborating mount availability and 2025 launch year.', date:'2026-08-30' },
+      { url:'https://fstoppers.com/reviews/what-can-tilt-shift-macro-lens-trying-out-laowa-55mm-f28-tilt-shift-1x-macro-690294', tier:'T2', note:'independent review (2025-01-19; Fstoppers republished under a new slug/ID) confirms "comes in Sony E, Nikon Z, Canon R, and Leica L mounts" and 1.345 kg weight, corroborating mount availability, weight and 2025 launch year. NB: it states 162x85mm for the barrel -- the sibling 100mm Tilt-Shift Macro\'s figure; the maker\'s own T1 spec page gives 168.5x85mm for this 55mm, which is what this entry uses.', date:'2026-09-26' },
     ],
     imageUrl:'https://www.venuslens.net/wp-content/uploads/2024/12/e55TS001.jpg',
     imageSource: { url:'https://www.venuslens.net/product/laowa-55mm-f-2-8-tilt-shift-1x-macro/', tier:'T1', note:'official Venus Optics/Laowa store; page lists Nikon Z as an available mount; front studio shot, base reads "LAOWA T/S 55mm F2.8 1X"', date:'2026-09-06' },
@@ -2052,7 +2055,7 @@ const LENSES = {
     weatherSealed:false, ois:false, oisStops:null, year:2022, discontinued:false,
     specSources: [
       { url:'https://www.laowalenses.ca/product/laowa-20mm-f-4-zero-d-shift/', tier:'T1', note:'official Laowa Canada regional store; mounts Canon EF&RF/Nikon F&Z/Sony E/Pentax K/L mount/Fujifilm G confirmed. Full spec table: 16 elements/11 groups (2 aspherical, 3 ED), 14 blades, 82mm filter, 25cm min focus, 0.17x max mag, Ø95×91mm, 747g, ±11mm shift (FF)/±8mm (medium format).', date:'2026-08-30' },
-      { url:'https://petapixel.com/2022/03/28/venus-optics-unveils-the-laowa-20mm-f4-zero-d-shift-lens/', tier:'T2', note:'independent dated announcement (2022-03-28) confirms the launch year and ±11mm shift spec.', date:'2026-08-30' },
+      { url:'https://petapixel.com/2022/03/28/venus-optics-unveils-the-laowa-20mm-f-4-zero-d-shift-lens/', tier:'T2', note:'independent dated announcement (2022-03-28; PetaPixel added a hyphen to its own slug, "f4" -> "f-4") confirms the 2022 launch year, +/-11mm full-frame shift spec, and ~$1,100 US price.', date:'2026-09-26' },
     ],
     imageUrl:'https://www.venuslens.net/wp-content/uploads/2022/03/Laowa_20mmF4ZeroDShift_0.jpg',
     imageSource: { url:'https://www.venuslens.net/product/laowa-20mm-f-4-zero-d-shift/', tier:'T1', note:'official Venus Optics/Laowa store; page lists Nikon Z as an available mount; front studio shot, LAOWA-branded hood, aperture ring tops out at f/4, shift knob and degree scale', date:'2026-09-06' },
@@ -2765,7 +2768,12 @@ const LENSES = {
       { url:'https://ttartisan.store/products/ttartisan-af-85mm-f1-8-neo', tier:'T1', note:'official TTArtisan store; "Neo" line, same simplified/ringless design language as the 50mm Neo sibling. Spec table: focal 85mm, F1.8-F16, Full-frame, 11 blades, 62mm filter, 0.8m MFD, 12E/8G, 29° AoV, weight "Around 332~338g" (stored as 335g midpoint); mount selector lists Sony E/Nikon Z only (no L, unlike the 50mm Neo); Z-mount dims from the page\'s own Size diagram image (E 90.5×70mm, Z 92×70mm — Z is 1.5mm longer)', date:'2026-08-31' },
     ],
     asin:'B0HB313N48',
-    prices:{USD:99,AUD:199,EUR:99,GBP:99,JPY:15000,CAD:99,SGD:99},
+    // Non-USD cleared 2026-09-26: EUR/GBP/CAD/SGD were all 99 (the USD
+    // figure copied across) and AUD/JPY had no source -- the same pattern
+    // fixed on fujifilm/viltrox-28mm-f45-chip.
+    prices:{USD:99,AUD:null,EUR:null,GBP:null,JPY:null,CAD:null,SGD:null},
+    priceIncomplete:true,
+    priceSource: { url:'https://ttartisan.store/products/ttartisan-af-85mm-f1-8-neo', tier:'T1', note:'US $99 for the Nikon Z variant on the official TTArtisan store (same price for Sony E and L)', date:'2026-09-26', title:'TTArtisan store' },
     productUrl:'https://ttartisan.store/products/ttartisan-af-85mm-f1-8-neo',
     imageUrl:'https://ttartisan.store/cdn/shop/files/SKU-E_e906dc60-ef1a-4b6f-8b20-d0edd44d8de5.jpg',
     imageSource: { url:'https://ttartisan.store/products/ttartisan-af-85mm-f1-8-neo', tier:'T1', note:'official TTArtisan store product photo; the page\'s og:image reflects the default Sony E variant (filename "SKU-E_...") rather than the Z-selected one — the theme does not update the OG tag on a client-side mount-selector click. Cosmetically identical across mounts in a front-on shot', date:'2026-08-31' },
