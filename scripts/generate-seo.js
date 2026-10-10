@@ -140,6 +140,18 @@ function successorPairKeys(cams) {
   return keys;
 }
 
+// ─── Indexability ────────────────────────────
+// Every vs-page is generated and linked for visitors, but only these ask
+// Google to index them; the rest carry `noindex, follow` and stay out of
+// the sitemap. Evidence and rationale: the noindex-thin-vs-pages change.
+//
+// A successor pair is indexable without a pin when its newer body launched
+// in or after this year — "new vs previous model" searches peak at launch.
+// A fixed year, not "now − 1", so output never shifts when the calendar
+// does. Before moving it, pin any older successor pair that has earned
+// Search Console evidence.
+const SUCCESSOR_INDEX_SINCE = 2025;
+
 function curatedPairs(cams) {
   const seen = new Set();
   const pairs = [];
