@@ -21,7 +21,7 @@ Data: `research/data.md` (GSC pages Jul 16–Sep 24 2026, GoatCounter all-time) 
 - **301 the reversed-order cross-brand URL** `/vs/canon-eos-r1-vs-sony-a9-iii` to `/vs/sony-a9-iii-vs-canon-eos-r1`.
 - **Keep the other 6 dropped URLs (1–3 impressions each) as 404s.** They will drop out of Search Console.
 
-No page is deleted, and no visitor-facing link or UI changes.
+No page is deleted and no UI changes. The only visitor-facing difference: the 4 restored pages join the capped related-links lists, displacing one older link on 11 pages (every page stays linked from its brand page).
 
 ## Capabilities
 

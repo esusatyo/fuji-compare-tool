@@ -79,3 +79,15 @@ Successor pairs whose newer body launched in 2025 or 2026 and aren't already in 
 - sony/vs/fx2-vs-fx3
 
 That is 13 pages. Restricted to 2026 launches only, it is 4 pages: R6 V, R8 II, A7R VI and FX5.
+
+## Re-check before merge (GSC Jul 16 – Oct 6 2026, pulled 2026-10-10)
+
+Filter `page contains /vs/`: 504 impressions, 5 clicks, 106 visible queries, 64 pages with impressions (`.html` and clean URLs merged).
+
+- **No new page meets the bar.** Every page with a click or ≥5 impressions is already pinned or auto-indexed. No noindexed page has ≥2 distinct named queries.
+- **Closest misses, unchanged:** `fujifilm/vs/x-t50-vs-x-s20` (4 impressions, 1 query) and `vs/canon-eos-r6-iii-vs-nikon-z6-iii` (4, 0).
+- **New since Oct 1, all under the bar:** `sony/vs/a7c-ii-vs-zv-e1` (3, 1 query) and `nikon/vs/z5-ii-vs-zfc` (3, 1).
+- **Launch-window rule already earning:** `canon/vs/eos-r6-v-vs-eos-r6-iii` (3 impressions; query "canon r6v vs r6 mark iii") and `panasonic/vs/s1-ii-vs-s1` (4) are auto-indexed successor pages.
+- `vs/sony-a7r-vi-vs-canon-eos-r5-ii` (pinned by hand, 4 impressions) now has a visible named query: "sony a7rvi vs canon r5 mark ii".
+
+Pin list unchanged: 30 pins, 43 indexable vs-pages.
