@@ -1997,7 +1997,7 @@ const LENSES = {
     priceIncomplete:true,
     // The US store page for this kit lens 404s (caught by test:links); Panasonic's
     // JP product database still carries it, so use that rather than dropping to null.
-    productUrl:'https://panasonic.jp/dc/p-db/H-FS12032.html',
+    productUrl:'https://panasonic.jp/dc/products/H-FS12032.html',
   },
   'lumix-g-12-60mm-f3-5-5-6': {
     name:'LUMIX G Vario 12-60mm F3.5-5.6 O.I.S.', manufacturer:'Panasonic', line:'LUMIX G', type:'Zoom', mount:'mft', asin:'B01C56V72Q',

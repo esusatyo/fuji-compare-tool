@@ -763,7 +763,7 @@ const CAMERAS = {
     asin:'B0CHGD4TN7',
     prices:{USD:8499,AUD:13299,EUR:8499,GBP:7599,JPY:1249000,CAD:10999,SGD:12299},
     specSources: [{ url:'https://www.fujifilm-x.com/en-us/products/cameras/gfx100-ii/specifications/', tier:'T1', note:'sensor/dimensions/IBIS/burst/video/AF/battery specs', date:'2026-08-15' }],
-    priceSource: { url:'https://www.calumet.de/product/fujifilm-mittelformatkamera-gfx-100-ii/FUJGFX100II', tier:'T3', note:'EUR corrected to €8,499 — stored €9,799 matched neither the reported pre-hike (€7,999) nor post-hike (€8,499) figure from the Aug–Sep 2026 EU price adjustment (FujiAddict/Imaging Resource, 2026-07-26); Calumet.de lists €8,499 incl. MwSt. as the current manufacturer UVP (selling at a €7,499 discount off it), matching the reported post-hike figure exactly — no VAT/regional-basis explanation found, treating the stored figure as a plain data error; USD $8,499 unchanged, confirmed current at B&H/Best Buy', date:'2026-08-23' },
+    priceSource: { url:'https://eshop.fujifilm-x.com/de/fujifilm-gfx100-ii.html', tier:'T1', title:'Fujifilm GFX eShop (Germany) — GFX100 II', note:'EUR €8,499 confirmed on Fujifilm\'s own German eShop (8.499,00 € incl. MwSt., 2026-10-10); replaces the 2026-08-23 Calumet.de citation, whose product page now 404s. The 2026-08-23 correction from a stored €9,799 (a plain data error, matching neither the pre- nor post-hike EU figure) stands; USD $8,499 unchanged', date:'2026-10-10' },
     sensorMP:102, sensorType:'43.8×32.9mm GFX CMOS II HS', processor:'X-Processor 5',
     width:152.4, height:117.4, depth:98.6, weight:948, weatherSealed:true,
     lcdSize:'3.2"', lcdDots:2360, lcdType:'Tilt (3-way)',
@@ -1419,7 +1419,7 @@ const LENSES = {
     imageUrl:'https://fujifilm-x.b-cdn.net/wp-content/uploads/2025/10/thumbnail_xc13-33mm-1.jpg?width=400',
     asin:'B0FZHD94P8',
     prices:{USD:400,AUD:649,EUR:316,GBP:329,JPY:65000,CAD:490,SGD:609},
-    productUrl:'https://www.fujifilm-x.com/global/products/lenses/xc13-33mmf35-63-ois/',
+    productUrl:'https://www.fujifilm-x.com/en-us/products/lenses/xc13-33mmf35-63-ois/',
   },
 
   /* ── Fujifilm GF (Medium Format Primes) ── */
