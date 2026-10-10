@@ -66,7 +66,7 @@ test('sitemap lists the compare page and every indexable cross-brand page (clean
   assert.ok(sitemap.includes('/compare/</loc>'));
   for (const m of matchups) {
     // Unpinned cross-brand pages carry noindex and stay out (see seo.test.js).
-    if (files.get(m.file).includes('noindex')) continue;
+    if (files.get(m.file).includes('<meta name="robots" content="noindex, follow">')) continue;
     // The host 307-redirects .html to the extensionless URL, so the
     // sitemap must carry the clean form.
     assert.ok(sitemap.includes(`/${m.file.replace(/\.html$/, '')}</loc>`), `sitemap missing ${m.file}`);

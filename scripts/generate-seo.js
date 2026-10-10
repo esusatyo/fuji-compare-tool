@@ -187,6 +187,7 @@ const PINNED_VS_PAIRS = [
   'vs/sony-a1-ii-vs-canon-eos-r1',
   'vs/sony-a1-ii-vs-canon-eos-r5-ii',
   'vs/sony-a1-ii-vs-nikon-z9',
+  'vs/sony-a7r-vi-vs-canon-eos-r5-ii', // under the bar, but a 2026 launch with real visits
   'vs/sony-zv-e10-ii-vs-fujifilm-x-m5',
 ];
 

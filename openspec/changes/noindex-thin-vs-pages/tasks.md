@@ -4,7 +4,7 @@ One commit per task, with that task's tick included in the commit. All work ship
 
 - [x] 1.1 Move rule 1's pair detection into a shared `forEachSuccessor(cams, visit)` in `scripts/generate-seo.js`, and expose `successorPairKeys(cams)` built on it. Leave the output of `curatedPairs` unchanged.
 - [x] 1.2 Add `SUCCESSOR_INDEX_SINCE = 2025`: a successor pair whose newer body's `year` is at least this is indexable without a pin.
-- [x] 1.3 Add `PINNED_VS_PAIRS`, seeded with the 29 pages that meet the evidence bar in `research/query-evidence.md`. They include the 4 restores:
+- [x] 1.3 Add `PINNED_VS_PAIRS`, seeded with the 29 pages that meet the evidence bar in `research/query-evidence.md`, plus the launch-window exception `vs/sony-a7r-vi-vs-canon-eos-r5-ii`. They include the 4 restores:
   - `panasonic/vs/s1-ii-vs-s1h`
   - `sony/vs/fx3-vs-a7s-iii`
   - `fujifilm/vs/x-t50-vs-x100v`
@@ -23,8 +23,9 @@ One commit per task, with that task's tick included in the commit. All work ship
 - [x] 2.3 Every `PINNED_VS_PAIRS` entry is generated at exactly its path and is indexable. Add a unit test that a pin naming an unknown slug makes `buildAll` throw.
 - [x] 2.4 Every successor pair whose newer body launched in or after `SUCCESSOR_INDEX_SINCE` is indexable; every other unpinned page is not.
 - [x] 2.5 `robots.txt` has no `Disallow` rule matching `/vs/`.
+- [x] 2.5a Add an outside-in test naming pages on each side of the split (the 13 recent successors indexable; Canon false matches, old successors, a price neighbour and an unpinned cross page noindexed), plus an upper bound on the indexable share. Match the exact robots tag, not the word `noindex`.
 - [x] 2.6 Run `node scripts/generate-seo.js` and then `npm test`. Confirm:
-  - the sitemap has 54 URLs (42 vs-pages + root, 8 brand pages, compare, About, Privacy);
+  - the sitemap has 55 URLs (43 vs-pages + root, 8 brand pages, compare, About, Privacy);
   - the 4 restored pages exist;
   - the orphan and links tests pass.
 
