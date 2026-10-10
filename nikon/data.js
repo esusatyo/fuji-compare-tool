@@ -164,6 +164,33 @@ const CAMERAS = {
     lensType:'Interchangeable', lensSpec:null,
   },
 
+  /* Z5 II internals in a flatter, viewfinder-less body (screen-first). */
+  'z5-iic': {
+    name:'Z5IIC', series:'Z (Full-frame)', mount:'z', year:2026, discontinued:false,
+    tagline:'Viewfinder-Free Full-Frame Z5 II',
+    productUrl:'https://www.nikonusa.com/p/z5iic/2082/overview',
+    imageUrl:null,
+    asin:null,
+    prices:{USD:1399,AUD:2199,EUR:1599,GBP:1299,JPY:218000,CAD:1799,SGD:1999},
+    specSources: [
+      { url:'https://imaging.nikon.com/imaging/lineup/mirrorless/z5_2c/', tier:'T1', title:'Nikon Z5IIC official product page (Nikon global)', note:'Approx. 134.0 x 80.5 x 72.0 mm; approx. 620 g with battery and memory card (538 g body only); 3.2in vari-angle TFT touch LCD approx. 1040k dots; no viewfinder; single SD/SDHC/SDXC slot, UHS-II; EN-EL15c; approx. 14 fps continuous (mechanical)', date:'2026-10-11' },
+      { url:'https://www.nikonusa.com/p/z5iic/2082/overview', tier:'T1', title:'Nikon USA Z5IIC product page', note:'$1,399.95 body; approx. 390 shots (CIPA, energy saving on), approx. 85 min video; Bluetooth 5.0; 14 fps mechanical / up to 30 fps electronic; pre-release capture; detection of 10 subject types incl. fish; USB-C charging', date:'2026-10-11' },
+      { url:'https://www.nikonusa.com/press-room/z5iic', tier:'T1', title:'Nikon USA Z5IIC press release', note:'24.5 MP BSI CMOS, EXPEED 7; 5-axis VR up to 7.5 stops; 4K UHD 60p (APS-C crop at 50/60p per CineD), FHD 120p; H.265 10-bit with N-Log; N-RAW to SD card (12-bit, up to 4032x2268 per CineD, stored as nRaw 4K); dust- and drip-resistant magnesium alloy; available mid-October 2026. Pixel-shift shooting not mentioned in any Nikon source read, so pixelShift is null', date:'2026-10-11' }],
+    priceSource: { url:'https://www.nikonusa.com/p/z5iic/2082/overview', tier:'T1', title:'Nikon USA Z5IIC product page', note:'"Starting at $1,399.95" body only (2026-10-11); $1,699.95 with the NIKKOR Z 24-50mm f/4-6.3 kit lens. Non-USD derived by scripts/compute-prices.js ratios, not confirmed local RRPs', date:'2026-10-11' },
+    sensorMP:24.5, sensorType:'Full-frame BSI CMOS', processor:'EXPEED 7',
+    width:134.0, height:80.5, depth:72.0, weight:620, weatherSealed:true,
+    lcdSize:'3.2"', lcdDots:1040, lcdType:'Vari-angle',
+    evfType:null, evfDots:null, evfMag:null,
+    faceDetection:true, subjectDetection:'10 types (People / Animals / Birds / Vehicles / Aircraft / Fish)',
+    ibis:true, ibisStops:7.5, maxBurst:14,
+    maxVideoRes:'4K / 60P',
+    logVideo:true,
+    expeed:'EXPEED 7', nRaw:'4K', pixelShift:null, preCapture:true,
+    bluetooth:'5.0', wifi:true,
+    cardSlots:'1× SD UHS-II', batteryLife:390, usbCharging:true,
+    lensType:'Interchangeable', lensSpec:null,
+  },
+
   /* ── Z Cinema ── */
   'zr': {
     name:'ZR', series:'Z Cinema (Full-frame)', mount:'z', year:2025, discontinued:false,
@@ -420,7 +447,7 @@ const CAMERAS = {
 };
 
 const CAMERA_ORDER = [
-  'z9', 'z8', 'z6-iii', 'z5-ii',
+  'z9', 'z8', 'z6-iii', 'z5-ii', 'z5-iic',
   'z7-ii', 'z7', 'z6-ii', 'z6', 'z5',
   'zr',
   'zf', 'zfc',
@@ -428,7 +455,7 @@ const CAMERA_ORDER = [
 ];
 
 const DROPDOWN_GROUPS = [
-  { label: '── Z Full-Frame ──', ids: ['z9', 'z8', 'z6-iii', 'z5-ii', 'z7-ii', 'z7', 'z6-ii', 'z6', 'z5'] },
+  { label: '── Z Full-Frame ──', ids: ['z9', 'z8', 'z6-iii', 'z5-ii', 'z5-iic', 'z7-ii', 'z7', 'z6-ii', 'z6', 'z5'] },
   { label: '── Z Cinema ──',     ids: ['zr'] },
   { label: '── Z Retro ──',      ids: ['zf', 'zfc'] },
   { label: '── Z APS-C (DX) ──', ids: ['z50-ii', 'z50', 'z30'] },

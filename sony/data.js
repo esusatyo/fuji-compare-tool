@@ -1975,6 +1975,22 @@ const LENSES = {
     productUrl:'https://www.sigma-global.com/en/lenses/c021_18_50_28/',
   },
 
+  'sigma-50-120mm-f28': {
+    name:'Sigma 50-120mm f/2.8 DC OS', manufacturer:'Sigma', line:'Contemporary', type:'Zoom',
+    mount:'e', focalLength:null, focalLengthMin:50, focalLengthMax:120, focalLengthEquiv:'75-180mm',
+    maxAperture:2.8, minAperture:22, weight:390, length:99.0, diameter:66.8,
+    filterThread:55, minFocusDist:23, maxMagnification:0.33,
+    elements:18, groups:13, blades:11, afType:'HLA Linear',
+    weatherSealed:true, ois:true, oisStops:6.5, year:2026, discontinued:false,
+    imageUrl:'https://www.sigma-global.com/lenses/images/01_PPhoto_50_120_28_dc_os_026_Emt_representative_1000px.png',
+    asin:null,
+    prices:{USD:799,AUD:null,EUR:null,GBP:null,JPY:null,CAD:null,SGD:null},
+    specSources: [{ url:'https://www.sigma-global.com/en/lenses/c026_50_120_28/', tier:'T1', title:'Sigma 50-120mm F2.8 DC OS | Contemporary official specifications', note:'Sony E column: 18 elements in 13 groups (1 FLD, 3 SLD, 4 aspherical); 11 rounded blades; F22 minimum; MFD 23cm (W) - 55cm (T); max magnification 1:3 (W) - 1:4.7 (T); 55mm filter; 66.8mm x 99mm; 390g; OS2 up to 6.5 stops (W) / 4.5 stops (T); HLA linear AF; dust- and splash-resistant. Announced 2026-10-08, shipping 2026-10-22', date:'2026-10-11' }],
+    priceSource: { url:'https://www.sigmaphoto.com/50-120mm-f2-8-dc-os-c', tier:'T1', title:'Sigma Corporation of America store', note:'$799 launch price (Sony E, FUJIFILM X and Canon RF all $799 per Sigma\'s announcement, 2026-10-08). Non-USD not yet published', date:'2026-10-11' },
+    priceIncomplete:true,
+    productUrl:'https://www.sigma-global.com/en/lenses/c026_50_120_28/',
+  },
+
   /* ── Sigma (FE, full-frame DG DN Art) ── */
   /* Full-frame E-mount; specs from Sigma official spec pages (Sony E values). */
   'sigma-24mm-f14-dg': {
@@ -2843,7 +2859,7 @@ const LENSES = {
     elements:8, groups:7, blades:7, afType:'Stepping Motor',
     weatherSealed:false, ois:false, oisStops:null, year:2019, discontinued:false,
     imageUrl:'https://www.sigma-global.com/lenses/c019_45_28_product_img01.png',
-    asin:null,
+    asin:'B07V592WZK',
     prices:{USD:619,AUD:999,EUR:699,GBP:599,JPY:70000,CAD:799,SGD:899},
     productUrl:'https://www.sigma-global.com/en/lenses/c019_45_28/',
   },
@@ -2910,7 +2926,7 @@ const LENS_DROPDOWN_GROUPS = [
   ] },
   { label: '── Sigma (APS-C) ──', ids: [
     'sigma-16mm-f14', 'sigma-23mm-f14', 'sigma-30mm-f14', 'sigma-56mm-f14',
-    'sigma-10-18mm-f28', 'sigma-18-50mm-f28',
+    'sigma-10-18mm-f28', 'sigma-18-50mm-f28', 'sigma-50-120mm-f28',
   ] },
   { label: '── Sigma (FF Primes) ──', ids: [
     'sigma-20mm-f2-dg', 'sigma-20mm-f14-dg', 'sigma-24mm-f2-dg', 'sigma-24mm-f14-dg', 'sigma-35mm-f2-dg',

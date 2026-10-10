@@ -212,6 +212,9 @@ const KNOWN_IMAGE_GAPS = {
     'm-monochrom-typ-246', 'm-e-typ-240',
   ]),
   nikon: new Set([
+    // z5-iic: announced 2026-09-23, added 2026-10-11 — too new for a
+    // freely-licensed Commons photo; revisit on the next image pass.
+    'z5-iic',
     // Cameras: all 10 resolved 2026-08-15 (Commons photos sourced + applied).
     // Lenses — re-run 2026-08-15 (Nikon+Panasonic lens image pass): z-dx-16-50mm-vr
     // and viltrox-27mm-f12 resolved and removed from this list.

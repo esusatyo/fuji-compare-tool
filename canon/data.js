@@ -1434,6 +1434,22 @@ const LENSES = {
     productUrl:'https://www.sigma-global.com/en/lenses/c021_18_50_28/',
   },
 
+  'sigma-50-120mm-f28': {
+    name:'Sigma 50-120mm f/2.8 DC OS', manufacturer:'Sigma', line:'Contemporary', type:'Zoom',
+    mount:'rf', focalLength:null, focalLengthMin:50, focalLengthMax:120, focalLengthEquiv:'80-192mm',
+    maxAperture:2.8, minAperture:22, weight:410, length:97.0, diameter:69.0,
+    filterThread:55, minFocusDist:23, maxMagnification:0.33,
+    elements:18, groups:13, blades:11, afType:'HLA Linear',
+    weatherSealed:true, ois:true, oisStops:6.5, year:2026, discontinued:false,
+    imageUrl:'https://www.sigma-global.com/lenses/images/03_PPhoto_50_120_28_dc_os_026_RFmt_representative_1000px.png',
+    asin:null,
+    prices:{USD:799,AUD:null,EUR:null,GBP:null,JPY:null,CAD:null,SGD:null},
+    specSources: [{ url:'https://www.sigma-global.com/en/lenses/c026_50_120_28/', tier:'T1', title:'Sigma 50-120mm F2.8 DC OS | Contemporary official specifications', note:'Canon RF column: 18 elements in 13 groups (1 FLD, 3 SLD, 4 aspherical); 11 rounded blades; F22 minimum; MFD 23cm (W) - 55cm (T); max magnification 1:3 (W) - 1:4.7 (T); 55mm filter; 69mm x 97mm; 410g; OS2 up to 6.5 stops (W) / 4.5 stops (T); HLA linear AF; dust- and splash-resistant. Announced 2026-10-08, shipping 2026-10-22', date:'2026-10-11' }],
+    priceSource: { url:'https://www.sigmaphoto.com/50-120mm-f2-8-dc-os-c', tier:'T1', title:'Sigma Corporation of America store', note:'$799 launch price (Sony E, FUJIFILM X and Canon RF all $799 per Sigma\'s announcement, 2026-10-08). Non-USD not yet published', date:'2026-10-11' },
+    priceIncomplete:true,
+    productUrl:'https://www.sigma-global.com/en/lenses/c026_50_120_28/',
+  },
+
   'sigma-17-40mm-f18': {
     name:'Sigma 17-40mm f/1.8 DC', manufacturer:'Sigma', line:'Art', type:'Zoom',
     mount:'rf', focalLength:null, focalLengthMin:17, focalLengthMax:40, focalLengthEquiv:'27-64mm',
@@ -1905,7 +1921,7 @@ const LENS_DROPDOWN_GROUPS = [
   { label: '── Canon RF Primes ──',   ids: ['rf-14mm-f14-l-vcm','rf-16mm-f28-stm','rf-20mm-f14-l-vcm','rf-24mm-f14-l-vcm','rf-24mm-f18-macro-is-stm','rf-28mm-f28-stm','rf-35mm-f14-l-vcm','rf-35mm-f18-macro-is-stm','rf-45mm-f12-stm','rf-50mm-f14-l-vcm','rf-50mm-f18-stm','rf-50mm-f12-l-usm','rf-85mm-f2-macro-is-stm','rf-85mm-f12-l-usm','rf-85mm-f12-l-usm-ds','rf-85mm-f14-l-vcm','rf-100mm-f28-l-macro-is-usm','rf-135mm-f18-l-is-usm','rf-400mm-f28-l-is-usm','rf-600mm-f4-l-is-usm','rf-600mm-f11-is-stm','rf-800mm-f56-l-is-usm','rf-800mm-f11-is-stm','rf-1200mm-f8-l-is-usm','rf-52mm-f28-l-dual-fisheye'] },
   { label: '── Canon RF Zooms ──',    ids: ['rf-7-14mm-f28-35-l-fisheye-stm','rf-10-20mm-f4-l-is-stm','rf-14-35mm-f4-l-is-usm','rf-15-30mm-f45-63-is-stm','rf-15-35mm-f28-l-is-usm','rf-16-28mm-f28-is-stm','rf-20-50mm-f4-l-is-usm-pz','rf-24-50mm-f45-63-is-stm','rf-24-70mm-f28-l-is-usm','rf-24-105mm-f4-l-is-usm','rf-24-105mm-f28-l-is-usm-z','rf-24-105mm-f4-71-is-stm','rf-24-240mm-f4-63-is-usm','rf-28-70mm-f2-l-usm','rf-28-70mm-f28-is-stm','rf-70-200mm-f28-l-is-usm','rf-70-200mm-f28-l-is-usm-z','rf-70-200mm-f4-l-is-usm','rf-75-300mm-f4-56','rf-100-300mm-f28-l-is-usm','rf-100-400mm-f56-8-is-usm','rf-100-500mm-f45-71-l-is-usm','rf-200-800mm-f63-9-is-usm'] },
   { label: '── Canon RF-S (APS-C) ──', ids: ['rfs-10-18mm-f45-63-is-stm','rfs-14-30mm-f4-63-is-stm-pz','rfs-18-45mm-f45-63-is-stm','rfs-18-150mm-f35-63-is-stm','rfs-55-210mm-f5-71-is-stm','rfs-39mm-f35-stm-dual-fisheye','rfs-78mm-f4-stm-dual'] },
-  { label: '── Sigma ──',              ids: ['sigma-12mm-f14','sigma-15mm-f14','sigma-16mm-f14','sigma-23mm-f14','sigma-30mm-f14','sigma-56mm-f14','sigma-10-18mm-f28','sigma-16-300mm-f35-67','sigma-17-40mm-f18','sigma-18-50mm-f28'] },
+  { label: '── Sigma ──',              ids: ['sigma-12mm-f14','sigma-15mm-f14','sigma-16mm-f14','sigma-23mm-f14','sigma-30mm-f14','sigma-56mm-f14','sigma-10-18mm-f28','sigma-16-300mm-f35-67','sigma-17-40mm-f18','sigma-18-50mm-f28', 'sigma-50-120mm-f28'] },
   { label: '── Tamron ──',             ids: ['tamron-11-20mm-f28','tamron-17-70mm-f28','tamron-18-300mm-f35-63'] },
   { label: '── Samyang ──',            ids: ['samyang-14mm-f28','samyang-12mm-f2-rf-s'] },
   { label: '── Viltrox ──',            ids: ['viltrox-85mm-f18'] },

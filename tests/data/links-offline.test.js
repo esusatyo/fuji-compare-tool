@@ -146,7 +146,14 @@ const KNOWN_SHARED_LINKS = new Map([
 // FX5, the 2026 Sigma 85mm f/1.2 and 20-60mm); only a 2025 "DG"/"DG II"
 // re-release listed (Sigma 45mm, 50mm); listing doesn't name the mount or
 // version (Yongnuo YN56, Meike 55mm, Meike 85mm); 7 Leica (bundles only).
-const ASIN_GAP_BASELINE = 45;
+// Tightened to 44 on 2026-10-11, net of a new-release pass: +8 new items
+// (nikon/z5-iic, sigma-50-120mm-f28 in sony/fujifilm/canon, and 4 Viltrox
+// Air L primes in panasonic/), of which the 4 Viltrox got listings; the
+// Z5IIC and 50-120 aren't on amazon.com yet. Also closed 5 Sigma gaps:
+// 45mm f/2.8 (sigma/, panasonic/ via the renewed "DG (Black)" listing,
+// which Sigma states is the same optics; sony/ via the original DG DN
+// listing) and 50mm f/2 L (sigma/, panasonic/, original DG DN listing).
+const ASIN_GAP_BASELINE = 44;
 
 const allItems = () => brandDirs().flatMap(brand => {
   const { data } = loadBrand(brand);
