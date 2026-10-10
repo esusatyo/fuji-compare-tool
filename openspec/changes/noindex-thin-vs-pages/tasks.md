@@ -14,11 +14,11 @@ One commit per task, with that task's tick included in the commit. All work ship
   - check that cross-brand pins match a `resolveMatchups` file;
   - throw on unknown brand, slug or page, or on an `a === b` pair.
 - [x] 1.5 Compute `indexable` per page (pinned, or a successor pair whose newer body launched in or after `SUCCESSOR_INDEX_SINCE`). Emit `<meta name="robots" content="noindex, follow">` in `vsPageHTML` and `crossVsPageHTML` heads for non-indexable pages.
-- [ ] 1.6 Pass only indexable vs-page paths to `sitemapXML`. Leave `robots.txt` unchanged.
+- [x] 1.6 Pass only indexable vs-page paths to `sitemapXML`. Leave `robots.txt` unchanged.
 
 ## 2. Tests (Tier 1, `tests/data/seo.test.js` unless noted)
 
-- [ ] 2.1 Replace the "sitemap covers … every vs-page" test: the sitemap must contain every indexable vs-page and no page whose HTML contains `noindex`.
+- [x] 2.1 Replace the "sitemap covers … every vs-page" test: the sitemap must contain every indexable vs-page and no page whose HTML contains `noindex`.
 - [ ] 2.2 Every generated vs-page has exactly one of: a robots `noindex, follow` meta tag, or a sitemap entry. Neither-or-both fails.
 - [ ] 2.3 Every `PINNED_VS_PAIRS` entry is generated at exactly its path and is indexable. Add a unit test that a pin naming an unknown slug makes `buildAll` throw.
 - [ ] 2.4 Every successor pair whose newer body launched in or after `SUCCESSOR_INDEX_SINCE` is indexable; every other unpinned page is not.

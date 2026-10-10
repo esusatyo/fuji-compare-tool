@@ -42,23 +42,28 @@ test('no orphan vs-pages on disk beyond the curated set', () => {
   }
 });
 
-test('sitemap covers root, every brand page, every vs-page, and trust pages (clean URLs)', () => {
+const NOINDEX_META = '<meta name="robots" content="noindex, follow">';
+const isVsPage = rel => /(^|\/)vs\/[^/]+\.html$/.test(rel);
+const sitemapHas = rel => generated.get('sitemap.xml')
+  .includes(`<loc>${siteConfig().baseUrl}/${rel.replace(/\.html$/, '')}</loc>`);
+
+test('sitemap covers root, every brand page, every indexable vs-page, and trust pages (clean URLs)', () => {
   const sitemap = generated.get('sitemap.xml');
   const site = siteConfig();
   assert.ok(sitemap.includes(`<loc>${site.baseUrl}/</loc>`));
   // The host 307-redirects .html to the extensionless URL, so sitemap
   // entries (like canonicals) must use the clean form.
   assert.ok(!sitemap.includes('.html</loc>'), 'sitemap must not contain .html URLs');
-  for (const p of ['about', 'privacy']) {
+  for (const p of ['about', 'privacy', 'compare/']) {
     assert.ok(sitemap.includes(`<loc>${site.baseUrl}/${p}</loc>`), `sitemap missing ${p}`);
   }
   for (const brand of brandDirs()) {
     assert.ok(sitemap.includes(`<loc>${site.baseUrl}/${brand}/</loc>`), `sitemap missing ${brand}/`);
-    for (const [rel] of generated) {
-      if (rel.startsWith(`${brand}/vs/`)) {
-        assert.ok(sitemap.includes(`<loc>${site.baseUrl}/${rel.replace(/\.html$/, '')}</loc>`), `sitemap missing ${rel}`);
-      }
-    }
+  }
+  for (const [rel, content] of generated) {
+    if (!isVsPage(rel)) continue;
+    if (content.includes('noindex')) assert.ok(!sitemapHas(rel), `sitemap lists noindexed ${rel}`);
+    else assert.ok(sitemapHas(rel), `sitemap missing indexable ${rel}`);
   }
 });
 

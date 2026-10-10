@@ -1515,7 +1515,7 @@ function buildAll() {
       const rel = `${brand}/vs/${a}-vs-${b}.html`;
       const index = indexable(rel, a, b);
       files.set(rel, vsPageHTML(brand, data, site, a, b, pairs, index));
-      sitemapPaths.push(rel);
+      if (index) sitemapPaths.push(rel);
     }
 
     const cams = data.CAMERAS;
@@ -1545,7 +1545,7 @@ function buildAll() {
   for (const m of matchups) {
     const index = pins.files.has(m.file);
     files.set(m.file, crossVsPageHTML(site, m, matchups, index));
-    sitemapPaths.push(m.file);
+    if (index) sitemapPaths.push(m.file);
   }
   const cmp = path.join('compare', 'index.html');
   const totalCams = Object.values(brandData).reduce((n, d) => n + Object.keys(d.CAMERAS).length, 0);
