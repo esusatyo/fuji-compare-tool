@@ -8,6 +8,7 @@ const fs = require('fs');
 const path = require('path');
 const { loadBrand, brandDirs, ROOT } = require('../helpers/load-brand');
 const { buildAll, curatedPairs, siteConfig, vsSummary, vsSummaryFacts, referenceRowsHTML,
+        resolvePins, resolveMatchups, withPins, successorPairKeys, PINNED_VS_PAIRS, SUCCESSOR_INDEX_SINCE,
         ID_HEAD_BEGIN, ID_HEAD_END, ID_HEADER_BEGIN, ID_HEADER_END } = require('../../scripts/generate-seo');
 
 const generated = buildAll();
@@ -81,6 +82,66 @@ test('every vs-page is either noindexed or in the sitemap — never both, never 
       `${rel}: must have exactly one of a noindex tag or a sitemap entry`);
   }
   assert.ok(noindexed > 0, 'expected some noindexed vs-pages');
+});
+
+test('every pinned pair is generated at exactly its path, indexable, and never also in reverse', () => {
+  for (const pin of PINNED_VS_PAIRS) {
+    const rel = `${pin}.html`;
+    assert.ok(generated.has(rel), `pin ${pin} was not generated`);
+    assert.ok(!generated.get(rel).includes('noindex'), `pin ${pin} is noindexed`);
+    if (!pin.startsWith('vs/')) {
+      const [dir, a, b] = [pin.slice(0, pin.lastIndexOf('/') + 1), ...pin.slice(pin.lastIndexOf('/') + 1).split('-vs-')];
+      assert.ok(!generated.has(`${dir}${b}-vs-${a}.html`), `pin ${pin} is also generated in reverse order`);
+    }
+  }
+});
+
+test('the 4 pages restored from price churn exist', () => {
+  for (const rel of ['panasonic/vs/s1-ii-vs-s1h.html', 'sony/vs/fx3-vs-a7s-iii.html',
+    'fujifilm/vs/x-t50-vs-x100v.html', 'canon/vs/eos-r50v-vs-eos-r10.html']) {
+    assert.ok(generated.has(rel), `${rel} missing`);
+  }
+});
+
+test('resolvePins fails loudly on a pin that does not resolve', () => {
+  const brandData = Object.fromEntries(brandDirs().map(b => [b, loadBrand(b).data]));
+  const matchups = resolveMatchups(brandData);
+  const throwsFor = (pin, re) => assert.throws(() => resolvePins(brandData, matchups, [pin]), re, pin);
+  throwsFor('canon/vs/eos-r9-vs-eos-r10', /unknown camera 'canon:eos-r9'/);
+  throwsFor('kodak/vs/a-vs-b', /unknown brand 'kodak'/);
+  throwsFor('canon/vs/eos-r10-vs-eos-r10', /same-camera pair/);
+  throwsFor('vs/sony-a1-ii-vs-kodak-z1', /not a CROSS_BRAND_MATCHUPS page/);
+  throwsFor('canon/eos-r10', /not a '<brand>\/vs\/<a>-vs-<b>' path/);
+  assert.throws(() => resolvePins(brandData, matchups, ['canon/vs/eos-r1-vs-eos-r3', 'canon/vs/eos-r1-vs-eos-r3']), /duplicate pin/);
+});
+
+test('withPins: a reversed rule pair takes the pinned order in place; a new pin is appended', () => {
+  const rules = [['a', 'b'], ['c', 'd']];
+  assert.deepEqual(withPins(rules, [['d', 'c'], ['e', 'a']]), [['a', 'b'], ['d', 'c'], ['e', 'a']]);
+  assert.deepEqual(rules, [['a', 'b'], ['c', 'd']], 'withPins must not mutate its input');
+});
+
+for (const brand of brandDirs()) {
+  test(`[${brand}] recent successor pairs are indexable; other unpinned pages are not`, () => {
+    const cams = loadBrand(brand).data.CAMERAS;
+    const successors = successorPairKeys(cams);
+    const pinned = new Set(PINNED_VS_PAIRS.map(p => `${p}.html`));
+    for (const [rel, content] of generated) {
+      if (!rel.startsWith(`${brand}/vs/`)) continue;
+      const [a, b] = path.basename(rel, '.html').split('-vs-');
+      const recentSuccessor = successors.has(`${a}|${b}`) &&
+        Math.max(cams[a].year, cams[b].year) >= SUCCESSOR_INDEX_SINCE;
+      assert.equal(!content.includes('noindex'), pinned.has(rel) || recentSuccessor,
+        `${rel}: indexability doesn't match its pin/successor status`);
+    }
+  });
+}
+
+test('unpinned cross-brand pages are noindexed', () => {
+  for (const [rel, content] of generated) {
+    if (!/^vs\/[^/]+\.html$/.test(rel)) continue;
+    assert.equal(!content.includes('noindex'), PINNED_VS_PAIRS.includes(rel.replace(/\.html$/, '')), rel);
+  }
 });
 
 test('canonicals never point at a .html URL (the host redirects those)', () => {
