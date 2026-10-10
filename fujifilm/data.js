@@ -2618,7 +2618,7 @@ const LENSES = {
     elements:9, groups:7, blades:9, afType:'Manual',
     weatherSealed:false, ois:false, oisStops:null, year:2019, discontinued:false,
     imageUrl:null,
-    asin:null,
+    asin:'B07JBK5ZCF',
     prices:{USD:299,AUD:499,EUR:299,GBP:299,JPY:34000,CAD:399,SGD:399},
     specSources: [{ url:'https://samyangus.com/products/85mm-f1-8-high-speed', tier:'T1', note:'weight/dimensions/optical formula; only SKU with no compare_at_price set, i.e. $299 is the plain list price', date:'2026-08-15' }],
     priceSource: { url:'https://samyangus.com/products/85mm-f1-8-high-speed', tier:'T1', date:'2026-08-15' },

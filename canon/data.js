@@ -164,7 +164,7 @@ const CAMERAS = {
     tagline:'First R8 with IBIS, Retro-Inspired Redesign',
     productUrl:'https://www.usa.canon.com/shop/p/eos-r8-mark-ii-camera-body',
     imageUrl:null,
-    asin:null,
+    asin:'B0HJF6FP9N',
     prices:{USD:1899,AUD:2999,EUR:2199,GBP:1699,JPY:296000,CAD:2499,SGD:2799},
     specSources: [{ url:'https://www.usa.canon.com/newsroom/2026/20260915-consumer', tier:'T1', title:'Canon USA official press release', date:'2026-09-23' }],
     priceSource: { url:'https://www.usa.canon.com/newsroom/2026/20260915-consumer', tier:'T1', note:'USD $1,899 body-only launch price (kit w/ RF24-50mm f/4.5-6.3 IS STM $2,099); announced 2026-09-15, ships late Oct 2026; AUD/EUR/GBP/JPY/CAD/SGD are ratio-derived, no regional RRP published yet', title:'Canon USA official press release', date:'2026-09-23' },

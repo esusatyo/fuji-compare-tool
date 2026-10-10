@@ -122,7 +122,14 @@ const KNOWN_SHARED_LINKS = new Map([
 // panasonic/sigma-20-60mm-f28-4-dg) -- still no Amazon listing.
 // Tightened to 80 in the same follow-ups: leica/super-elmar-m-21mm-f34-asph
 // got a plain (non-bundle) listing, B00579W0DE.
-const ASIN_GAP_BASELINE = 80;
+// Tightened to 75 on 2026-10-10: the four post-#65 releases got listings
+// (canon/eos-r8-ii, panasonic/lumix-s-20mm-f2-5, sony/fe-400mm-f45-gm-oss,
+// sony/fe-600mm-f63-gm-oss), plus fujifilm/samyang-85mm-f18 (sold on
+// amazon.com under Samyang's US brand, Rokinon RK8518). Each title was read
+// on amazon.com in a real browser before applying; the same pass re-read all
+// 46 existing Leica ASINs and found each on its stated product. The 7
+// remaining Leica gaps still have no plain listing.
+const ASIN_GAP_BASELINE = 75;
 
 const allItems = () => brandDirs().flatMap(brand => {
   const { data } = loadBrand(brand);

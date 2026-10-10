@@ -739,7 +739,7 @@ const LENSES = {
   },
 
   'lumix-s-20mm-f2-5': {
-    name:'LUMIX S 20mm F2.5', manufacturer:'Panasonic', line:'LUMIX S', type:'Prime', mount:'l', asin:null,
+    name:'LUMIX S 20mm F2.5', manufacturer:'Panasonic', line:'LUMIX S', type:'Prime', mount:'l', asin:'B0HJGZW988',
     focalLength:20, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'20mm',
     maxAperture:2.5, minAperture:22, weight:142, length:40.9, diameter:69.4,
     filterThread:62, minFocusDist:18, maxMagnification:0.15,

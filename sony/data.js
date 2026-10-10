@@ -1026,7 +1026,7 @@ const LENSES = {
   },
 
   'fe-400mm-f45-gm-oss': {
-    name:'FE 400mm F4.5 GM OSS', manufacturer:'Sony', line:'FE GM', type:'Prime', mount:'e', asin:null,
+    name:'FE 400mm F4.5 GM OSS', manufacturer:'Sony', line:'FE GM', type:'Prime', mount:'e', asin:'B0HJWQGTR9',
     focalLength:400, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'400mm',
     maxAperture:4.5, minAperture:32, weight:994, length:242.0, diameter:108.0,
     filterThread:95, minFocusDist:250, maxMagnification:0.18,
@@ -1040,7 +1040,7 @@ const LENSES = {
   },
 
   'fe-600mm-f63-gm-oss': {
-    name:'FE 600mm F6.3 GM OSS', manufacturer:'Sony', line:'FE GM', type:'Prime', mount:'e', asin:null,
+    name:'FE 600mm F6.3 GM OSS', manufacturer:'Sony', line:'FE GM', type:'Prime', mount:'e', asin:'B0HJX2ZKBN',
     focalLength:600, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'600mm',
     maxAperture:6.3, minAperture:32, weight:995, length:263.0, diameter:108.0,
     filterThread:95, minFocusDist:250, maxMagnification:0.25,
