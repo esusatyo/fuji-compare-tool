@@ -1333,7 +1333,8 @@ const LENSES = {
     weatherSealed:false, ois:false, oisStops:null, year:2025, discontinued:false,
     imageUrl:'https://www.sigma-global.com/lenses/c017_16_14_product_img01.png',
     asin:'B0DNLPJQLW',
-    prices:{USD:489,AUD:799,EUR:599,GBP:399,JPY:75000,CAD:599,SGD:699},
+    prices:{USD:539,AUD:799,EUR:599,GBP:399,JPY:75000,CAD:599,SGD:699},
+    priceSource: { url:'https://www.sigmaphoto.com/16mm-f1-4-dc-dn-c', tier:'T1', title:'Sigma Corporation of America store (Canon RF variant)', note:'USD $489 -> $539: $489 was the RF version\'s launch price; Sigma\'s own US store now lists the Canon RF variant at a regular price of $539 (on promo at $414); B&H\'s Canon RF listing (https://www.bhphotovideo.com/c/product/1825072-REG/sigma_16mm_f_1_4_dc_dn.html) shows the same $539 regular price. Same post-tariff figure as the Sony E variant. Non-USD not examined', date:'2026-10-10' },
     productUrl:'https://www.sigma-global.com/en/lenses/c017_16_14/',
   },
 
@@ -1372,7 +1373,8 @@ const LENSES = {
     weatherSealed:false, ois:false, oisStops:null, year:2025, discontinued:false,
     imageUrl:'https://www.sigma-global.com/lenses/c023_23_14_product_img01.png',
     asin:'B0DNLBDKFG',
-    prices:{USD:599,AUD:899,EUR:699,GBP:499,JPY:92000,CAD:799,SGD:899},
+    prices:{USD:659,AUD:899,EUR:699,GBP:499,JPY:92000,CAD:799,SGD:899},
+    priceSource: { url:'https://www.sigmaphoto.com/23mm-f1-4-dc-dn-c', tier:'T1', title:'Sigma Corporation of America store (Canon RF variant)', note:'USD $599 -> $659: $599 was the RF version\'s launch price; Sigma\'s own US store now lists the Canon RF variant at a regular price of $659 (on promo at $609); B&H\'s Canon RF listing (https://www.bhphotovideo.com/c/product/1825073-REG/sigma_23mm_f_1_4_dc_dn.html) showed $643, read as a discount off the same $659 regular price B&H shows for the Sony E variant; single clean source, approved by the owner. Same post-tariff figure as the Sony E variant. Non-USD not examined', date:'2026-10-10' },
     productUrl:'https://www.sigma-global.com/en/lenses/c023_23_14/',
   },
 
@@ -1385,7 +1387,8 @@ const LENSES = {
     weatherSealed:false, ois:false, oisStops:null, year:2024, discontinued:false,
     imageUrl:'https://www.sigma-global.com/lenses/c016_30_14_product_img01.png',
     asin:'B0DNLQ7K4V',
-    prices:{USD:369,AUD:599,EUR:399,GBP:299,JPY:56000,CAD:499,SGD:499},
+    prices:{USD:419,AUD:599,EUR:399,GBP:299,JPY:56000,CAD:499,SGD:499},
+    priceSource: { url:'https://www.sigmaphoto.com/30mm-f1-4-dc-dn-c', tier:'T1', title:'Sigma Corporation of America store (Canon RF variant)', note:'USD $369 -> $419: $369 was the RF version\'s launch price; Sigma\'s own US store now lists the Canon RF variant at a regular price of $419 (on promo at $344); B&H\'s Canon RF listing (https://www.bhphotovideo.com/c/product/1825074-REG/sigma_30mm_f_1_4_dc_dn.html) shows the same $419 regular price. Same post-tariff figure as the Sony E variant. Non-USD not examined', date:'2026-10-10' },
     productUrl:'https://www.sigma-global.com/en/lenses/c016_30_14/',
   },
 
@@ -1398,7 +1401,8 @@ const LENSES = {
     weatherSealed:false, ois:false, oisStops:null, year:2024, discontinued:false,
     imageUrl:'https://www.sigma-global.com/lenses/c018_56_14_product_img01.png',
     asin:'B0DNKF79MC',
-    prices:{USD:529,AUD:799,EUR:599,GBP:499,JPY:80000,CAD:699,SGD:799},
+    prices:{USD:579,AUD:799,EUR:599,GBP:499,JPY:80000,CAD:699,SGD:799},
+    priceSource: { url:'https://www.sigmaphoto.com/56mm-f1-4-dc-dn-c', tier:'T1', title:'Sigma Corporation of America store (Canon RF variant)', note:'USD $529 -> $579: $529 was the RF version\'s launch price; Sigma\'s own US store now lists the Canon RF variant at a regular price of $579 (on promo at $454); B&H\'s Canon RF listing (https://www.bhphotovideo.com/c/product/1825075-REG/sigma_56mm_f_1_4_dc_dn.html) shows the same $579 regular price. Same post-tariff figure as the Sony E variant. Non-USD not examined', date:'2026-10-10' },
     productUrl:'https://www.sigma-global.com/en/lenses/c018_56_14/',
   },
 
@@ -1411,7 +1415,8 @@ const LENSES = {
     weatherSealed:false, ois:false, oisStops:null, year:2024, discontinued:false,
     imageUrl:'https://www.sigma-global.com/lenses/c023_10_18_28_product_img01.png',
     asin:'B0GYFLG5HG',
-    prices:{USD:659,AUD:999,EUR:799,GBP:599,JPY:100000,CAD:899,SGD:999},
+    prices:{USD:729,AUD:999,EUR:799,GBP:599,JPY:100000,CAD:899,SGD:999},
+    priceSource: { url:'https://www.sigmaphoto.com/10-18mm-f2-8-dc-dn-c', tier:'T1', title:'Sigma Corporation of America store (Canon RF variant)', note:'USD $659 -> $729: $659 was the RF version\'s launch price; Sigma\'s own US store now lists the Canon RF variant at a regular price of $729; B&H\'s Canon RF listing (https://www.bhphotovideo.com/c/product/1825071-REG/sigma_10_18mm_f_2_8_dc_dn.html) shows the same $729 regular price. Same post-tariff figure as the Sony E variant. Non-USD not examined', date:'2026-10-10' },
     productUrl:'https://www.sigma-global.com/en/lenses/c023_10_18_28/',
   },
 
@@ -1424,7 +1429,8 @@ const LENSES = {
     weatherSealed:false, ois:false, oisStops:null, year:2024, discontinued:false,
     imageUrl:'https://www.sigma-global.com/lenses/c021_18_50_28_product_img01.png',
     asin:'B0D81586GK',
-    prices:{USD:599,AUD:899,EUR:699,GBP:499,JPY:90000,CAD:799,SGD:899},
+    prices:{USD:659,AUD:899,EUR:699,GBP:499,JPY:90000,CAD:799,SGD:899},
+    priceSource: { url:'https://www.sigmaphoto.com/18-50mm-f2-8-dc-dn-c', tier:'T1', title:'Sigma Corporation of America store (Canon RF variant)', note:'USD $599 -> $659: $599 was the RF version\'s launch price; Sigma\'s own US store now lists the Canon RF variant at a regular price of $659; B&H\'s Canon RF listing (https://www.bhphotovideo.com/c/product/1825070-REG/sigma_18_50mm_f_2_8_dc_dn.html) shows $659. Same post-tariff figure as the Sony E variant. Non-USD not examined', date:'2026-10-10' },
     productUrl:'https://www.sigma-global.com/en/lenses/c021_18_50_28/',
   },
 
