@@ -35,7 +35,7 @@ One commit per task, with that task's tick included in the commit. All work ship
 
 ## 4. Verify and document
 
-- [ ] 4.1 Run `npm run test:links` (a URL set changed, per the standing rule).
+- [x] 4.1 Run `npm run test:links` (a URL set changed, per the standing rule).
 - [ ] 4.2 On the preview, spot-check:
   - one noindexed page and one indexable page serve the right robots meta;
   - the preview's `sitemap.xml` count is correct;
