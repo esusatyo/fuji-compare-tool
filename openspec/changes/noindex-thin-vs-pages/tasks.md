@@ -40,7 +40,7 @@ One commit per task, with that task's tick included in the commit. All work ship
   - one noindexed page and one indexable page serve the right robots meta;
   - the preview's `sitemap.xml` count is correct;
   - the 4 restored URLs return 200.
-- [ ] 4.3 Update CLAUDE.md's "Adding / changing things" with what makes a vs-page indexable, how to pin or unpin one, that pins throw when a camera is removed, and when to move `SUCCESSOR_INDEX_SINCE`.
+- [x] 4.3 Update CLAUDE.md's "Adding / changing things" with what makes a vs-page indexable, how to pin or unpin one, that pins throw when a camera is removed, and when to move `SUCCESSOR_INDEX_SINCE`.
 - [ ] 4.4 `openspec validate noindex-thin-vs-pages --strict` passes. Open the PR (no session link).
 
 ## 5. After merge (manual)
