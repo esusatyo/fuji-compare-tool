@@ -3,7 +3,7 @@
 ### Requirement: Comparison pages are split into indexable and noindex sets
 The generator SHALL classify every generated vs-page (same-brand and cross-brand) as indexable or non-indexable:
 - A page SHALL be indexable if it is listed in the generator's pinned-pairs list.
-- A page SHALL also be indexable if it is a same-brand successor pair (consecutive generations within a model line) that is not on the generator's successor-exclude list.
+- A page SHALL also be indexable if it is a same-brand successor pair (consecutive generations within a model line) whose newer camera's launch year is at least the generator's successor-index threshold (`SUCCESSOR_INDEX_SINCE`).
 - Every other page SHALL be non-indexable.
 
 A non-indexable page SHALL still be generated and linked, and SHALL carry `<meta name="robots" content="noindex, follow">` in its head. An indexable page SHALL NOT carry a robots `noindex` directive. Both kinds SHALL keep their self-referencing canonical URL.
@@ -12,12 +12,12 @@ A non-indexable page SHALL still be generated and linked, and SHALL carry `<meta
 - **WHEN** a same-brand pair is produced only by the price-neighbour rule and is not pinned
 - **THEN** its vs-page is generated, carries `noindex, follow`, and is absent from `sitemap.xml`
 
-#### Scenario: Successor page is indexable by default
-- **WHEN** a new current camera is added whose predecessor is in the same model line
+#### Scenario: Recent successor page is indexable by default
+- **WHEN** a new current camera launched in or after `SUCCESSOR_INDEX_SINCE` is added whose predecessor is in the same model line
 - **THEN** its successor vs-page is generated without a `noindex` directive and is listed in `sitemap.xml`, with no pin required
 
-#### Scenario: Excluded successor false match is noindexed
-- **WHEN** the successor rule pairs two cameras listed on the successor-exclude list (e.g. Canon EOS R8 vs EOS R7)
+#### Scenario: Older unpinned successor page is noindexed
+- **WHEN** a successor pair's newer camera launched before `SUCCESSOR_INDEX_SINCE` and the page is not pinned
 - **THEN** that page carries `noindex, follow` and is absent from `sitemap.xml`
 
 #### Scenario: Unpinned cross-brand page is noindexed

@@ -68,6 +68,8 @@ Pages must stop disappearing when a price changes:
 
 ## Appendix A — Keep indexed (89)
 
+> **Superseded.** The change now pins only the 29 pages that meet the evidence bar in `query-evidence.md`, plus recent successor pairs (see design.md Decision 2). This list is kept as the page-level record.
+
 | Page | Type | GSC impr (3 mo) | GSC clicks | GoatCounter views |
 |---|---|---|---|---|
 | `/panasonic/vs/l10-vs-s9` | price-nbr | 62 | 2 | 26 |

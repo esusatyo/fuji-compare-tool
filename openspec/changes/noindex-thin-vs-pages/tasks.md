@@ -2,22 +2,18 @@ One commit per task, with that task's tick included in the commit. All work ship
 
 ## 1. Generator: pins and indexability
 
-- [ ] 1.1 Expose which same-brand pairs come from rule 1 (successor) in `scripts/generate-seo.js`, for example `successorPairKeys(cams)` built on the existing `romanLine`/`numberLine` logic. Leave the output of `curatedPairs` unchanged.
-- [ ] 1.2 Add `SUCCESSOR_NOINDEX`, seeded with the four Canon false matches:
-  - `canon/vs/eos-r8-vs-eos-r7`
-  - `canon/vs/eos-r7-vs-eos-r6`
-  - `canon/vs/eos-r3-vs-eos-r5`
-  - `canon/vs/eos-r50-vs-eos-r10`
-- [ ] 1.3 Add `PINNED_VS_PAIRS`, seeded with the 50 impression-earning live pages from `research/data.md` Appendix A (every row there that isn't a zero-impression successor), plus the 4 restores:
+- [ ] 1.1 Move rule 1's pair detection into a shared `forEachSuccessor(cams, visit)` in `scripts/generate-seo.js`, and expose `successorPairKeys(cams)` built on it. Leave the output of `curatedPairs` unchanged.
+- [ ] 1.2 Add `SUCCESSOR_INDEX_SINCE = 2025`: a successor pair whose newer body's `year` is at least this is indexable without a pin.
+- [ ] 1.3 Add `PINNED_VS_PAIRS`, seeded with the 29 pages that meet the evidence bar in `research/query-evidence.md`. They include the 4 restores:
   - `panasonic/vs/s1-ii-vs-s1h`
   - `sony/vs/fx3-vs-a7s-iii`
   - `fujifilm/vs/x-t50-vs-x100v`
   - `canon/vs/eos-r50v-vs-eos-r10`
 - [ ] 1.4 Resolve pins in `buildAll`:
-  - union same-brand pins into each brand's pairs in pinned slug order, dropping any reversed duplicate;
+  - merge same-brand pins into each brand's pairs in pinned slug order: replace a reversed rule pair in place, append any pair the rules don't produce;
   - check that cross-brand pins match a `resolveMatchups` file;
   - throw on unknown brand, slug or page, or on an `a === b` pair.
-- [ ] 1.5 Compute `indexable` per page (pinned, or successor and not excluded). Emit `<meta name="robots" content="noindex, follow">` in `vsPageHTML` and `crossVsPageHTML` heads for non-indexable pages.
+- [ ] 1.5 Compute `indexable` per page (pinned, or a successor pair whose newer body launched in or after `SUCCESSOR_INDEX_SINCE`). Emit `<meta name="robots" content="noindex, follow">` in `vsPageHTML` and `crossVsPageHTML` heads for non-indexable pages.
 - [ ] 1.6 Pass only indexable vs-page paths to `sitemapXML`. Leave `robots.txt` unchanged.
 
 ## 2. Tests (Tier 1, `tests/data/seo.test.js` unless noted)
@@ -25,10 +21,10 @@ One commit per task, with that task's tick included in the commit. All work ship
 - [ ] 2.1 Replace the "sitemap covers … every vs-page" test: the sitemap must contain every indexable vs-page and no page whose HTML contains `noindex`.
 - [ ] 2.2 Every generated vs-page has exactly one of: a robots `noindex, follow` meta tag, or a sitemap entry. Neither-or-both fails.
 - [ ] 2.3 Every `PINNED_VS_PAIRS` entry is generated at exactly its path and is indexable. Add a unit test that a pin naming an unknown slug makes `buildAll` throw.
-- [ ] 2.4 Every successor pair not in `SUCCESSOR_NOINDEX` is indexable. Each `SUCCESSOR_NOINDEX` entry is a real generated page, so a stale exclude fails the test.
+- [ ] 2.4 Every successor pair whose newer body launched in or after `SUCCESSOR_INDEX_SINCE` is indexable; every other unpinned page is not.
 - [ ] 2.5 `robots.txt` has no `Disallow` rule matching `/vs/`.
 - [ ] 2.6 Run `node scripts/generate-seo.js` and then `npm test`. Confirm:
-  - the sitemap has about 101 URLs (89 vs-pages + root, 8 brand pages, compare, About, Privacy);
+  - the sitemap has 54 URLs (42 vs-pages + root, 8 brand pages, compare, About, Privacy);
   - the 4 restored pages exist;
   - the orphan and links tests pass.
 
@@ -44,10 +40,10 @@ One commit per task, with that task's tick included in the commit. All work ship
   - one noindexed page and one indexable page serve the right robots meta;
   - the preview's `sitemap.xml` count is correct;
   - the 4 restored URLs return 200.
-- [ ] 4.3 Update CLAUDE.md's "Adding / changing things" with what makes a vs-page indexable, how to pin or unpin one, and that pins throw when a camera is removed.
+- [ ] 4.3 Update CLAUDE.md's "Adding / changing things" with what makes a vs-page indexable, how to pin or unpin one, that pins throw when a camera is removed, and when to move `SUCCESSOR_INDEX_SINCE`.
 - [ ] 4.4 `openspec validate noindex-thin-vs-pages --strict` passes. Open the PR (no session link).
 
 ## 5. After merge (manual)
 
 - [ ] 5.1 Deploy, then check the live sitemap count, the 301, and the robots meta on production. Resubmit `sitemap.xml` in Search Console.
-- [ ] 5.2 About 8 weeks after deploy: re-pull Search Console pages and queries, then promote or demote pins per design.md Migration step 3. Log the result in the SEO usage log.
+- [ ] 5.2 About 8 weeks after deploy: re-pull Search Console pages and queries, then promote pins and consider moving `SUCCESSOR_INDEX_SINCE` per design.md Migration step 3. Log the result in the SEO usage log.
