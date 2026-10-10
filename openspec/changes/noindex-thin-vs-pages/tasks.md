@@ -4,7 +4,7 @@ One commit per task, with that task's tick included in the commit. All work ship
 
 - [x] 1.1 Move rule 1's pair detection into a shared `forEachSuccessor(cams, visit)` in `scripts/generate-seo.js`, and expose `successorPairKeys(cams)` built on it. Leave the output of `curatedPairs` unchanged.
 - [x] 1.2 Add `SUCCESSOR_INDEX_SINCE = 2025`: a successor pair whose newer body's `year` is at least this is indexable without a pin.
-- [ ] 1.3 Add `PINNED_VS_PAIRS`, seeded with the 29 pages that meet the evidence bar in `research/query-evidence.md`. They include the 4 restores:
+- [x] 1.3 Add `PINNED_VS_PAIRS`, seeded with the 29 pages that meet the evidence bar in `research/query-evidence.md`. They include the 4 restores:
   - `panasonic/vs/s1-ii-vs-s1h`
   - `sony/vs/fx3-vs-a7s-iii`
   - `fujifilm/vs/x-t50-vs-x100v`

@@ -152,6 +152,44 @@ function successorPairKeys(cams) {
 // Search Console evidence.
 const SUCCESSOR_INDEX_SINCE = 2025;
 
+// Pages with Search Console evidence of demand (a click, ≥5 impressions,
+// or ≥2 distinct named queries): always generated, always indexable,
+// whatever the pairing rules or prices do. Written as their URL paths;
+// a same-brand pin is emitted in exactly this slug order, so a page keeps
+// the URL Google knows. Cross-brand pins must name a CROSS_BRAND_MATCHUPS
+// page. A pin that stops resolving fails the build — remove it on purpose.
+const PINNED_VS_PAIRS = [
+  'canon/vs/eos-r1-vs-eos-r3',
+  'canon/vs/eos-r5-ii-vs-eos-r5',
+  'canon/vs/eos-r50v-vs-eos-r10', // restored: dropped by price churn
+  'canon/vs/eos-r50v-vs-eos-r50',
+  'canon/vs/eos-r6-iii-vs-eos-r5',
+  'canon/vs/eos-r6-iii-vs-eos-r5c',
+  'canon/vs/eos-r8-vs-eos-r10',
+  'fujifilm/vs/x-t50-vs-x100v',   // restored
+  'nikon/vs/zr-vs-z5-ii',
+  'panasonic/vs/g9-ii-vs-g9',
+  'panasonic/vs/gh7-vs-gh6',
+  'panasonic/vs/l10-vs-s9',
+  'panasonic/vs/s1-ii-vs-s1h',    // restored
+  'panasonic/vs/s1r-ii-vs-s1-ii',
+  'panasonic/vs/s1r-ii-vs-s1h',
+  'panasonic/vs/s5-iix-vs-s5-ii',
+  'panasonic/vs/s9-vs-g100d',
+  'panasonic/vs/s9-vs-g9-ii',
+  'panasonic/vs/s9-vs-s5',
+  'sony/vs/a7-v-vs-a7-iv',
+  'sony/vs/fx3-vs-a7s-iii',       // restored
+  'vs/canon-eos-r5-ii-vs-sony-a7r-v',
+  'vs/fujifilm-x-t50-vs-nikon-zfc',
+  'vs/nikon-zf-vs-fujifilm-x-t5',
+  'vs/nikon-zr-vs-sony-zv-e1',
+  'vs/sony-a1-ii-vs-canon-eos-r1',
+  'vs/sony-a1-ii-vs-canon-eos-r5-ii',
+  'vs/sony-a1-ii-vs-nikon-z9',
+  'vs/sony-zv-e10-ii-vs-fujifilm-x-m5',
+];
+
 function curatedPairs(cams) {
   const seen = new Set();
   const pairs = [];
