@@ -158,6 +158,16 @@ test('robots.txt allows crawling and references the sitemap', () => {
   assert.ok(robots.includes(`Sitemap: ${siteConfig().baseUrl}/sitemap.xml`));
 });
 
+test('robots.txt never disallows vs-pages (Google must crawl them to see noindex)', () => {
+  for (const line of generated.get('robots.txt').split('\n')) {
+    const m = line.match(/^\s*Disallow:\s*(\S*)/i);
+    if (!m || !m[1]) continue;
+    for (const p of ['/vs/', '/canon/vs/', '/sony/vs/x-vs-y']) {
+      assert.ok(!p.startsWith(m[1].replace(/\*.*$/, '')), `robots.txt rule "${line.trim()}" blocks ${p}`);
+    }
+  }
+});
+
 test('base URL appears only via site-config (canonicals all start with it)', () => {
   const { baseUrl } = siteConfig();
   assert.match(baseUrl, /^https:\/\//);
