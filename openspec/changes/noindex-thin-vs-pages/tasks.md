@@ -30,7 +30,7 @@ One commit per task, with that task's tick included in the commit. All work ship
 
 ## 3. Redirect
 
-- [ ] 3.1 Add `_redirects` with `/vs/canon-eos-r1-vs-sony-a9-iii /vs/sony-a9-iii-vs-canon-eos-r1 301`. Check that `tests/data/orphan-links.test.js` and `links-offline` don't treat the file as a page.
+- [x] 3.1 Add `_redirects` with `/vs/canon-eos-r1-vs-sony-a9-iii /vs/sony-a9-iii-vs-canon-eos-r1 301`. Check that `tests/data/orphan-links.test.js` and `links-offline` don't treat the file as a page.
 - [ ] 3.2 On the branch's Cloudflare preview, check with `curl -sI` that the 301 fires. If `_redirects` isn't honoured in front of `main: _worker.js`, move the redirect into `_worker.js` as an exact-match map (with a Tier "Worker" test) and delete `_redirects`.
 
 ## 4. Verify and document
