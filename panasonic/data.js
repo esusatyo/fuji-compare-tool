@@ -1754,7 +1754,8 @@ const LENSES = {
     weatherSealed:false, ois:false, oisStops:null, year:2021, discontinued:false,
     imageUrl:'https://www.venuslens.net/wp-content/uploads/2017/03/LAOWA-15mm-f2-04-thumb-700x482.jpg',
     imageSource: { url:'https://www.venuslens.net/product/laowa-15mm-f2/', tier:'T1', note:'official Venus Optics/Laowa store; page text explicitly states "Leica L / Sony FE / Nikon Z / Canon RF mounts are available"; barrel reads "LAOWA 15mm F2.0 D-Dreamer" (mount-agnostic manual lens)', date:'2026-08-17' }, asin:null,
-    prices:{USD:849,AUD:null,EUR:null,GBP:null,JPY:null,CAD:null,SGD:null},
+    prices:{USD:649,AUD:null,EUR:null,GBP:null,JPY:null,CAD:null,SGD:null},
+    priceSource: { url:'https://www.venuslens.net/product/laowa-15mm-f2/', tier:'T1', title:'Laowa (Venus Optics) store listing', note:'USD $849 -> $649: Laowa\'s own store lists the 15mm f/2 Zero-D at $649.00 (no markdown shown), with Sony FE / Nikon Z / Canon RF / L / M mount options (2026-10-10); B&H\'s L-mount listing also shows $649. Matches the Nikon Z copy, already $649. Non-USD not examined', date:'2026-10-10' },
     priceIncomplete:true, productUrl:'https://www.venuslens.net/product/laowa-15mm-f2/',
   },
 

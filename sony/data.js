@@ -1657,9 +1657,10 @@ const LENSES = {
     weatherSealed:true, ois:false, oisStops:null, year:2022, discontinued:false,
     imageUrl:'https://upload.wikimedia.org/wikipedia/commons/thumb/4/40/Sony_E_15mm_F1.4_G_-_by_Henry_S%C3%B6derlund_%2852177180848%29.jpg/500px-Sony_E_15mm_F1.4_G_-_by_Henry_S%C3%B6derlund_%2852177180848%29.jpg',
     imageCredit:{author:"Henry Söderlund from Helsinki, Finland", licence:"CC BY 2.0", licenceUrl:"https://creativecommons.org/licenses/by/2.0", source:"https://commons.wikimedia.org/wiki/File:Sony_E_15mm_F1.4_G_-_by_Henry_S%C3%B6derlund_(52177180848).jpg"},
-    prices:{USD:748,AUD:1199,EUR:null,GBP:null,JPY:null,CAD:949,SGD:null},
+    prices:{USD:949,AUD:1199,EUR:null,GBP:null,JPY:null,CAD:949,SGD:null},
+    priceSource: { url:'https://electronics.sony.com/imaging/lenses/all-e-mount/p/sel15f14g', tier:'T1', title:'Sony Electronics store listing', note:'USD $748 -> $949: Sony\'s own US store lists the SEL15F14G at $949.99 (on promo at $849.99, 2026-10-10); Precision Camera also gives $949.99 as MSRP. Non-USD not examined', date:'2026-10-10' },
     priceIncomplete:true,
-    productUrl:'https://electronics.sony.com/imaging/lenses/aps-c-e-mount/p/sel15f14g',
+    productUrl:'https://electronics.sony.com/imaging/lenses/all-e-mount/p/sel15f14g',
   },
 
   'e-16mm-f28': {
@@ -2600,7 +2601,8 @@ const LENSES = {
     imageUrl:'https://www.venuslens.net/wp-content/uploads/2017/03/LAOWA-15mm-f2-04-thumb-700x482.jpg',
     imageSource: { url:'https://www.venuslens.net/product/laowa-15mm-f2/', tier:'T1', note:'official Venus Optics/Laowa store; barrel reads "LAOWA 15mm F2.0 D-Dreamer" (same image used for the Nikon Z entry); page text explicitly confirms "Sony FE" is available', date:'2026-08-17' },
     asin:'B075ZTC8X7',
-    prices:{USD:849,AUD:null,EUR:null,GBP:null,JPY:null,CAD:null,SGD:null},
+    prices:{USD:649,AUD:null,EUR:null,GBP:null,JPY:null,CAD:null,SGD:null},
+    priceSource: { url:'https://www.venuslens.net/product/laowa-15mm-f2/', tier:'T1', title:'Laowa (Venus Optics) store listing', note:'USD $849 -> $649: Laowa\'s own store lists the 15mm f/2 Zero-D at $649.00 (no markdown shown), with Sony FE / Nikon Z / Canon RF / L / M mount options (2026-10-10); B&H\'s L-mount listing also shows $649. Matches the Nikon Z copy, already $649. Non-USD not examined', date:'2026-10-10' },
     priceIncomplete:true,
     productUrl:'https://www.venuslens.net/product/laowa-15mm-f2/',
   },
