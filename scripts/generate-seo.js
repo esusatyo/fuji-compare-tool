@@ -227,6 +227,10 @@ function curatedPairs(cams) {
 }
 
 // ─── vs-page ─────────────────────────────────
+// Non-indexable pages stay crawlable (`follow`) so link equity still flows
+// through their related links; they are just kept out of the index.
+const robotsMeta = indexable => indexable ? '' : '\n  <meta name="robots" content="noindex, follow">';
+
 const VS_ROWS = [
   ['Price (USD RRP)', c => c.prices.USD == null ? null : `$${c.prices.USD.toLocaleString('en-US')}`],
   ['Announced', c => c.year],
@@ -590,7 +594,7 @@ function productCardHTML(data, brandName, slug, c, displayName) {
         </div>`;
 }
 
-function vsPageHTML(brand, data, site, aId, bId, allPairs) {
+function vsPageHTML(brand, data, site, aId, bId, allPairs, indexable = true) {
   const cams = data.CAMERAS;
   const brandName = data.BRAND_CONFIG.name;
   const [a, b] = [cams[aId], cams[bId]];
@@ -630,7 +634,7 @@ ${related.map(([x, y]) =>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>${esc(title)}</title>
-  <meta name="description" content="${esc(desc)}">
+  <meta name="description" content="${esc(desc)}">${robotsMeta(indexable)}
   <link rel="canonical" href="${url}">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="${esc(site.siteName)}">
@@ -886,7 +890,7 @@ function crossRelated(all, m) {
     .slice(0, 6);
 }
 
-function crossVsPageHTML(site, m, all) {
+function crossVsPageHTML(site, m, all, indexable = true) {
   const { a, b } = m;
   const title = `${crossTitle(m)}: Spec Comparison`;
   const desc = `Compare the ${a.brandName} ${a.cam.name} (${a.cam.year}) and ${b.brandName} ${b.cam.name} (${b.cam.year}) side by side — price, sensor, stabilization, video, weight and more.`;
@@ -919,7 +923,7 @@ ${related.map(x => `        <li><a href="${cleanHref(path.basename(x.file))}" da
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>${esc(title)}</title>
-  <meta name="description" content="${esc(desc)}">
+  <meta name="description" content="${esc(desc)}">${robotsMeta(indexable)}
   <link rel="canonical" href="${url}">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="${esc(site.siteName)}">
@@ -1496,6 +1500,9 @@ function buildAll() {
     brandNames.push(name);
 
     const pairs = withPins(curatedPairs(data.CAMERAS), pins.sameBrand[brand]);
+    const successors = successorPairKeys(data.CAMERAS);
+    const indexable = (rel, a, b) => pins.files.has(rel) || (successors.has(`${a}|${b}`) &&
+      Math.max(data.CAMERAS[a].year, data.CAMERAS[b].year) >= SUCCESSOR_INDEX_SINCE);
 
     const idx = path.join(brand, 'index.html');
     let idxHtml = fs.readFileSync(path.join(ROOT, idx), 'utf8');
@@ -1506,7 +1513,8 @@ function buildAll() {
 
     for (const [a, b] of pairs) {
       const rel = `${brand}/vs/${a}-vs-${b}.html`;
-      files.set(rel, vsPageHTML(brand, data, site, a, b, pairs));
+      const index = indexable(rel, a, b);
+      files.set(rel, vsPageHTML(brand, data, site, a, b, pairs, index));
       sitemapPaths.push(rel);
     }
 
@@ -1535,7 +1543,8 @@ function buildAll() {
   // Cross-brand: the /compare/ page plus the curated root vs/ cluster.
   sitemapPaths.push('compare/');
   for (const m of matchups) {
-    files.set(m.file, crossVsPageHTML(site, m, matchups));
+    const index = pins.files.has(m.file);
+    files.set(m.file, crossVsPageHTML(site, m, matchups, index));
     sitemapPaths.push(m.file);
   }
   const cmp = path.join('compare', 'index.html');
