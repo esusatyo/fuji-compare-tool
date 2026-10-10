@@ -41,7 +41,7 @@ One commit per task, with that task's tick included in the commit. All work ship
   - the preview's `sitemap.xml` count is correct;
   - the 4 restored URLs return 200.
 - [x] 4.3 Update CLAUDE.md's "Adding / changing things" with what makes a vs-page indexable, how to pin or unpin one, that pins throw when a camera is removed, and when to move `SUCCESSOR_INDEX_SINCE`.
-- [ ] 4.4 `openspec validate noindex-thin-vs-pages --strict` passes. Open the PR (no session link).
+- [x] 4.4 `openspec validate noindex-thin-vs-pages --strict` passes. Open the PR (no session link).
 
 ## 5. After merge (manual)
 
