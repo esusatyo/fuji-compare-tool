@@ -23,7 +23,7 @@ One commit per task, with that task's tick included in the commit. All work ship
 - [x] 2.3 Every `PINNED_VS_PAIRS` entry is generated at exactly its path and is indexable. Add a unit test that a pin naming an unknown slug makes `buildAll` throw.
 - [x] 2.4 Every successor pair whose newer body launched in or after `SUCCESSOR_INDEX_SINCE` is indexable; every other unpinned page is not.
 - [x] 2.5 `robots.txt` has no `Disallow` rule matching `/vs/`.
-- [ ] 2.6 Run `node scripts/generate-seo.js` and then `npm test`. Confirm:
+- [x] 2.6 Run `node scripts/generate-seo.js` and then `npm test`. Confirm:
   - the sitemap has 54 URLs (42 vs-pages + root, 8 brand pages, compare, About, Privacy);
   - the 4 restored pages exist;
   - the orphan and links tests pass.
