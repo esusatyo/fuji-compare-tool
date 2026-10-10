@@ -9,7 +9,7 @@ One commit per task, with that task's tick included in the commit. All work ship
   - `sony/vs/fx3-vs-a7s-iii`
   - `fujifilm/vs/x-t50-vs-x100v`
   - `canon/vs/eos-r50v-vs-eos-r10`
-- [ ] 1.4 Resolve pins in `buildAll`:
+- [x] 1.4 Resolve pins in `buildAll`:
   - merge same-brand pins into each brand's pairs in pinned slug order: replace a reversed rule pair in place, append any pair the rules don't produce;
   - check that cross-brand pins match a `resolveMatchups` file;
   - throw on unknown brand, slug or page, or on an `a === b` pair.

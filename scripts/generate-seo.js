@@ -826,6 +826,50 @@ function resolveMatchups(brandData, matchups = CROSS_BRAND_MATCHUPS) {
   });
 }
 
+// Resolve PINNED_VS_PAIRS against the loaded brand data and the resolved
+// cross-brand matchups. Fails hard (throw, no partial output) on an
+// unknown brand, camera or cross page, or a same-camera pair — a stale pin
+// is removed deliberately, never silently dropped.
+function resolvePins(brandData, matchups, pins = PINNED_VS_PAIRS) {
+  const sameBrand = {};
+  const crossFiles = new Set(matchups.map(m => m.file));
+  const files = new Set();
+  for (const pin of pins) {
+    const file = `${pin}.html`;
+    if (files.has(file)) throw new Error(`PINNED_VS_PAIRS: duplicate pin '${pin}'`);
+    files.add(file);
+    if (pin.startsWith('vs/')) {
+      if (!crossFiles.has(file)) throw new Error(`PINNED_VS_PAIRS: '${pin}' is not a CROSS_BRAND_MATCHUPS page`);
+      continue;
+    }
+    const m = pin.match(/^([^/]+)\/vs\/([^/]+)$/);
+    const ids = m && m[2].split('-vs-');
+    if (!m || ids.length !== 2) throw new Error(`PINNED_VS_PAIRS: '${pin}' is not a '<brand>/vs/<a>-vs-<b>' path`);
+    const [brand, [a, b]] = [m[1], ids];
+    const data = brandData[brand];
+    if (!data) throw new Error(`PINNED_VS_PAIRS: unknown brand '${brand}' in '${pin}'`);
+    for (const id of [a, b]) {
+      if (!data.CAMERAS[id]) throw new Error(`PINNED_VS_PAIRS: unknown camera '${brand}:${id}' in '${pin}'`);
+    }
+    if (a === b) throw new Error(`PINNED_VS_PAIRS: same-camera pair '${pin}'`);
+    (sameBrand[brand] ??= []).push([a, b]);
+  }
+  return { sameBrand, files };
+}
+
+// Merge a brand's pins into its rule-generated pairs. A pin the rules
+// already produce in the other order replaces that pair in place (the
+// pin's URL wins); any other pin is appended, so rule output doesn't shift.
+function withPins(pairs, pins = []) {
+  const out = pairs.map(p => [...p]);
+  for (const [a, b] of pins) {
+    const i = out.findIndex(([x, y]) => (x === a && y === b) || (x === b && y === a));
+    if (i === -1) out.push([a, b]);
+    else out[i] = [a, b];
+  }
+  return out;
+}
+
 const crossTitle = m => `${m.a.brandName} ${m.a.cam.name} vs ${m.b.brandName} ${m.b.cam.name}`;
 
 // Sibling cross-brand pages sharing a camera with this one (capped),
@@ -1440,13 +1484,18 @@ function buildAll() {
   const brandInfo = [];
   const brandData = {};
 
+  for (const brand of brandDirs()) brandData[brand] = loadBrand(brand).data;
+  // Resolved up front: pins are checked against every brand and matchup
+  // before anything is rendered.
+  const matchups = resolveMatchups(brandData);
+  const pins = resolvePins(brandData, matchups);
+
   for (const brand of brandDirs()) {
-    const { data } = loadBrand(brand);
-    brandData[brand] = data;
+    const data = brandData[brand];
     const name = data.BRAND_CONFIG.name;
     brandNames.push(name);
 
-    const pairs = curatedPairs(data.CAMERAS);
+    const pairs = withPins(curatedPairs(data.CAMERAS), pins.sameBrand[brand]);
 
     const idx = path.join(brand, 'index.html');
     let idxHtml = fs.readFileSync(path.join(ROOT, idx), 'utf8');
@@ -1484,7 +1533,6 @@ function buildAll() {
   }
 
   // Cross-brand: the /compare/ page plus the curated root vs/ cluster.
-  const matchups = resolveMatchups(brandData);
   sitemapPaths.push('compare/');
   for (const m of matchups) {
     files.set(m.file, crossVsPageHTML(site, m, matchups));
@@ -1545,4 +1593,4 @@ if (require.main === module) {
   console.log(`generate-seo: ${files.size} artifacts (${written} written, ${removed} stale removed)`);
 }
 
-module.exports = { LANDING_CARD_ORDER, ALL_BRANDS_MOSAIC, orderLandingBrands, allBrandsPhotoHTML, siteConfig, curatedPairs, successorPairKeys, relatedPairs, vsPageHTML, vsSummary, vsSummaryFacts, resolveMatchups, crossVsPageHTML, crossTitle, CROSS_BRAND_MATCHUPS, compareHeadBlock, compareBodyBlock, brandHeadBlock, rootHeadBlock, brandBodyBlock, rootBodyBlock, withHeadBlock, withBodyBlock, sitemapXML, robotsTxt, buildAll, SEO_BEGIN, SEO_END, SEO_BODY_BEGIN, SEO_BODY_END, ID_HEAD_BEGIN, ID_HEAD_END, ID_HEADER_BEGIN, ID_HEADER_END, ID_FOOTER_BEGIN, ID_FOOTER_END, identityToken, logoMark, cleanUrl, cleanHref, themeToggleHTML, collectReferences, citationText, refHostname, REFERENCE_ROWS, referenceRowsHTML };
+module.exports = { LANDING_CARD_ORDER, ALL_BRANDS_MOSAIC, orderLandingBrands, allBrandsPhotoHTML, siteConfig, curatedPairs, successorPairKeys, resolvePins, withPins, PINNED_VS_PAIRS, SUCCESSOR_INDEX_SINCE, relatedPairs, vsPageHTML, vsSummary, vsSummaryFacts, resolveMatchups, crossVsPageHTML, crossTitle, CROSS_BRAND_MATCHUPS, compareHeadBlock, compareBodyBlock, brandHeadBlock, rootHeadBlock, brandBodyBlock, rootBodyBlock, withHeadBlock, withBodyBlock, sitemapXML, robotsTxt, buildAll, SEO_BEGIN, SEO_END, SEO_BODY_BEGIN, SEO_BODY_END, ID_HEAD_BEGIN, ID_HEAD_END, ID_HEADER_BEGIN, ID_HEADER_END, ID_FOOTER_BEGIN, ID_FOOTER_END, identityToken, logoMark, cleanUrl, cleanHref, themeToggleHTML, collectReferences, citationText, refHostname, REFERENCE_ROWS, referenceRowsHTML };
