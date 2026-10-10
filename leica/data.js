@@ -472,7 +472,7 @@ const CAMERAS = {
     imageCredit:{author:'Rama', licence:'CC BY-SA 2.0 FR', licenceUrl:'https://creativecommons.org/licenses/by-sa/2.0/fr/deed.en', source:'https://commons.wikimedia.org/wiki/File:Leica_Q-IMG_9924.JPG'},
     asin:null,
     specSources:[
-      {url:'https://leica-camera.com/sites/default/files/pm-55579-Datenblatt_Q%20(Typ%20116)_e.pdf', tier:'T1', note:'Leica\'s official Q (Typ 116) technical data -- the primary source for this body\'s specifications. Leica\'s server returned HTTP 502 for this file on 2026-09-26 (as it does for many older Leica PDFs) and the Wayback Machine was unreachable from the research environment, so the text was not read that day; the stored values are not yet verified against it.', date:'2026-09-26', title:'Leica Q (Typ 116) technical data'},
+      {url:'https://leica-camera.com/sites/default/files/pm-29485-Datenblatt_Q--Typ-116-_e.pdf', tier:'T1', note:'Leica\'s official Q (Typ 116) technical data, read 2026-10-10 (the pm-55579 copy cited earlier still returns HTTP 502; this is another copy of the same sheet on Leica\'s server). Confirms: approx. 130 x 80 x 93 mm; approx. 640 g with battery (590 g without); 6000 x 4000 px; ISO 100-50000; 10/5/3 fps; 3.68 MP LCOS EVF; 3in TFT LCD approx. 1,040,000 px, touch; FHD 1920x1080 at 60 or 30 fps -- all match the stored values.', date:'2026-10-10', title:'Leica Q (Typ 116) technical data'},
       {url:'https://www.dpreview.com/products/leica/compacts/leica_q116/specifications', tier:'T2', note:'DPReview\'s spec table lists "Weight (inc. batteries)" as 640 g, matching the stored figure. Its table has no dimensions row, so the stored size is not independently confirmed by this source. Weight corrected from 590 g to this with-battery figure.', date:'2026-09-25', title:'DPReview specifications: Leica Q (Typ 116)'}],
     prices:{USD:4250,AUD:null,EUR:null,GBP:null,JPY:null,CAD:null,SGD:null},
     sensorMP:24.2, sensorType:'Full-frame CMOS (no AA filter)', processor:'Leica Maestro II',
@@ -1021,11 +1021,11 @@ const CAMERAS = {
     imageCredit:{author:'Peachyeung316', licence:'CC BY-SA 4.0', licenceUrl:'https://creativecommons.org/licenses/by-sa/4.0/', source:'https://commons.wikimedia.org/wiki/File:Leica_M10R_with_f2.8_len.jpg'},
     asin:null,
     specSources:[
-      {url:'https://leica-camera.com/sites/default/files/pm-54085-200721_Leica_M10-R_technData_en.pdf', tier:'T1', note:'Leica\'s official M10-R technical data -- the primary source for this body\'s specifications. Leica\'s server returned HTTP 502 for this file on 2026-09-26 (as it does for many older Leica PDFs) and the Wayback Machine was unreachable from the research environment, so the text was not read that day; the stored values are not yet verified against it.', date:'2026-09-26', title:'Leica M10-R technical data'},
+      {url:'https://leica-camera.com/sites/default/files/pm-54084-200721_Leica_M10-R_technData_de.pdf', tier:'T1', note:'Leica\'s official M10-R technical data (German edition, read 2026-10-10; the English pm-54085 copy still returns HTTP 502). Confirms: 7864 x 5200 px (40.89 MP); ISO 100-50000; 0.73x rangefinder magnification; 3in TFT LCD with 1,036,800 px; approx. 660 g with battery -- all matching. It also gives burst as approx. 4.5 fps and size as approx. 139 x 38.5 x 80 mm (W x D x H); the stored maxBurst (5, inferred from the M10 family) and depth (39) were corrected to these on 2026-10-10.', date:'2026-10-10', title:'Leica M10-R technical data (German)'},
       {url:'https://www.dpreview.com/products/leica/slrs/leica_m10-r/specifications', tier:'T2', note:'DPReview\'s spec table lists "Weight (inc. batteries)" as 660 g, matching the stored figure. Its table has no dimensions row, so the stored size is not independently confirmed by this source.', date:'2026-09-25', title:'DPReview specifications: Leica M10-R'}],
     prices:{USD:8295,AUD:null,EUR:null,GBP:null,JPY:null,CAD:null,SGD:null},
     sensorMP:40, sensorType:'Full-frame CMOS', processor:'Leica Maestro II',
-    width:139, height:80, depth:39, weight:660,
+    width:139, height:80, depth:38.5, weight:660,
     // DPReview's own spec table claims a fully-articulated touchscreen and
     // weather sealing for this model — the articulating-screen claim
     // contradicts every review and Wikipedia (no M-series body through M11
@@ -1035,10 +1035,9 @@ const CAMERAS = {
     weatherSealed:false,
     lcdSize:'3.0"', lcdDots:1036800, lcdType:'Fixed',
     evfType:null, evfDots:null, evfMag:null,
-    // maxBurst: not independently published for this model (DPReview's spec
-    // table omits a continuous-drive row entirely) — inferred from the
-    // shared M10-family shutter mechanism, confirmed at 5fps on M10/M10-P/M10-D.
-    faceDetection:false, subjectDetection:null, maxBurst:5,
+    // maxBurst: Leica's own M10-R sheet says approx. 4.5 fps (the 5 fps
+    // previously stored was inferred from the M10/M10-P/M10-D, wrongly).
+    faceDetection:false, subjectDetection:null, maxBurst:4.5,
     ibis:false, ibisStops:null,
     maxVideoRes:'None', logVideo:false,
     monochrom:false, focusingSystem:'Rangefinder', contentCredentials:false, internalStorageGB:null,
@@ -1383,9 +1382,9 @@ const LENSES = {
     imageSource:{url:'https://leica-camera.com/en-US/photography/lenses/sl/summicron-sl-35mm-f2-asph', tier:'T1', date:'2026-09-26', title:'Leica Summicron-SL 35 f/2 ASPH. official product page'},
     asin:'B0C153MZ3T',
     specSources:[{url:'https://leica-camera.com/sites/default/files/pm-90744-EN_Datenblatt%20Summicron-SL%2035%20ASPH.pdf', tier:'T1', note:'Leica\'s official datasheet (order no. 11192, Feb 2023) confirms weight 400 g, length 83 mm, diameter 74.5 mm (without hood), filter E67, 11 elements in 9 groups, focus range 0.24 m, largest scale 1:4.6, dust and splash protected. No blade count published.', date:'2026-09-26', title:'Leica datasheet: Leica Summicron-SL 35 f/2 ASPH.'}],
-    prices:{USD:2690,AUD:4400,EUR:2450,GBP:2190,JPY:451000,CAD:null,SGD:3600},
+    prices:{USD:2690,AUD:4400,EUR:2450,GBP:2190,JPY:451000,CAD:3795,SGD:3600},
     priceIncomplete:true,
-    priceSource:{url:'https://leicacamerausa.com/leica-summicron-sl-35mm-f/2-asph..html', tier:'T1', note:'$2,690 list price on leicacamerausa.com (SKU 11192); Leica Store Miami independently lists the same price. AUD/SGD/JPY from leica-store.com.au, leica-store.sg and store.leica-camera.jp; EUR/GBP from the schema.org Offer on leica-camera.com/de-DE and /en-GB (all 2026-09-26). CAD not readable (vistek.ca blocks automated access).', date:'2026-09-26', title:'Leica Camera USA'},
+    priceSource:{url:'https://leicacamerausa.com/leica-summicron-sl-35mm-f/2-asph..html', tier:'T1', note:'$2,690 list price on leicacamerausa.com (SKU 11192); Leica Store Miami independently lists the same price. AUD/SGD/JPY from leica-store.com.au, leica-store.sg and store.leica-camera.jp; EUR/GBP from the schema.org Offer on leica-camera.com/de-DE and /en-GB (all 2026-09-26). CAD not readable (vistek.ca blocks automated access). CAD $3,795 from Vistek, an authorized Leica dealer in Canada (https://www.vistek.ca/store/460665/, Mfr 11192), read 2026-10-10.', date:'2026-09-26', title:'Leica Camera USA'},
     productUrl:'https://leica-camera.com/en-US/photography/lenses/sl/summicron-sl-35mm-f2-asph',
   },
   'summicron-sl-50mm-f2-asph': {
@@ -1402,9 +1401,9 @@ const LENSES = {
     imageSource:{url:'https://leica-camera.com/en-US/photography/lenses/sl/summicron-sl-50mm-f2-asph', tier:'T1', date:'2026-09-26', title:'Leica Summicron-SL 50 f/2 ASPH. official product page'},
     asin:'B0C2TN2P4F',
     specSources:[{url:'https://leica-camera.com/sites/default/files/pm-90762-EN_Datenblatt%20Summicron-SL%2050%20ASPH.pdf', tier:'T1', note:'Leica\'s official datasheet (order no. 11193, Feb 2023) confirms weight 402 g, length 83 mm, diameter 74.5 mm (without hood), filter E67, 9 elements in 8 groups, focus range 0.45 m, largest scale 1:7.4, dust and splash protected. Blade count not on the sheet (11 per dealer listing).', date:'2026-09-26', title:'Leica datasheet: Leica Summicron-SL 50 f/2 ASPH.'}],
-    prices:{USD:2350,AUD:3800,EUR:2090,GBP:1900,JPY:385000,CAD:null,SGD:3050},
+    prices:{USD:2350,AUD:3800,EUR:2090,GBP:1900,JPY:385000,CAD:3315,SGD:3050},
     priceIncomplete:true,
-    priceSource:{url:'https://leicacamerausa.com/leica-summicron-sl-50mm-f/2-asph..html', tier:'T1', note:'$2,350 list price on leicacamerausa.com (SKU 11193); Leica Store Miami independently lists the same price. AUD/SGD/JPY from leica-store.com.au, leica-store.sg and store.leica-camera.jp; EUR/GBP from the schema.org Offer on leica-camera.com/de-DE and /en-GB (all 2026-09-26). CAD not readable (vistek.ca blocks automated access).', date:'2026-09-26', title:'Leica Camera USA'},
+    priceSource:{url:'https://leicacamerausa.com/leica-summicron-sl-50mm-f/2-asph..html', tier:'T1', note:'$2,350 list price on leicacamerausa.com (SKU 11193); Leica Store Miami independently lists the same price. AUD/SGD/JPY from leica-store.com.au, leica-store.sg and store.leica-camera.jp; EUR/GBP from the schema.org Offer on leica-camera.com/de-DE and /en-GB (all 2026-09-26). CAD not readable (vistek.ca blocks automated access). CAD $3,315 from Vistek, an authorized Leica dealer in Canada (https://www.vistek.ca/store/496682/, Mfr 11193), read 2026-10-10.', date:'2026-09-26', title:'Leica Camera USA'},
     productUrl:'https://leica-camera.com/en-US/photography/lenses/sl/summicron-sl-50mm-f2-asph',
   },
   'vario-elmarit-sl-24-90mm-f28-4-asph': {
@@ -1422,9 +1421,9 @@ const LENSES = {
     imageSource:{url:'https://leica-camera.com/en-US/photography/lenses/sl/vario-elmarit-sl-24-90mm-f2-8-4-asph-black', tier:'T1', date:'2026-09-26', title:'Leica Vario-Elmarit-SL 24-90 f/2.8-4 ASPH. official product page'},
     asin:'B018XM3P7Q',
     specSources:[{url:'https://leica-camera.com/sites/default/files/pm-55652-Datenblatt_Vario-Elmarit-SL_24-90_en.pdf', tier:'T1', note:'Leica\'s official datasheet (order no. 11176) confirms weight 1,140 g, length 138 mm (at 24mm, without hood), diameter 88 mm, filter E82, 18 elements in 15 groups, working range 0.3 m (24mm) / 0.45 m (90mm), largest ratio 1:7.2 (24mm) / 1:3.8 (90mm), O.I.S. 3.5 stops (CIPA). Announced 2015-10-20 with the SL (Typ 601).', date:'2026-09-26', title:'Leica datasheet: Leica Vario-Elmarit-SL 24-90 f/2.8-4 ASPH.'}],
-    prices:{USD:6310,AUD:10300,EUR:5750,GBP:4900,JPY:1056000,CAD:null,SGD:8500},
+    prices:{USD:6310,AUD:10300,EUR:5750,GBP:4900,JPY:1056000,CAD:8895,SGD:8500},
     priceIncomplete:true,
-    priceSource:{url:'https://leicacamerausa.com/leica-vario-elmarit-sl-24-90mm-f-2-8-4-asph.html', tier:'T1', note:'$6,310 list price on leicacamerausa.com (SKU 11176); Leica Store Miami independently lists the same price. AUD/SGD/JPY from leica-store.com.au, leica-store.sg and store.leica-camera.jp; EUR/GBP from the schema.org Offer on leica-camera.com/de-DE and /en-GB (all 2026-09-26). CAD not readable (vistek.ca blocks automated access).', date:'2026-09-26', title:'Leica Camera USA'},
+    priceSource:{url:'https://leicacamerausa.com/leica-vario-elmarit-sl-24-90mm-f-2-8-4-asph.html', tier:'T1', note:'$6,310 list price on leicacamerausa.com (SKU 11176); Leica Store Miami independently lists the same price. AUD/SGD/JPY from leica-store.com.au, leica-store.sg and store.leica-camera.jp; EUR/GBP from the schema.org Offer on leica-camera.com/de-DE and /en-GB (all 2026-09-26). CAD not readable (vistek.ca blocks automated access). CAD $8,895 from Vistek, an authorized Leica dealer in Canada (https://www.vistek.ca/store/401378/, Mfr 11176), read 2026-10-10.', date:'2026-09-26', title:'Leica Camera USA'},
     productUrl:'https://leica-camera.com/en-US/photography/lenses/sl/vario-elmarit-sl-24-90mm-f2-8-4-asph-black',
   },
   'vario-elmarit-sl-28-70mm-f28-asph': {
@@ -1443,9 +1442,9 @@ const LENSES = {
     imageSource:{url:'https://leica-camera.com/en-US/photography/lenses/sl/vario-elmarit-sl-28-70-f2-8-asph-black', tier:'T1', date:'2026-09-26', title:'Leica Vario-Elmarit-SL 28-70 f/2.8 ASPH. official product page'},
     asin:'B0FY4CJGX6',
     specSources:[{url:'https://leica-camera.com/sites/default/files/pm-21944-EN_Datenblatt_Vario-Elmarit-SL_28-70.pdf', tier:'T1', note:'Leica\'s official datasheet (order no. 11196, May 2025) confirms weight 572 g, length 102 mm, diameter 73 mm (without hood; the marketing copy says 72 mm), filter E67, 16 elements in 12 groups, focus range 0.19 m (28mm) / 0.38 m (70mm), largest scale 1:3.3 (28mm), dust and splash protected.', date:'2026-09-26', title:'Leica datasheet: Leica Vario-Elmarit-SL 28-70 f/2.8 ASPH.'}],
-    prices:{USD:2190,AUD:3600,EUR:1990,GBP:1750,JPY:363000,CAD:null,SGD:3000},
+    prices:{USD:2190,AUD:3600,EUR:1990,GBP:1750,JPY:363000,CAD:3090,SGD:3000},
     priceIncomplete:true,
-    priceSource:{url:'https://leicacamerausa.com/leica-vario-elmarit-sl-28-70mm-f-2-8-asph.html', tier:'T1', note:'$2,190 list price on leicacamerausa.com (SKU 11196); Leica Store Miami independently lists the same price. AUD/SGD/JPY from leica-store.com.au, leica-store.sg and store.leica-camera.jp; EUR/GBP from the schema.org Offer on leica-camera.com/de-DE and /en-GB (all 2026-09-26). CAD not readable (vistek.ca blocks automated access).', date:'2026-09-26', title:'Leica Camera USA'},
+    priceSource:{url:'https://leicacamerausa.com/leica-vario-elmarit-sl-28-70mm-f-2-8-asph.html', tier:'T1', note:'$2,190 list price on leicacamerausa.com (SKU 11196); Leica Store Miami independently lists the same price. AUD/SGD/JPY from leica-store.com.au, leica-store.sg and store.leica-camera.jp; EUR/GBP from the schema.org Offer on leica-camera.com/de-DE and /en-GB (all 2026-09-26). CAD not readable (vistek.ca blocks automated access). CAD $3,090 from Vistek, an authorized Leica dealer in Canada (https://www.vistek.ca/store/495614/, Mfr 11196), read 2026-10-10.', date:'2026-09-26', title:'Leica Camera USA'},
     productUrl:'https://leica-camera.com/en-US/photography/lenses/sl/vario-elmarit-sl-28-70-f2-8-asph-black',
   },
   'apo-summicron-sl-28mm-f2-asph': {
@@ -1650,9 +1649,9 @@ const LENSES = {
     imageSource:{url:'https://leica-camera.com/en-US/photography/lenses/m/summilux-m-35mm-f1-4-asph-black', tier:'T1', date:'2026-09-18', title:'Leica Summilux-M 35mm f/1.4 ASPH. FLE II official product page'},
     asin:'B0BXRNHD2K',
     specSources:[{url:'https://leica-camera.com/sites/default/files/pm-14528-EN_Datenblatt-Summilux-35---2022.pdf', tier:'T1', note:'Leica\'s official datasheet (order no. 11726) confirms weight 338 g, length 46 mm, diameter 58 mm, filter thread 46 mm, 9 elements in 5 groups, 11 aperture blades.', date:'2026-09-25', title:'Leica datasheet: Leica Summilux-M 35mm f/1.4 ASPH. FLE II'}],
-    prices:{USD:6900,AUD:10900,EUR:6100,GBP:5400,JPY:1111000,CAD:null,SGD:9050},
+    prices:{USD:6900,AUD:10900,EUR:6100,GBP:5400,JPY:1111000,CAD:9730,SGD:9050},
     priceIncomplete:true,
-    priceSource:{url:'https://leicacamerausa.com/leica-summilux-m-35mm-f-1-4-asph-black.html', tier:'T1', note:'$6,900 list price on leicacamerausa.com (SKU 11726, in stock); Leica Store Miami independently lists the same price. Replaces an earlier $5,650 figure that pre-dated Leica\'s US price increase.', date:'2026-09-25', title:'Leica Camera USA: Leica Summilux-M 35mm f/1.4 ASPH. FLE II'},
+    priceSource:{url:'https://leicacamerausa.com/leica-summilux-m-35mm-f-1-4-asph-black.html', tier:'T1', note:'$6,900 list price on leicacamerausa.com (SKU 11726, in stock); Leica Store Miami independently lists the same price. Replaces an earlier $5,650 figure that pre-dated Leica\'s US price increase. CAD $9,730 from Vistek, an authorized Leica dealer in Canada (https://www.vistek.ca/store/453325/, Mfr 11726), read 2026-10-10.', date:'2026-09-25', title:'Leica Camera USA: Leica Summilux-M 35mm f/1.4 ASPH. FLE II'},
     productUrl:'https://leica-camera.com/en-US/photography/lenses/m/summilux-m-35mm-f1-4-asph-black',
   },
   'summilux-m-35mm-f14-steel-rim': {
@@ -1669,9 +1668,9 @@ const LENSES = {
     imageSource:{url:'https://leica-camera.com/en-US/photography/lenses/m/summilux-m-35mm-f1-4', tier:'T1', date:'2026-09-18', title:'Leica Summilux-M 35mm f/1.4 "Steel Rim" official product page'},
     asin:null,
     specSources:[{url:'https://leica-camera.com/sites/default/files/pm-14505-EN_Datenblatt-Summilux-35---Classic.pdf', tier:'T1', note:'Leica\'s official datasheet (order no. 11301) confirms weight 200 g, length 26 mm, diameter 66.5 mm, filter thread 46 mm, 7 elements in 5 groups, 10 aperture blades. Where the sheet gives figures without and with the lens hood, the without-hood figure is stored. Length corrected from 35 mm to 26 mm to match the datasheet (a dealer listing had 35 mm).', date:'2026-09-25', title:'Leica datasheet: Leica Summilux-M 35mm f/1.4 "Steel Rim"'}],
-    prices:{USD:4900,AUD:7750,EUR:4300,GBP:3800,JPY:792000,CAD:null,SGD:6250},
+    prices:{USD:4900,AUD:7750,EUR:4300,GBP:3800,JPY:792000,CAD:6910,SGD:6250},
     priceIncomplete:true,
-    priceSource:{url:'https://leicacamerausa.com/leica-summilux-m-35mm-f-1-4.html', tier:'T1', note:'$4,900 list price on leicacamerausa.com (SKU 11301, in stock); Leica Store Miami independently lists the same price.', date:'2026-09-25', title:'Leica Camera USA: Leica Summilux-M 35mm f/1.4 "Steel Rim"'},
+    priceSource:{url:'https://leicacamerausa.com/leica-summilux-m-35mm-f-1-4.html', tier:'T1', note:'$4,900 list price on leicacamerausa.com (SKU 11301, in stock); Leica Store Miami independently lists the same price. CAD $6,910 from Vistek, an authorized Leica dealer in Canada (https://www.vistek.ca/store/456605/, Mfr 11301), read 2026-10-10.', date:'2026-09-25', title:'Leica Camera USA: Leica Summilux-M 35mm f/1.4 "Steel Rim"'},
     productUrl:'https://leica-camera.com/en-US/photography/lenses/m/summilux-m-35mm-f1-4',
   },
   'summilux-m-28mm-f14-asph': {
@@ -1690,9 +1689,9 @@ const LENSES = {
       {url:'https://leica-camera.com/sites/default/files/pm-14481-Technical-Data_Leica-Summilux-M_1-4_28mm_EN_2.pdf', tier:'T1', note:'Leica\'s official datasheet (order no. 11668) confirms weight 440 g, diameter 61 mm, filter thread 49 mm, 10 elements in 7 groups. Where the sheet gives figures without and with the lens hood, the without-hood figure is stored.', date:'2026-09-25', title:'Leica datasheet: Leica Summilux-M 28 f/1.4 ASPH.'},
       {url:'https://leica-camera.com/en-US/photography/lenses/m/summilux-m-28mm-f1-4-asph-black/technical-specification', tier:'T1', note:'Leica\'s web technical-specification page additionally confirms length 81 mm.', date:'2026-09-25', title:'Leica technical specification: Leica Summilux-M 28 f/1.4 ASPH.'},
     ],
-    prices:{USD:8555,AUD:13400,EUR:7400,GBP:6500,JPY:1353000,CAD:null,SGD:10900},
+    prices:{USD:8555,AUD:13400,EUR:7400,GBP:6500,JPY:1353000,CAD:12065,SGD:10900},
     priceIncomplete:true,
-    priceSource:{url:'https://leicacamerausa.com/leica-summilux-m-28mm-f-1-4-asph-black-anodized.html', tier:'T1', note:'$8,555 list price on leicacamerausa.com (SKU 11668, in stock); Leica Store Miami independently lists the same price. Replaces an earlier $6,000 figure that pre-dated Leica\'s US price increase.', date:'2026-09-25', title:'Leica Camera USA: Leica Summilux-M 28 f/1.4 ASPH.'},
+    priceSource:{url:'https://leicacamerausa.com/leica-summilux-m-28mm-f-1-4-asph-black-anodized.html', tier:'T1', note:'$8,555 list price on leicacamerausa.com (SKU 11668, in stock); Leica Store Miami independently lists the same price. Replaces an earlier $6,000 figure that pre-dated Leica\'s US price increase. CAD $12,065 from Vistek, an authorized Leica dealer in Canada (https://www.vistek.ca/store/280559/, Mfr 11668), read 2026-10-10.', date:'2026-09-25', title:'Leica Camera USA: Leica Summilux-M 28 f/1.4 ASPH.'},
     productUrl:'https://leica-camera.com/en-US/photography/lenses/m/summilux-m-28mm-f1-4-asph-black',
   },
   'summilux-m-21mm-f14-asph': {
@@ -1715,9 +1714,9 @@ const LENSES = {
       {url:'https://leica-camera.com/sites/default/files/pm-14344-Summilux-M21-TechnicalData.pdf', tier:'T1', note:'Leica\'s official datasheet (order no. 11647) confirms weight 580 g, 10 elements in 8 groups.', date:'2026-09-25', title:'Leica datasheet: Leica Summilux-M 21 f/1.4 ASPH.'},
       {url:'https://leica-camera.com/en-US/photography/lenses/m/summilux-m-21mm-f1-4-asph-black/technical-specification', tier:'T1', note:'Leica\'s web technical-specification page additionally confirms length 66 mm, diameter 69.5 mm, 9 aperture blades.', date:'2026-09-25', title:'Leica technical specification: Leica Summilux-M 21 f/1.4 ASPH.'},
     ],
-    prices:{USD:9840,AUD:14900,EUR:8250,GBP:7300,JPY:1507000,CAD:null,SGD:12250},
+    prices:{USD:9840,AUD:14900,EUR:8250,GBP:7300,JPY:1507000,CAD:13875,SGD:12250},
     priceIncomplete:true,
-    priceSource:{url:'https://leicacamerausa.com/leica-summilux-m-21mm-f-1-4-asph-black-anodized.html', tier:'T1', note:'$9,840 list price on leicacamerausa.com (SKU 11647, shown out of stock); Leica Store Miami independently lists the same price. Replaces an earlier $7,100 figure that pre-dated Leica\'s US price increase.', date:'2026-09-25', title:'Leica Camera USA: Leica Summilux-M 21 f/1.4 ASPH.'},
+    priceSource:{url:'https://leicacamerausa.com/leica-summilux-m-21mm-f-1-4-asph-black-anodized.html', tier:'T1', note:'$9,840 list price on leicacamerausa.com (SKU 11647, shown out of stock); Leica Store Miami independently lists the same price. Replaces an earlier $7,100 figure that pre-dated Leica\'s US price increase. CAD $13,875 from Vistek, an authorized Leica dealer in Canada (https://www.vistek.ca/store/239665/, Mfr 11647), read 2026-10-10.', date:'2026-09-25', title:'Leica Camera USA: Leica Summilux-M 21 f/1.4 ASPH.'},
     productUrl:'https://leica-camera.com/en-US/photography/lenses/m/summilux-m-21mm-f1-4-asph-black',
   },
   'summilux-m-50mm-f14-classic': {
@@ -1731,9 +1730,9 @@ const LENSES = {
     imageSource:{url:'https://leica-camera.com/en-US/photography/lenses/m/summilux-m-50-f1-4-silver-chrome-finish', tier:'T1', date:'2026-09-18', title:'Leica Summilux-M 50 f/1.4 (Classic Line) official product page'},
     asin:'B0F161R8N3',
     specSources:[{url:'https://leica-camera.com/en-US/photography/lenses/m/summilux-m-50-f1-4-silver-chrome-finish/technical-specification', tier:'T1', note:'Leica\'s technical-specification page (order no. 11714) confirms weight 417 g, length 45 mm, diameter 58 mm, filter thread 46 mm, 7 elements in 5 groups, 12 aperture blades. Where the page gives figures without and with the lens hood, the without-hood figure is stored.', date:'2026-09-25', title:'Leica technical specification: Leica Summilux-M 50 f/1.4'}],
-    prices:{USD:4600,AUD:7300,EUR:4050,GBP:3500,JPY:737000,CAD:null,SGD:5900},
+    prices:{USD:4600,AUD:7300,EUR:4050,GBP:3500,JPY:737000,CAD:6485,SGD:5900},
     priceIncomplete:true,
-    priceSource:{url:'https://leicacamerausa.com/leica-summilux-m-50mm-f-1-4-chrome.html', tier:'T1', note:'$4,600 list price on leicacamerausa.com (SKU 11714, in stock); Leica Store Miami independently lists the same price. Replaces an earlier $3,850 figure that pre-dated Leica\'s US price increase.', date:'2026-09-25', title:'Leica Camera USA: Leica Summilux-M 50 f/1.4'},
+    priceSource:{url:'https://leicacamerausa.com/leica-summilux-m-50mm-f-1-4-chrome.html', tier:'T1', note:'$4,600 list price on leicacamerausa.com (SKU 11714, in stock); Leica Store Miami independently lists the same price. Replaces an earlier $3,850 figure that pre-dated Leica\'s US price increase. CAD $6,485 from Vistek, an authorized Leica dealer in Canada (https://www.vistek.ca/store/477633/, Mfr 11714), read 2026-10-10.', date:'2026-09-25', title:'Leica Camera USA: Leica Summilux-M 50 f/1.4'},
     productUrl:'https://leica-camera.com/en-US/photography/lenses/m/summilux-m-50-f1-4-silver-chrome-finish',
   },
   'summilux-m-50mm-f14-asph': {
@@ -1747,9 +1746,9 @@ const LENSES = {
     imageSource:{url:'https://leica-camera.com/en-US/photography/lenses/m/leica-summilux-m-50-f14-asph-black', tier:'T1', date:'2026-09-18', title:'Leica Summilux-M 50 f/1.4 ASPH. official product page'},
     asin:'B0C5STP8LR',
     specSources:[{url:'https://leica-camera.com/sites/default/files/pm-14169-EN_Datenblatt-Summilux-M-50---Classic.pdf', tier:'T1', note:'Leica\'s official datasheet (order no. 11728) confirms weight 377 g, length 59.3 mm, diameter 58.6 mm, filter thread 46 mm, 8 elements in 5 groups, 11 aperture blades.', date:'2026-09-25', title:'Leica datasheet: Leica Summilux-M 50 f/1.4 ASPH.'}],
-    prices:{USD:5500,AUD:8800,EUR:4850,GBP:4300,JPY:891000,CAD:null,SGD:7200},
+    prices:{USD:5500,AUD:8800,EUR:4850,GBP:4300,JPY:891000,CAD:7755,SGD:7200},
     priceIncomplete:true,
-    priceSource:{url:'https://leicacamerausa.com/leica-summilux-m-50mm-f-1-4-asph-black.html', tier:'T1', note:'$5,500 list price on leicacamerausa.com (SKU 11728, in stock); Leica Store Miami independently lists the same price. Replaces an earlier $4,550 figure that pre-dated Leica\'s US price increase.', date:'2026-09-25', title:'Leica Camera USA: Leica Summilux-M 50 f/1.4 ASPH.'},
+    priceSource:{url:'https://leicacamerausa.com/leica-summilux-m-50mm-f-1-4-asph-black.html', tier:'T1', note:'$5,500 list price on leicacamerausa.com (SKU 11728, in stock); Leica Store Miami independently lists the same price. Replaces an earlier $4,550 figure that pre-dated Leica\'s US price increase. CAD $7,755 from Vistek, an authorized Leica dealer in Canada (https://www.vistek.ca/store/458024/, Mfr 11728), read 2026-10-10.', date:'2026-09-25', title:'Leica Camera USA: Leica Summilux-M 50 f/1.4 ASPH.'},
     productUrl:'https://leica-camera.com/en-US/photography/lenses/m/leica-summilux-m-50-f14-asph-black',
   },
   'noctilux-m-75mm-f125-asph': {
@@ -1766,9 +1765,9 @@ const LENSES = {
       {url:'https://leica-camera.com/sites/default/files/pm-14199-Datenblatt_Noctilux-M-1.25_75mm-ASPH_e_2.pdf', tier:'T1', note:'Leica\'s official datasheet (order no. 11676) confirms weight 1055 g, diameter 74 mm, filter thread 67 mm, 11 aperture blades. Where the sheet gives figures without and with the lens hood, the without-hood figure is stored.', date:'2026-09-25', title:'Leica datasheet: Leica Noctilux-M 75 f/1.25 ASPH.'},
       {url:'https://leica-camera.com/en-US/photography/lenses/m/noctilux-m-75-f1-25-asph/technical-specification', tier:'T1', note:'Leica\'s web technical-specification page additionally confirms length 91 mm, 9 elements in 6 groups.', date:'2026-09-25', title:'Leica technical specification: Leica Noctilux-M 75 f/1.25 ASPH.'},
     ],
-    prices:{USD:15615,AUD:24900,EUR:13750,GBP:12200,JPY:2519000,CAD:null,SGD:20500},
+    prices:{USD:15615,AUD:24900,EUR:13750,GBP:12200,JPY:2519000,CAD:22015,SGD:20500},
     priceIncomplete:true,
-    priceSource:{url:'https://leicacamerausa.com/leica-noctilux-m-75mm-f-1-25-asph-black-anodized.html', tier:'T1', note:'$15,615 list price on leicacamerausa.com (SKU 11676, in stock); Leica Store Miami independently lists the same price. Replaces an earlier $11,900 figure that pre-dated Leica\'s US price increase.', date:'2026-09-25', title:'Leica Camera USA: Leica Noctilux-M 75 f/1.25 ASPH.'},
+    priceSource:{url:'https://leicacamerausa.com/leica-noctilux-m-75mm-f-1-25-asph-black-anodized.html', tier:'T1', note:'$15,615 list price on leicacamerausa.com (SKU 11676, in stock); Leica Store Miami independently lists the same price. Replaces an earlier $11,900 figure that pre-dated Leica\'s US price increase. CAD $22,015 from Vistek, an authorized Leica dealer in Canada (https://www.vistek.ca/store/421144/, Mfr 11676), read 2026-10-10.', date:'2026-09-25', title:'Leica Camera USA: Leica Noctilux-M 75 f/1.25 ASPH.'},
     productUrl:'https://leica-camera.com/en-US/photography/lenses/m/noctilux-m-75-f1-25-asph',
   },
   'noctilux-m-50mm-f12-asph': {
@@ -1790,9 +1789,9 @@ const LENSES = {
       {url:'https://leica-camera.com/sites/default/files/pm-55730-EN_Noctilux_50_1.2.pdf', tier:'T1', note:'Leica\'s official datasheet (order no. 11686) confirms length 52 mm, diameter 61 mm, filter thread 49 mm, 6 elements in 4 groups, 16 aperture blades. Where the sheet gives figures without and with the lens hood, the without-hood figure is stored. Leica\'s datasheet has no weight row, so the 405 g weight rests on the DPReview citation.', date:'2026-09-25', title:'Leica datasheet: Leica Noctilux-M 50 f/1.2 ASPH.'},
       {url:'https://www.dpreview.com/news/8844725636/leica-noctilux-m-50mm-f1-2-is-an-homage-to-one-of-its-most-iconic-lenses', tier:'T2', note:'DPReview announcement: "61mm in diameter, 52mm long (without lens hood) and weighs 405g". Source for the weight, which Leica\'s datasheet omits.', date:'2026-09-25', title:'DPReview: Noctilux-M 50mm f/1.2 announcement'},
     ],
-    prices:{USD:8900,AUD:14200,EUR:7850,GBP:7200,JPY:1441000,CAD:null,SGD:12400},
+    prices:{USD:8900,AUD:14200,EUR:7850,GBP:7200,JPY:1441000,CAD:12550,SGD:12400},
     priceIncomplete:true,
-    priceSource:{url:'https://leicacamerausa.com/leica-noctilux-m-50-f-1-2-asph-black-anodized.html', tier:'T1', note:'$8,900 list price on leicacamerausa.com (SKU 11686, in stock); Leica Store Miami independently lists the same price.', date:'2026-09-25', title:'Leica Camera USA: Leica Noctilux-M 50 f/1.2 ASPH.'},
+    priceSource:{url:'https://leicacamerausa.com/leica-noctilux-m-50-f-1-2-asph-black-anodized.html', tier:'T1', note:'$8,900 list price on leicacamerausa.com (SKU 11686, in stock); Leica Store Miami independently lists the same price. CAD $12,550 from Vistek, an authorized Leica dealer in Canada (https://www.vistek.ca/store/443419/, Mfr 11686), read 2026-10-10.', date:'2026-09-25', title:'Leica Camera USA: Leica Noctilux-M 50 f/1.2 ASPH.'},
     productUrl:'https://leica-camera.com/en-US/photography/lenses/m/noctilux-m-50-f1-2-asph-black-finish',
   },
   'noctilux-m-50mm-f095-asph': {
@@ -1809,9 +1808,9 @@ const LENSES = {
       {url:'https://leica-camera.com/sites/default/files/pm-14085-Noctilux-M50-TechnicalData.pdf', tier:'T1', note:'Leica\'s official datasheet (order no. 11602) confirms weight 700 g, diameter 73 mm, filter thread 60 mm, 8 elements in 5 groups.', date:'2026-09-25', title:'Leica datasheet: Leica Noctilux-M 50 f/0.95 ASPH.'},
       {url:'https://leica-camera.com/en-US/photography/lenses/m/noctilux-m-50mm-f0-95-asph-black/technical-specification', tier:'T1', note:'Leica\'s web technical-specification page additionally confirms length 75.1 mm.', date:'2026-09-25', title:'Leica technical specification: Leica Noctilux-M 50 f/0.95 ASPH.'},
     ],
-    prices:{USD:14400,AUD:22900,EUR:12700,GBP:11400,JPY:2321000,CAD:null,SGD:18950},
+    prices:{USD:14400,AUD:22900,EUR:12700,GBP:11400,JPY:2321000,CAD:20305,SGD:18950},
     priceIncomplete:true,
-    priceSource:{url:'https://leicacamerausa.com/leica-noctilux-m-50mm-f-0-95-asph-black-anodized.html', tier:'T1', note:'$14,400 list price on leicacamerausa.com (SKU 11602, in stock); Leica Store Miami independently lists the same price. Replaces an earlier $10,400 figure that pre-dated Leica\'s US price increase.', date:'2026-09-25', title:'Leica Camera USA: Leica Noctilux-M 50 f/0.95 ASPH.'},
+    priceSource:{url:'https://leicacamerausa.com/leica-noctilux-m-50mm-f-0-95-asph-black-anodized.html', tier:'T1', note:'$14,400 list price on leicacamerausa.com (SKU 11602, in stock); Leica Store Miami independently lists the same price. Replaces an earlier $10,400 figure that pre-dated Leica\'s US price increase. CAD $20,305 from Vistek, an authorized Leica dealer in Canada (https://www.vistek.ca/store/239659/, Mfr 11602), read 2026-10-10.', date:'2026-09-25', title:'Leica Camera USA: Leica Noctilux-M 50 f/0.95 ASPH.'},
     productUrl:'https://leica-camera.com/en-US/photography/lenses/m/noctilux-m-50mm-f0-95-asph-black',
   },
   'noctilux-m-35mm-f12-asph': {
@@ -1829,9 +1828,9 @@ const LENSES = {
     // task 1.1 research; leica-camera.com's own page data layer showed a
     // lower, likely-stale $8,950 — the dealer figure is used.
     specSources:[{url:'https://leica-camera.com/sites/default/files/pm-27392-EN_Datenblatt_Noctilux_35_ASPH.pdf', tier:'T1', note:'Leica\'s official datasheet (order no. 11635) confirms weight 416 g, length 50.2 mm, diameter 64.6 mm, filter thread 49 mm, 10 elements in 5 groups, 11 aperture blades.', date:'2026-09-25', title:'Leica datasheet: Leica Noctilux-M 35 f/1.2 ASPH.'}],
-    prices:{USD:9650,AUD:16100,EUR:8950,GBP:7700,JPY:1650000,CAD:null,SGD:13700},
+    prices:{USD:9650,AUD:16100,EUR:8950,GBP:7700,JPY:1650000,CAD:13605,SGD:13700},
     priceIncomplete:true,
-    priceSource:{url:'https://leicacamerausa.com/leica-noctilux-m-35mm-f-1-2-asph-black-anodized.html', tier:'T1', note:'$9,650 list price on leicacamerausa.com (SKU 11635, shown out of stock); Leica Store Miami independently lists the same price.', date:'2026-09-25', title:'Leica Camera USA: Leica Noctilux-M 35 f/1.2 ASPH.'},
+    priceSource:{url:'https://leicacamerausa.com/leica-noctilux-m-35mm-f-1-2-asph-black-anodized.html', tier:'T1', note:'$9,650 list price on leicacamerausa.com (SKU 11635, shown out of stock); Leica Store Miami independently lists the same price. CAD $13,605 from Vistek, an authorized Leica dealer in Canada (https://www.vistek.ca/store/491193/, Mfr 11635), read 2026-10-10.', date:'2026-09-25', title:'Leica Camera USA: Leica Noctilux-M 35 f/1.2 ASPH.'},
     productUrl:'https://leica-camera.com/en-US/photography/lenses/m/noctilux-m-35mm-f1-2-asph-black',
   },
   'summicron-m-28mm-f2-asph': {
@@ -1856,9 +1855,9 @@ const LENSES = {
     // Current price ($6,000) is up from the $5,295 launch (Oct 2023),
     // consistent with this dataset's other Leica items' price increases.
     specSources:[{url:'https://leica-camera.com/sites/default/files/pm-102262-en_datenblatt-summicron-m-28-asph.pdf', tier:'T1', note:'Leica\'s official datasheet (order no. 11618) confirms weight 275 g, length 55 mm, diameter 58 mm, filter thread 46 mm, 9 elements in 6 groups, 10 aperture blades.', date:'2026-09-25', title:'Leica datasheet: Leica Summicron-M 28 f/2 ASPH. III'}],
-    prices:{USD:6000,AUD:9500,EUR:5250,GBP:4700,JPY:957000,CAD:null,SGD:7800},
+    prices:{USD:6000,AUD:9500,EUR:5250,GBP:4700,JPY:957000,CAD:8460,SGD:7800},
     priceIncomplete:true,
-    priceSource:{url:'https://leicacamerausa.com/leica-summicron-m-28-f-2-asph-in-black.html', tier:'T1', note:'$6,000 list price on leicacamerausa.com (SKU 11618, in stock); Leica Store Miami independently lists the same price. EUR/GBP (added 2026-09-26) from the schema.org Offer (explicit priceCurrency) in leica-camera.com/de-DE and /en-GB product pages -- not the unlabelled GA data-layer price. SGD 6990 -> 7800 (2026-09-26): leica-store.sg Shopify listing, SKU 11618, S$7,800, no compare-at price, in stock; the old figure sat below every sibling M lens\'s SGD/USD ratio.', date:'2026-09-25', title:'Leica Camera USA: Leica Summicron-M 28 f/2 ASPH. III'},
+    priceSource:{url:'https://leicacamerausa.com/leica-summicron-m-28-f-2-asph-in-black.html', tier:'T1', note:'$6,000 list price on leicacamerausa.com (SKU 11618, in stock); Leica Store Miami independently lists the same price. EUR/GBP (added 2026-09-26) from the schema.org Offer (explicit priceCurrency) in leica-camera.com/de-DE and /en-GB product pages -- not the unlabelled GA data-layer price. SGD 6990 -> 7800 (2026-09-26): leica-store.sg Shopify listing, SKU 11618, S$7,800, no compare-at price, in stock; the old figure sat below every sibling M lens\'s SGD/USD ratio. CAD $8,460 from Vistek, an authorized Leica dealer in Canada (https://www.vistek.ca/store/462810/, Mfr 11618), read 2026-10-10.', date:'2026-09-25', title:'Leica Camera USA: Leica Summicron-M 28 f/2 ASPH. III'},
     productUrl:'https://leica-camera.com/en-US/photography/lenses/m/summicron-m-28-f2-asph-black',
   },
   'apo-summicron-m-35mm-f2-asph': {
@@ -1880,9 +1879,9 @@ const LENSES = {
       {url:'https://leica-camera.com/sites/default/files/pm-14371-EN_APO-Summicron_35_2_2.pdf', tier:'T1', note:'Leica\'s official datasheet (order no. 11699) confirms length 40.9 mm, diameter 53 mm, filter thread 39 mm, 10 elements in 5 groups, 11 aperture blades. Where the sheet gives figures without and with the lens hood, the without-hood figure is stored. Leica\'s web spec table lists the with-hood length (49.3 mm); the datasheet gives 40.9 mm without the hood, which is what is stored.', date:'2026-09-25', title:'Leica datasheet: Leica APO-Summicron-M 35 f/2 ASPH.'},
       {url:'https://leica-camera.com/en-US/photography/lenses/m/apo-summicron-m-35-f2-asph-black-anodized-finish/technical-specification', tier:'T1', note:'Leica\'s web technical-specification page additionally confirms weight 320 g.', date:'2026-09-25', title:'Leica technical specification: Leica APO-Summicron-M 35 f/2 ASPH.'},
     ],
-    prices:{USD:9500,AUD:15100,EUR:8350,GBP:7300,JPY:1529000,CAD:null,SGD:12650},
+    prices:{USD:9500,AUD:15100,EUR:8350,GBP:7300,JPY:1529000,CAD:13395,SGD:12650},
     priceIncomplete:true,
-    priceSource:{url:'https://leicacamerausa.com/leica-apo-summicron-m-35mm-f-2-asph-black-anodized.html', tier:'T1', note:'$9,500 list price on leicacamerausa.com (SKU 11699, in stock); Leica Store Miami independently lists the same price. EUR/GBP (added 2026-09-26) from the schema.org Offer (explicit priceCurrency) in leica-camera.com/de-DE and /en-GB product pages -- not the unlabelled GA data-layer price.', date:'2026-09-25', title:'Leica Camera USA: Leica APO-Summicron-M 35 f/2 ASPH.'},
+    priceSource:{url:'https://leicacamerausa.com/leica-apo-summicron-m-35mm-f-2-asph-black-anodized.html', tier:'T1', note:'$9,500 list price on leicacamerausa.com (SKU 11699, in stock); Leica Store Miami independently lists the same price. EUR/GBP (added 2026-09-26) from the schema.org Offer (explicit priceCurrency) in leica-camera.com/de-DE and /en-GB product pages -- not the unlabelled GA data-layer price. CAD $13,395 from Vistek, an authorized Leica dealer in Canada (https://www.vistek.ca/store/445171/, Mfr 11699), read 2026-10-10.', date:'2026-09-25', title:'Leica Camera USA: Leica APO-Summicron-M 35 f/2 ASPH.'},
     productUrl:'https://leica-camera.com/en-US/photography/lenses/m/apo-summicron-m-35-f2-asph-black-anodized-finish',
   },
   'summicron-m-35mm-f2-asph': {
@@ -1902,9 +1901,9 @@ const LENSES = {
       {url:'https://leica-camera.com/sites/default/files/pm-14463-Datenblatt_Summicron-M-2_35mm_e.pdf', tier:'T1', note:'Leica\'s official datasheet (order no. 11673) confirms weight 252 g, diameter 53 mm, filter thread 39 mm, 11 aperture blades. Where the sheet gives figures without and with the lens hood, the without-hood figure is stored. Leica\'s web spec table shows an impossible 30.7 mm diameter (a field-swap error on that page); the datasheet\'s 53 mm is correct and is what is stored.', date:'2026-09-25', title:'Leica datasheet: Leica Summicron-M 35 f/2 ASPH.'},
       {url:'https://leica-camera.com/en-US/photography/lenses/m/summicron-m-35mm-f2-asph-black/technical-specification', tier:'T1', note:'Leica\'s web technical-specification page additionally confirms length 35.7 mm, 7 elements in 5 groups.', date:'2026-09-25', title:'Leica technical specification: Leica Summicron-M 35 f/2 ASPH.'},
     ],
-    prices:{USD:4275,AUD:6500,EUR:3600,GBP:3200,JPY:660000,CAD:null,SGD:5350},
+    prices:{USD:4275,AUD:6500,EUR:3600,GBP:3200,JPY:660000,CAD:6030,SGD:5350},
     priceIncomplete:true,
-    priceSource:{url:'https://leicacamerausa.com/leica-summicron-m-35mm-f-2-asph-black-anodized.html', tier:'T1', note:'$4,275 list price on leicacamerausa.com (SKU 11673, in stock); Leica Store Miami independently lists the same price. EUR/GBP (added 2026-09-26) from the schema.org Offer (explicit priceCurrency) in leica-camera.com/de-DE and /en-GB product pages -- not the unlabelled GA data-layer price.', date:'2026-09-25', title:'Leica Camera USA: Leica Summicron-M 35 f/2 ASPH.'},
+    priceSource:{url:'https://leicacamerausa.com/leica-summicron-m-35mm-f-2-asph-black-anodized.html', tier:'T1', note:'$4,275 list price on leicacamerausa.com (SKU 11673, in stock); Leica Store Miami independently lists the same price. EUR/GBP (added 2026-09-26) from the schema.org Offer (explicit priceCurrency) in leica-camera.com/de-DE and /en-GB product pages -- not the unlabelled GA data-layer price. CAD $6,030 from Vistek, an authorized Leica dealer in Canada (https://www.vistek.ca/store/402100/, Mfr 11673), read 2026-10-10.', date:'2026-09-25', title:'Leica Camera USA: Leica Summicron-M 35 f/2 ASPH.'},
     productUrl:'https://leica-camera.com/en-US/photography/lenses/m/summicron-m-35mm-f2-asph-black',
   },
   'apo-summicron-m-50mm-f2-asph': {
@@ -1922,9 +1921,9 @@ const LENSES = {
       {url:'https://leica-camera.com/sites/default/files/pm-14104-Apo-Summicron-M-2_50-ASPH_EN_Stand100512.pdf', tier:'T1', note:'Leica\'s official datasheet (order no. 11141) confirms weight 300 g, diameter 53 mm, filter thread 39 mm, 8 elements in 5 groups.', date:'2026-09-25', title:'Leica datasheet: Leica APO-Summicron-M 50 f/2 ASPH.'},
       {url:'https://leica-camera.com/en-US/photography/lenses/m/apo-summicron-m-50mm-f2-asph-black/technical-specification', tier:'T1', note:'Leica\'s web technical-specification page additionally confirms length 47 mm, 11 aperture blades.', date:'2026-09-25', title:'Leica technical specification: Leica APO-Summicron-M 50 f/2 ASPH.'},
     ],
-    prices:{USD:9945,AUD:15600,EUR:8650,GBP:7600,JPY:1584000,CAD:null,SGD:12850},
+    prices:{USD:9945,AUD:15600,EUR:8650,GBP:7600,JPY:1584000,CAD:14020,SGD:12850},
     priceIncomplete:true,
-    priceSource:{url:'https://leicacamerausa.com/leica-apo-summicron-m-50mm-f-2-asph-black-anodized.html', tier:'T1', note:'$9,945 list price on leicacamerausa.com (SKU 11141, in stock); Leica Store Miami independently lists the same price. EUR/GBP (added 2026-09-26) from the schema.org Offer (explicit priceCurrency) in leica-camera.com/de-DE and /en-GB product pages -- not the unlabelled GA data-layer price.', date:'2026-09-25', title:'Leica Camera USA: Leica APO-Summicron-M 50 f/2 ASPH.'},
+    priceSource:{url:'https://leicacamerausa.com/leica-apo-summicron-m-50mm-f-2-asph-black-anodized.html', tier:'T1', note:'$9,945 list price on leicacamerausa.com (SKU 11141, in stock); Leica Store Miami independently lists the same price. EUR/GBP (added 2026-09-26) from the schema.org Offer (explicit priceCurrency) in leica-camera.com/de-DE and /en-GB product pages -- not the unlabelled GA data-layer price. CAD $14,020 from Vistek, an authorized Leica dealer in Canada (https://www.vistek.ca/store/263033/, Mfr 11141), read 2026-10-10.', date:'2026-09-25', title:'Leica Camera USA: Leica APO-Summicron-M 50 f/2 ASPH.'},
     productUrl:'https://leica-camera.com/en-US/photography/lenses/m/apo-summicron-m-50mm-f2-asph-black',
   },
   'summicron-m-50mm-f2': {
@@ -1943,9 +1942,9 @@ const LENSES = {
       {url:'https://leica-camera.com/sites/default/files/pm-14145-Summicron-M-50-mm-Technical-Data_en.pdf', tier:'T1', note:'Leica\'s official datasheet (order no. 11826) confirms weight 240 g, diameter 53 mm, filter thread 39 mm.', date:'2026-09-25', title:'Leica datasheet: Leica Summicron-M 50 f/2'},
       {url:'https://leica-camera.com/en-US/photography/lenses/m/summicron-m-50mm-f2-black/technical-specification', tier:'T1', note:'Leica\'s web technical-specification page additionally confirms length 43.5 mm, 6 elements in 4 groups, 10 aperture blades.', date:'2026-09-25', title:'Leica technical specification: Leica Summicron-M 50 f/2'},
     ],
-    prices:{USD:3205,AUD:4950,EUR:2750,GBP:2450,JPY:506000,CAD:null,SGD:4050},
+    prices:{USD:3205,AUD:4950,EUR:2750,GBP:2450,JPY:506000,CAD:4520,SGD:4050},
     priceIncomplete:true,
-    priceSource:{url:'https://leicacamerausa.com/leica-summicron-m-50mm-f-2-black-anodized.html', tier:'T1', note:'$3,205 list price on leicacamerausa.com (SKU 11826, in stock); Leica Store Miami independently lists the same price. EUR/GBP (added 2026-09-26) from the schema.org Offer (explicit priceCurrency) in leica-camera.com/de-DE and /en-GB product pages -- not the unlabelled GA data-layer price.', date:'2026-09-25', title:'Leica Camera USA: Leica Summicron-M 50 f/2'},
+    priceSource:{url:'https://leicacamerausa.com/leica-summicron-m-50mm-f-2-black-anodized.html', tier:'T1', note:'$3,205 list price on leicacamerausa.com (SKU 11826, in stock); Leica Store Miami independently lists the same price. EUR/GBP (added 2026-09-26) from the schema.org Offer (explicit priceCurrency) in leica-camera.com/de-DE and /en-GB product pages -- not the unlabelled GA data-layer price. CAD $4,520 from Vistek, an authorized Leica dealer in Canada (https://www.vistek.ca/store/124444/, Mfr 11826), read 2026-10-10.', date:'2026-09-25', title:'Leica Camera USA: Leica Summicron-M 50 f/2'},
     productUrl:'https://leica-camera.com/en-US/photography/lenses/m/summicron-m-50mm-f2-black',
   },
   'apo-summicron-m-75mm-f2-asph': {
@@ -1962,9 +1961,9 @@ const LENSES = {
       {url:'https://leica-camera.com/sites/default/files/pm-14220-APO-Summicron-M75-TechnicalData.pdf', tier:'T1', note:'Leica\'s official datasheet (order no. 11637) confirms weight 430 g, diameter 58 mm, filter thread 49 mm.', date:'2026-09-25', title:'Leica datasheet: Leica APO-Summicron-M 75 f/2 ASPH.'},
       {url:'https://leica-camera.com/en-US/photography/lenses/m/apo-summicron-m-75mm-f2-asph-black/technical-specification', tier:'T1', note:'Leica\'s web technical-specification page additionally confirms length 66.8 mm, 7 elements in 5 groups.', date:'2026-09-25', title:'Leica technical specification: Leica APO-Summicron-M 75 f/2 ASPH.'},
     ],
-    prices:{USD:5300,AUD:8400,EUR:4650,GBP:4100,JPY:847000,CAD:null,SGD:6900},
+    prices:{USD:5300,AUD:8400,EUR:4650,GBP:4100,JPY:847000,CAD:7475,SGD:6900},
     priceIncomplete:true,
-    priceSource:{url:'https://leicacamerausa.com/leica-apo-summicron-m-75mm-f-2-asph-black-anodized.html', tier:'T1', note:'$5,300 list price on leicacamerausa.com (SKU 11637, in stock); Leica Store Miami independently lists the same price. EUR/GBP (added 2026-09-26) from the schema.org Offer (explicit priceCurrency) in leica-camera.com/de-DE and /en-GB product pages -- not the unlabelled GA data-layer price.', date:'2026-09-25', title:'Leica Camera USA: Leica APO-Summicron-M 75 f/2 ASPH.'},
+    priceSource:{url:'https://leicacamerausa.com/leica-apo-summicron-m-75mm-f-2-asph-black-anodized.html', tier:'T1', note:'$5,300 list price on leicacamerausa.com (SKU 11637, in stock); Leica Store Miami independently lists the same price. EUR/GBP (added 2026-09-26) from the schema.org Offer (explicit priceCurrency) in leica-camera.com/de-DE and /en-GB product pages -- not the unlabelled GA data-layer price. CAD $7,475 from Vistek, an authorized Leica dealer in Canada (https://www.vistek.ca/store/222112/, Mfr 11637), read 2026-10-10.', date:'2026-09-25', title:'Leica Camera USA: Leica APO-Summicron-M 75 f/2 ASPH.'},
     productUrl:'https://leica-camera.com/en-US/photography/lenses/m/apo-summicron-m-75mm-f2-asph-black',
   },
   'apo-summicron-m-90mm-f2-asph': {
@@ -1983,9 +1982,9 @@ const LENSES = {
       {url:'https://leica-camera.com/sites/default/files/pm-14240-APO-Summicron-M90-TechnicalData.pdf', tier:'T1', note:'Leica\'s official datasheet (order no. 11884) confirms weight 500 g, diameter 64 mm, filter thread 55 mm.', date:'2026-09-25', title:'Leica datasheet: Leica APO-Summicron-M 90 f/2 ASPH.'},
       {url:'https://leica-camera.com/en-US/photography/lenses/m/apo-summicron-m-90mm-f2-asph-black/technical-specification', tier:'T1', note:'Leica\'s web technical-specification page additionally confirms length 78 mm, 5 elements in 5 groups.', date:'2026-09-25', title:'Leica technical specification: Leica APO-Summicron-M 90 f/2 ASPH.'},
     ],
-    prices:{USD:6095,AUD:9500,EUR:5250,GBP:4700,JPY:957000,CAD:null,SGD:null},
+    prices:{USD:6095,AUD:9500,EUR:5250,GBP:4700,JPY:957000,CAD:8595,SGD:null},
     priceIncomplete:true,
-    priceSource:{url:'https://leicacamerausa.com/leica-apo-summicron-m-90mm-f-2-asph-black-anodized.html', tier:'T1', note:'$6,095 list price on leicacamerausa.com (SKU 11884, in stock); Leica Store Miami independently lists the same price. EUR/GBP (added 2026-09-26) from the schema.org Offer (explicit priceCurrency) in leica-camera.com/de-DE and /en-GB product pages -- not the unlabelled GA data-layer price.', date:'2026-09-25', title:'Leica Camera USA: Leica APO-Summicron-M 90 f/2 ASPH.'},
+    priceSource:{url:'https://leicacamerausa.com/leica-apo-summicron-m-90mm-f-2-asph-black-anodized.html', tier:'T1', note:'$6,095 list price on leicacamerausa.com (SKU 11884, in stock); Leica Store Miami independently lists the same price. EUR/GBP (added 2026-09-26) from the schema.org Offer (explicit priceCurrency) in leica-camera.com/de-DE and /en-GB product pages -- not the unlabelled GA data-layer price. CAD $8,595 from Vistek, an authorized Leica dealer in Canada (https://www.vistek.ca/store/158200/, Mfr 11884), read 2026-10-10.', date:'2026-09-25', title:'Leica Camera USA: Leica APO-Summicron-M 90 f/2 ASPH.'},
     productUrl:'https://leica-camera.com/en-US/photography/lenses/m/apo-summicron-m-90mm-f2-asph-black',
   },
   'apo-telyt-m-135mm-f34': {
@@ -2103,9 +2102,9 @@ const LENSES = {
     imageSource:{url:'https://leica-camera.com/en-US/photography/lenses/m/super-elmar-m-21mm-f3-4-asph-black', tier:'T1', date:'2026-09-26', title:'Leica Super-Elmar-M 21 f/3.4 ASPH. official product page'},
     asin:'B00579W0DE',
     specSources:[{url:'https://leica-camera.com/sites/default/files/pm-14547-Super-Elmar-M21-TechnicalData.pdf', tier:'T1', note:'Leica\'s official datasheet (order no. 11145) confirms weight 279 g, diameter 53 mm, filter E46, 8 elements in 7 groups, focus range 0.7 m, largest ratio 1:29.8, smallest aperture f/16. Its length row is mislabelled (see entry comment).', date:'2026-09-26', title:'Leica datasheet: Leica Super-Elmar-M 21 f/3.4 ASPH.'}],
-    prices:{USD:4000,AUD:null,EUR:null,GBP:null,JPY:null,CAD:null,SGD:null},
+    prices:{USD:4000,AUD:null,EUR:null,GBP:null,JPY:null,CAD:5640,SGD:null},
     priceIncomplete:true,
-    priceSource:{url:'https://leicacamerausa.com/leica-super-elmar-m-21mm-f-3-4-asph-black-anodized.html', tier:'T1', note:'$4,000 list price on leicacamerausa.com (SKU 11145); Leica Store Miami independently lists the same price. Regional prices not researched.', date:'2026-09-26', title:'Leica Camera USA'},
+    priceSource:{url:'https://leicacamerausa.com/leica-super-elmar-m-21mm-f-3-4-asph-black-anodized.html', tier:'T1', note:'$4,000 list price on leicacamerausa.com (SKU 11145); Leica Store Miami independently lists the same price. Regional prices not researched. CAD $5,640 from Vistek, an authorized Leica dealer in Canada (https://www.vistek.ca/store/257778/, Mfr 11145), read 2026-10-10.', date:'2026-09-26', title:'Leica Camera USA'},
     productUrl:'https://leica-camera.com/en-US/photography/lenses/m/super-elmar-m-21mm-f3-4-asph-black',
   },
   'summilux-m-90mm-f15-asph': {
@@ -2124,9 +2123,9 @@ const LENSES = {
     imageSource:{url:'https://leica-camera.com/en-US/photography/lenses/m/summilux-m-90mm-f1-5-asph', tier:'T1', date:'2026-09-26', title:'Leica Summilux-M 90 f/1.5 ASPH. official product page'},
     asin:'B08375D5BC',
     specSources:[{url:'https://leica-camera.com/sites/default/files/pm-56101-Technical-Data_Summilux-M%2090%20f-1.5%20ASPH_e.pdf', tier:'T1', note:'Leica\'s official datasheet (order no. 11678, Dec 2019) confirms weight 1,010 g, length 91 mm (without extended hood), diameter 74 mm, filter E67, 8 elements in 6 groups, 11 aperture blades, focus range 1 m, largest ratio 1:8.8, smallest aperture f/16; matches the web spec table exactly.', date:'2026-09-26', title:'Leica datasheet: Leica Summilux-M 90 f/1.5 ASPH.'}],
-    prices:{USD:14975,AUD:null,EUR:null,GBP:11760,JPY:null,CAD:null,SGD:null},
+    prices:{USD:14975,AUD:null,EUR:null,GBP:11760,JPY:null,CAD:20815,SGD:null},
     priceIncomplete:true,
-    priceSource:{url:'https://leicacamerausa.com/leica-summilux-m-90mm-f-1-5-asph-black-anodized.html', tier:'T1', note:'$14,975 list price on leicacamerausa.com (SKU 11678), shown out of stock); second source (2026-09-26): Classic Connection, an authorized dealer, lists the same $14,975.00 (Cat #11678, New USA, on backorder) -- Leica Store Miami no longer lists it. GBP 11,760 from the schema.org Offer on leica-camera.com/en-GB (2026-09-26).', date:'2026-09-26', title:'Leica Camera USA'},
+    priceSource:{url:'https://leicacamerausa.com/leica-summilux-m-90mm-f-1-5-asph-black-anodized.html', tier:'T1', note:'$14,975 list price on leicacamerausa.com (SKU 11678), shown out of stock); second source (2026-09-26): Classic Connection, an authorized dealer, lists the same $14,975.00 (Cat #11678, New USA, on backorder) -- Leica Store Miami no longer lists it. GBP 11,760 from the schema.org Offer on leica-camera.com/en-GB (2026-09-26). CAD $20,815 from Vistek, an authorized Leica dealer in Canada (https://www.vistek.ca/store/437658/, Mfr 11678), read 2026-10-10.', date:'2026-09-26', title:'Leica Camera USA'},
     productUrl:'https://leica-camera.com/en-US/photography/lenses/m/summilux-m-90mm-f1-5-asph',
   },
   'super-vario-elmar-tl-11-23mm-f35-45-asph': {
