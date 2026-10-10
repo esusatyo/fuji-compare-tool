@@ -129,7 +129,13 @@ const KNOWN_SHARED_LINKS = new Map([
 // on amazon.com in a real browser before applying; the same pass re-read all
 // 46 existing Leica ASINs and found each on its stated product. The 7
 // remaining Leica gaps still have no plain listing.
-const ASIN_GAP_BASELINE = 75;
+// Tightened to 57 the same day: 18 Sigma lenses got their original "DG DN"
+// listing (L-Mount ASIN shared by sigma/ and panasonic/, Sony E by sony/):
+// 17mm f/4, 20mm f/2, 24mm f/2 (L only), 35mm f/2, 65mm f/2, 90mm f/2.8,
+// plus sigma/sigma-300-600mm-f4-dg. Amazon also lists 2025 "DG" / "DG II"
+// re-releases of several of these; those were deliberately not used, since
+// they may be a different product from the DG DN entries stored here.
+const ASIN_GAP_BASELINE = 57;
 
 const allItems = () => brandDirs().flatMap(brand => {
   const { data } = loadBrand(brand);
