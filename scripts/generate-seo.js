@@ -94,28 +94,28 @@ function numberLine(slug) {
   return m ? { line: `${m[1]}#${m[2].length}`, gen: parseInt(m[2], 10) } : null;
 }
 
-function curatedPairs(cams) {
-  const seen = new Set();
-  const pairs = [];
-  const usd = id => (cams[id].prices && cams[id].prices.USD) || 0;
-  // Canonical order within a pair: newer first, then pricier, then slug.
-  const add = (a, b) => {
-    if (a === b) return;
-    const [ca, cb] = [cams[a], cams[b]];
-    if (cb.year > ca.year || (cb.year === ca.year && usd(b) > usd(a)) ||
-        (cb.year === ca.year && usd(b) === usd(a) && b < a)) [a, b] = [b, a];
-    const key = `${a}|${b}`;
-    if (!seen.has(key)) { seen.add(key); pairs.push([a, b]); }
-  };
+const usdOf = (cams, id) => (cams[id].prices && cams[id].prices.USD) || 0;
+
+// Canonical order within a pair: newer first, then pricier, then slug.
+function canonicalPair(cams, a, b) {
+  const usd = id => usdOf(cams, id);
+  const [ca, cb] = [cams[a], cams[b]];
+  if (cb.year > ca.year || (cb.year === ca.year && usd(b) > usd(a)) ||
+      (cb.year === ca.year && usd(b) === usd(a) && b < a)) [a, b] = [b, a];
+  return [a, b];
+}
+
+// Rule 1: consecutive generations within a model line, newer body
+// still current. Scheme A is structurally unambiguous; scheme B adds
+// the price gate because a shared stem can still span tiers. Calls
+// visit(newer, older) per pair, in the order curatedPairs emits them.
+function forEachSuccessor(cams, visit) {
+  const usd = id => usdOf(cams, id);
   // Successors launch near their predecessor's RRP; a big gap means the
   // "line" grouping actually caught two different tiers (Z9 vs Z5).
   const priceClose = (a, b) =>
     usd(a) > 0 && usd(b) > 0 && Math.abs(usd(a) - usd(b)) / Math.max(usd(a), usd(b)) <= 0.4;
-
-  // Rule 1: consecutive generations within a model line, newer body
-  // still current. Scheme A is structurally unambiguous; scheme B adds
-  // the price gate because a shared stem can still span tiers.
-  const addSuccessors = (grouper, gated) => {
+  for (const [grouper, gated] of [[romanLine, false], [numberLine, true]]) {
     const lines = {};
     for (const id of Object.keys(cams)) {
       const r = grouper(id);
@@ -127,12 +127,30 @@ function curatedPairs(cams) {
         const [newer, older] = [list[i][0], list[i + 1][0]];
         if (cams[newer].discontinued) continue;
         if (gated && !priceClose(newer, older)) continue;
-        add(newer, older);
+        visit(newer, older);
       }
     }
+  }
+}
+
+// `a|b` keys (canonical order) of the pairs rule 1 produces.
+function successorPairKeys(cams) {
+  const keys = new Set();
+  forEachSuccessor(cams, (a, b) => { if (a !== b) keys.add(canonicalPair(cams, a, b).join('|')); });
+  return keys;
+}
+
+function curatedPairs(cams) {
+  const seen = new Set();
+  const pairs = [];
+  const usd = id => usdOf(cams, id);
+  const add = (a, b) => {
+    if (a === b) return;
+    [a, b] = canonicalPair(cams, a, b);
+    const key = `${a}|${b}`;
+    if (!seen.has(key)) { seen.add(key); pairs.push([a, b]); }
   };
-  addSuccessors(romanLine, false);
-  addSuccessors(numberLine, true);
+  forEachSuccessor(cams, add);
 
   // Rule 2: current bodies vs their two nearest USD-price neighbours.
   const current = Object.keys(cams)
@@ -1477,4 +1495,4 @@ if (require.main === module) {
   console.log(`generate-seo: ${files.size} artifacts (${written} written, ${removed} stale removed)`);
 }
 
-module.exports = { LANDING_CARD_ORDER, ALL_BRANDS_MOSAIC, orderLandingBrands, allBrandsPhotoHTML, siteConfig, curatedPairs, relatedPairs, vsPageHTML, vsSummary, vsSummaryFacts, resolveMatchups, crossVsPageHTML, crossTitle, CROSS_BRAND_MATCHUPS, compareHeadBlock, compareBodyBlock, brandHeadBlock, rootHeadBlock, brandBodyBlock, rootBodyBlock, withHeadBlock, withBodyBlock, sitemapXML, robotsTxt, buildAll, SEO_BEGIN, SEO_END, SEO_BODY_BEGIN, SEO_BODY_END, ID_HEAD_BEGIN, ID_HEAD_END, ID_HEADER_BEGIN, ID_HEADER_END, ID_FOOTER_BEGIN, ID_FOOTER_END, identityToken, logoMark, cleanUrl, cleanHref, themeToggleHTML, collectReferences, citationText, refHostname, REFERENCE_ROWS, referenceRowsHTML };
+module.exports = { LANDING_CARD_ORDER, ALL_BRANDS_MOSAIC, orderLandingBrands, allBrandsPhotoHTML, siteConfig, curatedPairs, successorPairKeys, relatedPairs, vsPageHTML, vsSummary, vsSummaryFacts, resolveMatchups, crossVsPageHTML, crossTitle, CROSS_BRAND_MATCHUPS, compareHeadBlock, compareBodyBlock, brandHeadBlock, rootHeadBlock, brandBodyBlock, rootBodyBlock, withHeadBlock, withBodyBlock, sitemapXML, robotsTxt, buildAll, SEO_BEGIN, SEO_END, SEO_BODY_BEGIN, SEO_BODY_END, ID_HEAD_BEGIN, ID_HEAD_END, ID_HEADER_BEGIN, ID_HEADER_END, ID_FOOTER_BEGIN, ID_FOOTER_END, identityToken, logoMark, cleanUrl, cleanHref, themeToggleHTML, collectReferences, citationText, refHostname, REFERENCE_ROWS, referenceRowsHTML };
