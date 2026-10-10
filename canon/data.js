@@ -1562,7 +1562,7 @@ const LENSES = {
     specSources: [
       { url:'https://www.lksamyang.com/en/product/product-view.php?seq=410', tier:'T1', note:'official Samyang product page — full spec table (weight, length, diameter, MFD, magnification, elements/groups, blades, weather sealing) for the Canon RF-mount manual-focus version', date:'2026-08-29' },
     ],
-    asin:null,
+    asin:'B07Q47QQDT',
     prices:{USD:499,AUD:799,EUR:599,GBP:399,JPY:56000,CAD:599,SGD:699},
     productUrl:'https://samyangus.com/products/14mm-f2-8-full-frame-ultra-wide-angle-canon-rf',
   },

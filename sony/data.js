@@ -1391,7 +1391,7 @@ const LENSES = {
   },
 
   'fe-100-400mm-f56-8-oss': {
-    name:'FE 100-400mm F5.6-8 OSS', manufacturer:'Sony', line:'FE', type:'Zoom', mount:'e', asin:null,
+    name:'FE 100-400mm F5.6-8 OSS', manufacturer:'Sony', line:'FE', type:'Zoom', mount:'e', asin:'B0HCW5VT47',
     focalLength:null, focalLengthMin:100, focalLengthMax:400, focalLengthEquiv:'100-400mm',
     maxAperture:5.6, minAperture:32, weight:654, length:164.5, diameter:78.2,
     filterThread:67, minFocusDist:860, maxMagnification:0.41,
@@ -2103,7 +2103,7 @@ const LENSES = {
     elements:13, groups:11, blades:9, afType:'Stepping Motor',
     weatherSealed:false, ois:false, oisStops:null, year:2021, discontinued:false,
     imageUrl:'https://www.sigma-global.com/lenses/c021_24_2_product_img01.png',
-    asin:null,
+    asin:'B09FRVTZG6',
     prices:{USD:719,AUD:1099,EUR:799,GBP:599,JPY:92000,CAD:899,SGD:999},
     productUrl:'https://www.sigma-global.com/en/lenses/c021_24_2/',
   },

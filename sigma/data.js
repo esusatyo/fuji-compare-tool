@@ -621,7 +621,7 @@ const LENSES = {
     elements:18, groups:13, blades:11, afType:'Stepping Motor',
     weatherSealed:true, ois:false, oisStops:null, year:2019, discontinued:false,
     imageUrl:'https://www.sigma-global.com/lenses/a019_14_24_28_product_img01.png',
-    asin:null,
+    asin:'B07V49L2XG',
     prices:{USD:1539,AUD:null,EUR:null,GBP:null,JPY:null,CAD:null,SGD:null},
     priceIncomplete:true,
     productUrl:'https://www.sigma-global.com/en/lenses/a019_14_24_28/',

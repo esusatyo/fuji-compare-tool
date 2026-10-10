@@ -135,7 +135,18 @@ const KNOWN_SHARED_LINKS = new Map([
 // plus sigma/sigma-300-600mm-f4-dg. Amazon also lists 2025 "DG" / "DG II"
 // re-releases of several of these; those were deliberately not used, since
 // they may be a different product from the DG DN entries stored here.
-const ASIN_GAP_BASELINE = 57;
+// Tightened to 45 the same day by a full pass over the remaining gaps (each
+// title read on amazon.com): canon/samyang-14mm-f28 (Rokinon RF14),
+// nikon/tamron-12-20mm-f28, olympus/om-3, om-3-astro, pen-om,
+// omsystem-25mm-f18-ii (also panasonic/), omsystem-14-42mm-f35-56-iii,
+// panasonic/omsystem-17mm-f12-pro, sony/fe-100-400mm-f56-8-oss,
+// sony/sigma-24mm-f2-dg, sigma/sigma-14-24mm-f28-dg. Still open, with the
+// reason: no amazon.com listing in that mount (most Laowa and Voigtländer Z,
+// Laowa MFT and L, Samyang 14-24 L, Viltrox 85 II RF, Meike 25 Air X, Sony
+// FX5, the 2026 Sigma 85mm f/1.2 and 20-60mm); only a 2025 "DG"/"DG II"
+// re-release listed (Sigma 45mm, 50mm); listing doesn't name the mount or
+// version (Yongnuo YN56, Meike 55mm, Meike 85mm); 7 Leica (bundles only).
+const ASIN_GAP_BASELINE = 45;
 
 const allItems = () => brandDirs().flatMap(brand => {
   const { data } = loadBrand(brand);

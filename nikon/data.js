@@ -1574,7 +1574,7 @@ const LENSES = {
     elements:17, groups:12, blades:12, afType:'Linear Motor',
     weatherSealed:true, ois:false, oisStops:null, year:2026, discontinued:false,
     imageUrl:'https://tamron-americas.com/wp-content/uploads/2026/06/a084z-style.webp',
-    asin:null,
+    asin:'B0HC4P5F7L',
     specSources: [
       { url:'https://www.tamron.com/global/consumer/lenses/a084/spec.html', tier:'T1', note:'Nikon-Z-specific spec table: weight 585g / length 121.3mm; filter size is an integrated rear filter holder, no front thread.', date:'2026-08-30' },
     ],
