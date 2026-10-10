@@ -67,6 +67,22 @@ test('sitemap covers root, every brand page, every indexable vs-page, and trust 
   }
 });
 
+test('every vs-page is either noindexed or in the sitemap — never both, never neither', () => {
+  let noindexed = 0;
+  for (const [rel, content] of generated) {
+    if (!isVsPage(rel)) continue;
+    const robots = content.match(/<meta name="robots"[^>]*>/g) || [];
+    assert.ok(robots.length <= 1, `${rel}: more than one robots meta tag`);
+    if (robots.length) {
+      assert.equal(robots[0], NOINDEX_META, `${rel}: unexpected robots tag ${robots[0]}`);
+      noindexed++;
+    }
+    assert.notEqual(robots.length === 1, sitemapHas(rel),
+      `${rel}: must have exactly one of a noindex tag or a sitemap entry`);
+  }
+  assert.ok(noindexed > 0, 'expected some noindexed vs-pages');
+});
+
 test('canonicals never point at a .html URL (the host redirects those)', () => {
   for (const [rel, content] of generated) {
     if (!rel.endsWith('.html')) continue;

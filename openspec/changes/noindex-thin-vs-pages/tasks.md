@@ -19,7 +19,7 @@ One commit per task, with that task's tick included in the commit. All work ship
 ## 2. Tests (Tier 1, `tests/data/seo.test.js` unless noted)
 
 - [x] 2.1 Replace the "sitemap covers … every vs-page" test: the sitemap must contain every indexable vs-page and no page whose HTML contains `noindex`.
-- [ ] 2.2 Every generated vs-page has exactly one of: a robots `noindex, follow` meta tag, or a sitemap entry. Neither-or-both fails.
+- [x] 2.2 Every generated vs-page has exactly one of: a robots `noindex, follow` meta tag, or a sitemap entry. Neither-or-both fails.
 - [ ] 2.3 Every `PINNED_VS_PAIRS` entry is generated at exactly its path and is indexable. Add a unit test that a pin naming an unknown slug makes `buildAll` throw.
 - [ ] 2.4 Every successor pair whose newer body launched in or after `SUCCESSOR_INDEX_SINCE` is indexable; every other unpinned page is not.
 - [ ] 2.5 `robots.txt` has no `Disallow` rule matching `/vs/`.
