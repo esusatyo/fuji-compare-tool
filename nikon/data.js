@@ -1545,8 +1545,8 @@ const LENSES = {
     specSources: [
       { url:'https://www.tamron.com/global/consumer/lenses/a058/spec.html', tier:'T1', note:'Nikon-Z-specific spec table: weight 1,190g / length 160.1mm — corrected from a stored 1,165g/158mm that matched the Sony E-mount column, not Nikon Z.', date:'2026-08-29' },
     ],
-    priceSource: { url:'https://www.dpreview.com/news/8584835899/tamron-s-35-150mm-f2-2-8-for-nikon-z-mount-goes-on-sale-on-sept-21-for-1-999', tier:'NEWS', note:'Nikon Z launch MSRP $1,999, corroborated by tamron.com\'s own dated news post (launch confirmed 2023-09-21, no price on that page) and PetaPixel\'s contemporaneous coverage; corrects a stored $1,799 that matched no found source for this mount ($1,449.95 seen elsewhere is an Amazon sale price, not the RRP).', date:'2026-08-29' },
-    prices:{USD:1999,AUD:null,EUR:null,GBP:null,JPY:null,CAD:null,SGD:null},
+    priceSource: { url:'https://tamron-americas.com/product/35-150mm-f-2-2-8-di-iii-vxd/', tier:'T1', title:'Tamron Americas store', note:'USD $1999 -> $1799: Tamron Americas lists the Nikon z version at US $1799 / CA $2399 regular. Read 2026-10-11', date:'2026-10-11' },
+    prices:{USD:1799,AUD:null,EUR:null,GBP:null,JPY:null,CAD:null,SGD:null},
     priceIncomplete:true,
     productUrl:'https://tamron-americas.com/product/35-150mm-f-2-2-8-di-iii-vxd/',
   },
@@ -1638,8 +1638,8 @@ const LENSES = {
     specSources: [
       { url:'https://www.tamron.com/global/consumer/lenses/a064/spec.html', tier:'T1', note:'Nikon-Z-specific spec table: weight 450g / length 103.9mm (Sony E is 440g/101.8mm).', date:'2026-08-30' },
     ],
-    priceSource: { url:'https://tamron-americas.com/announced-ultra-wide-angle-16-30-mm-g2-trinity-sony-nikon/', tier:'T1', note:'"Both mounts will retail for $929 USD" — launched for Z 2025-08-22. No CAD figure published on the official announcement; not found on any independent source either.', date:'2026-08-30' },
-    prices:{USD:929,AUD:1399,EUR:1099,GBP:799,JPY:143000,CAD:1199,SGD:1299},
+    priceSource: { url:'https://tamron-americas.com/product/16-30mm-f-2-8-di-iii-vxd-g2/', tier:'T1', title:'Tamron Americas store', note:'CAD 1199 -> 1299: Tamron Americas lists the Nikon z version at US $929 / CA $1299 regular. Read 2026-10-11', date:'2026-10-11' },
+    prices:{USD:929,AUD:1399,EUR:1099,GBP:799,JPY:143000,CAD:1299,SGD:1299},
     productUrl:'https://tamron-americas.com/product/16-30mm-f-2-8-di-iii-vxd-g2/',
   },
 
@@ -1655,8 +1655,8 @@ const LENSES = {
     specSources: [
       { url:'https://www.tamron.com/global/consumer/lenses/a063/spec.html', tier:'T1', note:'Nikon-Z-specific spec table: weight 550g / length 119.8mm (Sony E is 540g/117.6mm).', date:'2026-08-30' },
     ],
-    priceSource: { url:'https://www.tamron.com/global/consumer/news/detail/a063z_20240314.html', tier:'T1', note:'Nikon Z launch MSRP $999 USD / $1,399 CAD, on sale from 2024-04-18 ($100 more than the Sony E price).', date:'2026-08-30' },
-    prices:{USD:999,AUD:1599,EUR:1099,GBP:899,JPY:151000,CAD:1399,SGD:1399},
+    priceSource: { url:'https://tamron-americas.com/product/28-75mm-f-2-8-di-iii-vxd-g2/', tier:'T1', title:'Tamron Americas store', note:'USD $999 -> $849, CAD 1399 -> 1149: Tamron Americas lists the Nikon z version at US $849 / CA $1149 regular. Read 2026-10-11', date:'2026-10-11' },
+    prices:{USD:849,AUD:1599,EUR:1099,GBP:899,JPY:151000,CAD:1149,SGD:1399},
     productUrl:'https://tamron-americas.com/product/28-75mm-f-2-8-di-iii-vxd-g2/',
   },
 

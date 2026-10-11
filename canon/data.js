@@ -1501,7 +1501,8 @@ const LENSES = {
     weatherSealed:true, ois:true, oisStops:null, year:2026, discontinued:false,
     imageUrl:'https://www.tamron.com/global/consumer/pc_file/file/b070_thumb.webp',
     asin:'B0H6Y347BF',
-    prices:{USD:749,AUD:1199,EUR:899,GBP:699,JPY:117000,CAD:999,SGD:1099},
+    prices:{USD:749,AUD:1199,EUR:899,GBP:699,JPY:117000,CAD:949,SGD:1099},
+    priceSource: { url:'https://tamron-americas.com/product/17-70mm-f-2-8-di-iii-a-vc-rxd/', tier:'T1', title:'Tamron Americas store', note:'CAD 999 -> 949: Tamron Americas lists the Canon rf version at US $749 / CA $949 regular. Read 2026-10-11', date:'2026-10-11' },
     productUrl:'https://www.tamron.com/global/consumer/lenses/b070/',
     specSources: [
       { url:'https://tamron-americas.com/canon/', tier:'T1', note:'Re-verified ~2 months post-launch: RF-specific 530 g / 117.3 mm / 67 mm filter unchanged. No tier-2 hands-on review of the RF copy exists yet (confirmed via an rfshooters.com Canon-RF forum thread explicitly asking for one) — stays tier-1-sourced.', date:'2026-08-29' },
@@ -1518,7 +1519,8 @@ const LENSES = {
     weatherSealed:true, ois:true, oisStops:null, year:2025, discontinued:false,
     imageUrl:'https://www.tamron.com/global/consumer/pc_file/file/b061_ogp_new.jpg',
     asin:'B0FLPDSK1S',
-    prices:{USD:629,AUD:999,EUR:699,GBP:599,JPY:97000,CAD:799,SGD:899},
+    prices:{USD:629,AUD:999,EUR:699,GBP:599,JPY:97000,CAD:849,SGD:899},
+    priceSource: { url:'https://tamron-americas.com/product/18-300mm-f-3-5-6-3-di-iii-a-vc-vxd/', tier:'T1', title:'Tamron Americas store', note:'CAD 799 -> 849: Tamron Americas lists the Canon rf version at US $629 / CA $849 regular. Read 2026-10-11', date:'2026-10-11' },
     productUrl:'https://www.tamron.com/global/consumer/lenses/b061/',
   },
 

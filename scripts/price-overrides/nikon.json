@@ -1,6 +1,6 @@
 {
   "tamron-12-20mm-f28": { "CAD": 2399 },
-  "tamron-28-75mm-f28-g2": { "CAD": 1399 },
+  "tamron-28-75mm-f28-g2": { "CAD": 1149 },
   "tamron-35-100mm-f28": { "CAD": 1299 },
   "tamron-70-180mm-f28-g2": { "CAD": 1549 },
   "tamron-90mm-f28-macro": { "CAD": 949 },
@@ -23,5 +23,6 @@
   "z-28-135mm-f4-pz": { "AUD": 3399, "CAD": 3599 },
   "z-28-75mm-f2-8": { "AUD": 1829, "CAD": 1599 },
   "z-600mm-f6-3-vr-s-pf": { "AUD": 8899, "CAD": 6899 },
-  "z-800mm-f6-3-vr-s-pf": { "AUD": 10999, "CAD": 9019 }
+  "z-800mm-f6-3-vr-s-pf": { "AUD": 10999, "CAD": 9019 },
+  "tamron-16-30mm-f28-g2": { "CAD": 1299 }
 }

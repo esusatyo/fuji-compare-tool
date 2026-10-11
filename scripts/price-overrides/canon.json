@@ -37,5 +37,7 @@
   "rf-35mm-f18-macro-is-stm": { "CAD": 699, "EUR": 619, "GBP": 559, "JPY": 88000, "SGD": 799 },
   "eos-r50": { "EUR": 745, "GBP": 729, "JPY": 111100, "SGD": 1029 },
   "eos-r100": { "EUR": 549, "GBP": 559, "JPY": 88000, "SGD": 739 },
-  "rf-800mm-f11-is-stm": { "EUR": 999, "GBP": 1099, "JPY": 152900, "SGD": 1529 }
+  "rf-800mm-f11-is-stm": { "EUR": 999, "GBP": 1099, "JPY": 152900, "SGD": 1529 },
+  "tamron-17-70mm-f28": { "CAD": 949 },
+  "tamron-18-300mm-f35-63": { "CAD": 849 }
 }
