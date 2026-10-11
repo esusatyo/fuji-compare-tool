@@ -2164,7 +2164,8 @@ const LENSES = {
     imageUrl:'https://samyangus.com/cdn/shop/products/MF14_2.8Z_Front.jpg',
     imageSource: { url:'https://samyangus.com/products/14mm-f2-8-full-frame-ultra-wide-angle-nikon-z', tier:'T1', note:'official Samyang US store, dedicated Nikon Z product page (SKU SYZ14-N); front product shot, file named "MF14_2.8Z_Front"', date:'2026-09-06' },
     asin:'B07QRVHBXS',
-    prices:{USD:707,AUD:1099,EUR:799,GBP:599,JPY:80000,CAD:899,SGD:999},
+    prices:{USD:499,AUD:1099,EUR:799,GBP:599,JPY:80000,CAD:899,SGD:999},
+    priceSource: { url:'https://samyangus.com/products/14mm-f2-8-full-frame-ultra-wide-angle-nikon-z', tier:'T1', title:'Samyang US official store', note:'USD $707 -> $499: Samyang US lists the Nikon Z version with a regular (compare-at) price of $499, currently selling at $428 (store catalogue feed, priceCurrency USD). The old figure matched no Samyang US price. Read 2026-10-11', date:'2026-10-11' },
     productUrl:'https://samyangus.com/products/14mm-f2-8-full-frame-ultra-wide-angle-nikon-z',
   },
 
@@ -2181,7 +2182,8 @@ const LENSES = {
     imageUrl:'https://samyangus.com/cdn/shop/products/MF85_1.4Z_Front.jpg',
     imageSource: { url:'https://samyangus.com/products/85mm-f1-4-full-frame-telephoto-nikon-z', tier:'T1', note:'official Samyang US store, dedicated Nikon Z product page; barrel explicitly reads "MF 85/1.4 Z"', date:'2026-09-06' },
     asin:'B07QRVFD3Q',
-    prices:{USD:565,AUD:899,EUR:599,GBP:499,JPY:68000,CAD:699,SGD:799},
+    prices:{USD:399,AUD:899,EUR:599,GBP:499,JPY:68000,CAD:699,SGD:799},
+    priceSource: { url:'https://samyangus.com/products/85mm-f1-4-full-frame-telephoto-nikon-z', tier:'T1', title:'Samyang US official store', note:'USD $565 -> $399: Samyang US lists the Nikon Z version with a regular (compare-at) price of $399, currently selling at $262.62 (store catalogue feed, priceCurrency USD). The old figure matched no Samyang US price. Read 2026-10-11', date:'2026-10-11' },
     productUrl:'https://samyangus.com/products/85mm-f1-4-full-frame-telephoto-nikon-z',
   },
 
