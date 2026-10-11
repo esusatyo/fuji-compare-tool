@@ -91,3 +91,18 @@ Filter `page contains /vs/`: 504 impressions, 5 clicks, 106 visible queries, 64 
 - `vs/sony-a7r-vi-vs-canon-eos-r5-ii` (pinned by hand, 4 impressions) now has a visible named query: "sony a7rvi vs canon r5 mark ii".
 
 Pin list unchanged: 30 pins, 43 indexable vs-pages.
+
+## Other search engines (GoatCounter referrers since Jul 1, pulled 2026-10-11)
+
+The bar above used Google data only, but `noindex` applies to every engine. GoatCounter search referrers and their vs-page landings:
+
+| Referrer | Visits | vs-page landings |
+|---|---|---|
+| Google | 19 | l10-vs-s9 (14), gh7-vs-gh6, s1-ii-vs-s1h, vs/sony-a1-ii-vs-canon-eos-r1 — all indexable |
+| DuckDuckGo | 13 | **vs/sony-a7-v-vs-nikon-z6-iii**, vs/sony-a7r-vi-vs-canon-eos-r5-ii (rest: root) |
+| Bing (bing.com + www.bing.com) | 11 | l10-vs-s9, **vs/sony-a7-v-vs-nikon-z6-iii**, vs/sony-a7r-vi-vs-canon-eos-r5-ii, **vs/nikon-z5-ii-vs-sony-a7c-ii** (rest: root) |
+| Yahoo, Ecosia | 3 | root only |
+
+The two bold pages were noindexed by PR #70 and are pinned in the follow-up: a search click from any engine meets the bar. Pins: 32; indexable vs-pages: 45; sitemap: 57 URLs.
+
+External backlinks (Search Console Links report, 2026-10-10): 52 links to 3 pages — `/fujifilm/` (36), `/` (10), `/compare/` (6). None target a vs-page.

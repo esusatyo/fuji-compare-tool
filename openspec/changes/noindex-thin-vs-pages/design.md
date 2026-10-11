@@ -21,7 +21,7 @@ Every page is listed in `sitemap.xml`. Rules 2 and 3 depend on prices, so each p
 - 202 pages have no Search Console impressions.
 - 11 pages that had impressions were deleted by price churn.
 
-`research/query-evidence.md` adds the query-level view and sets the evidence bar this change uses: a page earns indexing with a click, or ≥5 impressions, or ≥2 distinct named queries. 29 pages meet it (including 4 that churn deleted). Its Appendix A "keep 89" list in `data.md` is superseded by that bar.
+`research/query-evidence.md` adds the query-level view and sets the evidence bar this change uses: a page earns indexing with a search click, or ≥5 impressions, or ≥2 distinct named queries. A click from **any** engine counts — `noindex` applies to Bing and DuckDuckGo too, and GoatCounter referrers are the only view of those. 29 pages meet it (including 4 that churn deleted). Its Appendix A "keep 89" list in `data.md` is superseded by that bar.
 
 ## Goals / Non-Goals
 
@@ -58,7 +58,7 @@ Non-indexable pages get `<meta name="robots" content="noindex, follow">` and are
 - **Same-brand pins** are merged into that brand's pair set *in the exact slug order written*, so a restored page keeps the URL Google already knows. If the rules produce the pair in the other order, the pin's order replaces it in place; a pin the rules don't produce is appended, so rule-generated output (brand-page links, related links) doesn't shift.
 - **Cross-brand pins** must name an existing `CROSS_BRAND_MATCHUPS` page. That list is hand-curated and therefore already stable; for those pages the pin only marks indexability.
 - **A pin that names an unknown brand or slug, a missing cross page, or the same camera twice, throws.** This follows the `resolveMatchups` convention: a typo is caught by the generator, not by a crawler months later.
-- Seed list: the 29 pages that meet the evidence bar in `research/query-evidence.md`, plus `vs/sony-a7r-vi-vs-canon-eos-r5-ii`. The automatic launch-window rule only covers same-brand successors; this cross-brand page for a 2026 body had 4 impressions and 4 visits (the bar ignores GoatCounter visits), so it is pinned by hand.
+- Seed list: the 29 pages that meet the evidence bar in `research/query-evidence.md`, plus `vs/sony-a7r-vi-vs-canon-eos-r5-ii`. The automatic launch-window rule only covers same-brand successors; this cross-brand page for a 2026 body had 4 impressions and 4 visits (the bar ignores GoatCounter visits), so it is pinned by hand. A post-merge check of GoatCounter search referrers then found Bing/DuckDuckGo clicks on it and on two more noindexed pages, `vs/sony-a7-v-vs-nikon-z6-iii` and `vs/nikon-z5-ii-vs-sony-a7c-ii`, which are pinned too (32 pins).
 
 ### 4. The 301 lives in `_redirects`
 - Add `_redirects` with one line: `/vs/canon-eos-r1-vs-sony-a9-iii /vs/sony-a9-iii-vs-canon-eos-r1 301`.
@@ -88,7 +88,7 @@ Visitors still get every comparison. The orphan test and the links test keep the
 
 ## Migration Plan
 
-1. Merge, deploy, then fetch the live sitemap and check its count (55). Also check that one noindexed and one indexable page serve the right robots meta, that the 4 restored URLs return 200, and that the 301 works.
+1. Merge, deploy, then fetch the live sitemap and check its count (57). Also check that one noindexed and one indexable page serve the right robots meta, that the 4 restored URLs return 200, and that the 301 works.
 2. Resubmit `sitemap.xml` in Search Console.
 3. About 8 weeks after deploy, run a Search Console review:
    - promote noindexed pairs that meet the evidence bar by adding pins;
