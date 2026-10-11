@@ -3032,7 +3032,8 @@ const LENSES = {
     imageUrl:'https://yongnuo.eu/wp-content/uploads/2025/10/YN11mmF18ZDADSMWL_1.jpg',
     imageSource: { url:'https://yongnuo.eu/yn-11mm-f-1-8-lens-for-nikon-aps-c/', tier:'T1', note:'official Yongnuo EU store, filed under the maker\'s Nikon Z/F lens listing; studio product shot carries a "Z mount" / "APS-C" / "Auto Focus" badge overlay and the file is named "YN11mmF18ZDADSMWL"', date:'2026-09-06' },
     asin:'B0GC4M3MPR',
-    prices:{USD:300,AUD:499,EUR:299,GBP:299,JPY:42000,CAD:399,SGD:399},
+    prices:{USD:298,AUD:499,EUR:299,GBP:299,JPY:42000,CAD:399,SGD:399},
+    priceSource: { url:'https://www.bhphotovideo.com/c/search?q=yongnuo%20lens%20nikon%20z', tier:'T3', title:'B&H Photo listing', note:'USD $300 -> $298: B&H lists "Yongnuo YN 11mm f/1.8 DA DSM WL Lens (Nikon Z)" at $298, not on sale. Yongnuo has no US store of its own (yongnuo.eu prices in EUR). Read 2026-10-11', date:'2026-10-11' },
     productUrl:'https://yongnuo.eu/yn-11mm-f-1-8-lens-for-nikon-aps-c/',
   },
 
@@ -3050,7 +3051,8 @@ const LENSES = {
     imageUrl:'https://yongnuo.eu/wp-content/uploads/2025/10/YN23mmF1.4Nikon_1.jpg',
     imageSource: { url:'https://yongnuo.eu/yn-23mm-f-1-4-aps-c/', tier:'T1', note:'official Yongnuo EU store, Nikon Z/F lens listing; file named "YN23mmF1.4Nikon", shot carries a "Z mount" badge overlay', date:'2026-09-06' },
     asin:'B0DFM49DJ1',
-    prices:{USD:288,AUD:399,EUR:299,GBP:299,JPY:40000,CAD:399,SGD:399},
+    prices:{USD:276,AUD:399,EUR:299,GBP:299,JPY:40000,CAD:399,SGD:399},
+    priceSource: { url:'https://www.bhphotovideo.com/c/search?q=yongnuo%20lens%20nikon%20z', tier:'T3', title:'B&H Photo listing', note:'USD $288 -> $276: B&H lists "Yongnuo YN 23mm f/1.4 DA DSM WL Pro Lens (Nikon Z)" at $276, not on sale. Yongnuo has no US store of its own (yongnuo.eu prices in EUR). Read 2026-10-11', date:'2026-10-11' },
     productUrl:'https://yongnuo.eu/yn-23mm-f-1-4-aps-c/',
   },
 
@@ -3068,7 +3070,8 @@ const LENSES = {
     imageUrl:'https://yongnuo.eu/wp-content/uploads/2025/03/YN_33mm_f1.4_APS-C_a.jpg',
     imageSource: { url:'https://yongnuo.eu/lenses/nikon-z-f/yongnuo-33mm-f-1-4-aps-c-lens-for-nikon/', tier:'T1', note:'official Yongnuo EU store, Nikon Z/F lens listing; barrel reads "33", caption "33mm f/1.4"; shared studio image (badge overlay "E/Z/X/R mount"), mount bayonet not distinctly visible', date:'2026-09-06' },
     asin:'B0DJVRKGV7',
-    prices:{USD:300,AUD:499,EUR:299,GBP:299,JPY:45000,CAD:399,SGD:399},
+    prices:{USD:268,AUD:499,EUR:299,GBP:299,JPY:45000,CAD:399,SGD:399},
+    priceSource: { url:'https://www.bhphotovideo.com/c/search?q=yongnuo%20lens%20nikon%20z', tier:'T3', title:'B&H Photo listing', note:'USD $300 -> $268: B&H lists "Yongnuo YN 33mm f/1.4 DA DSM WL Pro Lens (Nikon Z)" at $268, not on sale. Yongnuo has no US store of its own (yongnuo.eu prices in EUR). Read 2026-10-11', date:'2026-10-11' },
     productUrl:'https://yongnuo.eu/lenses/nikon-z-f/yongnuo-33mm-f-1-4-aps-c-lens-for-nikon/',
   },
 
@@ -3086,7 +3089,8 @@ const LENSES = {
     imageUrl:'https://yongnuo.eu/wp-content/uploads/2024/10/YN_35mm_f1.8_APS-C_1.jpg',
     imageSource: { url:'https://yongnuo.eu/lenses/nikon-z-f/yongnuo-35mm-f-1-8-aps-c-lens-for-nikon-z-mount-camera-auto-focus-large-aperture-remote-control/', tier:'T1', note:'official Yongnuo EU store, Nikon Z/F lens listing; shot carries a "Z mount" / "APS-C" / "Auto Focus" badge overlay', date:'2026-09-06' },
     asin:'B0F66GW8Q8',
-    prices:{USD:300,AUD:499,EUR:299,GBP:299,JPY:42000,CAD:399,SGD:399},
+    prices:{USD:135,AUD:499,EUR:299,GBP:299,JPY:42000,CAD:399,SGD:399},
+    priceSource: { url:'https://www.bhphotovideo.com/c/search?q=yongnuo%20lens%20nikon%20z', tier:'T3', title:'B&H Photo listing', note:'USD $300 -> $135: B&H lists "Yongnuo YN 35mm f/1.8 DA DSM WL Lens (Nikon Z, Black)" at $135, not on sale. Yongnuo has no US store of its own (yongnuo.eu prices in EUR). Read 2026-10-11', date:'2026-10-11' },
     productUrl:'https://yongnuo.eu/lenses/nikon-z-f/yongnuo-35mm-f-1-8-aps-c-lens-for-nikon-z-mount-camera-auto-focus-large-aperture-remote-control/',
   },
 
@@ -3104,7 +3108,8 @@ const LENSES = {
     imageUrl:'https://yongnuo.eu/wp-content/uploads/2024/03/YN50mm_F1.8Z_DA_DSM_lens_1.jpg',
     imageSource: { url:'https://yongnuo.eu/lenses/nikon-z-f/yn50mm-f1-8z-da-dsm/', tier:'T1', note:'official Yongnuo EU store, Nikon Z/F lens listing; barrel explicitly reads "YN50mm F1.8Z DA DSM"', date:'2026-09-06' },
     asin:'B0CTJGD52V',
-    prices:{USD:120,AUD:199,EUR:99,GBP:99,JPY:18000,CAD:199,SGD:199},
+    prices:{USD:135,AUD:199,EUR:99,GBP:99,JPY:18000,CAD:199,SGD:199},
+    priceSource: { url:'https://www.bhphotovideo.com/c/search?q=yongnuo%20lens%20nikon%20z', tier:'T3', title:'B&H Photo listing', note:'USD $120 -> $135: B&H lists "Yongnuo YN 50mm f/1.8Z DA DSM Lens (Nikon Z)" at $135, not on sale. Yongnuo has no US store of its own (yongnuo.eu prices in EUR). Read 2026-10-11', date:'2026-10-11' },
     productUrl:'https://yongnuo.eu/lenses/nikon-z-f/yn50mm-f1-8z-da-dsm/',
   },
 
@@ -3122,7 +3127,8 @@ const LENSES = {
     imageUrl:'https://yongnuo.eu/wp-content/uploads/2025/03/YN_56mm_f1.4_APS_C_a.jpg',
     imageSource: { url:'https://yongnuo.eu/lenses/nikon-z-f/yongnuo-56mm-f-1-4-aps-c/', tier:'T1', note:'official Yongnuo EU store, Nikon Z/F lens listing; barrel reads "YN56mm ... DA DSM WL", caption "56mm f/1.4"; shared studio image (badge overlay "E/Z/X/R mount")', date:'2026-09-06' },
     asin:null,
-    prices:{USD:278,AUD:399,EUR:299,GBP:299,JPY:42000,CAD:399,SGD:399},
+    prices:{USD:212,AUD:399,EUR:299,GBP:299,JPY:42000,CAD:399,SGD:399},
+    priceSource: { url:'https://www.bhphotovideo.com/c/search?q=yongnuo%20lens%20nikon%20z', tier:'T3', title:'B&H Photo listing', note:'USD $278 -> $212: B&H lists "Yongnuo YN 56mm f/1.4Z DA DSM WL Pro Lens (Nikon Z)" at $212, not on sale. Yongnuo has no US store of its own (yongnuo.eu prices in EUR). Read 2026-10-11', date:'2026-10-11' },
     productUrl:'https://yongnuo.eu/lenses/nikon-z-f/yongnuo-56mm-f-1-4-aps-c/',
   },
 
@@ -3140,7 +3146,8 @@ const LENSES = {
     imageUrl:'https://yongnuo.eu/wp-content/uploads/2024/03/YN85mm_F1.8Z_DF_DSM_lens_1.jpg',
     imageSource: { url:'https://yongnuo.eu/lenses/nikon-z-f/yn85mm-f1-8z-df-dsm/', tier:'T1', note:'official Yongnuo EU store, Nikon Z/F lens listing; barrel reads "YN85mm F1.8Z DF DSM", the file\'s own EXIF description reads "YN85mm F1.8Z DF DSM Portrait Lens For Nikon Z Mount Camera"', date:'2026-09-06' },
     asin:'B09VPCWQCH',
-    prices:{USD:360,AUD:599,EUR:399,GBP:299,JPY:50000,CAD:499,SGD:499},
+    prices:{USD:349,AUD:599,EUR:399,GBP:299,JPY:50000,CAD:499,SGD:499},
+    priceSource: { url:'https://www.bhphotovideo.com/c/search?q=yongnuo%20lens%20nikon%20z', tier:'T3', title:'B&H Photo listing', note:'USD $360 -> $349: B&H lists "Yongnuo 85mm f/1.8Z DF DSM Lens (Nikon Z)" at $349, not on sale. Yongnuo has no US store of its own (yongnuo.eu prices in EUR). Read 2026-10-11', date:'2026-10-11' },
     productUrl:'https://th.hkyongnuo.com/products/yn85mm-f18z-df-dsm',
   },
 
