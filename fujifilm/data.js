@@ -2702,7 +2702,8 @@ const LENSES = {
     weatherSealed:false, ois:false, oisStops:null, year:2023, discontinued:false,
     imageUrl:'https://www.bhphotovideo.com/images/fb/voigtlander_ba377a_nokton_35mm_f_0_9_x_mount_1781158.jpg',
     asin:'B0CLJWKVR9',
-    prices:{USD:1199,AUD:1859,EUR:1119,GBP:949,JPY:179900,CAD:1649,SGD:1649},
+    prices:{USD:1499,AUD:1859,EUR:1119,GBP:949,JPY:179900,CAD:1649,SGD:1649},
+    priceSource: { url:'https://www.bhphotovideo.com/c/search?q=voigtlander%20fujifilm%20x', tier:'T3', title:'B&H Photo listing', note:'USD $1199 -> $1499: B&H lists "Nokton 35mm f/0.9 Lens (FUJIFILM X)" at a regular price of $1499 (currently on sale at $1199). Voigtländer publishes no US price of its own (cosina.co.jp/voigtlaender.de give JPY/EUR only), and B&H is the main US retailer; this replaces the earlier EUR-converted estimate. Read 2026-10-11', date:'2026-10-11' },
     productUrl:'https://www.bhphotovideo.com/c/product/1781158-REG/voigtlander_ba377a_nokton_35mm_f_0_9_x_mount.html',
   },
   'voigtlander-ultron-27mm-f2': {

@@ -2427,7 +2427,8 @@ const LENSES = {
     // Voigtländer is Cosina's brand) has a valid chain, so both fields now point there.
     imageUrl:'https://www.cosina.co.jp/wp/wp-content/uploads/2024/10/Z-50_20-APO-II-01-kjhgt.jpg',
     imageSource: { url:'https://www.cosina.co.jp/voigtlander/en/z-mount/apo-lanthar-50mm-f2-aspherical-ii/', tier:'T1', note:'Cosina\'s own EN product page for the Z-mount APO-LANTHAR 50mm F2 Aspherical II; replaces the voigtlaender.de source (TLS chain broken)', date:'2026-09-06' }, asin:'B0DPNK41Q7',
-    prices:{USD:1049,AUD:null,EUR:null,GBP:null,JPY:null,CAD:null,SGD:null},
+    prices:{USD:899,AUD:null,EUR:null,GBP:null,JPY:null,CAD:null,SGD:null},
+    priceSource: { url:'https://www.bhphotovideo.com/c/search?q=voigtlander%20nikon%20z', tier:'T3', title:'B&H Photo listing', note:'USD $1049 -> $899: B&H lists "APO-LANTHAR 50mm f/2 Aspherical Version II Lens (Nikon Z)" at $899, not on sale. Voigtländer publishes no US price of its own, and B&H is the main US retailer; this replaces the earlier EUR-converted estimate. Read 2026-10-11', date:'2026-10-11' },
     priceIncomplete:true, productUrl:'https://www.cosina.co.jp/voigtlander/en/z-mount/apo-lanthar-50mm-f2-aspherical-ii/',
   },
 
@@ -2454,13 +2455,11 @@ const LENSES = {
      classic 35mm f/1.4" (a brand-new Aug 2026 release, item no. 126307), is
      deferred — its own spec table leaves "Smallest Aperture" blank, and
      minAperture is non-nullable even for new releases; see PROGRESS.md.
-     USD prices below are ESTIMATES: voigtlaender.de states EUR-only RRPs and
-     this session's B&H/Amazon access was permission-blocked, Adorama search
-     returned no matching SKU, and the WebSearch budget was exhausted before
-     retail confirmation could be attempted. Each USD figure is EUR × 1.169,
-     the ratio backed out from this file's own verified
-     voigtlander-nokton-40mm-f12 entry (EUR 769 → USD 899, both tier-1/T1-
-     sourced). Flagged in PROGRESS.md for a follow-up retail-price pass. ── */
+     USD prices below were first entered as EUR × 1.169 estimates (Aug 2026:
+     voigtlaender.de states EUR-only RRPs and B&H was unreachable then). The
+     2026-10-11 retail pass replaced every estimate with B&H's regular
+     (non-sale) price, B&H being the main US retailer — see each priceSource.
+     The EUR figures still come from voigtlaender.de. ── */
   'voigtlander-super-wide-heliar-15mm-f45': {
     name:'Voigtländer Super Wide Heliar 15mm f/4.5 Aspherical Z', manufacturer:'Voigtländer', line:'Heliar', type:'Prime',
     mount:'z', focalLength:15, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'15mm',
@@ -2471,9 +2470,9 @@ const LENSES = {
     // 2026-09-06: repointed off voigtlaender.de — broken TLS chain (see note above).
     imageUrl:'https://www.cosina.co.jp/wp/wp-content/uploads/2023/01/Z-15_45_01kjhuy.jpg',
     imageSource: { url:'https://www.cosina.co.jp/voigtlander/en/z-mount/super-wide-heliar-15mm-f4-5-aspherical/', tier:'T1', note:'Cosina\'s own EN product page for the Z-mount Super Wide-Heliar 15mm F4.5 Aspherical; replaces the voigtlaender.de source (TLS chain broken)', date:'2026-09-06' },
-    priceSource: { url:'https://www.voigtlaender.de/z-mount/15mm-14-5-super-wide-heliar/?lang=en', tier:'T1', note:'EUR 849 stated on the maker\'s own page; USD is an estimate (849×1.169≈993) — not independently retail-confirmed, see block comment above', date:'2026-08-30' },
+    priceSource: { url:'https://www.bhphotovideo.com/c/search?q=voigtlander%20nikon%20z', tier:'T3', title:'B&H Photo listing', note:'USD $993 -> $749: B&H lists "Super Wide-Heliar 15mm f/4.5 Aspherical III Lens (Nikon Z)" at a regular price of $749 (currently on sale at $549). Voigtländer publishes no US price of its own (cosina.co.jp/voigtlaender.de give JPY/EUR only), and B&H is the main US retailer; this replaces the earlier EUR-converted estimate. Read 2026-10-11', date:'2026-10-11' },
     asin:'B0BVY37JZ4',
-    prices:{USD:993,AUD:null,EUR:849,GBP:null,JPY:null,CAD:null,SGD:null},
+    prices:{USD:749,AUD:null,EUR:849,GBP:null,JPY:null,CAD:null,SGD:null},
     priceIncomplete:true, productUrl:'https://www.cosina.co.jp/voigtlander/en/z-mount/super-wide-heliar-15mm-f4-5-aspherical/',
   },
 
@@ -2487,9 +2486,9 @@ const LENSES = {
     // 2026-09-06: repointed off voigtlaender.de — broken TLS chain (see note above).
     imageUrl:'https://www.cosina.co.jp/wp/wp-content/uploads/2022/04/Z-D23_12-01-tgjtsxhgw.jpg',
     imageSource: { url:'https://www.cosina.co.jp/voigtlander/z-mount/nokton-d23mm-f1-2-aspherical/', tier:'T1', note:'Cosina\'s own product page for the Z-mount (APS-C/DX) NOKTON D23mm F1.2 Aspherical; replaces the voigtlaender.de source (TLS chain broken)', date:'2026-09-06' },
-    priceSource: { url:'https://www.voigtlaender.de/z-mount/d23-mm-11-2-nokton/?lang=en', tier:'T1', note:'EUR 699 stated on the maker\'s own page; USD is an estimate (699×1.169≈817) — not independently retail-confirmed, see block comment above', date:'2026-08-30' },
+    priceSource: { url:'https://www.bhphotovideo.com/c/search?q=voigtlander%20nikon%20z', tier:'T3', title:'B&H Photo listing', note:'USD $817 -> $709: B&H lists "Nokton 23mm f/1.2 Aspherical Lens (Nikon Z, Black)" at a regular price of $709 (currently on sale at $499). Voigtländer publishes no US price of its own (cosina.co.jp/voigtlaender.de give JPY/EUR only), and B&H is the main US retailer; this replaces the earlier EUR-converted estimate. Read 2026-10-11', date:'2026-10-11' },
     asin:'B0B2VSXZV4',
-    prices:{USD:817,AUD:null,EUR:699,GBP:null,JPY:null,CAD:null,SGD:null},
+    prices:{USD:709,AUD:null,EUR:699,GBP:null,JPY:null,CAD:null,SGD:null},
     priceIncomplete:true, productUrl:'https://www.cosina.co.jp/voigtlander/z-mount/nokton-d23mm-f1-2-aspherical/',
   },
 
@@ -2503,9 +2502,9 @@ const LENSES = {
     // 2026-09-06: repointed off voigtlaender.de — broken TLS chain (see note above).
     imageUrl:'https://www.cosina.co.jp/wp/wp-content/uploads/2025/01/Z-28_15-01.jpg',
     imageSource: { url:'https://www.cosina.co.jp/voigtlander/en/z-mount/nokton-28mm-f1-5-aspherical/', tier:'T1', note:'Cosina\'s own EN product page for the Z-mount NOKTON 28mm F1.5 Aspherical; replaces the voigtlaender.de source (TLS chain broken)', date:'2026-09-06' },
-    priceSource: { url:'https://www.voigtlaender.de/z-mount/28-mm-115-nokton-aspherical-z/?lang=en', tier:'T1', note:'EUR 1,049 stated on the maker\'s own page; USD is an estimate (1049×1.169≈1226) — not independently retail-confirmed, see block comment above', date:'2026-08-30' },
+    priceSource: { url:'https://www.bhphotovideo.com/c/search?q=voigtlander%20nikon%20z', tier:'T3', title:'B&H Photo listing', note:'USD $1226 -> $899: B&H lists "Nokton 28mm f/1.5 Aspherical Lens (Nikon Z)" at a regular price of $899. Voigtländer publishes no US price of its own (cosina.co.jp/voigtlaender.de give JPY/EUR only), and B&H is the main US retailer; this replaces the earlier EUR-converted estimate. Read 2026-10-11', date:'2026-10-11' },
     asin:'B0FFZVN1SZ',
-    prices:{USD:1226,AUD:null,EUR:1049,GBP:null,JPY:null,CAD:null,SGD:null},
+    prices:{USD:899,AUD:null,EUR:1049,GBP:null,JPY:null,CAD:null,SGD:null},
     priceIncomplete:true, productUrl:'https://www.cosina.co.jp/voigtlander/en/z-mount/nokton-28mm-f1-5-aspherical/',
   },
 
@@ -2519,9 +2518,9 @@ const LENSES = {
     // 2026-09-06: repointed off voigtlaender.de — broken TLS chain (see note above).
     imageUrl:'https://www.cosina.co.jp/wp/wp-content/uploads/2025/11/Z-28_20-01-ikws.jpg',
     imageSource: { url:'https://www.cosina.co.jp/voigtlander/en/z-mount/apo-lanthar-28mm-f2-aspherical/', tier:'T1', note:'Cosina\'s own EN product page for the Z-mount APO-LANTHAR 28mm F2 Aspherical; replaces the voigtlaender.de source (TLS chain broken)', date:'2026-09-06' },
-    priceSource: { url:'https://www.voigtlaender.de/z-mount/28-mm-1-2-apo-lanthar/?lang=en', tier:'T1', note:'EUR 1,149 stated on the maker\'s own page; USD is an estimate (1149×1.169≈1343) — not independently retail-confirmed, see block comment above', date:'2026-08-30' },
+    priceSource: { url:'https://www.bhphotovideo.com/c/search?q=voigtlander%20nikon%20z', tier:'T3', title:'B&H Photo listing', note:'USD $1343 -> $1149: B&H lists "APO-LANTHAR 28mm f/2 Aspherical Lens (Nikon Z)" at a regular price of $1149. Voigtländer publishes no US price of its own (cosina.co.jp/voigtlaender.de give JPY/EUR only), and B&H is the main US retailer; this replaces the earlier EUR-converted estimate. Read 2026-10-11', date:'2026-10-11' },
     asin:null,
-    prices:{USD:1343,AUD:null,EUR:1149,GBP:null,JPY:null,CAD:null,SGD:null},
+    prices:{USD:1149,AUD:null,EUR:1149,GBP:null,JPY:null,CAD:null,SGD:null},
     priceIncomplete:true, productUrl:'https://www.cosina.co.jp/voigtlander/en/z-mount/apo-lanthar-28mm-f2-aspherical/',
   },
 
@@ -2535,9 +2534,9 @@ const LENSES = {
     // 2026-09-06: repointed off voigtlaender.de — broken TLS chain (see note above).
     imageUrl:'https://www.cosina.co.jp/wp/wp-content/uploads/2022/02/D35F12Z-top.jpg',
     imageSource: { url:'https://www.cosina.co.jp/voigtlander/z-mount/nokton-d35mm-f1-2/', tier:'T1', note:'Cosina\'s own product page for the Z-mount (APS-C/DX) NOKTON D35mm F1.2; replaces the voigtlaender.de source (TLS chain broken)', date:'2026-09-06' },
-    priceSource: { url:'https://www.voigtlaender.de/d35-mm-11-2-nokton/?lang=en', tier:'T1', note:'EUR 649 stated on the maker\'s own page; USD is an estimate (649×1.169≈759) — not independently retail-confirmed, see block comment above', date:'2026-08-30' },
+    priceSource: { url:'https://www.bhphotovideo.com/c/search?q=voigtlander%20nikon%20z', tier:'T3', title:'B&H Photo listing', note:'USD $759 -> $649: B&H lists "Nokton 35mm f/1.2 Lens (Nikon Z)" at $649, not on sale. B&H drops the D prefix, but the D35 is the only Z-mount Nokton 35mm f/1.2, and 649 matches its EUR 649 RRP. Voigtländer publishes no US price of its own, and B&H is the main US retailer; this replaces the earlier EUR-converted estimate. Read 2026-10-11', date:'2026-10-11' },
     asin:'B09VWW41S6',
-    prices:{USD:759,AUD:null,EUR:649,GBP:null,JPY:null,CAD:null,SGD:null},
+    prices:{USD:649,AUD:null,EUR:649,GBP:null,JPY:null,CAD:null,SGD:null},
     priceIncomplete:true, productUrl:'https://www.cosina.co.jp/voigtlander/z-mount/nokton-d35mm-f1-2/',
   },
 
@@ -2551,9 +2550,9 @@ const LENSES = {
     // 2026-09-06: repointed off voigtlaender.de — broken TLS chain (see note above).
     imageUrl:'https://www.cosina.co.jp/wp/wp-content/uploads/2022/09/D35_20_Z_01ertgfs.jpg',
     imageSource: { url:'https://www.cosina.co.jp/voigtlander/z-mount/macro-apo-ultron-d35mm-f2/', tier:'T1', note:'Cosina\'s own product page for the Z-mount (APS-C/DX) MACRO APO-ULTRON D35mm F2; replaces the voigtlaender.de source (TLS chain broken)', date:'2026-09-06' },
-    priceSource: { url:'https://www.voigtlaender.de/z-mount/d35mm-12-0-macro-apo-ultron/?lang=en', tier:'T1', note:'EUR 729 stated on the maker\'s own page; USD is an estimate (729×1.169≈852) — not independently retail-confirmed, see block comment above', date:'2026-08-30' },
+    priceSource: { url:'https://www.bhphotovideo.com/c/search?q=voigtlander%20nikon%20z', tier:'T3', title:'B&H Photo listing', note:'USD $852 -> $899: B&H lists "D35mm f/2 Macro Apo-Ultron Lens for Nikon Z Mount" at a regular price of $899 (currently on sale at $549). Voigtländer publishes no US price of its own (cosina.co.jp/voigtlaender.de give JPY/EUR only), and B&H is the main US retailer; this replaces the earlier EUR-converted estimate. Read 2026-10-11', date:'2026-10-11' },
     asin:'B0BM8FYPZ2',
-    prices:{USD:852,AUD:null,EUR:729,GBP:null,JPY:null,CAD:null,SGD:null},
+    prices:{USD:899,AUD:null,EUR:729,GBP:null,JPY:null,CAD:null,SGD:null},
     priceIncomplete:true, productUrl:'https://www.cosina.co.jp/voigtlander/z-mount/macro-apo-ultron-d35mm-f2/',
   },
 
@@ -2567,9 +2566,9 @@ const LENSES = {
     // 2026-09-06: repointed off voigtlaender.de — broken TLS chain (see note above).
     imageUrl:'https://www.cosina.co.jp/wp/wp-content/uploads/2024/10/Z-35_20-APO-II-01-rtyesd.jpg',
     imageSource: { url:'https://www.cosina.co.jp/voigtlander/en/z-mount/apo-lanthar-35mm-f2-aspherical-ii/', tier:'T1', note:'Cosina\'s own EN product page for the Z-mount APO-LANTHAR 35mm F2 Aspherical II; replaces the voigtlaender.de source (TLS chain broken)', date:'2026-09-06' },
-    priceSource: { url:'https://www.voigtlaender.de/z-mount/35mm-12-apo-lanthar-aspherical/?lang=en', tier:'T1', note:'EUR 1,099 stated on the maker\'s own page; USD is an estimate (1099×1.169≈1285) — not independently retail-confirmed, see block comment above', date:'2026-08-30' },
+    priceSource: { url:'https://www.bhphotovideo.com/c/search?q=voigtlander%20nikon%20z', tier:'T3', title:'B&H Photo listing', note:'USD $1285 -> $899: B&H lists "APO-LANTHAR 35mm f/2 Aspherical II Lens (Nikon Z)" at $899, not on sale. (B&H also still shows the version I listing, without a price.) Voigtländer publishes no US price of its own, and B&H is the main US retailer; this replaces the earlier EUR-converted estimate. Read 2026-10-11', date:'2026-10-11' },
     asin:'B0DSRBWFC8',
-    prices:{USD:1285,AUD:null,EUR:1099,GBP:null,JPY:null,CAD:null,SGD:null},
+    prices:{USD:899,AUD:null,EUR:1099,GBP:null,JPY:null,CAD:null,SGD:null},
     priceIncomplete:true, productUrl:'https://www.cosina.co.jp/voigtlander/en/z-mount/apo-lanthar-35mm-f2-aspherical-ii/',
   },
 
@@ -2583,9 +2582,9 @@ const LENSES = {
     // 2026-09-06: repointed off voigtlaender.de — broken TLS chain (see note above).
     imageUrl:'https://www.cosina.co.jp/wp/wp-content/uploads/2026/02/Z-40_20-web01-thoju.jpg',
     imageSource: { url:'https://www.cosina.co.jp/voigtlander/en/z-mount/septon-40mm-f2-aspherical/', tier:'T1', note:'Cosina\'s own EN product page for the Z-mount SEPTON 40mm F2 Aspherical; replaces the voigtlaender.de source (TLS chain broken)', date:'2026-09-06' },
-    priceSource: { url:'https://www.voigtlaender.de/z-mount/40-mm-12-septon-aspherical-z/?lang=en', tier:'T1', note:'EUR 649 stated on the maker\'s own page; USD is an estimate (649×1.169≈759) — not independently retail-confirmed, see block comment above', date:'2026-08-30' },
+    priceSource: { url:'https://www.bhphotovideo.com/c/search?q=voigtlander%20nikon%20z', tier:'T3', title:'B&H Photo listing', note:'USD $759 -> $699: B&H lists "SEPTON 40mm f/2 Aspherical Lens (Nikon Z)" at a regular price of $699. Voigtländer publishes no US price of its own (cosina.co.jp/voigtlaender.de give JPY/EUR only), and B&H is the main US retailer; this replaces the earlier EUR-converted estimate. Read 2026-10-11', date:'2026-10-11' },
     asin:null,
-    prices:{USD:759,AUD:null,EUR:649,GBP:null,JPY:null,CAD:null,SGD:null},
+    prices:{USD:699,AUD:null,EUR:649,GBP:null,JPY:null,CAD:null,SGD:null},
     priceIncomplete:true, productUrl:'https://www.cosina.co.jp/voigtlander/en/z-mount/septon-40mm-f2-aspherical/',
   },
 
@@ -2599,9 +2598,9 @@ const LENSES = {
     // 2026-09-06: repointed off voigtlaender.de — broken TLS chain (see note above).
     imageUrl:'https://www.cosina.co.jp/wp/wp-content/uploads/2023/01/Z-50_10_01olktr.jpg',
     imageSource: { url:'https://www.cosina.co.jp/voigtlander/en/z-mount/nokton-50mm-f1-aspherical/', tier:'T1', note:'Cosina\'s own EN product page for the Z-mount NOKTON 50mm F1 Aspherical; replaces the voigtlaender.de source (TLS chain broken)', date:'2026-09-06' },
-    priceSource: { url:'https://www.voigtlaender.de/z-mount/50-mm-11-0-nokton/?lang=en', tier:'T1', note:'EUR 1,799 stated on the maker\'s own page; USD is an estimate (1799×1.169≈2103) — not independently retail-confirmed, see block comment above', date:'2026-08-30' },
+    priceSource: { url:'https://www.bhphotovideo.com/c/search?q=voigtlander%20nikon%20z', tier:'T3', title:'B&H Photo listing', note:'USD $2103 -> $1799: B&H lists "Nokton 50mm f/1.0 Aspherical Lens (Nikon Z)" at a regular price of $1799 (currently on sale at $1699). Voigtländer publishes no US price of its own (cosina.co.jp/voigtlaender.de give JPY/EUR only), and B&H is the main US retailer; this replaces the earlier EUR-converted estimate. Read 2026-10-11', date:'2026-10-11' },
     asin:'B0BYRT9YGL',
-    prices:{USD:2103,AUD:null,EUR:1799,GBP:null,JPY:null,CAD:null,SGD:null},
+    prices:{USD:1799,AUD:null,EUR:1799,GBP:null,JPY:null,CAD:null,SGD:null},
     priceIncomplete:true, productUrl:'https://www.cosina.co.jp/voigtlander/en/z-mount/nokton-50mm-f1-aspherical/',
   },
 
@@ -2615,9 +2614,9 @@ const LENSES = {
     // 2026-09-06: repointed off voigtlaender.de — broken TLS chain (see note above).
     imageUrl:'https://www.cosina.co.jp/wp/wp-content/uploads/2022/10/Z-65_20-01b.jpg',
     imageSource: { url:'https://www.cosina.co.jp/voigtlander/en/z-mount/macro-apo-lanthar-65mm-f2-aspherical/', tier:'T1', note:'Cosina\'s own EN product page for the Z-mount MACRO APO-LANTHAR 65mm F2 Aspherical; replaces the voigtlaender.de source (TLS chain broken)', date:'2026-09-06' },
-    priceSource: { url:'https://www.voigtlaender.de/z-mount/65mm-120-macro-apo-lanthar-aspherical/?lang=en', tier:'T1', note:'EUR 1,149 stated on the maker\'s own page; USD is an estimate (1149×1.169≈1343) — not independently retail-confirmed, see block comment above', date:'2026-08-30' },
+    priceSource: { url:'https://www.bhphotovideo.com/c/search?q=voigtlander%20nikon%20z', tier:'T3', title:'B&H Photo listing', note:'USD $1343 -> $799: B&H lists "MACRO APO-LANTHAR 65mm f/2 Aspherical for Nikon Z" at a regular price of $799 (currently on sale at $699). Voigtländer publishes no US price of its own (cosina.co.jp/voigtlaender.de give JPY/EUR only), and B&H is the main US retailer; this replaces the earlier EUR-converted estimate. Read 2026-10-11', date:'2026-10-11' },
     asin:'B0BTRPNWSV',
-    prices:{USD:1343,AUD:null,EUR:1149,GBP:null,JPY:null,CAD:null,SGD:null},
+    prices:{USD:799,AUD:null,EUR:1149,GBP:null,JPY:null,CAD:null,SGD:null},
     priceIncomplete:true, productUrl:'https://www.cosina.co.jp/voigtlander/en/z-mount/macro-apo-lanthar-65mm-f2-aspherical/',
   },
 
@@ -2631,9 +2630,9 @@ const LENSES = {
     // 2026-09-06: repointed off voigtlaender.de — broken TLS chain (see note above).
     imageUrl:'https://www.cosina.co.jp/wp/wp-content/uploads/2026/01/Z-75_18-web01-lkpe.jpg',
     imageSource: { url:'https://www.cosina.co.jp/voigtlander/en/z-mount/portrait-heliar-75mm-f1-8/', tier:'T1', note:'Cosina\'s own EN product page for the Z-mount PORTRAIT HELIAR 75mm F1.8; replaces the voigtlaender.de source (TLS chain broken)', date:'2026-09-06' },
-    priceSource: { url:'https://www.voigtlaender.de/z-mount/75-mm-11-8-portrait-heliar-z/?lang=en', tier:'T1', note:'EUR 1,199 stated on the maker\'s own page; USD is an estimate (1199×1.169≈1402) — not independently retail-confirmed, see block comment above', date:'2026-08-30' },
+    priceSource: { url:'https://www.bhphotovideo.com/c/search?q=voigtlander%20nikon%20z', tier:'T3', title:'B&H Photo listing', note:'USD $1402 -> $699: B&H lists "Portrait Heliar 75mm f/1.8 Aspherical Lens (Nikon Z)" at a regular price of $699. Voigtländer publishes no US price of its own (cosina.co.jp/voigtlaender.de give JPY/EUR only), and B&H is the main US retailer; this replaces the earlier EUR-converted estimate. Read 2026-10-11', date:'2026-10-11' },
     asin:null,
-    prices:{USD:1402,AUD:null,EUR:1199,GBP:null,JPY:null,CAD:null,SGD:null},
+    prices:{USD:699,AUD:null,EUR:1199,GBP:null,JPY:null,CAD:null,SGD:null},
     priceIncomplete:true, productUrl:'https://www.cosina.co.jp/voigtlander/en/z-mount/portrait-heliar-75mm-f1-8/',
   },
 
