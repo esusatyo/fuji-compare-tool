@@ -2157,7 +2157,8 @@ const LENSES = {
     weatherSealed:false, ois:false, oisStops:null, year:2017, discontinued:false,
     imageUrl:'https://www.venuslens.net/wp-content/uploads/2017/03/shutterstock_131587922SC2-copy-700x467.jpg',
     imageSource: { url:'https://www.venuslens.net/product/laowa-7-5mm-f2/', tier:'T1', note:'official Venus Optics/Laowa store, MFT-only product page; barrel aperture ring reads "2, 2.8, 4, 5.6, 8, 11..." confirming the f/2 still-photo lens, not the T2.1 cine variant (a same-focal-length cine SKU exists on the same site and was rejected during sourcing)', date:'2026-08-17' }, asin:null,
-    prices:{USD:499,AUD:null,EUR:null,GBP:null,JPY:null,CAD:null,SGD:null},
+    prices:{USD:399,AUD:null,EUR:null,GBP:null,JPY:null,CAD:null,SGD:null},
+    priceSource: { url:'https://www.venuslens.net/product/laowa-7-5mm-f2/', tier:'T1', title:'Laowa (Venus Optics) official store', note:'USD $499 -> $399: Laowa\'s own store lists the MFT (black, automatic aperture) version at $399, regular price (not on sale). Read 2026-10-11', date:'2026-10-11' },
     priceIncomplete:true, productUrl:'https://www.venuslens.net/product/laowa-7-5mm-f2/',
   },
 

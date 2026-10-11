@@ -2139,7 +2139,8 @@ const LENSES = {
     imageUrl:'https://www.venuslens.net/wp-content/uploads/2021/11/main-01.jpg',
     imageSource: { url:'https://www.venuslens.net/product/laowa-85mm-f-5-6-2x-ultra-macro-apo/', tier:'T1', note:'official Venus Optics/Laowa store; page confirms Nikon Z availability; front 3/4 studio shot, aperture ring tops out at f/5.6, 2:1 magnification scale', date:'2026-09-06' },
     asin:'B09NMCYCD2',
-    prices:{USD:499,AUD:799,EUR:599,GBP:399,JPY:64000,CAD:599,SGD:699},
+    prices:{USD:449,AUD:799,EUR:599,GBP:399,JPY:64000,CAD:599,SGD:699},
+    priceSource: { url:'https://www.venuslens.net/product/laowa-85mm-f-5-6-2x-ultra-macro-apo/', tier:'T1', title:'Laowa (Venus Optics) official store', note:'USD $499 -> $449: Laowa\'s own store lists the Nikon Z version at $449, regular price (not on sale). Read 2026-10-11', date:'2026-10-11' },
     productUrl:'https://www.venuslens.net/product/laowa-85mm-f-5-6-2x-ultra-macro-apo/',
   },
 
