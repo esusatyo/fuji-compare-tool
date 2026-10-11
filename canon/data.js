@@ -880,7 +880,8 @@ const LENSES = {
     imageUrl:'https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Canon_RF_5%2C2mm_f2.8L_DUAL_FISHEYE.jpg/500px-Canon_RF_5%2C2mm_f2.8L_DUAL_FISHEYE.jpg',
     imageCredit:{author:"Bernatargentona", licence:"CC0", licenceUrl:"http://creativecommons.org/publicdomain/zero/1.0/deed.en", source:"https://commons.wikimedia.org/wiki/File:Canon_RF_5,2mm_f2.8L_DUAL_FISHEYE.jpg"},
     asin:'B09HVBDKFY',
-    prices:{USD:1999,AUD:3099,EUR:2299,GBP:1799,JPY:256000,CAD:2599,SGD:2899},
+    prices:{USD:2299,AUD:3099,EUR:2299,GBP:1799,JPY:256000,CAD:2599,SGD:2899},
+    priceSource: { url:'https://www.bhphotovideo.com/c/search?q=canon%20rf%20lens&sts=ma', tier:'T3', title:'B&H Photo listing', note:'USD $1999 -> $2299: B&H lists the "RF 5.2mm f/2.8 L Dual Fisheye 3D VR Lens" at a regular price of $2299 (currently $1999 on sale — the earlier figure was the promo price). Canon USA store is geo-blocked from here, so this rests on B&H alone. Read 2026-10-11', date:'2026-10-11' },
     productUrl:'https://www.canon.com.au/camera-lenses/rf-5-2mm-f2-8-l-dual-fisheye',
   },
 
