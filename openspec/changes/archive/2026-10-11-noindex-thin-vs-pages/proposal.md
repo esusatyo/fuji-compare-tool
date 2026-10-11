@@ -11,13 +11,13 @@ Data: `research/data.md` (GSC pages Jul 16–Sep 24 2026, GoatCounter all-time) 
 ## What Changes
 
 - **Split generated comparison pages into indexable and noindex sets.** A page is indexable if it is **pinned**, or if it is a **recent successor pair**: a successor pair whose newer body launched in or after `SUCCESSOR_INDEX_SINCE` (2025). All other pages still render and stay linked for visitors, but carry `<meta name="robots" content="noindex, follow">`.
-- **Add a pinned-pairs list (`PINNED_VS_PAIRS`) to the generator.** A pinned pair is always generated and always indexable, whatever the pairing rules produce. Seed it with the **29 pages that meet the evidence bar** in `research/query-evidence.md` (a click, or ≥5 impressions, or ≥2 distinct named queries). Add one launch-window exception below the bar: `vs/sony-a7r-vi-vs-canon-eos-r5-ii` (A7R VI is a 2026 launch; 4 impressions and 4 visits, the most-visited page the bar would otherwise noindex). That makes 30 pins. They include 4 pages dropped by price churn, which are restored:
+- **Add a pinned-pairs list (`PINNED_VS_PAIRS`) to the generator.** A pinned pair is always generated and always indexable, whatever the pairing rules produce. Seed it with the **29 pages that meet the evidence bar** in `research/query-evidence.md` (a click, or ≥5 impressions, or ≥2 distinct named queries). Add one launch-window exception below the bar: `vs/sony-a7r-vi-vs-canon-eos-r5-ii` (A7R VI is a 2026 launch; 4 impressions and 4 visits, the most-visited page the bar would otherwise noindex). Add two more found after the Google-only pass: `vs/sony-a7-v-vs-nikon-z6-iii` (search visits from Bing and DuckDuckGo) and `vs/nikon-z5-ii-vs-sony-a7c-ii` (a Bing visit) — `noindex` applies to every engine, so a click from any of them counts. That makes 32 pins. They include 4 pages dropped by price churn, which are restored:
   - `panasonic` s1-ii vs s1h
   - `sony` fx3 vs a7s-iii
   - `fujifilm` x-t50 vs x100v
   - `canon` eos-r50v vs eos-r10
-- **Indexable set: 43 vs-pages** — the 30 pins plus 13 recent successor pairs not already pinned (Canon R6 V/R6 III, R6 III/R6 II, R8 II/R8; Fujifilm X-T30 III/X-T30 II; Nikon Z5 II/Z5; OM System OM-5 II/OM-5, OM-3/OM-1; Panasonic S1R II/S1R, S1 II/S1, G97/G95; Sony A7R VI/A7R V, FX5/FX3, FX2/FX3).
-- **Sitemap lists only indexable pages.** It drops from 303 to 55 URLs: 43 vs-pages plus root, 8 brand pages, compare, About and Privacy.
+- **Indexable set: 45 vs-pages** — the 32 pins plus 13 recent successor pairs not already pinned (Canon R6 V/R6 III, R6 III/R6 II, R8 II/R8; Fujifilm X-T30 III/X-T30 II; Nikon Z5 II/Z5; OM System OM-5 II/OM-5, OM-3/OM-1; Panasonic S1R II/S1R, S1 II/S1, G97/G95; Sony A7R VI/A7R V, FX5/FX3, FX2/FX3).
+- **Sitemap lists only indexable pages.** It drops from 303 to 57 URLs: 45 vs-pages plus root, 8 brand pages, compare, About and Privacy.
 - **301 the reversed-order cross-brand URL** `/vs/canon-eos-r1-vs-sony-a9-iii` to `/vs/sony-a9-iii-vs-canon-eos-r1`.
 - **Keep the other 6 dropped URLs (1–3 impressions each) as 404s.** They will drop out of Search Console.
 
@@ -41,6 +41,6 @@ _None._
 - **Code:**
   - `scripts/generate-seo.js`: successor-pair tagging, `PINNED_VS_PAIRS` and `SUCCESSOR_INDEX_SINCE`, pinned pairs merged into each brand's pairs and checked against cross-brand matchups, an indexability decision, a robots meta tag in `vsPageHTML`/`crossVsPageHTML`, and `sitemapXML` input.
   - `_redirects`: new, for the one 301 (or `_worker.js` if the assets layer doesn't honour it; see design).
-- **Generated output:** 4 restored vs-pages reappear (295 in total); the 252 non-indexable ones gain a robots meta tag; `sitemap.xml` shrinks to 55 URLs.
+- **Generated output:** 4 restored vs-pages reappear (295 in total); the 250 non-indexable ones gain a robots meta tag; `sitemap.xml` shrinks to 57 URLs.
 - **Tests:** `tests/data/seo.test.js` (sitemap contents, indexability, pinned pairs resolve, restored pages exist) and the orphan and links tests (4 new pages).
 - **Operations:** after deploy, resubmit the sitemap in Search Console, then review in about 8 weeks (see design).

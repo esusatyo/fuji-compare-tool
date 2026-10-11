@@ -46,5 +46,5 @@ One commit per task, with that task's tick included in the commit. All work ship
 
 ## 5. After merge (manual)
 
-- [ ] 5.1 Deploy, then check the live sitemap count, the 301, and the robots meta on production. Resubmit `sitemap.xml` in Search Console.
+- [x] 5.1 Deploy, then check the live sitemap count, the 301, and the robots meta on production. Resubmit `sitemap.xml` in Search Console.
 - [ ] 5.2 About 8 weeks after deploy: re-pull Search Console pages and queries, then promote pins and consider moving `SUCCESSOR_INDEX_SINCE` per design.md Migration step 3. Log the result in the SEO usage log.

@@ -152,8 +152,10 @@ function successorPairKeys(cams) {
 // Search Console evidence.
 const SUCCESSOR_INDEX_SINCE = 2025;
 
-// Pages with Search Console evidence of demand (a click, ≥5 impressions,
-// or ≥2 distinct named queries): always generated, always indexable,
+// Pages with evidence of search demand — a search click from any engine
+// (Search Console for Google, GoatCounter referrers for Bing/DuckDuckGo,
+// since noindex applies to all of them), or ≥5 Google impressions, or ≥2
+// distinct named queries: always generated, always indexable,
 // whatever the pairing rules or prices do. Written as their URL paths;
 // a same-brand pin is emitted in exactly this slug order, so a page keeps
 // the URL Google knows. Cross-brand pins must name a CROSS_BRAND_MATCHUPS
@@ -182,12 +184,14 @@ const PINNED_VS_PAIRS = [
   'sony/vs/fx3-vs-a7s-iii',       // restored
   'vs/canon-eos-r5-ii-vs-sony-a7r-v',
   'vs/fujifilm-x-t50-vs-nikon-zfc',
+  'vs/nikon-z5-ii-vs-sony-a7c-ii',     // Bing click
   'vs/nikon-zf-vs-fujifilm-x-t5',
   'vs/nikon-zr-vs-sony-zv-e1',
   'vs/sony-a1-ii-vs-canon-eos-r1',
   'vs/sony-a1-ii-vs-canon-eos-r5-ii',
   'vs/sony-a1-ii-vs-nikon-z9',
-  'vs/sony-a7r-vi-vs-canon-eos-r5-ii', // under the bar, but a 2026 launch with real visits
+  'vs/sony-a7-v-vs-nikon-z6-iii',      // Bing + DuckDuckGo clicks
+  'vs/sony-a7r-vi-vs-canon-eos-r5-ii', // Bing + DuckDuckGo clicks
   'vs/sony-zv-e10-ii-vs-fujifilm-x-m5',
 ];
 
