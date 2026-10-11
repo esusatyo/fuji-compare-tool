@@ -94,28 +94,28 @@ function numberLine(slug) {
   return m ? { line: `${m[1]}#${m[2].length}`, gen: parseInt(m[2], 10) } : null;
 }
 
-function curatedPairs(cams) {
-  const seen = new Set();
-  const pairs = [];
-  const usd = id => (cams[id].prices && cams[id].prices.USD) || 0;
-  // Canonical order within a pair: newer first, then pricier, then slug.
-  const add = (a, b) => {
-    if (a === b) return;
-    const [ca, cb] = [cams[a], cams[b]];
-    if (cb.year > ca.year || (cb.year === ca.year && usd(b) > usd(a)) ||
-        (cb.year === ca.year && usd(b) === usd(a) && b < a)) [a, b] = [b, a];
-    const key = `${a}|${b}`;
-    if (!seen.has(key)) { seen.add(key); pairs.push([a, b]); }
-  };
+const usdOf = (cams, id) => (cams[id].prices && cams[id].prices.USD) || 0;
+
+// Canonical order within a pair: newer first, then pricier, then slug.
+function canonicalPair(cams, a, b) {
+  const usd = id => usdOf(cams, id);
+  const [ca, cb] = [cams[a], cams[b]];
+  if (cb.year > ca.year || (cb.year === ca.year && usd(b) > usd(a)) ||
+      (cb.year === ca.year && usd(b) === usd(a) && b < a)) [a, b] = [b, a];
+  return [a, b];
+}
+
+// Rule 1: consecutive generations within a model line, newer body
+// still current. Scheme A is structurally unambiguous; scheme B adds
+// the price gate because a shared stem can still span tiers. Calls
+// visit(newer, older) per pair, in the order curatedPairs emits them.
+function forEachSuccessor(cams, visit) {
+  const usd = id => usdOf(cams, id);
   // Successors launch near their predecessor's RRP; a big gap means the
   // "line" grouping actually caught two different tiers (Z9 vs Z5).
   const priceClose = (a, b) =>
     usd(a) > 0 && usd(b) > 0 && Math.abs(usd(a) - usd(b)) / Math.max(usd(a), usd(b)) <= 0.4;
-
-  // Rule 1: consecutive generations within a model line, newer body
-  // still current. Scheme A is structurally unambiguous; scheme B adds
-  // the price gate because a shared stem can still span tiers.
-  const addSuccessors = (grouper, gated) => {
+  for (const [grouper, gated] of [[romanLine, false], [numberLine, true]]) {
     const lines = {};
     for (const id of Object.keys(cams)) {
       const r = grouper(id);
@@ -127,12 +127,81 @@ function curatedPairs(cams) {
         const [newer, older] = [list[i][0], list[i + 1][0]];
         if (cams[newer].discontinued) continue;
         if (gated && !priceClose(newer, older)) continue;
-        add(newer, older);
+        visit(newer, older);
       }
     }
+  }
+}
+
+// `a|b` keys (canonical order) of the pairs rule 1 produces.
+function successorPairKeys(cams) {
+  const keys = new Set();
+  forEachSuccessor(cams, (a, b) => { if (a !== b) keys.add(canonicalPair(cams, a, b).join('|')); });
+  return keys;
+}
+
+// ─── Indexability ────────────────────────────
+// Every vs-page is generated and linked for visitors, but only these ask
+// Google to index them; the rest carry `noindex, follow` and stay out of
+// the sitemap. Evidence and rationale: the noindex-thin-vs-pages change.
+//
+// A successor pair is indexable without a pin when its newer body launched
+// in or after this year — "new vs previous model" searches peak at launch.
+// A fixed year, not "now − 1", so output never shifts when the calendar
+// does. Before moving it, pin any older successor pair that has earned
+// Search Console evidence.
+const SUCCESSOR_INDEX_SINCE = 2025;
+
+// Pages with Search Console evidence of demand (a click, ≥5 impressions,
+// or ≥2 distinct named queries): always generated, always indexable,
+// whatever the pairing rules or prices do. Written as their URL paths;
+// a same-brand pin is emitted in exactly this slug order, so a page keeps
+// the URL Google knows. Cross-brand pins must name a CROSS_BRAND_MATCHUPS
+// page. A pin that stops resolving fails the build — remove it on purpose.
+const PINNED_VS_PAIRS = [
+  'canon/vs/eos-r1-vs-eos-r3',
+  'canon/vs/eos-r5-ii-vs-eos-r5',
+  'canon/vs/eos-r50v-vs-eos-r10', // restored: dropped by price churn
+  'canon/vs/eos-r50v-vs-eos-r50',
+  'canon/vs/eos-r6-iii-vs-eos-r5',
+  'canon/vs/eos-r6-iii-vs-eos-r5c',
+  'canon/vs/eos-r8-vs-eos-r10',
+  'fujifilm/vs/x-t50-vs-x100v',   // restored
+  'nikon/vs/zr-vs-z5-ii',
+  'panasonic/vs/g9-ii-vs-g9',
+  'panasonic/vs/gh7-vs-gh6',
+  'panasonic/vs/l10-vs-s9',
+  'panasonic/vs/s1-ii-vs-s1h',    // restored
+  'panasonic/vs/s1r-ii-vs-s1-ii',
+  'panasonic/vs/s1r-ii-vs-s1h',
+  'panasonic/vs/s5-iix-vs-s5-ii',
+  'panasonic/vs/s9-vs-g100d',
+  'panasonic/vs/s9-vs-g9-ii',
+  'panasonic/vs/s9-vs-s5',
+  'sony/vs/a7-v-vs-a7-iv',
+  'sony/vs/fx3-vs-a7s-iii',       // restored
+  'vs/canon-eos-r5-ii-vs-sony-a7r-v',
+  'vs/fujifilm-x-t50-vs-nikon-zfc',
+  'vs/nikon-zf-vs-fujifilm-x-t5',
+  'vs/nikon-zr-vs-sony-zv-e1',
+  'vs/sony-a1-ii-vs-canon-eos-r1',
+  'vs/sony-a1-ii-vs-canon-eos-r5-ii',
+  'vs/sony-a1-ii-vs-nikon-z9',
+  'vs/sony-a7r-vi-vs-canon-eos-r5-ii', // under the bar, but a 2026 launch with real visits
+  'vs/sony-zv-e10-ii-vs-fujifilm-x-m5',
+];
+
+function curatedPairs(cams) {
+  const seen = new Set();
+  const pairs = [];
+  const usd = id => usdOf(cams, id);
+  const add = (a, b) => {
+    if (a === b) return;
+    [a, b] = canonicalPair(cams, a, b);
+    const key = `${a}|${b}`;
+    if (!seen.has(key)) { seen.add(key); pairs.push([a, b]); }
   };
-  addSuccessors(romanLine, false);
-  addSuccessors(numberLine, true);
+  forEachSuccessor(cams, add);
 
   // Rule 2: current bodies vs their two nearest USD-price neighbours.
   const current = Object.keys(cams)
@@ -159,6 +228,10 @@ function curatedPairs(cams) {
 }
 
 // ─── vs-page ─────────────────────────────────
+// Non-indexable pages stay crawlable (`follow`) so link equity still flows
+// through their related links; they are just kept out of the index.
+const robotsMeta = indexable => indexable ? '' : '\n  <meta name="robots" content="noindex, follow">';
+
 const VS_ROWS = [
   ['Price (USD RRP)', c => c.prices.USD == null ? null : `$${c.prices.USD.toLocaleString('en-US')}`],
   ['Announced', c => c.year],
@@ -522,7 +595,7 @@ function productCardHTML(data, brandName, slug, c, displayName) {
         </div>`;
 }
 
-function vsPageHTML(brand, data, site, aId, bId, allPairs) {
+function vsPageHTML(brand, data, site, aId, bId, allPairs, indexable = true) {
   const cams = data.CAMERAS;
   const brandName = data.BRAND_CONFIG.name;
   const [a, b] = [cams[aId], cams[bId]];
@@ -562,7 +635,7 @@ ${related.map(([x, y]) =>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>${esc(title)}</title>
-  <meta name="description" content="${esc(desc)}">
+  <meta name="description" content="${esc(desc)}">${robotsMeta(indexable)}
   <link rel="canonical" href="${url}">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="${esc(site.siteName)}">
@@ -758,6 +831,50 @@ function resolveMatchups(brandData, matchups = CROSS_BRAND_MATCHUPS) {
   });
 }
 
+// Resolve PINNED_VS_PAIRS against the loaded brand data and the resolved
+// cross-brand matchups. Fails hard (throw, no partial output) on an
+// unknown brand, camera or cross page, or a same-camera pair — a stale pin
+// is removed deliberately, never silently dropped.
+function resolvePins(brandData, matchups, pins = PINNED_VS_PAIRS) {
+  const sameBrand = {};
+  const crossFiles = new Set(matchups.map(m => m.file));
+  const files = new Set();
+  for (const pin of pins) {
+    const file = `${pin}.html`;
+    if (files.has(file)) throw new Error(`PINNED_VS_PAIRS: duplicate pin '${pin}'`);
+    files.add(file);
+    if (pin.startsWith('vs/')) {
+      if (!crossFiles.has(file)) throw new Error(`PINNED_VS_PAIRS: '${pin}' is not a CROSS_BRAND_MATCHUPS page`);
+      continue;
+    }
+    const m = pin.match(/^([^/]+)\/vs\/([^/]+)$/);
+    const ids = m && m[2].split('-vs-');
+    if (!m || ids.length !== 2) throw new Error(`PINNED_VS_PAIRS: '${pin}' is not a '<brand>/vs/<a>-vs-<b>' path`);
+    const [brand, [a, b]] = [m[1], ids];
+    const data = brandData[brand];
+    if (!data) throw new Error(`PINNED_VS_PAIRS: unknown brand '${brand}' in '${pin}'`);
+    for (const id of [a, b]) {
+      if (!data.CAMERAS[id]) throw new Error(`PINNED_VS_PAIRS: unknown camera '${brand}:${id}' in '${pin}'`);
+    }
+    if (a === b) throw new Error(`PINNED_VS_PAIRS: same-camera pair '${pin}'`);
+    (sameBrand[brand] ??= []).push([a, b]);
+  }
+  return { sameBrand, files };
+}
+
+// Merge a brand's pins into its rule-generated pairs. A pin the rules
+// already produce in the other order replaces that pair in place (the
+// pin's URL wins); any other pin is appended, so rule output doesn't shift.
+function withPins(pairs, pins = []) {
+  const out = pairs.map(p => [...p]);
+  for (const [a, b] of pins) {
+    const i = out.findIndex(([x, y]) => (x === a && y === b) || (x === b && y === a));
+    if (i === -1) out.push([a, b]);
+    else out[i] = [a, b];
+  }
+  return out;
+}
+
 const crossTitle = m => `${m.a.brandName} ${m.a.cam.name} vs ${m.b.brandName} ${m.b.cam.name}`;
 
 // Sibling cross-brand pages sharing a camera with this one (capped),
@@ -774,7 +891,7 @@ function crossRelated(all, m) {
     .slice(0, 6);
 }
 
-function crossVsPageHTML(site, m, all) {
+function crossVsPageHTML(site, m, all, indexable = true) {
   const { a, b } = m;
   const title = `${crossTitle(m)}: Spec Comparison`;
   const desc = `Compare the ${a.brandName} ${a.cam.name} (${a.cam.year}) and ${b.brandName} ${b.cam.name} (${b.cam.year}) side by side — price, sensor, stabilization, video, weight and more.`;
@@ -807,7 +924,7 @@ ${related.map(x => `        <li><a href="${cleanHref(path.basename(x.file))}" da
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>${esc(title)}</title>
-  <meta name="description" content="${esc(desc)}">
+  <meta name="description" content="${esc(desc)}">${robotsMeta(indexable)}
   <link rel="canonical" href="${url}">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="${esc(site.siteName)}">
@@ -1372,13 +1489,21 @@ function buildAll() {
   const brandInfo = [];
   const brandData = {};
 
+  for (const brand of brandDirs()) brandData[brand] = loadBrand(brand).data;
+  // Resolved up front: pins are checked against every brand and matchup
+  // before anything is rendered.
+  const matchups = resolveMatchups(brandData);
+  const pins = resolvePins(brandData, matchups);
+
   for (const brand of brandDirs()) {
-    const { data } = loadBrand(brand);
-    brandData[brand] = data;
+    const data = brandData[brand];
     const name = data.BRAND_CONFIG.name;
     brandNames.push(name);
 
-    const pairs = curatedPairs(data.CAMERAS);
+    const pairs = withPins(curatedPairs(data.CAMERAS), pins.sameBrand[brand]);
+    const successors = successorPairKeys(data.CAMERAS);
+    const indexable = (rel, a, b) => pins.files.has(rel) || (successors.has(`${a}|${b}`) &&
+      Math.max(data.CAMERAS[a].year, data.CAMERAS[b].year) >= SUCCESSOR_INDEX_SINCE);
 
     const idx = path.join(brand, 'index.html');
     let idxHtml = fs.readFileSync(path.join(ROOT, idx), 'utf8');
@@ -1389,8 +1514,9 @@ function buildAll() {
 
     for (const [a, b] of pairs) {
       const rel = `${brand}/vs/${a}-vs-${b}.html`;
-      files.set(rel, vsPageHTML(brand, data, site, a, b, pairs));
-      sitemapPaths.push(rel);
+      const index = indexable(rel, a, b);
+      files.set(rel, vsPageHTML(brand, data, site, a, b, pairs, index));
+      if (index) sitemapPaths.push(rel);
     }
 
     const cams = data.CAMERAS;
@@ -1416,11 +1542,11 @@ function buildAll() {
   }
 
   // Cross-brand: the /compare/ page plus the curated root vs/ cluster.
-  const matchups = resolveMatchups(brandData);
   sitemapPaths.push('compare/');
   for (const m of matchups) {
-    files.set(m.file, crossVsPageHTML(site, m, matchups));
-    sitemapPaths.push(m.file);
+    const index = pins.files.has(m.file);
+    files.set(m.file, crossVsPageHTML(site, m, matchups, index));
+    if (index) sitemapPaths.push(m.file);
   }
   const cmp = path.join('compare', 'index.html');
   const totalCams = Object.values(brandData).reduce((n, d) => n + Object.keys(d.CAMERAS).length, 0);
@@ -1477,4 +1603,4 @@ if (require.main === module) {
   console.log(`generate-seo: ${files.size} artifacts (${written} written, ${removed} stale removed)`);
 }
 
-module.exports = { LANDING_CARD_ORDER, ALL_BRANDS_MOSAIC, orderLandingBrands, allBrandsPhotoHTML, siteConfig, curatedPairs, relatedPairs, vsPageHTML, vsSummary, vsSummaryFacts, resolveMatchups, crossVsPageHTML, crossTitle, CROSS_BRAND_MATCHUPS, compareHeadBlock, compareBodyBlock, brandHeadBlock, rootHeadBlock, brandBodyBlock, rootBodyBlock, withHeadBlock, withBodyBlock, sitemapXML, robotsTxt, buildAll, SEO_BEGIN, SEO_END, SEO_BODY_BEGIN, SEO_BODY_END, ID_HEAD_BEGIN, ID_HEAD_END, ID_HEADER_BEGIN, ID_HEADER_END, ID_FOOTER_BEGIN, ID_FOOTER_END, identityToken, logoMark, cleanUrl, cleanHref, themeToggleHTML, collectReferences, citationText, refHostname, REFERENCE_ROWS, referenceRowsHTML };
+module.exports = { LANDING_CARD_ORDER, ALL_BRANDS_MOSAIC, orderLandingBrands, allBrandsPhotoHTML, siteConfig, curatedPairs, successorPairKeys, resolvePins, withPins, PINNED_VS_PAIRS, SUCCESSOR_INDEX_SINCE, relatedPairs, vsPageHTML, vsSummary, vsSummaryFacts, resolveMatchups, crossVsPageHTML, crossTitle, CROSS_BRAND_MATCHUPS, compareHeadBlock, compareBodyBlock, brandHeadBlock, rootHeadBlock, brandBodyBlock, rootBodyBlock, withHeadBlock, withBodyBlock, sitemapXML, robotsTxt, buildAll, SEO_BEGIN, SEO_END, SEO_BODY_BEGIN, SEO_BODY_END, ID_HEAD_BEGIN, ID_HEAD_END, ID_HEADER_BEGIN, ID_HEADER_END, ID_FOOTER_BEGIN, ID_FOOTER_END, identityToken, logoMark, cleanUrl, cleanHref, themeToggleHTML, collectReferences, citationText, refHostname, REFERENCE_ROWS, referenceRowsHTML };

@@ -1,0 +1,7 @@
+# Cloudflare static-assets redirects (Workers assets supports _redirects).
+#
+# Retired vs-page URLs that earned search impressions before a generator
+# change moved them. Exact matches only; keep this list short.
+
+# Cross-brand pair the generator now emits in the other order.
+/vs/canon-eos-r1-vs-sony-a9-iii /vs/sony-a9-iii-vs-canon-eos-r1 301

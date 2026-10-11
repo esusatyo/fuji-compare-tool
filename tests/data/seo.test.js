@@ -8,6 +8,7 @@ const fs = require('fs');
 const path = require('path');
 const { loadBrand, brandDirs, ROOT } = require('../helpers/load-brand');
 const { buildAll, curatedPairs, siteConfig, vsSummary, vsSummaryFacts, referenceRowsHTML,
+        resolvePins, resolveMatchups, withPins, successorPairKeys, PINNED_VS_PAIRS, SUCCESSOR_INDEX_SINCE,
         ID_HEAD_BEGIN, ID_HEAD_END, ID_HEADER_BEGIN, ID_HEADER_END } = require('../../scripts/generate-seo');
 
 const generated = buildAll();
@@ -42,24 +43,141 @@ test('no orphan vs-pages on disk beyond the curated set', () => {
   }
 });
 
-test('sitemap covers root, every brand page, every vs-page, and trust pages (clean URLs)', () => {
+const NOINDEX_META = '<meta name="robots" content="noindex, follow">';
+const isVsPage = rel => /(^|\/)vs\/[^/]+\.html$/.test(rel);
+// Exact tag, not the bare word: page copy could one day mention "noindex".
+const isNoindexed = content => content.includes(NOINDEX_META);
+const sitemapHas = rel => generated.get('sitemap.xml')
+  .includes(`<loc>${siteConfig().baseUrl}/${rel.replace(/\.html$/, '')}</loc>`);
+
+test('sitemap covers root, every brand page, every indexable vs-page, and trust pages (clean URLs)', () => {
   const sitemap = generated.get('sitemap.xml');
   const site = siteConfig();
   assert.ok(sitemap.includes(`<loc>${site.baseUrl}/</loc>`));
   // The host 307-redirects .html to the extensionless URL, so sitemap
   // entries (like canonicals) must use the clean form.
   assert.ok(!sitemap.includes('.html</loc>'), 'sitemap must not contain .html URLs');
-  for (const p of ['about', 'privacy']) {
+  for (const p of ['about', 'privacy', 'compare/']) {
     assert.ok(sitemap.includes(`<loc>${site.baseUrl}/${p}</loc>`), `sitemap missing ${p}`);
   }
   for (const brand of brandDirs()) {
     assert.ok(sitemap.includes(`<loc>${site.baseUrl}/${brand}/</loc>`), `sitemap missing ${brand}/`);
-    for (const [rel] of generated) {
-      if (rel.startsWith(`${brand}/vs/`)) {
-        assert.ok(sitemap.includes(`<loc>${site.baseUrl}/${rel.replace(/\.html$/, '')}</loc>`), `sitemap missing ${rel}`);
-      }
+  }
+  for (const [rel, content] of generated) {
+    if (!isVsPage(rel)) continue;
+    if (isNoindexed(content)) assert.ok(!sitemapHas(rel), `sitemap lists noindexed ${rel}`);
+    else assert.ok(sitemapHas(rel), `sitemap missing indexable ${rel}`);
+  }
+});
+
+test('every vs-page is either noindexed or in the sitemap — never both, never neither', () => {
+  let noindexed = 0;
+  for (const [rel, content] of generated) {
+    if (!isVsPage(rel)) continue;
+    const robots = content.match(/<meta name="robots"[^>]*>/g) || [];
+    assert.ok(robots.length <= 1, `${rel}: more than one robots meta tag`);
+    if (robots.length) {
+      assert.equal(robots[0], NOINDEX_META, `${rel}: unexpected robots tag ${robots[0]}`);
+      noindexed++;
+    }
+    assert.notEqual(robots.length === 1, sitemapHas(rel),
+      `${rel}: must have exactly one of a noindex tag or a sitemap entry`);
+  }
+  assert.ok(noindexed > 0, 'expected some noindexed vs-pages');
+});
+
+test('every pinned pair is generated at exactly its path, indexable, and never also in reverse', () => {
+  for (const pin of PINNED_VS_PAIRS) {
+    const rel = `${pin}.html`;
+    assert.ok(generated.has(rel), `pin ${pin} was not generated`);
+    assert.ok(!isNoindexed(generated.get(rel)), `pin ${pin} is noindexed`);
+    if (!pin.startsWith('vs/')) {
+      const [dir, a, b] = [pin.slice(0, pin.lastIndexOf('/') + 1), ...pin.slice(pin.lastIndexOf('/') + 1).split('-vs-')];
+      assert.ok(!generated.has(`${dir}${b}-vs-${a}.html`), `pin ${pin} is also generated in reverse order`);
     }
   }
+});
+
+test('the 4 pages restored from price churn exist', () => {
+  for (const rel of ['panasonic/vs/s1-ii-vs-s1h.html', 'sony/vs/fx3-vs-a7s-iii.html',
+    'fujifilm/vs/x-t50-vs-x100v.html', 'canon/vs/eos-r50v-vs-eos-r10.html']) {
+    assert.ok(generated.has(rel), `${rel} missing`);
+  }
+});
+
+test('resolvePins fails loudly on a pin that does not resolve', () => {
+  const brandData = Object.fromEntries(brandDirs().map(b => [b, loadBrand(b).data]));
+  const matchups = resolveMatchups(brandData);
+  const throwsFor = (pin, re) => assert.throws(() => resolvePins(brandData, matchups, [pin]), re, pin);
+  throwsFor('canon/vs/eos-r9-vs-eos-r10', /unknown camera 'canon:eos-r9'/);
+  throwsFor('kodak/vs/a-vs-b', /unknown brand 'kodak'/);
+  throwsFor('canon/vs/eos-r10-vs-eos-r10', /same-camera pair/);
+  throwsFor('vs/sony-a1-ii-vs-kodak-z1', /not a CROSS_BRAND_MATCHUPS page/);
+  throwsFor('canon/eos-r10', /not a '<brand>\/vs\/<a>-vs-<b>' path/);
+  assert.throws(() => resolvePins(brandData, matchups, ['canon/vs/eos-r1-vs-eos-r3', 'canon/vs/eos-r1-vs-eos-r3']), /duplicate pin/);
+});
+
+test('withPins: a reversed rule pair takes the pinned order in place; a new pin is appended', () => {
+  const rules = [['a', 'b'], ['c', 'd']];
+  assert.deepEqual(withPins(rules, [['d', 'c'], ['e', 'a']]), [['a', 'b'], ['d', 'c'], ['e', 'a']]);
+  assert.deepEqual(rules, [['a', 'b'], ['c', 'd']], 'withPins must not mutate its input');
+});
+
+for (const brand of brandDirs()) {
+  test(`[${brand}] recent successor pairs are indexable; other unpinned pages are not`, () => {
+    const cams = loadBrand(brand).data.CAMERAS;
+    const successors = successorPairKeys(cams);
+    const pinned = new Set(PINNED_VS_PAIRS.map(p => `${p}.html`));
+    for (const [rel, content] of generated) {
+      if (!rel.startsWith(`${brand}/vs/`)) continue;
+      const [a, b] = path.basename(rel, '.html').split('-vs-');
+      const recentSuccessor = successors.has(`${a}|${b}`) &&
+        Math.max(cams[a].year, cams[b].year) >= SUCCESSOR_INDEX_SINCE;
+      assert.equal(!isNoindexed(content), pinned.has(rel) || recentSuccessor,
+        `${rel}: indexability doesn't match its pin/successor status`);
+    }
+  });
+}
+
+test('unpinned cross-brand pages are noindexed', () => {
+  for (const [rel, content] of generated) {
+    if (!/^vs\/[^/]+\.html$/.test(rel)) continue;
+    assert.equal(!isNoindexed(content), PINNED_VS_PAIRS.includes(rel.replace(/\.html$/, '')), rel);
+  }
+});
+
+// Named pages, deliberately not derived from the generator's own helpers:
+// the tests above re-apply its rule, so a bug in successor detection would
+// pass them. These pin down the expected outcome from outside.
+test('known pages land on the expected side of the indexability split', () => {
+  const RECENT_SUCCESSORS = [ // newer body launched 2025+, indexable without a pin
+    'canon/vs/eos-r6-v-vs-eos-r6-iii', 'canon/vs/eos-r6-iii-vs-eos-r6-ii', 'canon/vs/eos-r8-ii-vs-eos-r8',
+    'fujifilm/vs/x-t30iii-vs-x-t30ii', 'nikon/vs/z5-ii-vs-z5', 'olympus/vs/om-5-ii-vs-om-5',
+    'olympus/vs/om-3-vs-om-1', 'panasonic/vs/s1r-ii-vs-s1r', 'panasonic/vs/s1-ii-vs-s1',
+    'panasonic/vs/g97-vs-g95', 'sony/vs/a7r-vi-vs-a7r-v', 'sony/vs/fx5-vs-fx3', 'sony/vs/fx2-vs-fx3',
+  ];
+  const NOINDEXED = [
+    'canon/vs/eos-r7-vs-eos-r6', 'canon/vs/eos-r8-vs-eos-r7',  // successor-rule false matches
+    'canon/vs/eos-r3-vs-eos-r5', 'canon/vs/eos-r50-vs-eos-r10',
+    'sony/vs/a7-iv-vs-a7-iii', 'fujifilm/vs/x-t5-vs-x-t4',      // pre-2025 successors, unpinned
+    'sony/vs/a7r-v-vs-a7r-iv',                                   // ...with 3 impressions, under the bar
+    'canon/vs/eos-r10-vs-eos-rp',                                // price neighbour
+    'vs/canon-eos-r1-vs-nikon-z9',                               // unpinned cross-brand
+  ];
+  for (const p of RECENT_SUCCESSORS) {
+    assert.ok(generated.has(`${p}.html`), `${p} not generated`);
+    assert.ok(!isNoindexed(generated.get(`${p}.html`)), `${p} should be indexable`);
+  }
+  for (const p of NOINDEXED) {
+    assert.ok(generated.has(`${p}.html`), `${p} not generated`);
+    assert.ok(isNoindexed(generated.get(`${p}.html`)), `${p} should be noindexed`);
+  }
+  // Guards the other direction (a rule that indexes far too much). Not an
+  // exact count, so a new camera launch doesn't break the build.
+  const vs = [...generated].filter(([rel]) => isVsPage(rel));
+  const indexable = vs.filter(([, c]) => !isNoindexed(c)).length;
+  assert.ok(indexable >= PINNED_VS_PAIRS.length && indexable <= vs.length / 4,
+    `${indexable} of ${vs.length} vs-pages indexable — expected a small, deliberate set`);
 });
 
 test('canonicals never point at a .html URL (the host redirects those)', () => {
@@ -74,6 +192,16 @@ test('robots.txt allows crawling and references the sitemap', () => {
   const robots = generated.get('robots.txt');
   assert.ok(robots.includes('Allow: /'));
   assert.ok(robots.includes(`Sitemap: ${siteConfig().baseUrl}/sitemap.xml`));
+});
+
+test('robots.txt never disallows vs-pages (Google must crawl them to see noindex)', () => {
+  for (const line of generated.get('robots.txt').split('\n')) {
+    const m = line.match(/^\s*Disallow:\s*(\S*)/i);
+    if (!m || !m[1]) continue;
+    for (const p of ['/vs/', '/canon/vs/', '/sony/vs/x-vs-y']) {
+      assert.ok(!p.startsWith(m[1].replace(/\*.*$/, '')), `robots.txt rule "${line.trim()}" blocks ${p}`);
+    }
+  }
 });
 
 test('base URL appears only via site-config (canonicals all start with it)', () => {
