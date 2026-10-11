@@ -122,7 +122,38 @@ const KNOWN_SHARED_LINKS = new Map([
 // panasonic/sigma-20-60mm-f28-4-dg) -- still no Amazon listing.
 // Tightened to 80 in the same follow-ups: leica/super-elmar-m-21mm-f34-asph
 // got a plain (non-bundle) listing, B00579W0DE.
-const ASIN_GAP_BASELINE = 80;
+// Tightened to 75 on 2026-10-10: the four post-#65 releases got listings
+// (canon/eos-r8-ii, panasonic/lumix-s-20mm-f2-5, sony/fe-400mm-f45-gm-oss,
+// sony/fe-600mm-f63-gm-oss), plus fujifilm/samyang-85mm-f18 (sold on
+// amazon.com under Samyang's US brand, Rokinon RK8518). Each title was read
+// on amazon.com in a real browser before applying; the same pass re-read all
+// 46 existing Leica ASINs and found each on its stated product. The 7
+// remaining Leica gaps still have no plain listing.
+// Tightened to 57 the same day: 18 Sigma lenses got their original "DG DN"
+// listing (L-Mount ASIN shared by sigma/ and panasonic/, Sony E by sony/):
+// 17mm f/4, 20mm f/2, 24mm f/2 (L only), 35mm f/2, 65mm f/2, 90mm f/2.8,
+// plus sigma/sigma-300-600mm-f4-dg. Amazon also lists 2025 "DG" / "DG II"
+// re-releases of several of these; those were deliberately not used, since
+// they may be a different product from the DG DN entries stored here.
+// Tightened to 45 the same day by a full pass over the remaining gaps (each
+// title read on amazon.com): canon/samyang-14mm-f28 (Rokinon RF14),
+// nikon/tamron-12-20mm-f28, olympus/om-3, om-3-astro, pen-om,
+// omsystem-25mm-f18-ii (also panasonic/), omsystem-14-42mm-f35-56-iii,
+// panasonic/omsystem-17mm-f12-pro, sony/fe-100-400mm-f56-8-oss,
+// sony/sigma-24mm-f2-dg, sigma/sigma-14-24mm-f28-dg. Still open, with the
+// reason: no amazon.com listing in that mount (most Laowa and Voigtländer Z,
+// Laowa MFT and L, Samyang 14-24 L, Viltrox 85 II RF, Meike 25 Air X, Sony
+// FX5, the 2026 Sigma 85mm f/1.2 and 20-60mm); only a 2025 "DG"/"DG II"
+// re-release listed (Sigma 45mm, 50mm); listing doesn't name the mount or
+// version (Yongnuo YN56, Meike 55mm, Meike 85mm); 7 Leica (bundles only).
+// Tightened to 44 on 2026-10-11, net of a new-release pass: +8 new items
+// (nikon/z5-iic, sigma-50-120mm-f28 in sony/fujifilm/canon, and 4 Viltrox
+// Air L primes in panasonic/), of which the 4 Viltrox got listings; the
+// Z5IIC and 50-120 aren't on amazon.com yet. Also closed 5 Sigma gaps:
+// 45mm f/2.8 (sigma/, panasonic/ via the renewed "DG (Black)" listing,
+// which Sigma states is the same optics; sony/ via the original DG DN
+// listing) and 50mm f/2 L (sigma/, panasonic/, original DG DN listing).
+const ASIN_GAP_BASELINE = 44;
 
 const allItems = () => brandDirs().flatMap(brand => {
   const { data } = loadBrand(brand);
