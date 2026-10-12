@@ -4,9 +4,9 @@
 
 ## 2. SG-image (new maker)
 
-- [ ] 2.1 Enumerate X-mount lineup from the maker; record in `research/lenses.md`
-- [ ] 2.2 Add `SG-image` to `MANUFACTURER_COLORS`
-- [ ] 2.3 Enter lenses + `── SG-image ──` group; images; prices; `npm run test:data`; commit
+- [x] 2.1 Enumerate X-mount lineup from the maker; record in `research/lenses.md`
+- [x] 2.2 Add `SG-image` to `MANUFACTURER_COLORS`
+- [x] 2.3 Enter lenses + `── SG-image ──` group; images; prices; `npm run test:data`; commit
 
 ## 3. Voigtländer (complete X-mount)
 

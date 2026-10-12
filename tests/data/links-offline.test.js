@@ -26,6 +26,7 @@ const ALLOWED_HOSTS = [
   'samyangus.com', 'lksamyang.com', 'tamron-americas.com', 'tamron.com',
   'meikeglobal.com', 'yongnuo.eu', 'hkyongnuo.com', 'omsystem.com', 'zeiss.com',
   'laowa.com.au', 'laowalenses.ca', 'pergear.com', 'voigtlaender.de', 'leica-camera.com',
+  'sg-image.com',
   // DPReview: used as productUrl for a handful of discontinued Leica Q
   // bodies whose own leica-camera.com pages are gone (task 5.6). Already
   // trusted as a footerLinks source across several brands.
@@ -153,7 +154,9 @@ const KNOWN_SHARED_LINKS = new Map([
 // 45mm f/2.8 (sigma/, panasonic/ via the renewed "DG (Black)" listing,
 // which Sigma states is the same optics; sony/ via the original DG DN
 // listing) and 50mm f/2 L (sigma/, panasonic/, original DG DN listing).
-const ASIN_GAP_BASELINE = 44;
+// Raised to 45 on 2026-10-13 for fujifilm/sgimage-55mm-f18: amazon.com has
+// only the Z-mount listing (B0H765VW8R), none for X.
+const ASIN_GAP_BASELINE = 45;
 
 const allItems = () => brandDirs().flatMap(brand => {
   const { data } = loadBrand(brand);

@@ -2949,6 +2949,40 @@ const LENSES = {
     priceSource: { url:'https://meikeglobal.com/products/5617x', tier:'T1', date:'2026-08-16' },
     productUrl:'https://meikeglobal.com/products/5617x',
   },
+
+  /* ── SG-image ── */
+  // sg-image.com publishes its spec tables only as images in the product
+  // description (AF25.png / 55.png), one table covering E/X/Z.
+  'sgimage-25mm-f18': {
+    name:'SG-image AF 25mm f/1.8', manufacturer:'SG-image', line:'AF', type:'Prime',
+    mount:'x', focalLength:25, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'38mm',
+    maxAperture:1.8, minAperture:16, weight:145, length:32, diameter:67,
+    filterThread:52, minFocusDist:30, maxMagnification:0.1,
+    elements:7, groups:5, blades:9, afType:'Stepping Motor',
+    weatherSealed:false, ois:false, oisStops:null, year:2025, discontinued:false,
+    imageUrl:'https://cdn.shopify.com/s/files/1/0729/5051/3889/files/259055cac18bc2ff902e5a600b9c3c29.png',
+    imageSource: { url:'https://www.sg-image.com/products/aps-c-25mm-f1-8-%E8%87%AA%E5%8A%A8%E5%AF%B9%E7%84%A6%E9%95%9C%E5%A4%B4', tier:'T1', title:'SG-image official store', note:'first gallery image (black, side view); the E/X/Z variants share one gallery and this shot shows no mount plate', date:'2026-10-13' },
+    asin:'B0GMBTGP47',
+    prices:{USD:125,AUD:199,EUR:99,GBP:99,JPY:19000,CAD:199,SGD:199},
+    specSources: [{ url:'https://www.sg-image.com/products/aps-c-25mm-f1-8-%E8%87%AA%E5%8A%A8%E5%AF%B9%E7%84%A6%E9%95%9C%E5%A4%B4', tier:'T1', title:'SG-image official store', note:'"Specification" image (AF25.png) lists X among supported mounts: 145 g, Ø67×32 mm, 52 mm filter, 0.3 m, 1:10, 7/5, 9 blades, F1.8-F16. The same page\'s prose says "152g with a depth of 34mm"; the formal table is used (it matches the X-mount announcement figures)', date:'2026-10-13' }],
+    priceSource: { url:'https://www.sg-image.com/products/aps-c-25mm-f1-8-%E8%87%AA%E5%8A%A8%E5%AF%B9%E7%84%A6%E9%95%9C%E5%A4%B4', tier:'T1', title:'SG-image official store', note:'black X variant $125 (silver $134), no compare-at/sale price', date:'2026-10-13' },
+    productUrl:'https://www.sg-image.com/products/aps-c-25mm-f1-8-%E8%87%AA%E5%8A%A8%E5%AF%B9%E7%84%A6%E9%95%9C%E5%A4%B4',
+  },
+  'sgimage-55mm-f18': {
+    name:'SG-image AF 55mm f/1.8', manufacturer:'SG-image', line:'AF', type:'Prime',
+    mount:'x', focalLength:55, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'83mm',
+    maxAperture:1.8, minAperture:16, weight:365, length:78, diameter:69,
+    filterThread:58, minFocusDist:50, maxMagnification:0.11,
+    elements:10, groups:8, blades:9, afType:'Stepping Motor',
+    weatherSealed:false, ois:false, oisStops:null, year:2024, discontinued:false,
+    imageUrl:'https://cdn.shopify.com/s/files/1/0729/5051/3889/files/10df10e33f51f214ddd2996389658ca6_274e300a-8209-4454-8b8e-9882e668a19c.png',
+    imageSource: { url:'https://www.sg-image.com/products/af-55mm-f1-8', tier:'T1', title:'SG-image official store', note:'first gallery image (lens with hood, front-side view); shows no mount plate', date:'2026-10-13' },
+    asin:null,
+    prices:{USD:199,AUD:299,EUR:199,GBP:199,JPY:39000,CAD:299,SGD:299},
+    specSources: [{ url:'https://www.sg-image.com/products/af-55mm-f1-8', tier:'T1', title:'SG-image official store', note:'"Specification" image (55.png), one table for E/X/Z: 365 g, Ø69×78 mm, 58 mm filter, 0.5 m, 1:9.1, 10/8, 9 blades, F1.8-F16. The maker calls it full-frame; the X-mount launch coverage called it APS-C, with identical figures', date:'2026-10-13' }, { url:'https://en.pronews.com/news/20241231152010126.html', tier:'NEWS', title:'PRONEWS X-mount release', note:'X-mount release on 2024-12-27 (year); same figures, with the length given as excluding the mount', date:'2026-10-13' }],
+    priceSource: { url:'https://www.sg-image.com/products/af-55mm-f1-8', tier:'T1', title:'SG-image official store', note:'X variant $199, no compare-at/sale price', date:'2026-10-13' },
+    productUrl:'https://www.sg-image.com/products/af-55mm-f1-8',
+  },
 };
 
 const LENS_DROPDOWN_GROUPS = [
@@ -2967,7 +3001,8 @@ const LENS_DROPDOWN_GROUPS = [
   { label: '── Voigtländer ──',         ids: ['voigtlander-nokton-35mm-f09','voigtlander-ultron-27mm-f2'] },
   { label: '── Zeiss ──',               ids: ['zeiss-touit-12mm-f28','zeiss-touit-32mm-f18','zeiss-touit-50mm-f28'] },
   { label: '── Laowa ──',               ids: ['laowa-9mm-f28','laowa-65mm-f28-macro','laowa-4mm-f28-fisheye','laowa-aksen-45mm-f28','laowa-aksen-17-5mm-f17'] },
-  { label: '── Meike ──',               ids: ['meike-33mm-f14','meike-55mm-f18','meike-85mm-f18','meike-55mm-f14-golden','meike-25mm-f17-air','meike-25mm-f18','meike-50mm-f17-ff','meike-56mm-f17-air'] },
+  { label: '── Meike ──',              ids: ['meike-33mm-f14','meike-55mm-f18','meike-85mm-f18','meike-55mm-f14-golden','meike-25mm-f17-air','meike-25mm-f18','meike-50mm-f17-ff','meike-56mm-f17-air'] },
+  { label: '── SG-image ──',           ids: ['sgimage-25mm-f18','sgimage-55mm-f18'] },
 ];
 
 return { BRAND_CONFIG, SERIES_COLORS, CAMERAS, CAMERA_ORDER,
