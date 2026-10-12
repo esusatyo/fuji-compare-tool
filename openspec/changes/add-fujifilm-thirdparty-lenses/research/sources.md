@@ -17,3 +17,9 @@ announcement (`year` only).
 | https://www.ithome.com/1/005/275.htm | NEWS | AF 35mm f/1.4: 227 g, 7/6, 0.35 m, 52 mm | no dimensions/blades |
 | https://www.fujirumors.com/sg-image-af-35mmf1-4-and-af-35mmf2-2-for-fujifilm-x-launched/ | NEWS | X launch (China) of AF 35mm f/1.4 and f/2.2 | 163 g = the f/2.2 |
 | https://www.amazon.com/dp/B0GMBTGP47 | T3 | AF 25mm X black ASIN | title "…APS-C Lens for X Mount Black" |
+| https://www.cosina.co.jp/voigtlander/en/x-mount/ | T1 | the complete X-mount lineup (7 designs + 2 silver variants); lineup thumbnails used as imageUrl | |
+| https://www.cosina.co.jp/voigtlander/en/x-mount/<slug>/ (×7) | T1 | per-lens X-mount spec tables | used to correct the 27mm and 35mm f/0.9 entries |
+| https://www.cosina.co.jp/voigtlander/x-mount/<slug>/ (×7) | T1 | release dates and JPY list prices (税別; the dataset stores tax-included → ×1.10) | |
+| https://www.voigtlaender.de/objektive/x-anschluss/ (+5 lens pages) | T1 (regional) | EUR UVP: 18mm €599, 35/1.2 €649, Macro €699, 50/1.2 €749, 35/0.9 €1,749 | incomplete TLS chain; read with curl -k. No X pages for the 23mm or 27mm |
+| https://www.bhphotovideo.com/c/search?q=voigtlander%20fujifilm%20x | T3 | USD regular prices for all 7 (read in Chrome, 2026-10-13) | blocks curl/WebFetch |
+| amazon.com listings B0CYYJCZWZ, B0B1CL663K, B09F76L1LG, B0B8NL7BZF, B0CKM299B1 | T3 | ASINs, matched by listing title (lens + X mount) | Macro listing currently "unavailable" |

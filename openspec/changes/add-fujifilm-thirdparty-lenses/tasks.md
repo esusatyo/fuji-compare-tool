@@ -10,8 +10,8 @@
 
 ## 3. Voigtländer (complete X-mount)
 
-- [ ] 3.1 Enumerate X-mount lineup from Cosina; record in `research/lenses.md`
-- [ ] 3.2 Enter missing lenses into `── Voigtländer ──`; images; prices; test; commit
+- [x] 3.1 Enumerate X-mount lineup from Cosina; record in `research/lenses.md`
+- [x] 3.2 Enter missing lenses into `── Voigtländer ──`; images; prices; test; commit
 
 ## 4. Laowa (complete X-mount)
 
