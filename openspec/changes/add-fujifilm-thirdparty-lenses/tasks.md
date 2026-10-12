@@ -20,7 +20,7 @@
 
 ## 5. Verify
 
-- [ ] 5.1 `node scripts/generate-seo.js`; `npm test` green
-- [ ] 5.2 `node scripts/verify-images.js fujifilm`; `RUN_LINK_TESTS=1 npm run test:links`
-- [ ] 5.3 Preview eyeball in lenses mode
-- [ ] 5.4 `openspec validate add-fujifilm-thirdparty-lenses --strict`; open PR
+- [x] 5.1 `node scripts/generate-seo.js`; `npm test` green
+- [x] 5.2 `node scripts/verify-images.js fujifilm`; `RUN_LINK_TESTS=1 npm run test:links`
+- [x] 5.3 Preview eyeball in lenses mode
+- [x] 5.4 `openspec validate add-fujifilm-thirdparty-lenses --strict`; open PR
