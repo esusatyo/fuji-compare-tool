@@ -2172,8 +2172,8 @@ const LENSES = {
     weatherSealed:false, ois:false, oisStops:null, year:2026, discontinued:false,
     imageUrl:'https://www.venuslens.net/wp-content/uploads/2022/06/Laowa_90mmF282XMacroAPO_1-700x482.jpg',
     imageSource: { url:'https://www.venuslens.net/product/laowa-90mm-f-2-8-2x-macro-apo/', tier:'T1', note:'official Venus Optics/Laowa store; same product page as the L-mount entry above — Mount dropdown explicitly lists "MFT" as a selectable option (added per the page\'s own "New MFT Mount Added" banner); barrel reads "LAOWA FFII 90mm F2.8 CA-Dreamer Macro 2X"', date:'2026-08-17' }, asin:null,
-    prices:{USD:449,AUD:null,EUR:null,GBP:null,JPY:null,CAD:null,SGD:null},
-    priceSource: { url:'https://www.dailycameranews.com/2026/01/laowa-90mm-f2-8-2x-ultra-macro-apo-mft-announced/', tier:'T2', title:'Daily Camera News — MFT version announcement', note:'USD $499 -> $449: the MFT version launched (Jan 2026) at "U.S. retail price $449 USD", unlike the $499 full-frame version the old figure appears to have been copied from; B&H also lists the MFT version at $449', date:'2026-10-10' },
+    prices:{USD:499,AUD:null,EUR:null,GBP:null,JPY:null,CAD:null,SGD:null},
+    priceSource: { url:'https://www.venuslens.net/product/laowa-90mm-f-2-8-2x-macro-apo/', tier:'T1', title:'Laowa (Venus Optics) official store', note:'USD $449 -> $499: Laowa\'s own store lists the MFT variant at $499 regular (not on sale). The $449 launch price (Jan 2026, also B&H) is superseded; owner chose the maker store (2026-10-12). Read 2026-10-11', date:'2026-10-11' },
     priceIncomplete:true, productUrl:'https://www.venuslens.net/product/laowa-90mm-f-2-8-2x-macro-apo/',
   },
 };
