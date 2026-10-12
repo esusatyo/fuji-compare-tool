@@ -2144,7 +2144,8 @@ const LENSES = {
     // its own site has a valid chain, so both fields now point there instead.
     imageUrl:'https://www.cosina.co.jp/wp/wp-content/uploads/2021/09/250_095_MFT_P00b.jpg',
     imageSource: { url:'https://www.cosina.co.jp/voigtlander/en/micro-four-thirds/nokton-25mm-f0-95-type-ii/', tier:'T1', note:'Cosina (the actual manufacturer) official EN product page for the Micro Four Thirds Type II; confirms 11 elements/8 groups matching this entry; replaces the voigtlaender.de source, which is TLS-broken (incomplete cert chain, UNABLE_TO_VERIFY_LEAF_SIGNATURE)', date:'2026-09-06' }, asin:'B0046EC1OE',
-    prices:{USD:999,AUD:null,EUR:null,GBP:null,JPY:null,CAD:null,SGD:null},
+    prices:{USD:799,AUD:null,EUR:null,GBP:null,JPY:null,CAD:null,SGD:null},
+    priceSource: { url:'https://www.bhphotovideo.com/c/search?q=voigtlander%20nokton%2025mm%20f0.95%20type%20II', tier:'T3', title:'B&H Photo listing', note:'USD $999 -> $799: B&H lists "Nokton 25mm f/0.95 Type II Lens for Micro Four Thirds" at a regular price of $799 (currently on sale at $749). Voigtländer publishes no US price of its own (cosina.co.jp/voigtlaender.de give JPY/EUR only), and B&H is the main US retailer; this replaces the earlier EUR-converted estimate. Read 2026-10-11', date:'2026-10-11' },
     priceIncomplete:true, productUrl:'https://www.cosina.co.jp/voigtlander/en/micro-four-thirds/nokton-25mm-f0-95-type-ii/',
   },
 
@@ -2157,7 +2158,8 @@ const LENSES = {
     weatherSealed:false, ois:false, oisStops:null, year:2017, discontinued:false,
     imageUrl:'https://www.venuslens.net/wp-content/uploads/2017/03/shutterstock_131587922SC2-copy-700x467.jpg',
     imageSource: { url:'https://www.venuslens.net/product/laowa-7-5mm-f2/', tier:'T1', note:'official Venus Optics/Laowa store, MFT-only product page; barrel aperture ring reads "2, 2.8, 4, 5.6, 8, 11..." confirming the f/2 still-photo lens, not the T2.1 cine variant (a same-focal-length cine SKU exists on the same site and was rejected during sourcing)', date:'2026-08-17' }, asin:null,
-    prices:{USD:499,AUD:null,EUR:null,GBP:null,JPY:null,CAD:null,SGD:null},
+    prices:{USD:399,AUD:null,EUR:null,GBP:null,JPY:null,CAD:null,SGD:null},
+    priceSource: { url:'https://www.venuslens.net/product/laowa-7-5mm-f2/', tier:'T1', title:'Laowa (Venus Optics) official store', note:'USD $499 -> $399: Laowa\'s own store lists the MFT (black, automatic aperture) version at $399, regular price (not on sale). Read 2026-10-11', date:'2026-10-11' },
     priceIncomplete:true, productUrl:'https://www.venuslens.net/product/laowa-7-5mm-f2/',
   },
 
@@ -2170,8 +2172,8 @@ const LENSES = {
     weatherSealed:false, ois:false, oisStops:null, year:2026, discontinued:false,
     imageUrl:'https://www.venuslens.net/wp-content/uploads/2022/06/Laowa_90mmF282XMacroAPO_1-700x482.jpg',
     imageSource: { url:'https://www.venuslens.net/product/laowa-90mm-f-2-8-2x-macro-apo/', tier:'T1', note:'official Venus Optics/Laowa store; same product page as the L-mount entry above — Mount dropdown explicitly lists "MFT" as a selectable option (added per the page\'s own "New MFT Mount Added" banner); barrel reads "LAOWA FFII 90mm F2.8 CA-Dreamer Macro 2X"', date:'2026-08-17' }, asin:null,
-    prices:{USD:449,AUD:null,EUR:null,GBP:null,JPY:null,CAD:null,SGD:null},
-    priceSource: { url:'https://www.dailycameranews.com/2026/01/laowa-90mm-f2-8-2x-ultra-macro-apo-mft-announced/', tier:'T2', title:'Daily Camera News — MFT version announcement', note:'USD $499 -> $449: the MFT version launched (Jan 2026) at "U.S. retail price $449 USD", unlike the $499 full-frame version the old figure appears to have been copied from; B&H also lists the MFT version at $449', date:'2026-10-10' },
+    prices:{USD:499,AUD:null,EUR:null,GBP:null,JPY:null,CAD:null,SGD:null},
+    priceSource: { url:'https://www.venuslens.net/product/laowa-90mm-f-2-8-2x-macro-apo/', tier:'T1', title:'Laowa (Venus Optics) official store', note:'USD $449 -> $499: Laowa\'s own store lists the MFT variant at $499 regular (not on sale). The $449 launch price (Jan 2026, also B&H) is superseded; owner chose the maker store (2026-10-12). Read 2026-10-11', date:'2026-10-11' },
     priceIncomplete:true, productUrl:'https://www.venuslens.net/product/laowa-90mm-f-2-8-2x-macro-apo/',
   },
 };
