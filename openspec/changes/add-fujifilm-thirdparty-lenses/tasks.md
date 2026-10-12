@@ -15,8 +15,8 @@
 
 ## 4. Laowa (complete X-mount)
 
-- [ ] 4.1 Enumerate X-mount lineup from Venus Optics; record in `research/lenses.md`
-- [ ] 4.2 Enter missing lenses into `── Laowa ──`; images; prices; test; commit
+- [x] 4.1 Enumerate X-mount lineup from Venus Optics; record in `research/lenses.md`
+- [x] 4.2 Enter missing lenses into `── Laowa ──`; images; prices; test; commit
 
 ## 5. Verify
 

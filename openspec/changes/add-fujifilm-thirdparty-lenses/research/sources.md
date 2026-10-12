@@ -23,3 +23,9 @@ announcement (`year` only).
 | https://www.voigtlaender.de/objektive/x-anschluss/ (+5 lens pages) | T1 (regional) | EUR UVP: 18mm €599, 35/1.2 €649, Macro €699, 50/1.2 €749, 35/0.9 €1,749 | incomplete TLS chain; read with curl -k. No X pages for the 23mm or 27mm |
 | https://www.bhphotovideo.com/c/search?q=voigtlander%20fujifilm%20x | T3 | USD regular prices for all 7 (read in Chrome, 2026-10-13) | blocks curl/WebFetch |
 | amazon.com listings B0CYYJCZWZ, B0B1CL663K, B09F76L1LG, B0B8NL7BZF, B0CKM299B1 | T3 | ASINs, matched by listing title (lens + X mount) | Macro listing currently "unavailable" |
+| https://www.venuslens.net/wp-json/wc/store/v1/products | T1 | the complete Laowa catalogue with mount attributes, regular USD prices and spec descriptions | needs a real browser (Cloudflare); read in Chrome 2026-10-13 |
+| https://www.venuslens.net/product/<slug>/ (×5) | T1 | per-lens spec tables (one table per lens covering mirrorless-only mounts) | |
+| https://www.bhphotovideo.com/c/search?q=laowa%20fujifilm | T3 | X/GFX SKU list: minimum apertures for the Cookie (f/22), Argus (f/11) and 8-16mm (f/16); 180mm X preorder status | read in Chrome |
+| https://en.pronews.com/news/2024120611209835.html | NEWS | 12-24mm shift: Ø98.91 × 80 mm reading | |
+| petapixel / photorumors / fujirumors launch posts (see ledger) | NEWS | year only | |
+| amazon.com B094393JNC, B0B7BPZDKM | T3 | Argus 33 X, Cookie X black ASINs | matched by listing title |
