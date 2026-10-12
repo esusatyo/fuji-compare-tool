@@ -45,6 +45,8 @@ Constraints: the site stays zero-dependency and works without a build step at de
 - [Font differences between machines change how cards look but not their hashes] → cosmetic only. The system font stack avoids missing-font fallbacks.
 - [Silhouettes imply a precision that rectangles don't have] → label them as "front, to scale" with the W×H figures, and keep the shapes deliberately schematic.
 
+- [Pre-merge previews can't be validated by social platforms] → `og:image` is an absolute production URL (taken from `site-config.js`, with no build step to rewrite it per deploy), so a validator pointed at a Workers preview fetches a production image that doesn't exist yet. Review cards locally (`render-share-images.js --sheet`, or `scripts/preview.py` at `/og/...png`), and confirm the preview serves the files. Run real validators after merge.
+
 ## Migration Plan
 
 Additive. Ship the tags and images together in one PR so no tag ever points at a missing image. Rolling back means reverting the PR, which restores `summary` cards. After deploy, run 3 representative URLs through a card validator and do a real paste into Discord or a Reddit post-preview.

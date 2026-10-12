@@ -1,7 +1,7 @@
 ## 1. Spike: layout and size budget
 
 - [ ] 1.1 Add a pure `shareCardHTML(page)` to `scripts/generate-seo.js` for the vs-card only (tokens, logo lockup, names, 4 spec rows, scale silhouettes), and export it
-- [ ] 1.2 Render 3 sample cards (same-brand, cross-brand, a pair with a missing dimension) with a throwaway Chrome screenshot; check them by eye at full size and at a 1.91:1/square crop
+- [ ] 1.2 Render 3 sample cards (same-brand, cross-brand, a pair with a missing dimension) with a throwaway Chrome screenshot; check them by eye at full size and at a 1.91:1/square crop (pre-check 2026-10-13: a mock vs-card rendered at 54 KB, which projects to about 16.5 MB for 305 pages)
 - [ ] 1.3 Measure PNG sizes and project the total for about 305 pages; if it's over about 20 MB, apply the design's fallback (noindexed same-brand vs-pages use the brand card) and record the numbers in design.md
 
 ## 2. Card builders
@@ -18,8 +18,9 @@
 ## 4. Renderer
 
 - [ ] 4.1 Write `scripts/render-share-images.js`: Chrome lookup (`CHROME_BIN` or the macOS default, error otherwise), hash each card's HTML, render missing/stale cards 4 at a time at 1200×630, delete orphans, write `og/manifest.json`
-- [ ] 4.2 Run the full render; commit `og/`
-- [ ] 4.3 Add an `/og/*` cache rule to `_headers` (max-age 86400, stale-if-error)
+- [ ] 4.2 Add `--sheet` to the renderer: writes an uncommitted contact sheet (scratch dir) showing every card at full size plus Reddit/Discord/X-style crops, and prints its path
+- [ ] 4.3 Run the full render, review the contact sheet, commit `og/`
+- [ ] 4.4 Add an `/og/*` cache rule to `_headers` (max-age 86400, stale-if-error)
 
 ## 5. Tests and hook
 
@@ -31,5 +32,5 @@
 
 ## 6. Ship and verify
 
-- [ ] 6.1 Open the PR; on the Workers preview, fetch 3 image URLs (200, `image/png`) and run the preview vs-page through a card validator
+- [ ] 6.1 Open the PR; on the Workers preview, fetch 3 image URLs directly (200, `image/png`, correct pixels). Card validators can't run against the preview, because its `og:image` tags point at production URLs that don't exist until merge, so validator checks wait for 6.2
 - [ ] 6.2 After merge: check 3 production URLs (home, a brand page, a cross-brand vs-page) in a card validator and with a real paste into Discord or a Reddit post-preview
