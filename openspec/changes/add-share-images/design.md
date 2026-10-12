@@ -40,6 +40,7 @@ Constraints: the site stays zero-dependency and works without a build step at de
 ## Risks / Trade-offs
 
 - [The repo grows by about 10–18 MB of PNGs, and churns whenever a card changes] → measure 3 sample cards first (task 1). If the projected total exceeds about 20 MB, same-brand noindexed vs-pages fall back to their brand card. Indexable and cross-brand pages always keep their own card.
+  *Measured 2026-10-13 (spike):* three vs-cards rendered at 66, 75 and 75 KB with a flat background. A radial-gradient background doubled that to 118–129 KB, so the background stays flat. About 302 cards × ~72 KB ≈ **22 MB**, just over the 20 MB line. With the fallback, about 115 own cards ≈ 8 MB. The owner decides which at layout sign-off.
 - [A contributor without Chrome can't refresh cards] → the test names the command, CI isn't affected (it only checks hashes), and the only source of stale cards is a data edit that changes card fields.
 - [Reddit and Facebook cache previews per URL for days] → expected for already-shared URLs. Verify with the platforms' debuggers after deploy rather than assuming.
 - [Font differences between machines change how cards look but not their hashes] → cosmetic only. The system font stack avoids missing-font fallbacks.

@@ -1043,6 +1043,118 @@ ${items}
   ${SEO_BODY_END}`;
 }
 
+// ─── Share cards (og:image) ──────────────────
+// Each page's 1200×630 social preview is a self-contained HTML document
+// built here, purely from identity tokens + dataset fields, and
+// screenshotted by scripts/render-share-images.js. Freshness is checked
+// against a hash of this HTML (og/manifest.json), never pixels — Chrome's
+// font rasterisation differs between machines.
+//
+// Deliberately photo-free and price-free: Commons photos are mostly
+// CC BY/BY-SA (a composite would need on-image credit and, for BY-SA,
+// relicensing the card), manufacturer shots are licensed to depict the
+// product in context, not to be baked into our own promo graphic; and
+// prices churn on every refresh, which would re-render every card.
+//
+// Layout is centre-weighted: platforms that show a square thumbnail keep
+// only the middle ~630px, so the title and spec table sit there and the
+// silhouettes flank them.
+const CARD_W = 1200;
+const CARD_H = 630;
+const CARD_FONT = `-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif`;
+// Largest a silhouette may be drawn; both bodies share one mm→px scale.
+const SIL_MAX_W = 230;
+const SIL_MAX_H = 160;
+
+const CARD_ROWS = [
+  ['Sensor', c => c.sensorMP == null ? null : `${c.sensorMP} MP`],
+  ['IBIS', c => c.ibis ? (c.ibisStops ? `${c.ibisStops} stops` : 'Yes') : 'None'],
+  ['Weight', c => c.weight == null ? null : `${c.weight} g`],
+  ['Announced', c => c.year],
+];
+
+function cardTokens() {
+  return {
+    bg: identityToken('bg-deep'),
+    border: identityToken('border'),
+    text: identityToken('text-primary'),
+    muted: identityToken('text-secondary'),
+    a: identityToken('accent-primary'),
+    b: identityToken('accent-secondary'),
+  };
+}
+
+// Title size steps down with length so long cross-brand names stay on
+// one line inside the safe area.
+function cardTitleSize(text) {
+  const n = text.length;
+  return n <= 20 ? 76 : n <= 28 ? 64 : n <= 36 ? 52 : n <= 46 ? 44 : 38;
+}
+
+function cardDocument(t, body, css = '') {
+  return `<!DOCTYPE html><html><head><meta charset="UTF-8"><style>
+html,body{margin:0;padding:0}
+body{width:${CARD_W}px;height:${CARD_H}px;overflow:hidden;background:${t.bg};color:${t.text};font-family:${CARD_FONT}}
+.card{box-sizing:border-box;width:${CARD_W}px;height:${CARD_H}px;padding:48px 64px;display:flex;flex-direction:column;align-items:center}
+.lockup{display:flex;align-items:center;gap:12px;font-size:26px;font-weight:600;color:${t.text}}
+.domain{margin-top:auto;font-size:22px;color:${t.muted};letter-spacing:.02em}
+${css}
+</style></head><body><div class="card">
+<div class="lockup">${logoMark(38)}<span>Compare Camera Specs</span></div>
+${body}
+<div class="domain">comparecameraspecs.com</div>
+</div></body></html>
+`;
+}
+
+// Front-view silhouette at a given mm→px scale (body outline plus a
+// schematic mount ring — the outline is to scale, the ring is not); null when either
+// dimension is missing (never a guessed shape).
+function silhouetteHTML(cam, scale, color) {
+  if (!cam.width || !cam.height) return '<div class="sil"></div>';
+  const w = Math.round(cam.width * scale);
+  const h = Math.round(cam.height * scale);
+  return `<div class="sil"><svg width="${w}" height="${h}" viewBox="0 0 ${w} ${h}" aria-hidden="true"><rect x="1.5" y="1.5" width="${w - 3}" height="${h - 3}" rx="${Math.round(Math.min(w, h) * 0.12)}" fill="${color}" fill-opacity="0.18" stroke="${color}" stroke-width="3"></rect><circle cx="${w / 2}" cy="${Math.round(h * 0.56)}" r="${Math.round(Math.min(w, h) * 0.3)}" fill="none" stroke="${color}" stroke-width="3" stroke-opacity="0.7"></circle></svg><span>${esc(String(cam.width))} × ${esc(String(cam.height))} mm</span></div>`;
+}
+
+// sides: [{ name, cam }, { name, cam }]; kicker: optional line above the
+// title (the brand name on same-brand pages).
+function vsCardHTML(sides, kicker = '') {
+  const t = cardTokens();
+  const [A, B] = sides;
+  const dims = sides.filter(s => s.cam.width && s.cam.height);
+  const scale = dims.length
+    ? Math.min(...dims.map(s => Math.min(SIL_MAX_W / s.cam.width, SIL_MAX_H / s.cam.height)))
+    : 0;
+  const titleText = `${A.name} vs ${B.name}`;
+  const rows = CARD_ROWS.map(([label, fn]) => {
+    const [va, vb] = [fn(A.cam), fn(B.cam)];
+    return `<tr><td class="va">${va == null ? '—' : esc(String(va))}</td><th>${esc(label)}</th><td class="vb">${vb == null ? '—' : esc(String(vb))}</td></tr>`;
+  }).join('');
+  const css = `
+.kicker{margin-top:34px;font-size:24px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:${t.muted}}
+.title{margin-top:${kicker ? 6 : 40}px;font-size:${cardTitleSize(titleText)}px;font-weight:800;letter-spacing:-.02em;white-space:nowrap}
+.title .na{color:${t.a}}.title .nb{color:${t.b}}.title .vs{color:${t.muted};font-weight:500;margin:0 .28em}
+.body{flex:1;width:100%;display:grid;grid-template-columns:1fr auto 1fr;align-items:center}
+.sil{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;font-size:17px;color:${t.muted}}
+.sil-a{justify-self:start}.sil-b{justify-self:end}
+table{border-collapse:collapse;font-size:30px}
+td,th{padding:9px 22px;border-bottom:1px solid ${t.border}}
+tr:last-child td,tr:last-child th{border-bottom:0}
+th{font-size:20px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:${t.muted};text-align:center}
+td{font-weight:700;white-space:nowrap}.va{text-align:right;color:${t.a}}.vb{text-align:left;color:${t.b}}
+.foot{font-size:16px;color:${t.muted};margin-bottom:6px}`;
+  const body = `${kicker ? `<div class="kicker">${esc(kicker)}</div>` : ''}
+<div class="title"><span class="na">${esc(A.name)}</span><span class="vs">vs</span><span class="nb">${esc(B.name)}</span></div>
+<div class="body">
+<div class="sil-a">${silhouetteHTML(A.cam, scale, t.a)}</div>
+<table>${rows}</table>
+<div class="sil-b">${silhouetteHTML(B.cam, scale, t.b)}</div>
+</div>
+${dims.length ? '<div class="foot">Front outlines drawn to scale</div>' : ''}`;
+  return cardDocument(t, body, css);
+}
+
 // ─── Head blocks ─────────────────────────────
 // `prefix` is the page's relative path back to the site root, so the
 // generated favicon/touch-icon links resolve at any directory depth.
@@ -1607,4 +1719,4 @@ if (require.main === module) {
   console.log(`generate-seo: ${files.size} artifacts (${written} written, ${removed} stale removed)`);
 }
 
-module.exports = { LANDING_CARD_ORDER, ALL_BRANDS_MOSAIC, orderLandingBrands, allBrandsPhotoHTML, siteConfig, curatedPairs, successorPairKeys, resolvePins, withPins, PINNED_VS_PAIRS, SUCCESSOR_INDEX_SINCE, relatedPairs, vsPageHTML, vsSummary, vsSummaryFacts, resolveMatchups, crossVsPageHTML, crossTitle, CROSS_BRAND_MATCHUPS, compareHeadBlock, compareBodyBlock, brandHeadBlock, rootHeadBlock, brandBodyBlock, rootBodyBlock, withHeadBlock, withBodyBlock, sitemapXML, robotsTxt, buildAll, SEO_BEGIN, SEO_END, SEO_BODY_BEGIN, SEO_BODY_END, ID_HEAD_BEGIN, ID_HEAD_END, ID_HEADER_BEGIN, ID_HEADER_END, ID_FOOTER_BEGIN, ID_FOOTER_END, identityToken, logoMark, cleanUrl, cleanHref, themeToggleHTML, collectReferences, citationText, refHostname, REFERENCE_ROWS, referenceRowsHTML };
+module.exports = { vsCardHTML, CARD_W, CARD_H, LANDING_CARD_ORDER, ALL_BRANDS_MOSAIC, orderLandingBrands, allBrandsPhotoHTML, siteConfig, curatedPairs, successorPairKeys, resolvePins, withPins, PINNED_VS_PAIRS, SUCCESSOR_INDEX_SINCE, relatedPairs, vsPageHTML, vsSummary, vsSummaryFacts, resolveMatchups, crossVsPageHTML, crossTitle, CROSS_BRAND_MATCHUPS, compareHeadBlock, compareBodyBlock, brandHeadBlock, rootHeadBlock, brandBodyBlock, rootBodyBlock, withHeadBlock, withBodyBlock, sitemapXML, robotsTxt, buildAll, SEO_BEGIN, SEO_END, SEO_BODY_BEGIN, SEO_BODY_END, ID_HEAD_BEGIN, ID_HEAD_END, ID_HEADER_BEGIN, ID_HEADER_END, ID_FOOTER_BEGIN, ID_FOOTER_END, identityToken, logoMark, cleanUrl, cleanHref, themeToggleHTML, collectReferences, citationText, refHostname, REFERENCE_ROWS, referenceRowsHTML };
