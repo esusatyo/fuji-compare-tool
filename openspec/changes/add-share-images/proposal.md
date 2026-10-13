@@ -5,7 +5,7 @@ No page on the site declares an `og:image`, so every shared link shows as a bare
 ## What Changes
 
 - Every generated page head (root, About, Privacy, `compare/`, each brand page, every same-brand and cross-brand vs-page) gains `og:image` (absolute URL), `og:image:width`/`og:image:height` (1200×630), `og:image:alt`, `twitter:image`, and switches `twitter:card` from `summary` to `summary_large_image`.
-- New committed static images under `og/`, one per page, laid out like the page path (`og/fujifilm.png`, `og/fujifilm/vs/x-t5-vs-x-s20.png`, `og/vs/<pair>.png`, `og/home.png`, `og/compare.png`, `og/site.png` for About/Privacy).
+- New committed static images under `og/`, one per page, laid out like the page path (`og/fujifilm.png`, `og/fujifilm/vs/x-t5-vs-x-s20.png`, `og/vs/<pair>.png`, `og/home.png`, which About and Privacy reuse, and `og/compare.png`).
 - Cards are **typographic, with no photos**: the site's identity (logo lockup, dark tokens) plus page-specific content. Vs-cards show both camera names, 3–4 headline specs that rarely change (sensor MP, IBIS stops, weight, year) and **front silhouettes of both bodies drawn to scale** from their stored width × height. Brand cards show the brand name, camera/lens counts and mounts. No prices, since prices churn and depend on currency.
 - `scripts/generate-seo.js` gains a pure `shareCardHTML(page)` builder and emits the new tags. A new `scripts/render-share-images.js` screenshots the card HTML with headless Chrome (the same approach as `render-touch-icon.js`), renders only stale or missing cards, and writes `og/manifest.json` recording the input hash for each card.
 - New Tier 1 test: every page's `og:image` file exists, is 1200×630, and its manifest hash matches the current card HTML. No orphan images.

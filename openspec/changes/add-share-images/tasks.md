@@ -2,12 +2,12 @@
 
 - [x] 1.1 Add a pure `shareCardHTML(page)` to `scripts/generate-seo.js` for the vs-card only (tokens, logo lockup, names, 4 spec rows, scale silhouettes), and export it
 - [x] 1.2 Render 3 sample cards (same-brand, cross-brand, a pair with a missing dimension) with a throwaway Chrome screenshot; check them by eye at full size and at a 1.91:1/square crop (pre-check 2026-10-13: a mock vs-card rendered at 54 KB, which projects to about 16.5 MB for 305 pages)
-- [ ] 1.3 Measure PNG sizes and project the total for about 305 pages; if it's over about 20 MB, apply the design's fallback (noindexed same-brand vs-pages use the brand card) and record the numbers in design.md
+- [x] 1.3 Measure PNG sizes and project the total for about 305 pages; if it's over about 20 MB, apply the design's fallback (noindexed same-brand vs-pages use the brand card) and record the numbers in design.md
 
 ## 2. Card builders
 
 - [ ] 2.1 Finish the vs-card (brand names on cross-brand cards, silhouette omitted on missing width/height, "front, to scale" label)
-- [ ] 2.2 Add brand, compare, home and site card variants
+- [ ] 2.2 Add brand, compare and home card variants (About/Privacy reuse the home card)
 - [ ] 2.3 Add `sharePages()` enumerating every generated page → `{ imagePath, alt, cardHTML }`, reusing the existing vs/brand/trust page lists so the two can't diverge
 
 ## 3. Head tags

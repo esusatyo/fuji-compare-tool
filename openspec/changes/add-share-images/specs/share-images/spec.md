@@ -1,7 +1,7 @@
 ## ADDED Requirements
 
 ### Requirement: Every generated page has its own share image
-The generator SHALL assign every generated page a 1200×630 PNG under `og/`, at a path that mirrors the page path (`og/home.png` for the root, `og/compare.png`, `og/<brand>.png`, `og/<brand>/vs/<pair>.png`, `og/vs/<pair>.png`), except About and Privacy, which SHALL share `og/site.png`.
+The generator SHALL assign every generated page a 1200×630 PNG under `og/`, at a path that mirrors the page path (`og/home.png` for the root, `og/compare.png`, `og/<brand>.png`, `og/<brand>/vs/<pair>.png`, `og/vs/<pair>.png`), except About and Privacy, which SHALL reuse the home card `og/home.png`.
 
 #### Scenario: Vs-page image path
 - **WHEN** the generator emits `fujifilm/vs/x-t5-vs-x-s20.html`
@@ -9,7 +9,7 @@ The generator SHALL assign every generated page a 1200×630 PNG under `og/`, at 
 
 #### Scenario: Trust pages share one image
 - **WHEN** the generator emits the About and Privacy head blocks
-- **THEN** both reference `og/site.png`
+- **THEN** both reference `og/home.png`
 
 ### Requirement: Share cards are typographic and photo-free
 Share cards SHALL be rendered from site identity tokens, the logo mark and dataset fields only, and SHALL NOT embed any product photograph or other third-party image. Cards SHALL NOT show prices.
@@ -30,7 +30,7 @@ A vs-card SHALL show both camera names (with brand names on cross-brand cards), 
 - **THEN** its silhouette is omitted and the other camera's is still drawn
 
 ### Requirement: Brand, compare and home cards
-A brand card SHALL show the brand name, its live camera and lens counts, and its declared mount labels. The compare card SHALL name the cross-brand comparison and list the registered brands. The home and site cards SHALL show the site name and tagline.
+A brand card SHALL show the brand name, its live camera and lens counts, and its declared mount labels. The compare card SHALL name the cross-brand comparison and list the registered brands. The home card SHALL show the site name and tagline.
 
 #### Scenario: Brand counts follow data
 - **WHEN** a camera is added to a brand's `data.js`

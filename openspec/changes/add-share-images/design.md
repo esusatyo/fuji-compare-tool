@@ -34,7 +34,7 @@ Constraints: the site stays zero-dependency and works without a build step at de
 
 **5. Incremental rendering, run by the hook when Chrome is present.** The renderer re-renders only cards whose hash changed or whose PNG is missing, and deletes orphans. Chrome launches once per card at about 0.5 s each, run 4 at a time: a full run takes about a minute, and a typical incremental run is 0–5 cards. The hook calls it after `generate-seo.js` when `CHROME_BIN` or the default macOS path exists. It needs no network, which keeps within the hook's "no external fetches" rule. Without Chrome, the hook skips it and the test failure prints `node scripts/render-share-images.js`.
 
-**6. Image paths mirror page paths under `og/`.** Use absolute URLs from `siteConfig().baseUrl` (platforms require them). About and Privacy share `og/site.png`.
+**6. Image paths mirror page paths under `og/`.** Use absolute URLs from `siteConfig().baseUrl` (platforms require them). About and Privacy reuse the home card (`og/home.png`); a separate identical image would only add a file.
 
 **7. Use dark tokens only, in a fixed layout.** The logo lockup sits at top-left, the title is set large, the content block sits below, and the domain sits at bottom-right. Keep about 60 px of safe margin, because some platforms crop toward 1.91:1 or square-center. Layout is checked by eye on 3 sample cards before a full render.
 
@@ -43,7 +43,7 @@ Constraints: the site stays zero-dependency and works without a build step at de
 ## Risks / Trade-offs
 
 - [The repo grows by about 10–18 MB of PNGs, and churns whenever a card changes] → measure 3 sample cards first (task 1). If the projected total exceeds about 20 MB, same-brand noindexed vs-pages fall back to their brand card. Indexable and cross-brand pages always keep their own card.
-  *Measured 2026-10-13 (spike):* three vs-cards rendered at 66, 75 and 75 KB with a flat background. A radial-gradient background doubled that to 118–129 KB, so the background stays flat. About 302 cards × ~72 KB ≈ **22 MB**, just over the 20 MB line. With the fallback, about 115 own cards ≈ 8 MB. The owner decides which at layout sign-off.
+  *Measured 2026-10-13 (spike):* three vs-cards rendered at 66, 75 and 75 KB with a flat background. A radial-gradient background doubled that to 118–129 KB, so the background stays flat. About 302 cards × ~72 KB ≈ **22 MB**, just over the 20 MB line. With the fallback, about 115 own cards ≈ 8 MB. **Decision (owner, 2026-10-13): option (a), every page gets its own card**, so a shared link to any vs-page previews that exact pair.
 - [A contributor without Chrome can't refresh cards] → the test names the command, CI isn't affected (it only checks hashes), and the only source of stale cards is a data edit that changes card fields.
 - [Reddit and Facebook cache previews per URL for days] → expected for already-shared URLs. Verify with the platforms' debuggers after deploy rather than assuming.
 - [Font differences between machines change how cards look but not their hashes] → cosmetic only. The system font stack avoids missing-font fallbacks.
