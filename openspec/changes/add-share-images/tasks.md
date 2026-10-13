@@ -38,5 +38,5 @@
 
 ## 7. Ship and verify
 
-- [ ] 7.1 Open the PR; on the Workers preview, fetch 3 image URLs directly (200, `image/png`, correct pixels). Card validators can't run against the preview, because its `og:image` tags point at production URLs that don't exist until merge, so validator checks wait for 7.2
+- [x] 7.1 Open the PR; on the Workers preview, fetch 3 image URLs directly (200, `image/png`, correct pixels). Card validators can't run against the preview, because its `og:image` tags point at production URLs that don't exist until merge, so validator checks wait for 7.2
 - [ ] 7.2 After merge: check 3 production URLs (home, a brand page, a cross-brand vs-page) in a card validator and with a real paste into Discord or a Reddit post-preview; check that `share-link` events appear in GoatCounter
