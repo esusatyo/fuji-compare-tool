@@ -6,14 +6,14 @@
 
 ## 2. Card builders
 
-- [ ] 2.1 Finish the vs-card (brand names on cross-brand cards, silhouette omitted on missing width/height, "front, to scale" label)
-- [ ] 2.2 Add brand, compare and home card variants (About/Privacy reuse the home card)
-- [ ] 2.3 Add `sharePages()` enumerating every generated page → `{ imagePath, alt, cardHTML }`, reusing the existing vs/brand/trust page lists so the two can't diverge
+- [x] 2.1 Finish the vs-card (brand names on cross-brand cards, silhouette omitted on missing width/height, "front, to scale" label)
+- [x] 2.2 Add brand, compare and home card variants (About/Privacy reuse the home card)
+- [x] 2.3 Build every page's card (`{ path, alt, html }`) inside `buildSite()` next to the page itself, reusing the existing vs/brand/trust page lists so the two can't diverge
 
 ## 3. Head tags
 
-- [ ] 3.1 Emit `og:image`, `og:image:width/height/alt`, `twitter:image` and `twitter:card=summary_large_image` from `metaBlock`, `vsPageHTML`, `crossVsPageHTML`, `identityHeadBlock` and `compareHeadBlock`
-- [ ] 3.2 Run `node scripts/generate-seo.js`; confirm the diff touches head blocks only
+- [x] 3.1 Emit `og:image`, `og:image:width/height/alt`, `twitter:image` and `twitter:card=summary_large_image` from `metaBlock`, `vsPageHTML`, `crossVsPageHTML`, `identityHeadBlock` and `compareHeadBlock`
+- [x] 3.2 Run `node scripts/generate-seo.js`; confirm the diff touches head blocks only
 
 ## 4. Renderer
 
