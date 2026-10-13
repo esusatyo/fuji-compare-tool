@@ -1,5 +1,13 @@
 {
   "tamron-11-20mm-f28": { "CAD": 899 },
   "tamron-18-300mm-f35-63": { "CAD": 949 },
-  "tamron-150-500mm-f5-67": { "CAD": 1999 }
+  "tamron-150-500mm-f5-67": { "CAD": 1999 },
+  "sgimage-55mm-f18": { "JPY": 39000 },
+  "voigtlander-color-skopar-18mm-f28": { "EUR": 599, "JPY": 88000 },
+  "voigtlander-nokton-23mm-f12": { "JPY": 99000 },
+  "voigtlander-ultron-27mm-f2": { "JPY": 80300 },
+  "voigtlander-nokton-35mm-f09": { "EUR": 1749, "JPY": 247500 },
+  "voigtlander-nokton-35mm-f12": { "EUR": 649, "JPY": 85800 },
+  "voigtlander-macro-apo-ultron-35mm-f2": { "EUR": 699, "JPY": 102300 },
+  "voigtlander-nokton-50mm-f12": { "EUR": 749, "JPY": 110000 }
 }
