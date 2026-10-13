@@ -1,6 +1,6 @@
 # Progress — Fujifilm third-party lenses (SG-image, Voigtländer, Laowa)
 
-**Resume at:** done — PR open; awaiting owner on the Laowa GFX question. Archive the change after merge
+**Resume at:** done — PR open; Laowa GFX deferred by the owner (2026-10-13). Archive the change after merge
 **Branch:** add-fujifilm-thirdparty-lenses   **Last green commit:** b172b10
 **Worktree:** /Users/enricosusatyo/Projects/fuji-compare-tool-fuji-lenses
 
@@ -21,4 +21,4 @@
 - npm test 834/834; verify-images: only the two Aksen venuslens images fail (already on main); test:links: every new/changed URL OK, the only failure is an unrelated, transient ECONNRESET on a Canon B&H search link
 
 ## Open questions for the user
-- Add Laowa's GFX (G-mount) lenses? None of the dataset's third-party lenses are G-mount yet; 3 have clean GFX tables, the shift lenses don't
+- (none) — Laowa GFX: owner said not for now (2026-10-13)
