@@ -17,10 +17,10 @@
 
 ## 4. Renderer
 
-- [ ] 4.1 Write `scripts/render-share-images.js`: Chrome lookup (`CHROME_BIN` or the macOS default, error otherwise), hash each card's HTML, render missing/stale cards 4 at a time at 1200×630, delete orphans, write `og/manifest.json`
-- [ ] 4.2 Add `--sheet` to the renderer: writes an uncommitted contact sheet (scratch dir) showing every card at full size plus Reddit/Discord/X-style crops, and prints its path
-- [ ] 4.3 Run the full render, review the contact sheet, commit `og/`
-- [ ] 4.4 Add an `/og/*` cache rule to `_headers` (max-age 86400, stale-if-error)
+- [x] 4.1 Write `scripts/render-share-images.js`: Chrome lookup (`CHROME_BIN` or the macOS default, error otherwise), hash each card's HTML, render missing/stale cards 4 at a time at 1200×630, delete orphans, write `og/manifest.json`
+- [x] 4.2 Add `--sheet` to the renderer: writes an uncommitted contact sheet (scratch dir) showing every card at full size plus Reddit/Discord/X-style crops, and prints its path
+- [x] 4.3 Run the full render, review the contact sheet, commit `og/`
+- [x] 4.4 Add an `/og/*` cache rule to `_headers` (max-age 86400, stale-if-error)
 
 ## 5. Tests and hook
 

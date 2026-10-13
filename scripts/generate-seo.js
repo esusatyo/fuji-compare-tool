@@ -1165,7 +1165,7 @@ function infoCardHTML({ kicker = '', title, subtitle, chips = [] }) {
 .kicker{font-size:24px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:${t.muted}}
 .title{margin-top:10px;font-size:${cardTitleSize(title) + 8}px;font-weight:800;letter-spacing:-.02em;white-space:nowrap;color:${t.a}}
 .sub{margin-top:18px;font-size:34px;font-weight:600;color:${t.text}}
-.chips{margin-top:34px;display:flex;flex-wrap:wrap;justify-content:center;gap:12px;max-width:980px}
+.chips{margin-top:34px;display:flex;flex-wrap:wrap;justify-content:center;gap:12px;max-width:1080px}
 .chip{padding:8px 20px;border:2px solid ${t.border};border-radius:999px;font-size:24px;font-weight:600;color:${t.b}}`;
   const body = `<div class="main">
 ${kicker ? `<div class="kicker">${esc(kicker)}</div>` : ''}
