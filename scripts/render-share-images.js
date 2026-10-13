@@ -23,18 +23,15 @@
 // compared: Chrome's font rasterisation differs between machines.
 // ─────────────────────────────────────────────
 const { execFile } = require('child_process');
-const crypto = require('crypto');
 const fs = require('fs');
 const os = require('os');
 const path = require('path');
-const { buildSite, CARD_W, CARD_H } = require('./generate-seo');
+const { buildSite, cardHash, CARD_W, CARD_H } = require('./generate-seo');
 
 const ROOT = path.resolve(__dirname, '..');
 const OG_DIR = path.join(ROOT, 'og');
 const MANIFEST = path.join(OG_DIR, 'manifest.json');
 const CONCURRENCY = 4;
-
-const cardHash = html => crypto.createHash('sha256').update(html).digest('hex').slice(0, 16);
 
 function readManifest() {
   try { return JSON.parse(fs.readFileSync(MANIFEST, 'utf8')); } catch { return {}; }

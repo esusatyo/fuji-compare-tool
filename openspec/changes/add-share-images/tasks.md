@@ -24,11 +24,11 @@
 
 ## 5. Tests and hook
 
-- [ ] 5.1 Add `tests/data/share-images.test.js`: every page's image exists, is 1200×630 (reuse the touch-icon PNG decoder), manifest hash matches, no orphan PNGs or manifest entries, no `<img>` or price in any card HTML, every PNG under 250 KB (WhatsApp reportedly drops previews over about 300 KB), tags present and absolute on every page
-- [ ] 5.2 Extend `tests/data/seo.test.js` or its spec-matching assertions for the new tags where it already checks head blocks
-- [ ] 5.3 Extend `.githooks/pre-commit`: after `generate-seo.js`, run the renderer if Chrome exists, stage `og/`, else skip
-- [ ] 5.4 Prove the gate: change one camera's `weight` locally, rerun only the generator, and confirm `npm test` fails naming the image and command; revert
-- [ ] 5.5 Update CLAUDE.md (architecture bullet for share images + the rebrand flow now also runs `render-share-images.js`); `npm test` green; `openspec validate add-share-images --strict`
+- [x] 5.1 Add `tests/data/share-images.test.js`: every page's image exists, is 1200×630 (reuse the touch-icon PNG decoder), manifest hash matches, no orphan PNGs or manifest entries, no `<img>` or price in any card HTML, every PNG under 250 KB (WhatsApp reportedly drops previews over about 300 KB), tags present and absolute on every page
+- [x] 5.2 Tag assertions live in `share-images.test.js` (every generated page; seo.test.js has no per-tag checks, and its staleness test already covers the head blocks)
+- [x] 5.3 Extend `.githooks/pre-commit`: after `generate-seo.js`, run the renderer if Chrome exists, stage `og/`, else skip
+- [x] 5.4 Prove the gate: change one camera's `weight` locally, rerun only the generator, and confirm `npm test` fails naming the image and command; revert
+- [x] 5.5 Update CLAUDE.md (architecture bullet for share images + the rebrand flow now also runs `render-share-images.js`); `npm test` green; `openspec validate add-share-images --strict`
 
 ## 6. Share button
 
