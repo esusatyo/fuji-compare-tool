@@ -3,7 +3,8 @@
 # suite whenever staged changes could affect generated output, then stages
 # whatever the generator wrote so it rides along in the same commit —
 # nothing stale ever gets committed. See CLAUDE.md for the rationale and
-# scope: deliberately limited to generate-seo.js. Scripts that fetch
+# scope: deliberately limited to generate-seo.js plus the share-card
+# renderer (render-share-images.js — local Chrome, no network). Scripts that fetch
 # external data (fetch-images*.js, compute-prices.js, apply-images.js, etc.)
 # are NOT run here — those need human/agent review before committing, per
 # this project's sourcing rules.
@@ -25,7 +26,7 @@ NODE_BIN=$(command -v node) || {
   exit 1
 }
 
-TRIGGER='(^|/)data\.js$|^site-config\.js$|^scripts/generate-seo\.js$|^engine\.css$|^assets/logo\.svg$'
+TRIGGER='(^|/)data\.js$|^site-config\.js$|^scripts/generate-seo\.js$|^scripts/render-share-images\.js$|^engine\.css$|^assets/logo\.svg$'
 if ! git diff --cached --name-only | grep -qE "$TRIGGER"; then
   exit 0
 fi
@@ -37,6 +38,18 @@ echo "pre-commit: staged changes affect generated output — regenerating..."
 # vs-pages, sitemap, robots.txt) — scoped to what it manages, not the
 # whole tree, so unrelated dirty files elsewhere are never swept in.
 git add -A -- '*.html' 'sitemap.xml' 'robots.txt'
+
+# Re-render any share card (og:image) whose inputs changed. Needs Chrome;
+# without it, skip — the test gate below then fails naming the stale cards
+# and the command to run on a machine that has Chrome.
+CHROME=${CHROME_BIN:-"/Applications/Google Chrome.app/Contents/MacOS/Google Chrome"}
+if [ -x "$CHROME" ]; then
+  echo "pre-commit: rendering changed share cards..."
+  "$NODE_BIN" scripts/render-share-images.js
+  git add -A -- og
+else
+  echo "pre-commit: no Chrome at \"$CHROME\" — skipping share-card rendering (set CHROME_BIN)."
+fi
 
 echo "pre-commit: running test suite..."
 if ! npm test; then

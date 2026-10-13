@@ -599,7 +599,7 @@ function productCardHTML(data, brandName, slug, c, displayName) {
         </div>`;
 }
 
-function vsPageHTML(brand, data, site, aId, bId, allPairs, indexable = true) {
+function vsPageHTML(brand, data, site, aId, bId, allPairs, indexable = true, card = null) {
   const cams = data.CAMERAS;
   const brandName = data.BRAND_CONFIG.name;
   const [a, b] = [cams[aId], cams[bId]];
@@ -646,7 +646,7 @@ ${related.map(([x, y]) =>
   <meta property="og:title" content="${esc(title)}">
   <meta property="og:description" content="${esc(desc)}">
   <meta property="og:url" content="${url}">
-  <meta name="twitter:card" content="summary">
+  ${shareTags(site, card)}
   <script type="application/ld+json">${JSON.stringify(ld)}</script>
   <!-- Umami analytics — temporarily disabled, kept for re-enabling.
   <script defer src="https://cloud.umami.is/script.js" data-website-id="365e9ee6-1fb5-4a0d-9c74-f6255522a196"></script> -->
@@ -895,7 +895,7 @@ function crossRelated(all, m) {
     .slice(0, 6);
 }
 
-function crossVsPageHTML(site, m, all, indexable = true) {
+function crossVsPageHTML(site, m, all, indexable = true, card = null) {
   const { a, b } = m;
   const title = `${crossTitle(m)}: Spec Comparison`;
   const desc = `Compare the ${a.brandName} ${a.cam.name} (${a.cam.year}) and ${b.brandName} ${b.cam.name} (${b.cam.year}) side by side — price, sensor, stabilization, video, weight and more.`;
@@ -935,7 +935,7 @@ ${related.map(x => `        <li><a href="${cleanHref(path.basename(x.file))}" da
   <meta property="og:title" content="${esc(title)}">
   <meta property="og:description" content="${esc(desc)}">
   <meta property="og:url" content="${url}">
-  <meta name="twitter:card" content="summary">
+  ${shareTags(site, card)}
   <script type="application/ld+json">${JSON.stringify(ld)}</script>
   <!-- Umami analytics — temporarily disabled, kept for re-enabling.
   <script defer src="https://cloud.umami.is/script.js" data-website-id="365e9ee6-1fb5-4a0d-9c74-f6255522a196"></script> -->
@@ -1017,13 +1017,14 @@ function prose(names) {
 }
 
 // ─── Compare-page blocks ─────────────────────
-function compareHeadBlock(site, brandNames, nCams) {
+function compareHeadBlock(site, brandNames, nCams, card = null) {
   return metaBlock(
     site,
     `${site.baseUrl}/compare/`,
     'Compare Cameras Across Brands',
     `Compare 2–4 of ${nCams} cameras from ${brandNames.join(', ')} side by side — specs, prices and buy links in 7 currencies.`,
-    '../'
+    '../',
+    card
   );
 }
 
@@ -1043,10 +1044,223 @@ ${items}
   ${SEO_BODY_END}`;
 }
 
+// ─── Share cards (og:image) ──────────────────
+// Each page's 1200×630 social preview is a self-contained HTML document
+// built here, purely from identity tokens + dataset fields, and
+// screenshotted by scripts/render-share-images.js. Freshness is checked
+// against a hash of this HTML (og/manifest.json), never pixels — Chrome's
+// font rasterisation differs between machines.
+//
+// Deliberately photo-free and price-free: Commons photos are mostly
+// CC BY/BY-SA (a composite would need on-image credit and, for BY-SA,
+// relicensing the card), manufacturer shots are licensed to depict the
+// product in context, not to be baked into our own promo graphic; and
+// prices churn on every refresh, which would re-render every card.
+//
+// Layout is centre-weighted: platforms that show a square thumbnail keep
+// only the middle ~630px, so the title and spec table sit there and the
+// silhouettes flank them.
+const CARD_W = 1200;
+const CARD_H = 630;
+const CARD_FONT = `-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif`;
+// Largest a silhouette may be drawn; both bodies share one mm→px scale.
+const SIL_MAX_W = 230;
+const SIL_MAX_H = 160;
+
+const CARD_ROWS = [
+  ['Sensor', c => c.sensorMP == null ? null : `${c.sensorMP} MP`],
+  ['IBIS', c => c.ibis ? (c.ibisStops ? `${c.ibisStops} stops` : 'Yes') : 'None'],
+  ['Weight', c => c.weight == null ? null : `${c.weight} g`],
+  ['Announced', c => c.year],
+];
+
+function cardTokens() {
+  return {
+    bg: identityToken('bg-deep'),
+    border: identityToken('border'),
+    text: identityToken('text-primary'),
+    muted: identityToken('text-secondary'),
+    a: identityToken('accent-primary'),
+    b: identityToken('accent-secondary'),
+  };
+}
+
+// Title size steps down with length so long cross-brand names stay on
+// one line inside the safe area.
+function cardTitleSize(text) {
+  const n = text.length;
+  return n <= 20 ? 76 : n <= 28 ? 64 : n <= 36 ? 52 : n <= 46 ? 44 : 38;
+}
+
+function cardDocument(t, body, css = '') {
+  return `<!DOCTYPE html><html><head><meta charset="UTF-8"><style>
+html,body{margin:0;padding:0}
+body{width:${CARD_W}px;height:${CARD_H}px;overflow:hidden;background:${t.bg};color:${t.text};font-family:${CARD_FONT}}
+.card{box-sizing:border-box;width:${CARD_W}px;height:${CARD_H}px;padding:48px 64px;display:flex;flex-direction:column;align-items:center}
+.lockup{display:flex;align-items:center;gap:12px;font-size:26px;font-weight:600;color:${t.text}}
+.domain{margin-top:auto;font-size:22px;color:${t.muted};letter-spacing:.02em}
+${css}
+</style></head><body><div class="card">
+<div class="lockup">${logoMark(38)}<span>Compare Camera Specs</span></div>
+${body}
+<div class="domain">comparecameraspecs.com</div>
+</div></body></html>
+`;
+}
+
+// Front-view silhouette at a given mm→px scale (body outline plus a
+// schematic mount ring — the outline is to scale, the ring is not); null when either
+// dimension is missing (never a guessed shape).
+function silhouetteHTML(cam, scale, color) {
+  if (!cam.width || !cam.height) return '<div class="sil"></div>';
+  const w = Math.round(cam.width * scale);
+  const h = Math.round(cam.height * scale);
+  return `<div class="sil"><svg width="${w}" height="${h}" viewBox="0 0 ${w} ${h}" aria-hidden="true"><rect x="1.5" y="1.5" width="${w - 3}" height="${h - 3}" rx="${Math.round(Math.min(w, h) * 0.12)}" fill="${color}" fill-opacity="0.18" stroke="${color}" stroke-width="3"></rect><circle cx="${w / 2}" cy="${Math.round(h * 0.56)}" r="${Math.round(Math.min(w, h) * 0.3)}" fill="none" stroke="${color}" stroke-width="3" stroke-opacity="0.7"></circle></svg><span>${esc(String(cam.width))} × ${esc(String(cam.height))} mm</span></div>`;
+}
+
+// sides: [{ name, cam }, { name, cam }]; kicker: optional line above the
+// title (the brand name on same-brand pages).
+function vsCardHTML(sides, kicker = '') {
+  const t = cardTokens();
+  const [A, B] = sides;
+  const dims = sides.filter(s => s.cam.width && s.cam.height);
+  const scale = dims.length
+    ? Math.min(...dims.map(s => Math.min(SIL_MAX_W / s.cam.width, SIL_MAX_H / s.cam.height)))
+    : 0;
+  const titleText = `${A.name} vs ${B.name}`;
+  const rows = CARD_ROWS.map(([label, fn]) => {
+    const [va, vb] = [fn(A.cam), fn(B.cam)];
+    return `<tr><td class="va">${va == null ? '—' : esc(String(va))}</td><th>${esc(label)}</th><td class="vb">${vb == null ? '—' : esc(String(vb))}</td></tr>`;
+  }).join('');
+  const css = `
+.kicker{margin-top:34px;font-size:24px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:${t.muted}}
+.title{margin-top:${kicker ? 6 : 40}px;font-size:${cardTitleSize(titleText)}px;font-weight:800;letter-spacing:-.02em;white-space:nowrap}
+.title .na{color:${t.a}}.title .nb{color:${t.b}}.title .vs{color:${t.muted};font-weight:500;margin:0 .28em}
+.body{flex:1;width:100%;display:grid;grid-template-columns:1fr auto 1fr;align-items:center}
+.sil{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;font-size:17px;color:${t.muted}}
+.sil-a{justify-self:start}.sil-b{justify-self:end}
+table{border-collapse:collapse;font-size:30px}
+td,th{padding:9px 22px;border-bottom:1px solid ${t.border}}
+tr:last-child td,tr:last-child th{border-bottom:0}
+th{font-size:20px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:${t.muted};text-align:center}
+td{font-weight:700;white-space:nowrap}.va{text-align:right;color:${t.a}}.vb{text-align:left;color:${t.b}}
+.foot{font-size:16px;color:${t.muted};margin-bottom:6px}`;
+  const body = `${kicker ? `<div class="kicker">${esc(kicker)}</div>` : ''}
+<div class="title"><span class="na">${esc(A.name)}</span><span class="vs">vs</span><span class="nb">${esc(B.name)}</span></div>
+<div class="body">
+<div class="sil-a">${silhouetteHTML(A.cam, scale, t.a)}</div>
+<table>${rows}</table>
+<div class="sil-b">${silhouetteHTML(B.cam, scale, t.b)}</div>
+</div>
+${dims.length ? '<div class="foot">Front outlines drawn to scale</div>' : ''}`;
+  return cardDocument(t, body, css);
+}
+
+// Brand / compare / home cards: a large title, a count line and a row of
+// chips (mounts or brand names).
+function infoCardHTML({ kicker = '', title, subtitle, chips = [] }) {
+  const t = cardTokens();
+  const css = `
+.main{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center}
+.kicker{font-size:24px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:${t.muted}}
+.title{margin-top:10px;font-size:${cardTitleSize(title) + 8}px;font-weight:800;letter-spacing:-.02em;white-space:nowrap;color:${t.a}}
+.sub{margin-top:18px;font-size:34px;font-weight:600;color:${t.text}}
+.chips{margin-top:34px;display:flex;flex-wrap:wrap;justify-content:center;gap:12px;max-width:1080px}
+.chip{padding:8px 20px;border:2px solid ${t.border};border-radius:999px;font-size:24px;font-weight:600;color:${t.b}}`;
+  const body = `<div class="main">
+${kicker ? `<div class="kicker">${esc(kicker)}</div>` : ''}
+<div class="title">${esc(title)}</div>
+<div class="sub">${esc(subtitle)}</div>
+${chips.length ? `<div class="chips">${chips.map(c => `<span class="chip">${esc(c)}</span>`).join('')}</div>` : ''}
+</div>`;
+  return cardDocument(t, body, css);
+}
+
+// Each builder returns { path, alt, html }: path is the PNG's repo path
+// under og/ (mirroring the page path), alt is the og:image:alt text.
+function vsShareCard(brand, data, aId, bId) {
+  const brandName = data.BRAND_CONFIG.name;
+  const [a, b] = [data.CAMERAS[aId], data.CAMERAS[bId]];
+  return {
+    path: `og/${brand}/vs/${aId}-vs-${bId}.png`,
+    alt: `${brandName} ${a.name} vs ${b.name}: sensor, stabilization, weight and year compared, with front outlines drawn to scale`,
+    html: vsCardHTML([{ name: a.name, cam: a }, { name: b.name, cam: b }], brandName),
+  };
+}
+
+function crossShareCard(m) {
+  const full = s => `${s.brandName} ${s.cam.name}`;
+  return {
+    path: `og/${m.file.replace(/\.html$/, '.png')}`,
+    alt: `${crossTitle(m)}: sensor, stabilization, weight and year compared, with front outlines drawn to scale`,
+    html: vsCardHTML([{ name: full(m.a), cam: m.a.cam }, { name: full(m.b), cam: m.b.cam }]),
+  };
+}
+
+function brandShareCard(brand, data) {
+  const name = data.BRAND_CONFIG.name;
+  const nCams = Object.keys(data.CAMERAS).length;
+  const nLenses = Object.keys(data.LENSES).length;
+  return {
+    path: `og/${brand}.png`,
+    alt: `${name}: compare ${nCams} cameras and ${nLenses} lenses side by side`,
+    html: infoCardHTML({
+      kicker: 'Camera & lens comparison',
+      title: name,
+      subtitle: `${nCams} cameras · ${nLenses} lenses`,
+      chips: data.BRAND_CONFIG.mounts.map(m => m.label),
+    }),
+  };
+}
+
+function compareShareCard(brandNames, nCams) {
+  return {
+    path: 'og/compare.png',
+    alt: `Compare ${nCams} cameras across ${brandNames.length} brands side by side`,
+    html: infoCardHTML({
+      kicker: 'Cross-brand comparison',
+      title: 'Compare cameras across brands',
+      subtitle: `${nCams} cameras from ${brandNames.length} brands`,
+      chips: brandNames,
+    }),
+  };
+}
+
+function homeShareCard(brandNames, nCams, nLenses) {
+  return {
+    path: 'og/home.png',
+    alt: `Compare ${nCams} cameras and ${nLenses} lenses from ${brandNames.length} brands side by side`,
+    html: infoCardHTML({
+      title: 'Camera & lens specs, side by side',
+      subtitle: `${nCams} cameras · ${nLenses} lenses · ${brandNames.length} brands`,
+      chips: brandNames,
+    }),
+  };
+}
+
+// Freshness key for a rendered card: og/manifest.json records this per
+// PNG, and tests/data/share-images.test.js recomputes it.
+function cardHash(html) {
+  return require('crypto').createHash('sha256').update(html).digest('hex').slice(0, 16);
+}
+
+// The og:image/twitter tags for a page. With no card (direct callers in
+// tests), the page keeps a plain summary card.
+function shareTags(site, card) {
+  if (!card) return '<meta name="twitter:card" content="summary">';
+  const url = `${site.baseUrl}/${card.path}`;
+  return `<meta property="og:image" content="${url}">
+  <meta property="og:image:width" content="${CARD_W}">
+  <meta property="og:image:height" content="${CARD_H}">
+  <meta property="og:image:alt" content="${esc(card.alt)}">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="${url}">`;
+}
+
 // ─── Head blocks ─────────────────────────────
 // `prefix` is the page's relative path back to the site root, so the
 // generated favicon/touch-icon links resolve at any directory depth.
-function metaBlock(site, url, title, desc, prefix = './') {
+function metaBlock(site, url, title, desc, prefix = './', card = null) {
   return `${SEO_BEGIN}
   <meta name="description" content="${esc(desc)}">
   <link rel="canonical" href="${url}">
@@ -1055,12 +1269,12 @@ function metaBlock(site, url, title, desc, prefix = './') {
   <meta property="og:title" content="${esc(title)}">
   <meta property="og:description" content="${esc(desc)}">
   <meta property="og:url" content="${url}">
-  <meta name="twitter:card" content="summary">
+  ${shareTags(site, card)}
   ${assetLinks(prefix)}
   ${SEO_END}`;
 }
 
-function brandHeadBlock(brand, data, site) {
+function brandHeadBlock(brand, data, site, card = null) {
   const name = data.BRAND_CONFIG.name;
   const nCams = Object.keys(data.CAMERAS).length;
   const nLenses = Object.keys(data.LENSES).length;
@@ -1069,7 +1283,8 @@ function brandHeadBlock(brand, data, site) {
     `${site.baseUrl}/${brand}/`,
     `${name} Camera & Lens Comparison`,
     `Compare ${nCams} ${name} cameras and ${nLenses} lenses side by side — price, sensor, autofocus, stabilization and video, in 7 currencies.`,
-    '../'
+    '../',
+    card
   );
 }
 
@@ -1085,12 +1300,14 @@ function aboutHeadBlock(site) {
   );
 }
 
-function rootHeadBlock(site, brandNames) {
+function rootHeadBlock(site, brandNames, card = null) {
   return metaBlock(
     site,
     `${site.baseUrl}/`,
     `${site.siteName} — Camera & Lens Comparison`,
-    `Side-by-side camera and lens comparison for ${brandNames.join(', ')} — specs, prices and buy links in 7 currencies.`
+    `Side-by-side camera and lens comparison for ${brandNames.join(', ')} — specs, prices and buy links in 7 currencies.`,
+    './',
+    card
   );
 }
 
@@ -1341,7 +1558,7 @@ function withHeadBlock(html, block, file) {
 // Trust pages don't load engine.css (self-contained, file://-safe), so their
 // few theme-dependent rules — including the toggle's — carry their own
 // tiny :root/[data-theme="light"] block derived from the same tokens.
-function identityHeadBlock(page, site, title, desc) {
+function identityHeadBlock(page, site, title, desc, card = null) {
   const dark = n => identityToken(n, 'dark');
   const light = n => identityToken(n, 'light');
   const url = `${site.baseUrl}/${cleanUrl(page)}`;
@@ -1353,7 +1570,7 @@ function identityHeadBlock(page, site, title, desc) {
   <meta property="og:title" content="${esc(title)}">
   <meta property="og:description" content="${esc(desc)}">
   <meta property="og:url" content="${url}">
-  <meta name="twitter:card" content="summary">
+  ${shareTags(site, card)}
   ${assetLinks('./')}
   <style>
     :root {
@@ -1484,10 +1701,14 @@ Sitemap: ${site.baseUrl}/sitemap.xml
 `;
 }
 
-// ─── Build everything (pure — returns path → content) ───
-function buildAll() {
+// ─── Build everything (pure) ───
+// Returns { files: path → content, cards: og/ image path → share card }.
+// Cards are built alongside their pages so the two lists can't diverge.
+function buildSite() {
   const site = siteConfig();
   const files = new Map();
+  const cards = new Map();
+  const addCard = card => { cards.set(card.path, card); return card; };
   const sitemapPaths = [];
   const brandNames = [];
   const brandInfo = [];
@@ -1511,7 +1732,7 @@ function buildAll() {
 
     const idx = path.join(brand, 'index.html');
     let idxHtml = fs.readFileSync(path.join(ROOT, idx), 'utf8');
-    idxHtml = withHeadBlock(idxHtml, brandHeadBlock(brand, data, site), idx);
+    idxHtml = withHeadBlock(idxHtml, brandHeadBlock(brand, data, site, addCard(brandShareCard(brand, data))), idx);
     idxHtml = withBodyBlock(idxHtml, brandBodyBlock(brand, data, site, pairs), idx);
     files.set(idx, idxHtml);
     sitemapPaths.push(`${brand}/`);
@@ -1519,7 +1740,7 @@ function buildAll() {
     for (const [a, b] of pairs) {
       const rel = `${brand}/vs/${a}-vs-${b}.html`;
       const index = indexable(rel, a, b);
-      files.set(rel, vsPageHTML(brand, data, site, a, b, pairs, index));
+      files.set(rel, vsPageHTML(brand, data, site, a, b, pairs, index, addCard(vsShareCard(brand, data, a, b))));
       if (index) sitemapPaths.push(rel);
     }
 
@@ -1549,15 +1770,18 @@ function buildAll() {
   sitemapPaths.push('compare/');
   for (const m of matchups) {
     const index = pins.files.has(m.file);
-    files.set(m.file, crossVsPageHTML(site, m, matchups, index));
+    files.set(m.file, crossVsPageHTML(site, m, matchups, index, addCard(crossShareCard(m))));
     if (index) sitemapPaths.push(m.file);
   }
   const cmp = path.join('compare', 'index.html');
   const totalCams = Object.values(brandData).reduce((n, d) => n + Object.keys(d.CAMERAS).length, 0);
   let cmpHtml = fs.readFileSync(path.join(ROOT, cmp), 'utf8');
-  cmpHtml = withHeadBlock(cmpHtml, compareHeadBlock(site, brandNames, totalCams), cmp);
+  cmpHtml = withHeadBlock(cmpHtml, compareHeadBlock(site, brandNames, totalCams, addCard(compareShareCard(brandNames, totalCams))), cmp);
   cmpHtml = withBodyBlock(cmpHtml, compareBodyBlock(matchups, brandNames), cmp);
   files.set(cmp, cmpHtml);
+
+  const totalLenses = Object.values(brandData).reduce((n, d) => n + Object.keys(d.LENSES).length, 0);
+  const homeCard = addCard(homeShareCard(brandNames, totalCams, totalLenses));
 
   sitemapPaths.push('about.html', 'privacy.html');
   const ABOUT_DESC = `What ${site.siteName} is, how the spec and price data is sourced and verified, image credits, and who built it.`;
@@ -1567,19 +1791,23 @@ function buildAll() {
     ['privacy.html', `Privacy — ${site.siteName}`, PRIVACY_DESC],
   ]) {
     let html = fs.readFileSync(path.join(ROOT, page), 'utf8');
-    html = withBlock(html, identityHeadBlock(page, site, title, desc), page, ID_HEAD_BEGIN, ID_HEAD_END);
+    html = withBlock(html, identityHeadBlock(page, site, title, desc, homeCard), page, ID_HEAD_BEGIN, ID_HEAD_END);
     html = withBlock(html, identityHeaderBlock(), page, ID_HEADER_BEGIN, ID_HEADER_END);
     html = withBlock(html, identityFooterBlock(), page, ID_FOOTER_BEGIN, ID_FOOTER_END);
     if (page === 'about.html') html = withBodyBlock(html, imageCreditsBlock(brandData), page);
     files.set(page, html);
   }
   let rootHtml = fs.readFileSync(path.join(ROOT, 'index.html'), 'utf8');
-  rootHtml = withHeadBlock(rootHtml, rootHeadBlock(site, brandNames), 'index.html');
+  rootHtml = withHeadBlock(rootHtml, rootHeadBlock(site, brandNames, homeCard), 'index.html');
   rootHtml = withBodyBlock(rootHtml, rootBodyBlock(site, brandInfo, matchups.slice(0, 4), resolveFavourites(brandData)), 'index.html');
   files.set('index.html', rootHtml);
   files.set('sitemap.xml', sitemapXML(site, sitemapPaths));
   files.set('robots.txt', robotsTxt(site));
-  return files;
+  return { files, cards };
+}
+
+function buildAll() {
+  return buildSite().files;
 }
 
 // ─── CLI ─────────────────────────────────────
@@ -1607,4 +1835,4 @@ if (require.main === module) {
   console.log(`generate-seo: ${files.size} artifacts (${written} written, ${removed} stale removed)`);
 }
 
-module.exports = { LANDING_CARD_ORDER, ALL_BRANDS_MOSAIC, orderLandingBrands, allBrandsPhotoHTML, siteConfig, curatedPairs, successorPairKeys, resolvePins, withPins, PINNED_VS_PAIRS, SUCCESSOR_INDEX_SINCE, relatedPairs, vsPageHTML, vsSummary, vsSummaryFacts, resolveMatchups, crossVsPageHTML, crossTitle, CROSS_BRAND_MATCHUPS, compareHeadBlock, compareBodyBlock, brandHeadBlock, rootHeadBlock, brandBodyBlock, rootBodyBlock, withHeadBlock, withBodyBlock, sitemapXML, robotsTxt, buildAll, SEO_BEGIN, SEO_END, SEO_BODY_BEGIN, SEO_BODY_END, ID_HEAD_BEGIN, ID_HEAD_END, ID_HEADER_BEGIN, ID_HEADER_END, ID_FOOTER_BEGIN, ID_FOOTER_END, identityToken, logoMark, cleanUrl, cleanHref, themeToggleHTML, collectReferences, citationText, refHostname, REFERENCE_ROWS, referenceRowsHTML };
+module.exports = { buildSite, cardHash, vsCardHTML, infoCardHTML, shareTags, CARD_W, CARD_H, LANDING_CARD_ORDER, ALL_BRANDS_MOSAIC, orderLandingBrands, allBrandsPhotoHTML, siteConfig, curatedPairs, successorPairKeys, resolvePins, withPins, PINNED_VS_PAIRS, SUCCESSOR_INDEX_SINCE, relatedPairs, vsPageHTML, vsSummary, vsSummaryFacts, resolveMatchups, crossVsPageHTML, crossTitle, CROSS_BRAND_MATCHUPS, compareHeadBlock, compareBodyBlock, brandHeadBlock, rootHeadBlock, brandBodyBlock, rootBodyBlock, withHeadBlock, withBodyBlock, sitemapXML, robotsTxt, buildAll, SEO_BEGIN, SEO_END, SEO_BODY_BEGIN, SEO_BODY_END, ID_HEAD_BEGIN, ID_HEAD_END, ID_HEADER_BEGIN, ID_HEADER_END, ID_FOOTER_BEGIN, ID_FOOTER_END, identityToken, logoMark, cleanUrl, cleanHref, themeToggleHTML, collectReferences, citationText, refHostname, REFERENCE_ROWS, referenceRowsHTML };
