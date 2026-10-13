@@ -11,6 +11,7 @@ No page on the site declares an `og:image`, so every shared link shows as a bare
 - New Tier 1 test: every page's `og:image` file exists, is 1200×630, and its manifest hash matches the current card HTML. No orphan images.
 - `.githooks/pre-commit` runs the incremental renderer after `generate-seo.js` when a Chrome binary is available. Without Chrome, the test failure names the command to run.
 - `_headers` gets a cache rule for `/og/*`.
+- **Share button on the interactive tool** (brand pages and `compare/`). On phones with a native share sheet it opens the sheet; elsewhere it copies the current comparison URL to the clipboard and confirms with "Link copied". Each use reports a `share-link` GoatCounter event, and `privacy.html` lists it. Its job is to measure whether people share interactive comparisons, which decides whether a follow-up change for on-demand cards (drawn by the Worker for any selection) is worth building. Until then, a shared interactive link previews as its brand card, because crawlers never see the `#` selection.
 
 ## Capabilities
 
@@ -18,6 +19,7 @@ No page on the site declares an `og:image`, so every shared link shows as a bare
 - `share-images`: per-page 1200×630 social preview cards: what each page type's card shows, how cards are rendered and kept fresh, and the no-photo rule.
 
 ### Modified Capabilities
+- `shareable-urls`: adds a share button that hands the current comparison URL to the native share sheet or the clipboard, and reports its use.
 - `seo-surface`: "Every page has SEO head tags" now requires the image and large-card tags on every generated page, and "Generated output cannot go stale" now covers share images.
 
 ## Impact
@@ -25,4 +27,4 @@ No page on the site declares an `og:image`, so every shared link shows as a bare
 - **Code**: `scripts/generate-seo.js` (card builder + tags in `metaBlock`, `vsPageHTML`, `crossVsPageHTML`, `identityHeadBlock`, `compareHeadBlock`), new `scripts/render-share-images.js`, `.githooks/pre-commit`, `_headers`, new `tests/data/share-images.test.js`. Every generated HTML file changes once, in its head block only.
 - **Repo size**: about 305 PNGs, one per page, estimated at 30–60 KB each (roughly 10–18 MB). Task 1 measures this before committing to "every page gets its own card".
 - **Workflow**: a data edit that adds a vs-pair or changes a card's specs now also needs a render. The hook covers it when Chrome is present.
-- **Runtime**: none. There's no JS, no Worker change, no new dependency, and analytics and the privacy page are unaffected (the images are same-origin static files fetched by social-platform crawlers).
+- **Runtime**: only the share button, a small addition to `engine.js` and `engine.css` plus one new event in `analytics.js`'s grammar header. The cards themselves add no JS, no Worker change no new dependency, and the images are unaffected by analytics (they are same-origin static files fetched by social-platform crawlers).

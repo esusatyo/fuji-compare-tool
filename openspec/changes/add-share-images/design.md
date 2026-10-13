@@ -19,6 +19,7 @@ Constraints: the site stays zero-dependency and works without a build step at de
 **Non-Goals:**
 - **Product photos on cards.** Commons photos are mostly CC BY/BY-SA, so a composite is an adaptation that needs on-image attribution and, for BY-SA, would put the card itself under BY-SA. Manufacturer press shots are used on-page only to depict the product in context, and baking them into our own promotional graphic goes beyond that. The scale silhouettes carry the visual instead. Revisit separately if wanted.
 - **Cards for interactive states.** A shared `/fujifilm/#cameras=x-t5,x-s20` shows the Fujifilm brand card, because crawlers never see the hash. A per-state card would need a Worker rendering images on request, which is a separate change if share data shows it matters.
+- **On-demand cards for any selection.** These would need crawlable share URLs plus Worker-side rendering, and they're deferred until the share-button data shows interactive links get shared.
 - Light-theme cards, localized cards, and per-lens cards (lenses have no vs-pages).
 
 ## Decisions
@@ -36,6 +37,8 @@ Constraints: the site stays zero-dependency and works without a build step at de
 **6. Image paths mirror page paths under `og/`.** Use absolute URLs from `siteConfig().baseUrl` (platforms require them). About and Privacy share `og/site.png`.
 
 **7. Use dark tokens only, in a fixed layout.** The logo lockup sits at top-left, the title is set large, the content block sits below, and the domain sits at bottom-right. Keep about 60 px of safe margin, because some platforms crop toward 1.91:1 or square-center. Layout is checked by eye on 3 sample cards before a full render.
+
+**8. The share button is a measuring instrument first.** It sits by the comparison itself, not in the site header: the header is already tight on narrow screens, where the unresolved iPad header issue lives. It uses `navigator.share` where it exists (on phones, that's how people post into the Reddit or Discord apps) and `navigator.clipboard.writeText` elsewhere. If neither is available, it shows the URL in a selected read-only field, with no `alert()`. The shared URL is exactly `location.href` (the existing `#mode=…` grammar), so this change makes no URL-format decision; it leaves the hash-to-query-string question to the on-demand-cards follow-up. The event is `share-link:<brand|compare>:<cameras|lenses>:<native|copy>`, fired when the share sheet opens or the copy succeeds, so it counts intent, not completed posts (the share sheet doesn't report which app was chosen, and cancelling it fires no event). Vs-pages get no button: their address bar already holds a clean, crawlable URL that previews with its own card.
 
 ## Risks / Trade-offs
 

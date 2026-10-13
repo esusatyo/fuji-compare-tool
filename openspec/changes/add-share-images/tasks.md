@@ -30,7 +30,13 @@
 - [ ] 5.4 Prove the gate: change one camera's `weight` locally, rerun only the generator, and confirm `npm test` fails naming the image and command; revert
 - [ ] 5.5 Update CLAUDE.md (architecture bullet for share images + the rebrand flow now also runs `render-share-images.js`); `npm test` green; `openspec validate add-share-images --strict`
 
-## 6. Ship and verify
+## 6. Share button
 
-- [ ] 6.1 Open the PR; on the Workers preview, fetch 3 image URLs directly (200, `image/png`, correct pixels). Card validators can't run against the preview, because its `og:image` tags point at production URLs that don't exist until merge, so validator checks wait for 6.2
-- [ ] 6.2 After merge: check 3 production URLs (home, a brand page, a cross-brand vs-page) in a card validator and with a real paste into Discord or a Reddit post-preview
+- [ ] 6.1 Add the share button beside the comparison on brand pages and `compare/` (`engine.js` + `engine.css`), with native share → clipboard → read-only-field fallbacks and no browser dialogs; check placement at phone width on a real device or the owner's iPad, not only a resized desktop window
+- [ ] 6.2 Report `share-link:<brand|compare>:<mode>:<native|copy>` via `trackEvent` only on success; add it to `analytics.js`'s grammar header and `privacy.html`'s list of counted interactions
+- [ ] 6.3 Tier 2 jsdom tests: copy path (clipboard stub + "Link copied" state + event), native path (share stub + event), cancelled share (rejecting stub, no event), no-API fallback (field shown, no dialog), URL includes the selection hash
+
+## 7. Ship and verify
+
+- [ ] 7.1 Open the PR; on the Workers preview, fetch 3 image URLs directly (200, `image/png`, correct pixels). Card validators can't run against the preview, because its `og:image` tags point at production URLs that don't exist until merge, so validator checks wait for 7.2
+- [ ] 7.2 After merge: check 3 production URLs (home, a brand page, a cross-brand vs-page) in a card validator and with a real paste into Discord or a Reddit post-preview; check that `share-link` events appear in GoatCounter
