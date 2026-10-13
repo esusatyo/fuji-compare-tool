@@ -1,7 +1,7 @@
 ## ADDED Requirements
 
 ### Requirement: Share button hands off the current comparison
-Brand pages and the cross-brand compare page SHALL show a share button beside the comparison. Activating it SHALL hand the current `location.href` (including the selection hash) to `navigator.share` when that API exists, otherwise copy it with `navigator.clipboard.writeText` and confirm with a visible "Link copied" state, and otherwise reveal the URL in a selected read-only text field. It SHALL NOT use `alert()`, `confirm()` or `prompt()`.
+Brand pages and the cross-brand compare page SHALL show a share button in the page hero, above the comparison. Activating it SHALL hand the current `location.href` (including the selection hash) to `navigator.share` when that API exists, otherwise copy it with `navigator.clipboard.writeText` and confirm with a visible "Link copied" state, and otherwise reveal the URL in a selected read-only text field. It SHALL NOT use `alert()`, `confirm()` or `prompt()`.
 
 #### Scenario: Desktop copy
 - **WHEN** a visitor on a browser without `navigator.share` activates the button while comparing X-T5 and X-S20
