@@ -21,3 +21,12 @@ Specs: maker's own page for the X-mount variant (T1) unless noted.
 | — | 7Artisans 7.5mm f/2.8 II Fisheye | 7Artisans | — | — | 7artisans.store/products/7-5mm-f2-8-mk-ii | — | **skip:** no dimensions |
 | — | 7Artisans 50mm f/1.8 (MF) | 7Artisans | — | — | 7artisans.store/products/50mm-f1-8 | — | **skip:** page has no spec table |
 | — | 7Artisans 10mm f/2.8 FF Fisheye | 7Artisans | — | — | 7artisans.store/products/7artisans-10mm-f2-8-full-frame-… | — | **out:** no X version (E/L/R/Z/GFX) |
+| ttartisan-100mm-f28-macro | TTArtisan 100mm f/2.8 2X Macro | TTArtisan | 2024 | no | ttartisan.store/products/100mm-f2-8macro | B&H X SKU 1850577 (T3, weight) | **entered**; X size from the maker's per-mount diagram (ø72 × 150); maker weight is a 700–748 g range → B&H X weight 748 g |
+| — | TTArtisan Tilt-Shift 100mm F2.8 2X Macro | TTArtisan | — | — | ttartisan.store/products/ts100 | — | **skip:** weight only as a 695–845 g range, no size diagram, not at B&H |
+| — | TTArtisan 500mm F6.3 | TTArtisan | — | — | ttartisan.store/products/500mm | B&H X SKU 1813512 | **skip:** size known (ø88 × 317, shared E/X/Z/RF/L panel) but weight only as a 1564–1617 g range; B&H lists no weight |
+| — | TTArtisan 50mm F2.0 | TTArtisan | — | — | ttartisan.store/products/multi-mounts-50mm-f2-0 | — | **skip:** size diagram labels all four panels "E, X, EOS-M, M43" with four different sizes (60×35, 60×34, 63×34, 63×38) — X figure ambiguous |
+| — | TTArtisan AF 35mm F1.8 (original) | TTArtisan | — | — | ttartisan.store/products/351-8 | — | **skip:** no size diagram, weight only as a range, B&H carries only the II. Existing `ttartisan-35mm-f18` renamed "…II" (its specs/source/price were already the II's) |
+| — | TTArtisan Tilt-Shift 17mm F4 | TTArtisan | — | — | ttartisan.store/products/tilt-shift-17mm-f4-asph | — | **out:** GFX only |
+| — | TTArtisan 11mm F2.8 Fisheye, 90mm F1.25 | TTArtisan | — | — | ttartisan.store | — | **out:** no X variant |
+| — | TTArtisan M 28/50/90/100mm, APO-M 35mm | TTArtisan | — | — | ttartisan.store | — | **out:** Leica M lenses, X only via adapter |
+| — | TTArtisan AF 40mm F2 | TTArtisan | — | — | ttartisan.store/products/af-40mm-f2 | — | **out:** no X variant (E/Z/L) |

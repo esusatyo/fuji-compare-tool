@@ -14,3 +14,5 @@ T3 retailer (price/availability only) · T4 aggregator · NEWS (year only).
 | https://petapixel.com/2021/08/04/7artisans-launches-a-50mm-f-0-95-lens-for-multiple-aps-c-mounts/ | NEWS | year + launch price, 50mm f/0.95 | |
 | https://www.dpreview.com/products/sevenartisans/lenses/7artisans_55mm_1p4 | NEWS | year, 55mm f/1.4 Mark I | its 0.8 m MFD rejected (maker: 0.35 m) |
 | amazon.com search results (site:amazon.com) | T3 | ASINs only | 7 of 10 found |
+| https://ttartisan.store/products/<handle> (5 pages) | T1 | spec tables (HTML) + per-mount size-diagram PNGs | diagrams are transparent PNGs — render on white or the labels disappear |
+| https://www.bhphotovideo.com/c/product/1850577-REG/…/specs | T3 | X weight, 100mm macro | JSON-LD additionalProperty readable via in-page fetch; B&H blocked further fetches after ~25 requests |
