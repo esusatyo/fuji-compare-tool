@@ -45,3 +45,4 @@ Specs: maker's own page for the X-mount variant (T1) unless noted.
 | — | Thypoch Eureka 28mm f/2.8 | Thypoch | — | — | thypoch.com/en/eureka/28mm | B&H X SKU 1933790 | **skip:** barrel diameter unpublished ("Front Dia. ø28.3" is the front element); B&H weight 137 g conflicts with T1's 154 g (X) |
 | — | Thypoch Simera 21/35/50/75mm | Thypoch | — | — | thypoch.com/en/simera/* | — | **out:** no X version (M/Z/RF/E only) |
 | — | Thypoch AF 23mm f/1.4 Sculptor | Thypoch | — | — | — | cameradecision (NEWS) | **deferred:** unveiled 2026-10-08, not on sale, no price/weight |
+| — | Meike MF 7.5mm f/2.8, 12mm f/2, 60mm f/2.8 Macro, 6-11mm f/3.5, 25/35/50mm f/0.95 | Meike | — | — | meikeglobal.com/products/{7528x,1220x,60mm-f2-8x,6-11mm-f3-5x,25mm-f0-95x,35mm-f0-95x,50mm-f0-95x} | — | **still blocked** (re-checked 2026-10-19): no spec text, and the only size callouts on these pages come from a site-wide 85mm GFX promo image, not the lens. Same result as Aug 2026 |

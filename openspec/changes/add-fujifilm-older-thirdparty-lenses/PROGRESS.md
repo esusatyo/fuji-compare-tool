@@ -1,6 +1,6 @@
 # Progress — Fujifilm older third-party lenses
 
-**Resume at:** 2.5 Meike — quick re-check of the 8 MF lenses for a published barrel diameter (blocked Aug 2026)
+**Resume at:** 3.1 verify — verify-images, test:links, preview in lenses mode
 **Branch:** laowa-images-fuji-refresh   **Last green commit:** 1c5792f Fujifilm: record price sources for 97 prices verified 2026-10-19
 
 ## Batches
@@ -9,8 +9,8 @@
 | 7Artisans | ✅ 16 | ✅ 10 | ✅ | ✅ | ✅ (7 ASINs) | a15f21b |
 | TTArtisan | ✅ 12 | ✅ 1 | ✅ | ✅ | ✅ | 4e7a930 |
 | SG-image | ✅ 9 | ✅ 8 | ✅ | ✅ | ✅ (no ASINs exist) | 60ded8e |
-| Thypoch | ✅ 7 | ✅ 1 | ✅ | ✅ | ✅ | (this commit) |
-| Meike (MF re-check) | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ | — |
+| Thypoch | ✅ 7 | ✅ 1 | ✅ | ✅ | ✅ | 9c6b4d3 |
+| Meike (MF re-check) | ✅ 7 | — (still blocked) | — | — | — | (this commit) |
 
 ## Deferred / skipped (with reason)
 - Thypoch Eureka 28mm f/2.8 — barrel diameter unpublished

@@ -8,7 +8,7 @@
 - [x] 2.2 TTArtisan
 - [x] 2.3 SG-image
 - [x] 2.4 Thypoch (+ MANUFACTURER_COLORS entry)
-- [ ] 2.5 Meike manual-focus re-check
+- [x] 2.5 Meike manual-focus re-check
 
 ## 3. Verify
 
