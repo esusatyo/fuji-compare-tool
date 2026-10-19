@@ -1,6 +1,6 @@
 # Progress — Sony missing third-party lenses
 
-**Resume at:** 2.2 Samyang — samyangus.com products.json (Sony E AF list; exclude Lens Station bundles / "copy-of" duplicates)
+**Resume at:** 2.3 Sigma — diff sigma-global.com E-mount lens list against sony/data.js (30 present); prices via sigmaphoto.com (MNT=Sony in sigma.py)
 **Branch:** canon-sony-lens-refresh (worktree ../fuji-compare-canon-sony)   **Last green commit:** 427328a Canon: check third-party RF prices
 
 ## Method (reuse)
@@ -12,12 +12,14 @@
 ## Batches
 | Maker | Candidates | Entered | Skipped | Committed |
 |---|---|---|---|---|
-| Viltrox | 23 | 21 | 2 (404, cine) | (this commit) |
+| Viltrox | 23 | 21 | 2 (404, cine) | 4c4b97e |
+| Samyang | 33 | 32 | 1 (3-lens set) | (this commit) |
 
 ## Deferred / skipped (with reason)
 
 ## Open questions for the user
-- (none)
+- Samyang US compare-at prices used as USD (owner rule) look inflated on two zooms: AF 24-60 f/2.8 $1,399 (selling $549), AF 24-70 f/2.8 $1,299 (selling $699).
+- Samyang MF images show the DSLR-mount barrel (noted per entry).
 
 ## Notes
 - ASIN gap baseline raised per batch (no per-lens ASIN lookups); run check-prices-and-buy-links ASIN backfill after the pass.

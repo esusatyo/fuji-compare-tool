@@ -5,7 +5,7 @@
 ## 2. Maker batches
 
 - [x] 2.1 Viltrox
-- [ ] 2.2 Samyang
+- [x] 2.2 Samyang
 - [ ] 2.3 Sigma
 - [ ] 2.4 Tamron
 - [ ] 2.5 Laowa
