@@ -1363,6 +1363,7 @@ const LENSES = {
     imageUrl:'https://www.sigma-global.com/lenses/c025_12_14_product_img01.png',
     asin:'B0FML65PRM',
     prices:{USD:629,AUD:999,EUR:699,GBP:599,JPY:97000,CAD:799,SGD:899},
+    priceSource: { url:'https://www.sigmaphoto.com/12mm-f1-4-dc-c', tier:'T1', title:'Sigma America official store', note:'Canon RF variant regular price $629 (on sale at $579 at the time, not used)', date:'2026-10-19' },
     productUrl:'https://www.sigma-global.com/en/lenses/c025_12_14/',
   },
 
@@ -1376,6 +1377,7 @@ const LENSES = {
     imageUrl:'https://www.sigma-global.com/lenses/images/c026_15_14_product_img01.png',
     asin:'B0GQJ2Y8MR',
     prices:{USD:579,AUD:899,EUR:699,GBP:499,JPY:90000,CAD:799,SGD:799},
+    priceSource: { url:'https://www.sigmaphoto.com/15mm-f1-4-dc-c', tier:'T1', title:'Sigma America official store', note:'Canon RF variant regular price $579 (on sale at $529 at the time, not used)', date:'2026-10-19' },
     productUrl:'https://www.sigma-global.com/en/lenses/c026_15_14/',
   },
 
@@ -1475,6 +1477,7 @@ const LENSES = {
     imageUrl:'https://www.sigma-global.com/lenses/a025_17_40_18_product_img01.png',
     asin:'B0FDH65ZJD',
     prices:{USD:919,AUD:1399,EUR:1099,GBP:799,JPY:142000,CAD:1199,SGD:1299},
+    priceSource: { url:'https://www.sigmaphoto.com/17-40mm-f1-8-dc-a', tier:'T1', title:'Sigma America official store', note:'Canon RF variant regular price $919', date:'2026-10-19' },
     productUrl:'https://www.sigma-global.com/en/lenses/a025_17_40_18/',
   },
 
@@ -1488,6 +1491,7 @@ const LENSES = {
     imageUrl:'https://www.sigma-global.com/lenses/c025_16_300_35_67_product_img01.png',
     asin:'B0DY97V8YH',
     prices:{USD:769,AUD:1199,EUR:899,GBP:699,JPY:118000,CAD:999,SGD:1099},
+    priceSource: { url:'https://www.sigmaphoto.com/16-300mm-f3-5-6-7-dc-os-c', tier:'T1', title:'Sigma America official store', note:'Canon RF variant regular price $769 (on sale at $694 at the time, not used)', date:'2026-10-19' },
     productUrl:'https://www.sigma-global.com/en/lenses/c025_16_300_35_67/',
   },
 
@@ -1503,6 +1507,7 @@ const LENSES = {
     imageUrl:'https://www.tamron.com/global/consumer/pc_file/file/b060rf_ogp.webp',
     asin:'B0DPLL4P3Q',
     prices:{USD:659,AUD:999,EUR:799,GBP:599,JPY:100000,CAD:899,SGD:999},
+    priceSource: { url:'https://tamron-americas.com/product/11-20mm-f-2-8-di-iii-a-rxd/', tier:'T1', title:'Tamron Americas', note:'Canon RF option data-us-price $659.00, no sale price', date:'2026-10-19' },
     productUrl:'https://www.tamron.com/global/consumer/lenses/b060/',
   },
 
@@ -1595,6 +1600,7 @@ const LENSES = {
     specSources: [
       { url:'https://www.lksamyang.com/en/product/product-view.php?seq=410', tier:'T1', note:'official Samyang product page — full spec table (weight, length, diameter, MFD, magnification, elements/groups, blades, weather sealing) for the Canon RF-mount manual-focus version', date:'2026-08-29' },
     ],
+    priceSource: { url:'https://samyangus.com/products/14mm-f2-8-full-frame-ultra-wide-angle-canon-rf', tier:'T1', title:'Samyang US official store', note:'regular price $499 = compare-at; on sale at $443.29 at the time, not used', date:'2026-10-19' },
     asin:'B07Q47QQDT',
     prices:{USD:499,AUD:799,EUR:599,GBP:399,JPY:56000,CAD:599,SGD:699},
     productUrl:'https://samyangus.com/products/14mm-f2-8-full-frame-ultra-wide-angle-canon-rf',
@@ -1611,6 +1617,7 @@ const LENSES = {
     specSources: [
       { url:'https://www.lksamyang.com/en/product/product-view.php?seq=657', tier:'T1', note:'official Samyang product page — full spec table for the Canon RF-S (APS-C) autofocus version, Samyang\'s first RF-S lens', date:'2026-08-29' },
     ],
+    priceSource: { url:'https://samyangus.com/products/samyang-af-12mm-f2-0-rf-s-ultra-wide-angle-lens', tier:'T1', title:'Samyang US official store', note:'regular price $499 = compare-at; on sale at $449 at the time, not used', date:'2026-10-19' },
     asin:'B0DYBPBSSF',
     prices:{USD:499,AUD:799,EUR:599,GBP:399,JPY:77000,CAD:599,SGD:699},
     productUrl:'https://samyangus.com/products/samyang-af-12mm-f2-0-rf-s-ultra-wide-angle-lens',
@@ -1630,6 +1637,7 @@ const LENSES = {
     imageSource: { url:'https://laowa.com.au/product/90mm/', tier:'T1', title:'Laowa Australia (official regional site)', note:'lens alone, front three-quarter view. Replaced the venuslens.net image 2026-10-19: its Cloudflare serves a bot challenge instead of the image, so embedded requests fail in real browsers too', date:'2026-10-19' },
     asin:'B0B347B7CJ',
     prices:{USD:499,AUD:799,EUR:599,GBP:399,JPY:70000,CAD:599,SGD:699},
+    priceSource: { url:'https://www.venuslens.net/product/laowa-90mm-f-2-8-2x-macro-apo/', tier:'T1', title:'Laowa (Venus Optics) official store', note:'Canon RF variation regular $499 (store API, read in a browser)', date:'2026-10-19' },
     productUrl:'https://www.venuslens.net/product/laowa-90mm-f-2-8-2x-macro-apo/',
   },
 
@@ -1643,6 +1651,7 @@ const LENSES = {
     imageUrl:'https://laowa.com.au/wp-content/uploads/2022/09/5828_CanonR_1.png',
     asin:'B0BH8HWWFT',
     prices:{USD:499,AUD:799,EUR:599,GBP:399,JPY:70000,CAD:599,SGD:699},
+    priceSource: { url:'https://www.venuslens.net/product/5828-2x-ultra-macro-apo/', tier:'T1', title:'Laowa (Venus Optics) official store', note:'Canon RF variation regular $499 (store API, read in a browser)', date:'2026-10-19' },
     productUrl:'https://www.venuslens.net/product/5828-2x-ultra-macro-apo/',
   },
 
@@ -1656,6 +1665,7 @@ const LENSES = {
     imageUrl:'https://laowa.com.au/wp-content/uploads/2019/05/LAOWA-100mm-Macro.jpg',
     asin:'B0851QX7X5',
     prices:{USD:499,AUD:799,EUR:599,GBP:399,JPY:60000,CAD:599,SGD:699},
+    priceSource: { url:'https://www.venuslens.net/product/laowa-100mm-f-2-8-2x-macro-apo/', tier:'T1', title:'Laowa (Venus Optics) official store', note:'Canon RF variation regular $499 (store API, read in a browser)', date:'2026-10-19' },
     productUrl:'https://www.venuslens.net/product/laowa-100mm-f-2-8-2x-macro-apo/',
   },
 
@@ -1685,6 +1695,7 @@ const LENSES = {
     imageSource: { url:'https://laowa.com.au/product/cookie/', tier:'T1', note:'official Laowa Australia (Venus Optics) product page, "Canon RF" is a selectable mount option (SKU VE1040) and this default gallery image shows the lens mounted on an actual Canon EOS R6 body with "Canon" branding legible', date:'2026-08-17' },
     asin:'B0B7BG44XP',
     prices:{USD:299,AUD:499,EUR:299,GBP:299,JPY:42000,CAD:399,SGD:399},
+    priceSource: { url:'https://www.venuslens.net/product/laowa-10mm-f-4-cookie/', tier:'T1', title:'Laowa (Venus Optics) official store', note:'Canon RF / Black variation regular $299 (store API, read in a browser)', date:'2026-10-19' },
     productUrl:'https://www.venuslens.net/product/laowa-10mm-f-4-cookie/',
   },
 
@@ -1698,7 +1709,8 @@ const LENSES = {
     imageUrl:'https://ttartisan.store/cdn/shop/files/5014.jpg',
     imageSource: { url:'https://ttartisan.store/products/50mm-f1-4-asph', tier:'T1', note:'official TTArtisan store page (titled "50mm F1.4 Multi mount"), barrel reads "TTARTISAN" and "50"; Canon RF is a selectable mount option. No mount-specific marking is visible in the photo itself (manual lenses share an identical front barrel across mounts, only the rear bayonet differs) — accepted since nothing in the image contradicts the confirmed RF availability', date:'2026-08-17' },
     asin:'B09BQXHWSQ',
-    prices:{USD:235,AUD:399,EUR:299,GBP:199,JPY:30000,CAD:299,SGD:299},
+    prices:{USD:282,AUD:399,EUR:299,GBP:299,JPY:44000,CAD:399,SGD:399},
+    priceSource: { url:'https://ttartisan.store/products/50mm-f1-4-asph', tier:'T1', title:'TTArtisan official store', note:'Canon RF / Black variant $282, no sale; was $235 in the data', date:'2026-10-19' },
     productUrl:'https://www.ttartisan.com/?full-frame-lenses%2F55.html=',
   },
 
@@ -1713,6 +1725,7 @@ const LENSES = {
     imageSource: { url:'https://ttartisan.store/products/tilt50mm', tier:'T1', note:'official TTArtisan store page, barrel reads "TTARTISAN" and "Tilt 50"; Canon RF is a selectable mount option. No mount-specific marking visible (front barrel is mount-agnostic for this manual lens), accepted since nothing in the image contradicts confirmed RF availability', date:'2026-08-17' },
     asin:'B0BPCG9XML',
     prices:{USD:229,AUD:399,EUR:299,GBP:199,JPY:32000,CAD:299,SGD:299},
+    priceSource: { url:'https://ttartisan.store/products/tilt50mm', tier:'T1', title:'TTArtisan official store', note:'Canon RF / Black variant $229, no sale', date:'2026-10-19' },
     productUrl:'https://www.ttartisan.com/?full-frame-lenses%2F60.html=',
   },
 
@@ -1727,6 +1740,7 @@ const LENSES = {
     imageCredit:{author:"TurnOnTheNight", licence:"CC BY-SA 4.0", licenceUrl:"https://creativecommons.org/licenses/by-sa/4.0", source:"https://commons.wikimedia.org/wiki/File:Canon_EOS_R10_with_TTArtisan_500mm_F6.3_20250517103824.jpg"},
     asin:'B0CWVFSNLD',
     prices:{USD:369,AUD:599,EUR:399,GBP:299,JPY:54000,CAD:499,SGD:499},
+    priceSource: { url:'https://ttartisan.store/products/500mm', tier:'T1', title:'TTArtisan official store', note:'Canon RF / Black variant $369, no sale', date:'2026-10-19' },
     productUrl:'https://www.ttartisan.com/?full-frame-lenses%2F500-F6-3.html=',
   },
 
@@ -1740,7 +1754,8 @@ const LENSES = {
     imageUrl:'https://ttartisan.store/cdn/shop/files/C5012-1.jpg',
     imageSource: { url:'https://ttartisan.store/products/ttartisan-50mm-f1-2', tier:'T1', note:'official TTArtisan store page, barrel reads "TTArtisan"; Canon RF is a selectable mount option. No mount-specific marking visible (front barrel is mount-agnostic for this manual lens), accepted since nothing in the image contradicts confirmed RF availability', date:'2026-08-17' },
     asin:'B0B9G3SYBX',
-    prices:{USD:98,AUD:199,EUR:99,GBP:99,JPY:12000,CAD:99,SGD:99},
+    prices:{USD:109,AUD:199,EUR:99,GBP:99,JPY:17000,CAD:99,SGD:199},
+    priceSource: { url:'https://ttartisan.store/products/ttartisan-50mm-f1-2', tier:'T1', title:'TTArtisan official store', note:'Canon RF / Black variant $109, no sale; was $98 in the data', date:'2026-10-19' },
     productUrl:'https://www.ttartisan.com/?aps-c-lenses%2F73.html=',
   },
 
@@ -1755,6 +1770,7 @@ const LENSES = {
     imageSource: { url:'https://ttartisan.store/products/aps-c-50mm-f0-95', tier:'T1', note:'official TTArtisan store page, barrel reads "TTARTISAN"; Canon RF is a selectable mount option. No mount-specific marking visible (front barrel is mount-agnostic for this manual lens), accepted since nothing in the image contradicts confirmed RF availability', date:'2026-08-17' },
     asin:'B0C4V8R4HQ',
     prices:{USD:218,AUD:299,EUR:299,GBP:199,JPY:31000,CAD:299,SGD:299},
+    priceSource: { url:'https://ttartisan.store/products/aps-c-50mm-f0-95', tier:'T1', title:'TTArtisan official store', note:'Canon RF / Zebra Design variant $218, no sale', date:'2026-10-19' },
     productUrl:'https://www.ttartisan.com/?aps-c-lenses%2F77.html=',
   },
 
@@ -1771,6 +1787,7 @@ const LENSES = {
       { url:'https://ttartisan.store/products/aps-c-35mm-f1-4', tier:'T1', note:'spec table (focal/aperture/MFD/blades/filter/elements/weight — weight is a single published figure, not a range) and Mount selector confirming Canon RF', date:'2026-08-29' },
       { url:'https://ttartisan.store/products/aps-c-35mm-f1-4', tier:'T1', note:'the page\'s "Size" row image renders a per-mount dimension diagram (E/X/EOS-M/M43 = 56x44mm, Z = 63x42mm, RF = 63x42mm, L = 60x43mm); length/diameter above are the RF column, read directly off the downloaded image', date:'2026-08-29' },
     ],
+    priceSource: { url:'https://ttartisan.store/products/aps-c-35mm-f1-4', tier:'T1', title:'TTArtisan official store', note:'Canon RF / Black variant $80, no sale', date:'2026-10-19' },
     asin:'B0BC3QMRK6',
     prices:{USD:80,AUD:99,EUR:99,GBP:99,JPY:10000,CAD:99,SGD:99},
     productUrl:'https://ttartisan.store/products/aps-c-35mm-f1-4',
@@ -1789,6 +1806,7 @@ const LENSES = {
       { url:'https://ttartisan.store/products/aps-c-23mm-f1-4-black', tier:'T1', note:'spec table and Mount selector confirming Canon RF; weight published as a range ("around 222~250g") — top of range used, consistent with this dataset\'s existing convention for TTArtisan cross-mount ranges (RF/L tend to be the heaviest variant), not independently re-measured for this specific lens', date:'2026-08-29' },
       { url:'https://ttartisan.store/products/aps-c-23mm-f1-4-black', tier:'T1', note:'the "Size" row image gives per-mount L x diameter; RF column = 63x41mm, read directly off the downloaded image', date:'2026-08-29' },
     ],
+    priceSource: { url:'https://ttartisan.store/products/aps-c-23mm-f1-4-black', tier:'T1', title:'TTArtisan official store', note:'Canon RF variant $114, no sale (out of stock at the time)', date:'2026-10-19' },
     asin:'B0BJ1PQGXH',
     prices:{USD:114,AUD:199,EUR:99,GBP:99,JPY:15000,CAD:99,SGD:199},
     productUrl:'https://ttartisan.store/products/aps-c-23mm-f1-4-black',
@@ -1808,6 +1826,7 @@ const LENSES = {
       { url:'https://ttartisan.store/products/102', tier:'T1', note:'the "Size" row image gives per-mount L x diameter; RF column = 61x63mm, read directly off the downloaded image', date:'2026-08-29' },
       { url:'https://www.bhphotovideo.com/c/product/1801465-REG/ttartisan_c1020_b_rf_10mm_f_2_lens_canon.html', tier:'T3', note:'corroborates a Canon RF SKU (C1020-B-RF) exists at retail; not used for specs', date:'2026-08-29' },
     ],
+    priceSource: { url:'https://ttartisan.store/products/102', tier:'T1', title:'TTArtisan official store', note:'Canon RF / Black variant $169, no sale', date:'2026-10-19' },
     asin:'B0CPSVY71Q',
     prices:{USD:169,AUD:299,EUR:199,GBP:199,JPY:25000,CAD:199,SGD:199},
     productUrl:'https://ttartisan.store/products/102',
@@ -1827,6 +1846,7 @@ const LENSES = {
       { url:'https://ttartisan.store/products/tilt-35mm-f1-4', tier:'T1', note:'the "Size" row image gives per-mount L x diameter; RF column = 66x61mm, read directly off the downloaded image', date:'2026-08-29' },
       { url:'https://petapixel.com/2025/05/09/ttartisans-new-tilt-35mm-f-1-4-lens-offers-creative-depth-of-field-control/', tier:'NEWS', note:'confirms May 9 2025 announcement across Sony E/Fuji X/Nikon Z/Canon RF/MFT together, supporting year:2025 for the RF entry', date:'2026-08-29' },
     ],
+    priceSource: { url:'https://ttartisan.store/products/tilt-35mm-f1-4', tier:'T1', title:'TTArtisan official store', note:'Canon RF / Black variant $169, no sale', date:'2026-10-19' },
     asin:'B0F671MLJY',
     prices:{USD:169,AUD:299,EUR:199,GBP:199,JPY:26000,CAD:199,SGD:199},
     productUrl:'https://ttartisan.store/products/tilt-35mm-f1-4',
@@ -1847,6 +1867,7 @@ const LENSES = {
       { url:'https://www.newsshooter.com/2025/10/10/ttartisan-17mm-f4-tilt-shift/', tier:'NEWS', note:'confirms Oct 2025 launch was Sony E + Fuji GFX only', date:'2026-08-29' },
       { url:'https://nikonrumors.com/2026/03/08/ttartisan-announced-a-new-17mm-f-4-tilt-shift-lens-for-nikon-z-mount.aspx/', tier:'NEWS', note:'confirms Nikon Z / Canon RF / Leica L were added March 2026 -- this is the source for year:2026 on this RF-specific entry (the design itself first shipped 2025, but not in RF)', date:'2026-08-29' },
     ],
+    priceSource: { url:'https://ttartisan.store/products/tilt-shift-17mm-f4-asph', tier:'T1', title:'TTArtisan official store', note:'Canon RF / Black variant $550, no sale', date:'2026-10-19' },
     asin:'B0GQH1NMNX',
     prices:{USD:550,AUD:899,EUR:599,GBP:499,JPY:86000,CAD:699,SGD:799},
     productUrl:'https://ttartisan.store/products/tilt-shift-17mm-f4-asph',
@@ -1866,6 +1887,7 @@ const LENSES = {
       { url:'https://ttartisan.store/products/14mm-f2-8', tier:'T1', note:'the "Size" row image (899x421px) gives per-mount L x diameter directly; RF column = 65x75mm', date:'2026-08-29' },
       { url:'https://photorumors.com/2025/08/22/new-ttartisan-14mm-f-2-8-asph-full-frame-ultra-wide-angle-lens-for-e-z-rf-l-announced-196/', tier:'NEWS', note:'confirms Aug 22 2025 announcement covered E/Z/RF/L simultaneously, supporting year:2025 for the RF entry (not a later-added mount)', date:'2026-08-29' },
     ],
+    priceSource: { url:'https://ttartisan.store/products/14mm-f2-8', tier:'T1', title:'TTArtisan official store', note:'Canon RF / Black variant $196, no sale', date:'2026-10-19' },
     asin:'B0FMF9BNG7',
     prices:{USD:196,AUD:299,EUR:199,GBP:199,JPY:30000,CAD:299,SGD:299},
     productUrl:'https://ttartisan.store/products/14mm-f2-8',
@@ -1885,6 +1907,7 @@ const LENSES = {
       { url:'https://ttartisan.store/products/100mm-f2-8macro', tier:'T1', note:'the "Size" row image (2500x600px, 8-mount comparison) gives per-mount L x diameter directly; RF column = 72x148mm', date:'2026-08-29' },
       { url:'https://petapixel.com/2024/07/12/ttartisan-simplifies-100mm-f-2-8-2x-macro-lens-by-removing-tilt-and-shift/', tier:'NEWS', note:'confirms this is a July 2024 simplified (non-tilt-shift) re-release sold across E/EF/F/GF/L/RF/X/Z, resolving a naming-hazard the archived round-1 research left open between this plain macro and a separate, later "Tilt-Shift 100mm F2.8 2X Macro" product at ttartisan.store/products/ts100 (not entered -- outside this batch\'s scope, wasn\'t on round 1\'s original 14-lens list); filter/MFD/weight-range/price here match round 1\'s ttartisan.com-scraped "TS-100-Macro" table exactly, confirming that slug refers to this plain macro, not the tilt-shift product', date:'2026-08-29' },
     ],
+    priceSource: { url:'https://ttartisan.store/products/100mm-f2-8macro', tier:'T1', title:'TTArtisan official store', note:'Canon RF / Black variant $339, no sale', date:'2026-10-19' },
     asin:'B0DFPZDPC5',
     prices:{USD:339,AUD:499,EUR:399,GBP:299,JPY:51000,CAD:399,SGD:499},
     productUrl:'https://ttartisan.store/products/100mm-f2-8macro',
@@ -1900,7 +1923,8 @@ const LENSES = {
     imageUrl:'https://7artisans.store/cdn/shop/files/1_db9d8e0b-ae96-4b07-96e3-bcc94c217e33.jpg',
     imageSource: { url:'https://7artisans.store/products/9mm-f-5-6-full-frame-wide-angle-lens-for-e-l-r-z', tier:'T1', note:'official 7Artisans store page ("MF 9mm f/5.6...for E/L/R/Z"), barrel reads "7Artisans 9mm F5.6"; "Canon EOS-R" is a selectable mount option. No mount-specific marking visible (front barrel is mount-agnostic for this manual lens), accepted since nothing in the image contradicts confirmed RF availability', date:'2026-08-17' },
     asin:'B0CHNR1GH2',
-    prices:{USD:335,AUD:499,EUR:399,GBP:299,JPY:49000,CAD:399,SGD:499},
+    prices:{USD:479,AUD:699,EUR:599,GBP:399,JPY:75000,CAD:599,SGD:699},
+    priceSource: { url:'https://7artisans.store/products/9mm-f-5-6-full-frame-wide-angle-lens-for-e-l-r-z', tier:'T1', title:'7Artisans official store', note:'Canon EOS-R / ND64 variant regular price $479 = compare-at (sold only with an ND filter; no lens-only variant); on sale at $335.30 at the time. Was $335 (the sale price) in the data; regular price used per the owner\'s 2026-10-19 rule', date:'2026-10-19' },
     productUrl:'https://7artisans.store/products/9mm-f-5-6-full-frame-wide-angle-lens-for-e-l-r-z',
   },
 
@@ -1915,6 +1939,7 @@ const LENSES = {
     imageSource: { url:'https://7artisans.store/products/10mm-f-2-8-ii-ultra-wide-angle-full-frame-fisheye-lens-for-e-l-r-z-1', tier:'T1', note:'official 7Artisans store page ("MF 10mm f/2.8 Mark II...for E/L/R/Z"), barrel reads "10mm 1:2.8 Fish-Eye ED / 7Artisans"; "Canon EOS-R" is a selectable mount option. No mount-specific marking visible (front barrel is mount-agnostic for this manual lens), accepted since nothing in the image contradicts confirmed RF availability', date:'2026-08-17' },
     asin:'B0DK1SJ4Q6',
     prices:{USD:278,AUD:399,EUR:299,GBP:299,JPY:42000,CAD:399,SGD:399},
+    priceSource: { url:'https://7artisans.store/products/10mm-f-2-8-ii-ultra-wide-angle-full-frame-fisheye-lens-for-e-l-r-z-1', tier:'T1', title:'7Artisans official store', note:'Canon EOS-R variant $278, no sale', date:'2026-10-19' },
     productUrl:'https://7artisans.store/products/10mm-f-2-8-ii-ultra-wide-angle-full-frame-fisheye-lens-for-e-l-r-z-1',
   },
 
@@ -1929,6 +1954,7 @@ const LENSES = {
     imageSource: { url:'https://7artisans.store/products/35mm-f-1-4-full-frame-lens-for-e-eos-r-z-l', tier:'T1', note:'official 7Artisans store page ("MF 35mm f/1.4 Ⅲ...for E/EOS-R/Z/L" — confirms Mark III specifically), aperture/focus scales match; "EOS-R mount" is a selectable option. No mount-specific marking visible (front barrel is mount-agnostic for this manual lens), accepted since nothing in the image contradicts confirmed RF availability', date:'2026-08-17' },
     asin:'B0BRKB1P34',
     prices:{USD:189,AUD:299,EUR:199,GBP:199,JPY:29000,CAD:199,SGD:299},
+    priceSource: { url:'https://7artisans.store/products/35mm-f-1-4-full-frame-lens-for-e-eos-r-z-l', tier:'T1', title:'7Artisans official store', note:'EOS-R mount / Black variant $189, no sale', date:'2026-10-19' },
     productUrl:'https://7artisans.store/products/35mm-f-1-4-full-frame-lens-for-e-eos-r-z-l',
   },
 
