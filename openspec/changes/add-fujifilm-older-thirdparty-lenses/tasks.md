@@ -12,5 +12,5 @@
 
 ## 3. Verify
 
-- [ ] 3.1 npm test, verify-images, test:links, generate-seo
-- [ ] 3.2 Preview in lenses mode
+- [x] 3.1 npm test, verify-images, test:links, generate-seo
+- [x] 3.2 Preview in lenses mode

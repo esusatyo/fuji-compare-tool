@@ -1,6 +1,6 @@
 # Progress — Fujifilm older third-party lenses
 
-**Resume at:** 3.1 verify — verify-images, test:links, preview in lenses mode
+**Resume at:** done — open the PR (owner asked for one consolidated PR), archive the change after merge
 **Branch:** laowa-images-fuji-refresh   **Last green commit:** 1c5792f Fujifilm: record price sources for 97 prices verified 2026-10-19
 
 ## Batches
@@ -10,7 +10,7 @@
 | TTArtisan | ✅ 12 | ✅ 1 | ✅ | ✅ | ✅ | 4e7a930 |
 | SG-image | ✅ 9 | ✅ 8 | ✅ | ✅ | ✅ (no ASINs exist) | 60ded8e |
 | Thypoch | ✅ 7 | ✅ 1 | ✅ | ✅ | ✅ | 9c6b4d3 |
-| Meike (MF re-check) | ✅ 7 | — (still blocked) | — | — | — | (this commit) |
+| Meike (MF re-check) | ✅ 7 | — (still blocked) | — | — | — | d49c01a |
 
 ## Deferred / skipped (with reason)
 - Thypoch Eureka 28mm f/2.8 — barrel diameter unpublished
