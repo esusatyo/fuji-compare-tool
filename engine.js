@@ -215,6 +215,7 @@ const MANUFACTURER_COLORS = {
   'Laowa':        { bg: '#241014', text: '#d88a92' },
   'Sirui':        { bg: '#1c1426', text: '#a98ad8' },
   'Meike':        { bg: '#14220f', text: '#9cc878' },
+  'SG-image':     { bg: '#1a1e24', text: '#a8b4c4' },
 };
 
 // ─────────────────────────────────────────────
