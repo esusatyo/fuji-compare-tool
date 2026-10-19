@@ -4,7 +4,7 @@
 
 ## 2. Maker batches
 
-- [ ] 2.1 Viltrox
+- [x] 2.1 Viltrox
 - [ ] 2.2 Samyang
 - [ ] 2.3 Sigma
 - [ ] 2.4 Tamron

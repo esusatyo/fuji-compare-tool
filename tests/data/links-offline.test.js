@@ -166,7 +166,11 @@ const KNOWN_SHARED_LINKS = new Map([
 // found, and 7artisans-10mm-f35's only listing doesn't name the mount.
 // Raised to 58 the same day: the 8 SG-image manual-focus lenses have no
 // amazon.com listings in any mount (site:amazon.com search, 2026-10-19).
-const ASIN_GAP_BASELINE = 58;
+// Sony missing-lens pass (add-sony-missing-thirdparty-lenses, 2026-10-19+):
+// ~180 lenses are being added in maker batches without per-lens ASIN
+// lookups; ASINs are backfilled afterwards with the check-prices-and-buy-links
+// skill, which then tightens this back down. +21 Viltrox.
+const ASIN_GAP_BASELINE = 79;
 
 const allItems = () => brandDirs().flatMap(brand => {
   const { data } = loadBrand(brand);
