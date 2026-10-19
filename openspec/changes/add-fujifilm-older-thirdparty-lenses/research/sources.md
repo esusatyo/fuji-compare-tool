@@ -17,3 +17,7 @@ T3 retailer (price/availability only) · T4 aggregator · NEWS (year only).
 | https://ttartisan.store/products/<handle> (5 pages) | T1 | spec tables (HTML) + per-mount size-diagram PNGs | diagrams are transparent PNGs — render on white or the labels disappear |
 | https://www.bhphotovideo.com/c/product/1850577-REG/…/specs | T3 | X weight, 100mm macro | JSON-LD additionalProperty readable via in-page fetch; B&H blocked further fetches after ~25 requests |
 | https://www.sg-image.com/products/<handle> (9 pages) | T1 | Specification card PNGs (read via OCR, confirmed by eye), price, image | one figure for all mounts; two handles are recycled from other listings |
+| https://thypoch.com/en/simera/28mm | T1 | Simera 28 X specs (per-mount columns M/Z/RF/E/X) | the default-rendered column is M; X is the fifth |
+| https://thypoch.com/en/eureka/28mm | T1 | Eureka 28 (rejected, no barrel diameter) | |
+| https://store.thypoch.com/products.json | T1 | price, variant images | |
+| https://fujiaddict.com/2024/04/25/thypoch-lenses-are-coming-to-x-mount-with-a-unique-depth-of-field-indicator/ | NEWS | year, Simera X | |

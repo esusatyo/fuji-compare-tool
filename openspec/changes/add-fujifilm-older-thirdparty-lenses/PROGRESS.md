@@ -1,6 +1,6 @@
 # Progress — Fujifilm older third-party lenses
 
-**Resume at:** 2.4 Thypoch — enter Simera 28mm f/1.4 X (T1 per-mount table: 347 g, 70.1 mm, ø54) + MANUFACTURER_COLORS; Eureka 28 skipped (no barrel diameter)
+**Resume at:** 2.5 Meike — quick re-check of the 8 MF lenses for a published barrel diameter (blocked Aug 2026)
 **Branch:** laowa-images-fuji-refresh   **Last green commit:** 1c5792f Fujifilm: record price sources for 97 prices verified 2026-10-19
 
 ## Batches
@@ -8,11 +8,12 @@
 |---|---|---|---|---|---|---|
 | 7Artisans | ✅ 16 | ✅ 10 | ✅ | ✅ | ✅ (7 ASINs) | a15f21b |
 | TTArtisan | ✅ 12 | ✅ 1 | ✅ | ✅ | ✅ | 4e7a930 |
-| SG-image | ✅ 9 | ✅ 8 | ✅ | ✅ | ✅ (no ASINs exist) | (this commit) |
-| Thypoch | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ | — |
+| SG-image | ✅ 9 | ✅ 8 | ✅ | ✅ | ✅ (no ASINs exist) | 60ded8e |
+| Thypoch | ✅ 7 | ✅ 1 | ✅ | ✅ | ✅ | (this commit) |
 | Meike (MF re-check) | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ | — |
 
 ## Deferred / skipped (with reason)
+- Thypoch Eureka 28mm f/2.8 — barrel diameter unpublished
 - SG-image MF 18mm f/6.3 — no published specs
 - TTArtisan Tilt-Shift 100mm, 500mm, 50mm F2.0, AF 35mm F1.8 (original) — no unambiguous X weight/size
 - 7Artisans 60mm f/2.8 II, 4mm f/2.8, 35mm f/1.2 II, 7.5mm f/2.8 II, 50mm f/1.8 — no published dimensions

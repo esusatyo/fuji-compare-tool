@@ -3475,6 +3475,21 @@ const LENSES = {
     priceSource: { url:'https://www.sg-image.com/products/50mm-f1-8-mf-full-frame-lens-with-shaped-aperture', tier:'T1', title:'SG-image official store', note:'X variant $192, no compare-at/sale price; read from the store\'s products.json', date:'2026-10-19' },
     productUrl:'https://www.sg-image.com/products/50mm-f1-8-mf-full-frame-lens-with-shaped-aperture',
   },
+  'thypoch-simera-28mm-f14': {
+    name:'Thypoch Simera 28mm f/1.4', manufacturer:'Thypoch', line:'Simera', type:'Prime',
+    mount:'x', focalLength:28, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'42mm',
+    maxAperture:1.4, minAperture:16, weight:347, length:70.1, diameter:54,
+    filterThread:49, minFocusDist:40, maxMagnification:null,
+    elements:11, groups:7, blades:14, afType:'Manual',
+    weatherSealed:false, ois:false, oisStops:null, year:2024, discontinued:false,
+    imageUrl:'https://cdn.shopify.com/s/files/1/0756/5937/8928/files/Simera-28mm-f-1.4-Z-M-E-RF-X-Mount-Full-Frame-Manual-Lens-Thypoch-15970566.png',
+    imageSource: { url:'https://store.thypoch.com/products/simera-28mm-f-1-4-e-rf-x-z-mount', tier:'T1', title:'Thypoch official store', note:'the Black / Fujifilm X Mount variant\'s own image (the product\'s first image shows the shorter Leica M barrel, so it was not used)', date:'2026-10-19' },
+    asin:'B0D96W9G6K',
+    prices:{USD:399,AUD:599,EUR:499,GBP:399,JPY:60000,CAD:499,SGD:599},
+    specSources: [{ url:'https://thypoch.com/en/simera/28mm', tier:'T1', title:'Thypoch Simera 28mm official page', note:'per-mount spec table (columns M/Z/RF/E/X), X column: length 70.1mm without hood, ≈347g, flange 17.7mm; shared: front dia. ø54mm, 11/7, 14 blades, 0.4m from the sensor plane, ø49 filter, f/1.4-16, full-frame image circle. The M-mount figures (55mm, 330g) are not this lens\'s', date:'2026-10-19' }, { url:'https://fujiaddict.com/2024/04/25/thypoch-lenses-are-coming-to-x-mount-with-a-unique-depth-of-field-indicator/', tier:'NEWS', title:'Fuji Addict: Thypoch lenses are coming to X-mount', note:'X-mount version announced April 2024', date:'2026-10-19' }],
+    priceSource: { url:'https://store.thypoch.com/products/simera-28mm-f-1-4-e-rf-x-z-mount', tier:'T1', title:'Thypoch official store', note:'Black / Fujifilm X Mount variant $399, no compare-at/sale price; read from the store\'s products.json (B&H X SKU also $399)', date:'2026-10-19' },
+    productUrl:'https://store.thypoch.com/products/simera-28mm-f-1-4-e-rf-x-z-mount',
+  },
 };
 
 const LENS_DROPDOWN_GROUPS = [
@@ -3495,6 +3510,7 @@ const LENS_DROPDOWN_GROUPS = [
   { label: '── Laowa ──',               ids: ['laowa-9mm-f28','laowa-65mm-f28-macro','laowa-4mm-f28-fisheye','laowa-aksen-45mm-f28','laowa-aksen-17-5mm-f17','laowa-4-5-10mm-f28-fisheye','laowa-8-16mm-f35-5','laowa-10mm-f4-cookie','laowa-argus-33mm-f095','laowa-12-24mm-f56-shift'] },
   { label: '── Meike ──',              ids: ['meike-33mm-f14','meike-55mm-f18','meike-85mm-f18','meike-55mm-f14-golden','meike-25mm-f17-air','meike-25mm-f18','meike-50mm-f17-ff','meike-56mm-f17-air'] },
   { label: '── SG-image ──',           ids: ['sgimage-25mm-f18','sgimage-55mm-f18','sgimage-50mm-f14','sgimage-35mm-f12','sgimage-35mm-f095','sgimage-25mm-f18-mf','sgimage-24mm-f63','sgimage-12mm-f28','sgimage-7-5mm-f28-fisheye','sgimage-50mm-f18'] },
+  { label: '── Thypoch ──',            ids: ['thypoch-simera-28mm-f14'] },
 ];
 
 return { BRAND_CONFIG, SERIES_COLORS, CAMERAS, CAMERA_ORDER,

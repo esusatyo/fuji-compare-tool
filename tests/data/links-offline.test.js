@@ -27,6 +27,8 @@ const ALLOWED_HOSTS = [
   'meikeglobal.com', 'yongnuo.eu', 'hkyongnuo.com', 'omsystem.com', 'zeiss.com',
   'laowa.com.au', 'laowalenses.ca', 'pergear.com', 'voigtlaender.de', 'leica-camera.com',
   'sg-image.com',
+  // Thypoch's official Shopify store (productUrl) and site (spec tables).
+  'thypoch.com',
   // DPReview: used as productUrl for a handful of discontinued Leica Q
   // bodies whose own leica-camera.com pages are gone (task 5.6). Already
   // trusted as a footerLinks source across several brands.

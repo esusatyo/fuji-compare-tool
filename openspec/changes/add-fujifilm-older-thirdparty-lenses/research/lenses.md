@@ -41,3 +41,7 @@ Specs: maker's own page for the X-mount variant (T1) unless noted.
 | — | SG-image 18mm f/6.3 Pancake | SG-image | — | — | sg-image.com/products/mf-18mm-f6-3-aps-c-ultra-slim-pancake-lens | — | **skip:** no spec card or figures among the page's images |
 
 \* SG-image years are the store listing date (Aug 2025); the lenses may have shipped earlier.
+| thypoch-simera-28mm-f14 | Thypoch Simera 28mm f/1.4 | Thypoch | 2024 | no | thypoch.com/en/simera/28mm (per-mount table, X column) | fujiaddict 2024-04-25 (NEWS); B&H X SKU 1826035 (T3, agrees: 347 g, $399) | **entered**; new maker → `MANUFACTURER_COLORS.Thypoch` + `thypoch.com` allowed host; X variant's own image (first product image is the M barrel) |
+| — | Thypoch Eureka 28mm f/2.8 | Thypoch | — | — | thypoch.com/en/eureka/28mm | B&H X SKU 1933790 | **skip:** barrel diameter unpublished ("Front Dia. ø28.3" is the front element); B&H weight 137 g conflicts with T1's 154 g (X) |
+| — | Thypoch Simera 21/35/50/75mm | Thypoch | — | — | thypoch.com/en/simera/* | — | **out:** no X version (M/Z/RF/E only) |
+| — | Thypoch AF 23mm f/1.4 Sculptor | Thypoch | — | — | — | cameradecision (NEWS) | **deferred:** unveiled 2026-10-08, not on sale, no price/weight |
