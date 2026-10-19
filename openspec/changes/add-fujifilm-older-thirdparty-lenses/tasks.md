@@ -4,7 +4,7 @@
 
 ## 2. Research and entry, one batch per maker
 
-- [ ] 2.1 7Artisans
+- [x] 2.1 7Artisans
 - [ ] 2.2 TTArtisan
 - [ ] 2.3 SG-image
 - [ ] 2.4 Thypoch (+ MANUFACTURER_COLORS entry)
