@@ -6,7 +6,7 @@
 
 - [x] 2.1 Viltrox
 - [x] 2.2 Samyang
-- [ ] 2.3 Sigma
+- [x] 2.3 Sigma
 - [ ] 2.4 Tamron
 - [ ] 2.5 Laowa
 - [ ] 2.6 Voigtländer

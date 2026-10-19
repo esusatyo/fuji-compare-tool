@@ -1,6 +1,6 @@
 # Progress — Sony missing third-party lenses
 
-**Resume at:** 2.3 Sigma — diff sigma-global.com E-mount lens list against sony/data.js (30 present); prices via sigmaphoto.com (MNT=Sony in sigma.py)
+**Resume at:** 2.4 Tamron — diff tamron-americas.com Sony E lineup against sony/data.js (10 present); per-mount option prices via data-us-price
 **Branch:** canon-sony-lens-refresh (worktree ../fuji-compare-canon-sony)   **Last green commit:** 427328a Canon: check third-party RF prices
 
 ## Method (reuse)
@@ -13,7 +13,8 @@
 | Maker | Candidates | Entered | Skipped | Committed |
 |---|---|---|---|---|
 | Viltrox | 23 | 21 | 2 (404, cine) | 4c4b97e |
-| Samyang | 33 | 32 | 1 (3-lens set) | (this commit) |
+| Samyang | 33 | 32 | 1 (3-lens set) | 98cc6ab |
+| Sigma | 18 (+8 renamed) | 17 | 1 (no US price) | (this commit) |
 
 ## Deferred / skipped (with reason)
 
