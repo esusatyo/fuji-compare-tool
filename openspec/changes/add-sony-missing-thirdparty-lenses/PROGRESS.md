@@ -1,6 +1,6 @@
 # Progress — Sony missing third-party lenses
 
-**Resume at:** 2.4 Tamron — diff tamron-americas.com Sony E lineup against sony/data.js (10 present); per-mount option prices via data-us-price
+**Resume at:** 2.5 Laowa — venuslens.net Woo Store API in Chrome (mount attribute = Sony E); specs from product pages; data has 3
 **Branch:** canon-sony-lens-refresh (worktree ../fuji-compare-canon-sony)   **Last green commit:** 427328a Canon: check third-party RF prices
 
 ## Method (reuse)
@@ -14,7 +14,8 @@
 |---|---|---|---|---|
 | Viltrox | 23 | 21 | 2 (404, cine) | 4c4b97e |
 | Samyang | 33 | 32 | 1 (3-lens set) | 98cc6ab |
-| Sigma | 18 (+8 renamed) | 17 | 1 (no US price) | (this commit) |
+| Sigma | 18 (+8 renamed) | 17 | 1 (no US price) | 52d6307 |
+| Tamron | 14 | 14 | 0 (4 DSLR out of scope) | (this commit) |
 
 ## Deferred / skipped (with reason)
 

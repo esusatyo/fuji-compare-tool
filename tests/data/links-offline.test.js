@@ -169,8 +169,8 @@ const KNOWN_SHARED_LINKS = new Map([
 // Sony missing-lens pass (add-sony-missing-thirdparty-lenses, 2026-10-19+):
 // ~180 lenses are being added in maker batches without per-lens ASIN
 // lookups; ASINs are backfilled afterwards with the check-prices-and-buy-links
-// skill, which then tightens this back down. +21 Viltrox, +32 Samyang, +17 Sigma.
-const ASIN_GAP_BASELINE = 128;
+// skill, which then tightens this back down. +21 Viltrox, +32 Samyang, +17 Sigma, +14 Tamron.
+const ASIN_GAP_BASELINE = 142;
 
 const allItems = () => brandDirs().flatMap(brand => {
   const { data } = loadBrand(brand);
