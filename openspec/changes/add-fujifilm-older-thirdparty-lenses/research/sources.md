@@ -16,3 +16,4 @@ T3 retailer (price/availability only) · T4 aggregator · NEWS (year only).
 | amazon.com search results (site:amazon.com) | T3 | ASINs only | 7 of 10 found |
 | https://ttartisan.store/products/<handle> (5 pages) | T1 | spec tables (HTML) + per-mount size-diagram PNGs | diagrams are transparent PNGs — render on white or the labels disappear |
 | https://www.bhphotovideo.com/c/product/1850577-REG/…/specs | T3 | X weight, 100mm macro | JSON-LD additionalProperty readable via in-page fetch; B&H blocked further fetches after ~25 requests |
+| https://www.sg-image.com/products/<handle> (9 pages) | T1 | Specification card PNGs (read via OCR, confirmed by eye), price, image | one figure for all mounts; two handles are recycled from other listings |

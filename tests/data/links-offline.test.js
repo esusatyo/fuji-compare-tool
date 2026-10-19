@@ -162,7 +162,9 @@ const KNOWN_SHARED_LINKS = new Map([
 // (add-fujifilm-older-thirdparty-lenses): of 10 new 7Artisans lenses, 7 got
 // X-mount listings; 7artisans-6mm-f2 and 7artisans-50mm-f14-tilt have none
 // found, and 7artisans-10mm-f35's only listing doesn't name the mount.
-const ASIN_GAP_BASELINE = 50;
+// Raised to 58 the same day: the 8 SG-image manual-focus lenses have no
+// amazon.com listings in any mount (site:amazon.com search, 2026-10-19).
+const ASIN_GAP_BASELINE = 58;
 
 const allItems = () => brandDirs().flatMap(brand => {
   const { data } = loadBrand(brand);

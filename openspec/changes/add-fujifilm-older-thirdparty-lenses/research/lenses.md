@@ -30,3 +30,14 @@ Specs: maker's own page for the X-mount variant (T1) unless noted.
 | — | TTArtisan 11mm F2.8 Fisheye, 90mm F1.25 | TTArtisan | — | — | ttartisan.store | — | **out:** no X variant |
 | — | TTArtisan M 28/50/90/100mm, APO-M 35mm | TTArtisan | — | — | ttartisan.store | — | **out:** Leica M lenses, X only via adapter |
 | — | TTArtisan AF 40mm F2 | TTArtisan | — | — | ttartisan.store/products/af-40mm-f2 | — | **out:** no X variant (E/Z/L) |
+| sgimage-50mm-f14 | SG-image 50mm f/1.4 | SG-image | 2025* | no | sg-image.com/products/mf-25mm-f2-8-aps-c-lens-copy | — | **entered**; handle recycled from a 25mm listing (title + spec card are the 50/1.4) |
+| sgimage-35mm-f12 | SG-image 35mm f/1.2 | SG-image | 2025* | no | sg-image.com/products/mf-35mm-f1-2-aps-c-lens | — | **entered** |
+| sgimage-35mm-f095 | SG-image 35mm f/0.95 | SG-image | 2025* | no | sg-image.com/products/mf-35mm-f0-95-ultra-bright-aps-c-lens | — | **entered** |
+| sgimage-25mm-f18-mf | SG-image 25mm f/1.8 (MF) | SG-image | 2025* | no | sg-image.com/products/mf-18mm-f6-3-…-copy | — | **entered**; `-mf` suffix because the AF 25mm f/1.8 holds `sgimage-25mm-f18` |
+| sgimage-24mm-f63 | SG-image 24mm f/6.3 Pancake | SG-image | 2025* | no | sg-image.com/products/mf-24mm-f6-3-full-frame-… | — | **entered**; fixed aperture; filter "37/49mm" ambiguous → null |
+| sgimage-12mm-f28 | SG-image 12mm f/2.8 | SG-image | 2025* | no | sg-image.com/products/mf-12mm-f2-8-…-copy | — | **entered** |
+| sgimage-7-5mm-f28-fisheye | SG-image 7.5mm f/2.8 Fisheye | SG-image | 2025* | no | sg-image.com/products/mf-7-5mm-f2-8-aps-c-fisheye-lens | — | **entered**; **rejected:** card's "1:1.1" magnification (implausible) → null |
+| sgimage-50mm-f18 | SG-image 50mm f/1.8 Shaped Aperture | SG-image | 2025* | no | sg-image.com/products/50mm-f1-8-mf-full-frame-… | — | **entered**; shaped-aperture plates, no iris → blades null, min = max |
+| — | SG-image 18mm f/6.3 Pancake | SG-image | — | — | sg-image.com/products/mf-18mm-f6-3-aps-c-ultra-slim-pancake-lens | — | **skip:** no spec card or figures among the page's images |
+
+\* SG-image years are the store listing date (Aug 2025); the lenses may have shipped earlier.
