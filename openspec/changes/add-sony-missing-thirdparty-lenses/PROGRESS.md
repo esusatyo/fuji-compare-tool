@@ -1,0 +1,19 @@
+# Progress — Sony missing third-party lenses
+
+**Resume at:** 2.1 Viltrox — ~22 E/FE AF lenses missing (catalogue: viltrox.com/products.json)
+**Branch:** canon-sony-lens-refresh (worktree ../fuji-compare-canon-sony)   **Last green commit:** 427328a Canon: check third-party RF prices
+
+## Method (reuse)
+- Find gaps: diff each maker's Shopify `products.json` handles against `productUrl`s.
+- Specs: product page spec table / infographic; locate with `tesseract` OCR, confirm every figure by eye.
+- Prices: Shopify regular price (compare-at when on sale) — owner rule.
+- One commit per maker batch, with this file and tasks.md updated in the same commit.
+
+## Batches
+| Maker | Candidates | Entered | Skipped | Committed |
+|---|---|---|---|---|
+
+## Deferred / skipped (with reason)
+
+## Open questions for the user
+- (none)
