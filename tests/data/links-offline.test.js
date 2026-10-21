@@ -178,8 +178,8 @@ const KNOWN_SHARED_LINKS = new Map([
 // lookups; ASINs are backfilled afterwards with the check-prices-and-buy-links
 // skill, which then tightens this back down. +21 Viltrox, +32 Samyang, +17 Sigma, +14 Tamron,
 // +35 Laowa, +13 Voigtländer, +9 Zeiss (8 new + Batis 85, now current again),
-// +19 TTArtisan, +28 7Artisans, +12 Meike.
-const ASIN_GAP_BASELINE = 258;
+// +19 TTArtisan, +28 7Artisans, +12 Meike, +13 Thypoch/SG-image.
+const ASIN_GAP_BASELINE = 271;
 
 const allItems = () => brandDirs().flatMap(brand => {
   const { data } = loadBrand(brand);

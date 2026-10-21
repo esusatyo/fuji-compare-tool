@@ -14,7 +14,7 @@
 - [x] 2.8 TTArtisan
 - [x] 2.9 7Artisans
 - [x] 2.10 Meike
-- [ ] 2.11 Thypoch / SG-image
+- [x] 2.11 Thypoch / SG-image
 
 ## 3. Verify
 
