@@ -10,7 +10,7 @@
 ## 3. Panasonic L-Mount makers
 
 - [x] 3.1 Samyang + Viltrox
-- [ ] 3.2 Laowa
+- [x] 3.2 Laowa
 - [ ] 3.3 TTArtisan
 - [ ] 3.4 7Artisans
 - [ ] 3.5 Meike

@@ -61,6 +61,7 @@ const KNOWN_SHARED_LINKS = new Map([
   ['fujifilm productUrl https://www.venuslens.net/product/laowa-aksen-ultra-macro-apo/', 2],
   ['sony productUrl https://www.venuslens.net/product/laowa-aksen-ultra-macro-apo/', 2],
   ['nikon productUrl https://www.venuslens.net/product/laowa-aksen-ultra-macro-apo/', 2],
+  ['panasonic productUrl https://www.venuslens.net/product/laowa-aksen-ultra-macro-apo/', 2],
   // Zeiss has one page (with a per-lens Technical Data table) per lens line.
   ['sony productUrl https://www.zeiss.com/photonics-and-optics/us/photography/products/lenses-for-mirrorless-system-cameras/batis-lenses.html', 5],
   ['sony productUrl https://www.zeiss.com/photonics-and-optics/us/photography/products/lenses-for-mirrorless-system-cameras/touit-lenses.html', 3],
@@ -187,8 +188,8 @@ const KNOWN_SHARED_LINKS = new Map([
 // Panasonic/Leica missing-lens pass (add-panasonic-leica-missing-thirdparty-
 // lenses, 2026-10-22+): copies of entries already in another brand file carry
 // that entry's asin, so only the ones that had none add a gap — +4 Sigma L /
-// Leica SL copies, +1 Samyang L.
-const ASIN_GAP_BASELINE = 333;
+// Leica SL copies, +1 Samyang L, +19 Laowa L.
+const ASIN_GAP_BASELINE = 352;
 
 const allItems = () => brandDirs().flatMap(brand => {
   const { data } = loadBrand(brand);

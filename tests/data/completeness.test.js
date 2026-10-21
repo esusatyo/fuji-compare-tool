@@ -394,6 +394,15 @@ const KNOWN_IMAGE_GAPS = {
     // lumix-s-20mm-f2-5: announced 2026-09-17, added 2026-09-25 refresh — too
     // new for a freely-licensed Commons photo yet (ships Oct 2026).
     'lumix-s-20mm-f2-5',
+    // Panasonic/Leica missing-lens pass (2026-10-22), Laowa L-Mount:
+    // laowa-11mm-f45-rl-l, laowa-14mm-f4-rl-l, laowa-9mm-f56-rl-l and
+    // laowa-15mm-f45-shift-l stay gapped for the same reasons as on sony/ and
+    // nikon/ (RL galleries show only the Leica M barrel; the 15mm Shift's only
+    // photo is a recrop of the 20mm Shift's). laowa-12mm-f28-lite-zero-d-l and
+    // laowa-10mm-f28-l are the manual-focus L versions; Laowa only publishes
+    // photos of the AF Sony E versions (VE1228AFFE / VE1028AFFE files).
+    'laowa-11mm-f45-rl-l', 'laowa-14mm-f4-rl-l', 'laowa-9mm-f56-rl-l', 'laowa-15mm-f45-shift-l',
+    'laowa-12mm-f28-lite-zero-d-l', 'laowa-10mm-f28-l',
   ]),
   sony: new Set([
     // tamron-70-300mm: the only Commons file is the Nikon Z version (Model
