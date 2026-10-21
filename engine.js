@@ -708,6 +708,41 @@ function buildMountFilterHTML() {
     `</div></div>`;
 }
 
+// Share the current comparison (the address bar already carries the
+// selection hash). Native share sheet where it exists — on phones that is how
+// a link reaches the Reddit or Discord app — else the clipboard, else a
+// selected read-only field. Never alert()/prompt(): they block the page.
+// The share-link event fires only on a completed hand-off, so a cancelled
+// sheet or a failed copy counts nothing.
+async function shareComparison() {
+  const url = location.href;
+  const done = how => track(`share-link:${trackPage()}:${currentMode}:${how}`, `Share link (${how})`);
+  if (typeof navigator.share === 'function') {
+    try {
+      await navigator.share({ title: document.title, url });
+      done('native');
+      return;
+    } catch (e) {
+      if (e && e.name === 'AbortError') return; // the visitor dismissed the sheet
+      // Any other refusal (e.g. not allowed here): fall through to copying.
+    }
+  }
+  try {
+    await navigator.clipboard.writeText(url);
+    done('copy');
+    const label = document.getElementById('share-btn-label');
+    label.textContent = 'Link copied';
+    clearTimeout(shareComparison.reset);
+    shareComparison.reset = setTimeout(() => { label.textContent = 'Share this comparison'; }, 2000);
+  } catch (e) {
+    const field = document.getElementById('share-url');
+    field.value = url;
+    field.hidden = false;
+    field.focus();
+    field.select();
+  }
+}
+
 function buildFooterLinks() {
   const links = BRAND_CONFIG.footerLinks;
   if (!links || !links.length) return 'manufacturer documentation';
@@ -765,6 +800,10 @@ function injectBody() {
   <div class="hero-eyebrow" id="hero-eyebrow">${BRAND_CONFIG.cameras.heroEyebrow}</div>
   <h1 class="hero-title" id="hero-title">${BRAND_CONFIG.cameras.heroTitle}</h1>
   <p class="hero-subtitle" id="hero-subtitle">${BRAND_CONFIG.cameras.heroSubtitle}</p>
+  <div class="share">
+    <button type="button" class="share-btn" id="share-btn"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v13M7 8l5-5 5 5M5 13v6a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-6"/></svg><span id="share-btn-label">Share this comparison</span></button>
+    <input class="share-url" id="share-url" type="text" readonly hidden aria-label="Link to this comparison">
+  </div>
 </div>
 
 <div id="compare-header">
@@ -1263,6 +1302,8 @@ function attachEventListeners() {
     track(`reference-click:${link.dataset.refKind}:${refHostname(link.href)}`,
       `Reference: ${link.textContent}`);
   });
+
+  document.getElementById('share-btn').addEventListener('click', shareComparison);
 
   document.getElementById('currency-select').addEventListener('change', e => {
     currentCurrency = e.target.value;

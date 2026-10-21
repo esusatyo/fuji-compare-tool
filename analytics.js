@@ -24,6 +24,7 @@
 //   mount-filter:<brand>:<mount|all>  theme:<light|dark|system>
 //   currency:<CUR>                    spec-section:<id>:<open|close>
 //   vs-to-interactive:<brand|cross>:<pair>   vs-related:<brand|cross>:<pair>
+//   share-link:<brand|compare>:<cameras|lenses>:<native|copy>
 //   engaged-30s:<pathname>  engaged-120s:<pathname>  specs-seen:<pathname>
 (function () {
   // Cumulative visible-time marks, in order.

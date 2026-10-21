@@ -20,3 +20,6 @@ wrangler.jsonc
 .gitignore
 .DS_Store
 CLAUDE.md
+
+# Share-card freshness manifest: a build input for tests, not a page asset.
+og/manifest.json
