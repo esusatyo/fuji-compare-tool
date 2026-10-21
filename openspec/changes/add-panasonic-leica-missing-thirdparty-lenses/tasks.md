@@ -14,7 +14,7 @@
 - [x] 3.3 TTArtisan
 - [x] 3.4 7Artisans
 - [x] 3.5 Meike
-- [ ] 3.6 SG-image
+- [x] 3.6 SG-image
 
 ## 4. MFT makers (Panasonic + Olympus)
 

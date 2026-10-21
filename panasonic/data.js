@@ -3116,6 +3116,41 @@ const LENSES = {
     productUrl:'https://meikeglobal.com/products/8518se-l',
   },
 
+  /* ── SG-image (L-Mount, full-frame) — Panasonic/Leica missing-lens pass 2026-10-22 ── */
+  'sgimage-24mm-f63-l': {
+    name:'SG-image 24mm f/6.3 Pancake', manufacturer:'SG-image', line:'MF', type:'Prime',
+    mount:'l', focalLength:24, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'24mm',
+    maxAperture:6.3, minAperture:6.3, weight:74, length:16.7, diameter:58,
+    filterThread:null, minFocusDist:25, maxMagnification:0.125,
+    elements:6, groups:5, blades:null, afType:'Manual',
+    weatherSealed:false, ois:false, oisStops:null, year:2025, discontinued:false,
+    imageUrl:'https://cdn.shopify.com/s/files/1/0729/5051/3889/files/800_-01.png',
+    imageSource: { url:'https://www.sg-image.com/products/mf-24mm-f6-3-full-frame-ultra-slim-pancake-lens', tier:'T1', title:'SG-image official store', note:'same maker product shot as the Fujifilm entry (one listing for all mounts)', date:'2026-10-22' },
+    asin:null,
+    prices:{USD:76,AUD:null,EUR:null,GBP:null,JPY:null,CAD:null,SGD:null},
+    specSources: [{ url:'https://www.sg-image.com/products/mf-24mm-f6-3-full-frame-ultra-slim-pancake-lens', tier:'T1', title:'SG-image 24mm f/6.3 Pancake official store page', note:'L-Mount taken from the same spec card as the Fujifilm entry, which gives one figure for all mounts (L listed): Specification card image: full-frame pancake, fixed f/6.3 (blades null), 6/5, 0.25m, 1:8.0, approx. 74g, ø58 x 16.7mm; filter listed as "37/49mm" (ambiguous, left null). One figure for all mounts (E/X/Z/M43/EOS-M/R/L). Year from the store listing date (Aug 2025); the lens may have shipped earlier', date:'2026-10-22' }],
+    priceSource: { url:'https://www.sg-image.com/products/mf-24mm-f6-3-full-frame-ultra-slim-pancake-lens', tier:'T1', title:'SG-image official store', note:'"L / 黑色" variant price $76 (store products.json, 2026-10-22); non-USD not examined', date:'2026-10-22' },
+    priceIncomplete:true,
+    productUrl:'https://www.sg-image.com/products/mf-24mm-f6-3-full-frame-ultra-slim-pancake-lens',
+  },
+
+  'sgimage-50mm-f18-l': {
+    name:'SG-image 50mm f/1.8 Shaped Aperture', manufacturer:'SG-image', line:'MF', type:'Prime',
+    mount:'l', focalLength:50, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'50mm',
+    maxAperture:1.8, minAperture:1.8, weight:311, length:48, diameter:69,
+    filterThread:58, minFocusDist:50, maxMagnification:0.13,
+    elements:7, groups:5, blades:null, afType:'Manual',
+    weatherSealed:false, ois:false, oisStops:null, year:2025, discontinued:false,
+    imageUrl:'https://cdn.shopify.com/s/files/1/0729/5051/3889/files/13_3eaacd43-9a62-4582-b9de-bb3063ec86c2.png',
+    imageSource: { url:'https://www.sg-image.com/products/50mm-f1-8-mf-full-frame-lens-with-shaped-aperture', tier:'T1', title:'SG-image official store', note:'same maker product shot as the Fujifilm entry (one listing for all mounts)', date:'2026-10-22' },
+    asin:null,
+    prices:{USD:192,AUD:null,EUR:null,GBP:null,JPY:null,CAD:null,SGD:null},
+    specSources: [{ url:'https://www.sg-image.com/products/50mm-f1-8-mf-full-frame-lens-with-shaped-aperture', tier:'T1', title:'SG-image 50mm f/1.8 Shaped Aperture official store page', note:'L-Mount taken from the same spec card as the Fujifilm entry, which gives one figure for all mounts (L listed): Specification card image: full-frame, fixed f/1.8 with interchangeable shaped-aperture plates (no iris; blades null, min = max), 7/5, 0.5m, 1:7.7, ø58 filter, approx. 311g, ø69 x 48mm. One figure for all mounts (E/X/Z/M43/EOS-M/R/L). Year from the store listing date (Aug 2025); the lens may have shipped earlier', date:'2026-10-22' }],
+    priceSource: { url:'https://www.sg-image.com/products/50mm-f1-8-mf-full-frame-lens-with-shaped-aperture', tier:'T1', title:'SG-image official store', note:'"L" variant price $192 (store products.json, 2026-10-22); non-USD not examined', date:'2026-10-22' },
+    priceIncomplete:true,
+    productUrl:'https://www.sg-image.com/products/50mm-f1-8-mf-full-frame-lens-with-shaped-aperture',
+  },
+
   /* ── OM System M.Zuiko (MFT, 2.0× crop) — major MFT third party ── */
   'omsystem-12-40mm-f28-pro': {
     name:'OM System M.Zuiko 12-40mm f/2.8 PRO II', manufacturer:'OM System', line:'PRO', type:'Zoom',
@@ -3764,6 +3799,7 @@ const LENS_DROPDOWN_GROUPS = [
   { label: '── TTArtisan (L-Mount) ──', ids: ['ttartisan-50mm-f18-neo-l', 'ttartisan-40mm-f2-l', 'ttartisan-14mm-f28-asph-l', 'ttartisan-75mm-f2-l', 'ttartisan-11mm-f28-fisheye-l', 'ttartisan-tilt-shift-17mm-f4-asph-l'] },
   { label: '── 7Artisans (L-Mount) ──', ids: ['7artisans-35mm-f18-l', '7artisans-24mm-f18-l', '7artisans-40mm-f25-lite-l', '7artisans-135mm-f18-l', '7artisans-18mm-f56-l', '7artisans-10mm-f25-af-fisheye-l', '7artisans-75mm-f14-l', '7artisans-14mm-f28-l', '7artisans-50mm-f18-l', '7artisans-10mm-f28-ii-l', '7artisans-10mm-f28-fisheye-l'] },
   { label: '── Meike (L-Mount) ──', ids: ['meike-85mm-f14-ii-l', 'meike-85mm-f18-se-ii-l'] },
+  { label: '── SG-image (L-Mount) ──', ids: ['sgimage-24mm-f63-l', 'sgimage-50mm-f18-l'] },
   { label: '── OM System Primes (MFT) ──', ids: ['omsystem-17mm-f12-pro', 'omsystem-25mm-f12-pro', 'omsystem-45mm-f12-pro', 'omsystem-60mm-f28-macro', 'omsystem-17mm-f18', 'omsystem-25mm-f18', 'omsystem-25mm-f18-ii', 'omsystem-45mm-f18', 'omsystem-8mm-f18-fisheye-pro', 'omsystem-20mm-f14-pro', 'omsystem-90mm-f35-macro-is-pro', 'omsystem-300mm-f4-is-pro', 'omsystem-12mm-f2', 'omsystem-75mm-f18', 'omsystem-30mm-f35-macro'] },
   { label: '── OM System Zooms (MFT) ──', ids: ['omsystem-12-40mm-f28-pro', 'omsystem-40-150mm-f4-pro', 'omsystem-12-100mm-f4-pro', 'omsystem-100-400mm-f5-63-ii', 'omsystem-7-14mm-f28-pro', 'omsystem-8-25mm-f4-pro', 'omsystem-12-45mm-f4-pro', 'omsystem-40-150mm-f28-pro', 'omsystem-50-200mm-f28-is-pro', 'omsystem-150-400mm-f45-tc125x-is-pro', 'omsystem-14-42mm-f35-56-iii', 'omsystem-14-42mm-f35-56-ez', 'omsystem-9-18mm-f4-56-ii', 'omsystem-40-150mm-f4-56-r', 'omsystem-14-150mm-f4-56-ii', 'omsystem-75-300mm-f48-67-ii', 'omsystem-12-200mm-f35-63', 'omsystem-150-600mm-f5-63-is'] },
   { label: '── Sigma (MFT) ──', ids: ['sigma-16mm-f14-mft', 'sigma-30mm-f14-mft', 'sigma-56mm-f14-mft'] },
