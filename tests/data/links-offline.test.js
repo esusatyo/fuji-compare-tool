@@ -59,6 +59,7 @@ const KNOWN_SHARED_LINKS = new Map([
   ['fujifilm productUrl https://www.fujifilm-x.com/global/products/cameras/', 20],
   // Laowa sells the Aksen 45mm and 17.5mm off one product page.
   ['fujifilm productUrl https://www.venuslens.net/product/laowa-aksen-ultra-macro-apo/', 2],
+  ['sony productUrl https://www.venuslens.net/product/laowa-aksen-ultra-macro-apo/', 2],
   // 7Artisans sells the 25/35/50mm f/1.8 Lite trio as ONE listing with mount and
   // focal-length variants; the photo is the maker's official family shot showing
   // all three barrels. Verified visually 2026-09-07.
@@ -169,8 +170,9 @@ const KNOWN_SHARED_LINKS = new Map([
 // Sony missing-lens pass (add-sony-missing-thirdparty-lenses, 2026-10-19+):
 // ~180 lenses are being added in maker batches without per-lens ASIN
 // lookups; ASINs are backfilled afterwards with the check-prices-and-buy-links
-// skill, which then tightens this back down. +21 Viltrox, +32 Samyang, +17 Sigma, +14 Tamron.
-const ASIN_GAP_BASELINE = 142;
+// skill, which then tightens this back down. +21 Viltrox, +32 Samyang, +17 Sigma, +14 Tamron,
+// +35 Laowa.
+const ASIN_GAP_BASELINE = 177;
 
 const allItems = () => brandDirs().flatMap(brand => {
   const { data } = loadBrand(brand);

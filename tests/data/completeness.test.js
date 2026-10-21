@@ -497,6 +497,12 @@ const KNOWN_IMAGE_GAPS = {
     // 2026-09-23 refresh — too new for a freely-licensed Commons photo yet
     // (ship Oct 2026).
     'fe-400mm-f45-gm-oss', 'fe-600mm-f63-gm-oss',
+    // Laowa batch (add-sony-missing-thirdparty-lenses, 2026-10-21): the RL
+    // lenses' official galleries (laowa.com.au) show only the Leica M version
+    // — a different, shorter barrel than the E version — or the lens mounted
+    // on a camera; the 15mm f/4.5 Shift's only image (DSC_4018-1) is a copy of
+    // the 20mm Shift's DSC_4018, so it can't be trusted as the 15mm.
+    'laowa-11mm-f45-rl', 'laowa-14mm-f4-rl', 'laowa-9mm-f56-rl', 'laowa-15mm-f45-shift',
   ]),
 };
 

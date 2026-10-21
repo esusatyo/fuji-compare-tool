@@ -1,11 +1,9 @@
 # Progress — Sony missing third-party lenses
 
-**Resume at:** 2.5 Laowa — 34 candidates mapped (scratch method below); read each lens's spec table BY HAND
-**Laowa notes (2026-10-19):**
-- Candidates (venuslens slug → laowa.com.au slug) are the E-capable lenses minus the 3 already in the data (90 macro, 15 f/2, 10 Cookie) and minus bundles ("The …"), cine, probe, Magic Shift Converter.
-- **Trap:** laowa.com.au table rows include WooCommerce SHIPPING placeholders ("9.5 × 7 cm", "0.503 kg") and unit typos ("254 kg"). Never take Dimensions/Weight from the first table row; use the lens's own spec row (often a second "Dimensions"/"Weight" row) and cross-check against venuslens.net's product page (Chrome; in-page fetch of /product/<slug>/ works, output truncates ~1000 chars).
-- Sony E variation regular prices (venuslens, 2026-10-19): Acris 35 449; Aksen 749; 4.5-10 399; 17 TS 1249; Argus 33 449; 105 STF 699; 11 RL 549; 200 f/2 AF 1999; 180 macro 499; 12 Lite 699; 8-15 699; 15 f/4.5 macro 399; 55 TS 1249; 100 TS 1249; 15 Cookie 399; 12-24 shift 699; 10 f/2.8 AF 799; 8-16 549; Argus 28 599; 58 macro 499; 12-24 f/5.6 649; 20 shift 1099; Argus 45 599; 85 macro 449; Argus 35 649; 15 shift 1199; 14 RL 449; 9 RL 599; 65 macro 399; 4mm 199; 100 macro 499; 10-18 599; 9mm 399; 25 ultra macro 399.
-- Images: use laowa.com.au / laowalenses.ca (venuslens images fail when embedded).
+**Resume at:** 2.6 Voigtländer (cosina.co.jp E-mount list; data has 3)
+**Laowa done 2026-10-21 (35 lenses):** specs from venuslens.net store API descriptions (Laowa's own spec tables; laowa.com.au attributes are copies, not a 2nd source). B&H Sony E listings filled what Laowa leaves out or gives for another mount only: min apertures, ACRIS/8-15/12mm Lite E dimensions, and diameter-vs-length order (Laowa's "A x B" order is inconsistent: 9mm and 25mm are length x diameter). Images: first laowa.com.au gallery shot (mostly files named *FE/*SE); 4 gapped (RL 9/11/14 galleries show only the Leica M barrel; 15mm Shift's image is a copy of the 20mm Shift's). Typo fixed: 12mm Lite MFD "14mm" -> 14cm.
+**Found in other brands (fix in the Nikon refresh / follow-up):** nikon laowa-25mm-f28-25-5x-macro and laowa-17mm-f4-tilt-shift have length/diameter swapped; nikon laowa-argus-33mm-f095 minAperture 16 (B&H/Fuji: f/11); nikon laowa-15mm-f45-shift uses the 20mm Shift's photo; fujifilm laowa-4mm-f28-fisheye and laowa-12-24mm-f56-shift have length/diameter swapped vs Laowa's order.
+**Not entered — ask owner:** DSLR-era designs still sold with a Sony FE mount: 105mm f/2 STF, 60mm f/2.8 2X Macro, 15mm f/4 Wide Angle Macro, 12mm f/2.8 Zero-D (original). Also skipped: bundles, cine, probe, Aurogon microscope, MSC, 10mm Cookie silver (same lens).
 **Branch:** canon-sony-lens-refresh (rebased onto main 2026-10-21; now worked from worktree refresh-camera-data-sep2026, local branch csr-continue)   **Last green commit:** 427328a Canon: check third-party RF prices
 
 ## Method (reuse)
@@ -21,7 +19,7 @@
 | Samyang | 33 | 32 | 1 (3-lens set) | 98cc6ab |
 | Sigma | 18 (+8 renamed) | 17 | 1 (no US price) | 52d6307 |
 | Tamron | 14 | 14 | 0 (4 DSLR out of scope) | d366f95 |
-| Laowa | 34 | — | — | in progress |
+| Laowa | 39 | 35 | 4 (DSLR-era FE, ask owner) | (this commit) |
 
 ## Deferred / skipped (with reason)
 
