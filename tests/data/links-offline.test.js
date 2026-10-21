@@ -195,8 +195,8 @@ const KNOWN_SHARED_LINKS = new Map([
 // that entry's asin, so only the ones that had none add a gap — +4 Sigma L /
 // Leica SL copies, +1 Samyang L, +19 Laowa L, +6 TTArtisan L,
 // +11 7Artisans L, +2 Meike L, +2 SG-image L, +22 Laowa MFT (11 each in
-// panasonic and olympus).
-const ASIN_GAP_BASELINE = 395;
+// panasonic and olympus), +10 Voigtländer MFT (5 each).
+const ASIN_GAP_BASELINE = 405;
 
 const allItems = () => brandDirs().flatMap(brand => {
   const { data } = loadBrand(brand);
