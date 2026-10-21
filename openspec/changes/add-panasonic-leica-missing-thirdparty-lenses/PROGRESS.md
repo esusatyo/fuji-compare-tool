@@ -1,6 +1,7 @@
 # Progress — Panasonic + Leica missing third-party lenses
 
-**Resume at:** 2.2 (copies: OM System → Panasonic; LUMIX 35-100 II → Olympus)
+**Resume at:** 3.1 (Samyang + Viltrox L)
+**2.2 done 2026-10-22:** 21 OM System lenses copied verbatim from olympus/data.js into Panasonic's OM System Primes/Zooms groups (all had ASINs); LUMIX G X Vario 35-100 f/2.8 II copied into olympus/data.js with its image gap.
 **2.1 done 2026-10-22:** 14 Sigma L lenses copied verbatim from sigma/data.js (shared-mount test now compares 38 shared ids) into the existing Sigma Primes/Zooms groups; 18 Leica SL lenses copied from leica/data.js into new "Leica SL Primes / Zooms (L-Mount)" groups. ASIN baseline +4 (copies that had none).
 **Branch:** canon-sony-lens-refresh (local csr-continue, worktree refresh-camera-data-sep2026); same PR as Canon/Sony/Nikon (#78)
 **Owner decision 2026-10-22:** Leica gets M-mount third-party lenses and every full-frame L lens on Panasonic's page; Leica SL lenses go onto Panasonic's page; Sigma's page stays first-party only.
@@ -44,6 +45,7 @@ Makers' store catalogues (Shopify `products.json`, venuslens Woo Store API) and 
 ## Batches
 | Batch | Candidates | Entered | Skipped | Committed |
 |---|---|---|---|---|
-| 2.1 Sigma L + Leica SL copies | 32 | 32 | 0 | (this commit) |
+| 2.1 Sigma L + Leica SL copies | 32 | 32 | 0 | 4e1b295 |
+| 2.2 OM System → Panasonic, LUMIX 35-100 II → Olympus | 22 | 22 | 0 | (this commit) |
 
 ## Skipped

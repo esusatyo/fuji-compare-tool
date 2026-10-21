@@ -1822,6 +1822,27 @@ const LENSES = {
     priceSource: { url:'https://shop.panasonic.com/products/g-series-12-60mm-f2-8-4-0-asph-leica-lens', tier:'T1', note:'"Regular price $1,049.99" on shop.panasonic.com (Aug 2026, currently on promo at $899.99), confirming the stored $1,049 unchanged', date:'2026-08-23' },
     productUrl:'https://shop.panasonic.com/products/g-series-12-60mm-f2-8-4-0-asph-leica-lens',
   },
+  'lumix-g-35-100mm-f2-8-ii': {
+    name:'LUMIX G X Vario 35-100mm F2.8 II O.I.S.', manufacturer:'Panasonic', line:'LUMIX G', type:'Zoom', mount:'mft', asin:null,
+    focalLength:null, focalLengthMin:35, focalLengthMax:100, focalLengthEquiv:'70-200mm',
+    maxAperture:2.8, minAperture:22, weight:360, length:100.0, diameter:67.4,
+    filterThread:58, minFocusDist:85, maxMagnification:0.10,
+    elements:18, groups:13, blades:7, afType:'Stepping Motor',
+    weatherSealed:true, ois:true, oisStops:null, year:2017, discontinued:true,
+    // 2026-09-06: re-confirmed still a genuine gap. B&H's own "replacement"
+    // landing page for this discontinued SKU (model H-HSA35100) confirms it was
+    // replaced by the H-ES35100, i.e. this dataset's own
+    // leica-dg-35-100mm-f2-8-power-ois entry — consistent with the existing
+    // KNOWN_IMAGE_GAPS note. Still no T1 (maker) or T2 (free-repo) image exists;
+    // B&H has one, but retailer photos (T3) aren't valid provenance per this
+    // project's imageSource rule (schema.js: "T3/T4/NEWS never establish that a
+    // given photo depicts the product"), so left as imageUrl:null rather than
+    // using it.
+    imageUrl:null,
+    prices:{USD:1097,AUD:null,EUR:null,GBP:null,JPY:null,CAD:null,SGD:null},
+    productUrl:null,
+  },
+
   'leica-dg-35-100mm-f2-8-power-ois': {
     name:'LEICA DG VARIO-ELMARIT 35-100mm F2.8 POWER O.I.S.', manufacturer:'Panasonic', line:'LUMIX G', type:'Zoom', mount:'mft', asin:'B0CHTFTN2B',
     focalLength:null, focalLengthMin:35, focalLengthMax:100, focalLengthEquiv:'70-200mm',
@@ -2172,7 +2193,7 @@ const LENS_DROPDOWN_GROUPS = [
   { label: '── M.Zuiko Primes ──', ids: ['omsystem-12mm-f2', 'omsystem-17mm-f18', 'omsystem-25mm-f18', 'omsystem-25mm-f18-ii', 'omsystem-45mm-f18', 'omsystem-75mm-f18', 'omsystem-60mm-f28-macro', 'omsystem-30mm-f35-macro'] },
   { label: '── M.Zuiko Zooms ──', ids: ['omsystem-100-400mm-f5-63-ii', 'omsystem-14-42mm-f35-56-iii', 'omsystem-14-42mm-f35-56-ez', 'omsystem-9-18mm-f4-56-ii', 'omsystem-40-150mm-f4-56-r', 'omsystem-14-150mm-f4-56-ii', 'omsystem-75-300mm-f48-67-ii', 'omsystem-12-200mm-f35-63', 'omsystem-150-600mm-f5-63-is'] },
   { label: '── LUMIX G Primes (MFT) ──',     ids: ['lumix-g-fisheye-8mm-f3-5', 'leica-dg-9mm-f1-7', 'leica-dg-12mm-f1-4', 'lumix-g-14mm-f2-5-ii', 'leica-dg-15mm-f1-7', 'lumix-g-20mm-f1-7-ii', 'leica-dg-25mm-f1-4-ii', 'lumix-g-25mm-f1-7', 'lumix-g-macro-30mm-f2-8', 'leica-dg-42-5mm-f1-2-nocticron', 'lumix-g-42-5mm-f1-7', 'leica-dg-45mm-f28-macro', 'leica-dg-200mm-f2-8'] },
-  { label: '── LUMIX G Zooms (MFT) ──',      ids: ['lumix-g-7-14mm-f4', 'leica-dg-8-18mm-f2-8-4', 'leica-dg-10-25mm-f1-7', 'lumix-g-12-32mm-f3-5-5-6', 'leica-dg-12-60mm-f2-8-4', 'lumix-g-12-60mm-f3-5-5-6', 'lumix-g-12-35mm-f2-8-ii', 'lumix-g-x-pz-14-42mm-f3-5-5-6', 'leica-dg-25-50mm-f1-7', 'leica-dg-35-100mm-f2-8-power-ois', 'lumix-g-35-100mm-f4-5-6', 'leica-dg-50-200mm-f2-8-4', 'lumix-g-14-140mm-f3-5-5-6-ii', 'lumix-g-100-300mm-f4-5-6-ii', 'leica-dg-100-400mm-f4-6-3-ii'] },
+  { label: '── LUMIX G Zooms (MFT) ──',      ids: ['lumix-g-7-14mm-f4', 'leica-dg-8-18mm-f2-8-4', 'leica-dg-10-25mm-f1-7', 'lumix-g-12-32mm-f3-5-5-6', 'leica-dg-12-60mm-f2-8-4', 'lumix-g-12-60mm-f3-5-5-6', 'lumix-g-12-35mm-f2-8-ii', 'lumix-g-x-pz-14-42mm-f3-5-5-6', 'leica-dg-25-50mm-f1-7', 'lumix-g-35-100mm-f2-8-ii', 'leica-dg-35-100mm-f2-8-power-ois', 'lumix-g-35-100mm-f4-5-6', 'leica-dg-50-200mm-f2-8-4', 'lumix-g-14-140mm-f3-5-5-6-ii', 'lumix-g-100-300mm-f4-5-6-ii', 'leica-dg-100-400mm-f4-6-3-ii'] },
   { label: '── Sigma (MFT) ──', ids: ['sigma-16mm-f14-mft', 'sigma-30mm-f14-mft', 'sigma-56mm-f14-mft'] },
   { label: '── Voigtländer & Laowa (MFT) ──', ids: ['voigtlander-nokton-25mm-f095', 'laowa-7-5mm-f2-mft', 'laowa-90mm-f28-macro-mft'] },
 ];

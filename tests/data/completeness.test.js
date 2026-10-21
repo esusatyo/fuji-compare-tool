@@ -325,6 +325,9 @@ const KNOWN_IMAGE_GAPS = {
     // physical product) from panasonic/data.js's identical entry below,
     // gap and all — see that entry's note for why no photo was found.
     'lumix-g-12-32mm-f3-5-5-6',
+    // lumix-g-35-100mm-f2-8-ii: 2026-10-22 Panasonic/Leica missing-lens
+    // pass, copied from panasonic/data.js with its gap — see that entry.
+    'lumix-g-35-100mm-f2-8-ii',
   ]),
   panasonic: new Set([
     // Cameras: all resolved (see git history — Commons sweeps plus Tier 3

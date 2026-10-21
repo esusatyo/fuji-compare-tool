@@ -5,7 +5,7 @@
 ## 2. Copies of verified same-mount entries
 
 - [x] 2.1 Panasonic ← Sigma L-Mount lenses and Leica SL lenses
-- [ ] 2.2 Panasonic ← OM System lenses; Olympus ← LUMIX G 35-100 II
+- [x] 2.2 Panasonic ← OM System lenses; Olympus ← LUMIX G 35-100 II
 
 ## 3. Panasonic L-Mount makers
 
