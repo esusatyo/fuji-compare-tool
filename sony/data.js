@@ -3246,9 +3246,9 @@ const LENSES = {
     imageUrl:'https://cdn.shopify.com/s/files/1/0488/0790/3385/files/AF24-60mmF2.8FE_Front_1.png',
     imageSource: { url:'https://samyangus.com/products/24-60mm-f2-8-af-standard-zoom-lens-sony-e', tier:'T1', title:'Samyang US official store', note:'first product image, lens alone; model badge legible', date:'2026-10-19' },
     asin:null,
-    prices:{USD:1399,AUD:2199,EUR:1599,GBP:1299,JPY:215000,CAD:1799,SGD:1999},
+    prices:{USD:549,AUD:899,EUR:599,GBP:499,JPY:86000,CAD:699,SGD:799},
     specSources: [{ url:'https://samyangus.com/products/24-60mm-f2-8-af-standard-zoom-lens-sony-e', tier:'T1', title:'Samyang AF 24-60mm f/2.8 FE - Samyang US store page', note:'Specifications table (Sony E/FE): 14/11, 9 blades, 0.18m, 0.27x, ø72 filter, ø78 x 102mm, 494g, AF motor Linear STM, weather sealing listed. Year: store listing date', date:'2026-10-19' }],
-    priceSource: { url:'https://samyangus.com/products/24-60mm-f2-8-af-standard-zoom-lens-sony-e', tier:'T1', title:'Samyang US official store', note:'regular price $1399 = compare-at; on sale at $549.00 at the time, not used; read from the store\'s products.json', date:'2026-10-19' },
+    priceSource: { url:'https://samyangus.com/products/24-60mm-f2-8-af-standard-zoom-lens-sony-e', tier:'T1', title:'Samyang US official store', note:'selling price $549 used (owner decision 2026-10-21: the $1399 compare-at is far above launch MSRP); read from the store\'s products.json', date:'2026-10-19' },
     productUrl:'https://samyangus.com/products/24-60mm-f2-8-af-standard-zoom-lens-sony-e',
   },
 
@@ -3326,9 +3326,9 @@ const LENSES = {
     imageUrl:'https://cdn.shopify.com/s/files/1/0488/0790/3385/products/AF24-70_2.8FE_FrontHood.png',
     imageSource: { url:'https://samyangus.com/products/24-70mm-f2-8-af-full-frame-zoom-lens-sony-e', tier:'T1', title:'Samyang US official store', note:'first product image, lens alone; model badge legible', date:'2026-10-19' },
     asin:null,
-    prices:{USD:1299,AUD:1999,EUR:1499,GBP:1199,JPY:196000,CAD:1699,SGD:1899},
+    prices:{USD:699,AUD:1099,EUR:799,GBP:599,JPY:109000,CAD:899,SGD:999},
     specSources: [{ url:'https://samyangus.com/products/24-70mm-f2-8-af-full-frame-zoom-lens-sony-e', tier:'T1', title:'Samyang AF 24-70mm f/2.8 FE - Samyang US store page', note:'Specifications table (Sony E/FE): 17/14, blade count not published blades, 0.35m, 0.27x, ø82 filter, ø88 x 128.5mm, 1027g, AF motor Linear STM, weather sealing listed. Year: estimated (announced early 2024; store handle predates it)', date:'2026-10-19' }],
-    priceSource: { url:'https://samyangus.com/products/24-70mm-f2-8-af-full-frame-zoom-lens-sony-e', tier:'T1', title:'Samyang US official store', note:'regular price $1299 = compare-at; on sale at $699.00 at the time, not used (Lens variant); read from the store\'s products.json', date:'2026-10-19' },
+    priceSource: { url:'https://samyangus.com/products/24-70mm-f2-8-af-full-frame-zoom-lens-sony-e', tier:'T1', title:'Samyang US official store', note:'selling price $699 used (owner decision 2026-10-21: the $1299 compare-at is far above launch MSRP) (Lens variant); read from the store\'s products.json', date:'2026-10-19' },
     productUrl:'https://samyangus.com/products/24-70mm-f2-8-af-full-frame-zoom-lens-sony-e',
   },
 

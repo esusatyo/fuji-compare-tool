@@ -6,7 +6,7 @@
 - **Trap:** laowa.com.au table rows include WooCommerce SHIPPING placeholders ("9.5 × 7 cm", "0.503 kg") and unit typos ("254 kg"). Never take Dimensions/Weight from the first table row; use the lens's own spec row (often a second "Dimensions"/"Weight" row) and cross-check against venuslens.net's product page (Chrome; in-page fetch of /product/<slug>/ works, output truncates ~1000 chars).
 - Sony E variation regular prices (venuslens, 2026-10-19): Acris 35 449; Aksen 749; 4.5-10 399; 17 TS 1249; Argus 33 449; 105 STF 699; 11 RL 549; 200 f/2 AF 1999; 180 macro 499; 12 Lite 699; 8-15 699; 15 f/4.5 macro 399; 55 TS 1249; 100 TS 1249; 15 Cookie 399; 12-24 shift 699; 10 f/2.8 AF 799; 8-16 549; Argus 28 599; 58 macro 499; 12-24 f/5.6 649; 20 shift 1099; Argus 45 599; 85 macro 449; Argus 35 649; 15 shift 1199; 14 RL 449; 9 RL 599; 65 macro 399; 4mm 199; 100 macro 499; 10-18 599; 9mm 399; 25 ultra macro 399.
 - Images: use laowa.com.au / laowalenses.ca (venuslens images fail when embedded).
-**Branch:** canon-sony-lens-refresh (worktree ../fuji-compare-canon-sony)   **Last green commit:** 427328a Canon: check third-party RF prices
+**Branch:** canon-sony-lens-refresh (rebased onto main 2026-10-21; now worked from worktree refresh-camera-data-sep2026, local branch csr-continue)   **Last green commit:** 427328a Canon: check third-party RF prices
 
 ## Method (reuse)
 - Find gaps: diff each maker's Shopify `products.json` handles against `productUrl`s.
@@ -26,7 +26,7 @@
 ## Deferred / skipped (with reason)
 
 ## Open questions for the user
-- Samyang US compare-at prices used as USD (owner rule) look inflated on two zooms: AF 24-60 f/2.8 $1,399 (selling $549), AF 24-70 f/2.8 $1,299 (selling $699).
+- ~~Samyang compare-at inflated on AF 24-60 / AF 24-70~~ — RESOLVED 2026-10-21: owner chose the selling price ($549 / $699); regional prices recomputed from it.
 - Samyang MF images show the DSLR-mount barrel (noted per entry).
 
 ## Notes
