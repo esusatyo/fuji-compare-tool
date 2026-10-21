@@ -11,7 +11,7 @@
 - [x] 2.5 Laowa
 - [x] 2.6 Voigtländer
 - [x] 2.7 Zeiss
-- [ ] 2.8 TTArtisan
+- [x] 2.8 TTArtisan
 - [ ] 2.9 7Artisans
 - [ ] 2.10 Meike
 - [ ] 2.11 Thypoch / SG-image

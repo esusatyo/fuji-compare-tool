@@ -1,6 +1,8 @@
 # Progress — Sony missing third-party lenses
 
-**Resume at:** 2.8 TTArtisan (~20 E)
+**Resume at:** 2.9 7Artisans (~30 E)
+**TTArtisan done 2026-10-21 (19 lenses):** ttartisan.store products.json (33 products with a Sony E variant). Specs from each product page's spec table (HTML, not the products.json body, which is marketing bullets). Dimensions exist only as Size-diagram IMAGES on the official page: Sony E sizes came from the Nikon entries' notes (8 AF lenses, read from those diagrams) or B&H's Sony E listing text (11). TTArtisan now has its own dropdown group (27mm moved out of "Other").
+**TTArtisan skipped — no sourceable Sony E dimensions (B&H lists none, no diagram found):** AF 24mm f/3.8 mini (new 2026-10), 100mm f/2.8 2X Macro, 10mm f/2 ASPH, 500mm f/6.3, Tilt 50mm f/1.4, 50mm f/2, 50mm f/0.95, 50mm f/1.4 ASPH, 17mm f/1.4, AF 35mm f/1.8 (original), Tilt-Shift 100mm Macro, 21mm f/1.5, 90mm f/1.25 (page's mount table says GFX/XCD only); 11mm f/2.8 fisheye (no spec table). Revisit by reading each page's Size diagram by eye.
 **Zeiss done 2026-10-21 (8 lenses):** Batis 18/40 CF/135, Touit 12/50M, Otus ML 35/50/85 (new 2025 manual line). Specs from zeiss.com per-line Technical Data tables (use "Diameter max." and "Length (Without Lens Caps)", E column); USD from B&H. Batis 25/85 were wrongly marked discontinued (Zeiss lists them, B&H stocks them new) — now current; Batis 85, Loxia 35, Touit 32 had wrong sizes (with-caps length / focus-ring diameter) — corrected. Loxia 25/50/85 NOT added: B&H no longer stocks Loxia (one Loxia 50 at clearance), no citable US price. 5 image gaps (Zeiss has only family shots; Commons has nothing).
 **Voigtländer done 2026-10-21 (13 lenses):** Cosina's E-mount list (17 current, 3 already in) — specs from each EN product page; USD = B&H regular (strikethrough) price, a fall sale was on. Existing Nokton 40 f/1.2 $799 -> $1099. **Trap:** a Cosina page's FIRST image (…P00…) is a sample photo, not the lens — use the `…-01` file. That bug was live on sony APO-Lanthar 35/50 and panasonic+olympus Nokton 25 f/0.95; all fixed here.
 **Laowa done 2026-10-21 (35 lenses):** specs from venuslens.net store API descriptions (Laowa's own spec tables; laowa.com.au attributes are copies, not a 2nd source). B&H Sony E listings filled what Laowa leaves out or gives for another mount only: min apertures, ACRIS/8-15/12mm Lite E dimensions, and diameter-vs-length order (Laowa's "A x B" order is inconsistent: 9mm and 25mm are length x diameter). Images: first laowa.com.au gallery shot (mostly files named *FE/*SE); 4 gapped (RL 9/11/14 galleries show only the Leica M barrel; 15mm Shift's image is a copy of the 20mm Shift's). Typo fixed: 12mm Lite MFD "14mm" -> 14cm.
@@ -23,7 +25,8 @@
 | Tamron | 14 | 14 | 0 (4 DSLR out of scope) | d366f95 |
 | Laowa | 39 | 35 | 4 (DSLR-era FE, owner: out) | fb9e34d |
 | Voigtländer | 13 | 13 | 0 | fe9691e |
-| Zeiss | 11 | 8 | 3 (Loxia, discontinued) | (this commit) |
+| Zeiss | 11 | 8 | 3 (Loxia, discontinued) | 9191b4f |
+| TTArtisan | 33 | 19 | 14 (no E dimensions) | (this commit) |
 
 ## Deferred / skipped (with reason)
 
