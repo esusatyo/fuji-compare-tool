@@ -18,7 +18,7 @@
 
 ## 4. MFT makers (Panasonic + Olympus)
 
-- [ ] 4.1 Laowa
+- [x] 4.1 Laowa
 - [ ] 4.2 Voigtländer
 - [ ] 4.3 TTArtisan / 7Artisans / Meike / SG-image / Samyang
 

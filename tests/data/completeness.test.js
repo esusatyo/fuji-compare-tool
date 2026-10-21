@@ -328,6 +328,9 @@ const KNOWN_IMAGE_GAPS = {
     // lumix-g-35-100mm-f2-8-ii: 2026-10-22 Panasonic/Leica missing-lens
     // pass, copied from panasonic/data.js with its gap — see that entry.
     'lumix-g-35-100mm-f2-8-ii',
+    // laowa-17mm-f18-mft: 2026-10-22 Panasonic/Leica missing-lens pass. Not on
+    // Laowa Australia/Canada; Laowa's US store (venuslens.net) blocks hotlinks.
+    'laowa-17mm-f18-mft',
   ]),
   panasonic: new Set([
     // Cameras: all resolved (see git history — Commons sweeps plus Tier 3
@@ -403,6 +406,9 @@ const KNOWN_IMAGE_GAPS = {
     // photos of the AF Sony E versions (VE1228AFFE / VE1028AFFE files).
     'laowa-11mm-f45-rl-l', 'laowa-14mm-f4-rl-l', 'laowa-9mm-f56-rl-l', 'laowa-15mm-f45-shift-l',
     'laowa-12mm-f28-lite-zero-d-l', 'laowa-10mm-f28-l',
+    // laowa-17mm-f18-mft: 2026-10-22 Panasonic/Leica missing-lens pass. Not on
+    // Laowa Australia/Canada; Laowa's US store (venuslens.net) blocks hotlinks.
+    'laowa-17mm-f18-mft',
   ]),
   sony: new Set([
     // tamron-70-300mm: the only Commons file is the Nikon Z version (Model
@@ -548,6 +554,9 @@ const SHARED_IMAGE_OK = {
     // Laowa 90mm f/2.8 2x Macro APO — one maker studio shot, entered once per
     // Panasonic-file mount (L and MFT).
     ['laowa-90mm-f28-macro-l', 'laowa-90mm-f28-macro-mft'],
+    // Laowa Aksen 45mm / 17.5mm — same, entered in L and MFT (2026-10-22).
+    ['laowa-aksen-45mm-f28-l', 'laowa-aksen-45mm-f28-mft'],
+    ['laowa-aksen-17-5mm-f17-l', 'laowa-aksen-17-5mm-f17-mft'],
   ],
   sony: [
     // Same 7Artisans Lite trio as nikon above (one listing, one hero image).

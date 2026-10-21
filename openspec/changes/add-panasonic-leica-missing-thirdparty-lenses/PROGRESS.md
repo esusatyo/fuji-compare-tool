@@ -1,6 +1,7 @@
 # Progress — Panasonic + Leica missing third-party lenses
 
-**Resume at:** 4.1 (Laowa MFT, mirrored into olympus/)
+**Resume at:** 4.2 (Voigtländer MFT, mirrored into olympus/)
+**4.1 done 2026-10-22 (11 Laowa MFT lenses, in both panasonic/ and olympus/):** Aksen 45 / 17.5, 4.5-10 CF fisheye, 4mm fisheye, 9mm Zero-D (Sony entries cloned, 2x equivalents; Laowa gives one size for all mounts, MFT listed); MFT-only designs Argus 25 MFT APO, Argus 18 MFT APO, 17 f/1.8 MFT, 50 2X macro, 10 f/2 Zero-D MFT, 6 f/2 Zero-D MFT from Laowa's spec tables + B&H MFT listings (min aperture from B&H). 6mm/10mm/Argus 18 are not on Laowa's US store: USD = B&H, specs/images from Laowa Australia. "Voigtländer & Laowa (MFT)" group split into Laowa / Voigtländer groups on both pages. 17mm f/1.8 image gapped (only on venuslens.net, which blocks hotlinks).
 **3.6 done 2026-10-22 (2 SG-image L lenses):** MF 24 f/6.3 pancake and MF 50 f/1.8 Shaped Aperture, cloned from the Sony entries (SG-image's spec card gives one figure for every mount, L listed); USD = L variant price (same as E). AF 35 f/2.2 skipped as on sony/ (spec card only in the rendered page). APS-C SG-image L lenses out of scope.
 **3.5 done 2026-10-22 (2 Meike L lenses):** AF 85 f/1.4 MIX II and AF 85 f/1.8 SE Mark II, from B&H's L-Mount listings (Meike's L listings have no spec text); USD = Meike store L listing price.
 **3.4 done 2026-10-22 (11 7Artisans L lenses):** AF 35 / 24 / 40 / 50 f/1.8 / 135 / 10 f/2.5 fisheye, MF 18 f/5.6, 75 f/1.4, 14 f/2.8, 10 f/2.8 II, 10 f/2.8 fisheye. Shared optics from the Sony entries; L size/weight from each B&H L-Mount listing (several are identical to the E figures; 40mm, 135mm, 18mm differ); USD = store L variant regular (compare-at) price, all equal to the Sony E prices. L-specific shots for the 40, 50 and AF 10mm.
@@ -58,7 +59,8 @@ Makers' store catalogues (Shopify `products.json`, venuslens Woo Store API) and 
 | 3.3 TTArtisan L | 13 | 6 | 7 | b054488 |
 | 3.4 7Artisans L | 15 | 11 | 4 | 4615223 |
 | 3.5 Meike L | 11 | 2 | 9 | ba30b66 |
-| 3.6 SG-image L | 3 | 2 | 1 | (this commit) |
+| 3.6 SG-image L | 3 | 2 | 1 | 9699404 |
+| 4.1 Laowa MFT | 11 | 11 | 0 | (this commit) |
 
 ## Skipped
 ### Laowa L (3.2)

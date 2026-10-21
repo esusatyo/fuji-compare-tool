@@ -61,7 +61,12 @@ const KNOWN_SHARED_LINKS = new Map([
   ['fujifilm productUrl https://www.venuslens.net/product/laowa-aksen-ultra-macro-apo/', 2],
   ['sony productUrl https://www.venuslens.net/product/laowa-aksen-ultra-macro-apo/', 2],
   ['nikon productUrl https://www.venuslens.net/product/laowa-aksen-ultra-macro-apo/', 2],
-  ['panasonic productUrl https://www.venuslens.net/product/laowa-aksen-ultra-macro-apo/', 2],
+  // Panasonic carries both Aksens twice (L-Mount and MFT): one page, and one
+  // maker photo per lens for both mounts.
+  ['panasonic productUrl https://www.venuslens.net/product/laowa-aksen-ultra-macro-apo/', 4],
+  ['panasonic imageUrl https://www.laowalenses.ca/wp-content/uploads/2026/07/02_VEAKSEN4528FE-scaled-1-768x768.jpg', 2],
+  ['panasonic imageUrl https://www.laowalenses.ca/wp-content/uploads/2026/07/01_VEAKSEN17517FE-CO-scaled-1-768x768.jpg', 2],
+  ['olympus productUrl https://www.venuslens.net/product/laowa-aksen-ultra-macro-apo/', 2],
   // Zeiss has one page (with a per-lens Technical Data table) per lens line.
   ['sony productUrl https://www.zeiss.com/photonics-and-optics/us/photography/products/lenses-for-mirrorless-system-cameras/batis-lenses.html', 5],
   ['sony productUrl https://www.zeiss.com/photonics-and-optics/us/photography/products/lenses-for-mirrorless-system-cameras/touit-lenses.html', 3],
@@ -189,8 +194,9 @@ const KNOWN_SHARED_LINKS = new Map([
 // lenses, 2026-10-22+): copies of entries already in another brand file carry
 // that entry's asin, so only the ones that had none add a gap — +4 Sigma L /
 // Leica SL copies, +1 Samyang L, +19 Laowa L, +6 TTArtisan L,
-// +11 7Artisans L, +2 Meike L, +2 SG-image L.
-const ASIN_GAP_BASELINE = 373;
+// +11 7Artisans L, +2 Meike L, +2 SG-image L, +22 Laowa MFT (11 each in
+// panasonic and olympus).
+const ASIN_GAP_BASELINE = 395;
 
 const allItems = () => brandDirs().flatMap(brand => {
   const { data } = loadBrand(brand);
