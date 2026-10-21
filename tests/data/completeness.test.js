@@ -220,6 +220,9 @@ const KNOWN_IMAGE_GAPS = {
     // (Nikon missing-lens pass); as on sony/, the RL galleries show only the
     // Leica M barrel (11mm: one shot of the Z and E versions side by side).
     'laowa-11mm-f45-rl', 'laowa-14mm-f4-rl', 'laowa-9mm-f56-rl',
+    // Zeiss Otus ML 35/50/85 (Z): added 2026-10-21; as on sony/, Zeiss shows only
+    // family shots and Commons has nothing.
+    'zeiss-otus-ml-35mm-f14', 'zeiss-otus-ml-50mm-f14', 'zeiss-otus-ml-85mm-f14',
     // Cameras: all 10 resolved 2026-08-15 (Commons photos sourced + applied).
     // Lenses — re-run 2026-08-15 (Nikon+Panasonic lens image pass): z-dx-16-50mm-vr
     // and viltrox-27mm-f12 resolved and removed from this list.

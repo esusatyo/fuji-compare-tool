@@ -65,6 +65,7 @@ const KNOWN_SHARED_LINKS = new Map([
   ['sony productUrl https://www.zeiss.com/photonics-and-optics/us/photography/products/lenses-for-mirrorless-system-cameras/batis-lenses.html', 5],
   ['sony productUrl https://www.zeiss.com/photonics-and-optics/us/photography/products/lenses-for-mirrorless-system-cameras/touit-lenses.html', 3],
   ['sony productUrl https://www.zeiss.com/photonics-and-optics/us/photography/products/lenses-for-mirrorless-system-cameras/otus-ml-lenses.html', 3],
+  ['nikon productUrl https://www.zeiss.com/photonics-and-optics/us/photography/products/lenses-for-mirrorless-system-cameras/otus-ml-lenses.html', 3],
   // 7Artisans sells the 25/35/50mm f/1.8 Lite trio as ONE listing with mount and
   // focal-length variants; the photo is the maker's official family shot showing
   // all three barrels. Verified visually 2026-09-07.
@@ -181,8 +182,8 @@ const KNOWN_SHARED_LINKS = new Map([
 // +35 Laowa, +13 Voigtländer, +9 Zeiss (8 new + Batis 85, now current again),
 // +19 TTArtisan, +28 7Artisans, +12 Meike, +13 Thypoch/SG-image.
 // Nikon missing-lens pass (add-nikon-missing-thirdparty-lenses, 2026-10-21+),
-// same approach: +1 Tamron, +14 Laowa.
-const ASIN_GAP_BASELINE = 286;
+// same approach: +1 Tamron, +14 Laowa, +2 Voigtländer, +3 Zeiss.
+const ASIN_GAP_BASELINE = 291;
 
 const allItems = () => brandDirs().flatMap(brand => {
   const { data } = loadBrand(brand);

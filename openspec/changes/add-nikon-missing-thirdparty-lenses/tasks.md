@@ -6,7 +6,7 @@
 
 - [x] 2.1 Viltrox + Tamron
 - [x] 2.2 Laowa
-- [ ] 2.3 Voigtländer + Zeiss
+- [x] 2.3 Voigtländer + Zeiss
 - [ ] 2.4 TTArtisan
 - [ ] 2.5 7Artisans
 - [ ] 2.6 Meike
