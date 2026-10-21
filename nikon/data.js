@@ -3696,6 +3696,74 @@ const LENSES = {
     priceIncomplete:true, productUrl:'https://meikeglobal.com/products/8518%E2%85%B1-se-z-mount',
   },
 
+  'meike-85mm-f14-ii': {
+    name:'Meike AF 85mm f/1.4 MIX II', manufacturer:'Meike', line:'MIX', type:'Prime',
+    mount:'z', focalLength:85, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'85mm',
+    maxAperture:1.4, minAperture:16, weight:656, length:110, diameter:85,
+    filterThread:77, minFocusDist:81, maxMagnification:null,
+    elements:15, groups:11, blades:11, afType:'STM',
+    weatherSealed:false, ois:false, oisStops:null, year:2026, discontinued:false,
+    imageUrl:'https://cdn.shopify.com/s/files/1/0251/3508/7676/files/8514ii-11.jpg',
+    imageSource: { url:'https://meikeglobal.com/products/8514iiz', tier:'T1', title:'Meike official store', note:'first image of the Z-mount listing, lens alone', date:'2026-10-21' },
+    asin:null,
+    prices:{USD:569,AUD:null,EUR:null,GBP:null,JPY:null,CAD:null,SGD:null},
+    specSources: [{ url:'https://www.bhphotovideo.com/c/product/1992603-REG/x.html/specs', tier:'T3', title:'B&H - Meike AF 85mm f/1.4 MIX II (Nikon Z) specs', note:'Nikon Z listing: 85 x 110mm (diameter x length), 656g, f/1.4-16, 81cm, 15/11, 11 blades, 77mm filter. Used because Meike publishes most specs only as images; shared optics match the Sony E entry', date:'2026-10-21' }, { url:'https://meikeglobal.com/products/8514iiz', tier:'T1', title:'Meike AF 85mm f/1.4 MIX II - official Meike store (Z listing)', note:'confirms the Nikon Z version. Year: 2026', date:'2026-10-21' }],
+    priceSource: { url:'https://meikeglobal.com/products/8514iiz', tier:'T1', title:'Meike official store', note:'Z listing price $569 (store products.json), rounded; non-USD not examined', date:'2026-10-21' },
+    priceIncomplete:true,
+    productUrl:'https://meikeglobal.com/products/8514iiz',
+  },
+
+  'meike-56mm-f17-air': {
+    name:'Meike AF 56mm f/1.7 Air', manufacturer:'Meike', line:'Air', type:'Prime',
+    mount:'z', focalLength:56, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'84mm',
+    maxAperture:1.7, minAperture:16, weight:190, length:59.2, diameter:66.5,
+    filterThread:52, minFocusDist:55, maxMagnification:null,
+    elements:11, groups:7, blades:9, afType:'STM',
+    weatherSealed:false, ois:false, oisStops:null, year:2026, discontinued:false,
+    imageUrl:'https://cdn.shopify.com/s/files/1/0251/3508/7676/files/18_4b517d23-88fd-4970-92d7-a2c14c0b8fbc.jpg',
+    imageSource: { url:'https://meikeglobal.com/products/5617z', tier:'T1', title:'Meike official store', note:'first image of the Z-mount listing, lens alone', date:'2026-10-21' },
+    asin:null,
+    prices:{USD:159,AUD:null,EUR:null,GBP:null,JPY:null,CAD:null,SGD:null},
+    specSources: [{ url:'https://www.bhphotovideo.com/c/product/1964753-REG/x.html/specs', tier:'T3', title:'B&H - Meike AF 56mm f/1.7 Air (Nikon Z) specs', note:'Nikon Z listing: 66.5 x 59.2mm, 190g, f/1.7-16, 11/7, 9 blades, 52mm filter. Used because Meike publishes most specs only as images; shared optics match the Sony E entry', date:'2026-10-21' }, { url:'https://meikeglobal.com/products/5617z', tier:'T1', title:'Meike AF 56mm f/1.7 Air - official Meike store (Z listing)', note:'confirms the Nikon Z version. Year: 2026', date:'2026-10-21' }],
+    priceSource: { url:'https://meikeglobal.com/products/5617z', tier:'T1', title:'Meike official store', note:'Z listing price $159 (store products.json), rounded; non-USD not examined', date:'2026-10-21' },
+    priceIncomplete:true,
+    productUrl:'https://meikeglobal.com/products/5617z',
+  },
+
+  'meike-23mm-f14': {
+    name:'Meike AF 23mm f/1.4', manufacturer:'Meike', line:'AF', type:'Prime',
+    mount:'z', focalLength:23, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'35mm',
+    maxAperture:1.4, minAperture:16, weight:302, length:81, diameter:66.5,
+    filterThread:58, minFocusDist:25, maxMagnification:null,
+    elements:13, groups:11, blades:9, afType:'STM',
+    weatherSealed:false, ois:false, oisStops:null, year:2025, discontinued:false,
+    imageUrl:'https://cdn.shopify.com/s/files/1/0251/3508/7676/files/2314E---1_a42ce956-bfee-48a7-ac95-a28fef7bf808.jpg',
+    imageSource: { url:'https://meikeglobal.com/products/2314z', tier:'T1', title:'Meike official store', note:'first image of the Z-mount listing, lens alone', date:'2026-10-21' },
+    asin:null,
+    prices:{USD:290,AUD:null,EUR:null,GBP:null,JPY:null,CAD:null,SGD:null},
+    specSources: [{ url:'https://www.bhphotovideo.com/c/product/1942623-REG/x.html/specs', tier:'T3', title:'B&H - Meike AF 23mm f/1.4 (Nikon Z) specs', note:'Nikon Z listing: 66.5 x 81mm, 302g (Sony E 298g), f/1.4-16, 0.25m, 13/11, 9 blades, 58mm filter. Used because Meike publishes most specs only as images; shared optics match the Sony E entry', date:'2026-10-21' }, { url:'https://meikeglobal.com/products/2314z', tier:'T1', title:'Meike AF 23mm f/1.4 - official Meike store (Z listing)', note:'confirms the Nikon Z version. Year: 2025', date:'2026-10-21' }],
+    priceSource: { url:'https://meikeglobal.com/products/2314z', tier:'T1', title:'Meike official store', note:'Z listing price $289.99 (store products.json), rounded; non-USD not examined', date:'2026-10-21' },
+    priceIncomplete:true,
+    productUrl:'https://meikeglobal.com/products/2314z',
+  },
+
+  'meike-35mm-f2': {
+    name:'Meike AF 35mm f/2', manufacturer:'Meike', line:'AF', type:'Prime',
+    mount:'z', focalLength:35, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'35mm',
+    maxAperture:2, minAperture:22, weight:298, length:90, diameter:73,
+    filterThread:58, minFocusDist:45, maxMagnification:null,
+    elements:11, groups:9, blades:9, afType:'STM',
+    weatherSealed:false, ois:false, oisStops:null, year:2024, discontinued:false,
+    imageUrl:'https://cdn.shopify.com/s/files/1/0251/3508/7676/files/3520E-_-10.jpg',
+    imageSource: { url:'https://meikeglobal.com/products/3520z', tier:'T1', title:'Meike official store', note:'first image of the Z-mount listing, lens alone', date:'2026-10-21' },
+    asin:null,
+    prices:{USD:220,AUD:null,EUR:null,GBP:null,JPY:null,CAD:null,SGD:null},
+    specSources: [{ url:'https://www.bhphotovideo.com/c/product/1852097-REG/x.html/specs', tier:'T3', title:'B&H - Meike AF 35mm f/2 (Nikon Z) specs', note:'Nikon Z listing: 73 x 90mm, 298g, f/2-22, 0.45m, 11/9, 9 blades, 58mm filter. Used because Meike publishes most specs only as images; shared optics match the Sony E entry', date:'2026-10-21' }, { url:'https://meikeglobal.com/products/3520z', tier:'T1', title:'Meike AF 35mm f/2 - official Meike store (Z listing)', note:'confirms the Nikon Z version. Year: 2024', date:'2026-10-21' }],
+    priceSource: { url:'https://meikeglobal.com/products/3520z', tier:'T1', title:'Meike official store', note:'Z listing price $219.99 (store products.json), rounded; non-USD not examined', date:'2026-10-21' },
+    priceIncomplete:true,
+    productUrl:'https://meikeglobal.com/products/3520z',
+  },
+
   /* ── Yongnuo + Meike batch (2026-08-31): 7 new Yongnuo APS-C/FF primes
      (the maker's entire remaining Z-mount catalogue beyond the 2 already
      above) + 4 new Meike AF primes (MIX/Pro/SE lines). See
@@ -3926,7 +3994,7 @@ const LENS_DROPDOWN_GROUPS = [
   { label: '── Yongnuo ──', ids: ['yongnuo-11mm-f18', 'yongnuo-23mm-f14', 'yongnuo-33mm-f14', 'yongnuo-35mm-f18', 'yongnuo-35mm-f2', 'yongnuo-50mm-f18-da', 'yongnuo-50mm-f18', 'yongnuo-56mm-f14', 'yongnuo-85mm-f18'] },
   { label: '── TTArtisan ──', ids: ['ttartisan-27mm-f28', 'ttartisan-17mm-f18-air', 'ttartisan-23mm-f18', 'ttartisan-35mm-f18-ii', 'ttartisan-40mm-f2', 'ttartisan-50mm-f18-neo', 'ttartisan-56mm-f18', 'ttartisan-75mm-f2', 'ttartisan-85mm-f18-neo', 'ttartisan-50mm-f12', 'ttartisan-tilt-35mm-f14', 'ttartisan-14mm-f28-asph', 'ttartisan-40mm-f28-macro', 'ttartisan-tilt-shift-17mm-f4-asph', 'ttartisan-35mm-f14', 'ttartisan-11mm-f28-fisheye'] },
   { label: '── 7Artisans ──', ids: ['7artisans-27mm-f28', '7artisans-10mm-f28', '7artisans-25mm-f18-lite', '7artisans-35mm-f18-lite', '7artisans-50mm-f18-lite', '7artisans-35mm-f18', '7artisans-40mm-f25-lite', '7artisans-50mm-f18', '7artisans-85mm-f18', '7artisans-10mm-f28-ii', '7artisans-75mm-f14', '7artisans-18mm-f56', '7artisans-10mm-f25-af-fisheye', '7artisans-24mm-f18', '7artisans-135mm-f18', '7artisans-14mm-f28', '7artisans-10mm-f35', '7artisans-10mm-f28-fisheye', '7artisans-25mm-f18', '7artisans-9mm-f56', '7artisans-60mm-f28-2x-macro', '7artisans-18mm-f63-ii'] },
-  { label: '── Meike ──', ids: ['meike-24mm-f14', 'meike-35mm-f18-pro', 'meike-50mm-f18', 'meike-85mm-f18', 'meike-85mm-f18-pro', 'meike-85mm-f18-se-ii'] },
+  { label: '── Meike ──', ids: ['meike-24mm-f14', 'meike-35mm-f18-pro', 'meike-50mm-f18', 'meike-85mm-f18', 'meike-85mm-f18-pro', 'meike-85mm-f18-se-ii', 'meike-85mm-f14-ii', 'meike-56mm-f17-air', 'meike-23mm-f14', 'meike-35mm-f2'] },
 ];
 
 return { BRAND_CONFIG, SERIES_COLORS, CAMERAS, CAMERA_ORDER,

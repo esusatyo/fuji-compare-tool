@@ -9,7 +9,7 @@
 - [x] 2.3 Voigtländer + Zeiss
 - [x] 2.4 TTArtisan
 - [x] 2.5 7Artisans
-- [ ] 2.6 Meike
+- [x] 2.6 Meike
 - [ ] 2.7 Thypoch / SG-image
 - [ ] 2.8 Yongnuo
 
