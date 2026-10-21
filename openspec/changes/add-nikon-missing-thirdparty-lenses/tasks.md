@@ -10,7 +10,7 @@
 - [x] 2.4 TTArtisan
 - [x] 2.5 7Artisans
 - [x] 2.6 Meike
-- [ ] 2.7 Thypoch / SG-image
+- [x] 2.7 Thypoch / SG-image
 - [ ] 2.8 Yongnuo
 
 ## 3. Verify

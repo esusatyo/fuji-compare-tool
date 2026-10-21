@@ -1,6 +1,7 @@
 # Progress — Nikon missing third-party lenses
 
-**Resume at:** 2.7 Thypoch / SG-image
+**Resume at:** 2.8 Yongnuo
+**Thypoch / SG-image done 2026-10-21 (13 lenses):** Thypoch Simera 28/35/50 from thypoch.com's per-mount tables (Z column); USD = Z variant regular (compare-at) $549. SG-image: all 10 Sony entries are sold in Z at the same price, and SG-image's spec cards give one figure for every mount, so the entries were cloned with mount z. **Image fix:** the Simera 35's main shots (and sony's Simera 28/35 images) show the shorter Leica-M barrel — sony 28 now uses its Sony E variant image, sony/nikon 35 a hooded shot with the mount hidden.
 **Meike done 2026-10-21 (4 lenses):** AF 85 f/1.4 MIX II, AF 56 f/1.7 Air, AF 23 f/1.4, AF 35 f/2. Shared optics from the Sony entries; Z size/weight from B&H Nikon Z listings; USD and image from Meike's Z store listing (all USD equal the Sony E prices).
 **7Artisans done 2026-10-21 (13 lenses):** 10 f/2.8 II, 75 f/1.4, 18 f/5.6, AF 10 f/2.5 Fisheye, AF 24 f/1.8, AF 135 f/1.8, 14 f/2.8, 10 f/3.5, 10 f/2.8 Fisheye, 25 f/1.8, 9 f/5.6, 60 f/2.8 2X Macro, 18 f/6.3 II. Shared optics cloned from the Sony entries; Z size/weight from each B&H Nikon Z listing (7Artisans publishes specs as images). USD = store Z variant regular (compare-at) price — all equal to the Sony E prices.
 **TTArtisan done 2026-10-21 (7 lenses):** 50 f/1.2, Tilt 35 f/1.4, 14 f/2.8, 40 f/2.8 Macro, Tilt-Shift 17 f/4, 35 f/1.4, 11 f/2.8 Fisheye. Maker tables give one spec set for all mounts (weight as a range); the Z size/weight are each lens's B&H Nikon Z listing. USD = store Z variant price (no compare-at). Z-specific product shots where the store has them (SKU-Z files). Nikon's "Other" dropdown group split into Yongnuo / TTArtisan / 7Artisans / Meike, as on sony/.
@@ -36,7 +37,8 @@ Makers' store catalogues (Shopify `products.json`, venuslens Woo Store API, Cosi
 | Voigtländer + Zeiss | 5 | 5 | 0 | 63bfe4e |
 | TTArtisan | 22 | 7 | 15 | f2506c2 |
 | 7Artisans | 25 | 13 | 12 | 0381050 |
-| Meike | 18 | 4 | 14 | (this commit) |
+| Meike | 18 | 4 | 14 | 2bb2b38 |
+| Thypoch / SG-image | 13 | 13 | 0 | (this commit) |
 
 ## Skipped (with reason)
 - Laowa ACRIS 35mm f/2.8 1X Macro (Z AF version, $449, 570g): Laowa gives dimensions for EF only and B&H's Z listing has none — Z length unknown.
