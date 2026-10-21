@@ -1728,6 +1728,558 @@ const LENSES = {
     productUrl:'https://www.sigma-global.com/en/lenses/s021_150_600_5_63/',
   },
 
+  /* ── Sigma (L-Mount) — copied from sigma/data.js, Panasonic/Leica missing-lens pass 2026-10-22 ── */
+  'sigma-14mm-f14-dg': {
+    name:'Sigma 14mm f/1.4 DG DN Art', manufacturer:'Sigma', line:'Art', type:'Prime',
+    mount:'l', focalLength:14, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'14mm',
+    maxAperture:1.4, minAperture:16, weight:1170, length:149.9, diameter:101.4,
+    filterThread:null, minFocusDist:30, maxMagnification:0.084,
+    elements:19, groups:15, blades:11, afType:'HLA Linear',
+    weatherSealed:true, ois:false, oisStops:null, year:2023, discontinued:false,
+    imageUrl:'https://www.sigma-global.com/lenses/a023_14_14_product_img01.png',
+    asin:'B0C7JC634M',
+    prices:{USD:1839,AUD:null,EUR:null,GBP:null,JPY:null,CAD:null,SGD:null},
+    priceIncomplete:true,
+    productUrl:'https://www.sigma-global.com/en/lenses/a023_14_14_re/',
+  },
+
+  'sigma-15mm-f14-dg-fisheye': {
+    name:'Sigma 15mm f/1.4 DG DN Diagonal Fisheye Art', manufacturer:'Sigma', line:'Art', type:'Prime',
+    mount:'l', focalLength:15, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'15mm',
+    maxAperture:1.4, minAperture:16, weight:1360, length:157.9, diameter:104,
+    filterThread:null, minFocusDist:38.5, maxMagnification:0.063,
+    elements:21, groups:15, blades:11, afType:'HLA Linear',
+    weatherSealed:true, ois:false, oisStops:null, year:2024, discontinued:false,
+    imageUrl:'https://www.sigma-global.com/lenses/a024_15_14_product_img01.png',
+    asin:'B0CWH16C4Q',
+    prices:{USD:2199,AUD:null,EUR:null,GBP:null,JPY:null,CAD:null,SGD:null},
+    priceIncomplete:true,
+    productUrl:'https://www.sigma-global.com/en/lenses/a024_15_14/',
+  },
+
+  'sigma-35mm-f12-dg-ii': {
+    name:'Sigma 35mm f/1.2 DG II Art', manufacturer:'Sigma', line:'Art', type:'Prime',
+    mount:'l', focalLength:35, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'35mm',
+    maxAperture:1.2, minAperture:16, weight:755, length:111.4, diameter:81,
+    filterThread:72, minFocusDist:28, maxMagnification:0.189,
+    elements:17, groups:13, blades:11, afType:'Dual HLA Linear',
+    weatherSealed:true, ois:false, oisStops:null, year:2025, discontinued:false,
+    imageUrl:'https://www.sigma-global.com/lenses/a025_35_12_product_img02.png',
+    asin:null,
+    prices:{USD:1549,AUD:null,EUR:null,GBP:null,JPY:null,CAD:null,SGD:null},
+    priceIncomplete:true,
+    productUrl:'https://www.sigma-global.com/en/lenses/a025_35_12/',
+  },
+
+  'sigma-50mm-f12-dg': {
+    name:'Sigma 50mm f/1.2 DG DN Art', manufacturer:'Sigma', line:'Art', type:'Prime',
+    mount:'l', focalLength:50, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'50mm',
+    maxAperture:1.2, minAperture:16, weight:745, length:108.8, diameter:81,
+    filterThread:72, minFocusDist:40, maxMagnification:0.161,
+    elements:17, groups:12, blades:13, afType:'Dual HLA Linear',
+    weatherSealed:true, ois:false, oisStops:null, year:2024, discontinued:false,
+    imageUrl:'https://www.sigma-global.com/lenses/a024_50_12_product_img01.png',
+    asin:'B0CZ4C8KS2',
+    prices:{USD:1539,AUD:null,EUR:null,GBP:null,JPY:null,CAD:null,SGD:null},
+    priceIncomplete:true,
+    productUrl:'https://www.sigma-global.com/en/lenses/a024_50_12/',
+  },
+
+  'sigma-105mm-f28-dg-macro': {
+    name:'Sigma 105mm f/2.8 DG DN Macro Art', manufacturer:'Sigma', line:'Art', type:'Prime',
+    mount:'l', focalLength:105, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'105mm',
+    maxAperture:2.8, minAperture:22, weight:715, length:133.6, diameter:74,
+    filterThread:62, minFocusDist:29.5, maxMagnification:1.0,
+    elements:17, groups:12, blades:9, afType:'Stepping Motor',
+    weatherSealed:true, ois:false, oisStops:null, year:2020, discontinued:false,
+    imageUrl:'https://www.sigma-global.com/lenses/a020_105_28_product_img01.png',
+    asin:'B08KGT1G2B',
+    prices:{USD:879,AUD:null,EUR:null,GBP:null,JPY:null,CAD:null,SGD:null},
+    priceIncomplete:true,
+    productUrl:'https://www.sigma-global.com/en/lenses/a020_105_28/',
+  },
+
+  'sigma-14-24mm-f28-dg': {
+    name:'Sigma 14-24mm f/2.8 DG DN Art', manufacturer:'Sigma', line:'Art', type:'Zoom',
+    mount:'l', focalLength:null, focalLengthMin:14, focalLengthMax:24, focalLengthEquiv:'14-24mm',
+    maxAperture:2.8, minAperture:22, weight:795, length:131, diameter:85,
+    filterThread:null, minFocusDist:28, maxMagnification:0.137,
+    elements:18, groups:13, blades:11, afType:'Stepping Motor',
+    weatherSealed:true, ois:false, oisStops:null, year:2019, discontinued:false,
+    imageUrl:'https://www.sigma-global.com/lenses/a019_14_24_28_product_img01.png',
+    asin:'B07V49L2XG',
+    prices:{USD:1539,AUD:null,EUR:null,GBP:null,JPY:null,CAD:null,SGD:null},
+    priceIncomplete:true,
+    productUrl:'https://www.sigma-global.com/en/lenses/a019_14_24_28/',
+  },
+
+  'sigma-24-70mm-f28-dg': {
+    name:'Sigma 24-70mm f/2.8 DG DN Art', manufacturer:'Sigma', line:'Art', type:'Zoom',
+    mount:'l', focalLength:null, focalLengthMin:24, focalLengthMax:70, focalLengthEquiv:'24-70mm',
+    maxAperture:2.8, minAperture:22, weight:835, length:122.9, diameter:87.8,
+    filterThread:82, minFocusDist:18, maxMagnification:0.34,
+    elements:19, groups:15, blades:11, afType:'Stepping Motor',
+    weatherSealed:true, ois:false, oisStops:null, year:2019, discontinued:true,
+    imageUrl:'https://www.sigma-global.com/lenses/a019_24_70_28_product_img01.png',
+    asin:null,
+    prices:{USD:1099,AUD:null,EUR:null,GBP:null,JPY:null,CAD:null,SGD:null},
+    priceIncomplete:true,
+    productUrl:'https://www.sigma-global.com/en/lenses/a019_24_70_28/',
+  },
+
+  'sigma-28-105mm-f28-dg': {
+    name:'Sigma 28-105mm f/2.8 DG DN Art', manufacturer:'Sigma', line:'Art', type:'Zoom',
+    mount:'l', focalLength:null, focalLengthMin:28, focalLengthMax:105, focalLengthEquiv:'28-105mm',
+    maxAperture:2.8, minAperture:22, weight:995, length:157.9, diameter:87.8,
+    filterThread:82, minFocusDist:40, maxMagnification:0.323,
+    elements:18, groups:13, blades:12, afType:'HLA Linear',
+    weatherSealed:true, ois:false, oisStops:null, year:2024, discontinued:false,
+    imageUrl:'https://www.sigma-global.com/lenses/a024_28_105_28_product_img01.png',
+    asin:'B0DH9QMB59',
+    prices:{USD:1649,AUD:null,EUR:null,GBP:null,JPY:null,CAD:null,SGD:null},
+    priceIncomplete:true,
+    productUrl:'https://www.sigma-global.com/en/lenses/a024_28_105_28/',
+  },
+
+  'sigma-24mm-f35-dg': {
+    name:'Sigma 24mm f/3.5 DG DN Contemporary', manufacturer:'Sigma', line:'Contemporary', type:'Prime',
+    mount:'l', focalLength:24, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'24mm',
+    maxAperture:3.5, minAperture:22, weight:225, length:48.8, diameter:64,
+    filterThread:55, minFocusDist:10.8, maxMagnification:0.5,
+    elements:10, groups:8, blades:7, afType:'Stepping Motor',
+    weatherSealed:false, ois:false, oisStops:null, year:2021, discontinued:false,
+    imageUrl:'https://www.sigma-global.com/lenses/c021_24_35_product_img01.png',
+    asin:'B08T9RLPM4',
+    prices:{USD:619,AUD:null,EUR:null,GBP:null,JPY:null,CAD:null,SGD:null},
+    priceIncomplete:true,
+    productUrl:'https://www.sigma-global.com/en/lenses/c021_24_35_re/',
+  },
+
+  'sigma-20-200mm-f35-63-dg': {
+    name:'Sigma 20-200mm f/3.5-6.3 DG Contemporary', manufacturer:'Sigma', line:'Contemporary', type:'Zoom',
+    mount:'l', focalLength:null, focalLengthMin:20, focalLengthMax:200, focalLengthEquiv:'20-200mm',
+    maxAperture:3.5, minAperture:22, weight:550, length:115.5, diameter:77.2,
+    filterThread:72, minFocusDist:16.5, maxMagnification:0.5,
+    elements:18, groups:14, blades:9, afType:'HLA Linear',
+    weatherSealed:true, ois:false, oisStops:null, year:2025, discontinued:false,
+    imageUrl:'https://www.sigma-global.com/lenses/c025_20_200_35_63_product_img01.png',
+    asin:null,
+    prices:{USD:999,AUD:null,EUR:null,GBP:null,JPY:null,CAD:null,SGD:null},
+    priceIncomplete:true,
+    productUrl:'https://www.sigma-global.com/en/lenses/c025_20_200_35_63/',
+  },
+
+  'sigma-200mm-f2-dg': {
+    name:'Sigma 200mm f/2 DG OS Sports', manufacturer:'Sigma', line:'Sports', type:'Prime',
+    mount:'l', focalLength:200, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'200mm',
+    maxAperture:2.0, minAperture:22, weight:1820, length:201, diameter:118.9,
+    filterThread:105, minFocusDist:170, maxMagnification:0.132,
+    elements:19, groups:14, blades:11, afType:'HLA Linear',
+    weatherSealed:true, ois:true, oisStops:6.5, year:2025, discontinued:false,
+    imageUrl:'https://www.sigma-global.com/lenses/s025_200_2_product_img01.png',
+    asin:'B0FML8KVG7',
+    prices:{USD:3299,AUD:null,EUR:null,GBP:null,JPY:null,CAD:null,SGD:null},
+    priceIncomplete:true,
+    productUrl:'https://www.sigma-global.com/en/lenses/s025_200_2/',
+  },
+
+  'sigma-500mm-f56-dg': {
+    name:'Sigma 500mm f/5.6 DG DN OS Sports', manufacturer:'Sigma', line:'Sports', type:'Prime',
+    mount:'l', focalLength:500, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'500mm',
+    maxAperture:5.6, minAperture:32, weight:1370, length:234.6, diameter:107.6,
+    filterThread:95, minFocusDist:320, maxMagnification:0.167,
+    elements:20, groups:14, blades:11, afType:'HLA Linear',
+    weatherSealed:true, ois:true, oisStops:5, year:2024, discontinued:false,
+    imageUrl:'https://www.sigma-global.com/lenses/s024_500_56_product_img01.png',
+    asin:'B0CV6R63MW',
+    prices:{USD:3299,AUD:null,EUR:null,GBP:null,JPY:null,CAD:null,SGD:null},
+    priceIncomplete:true,
+    productUrl:'https://www.sigma-global.com/en/lenses/s024_500_56/',
+  },
+
+  'sigma-60-600mm-f45-63-dg': {
+    name:'Sigma 60-600mm f/4.5-6.3 DG DN OS Sports', manufacturer:'Sigma', line:'Sports', type:'Zoom',
+    mount:'l', focalLength:null, focalLengthMin:60, focalLengthMax:600, focalLengthEquiv:'60-600mm',
+    maxAperture:4.5, minAperture:22, weight:2495, length:279.2, diameter:119.4,
+    filterThread:105, minFocusDist:45, maxMagnification:0.417,
+    elements:27, groups:19, blades:9, afType:'HLA Linear',
+    weatherSealed:true, ois:true, oisStops:7, year:2023, discontinued:false,
+    imageUrl:'https://www.sigma-global.com/lenses/s023_60_600_45_63_product_img01.png',
+    asin:null,
+    prices:{USD:2199,AUD:null,EUR:null,GBP:null,JPY:null,CAD:null,SGD:null},
+    priceIncomplete:true,
+    productUrl:'https://www.sigma-global.com/en/lenses/s023_60_600_45_63/',
+  },
+
+  'sigma-300-600mm-f4-dg': {
+    name:'Sigma 300-600mm f/4 DG OS Sports', manufacturer:'Sigma', line:'Sports', type:'Zoom',
+    mount:'l', focalLength:null, focalLengthMin:300, focalLengthMax:600, focalLengthEquiv:'300-600mm',
+    maxAperture:4.0, minAperture:22, weight:3985, length:467.9, diameter:167,
+    filterThread:null, minFocusDist:280, maxMagnification:0.167,
+    elements:28, groups:21, blades:13, afType:'HLA Linear',
+    weatherSealed:true, ois:true, oisStops:5.5, year:2025, discontinued:false,
+    imageUrl:'https://www.sigma-global.com/lenses/s025_300_600_4_product_img01.png',
+    asin:'B0DY8RDZNV',
+    prices:{USD:6599,AUD:null,EUR:null,GBP:null,JPY:null,CAD:null,SGD:null},
+    priceIncomplete:true,
+    productUrl:'https://www.sigma-global.com/en/lenses/s025_300_600_4/',
+  },
+
+  /* ── Leica SL (L-Mount, full-frame) — copied from leica/data.js, Panasonic/Leica missing-lens pass 2026-10-22 ── */
+  'super-apo-summicron-sl-21mm-f2-asph': {
+    name:'Leica Super-APO-Summicron-SL 21mm f/2 ASPH.', manufacturer:'Leica', line:'SL', type:'Prime',
+    mount:'l', focalLength:21, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'21mm',
+    maxAperture:2, minAperture:22, weight:789, length:102, diameter:73,
+    filterThread:67, minFocusDist:21, maxMagnification:0.19,
+    elements:14, groups:11, blades:null, afType:'Dual Syncro Drive (DSD)',
+    weatherSealed:true, ois:false, oisStops:null, year:2023, discontinued:false,
+    imageUrl:'https://leica-camera.com/sites/default/files/styles/meta_tag_product_image/public/pm-15419-11181_Super-APO-Summicron-SL_21_f2_upright.png?itok=bCI3nS60',
+    imageSource:{url:'https://leica-camera.com/en-US/photography/lenses/sl/super-apo-summicron-sl-21-f2-asph', tier:'T1', date:'2026-09-16', title:'Leica Super-APO-Summicron-SL 21mm f/2 ASPH. official product page'},
+    asin:'B0D3FJQNFH',
+    specSources:[{url:'https://leica-camera.com/sites/default/files/pm-106496-en_datenblatt-summicron-sl-21-asph_1.pdf', tier:'T1', note:'Leica\'s official datasheet (order no. 11181) confirms weight 789 g, length 102 mm, diameter 73 mm, filter thread 67 mm, 14 elements in 11 groups. Where the sheet gives figures without and with the lens hood, the without-hood figure is stored.', date:'2026-09-25', title:'Leica datasheet: Leica Super-APO-Summicron-SL 21mm f/2 ASPH.'}],
+    prices:{USD:5950,AUD:9800,EUR:5490,GBP:4850,JPY:1001000,CAD:8390,SGD:8150},
+    priceSource:{url:'https://leicacamerausa.com/leica-super-apo-summicron-sl-21-f-2-asph.html', tier:'T1', note:'$5,950 list price on leicacamerausa.com (SKU 11181, in stock); Leica Store Miami independently lists the same price.', date:'2026-09-25', title:'Leica Camera USA: Leica Super-APO-Summicron-SL 21mm f/2 ASPH.'},
+    productUrl:'https://leica-camera.com/en-US/photography/lenses/sl/super-apo-summicron-sl-21-f2-asph',
+  },
+
+  'apo-summicron-sl-28mm-f2-asph': {
+    name:'Leica APO-Summicron-SL 28mm f/2 ASPH.', manufacturer:'Leica', line:'SL', type:'Prime',
+    mount:'l', focalLength:28, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'28mm',
+    maxAperture:2, minAperture:22, weight:700, length:102, diameter:73,
+    filterThread:67, minFocusDist:24, maxMagnification:0.2,
+    elements:13, groups:10, blades:null, afType:'Dual Syncro Drive (DSD)',
+    weatherSealed:true, ois:false, oisStops:null, year:2021, discontinued:false,
+    imageUrl:'https://leica-camera.com/sites/default/files/styles/meta_tag_product_image/public/pm-15028-11183__APO-Summicron-SL_28_f2.png?itok=dsM0LQdi',
+    imageSource:{url:'https://leica-camera.com/en-US/photography/lenses/sl/apo-summicron-sl-28-f2-asph-black-finish', tier:'T1', date:'2026-09-18', title:'Leica APO-Summicron-SL 28mm f/2 ASPH. official product page'},
+    asin:'B096N51F77',
+    // CAD not found — Vistek does not carry this lens new (checked twice).
+    specSources:[{url:'https://leica-camera.com/sites/default/files/pm-59022-Tech_Data_APO-Summicron-SL_28_EN.pdf', tier:'T1', note:'Leica\'s official datasheet (order no. 11183) confirms weight 700 g, length 102 mm, diameter 73 mm, filter thread 67 mm, 13 elements in 10 groups. Where the sheet gives figures without and with the lens hood, the without-hood figure is stored.', date:'2026-09-25', title:'Leica datasheet: Leica APO-Summicron-SL 28mm f/2 ASPH.'}],
+    prices:{USD:5650,AUD:9300,EUR:5190,GBP:4650,JPY:946000,CAD:null,SGD:7750},
+    priceIncomplete:true,
+    priceSource:{url:'https://leicacamerausa.com/leica-apo-summicron-sl-28mm-f-2-asph.html', tier:'T1', note:'$5,650 list price on leicacamerausa.com (SKU 11183, in stock); Leica Store Miami independently lists the same price.', date:'2026-09-25', title:'Leica Camera USA: Leica APO-Summicron-SL 28mm f/2 ASPH.'},
+    productUrl:'https://leica-camera.com/en-US/photography/lenses/sl/apo-summicron-sl-28-f2-asph-black-finish',
+  },
+
+  'apo-summicron-sl-35mm-f2-asph': {
+    name:'Leica APO-Summicron-SL 35mm f/2 ASPH.', manufacturer:'Leica', line:'SL', type:'Prime',
+    mount:'l', focalLength:35, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'35mm',
+    maxAperture:2, minAperture:22, weight:750, length:102, diameter:73,
+    filterThread:67, minFocusDist:27, maxMagnification:0.2,
+    elements:13, groups:11, blades:null, afType:'Dual Syncro Drive (DSD)',
+    weatherSealed:true, ois:false, oisStops:null, year:2019, discontinued:false,
+    imageUrl:'https://leica-camera.com/sites/default/files/styles/meta_tag_product_image/public/pm-15049-11184__APO-Summicron-SL_35_f2_1.png?itok=H4-6LOuR',
+    imageSource:{url:'https://leica-camera.com/en-US/photography/lenses/sl/apo-summicron-sl-35mm-f2-asph', tier:'T1', date:'2026-09-18', title:'Leica APO-Summicron-SL 35mm f/2 ASPH. official product page'},
+    asin:'B07SL23YXT',
+    specSources:[{url:'https://leica-camera.com/sites/default/files/pm-55403-11184_Datenblatt_APO_Summicron-SL-35mm-ASPH_en.pdf', tier:'T1', note:'Leica\'s official datasheet (order no. 11184) confirms weight 750 g, length 102 mm, diameter 73 mm, filter thread 67 mm, 13 elements in 11 groups.', date:'2026-09-25', title:'Leica datasheet: Leica APO-Summicron-SL 35mm f/2 ASPH.'}],
+    prices:{USD:5560,AUD:8900,EUR:4990,GBP:4390,JPY:913000,CAD:7840,SGD:7450},
+    priceSource:{url:'https://leicacamerausa.com/leica-apo-summicron-sl-35mm-f-2-asph.html', tier:'T1', note:'$5,560 list price on leicacamerausa.com (SKU 11184, in stock); Leica Store Miami independently lists the same price.', date:'2026-09-25', title:'Leica Camera USA: Leica APO-Summicron-SL 35mm f/2 ASPH.'},
+    productUrl:'https://leica-camera.com/en-US/photography/lenses/sl/apo-summicron-sl-35mm-f2-asph',
+  },
+
+  'summicron-sl-35mm-f2-asph': {
+    // Non-APO Summicron-SL (Feb 2023), a lighter/cheaper sibling of the
+    // APO-Summicron-SL 35 (order 11184) -- a distinct product, order 11192.
+    // blades: Leica publishes no blade count for this lens (checked its
+    // datasheet, web spec table and review databases) -- left null.
+    // afType: the datasheet names no motor; PetaPixel and Macfilos both
+    // report a linear motor for this and the 50mm twin.
+    name:'Leica Summicron-SL 35 f/2 ASPH.', manufacturer:'Leica', line:'SL', type:'Prime',
+    mount:'l', focalLength:35, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'35mm',
+    maxAperture:2, minAperture:22, weight:400, length:83, diameter:74.5,
+    filterThread:67, minFocusDist:24, maxMagnification:0.2174,
+    elements:11, groups:9, blades:null, afType:'Linear Motor',
+    weatherSealed:true, ois:false, oisStops:null, year:2023, discontinued:false,
+    imageUrl:'https://leica-camera.com/sites/default/files/styles/meta_tag_product_image/public/pm-15375-11192_Summicron-SL_35_f2_front.png?itok=uv17Cpss',
+    imageSource:{url:'https://leica-camera.com/en-US/photography/lenses/sl/summicron-sl-35mm-f2-asph', tier:'T1', date:'2026-09-26', title:'Leica Summicron-SL 35 f/2 ASPH. official product page'},
+    asin:'B0C153MZ3T',
+    specSources:[{url:'https://leica-camera.com/sites/default/files/pm-90744-EN_Datenblatt%20Summicron-SL%2035%20ASPH.pdf', tier:'T1', note:'Leica\'s official datasheet (order no. 11192, Feb 2023) confirms weight 400 g, length 83 mm, diameter 74.5 mm (without hood), filter E67, 11 elements in 9 groups, focus range 0.24 m, largest scale 1:4.6, dust and splash protected. No blade count published.', date:'2026-09-26', title:'Leica datasheet: Leica Summicron-SL 35 f/2 ASPH.'}],
+    prices:{USD:2690,AUD:4400,EUR:2450,GBP:2190,JPY:451000,CAD:3795,SGD:3600},
+    priceIncomplete:true,
+    priceSource:{url:'https://leicacamerausa.com/leica-summicron-sl-35mm-f/2-asph..html', tier:'T1', note:'$2,690 list price on leicacamerausa.com (SKU 11192); Leica Store Miami independently lists the same price. AUD/SGD/JPY from leica-store.com.au, leica-store.sg and store.leica-camera.jp; EUR/GBP from the schema.org Offer on leica-camera.com/de-DE and /en-GB (all 2026-09-26). CAD not readable (vistek.ca blocks automated access). CAD $3,795 from Vistek, an authorized Leica dealer in Canada (https://www.vistek.ca/store/460665/, Mfr 11192), read 2026-10-10.', date:'2026-09-26', title:'Leica Camera USA'},
+    productUrl:'https://leica-camera.com/en-US/photography/lenses/sl/summicron-sl-35mm-f2-asph',
+  },
+
+  'summilux-sl-50mm-f14-asph': {
+    name:'Leica Summilux-SL 50mm f/1.4 ASPH.', manufacturer:'Leica', line:'SL', type:'Prime',
+    mount:'l', focalLength:50, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'50mm',
+    maxAperture:1.4, minAperture:16, weight:584, length:75.5, diameter:74,
+    filterThread:67, minFocusDist:50, maxMagnification:0.13,
+    elements:11, groups:6, blades:11, afType:'Precision voice-coil drive',
+    weatherSealed:true, ois:false, oisStops:null, year:2026, discontinued:false,
+    imageUrl:'https://leica-camera.com/sites/default/files/styles/meta_tag_product_image/public/pm-28332-11195_Leica_Summilux-SL_50_f_1_4_upright_1920px.webp?itok=e6N_YMBP',
+    imageSource:{url:'https://leica-camera.com/en-US/photography/lenses/sl/summilux-sl-50mm-f1-4-asph-black-anodized-finish', tier:'T1', date:'2026-09-16', title:'Leica Summilux-SL 50mm f/1.4 ASPH. official product page'},
+    asin:'B01N9JBVQ3',
+    // JPY/SGD not yet published — the 2026 compact redesign ships "autumn
+    // 2026" and neither regional store has opened pricing/ordering yet
+    // (confirmed on both store.leica-camera.jp and leica-store.sg,
+    // 2026-09-16). Re-check closer to ship.
+    specSources:[{url:'https://leica-camera.com/sites/default/files/pm-28467-Datenblatt-Summilux-SL-50-ASPH_EN.pdf', tier:'T1', note:'Leica\'s official datasheet (order no. 11195) confirms weight 584 g, length 75.5 mm, diameter 74 mm, filter thread 67 mm, 11 elements in 6 groups, 11 aperture blades. Where the sheet gives figures without and with the lens hood, the without-hood figure is stored.', date:'2026-09-25', title:'Leica datasheet: Leica Summilux-SL 50mm f/1.4 ASPH.'}],
+    prices:{USD:4950,AUD:7900,EUR:4500,GBP:3890,JPY:null,CAD:6980,SGD:null},
+    priceIncomplete:true,
+    priceSource:{url:'https://leicacamerausa.com/leica-summilux-sl-50mm-f-1-4_asph.html', tier:'T1', note:'$4,950 list price on leicacamerausa.com (SKU 11195, shown out of stock); Leica Store Miami independently lists the same price.', date:'2026-09-25', title:'Leica Camera USA: Leica Summilux-SL 50mm f/1.4 ASPH.'},
+    productUrl:'https://leica-camera.com/en-US/photography/lenses/sl/summilux-sl-50mm-f1-4-asph-black-anodized-finish',
+  },
+
+  'apo-summicron-sl-50mm-f2-asph': {
+    name:'Leica APO-Summicron-SL 50mm f/2 ASPH.', manufacturer:'Leica', line:'SL', type:'Prime',
+    mount:'l', focalLength:50, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'50mm',
+    maxAperture:2, minAperture:22, weight:740, length:102, diameter:73,
+    filterThread:67, minFocusDist:35, maxMagnification:0.2,
+    elements:12, groups:10, blades:null, afType:'Dual Syncro Drive (DSD)',
+    weatherSealed:true, ois:false, oisStops:null, year:2019, discontinued:false,
+    imageUrl:'https://leica-camera.com/sites/default/files/styles/meta_tag_product_image/public/pm-15323-11185__APO-Summicron-SL_50_f2.png?itok=DcjYPvax',
+    imageSource:{url:'https://leica-camera.com/en-US/photography/lenses/sl/apo-summicron-sl-50mm-f2-asph-black', tier:'T1', date:'2026-09-16', title:'Leica APO-Summicron-SL 50mm f/2 ASPH. official product page'},
+    asin:'B083W2HXBZ',
+    specSources:[{url:'https://leica-camera.com/sites/default/files/pm-55406-11185_Datenblatt_APO-Summicron-SL-50-ASPH_en.pdf', tier:'T1', note:'Leica\'s official datasheet (order no. 11185) confirms weight 740 g, length 102 mm, diameter 73 mm, filter thread 67 mm, 12 elements in 10 groups.', date:'2026-09-25', title:'Leica datasheet: Leica APO-Summicron-SL 50mm f/2 ASPH.'}],
+    prices:{USD:5450,AUD:8900,EUR:4990,GBP:4390,JPY:913000,CAD:7685,SGD:7450},
+    priceSource:{url:'https://leicacamerausa.com/leica-apo-summicron-sl-50mm-f-2-asph.html', tier:'T1', note:'$5,450 list price on leicacamerausa.com (SKU 11185, in stock); Leica Store Miami independently lists the same price.', date:'2026-09-25', title:'Leica Camera USA: Leica APO-Summicron-SL 50mm f/2 ASPH.'},
+    productUrl:'https://leica-camera.com/en-US/photography/lenses/sl/apo-summicron-sl-50mm-f2-asph-black',
+  },
+
+  'summicron-sl-50mm-f2-asph': {
+    // Non-APO twin of the Summicron-SL 35 (Feb 2023, order 11193), distinct
+    // from the APO-Summicron-SL 50 (order 11185). blades:11 is dealer-sourced
+    // (MF Camera listing); Leica's datasheet gives no blade count.
+    name:'Leica Summicron-SL 50 f/2 ASPH.', manufacturer:'Leica', line:'SL', type:'Prime',
+    mount:'l', focalLength:50, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'50mm',
+    maxAperture:2, minAperture:22, weight:402, length:83, diameter:74.5,
+    filterThread:67, minFocusDist:45, maxMagnification:0.1351,
+    elements:9, groups:8, blades:11, afType:'Linear Motor',
+    weatherSealed:true, ois:false, oisStops:null, year:2023, discontinued:false,
+    imageUrl:'https://leica-camera.com/sites/default/files/styles/meta_tag_product_image/public/pm-15346-11193_Summicron-SL_50_f2_front.png?itok=Sb1U0XtK',
+    imageSource:{url:'https://leica-camera.com/en-US/photography/lenses/sl/summicron-sl-50mm-f2-asph', tier:'T1', date:'2026-09-26', title:'Leica Summicron-SL 50 f/2 ASPH. official product page'},
+    asin:'B0C2TN2P4F',
+    specSources:[{url:'https://leica-camera.com/sites/default/files/pm-90762-EN_Datenblatt%20Summicron-SL%2050%20ASPH.pdf', tier:'T1', note:'Leica\'s official datasheet (order no. 11193, Feb 2023) confirms weight 402 g, length 83 mm, diameter 74.5 mm (without hood), filter E67, 9 elements in 8 groups, focus range 0.45 m, largest scale 1:7.4, dust and splash protected. Blade count not on the sheet (11 per dealer listing).', date:'2026-09-26', title:'Leica datasheet: Leica Summicron-SL 50 f/2 ASPH.'}],
+    prices:{USD:2350,AUD:3800,EUR:2090,GBP:1900,JPY:385000,CAD:3315,SGD:3050},
+    priceIncomplete:true,
+    priceSource:{url:'https://leicacamerausa.com/leica-summicron-sl-50mm-f/2-asph..html', tier:'T1', note:'$2,350 list price on leicacamerausa.com (SKU 11193); Leica Store Miami independently lists the same price. AUD/SGD/JPY from leica-store.com.au, leica-store.sg and store.leica-camera.jp; EUR/GBP from the schema.org Offer on leica-camera.com/de-DE and /en-GB (all 2026-09-26). CAD not readable (vistek.ca blocks automated access). CAD $3,315 from Vistek, an authorized Leica dealer in Canada (https://www.vistek.ca/store/496682/, Mfr 11193), read 2026-10-10.', date:'2026-09-26', title:'Leica Camera USA'},
+    productUrl:'https://leica-camera.com/en-US/photography/lenses/sl/summicron-sl-50mm-f2-asph',
+  },
+
+  'apo-summicron-sl-75mm-f2-asph': {
+    name:'Leica APO-Summicron-SL 75mm f/2 ASPH.', manufacturer:'Leica', line:'SL', type:'Prime',
+    mount:'l', focalLength:75, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'75mm',
+    maxAperture:2, minAperture:22, weight:720, length:102, diameter:73,
+    filterThread:67, minFocusDist:50, maxMagnification:0.2,
+    elements:11, groups:9, blades:null, afType:'Dual Syncro Drive (DSD)',
+    weatherSealed:true, ois:false, oisStops:null, year:2018, discontinued:false,
+    // leica-camera.com's own og:image for this lens is broken (points to an
+    // unrelated loupe/magnifier product, confirmed on reload) — sourced
+    // from leicacamerausa.com's storefront CDN instead, visually verified
+    // 2026-09-18 (barrel print reads "75").
+    imageUrl:'https://cdn11.bigcommerce.com/s-r16b86mn51/images/stencil/500x659/products/6531/19492/11178-01-Leica-APO-Summicron-SL-75mm-ASPH_front__64642.1564749914.1280.1280__15847.1653588148.jpg?c=2',
+    imageSource:{url:'https://leicacamerausa.com/leica-apo-summicron-sl-75mm-f-2-asph.html', tier:'T1', date:'2026-09-18', title:'Leica APO-Summicron-SL 75mm f/2 ASPH. — Leica Camera USA'},
+    asin:'B07G4KRTL8',
+    specSources:[{url:'https://leica-camera.com/sites/default/files/pm-55397-11178_Datenblatt_APO-Summicron-SL-75mm-ASPH_e.pdf', tier:'T1', note:'Leica\'s official datasheet (order no. 11178) confirms weight 720 g, length 102 mm, diameter 73 mm, filter thread 67 mm, 11 elements in 9 groups.', date:'2026-09-25', title:'Leica datasheet: Leica APO-Summicron-SL 75mm f/2 ASPH.'}],
+    prices:{USD:5775,AUD:9300,EUR:5190,GBP:4500,JPY:946000,CAD:8145,SGD:7750},
+    priceSource:{url:'https://leicacamerausa.com/leica-apo-summicron-sl-75mm-f-2-asph.html', tier:'T1', note:'$5,775 list price on leicacamerausa.com (SKU 11178, in stock); Leica Store Miami independently lists the same price.', date:'2026-09-25', title:'Leica Camera USA: Leica APO-Summicron-SL 75mm f/2 ASPH.'},
+    productUrl:'https://leica-camera.com/en-US/photography/lenses/sl/apo-summicron-sl-75mm-f2-asph-black',
+  },
+
+  'apo-summicron-sl-90mm-f2-asph': {
+    name:'Leica APO-Summicron-SL 90mm f/2 ASPH.', manufacturer:'Leica', line:'SL', type:'Prime',
+    mount:'l', focalLength:90, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'90mm',
+    maxAperture:2, minAperture:22, weight:700, length:102, diameter:73,
+    filterThread:67, minFocusDist:60, maxMagnification:0.2,
+    elements:11, groups:9, blades:null, afType:'Dual Syncro Drive (DSD)',
+    weatherSealed:true, ois:false, oisStops:null, year:2018, discontinued:false,
+    imageUrl:'https://leica-camera.com/sites/default/files/styles/meta_tag_product_image/public/pm-15271-11179__APO-Summicron-SL_90_f2.png?itok=0eTd9i-1',
+    imageSource:{url:'https://leica-camera.com/en-US/photography/lenses/sl/apo-summicron-sl-90mm-f2-asph-black', tier:'T1', date:'2026-09-18', title:'Leica APO-Summicron-SL 90mm f/2 ASPH. official product page'},
+    asin:'B07KZH7LFJ',
+    specSources:[{url:'https://leica-camera.com/sites/default/files/pm-55400-11179_Datenblatt_APO-Summicron-SL-90mm-ASPH_e.pdf', tier:'T1', note:'Leica\'s official datasheet (order no. 11179) confirms weight 700 g, length 102 mm, diameter 73 mm, filter thread 67 mm, 11 elements in 9 groups.', date:'2026-09-25', title:'Leica datasheet: Leica APO-Summicron-SL 90mm f/2 ASPH.'}],
+    prices:{USD:6200,AUD:9600,EUR:5390,GBP:4750,JPY:990000,CAD:8740,SGD:8150},
+    priceSource:{url:'https://leicacamerausa.com/leica-apo-summicron-sl-90mm-f-2-asph.html', tier:'T1', note:'$6,200 list price on leicacamerausa.com (SKU 11179, shown out of stock); Leica Store Miami independently lists the same price.', date:'2026-09-25', title:'Leica Camera USA: Leica APO-Summicron-SL 90mm f/2 ASPH.'},
+    productUrl:'https://leica-camera.com/en-US/photography/lenses/sl/apo-summicron-sl-90mm-f2-asph-black',
+  },
+
+  'apo-macro-elmarit-sl-100mm-f28': {
+    name:'Leica APO-Macro-Elmarit-SL 100mm f/2.8', manufacturer:'Leica', line:'SL', type:'Prime',
+    mount:'l', focalLength:100, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'100mm',
+    maxAperture:2.8, minAperture:22, weight:801, length:137, diameter:77,
+    filterThread:67, minFocusDist:30, maxMagnification:1,
+    elements:17, groups:12, blades:9,
+    // afType: Leica's own pages describe only "a precise autofocus system
+    // with focus limiter", never naming a motor — generic 'Autofocus'
+    // rather than guessing a specific system name.
+    afType:'Autofocus',
+    weatherSealed:true, ois:false, oisStops:null, year:2026, discontinued:false,
+    imageUrl:'https://leica-camera.com/sites/default/files/styles/meta_tag_product_image/public/pm-28327-11125_APO_Macro-Elmarit-SL_f2_8_100_upright_1920px.webp?itok=KJQn4Shc',
+    imageSource:{url:'https://leica-camera.com/en-US/photography/lenses/sl/apo-macro-elmarit-sl-100mm-f2-8-black', tier:'T1', date:'2026-09-18', title:'Leica APO-Macro-Elmarit-SL 100mm f/2.8 official product page'},
+    asin:null,
+    specSources:[
+      {url:'https://leica-camera.com/sites/default/files/pm-28482-Datenblatt_APO-Macro-Elmarit-100_EN.pdf', tier:'T1', note:'Leica\'s official datasheet (order no. 11125) confirms weight 801 g, length 137 mm, diameter 77 mm, filter thread 67 mm, 17 elements in 12 groups. Where the sheet gives figures without and with the lens hood, the without-hood figure is stored.', date:'2026-09-25', title:'Leica datasheet: Leica APO-Macro-Elmarit-SL 100mm f/2.8'},
+      {url:'https://leica-camera.com/en-US/photography/lenses/sl/apo-macro-elmarit-sl-100mm-f2-8-black/technical-specification', tier:'T1', note:'Leica\'s web technical-specification page additionally confirms 9 aperture blades.', date:'2026-09-25', title:'Leica technical specification: Leica APO-Macro-Elmarit-SL 100mm f/2.8'},
+    ],
+    prices:{USD:2700,AUD:4400,EUR:2450,GBP:2110,JPY:451000,CAD:3805,SGD:3650},
+    priceSource:{url:'https://leicacamerausa.com/leica-apo-macro-elmarit-sl-100mm-f-2-8.html', tier:'T1', note:'$2,700 list price on leicacamerausa.com (SKU 11125, shown out of stock); Leica Store Miami independently lists the same price.', date:'2026-09-25', title:'Leica Camera USA: Leica APO-Macro-Elmarit-SL 100mm f/2.8'},
+    productUrl:'https://leica-camera.com/en-US/photography/lenses/sl/apo-macro-elmarit-sl-100mm-f2-8-black',
+  },
+
+  'super-vario-elmarit-sl-14-24mm-f28-asph': {
+    name:'Leica Super-Vario-Elmarit-SL 14-24mm f/2.8 ASPH.', manufacturer:'Leica', line:'SL', type:'Zoom',
+    mount:'l', focalLength:null, focalLengthMin:14, focalLengthMax:24, focalLengthEquiv:'14-24mm',
+    maxAperture:2.8, minAperture:22, weight:855, length:131, diameter:85,
+    filterThread:null, minFocusDist:28, maxMagnification:0.135,
+    elements:18, groups:13, blades:null,
+    // afType: Leica's pages describe only "a quick, quiet AF system", no
+    // motor name given.
+    afType:'Autofocus',
+    weatherSealed:true, ois:false, oisStops:null, year:2023, discontinued:false,
+    imageUrl:'https://leica-camera.com/sites/default/files/styles/meta_tag_product_image/public/pm-15079-11194_Super-Vario-Elmarit-SL_14-24_f2_8_upright.png?itok=r3RTFceU',
+    imageSource:{url:'https://leica-camera.com/en-US/photography/lenses/sl/leica-super-vario-elmarit-sl-14-24-f28-asph-black-anodized-finish', tier:'T1', date:'2026-09-18', title:'Leica Super-Vario-Elmarit-SL 14-24mm f/2.8 ASPH. official product page'},
+    asin:'B0CQD9G7FQ',
+    specSources:[{url:'https://leica-camera.com/sites/default/files/pm-101480-en_datenblatt_super-vario-elmarit-sl_14-24_asph.pdf', tier:'T1', note:'Leica\'s official datasheet (order no. 11194) confirms weight 855 g, length 131 mm, diameter 85 mm, 18 elements in 13 groups.', date:'2026-09-25', title:'Leica datasheet: Leica Super-Vario-Elmarit-SL 14-24mm f/2.8 ASPH.'}],
+    prices:{USD:2950,AUD:4800,EUR:2690,GBP:2350,JPY:495000,CAD:4160,SGD:3990},
+    priceSource:{url:'https://leicacamerausa.com/leica-super-vario-elmarit-sl-14-24mm-f-2-8-asph.html', tier:'T1', note:'$2,950 list price on leicacamerausa.com (SKU 11194, in stock); Leica Store Miami independently lists the same price.', date:'2026-09-25', title:'Leica Camera USA: Leica Super-Vario-Elmarit-SL 14-24mm f/2.8 ASPH.'},
+    productUrl:'https://leica-camera.com/en-US/photography/lenses/sl/leica-super-vario-elmarit-sl-14-24-f28-asph-black-anodized-finish',
+  },
+
+  'super-vario-elmar-sl-16-35mm-f35-45-asph': {
+    name:'Leica Super-Vario-Elmar-SL 16-35mm f/3.5-4.5 ASPH.', manufacturer:'Leica', line:'SL', type:'Zoom',
+    mount:'l', focalLength:null, focalLengthMin:16, focalLengthMax:35, focalLengthEquiv:'16-35mm',
+    maxAperture:3.5, minAperture:22, weight:990, length:123, diameter:88,
+    filterThread:82, minFocusDist:25, maxMagnification:0.27,
+    elements:18, groups:12, blades:null,
+    // afType: Leica's own copy describes "a specially developed motor
+    // concept consisting of a stepper motor and a linear guide" — a
+    // different, unbadged system from the Summicron-SL line's DSD.
+    afType:'Stepping Motor + Linear Guide',
+    weatherSealed:true, ois:false, oisStops:null, year:2018, discontinued:false,
+    // Current, but out of stock on leicacamerausa.com specifically ("back
+    // in stock" notify form) while in stock in DE/GB/JP/AU/SG/CA — treated
+    // as a regional inventory gap, not a discontinuation.
+    imageUrl:'https://leica-camera.com/sites/default/files/styles/meta_tag_product_image/public/pm-19513-11177__Super-Vario-Elmar-SL_16-35_f3_5-4_5.png?itok=ciQIrSmc',
+    imageSource:{url:'https://leica-camera.com/en-US/photography/lenses/sl/super-vario-elmar-sl-16-35mm-f3-5-4-5-asph-black', tier:'T1', date:'2026-09-18', title:'Leica Super-Vario-Elmar-SL 16-35mm f/3.5-4.5 ASPH. official product page'},
+    asin:'B07CZ4QM71',
+    specSources:[{url:'https://leica-camera.com/sites/default/files/pm-54144-11177_Datenblatt_Super-Vario-Elmar-16-35-ASPH_EN.pdf', tier:'T1', note:'Leica\'s official datasheet (order no. 11177) confirms weight 990 g, length 123 mm, diameter 88 mm, filter thread 82 mm, 18 elements in 12 groups. Where the sheet gives figures without and with the lens hood, the without-hood figure is stored.', date:'2026-09-25', title:'Leica datasheet: Leica Super-Vario-Elmar-SL 16-35mm f/3.5-4.5 ASPH.'}],
+    prices:{USD:6845,AUD:10200,EUR:5990,GBP:5350,JPY:1100000,CAD:9650,SGD:9050},
+    priceSource:{url:'https://leicacamerausa.com/leica-super-vario-elmar-sl-16-35mm-f-3-5-4-5-asph.html', tier:'T1', note:'$6,845 list price on leicacamerausa.com (SKU 11177, shown out of stock); Leica Store Miami independently lists the same price.', date:'2026-09-25', title:'Leica Camera USA: Leica Super-Vario-Elmar-SL 16-35mm f/3.5-4.5 ASPH.'},
+    productUrl:'https://leica-camera.com/en-US/photography/lenses/sl/super-vario-elmar-sl-16-35mm-f3-5-4-5-asph-black',
+  },
+
+  'vario-elmarit-sl-24-70mm-f28-asph': {
+    name:'Leica Vario-Elmarit-SL 24-70mm f/2.8 ASPH.', manufacturer:'Leica', line:'SL', type:'Zoom',
+    mount:'l', focalLength:null, focalLengthMin:24, focalLengthMax:70, focalLengthEquiv:'24-70mm',
+    maxAperture:2.8, minAperture:22, weight:856, length:123, diameter:88,
+    filterThread:82, minFocusDist:18, maxMagnification:0.35,
+    elements:19, groups:15, blades:11, afType:'Stepping motor',
+    weatherSealed:true, ois:false, oisStops:null, year:2021, discontinued:false,
+    imageUrl:'https://leica-camera.com/sites/default/files/styles/meta_tag_product_image/public/pm-15167-11189__Vario-Elmarit-SL_24-70_f2_8.png?itok=Yy-mitXZ',
+    imageSource:{url:'https://leica-camera.com/en-US/photography/lenses/sl/vario-elmarit-sl-24-70-f2-8-asph-black-finish', tier:'T1', date:'2026-09-16', title:'Leica Vario-Elmarit-SL 24-70mm f/2.8 ASPH. official product page'},
+    asin:'B097F8DQV8',
+    specSources:[{url:'https://leica-camera.com/sites/default/files/pm-100303-en_vario-elmarit-sl24-70mm_tech_data.pdf', tier:'T1', note:'Leica\'s official datasheet (order no. 11189) confirms weight 856 g, length 123 mm, diameter 88 mm, filter thread 82 mm, 19 elements in 15 groups. Where the sheet gives figures without and with the lens hood, the without-hood figure is stored.', date:'2026-09-25', title:'Leica datasheet: Leica Vario-Elmarit-SL 24-70mm f/2.8 ASPH.'}],
+    prices:{USD:3205,AUD:5300,EUR:2950,GBP:2590,JPY:539000,CAD:4520,SGD:4350},
+    priceSource:{url:'https://leicacamerausa.com/leica-vario-elmarit-sl-24-70mm-f-2-8-asph.html', tier:'T1', note:'$3,205 list price on leicacamerausa.com (SKU 11189, shown out of stock); Leica Store Miami independently lists the same price.', date:'2026-09-25', title:'Leica Camera USA: Leica Vario-Elmarit-SL 24-70mm f/2.8 ASPH.'},
+    productUrl:'https://leica-camera.com/en-US/photography/lenses/sl/vario-elmarit-sl-24-70-f2-8-asph-black-finish',
+  },
+
+  'vario-elmarit-sl-28-70mm-f28-asph': {
+    // Announced 2025-06-12, the SL3-S's lighter kit zoom (order 11196).
+    // afType: no source (Leica's page/datasheet or six press outlets) names
+    // the motor, so the file's generic 'Autofocus' is used. Best-case
+    // minFocusDist/maxMagnification are both at 28mm (0.19 m, 1:3.3).
+    // blades:9 from Digital Camera World's review spec table.
+    name:'Leica Vario-Elmarit-SL 28-70mm f/2.8 ASPH.', manufacturer:'Leica', line:'SL', type:'Zoom',
+    mount:'l', focalLength:null, focalLengthMin:28, focalLengthMax:70, focalLengthEquiv:'28-70mm',
+    maxAperture:2.8, minAperture:22, weight:572, length:102, diameter:73,
+    filterThread:67, minFocusDist:19, maxMagnification:0.303,
+    elements:16, groups:12, blades:9, afType:'Autofocus',
+    weatherSealed:true, ois:false, oisStops:null, year:2025, discontinued:false,
+    imageUrl:'https://leica-camera.com/sites/default/files/styles/meta_tag_product_image/public/pm-21931-11196_Leica_Vario-Elmarit-SL_28-70_f_2_8_upright_1920px.webp?itok=FEPC_bvI',
+    imageSource:{url:'https://leica-camera.com/en-US/photography/lenses/sl/vario-elmarit-sl-28-70-f2-8-asph-black', tier:'T1', date:'2026-09-26', title:'Leica Vario-Elmarit-SL 28-70 f/2.8 ASPH. official product page'},
+    asin:'B0FY4CJGX6',
+    specSources:[{url:'https://leica-camera.com/sites/default/files/pm-21944-EN_Datenblatt_Vario-Elmarit-SL_28-70.pdf', tier:'T1', note:'Leica\'s official datasheet (order no. 11196, May 2025) confirms weight 572 g, length 102 mm, diameter 73 mm (without hood; the marketing copy says 72 mm), filter E67, 16 elements in 12 groups, focus range 0.19 m (28mm) / 0.38 m (70mm), largest scale 1:3.3 (28mm), dust and splash protected.', date:'2026-09-26', title:'Leica datasheet: Leica Vario-Elmarit-SL 28-70 f/2.8 ASPH.'}],
+    prices:{USD:2190,AUD:3600,EUR:1990,GBP:1750,JPY:363000,CAD:3090,SGD:3000},
+    priceIncomplete:true,
+    priceSource:{url:'https://leicacamerausa.com/leica-vario-elmarit-sl-28-70mm-f-2-8-asph.html', tier:'T1', note:'$2,190 list price on leicacamerausa.com (SKU 11196); Leica Store Miami independently lists the same price. AUD/SGD/JPY from leica-store.com.au, leica-store.sg and store.leica-camera.jp; EUR/GBP from the schema.org Offer on leica-camera.com/de-DE and /en-GB (all 2026-09-26). CAD not readable (vistek.ca blocks automated access). CAD $3,090 from Vistek, an authorized Leica dealer in Canada (https://www.vistek.ca/store/495614/, Mfr 11196), read 2026-10-10.', date:'2026-09-26', title:'Leica Camera USA'},
+    productUrl:'https://leica-camera.com/en-US/photography/lenses/sl/vario-elmarit-sl-28-70-f2-8-asph-black',
+  },
+
+  'vario-elmarit-sl-24-90mm-f28-4-asph': {
+    // The original SL kit zoom (Oct 2015, with the SL Typ 601), still sold
+    // alongside the 24-70 f/2.8 and 28-70 f/2.8. minFocusDist/maxMagnification
+    // are the best case across the range (0.3 m at 24mm; 1:3.8 at 90mm).
+    // blades:9 is from a Lensrentals teardown + dealer listing, not Leica.
+    name:'Leica Vario-Elmarit-SL 24-90mm f/2.8-4 ASPH.', manufacturer:'Leica', line:'SL', type:'Zoom',
+    mount:'l', focalLength:null, focalLengthMin:24, focalLengthMax:90, focalLengthEquiv:'24-90mm',
+    maxAperture:2.8, minAperture:22, weight:1140, length:138, diameter:88,
+    filterThread:82, minFocusDist:30, maxMagnification:0.2632,
+    elements:18, groups:15, blades:9, afType:'Stepping Motor + Linear Guide',
+    weatherSealed:true, ois:true, oisStops:3.5, year:2015, discontinued:false,
+    imageUrl:'https://leica-camera.com/sites/default/files/styles/meta_tag_product_image/public/pm-15189-11176__Vario-Elmarit-SL_24-90_f2_8-4.png?itok=NEwaEixE',
+    imageSource:{url:'https://leica-camera.com/en-US/photography/lenses/sl/vario-elmarit-sl-24-90mm-f2-8-4-asph-black', tier:'T1', date:'2026-09-26', title:'Leica Vario-Elmarit-SL 24-90 f/2.8-4 ASPH. official product page'},
+    asin:'B018XM3P7Q',
+    specSources:[{url:'https://leica-camera.com/sites/default/files/pm-55652-Datenblatt_Vario-Elmarit-SL_24-90_en.pdf', tier:'T1', note:'Leica\'s official datasheet (order no. 11176) confirms weight 1,140 g, length 138 mm (at 24mm, without hood), diameter 88 mm, filter E82, 18 elements in 15 groups, working range 0.3 m (24mm) / 0.45 m (90mm), largest ratio 1:7.2 (24mm) / 1:3.8 (90mm), O.I.S. 3.5 stops (CIPA). Announced 2015-10-20 with the SL (Typ 601).', date:'2026-09-26', title:'Leica datasheet: Leica Vario-Elmarit-SL 24-90 f/2.8-4 ASPH.'}],
+    prices:{USD:6310,AUD:10300,EUR:5750,GBP:4900,JPY:1056000,CAD:8895,SGD:8500},
+    priceIncomplete:true,
+    priceSource:{url:'https://leicacamerausa.com/leica-vario-elmarit-sl-24-90mm-f-2-8-4-asph.html', tier:'T1', note:'$6,310 list price on leicacamerausa.com (SKU 11176); Leica Store Miami independently lists the same price. AUD/SGD/JPY from leica-store.com.au, leica-store.sg and store.leica-camera.jp; EUR/GBP from the schema.org Offer on leica-camera.com/de-DE and /en-GB (all 2026-09-26). CAD not readable (vistek.ca blocks automated access). CAD $8,895 from Vistek, an authorized Leica dealer in Canada (https://www.vistek.ca/store/401378/, Mfr 11176), read 2026-10-10.', date:'2026-09-26', title:'Leica Camera USA'},
+    productUrl:'https://leica-camera.com/en-US/photography/lenses/sl/vario-elmarit-sl-24-90mm-f2-8-4-asph-black',
+  },
+
+  'vario-elmarit-sl-70-200mm-f28-asph': {
+    name:'Leica Vario-Elmarit-SL 70-200mm f/2.8 ASPH.', manufacturer:'Leica', line:'SL', type:'Zoom',
+    mount:'l', focalLength:null, focalLengthMin:70, focalLengthMax:200, focalLengthEquiv:'70-200mm',
+    maxAperture:2.8, minAperture:22, weight:1540, length:207, diameter:89,
+    filterThread:82, minFocusDist:100, maxMagnification:0.196,
+    elements:20, groups:15, blades:null,
+    // afType: Leica's pages describe only "internal focusing", no motor
+    // name given.
+    afType:'Autofocus',
+    weatherSealed:true, ois:true, oisStops:null, year:2024, discontinued:false,
+    // Current, but showing as unavailable-online in DE/GB specifically
+    // (in-store reserve only) while in stock in US/JP/AU/CA — a regional
+    // inventory gap, not a discontinuation. No standalone SGD listing found
+    // (Singapore only bundles it with a teleconverter).
+    imageUrl:'https://leica-camera.com/sites/default/files/styles/meta_tag_product_image/public/pm-20382-11096_Leica_Vario-Elmarit-SL_70-200_f_2_8_upright_1920px.png?itok=n_YgewDs',
+    imageSource:{url:'https://leica-camera.com/en-US/photography/lenses/sl/vario-elmarit-sl-70-200-f28-asph-black-anodized-finish', tier:'T1', date:'2026-09-18', title:'Leica Vario-Elmarit-SL 70-200mm f/2.8 ASPH. official product page'},
+    asin:'B0DH9368DS',
+    specSources:[{url:'https://leica-camera.com/sites/default/files/pm-20386-EN_Datenblatt_Vario-Elmar-SL_70-200.pdf', tier:'T1', note:'Leica\'s official datasheet (order no. 11096) confirms weight 1540 g, length 207 mm, diameter 89 mm, filter thread 82 mm, 20 elements in 15 groups. Where the sheet gives figures without and with the lens hood, the without-hood figure is stored.', date:'2026-09-25', title:'Leica datasheet: Leica Vario-Elmarit-SL 70-200mm f/2.8 ASPH.'}],
+    prices:{USD:3550,AUD:5800,EUR:3250,GBP:2880,JPY:594000,CAD:5005,SGD:null},
+    priceIncomplete:true,
+    priceSource:{url:'https://leicacamerausa.com/leica-vario-elmarit-sl-70-200mm-f-2-8-asph.html', tier:'T1', note:'$3,550 list price on leicacamerausa.com (SKU 11096, shown out of stock); Leica Store Miami independently lists the same price.', date:'2026-09-25', title:'Leica Camera USA: Leica Vario-Elmarit-SL 70-200mm f/2.8 ASPH.'},
+    productUrl:'https://leica-camera.com/en-US/photography/lenses/sl/vario-elmarit-sl-70-200-f28-asph-black-anodized-finish',
+  },
+
+  'apo-vario-elmarit-sl-90-280mm-f28-4': {
+    name:'Leica APO-Vario-Elmarit-SL 90-280mm f/2.8-4', manufacturer:'Leica', line:'SL', type:'Zoom',
+    mount:'l', focalLength:null, focalLengthMin:90, focalLengthMax:280, focalLengthEquiv:'90-280mm',
+    maxAperture:2.8, minAperture:22, weight:1710, length:238, diameter:88,
+    filterThread:82, minFocusDist:60, maxMagnification:0.208,
+    elements:23, groups:17, blades:null, afType:'Dual Syncro Drive (DSD)',
+    weatherSealed:true, ois:true, oisStops:3.5, year:2016, discontinued:false,
+    imageUrl:'https://leica-camera.com/sites/default/files/styles/meta_tag_product_image/public/pm-15116-11175__APO-Vario-Elmarit-SL_90-280_f2_8-4.png?itok=ZtZH1RSr',
+    imageSource:{url:'https://leica-camera.com/en-US/photography/lenses/sl/apo-vario-elmarit-sl-90-280mm-f2-8-4-black', tier:'T1', date:'2026-09-18', title:'Leica APO-Vario-Elmarit-SL 90-280mm f/2.8-4 official product page'},
+    asin:'B01E6BFN0K',
+    specSources:[
+      {url:'https://leica-camera.com/sites/default/files/pm-55506-Datenblatt_APO-Vario-Elmarit-SL_90-280_en.pdf', tier:'T1', note:'Leica\'s official datasheet (order no. 11175) confirms weight 1710 g, diameter 88 mm, filter thread 82 mm. Where the sheet gives figures without and with the lens hood, the without-hood figure is stored.', date:'2026-09-25', title:'Leica datasheet: Leica APO-Vario-Elmarit-SL 90-280mm f/2.8-4'},
+      {url:'https://leica-camera.com/en-US/photography/lenses/sl/apo-vario-elmarit-sl-90-280mm-f2-8-4-black/technical-specification', tier:'T1', note:'Leica\'s web technical-specification page additionally confirms length 238 mm.', date:'2026-09-25', title:'Leica technical specification: Leica APO-Vario-Elmarit-SL 90-280mm f/2.8-4'},
+    ],
+    prices:{USD:7805,AUD:12900,EUR:7190,GBP:6250,JPY:1320000,CAD:11005,SGD:10700},
+    priceSource:{url:'https://leicacamerausa.com/leica-apo-vario-elmarit-sl-90-280mm-f-2-8-4.html', tier:'T1', note:'$7,805 list price on leicacamerausa.com (SKU 11175, in stock); Leica Store Miami independently lists the same price.', date:'2026-09-25', title:'Leica Camera USA: Leica APO-Vario-Elmarit-SL 90-280mm f/2.8-4'},
+    productUrl:'https://leica-camera.com/en-US/photography/lenses/sl/apo-vario-elmarit-sl-90-280mm-f2-8-4-black',
+  },
+
+  'vario-elmar-sl-100-400mm-f5-63': {
+    name:'Leica Vario-Elmar-SL 100-400mm f/5-6.3', manufacturer:'Leica', line:'SL', type:'Zoom',
+    mount:'l', focalLength:null, focalLengthMin:100, focalLengthMax:400, focalLengthEquiv:'100-400mm',
+    maxAperture:5, minAperture:22, weight:1530, length:198, diameter:88,
+    filterThread:82, minFocusDist:159, maxMagnification:0.244,
+    elements:22, groups:16, blades:null,
+    // afType: Leica's pages describe only "optical image stabilisation and
+    // precise autofocus", no motor name given.
+    afType:'Autofocus',
+    weatherSealed:true, ois:true, oisStops:null, year:2023, discontinued:false,
+    // No standalone SGD listing found (Singapore only bundles it with a teleconverter).
+    imageUrl:'https://leica-camera.com/sites/default/files/styles/meta_tag_product_image/public/pm-15210-11191_Vario-Elmar-SL_100-400_front_PIM.png?itok=A3WPjlro',
+    imageSource:{url:'https://leica-camera.com/en-US/photography/lenses/sl/vario-elmar-sl-100-400-f5-6-3', tier:'T1', date:'2026-09-18', title:'Leica Vario-Elmar-SL 100-400mm f/5-6.3 official product page'},
+    asin:'B0BZYCRFCP',
+    specSources:[{url:'https://leica-camera.com/sites/default/files/pm-92387-EN_Datenblatt_Vario-Elmar-SL_100-400.pdf', tier:'T1', note:'Leica\'s official datasheet (order no. 11191) confirms weight 1530 g, length 198 mm, diameter 88 mm, filter thread 82 mm, 22 elements in 16 groups. Where the sheet gives figures without and with the lens hood, the without-hood figure is stored.', date:'2026-09-25', title:'Leica datasheet: Leica Vario-Elmar-SL 100-400mm f/5-6.3'}],
+    prices:{USD:2590,AUD:4300,EUR:2390,GBP:2150,JPY:440000,CAD:3650,SGD:null},
+    priceIncomplete:true,
+    priceSource:{url:'https://leicacamerausa.com/leica-vario-elmar-sl-100-400-f-5-6-3.html', tier:'T1', note:'$2,590 list price on leicacamerausa.com (SKU 11191, in stock); Leica Store Miami independently lists the same price.', date:'2026-09-25', title:'Leica Camera USA: Leica Vario-Elmar-SL 100-400mm f/5-6.3'},
+    productUrl:'https://leica-camera.com/en-US/photography/lenses/sl/vario-elmar-sl-100-400-f5-6-3',
+  },
+
   /* ── Voigtländer (L-Mount, native full-frame manual-focus) ── */
 
 
@@ -2183,8 +2735,10 @@ const LENS_DROPDOWN_GROUPS = [
   { label: '── LUMIX S Zooms (L-Mount) ──',  ids: ['lumix-s-18-40mm-f4-5-6-3', 'lumix-s-14-28mm-f4-5-6-macro', 'lumix-s-pro-16-35mm-f4', 'lumix-s-20-60mm-f3-5-5-6', 'lumix-s-24-60mm-f2-8', 'lumix-s-24-70mm-f2-8-pro', 'lumix-s-24-105mm-f4-macro', 'lumix-s-28-200mm-f4-7-1-macro', 'lumix-s-pro-70-200mm-f2-8', 'lumix-s-pro-70-200mm-f4', 'lumix-s-70-300mm-f4-5-5-6-macro', 'lumix-s-100-500mm-f5-7-1'] },
   { label: '── LUMIX G Primes (MFT) ──',     ids: ['lumix-g-fisheye-8mm-f3-5', 'leica-dg-9mm-f1-7', 'leica-dg-12mm-f1-4', 'lumix-g-14mm-f2-5-ii', 'leica-dg-15mm-f1-7', 'lumix-g-20mm-f1-7-ii', 'leica-dg-25mm-f1-4-ii', 'lumix-g-25mm-f1-7', 'lumix-g-macro-30mm-f2-8', 'leica-dg-42-5mm-f1-2-nocticron', 'lumix-g-42-5mm-f1-7', 'leica-dg-45mm-f28-macro', 'leica-dg-200mm-f2-8'] },
   { label: '── LUMIX G Zooms (MFT) ──',      ids: ['lumix-g-7-14mm-f4', 'leica-dg-8-18mm-f2-8-4', 'leica-dg-10-25mm-f1-7', 'lumix-g-12-32mm-f3-5-5-6', 'leica-dg-12-60mm-f2-8-4', 'lumix-g-12-60mm-f3-5-5-6', 'lumix-g-12-35mm-f2-8-ii', 'lumix-g-x-pz-14-42mm-f3-5-5-6', 'leica-dg-25-50mm-f1-7', 'lumix-g-35-100mm-f2-8-ii', 'leica-dg-35-100mm-f2-8-power-ois', 'lumix-g-35-100mm-f4-5-6', 'leica-dg-50-200mm-f2-8-4', 'lumix-g-14-140mm-f3-5-5-6-ii', 'lumix-g-100-300mm-f4-5-6-ii', 'leica-dg-100-400mm-f4-6-3-ii'] },
-  { label: '── Sigma Primes (L-Mount) ──', ids: ['sigma-20mm-f14-dg', 'sigma-24mm-f14-dg', 'sigma-35mm-f14-dg', 'sigma-35mm-f14-dg-ii', 'sigma-50mm-f14-dg', 'sigma-85mm-f12-dg', 'sigma-85mm-f14-dg', 'sigma-135mm-f14-dg', 'sigma-20mm-f2-dg', 'sigma-24mm-f2-dg', 'sigma-35mm-f2-dg', 'sigma-45mm-f28-dg', 'sigma-50mm-f2-dg', 'sigma-65mm-f2-dg', 'sigma-90mm-f28-dg', 'sigma-17mm-f4-dg'] },
-  { label: '── Sigma Zooms (L-Mount) ──', ids: ['sigma-16-28mm-f28-dg', 'sigma-20-60mm-f28-4-dg', 'sigma-28-70mm-f28-dg', 'sigma-24-70mm-f28-dg-ii', 'sigma-28-45mm-f18-dg', 'sigma-70-200mm-f28-dg', 'sigma-100-400mm-f5-63-dg', 'sigma-150-600mm-f5-63-dg'] },
+  { label: '── Sigma Primes (L-Mount) ──', ids: ['sigma-20mm-f14-dg', 'sigma-24mm-f14-dg', 'sigma-35mm-f14-dg', 'sigma-35mm-f14-dg-ii', 'sigma-50mm-f14-dg', 'sigma-85mm-f12-dg', 'sigma-85mm-f14-dg', 'sigma-135mm-f14-dg', 'sigma-20mm-f2-dg', 'sigma-24mm-f2-dg', 'sigma-35mm-f2-dg', 'sigma-45mm-f28-dg', 'sigma-50mm-f2-dg', 'sigma-65mm-f2-dg', 'sigma-90mm-f28-dg', 'sigma-17mm-f4-dg', 'sigma-14mm-f14-dg', 'sigma-15mm-f14-dg-fisheye', 'sigma-35mm-f12-dg-ii', 'sigma-50mm-f12-dg', 'sigma-105mm-f28-dg-macro', 'sigma-24mm-f35-dg', 'sigma-200mm-f2-dg', 'sigma-500mm-f56-dg'] },
+  { label: '── Sigma Zooms (L-Mount) ──', ids: ['sigma-16-28mm-f28-dg', 'sigma-20-60mm-f28-4-dg', 'sigma-28-70mm-f28-dg', 'sigma-24-70mm-f28-dg-ii', 'sigma-28-45mm-f18-dg', 'sigma-70-200mm-f28-dg', 'sigma-100-400mm-f5-63-dg', 'sigma-150-600mm-f5-63-dg', 'sigma-14-24mm-f28-dg', 'sigma-24-70mm-f28-dg', 'sigma-28-105mm-f28-dg', 'sigma-20-200mm-f35-63-dg', 'sigma-60-600mm-f45-63-dg', 'sigma-300-600mm-f4-dg'] },
+  { label: '── Leica SL Primes (L-Mount) ──', ids: ['super-apo-summicron-sl-21mm-f2-asph', 'apo-summicron-sl-28mm-f2-asph', 'apo-summicron-sl-35mm-f2-asph', 'summicron-sl-35mm-f2-asph', 'summilux-sl-50mm-f14-asph', 'apo-summicron-sl-50mm-f2-asph', 'summicron-sl-50mm-f2-asph', 'apo-summicron-sl-75mm-f2-asph', 'apo-summicron-sl-90mm-f2-asph', 'apo-macro-elmarit-sl-100mm-f28'] },
+  { label: '── Leica SL Zooms (L-Mount) ──', ids: ['super-vario-elmarit-sl-14-24mm-f28-asph', 'super-vario-elmar-sl-16-35mm-f35-45-asph', 'vario-elmarit-sl-24-70mm-f28-asph', 'vario-elmarit-sl-28-70mm-f28-asph', 'vario-elmarit-sl-24-90mm-f28-4-asph', 'vario-elmarit-sl-70-200mm-f28-asph', 'apo-vario-elmarit-sl-90-280mm-f28-4', 'vario-elmar-sl-100-400mm-f5-63'] },
   { label: '── Laowa (L-Mount) ──', ids: ['laowa-15mm-f2-l', 'laowa-17mm-f4-tilt-shift-l', 'laowa-90mm-f28-macro-l', 'laowa-180mm-f45-macro-l'] },
   { label: '── Viltrox (L-Mount) ──', ids: ['viltrox-16mm-f18-l', 'viltrox-28mm-f45-l', 'viltrox-14mm-f4-air-l', 'viltrox-20mm-f28-air-l', 'viltrox-40mm-f25-air-l', 'viltrox-50mm-f2-air-l'] },
   { label: '── Samyang (L-Mount) ──', ids: ['samyang-14-24mm-f28-l'] },
