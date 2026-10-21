@@ -27,6 +27,8 @@ const ALLOWED_HOSTS = [
   'meikeglobal.com', 'yongnuo.eu', 'hkyongnuo.com', 'omsystem.com', 'zeiss.com',
   'laowa.com.au', 'laowalenses.ca', 'pergear.com', 'voigtlaender.de', 'leica-camera.com',
   'sg-image.com',
+  // Thypoch's official Shopify store (productUrl) and site (spec tables).
+  'thypoch.com',
   // DPReview: used as productUrl for a handful of discontinued Leica Q
   // bodies whose own leica-camera.com pages are gone (task 5.6). Already
   // trusted as a footerLinks source across several brands.
@@ -158,7 +160,13 @@ const KNOWN_SHARED_LINKS = new Map([
 // of which has an X-mount amazon.com listing: sgimage-55mm-f18 (only the Z
 // listing, B0H765VW8R), laowa-4-5-10mm-f28-fisheye, laowa-8-16mm-f35-5 and
 // laowa-12-24mm-f56-shift (Laowa's 12-24 has only a Z listing).
-const ASIN_GAP_BASELINE = 47;
+// Raised to 50 on 2026-10-19 by the Fujifilm older-third-party pass
+// (add-fujifilm-older-thirdparty-lenses): of 10 new 7Artisans lenses, 7 got
+// X-mount listings; 7artisans-6mm-f2 and 7artisans-50mm-f14-tilt have none
+// found, and 7artisans-10mm-f35's only listing doesn't name the mount.
+// Raised to 58 the same day: the 8 SG-image manual-focus lenses have no
+// amazon.com listings in any mount (site:amazon.com search, 2026-10-19).
+const ASIN_GAP_BASELINE = 58;
 
 const allItems = () => brandDirs().flatMap(brand => {
   const { data } = loadBrand(brand);
