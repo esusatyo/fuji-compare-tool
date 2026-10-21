@@ -60,6 +60,7 @@ const KNOWN_SHARED_LINKS = new Map([
   // Laowa sells the Aksen 45mm and 17.5mm off one product page.
   ['fujifilm productUrl https://www.venuslens.net/product/laowa-aksen-ultra-macro-apo/', 2],
   ['sony productUrl https://www.venuslens.net/product/laowa-aksen-ultra-macro-apo/', 2],
+  ['nikon productUrl https://www.venuslens.net/product/laowa-aksen-ultra-macro-apo/', 2],
   // Zeiss has one page (with a per-lens Technical Data table) per lens line.
   ['sony productUrl https://www.zeiss.com/photonics-and-optics/us/photography/products/lenses-for-mirrorless-system-cameras/batis-lenses.html', 5],
   ['sony productUrl https://www.zeiss.com/photonics-and-optics/us/photography/products/lenses-for-mirrorless-system-cameras/touit-lenses.html', 3],
@@ -180,8 +181,8 @@ const KNOWN_SHARED_LINKS = new Map([
 // +35 Laowa, +13 Voigtländer, +9 Zeiss (8 new + Batis 85, now current again),
 // +19 TTArtisan, +28 7Artisans, +12 Meike, +13 Thypoch/SG-image.
 // Nikon missing-lens pass (add-nikon-missing-thirdparty-lenses, 2026-10-21+),
-// same approach: +1 Tamron.
-const ASIN_GAP_BASELINE = 272;
+// same approach: +1 Tamron, +14 Laowa.
+const ASIN_GAP_BASELINE = 286;
 
 const allItems = () => brandDirs().flatMap(brand => {
   const { data } = loadBrand(brand);

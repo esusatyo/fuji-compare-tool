@@ -5,7 +5,7 @@
 ## 2. Maker batches
 
 - [x] 2.1 Viltrox + Tamron
-- [ ] 2.2 Laowa
+- [x] 2.2 Laowa
 - [ ] 2.3 Voigtländer + Zeiss
 - [ ] 2.4 TTArtisan
 - [ ] 2.5 7Artisans
