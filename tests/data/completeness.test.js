@@ -529,6 +529,10 @@ const SHARED_IMAGE_OK = {
     // Panasonic-file mount (L and MFT).
     ['laowa-90mm-f28-macro-l', 'laowa-90mm-f28-macro-mft'],
   ],
+  sony: [
+    // Same 7Artisans Lite trio as nikon above (one listing, one hero image).
+    ['7artisans-25mm-f18-lite', '7artisans-35mm-f18-lite', '7artisans-50mm-f18-lite'],
+  ],
 };
 
 for (const brand of brandDirs()) {

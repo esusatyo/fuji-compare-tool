@@ -1,6 +1,8 @@
 # Progress — Sony missing third-party lenses
 
-**Resume at:** 2.9 7Artisans (~30 E)
+**Resume at:** 2.10 Meike (~25 E; MF line historically lacks published diameter)
+**7Artisans done 2026-10-21 (28 lenses):** 7artisans.store products.json lists 36 Sony-E photo lenses (cine/used/drone excluded). The maker publishes most specs only as images, so the full spec set comes from each lens's B&H Sony E listing (B&H search "7artisans sony e", then `/c/product/<id>-REG/x.html/specs`), cross-checked against the maker's text tables where they exist (maker wins on conflict: AF 40 L40 vs B&H 50, AF 135 L130 vs 136). USD = store compare-at (regular) price for the base Sony E variant. Own dropdown group; the Lite trio shares one listing + image (allowlisted, as on nikon).
+**7Artisans skipped — no Sony E dimensions anywhere:** 50mm f/1.8 (APS-C), 7.5mm f/2.8 II, 35mm f/1.4 (APS-C), 35mm f/1.4 III, 35mm f/5.6, 6mm f/2, 35mm f/1.2 II, 50mm f/0.95 (B&H E listing retired).
 **TTArtisan done 2026-10-21 (19 lenses):** ttartisan.store products.json (33 products with a Sony E variant). Specs from each product page's spec table (HTML, not the products.json body, which is marketing bullets). Dimensions exist only as Size-diagram IMAGES on the official page: Sony E sizes came from the Nikon entries' notes (8 AF lenses, read from those diagrams) or B&H's Sony E listing text (11). TTArtisan now has its own dropdown group (27mm moved out of "Other").
 **TTArtisan skipped — no sourceable Sony E dimensions (B&H lists none, no diagram found):** AF 24mm f/3.8 mini (new 2026-10), 100mm f/2.8 2X Macro, 10mm f/2 ASPH, 500mm f/6.3, Tilt 50mm f/1.4, 50mm f/2, 50mm f/0.95, 50mm f/1.4 ASPH, 17mm f/1.4, AF 35mm f/1.8 (original), Tilt-Shift 100mm Macro, 21mm f/1.5, 90mm f/1.25 (page's mount table says GFX/XCD only); 11mm f/2.8 fisheye (no spec table). Revisit by reading each page's Size diagram by eye.
 **Zeiss done 2026-10-21 (8 lenses):** Batis 18/40 CF/135, Touit 12/50M, Otus ML 35/50/85 (new 2025 manual line). Specs from zeiss.com per-line Technical Data tables (use "Diameter max." and "Length (Without Lens Caps)", E column); USD from B&H. Batis 25/85 were wrongly marked discontinued (Zeiss lists them, B&H stocks them new) — now current; Batis 85, Loxia 35, Touit 32 had wrong sizes (with-caps length / focus-ring diameter) — corrected. Loxia 25/50/85 NOT added: B&H no longer stocks Loxia (one Loxia 50 at clearance), no citable US price. 5 image gaps (Zeiss has only family shots; Commons has nothing).
@@ -26,7 +28,8 @@
 | Laowa | 39 | 35 | 4 (DSLR-era FE, owner: out) | fb9e34d |
 | Voigtländer | 13 | 13 | 0 | fe9691e |
 | Zeiss | 11 | 8 | 3 (Loxia, discontinued) | 9191b4f |
-| TTArtisan | 33 | 19 | 14 (no E dimensions) | (this commit) |
+| TTArtisan | 33 | 19 | 14 (no E dimensions) | cf6d340 |
+| 7Artisans | 36 | 28 | 8 (no E dimensions) | (this commit) |
 
 ## Deferred / skipped (with reason)
 

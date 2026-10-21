@@ -69,6 +69,8 @@ const KNOWN_SHARED_LINKS = new Map([
   // all three barrels. Verified visually 2026-09-07.
   ['nikon imageUrl https://7artisans.store/cdn/shop/files/2342434.jpg', 3],
   ['nikon productUrl https://7artisans.store/products/af-25-35-50mm-f1-8-aps-c-lens-for-e-fx-z', 3],
+  ['sony imageUrl https://cdn.shopify.com/s/files/1/0555/8504/6736/files/2342434.jpg', 3],
+  ['sony productUrl https://7artisans.store/products/af-25-35-50mm-f1-8-aps-c-lens-for-e-fx-z', 3],
   // Same Laowa 90mm optic in L and MFT — one maker page, one photo.
   ['panasonic imageUrl https://www.venuslens.net/wp-content/uploads/2022/06/Laowa_90mmF282XMacroAPO_1-700x482.jpg', 2],
   ['panasonic productUrl https://www.venuslens.net/product/laowa-90mm-f-2-8-2x-macro-apo/', 2],
@@ -176,8 +178,8 @@ const KNOWN_SHARED_LINKS = new Map([
 // lookups; ASINs are backfilled afterwards with the check-prices-and-buy-links
 // skill, which then tightens this back down. +21 Viltrox, +32 Samyang, +17 Sigma, +14 Tamron,
 // +35 Laowa, +13 Voigtländer, +9 Zeiss (8 new + Batis 85, now current again),
-// +19 TTArtisan.
-const ASIN_GAP_BASELINE = 218;
+// +19 TTArtisan, +28 7Artisans.
+const ASIN_GAP_BASELINE = 246;
 
 const allItems = () => brandDirs().flatMap(brand => {
   const { data } = loadBrand(brand);
