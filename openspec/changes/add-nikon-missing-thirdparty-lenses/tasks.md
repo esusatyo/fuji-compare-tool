@@ -1,0 +1,19 @@
+## 1. Setup
+
+- [x] 1.1 Create change, PROGRESS.md and catalogue diff
+
+## 2. Maker batches
+
+- [ ] 2.1 Viltrox + Tamron
+- [ ] 2.2 Laowa
+- [ ] 2.3 Voigtländer + Zeiss
+- [ ] 2.4 TTArtisan
+- [ ] 2.5 7Artisans
+- [ ] 2.6 Meike
+- [ ] 2.7 Thypoch / SG-image
+- [ ] 2.8 Yongnuo
+
+## 3. Verify
+
+- [ ] 3.1 npm test, verify-images nikon, test:links, generate-seo
+- [ ] 3.2 Preview /nikon/ in lenses mode
