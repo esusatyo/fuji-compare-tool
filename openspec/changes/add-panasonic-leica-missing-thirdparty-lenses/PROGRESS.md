@@ -1,6 +1,7 @@
 # Progress — Panasonic + Leica missing third-party lenses
 
-**Resume at:** 5.3 (Leica M: Zeiss ZM)
+**Resume at:** 5.4 (Leica M: TTArtisan / 7Artisans / Thypoch / Laowa)
+**5.3 done 2026-10-22 (9 Zeiss ZM lenses into leica/):** the full current ZM line on zeiss.com (Distagon 15/2.8, Biogon 21/2.8, 25/2.8, 28/2.8, 2/35, C Biogon 2.8/35, Distagon 1.4/35, C Sonnar 1.5/50, Planar 2/50). Specs from zeiss.com's ZM technical-data table (lengths without caps) + the per-lens Zeiss datasheet PDFs; diameter and blade count (not published by Zeiss) from B&H; Distagon 15 diameter (78mm) from DxOMark only. Where the current web table and the older datasheets disagree on weight (15mm 550 vs 500g, 21mm 280 vs 300g, 28mm 230 vs 220g; B&H follows the datasheets) the web table is used and the datasheet figure noted. Years: Distagon 35 2014 (Photokina) and Distagon 15 2005 (DxOMark) sourced; the others estimated from the 2004-05 ZM launch, noted as estimates. USD = B&H (Zeiss's US web shop no longer lists ZM). Per-lens model images from zeiss.com.
 **5.2 done 2026-10-22 (29 Voigtländer VM lenses into leica/):** every current design on Cosina's EN VM list - specs from the EN pages, release dates (発売日) from the JP pages, USD = B&H regular (no strikethrough), product shot = each page's "-01" image (the first, P00, is a sample photo). One entry per optical design: Vintage Line Type I/II (same optics, aluminium vs brass barrel) use the variant B&H sells / Cosina still makes, noted in specSources; APO-Lanthar 50 f/3.5 Type I and Type II are separate entries (Type II focuses closer and takes 39mm filters). New "Voigtländer (M-Mount)" group.
 **5.1 done 2026-10-22 (112 L-Mount lenses copied into leica/):** every full-frame L lens on Panasonic's page except Leica's own SL lenses - LUMIX S 22, Sigma 38, Laowa 23, Viltrox 6, Samyang 2, TTArtisan 6, 7Artisans 11, Meike 2, SG-image 2 - copied verbatim with Panasonic's dropdown grouping ("Panasonic LUMIX S Primes/Zooms (L-Mount)", maker groups after Leica's own). shared-mount.test.js gains leica-panasonic and leica-sigma rows (both pass). 7 image gaps carried over (lumix-s-20mm-f2-5 + 6 Laowa).
 **4.3 done 2026-10-22 (TTArtisan 5 + 7Artisans 7 MFT lenses, panasonic/ + olympus/):** TTArtisan 35 f/1.4, 50 f/1.2, 40 macro, 7.5 fisheye, Tilt 35; 7Artisans 25 f/1.8, 60 macro II, 4mm, 18 f/6.3 II, 50 Tilt, 10 f/3.5, 6 f/2 fisheye. Every B&H MFT listing used gives the same size/weight as the Sony (6mm: Fujifilm) entry, so those entries were cloned with mount mft and 2x equivalents; USD = store M43 variant price (equal to the E prices).
@@ -70,7 +71,8 @@ Makers' store catalogues (Shopify `products.json`, venuslens Woo Store API) and 
 | 4.3a SG-image + Samyang MFT | 21 | 20 | 1 | 26e2815 |
 | 4.3b TTArtisan + 7Artisans + Meike MFT | ~38 | 12 | ~26 | 47bfd73 |
 | 5.1 Leica L-Mount mirror | 112 | 112 | 0 | 08e9c67 |
-| 5.2 Voigtländer VM | 35 | 29 | 6 | (this commit) |
+| 5.2 Voigtländer VM | 35 | 29 | 6 | b3b948d |
+| 5.3 Zeiss ZM | 9 | 9 | 0 | (this commit) |
 
 ## Skipped
 ### Laowa L (3.2)

@@ -77,6 +77,7 @@ const KNOWN_SHARED_LINKS = new Map([
   ['sony productUrl https://www.zeiss.com/photonics-and-optics/us/photography/products/lenses-for-mirrorless-system-cameras/touit-lenses.html', 3],
   ['sony productUrl https://www.zeiss.com/photonics-and-optics/us/photography/products/lenses-for-mirrorless-system-cameras/otus-ml-lenses.html', 3],
   ['nikon productUrl https://www.zeiss.com/photonics-and-optics/us/photography/products/lenses-for-mirrorless-system-cameras/otus-ml-lenses.html', 3],
+  ['leica productUrl https://www.zeiss.com/photonics-and-optics/us/photography/products/lenses-for-rangefinder-cameras/zm-lenses.html', 9],
   // 7Artisans sells the 25/35/50mm f/1.8 Lite trio as ONE listing with mount and
   // focal-length variants; the photo is the maker's official family shot showing
   // all three barrels. Verified visually 2026-09-07.
@@ -203,8 +204,9 @@ const KNOWN_SHARED_LINKS = new Map([
 // panasonic and olympus), +10 Voigtländer MFT (5 each),
 // +14 SG-image MFT, +26 Samyang MFT (7 / 13 each), +24 TTArtisan/7Artisans
 // MFT (12 each), +49 Leica L-Mount copies of Panasonic's LUMIX S /
-// third-party entries that have no asin, +29 Voigtländer VM (Leica).
-const ASIN_GAP_BASELINE = 547;
+// third-party entries that have no asin, +29 Voigtländer VM, +9 Zeiss ZM
+// (Leica).
+const ASIN_GAP_BASELINE = 556;
 
 const allItems = () => brandDirs().flatMap(brand => {
   const { data } = loadBrand(brand);
