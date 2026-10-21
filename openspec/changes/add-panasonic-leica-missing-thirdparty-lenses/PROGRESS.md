@@ -1,6 +1,7 @@
 # Progress — Panasonic + Leica missing third-party lenses
 
-**Resume at:** 4.3 (TTArtisan / 7Artisans / Meike / SG-image / Samyang MFT)
+**Resume at:** 4.3 remainder (TTArtisan / 7Artisans / Meike MFT via B&H MFT listings)
+**4.3 part 1 done 2026-10-22 (SG-image 7 + Samyang 13 MFT lenses, panasonic/ + olympus/):** SG-image: Sony entries cloned (spec card gives one figure for all mounts, M43 listed; M43 variant prices equal the E ones); MF 18 f/6.3 skipped as on sony/. Samyang: Sony entries cloned with the Micro 4/3 column of samyangus.com's per-mount spec tables (length/weight) and the MFT variant's regular (compare-at) price; MFT-only 7.5mm f/3.5 fisheye added from its own table. 8mm f/3.5: store MFT price is a non-round $215.13 with no compare-at -> B&H Rokinon MFT $269. 300mm mirror: store $268.95, no compare-at, no B&H MFT listing -> $269. Follow-up: sony samyang-100mm-f28-macro USD $319 ("regular", no compare-at) vs the MFT variant's $599 compare-at - recheck the Sony price.
 **4.2 done 2026-10-22 (5 Voigtländer MFT lenses, panasonic/ + olympus/):** Nokton 10.5 / 17.5 / 42.5 / 60 f/0.95 and Super Nokton 29 f/0.8 from Cosina's EN MFT pages (Cosina's full MFT list is these + the 25mm Type II already entered); USD = B&H regular (no strikethrough). Note: B&H now lists the existing Nokton 25mm Type II at $749 with no strikethrough (data has $799 from a 2026-10-10 "regular $799, sale $749" reading) - recheck in the price pass.
 **4.1 done 2026-10-22 (11 Laowa MFT lenses, in both panasonic/ and olympus/):** Aksen 45 / 17.5, 4.5-10 CF fisheye, 4mm fisheye, 9mm Zero-D (Sony entries cloned, 2x equivalents; Laowa gives one size for all mounts, MFT listed); MFT-only designs Argus 25 MFT APO, Argus 18 MFT APO, 17 f/1.8 MFT, 50 2X macro, 10 f/2 Zero-D MFT, 6 f/2 Zero-D MFT from Laowa's spec tables + B&H MFT listings (min aperture from B&H). 6mm/10mm/Argus 18 are not on Laowa's US store: USD = B&H, specs/images from Laowa Australia. "Voigtländer & Laowa (MFT)" group split into Laowa / Voigtländer groups on both pages. 17mm f/1.8 image gapped (only on venuslens.net, which blocks hotlinks).
 **3.6 done 2026-10-22 (2 SG-image L lenses):** MF 24 f/6.3 pancake and MF 50 f/1.8 Shaped Aperture, cloned from the Sony entries (SG-image's spec card gives one figure for every mount, L listed); USD = L variant price (same as E). AF 35 f/2.2 skipped as on sony/ (spec card only in the rendered page). APS-C SG-image L lenses out of scope.
@@ -62,7 +63,8 @@ Makers' store catalogues (Shopify `products.json`, venuslens Woo Store API) and 
 | 3.5 Meike L | 11 | 2 | 9 | ba30b66 |
 | 3.6 SG-image L | 3 | 2 | 1 | 9699404 |
 | 4.1 Laowa MFT | 11 | 11 | 0 | 9cce5a1 |
-| 4.2 Voigtländer MFT | 5 | 5 | 0 | (this commit) |
+| 4.2 Voigtländer MFT | 5 | 5 | 0 | 83e5a4f |
+| 4.3a SG-image + Samyang MFT | 21 | 20 | 1 | (this commit) |
 
 ## Skipped
 ### Laowa L (3.2)

@@ -557,6 +557,8 @@ const SHARED_IMAGE_OK = {
     // Laowa Aksen 45mm / 17.5mm — same, entered in L and MFT (2026-10-22).
     ['laowa-aksen-45mm-f28-l', 'laowa-aksen-45mm-f28-mft'],
     ['laowa-aksen-17-5mm-f17-l', 'laowa-aksen-17-5mm-f17-mft'],
+    // SG-image 50mm f/1.8 Shaped Aperture — one photo for all mounts (L and MFT).
+    ['sgimage-50mm-f18-l', 'sgimage-50mm-f18-mft'],
   ],
   sony: [
     // Same 7Artisans Lite trio as nikon above (one listing, one hero image).
