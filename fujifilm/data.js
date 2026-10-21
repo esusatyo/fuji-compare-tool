@@ -3486,9 +3486,9 @@ const LENSES = {
     imageUrl:'https://cdn.shopify.com/s/files/1/0756/5937/8928/files/Simera-28mm-f-1.4-Z-M-E-RF-X-Mount-Full-Frame-Manual-Lens-Thypoch-15970566.png',
     imageSource: { url:'https://store.thypoch.com/products/simera-28mm-f-1-4-e-rf-x-z-mount', tier:'T1', title:'Thypoch official store', note:'the Black / Fujifilm X Mount variant\'s own image (the product\'s first image shows the shorter Leica M barrel, so it was not used)', date:'2026-10-19' },
     asin:'B0D96W9G6K',
-    prices:{USD:399,AUD:599,EUR:499,GBP:399,JPY:60000,CAD:499,SGD:599},
+    prices:{USD:549,AUD:899,EUR:599,GBP:499,JPY:86000,CAD:699,SGD:799},
     specSources: [{ url:'https://thypoch.com/en/simera/28mm', tier:'T1', title:'Thypoch Simera 28mm official page', note:'per-mount spec table (columns M/Z/RF/E/X), X column: length 70.1mm without hood, ≈347g, flange 17.7mm; shared: front dia. ø54mm, 11/7, 14 blades, 0.4m from the sensor plane, ø49 filter, f/1.4-16, full-frame image circle. The M-mount figures (55mm, 330g) are not this lens\'s', date:'2026-10-19' }, { url:'https://fujiaddict.com/2024/04/25/thypoch-lenses-are-coming-to-x-mount-with-a-unique-depth-of-field-indicator/', tier:'NEWS', title:'Fuji Addict: Thypoch lenses are coming to X-mount', note:'X-mount version announced April 2024', date:'2026-10-19' }],
-    priceSource: { url:'https://store.thypoch.com/products/simera-28mm-f-1-4-e-rf-x-z-mount', tier:'T1', title:'Thypoch official store', note:'Black / Fujifilm X Mount variant $399, no compare-at/sale price; read from the store\'s products.json (B&H X SKU also $399)', date:'2026-10-19' },
+    priceSource: { url:'https://www.bhphotovideo.com/c/search?q=thypoch%20simera%2028mm%20fujifilm%20x', tier:'T3', title:'B&H Photo search: Thypoch Simera 28mm (FUJIFILM X)', note:'B&H # THTPS28XBLK regular (strikethrough) $549, on sale at $399. The official store sells the X variant at $399 but omits its compare-at price, while every other mount variant shows $549 regular / $399 sale; $549 taken as the regular price (owner decision)', date:'2026-10-21' },
     productUrl:'https://store.thypoch.com/products/simera-28mm-f-1-4-e-rf-x-z-mount',
   },
 };
