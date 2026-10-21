@@ -11,7 +11,7 @@
 - [x] 2.5 7Artisans
 - [x] 2.6 Meike
 - [x] 2.7 Thypoch / SG-image
-- [ ] 2.8 Yongnuo
+- [x] 2.8 Yongnuo
 
 ## 3. Verify
 
