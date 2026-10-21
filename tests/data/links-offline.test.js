@@ -182,8 +182,8 @@ const KNOWN_SHARED_LINKS = new Map([
 // +35 Laowa, +13 Voigtländer, +9 Zeiss (8 new + Batis 85, now current again),
 // +19 TTArtisan, +28 7Artisans, +12 Meike, +13 Thypoch/SG-image.
 // Nikon missing-lens pass (add-nikon-missing-thirdparty-lenses, 2026-10-21+),
-// same approach: +1 Tamron, +14 Laowa, +2 Voigtländer, +3 Zeiss.
-const ASIN_GAP_BASELINE = 291;
+// same approach: +1 Tamron, +14 Laowa, +2 Voigtländer, +3 Zeiss, +7 TTArtisan.
+const ASIN_GAP_BASELINE = 298;
 
 const allItems = () => brandDirs().flatMap(brand => {
   const { data } = loadBrand(brand);
