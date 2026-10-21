@@ -67,6 +67,7 @@ const KNOWN_SHARED_LINKS = new Map([
   ['panasonic imageUrl https://www.laowalenses.ca/wp-content/uploads/2026/07/02_VEAKSEN4528FE-scaled-1-768x768.jpg', 2],
   ['panasonic imageUrl https://www.laowalenses.ca/wp-content/uploads/2026/07/01_VEAKSEN17517FE-CO-scaled-1-768x768.jpg', 2],
   ['olympus productUrl https://www.venuslens.net/product/laowa-aksen-ultra-macro-apo/', 2],
+  ['leica productUrl https://www.venuslens.net/product/laowa-aksen-ultra-macro-apo/', 2],
   // SG-image 50mm f/1.8 Shaped Aperture — one listing and photo for every mount;
   // Panasonic carries it in L and MFT.
   ['panasonic imageUrl https://cdn.shopify.com/s/files/1/0729/5051/3889/files/13_3eaacd43-9a62-4582-b9de-bb3063ec86c2.png', 2],
@@ -201,8 +202,9 @@ const KNOWN_SHARED_LINKS = new Map([
 // +11 7Artisans L, +2 Meike L, +2 SG-image L, +22 Laowa MFT (11 each in
 // panasonic and olympus), +10 Voigtländer MFT (5 each),
 // +14 SG-image MFT, +26 Samyang MFT (7 / 13 each), +24 TTArtisan/7Artisans
-// MFT (12 each).
-const ASIN_GAP_BASELINE = 469;
+// MFT (12 each), +49 Leica L-Mount copies of Panasonic's LUMIX S /
+// third-party entries that have no asin.
+const ASIN_GAP_BASELINE = 518;
 
 const allItems = () => brandDirs().flatMap(brand => {
   const { data } = loadBrand(brand);

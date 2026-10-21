@@ -210,6 +210,11 @@ const KNOWN_IMAGE_GAPS = {
     // succeeded (the CCD M Monochrom predates the Typ 246; the Typ 220
     // predates this M-E). Re-check in task 7.
     'm-monochrom-typ-246', 'm-e-typ-240',
+    // L-Mount lenses copied from panasonic/data.js (2026-10-22 Panasonic/Leica
+    // missing-lens pass), gaps and all — see the panasonic entries' notes.
+    'lumix-s-20mm-f2-5',
+    'laowa-11mm-f45-rl-l', 'laowa-14mm-f4-rl-l', 'laowa-9mm-f56-rl-l', 'laowa-15mm-f45-shift-l',
+    'laowa-12mm-f28-lite-zero-d-l', 'laowa-10mm-f28-l',
   ]),
   nikon: new Set([
     // laowa-15mm-f45-shift: 2026-10-21 its image (laowa.com.au DSC_4018-1) was

@@ -1,6 +1,7 @@
 # Progress — Panasonic + Leica missing third-party lenses
 
-**Resume at:** 5.1 (Leica L-Mount mirror + shared-mount test rows)
+**Resume at:** 5.2 (Leica M: Voigtländer VM)
+**5.1 done 2026-10-22 (112 L-Mount lenses copied into leica/):** every full-frame L lens on Panasonic's page except Leica's own SL lenses - LUMIX S 22, Sigma 38, Laowa 23, Viltrox 6, Samyang 2, TTArtisan 6, 7Artisans 11, Meike 2, SG-image 2 - copied verbatim with Panasonic's dropdown grouping ("Panasonic LUMIX S Primes/Zooms (L-Mount)", maker groups after Leica's own). shared-mount.test.js gains leica-panasonic and leica-sigma rows (both pass). 7 image gaps carried over (lumix-s-20mm-f2-5 + 6 Laowa).
 **4.3 done 2026-10-22 (TTArtisan 5 + 7Artisans 7 MFT lenses, panasonic/ + olympus/):** TTArtisan 35 f/1.4, 50 f/1.2, 40 macro, 7.5 fisheye, Tilt 35; 7Artisans 25 f/1.8, 60 macro II, 4mm, 18 f/6.3 II, 50 Tilt, 10 f/3.5, 6 f/2 fisheye. Every B&H MFT listing used gives the same size/weight as the Sony (6mm: Fujifilm) entry, so those entries were cloned with mount mft and 2x equivalents; USD = store M43 variant price (equal to the E prices).
 **4.3 part 1 done 2026-10-22 (SG-image 7 + Samyang 13 MFT lenses, panasonic/ + olympus/):** SG-image: Sony entries cloned (spec card gives one figure for all mounts, M43 listed; M43 variant prices equal the E ones); MF 18 f/6.3 skipped as on sony/. Samyang: Sony entries cloned with the Micro 4/3 column of samyangus.com's per-mount spec tables (length/weight) and the MFT variant's regular (compare-at) price; MFT-only 7.5mm f/3.5 fisheye added from its own table. 8mm f/3.5: store MFT price is a non-round $215.13 with no compare-at -> B&H Rokinon MFT $269. 300mm mirror: store $268.95, no compare-at, no B&H MFT listing -> $269. Follow-up: sony samyang-100mm-f28-macro USD $319 ("regular", no compare-at) vs the MFT variant's $599 compare-at - recheck the Sony price.
 **4.2 done 2026-10-22 (5 Voigtländer MFT lenses, panasonic/ + olympus/):** Nokton 10.5 / 17.5 / 42.5 / 60 f/0.95 and Super Nokton 29 f/0.8 from Cosina's EN MFT pages (Cosina's full MFT list is these + the 25mm Type II already entered); USD = B&H regular (no strikethrough). Note: B&H now lists the existing Nokton 25mm Type II at $749 with no strikethrough (data has $799 from a 2026-10-10 "regular $799, sale $749" reading) - recheck in the price pass.
@@ -66,7 +67,8 @@ Makers' store catalogues (Shopify `products.json`, venuslens Woo Store API) and 
 | 4.1 Laowa MFT | 11 | 11 | 0 | 9cce5a1 |
 | 4.2 Voigtländer MFT | 5 | 5 | 0 | 83e5a4f |
 | 4.3a SG-image + Samyang MFT | 21 | 20 | 1 | 26e2815 |
-| 4.3b TTArtisan + 7Artisans + Meike MFT | ~38 | 12 | ~26 | (this commit) |
+| 4.3b TTArtisan + 7Artisans + Meike MFT | ~38 | 12 | ~26 | 47bfd73 |
+| 5.1 Leica L-Mount mirror | 112 | 112 | 0 | (this commit) |
 
 ## Skipped
 ### Laowa L (3.2)
