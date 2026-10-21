@@ -171,8 +171,8 @@ const KNOWN_SHARED_LINKS = new Map([
 // ~180 lenses are being added in maker batches without per-lens ASIN
 // lookups; ASINs are backfilled afterwards with the check-prices-and-buy-links
 // skill, which then tightens this back down. +21 Viltrox, +32 Samyang, +17 Sigma, +14 Tamron,
-// +35 Laowa.
-const ASIN_GAP_BASELINE = 177;
+// +35 Laowa, +13 Voigtländer.
+const ASIN_GAP_BASELINE = 190;
 
 const allItems = () => brandDirs().flatMap(brand => {
   const { data } = loadBrand(brand);

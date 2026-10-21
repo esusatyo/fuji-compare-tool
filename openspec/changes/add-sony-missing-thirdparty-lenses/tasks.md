@@ -9,7 +9,7 @@
 - [x] 2.3 Sigma
 - [x] 2.4 Tamron
 - [x] 2.5 Laowa
-- [ ] 2.6 Voigtländer
+- [x] 2.6 Voigtländer
 - [ ] 2.7 Zeiss
 - [ ] 2.8 TTArtisan
 - [ ] 2.9 7Artisans
