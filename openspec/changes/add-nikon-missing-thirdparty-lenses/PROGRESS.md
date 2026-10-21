@@ -1,6 +1,6 @@
 # Progress — Nikon missing third-party lenses
 
-**Resume at:** 3 Verify
+**Resume at:** PR #78 review + archive. Verify done 2026-10-22: npm test 847/847, test:links pass, verify-images nikon all OK (one Wikimedia rate-limit on the first pass, 200 on re-check), preview /nikon/ lens mode OK (19 maker groups, no console errors)
 **Yongnuo checked 2026-10-22: nothing missing** — every Yongnuo Nikon Z lens on B&H (11/23/33/35/50/56 DA, 85 DF) is already in the data; no 16mm DA listing found.
 **Thypoch / SG-image done 2026-10-21 (13 lenses):** Thypoch Simera 28/35/50 from thypoch.com's per-mount tables (Z column); USD = Z variant regular (compare-at) $549. SG-image: all 10 Sony entries are sold in Z at the same price, and SG-image's spec cards give one figure for every mount, so the entries were cloned with mount z. **Image fix:** the Simera 35's main shots (and sony's Simera 28/35 images) show the shorter Leica-M barrel — sony 28 now uses its Sony E variant image, sony/nikon 35 a hooded shot with the mount hidden.
 **Meike done 2026-10-21 (4 lenses):** AF 85 f/1.4 MIX II, AF 56 f/1.7 Air, AF 23 f/1.4, AF 35 f/2. Shared optics from the Sony entries; Z size/weight from B&H Nikon Z listings; USD and image from Meike's Z store listing (all USD equal the Sony E prices).
@@ -40,7 +40,7 @@ Makers' store catalogues (Shopify `products.json`, venuslens Woo Store API, Cosi
 | 7Artisans | 25 | 13 | 12 | 0381050 |
 | Meike | 18 | 4 | 14 | 2bb2b38 |
 | Thypoch / SG-image | 13 | 13 | 0 | 52fdf82 |
-| Yongnuo | 0 | 0 | 0 | (verify commit) |
+| Yongnuo | 0 | 0 | 0 | 845e235 |
 
 ## Skipped (with reason)
 - Laowa ACRIS 35mm f/2.8 1X Macro (Z AF version, $449, 570g): Laowa gives dimensions for EF only and B&H's Z listing has none — Z length unknown.
