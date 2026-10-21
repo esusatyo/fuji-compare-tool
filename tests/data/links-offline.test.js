@@ -60,6 +60,10 @@ const KNOWN_SHARED_LINKS = new Map([
   // Laowa sells the Aksen 45mm and 17.5mm off one product page.
   ['fujifilm productUrl https://www.venuslens.net/product/laowa-aksen-ultra-macro-apo/', 2],
   ['sony productUrl https://www.venuslens.net/product/laowa-aksen-ultra-macro-apo/', 2],
+  // Zeiss has one page (with a per-lens Technical Data table) per lens line.
+  ['sony productUrl https://www.zeiss.com/photonics-and-optics/us/photography/products/lenses-for-mirrorless-system-cameras/batis-lenses.html', 5],
+  ['sony productUrl https://www.zeiss.com/photonics-and-optics/us/photography/products/lenses-for-mirrorless-system-cameras/touit-lenses.html', 3],
+  ['sony productUrl https://www.zeiss.com/photonics-and-optics/us/photography/products/lenses-for-mirrorless-system-cameras/otus-ml-lenses.html', 3],
   // 7Artisans sells the 25/35/50mm f/1.8 Lite trio as ONE listing with mount and
   // focal-length variants; the photo is the maker's official family shot showing
   // all three barrels. Verified visually 2026-09-07.
@@ -171,8 +175,8 @@ const KNOWN_SHARED_LINKS = new Map([
 // ~180 lenses are being added in maker batches without per-lens ASIN
 // lookups; ASINs are backfilled afterwards with the check-prices-and-buy-links
 // skill, which then tightens this back down. +21 Viltrox, +32 Samyang, +17 Sigma, +14 Tamron,
-// +35 Laowa, +13 Voigtländer.
-const ASIN_GAP_BASELINE = 190;
+// +35 Laowa, +13 Voigtländer, +9 Zeiss (8 new + Batis 85, now current again).
+const ASIN_GAP_BASELINE = 199;
 
 const allItems = () => brandDirs().flatMap(brand => {
   const { data } = loadBrand(brand);

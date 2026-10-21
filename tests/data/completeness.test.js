@@ -503,6 +503,11 @@ const KNOWN_IMAGE_GAPS = {
     // on a camera; the 15mm f/4.5 Shift's only image (DSC_4018-1) is a copy of
     // the 20mm Shift's DSC_4018, so it can't be trusted as the 15mm.
     'laowa-11mm-f45-rl', 'laowa-14mm-f4-rl', 'laowa-9mm-f56-rl', 'laowa-15mm-f45-shift',
+    // Zeiss batch (2026-10-21): Zeiss's pages carry only family group shots,
+    // and Commons has no photo of these (searched "Zeiss Batis 40/135",
+    // "Zeiss Otus ML").
+    'zeiss-batis-40mm-f2-cf', 'zeiss-batis-135mm-f28',
+    'zeiss-otus-ml-35mm-f14', 'zeiss-otus-ml-50mm-f14', 'zeiss-otus-ml-85mm-f14',
   ]),
 };
 
