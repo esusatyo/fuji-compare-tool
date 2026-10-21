@@ -3078,9 +3078,10 @@ const LENSES = {
     productUrl:'https://www.venuslens.net/product/laowa-65mm-f-2-8-2x-ultra-macro-apo/',
   },
   'laowa-4mm-f28-fisheye': {
+    // 2026-10-21: length/diameter were swapped; B&H X listing (1542241) gives 45.2 x 25.5mm diameter x length
     name:'Laowa 4mm f/2.8 Circular Fisheye', manufacturer:'Laowa', line:'Fisheye', type:'Prime',
     mount:'x', focalLength:4, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'6mm',
-    maxAperture:2.8, minAperture:16, weight:135, length:45.2, diameter:25.5,
+    maxAperture:2.8, minAperture:16, weight:135, length:25.5, diameter:45.2,
     filterThread:null, minFocusDist:8, maxMagnification:0.11,
     elements:7, groups:6, blades:7, afType:'Manual',
     weatherSealed:false, ois:false, oisStops:null, year:2021, discontinued:false,

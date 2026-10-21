@@ -1946,9 +1946,10 @@ const LENSES = {
   },
 
   'laowa-25mm-f28-25-5x-macro': {
+    // 2026-10-21: length/diameter were swapped; B&H gives 65 x 82mm diameter x length (Laowa writes "82 x 65", length first)
     name:'Laowa 25mm f/2.8 2.5-5X Ultra Macro', manufacturer:'Laowa', line:'Ultra Macro', type:'Prime',
     mount:'z', focalLength:25, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'25mm',
-    maxAperture:2.8, minAperture:16, weight:400, length:65, diameter:82,
+    maxAperture:2.8, minAperture:16, weight:400, length:82, diameter:65,
     filterThread:null, minFocusDist:17.3, maxMagnification:5.0,
     elements:8, groups:6, blades:8, afType:'Manual',
     weatherSealed:false, ois:false, oisStops:null, year:2020, discontinued:false,
@@ -1982,9 +1983,10 @@ const LENSES = {
   },
 
   'laowa-argus-33mm-f095': {
+    // 2026-10-21: minimum aperture 16 -> 11 (B&H: f/0.95 to f/11, matching the Fujifilm entry)
     name:'Laowa Argus 33mm f/0.95 CF APO', manufacturer:'Laowa', line:'Argus', type:'Prime',
     mount:'z', focalLength:33, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'50mm',
-    maxAperture:0.95, minAperture:16, weight:590, length:83, diameter:71.5,
+    maxAperture:0.95, minAperture:11, weight:590, length:83, diameter:71.5,
     filterThread:62, minFocusDist:35, maxMagnification:0.125,
     elements:14, groups:9, blades:9, afType:'Manual',
     weatherSealed:false, ois:false, oisStops:null, year:2021, discontinued:false,
@@ -2000,9 +2002,10 @@ const LENSES = {
   },
 
   'laowa-17mm-f4-tilt-shift': {
+    // 2026-10-21: length/diameter were swapped; B&H Z listing (1958220) gives 93 x 111mm diameter x length
     name:'Laowa 17mm f/4 Zero-D Tilt-Shift / Shift', manufacturer:'Laowa', line:'Tilt-Shift', type:'Prime',
     mount:'z', focalLength:17, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'17mm',
-    maxAperture:4.0, minAperture:22, weight:810, length:93, diameter:111,
+    maxAperture:4.0, minAperture:22, weight:810, length:111, diameter:93,
     filterThread:86, minFocusDist:25, maxMagnification:0.131,
     elements:18, groups:12, blades:14, afType:'Manual',
     weatherSealed:false, ois:false, oisStops:null, year:2026, discontinued:false,
@@ -2072,6 +2075,7 @@ const LENSES = {
   },
 
   'laowa-15mm-f45-shift': {
+    // 2026-10-21: image removed - laowa.com.au's DSC_4018-1.png is a recrop of the 20mm Shift's DSC_4018.png (same shot; its aperture scale ends at f/4, this lens is f/4.5)
     name:'Laowa 15mm f/4.5 Zero-D Shift', manufacturer:'Laowa', line:'Zero-D Shift', type:'Prime',
     mount:'z', focalLength:15, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'15mm',
     maxAperture:4.5, minAperture:22, weight:597, length:103, diameter:79,
@@ -2082,8 +2086,7 @@ const LENSES = {
       { url:'https://www.laowalenses.ca/product/laowa-15mm-f-4-5-zero-d-shift/', tier:'T1', note:'official Laowa Canada regional store; mounts Canon EF&RF/Nikon F&Z/Sony E/Pentax K/L mount/Fujifilm G/Hasselblad XCD, Nikon Z confirmed. 17 elements/11 groups, 79×103mm, 597g; no front filter thread published (this Shift design has none) so filterThread left null; two aperture-blade variants exist (5-blade original, 14-blade "R" update from 2022) — 14 used here as the version blade tables now typically ship.', date:'2026-08-30' },
       { url:'https://www.fujirumors.com/laowa-15mm-f-4-5r-zero-d-shift-new-version-announced/', tier:'T2', note:'independent coverage of the 2022 "R" 14-blade update states max magnification 0.2x (1:5) and min focus 20cm, matching this entry; original announcement (canonrumors.com, 2020-10-30) anchors the 2020 first-ship year for this mount family.', date:'2026-08-30' },
     ],
-    imageUrl:'https://laowa.com.au/wp-content/uploads/2022/03/DSC_4018-1.png',
-    imageSource: { url:'https://laowa.com.au/product/15shift/', tier:'T1', title:'Laowa Australia (official regional site)', note:'only gallery image, red-ring Zero-D Shift, lens alone. Replaced the venuslens.net image 2026-10-19: its Cloudflare serves a bot challenge instead of the image, so embedded requests fail in real browsers too', date:'2026-10-19' },
+    imageUrl:null,
     asin:'B08NPXCZRQ',
     prices:{USD:1199,AUD:1899,EUR:1399,GBP:1099,JPY:144000,CAD:1599,SGD:1699},
     productUrl:'https://www.venuslens.net/product/15mm-f-4-5-zero-d-shift/',

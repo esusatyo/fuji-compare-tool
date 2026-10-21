@@ -215,6 +215,10 @@ const KNOWN_IMAGE_GAPS = {
     // z5-iic: announced 2026-09-23, added 2026-10-11 — too new for a
     // freely-licensed Commons photo; revisit on the next image pass.
     'z5-iic',
+    // laowa-15mm-f45-shift: 2026-10-21 its image (laowa.com.au DSC_4018-1) was
+    // found to be a recrop of the 20mm Shift's DSC_4018 — same shot, aperture
+    // scale ending at f/4 (the 15mm is f/4.5); no other usable 15mm photo.
+    'laowa-15mm-f45-shift',
     // Cameras: all 10 resolved 2026-08-15 (Commons photos sourced + applied).
     // Lenses — re-run 2026-08-15 (Nikon+Panasonic lens image pass): z-dx-16-50mm-vr
     // and viltrox-27mm-f12 resolved and removed from this list.
