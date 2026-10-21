@@ -1275,14 +1275,16 @@ const LENSES = {
   'viltrox-27mm-f12': {
     name:'Viltrox AF 27mm f/1.2 Pro', manufacturer:'Viltrox', line:'Pro', type:'Prime',
     mount:'z', focalLength:27, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'41mm',
-    maxAperture:1.2, minAperture:16, weight:560, length:92, diameter:82,
+    maxAperture:1.2, minAperture:16, weight:605, length:94, diameter:82,
     filterThread:67, minFocusDist:28, maxMagnification:0.15,
     elements:15, groups:11, blades:11, afType:'STM',
     weatherSealed:false, ois:false, oisStops:null, year:2024, discontinued:false,
     imageUrl:'https://upload.wikimedia.org/wikipedia/commons/thumb/9/90/VILTROX_AF_27mm_F1.2_Pro_20250517112908.jpg/500px-VILTROX_AF_27mm_F1.2_Pro_20250517112908.jpg',
     imageCredit:{author:"TurnOnTheNight", licence:"CC BY-SA 4.0", licenceUrl:"https://creativecommons.org/licenses/by-sa/4.0", source:"https://commons.wikimedia.org/wiki/File:VILTROX_AF_27mm_F1.2_Pro_20250517112908.jpg"}, asin:'B0CWGMJQC9',
     prices:{USD:578,AUD:null,EUR:null,GBP:null,JPY:null,CAD:null,SGD:null},
-    priceIncomplete:true, productUrl:null,
+    specSources: [{ url:'https://viltrox.com/products/viltrox-af-27mm-f1-2-aps-c-lens-for-nikno-z-mount', tier:'T1', title:'Viltrox AF 27mm F1.2 Pro for Nikon Z - official store', note:'per-mount comparison table, "AF 27/1.2 Pro Z" column: φ82x94mm, 605g, 0.28m, 0.15X, φ67mm filter, 15/11, 11 blades, F1.2-F16, STM. Weight/length were the E column\'s 560g / 92mm until 2026-10-21', date:'2026-10-21' }],
+    priceSource: { url:'https://viltrox.com/products/viltrox-af-27mm-f1-2-aps-c-lens-for-nikno-z-mount', tier:'T1', title:'Viltrox official store', note:'Z listing $578.00, no markdown (store products.json); non-USD not examined', date:'2026-10-21' },
+    priceIncomplete:true, productUrl:'https://viltrox.com/products/viltrox-af-27mm-f1-2-aps-c-lens-for-nikno-z-mount',
   },
 
   'viltrox-33mm-f14': {
@@ -1676,6 +1678,26 @@ const LENSES = {
     priceSource: { url:'https://tamron-americas.com/launch-announcement-35-100-lens/', tier:'T1', note:'"$929 for Nikon Z" (Sony E is $899), launched 2026-03-26; CAD $1,299 corroborated independently via dailycameranews.com and provideocoalition.com.', date:'2026-08-30' },
     prices:{USD:929,AUD:1399,EUR:1099,GBP:799,JPY:145000,CAD:1299,SGD:1299},
     productUrl:'https://tamron-americas.com/product/35-100mm-f-2-8-di-iii-vxd/',
+  },
+
+  'tamron-20-40mm-f28': {
+    name:'Tamron 20-40mm f/2.8 Di III VXD', manufacturer:'Tamron', line:'Di III', type:'Zoom',
+    mount:'z', focalLength:null, focalLengthMin:20, focalLengthMax:40, focalLengthEquiv:'20-40mm',
+    maxAperture:2.8, minAperture:22, weight:380, length:88.7, diameter:74.4,
+    filterThread:67, minFocusDist:17, maxMagnification:0.26,
+    elements:12, groups:11, blades:9, afType:'Linear Motor',
+    weatherSealed:true, ois:false, oisStops:null, year:2026, discontinued:false,
+    imageUrl:'https://tamron-americas.com/wp-content/uploads/2026/04/a062-1200-x-1200-wht.webp',
+    imageSource: { url:'https://tamron-americas.com/product/20-40mm-f-2-8-di-iii-vxd/', tier:'T1', title:'Tamron Americas product page', note:'main product shot (the barrel is the same for both mounts)', date:'2026-10-21' },
+    asin:null,
+    specSources: [
+      { url:'https://www.tamron.com/global/consumer/lenses/a062/spec.html', tier:'T1', title:'Tamron 20-40mm F/2.8 Di III VXD (Model A062) specifications', note:'Nikon Z figures: length 88.7mm, weight 380g (Sony E 86.5mm / 365g); shared: 12/11, MOD 0.17m wide, 1:3.8 max, Φ67 filter, Φ74.4mm, 9 blades, F22. Z release date October 22, 2026', date:'2026-10-21' },
+      { url:'https://www.tamron.com/global/news/detail/a062z_20261008.html', tier:'T1', title:'Tamron news: 20-40mm F/2.8 for Nikon Z (2026-10-08)', note:'Z-mount version announced 2026-10-08', date:'2026-10-21' },
+    ],
+    priceSource: { url:'https://tamron-americas.com/product/20-40mm-f-2-8-di-iii-vxd/', tier:'T1', title:'Tamron Americas product page', note:'Nikon Z option data-us-price $729.00 (Sony E $699.00); non-USD not examined', date:'2026-10-21' },
+    prices:{USD:729,AUD:null,EUR:null,GBP:null,JPY:null,CAD:null,SGD:null},
+    priceIncomplete:true,
+    productUrl:'https://tamron-americas.com/product/20-40mm-f-2-8-di-iii-vxd/',
   },
 
   'tamron-70-180mm-f28-g2': {
@@ -3240,7 +3262,7 @@ const LENS_DROPDOWN_GROUPS = [
   { label: '── DX Lenses ──',     ids: ['z-dx-24mm-f1-7', 'z-dx-mc-35mm-f17', 'z-dx-12-28mm-pz-vr', 'z-dx-16-50mm-vr', 'z-dx-16-50mm-f28-vr', 'z-dx-18-140mm-vr', 'z-dx-50-250mm-vr'] },
   { label: '── Sigma ──', ids: ['sigma-16mm-f14', 'sigma-30mm-f14', 'sigma-56mm-f14'] },
   { label: '── Viltrox ──', ids: ['viltrox-13mm-f14', 'viltrox-16mm-f18', 'viltrox-27mm-f12', 'viltrox-33mm-f14', 'viltrox-56mm-f14', 'viltrox-85mm-f18-ii', 'viltrox-85mm-f20-evo', 'viltrox-85mm-f14-pro', 'viltrox-24mm-f18', 'viltrox-35mm-f18-evo', 'viltrox-40mm-f25-air', 'viltrox-90mm-f22-evo', 'viltrox-75mm-f18-evo', 'viltrox-56mm-f12-pro', 'viltrox-9mm-f28-air', 'viltrox-15mm-f17-air', 'viltrox-25mm-f17-air', 'viltrox-35mm-f17-air', 'viltrox-23mm-f14', 'viltrox-75mm-f12-pro', 'viltrox-56mm-f17-air', 'viltrox-26mm-f28-evo', 'viltrox-55mm-f18-evo', 'viltrox-50mm-f14-pro', 'viltrox-35mm-f12-lab', 'viltrox-135mm-f18-lab', 'viltrox-14mm-f4-air', 'viltrox-28mm-f45', 'viltrox-50mm-f2-air', 'viltrox-20mm-f28-air', 'viltrox-28mm-f18', 'viltrox-20mm-f18-mf'] },
-  { label: '── Tamron ──', ids: ['tamron-12-20mm-f28', 'tamron-16-30mm-f28-g2', 'tamron-17-70mm-f28', 'tamron-18-300mm-f35-63', 'tamron-28-75mm-f28-g2', 'tamron-35-100mm-f28', 'tamron-35-150mm-f2-28', 'tamron-50-400mm-f45-63', 'tamron-70-180mm-f28-g2', 'tamron-70-300mm-f45-63', 'tamron-90mm-f28-macro', 'tamron-150-500mm-f5-67'] },
+  { label: '── Tamron ──', ids: ['tamron-12-20mm-f28', 'tamron-16-30mm-f28-g2', 'tamron-17-70mm-f28', 'tamron-18-300mm-f35-63', 'tamron-20-40mm-f28', 'tamron-28-75mm-f28-g2', 'tamron-35-100mm-f28', 'tamron-35-150mm-f2-28', 'tamron-50-400mm-f45-63', 'tamron-70-180mm-f28-g2', 'tamron-70-300mm-f45-63', 'tamron-90mm-f28-macro', 'tamron-150-500mm-f5-67'] },
   { label: '── Voigtländer ──', ids: ['voigtlander-apo-lanthar-50mm-f2', 'voigtlander-nokton-40mm-f12', 'voigtlander-super-wide-heliar-15mm-f45', 'voigtlander-nokton-d23mm-f12', 'voigtlander-nokton-28mm-f15', 'voigtlander-apo-lanthar-28mm-f2', 'voigtlander-nokton-d35mm-f12', 'voigtlander-macro-apo-ultron-d35mm-f2', 'voigtlander-apo-lanthar-35mm-f2', 'voigtlander-septon-40mm-f2', 'voigtlander-nokton-50mm-f10', 'voigtlander-macro-apo-lanthar-65mm-f2', 'voigtlander-portrait-heliar-75mm-f18'] },
   { label: '── Laowa ──', ids: ['laowa-10mm-f4-cookie', 'laowa-10mm-f28-af', 'laowa-12mm-f28-lite-zero-d', 'laowa-15mm-f2', 'laowa-15mm-f45-macro', 'laowa-15mm-f5-cookie', 'laowa-15mm-f45-shift', 'laowa-17mm-f4-tilt-shift', 'laowa-20mm-f4-shift', 'laowa-25mm-f28-25-5x-macro', 'laowa-35mm-f28-tilt-shift-macro', 'laowa-55mm-f28-tilt-shift-macro', 'laowa-58mm-f28-2x-macro', 'laowa-65mm-f28-2x-macro', 'laowa-85mm-f56-2x-macro', 'laowa-90mm-f28-macro', 'laowa-100mm-f28-2x-macro', 'laowa-100mm-f28-tilt-shift-macro', 'laowa-argus-28mm-f12', 'laowa-argus-33mm-f095', 'laowa-8-15mm-f28-fisheye', 'laowa-8-16mm-f35-5', 'laowa-10-18mm-f45-56', 'laowa-12-24mm-f56-shift'] },
   { label: '── Samyang ──', ids: ['samyang-14mm-f28', 'samyang-85mm-f14'] },

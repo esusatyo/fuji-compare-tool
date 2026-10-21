@@ -179,7 +179,9 @@ const KNOWN_SHARED_LINKS = new Map([
 // skill, which then tightens this back down. +21 Viltrox, +32 Samyang, +17 Sigma, +14 Tamron,
 // +35 Laowa, +13 Voigtländer, +9 Zeiss (8 new + Batis 85, now current again),
 // +19 TTArtisan, +28 7Artisans, +12 Meike, +13 Thypoch/SG-image.
-const ASIN_GAP_BASELINE = 271;
+// Nikon missing-lens pass (add-nikon-missing-thirdparty-lenses, 2026-10-21+),
+// same approach: +1 Tamron.
+const ASIN_GAP_BASELINE = 272;
 
 const allItems = () => brandDirs().flatMap(brand => {
   const { data } = loadBrand(brand);

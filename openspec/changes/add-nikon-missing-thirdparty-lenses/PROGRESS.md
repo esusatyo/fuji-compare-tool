@@ -1,6 +1,7 @@
 # Progress — Nikon missing third-party lenses
 
-**Resume at:** 2.1 Viltrox + Tamron
+**Resume at:** 2.2 Laowa
+**Viltrox + Tamron done 2026-10-21:** Viltrox's "missing" AF 27mm f/1.2 Pro was already in the data (`viltrox-27mm-f12`, productUrl null) but held the Sony E column's 560g / 92mm; corrected to the Z column (605g / 94mm) and given its Z store page + sources. Tamron 20-40mm f/2.8 (A062) Z added from tamron.com's per-mount spec table ($729, on sale 2026-10-22).
 **Branch:** canon-sony-lens-refresh (local csr-continue, worktree refresh-camera-data-sep2026); same PR as Canon/Sony (#78)
 
 ## Catalogue diff (2026-10-21)
@@ -25,6 +26,7 @@ Makers' store catalogues (Shopify `products.json`, venuslens Woo Store API, Cosi
 ## Batches
 | Maker | Candidates | Entered | Skipped | Committed |
 |---|---|---|---|---|
+| Viltrox + Tamron | 2 | 1 (+1 fixed) | 0 | (this commit) |
 
 ## Skipped (with reason)
 
