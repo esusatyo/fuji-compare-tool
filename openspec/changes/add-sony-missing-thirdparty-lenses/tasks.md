@@ -13,7 +13,7 @@
 - [x] 2.7 Zeiss
 - [x] 2.8 TTArtisan
 - [x] 2.9 7Artisans
-- [ ] 2.10 Meike
+- [x] 2.10 Meike
 - [ ] 2.11 Thypoch / SG-image
 
 ## 3. Verify
