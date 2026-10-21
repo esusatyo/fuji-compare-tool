@@ -1,6 +1,6 @@
 # Progress — Sony missing third-party lenses
 
-**Resume at:** 3.x Verify (npm test, verify-images sony, test:links, preview) — all maker batches done
+**Resume at:** 4 PR + archive. Verify done 2026-10-21: npm test 847/847, test:links pass, verify-images sony all 361 OK (8 first-pass failures were Wikimedia rate limits, 200 on re-check), preview OK
 **Thypoch / SG-image done 2026-10-21 (13 lenses):** Thypoch Voyager AF 24-50 f/2.8 + Simera 28/35 from thypoch.com per-mount tables (E column); USD = regular (compare-at) price, B&H shows the same was/now. SG-image: 10 lenses already in fujifilm/, whose maker spec cards give one figure for all mounts (E listed) — entered with Sony E equivalents (full-frame 55 AF, 24 f/6.3, 50 f/1.8 at native focal length) and E variant prices.
 **Skipped:** SG-image AF 35 f/1.4 APS-C (new 2026-09), AF 35 f/2.2 FF, AF 85 f/1.8, MF 18 f/6.3 — spec cards are only in the rendered page theme, not in products.json; read them in a browser later. Cine lenses out of scope.
 **Follow-up:** fujifilm thypoch-simera-28mm-f14 is $399 (no compare-at when entered 2026-10-19); the store and B&H now show $549 regular / $399 sale — recheck.
