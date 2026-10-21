@@ -8,7 +8,7 @@
 - [x] 2.2 Laowa
 - [x] 2.3 Voigtländer + Zeiss
 - [x] 2.4 TTArtisan
-- [ ] 2.5 7Artisans
+- [x] 2.5 7Artisans
 - [ ] 2.6 Meike
 - [ ] 2.7 Thypoch / SG-image
 - [ ] 2.8 Yongnuo
