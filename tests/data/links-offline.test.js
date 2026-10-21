@@ -187,8 +187,8 @@ const KNOWN_SHARED_LINKS = new Map([
 // Panasonic/Leica missing-lens pass (add-panasonic-leica-missing-thirdparty-
 // lenses, 2026-10-22+): copies of entries already in another brand file carry
 // that entry's asin, so only the ones that had none add a gap — +4 Sigma L /
-// Leica SL copies.
-const ASIN_GAP_BASELINE = 332;
+// Leica SL copies, +1 Samyang L.
+const ASIN_GAP_BASELINE = 333;
 
 const allItems = () => brandDirs().flatMap(brand => {
   const { data } = loadBrand(brand);

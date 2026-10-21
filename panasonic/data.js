@@ -2455,6 +2455,24 @@ const LENSES = {
     priceIncomplete:true, productUrl:'https://www.lksamyang.com/en/product/product-view.php?seq=685',
   },
 
+  'samyang-35-150mm-f2-28-l': {
+    name:'Samyang AF 35-150mm f/2-2.8 L', manufacturer:'Samyang', line:'AF', type:'Zoom',
+    mount:'l', focalLength:null, focalLengthMin:35, focalLengthMax:150, focalLengthEquiv:'35-150mm',
+    maxAperture:2, minAperture:22, weight:1206, length:155.4, diameter:92.8,
+    filterThread:82, minFocusDist:32, maxMagnification:0.184,
+    elements:21, groups:18, blades:9, afType:'Linear STM',
+    weatherSealed:true, ois:false, oisStops:null, year:2024, discontinued:false,
+    imageUrl:'https://cdn.shopify.com/s/files/1/0488/0790/3385/files/AF35-150mmF2-2.8L_Front_1.jpg',
+    imageSource: { url:'https://samyangus.com/products/af-35-150mm-f2-2-8-l', tier:'T1', title:'Samyang US official store', note:'the L-mount listing\'s own studio shot without hood; barrel reads "AF 35-150/2-2.8 L"', date:'2026-10-22' },
+    asin:null,
+    prices:{USD:1399,AUD:null,EUR:null,GBP:null,JPY:null,CAD:null,SGD:null},
+    specSources: [{ url:'https://samyangus.com/products/af-35-150mm-f2-2-8-l', tier:'T1', title:'Samyang AF 35-150mm F2-2.8 L - Samyang US store page', note:'Specifications table (Mount: L Mount): 21 elements in 18 groups, 9 blades, F2-F16 (wide) / F2.8-F22 (tele), 0.32m (wide) / 0.85m (tele), 0.184x (wide) / 0.18x (tele), 82mm filter, max diameter 92.8mm, length 155.4mm (wide), 1,206g without cap and hood, Linear STM AF, weather sealing yes. The L figures differ from the Sony FE version (157.4mm, 1,231g, 0.33m)', date:'2026-10-22' },
+      { url:'https://www.lksamyang.com/en/about/notice-view.php?seq=1667', tier:'T1', title:'LK Samyang notice - AF 35-150mm F2-2.8 L launch', note:'announced 2024-06-04 as Samyang\'s first L-Mount lens', date:'2026-10-22' }],
+    priceSource: { url:'https://www.bhphotovideo.com/c/product/1832447-REG/samyang_35_150mm_f_2_2_8_af_lens.html', tier:'T3', title:'B&H Photo - Samyang 35-150mm f/2-2.8 AF Lens (Leica L)', note:'B&H price $1,399 with no strikethrough (= the ~$1,400 launch price press reported); Samyang\'s own US store shows it sold out at $1,199 sale against a $1,499 compare-at, so neither store figure was used. Non-USD not examined', date:'2026-10-22' },
+    priceIncomplete:true,
+    productUrl:'https://samyangus.com/products/af-35-150mm-f2-2-8-l',
+  },
+
   /* ── OM System M.Zuiko (MFT, 2.0× crop) — major MFT third party ── */
   'omsystem-12-40mm-f28-pro': {
     name:'OM System M.Zuiko 12-40mm f/2.8 PRO II', manufacturer:'OM System', line:'PRO', type:'Zoom',
@@ -3099,7 +3117,7 @@ const LENS_DROPDOWN_GROUPS = [
   { label: '── Leica SL Zooms (L-Mount) ──', ids: ['super-vario-elmarit-sl-14-24mm-f28-asph', 'super-vario-elmar-sl-16-35mm-f35-45-asph', 'vario-elmarit-sl-24-70mm-f28-asph', 'vario-elmarit-sl-28-70mm-f28-asph', 'vario-elmarit-sl-24-90mm-f28-4-asph', 'vario-elmarit-sl-70-200mm-f28-asph', 'apo-vario-elmarit-sl-90-280mm-f28-4', 'vario-elmar-sl-100-400mm-f5-63'] },
   { label: '── Laowa (L-Mount) ──', ids: ['laowa-15mm-f2-l', 'laowa-17mm-f4-tilt-shift-l', 'laowa-90mm-f28-macro-l', 'laowa-180mm-f45-macro-l'] },
   { label: '── Viltrox (L-Mount) ──', ids: ['viltrox-16mm-f18-l', 'viltrox-28mm-f45-l', 'viltrox-14mm-f4-air-l', 'viltrox-20mm-f28-air-l', 'viltrox-40mm-f25-air-l', 'viltrox-50mm-f2-air-l'] },
-  { label: '── Samyang (L-Mount) ──', ids: ['samyang-14-24mm-f28-l'] },
+  { label: '── Samyang (L-Mount) ──', ids: ['samyang-14-24mm-f28-l', 'samyang-35-150mm-f2-28-l'] },
   { label: '── OM System Primes (MFT) ──', ids: ['omsystem-17mm-f12-pro', 'omsystem-25mm-f12-pro', 'omsystem-45mm-f12-pro', 'omsystem-60mm-f28-macro', 'omsystem-17mm-f18', 'omsystem-25mm-f18', 'omsystem-25mm-f18-ii', 'omsystem-45mm-f18', 'omsystem-8mm-f18-fisheye-pro', 'omsystem-20mm-f14-pro', 'omsystem-90mm-f35-macro-is-pro', 'omsystem-300mm-f4-is-pro', 'omsystem-12mm-f2', 'omsystem-75mm-f18', 'omsystem-30mm-f35-macro'] },
   { label: '── OM System Zooms (MFT) ──', ids: ['omsystem-12-40mm-f28-pro', 'omsystem-40-150mm-f4-pro', 'omsystem-12-100mm-f4-pro', 'omsystem-100-400mm-f5-63-ii', 'omsystem-7-14mm-f28-pro', 'omsystem-8-25mm-f4-pro', 'omsystem-12-45mm-f4-pro', 'omsystem-40-150mm-f28-pro', 'omsystem-50-200mm-f28-is-pro', 'omsystem-150-400mm-f45-tc125x-is-pro', 'omsystem-14-42mm-f35-56-iii', 'omsystem-14-42mm-f35-56-ez', 'omsystem-9-18mm-f4-56-ii', 'omsystem-40-150mm-f4-56-r', 'omsystem-14-150mm-f4-56-ii', 'omsystem-75-300mm-f48-67-ii', 'omsystem-12-200mm-f35-63', 'omsystem-150-600mm-f5-63-is'] },
   { label: '── Sigma (MFT) ──', ids: ['sigma-16mm-f14-mft', 'sigma-30mm-f14-mft', 'sigma-56mm-f14-mft'] },

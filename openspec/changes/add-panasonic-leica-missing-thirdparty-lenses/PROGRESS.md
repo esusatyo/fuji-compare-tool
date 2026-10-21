@@ -1,6 +1,7 @@
 # Progress — Panasonic + Leica missing third-party lenses
 
-**Resume at:** 3.1 (Samyang + Viltrox L)
+**Resume at:** 3.2 (Laowa L)
+**3.1 done 2026-10-22:** Samyang AF 35-150 f/2-2.8 L added (Samyang US store L spec table: 1,206g / 155.4mm / 0.32m / 0.184x; USD = B&H $1,399, the store shows it sold out at a $1,199 sale vs $1,499 compare-at). Fixed sony samyang-35-150mm-f2-28: year 2024 -> 2023, min aperture 16 -> 22, max magnification 0.175 -> 0.18, USD $1,499 compare-at -> $999 selling (= B&H; same rule as the 24-60/24-70), regional recomputed. Viltrox: B&H and the store list only the 6 L lenses already entered (+ cine). Sirui L = cine/anamorphic only; Yongnuo has no L lenses.
 **2.2 done 2026-10-22:** 21 OM System lenses copied verbatim from olympus/data.js into Panasonic's OM System Primes/Zooms groups (all had ASINs); LUMIX G X Vario 35-100 f/2.8 II copied into olympus/data.js with its image gap.
 **2.1 done 2026-10-22:** 14 Sigma L lenses copied verbatim from sigma/data.js (shared-mount test now compares 38 shared ids) into the existing Sigma Primes/Zooms groups; 18 Leica SL lenses copied from leica/data.js into new "Leica SL Primes / Zooms (L-Mount)" groups. ASIN baseline +4 (copies that had none).
 **Branch:** canon-sony-lens-refresh (local csr-continue, worktree refresh-camera-data-sep2026); same PR as Canon/Sony/Nikon (#78)
@@ -46,6 +47,7 @@ Makers' store catalogues (Shopify `products.json`, venuslens Woo Store API) and 
 | Batch | Candidates | Entered | Skipped | Committed |
 |---|---|---|---|---|
 | 2.1 Sigma L + Leica SL copies | 32 | 32 | 0 | 4e1b295 |
-| 2.2 OM System → Panasonic, LUMIX 35-100 II → Olympus | 22 | 22 | 0 | (this commit) |
+| 2.2 OM System → Panasonic, LUMIX 35-100 II → Olympus | 22 | 22 | 0 | 09f2b67 |
+| 3.1 Samyang + Viltrox L | 1 | 1 (+1 Sony fix) | 0 | (this commit) |
 
 ## Skipped
