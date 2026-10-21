@@ -1,6 +1,7 @@
 # Progress — Panasonic + Leica missing third-party lenses
 
-**Resume at:** 3.5 (Meike L)
+**Resume at:** 3.6 (SG-image L)
+**3.5 done 2026-10-22 (2 Meike L lenses):** AF 85 f/1.4 MIX II and AF 85 f/1.8 SE Mark II, from B&H's L-Mount listings (Meike's L listings have no spec text); USD = Meike store L listing price.
 **3.4 done 2026-10-22 (11 7Artisans L lenses):** AF 35 / 24 / 40 / 50 f/1.8 / 135 / 10 f/2.5 fisheye, MF 18 f/5.6, 75 f/1.4, 14 f/2.8, 10 f/2.8 II, 10 f/2.8 fisheye. Shared optics from the Sony entries; L size/weight from each B&H L-Mount listing (several are identical to the E figures; 40mm, 135mm, 18mm differ); USD = store L variant regular (compare-at) price, all equal to the Sony E prices. L-specific shots for the 40, 50 and AF 10mm.
 **3.3 done 2026-10-22 (6 TTArtisan L lenses):** AF 50 f/1.8 Neo, AF 40 f/2, 14 f/2.8, AF 75 f/2, 11 f/2.8 fisheye, Tilt-Shift 17 f/4. Shared optics from the Sony entries (11mm from nikon/); L size/weight from each B&H L-Mount listing (TTArtisan gives sizes only as diagrams); USD = store L variant price; L-specific SKU-L product shots where the store has them. 14mm: B&H L diameter 75mm contradicts its E/Z listings (80mm) for the same front element, 80 kept. New "TTArtisan (L-Mount)" dropdown group.
 **3.2 done 2026-10-22 (19 Laowa L lenses):** Aksen 45 / 17.5, 35 TS 0.5x, 11 / 14 / 9 RL, 12 Lite (MF), 8-15 fisheye, 15 0.5x macro, 55 / 100 TS, 10 f/2.8 (MF), Argus 28, 58 2X, 20 / 15 Shift, 100 2X macro, 10-18, 25 2.5-5X. Shared optics cloned from the Sony entries (slug + `-l`); size/weight from Laowa where it gives one figure for all mounts (cross-checked against each B&H L-Mount listing) or an L/RF figure (12 Lite MF L 475g; 8-15 RF = 20mm flange like L); USD = venuslens L variation regular. L versions of the 12mm Lite and 10mm are manual focus (AF is E/Z only) -> afType Manual. 55 TS: B&H L listing gives 162mm (the 100mm TS's length), Laowa's 168.5mm used. 100 2X macro: Laowa doesn't list L; B&H L 155mm / 638g used. Images reuse the Sony shots; 6 gapped (RL x3 and 15 Shift as on sony/nikon; 12 Lite and 10mm MF L: Laowa only shows the AF E barrel).
@@ -54,7 +55,8 @@ Makers' store catalogues (Shopify `products.json`, venuslens Woo Store API) and 
 | 3.1 Samyang + Viltrox L | 1 | 1 (+1 Sony fix) | 0 | 557b846 |
 | 3.2 Laowa L | 23 | 19 | 4 | 915babe |
 | 3.3 TTArtisan L | 13 | 6 | 7 | b054488 |
-| 3.4 7Artisans L | 15 | 11 | 4 | (this commit) |
+| 3.4 7Artisans L | 15 | 11 | 4 | 4615223 |
+| 3.5 Meike L | 11 | 2 | 9 | (this commit) |
 
 ## Skipped
 ### Laowa L (3.2)
@@ -70,3 +72,5 @@ No L dimensions anywhere but TTArtisan's per-mount size-diagram images (same gap
 - MF 35mm f/1.4 Mark III, MF 35mm f/5.6 pancake: B&H L listings have weight only (274g / 155g), no dimensions; neither is on the Sony page either.
 - MF 9mm f/5.6: no B&H L listing found.
 - APS-C L lenses (25 f/0.95, 60 f/2.8 II macro) out of scope.
+### Meike L (3.5)
+Meike's L-mount store listings carry no spec text (images only) and B&H lists only three Meike L lenses: AF 85 f/1.4 (original, B&H listing retired - redirects to its replacement), AF 55 f/1.8 Pro, AF 85 f/1.8 Pro, AF 35 f/1.8 Pro, AF 35 f/2, AF 50 f/1.8, AF 24 f/1.4 MIX, MF 50 f/1.2, MF 50 f/1.7 have no sourceable L dimensions/weight.

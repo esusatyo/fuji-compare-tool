@@ -3081,6 +3081,41 @@ const LENSES = {
     productUrl:'https://7artisans.store/products/7artisans-10mm-f2-8-full-frame-fisheye-lens-for-e-l-r-z-mount',
   },
 
+  /* ── Meike (L-Mount, full-frame) — Panasonic/Leica missing-lens pass 2026-10-22 ── */
+  'meike-85mm-f14-ii-l': {
+    name:'Meike AF 85mm f/1.4 MIX II', manufacturer:'Meike', line:'MIX', type:'Prime',
+    mount:'l', focalLength:85, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'85mm',
+    maxAperture:1.4, minAperture:16, weight:653, length:110, diameter:85,
+    filterThread:77, minFocusDist:81, maxMagnification:null,
+    elements:15, groups:11, blades:11, afType:'STM',
+    weatherSealed:false, ois:false, oisStops:null, year:2026, discontinued:false,
+    imageUrl:'https://cdn.shopify.com/s/files/1/0251/3508/7676/files/8514ii-11.jpg',
+    imageSource: { url:'https://meikeglobal.com/products/8514iil', tier:'T1', title:'Meike official store', note:'first product image of the L-mount listing, lens alone (same photo as the Sony entry)', date:'2026-10-22' },
+    asin:null,
+    prices:{USD:569,AUD:null,EUR:null,GBP:null,JPY:null,CAD:null,SGD:null},
+    specSources: [{ url:'https://www.bhphotovideo.com/c/product/1992604-REG/x.html/specs', tier:'T3', title:'B&H - Meike AF 85mm f/1.4 MIX II (L-Mount) specs', note:'L-Mount, Black (SL85MMF1.4STMII): f/1.4-16, 15/11, 11 blades, 81cm MFD, 77mm filter, 85 x 110mm (diameter x length), 653g, autofocus (Sony E listing 648g). Meike\'s L-mount store listing has no spec table', date:'2026-10-22' }, { url:'https://meikeglobal.com/products/8514iil', tier:'T1', title:'Meike AF 85mm f/1.4 MIX II - Meike official store (L-mount listing)', note:'separate L-mount product listing confirms the L version, focal length and aperture', date:'2026-10-22' }],
+    priceSource: { url:'https://meikeglobal.com/products/8514iil', tier:'T1', title:'Meike official store', note:'L-mount listing Black variant $569, no compare-at (store products.json); non-USD not examined', date:'2026-10-22' },
+    priceIncomplete:true,
+    productUrl:'https://meikeglobal.com/products/8514iil',
+  },
+
+  'meike-85mm-f18-se-ii-l': {
+    name:'Meike AF 85mm f/1.8 SE Mark II', manufacturer:'Meike', line:'SE', type:'Prime',
+    mount:'l', focalLength:85, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'85mm',
+    maxAperture:1.8, minAperture:16, weight:369, length:100.2, diameter:76,
+    filterThread:62, minFocusDist:65, maxMagnification:null,
+    elements:11, groups:7, blades:11, afType:'STM',
+    weatherSealed:false, ois:false, oisStops:null, year:2025, discontinued:false,
+    imageUrl:'https://cdn.shopify.com/s/files/1/0251/3508/7676/files/85mm-F1-7.jpg',
+    imageSource: { url:'https://meikeglobal.com/products/8518se-l', tier:'T1', title:'Meike official store', note:'first product image of the L-mount listing, lens alone (same photo as the Sony entry)', date:'2026-10-22' },
+    asin:null,
+    prices:{USD:200,AUD:null,EUR:null,GBP:null,JPY:null,CAD:null,SGD:null},
+    specSources: [{ url:'https://www.bhphotovideo.com/c/product/1990881-REG/x.html/specs', tier:'T3', title:'B&H - Meike AF 85mm f/1.8 SE Mark II (L-Mount) specs', note:'L-Mount (85MMF1.8STMSEII): f/1.8-16, 11/7, 11 rounded blades, 0.65m MFD, 62mm filter, 76 x 100.2mm, 369g, autofocus - same as the Sony E listing. Meike\'s L-mount store listing has no spec table', date:'2026-10-22' }, { url:'https://meikeglobal.com/products/8518se-l', tier:'T1', title:'Meike AF 85mm f/1.8 SE Mark II - Meike official store (L-mount listing)', note:'separate L-mount product listing confirms the L version, focal length and aperture', date:'2026-10-22' }],
+    priceSource: { url:'https://meikeglobal.com/products/8518se-l', tier:'T1', title:'Meike official store', note:'L-mount listing $199.99, no compare-at (store products.json); non-USD not examined', date:'2026-10-22' },
+    priceIncomplete:true,
+    productUrl:'https://meikeglobal.com/products/8518se-l',
+  },
+
   /* ── OM System M.Zuiko (MFT, 2.0× crop) — major MFT third party ── */
   'omsystem-12-40mm-f28-pro': {
     name:'OM System M.Zuiko 12-40mm f/2.8 PRO II', manufacturer:'OM System', line:'PRO', type:'Zoom',
@@ -3728,6 +3763,7 @@ const LENS_DROPDOWN_GROUPS = [
   { label: '── Samyang (L-Mount) ──', ids: ['samyang-14-24mm-f28-l', 'samyang-35-150mm-f2-28-l'] },
   { label: '── TTArtisan (L-Mount) ──', ids: ['ttartisan-50mm-f18-neo-l', 'ttartisan-40mm-f2-l', 'ttartisan-14mm-f28-asph-l', 'ttartisan-75mm-f2-l', 'ttartisan-11mm-f28-fisheye-l', 'ttartisan-tilt-shift-17mm-f4-asph-l'] },
   { label: '── 7Artisans (L-Mount) ──', ids: ['7artisans-35mm-f18-l', '7artisans-24mm-f18-l', '7artisans-40mm-f25-lite-l', '7artisans-135mm-f18-l', '7artisans-18mm-f56-l', '7artisans-10mm-f25-af-fisheye-l', '7artisans-75mm-f14-l', '7artisans-14mm-f28-l', '7artisans-50mm-f18-l', '7artisans-10mm-f28-ii-l', '7artisans-10mm-f28-fisheye-l'] },
+  { label: '── Meike (L-Mount) ──', ids: ['meike-85mm-f14-ii-l', 'meike-85mm-f18-se-ii-l'] },
   { label: '── OM System Primes (MFT) ──', ids: ['omsystem-17mm-f12-pro', 'omsystem-25mm-f12-pro', 'omsystem-45mm-f12-pro', 'omsystem-60mm-f28-macro', 'omsystem-17mm-f18', 'omsystem-25mm-f18', 'omsystem-25mm-f18-ii', 'omsystem-45mm-f18', 'omsystem-8mm-f18-fisheye-pro', 'omsystem-20mm-f14-pro', 'omsystem-90mm-f35-macro-is-pro', 'omsystem-300mm-f4-is-pro', 'omsystem-12mm-f2', 'omsystem-75mm-f18', 'omsystem-30mm-f35-macro'] },
   { label: '── OM System Zooms (MFT) ──', ids: ['omsystem-12-40mm-f28-pro', 'omsystem-40-150mm-f4-pro', 'omsystem-12-100mm-f4-pro', 'omsystem-100-400mm-f5-63-ii', 'omsystem-7-14mm-f28-pro', 'omsystem-8-25mm-f4-pro', 'omsystem-12-45mm-f4-pro', 'omsystem-40-150mm-f28-pro', 'omsystem-50-200mm-f28-is-pro', 'omsystem-150-400mm-f45-tc125x-is-pro', 'omsystem-14-42mm-f35-56-iii', 'omsystem-14-42mm-f35-56-ez', 'omsystem-9-18mm-f4-56-ii', 'omsystem-40-150mm-f4-56-r', 'omsystem-14-150mm-f4-56-ii', 'omsystem-75-300mm-f48-67-ii', 'omsystem-12-200mm-f35-63', 'omsystem-150-600mm-f5-63-is'] },
   { label: '── Sigma (MFT) ──', ids: ['sigma-16mm-f14-mft', 'sigma-30mm-f14-mft', 'sigma-56mm-f14-mft'] },
