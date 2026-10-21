@@ -20,7 +20,7 @@
 
 - [x] 4.1 Laowa
 - [x] 4.2 Voigtländer
-- [ ] 4.3 TTArtisan / 7Artisans / Meike / SG-image / Samyang
+- [x] 4.3 TTArtisan / 7Artisans / Meike / SG-image / Samyang
 
 ## 5. Leica
 

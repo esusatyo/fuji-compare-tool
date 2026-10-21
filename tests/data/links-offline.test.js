@@ -200,8 +200,9 @@ const KNOWN_SHARED_LINKS = new Map([
 // Leica SL copies, +1 Samyang L, +19 Laowa L, +6 TTArtisan L,
 // +11 7Artisans L, +2 Meike L, +2 SG-image L, +22 Laowa MFT (11 each in
 // panasonic and olympus), +10 Voigtländer MFT (5 each),
-// +14 SG-image MFT, +26 Samyang MFT (7 / 13 each).
-const ASIN_GAP_BASELINE = 445;
+// +14 SG-image MFT, +26 Samyang MFT (7 / 13 each), +24 TTArtisan/7Artisans
+// MFT (12 each).
+const ASIN_GAP_BASELINE = 469;
 
 const allItems = () => brandDirs().flatMap(brand => {
   const { data } = loadBrand(brand);

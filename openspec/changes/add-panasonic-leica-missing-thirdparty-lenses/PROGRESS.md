@@ -1,6 +1,7 @@
 # Progress — Panasonic + Leica missing third-party lenses
 
-**Resume at:** 4.3 remainder (TTArtisan / 7Artisans / Meike MFT via B&H MFT listings)
+**Resume at:** 5.1 (Leica L-Mount mirror + shared-mount test rows)
+**4.3 done 2026-10-22 (TTArtisan 5 + 7Artisans 7 MFT lenses, panasonic/ + olympus/):** TTArtisan 35 f/1.4, 50 f/1.2, 40 macro, 7.5 fisheye, Tilt 35; 7Artisans 25 f/1.8, 60 macro II, 4mm, 18 f/6.3 II, 50 Tilt, 10 f/3.5, 6 f/2 fisheye. Every B&H MFT listing used gives the same size/weight as the Sony (6mm: Fujifilm) entry, so those entries were cloned with mount mft and 2x equivalents; USD = store M43 variant price (equal to the E prices).
 **4.3 part 1 done 2026-10-22 (SG-image 7 + Samyang 13 MFT lenses, panasonic/ + olympus/):** SG-image: Sony entries cloned (spec card gives one figure for all mounts, M43 listed; M43 variant prices equal the E ones); MF 18 f/6.3 skipped as on sony/. Samyang: Sony entries cloned with the Micro 4/3 column of samyangus.com's per-mount spec tables (length/weight) and the MFT variant's regular (compare-at) price; MFT-only 7.5mm f/3.5 fisheye added from its own table. 8mm f/3.5: store MFT price is a non-round $215.13 with no compare-at -> B&H Rokinon MFT $269. 300mm mirror: store $268.95, no compare-at, no B&H MFT listing -> $269. Follow-up: sony samyang-100mm-f28-macro USD $319 ("regular", no compare-at) vs the MFT variant's $599 compare-at - recheck the Sony price.
 **4.2 done 2026-10-22 (5 Voigtländer MFT lenses, panasonic/ + olympus/):** Nokton 10.5 / 17.5 / 42.5 / 60 f/0.95 and Super Nokton 29 f/0.8 from Cosina's EN MFT pages (Cosina's full MFT list is these + the 25mm Type II already entered); USD = B&H regular (no strikethrough). Note: B&H now lists the existing Nokton 25mm Type II at $749 with no strikethrough (data has $799 from a 2026-10-10 "regular $799, sale $749" reading) - recheck in the price pass.
 **4.1 done 2026-10-22 (11 Laowa MFT lenses, in both panasonic/ and olympus/):** Aksen 45 / 17.5, 4.5-10 CF fisheye, 4mm fisheye, 9mm Zero-D (Sony entries cloned, 2x equivalents; Laowa gives one size for all mounts, MFT listed); MFT-only designs Argus 25 MFT APO, Argus 18 MFT APO, 17 f/1.8 MFT, 50 2X macro, 10 f/2 Zero-D MFT, 6 f/2 Zero-D MFT from Laowa's spec tables + B&H MFT listings (min aperture from B&H). 6mm/10mm/Argus 18 are not on Laowa's US store: USD = B&H, specs/images from Laowa Australia. "Voigtländer & Laowa (MFT)" group split into Laowa / Voigtländer groups on both pages. 17mm f/1.8 image gapped (only on venuslens.net, which blocks hotlinks).
@@ -64,7 +65,8 @@ Makers' store catalogues (Shopify `products.json`, venuslens Woo Store API) and 
 | 3.6 SG-image L | 3 | 2 | 1 | 9699404 |
 | 4.1 Laowa MFT | 11 | 11 | 0 | 9cce5a1 |
 | 4.2 Voigtländer MFT | 5 | 5 | 0 | 83e5a4f |
-| 4.3a SG-image + Samyang MFT | 21 | 20 | 1 | (this commit) |
+| 4.3a SG-image + Samyang MFT | 21 | 20 | 1 | 26e2815 |
+| 4.3b TTArtisan + 7Artisans + Meike MFT | ~38 | 12 | ~26 | (this commit) |
 
 ## Skipped
 ### Laowa L (3.2)
@@ -82,3 +84,5 @@ No L dimensions anywhere but TTArtisan's per-mount size-diagram images (same gap
 - APS-C L lenses (25 f/0.95, 60 f/2.8 II macro) out of scope.
 ### Meike L (3.5)
 Meike's L-mount store listings carry no spec text (images only) and B&H lists only three Meike L lenses: AF 85 f/1.4 (original, B&H listing retired - redirects to its replacement), AF 55 f/1.8 Pro, AF 85 f/1.8 Pro, AF 35 f/1.8 Pro, AF 35 f/2, AF 50 f/1.8, AF 24 f/1.4 MIX, MF 50 f/1.2, MF 50 f/1.7 have no sourceable L dimensions/weight.
+### Budget MFT (4.3)
+B&H MFT listings missing dimensions or weight (makers publish specs only as images or weight ranges): TTArtisan 17 f/1.4, 23 f/1.4 (no weight), 25 f/2 (no weight), 50 f/0.95, Tilt 50 f/1.4, 10 f/2; 7Artisans 7.5 f/2.8 II fisheye, 35 f/1.2 II, 35 f/1.4, 50 f/1.2 (no weight); 7Artisans 12 f/2.8 II MFT listing retired. Meike: B&H's MFT listings (8 f/2.8, 7.5 fisheye, 10 f/2, 50 f/0.95) have no dimensions and Meike's store has no spec text, so no Meike MFT lens could be entered (12 f/2.8, 12 f/2, 25 f/2, 25/35 f/0.95, 35/50 f/1.7, 60 macro, 6-11 zoom not on B&H at all). TTArtisan/7Artisans MFT lenses not on B&H (e.g. TTArtisan 50 f/2, TS 100, 7Artisans 35 f/0.95, 50 f/0.95, 50 f/1.8) likewise skipped. SG-image MF 18 f/6.3 skipped as on sony/.
