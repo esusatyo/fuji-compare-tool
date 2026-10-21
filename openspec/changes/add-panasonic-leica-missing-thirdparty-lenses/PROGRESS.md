@@ -1,6 +1,7 @@
 # Progress — Panasonic + Leica missing third-party lenses
 
-**Resume at:** 5.2 (Leica M: Voigtländer VM)
+**Resume at:** 5.3 (Leica M: Zeiss ZM)
+**5.2 done 2026-10-22 (29 Voigtländer VM lenses into leica/):** every current design on Cosina's EN VM list - specs from the EN pages, release dates (発売日) from the JP pages, USD = B&H regular (no strikethrough), product shot = each page's "-01" image (the first, P00, is a sample photo). One entry per optical design: Vintage Line Type I/II (same optics, aluminium vs brass barrel) use the variant B&H sells / Cosina still makes, noted in specSources; APO-Lanthar 50 f/3.5 Type I and Type II are separate entries (Type II focuses closer and takes 39mm filters). New "Voigtländer (M-Mount)" group.
 **5.1 done 2026-10-22 (112 L-Mount lenses copied into leica/):** every full-frame L lens on Panasonic's page except Leica's own SL lenses - LUMIX S 22, Sigma 38, Laowa 23, Viltrox 6, Samyang 2, TTArtisan 6, 7Artisans 11, Meike 2, SG-image 2 - copied verbatim with Panasonic's dropdown grouping ("Panasonic LUMIX S Primes/Zooms (L-Mount)", maker groups after Leica's own). shared-mount.test.js gains leica-panasonic and leica-sigma rows (both pass). 7 image gaps carried over (lumix-s-20mm-f2-5 + 6 Laowa).
 **4.3 done 2026-10-22 (TTArtisan 5 + 7Artisans 7 MFT lenses, panasonic/ + olympus/):** TTArtisan 35 f/1.4, 50 f/1.2, 40 macro, 7.5 fisheye, Tilt 35; 7Artisans 25 f/1.8, 60 macro II, 4mm, 18 f/6.3 II, 50 Tilt, 10 f/3.5, 6 f/2 fisheye. Every B&H MFT listing used gives the same size/weight as the Sony (6mm: Fujifilm) entry, so those entries were cloned with mount mft and 2x equivalents; USD = store M43 variant price (equal to the E prices).
 **4.3 part 1 done 2026-10-22 (SG-image 7 + Samyang 13 MFT lenses, panasonic/ + olympus/):** SG-image: Sony entries cloned (spec card gives one figure for all mounts, M43 listed; M43 variant prices equal the E ones); MF 18 f/6.3 skipped as on sony/. Samyang: Sony entries cloned with the Micro 4/3 column of samyangus.com's per-mount spec tables (length/weight) and the MFT variant's regular (compare-at) price; MFT-only 7.5mm f/3.5 fisheye added from its own table. 8mm f/3.5: store MFT price is a non-round $215.13 with no compare-at -> B&H Rokinon MFT $269. 300mm mirror: store $268.95, no compare-at, no B&H MFT listing -> $269. Follow-up: sony samyang-100mm-f28-macro USD $319 ("regular", no compare-at) vs the MFT variant's $599 compare-at - recheck the Sony price.
@@ -68,7 +69,8 @@ Makers' store catalogues (Shopify `products.json`, venuslens Woo Store API) and 
 | 4.2 Voigtländer MFT | 5 | 5 | 0 | 83e5a4f |
 | 4.3a SG-image + Samyang MFT | 21 | 20 | 1 | 26e2815 |
 | 4.3b TTArtisan + 7Artisans + Meike MFT | ~38 | 12 | ~26 | 47bfd73 |
-| 5.1 Leica L-Mount mirror | 112 | 112 | 0 | (this commit) |
+| 5.1 Leica L-Mount mirror | 112 | 112 | 0 | 08e9c67 |
+| 5.2 Voigtländer VM | 35 | 29 | 6 | (this commit) |
 
 ## Skipped
 ### Laowa L (3.2)
@@ -88,3 +90,5 @@ No L dimensions anywhere but TTArtisan's per-mount size-diagram images (same gap
 Meike's L-mount store listings carry no spec text (images only) and B&H lists only three Meike L lenses: AF 85 f/1.4 (original, B&H listing retired - redirects to its replacement), AF 55 f/1.8 Pro, AF 85 f/1.8 Pro, AF 35 f/1.8 Pro, AF 35 f/2, AF 50 f/1.8, AF 24 f/1.4 MIX, MF 50 f/1.2, MF 50 f/1.7 have no sourceable L dimensions/weight.
 ### Budget MFT (4.3)
 B&H MFT listings missing dimensions or weight (makers publish specs only as images or weight ranges): TTArtisan 17 f/1.4, 23 f/1.4 (no weight), 25 f/2 (no weight), 50 f/0.95, Tilt 50 f/1.4, 10 f/2; 7Artisans 7.5 f/2.8 II fisheye, 35 f/1.2 II, 35 f/1.4, 50 f/1.2 (no weight); 7Artisans 12 f/2.8 II MFT listing retired. Meike: B&H's MFT listings (8 f/2.8, 7.5 fisheye, 10 f/2, 50 f/0.95) have no dimensions and Meike's store has no spec text, so no Meike MFT lens could be entered (12 f/2.8, 12 f/2, 25 f/2, 25/35 f/0.95, 35/50 f/1.7, 60 macro, 6-11 zoom not on B&H at all). TTArtisan/7Artisans MFT lenses not on B&H (e.g. TTArtisan 50 f/2, TS 100, 7Artisans 35 f/0.95, 50 f/0.95, 50 f/1.8) likewise skipped. SG-image MF 18 f/6.3 skipped as on sony/.
+### Voigtländer VM (5.2)
+Discontinued per Cosina's own pages (out of scope for current M lenses): APO-Skopar 90 f/2.8 (June 2026), Color-Skopar 21 f/4 P (Nov 2025), Color-Skopar 28 f/2.8 Type I (June 2026), Heliar 40 f/2.8 (Aug 2025). Limited/commemorative editions of entered designs: APO-Lanthar 50 f/3.5 Limited (colour editions), Color-Skopar 35 f/2.5 "Skopar 100th" model.

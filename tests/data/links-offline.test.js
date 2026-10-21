@@ -203,8 +203,8 @@ const KNOWN_SHARED_LINKS = new Map([
 // panasonic and olympus), +10 Voigtländer MFT (5 each),
 // +14 SG-image MFT, +26 Samyang MFT (7 / 13 each), +24 TTArtisan/7Artisans
 // MFT (12 each), +49 Leica L-Mount copies of Panasonic's LUMIX S /
-// third-party entries that have no asin.
-const ASIN_GAP_BASELINE = 518;
+// third-party entries that have no asin, +29 Voigtländer VM (Leica).
+const ASIN_GAP_BASELINE = 547;
 
 const allItems = () => brandDirs().flatMap(brand => {
   const { data } = loadBrand(brand);

@@ -25,7 +25,7 @@
 ## 5. Leica
 
 - [x] 5.1 L-Mount: mirror Panasonic's full-frame L lenses; shared-mount test rows
-- [ ] 5.2 M-Mount: Voigtländer VM
+- [x] 5.2 M-Mount: Voigtländer VM
 - [ ] 5.3 M-Mount: Zeiss ZM
 - [ ] 5.4 M-Mount: TTArtisan / 7Artisans / Thypoch / Laowa
 
