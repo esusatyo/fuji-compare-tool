@@ -1,6 +1,6 @@
 # Progress — Canon missing third-party lenses + price consistency
 
-**Resume at:** 3.1/3.2 Samyang (owner decision pending), then 4.1
+**Resume at:** 3.1/3.2 Samyang (owner decision pending), 4.1 test:links running, then 4.3
 **Branch:** csr-continue → origin canon-sony-lens-refresh (PR #78)
 **Baseline 2026-10-22:** 39 third-party Canon lenses — Sigma 11, TTArtisan 12,
 Laowa 5, Tamron 3, 7Artisans 3, Samyang 2, Yongnuo 2 (discontinued), Viltrox 1
@@ -37,6 +37,8 @@ mount, and are excluded.
 **2.7 done 2026-10-22:** Sigma - B&H lists exactly the 11 RF lenses already entered (all APS-C; no full-frame RF Sigma exists). Viltrox - no RF lens on its store or at B&H (EF-M only). Tamron - **new release found: 16-50mm F2.8 A (B091)**, announced 2026-10-14; Canon RF and Sony E ship 2026-10-29, Nikon Z 2026-11-19, Fujifilm X 2026-12-17 (Tamron spec page, per-mount columns). Added to canon/ (RF: 69.2 x 77.6mm, 305g, US $549 Tamron Americas). Sony/Nikon/Fujifilm versions are NOT added here (outside this pass) - follow-up.
 
 **3.3 done 2026-10-22:** nikon z-58mm-f0-95-s-noct afType Manual Focus -> Manual (the only lens of 1,300+ not using "Manual"; the spec table shows it in the AF Motor Type row).
+
+**4.2 done 2026-10-22:** /canon/ lens mode previewed - dropdown groups Sigma 11, Tamron 4, Samyang 3, Viltrox 1, TTArtisan 15, 7Artisans 9, Laowa 34, Voigtländer 5, Thypoch 1, Yongnuo 2 (85 third-party, = 39 + 46); spot-checked Laowa 180 / Nokton 50 f/1 / Tamron 16-50 and 7Artisans 6mm / Simera 28 / Samyang 85 RF: photos load, USD shows, AF Motor Type "Manual" / "Linear Motor", no console errors. Image check: all 41 new Canon image URLs load (one Wikimedia 429 re-checked OK).
 
 ## Batches
 
