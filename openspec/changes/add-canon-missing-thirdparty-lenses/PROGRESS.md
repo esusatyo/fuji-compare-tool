@@ -1,6 +1,6 @@
 # Progress — Canon missing third-party lenses + price consistency
 
-**Resume at:** 5.6 (review listing artifact)
+**Resume at:** 5.7 (test:links, PR body, push)
 
 **Owner answers 2026-10-22 (review of PR #78):** Laowa RL lengths - flag in the PR description, owner reviews; USD-only lenses stay USD-only (no ratio estimates); TTArtisan weight ranges - keep skipping, keep researching per-mount weights; Tamron 16-50 Sony E - in this PR, research for correctness; landing/About counts - count unique lenses; refresh-camera-data skill - write the B&H rule into it in this PR; Meike 50mm f/1.7 X stays $130. Also asked for a published review listing of every lens this PR adds, with sources and flags.
 
@@ -53,6 +53,8 @@ mount, and are excluded.
 **5.4 done 2026-10-22:** the third-party USD rule (B&H's price for that mount; Samyang/Rokinon = B&H selling price; no maker compare-at on its own; no-B&H-listing fallback; T3 citation; recompute only ratio-derived regionals) is written into refresh-camera-data's pricing convention, with one-paragraph pointers in add-thirdparty-lenses Step 6 and check-prices-and-buy-links. Open for the owner: add-thirdparty-lenses Step 6 still says fill all seven currencies with compute-prices.js; this PR's owner answer kept 572 new lenses USD-only, but that was a decision about these lenses, not a standing rule.
 
 **5.5 done 2026-10-22 (owner: keep skipping, research if possible):** no per-mount weight found for TTArtisan APS-C 23mm f/1.4 (Z, MFT), 7.5mm f/2 fisheye (Z), APS-C 25mm f/2 (Z, RF, MFT) and APS-C 35mm f/0.95 (Z, RF). Tried: ttartisan.store products.json variant weights (one figure for every mount = the range's top: 250 / 370 / 178 / 258g); web search for per-mount specs (retailers quote the range or nothing; Dustin Abbott's review weighs the 23mm at 225g without naming the mount; Georges AU lists 336g); Adorama's RF/Z listings (403 to fetch). Still skipped. Next idea: a real browser on Adorama/B&H per-mount listings, or TTArtisan's per-mount size-diagram images if they ever add weight.
+
+**5.6 done 2026-10-22:** review listing published as a private Artifact (https://claude.ai/artifact/RnRVvjdqznpvVhDdYgGZZS): all 824 entries this PR adds or changes vs origin/main (461 new lenses, 214 copies, 132 changed lenses, 17 changed cameras) with stored figures, every cited source, computed flags (RL length, same length as another mount, estimated values, sources disagreed, retailer-only specs, price via tracker, Samyang selling price, shared/no photo, no recorded source) and three open owner questions (RL lengths; USD-only as a standing rule for future third-party lenses vs add-thirdparty-lenses Step 6; Canon Price Watch as a cited source). Owner marks are stored in the artifact's db: collection `reviews` (doc id `<brand>:<slug>`, cameras `<brand>:cam:<slug>`; fields status ok/wrong/question/note, note, name) and `questions` (choice, note). Read them back with ArtifactData list. Builder: scratchpad review/build_data.js + assemble.py.
 
 ## Batches
 

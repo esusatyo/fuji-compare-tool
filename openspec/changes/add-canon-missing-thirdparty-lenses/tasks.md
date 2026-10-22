@@ -31,5 +31,5 @@
 - [x] 5.3 Landing/About lens counts: count each lens once (same mount + same id)
 - [x] 5.4 refresh-camera-data skill: third-party USD = B&H rule
 - [x] 5.5 TTArtisan cross-mount weight ranges: stay skipped; look for per-mount weights
-- [ ] 5.6 Review listing (Artifact) of every lens added in this PR, with sources and flags
+- [x] 5.6 Review listing (Artifact) of every lens added in this PR, with sources and flags
 - [ ] 5.7 Verify, PR body, push
