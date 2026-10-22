@@ -1,6 +1,6 @@
 # Progress — Canon missing third-party lenses + price consistency
 
-**Resume at:** 2.2 (Voigtländer)
+**Resume at:** 2.3 (TTArtisan)
 **Branch:** csr-continue → origin canon-sony-lens-refresh (PR #78)
 **Baseline 2026-10-22:** 39 third-party Canon lenses — Sigma 11, TTArtisan 12,
 Laowa 5, Tamron 3, 7Artisans 3, Samyang 2, Yongnuo 2 (discontinued), Viltrox 1
@@ -26,11 +26,14 @@ mount, and are excluded.
 
 **2.1 done 2026-10-22 (29 Laowa RF lenses):** Nikon entries cloned (Laowa publishes one spec table across its mirrorless mounts and every lens has a Canon RF variation on its store and a B&H Canon RF listing). RF-specific figures: 12-24mm f/5.6 length 91.6mm (Laowa gives R/M/E/Z lengths), 85mm f/5.6 310g (Laowa + B&H RF), 180mm macro is manual focus on RF (522g / 134.4mm from B&H RF, f/32 min), 12mm Lite and 10mm f/2.8 are manual focus on RF (12mm Lite 480g). APS-C designs (4.5-10, 8-16, 12-24 Shift CF, Argus 25/33, 65mm, 4mm, 9mm) use the 1.6x RF-S crop. Photos reused from the Sony entries (Panasonic L for the 180mm); the 5 lenses gapped on the other brands are gapped here too. The existing 5 Laowa lenses moved out of "Other" into a new Laowa group; "Other" is now "Yongnuo".
 
+**2.2 done 2026-10-22 (5 Voigtländer RF lenses):** Cosina's whole RF list (Nokton 40 f/1.2, 50 f/1, 75 f/1.5, Nokton Classic 35 f/1.4, Portrait Heliar 75 f/1.8) from the RF-mount EN pages (RF housings differ from the other mounts); release years from the JP pages (発売日); USD = B&H regular for the RF listing (50mm and 75mm on sale at the time). Product shot = the "-01"/"web01" image (P00 is a sample photo), checked visually.
+
 ## Batches
 
 | Batch | Added | Skipped | Commit |
 |---|---|---|---|
 | 2.1 Laowa | 29 | 2 | (this commit) |
+| 2.2 Voigtländer | 5 | 0 | (this commit) |
 
 ## Price consistency
 

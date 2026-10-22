@@ -5,7 +5,7 @@
 ## 2. Canon RF maker batches
 
 - [x] 2.1 Laowa
-- [ ] 2.2 Voigtländer
+- [x] 2.2 Voigtländer
 - [ ] 2.3 TTArtisan
 - [ ] 2.4 7Artisans
 - [ ] 2.5 Thypoch + Samyang
