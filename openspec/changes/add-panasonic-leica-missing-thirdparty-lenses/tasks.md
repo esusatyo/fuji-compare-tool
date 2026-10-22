@@ -32,4 +32,4 @@
 ## 6. Verify
 
 - [ ] 6.1 npm test, verify-images panasonic/olympus/leica, test:links, generate-seo
-- [ ] 6.2 Preview /panasonic/, /olympus/ and /leica/ in lenses mode
+- [x] 6.2 Preview /panasonic/, /olympus/ and /leica/ in lenses mode

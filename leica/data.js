@@ -1567,8 +1567,8 @@ const LENSES = {
     // Current, but out of stock on leicacamerausa.com specifically ("back
     // in stock" notify form) while in stock in DE/GB/JP/AU/SG/CA — treated
     // as a regional inventory gap, not a discontinuation.
-    imageUrl:'https://leica-camera.com/sites/default/files/styles/meta_tag_product_image/public/pm-19513-11177__Super-Vario-Elmar-SL_16-35_f3_5-4_5.png?itok=ciQIrSmc',
-    imageSource:{url:'https://leica-camera.com/en-US/photography/lenses/sl/super-vario-elmar-sl-16-35mm-f3-5-4-5-asph-black', tier:'T1', date:'2026-09-18', title:'Leica Super-Vario-Elmar-SL 16-35mm f/3.5-4.5 ASPH. official product page'},
+    imageUrl:'https://leica-camera.com/sites/default/files/styles/meta_tag_product_image/public/pm-15139-11177__Super-Vario-Elmar-SL_16-35_f3_5-4_5.png?itok=147razDy',
+    imageSource:{url:'https://leica-camera.com/en-US/photography/lenses/sl/super-vario-elmar-sl-16-35mm-f3-5-4-5-asph-black', tier:'T1', date:'2026-10-22', title:'Leica Super-Vario-Elmar-SL 16-35mm f/3.5-4.5 ASPH. official product page', note:'the page\'s og:image (pm-15139), lens alone; replaced 2026-10-22 because the previous file (pm-19513) now returns 404'},
     asin:'B07CZ4QM71',
     specSources:[{url:'https://leica-camera.com/sites/default/files/pm-54144-11177_Datenblatt_Super-Vario-Elmar-16-35-ASPH_EN.pdf', tier:'T1', note:'Leica\'s official datasheet (order no. 11177) confirms weight 990 g, length 123 mm, diameter 88 mm, filter thread 82 mm, 18 elements in 12 groups. Where the sheet gives figures without and with the lens hood, the without-hood figure is stored.', date:'2026-09-25', title:'Leica datasheet: Leica Super-Vario-Elmar-SL 16-35mm f/3.5-4.5 ASPH.'}],
     prices:{USD:6845,AUD:10200,EUR:5990,GBP:5350,JPY:1100000,CAD:9650,SGD:9050},
@@ -4547,8 +4547,8 @@ const LENSES = {
     filterThread:43, minFocusDist:70, maxMagnification:0.059,
     elements:7, groups:5, blades:10, afType:'Manual',
     weatherSealed:false, ois:false, oisStops:null, year:2008, discontinued:false,
-    imageUrl:'https://www.zeiss.com/content/dam/pno/images/photography/products/lenses-for-rangefinder-cameras/zm-lenses/models/zeiss-biogon-2835-zm.jpg',
-    imageSource: { url:'https://www.zeiss.com/photonics-and-optics/us/photography/products/lenses-for-rangefinder-cameras/zm-lenses.html', tier:'T1', title:'ZEISS ZM Lenses - zeiss.com', note:'the model image for this lens (file zeiss-biogon-2835-zm), lens alone', date:'2026-10-22' },
+    imageUrl:'https://www.zeiss.com/content/dam/pno/images/photography/products/lenses-for-rangefinder-cameras/zm-lenses/models/zeiss-c-biogon-2835-zm.jpg',
+    imageSource: { url:'https://www.zeiss.com/photonics-and-optics/us/photography/products/lenses-for-rangefinder-cameras/zm-lenses.html', tier:'T1', title:'ZEISS ZM Lenses - zeiss.com', note:'the model image for this lens (file zeiss-c-biogon-2835-zm), lens alone', date:'2026-10-22' },
     asin:null,
     prices:{USD:999,AUD:null,EUR:null,GBP:null,JPY:null,CAD:null,SGD:null},
     specSources: [{ url:'https://www.zeiss.com/photonics-and-optics/us/photography/products/lenses-for-rangefinder-cameras/zm-lenses.html', tier:'T1', title:'ZEISS ZM Lenses - official technical data (zeiss.com US)', note:'Zeiss C Biogon T* 2.8/35 ZM: f/2.8-f/22, 7/5, 0.70m, 1:17, M43 x 0.75, 55mm "without lens caps", 200g. Year: estimated (C Biogon 35 followed the 2006 C Sonnar; B&H listing c. 2008)', date:'2026-10-22' }, { url:'https://www.zeiss.com/content/dam/pno/downloads/photo-lenses/datasheets/zm-lenses/datasheet-zeiss-zm-biogon-2835-en.pdf', tier:'T1', title:'Zeiss C Biogon T* 2.8/35 ZM - Zeiss datasheet (PDF)', note:'datasheet: max diameter 52mm, 55mm labelled "with caps" (the web table labels the same 55mm "without caps"), 200g', date:'2026-10-22' }, { url:'https://www.bhphotovideo.com/c/product/553340-REG/x.html/specs', tier:'T3', title:'B&H - Zeiss C Biogon T* 2.8/35 ZM specs', note:'f/2.8-22, 7/5, 10 blades, 70cm, 43mm filter, 52 x 55mm, 200g (Zeiss publishes no diameter or blade count for the ZM line)', date:'2026-10-22' }],

@@ -2148,8 +2148,8 @@ const LENSES = {
     // Current, but out of stock on leicacamerausa.com specifically ("back
     // in stock" notify form) while in stock in DE/GB/JP/AU/SG/CA — treated
     // as a regional inventory gap, not a discontinuation.
-    imageUrl:'https://leica-camera.com/sites/default/files/styles/meta_tag_product_image/public/pm-19513-11177__Super-Vario-Elmar-SL_16-35_f3_5-4_5.png?itok=ciQIrSmc',
-    imageSource:{url:'https://leica-camera.com/en-US/photography/lenses/sl/super-vario-elmar-sl-16-35mm-f3-5-4-5-asph-black', tier:'T1', date:'2026-09-18', title:'Leica Super-Vario-Elmar-SL 16-35mm f/3.5-4.5 ASPH. official product page'},
+    imageUrl:'https://leica-camera.com/sites/default/files/styles/meta_tag_product_image/public/pm-15139-11177__Super-Vario-Elmar-SL_16-35_f3_5-4_5.png?itok=147razDy',
+    imageSource:{url:'https://leica-camera.com/en-US/photography/lenses/sl/super-vario-elmar-sl-16-35mm-f3-5-4-5-asph-black', tier:'T1', date:'2026-10-22', title:'Leica Super-Vario-Elmar-SL 16-35mm f/3.5-4.5 ASPH. official product page', note:'the page\'s og:image (pm-15139), lens alone; replaced 2026-10-22 because the previous file (pm-19513) now returns 404'},
     asin:'B07CZ4QM71',
     specSources:[{url:'https://leica-camera.com/sites/default/files/pm-54144-11177_Datenblatt_Super-Vario-Elmar-16-35-ASPH_EN.pdf', tier:'T1', note:'Leica\'s official datasheet (order no. 11177) confirms weight 990 g, length 123 mm, diameter 88 mm, filter thread 82 mm, 18 elements in 12 groups. Where the sheet gives figures without and with the lens hood, the without-hood figure is stored.', date:'2026-09-25', title:'Leica datasheet: Leica Super-Vario-Elmar-SL 16-35mm f/3.5-4.5 ASPH.'}],
     prices:{USD:6845,AUD:10200,EUR:5990,GBP:5350,JPY:1100000,CAD:9650,SGD:9050},
