@@ -1,6 +1,6 @@
 # Progress — Canon missing third-party lenses + price consistency
 
-**Resume at:** 5.3 (unique lens counts)
+**Resume at:** 5.4 (refresh-camera-data skill: B&H rule)
 
 **Owner answers 2026-10-22 (review of PR #78):** Laowa RL lengths - flag in the PR description, owner reviews; USD-only lenses stay USD-only (no ratio estimates); TTArtisan weight ranges - keep skipping, keep researching per-mount weights; Tamron 16-50 Sony E - in this PR, research for correctness; landing/About counts - count unique lenses; refresh-camera-data skill - write the B&H rule into it in this PR; Meike 50mm f/1.7 X stays $130. Also asked for a published review listing of every lens this PR adds, with sources and flags.
 
@@ -47,6 +47,8 @@ mount, and are excluded.
 **4.2 done 2026-10-22:** /canon/ lens mode previewed - dropdown groups Sigma 11, Tamron 4, Samyang 3, Viltrox 1, TTArtisan 15, 7Artisans 9, Laowa 34, Voigtländer 5, Thypoch 1, Yongnuo 2 (85 third-party, = 39 + 46); spot-checked Laowa 180 / Nokton 50 f/1 / Tamron 16-50 and 7Artisans 6mm / Simera 28 / Samyang 85 RF: photos load, USD shows, AF Motor Type "Manual" / "Linear Motor", no console errors. Image check: all 41 new Canon image URLs load (one Wikimedia 429 re-checked OK).
 
 **4.1 done 2026-10-22:** npm test 849/849; npm run test:links pass 2 / fail 0 (run twice: after the Canon batches and again after the Samyang price changes); warnings are bot blocks / rate limits only (B&H 403, Wikimedia 429).
+
+**5.3 done 2026-10-22:** site-wide totals (home share card + its alt text on the landing/About/Privacy pages) now count each product once, keyed by mount + slug (`uniqueItemCount` in scripts/generate-seo.js): 1,516 lens entries -> 1,232 unique lenses (284 are the same lens on two or three brand pages); cameras unchanged at 231. Per-brand counts stay per page. Two tests in tests/data/landing.test.js pin it.
 
 ## Batches
 
