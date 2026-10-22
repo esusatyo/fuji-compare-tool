@@ -2291,9 +2291,10 @@ const LENSES = {
     productUrl:'https://ttartisan.store/products/ttartisan-50mm-f1-2',
   },
   'ttartisan-75mm-f2': {
+    // 2026-10-22: length/diameter checked against TTArtisan's per-mount size diagram (X column 74mm long x 67mm diameter (diameter was 65)); was length 74 / diameter 65.
     name:'TTArtisan AF 75mm f/2', manufacturer:'TTArtisan', line:'AF', type:'Prime',
     mount:'x', focalLength:75, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'114mm',
-    maxAperture:2.0, minAperture:16, weight:326, length:74, diameter:65,
+    maxAperture:2.0, minAperture:16, weight:326, length:74, diameter:67,
     filterThread:62, minFocusDist:75, maxMagnification:0.1,
     elements:10, groups:7, blades:9, afType:'Stepping Motor',
     weatherSealed:false, ois:false, oisStops:null, year:2025, discontinued:false,
@@ -2395,9 +2396,10 @@ const LENSES = {
     productUrl:'https://ttartisan.store/products/aps-c-50mm-f0-95',
   },
   'ttartisan-tilt-35mm-f14': {
+    // 2026-10-22: length/diameter checked against TTArtisan's per-mount size diagram (X column 63mm long x 66mm diameter); was length 66 / diameter 63.
     name:'TTArtisan Tilt 35mm f/1.4', manufacturer:'TTArtisan', line:'Tilt', type:'Prime',
     mount:'x', focalLength:35, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'53mm',
-    maxAperture:1.4, minAperture:16, weight:346, length:66, diameter:63,
+    maxAperture:1.4, minAperture:16, weight:346, length:63, diameter:66,
     filterThread:52, minFocusDist:35, maxMagnification:0.1,
     elements:7, groups:6, blades:10, afType:'Manual',
     weatherSealed:false, ois:false, oisStops:null, year:2025, discontinued:false,
@@ -2427,9 +2429,10 @@ const LENSES = {
     productUrl:'https://ttartisan.store/products/102',
   },
   'ttartisan-35mm-f14': {
+    // 2026-10-22: length/diameter checked against TTArtisan's per-mount size diagram (X column 44mm long x 56mm diameter); was length 56 / diameter 44.
     name:'TTArtisan 35mm f/1.4', manufacturer:'TTArtisan', line:'Manual', type:'Prime',
     mount:'x', focalLength:35, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'52mm',
-    maxAperture:1.4, minAperture:16, weight:180, length:56, diameter:44,
+    maxAperture:1.4, minAperture:16, weight:180, length:44, diameter:56,
     filterThread:39, minFocusDist:28, maxMagnification:0.1,
     elements:7, groups:6, blades:10, afType:'Manual',
     weatherSealed:false, ois:false, oisStops:null, year:2025, discontinued:false,

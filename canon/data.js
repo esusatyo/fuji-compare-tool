@@ -1775,9 +1775,10 @@ const LENSES = {
   },
 
   'ttartisan-35mm-f14-apsc': {
+    // 2026-10-22: length/diameter checked against TTArtisan's per-mount size diagram (RF column 42mm long x 63mm diameter); was length 63 / diameter 42.
     name:'TTArtisan APS-C 35mm f/1.4', manufacturer:'TTArtisan', line:'APS-C', type:'Prime',
     mount:'rf', focalLength:35, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'56mm',
-    maxAperture:1.4, minAperture:16, weight:180, length:63, diameter:42,
+    maxAperture:1.4, minAperture:16, weight:180, length:42, diameter:63,
     filterThread:39, minFocusDist:28, maxMagnification:null,
     elements:7, groups:6, blades:10, afType:'Manual',
     weatherSealed:false, ois:false, oisStops:null, year:2020, discontinued:false,
@@ -1794,9 +1795,10 @@ const LENSES = {
   },
 
   'ttartisan-23mm-f14-apsc': {
+    // 2026-10-22: length/diameter checked against TTArtisan's per-mount size diagram (RF column 41mm long x 63mm diameter); was length 63 / diameter 41.
     name:'TTArtisan APS-C 23mm f/1.4', manufacturer:'TTArtisan', line:'APS-C', type:'Prime',
     mount:'rf', focalLength:23, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'37mm',
-    maxAperture:1.4, minAperture:16, weight:250, length:63, diameter:41,
+    maxAperture:1.4, minAperture:16, weight:250, length:41, diameter:63,
     filterThread:43, minFocusDist:20, maxMagnification:null,
     elements:8, groups:6, blades:10, afType:'Manual',
     weatherSealed:false, ois:false, oisStops:null, year:2021, discontinued:false,
@@ -1833,9 +1835,10 @@ const LENSES = {
   },
 
   'ttartisan-tilt-35mm-f14-apsc': {
+    // 2026-10-22: length/diameter checked against TTArtisan's per-mount size diagram (RF column 61mm long x 66mm diameter); was length 66 / diameter 61.
     name:'TTArtisan Tilt APS-C 35mm f/1.4', manufacturer:'TTArtisan', line:'APS-C', type:'Prime',
     mount:'rf', focalLength:35, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'56mm',
-    maxAperture:1.4, minAperture:16, weight:350, length:66, diameter:61,
+    maxAperture:1.4, minAperture:16, weight:350, length:61, diameter:66,
     filterThread:52, minFocusDist:35, maxMagnification:null,
     elements:7, groups:6, blades:10, afType:'Manual',
     weatherSealed:false, ois:false, oisStops:null, year:2025, discontinued:false,
@@ -1853,9 +1856,10 @@ const LENSES = {
   },
 
   'ttartisan-tilt-shift-17mm-f4-asph': {
+    // 2026-10-22: length/diameter checked against TTArtisan's per-mount size diagram (the stored 113mm is the length and 88mm the diameter (the E/GFX diagram shows the same 88mm diameter)); was length 88 / diameter 113.
     name:'TTArtisan Tilt-Shift 17mm f/4 ASPH', manufacturer:'TTArtisan', line:'Full Frame', type:'Prime',
     mount:'rf', focalLength:17, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'17mm',
-    maxAperture:4, minAperture:16, weight:1055, length:88, diameter:113,
+    maxAperture:4, minAperture:16, weight:1055, length:113, diameter:88,
     filterThread:null, minFocusDist:30, maxMagnification:null,
     elements:17, groups:11, blades:10, afType:'Manual',
     weatherSealed:false, ois:false, oisStops:null, year:2026, discontinued:false,
@@ -1874,9 +1878,10 @@ const LENSES = {
   },
 
   'ttartisan-14mm-f28-asph': {
+    // 2026-10-22: length/diameter checked against TTArtisan's per-mount size diagram (RF column 75mm long x 65mm diameter); was length 65 / diameter 75.
     name:'TTArtisan 14mm f/2.8 ASPH', manufacturer:'TTArtisan', line:'Full Frame', type:'Prime',
     mount:'rf', focalLength:14, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'14mm',
-    maxAperture:2.8, minAperture:16, weight:441, length:65, diameter:75,
+    maxAperture:2.8, minAperture:16, weight:441, length:75, diameter:65,
     filterThread:77, minFocusDist:20, maxMagnification:null,
     elements:13, groups:10, blades:8, afType:'Manual',
     weatherSealed:false, ois:false, oisStops:null, year:2025, discontinued:false,
@@ -1894,9 +1899,10 @@ const LENSES = {
   },
 
   'ttartisan-100mm-f28-2x-macro': {
+    // 2026-10-22: length/diameter checked against TTArtisan's per-mount size diagram (RF column 148mm long x 72mm diameter); was length 72 / diameter 148.
     name:'TTArtisan 100mm f/2.8 2X Macro', manufacturer:'TTArtisan', line:'Full Frame', type:'Prime',
     mount:'rf', focalLength:100, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'100mm',
-    maxAperture:2.8, minAperture:22, weight:724, length:72, diameter:148,
+    maxAperture:2.8, minAperture:22, weight:724, length:148, diameter:72,
     filterThread:67, minFocusDist:25, maxMagnification:2.0,
     elements:14, groups:10, blades:12, afType:'Manual',
     weatherSealed:false, ois:false, oisStops:null, year:2024, discontinued:false,

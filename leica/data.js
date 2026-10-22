@@ -3616,9 +3616,10 @@ const LENSES = {
   },
 
   'ttartisan-14mm-f28-asph-l': {
+    // 2026-10-22: length/diameter checked against TTArtisan's per-mount size diagram (L column 75mm long x 65mm diameter; B&H lists the two figures transposed); was length 65 / diameter 80.
     name:'TTArtisan 14mm f/2.8 ASPH', manufacturer:'TTArtisan', line:'Manual', type:'Prime',
     mount:'l', focalLength:14, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'14mm',
-    maxAperture:2.8, minAperture:16, weight:445, length:65, diameter:80,
+    maxAperture:2.8, minAperture:16, weight:445, length:75, diameter:65,
     filterThread:null, minFocusDist:20, maxMagnification:null,
     elements:13, groups:10, blades:8, afType:'Manual',
     weatherSealed:false, ois:false, oisStops:null, year:2025, discontinued:false,
@@ -3626,16 +3627,17 @@ const LENSES = {
     imageSource: { url:'https://ttartisan.store/products/14mm-f2-8', tier:'T1', title:'TTArtisan official store', note:'the L-mount variant\'s own product image (file SKU-L), lens alone', date:'2026-10-22' },
     asin:null,
     prices:{USD:196,AUD:null,EUR:null,GBP:null,JPY:null,CAD:null,SGD:null},
-    specSources: [{ url:'https://ttartisan.store/products/14mm-f2-8', tier:'T1', title:'TTArtisan 14mm f/2.8 ASPH - TTArtisan official store', note:'spec table: 14mm, F2.8-F16, Full Frame, 8 blades, no filter thread, 0.2m MFD, 13E/10G, weight Around 437~445g, midpoint; mount list includes Sony E. no front thread; 77mm via the supplied external filter holder. Year: store listing date; L mount is a listed variant', date:'2026-10-22' }, { url:'https://www.bhphotovideo.com/c/product/1922594-REG/x.html/specs', tier:'T3', title:'B&H - TTArtisan 14mm f/2.8 ASPH (L-Mount) specs', note:'L-Mount (F1428-L-B): 75 x 65mm (diameter x length), 445g. Its 75mm diameter disagrees with the Sony E and Nikon Z listings (80mm) for the same front element and filter holder, so 80mm is kept; length and weight are the L listing\'s. Used for the L size/weight, which TTArtisan publishes only as per-mount diagrams or a weight range', date:'2026-10-22' }],
+    specSources: [{ url:'https://ttartisan.store/products/14mm-f2-8', tier:'T1', title:'TTArtisan 14mm f/2.8 ASPH - TTArtisan official store', note:'spec table: 14mm, F2.8-F16, Full Frame, 8 blades, no filter thread, 0.2m MFD, 13E/10G, weight Around 437~445g, midpoint; mount list includes Sony E. no front thread; 77mm via the supplied external filter holder. Year: store listing date; L mount is a listed variant', date:'2026-10-22' }, { url:'https://www.bhphotovideo.com/c/product/1922594-REG/x.html/specs', tier:'T3', title:'B&H - TTArtisan 14mm f/2.8 ASPH (L-Mount) specs', note:'L-Mount (F1428-L-B): 445g; it lists 75 x 65mm as diameter x length, but TTArtisan\'s size diagram gives the L version as 75mm long x 65mm diameter (B&H transposes the two). Used for the L size/weight, which TTArtisan publishes only as per-mount diagrams or a weight range', date:'2026-10-22' }],
     priceSource: { url:'https://ttartisan.store/products/14mm-f2-8', tier:'T1', title:'TTArtisan official store', note:'L mount variant $196, compare-at equal (store products.json); non-USD not examined', date:'2026-10-22' },
     priceIncomplete:true,
     productUrl:'https://ttartisan.store/products/14mm-f2-8',
   },
 
   'ttartisan-75mm-f2-l': {
+    // 2026-10-22: length/diameter checked against TTArtisan's per-mount size diagram (L column 76mm long x 67mm diameter (B&H L listing: 72mm)); was length 72 / diameter 67.
     name:'TTArtisan AF 75mm f/2', manufacturer:'TTArtisan', line:'AF', type:'Prime',
     mount:'l', focalLength:75, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'75mm',
-    maxAperture:2, minAperture:16, weight:329, length:72, diameter:67,
+    maxAperture:2, minAperture:16, weight:329, length:76, diameter:67,
     filterThread:62, minFocusDist:75, maxMagnification:null,
     elements:10, groups:7, blades:9, afType:'STM',
     weatherSealed:false, ois:false, oisStops:null, year:2023, discontinued:false,

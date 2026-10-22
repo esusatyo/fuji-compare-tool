@@ -4483,9 +4483,10 @@ const LENSES = {
   },
 
   'ttartisan-14mm-f28-asph': {
+    // 2026-10-22: length/diameter checked against TTArtisan's per-mount size diagram (E column 80mm long x 65mm diameter; B&H lists the two figures transposed); was length 65 / diameter 80.
     name:'TTArtisan 14mm f/2.8 ASPH', manufacturer:'TTArtisan', line:'Manual', type:'Prime',
     mount:'e', focalLength:14, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'14mm',
-    maxAperture:2.8, minAperture:16, weight:441, length:65, diameter:80,
+    maxAperture:2.8, minAperture:16, weight:441, length:80, diameter:65,
     filterThread:null, minFocusDist:20, maxMagnification:null,
     elements:13, groups:10, blades:8, afType:'Manual',
     weatherSealed:false, ois:false, oisStops:null, year:2025, discontinued:false,

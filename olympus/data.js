@@ -2872,9 +2872,10 @@ const LENSES = {
   },
 
   'ttartisan-tilt-35mm-f14-mft': {
+    // 2026-10-22: length/diameter checked against TTArtisan's per-mount size diagram (M43 column 61mm long x 66mm diameter (B&H MFT listing agrees); the E version is 66mm long); was length 66 / diameter 66.
     name:'TTArtisan Tilt 35mm f/1.4', manufacturer:'TTArtisan', line:'Tilt', type:'Prime',
     mount:'mft', focalLength:35, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'70mm',
-    maxAperture:1.4, minAperture:16, weight:345, length:66, diameter:66,
+    maxAperture:1.4, minAperture:16, weight:345, length:61, diameter:66,
     filterThread:52, minFocusDist:35, maxMagnification:null,
     elements:7, groups:6, blades:10, afType:'Manual',
     weatherSealed:false, ois:false, oisStops:null, year:2025, discontinued:false,
