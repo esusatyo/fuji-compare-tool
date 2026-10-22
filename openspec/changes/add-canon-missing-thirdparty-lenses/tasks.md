@@ -20,6 +20,6 @@
 
 ## 4. Verify
 
-- [ ] 4.1 npm test, image check, test:links, generate-seo
+- [x] 4.1 npm test, image check, test:links, generate-seo
 - [x] 4.2 Preview /canon/ in lenses mode
-- [ ] 4.3 PR #78 body update
+- [x] 4.3 PR #78 body update

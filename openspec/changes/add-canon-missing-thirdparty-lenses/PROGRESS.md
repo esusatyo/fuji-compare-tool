@@ -1,6 +1,6 @@
 # Progress — Canon missing third-party lenses + price consistency
 
-**Resume at:** 4.1 tick (test:links passed), then 4.3 PR update
+**Resume at:** PR #78 review + archive (all tasks done)
 **Branch:** csr-continue → origin canon-sony-lens-refresh (PR #78)
 **Baseline 2026-10-22:** 39 third-party Canon lenses — Sigma 11, TTArtisan 12,
 Laowa 5, Tamron 3, 7Artisans 3, Samyang 2, Yongnuo 2 (discontinued), Viltrox 1
@@ -39,6 +39,8 @@ mount, and are excluded.
 **3.3 done 2026-10-22:** nikon z-58mm-f0-95-s-noct afType Manual Focus -> Manual (the only lens of 1,300+ not using "Manual"; the spec table shows it in the AF Motor Type row).
 
 **4.2 done 2026-10-22:** /canon/ lens mode previewed - dropdown groups Sigma 11, Tamron 4, Samyang 3, Viltrox 1, TTArtisan 15, 7Artisans 9, Laowa 34, Voigtländer 5, Thypoch 1, Yongnuo 2 (85 third-party, = 39 + 46); spot-checked Laowa 180 / Nokton 50 f/1 / Tamron 16-50 and 7Artisans 6mm / Simera 28 / Samyang 85 RF: photos load, USD shows, AF Motor Type "Manual" / "Linear Motor", no console errors. Image check: all 41 new Canon image URLs load (one Wikimedia 429 re-checked OK).
+
+**4.1 done 2026-10-22:** npm test 849/849; npm run test:links pass 2 / fail 0 (run twice: after the Canon batches and again after the Samyang price changes); warnings are bot blocks / rate limits only (B&H 403, Wikimedia 429).
 
 ## Batches
 
