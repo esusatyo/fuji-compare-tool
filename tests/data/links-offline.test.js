@@ -68,6 +68,11 @@ const KNOWN_SHARED_LINKS = new Map([
   ['panasonic imageUrl https://www.laowalenses.ca/wp-content/uploads/2026/07/01_VEAKSEN17517FE-CO-scaled-1-768x768.jpg', 2],
   ['olympus productUrl https://www.venuslens.net/product/laowa-aksen-ultra-macro-apo/', 2],
   ['leica productUrl https://www.venuslens.net/product/laowa-aksen-ultra-macro-apo/', 2],
+  // Laowa sells the RL lenses' L-Mount and Leica M versions off one page
+  // each; Leica's page carries both.
+  ['leica productUrl https://www.venuslens.net/product/laowa-9mm-f-5-6-ff-rl/', 2],
+  ['leica productUrl https://www.venuslens.net/product/laowa-11mm-f-4-5-ff-rl/', 2],
+  ['leica productUrl https://www.venuslens.net/product/14mm-f4-ff-rl-zero-d/', 2],
   // SG-image 50mm f/1.8 Shaped Aperture — one listing and photo for every mount;
   // Panasonic carries it in L and MFT.
   ['panasonic imageUrl https://cdn.shopify.com/s/files/1/0729/5051/3889/files/13_3eaacd43-9a62-4582-b9de-bb3063ec86c2.png', 2],
@@ -204,9 +209,9 @@ const KNOWN_SHARED_LINKS = new Map([
 // panasonic and olympus), +10 Voigtländer MFT (5 each),
 // +14 SG-image MFT, +26 Samyang MFT (7 / 13 each), +24 TTArtisan/7Artisans
 // MFT (12 each), +49 Leica L-Mount copies of Panasonic's LUMIX S /
-// third-party entries that have no asin, +29 Voigtländer VM, +9 Zeiss ZM
-// (Leica).
-const ASIN_GAP_BASELINE = 556;
+// third-party entries that have no asin, +29 Voigtländer VM, +9 Zeiss ZM,
+// +19 TTArtisan/7Artisans/Laowa/Thypoch M (Leica).
+const ASIN_GAP_BASELINE = 575;
 
 const allItems = () => brandDirs().flatMap(brand => {
   const { data } = loadBrand(brand);

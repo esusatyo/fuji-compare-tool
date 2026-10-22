@@ -1,6 +1,7 @@
 # Progress — Panasonic + Leica missing third-party lenses
 
-**Resume at:** 5.4 (Leica M: TTArtisan / 7Artisans / Thypoch / Laowa)
+**Resume at:** 6.1 (verify)
+**5.4 done 2026-10-22 (19 M-mount lenses into leica/):** Thypoch 9 (Simera 21/28/35/50/75, Ksana 21/35, Eureka 28/50) from thypoch.com's tables (M column); USD = B&H regular, which equals Thypoch's own store price (the store's compare-at prices are ~25-35% higher and no retailer charges them). Laowa 6 (RL 9/11/14, 15 f/2 M, 12-24 M, 15 Cookie M): Sony entries' optics with Laowa's M figures / B&H Leica M listings; RL M images are the Leica M barrel shots that had to be gapped on sony/nikon. TTArtisan 2 (M 50 f/1.4 ASPH, M 50 f/0.95) and 7Artisans 2 (M 75 f/1.25 II, M 28 f/1.4) from B&H Leica M listings.
 **5.3 done 2026-10-22 (9 Zeiss ZM lenses into leica/):** the full current ZM line on zeiss.com (Distagon 15/2.8, Biogon 21/2.8, 25/2.8, 28/2.8, 2/35, C Biogon 2.8/35, Distagon 1.4/35, C Sonnar 1.5/50, Planar 2/50). Specs from zeiss.com's ZM technical-data table (lengths without caps) + the per-lens Zeiss datasheet PDFs; diameter and blade count (not published by Zeiss) from B&H; Distagon 15 diameter (78mm) from DxOMark only. Where the current web table and the older datasheets disagree on weight (15mm 550 vs 500g, 21mm 280 vs 300g, 28mm 230 vs 220g; B&H follows the datasheets) the web table is used and the datasheet figure noted. Years: Distagon 35 2014 (Photokina) and Distagon 15 2005 (DxOMark) sourced; the others estimated from the 2004-05 ZM launch, noted as estimates. USD = B&H (Zeiss's US web shop no longer lists ZM). Per-lens model images from zeiss.com.
 **5.2 done 2026-10-22 (29 Voigtländer VM lenses into leica/):** every current design on Cosina's EN VM list - specs from the EN pages, release dates (発売日) from the JP pages, USD = B&H regular (no strikethrough), product shot = each page's "-01" image (the first, P00, is a sample photo). One entry per optical design: Vintage Line Type I/II (same optics, aluminium vs brass barrel) use the variant B&H sells / Cosina still makes, noted in specSources; APO-Lanthar 50 f/3.5 Type I and Type II are separate entries (Type II focuses closer and takes 39mm filters). New "Voigtländer (M-Mount)" group.
 **5.1 done 2026-10-22 (112 L-Mount lenses copied into leica/):** every full-frame L lens on Panasonic's page except Leica's own SL lenses - LUMIX S 22, Sigma 38, Laowa 23, Viltrox 6, Samyang 2, TTArtisan 6, 7Artisans 11, Meike 2, SG-image 2 - copied verbatim with Panasonic's dropdown grouping ("Panasonic LUMIX S Primes/Zooms (L-Mount)", maker groups after Leica's own). shared-mount.test.js gains leica-panasonic and leica-sigma rows (both pass). 7 image gaps carried over (lumix-s-20mm-f2-5 + 6 Laowa).
@@ -72,7 +73,8 @@ Makers' store catalogues (Shopify `products.json`, venuslens Woo Store API) and 
 | 4.3b TTArtisan + 7Artisans + Meike MFT | ~38 | 12 | ~26 | 47bfd73 |
 | 5.1 Leica L-Mount mirror | 112 | 112 | 0 | 08e9c67 |
 | 5.2 Voigtländer VM | 35 | 29 | 6 | b3b948d |
-| 5.3 Zeiss ZM | 9 | 9 | 0 | (this commit) |
+| 5.3 Zeiss ZM | 9 | 9 | 0 | 86af1ac |
+| 5.4 TTArtisan / 7Artisans / Laowa / Thypoch M | ~30 | 19 | ~11 | (this commit) |
 
 ## Skipped
 ### Laowa L (3.2)
@@ -94,3 +96,7 @@ Meike's L-mount store listings carry no spec text (images only) and B&H lists on
 B&H MFT listings missing dimensions or weight (makers publish specs only as images or weight ranges): TTArtisan 17 f/1.4, 23 f/1.4 (no weight), 25 f/2 (no weight), 50 f/0.95, Tilt 50 f/1.4, 10 f/2; 7Artisans 7.5 f/2.8 II fisheye, 35 f/1.2 II, 35 f/1.4, 50 f/1.2 (no weight); 7Artisans 12 f/2.8 II MFT listing retired. Meike: B&H's MFT listings (8 f/2.8, 7.5 fisheye, 10 f/2, 50 f/0.95) have no dimensions and Meike's store has no spec text, so no Meike MFT lens could be entered (12 f/2.8, 12 f/2, 25 f/2, 25/35 f/0.95, 35/50 f/1.7, 60 macro, 6-11 zoom not on B&H at all). TTArtisan/7Artisans MFT lenses not on B&H (e.g. TTArtisan 50 f/2, TS 100, 7Artisans 35 f/0.95, 50 f/0.95, 50 f/1.8) likewise skipped. SG-image MF 18 f/6.3 skipped as on sony/.
 ### Voigtländer VM (5.2)
 Discontinued per Cosina's own pages (out of scope for current M lenses): APO-Skopar 90 f/2.8 (June 2026), Color-Skopar 21 f/4 P (Nov 2025), Color-Skopar 28 f/2.8 Type I (June 2026), Heliar 40 f/2.8 (Aug 2025). Limited/commemorative editions of entered designs: APO-Lanthar 50 f/3.5 Limited (colour editions), Color-Skopar 35 f/2.5 "Skopar 100th" model.
+### M-Mount budget makers (5.4)
+- TTArtisan: APO-M 35 f/2, M 21 f/1.5, M 100 f/2.8 Bubble Bokeh (B&H Leica M listings have no dimensions); M 28 f/5.6, M 90 f/1.25, M 11 f/2.8 fisheye (no B&H M listing; TTArtisan gives sizes only as diagrams).
+- 7Artisans: M 35 f/5.6 WEN (no B&H dimensions), M 35 f/2.8 (no B&H dimensions or weight), Seagull M 35 f/1.7 (not on B&H), M 35 f/2 Mark II (B&H only, not on 7Artisans' store), M 75 f/1.25 first version (superseded by the Mark II in January 2026; store clearance).
+- Laowa: 85mm f/5.6 2X macro M (Laowa's M weight includes hood/caps; B&H M listing has no dimensions).

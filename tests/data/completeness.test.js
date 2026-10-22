@@ -215,6 +215,11 @@ const KNOWN_IMAGE_GAPS = {
     'lumix-s-20mm-f2-5',
     'laowa-11mm-f45-rl-l', 'laowa-14mm-f4-rl-l', 'laowa-9mm-f56-rl-l', 'laowa-15mm-f45-shift-l',
     'laowa-12mm-f28-lite-zero-d-l', 'laowa-10mm-f28-l',
+    // M-Mount pass (2026-10-22): Laowa shows only the E/AE versions of the
+    // 12-24mm f/5.6 and the 15mm Cookie (the M versions are a different, shorter
+    // barrel); the Thypoch Eureka 50mm isn't on Thypoch's store and its site's
+    // images are unlabelled CDN files.
+    'laowa-12-24mm-f56-m', 'laowa-15mm-f5-cookie-m', 'thypoch-eureka-50mm-f2-m',
   ]),
   nikon: new Set([
     // laowa-15mm-f45-shift: 2026-10-21 its image (laowa.com.au DSC_4018-1) was
