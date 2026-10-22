@@ -92,6 +92,30 @@ a question. Pick the retail figure, apply it, and mention it in the summary at m
 Reserve "Needs confirmation" for deltas that would change a buyer's decision or where
 sources genuinely conflict on the real price.
 
+**Third-party lenses follow a different rule: USD = what B&H charges for that mount.**
+The official-store-first rule above is for a camera maker's own bodies and lenses.
+For third-party lenses (Sigma, Tamron, Samyang, Viltrox, Laowa, Voigtländer, Zeiss,
+TTArtisan, 7Artisans, Meike, Thypoch, …) the owner set this rule on 2026-10-22, because
+budget makers' own stores show a crossed-out "compare-at" price that nobody charges
+(7Artisans 25mm f/0.95: $369 compare-at, $143 at the store's own "sale" and at B&H):
+
+- **USD = B&H's regular price for that mount**: its strikethrough price if it shows one,
+  otherwise its listed price. A maker store's compare-at price is never used on its own.
+  When the maker's own US store lists the same figure B&H charges (Tamron Americas
+  usually does), either can be cited; when they differ, B&H wins.
+- **Exception — Samyang/Rokinon: B&H's current selling price** (the lowest new listing for
+  that mount, sale or not). Their list prices are discounted almost permanently, and B&H's
+  Rokinon- and Samyang-branded listings of one lens often disagree on the "regular" price.
+  Expect these to move between runs; a sale ending is not a finding worth raising.
+- **No B&H listing for that mount:** use the maker store's selling price only when B&H's
+  price for the same lens in another mount shows the store's compare-at is fiction;
+  otherwise keep the stored figure and say so.
+- Cite B&H as tier `T3` in `priceSource` and keep the old store figure in its note.
+- Regional prices: recompute only the ones that were ratio-derived from the old USD
+  (`node scripts/compute-prices.js <brand> lenses --recompute --ids=…`); leave confirmed
+  local figures alone.
+- `compute-prices.js` rounds GBP to -1 for USD below about $56 — check cheap lenses by hand.
+
 Buy links are **generated per-currency** by the engine (`amazonBuyUrl`) — there are no
 `buyUrl` fields to maintain; don't reintroduce them.
 

@@ -1,6 +1,6 @@
 # Progress — Canon missing third-party lenses + price consistency
 
-**Resume at:** 5.4 (refresh-camera-data skill: B&H rule)
+**Resume at:** 5.5 (TTArtisan per-mount weights)
 
 **Owner answers 2026-10-22 (review of PR #78):** Laowa RL lengths - flag in the PR description, owner reviews; USD-only lenses stay USD-only (no ratio estimates); TTArtisan weight ranges - keep skipping, keep researching per-mount weights; Tamron 16-50 Sony E - in this PR, research for correctness; landing/About counts - count unique lenses; refresh-camera-data skill - write the B&H rule into it in this PR; Meike 50mm f/1.7 X stays $130. Also asked for a published review listing of every lens this PR adds, with sources and flags.
 
@@ -49,6 +49,8 @@ mount, and are excluded.
 **4.1 done 2026-10-22:** npm test 849/849; npm run test:links pass 2 / fail 0 (run twice: after the Canon batches and again after the Samyang price changes); warnings are bot blocks / rate limits only (B&H 403, Wikimedia 429).
 
 **5.3 done 2026-10-22:** site-wide totals (home share card + its alt text on the landing/About/Privacy pages) now count each product once, keyed by mount + slug (`uniqueItemCount` in scripts/generate-seo.js): 1,516 lens entries -> 1,232 unique lenses (284 are the same lens on two or three brand pages); cameras unchanged at 231. Per-brand counts stay per page. Two tests in tests/data/landing.test.js pin it.
+
+**5.4 done 2026-10-22:** the third-party USD rule (B&H's price for that mount; Samyang/Rokinon = B&H selling price; no maker compare-at on its own; no-B&H-listing fallback; T3 citation; recompute only ratio-derived regionals) is written into refresh-camera-data's pricing convention, with one-paragraph pointers in add-thirdparty-lenses Step 6 and check-prices-and-buy-links. Open for the owner: add-thirdparty-lenses Step 6 still says fill all seven currencies with compute-prices.js; this PR's owner answer kept 572 new lenses USD-only, but that was a decision about these lenses, not a standing rule.
 
 ## Batches
 

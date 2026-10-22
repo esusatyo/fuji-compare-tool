@@ -107,6 +107,10 @@ so they stay in lockstep.
 - **USD = the current US list price** (RRP/MSRP). This dataset tracks the *list*
   price, **not** transient street/sale prices. Use the official store or B&H
   "list price", not Canon Price Watch / CamelCamelCamel street figures.
+- **Third-party lenses: USD = what B&H charges for that mount** (Samyang/Rokinon:
+  B&H's current selling price), never a maker store's crossed-out compare-at on
+  its own. Full rule in the third-party paragraph of
+  [`refresh-camera-data`](../refresh-camera-data/SKILL.md)'s pricing convention.
 - **Non-USD** values are approximate, derived from USD by regional ratios
   (see `scripts/compute-prices.js`) **unless a real local RRP is confirmed**
   (see step 2 for how to catch these opportunistically without a dedicated

@@ -324,9 +324,12 @@ render — a wrong-product photo is worse than the placeholder card.
 
 ## Step 6 — Prices (fill all seven, don't default to USD-only)
 
-- **USD = the current US list price (RRP/MSRP)**, from tier 1 or a tier-3
-  retailer's list — *not* a sale/deal price. A discount post is a sale, not a
-  new RRP.
+- **USD = what B&H charges for that mount** — its strikethrough price if it
+  shows one, else its listed price (Samyang/Rokinon: B&H's current selling
+  price). Never a maker store's crossed-out compare-at on its own: budget
+  makers show compare-at prices nobody charges. Full rule in the third-party
+  paragraph of [`refresh-camera-data`](../refresh-camera-data/SKILL.md)'s
+  pricing convention (owner, 2026-10-22).
 - Then fill the six regional prices: `node scripts/compute-prices.js <brand> lenses`.
   It derives approximate launch RRPs from USD via regional ratios, anchored to
   any confirmed figures in `scripts/price-overrides/<brand>.json`. Add real
