@@ -2446,9 +2446,10 @@ const LENSES = {
     productUrl:'https://ttartisan.store/products/aps-c-35mm-f1-4',
   },
   'ttartisan-7-5mm-f2-fisheye': {
+    // 2026-10-22: length/diameter checked against TTArtisan's size diagram (every mount 57mm long x 72mm wide; B&H's RF listing agrees: 72 x 57mm, diameter x length); was length 72 / diameter 57.
     name:'TTArtisan 7.5mm f/2 Fisheye', manufacturer:'TTArtisan', line:'Manual', type:'Prime',
     mount:'x', focalLength:7.5, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'11mm',
-    maxAperture:2.0, minAperture:11, weight:357, length:72, diameter:57,
+    maxAperture:2.0, minAperture:11, weight:357, length:57, diameter:72,
     filterThread:null, minFocusDist:12.5, maxMagnification:0.11,
     elements:11, groups:8, blades:7, afType:'Manual',
     weatherSealed:false, ois:false, oisStops:null, year:2025, discontinued:false,
@@ -2457,7 +2458,7 @@ const LENSES = {
     asin:'B0GX1M9QWD',
     prices:{USD:139,AUD:null,EUR:null,GBP:null,JPY:null,CAD:null,SGD:null},
     priceIncomplete:true,
-    specSources: [{ url:'https://ttartisan.store/products/aps-c-7-5mm-f2', tier:'T1', note:'optical formula/weight/price/mount availability; dimensions from the page\'s size-diagram image (E/X/M43 shared panel: 57mm dia. x 72mm); year estimated from earliest customer review (12/26/2025)', date:'2026-08-16' }],
+    specSources: [{ url:'https://ttartisan.store/products/aps-c-7-5mm-f2', tier:'T1', note:'optical formula/weight/price/mount availability; dimensions from the page\'s size-diagram image (E/X/M43 panel: 57mm long x 72mm wide; re-read 2026-10-22, the original entry had the two transposed); year estimated from earliest customer review (12/26/2025)', date:'2026-08-16' }],
     priceSource: { url:'https://ttartisan.store/products/aps-c-7-5mm-f2', tier:'T1', title:'TTArtisan official store', note:'regular price $139 (Fuji X / Black variant); read from the store\'s products.json', date:'2026-10-19' },
     productUrl:'https://ttartisan.store/products/aps-c-7-5mm-f2',
   },

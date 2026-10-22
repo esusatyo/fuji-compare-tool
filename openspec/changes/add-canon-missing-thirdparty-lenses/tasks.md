@@ -6,7 +6,7 @@
 
 - [x] 2.1 Laowa
 - [x] 2.2 Voigtländer
-- [ ] 2.3 TTArtisan
+- [x] 2.3 TTArtisan
 - [ ] 2.4 7Artisans
 - [ ] 2.5 Thypoch + Samyang
 - [ ] 2.6 Meike + Yongnuo

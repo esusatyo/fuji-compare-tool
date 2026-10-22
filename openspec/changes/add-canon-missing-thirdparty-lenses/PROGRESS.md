@@ -1,6 +1,6 @@
 # Progress — Canon missing third-party lenses + price consistency
 
-**Resume at:** 2.3 (TTArtisan)
+**Resume at:** 2.4 (7Artisans)
 **Branch:** csr-continue → origin canon-sony-lens-refresh (PR #78)
 **Baseline 2026-10-22:** 39 third-party Canon lenses — Sigma 11, TTArtisan 12,
 Laowa 5, Tamron 3, 7Artisans 3, Samyang 2, Yongnuo 2 (discontinued), Viltrox 1
@@ -28,12 +28,15 @@ mount, and are excluded.
 
 **2.2 done 2026-10-22 (5 Voigtländer RF lenses):** Cosina's whole RF list (Nokton 40 f/1.2, 50 f/1, 75 f/1.5, Nokton Classic 35 f/1.4, Portrait Heliar 75 f/1.8) from the RF-mount EN pages (RF housings differ from the other mounts); release years from the JP pages (発売日); USD = B&H regular for the RF listing (50mm and 75mm on sale at the time). Product shot = the "-01"/"web01" image (P00 is a sample photo), checked visually.
 
+**2.3 done 2026-10-22 (3 TTArtisan RF lenses + 1 Fujifilm fix):** 7.5mm f/2 fisheye, 40mm f/2.8 macro, 11mm f/2.8 fisheye - the only RF candidates with a B&H Canon RF listing giving size and weight; shared optics cloned from sony/ (11mm from panasonic/ L, same B&H size). USD = store RF variant (no compare-at). The 7.5mm size diagram (all mounts 57mm long x 72mm wide) showed **fujifilm/ttartisan-7-5mm-f2-fisheye had length and diameter transposed** (72/57) - fixed.
+
 ## Batches
 
 | Batch | Added | Skipped | Commit |
 |---|---|---|---|
 | 2.1 Laowa | 29 | 2 | (this commit) |
 | 2.2 Voigtländer | 5 | 0 | (this commit) |
+| 2.3 TTArtisan | 3 | 6 | (this commit) |
 
 ## Price consistency
 
@@ -46,3 +49,5 @@ Sale/compare-at ratio at read time 0.39 (7Artisans 25 f/0.95, fujifilm) to
 - Laowa ACRIS 35mm f/2.8 RF (2.1): the RF version is manual focus and Laowa gives weight/size for E, Z and EF only; B&H RF listing (2004642) has no dimensions or weight. Same skip as the L-Mount pass.
 - Laowa 15mm f/5 Cookie RF (2.1): Laowa gives E (35.2mm, 138g) and M (25mm, 104g) only; B&H RF listing (1861639) gives only box size and a 158g shipping weight.
 - Laowa 12mm f/2.8 Zero-D, Aurogon 10-50X, probes, cine lenses, kits, MSC: out of scope (DSLR-era design per owner decision; microscope objective; cine/probe/bundle).
+- TTArtisan APS-C 35mm f/0.95 and APS-C 25mm f/2 RF (2.3): no B&H Canon RF listing; TTArtisan gives weight only as a cross-mount range (247-267g, 166-189g) - same open owner question as on Nikon.
+- TTArtisan 50mm f/2, 90mm f/1.25, 21mm f/1.5, Tilt-Shift 100mm f/2.8 RF (2.3): no RF dimensions from TTArtisan or B&H (same skips as Sony/Nikon).
