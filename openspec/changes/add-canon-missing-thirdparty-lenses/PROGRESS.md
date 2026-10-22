@@ -1,6 +1,6 @@
 # Progress — Canon missing third-party lenses + price consistency
 
-**Resume at:** 3.1/3.2 Samyang (owner decision pending), 4.1 test:links running, then 4.3
+**Resume at:** 4.1 tick (test:links passed), then 4.3 PR update
 **Branch:** csr-continue → origin canon-sony-lens-refresh (PR #78)
 **Baseline 2026-10-22:** 39 third-party Canon lenses — Sigma 11, TTArtisan 12,
 Laowa 5, Tamron 3, 7Artisans 3, Samyang 2, Yongnuo 2 (discontinued), Viltrox 1
@@ -93,7 +93,29 @@ for the same lens in another mount shows the compare-at is not a real price.
 - `scripts/compute-prices.js` round99 gives GBP -1 below ~$56 USD (49 x 0.90
   -> -1); fujifilm 7Artisans 55mm GBP set to 49 by hand. Script not changed.
 
-**Samyang (59): pending owner decision** - see the PR #78 follow-ups.
+**Samyang: decided by the owner, see below.**
+
+**Samyang - owner decision 2026-10-22: "Selling price"** (B&H's current price,
+lowest new listing for that mount, sale or not; extends the earlier Samyang
+zoom decision). Reason: Samyang/Rokinon list prices are discounted almost
+permanently at Samyang's US store and at B&H, and B&H's Rokinon- and
+Samyang-branded listings of one lens often show different "regular" prices.
+- Applied to 68 entries (sony 30, fujifilm 12, panasonic 11, olympus 9 (mirror
+  of panasonic MFT), canon 3, nikon 1, leica 2 (mirror of panasonic L)). Most
+  fall 10-60% (e.g. Sony MF 85mm f/1.4 349 -> 224, Fujifilm 14mm f/2.8
+  449 -> 199, Sony AF 35mm f/1.4 FE II 849 -> 499); a few rise because B&H
+  charges more than Samyang's store showed (Sony AF 24-60mm 549 -> 729, AF
+  60-180mm 999 -> 1,099, 100mm macro 319 -> 419, Fujifilm 85mm f/1.8 299 -> 399).
+  Sony AF 35-150mm stays $999; Nikon 85mm f/1.4, Sony 85mm f/1.8 CS / MF 85mm
+  II, MFT 8mm f/3.5 already equal B&H.
+- No new B&H listing (only used, no price, or none), kept with the old source:
+  Sony AF 85mm f/1.4 FE (original), 8mm f/3.5 CS II, 16mm f/2, 12mm f/2.8
+  fisheye; MFT 10mm f/2.8, 85mm f/1.8, 300mm mirror.
+- Ratio-derived regional prices recomputed (sony 25, fujifilm 11, canon 2);
+  Fujifilm AF 12mm and Nikon 14mm regional prices are local figures, kept.
+- Follow-ups closed: Sony 100mm macro (was $319 vs MFT $599) -> E $419, X/MFT
+  $399. Nokton 25mm f/0.95 II (panasonic/olympus $799): B&H now shows $749
+  with a $799 strikethrough, so $799 is B&H's regular - unchanged.
 
 ## Skipped (with reason)
 - Laowa ACRIS 35mm f/2.8 RF (2.1): the RF version is manual focus and Laowa gives weight/size for E, Z and EF only; B&H RF listing (2004642) has no dimensions or weight. Same skip as the L-Mount pass.

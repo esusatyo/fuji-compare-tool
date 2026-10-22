@@ -2425,8 +2425,8 @@ const LENSES = {
     imageUrl:'https://samyangus.com/cdn/shop/products/MF14_2.8Z_Front.jpg',
     imageSource: { url:'https://samyangus.com/products/14mm-f2-8-full-frame-ultra-wide-angle-nikon-z', tier:'T1', note:'official Samyang US store, dedicated Nikon Z product page (SKU SYZ14-N); front product shot, file named "MF14_2.8Z_Front"', date:'2026-09-06' },
     asin:'B07QRVHBXS',
-    prices:{USD:499,AUD:1099,EUR:799,GBP:599,JPY:80000,CAD:899,SGD:999},
-    priceSource: { url:'https://samyangus.com/products/14mm-f2-8-full-frame-ultra-wide-angle-nikon-z', tier:'T1', title:'Samyang US official store', note:'USD $707 -> $499: Samyang US lists the Nikon Z version with a regular (compare-at) price of $499, currently selling at $428 (store catalogue feed, priceCurrency USD). The old figure matched no Samyang US price. Read 2026-10-11', date:'2026-10-11' },
+    prices:{USD:429,AUD:1099,EUR:799,GBP:599,JPY:80000,CAD:899,SGD:999},
+    priceSource: { url:'https://www.bhphotovideo.com/c/product/1480695-REG/x.html', tier:'T3', title:'B&H - Samyang 14mm F2.8 Z (Nikon Z)', note:'USD $499 -> $429: B&H\'s current price for the Nikon Z version (lowest new listing, B&H listing #1480695). Owner rule 2026-10-22 for Samyang: use the selling price - Samyang/Rokinon list prices are discounted almost permanently at Samyang\'s US store and at B&H, and B&H\'s two listings of one lens often show different "regular" prices. Previously: USD $707 -> $499: Samyang US lists the Nikon Z version with a regular (compare-at) price of $499, currently selling at $428 (store catalogue feed, priceCurrency USD). The old figure matched no Samyang US price. Read 2026-10-11 (samyangus.com); non-USD not examined', date:'2026-10-22' },
     productUrl:'https://samyangus.com/products/14mm-f2-8-full-frame-ultra-wide-angle-nikon-z',
   },
 

@@ -1617,9 +1617,9 @@ const LENSES = {
     specSources: [
       { url:'https://www.lksamyang.com/en/product/product-view.php?seq=410', tier:'T1', note:'official Samyang product page — full spec table (weight, length, diameter, MFD, magnification, elements/groups, blades, weather sealing) for the Canon RF-mount manual-focus version', date:'2026-08-29' },
     ],
-    priceSource: { url:'https://samyangus.com/products/14mm-f2-8-full-frame-ultra-wide-angle-canon-rf', tier:'T1', title:'Samyang US official store', note:'regular price $499 = compare-at; on sale at $443.29 at the time, not used', date:'2026-10-19' },
+    priceSource: { url:'https://www.bhphotovideo.com/c/search?q=Rokinon%20MF%2014mm%20F2.8%20RF%20Canon%20RF', tier:'T3', title:'B&H - Samyang MF 14mm F2.8 RF (Canon RF)', note:'USD $499 -> $379: B&H\'s current price for the Canon RF version (lowest new listing, B&H search results for this mount; crossed-out $579). Owner rule 2026-10-22 for Samyang: use the selling price - Samyang/Rokinon list prices are discounted almost permanently at Samyang\'s US store and at B&H, and B&H\'s two listings of one lens often show different "regular" prices. Previously: regular price $499 = compare-at; on sale at $443.29 at the time, not used (samyangus.com); non-USD not examined', date:'2026-10-22' },
     asin:'B07Q47QQDT',
-    prices:{USD:499,AUD:799,EUR:599,GBP:399,JPY:56000,CAD:599,SGD:699},
+    prices:{USD:379,AUD:599,EUR:399,GBP:299,JPY:59000,CAD:499,SGD:499},
     productUrl:'https://samyangus.com/products/14mm-f2-8-full-frame-ultra-wide-angle-canon-rf',
   },
 
@@ -1634,9 +1634,9 @@ const LENSES = {
     specSources: [
       { url:'https://www.lksamyang.com/en/product/product-view.php?seq=657', tier:'T1', note:'official Samyang product page — full spec table for the Canon RF-S (APS-C) autofocus version, Samyang\'s first RF-S lens', date:'2026-08-29' },
     ],
-    priceSource: { url:'https://samyangus.com/products/samyang-af-12mm-f2-0-rf-s-ultra-wide-angle-lens', tier:'T1', title:'Samyang US official store', note:'regular price $499 = compare-at; on sale at $449 at the time, not used', date:'2026-10-19' },
+    priceSource: { url:'https://www.bhphotovideo.com/c/search?q=Rokinon%20AF%2012mm%20F2%20RF-S%20Canon%20RF', tier:'T3', title:'B&H - Samyang AF 12mm F2 RF-S (Canon RF)', note:'USD $499 -> $449: B&H\'s current price for the Canon RF version (lowest new listing, B&H search results for this mount). Owner rule 2026-10-22 for Samyang: use the selling price - Samyang/Rokinon list prices are discounted almost permanently at Samyang\'s US store and at B&H, and B&H\'s two listings of one lens often show different "regular" prices. Previously: regular price $499 = compare-at; on sale at $449 at the time, not used (samyangus.com); non-USD not examined', date:'2026-10-22' },
     asin:'B0DYBPBSSF',
-    prices:{USD:499,AUD:799,EUR:599,GBP:399,JPY:77000,CAD:599,SGD:699},
+    prices:{USD:449,AUD:699,EUR:499,GBP:399,JPY:70000,CAD:599,SGD:699},
     productUrl:'https://samyangus.com/products/samyang-af-12mm-f2-0-rf-s-ultra-wide-angle-lens',
   },
 
@@ -1650,9 +1650,9 @@ const LENSES = {
     imageUrl:'https://cdn.shopify.com/s/files/1/0488/0790/3385/products/MF85mm1.4RF-FRONT.jpg',
     imageSource: { url:'https://samyangus.com/products/85mm-f1-4-full-frame-telephoto-canon-rf', tier:'T1', title:'Samyang US official store', note:'product gallery "MF85mm1.4RF-FRONT" shot of the RF version, lens alone', date:'2026-10-22' },
     asin:null,
-    prices:{USD:329,AUD:null,EUR:null,GBP:null,JPY:null,CAD:null,SGD:null},
+    prices:{USD:289,AUD:null,EUR:null,GBP:null,JPY:null,CAD:null,SGD:null},
     specSources: [{ url:'https://samyangus.com/products/85mm-f1-4-full-frame-telephoto-canon-rf', tier:'T1', title:'Samyang MF 85mm F1.4 RF - Samyang US official store', note:'RF spec table: F1.4-22, 9 elements in 7 groups (1 hybrid aspherical), 1.0m, x0.09, 72mm filter, 8 blades, ø78 x 98.7mm, 730g, weather sealed', date:'2026-10-22' }, { url:'https://www.the-digital-picture.com/News/Samyang-Introduces-MF-14mm-F2-8-RF---MF-85mm-F1-4-RF-Lenses', tier:'T4', title:'The-Digital-Picture - Samyang Introduces MF 14mm F2.8 RF & MF 85mm F1.4 RF Lenses', note:'year: announced 2019-02-28 with the MF 14mm F2.8 RF as Samyang\'s first RF lenses', date:'2026-10-22' }],
-    priceSource: { url:'https://www.bhphotovideo.com/c/product/1470026-REG/x.html', tier:'T3', title:'B&H - Rokinon 85mm f/1.4 Lens for Canon RF', note:'B&H regular (strikethrough) $329, on sale at $289 at the time (sold in the US under Samyang\'s Rokinon brand). Samyang\'s US store shows a $399 compare-at and a $318.02 "sale", neither used; non-USD not examined', date:'2026-10-22' },
+    priceSource: { url:'https://www.bhphotovideo.com/c/product/1470026-REG/x.html', tier:'T3', title:'B&H - Samyang MF 85mm F1.4 RF (Canon RF)', note:'USD $329 -> $289: B&H\'s current price for the Canon RF version (lowest new listing, B&H listing #1470026; crossed-out $329). Owner rule 2026-10-22 for Samyang: use the selling price - Samyang/Rokinon list prices are discounted almost permanently at Samyang\'s US store and at B&H, and B&H\'s two listings of one lens often show different "regular" prices. Previously: B&H regular (strikethrough) $329, on sale at $289 at the time (sold in the US under Samyang\'s Rokinon brand). Samyang\'s US store shows a $399 compare-at and a $318.02 "sale", neither used (bhphotovideo.com); non-USD not examined', date:'2026-10-22' },
     priceIncomplete:true,
     productUrl:'https://samyangus.com/products/85mm-f1-4-full-frame-telephoto-canon-rf',
   },
