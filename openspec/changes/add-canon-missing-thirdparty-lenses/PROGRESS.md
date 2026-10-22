@@ -1,6 +1,6 @@
 # Progress — Canon missing third-party lenses + price consistency
 
-**Resume at:** 2.6 (Meike + Yongnuo)
+**Resume at:** 2.7 (Sigma / Tamron / Viltrox re-check)
 **Branch:** csr-continue → origin canon-sony-lens-refresh (PR #78)
 **Baseline 2026-10-22:** 39 third-party Canon lenses — Sigma 11, TTArtisan 12,
 Laowa 5, Tamron 3, 7Artisans 3, Samyang 2, Yongnuo 2 (discontinued), Viltrox 1
@@ -43,6 +43,7 @@ mount, and are excluded.
 | 2.3 TTArtisan | 3 | 6 | (this commit) |
 | 2.4 7Artisans | 6 | 7 | (this commit) |
 | 2.5 Thypoch + Samyang | 2 | 1 | (this commit) |
+| 2.6 Meike + Yongnuo | 0 | 4 | (this commit) |
 
 ## Price consistency
 
@@ -60,3 +61,6 @@ Sale/compare-at ratio at read time 0.39 (7Artisans 25 f/0.95, fujifilm) to
 - 7Artisans 35mm f/1.4 APS-C and 7.5mm f/2.8 II RF (2.4): B&H Canon RF listings give only the box size; no RF lens size from 7Artisans.
 - 7Artisans 25mm f/0.95, 50mm f/0.95, 35mm f/0.95, 35mm f/5.6, 12mm f/2.8 II RF (2.4): no B&H Canon RF listing and no RF (or all-mount) size from 7Artisans.
 - Thypoch Simera 35mm f/1.4 RF (2.5): Thypoch's spec table has an RF column (62.8mm, 310g), but the store sells only M / Z / E variants and B&H has no RF listing, so RF availability is unconfirmed.
+- Meike (2.6): no RF still lens on meikeglobal.com or B&H (RF listings are cine lenses, adapters, extension tubes); retailer-only MF RF primes (masterfoto.lv, eBay) quote E-mount specs.
+- Yongnuo YN 23mm f/1.4 APS-C, YN 35mm F1.8R DA DSM, YN 50mm F1.8 DSM R (2.6): yongnuo.eu still publishes no size/weight (50mm: 300g and 0.45m only); not at B&H.
+- Yongnuo YN85mm F1.8R DF DSM II (2.6): yongnuo.eu gives full specs (381g, 67 x 88mm, 0.8m, 9/8, 7 blades) identical to the original YN85mm F1.8R already entered, and no US price anywhere (not at B&H) - same ambiguity as August.
