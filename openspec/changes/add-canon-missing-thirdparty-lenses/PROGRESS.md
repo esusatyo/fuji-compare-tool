@@ -1,6 +1,6 @@
 # Progress — Canon missing third-party lenses + price consistency
 
-**Resume at:** 2.7 (Sigma / Tamron / Viltrox re-check)
+**Resume at:** 3.1 (price consistency audit)
 **Branch:** csr-continue → origin canon-sony-lens-refresh (PR #78)
 **Baseline 2026-10-22:** 39 third-party Canon lenses — Sigma 11, TTArtisan 12,
 Laowa 5, Tamron 3, 7Artisans 3, Samyang 2, Yongnuo 2 (discontinued), Viltrox 1
@@ -34,6 +34,8 @@ mount, and are excluded.
 
 **2.5 done 2026-10-22 (Thypoch 1 + Samyang 1):** Thypoch Simera 28mm f/1.4 RF (thypoch.com RF column: 68.6mm, 353g; USD = B&H RF regular $549, as on Fujifilm) and Samyang MF 85mm F1.4 RF (Samyang US RF spec table: 730g, 98.7 x 78mm, weather sealed; announced 2019-02-28 with the 14mm RF; USD = B&H Rokinon RF regular $329 - the Samyang store's $399 compare-at and $318.02 "sale" are not used).
 
+**2.7 done 2026-10-22:** Sigma - B&H lists exactly the 11 RF lenses already entered (all APS-C; no full-frame RF Sigma exists). Viltrox - no RF lens on its store or at B&H (EF-M only). Tamron - **new release found: 16-50mm F2.8 A (B091)**, announced 2026-10-14; Canon RF and Sony E ship 2026-10-29, Nikon Z 2026-11-19, Fujifilm X 2026-12-17 (Tamron spec page, per-mount columns). Added to canon/ (RF: 69.2 x 77.6mm, 305g, US $549 Tamron Americas). Sony/Nikon/Fujifilm versions are NOT added here (outside this pass) - follow-up.
+
 ## Batches
 
 | Batch | Added | Skipped | Commit |
@@ -44,6 +46,7 @@ mount, and are excluded.
 | 2.4 7Artisans | 6 | 7 | (this commit) |
 | 2.5 Thypoch + Samyang | 2 | 1 | (this commit) |
 | 2.6 Meike + Yongnuo | 0 | 4 | (this commit) |
+| 2.7 Sigma / Tamron / Viltrox | 1 | 0 | (this commit) |
 
 ## Price consistency
 

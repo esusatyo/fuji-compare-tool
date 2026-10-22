@@ -1543,6 +1543,23 @@ const LENSES = {
     productUrl:'https://www.tamron.com/global/consumer/lenses/b061/',
   },
 
+  'tamron-16-50mm-f28': {
+    name:'Tamron 16-50mm f/2.8 A', manufacturer:'Tamron', line:'A', type:'Zoom',
+    mount:'rf', focalLength:null, focalLengthMin:16, focalLengthMax:50, focalLengthEquiv:'26-80mm',
+    maxAperture:2.8, minAperture:16, weight:305, length:77.6, diameter:69.2,
+    filterThread:55, minFocusDist:15, maxMagnification:0.22,
+    elements:14, groups:10, blades:7, afType:'Linear Motor',
+    weatherSealed:true, ois:false, oisStops:null, year:2026, discontinued:false,
+    imageUrl:'https://www.tamron.com/global/consumer/pc_file/file/b091_main.webp',
+    imageSource: { url:'https://www.tamron.com/global/consumer/lenses/b091/', tier:'T1', title:'Tamron global official product page (B091)', note:'main product shot, lens alone; the page covers all four mounts and the photo shows no mount marking', date:'2026-10-22' },
+    asin:null,
+    prices:{USD:549,AUD:null,EUR:null,GBP:null,JPY:null,CAD:null,SGD:null},
+    specSources: [{ url:'https://www.tamron.com/global/consumer/lenses/b091/spec.html', tier:'T1', title:'Tamron 16-50mm F2.8 A (B091) - Tamron official specifications', note:'Canon RF column: φ69.2 x 77.6mm (front to mount face), 305g, angle of view 80°24\'-30°16\'; shared: 14 elements in 10 groups, 0.15m (wide) / 0.29m (tele), 1:4.5 (wide) / 1:4.8 (tele), φ55 filter, 7 blades (circular), F16 min; VXD linear motor and moisture-resistant construction per the overview page. Release date (Canon RF): October 29, 2026; announced 2026-10-14', date:'2026-10-22' }],
+    priceSource: { url:'https://tamron-americas.com/canon/', tier:'T1', title:'Tamron Americas store', note:'Canon RF option US $549 / CA $749 (data-us-price), not yet shipping; Sony E $529; non-USD not examined', date:'2026-10-22' },
+    priceIncomplete:true,
+    productUrl:'https://www.tamron.com/global/consumer/lenses/b091/',
+  },
+
   /* ── Viltrox (full-frame RF AF) ── */
   /* Canon's licensing blocked Viltrox's APS-C RF AF primes (13/23/33/56 f/1.4
      discontinued for RF). The 85mm f/1.8 RF II is its current native RF AF lens. */
@@ -2735,7 +2752,7 @@ const LENS_DROPDOWN_GROUPS = [
   { label: '── Canon RF Zooms ──',    ids: ['rf-7-14mm-f28-35-l-fisheye-stm','rf-10-20mm-f4-l-is-stm','rf-14-35mm-f4-l-is-usm','rf-15-30mm-f45-63-is-stm','rf-15-35mm-f28-l-is-usm','rf-16-28mm-f28-is-stm','rf-20-50mm-f4-l-is-usm-pz','rf-24-50mm-f45-63-is-stm','rf-24-70mm-f28-l-is-usm','rf-24-105mm-f4-l-is-usm','rf-24-105mm-f28-l-is-usm-z','rf-24-105mm-f4-71-is-stm','rf-24-240mm-f4-63-is-usm','rf-28-70mm-f2-l-usm','rf-28-70mm-f28-is-stm','rf-70-200mm-f28-l-is-usm','rf-70-200mm-f28-l-is-usm-z','rf-70-200mm-f4-l-is-usm','rf-75-300mm-f4-56','rf-100-300mm-f28-l-is-usm','rf-100-400mm-f56-8-is-usm','rf-100-500mm-f45-71-l-is-usm','rf-200-800mm-f63-9-is-usm'] },
   { label: '── Canon RF-S (APS-C) ──', ids: ['rfs-10-18mm-f45-63-is-stm','rfs-14-30mm-f4-63-is-stm-pz','rfs-18-45mm-f45-63-is-stm','rfs-18-150mm-f35-63-is-stm','rfs-55-210mm-f5-71-is-stm','rfs-39mm-f35-stm-dual-fisheye','rfs-78mm-f4-stm-dual'] },
   { label: '── Sigma ──',              ids: ['sigma-12mm-f14','sigma-15mm-f14','sigma-16mm-f14','sigma-23mm-f14','sigma-30mm-f14','sigma-56mm-f14','sigma-10-18mm-f28','sigma-16-300mm-f35-67','sigma-17-40mm-f18','sigma-18-50mm-f28', 'sigma-50-120mm-f28'] },
-  { label: '── Tamron ──',             ids: ['tamron-11-20mm-f28','tamron-17-70mm-f28','tamron-18-300mm-f35-63'] },
+  { label: '── Tamron ──',             ids: ['tamron-11-20mm-f28','tamron-17-70mm-f28','tamron-18-300mm-f35-63', 'tamron-16-50mm-f28'] },
   { label: '── Samyang ──',            ids: ['samyang-14mm-f28','samyang-12mm-f2-rf-s', 'samyang-85mm-f14-rf'] },
   { label: '── Viltrox ──',            ids: ['viltrox-85mm-f18'] },
   { label: '── TTArtisan ──',          ids: ['ttartisan-50mm-f14-asph','ttartisan-tilt-50mm-f14','ttartisan-500mm-f63','ttartisan-50mm-f12','ttartisan-50mm-f095','ttartisan-35mm-f14-apsc','ttartisan-23mm-f14-apsc','ttartisan-10mm-f2-asph-apsc','ttartisan-tilt-35mm-f14-apsc','ttartisan-tilt-shift-17mm-f4-asph','ttartisan-14mm-f28-asph','ttartisan-100mm-f28-2x-macro', 'ttartisan-7-5mm-f2-fisheye', 'ttartisan-40mm-f28-macro', 'ttartisan-11mm-f28-fisheye'] },

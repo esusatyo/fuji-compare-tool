@@ -10,7 +10,7 @@
 - [x] 2.4 7Artisans
 - [x] 2.5 Thypoch + Samyang
 - [x] 2.6 Meike + Yongnuo
-- [ ] 2.7 Sigma / Tamron / Viltrox re-check
+- [x] 2.7 Sigma / Tamron / Viltrox re-check
 
 ## 3. Price consistency
 
