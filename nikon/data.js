@@ -622,7 +622,7 @@ const LENSES = {
     focalLength:58, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'58mm',
     maxAperture:0.95, minAperture:16, weight:2000, length:153.0, diameter:102.0,
     filterThread:82, minFocusDist:50, maxMagnification:0.19,
-    elements:17, groups:10, blades:11, afType:'Manual Focus',
+    elements:17, groups:10, blades:11, afType:'Manual',
     weatherSealed:true, ois:false, oisStops:null, year:2019, discontinued:false,
     imageUrl:'https://images.cdn.us-central1.gcp.commercetools.com/f7c8f2bb-aff1-4581-a826-1ad2527be222/FrontLeft-20086-NIKK-jnqFWMWj-large.png',
     imageSource: { url:'https://www.nikonusa.com/p/nikkor-z-58mm-f095-s-noct/20086/overview', tier:'T1', note:'official Nikon USA product page, barrel reads "Z 58mm 1:0.95 S Noct" and gold "Noct" script', date:'2026-08-17' },

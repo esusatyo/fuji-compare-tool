@@ -16,7 +16,7 @@
 
 - [ ] 3.1 Dealer regular price for every compare-at entry (47), decision per entry
 - [ ] 3.2 Apply USD changes and recompute ratio-derived regional prices
-- [ ] 3.3 Normalise afType 'Manual Focus' → 'Manual'
+- [x] 3.3 Normalise afType 'Manual Focus' → 'Manual'
 
 ## 4. Verify
 
