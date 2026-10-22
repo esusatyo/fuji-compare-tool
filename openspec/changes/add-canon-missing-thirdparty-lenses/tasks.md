@@ -8,7 +8,7 @@
 - [x] 2.2 Voigtländer
 - [x] 2.3 TTArtisan
 - [x] 2.4 7Artisans
-- [ ] 2.5 Thypoch + Samyang
+- [x] 2.5 Thypoch + Samyang
 - [ ] 2.6 Meike + Yongnuo
 - [ ] 2.7 Sigma / Tamron / Viltrox re-check
 

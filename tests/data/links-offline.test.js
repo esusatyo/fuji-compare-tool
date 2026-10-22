@@ -213,8 +213,9 @@ const KNOWN_SHARED_LINKS = new Map([
 // third-party entries that have no asin, +29 Voigtländer VM, +9 Zeiss ZM,
 // +19 TTArtisan/7Artisans/Laowa/Thypoch M (Leica).
 // Canon missing-lens pass (add-canon-missing-thirdparty-lenses, 2026-10-22+),
-// same approach: +29 Laowa RF, +5 Voigtländer RF, +3 TTArtisan RF, +6 7Artisans RF.
-const ASIN_GAP_BASELINE = 618;
+// same approach: +29 Laowa RF, +5 Voigtländer RF, +3 TTArtisan RF, +6 7Artisans RF,
+// +1 Thypoch RF, +1 Samyang RF.
+const ASIN_GAP_BASELINE = 620;
 
 const allItems = () => brandDirs().flatMap(brand => {
   const { data } = loadBrand(brand);

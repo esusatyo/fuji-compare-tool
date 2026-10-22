@@ -1623,6 +1623,23 @@ const LENSES = {
     productUrl:'https://samyangus.com/products/samyang-af-12mm-f2-0-rf-s-ultra-wide-angle-lens',
   },
 
+  'samyang-85mm-f14-rf': {
+    name:'Samyang MF 85mm F1.4 RF', manufacturer:'Samyang', line:'Manual', type:'Prime',
+    mount:'rf', focalLength:85, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'85mm',
+    maxAperture:1.4, minAperture:22, weight:730, length:98.7, diameter:78,
+    filterThread:72, minFocusDist:100, maxMagnification:0.09,
+    elements:9, groups:7, blades:8, afType:'Manual',
+    weatherSealed:true, ois:false, oisStops:null, year:2019, discontinued:false,
+    imageUrl:'https://cdn.shopify.com/s/files/1/0488/0790/3385/products/MF85mm1.4RF-FRONT.jpg',
+    imageSource: { url:'https://samyangus.com/products/85mm-f1-4-full-frame-telephoto-canon-rf', tier:'T1', title:'Samyang US official store', note:'product gallery "MF85mm1.4RF-FRONT" shot of the RF version, lens alone', date:'2026-10-22' },
+    asin:null,
+    prices:{USD:329,AUD:null,EUR:null,GBP:null,JPY:null,CAD:null,SGD:null},
+    specSources: [{ url:'https://samyangus.com/products/85mm-f1-4-full-frame-telephoto-canon-rf', tier:'T1', title:'Samyang MF 85mm F1.4 RF - Samyang US official store', note:'RF spec table: F1.4-22, 9 elements in 7 groups (1 hybrid aspherical), 1.0m, x0.09, 72mm filter, 8 blades, ø78 x 98.7mm, 730g, weather sealed', date:'2026-10-22' }, { url:'https://www.the-digital-picture.com/News/Samyang-Introduces-MF-14mm-F2-8-RF---MF-85mm-F1-4-RF-Lenses', tier:'T4', title:'The-Digital-Picture - Samyang Introduces MF 14mm F2.8 RF & MF 85mm F1.4 RF Lenses', note:'year: announced 2019-02-28 with the MF 14mm F2.8 RF as Samyang\'s first RF lenses', date:'2026-10-22' }],
+    priceSource: { url:'https://www.bhphotovideo.com/c/product/1470026-REG/x.html', tier:'T3', title:'B&H - Rokinon 85mm f/1.4 Lens for Canon RF', note:'B&H regular (strikethrough) $329, on sale at $289 at the time (sold in the US under Samyang\'s Rokinon brand). Samyang\'s US store shows a $399 compare-at and a $318.02 "sale", neither used; non-USD not examined', date:'2026-10-22' },
+    priceIncomplete:true,
+    productUrl:'https://samyangus.com/products/85mm-f1-4-full-frame-telephoto-canon-rf',
+  },
+
   /* ── Laowa (native RF manual-focus specialty) ── */
   /* Canon blocks third-party AF, so specialty makers ship native RF as MF only.
      Specs from Venus Optics + retailer spec tables; ASINs are Canon RF listings. */
@@ -2693,6 +2710,24 @@ const LENSES = {
     productUrl:'https://www.cosina.co.jp/voigtlander/en/rf-mount-lenses/portrait-heliar-75mm-f1-8/',
   },
 
+  /* ── Thypoch (native RF; catalogue-gap pass 2026-10-22) ── */
+  'thypoch-simera-28mm-f14': {
+    name:'Thypoch Simera 28mm f/1.4', manufacturer:'Thypoch', line:'Simera', type:'Prime',
+    mount:'rf', focalLength:28, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'28mm',
+    maxAperture:1.4, minAperture:16, weight:353, length:68.6, diameter:54,
+    filterThread:49, minFocusDist:40, maxMagnification:null,
+    elements:11, groups:7, blades:14, afType:'Manual',
+    weatherSealed:false, ois:false, oisStops:null, year:2024, discontinued:false,
+    imageUrl:'https://cdn.shopify.com/s/files/1/0756/5937/8928/files/Simera-28mm-f-1.4-Z-M-E-RF-X-Mount-Full-Frame-Manual-Lens-Thypoch-15970383.png',
+    imageSource: { url:'https://store.thypoch.com/products/simera-28mm-f-1-4-e-rf-x-z-mount', tier:'T1', title:'Thypoch official store', note:'the Black / Nikon Z Mount variant\'s own image; same photo as the Nikon entry (Thypoch\'s listing photo for all its mirrorless mounts)', date:'2026-10-22' },
+    asin:null,
+    prices:{USD:549,AUD:null,EUR:null,GBP:null,JPY:null,CAD:null,SGD:null},
+    specSources: [{ url:'https://thypoch.com/en/simera/28mm', tier:'T1', title:'Thypoch Simera 28mm f/1.4 - Thypoch official page', note:'per-mount spec table (columns M/Z/RF/E/X), RF column: 68.6mm long without hood (82.2mm with), ≈353g, flange 20mm; shared: front ø54mm, 11/7, 14 blades, 0.4m from the sensor plane, ø49 filter, f/1.4-16', date:'2026-10-22' }],
+    priceSource: { url:'https://www.bhphotovideo.com/c/product/1826034-REG/x.html', tier:'T3', title:'B&H - Thypoch Simera 28mm f/1.4 Lens (Canon RF)', note:'B&H regular (strikethrough) $549, on sale at $399 at the time; same regular price as the Fujifilm X entry (owner decision 2026-10-22); non-USD not examined', date:'2026-10-22' },
+    priceIncomplete:true,
+    productUrl:'https://store.thypoch.com/products/simera-28mm-f-1-4-e-rf-x-z-mount',
+  },
+
 };
 
 const LENS_DROPDOWN_GROUPS = [
@@ -2701,12 +2736,13 @@ const LENS_DROPDOWN_GROUPS = [
   { label: '── Canon RF-S (APS-C) ──', ids: ['rfs-10-18mm-f45-63-is-stm','rfs-14-30mm-f4-63-is-stm-pz','rfs-18-45mm-f45-63-is-stm','rfs-18-150mm-f35-63-is-stm','rfs-55-210mm-f5-71-is-stm','rfs-39mm-f35-stm-dual-fisheye','rfs-78mm-f4-stm-dual'] },
   { label: '── Sigma ──',              ids: ['sigma-12mm-f14','sigma-15mm-f14','sigma-16mm-f14','sigma-23mm-f14','sigma-30mm-f14','sigma-56mm-f14','sigma-10-18mm-f28','sigma-16-300mm-f35-67','sigma-17-40mm-f18','sigma-18-50mm-f28', 'sigma-50-120mm-f28'] },
   { label: '── Tamron ──',             ids: ['tamron-11-20mm-f28','tamron-17-70mm-f28','tamron-18-300mm-f35-63'] },
-  { label: '── Samyang ──',            ids: ['samyang-14mm-f28','samyang-12mm-f2-rf-s'] },
+  { label: '── Samyang ──',            ids: ['samyang-14mm-f28','samyang-12mm-f2-rf-s', 'samyang-85mm-f14-rf'] },
   { label: '── Viltrox ──',            ids: ['viltrox-85mm-f18'] },
   { label: '── TTArtisan ──',          ids: ['ttartisan-50mm-f14-asph','ttartisan-tilt-50mm-f14','ttartisan-500mm-f63','ttartisan-50mm-f12','ttartisan-50mm-f095','ttartisan-35mm-f14-apsc','ttartisan-23mm-f14-apsc','ttartisan-10mm-f2-asph-apsc','ttartisan-tilt-35mm-f14-apsc','ttartisan-tilt-shift-17mm-f4-asph','ttartisan-14mm-f28-asph','ttartisan-100mm-f28-2x-macro', 'ttartisan-7-5mm-f2-fisheye', 'ttartisan-40mm-f28-macro', 'ttartisan-11mm-f28-fisheye'] },
   { label: '── 7Artisans ──',          ids: ['7artisans-9mm-f56','7artisans-10mm-f28-ii','7artisans-35mm-f14-iii', '7artisans-14mm-f28', '7artisans-75mm-f14', '7artisans-60mm-f28-2x-macro', '7artisans-10mm-f28-fisheye', '7artisans-60mm-f28-ii-macro', '7artisans-6mm-f2'] },
   { label: '── Laowa ──',              ids: ['laowa-15mm-f2','laowa-58mm-f28-macro','laowa-90mm-f28-macro','laowa-100mm-f28-macro','laowa-10mm-f4-cookie', 'laowa-aksen-45mm-f28', 'laowa-aksen-17-5mm-f17', 'laowa-4-5-10mm-f28-fisheye', 'laowa-17mm-f4-tilt-shift', 'laowa-35mm-f28-tilt-shift-macro', 'laowa-180mm-f45-macro', 'laowa-12mm-f28-lite-zero-d', 'laowa-8-15mm-f28-fisheye', 'laowa-15mm-f45-macro', 'laowa-55mm-f28-tilt-shift-macro', 'laowa-100mm-f28-tilt-shift-macro', 'laowa-12-24mm-f56-shift', 'laowa-10mm-f28', 'laowa-8-16mm-f35-5', 'laowa-argus-28mm-f12', 'laowa-12-24mm-f56', 'laowa-20mm-f4-shift', 'laowa-argus-45mm-f095', 'laowa-85mm-f56-2x-macro', 'laowa-argus-35mm-f095', 'laowa-argus-33mm-f095', 'laowa-15mm-f45-shift', 'laowa-14mm-f4-rl', 'laowa-11mm-f45-rl', 'laowa-65mm-f28-2x-macro', 'laowa-4mm-f28-fisheye', 'laowa-9mm-f28', 'laowa-25mm-f28-25-5x-macro', 'laowa-argus-25mm-f095'] },
   { label: '── Voigtländer ──', ids: ['voigtlander-nokton-40mm-f12', 'voigtlander-nokton-50mm-f1', 'voigtlander-nokton-75mm-f15', 'voigtlander-nokton-classic-35mm-f14', 'voigtlander-portrait-heliar-75mm-f18'] },
+  { label: '── Thypoch ──', ids: ['thypoch-simera-28mm-f14'] },
   { label: '── Yongnuo ──',            ids: ['yongnuo-35mm-f2','yongnuo-85mm-f18'] },
 ];
 
