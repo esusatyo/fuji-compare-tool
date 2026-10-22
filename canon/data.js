@@ -2014,8 +2014,8 @@ const LENSES = {
     imageUrl:'https://7artisans.store/cdn/shop/files/1_db9d8e0b-ae96-4b07-96e3-bcc94c217e33.jpg',
     imageSource: { url:'https://7artisans.store/products/9mm-f-5-6-full-frame-wide-angle-lens-for-e-l-r-z', tier:'T1', note:'official 7Artisans store page ("MF 9mm f/5.6...for E/L/R/Z"), barrel reads "7Artisans 9mm F5.6"; "Canon EOS-R" is a selectable mount option. No mount-specific marking visible (front barrel is mount-agnostic for this manual lens), accepted since nothing in the image contradicts confirmed RF availability', date:'2026-08-17' },
     asin:'B0CHNR1GH2',
-    prices:{USD:479,AUD:699,EUR:599,GBP:399,JPY:75000,CAD:599,SGD:699},
-    priceSource: { url:'https://7artisans.store/products/9mm-f-5-6-full-frame-wide-angle-lens-for-e-l-r-z', tier:'T1', title:'7Artisans official store', note:'Canon EOS-R / ND64 variant regular price $479 = compare-at (sold only with an ND filter; no lens-only variant); on sale at $335.30 at the time. Was $335 (the sale price) in the data; regular price used per the owner\'s 2026-10-19 rule', date:'2026-10-19' },
+    prices:{USD:335,AUD:499,EUR:399,GBP:299,JPY:52000,CAD:399,SGD:499},
+    priceSource: { url:'https://www.bhphotovideo.com/c/product/1861712-REG/x.html', tier:'T3', title:'B&H - 7Artisans 9mm f/5.6 Lens (Canon RF, Rear ND Filter)', note:'USD $479 -> $335: B&H price $335 with no strikethrough. Previously the 7artisans.store compare-at (Canon EOS-R / ND64 variant regular price $479 = compare-at (sold only with an ND filter; no lens-only variant); on sale at $335.30 at the time. Was $335 (the sale price) in the data; regular price used per the owner\'s 2026-10-19 rule). USD is the price a dealer actually charges (owner rule 2026-10-22); the maker store\'s compare-at is not used; non-USD not examined', date:'2026-10-22' },
     productUrl:'https://7artisans.store/products/9mm-f-5-6-full-frame-wide-angle-lens-for-e-l-r-z',
   },
 

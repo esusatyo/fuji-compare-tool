@@ -1,6 +1,6 @@
 # Progress — Canon missing third-party lenses + price consistency
 
-**Resume at:** 3.1 (price consistency audit)
+**Resume at:** 3.1 Samyang (B&H data gathered, owner decision pending), then 3.3
 **Branch:** csr-continue → origin canon-sony-lens-refresh (PR #78)
 **Baseline 2026-10-22:** 39 third-party Canon lenses — Sigma 11, TTArtisan 12,
 Laowa 5, Tamron 3, 7Artisans 3, Samyang 2, Yongnuo 2 (discontinued), Viltrox 1
@@ -54,6 +54,42 @@ mount, and are excluded.
 viltrox.com 5, 7artisans.store 2, meikeglobal.com 2, ttartisan.store 1.
 Sale/compare-at ratio at read time 0.39 (7Artisans 25 f/0.95, fujifilm) to
 0.94 (Meike 25 f/1.8, fujifilm).
+
+The first scan's regex missed differently worded notes; the widened scan
+(`compare-at` + `on sale at`, store sources only) finds **103 entries**:
+Samyang 59, 7Artisans 26, Thypoch 6, Meike 5, Viltrox 5, TTArtisan 2.
+
+**Rule applied:** USD = B&H's regular price for that mount (its strikethrough
+price if it shows one, else its listed price), the same rule the owner's
+Fujifilm Simera 28 ($549) and Leica Thypoch decisions follow. Where B&H has no
+listing for a mount, the store's selling price is used only when B&H's price
+for the same lens in another mount shows the compare-at is not a real price.
+
+**Applied 2026-10-22 (31 entries, non-Samyang):**
+- 7Artisans 22: 14mm f/2.8 299 -> 209 (E/Z/L x2), 18mm f/5.6 89 -> 62 (E/Z/L x2),
+  25mm f/0.95 369 -> 143 (E; X from the store's $143.40, = B&H E), 50mm f/0.95 X
+  236 -> 149, 55mm f/1.4 X 109 -> 49 (store price, no dealer listing), 60mm 2X
+  macro 335 -> 284 (E) / 285 (Z, B&H regular $284.75), 75mm f/1.4 189 -> 151
+  (E/Z/L x2), 9mm f/5.6 479 -> 335 (E/Z/RF), Leica M 28mm f/1.4 459 -> 321.
+  B&H shows no strikethrough on any of these; its prices sit at or near the
+  store's "sale" prices, so 7Artisans' compare-at prices are not real prices.
+- Meike 4: 25mm f/1.8 80 -> 74 (E, X), 35mm f/1.4 E 110 -> 99, 35mm f/1.7 E
+  80 -> 79. Left: Fujifilm meike-50mm-f17-ff stays $130 (B&H's X listing says
+  $180, above Meike's own $129.99 list and B&H's E price of $109 - looks like
+  a stale listing).
+- TTArtisan AF 56mm f/1.8 158 -> 129 (E, X).
+- Viltrox X 33mm f/1.4 279 -> 239, 56mm f/1.4 299 -> 239, 85mm f/1.8 II
+  399 -> 329. Viltrox 56mm f/1.2 Pro (X, E) stays $580 = B&H regular.
+- Thypoch: no change - B&H's regular equals the stored $549 / $649 (Simera
+  28/35 Z+E, Voyager 24-50 E).
+- Regional prices recomputed only where they were ratio-derived from the old
+  USD (fujifilm 7Artisans 25/50/55, Meike 25, Viltrox 85 II; canon 7Artisans
+  9mm). The Viltrox 33/56 and TTArtisan 56 regional figures are not
+  ratio-derived (local store prices) and were kept.
+- `scripts/compute-prices.js` round99 gives GBP -1 below ~$56 USD (49 x 0.90
+  -> -1); fujifilm 7Artisans 55mm GBP set to 49 by hand. Script not changed.
+
+**Samyang (59): pending owner decision** - see the PR #78 follow-ups.
 
 ## Skipped (with reason)
 - Laowa ACRIS 35mm f/2.8 RF (2.1): the RF version is manual focus and Laowa gives weight/size for E, Z and EF only; B&H RF listing (2004642) has no dimensions or weight. Same skip as the L-Mount pass.
