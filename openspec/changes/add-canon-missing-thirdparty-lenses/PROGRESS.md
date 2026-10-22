@@ -1,6 +1,12 @@
 # Progress — Canon missing third-party lenses + price consistency
 
-**Resume at:** PR #78 review + archive (all tasks done)
+**Resume at:** 5.3 (unique lens counts)
+
+**Owner answers 2026-10-22 (review of PR #78):** Laowa RL lengths - flag in the PR description, owner reviews; USD-only lenses stay USD-only (no ratio estimates); TTArtisan weight ranges - keep skipping, keep researching per-mount weights; Tamron 16-50 Sony E - in this PR, research for correctness; landing/About counts - count unique lenses; refresh-camera-data skill - write the B&H rule into it in this PR; Meike 50mm f/1.7 X stays $130. Also asked for a published review listing of every lens this PR adds, with sources and flags.
+
+**5.1 done 2026-10-22:** "Needs owner review: Laowa RL lens lengths (17 entries)" section added to the PR #78 description (stored figures, every Laowa/B&H source per mount, options).
+
+**5.2 done 2026-10-22:** correction - the Sony E Tamron 16-50mm F2.8 A was already in this PR (`sony/tamron-16-50mm-f28`, added in the Sony Tamron batch c67a1af); the "Canon only" follow-up note was wrong. Both entries re-checked against Tamron's global spec page (Sony E 64.4 x 79.6mm, 305g; RF 69.2 x 77.6mm, 305g; 14/10, 7 blades, F16, 0.15/0.29m, 1:4.5, 55mm, VXD, moisture-resistant, no VC), Abt's Sony E listing and Fstoppers' launch article (RF $549). Prices: Tamron Americas Sony E $529 / CA $729, RF $549 / CA $749; Tamron Japan suggested retail (tax-included) Sony E ¥115,500, RF ¥119,350. The Sony entry's ratio-estimated AUD/EUR/GBP/JPY/CAD/SGD (JPY ¥83,000, 28% under the official figure) were replaced by the official CAD/JPY, the rest null + priceIncomplete. Nikon Z (2026-11-19) and Fujifilm X (2026-12-17) remain follow-ups.
 **Branch:** csr-continue → origin canon-sony-lens-refresh (PR #78)
 **Baseline 2026-10-22:** 39 third-party Canon lenses — Sigma 11, TTArtisan 12,
 Laowa 5, Tamron 3, 7Artisans 3, Samyang 2, Yongnuo 2 (discontinued), Viltrox 1
