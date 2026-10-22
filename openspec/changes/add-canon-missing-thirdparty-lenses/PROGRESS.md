@@ -1,6 +1,6 @@
 # Progress — Canon missing third-party lenses + price consistency
 
-**Resume at:** 2.4 (7Artisans)
+**Resume at:** 2.5 (Thypoch + Samyang)
 **Branch:** csr-continue → origin canon-sony-lens-refresh (PR #78)
 **Baseline 2026-10-22:** 39 third-party Canon lenses — Sigma 11, TTArtisan 12,
 Laowa 5, Tamron 3, 7Artisans 3, Samyang 2, Yongnuo 2 (discontinued), Viltrox 1
@@ -30,6 +30,8 @@ mount, and are excluded.
 
 **2.3 done 2026-10-22 (3 TTArtisan RF lenses + 1 Fujifilm fix):** 7.5mm f/2 fisheye, 40mm f/2.8 macro, 11mm f/2.8 fisheye - the only RF candidates with a B&H Canon RF listing giving size and weight; shared optics cloned from sony/ (11mm from panasonic/ L, same B&H size). USD = store RF variant (no compare-at). The 7.5mm size diagram (all mounts 57mm long x 72mm wide) showed **fujifilm/ttartisan-7-5mm-f2-fisheye had length and diameter transposed** (72/57) - fixed.
 
+**2.4 done 2026-10-22 (6 7Artisans RF lenses):** 14mm f/2.8, 75mm f/1.4, 60mm f/2.8 2X macro, 10mm f/2.8 fisheye (Mark I), 60mm f/2.8 II macro (B&H Canon RF listings: size/weight equal the Sony entries) and 6mm f/2 fisheye (7Artisans gives one size for all mounts incl. R). **USD = B&H RF price**, not the store: 7Artisans shows a compare-at and a permanent "sale" on most lenses (14mm $299 / $179.40, B&H $209; 75mm $189 / $141.75, B&H $151). The Sony/Nikon/L copies of these lenses still carry the store compare-at - task 3.
+
 ## Batches
 
 | Batch | Added | Skipped | Commit |
@@ -37,6 +39,7 @@ mount, and are excluded.
 | 2.1 Laowa | 29 | 2 | (this commit) |
 | 2.2 Voigtländer | 5 | 0 | (this commit) |
 | 2.3 TTArtisan | 3 | 6 | (this commit) |
+| 2.4 7Artisans | 6 | 7 | (this commit) |
 
 ## Price consistency
 
@@ -51,3 +54,5 @@ Sale/compare-at ratio at read time 0.39 (7Artisans 25 f/0.95, fujifilm) to
 - Laowa 12mm f/2.8 Zero-D, Aurogon 10-50X, probes, cine lenses, kits, MSC: out of scope (DSLR-era design per owner decision; microscope objective; cine/probe/bundle).
 - TTArtisan APS-C 35mm f/0.95 and APS-C 25mm f/2 RF (2.3): no B&H Canon RF listing; TTArtisan gives weight only as a cross-mount range (247-267g, 166-189g) - same open owner question as on Nikon.
 - TTArtisan 50mm f/2, 90mm f/1.25, 21mm f/1.5, Tilt-Shift 100mm f/2.8 RF (2.3): no RF dimensions from TTArtisan or B&H (same skips as Sony/Nikon).
+- 7Artisans 35mm f/1.4 APS-C and 7.5mm f/2.8 II RF (2.4): B&H Canon RF listings give only the box size; no RF lens size from 7Artisans.
+- 7Artisans 25mm f/0.95, 50mm f/0.95, 35mm f/0.95, 35mm f/5.6, 12mm f/2.8 II RF (2.4): no B&H Canon RF listing and no RF (or all-mount) size from 7Artisans.

@@ -7,7 +7,7 @@
 - [x] 2.1 Laowa
 - [x] 2.2 Voigtländer
 - [x] 2.3 TTArtisan
-- [ ] 2.4 7Artisans
+- [x] 2.4 7Artisans
 - [ ] 2.5 Thypoch + Samyang
 - [ ] 2.6 Meike + Yongnuo
 - [ ] 2.7 Sigma / Tamron / Viltrox re-check
