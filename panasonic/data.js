@@ -4549,10 +4549,10 @@ const LENSES = {
     imageSource: { url:'https://7artisans.store/products/18mm-f-6-3-mark-ii-aps-c-lens-for-sony-e-fujifilm-x-nikon-z', tier:'T1', title:'7Artisans official store', note:'first product image, lens alone; same photo as the Sony entry', date:'2026-10-22' },
     asin:null,
     prices:{USD:59,AUD:null,EUR:null,GBP:null,JPY:null,CAD:null,SGD:null},
-    specSources: [{ url:'https://www.bhphotovideo.com/c/product/1732927-REG/x.html/specs', tier:'T3', title:'B&H - 7Artisans 18mm f/6.3 II (Micro Four Thirds) specs', note:'MFT listing: 6/5, 0.3m, no filter, 56 x 15mm, 58g - same size/weight as the Sony entry (one set of figures for every mount)', date:'2026-10-22' }, { url:'https://7artisans.store/products/18mm-f-6-3-mark-ii-aps-c-lens-for-sony-e-fujifilm-x-nikon-z-panasonic-olympus-m43', tier:'T1', title:'7Artisans 18mm f/6.3 II - 7Artisans official store', note:'fixed f/6.3 pancake. confirms the Sony E version, focal length and maximum aperture; "Panasonic/ Olympus M43" variant listed', date:'2026-10-22' }],
-    priceSource: { url:'https://7artisans.store/products/18mm-f-6-3-mark-ii-aps-c-lens-for-sony-e-fujifilm-x-nikon-z-panasonic-olympus-m43', tier:'T1', title:'7Artisans official store', note:'"Panasonic/ Olympus M43" variant $59, compare-at equal (store products.json); non-USD not examined', date:'2026-10-22' },
+    specSources: [{ url:'https://www.bhphotovideo.com/c/product/1732927-REG/x.html/specs', tier:'T3', title:'B&H - 7Artisans 18mm f/6.3 II (Micro Four Thirds) specs', note:'MFT listing: 6/5, 0.3m, no filter, 56 x 15mm, 58g - same size/weight as the Sony entry (one set of figures for every mount)', date:'2026-10-22' }, { url:'https://7artisans.store/products/18mm-f-6-3-mark-ii-aps-c-lens-for-sony-e-fujifilm-x-nikon-z', tier:'T1', title:'7Artisans 18mm f/6.3 II - 7Artisans official store', note:'fixed f/6.3 pancake. confirms the Sony E version, focal length and maximum aperture; "Panasonic/ Olympus M43" variant listed', date:'2026-10-22' }],
+    priceSource: { url:'https://7artisans.store/products/18mm-f-6-3-mark-ii-aps-c-lens-for-sony-e-fujifilm-x-nikon-z', tier:'T1', title:'7Artisans official store', note:'"Panasonic/ Olympus M43" variant $59, compare-at equal (store products.json); non-USD not examined', date:'2026-10-22' },
     priceIncomplete:true,
-    productUrl:'https://7artisans.store/products/18mm-f-6-3-mark-ii-aps-c-lens-for-sony-e-fujifilm-x-nikon-z-panasonic-olympus-m43',
+    productUrl:'https://7artisans.store/products/18mm-f-6-3-mark-ii-aps-c-lens-for-sony-e-fujifilm-x-nikon-z',
   },
 
   '7artisans-50mm-f14-tilt-mft': {
