@@ -70,6 +70,12 @@ const KNOWN_IMAGE_GAPS = {
     // mounts, but nothing in any image contradicts the confirmed RF
     // availability). ttartisan-500mm-f63 resolved earlier, 2026-08-15
     // (Commons, camera-mounted shot with legible barrel text).
+    // Canon gap pass 2026-10-22: the same Laowa image gaps as on the other
+    // brands' copies — the 12mm Lite and 10mm f/2.8 photos show the AF
+    // version (RF is manual focus), the RL / 15mm Shift photos show another
+    // mount or another lens.
+    'laowa-12mm-f28-lite-zero-d', 'laowa-10mm-f28', 'laowa-15mm-f45-shift',
+    'laowa-14mm-f4-rl', 'laowa-11mm-f45-rl',
   ]),
   fujifilm: new Set([
     // 38 ids resolved 2026-08-17 (manufacturer product-image sourcing sweep):

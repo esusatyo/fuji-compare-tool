@@ -59,6 +59,7 @@ const KNOWN_SHARED_LINKS = new Map([
   ['fujifilm productUrl https://www.fujifilm-x.com/global/products/cameras/', 20],
   // Laowa sells the Aksen 45mm and 17.5mm off one product page.
   ['fujifilm productUrl https://www.venuslens.net/product/laowa-aksen-ultra-macro-apo/', 2],
+  ['canon productUrl https://www.venuslens.net/product/laowa-aksen-ultra-macro-apo/', 2],
   ['sony productUrl https://www.venuslens.net/product/laowa-aksen-ultra-macro-apo/', 2],
   ['nikon productUrl https://www.venuslens.net/product/laowa-aksen-ultra-macro-apo/', 2],
   // Panasonic carries both Aksens twice (L-Mount and MFT): one page, and one
@@ -211,7 +212,9 @@ const KNOWN_SHARED_LINKS = new Map([
 // MFT (12 each), +49 Leica L-Mount copies of Panasonic's LUMIX S /
 // third-party entries that have no asin, +29 Voigtländer VM, +9 Zeiss ZM,
 // +19 TTArtisan/7Artisans/Laowa/Thypoch M (Leica).
-const ASIN_GAP_BASELINE = 575;
+// Canon missing-lens pass (add-canon-missing-thirdparty-lenses, 2026-10-22+),
+// same approach: +29 Laowa RF.
+const ASIN_GAP_BASELINE = 604;
 
 const allItems = () => brandDirs().flatMap(brand => {
   const { data } = loadBrand(brand);

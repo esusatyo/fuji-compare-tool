@@ -1,6 +1,6 @@
 # Progress — Canon missing third-party lenses + price consistency
 
-**Resume at:** 2.1 (Laowa)
+**Resume at:** 2.2 (Voigtländer)
 **Branch:** csr-continue → origin canon-sony-lens-refresh (PR #78)
 **Baseline 2026-10-22:** 39 third-party Canon lenses — Sigma 11, TTArtisan 12,
 Laowa 5, Tamron 3, 7Artisans 3, Samyang 2, Yongnuo 2 (discontinued), Viltrox 1
@@ -24,10 +24,13 @@ mount, and are excluded.
 | Yongnuo | 4 leads | from August: 23 f/1.4 APS-C, 35 f/1.8 DA, 50 f/1.8, 85 f/1.8R II (no specs then) |
 | SG-image, Viltrox | 0 | SG-image sells EF-M, not RF; Viltrox's RF AF lenses were withdrawn |
 
+**2.1 done 2026-10-22 (29 Laowa RF lenses):** Nikon entries cloned (Laowa publishes one spec table across its mirrorless mounts and every lens has a Canon RF variation on its store and a B&H Canon RF listing). RF-specific figures: 12-24mm f/5.6 length 91.6mm (Laowa gives R/M/E/Z lengths), 85mm f/5.6 310g (Laowa + B&H RF), 180mm macro is manual focus on RF (522g / 134.4mm from B&H RF, f/32 min), 12mm Lite and 10mm f/2.8 are manual focus on RF (12mm Lite 480g). APS-C designs (4.5-10, 8-16, 12-24 Shift CF, Argus 25/33, 65mm, 4mm, 9mm) use the 1.6x RF-S crop. Photos reused from the Sony entries (Panasonic L for the 180mm); the 5 lenses gapped on the other brands are gapped here too. The existing 5 Laowa lenses moved out of "Other" into a new Laowa group; "Other" is now "Yongnuo".
+
 ## Batches
 
 | Batch | Added | Skipped | Commit |
 |---|---|---|---|
+| 2.1 Laowa | 29 | 2 | (this commit) |
 
 ## Price consistency
 
@@ -37,3 +40,6 @@ Sale/compare-at ratio at read time 0.39 (7Artisans 25 f/0.95, fujifilm) to
 0.94 (Meike 25 f/1.8, fujifilm).
 
 ## Skipped (with reason)
+- Laowa ACRIS 35mm f/2.8 RF (2.1): the RF version is manual focus and Laowa gives weight/size for E, Z and EF only; B&H RF listing (2004642) has no dimensions or weight. Same skip as the L-Mount pass.
+- Laowa 15mm f/5 Cookie RF (2.1): Laowa gives E (35.2mm, 138g) and M (25mm, 104g) only; B&H RF listing (1861639) gives only box size and a 158g shipping weight.
+- Laowa 12mm f/2.8 Zero-D, Aurogon 10-50X, probes, cine lenses, kits, MSC: out of scope (DSLR-era design per owner decision; microscope objective; cine/probe/bundle).
