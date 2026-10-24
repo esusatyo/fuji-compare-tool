@@ -1,0 +1,55 @@
+# Pings IndexNow (Bing, Yandex, Seznam, Naver…) with the indexable pages a
+# push to main changed, once Cloudflare Workers Builds has deployed that
+# commit. See scripts/indexnow.js for which URLs are chosen and why.
+name: IndexNow
+
+on:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+  checks: read
+
+concurrency:
+  group: indexnow
+  cancel-in-progress: false
+
+jobs:
+  ping:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          fetch-depth: 0
+
+      # Bing may fetch within seconds of the ping, so wait for the deploy.
+      # Gives up without pinging after 15 minutes or on a failed deploy.
+      - name: Wait for the Cloudflare deploy
+        env:
+          GH_TOKEN: ${{ github.token }}
+          CHECK: 'Workers Builds: fuji-compare-tool'
+        run: |
+          for i in $(seq 1 90); do
+            run=$(gh api "repos/${{ github.repository }}/commits/${{ github.sha }}/check-runs" \
+              --jq ".check_runs | map(select(.name == \"$CHECK\")) | first | [.status, .conclusion] | @tsv")
+            status=$(printf '%s' "$run" | cut -f1); conclusion=$(printf '%s' "$run" | cut -f2)
+            if [ "$status" = "completed" ]; then
+              echo "deploy check: $conclusion"
+              [ "$conclusion" = "success" ] && exit 0
+              exit 1
+            fi
+            sleep 10
+          done
+          echo "deploy check did not finish within 15 minutes; not pinging"
+          exit 1
+
+      - name: Submit changed pages
+        run: |
+          before='${{ github.event.before }}'
+          if [ -z "$before" ] || [ "$before" = "0000000000000000000000000000000000000000" ] \
+             || ! git cat-file -e "$before^{commit}" 2>/dev/null; then
+            before='${{ github.sha }}~1'
+          fi
+          node scripts/indexnow.js --since "$before" --until '${{ github.sha }}'
