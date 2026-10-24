@@ -1075,8 +1075,9 @@ function collectReferences(item) {
     rows.spec.push({ text: citationText(c), url: c.url });
   }
 
-  if (item.priceSource) {
-    rows.price.push({ text: citationText(item.priceSource), url: item.priceSource.url });
+  // One citation, or a list when several stores were read for the price.
+  for (const c of [].concat(item.priceSource || [])) {
+    rows.price.push({ text: citationText(c), url: c.url });
   }
 
   const imageSource = item.imageSource

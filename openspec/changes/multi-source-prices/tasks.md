@@ -6,9 +6,9 @@
 
 ## 2. Multiple price citations
 
-- [ ] 2.1 Schema: `priceSource` is one citation or a non-empty list
-- [ ] 2.2 References (engine.js and generate-seo.js) render every price citation; link test checks each
-- [ ] 2.3 Tests: schema guard, references parity fixture, rendered order
+- [x] 2.1 Schema: `priceSource` is one citation or a non-empty list
+- [x] 2.2 References (engine.js and generate-seo.js) render every price citation; link test checks each
+- [x] 2.3 Tests: schema guard, references parity fixture, rendered order
 
 ## 3. Rules in the skills
 

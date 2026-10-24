@@ -147,3 +147,25 @@ test('an empty-string citation title is rejected', () => {
   const bad = camera({ specSources: [{ url: CITATION_URL, tier: 'T1', title: '' }] });
   reports(validateCamera('empty-title', bad, []), 'title');
 });
+
+// ── priceSource: one citation or a list (owner rule 2026-10-24) ─────
+
+const PRICE_A = { url: 'https://www.bhphotovideo.com/c/product/1-REG/x.html', tier: 'T3', title: 'B&H' };
+const PRICE_B = { url: 'https://www.adorama.com/x.html', tier: 'T3', title: 'Adorama' };
+
+test('priceSource as one citation is accepted', () => {
+  assert.deepEqual(validateCamera('one-price-source', camera({ priceSource: PRICE_A }), []), []);
+});
+
+test('priceSource as a list of citations is accepted', () => {
+  assert.deepEqual(validateCamera('two-price-sources', camera({ priceSource: [PRICE_A, PRICE_B] }), []), []);
+});
+
+test('an empty priceSource list is rejected', () => {
+  reports(validateCamera('empty-price-sources', camera({ priceSource: [] }), []), 'priceSource');
+});
+
+test('a bad citation inside a priceSource list is reported with its index', () => {
+  const bad = camera({ priceSource: [PRICE_A, { url: 'http://x.example', tier: 'T3' }] });
+  reports(validateCamera('bad-price-source', bad, []), 'priceSource[1]');
+});
