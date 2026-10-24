@@ -24,4 +24,4 @@ An offline audit (cross-mount USD spread, regional/USD ratios, citation basis) f
 - [x] 4.2 Samyang: lenses still stored at the store's compare-at price move to the selling price (owner rule), checked against the Samyang store and B&H
 - [x] 4.3 Voigtländer Nokton 40/1.2, Nokton Classic 35/1.4, Portrait Heliar 75/1.8: the Canon RF and Sony E prices disagree by 14-47%; re-check across stores
 - [x] 4.4 Siblings: Thypoch Simera 35 Z/E (stored at a $549 compare-at), Viltrox 33/56 f/1.4 E and TTArtisan 56 f/1.8 Z (left at the old price when their siblings were fixed), 7Artisans 60mm 2x RF
-- [ ] 4.5 npm test, test:links, PR body, review listing, push
+- [x] 4.5 npm test, test:links, PR body, review listing, push
