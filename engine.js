@@ -457,7 +457,10 @@ const LENS_SPEC_SECTIONS = [
       { key: 'diameter',        label: 'Diameter',                type: 'number', lowerBetter: true,  fn: l => l.diameter,       fmt: v => v + ' mm' },
       { key: 'filterThread',    label: 'Filter Thread',           type: 'text',   fn: l => l.filterThread ? l.filterThread + 'mm' : 'Built-in hood' },
       { key: 'weatherSealed',   label: 'Weather Sealed',          type: 'boolean', fn: l => l.weatherSealed },
-      { key: 'price',           label: 'RRP (list price)',         type: 'number', lowerBetter: true,  fn: l => l.prices ? (l.prices[currentCurrency] ?? null) : null, fmt: v => CURRENCY[currentCurrency].symbol + v.toLocaleString() },
+      // No local price → the tagged USD figure (price-display spec), and no
+      // winner unless every slot has a local price: "not published in A$"
+      // isn't "dearer", and A$ vs US$ isn't a comparison.
+      { key: 'price',           label: 'RRP (list price)',         type: 'number', lowerBetter: true,  needsAll: true, fn: l => l.prices ? (l.prices[currentCurrency] ?? null) : null, fmt: v => CURRENCY[currentCurrency].symbol + v.toLocaleString(), fallback: l => l.prices && l.prices.USD != null ? usdTaggedHTML(l.prices.USD) : null },
     ]
   },
 ];
@@ -931,7 +934,7 @@ function buildSelectHTML(currentId, slotIndex) {
 // RENDER PRICE (shared by slot and table)
 // Rules:
 //   1. Local-currency price available → show with local symbol + RRP label
-//   2. Discontinued → show "Discontinued / Launch: $X" (no RRP label)
+//   2. Discontinued → show "Discontinued / Launch: USD $X" (no RRP label)
 //   3. Live item, no local price but USD exists → show tagged "USD $X" + RRP label
 //   4. No price at all → "Price unavailable"
 // ─────────────────────────────────────────────
@@ -944,12 +947,18 @@ function renderPriceHTML(item) {
     return `<div class="slot-price"><span class="price-rrp-label">RRP</span> ${sym}${localPrice.toLocaleString()}</div>`;
   }
   if (item.discontinued) {
-    return `<div class="slot-price discontinued">Discontinued<br><small>Launch: $${prices.USD?.toLocaleString() ?? 'N/A'}</small></div>`;
+    return `<div class="slot-price discontinued">Discontinued<br><small>Launch: ${prices.USD != null ? `USD $${prices.USD.toLocaleString()}` : 'N/A'}</small></div>`;
   }
   if (prices.USD != null) {
-    return `<div class="slot-price"><span class="price-rrp-label">RRP</span> <small>USD</small> $${prices.USD.toLocaleString()}</div>`;
+    return `<div class="slot-price"><span class="price-rrp-label">RRP</span> ${usdTaggedHTML(prices.USD)}</div>`;
   }
   return `<div class="slot-price discontinued">Price unavailable</div>`;
+}
+
+// A USD figure shown while another currency is selected: always tagged, so a
+// bare "$" can't read as A$, C$ or S$.
+function usdTaggedHTML(usd) {
+  return `<span title="No ${currentCurrency} price published; US list price shown"><small>USD</small> $${usd.toLocaleString()}</span>`;
 }
 
 // ─────────────────────────────────────────────
@@ -1001,6 +1010,7 @@ function computeWinners(spec) {
   if (!spec.higherBetter && !spec.lowerBetter) return vals.map(() => false);
   const nums = vals.map(v => typeof v === 'number' ? v : null);
   if (nums.every(v => v === null)) return vals.map(() => false);
+  if (spec.needsAll && nums.some(v => v === null)) return vals.map(() => false);
   const valid = nums.filter(v => v !== null);
   const best = spec.higherBetter ? Math.max(...valid) : Math.min(...valid);
   return nums.map(v => v !== null && v === best);
@@ -1019,7 +1029,7 @@ function formatVal(spec, item) {
       ? `<span class="check">✓</span>`
       : `<span class="cross">—</span>`;
   }
-  if (raw === null || raw === undefined) return '<span class="cross">—</span>';
+  if (raw === null || raw === undefined) return (spec.fallback && spec.fallback(item)) || '<span class="cross">—</span>';
   if (spec.fmt && typeof raw === 'number') return spec.fmt(raw);
   return raw;
 }
