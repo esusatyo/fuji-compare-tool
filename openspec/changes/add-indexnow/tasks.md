@@ -1,8 +1,8 @@
 ## 1. Key and script
 
 - [x] 1.1 Commit the Bing-issued key file `870b934a4865448e894273f3859a8725.txt` at the repo root
-- [ ] 1.2 Write `scripts/indexnow.js`: pure `selectUrls({changedFiles, oldSitemap, newSitemap, baseUrl})`, sitemap parsing via `git show`, `--since/--until`, `--all`, `--dry-run`, and a POST to api.indexnow.org
-- [ ] 1.3 Add `tests/data/indexnow.test.js` (key file served and matching, URL selection rules) and run `npm test`
+- [x] 1.2 Write `scripts/indexnow.js`: pure `selectUrls({changedFiles, oldSitemap, newSitemap, baseUrl})`, sitemap parsing via `git show`, `--since/--until`, `--all`, `--dry-run`, and a POST to api.indexnow.org
+- [x] 1.3 Add `tests/data/indexnow.test.js` (key file served and matching, URL selection rules) and run `npm test`
 
 ## 2. Workflow
 
