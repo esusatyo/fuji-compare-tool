@@ -83,6 +83,10 @@ With that set, `.githooks/pre-commit` runs automatically on every commit. It's a
 
 Deliberately scoped to `generate-seo.js` (pure and deterministic) and the share-card renderer (local Chrome, no network calls). The scripts that fetch external data (`fetch-images*.js`, `fetch-image-credits.js`, `compute-prices.js`, `apply-images.js`) are **not** run automatically; those need human/agent review before committing, per the sourcing rules above.
 
+### IndexNow pings after deploy
+
+`.github/workflows/indexnow.yml` runs on every push to `main`: it waits for the `Workers Builds: fuji-compare-tool` check (the Cloudflare deploy) to succeed, then `scripts/indexnow.js` submits the pushed range's changed pages to IndexNow (Bing/Copilot, Yandex, Seznam, Naver — not Google). Only sitemap URLs are sent (changed `*.html`, plus a changed `<brand>/data.js` as its brand page), plus URLs dropped from the sitemap. The key file `870b934a4865448e894273f3859a8725.txt` at the repo root is public by design; keep it served (not in `.assetsignore`). Manual use: `node scripts/indexnow.js --all` submits the whole sitemap, `--dry-run` just prints. Cloudflare Crawler Hints is on but delivers nothing for this Workers-assets site, which is why this exists.
+
 ## URLs: always link clean (no `.html`)
 
 Files on disk keep their `.html` names, but **every URL the site publishes is extensionless** — internal `<a href>`s, canonicals, `og:url`s and sitemap entries alike. The host (Cloudflare Pages) 307-redirects `/page.html` → `/page`, so a `.html` href puts a *temporary* redirect on every crawl path: it doesn't consolidate signals the way a 301 does, and it contradicts the clean canonical the destination then declares.

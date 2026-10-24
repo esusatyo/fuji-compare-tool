@@ -6,8 +6,8 @@
 
 ## 2. Workflow
 
-- [ ] 2.1 Add `.github/workflows/indexnow.yml`: on push to `main`, wait for the Workers Builds check to succeed, then run the script over `before..sha`
-- [ ] 2.2 Document IndexNow in CLAUDE.md (key location, what is pinged when, `--all` for a manual full submit)
+- [x] 2.1 Add `.github/workflows/indexnow.yml`: on push to `main`, wait for the Workers Builds check to succeed, then run the script over `before..sha`
+- [x] 2.2 Document IndexNow in CLAUDE.md (key location, what is pinged when, `--all` for a manual full submit)
 
 ## 3. After merge
 
