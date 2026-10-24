@@ -172,8 +172,10 @@ function checkCitation(c, label) {
 
 /**
  * Validate the optional `specSources` (array of citations covering the
- * weight/dimensions/optical-formula/status block), `priceSource` (single
- * citation for the current price), and `imageSource` (single citation for
+ * weight/dimensions/optical-formula/status block), `priceSource` (the
+ * citation for the current price — one object, or a non-empty array when
+ * several stores were read and the stored price is the one they agree on;
+ * owner rule 2026-10-24), and `imageSource` (single citation for
  * where the current `imageUrl` was found/verified) fields. All three are
  * optional and retrofitted only where a refresh actually recorded where a
  * fact came from — absence does not mean the data is wrong, just that no
@@ -189,7 +191,10 @@ function checkSources(obj) {
     if (!Array.isArray(obj.specSources)) errs.push('"specSources" should be an array');
     else obj.specSources.forEach((c, i) => errs.push(...checkCitation(c, `specSources[${i}]`)));
   }
-  if (obj.priceSource != null) errs.push(...checkCitation(obj.priceSource, 'priceSource'));
+  if (Array.isArray(obj.priceSource)) {
+    if (!obj.priceSource.length) errs.push('"priceSource" is an empty array (omit it, or cite at least one store)');
+    obj.priceSource.forEach((c, i) => errs.push(...checkCitation(c, `priceSource[${i}]`)));
+  } else if (obj.priceSource != null) errs.push(...checkCitation(obj.priceSource, 'priceSource'));
   if (obj.imageSource != null) {
     errs.push(...checkCitation(obj.imageSource, 'imageSource'));
     // imageSource records the page a manufacturer/free-repo photo was verified

@@ -36,7 +36,7 @@ function collectUrls() {
         // a dead citation is a dead link on the page, same as a dead
         // productUrl/imageUrl, so it belongs in this sweep too.
         for (const c of (item.specSources || [])) addUrl(c.url, 'spec-source', `${brand}/${type}/${id}`);
-        if (item.priceSource) addUrl(item.priceSource.url, 'price-source', `${brand}/${type}/${id}`);
+        for (const c of [].concat(item.priceSource || [])) addUrl(c.url, 'price-source', `${brand}/${type}/${id}`);
         if (item.imageSource) addUrl(item.imageSource.url, 'image-source', `${brand}/${type}/${id}`);
         if (item.imageCredit) addUrl(item.imageCredit.source, 'image-source', `${brand}/${type}/${id}`);
       }

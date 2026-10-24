@@ -59,11 +59,38 @@ const KNOWN_SHARED_LINKS = new Map([
   ['fujifilm productUrl https://www.fujifilm-x.com/global/products/cameras/', 20],
   // Laowa sells the Aksen 45mm and 17.5mm off one product page.
   ['fujifilm productUrl https://www.venuslens.net/product/laowa-aksen-ultra-macro-apo/', 2],
+  ['canon productUrl https://www.venuslens.net/product/laowa-aksen-ultra-macro-apo/', 2],
+  ['sony productUrl https://www.venuslens.net/product/laowa-aksen-ultra-macro-apo/', 2],
+  ['nikon productUrl https://www.venuslens.net/product/laowa-aksen-ultra-macro-apo/', 2],
+  // Panasonic carries both Aksens twice (L-Mount and MFT): one page, and one
+  // maker photo per lens for both mounts.
+  ['panasonic productUrl https://www.venuslens.net/product/laowa-aksen-ultra-macro-apo/', 4],
+  ['panasonic imageUrl https://www.laowalenses.ca/wp-content/uploads/2026/07/02_VEAKSEN4528FE-scaled-1-768x768.jpg', 2],
+  ['panasonic imageUrl https://www.laowalenses.ca/wp-content/uploads/2026/07/01_VEAKSEN17517FE-CO-scaled-1-768x768.jpg', 2],
+  ['olympus productUrl https://www.venuslens.net/product/laowa-aksen-ultra-macro-apo/', 2],
+  ['leica productUrl https://www.venuslens.net/product/laowa-aksen-ultra-macro-apo/', 2],
+  // Laowa sells the RL lenses' L-Mount and Leica M versions off one page
+  // each; Leica's page carries both.
+  ['leica productUrl https://www.venuslens.net/product/laowa-9mm-f-5-6-ff-rl/', 2],
+  ['leica productUrl https://www.venuslens.net/product/laowa-11mm-f-4-5-ff-rl/', 2],
+  ['leica productUrl https://www.venuslens.net/product/14mm-f4-ff-rl-zero-d/', 2],
+  // SG-image 50mm f/1.8 Shaped Aperture — one listing and photo for every mount;
+  // Panasonic carries it in L and MFT.
+  ['panasonic imageUrl https://cdn.shopify.com/s/files/1/0729/5051/3889/files/13_3eaacd43-9a62-4582-b9de-bb3063ec86c2.png', 2],
+  ['panasonic productUrl https://www.sg-image.com/products/50mm-f1-8-mf-full-frame-lens-with-shaped-aperture', 2],
+  // Zeiss has one page (with a per-lens Technical Data table) per lens line.
+  ['sony productUrl https://www.zeiss.com/photonics-and-optics/us/photography/products/lenses-for-mirrorless-system-cameras/batis-lenses.html', 5],
+  ['sony productUrl https://www.zeiss.com/photonics-and-optics/us/photography/products/lenses-for-mirrorless-system-cameras/touit-lenses.html', 3],
+  ['sony productUrl https://www.zeiss.com/photonics-and-optics/us/photography/products/lenses-for-mirrorless-system-cameras/otus-ml-lenses.html', 3],
+  ['nikon productUrl https://www.zeiss.com/photonics-and-optics/us/photography/products/lenses-for-mirrorless-system-cameras/otus-ml-lenses.html', 3],
+  ['leica productUrl https://www.zeiss.com/photonics-and-optics/us/photography/products/lenses-for-rangefinder-cameras/zm-lenses.html', 9],
   // 7Artisans sells the 25/35/50mm f/1.8 Lite trio as ONE listing with mount and
   // focal-length variants; the photo is the maker's official family shot showing
   // all three barrels. Verified visually 2026-09-07.
   ['nikon imageUrl https://7artisans.store/cdn/shop/files/2342434.jpg', 3],
   ['nikon productUrl https://7artisans.store/products/af-25-35-50mm-f1-8-aps-c-lens-for-e-fx-z', 3],
+  ['sony imageUrl https://cdn.shopify.com/s/files/1/0555/8504/6736/files/2342434.jpg', 3],
+  ['sony productUrl https://7artisans.store/products/af-25-35-50mm-f1-8-aps-c-lens-for-e-fx-z', 3],
   // Same Laowa 90mm optic in L and MFT — one maker page, one photo.
   ['panasonic imageUrl https://www.venuslens.net/wp-content/uploads/2022/06/Laowa_90mmF282XMacroAPO_1-700x482.jpg', 2],
   ['panasonic productUrl https://www.venuslens.net/product/laowa-90mm-f-2-8-2x-macro-apo/', 2],
@@ -166,7 +193,29 @@ const KNOWN_SHARED_LINKS = new Map([
 // found, and 7artisans-10mm-f35's only listing doesn't name the mount.
 // Raised to 58 the same day: the 8 SG-image manual-focus lenses have no
 // amazon.com listings in any mount (site:amazon.com search, 2026-10-19).
-const ASIN_GAP_BASELINE = 58;
+// Sony missing-lens pass (add-sony-missing-thirdparty-lenses, 2026-10-19+):
+// ~180 lenses are being added in maker batches without per-lens ASIN
+// lookups; ASINs are backfilled afterwards with the check-prices-and-buy-links
+// skill, which then tightens this back down. +21 Viltrox, +32 Samyang, +17 Sigma, +14 Tamron,
+// +35 Laowa, +13 Voigtländer, +9 Zeiss (8 new + Batis 85, now current again),
+// +19 TTArtisan, +28 7Artisans, +12 Meike, +13 Thypoch/SG-image.
+// Nikon missing-lens pass (add-nikon-missing-thirdparty-lenses, 2026-10-21+),
+// same approach: +1 Tamron, +14 Laowa, +2 Voigtländer, +3 Zeiss, +7 TTArtisan,
+// +13 7Artisans, +4 Meike, +13 Thypoch/SG-image.
+// Panasonic/Leica missing-lens pass (add-panasonic-leica-missing-thirdparty-
+// lenses, 2026-10-22+): copies of entries already in another brand file carry
+// that entry's asin, so only the ones that had none add a gap — +4 Sigma L /
+// Leica SL copies, +1 Samyang L, +19 Laowa L, +6 TTArtisan L,
+// +11 7Artisans L, +2 Meike L, +2 SG-image L, +22 Laowa MFT (11 each in
+// panasonic and olympus), +10 Voigtländer MFT (5 each),
+// +14 SG-image MFT, +26 Samyang MFT (7 / 13 each), +24 TTArtisan/7Artisans
+// MFT (12 each), +49 Leica L-Mount copies of Panasonic's LUMIX S /
+// third-party entries that have no asin, +29 Voigtländer VM, +9 Zeiss ZM,
+// +19 TTArtisan/7Artisans/Laowa/Thypoch M (Leica).
+// Canon missing-lens pass (add-canon-missing-thirdparty-lenses, 2026-10-22+),
+// same approach: +29 Laowa RF, +5 Voigtländer RF, +3 TTArtisan RF, +6 7Artisans RF,
+// +1 Thypoch RF, +1 Samyang RF, +1 Tamron RF (16-50mm, not on sale until 2026-10-29).
+const ASIN_GAP_BASELINE = 621;
 
 const allItems = () => brandDirs().flatMap(brand => {
   const { data } = loadBrand(brand);

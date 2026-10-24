@@ -286,8 +286,9 @@ function collectReferences(item) {
     rows.spec.push({ text: citationText(c), url: c.url });
   }
 
-  if (item.priceSource) {
-    rows.price.push({ text: citationText(item.priceSource), url: item.priceSource.url });
+  // One citation, or a list when several stores were read for the price.
+  for (const c of [].concat(item.priceSource || [])) {
+    rows.price.push({ text: citationText(c), url: c.url });
   }
 
   const imageSource = item.imageSource
@@ -1226,6 +1227,19 @@ function compareShareCard(brandNames, nCams) {
   };
 }
 
+// Site-wide totals count each product once. Third-party lenses are stored
+// per brand, so one L-Mount lens can sit on the Panasonic, Leica and Sigma
+// pages (and an MFT lens on Panasonic and Olympus) under the same slug. The
+// same slug on a different mount is a different lens, so the key is
+// mount + slug, never the slug alone.
+function uniqueItemCount(brandData, kind) {
+  const keys = new Set();
+  for (const data of Object.values(brandData)) {
+    for (const [slug, item] of Object.entries(data[kind])) keys.add(`${item.mount}:${slug}`);
+  }
+  return keys.size;
+}
+
 function homeShareCard(brandNames, nCams, nLenses) {
   return {
     path: 'og/home.png',
@@ -1774,13 +1788,13 @@ function buildSite() {
     if (index) sitemapPaths.push(m.file);
   }
   const cmp = path.join('compare', 'index.html');
-  const totalCams = Object.values(brandData).reduce((n, d) => n + Object.keys(d.CAMERAS).length, 0);
+  const totalCams = uniqueItemCount(brandData, 'CAMERAS');
   let cmpHtml = fs.readFileSync(path.join(ROOT, cmp), 'utf8');
   cmpHtml = withHeadBlock(cmpHtml, compareHeadBlock(site, brandNames, totalCams, addCard(compareShareCard(brandNames, totalCams))), cmp);
   cmpHtml = withBodyBlock(cmpHtml, compareBodyBlock(matchups, brandNames), cmp);
   files.set(cmp, cmpHtml);
 
-  const totalLenses = Object.values(brandData).reduce((n, d) => n + Object.keys(d.LENSES).length, 0);
+  const totalLenses = uniqueItemCount(brandData, 'LENSES');
   const homeCard = addCard(homeShareCard(brandNames, totalCams, totalLenses));
 
   sitemapPaths.push('about.html', 'privacy.html');
@@ -1835,4 +1849,4 @@ if (require.main === module) {
   console.log(`generate-seo: ${files.size} artifacts (${written} written, ${removed} stale removed)`);
 }
 
-module.exports = { buildSite, cardHash, vsCardHTML, infoCardHTML, shareTags, CARD_W, CARD_H, LANDING_CARD_ORDER, ALL_BRANDS_MOSAIC, orderLandingBrands, allBrandsPhotoHTML, siteConfig, curatedPairs, successorPairKeys, resolvePins, withPins, PINNED_VS_PAIRS, SUCCESSOR_INDEX_SINCE, relatedPairs, vsPageHTML, vsSummary, vsSummaryFacts, resolveMatchups, crossVsPageHTML, crossTitle, CROSS_BRAND_MATCHUPS, compareHeadBlock, compareBodyBlock, brandHeadBlock, rootHeadBlock, brandBodyBlock, rootBodyBlock, withHeadBlock, withBodyBlock, sitemapXML, robotsTxt, buildAll, SEO_BEGIN, SEO_END, SEO_BODY_BEGIN, SEO_BODY_END, ID_HEAD_BEGIN, ID_HEAD_END, ID_HEADER_BEGIN, ID_HEADER_END, ID_FOOTER_BEGIN, ID_FOOTER_END, identityToken, logoMark, cleanUrl, cleanHref, themeToggleHTML, collectReferences, citationText, refHostname, REFERENCE_ROWS, referenceRowsHTML };
+module.exports = { buildSite, uniqueItemCount, cardHash, vsCardHTML, infoCardHTML, shareTags, CARD_W, CARD_H, LANDING_CARD_ORDER, ALL_BRANDS_MOSAIC, orderLandingBrands, allBrandsPhotoHTML, siteConfig, curatedPairs, successorPairKeys, resolvePins, withPins, PINNED_VS_PAIRS, SUCCESSOR_INDEX_SINCE, relatedPairs, vsPageHTML, vsSummary, vsSummaryFacts, resolveMatchups, crossVsPageHTML, crossTitle, CROSS_BRAND_MATCHUPS, compareHeadBlock, compareBodyBlock, brandHeadBlock, rootHeadBlock, brandBodyBlock, rootBodyBlock, withHeadBlock, withBodyBlock, sitemapXML, robotsTxt, buildAll, SEO_BEGIN, SEO_END, SEO_BODY_BEGIN, SEO_BODY_END, ID_HEAD_BEGIN, ID_HEAD_END, ID_HEADER_BEGIN, ID_HEADER_END, ID_FOOTER_BEGIN, ID_FOOTER_END, identityToken, logoMark, cleanUrl, cleanHref, themeToggleHTML, collectReferences, citationText, refHostname, REFERENCE_ROWS, referenceRowsHTML };
