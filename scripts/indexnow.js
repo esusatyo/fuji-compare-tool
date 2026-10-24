@@ -25,11 +25,18 @@
 const { execFileSync } = require('child_process');
 const fs = require('fs');
 const path = require('path');
-const { siteConfig } = require('./generate-seo');
 
 const ROOT = path.resolve(__dirname, '..');
 const KEY = '870b934a4865448e894273f3859a8725';
 const ENDPOINT = 'https://api.indexnow.org/indexnow';
+
+// Read site-config.js directly, as generate-seo.js does: requiring the
+// generator would pull in jsdom, a dev dependency the GitHub Action never
+// installs.
+function siteConfig() {
+  const src = fs.readFileSync(path.join(ROOT, 'site-config.js'), 'utf8');
+  return new Function(`${src}; return SITE_CONFIG;`)();
+}
 
 function sitemapUrls(xml) {
   return [...String(xml).matchAll(/<loc>([^<]+)<\/loc>/g)].map(m => m[1]);
@@ -106,4 +113,4 @@ async function main() {
 
 if (require.main === module) main().catch(e => { console.error(e); process.exit(1); });
 
-module.exports = { KEY, ENDPOINT, sitemapUrls, fileToUrl, selectUrls };
+module.exports = { KEY, ENDPOINT, siteConfig, sitemapUrls, fileToUrl, selectUrls };

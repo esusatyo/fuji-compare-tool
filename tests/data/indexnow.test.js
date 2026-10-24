@@ -5,8 +5,8 @@ const { test } = require('node:test');
 const assert = require('node:assert/strict');
 const fs = require('fs');
 const path = require('path');
-const { KEY, sitemapUrls, fileToUrl, selectUrls } = require('../../scripts/indexnow');
-const { siteConfig } = require('../../scripts/generate-seo');
+const { KEY, sitemapUrls, fileToUrl, selectUrls, siteConfig } = require('../../scripts/indexnow');
+const { execFileSync } = require('child_process');
 
 const ROOT = path.resolve(__dirname, '..', '..');
 const BASE = siteConfig().baseUrl;
@@ -59,4 +59,18 @@ test('selects changed indexable pages, brand data, and dropped URLs only', () =>
 test('nothing changed means nothing submitted', () => {
   const s = sitemap([`${BASE}/`]);
   assert.deepEqual(selectUrls({ baseUrl: BASE, changedFiles: ['README.md'], oldSitemap: s, newSitemap: s }), []);
+});
+
+test('the script runs without dev dependencies (the GitHub Action installs none)', () => {
+  // Preload a guard that fails any require of a package (node_modules),
+  // then run the real CLI exactly as the workflow does.
+  const guard = path.join(fs.mkdtempSync(path.join(require('os').tmpdir(), 'indexnow-')), 'guard.js');
+  fs.writeFileSync(guard, `const M = require('module'); const r = M._resolveFilename;
+M._resolveFilename = function (req, ...a) {
+  if (!req.startsWith('.') && !req.startsWith('/') && !M.isBuiltin(req)) throw new Error('needs package ' + req);
+  return r.call(this, req, ...a);
+};`);
+  const out = execFileSync(process.execPath, ['--require', guard, path.join(ROOT, 'scripts', 'indexnow.js'), '--all', '--dry-run'],
+    { encoding: 'utf8' });
+  assert.match(out, /indexnow: \d+ URL\(s\)/);
 });
