@@ -104,13 +104,26 @@ so they stay in lockstep.
 
 ### Pricing convention (important)
 
-- **USD = the current US list price** (RRP/MSRP). This dataset tracks the *list*
-  price, **not** transient street/sale prices. Use the official store or B&H
-  "list price", not Canon Price Watch / CamelCamelCamel street figures.
-- **Non-USD** values are approximate, derived from USD by regional ratios
-  (see `scripts/compute-prices.js`) **unless a real local RRP is confirmed**
-  (see step 2 for how to catch these opportunistically without a dedicated
-  per-currency pass).
+- **USD = the regular price the reputable sources agree on** (owner rule
+  2026-10-24; full text in
+  [`refresh-camera-data`](../refresh-camera-data/SKILL.md)'s pricing convention).
+  Read as many as practical — the maker's official store for its own products,
+  then B&H, Adorama, Best Buy, Amazon (sold by the maker or an authorised
+  seller) — **cite every one** in `priceSource` (a list when you read several),
+  and store the price they agree on. Never store a one-off or time-limited
+  sale, an anomaly (one store far off the rest, a stale listing), or an
+  inflated crossed-out "compare-at" nobody charges. Samyang/Rokinon store the
+  current selling price (their discount is near-permanent).
+- **Canon Price Watch**: its price-change pages log the Canon USA store's own
+  regular and sale prices, and usa.canon.com blocks us, so cite them as the
+  Canon store's price. Its deal posts, like CamelCamelCamel figures, are
+  street prices, not list prices.
+- **Non-USD** values: a confirmed local price from the local official store or
+  a reputable local retailer, cited. New lenses without one stay `null` with
+  `priceIncomplete: true` (shown on the site tagged as USD). Older entries
+  still hold ratio-derived figures (`scripts/compute-prices.js`); recompute
+  those when their USD changes. See step 2 for catching local prices
+  opportunistically without a dedicated per-currency pass.
 - US tariff-driven price changes are **US-only** — change `USD` and leave the
   other currencies unless you confirm a matching local change.
 
@@ -187,8 +200,9 @@ so they stay in lockstep.
      and never assume a US-specific event also moved other currencies just
      because they're printed near each other.
 
-3. **Present findings BEFORE editing**, grouped per brand. Cite **both**
-   sources for every headline change (step 2's two-source rule) and state
+3. **Present findings BEFORE editing**, grouped per brand. Cite **every**
+   source for every headline change (step 2's two-source rule; when applied,
+   they all go into the entry's `priceSource` list) and state
    each changed item's non-USD status explicitly — `not examined` (routine
    pass, no non-USD research attempted) is a different claim from `confirmed
    unchanged` (a non-USD figure was actually seen this pass and still

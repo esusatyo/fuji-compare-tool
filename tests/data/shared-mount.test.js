@@ -4,9 +4,10 @@
 // in RF and X mount really is a different product with its own weight, price
 // and ASIN, so the files are expected to disagree.
 //
-// The exception is two brands that share a mount. Sigma's L-Mount lenses live
-// in BOTH `panasonic/data.js` (as third-party) and `sigma/data.js` (as
-// first-party), describing one physical product — so there they must agree.
+// The exception is brands that share a mount. Sigma's L-Mount lenses live
+// in `panasonic/data.js` and `leica/data.js` (as third-party) and
+// `sigma/data.js` (as first-party), describing one physical product — so
+// there they must agree.
 //
 // This is not hypothetical. Before this guard existed, every one of those
 // entries in panasonic/data.js carried Sony E-mount dimensions (L-Mount barrels
@@ -17,12 +18,15 @@ const assert = require('node:assert/strict');
 const { loadBrand } = require('../helpers/load-brand');
 
 // [brandA, brandB, mount]. The only mounts on this site that span two makers
-// are L-Mount (Panasonic/Sigma, plus Leica if ever added) and Micro Four
-// Thirds (Panasonic/OM System) — so adding a row is all a future
-// mount-sharing brand needs.
+// are L-Mount (Panasonic/Sigma/Leica) and Micro Four Thirds (Panasonic/OM
+// System) — so adding a row is all a future mount-sharing brand needs. Leica
+// carries every full-frame L lens Panasonic's page lists (and Panasonic carries
+// Leica's SL lenses) since 2026-10-22.
 const SAME_MOUNT_BRANDS = [
   ['panasonic', 'sigma', 'L-Mount'],
   ['panasonic', 'olympus', 'Micro Four Thirds'],
+  ['leica', 'panasonic', 'L-Mount'],
+  ['leica', 'sigma', 'L-Mount'],
 ];
 
 // Everything that is a property of the optic rather than of the listing.

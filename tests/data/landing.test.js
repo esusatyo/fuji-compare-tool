@@ -7,9 +7,9 @@
 // from several brands' showcase cameras rather than the logo.
 const { test } = require('node:test');
 const assert = require('node:assert/strict');
-const { buildAll, orderLandingBrands, allBrandsPhotoHTML, LANDING_CARD_ORDER, ALL_BRANDS_MOSAIC } =
+const { buildAll, orderLandingBrands, allBrandsPhotoHTML, uniqueItemCount, LANDING_CARD_ORDER, ALL_BRANDS_MOSAIC } =
   require('../../scripts/generate-seo');
-const { brandDirs } = require('../helpers/load-brand');
+const { brandDirs, loadBrand } = require('../helpers/load-brand');
 
 const root = buildAll().get('index.html');
 const cards = (root.match(/<li class="brand-card"[\s\S]*?<\/li>/g) || []);
@@ -72,4 +72,29 @@ test('landing: with fewer than two photos the tile falls back to the logo mark, 
     { slug: 'sony', heroCamera: { imageUrl: null } },
   ]);
   assert.ok(/<svg/.test(one) && !/<img/.test(one));
+});
+
+// Third-party lenses are stored per brand, so one L-Mount lens can appear on
+// the Panasonic, Leica and Sigma pages. The site-wide total must count it
+// once, or the headline number inflates with every mirrored copy.
+test('site totals: a lens on several brand pages counts once; the same slug on another mount counts again', () => {
+  const lens = mount => ({ mount });
+  const brandData = {
+    panasonic: { LENSES: { 'laowa-10mm': lens('l'), 'lumix-s-50': lens('l') } },
+    leica: { LENSES: { 'laowa-10mm': lens('l') } },
+    sony: { LENSES: { 'laowa-10mm': lens('e') } },
+  };
+  assert.equal(uniqueItemCount(brandData, 'LENSES'), 3);
+});
+
+test('site totals: the home share card states the unique lens count, not the per-page sum', () => {
+  const unique = new Set();
+  let sum = 0;
+  for (const b of brandDirs()) {
+    for (const [slug, l] of Object.entries(loadBrand(b).data.LENSES)) { unique.add(`${l.mount}:${slug}`); sum++; }
+  }
+  assert.ok(unique.size < sum, 'sanity: some lenses are listed on more than one brand page');
+  const about = buildAll().get('about.html');
+  const alt = (about.match(/<meta property="og:image:alt" content="([^"]*)"/) || [])[1] || '';
+  assert.match(alt, new RegExp(`\\b${unique.size} lenses\\b`));
 });

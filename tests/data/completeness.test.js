@@ -70,6 +70,12 @@ const KNOWN_IMAGE_GAPS = {
     // mounts, but nothing in any image contradicts the confirmed RF
     // availability). ttartisan-500mm-f63 resolved earlier, 2026-08-15
     // (Commons, camera-mounted shot with legible barrel text).
+    // Canon gap pass 2026-10-22: the same Laowa image gaps as on the other
+    // brands' copies — the 12mm Lite and 10mm f/2.8 photos show the AF
+    // version (RF is manual focus), the RL / 15mm Shift photos show another
+    // mount or another lens.
+    'laowa-12mm-f28-lite-zero-d', 'laowa-10mm-f28', 'laowa-15mm-f45-shift',
+    'laowa-14mm-f4-rl', 'laowa-11mm-f45-rl',
   ]),
   fujifilm: new Set([
     // 38 ids resolved 2026-08-17 (manufacturer product-image sourcing sweep):
@@ -210,11 +216,29 @@ const KNOWN_IMAGE_GAPS = {
     // succeeded (the CCD M Monochrom predates the Typ 246; the Typ 220
     // predates this M-E). Re-check in task 7.
     'm-monochrom-typ-246', 'm-e-typ-240',
+    // L-Mount lenses copied from panasonic/data.js (2026-10-22 Panasonic/Leica
+    // missing-lens pass), gaps and all — see the panasonic entries' notes.
+    'lumix-s-20mm-f2-5',
+    'laowa-11mm-f45-rl-l', 'laowa-14mm-f4-rl-l', 'laowa-9mm-f56-rl-l', 'laowa-15mm-f45-shift-l',
+    'laowa-12mm-f28-lite-zero-d-l', 'laowa-10mm-f28-l',
+    // M-Mount pass (2026-10-22): Laowa shows only the E/AE versions of the
+    // 12-24mm f/5.6 and the 15mm Cookie (the M versions are a different, shorter
+    // barrel); the Thypoch Eureka 50mm isn't on Thypoch's store and its site's
+    // images are unlabelled CDN files.
+    'laowa-12-24mm-f56-m', 'laowa-15mm-f5-cookie-m', 'thypoch-eureka-50mm-f2-m',
   ]),
   nikon: new Set([
-    // z5-iic: announced 2026-09-23, added 2026-10-11 — too new for a
-    // freely-licensed Commons photo; revisit on the next image pass.
-    'z5-iic',
+    // laowa-15mm-f45-shift: 2026-10-21 its image (laowa.com.au DSC_4018-1) was
+    // found to be a recrop of the 20mm Shift's DSC_4018 — same shot, aperture
+    // scale ending at f/4 (the 15mm is f/4.5); no other usable 15mm photo.
+    'laowa-15mm-f45-shift',
+    // laowa-11mm-f45-rl, laowa-14mm-f4-rl, laowa-9mm-f56-rl: added 2026-10-21
+    // (Nikon missing-lens pass); as on sony/, the RL galleries show only the
+    // Leica M barrel (11mm: one shot of the Z and E versions side by side).
+    'laowa-11mm-f45-rl', 'laowa-14mm-f4-rl', 'laowa-9mm-f56-rl',
+    // Zeiss Otus ML 35/50/85 (Z): added 2026-10-21; as on sony/, Zeiss shows only
+    // family shots and Commons has nothing.
+    'zeiss-otus-ml-35mm-f14', 'zeiss-otus-ml-50mm-f14', 'zeiss-otus-ml-85mm-f14',
     // Cameras: all 10 resolved 2026-08-15 (Commons photos sourced + applied).
     // Lenses — re-run 2026-08-15 (Nikon+Panasonic lens image pass): z-dx-16-50mm-vr
     // and viltrox-27mm-f12 resolved and removed from this list.
@@ -317,6 +341,12 @@ const KNOWN_IMAGE_GAPS = {
     // physical product) from panasonic/data.js's identical entry below,
     // gap and all — see that entry's note for why no photo was found.
     'lumix-g-12-32mm-f3-5-5-6',
+    // lumix-g-35-100mm-f2-8-ii: 2026-10-22 Panasonic/Leica missing-lens
+    // pass, copied from panasonic/data.js with its gap — see that entry.
+    'lumix-g-35-100mm-f2-8-ii',
+    // laowa-17mm-f18-mft: 2026-10-22 Panasonic/Leica missing-lens pass. Not on
+    // Laowa Australia/Canada; Laowa's US store (venuslens.net) blocks hotlinks.
+    'laowa-17mm-f18-mft',
   ]),
   panasonic: new Set([
     // Cameras: all resolved (see git history — Commons sweeps plus Tier 3
@@ -383,6 +413,18 @@ const KNOWN_IMAGE_GAPS = {
     // lumix-s-20mm-f2-5: announced 2026-09-17, added 2026-09-25 refresh — too
     // new for a freely-licensed Commons photo yet (ships Oct 2026).
     'lumix-s-20mm-f2-5',
+    // Panasonic/Leica missing-lens pass (2026-10-22), Laowa L-Mount:
+    // laowa-11mm-f45-rl-l, laowa-14mm-f4-rl-l, laowa-9mm-f56-rl-l and
+    // laowa-15mm-f45-shift-l stay gapped for the same reasons as on sony/ and
+    // nikon/ (RL galleries show only the Leica M barrel; the 15mm Shift's only
+    // photo is a recrop of the 20mm Shift's). laowa-12mm-f28-lite-zero-d-l and
+    // laowa-10mm-f28-l are the manual-focus L versions; Laowa only publishes
+    // photos of the AF Sony E versions (VE1228AFFE / VE1028AFFE files).
+    'laowa-11mm-f45-rl-l', 'laowa-14mm-f4-rl-l', 'laowa-9mm-f56-rl-l', 'laowa-15mm-f45-shift-l',
+    'laowa-12mm-f28-lite-zero-d-l', 'laowa-10mm-f28-l',
+    // laowa-17mm-f18-mft: 2026-10-22 Panasonic/Leica missing-lens pass. Not on
+    // Laowa Australia/Canada; Laowa's US store (venuslens.net) blocks hotlinks.
+    'laowa-17mm-f18-mft',
   ]),
   sony: new Set([
     // tamron-70-300mm: the only Commons file is the Nikon Z version (Model
@@ -497,6 +539,17 @@ const KNOWN_IMAGE_GAPS = {
     // 2026-09-23 refresh — too new for a freely-licensed Commons photo yet
     // (ship Oct 2026).
     'fe-400mm-f45-gm-oss', 'fe-600mm-f63-gm-oss',
+    // Laowa batch (add-sony-missing-thirdparty-lenses, 2026-10-21): the RL
+    // lenses' official galleries (laowa.com.au) show only the Leica M version
+    // — a different, shorter barrel than the E version — or the lens mounted
+    // on a camera; the 15mm f/4.5 Shift's only image (DSC_4018-1) is a copy of
+    // the 20mm Shift's DSC_4018, so it can't be trusted as the 15mm.
+    'laowa-11mm-f45-rl', 'laowa-14mm-f4-rl', 'laowa-9mm-f56-rl', 'laowa-15mm-f45-shift',
+    // Zeiss batch (2026-10-21): Zeiss's pages carry only family group shots,
+    // and Commons has no photo of these (searched "Zeiss Batis 40/135",
+    // "Zeiss Otus ML").
+    'zeiss-batis-40mm-f2-cf', 'zeiss-batis-135mm-f28',
+    'zeiss-otus-ml-35mm-f14', 'zeiss-otus-ml-50mm-f14', 'zeiss-otus-ml-85mm-f14',
   ]),
 };
 
@@ -517,6 +570,15 @@ const SHARED_IMAGE_OK = {
     // Laowa 90mm f/2.8 2x Macro APO — one maker studio shot, entered once per
     // Panasonic-file mount (L and MFT).
     ['laowa-90mm-f28-macro-l', 'laowa-90mm-f28-macro-mft'],
+    // Laowa Aksen 45mm / 17.5mm — same, entered in L and MFT (2026-10-22).
+    ['laowa-aksen-45mm-f28-l', 'laowa-aksen-45mm-f28-mft'],
+    ['laowa-aksen-17-5mm-f17-l', 'laowa-aksen-17-5mm-f17-mft'],
+    // SG-image 50mm f/1.8 Shaped Aperture — one photo for all mounts (L and MFT).
+    ['sgimage-50mm-f18-l', 'sgimage-50mm-f18-mft'],
+  ],
+  sony: [
+    // Same 7Artisans Lite trio as nikon above (one listing, one hero image).
+    ['7artisans-25mm-f18-lite', '7artisans-35mm-f18-lite', '7artisans-50mm-f18-lite'],
   ],
 };
 
