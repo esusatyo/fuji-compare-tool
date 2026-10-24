@@ -2611,7 +2611,10 @@ const LENSES = {
     prices:{USD:269,AUD:null,EUR:null,GBP:null,JPY:null,CAD:null,SGD:null},
     priceIncomplete:true,
     specSources: [{ url:'https://samyangus.com/products/8mm-f3-5-hd-fisheye', tier:'T1', title:'Samyang 8mm f/3.5 UMC Fisheye CS II - Samyang US store page', note:'Specifications table: per-mount columns, Micro 4/3 column used: length 99.9mm, 440g (the DSLR-mount versions are shorter/lighter); shared: 10/7, 0.3m, ø77.8mm max diameter, no front filter, blade count not published. Year: estimated: the Sony E version was on sale by the 2020 store listing; original design years vary', date:'2026-10-22' }],
-    priceSource: { url:'https://samyangus.com/products/8mm-f3-5-hd-fisheye', tier:'T1', title:'Samyang US official store', note:'Samyang\'s store lists the Micro 4/3 variant at $215.13 with no compare-at (a non-round sale-style figure); B&H sells the same lens as Rokinon 8mm f/3.5 UMC Fisheye CS II for MFT (https://www.bhphotovideo.com/c/product/1040175-REG/x.html) at $269, no strikethrough, used instead; non-USD not examined', date:'2026-10-22' },
+    priceSource: [
+      { url:'https://www.bhphotovideo.com/c/product/1040175-REG/x.html', tier:'T3', title:'B&H - Rokinon 8mm f/3.5 UMC Fisheye CS II (Micro Four Thirds)', note:'$269, no strikethrough (checked 2026-10-24), matching the stored price', date:'2026-10-24' },
+      { url:'https://samyangus.com/products/8mm-f3-5-hd-fisheye', tier:'T1', title:'Samyang US official store', note:'Samyang\'s store lists the Micro 4/3 variant at $215.13 with no compare-at (a non-round sale-style figure); B&H sells the same lens as Rokinon 8mm f/3.5 UMC Fisheye CS II for MFT (https://www.bhphotovideo.com/c/product/1040175-REG/x.html) at $269, no strikethrough, used instead; non-USD not examined', date:'2026-10-22' },
+    ],
     productUrl:'https://samyangus.com/products/8mm-f3-5-hd-fisheye',
   },
 
@@ -2625,10 +2628,10 @@ const LENSES = {
     imageUrl:'https://cdn.shopify.com/s/files/1/0488/0790/3385/products/10mm2.8Canon-front.jpg',
     imageSource: { url:'https://samyangus.com/products/10mm-f2-8-ultra-wide-angle', tier:'T1', title:'Samyang US official store', note:'first product image; it shows the DSLR-mount barrel (the Sony E version adds a longer mount section); same photo as the Sony entry (front view; the store shows one product photo for all mounts)', date:'2026-10-22' },
     asin:null,
-    prices:{USD:499,AUD:null,EUR:null,GBP:null,JPY:null,CAD:null,SGD:null},
+    prices:{USD:448,AUD:null,EUR:null,GBP:null,JPY:null,CAD:null,SGD:null},
     priceIncomplete:true,
     specSources: [{ url:'https://samyangus.com/products/10mm-f2-8-ultra-wide-angle', tier:'T1', title:'Samyang 10mm f/2.8 ED AS NCS CS - Samyang US store page', note:'Specifications table: per-mount columns, Micro 4/3 column used: length 130.9mm, 620g (the DSLR-mount versions are shorter/lighter); shared: 14/9, 0.24m, ø87mm max diameter, no front filter, blade count not published. Year: estimated: the Sony E version was on sale by the 2020 store listing; original design years vary', date:'2026-10-22' }],
-    priceSource: { url:'https://samyangus.com/products/10mm-f2-8-ultra-wide-angle', tier:'T1', title:'Samyang US official store', note:'regular price $499 = Micro 4/3 variant compare-at; on sale at $448.00 at the time, not used; read from the store\'s products.json', date:'2026-10-22' },
+    priceSource: { url:'https://samyangus.com/products/10mm-f2-8-ultra-wide-angle', tier:'T1', title:'Samyang US official store', note:'USD $499 -> $448: Micro 4/3 variant selling price $448.00, in stock; the $499 compare-at is not charged (owner rule for Samyang: use the selling price). B&H has no Micro Four Thirds listing of this lens, only Fujifilm X and Sony E (checked 2026-10-24); read from the store\'s product JSON', date:'2026-10-24' },
     productUrl:'https://samyangus.com/products/10mm-f2-8-ultra-wide-angle',
   },
 

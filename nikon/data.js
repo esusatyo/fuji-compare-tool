@@ -1586,7 +1586,8 @@ const LENSES = {
     specSources: [
       { url:'https://www.tamron.com/global/consumer/lenses/a047/spec.html', tier:'T1', note:'Nikon-Z-specific spec table: weight 580g / length 150.3mm — corrected from a stored 545g/148mm that matched the Sony E-mount column, not Nikon Z. Also corrected maxMagnification: the page states 1:9.4 (WIDE) / 1:5.1 (TELE) — the TELE figure (0.20) is the true maximum across the range, not the stored 0.11 which had taken the WIDE figure.', date:'2026-08-29' },
     ],
-    prices:{USD:499,AUD:null,EUR:null,GBP:null,JPY:null,CAD:null,SGD:null},
+    prices:{USD:499,AUD:null,EUR:null,GBP:null,JPY:null,CAD:699,SGD:null},
+    priceSource: { url:'https://tamron-americas.com/product/70-300mm-f-4-5-6-3-di-iii-rxd/', tier:'T1', title:'Tamron Americas', note:'Nikon Z option US $499 / CA $699, no sale price (Sony E $399 / CA $549); read 2026-10-24', date:'2026-10-24' },
     priceIncomplete:true,
     productUrl:'https://tamron-americas.com/product/70-300mm-f-4-5-6-3-di-iii-rxd/',
   },
@@ -1605,7 +1606,8 @@ const LENSES = {
     // independently list $1,199 for the Nikon Z variant — down from the $1,399
     // launch-era figure last confirmed in 2023. Two-retailer agreement used in
     // place of the unreachable official price per sourcing convention.
-    prices:{USD:1199,AUD:null,EUR:null,GBP:null,JPY:null,CAD:null,SGD:null},
+    prices:{USD:1199,AUD:null,EUR:null,GBP:null,JPY:null,CAD:1599,SGD:null},
+    priceSource: { url:'https://tamron-americas.com/product/150-500mm-f-5-6-7-di-iii-vc-vxd/', tier:'T1', title:'Tamron Americas', note:'Nikon Z option US $1,199 / CA $1,599, no sale price (Sony E $1,399, Fujifilm X $1,499); read 2026-10-24', date:'2026-10-24' },
     priceIncomplete:true,
     productUrl:'https://tamron-americas.com/product/150-500mm-f-5-6-7-di-iii-vc-vxd/',
   },
@@ -2703,7 +2705,11 @@ const LENSES = {
     // 2026-09-06: repointed off voigtlaender.de — broken TLS chain (see note above).
     imageUrl:'https://www.cosina.co.jp/wp/wp-content/uploads/2022/09/40_12_Z_01thygfd.jpg',
     imageSource: { url:'https://www.cosina.co.jp/voigtlander/en/z-mount/nokton-40mm-f1-2-aspherical/', tier:'T1', note:'Cosina\'s own EN product page for the Z-mount NOKTON 40mm F1.2 Aspherical; replaces the voigtlaender.de source (TLS chain broken)', date:'2026-09-06' }, asin:'B0BMWKQ1WP',
-    prices:{USD:899,AUD:null,EUR:null,GBP:null,JPY:null,CAD:null,SGD:null},
+    prices:{USD:899,AUD:null,EUR:null,GBP:null,JPY:115500,CAD:null,SGD:null},
+    priceSource: [
+      { url:'https://www.bhphotovideo.com/c/product/1734166-REG/x.html', tier:'T3', title:'B&H - Voigtländer Nokton 40mm f/1.2 Aspherical (Nikon Z)', note:'$899, no strikethrough (checked 2026-10-24)', date:'2026-10-24' },
+      { url:'https://www.cosina.co.jp/voigtlander/z-mount/nokton-40mm-f1-2-aspherical/', tier:'T1', title:'Cosina (Voigtländer maker) Japan - NOKTON 40mm F1.2 Aspherical (Z-mount)', note:'suggested retail ¥105,000 before tax; JPY stored with 10% consumption tax: ¥115,500 (read 2026-10-24)', date:'2026-10-24' },
+    ],
     priceIncomplete:true, productUrl:'https://www.cosina.co.jp/voigtlander/en/z-mount/nokton-40mm-f1-2-aspherical/',
   },
 
@@ -2891,9 +2897,12 @@ const LENSES = {
     // 2026-09-06: repointed off voigtlaender.de — broken TLS chain (see note above).
     imageUrl:'https://www.cosina.co.jp/wp/wp-content/uploads/2026/01/Z-75_18-web01-lkpe.jpg',
     imageSource: { url:'https://www.cosina.co.jp/voigtlander/en/z-mount/portrait-heliar-75mm-f1-8/', tier:'T1', note:'Cosina\'s own EN product page for the Z-mount PORTRAIT HELIAR 75mm F1.8; replaces the voigtlaender.de source (TLS chain broken)', date:'2026-09-06' },
-    priceSource: { url:'https://www.bhphotovideo.com/c/search?q=voigtlander%20nikon%20z', tier:'T3', title:'B&H Photo listing', note:'USD $1402 -> $699: B&H lists "Portrait Heliar 75mm f/1.8 Aspherical Lens (Nikon Z)" at a regular price of $699. Voigtländer publishes no US price of its own (cosina.co.jp/voigtlaender.de give JPY/EUR only), and B&H is the main US retailer; this replaces the earlier EUR-converted estimate. Read 2026-10-11', date:'2026-10-11' },
+    priceSource: [
+      { url:'https://www.bhphotovideo.com/c/product/1954823-REG/x.html', tier:'T3', title:'B&H - Voigtländer Portrait Heliar 75mm f/1.8 Aspherical (Nikon Z)', note:'$699, no strikethrough (checked 2026-10-24)', date:'2026-10-24' },
+      { url:'https://www.cosina.co.jp/voigtlander/z-mount/portrait-heliar-75mm-f1-8/', tier:'T1', title:'Cosina (Voigtländer maker) Japan - Portrait Heliar 75mm F1.8 (Z-mount)', note:'suggested retail ¥150,000 before tax, the same on every mount; JPY stored with 10% consumption tax: ¥165,000 (read 2026-10-24)', date:'2026-10-24' },
+    ],
     asin:null,
-    prices:{USD:699,AUD:null,EUR:1199,GBP:null,JPY:null,CAD:null,SGD:null},
+    prices:{USD:699,AUD:null,EUR:1199,GBP:null,JPY:165000,CAD:null,SGD:null},
     priceIncomplete:true, productUrl:'https://www.cosina.co.jp/voigtlander/en/z-mount/portrait-heliar-75mm-f1-8/',
   },
 
@@ -2923,9 +2932,12 @@ const LENSES = {
     imageUrl:'https://www.cosina.co.jp/wp/wp-content/uploads/2026/06/Z-35_14-web01juwsd.jpg',
     imageSource: { url:'https://www.cosina.co.jp/voigtlander/en/z-mount/nokton-classic-35mm-f1-4/', tier:'T1', title:'Cosina Voigtländer NOKTON classic 35mm F1.4 (Z-mount)', note:'the page\'s first product shot (Z-35_14-web01; the P00 file is a sample photo)', date:'2026-10-21' },
     asin:null,
-    prices:{USD:699,AUD:null,EUR:null,GBP:null,JPY:null,CAD:null,SGD:null},
+    prices:{USD:699,AUD:null,EUR:null,GBP:null,JPY:99000,CAD:null,SGD:null},
     specSources: [{ url:'https://www.cosina.co.jp/voigtlander/en/z-mount/nokton-classic-35mm-f1-4/', tier:'T1', title:'Cosina Voigtländer NOKTON classic 35mm F1.4 (Z-mount) - official page', note:'F1.4-F16, 8 elements in 6 groups, 10 blades, 0.27m, 1:5.5, φ67.6×41.6mm, φ58 filter, 250g, full frame, electrical contacts. Year from the page\'s image upload date (June 2026)', date:'2026-10-21' }],
-    priceSource: { url:'https://www.bhphotovideo.com/c/search?q=voigtlander%20nikon%20z', tier:'T3', title:'B&H Photo - Voigtländer Nikon Z search results', note:'"Nokton Classic 35mm f/1.4 Lens (Nikon Z)" $699, not on sale. Cosina publishes no US price; non-USD not examined', date:'2026-10-21' },
+    priceSource: [
+      { url:'https://www.bhphotovideo.com/c/product/1982279-REG/x.html', tier:'T3', title:'B&H - Voigtländer Nokton Classic 35mm f/1.4 (Nikon Z)', note:'$699, no strikethrough (checked 2026-10-24)', date:'2026-10-24' },
+      { url:'https://www.cosina.co.jp/voigtlander/z-mount/nokton-classic-35mm-f1-4/', tier:'T1', title:'Cosina (Voigtländer maker) Japan - Nokton classic 35mm F1.4 (Z-mount)', note:'suggested retail ¥90,000 before tax; JPY stored with 10% consumption tax: ¥99,000 (read 2026-10-24)', date:'2026-10-24' },
+    ],
     priceIncomplete:true, productUrl:'https://www.cosina.co.jp/voigtlander/en/z-mount/nokton-classic-35mm-f1-4/',
   },
 
@@ -3006,9 +3018,12 @@ const LENSES = {
     imageUrl:'https://cdn.shopify.com/s/files/1/0756/5937/8928/files/Simera-35mm-f-1.4-Z-M-E-RF-Mount-Full-Frame-Manual-Lens-Thypoch-103835225.png',
     imageSource: { url:'https://store.thypoch.com/products/simera-35mm-camera-lens-f1-4', tier:'T1', title:'Thypoch official store', note:'black lens with hood, mount not visible; the listing\'s main product shots all show the shorter Leica M barrel', date:'2026-10-21' },
     asin:null,
-    prices:{USD:549,AUD:null,EUR:null,GBP:null,JPY:null,CAD:null,SGD:null},
+    prices:{USD:369,AUD:null,EUR:null,GBP:null,JPY:null,CAD:null,SGD:null},
     specSources: [{ url:'https://thypoch.com/en/simera/35mm', tier:'T1', title:'Thypoch Simera 35mm f/1.4 - Thypoch official page', note:'per-mount spec table (columns M/Z/RF/E), Z column: 66.4mm long without hood, ≈309g; shared: front ø54mm, 9/5, 14 blades, 0.45m from the sensor plane, ø49 filter, f/1.4-16', date:'2026-10-21' }],
-    priceSource: { url:'https://store.thypoch.com/products/simera-35mm-camera-lens-f1-4', tier:'T1', title:'Thypoch official store', note:'"Black / Nikon Z Mount / Type ii (with focus tab)" variant regular (compare-at) price $549; on sale at $369 at the time; store products.json 2026-10-21; non-USD not examined', date:'2026-10-21' },
+    priceSource: [
+      { url:'https://store.thypoch.com/products/simera-35mm-camera-lens-f1-4', tier:'T1', title:'Thypoch official store', note:'USD $549 -> $369: the "Black / Nikon Z Mount / Type ii (with focus tab)" variant sells at $369; the $549 compare-at is not charged (checked 2026-10-24; the Leica M version is stored at its $499 selling price on the same basis); read from the store\'s product JSON', date:'2026-10-24' },
+      { url:'https://www.bhphotovideo.com/c/product/1826044-REG/x.html', tier:'T3', title:'B&H - Thypoch Simera 35mm f/1.4 (Nikon Z, Black)', note:'$369 against a struck-through $549, the same as Thypoch\'s own store (checked 2026-10-24)', date:'2026-10-24' },
+    ],
     priceIncomplete:true,
     productUrl:'https://store.thypoch.com/products/simera-35mm-camera-lens-f1-4',
   },
@@ -3345,7 +3360,8 @@ const LENSES = {
       { url:'https://ttartisan.store/products/56mm', tier:'T1', note:'official TTArtisan store, page titled "AF 56mm F1.8"; spec table: focal 56mm, F1.8-F16, APS-C, 9 blades, 52mm filter, 0.5m MFD, 10E/9G, 28° AoV, weight "Around 233~245g" (Black/Silver, stored as 239g midpoint); mount selector lists Fuji X/Sony E/Nikon Z; Z-mount dims from the page\'s own Size diagram image (E 66×65mm, X 62×65mm, Z 70×65mm)', date:'2026-08-31' },
     ],
     asin:'B0D37CBZV1',
-    prices:{USD:158,AUD:199,EUR:199,GBP:99,JPY:23000,CAD:199,SGD:199},
+    prices:{USD:129,AUD:199,EUR:99,GBP:99,JPY:20000,CAD:199,SGD:199},
+    priceSource: { url:'https://www.bhphotovideo.com/c/product/1833515-REG/x.html', tier:'T3', title:'B&H - TTArtisan AF 56mm f/1.8 (Nikon Z, Black)', note:'USD $158 -> $129: $129, no strikethrough, the same as the Fujifilm X and Sony E versions at B&H (checked 2026-10-24)', date:'2026-10-24' },
     productUrl:'https://ttartisan.store/products/56mm',
     imageUrl:'https://ttartisan.store/cdn/shop/files/1_a9032302-fd97-45f6-aa5b-208375f3a45d.jpg',
     imageSource: { url:'https://ttartisan.store/products/56mm', tier:'T1', note:'official TTArtisan store product photo (og:image). Current sale price is $129 (a discount, not a new RRP) — regular price $158 used as USD list', date:'2026-08-31' },
