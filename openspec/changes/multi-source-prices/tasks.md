@@ -12,6 +12,6 @@
 
 ## 3. Rules in the skills
 
-- [ ] 3.1 refresh-camera-data: multi-source price rule (replaces the single-source wording), USD-only rule for new lenses
-- [ ] 3.2 check-prices-and-buy-links and add-thirdparty-lenses: same rules
+- [x] 3.1 refresh-camera-data: multi-source price rule (replaces the single-source wording), USD-only rule for new lenses
+- [x] 3.2 check-prices-and-buy-links and add-thirdparty-lenses: same rules
 - [ ] 3.3 Validate, npm test, PR body, push

@@ -43,78 +43,68 @@ skill touches:
 }
 ```
 
-Pricing convention (see also `scripts/compute-prices.js` and the
+Pricing convention (owner rule 2026-10-24; see also `scripts/compute-prices.js` and the
 [`check-prices-and-buy-links`](../check-prices-and-buy-links/SKILL.md) skill):
-**USD tracks the current US list price (RRP/MSRP)** — not transient street/sale prices;
-non-USD figures are approximate, derived from USD by regional ratios unless a real local
-RRP is confirmed. US-only changes (e.g. tariff hikes) change USD only. Only overwrite a
-non-USD figure when you have a confirmed local RRP, and note it.
+**read as many reputable sources as practical, cite every one, and store the sensible
+price they agree on.** The stored figure is the regular list price (RRP/MSRP) a buyer
+actually meets: not a one-off sale, not one store's odd figure, not an inflated
+"compare-at" that nobody charges. US-only changes (e.g. tariff hikes) change USD only.
 
-**Prices shown should be the RRP — check the manufacturer's own official store first,
-always. A retailer's price is a fallback for when the official source can't be reached,
-not an equally-valid alternative to check instead.** A retailer's *current, undiscounted-
-looking* price can still be marked up or down from the real RRP and there's no way to
-tell without comparing against the maker's own figure. Official stores are often more
-explicit than you'd expect: Sony's `electronics.sony.com` product pages state the actual
-MSRP in plain FAQ text — "MSRP is listed as $X.99" — even on a page showing a different,
-lower "Sale Price" banner above it (confirmed 2026-08-09, e.g. A7R V: Sale Price
-$3,499.99 vs "MSRP is listed as $3,799.99"). That's about as unambiguous as sourcing
-gets. Look for the equivalent official RRP/MSRP/List Price statement on other brands'
-own stores before reaching for a retailer at all.
+**Sources, roughly in order of weight:**
+- **The maker's official store**, for its own products. Official stores are often more
+  explicit than you'd expect: Sony's `electronics.sony.com` product pages state the MSRP
+  in plain FAQ text ("MSRP is listed as $X.99") even under a lower "Sale Price" banner
+  (2026-08-09, A7R V: sale $3,499.99 vs "MSRP is listed as $3,799.99"). Canon's US store
+  geo-blocks us; Canon Price Watch's price-change pages log that store's own regular and
+  sale prices, so cite them as "Canon USA store price (via Canon Price Watch)" — its deal
+  posts and street prices are sales, not list prices.
+- **Major authorised US dealers**: B&H, Adorama, Best Buy, Amazon (sold by the maker or an
+  authorised seller). For third-party lenses with no official US price, these decide.
+- **Local prices**: the local official store and major local retailers only.
 
-**When sources disagree, fall back to the official manufacturer RRP.** Retailer
-"was/now" pairs are the usual culprit: a retailer's struck-through figure is *that
-retailer's own regular price*, not the manufacturer MSRP, and it drifts in both
-directions. Verified 2026-07-26 — B&H showed "$4,399 → $3,899" for the Canon EOS R5
-Mark II and "$2,299 → $1,999" for the R6 Mark II while Canon's MSRPs were still $4,299
-and $2,499, which would have produced a batch of false-positive "price changes". Anchor
-on the manufacturer's own store/press release; use a reputable reseller's **list**
-price (not the sale price) only when the official RRP can't be reached, and say which
-one you used.
+**Cite every source you read** in `priceSource` — one citation object, or a list when you
+read several (each `{url, tier, title, note, date}`; the References row shows them all).
+Put what each showed in its note: "regular $999, on sale $849 until 11-02", "no
+strikethrough", "listing looks stale".
 
-**One reputable data point is enough for a routine price — but make it the official one
-when you can reach it.** "Ground it in more than one source" applies to *new entries and
-disputed figures* — it is not a bar every price must clear before it can be edited. A
-current RRP from the manufacturer's own official store is sufficient on its own; take
-it, cite it, move on. Only fall back to a major authorised dealer's list price (B&H etc.)
-when the official store is unreachable or shows no price, and say so in the citation —
-"B&H list price, official store unreachable" reads very differently from "confirmed
-RRP" on the next run. Decided 2026-07-26 for the Sony a6700 ($1,498) and a7R V ($3,798),
-both from B&H's list price at the time (the official-store-first rule above wasn't yet
-this explicit) — don't stall a whole refresh hunting for corroboration on individually
-low-stakes numbers, but check the official store before the retailer when both are
-equally easy to reach.
+**Pick the price the sources agree on.** Never store:
+- **a one-off or time-limited discount** (instant rebates, holiday sales) — note it;
+- **an anomaly** — one store far from the rest, a stale listing (B&H's Fujifilm X listing
+  of the Meike 50mm f/1.7 at $180 while Meike and B&H's own E listing were $109–130);
+- **an inflated figure** — a crossed-out "compare-at" no store charges (7Artisans 25mm
+  f/0.95: $369 compare-at, $143 at the maker's own "sale" and at B&H, 2026-10-22).
 
-**Don't escalate cosmetic deltas — just pick one.** Differences of a few dollars from
-rounding or the $X,499.99-vs-$X,498 convention (e.g. Sony press releases quote
-`$4,499.99` where the actual shelf price is `$4,498`) are not findings and are not worth
-a question. Pick the retail figure, apply it, and mention it in the summary at most.
-Reserve "Needs confirmation" for deltas that would change a buyer's decision or where
-sources genuinely conflict on the real price.
+A discount that every source charges for months is the regular price: Samyang/Rokinon
+list prices are discounted almost permanently, so they store the current selling price
+(owner decision 2026-10-22; B&H's Rokinon- and Samyang-branded listings of one lens often
+disagree on "regular"). Expect those to move between runs; a sale ending is not a finding.
 
-**Third-party lenses follow a different rule: USD = what B&H charges for that mount.**
-The official-store-first rule above is for a camera maker's own bodies and lenses.
-For third-party lenses (Sigma, Tamron, Samyang, Viltrox, Laowa, Voigtländer, Zeiss,
-TTArtisan, 7Artisans, Meike, Thypoch, …) the owner set this rule on 2026-10-22, because
-budget makers' own stores show a crossed-out "compare-at" price that nobody charges
-(7Artisans 25mm f/0.95: $369 compare-at, $143 at the store's own "sale" and at B&H):
+**Dealer "was/now" pairs are each store's own regular price, and they drift.** 2026-07-26:
+B&H showed "$4,399 → $3,899" for the EOS R5 Mark II and "$2,299 → $1,999" for the R6
+Mark II while Canon's MSRPs were $4,299 and $2,499. When dealers disagree with each other,
+a maker's official MSRP breaks the tie for its own products; for third-party lenses, go
+with the figure most dealers share and say so in the notes.
 
-- **USD = B&H's regular price for that mount**: its strikethrough price if it shows one,
-  otherwise its listed price. A maker store's compare-at price is never used on its own.
-  When the maker's own US store lists the same figure B&H charges (Tamron Americas
-  usually does), either can be cited; when they differ, B&H wins.
-- **Exception — Samyang/Rokinon: B&H's current selling price** (the lowest new listing for
-  that mount, sale or not). Their list prices are discounted almost permanently, and B&H's
-  Rokinon- and Samyang-branded listings of one lens often disagree on the "regular" price.
-  Expect these to move between runs; a sale ending is not a finding worth raising.
-- **No B&H listing for that mount:** use the maker store's selling price only when B&H's
-  price for the same lens in another mount shows the store's compare-at is fiction;
-  otherwise keep the stored figure and say so.
-- Cite B&H as tier `T3` in `priceSource` and keep the old store figure in its note.
-- Regional prices: recompute only the ones that were ratio-derived from the old USD
-  (`node scripts/compute-prices.js <brand> lenses --recompute --ids=…`); leave confirmed
-  local figures alone.
-- `compute-prices.js` rounds GBP to -1 for USD below about $56 — check cheap lenses by hand.
+**How many sources:** as many as you can reach without stalling the run. A new or changed
+price wants at least two that agree. A routine price that one official source confirms
+unchanged can stand on that one when dealers block bots — say so in the note ("B&H 403").
+Put real conflicts in "Needs confirmation"; low-stakes numbers don't need a hunt.
+
+**Don't escalate cosmetic deltas — just pick one.** A few dollars from rounding or the
+$X,499.99-vs-$X,498 convention (Sony press releases quote `$4,499.99` where the shelf price
+is `$4,498`) are not findings. Pick the retail figure, apply it, mention it at most.
+
+**Regional prices.** Store a non-USD price only when a local price is confirmed from the
+local official store or a reputable local retailer, and cite it. **New lenses with no
+confirmed local price leave that currency `null` with `priceIncomplete: true`** — no
+ratio estimate (owner 2026-10-24); the site then shows the price tagged as USD. Current
+cameras still need all seven currencies (schema): fill the gaps with
+`node scripts/compute-prices.js <brand> cameras`, anchored on confirmed figures in
+`scripts/price-overrides/<brand>.json`. When a USD price changes, recompute only the
+regional figures that were ratio-derived from it
+(`node scripts/compute-prices.js <brand> lenses --recompute --ids=…`) and leave confirmed
+local figures alone. `compute-prices.js` rounds GBP to -1 for USD below about $56 — check
+cheap items by hand.
 
 Buy links are **generated per-currency** by the engine (`amazonBuyUrl`) — there are no
 `buyUrl` fields to maintain; don't reintroduce them.
@@ -208,9 +198,10 @@ Use **WebSearch** and **WebFetch**. Work brand by brand. For each brand:
 - **Record every source as you read it** (see Guardrails). A refreshed price with no
   recorded source is a number nobody can re-check next run.
 - **Price changes** — for existing models still on sale (`discontinued:false`), check
-  current RRP. Anchor on the official store / a major retailer. Flag any USD delta;
-  for non-USD currencies in scope, update only where a confirmed local RRP exists,
-  otherwise note that it stays ratio-derived.
+  the current price against several sources per the pricing convention above (the
+  official store plus major dealers), cite each one, and flag any USD delta. For non-USD
+  currencies in scope, update only where a confirmed local price exists; otherwise note
+  that it stays ratio-derived (or `null`).
 
   **If one current item's price looks stale, check whether the whole brand moved.**
   Manufacturers often push a blanket USD increase across most of a lineup in a single
@@ -221,8 +212,8 @@ Use **WebSearch** and **WebFetch**. Work brand by brand. For each brand:
   2026-08-09 on Sony: a single July 2025 article listing ~20 before/after body prices
   flagged FX3, FX30, and A6400 as all needing updates in one pass. Treat the article as
   a lead, not confirmation — it's a single snapshot and further rounds can follow — so
-  verify the *current* figure against the official store per the pricing convention
-  above, not just the article's "now" column.
+  verify the *current* figure against the official store and dealers per the pricing
+  convention above, not just the article's "now" column.
 
   **Individual B&H product pages often don't expose price through `get_page_text`** —
   the price widget sits outside the `<article>` element the tool extracts, so it
@@ -369,16 +360,18 @@ the user opts in). Then edit the relevant `<slug>/data.js`:
   a sibling to find every array it must be added to.
 
 For non-USD prices, `scripts/compute-prices.js` has two modes:
-- **Fill mode** (default) — for a brand-new entry where only USD is known, derives
-  every non-USD currency from scratch via regional ratios.
+- **Fill mode** (default) — for a brand-new **camera** where only USD is known, derives
+  every non-USD currency from scratch via regional ratios (current cameras need all
+  seven). Don't run it for new lenses: a lens with no confirmed local price stays
+  USD-only (`null` + `priceIncomplete: true`, owner 2026-10-24).
 - **Recompute mode** (`--recompute`, optionally `--ids=slug1,slug2` to target specific
   entries) — for an EXISTING entry whose USD you just refreshed, re-derives every
   currency field that's already a number, leaving nulls as nulls (so a
   `priceIncomplete` lens that only has AUD/CAD populated gets just those two
-  refreshed, and a USD-only third-party entry is untouched beyond USD). A single
-  credible source for the new USD figure is enough before running this — see the "one
-  source is enough for a routine price" rule above; the script's job is just the
-  arithmetic, not sourcing.
+  refreshed, and a USD-only third-party entry is untouched beyond USD). Check first
+  that those figures really were ratio-derived; confirmed local prices must not be
+  recomputed. Settle the new USD figure per "How many sources" above first; the
+  script's job is just the arithmetic, not sourcing.
 
 Note which figures are derived vs confirmed either way.
 
@@ -415,7 +408,8 @@ the test result, and any items left under "Needs confirmation" for the user to d
   independent review/measurement · T3 retailer, price and availability only · T4
   aggregator, tables only · NEWS dated announcement, `year` only). Populate
   `specSources`/`priceSource` on the entry where the field exists, as
-  `{ url, tier, date, title }` — give `title` a short reader-facing label (e.g.
+  `{ url, tier, date, title }` (`priceSource` takes a list when you read several
+  stores for the price) — give `title` a short reader-facing label (e.g.
   `"Fujifilm X-T5 official product page"`); untitled citations still validate and
   render (falling back to a bare hostname on the page), but a real title reads
   better.
