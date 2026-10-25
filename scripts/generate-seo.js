@@ -1300,12 +1300,19 @@ function aboutHeadBlock(site) {
   );
 }
 
+// The landing page's <title> (hand-written in index.html) and og:title.
+// Leads with size: "camera size comparison" is the top search query on
+// Bing and in Copilot citations (Bing Webmaster Tools, Oct 2026), and the
+// tool does compare dimensions and weight. tests/data/seo.test.js keeps
+// the two in sync.
+const ROOT_TITLE = 'Compare Camera & Lens Specs, Size & Weight Side by Side';
+
 function rootHeadBlock(site, brandNames, card = null) {
   return metaBlock(
     site,
     `${site.baseUrl}/`,
-    `${site.siteName} — Camera & Lens Comparison`,
-    `Side-by-side camera and lens comparison for ${brandNames.join(', ')} — specs, prices and buy links in 7 currencies.`,
+    ROOT_TITLE,
+    `Compare cameras and lenses side by side: specs, size and weight, and prices in 7 currencies. ${brandNames.join(', ')}.`,
     './',
     card
   );
@@ -1835,4 +1842,4 @@ if (require.main === module) {
   console.log(`generate-seo: ${files.size} artifacts (${written} written, ${removed} stale removed)`);
 }
 
-module.exports = { buildSite, cardHash, vsCardHTML, infoCardHTML, shareTags, CARD_W, CARD_H, LANDING_CARD_ORDER, ALL_BRANDS_MOSAIC, orderLandingBrands, allBrandsPhotoHTML, siteConfig, curatedPairs, successorPairKeys, resolvePins, withPins, PINNED_VS_PAIRS, SUCCESSOR_INDEX_SINCE, relatedPairs, vsPageHTML, vsSummary, vsSummaryFacts, resolveMatchups, crossVsPageHTML, crossTitle, CROSS_BRAND_MATCHUPS, compareHeadBlock, compareBodyBlock, brandHeadBlock, rootHeadBlock, brandBodyBlock, rootBodyBlock, withHeadBlock, withBodyBlock, sitemapXML, robotsTxt, buildAll, SEO_BEGIN, SEO_END, SEO_BODY_BEGIN, SEO_BODY_END, ID_HEAD_BEGIN, ID_HEAD_END, ID_HEADER_BEGIN, ID_HEADER_END, ID_FOOTER_BEGIN, ID_FOOTER_END, identityToken, logoMark, cleanUrl, cleanHref, themeToggleHTML, collectReferences, citationText, refHostname, REFERENCE_ROWS, referenceRowsHTML };
+module.exports = { ROOT_TITLE, buildSite, cardHash, vsCardHTML, infoCardHTML, shareTags, CARD_W, CARD_H, LANDING_CARD_ORDER, ALL_BRANDS_MOSAIC, orderLandingBrands, allBrandsPhotoHTML, siteConfig, curatedPairs, successorPairKeys, resolvePins, withPins, PINNED_VS_PAIRS, SUCCESSOR_INDEX_SINCE, relatedPairs, vsPageHTML, vsSummary, vsSummaryFacts, resolveMatchups, crossVsPageHTML, crossTitle, CROSS_BRAND_MATCHUPS, compareHeadBlock, compareBodyBlock, brandHeadBlock, rootHeadBlock, brandBodyBlock, rootBodyBlock, withHeadBlock, withBodyBlock, sitemapXML, robotsTxt, buildAll, SEO_BEGIN, SEO_END, SEO_BODY_BEGIN, SEO_BODY_END, ID_HEAD_BEGIN, ID_HEAD_END, ID_HEADER_BEGIN, ID_HEADER_END, ID_FOOTER_BEGIN, ID_FOOTER_END, identityToken, logoMark, cleanUrl, cleanHref, themeToggleHTML, collectReferences, citationText, refHostname, REFERENCE_ROWS, referenceRowsHTML };
