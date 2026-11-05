@@ -33,3 +33,11 @@
 - [x] 5.5 TTArtisan cross-mount weight ranges: stay skipped; look for per-mount weights
 - [x] 5.6 Review listing (Artifact) of every lens added in this PR, with sources and flags
 - [x] 5.7 Verify, PR body, push
+
+## 6. Owner decisions (2026-11-05)
+
+- [x] 6.1 Laowa RL 9/11/14mm (17 entries): keep Laowa's single published size and weight on every mount; cite Laowa's live page, an archived copy of its spec table (Wayback Machine) and that mount's B&H listing with its figures
+- [x] 6.2 Samyang AF 85mm f/1.4 FE (first generation) and 8mm f/3.5 Fisheye CS II, Sony E: discontinued; USD becomes the launch price ($699, 2019) and Adorama's last list price ($299); AF 85 year 2018 -> 2019 (announced March 2019)
+- [x] 6.3 Voigtländer Nokton 40mm f/1.2: Sony E $1,099 and Canon RF $749 kept as they are
+- [x] 6.4 Leica Summilux-M 90 f/1.5 image: Leica moved the file (404 in test:links) -> the product page's current og:image
+- [ ] 6.5 Verify (npm test, test:links), PR body, review listing, push
