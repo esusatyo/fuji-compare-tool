@@ -17,6 +17,6 @@
 
 ## Impact
 
-- **Files**: `scripts/generate-seo.js`, new `sitemap-lastmod.json`, `sitemap.xml`, `tests/data/seo.test.js`, `.githooks/pre-commit`, CLAUDE.md, five skills.
+- **Files**: `scripts/generate-seo.js`, new `sitemap-lastmod.json` (kept out of the deploy via `.assetsignore`), `sitemap.xml`, `tests/data/seo.test.js`, `.githooks/pre-commit`, CLAUDE.md, five skills.
 - **No page or runtime change.** IndexNow is unaffected: it reads `<loc>` only.
 - `generate-seo.js` stays deterministic for unchanged content. Its output only depends on the date when a page's hash changes, and the existing staleness test then fails until the regenerated manifest is committed, which is the intended guard.
