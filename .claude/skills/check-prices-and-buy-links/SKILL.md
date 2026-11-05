@@ -234,6 +234,7 @@ so they stay in lockstep.
    Fix any malformed entry rather than loosening a test. Note: prices appear in
    the generated vs-pages, so any price edit requires
    `node scripts/generate-seo.js` (the Tier 1 staleness test enforces this).
+   This also moves the sitemap `<lastmod>` of every page whose content changed (a brand page counts its `data.js`), so commit `sitemap-lastmod.json` and `sitemap.xml` in the same commit as the data edit — never hand-edit their dates.
 
 7. **Summarize**: counts of price updates per brand, the test result, and any
    items left under "Needs confirmation".
@@ -272,7 +273,7 @@ vs-pages advertise this as "Specs & prices last verified", and it must state
 when an audit actually ran (this skill is what keeps it honest). Then:
 
 ```bash
-node scripts/generate-seo.js   # re-embeds prices + verified date in generated pages
+node scripts/generate-seo.js   # re-embeds prices + verified date; moves sitemap <lastmod> of changed pages
 npm test
 ```
 

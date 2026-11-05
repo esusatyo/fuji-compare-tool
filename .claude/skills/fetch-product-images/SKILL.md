@@ -195,6 +195,8 @@ The About-page credits block already exists (`imageCreditsBlock` in
 not a build, for **Commons** images specifically. `imageSource` citations are provenance
 for re-verification, not licence attribution, so they deliberately don't need a public
 credits-page entry — confirm instead that `node scripts/generate-seo.js` still runs clean
+(it also moves the sitemap `<lastmod>` of the brand pages and About page whose content changed;
+commit `sitemap-lastmod.json` and `sitemap.xml` with the image edits)
 and `about.html`'s credited-photo count only grew by the Commons images this run added,
 not the Tier 2/3 ones.
 

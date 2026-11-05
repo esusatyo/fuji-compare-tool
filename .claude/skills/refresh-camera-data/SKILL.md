@@ -359,11 +359,14 @@ For non-USD prices, `scripts/compute-prices.js` has two modes:
 Note which figures are derived vs confirmed either way.
 
 ### 6. Verify
-After edits, run the data tests so a malformed entry is caught:
+After edits, regenerate the SEO artifacts, then run the tests so a malformed entry is caught:
 
 ```bash
+node scripts/generate-seo.js   # vs-pages, sitemap <lastmod> dates
 npm test
 ```
+
+This also moves the sitemap `<lastmod>` of every page whose content changed (a brand page counts its `data.js`), so commit `sitemap-lastmod.json` and `sitemap.xml` in the same commit as the data edit — never hand-edit their dates.
 
 (Optionally `npm run test:links` to validate any new/changed URLs — note it hits the
 network and is slower.) Report pass/fail. If a new entry breaks a completeness or schema

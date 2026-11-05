@@ -358,7 +358,7 @@ render — a wrong-product photo is worse than the placeholder card.
 - `node scripts/verify-images.js <brand>` — every `imageUrl` returns an image.
 - `RUN_LINK_TESTS=1 npm run test:links` to spot-check the new `productUrl`s.
 - Re-run `node scripts/generate-seo.js` (lens counts change, so the generated
-  pages go stale — a `seo.test.js` test fails until you do).
+  pages go stale — a `seo.test.js` test fails until you do). This also moves the sitemap `<lastmod>` of every page whose content changed (a brand page counts its `data.js`), so commit `sitemap-lastmod.json` and `sitemap.xml` in the same commit as the data edit — never hand-edit their dates.
 - **Leave `dataVerified` in `site-config.js` alone.** It backs the page claim
   "Specs & prices last verified: <date>", which is a statement about the
   *whole* dataset — all five brands, cameras and lenses. This skill verifies
@@ -396,7 +396,7 @@ render — a wrong-product photo is worse than the placeholder card.
 - [ ] all 7 currencies filled via `compute-prices.js`; `priceIncomplete` only
       where deliberate
 - [ ] `npm test` green; `verify-images.js` clean; preview eyeballed in lenses mode
-- [ ] `generate-seo.js` re-run (and `dataVerified` deliberately left alone)
+- [ ] `generate-seo.js` re-run, `sitemap-lastmod.json` + `sitemap.xml` committed with the data (and `dataVerified` deliberately left alone)
 - [ ] OpenSpec change archived after the PR merges
 
 ## Resumability
