@@ -46,4 +46,4 @@
 
 - [x] 7.1 Seven minimum-focus distances stored 10x too large (already on main): re-read from the maker (B&H for Meike) and fixed, with a citation on each; schema guard rejects MFD >= 150 cm and > 3.5x the longest focal length
 - [x] 7.2 Samyang 8mm f/3.5 Sony E: Adorama's discontinued listing ($299) cited as its price source (done in 6.2)
-- [ ] 7.3 Document the remaining doubts for the next sweep (cross-mount spec conflicts, estimated release years) in the PR description; verify, push
+- [x] 7.3 Document the remaining doubts for the next sweep (cross-mount spec conflicts, estimated release years) in the PR description; verify (npm test 868/868, test:links pass), push
