@@ -35,9 +35,10 @@ echo "pre-commit: staged changes affect generated output — regenerating..."
 "$NODE_BIN" scripts/generate-seo.js
 
 # Stage whatever the generator wrote or removed (new/changed/stale
-# vs-pages, sitemap, robots.txt) — scoped to what it manages, not the
-# whole tree, so unrelated dirty files elsewhere are never swept in.
-git add -A -- '*.html' 'sitemap.xml' 'robots.txt'
+# vs-pages, sitemap + its lastmod manifest, robots.txt) — scoped to what
+# it manages, not the whole tree, so unrelated dirty files elsewhere are
+# never swept in.
+git add -A -- '*.html' 'sitemap.xml' 'sitemap-lastmod.json' 'robots.txt'
 
 # Re-render any share card (og:image) whose inputs changed. Needs Chrome;
 # without it, skip — the test gate below then fails naming the stale cards

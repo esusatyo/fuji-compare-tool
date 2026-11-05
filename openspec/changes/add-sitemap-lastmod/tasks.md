@@ -9,7 +9,7 @@
 
 ## 3. Workflow and docs
 
-- [ ] 3.1 Pre-commit hook stages `sitemap-lastmod.json`; CLAUDE.md documents `<lastmod>`
+- [x] 3.1 Pre-commit hook stages `sitemap-lastmod.json`; CLAUDE.md documents `<lastmod>`
 - [ ] 3.2 Data skills (refresh-camera-data, add-thirdparty-lenses, check-prices-and-buy-links, fetch-product-images, add-camera-brand) say regeneration moves `<lastmod>` and the manifest is committed with the data change; fix the claim in `docs/seo-manual-tasks.md`
 
 ## 4. Growth backlog
