@@ -1,7 +1,7 @@
 ## 1. Generator
 
-- [ ] 1.1 Add `lastmodManifest()` and page-content hashing to `scripts/generate-seo.js`; emit `<lastmod>` per sitemap entry and `sitemap-lastmod.json` as a generated artifact
-- [ ] 1.2 Seed the first manifest from git history and regenerate; `npm test` green
+- [x] 1.1 Add `lastmodManifest()` and page-content hashing to `scripts/generate-seo.js`; emit `<lastmod>` per sitemap entry and `sitemap-lastmod.json` as a generated artifact
+- [x] 1.2 Seed the first manifest from git history and regenerate; `npm test` green
 
 ## 2. Tests
 
