@@ -5,7 +5,7 @@
 
 ## 2. Tests
 
-- [ ] 2.1 Extend `tests/data/seo.test.js`: every sitemap URL has a `<lastmod>` matching the manifest, the manifest covers exactly the sitemap, hashes match current content, and `lastmodManifest` keeps/stamps/drops correctly
+- [x] 2.1 Extend `tests/data/seo.test.js`: every sitemap URL has a `<lastmod>` matching the manifest, the manifest covers exactly the sitemap, hashes match current content, and `lastmodManifest` keeps/stamps/drops correctly
 
 ## 3. Workflow and docs
 
