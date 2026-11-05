@@ -14,7 +14,7 @@
 
 ## 4. Growth backlog
 
-- [ ] 4.1 Write `docs/growth-backlog.md` with the four deferred growth ideas (homepage quick-compare, size-comparison pages, static brand-page specs, earning links) and the evidence behind each
+- [x] 4.1 Write `docs/growth-backlog.md` with the four deferred growth ideas (homepage quick-compare, size-comparison pages, static brand-page specs, earning links) and the evidence behind each
 
 ## 5. After merge
 
