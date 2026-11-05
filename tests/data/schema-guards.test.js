@@ -169,3 +169,14 @@ test('a bad citation inside a priceSource list is reported with its index', () =
   const bad = camera({ priceSource: [PRICE_A, { url: 'http://x.example', tier: 'T3' }] });
   reports(validateCamera('bad-price-source', bad, []), 'priceSource[1]');
 });
+
+// ── minFocusDist unit guard (cm) ─────────────────────────────────────
+
+test('a minimum focus distance entered 10x too large is rejected', () => {
+  reports(validateLens('mfd-x10', prime({ focalLength: 85, minFocusDist: 790 })), 'minFocusDist');
+});
+
+test('a long but real minimum focus distance passes the unit guard', () => {
+  assert.deepEqual(validateLens('mfd-tele', prime({ focalLength: 600, minFocusDist: 420 })), []);
+  assert.deepEqual(validateLens('mfd-rangefinder-wide', prime({ focalLength: 21, minFocusDist: 70 })), []);
+});

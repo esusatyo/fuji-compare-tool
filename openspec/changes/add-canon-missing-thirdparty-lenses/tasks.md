@@ -41,3 +41,9 @@
 - [x] 6.3 Voigtländer Nokton 40mm f/1.2: Sony E $1,099 and Canon RF $749 kept as they are
 - [x] 6.4 Leica Summilux-M 90 f/1.5 image: Leica moved the file (404 in test:links) -> the product page's current og:image
 - [x] 6.5 Verify (npm test 866/866, test:links pass), PR body, review listing answers, push
+
+## 7. Owner follow-ups (2026-11-05, second round)
+
+- [x] 7.1 Seven minimum-focus distances stored 10x too large (already on main): re-read from the maker (B&H for Meike) and fixed, with a citation on each; schema guard rejects MFD >= 150 cm and > 3.5x the longest focal length
+- [x] 7.2 Samyang 8mm f/3.5 Sony E: Adorama's discontinued listing ($299) cited as its price source (done in 6.2)
+- [ ] 7.3 Document the remaining doubts for the next sweep (cross-mount spec conflicts, estimated release years) in the PR description; verify, push
