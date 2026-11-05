@@ -346,3 +346,12 @@ test('vsSummaryFacts: null fields are simply absent, never rendered as a fact', 
   assert.equal(facts.weight, undefined);
   assert.equal(facts.ibis, 'no IBIS');
 });
+
+test('the landing page <title> (hand-written) matches its generated og:title', () => {
+  const { ROOT_TITLE } = require('../../scripts/generate-seo');
+  const html = fs.readFileSync(path.join(ROOT, 'index.html'), 'utf8');
+  const unesc = s => s.replace(/&amp;/g, '&');
+  assert.equal(unesc(html.match(/<title>([^<]*)<\/title>/)[1]), ROOT_TITLE);
+  assert.equal(unesc(html.match(/<meta property="og:title" content="([^"]*)">/)[1]), ROOT_TITLE);
+  assert.ok(ROOT_TITLE.length <= 60, `title is ${ROOT_TITLE.length} chars; search results truncate past ~60`);
+});
