@@ -40,4 +40,4 @@
 - [x] 6.2 Samyang AF 85mm f/1.4 FE (first generation) and 8mm f/3.5 Fisheye CS II, Sony E: discontinued; USD becomes the launch price ($699, 2019) and Adorama's last list price ($299); AF 85 year 2018 -> 2019 (announced March 2019)
 - [x] 6.3 Voigtländer Nokton 40mm f/1.2: Sony E $1,099 and Canon RF $749 kept as they are
 - [x] 6.4 Leica Summilux-M 90 f/1.5 image: Leica moved the file (404 in test:links) -> the product page's current og:image
-- [ ] 6.5 Verify (npm test, test:links), PR body, review listing, push
+- [x] 6.5 Verify (npm test 866/866, test:links pass), PR body, review listing answers, push
