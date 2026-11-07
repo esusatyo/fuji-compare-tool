@@ -12,7 +12,7 @@
 ## 3. Specs
 
 - [x] 3.1 Thypoch Eureka 28 / 50 and Ksana 21 / 35 widest diameter
-- [ ] 3.2 Generic or disputed AF motor labels
+- [x] 3.2 Generic or disputed AF motor labels
 - [ ] 3.3 Samyang AF 75mm FE weather sealing
 
 ## 4. Prices
