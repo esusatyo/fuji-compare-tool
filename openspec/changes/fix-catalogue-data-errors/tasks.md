@@ -17,7 +17,7 @@
 ## 4. Release years
 
 - [x] 4.1 Fujifilm Samyang 8mm f/2.8 and 14mm f/2.8 (dated 2011, before X-mount)
-- [ ] 4.2 Samyang manual-focus entries dated 2020 (Sony E, Olympus, Panasonic)
+- [x] 4.2 Samyang manual-focus entries dated 2020 (Sony E, Olympus, Panasonic)
 - [ ] 4.3 Other estimated years (Zeiss ZM, Samyang AF FE, Voigtländer Nokton 21 E, Meike AF 35 E, 7Artisans M 28, Thypoch Eureka 50, Samyang 7.5mm MFT)
 - [ ] 4.4 Years taken from a store listing date: check each against launch news
 

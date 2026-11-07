@@ -63,3 +63,22 @@ Guard tightened to >= 150 cm and > 1.4x longest focal length.
     sells the R100 only as the RF-S18-45 kit (MSRP $899.99, 6052C012); Best
     Buy Canada lists only kits; no body-only Canadian price exists. A current
     camera needs all seven currencies, so the figure stays and is flagged.
+
+## 4. Release years (2026-11-07)
+
+Convention (add-thirdparty-lenses skill): `year` = first shipping year in
+this mount, not the announcement or the design's DSLR launch. Every touched
+entry got a dated citation (confirmed or "X -> Y").
+
+- 4.1 Fujifilm Samyang 8mm (Fisheye II, X-mount March 2014; renamed to say
+  Fisheye II, which its specs and the current Samyang US product are) and
+  14mm (X-mount February 2014). Found while checking: the 14mm's USD 199 was
+  a Rokinon-branded B&H sale; Samyang US and B&H's Samyang listing are both
+  $399 -> USD 399, unsourced regionals -> null.
+- 4.2 Samyang manual-focus "2020" entries: 33 changed (2013-2018), 6 MK II
+  confirmed 2020. Sony E 14/35/85 = Dec 2013 full-frame E release; MFT 14 =
+  B&H MFT listing archived 2014-03-14 (best available); MFT 85 = Photo
+  Review Oct 2014 "recently released". **Still open:** the 8mm f/3.5 CS II on
+  Sony E (discontinued) and MFT (olympus, panasonic) - no dated mirrorless
+  CS II launch found (the E-mount 8mm f/3.5 VG10 version shipped May 2011;
+  a Swiss retailer lists the E CS II from 2016-10-18; Wayback was offline).
