@@ -172,8 +172,10 @@ function checkCitation(c, label) {
 
 /**
  * Validate the optional `specSources` (array of citations covering the
- * weight/dimensions/optical-formula/status block), `priceSource` (single
- * citation for the current price), and `imageSource` (single citation for
+ * weight/dimensions/optical-formula/status block), `priceSource` (the
+ * citation for the current price — one object, or a non-empty array when
+ * several stores were read and the stored price is the one they agree on;
+ * owner rule 2026-10-24), and `imageSource` (single citation for
  * where the current `imageUrl` was found/verified) fields. All three are
  * optional and retrofitted only where a refresh actually recorded where a
  * fact came from — absence does not mean the data is wrong, just that no
@@ -189,7 +191,10 @@ function checkSources(obj) {
     if (!Array.isArray(obj.specSources)) errs.push('"specSources" should be an array');
     else obj.specSources.forEach((c, i) => errs.push(...checkCitation(c, `specSources[${i}]`)));
   }
-  if (obj.priceSource != null) errs.push(...checkCitation(obj.priceSource, 'priceSource'));
+  if (Array.isArray(obj.priceSource)) {
+    if (!obj.priceSource.length) errs.push('"priceSource" is an empty array (omit it, or cite at least one store)');
+    obj.priceSource.forEach((c, i) => errs.push(...checkCitation(c, `priceSource[${i}]`)));
+  } else if (obj.priceSource != null) errs.push(...checkCitation(obj.priceSource, 'priceSource'));
   if (obj.imageSource != null) {
     errs.push(...checkCitation(obj.imageSource, 'imageSource'));
     // imageSource records the page a manufacturer/free-repo photo was verified
@@ -375,6 +380,15 @@ function validateLens(id, lens, mountIds = null) {
   add(checkField(lens, 'blades', { type: 'number', nullable: true, min: 1, max: 20 }));
 
   add(checkField(lens, 'minFocusDist', { type: 'number', min: 0 }));
+  // minFocusDist is in cm. Seven entries once stored the figure 10x too large
+  // (an 85mm at 790 cm instead of 0.79 m), which also flipped the "closest
+  // focus" winner. Real lenses stay under ~3x their longest focal length in
+  // mm (Leica M wides: 70 cm at 21mm); 150 cm keeps supertelephotos clear.
+  const longest = lens.type === 'Zoom' ? lens.focalLengthMax : lens.focalLength;
+  if (typeof lens.minFocusDist === 'number' && typeof longest === 'number'
+      && lens.minFocusDist >= 150 && lens.minFocusDist > 3.5 * longest) {
+    e.push(`minFocusDist (${lens.minFocusDist} cm) is implausible for a ${longest}mm lens - entered 10x too large?`);
+  }
   add(checkField(lens, 'maxMagnification', { type: 'number', nullable: true, min: 0 }));
   add(checkField(lens, 'afType', { type: 'string' }));
   add(checkField(lens, 'weatherSealed', { type: 'boolean' }));

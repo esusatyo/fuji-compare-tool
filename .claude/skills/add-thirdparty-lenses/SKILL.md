@@ -322,20 +322,28 @@ Three valid outcomes, in order of preference:
 Never hotlink a retailer's photo, and never use an image you haven't seen
 render — a wrong-product photo is worse than the placeholder card.
 
-## Step 6 — Prices (fill all seven, don't default to USD-only)
+## Step 6 — Prices (USD from several stores; local prices only where confirmed)
 
-- **USD = the current US list price (RRP/MSRP)**, from tier 1 or a tier-3
-  retailer's list — *not* a sale/deal price. A discount post is a sale, not a
-  new RRP.
-- Then fill the six regional prices: `node scripts/compute-prices.js <brand> lenses`.
-  It derives approximate launch RRPs from USD via regional ratios, anchored to
-  any confirmed figures in `scripts/price-overrides/<brand>.json`. Add real
-  RRPs there whenever a maker publishes them (AU/UK/JP pages often do).
-- **`priceIncomplete: true` is an opt-out, not a default.** `compute-prices.js`
-  *skips* every item carrying the flag, so setting it reflexively is what
-  leaves a lens showing a lone USD figure forever. Set it only when the item
-  should deliberately stay USD-only. Discontinued lenses keep their historical
-  USD launch RRP and need no flag.
+Owner rules 2026-10-22 and 2026-10-24; full text in
+[`refresh-camera-data`](../refresh-camera-data/SKILL.md)'s pricing convention.
+
+- **USD = the regular price the reputable sources agree on for that mount.**
+  Read B&H and as many other major US dealers as you can reach (Adorama, Best
+  Buy, Amazon sold by the maker or an authorised seller), plus the maker's US
+  store where it has one, and **cite every one** in `priceSource` (a list).
+  Never store a one-off sale, an anomaly, or an inflated crossed-out
+  "compare-at": budget makers' stores show compare-at prices nobody charges
+  (7Artisans 25mm f/0.95: $369 compare-at, $143 everywhere). Samyang/Rokinon
+  store the current selling price (their discount is near-permanent).
+- **Regional prices: only confirmed local ones.** Add a non-USD price only from
+  the local official store or a reputable local retailer (makers' AU/UK/JP
+  pages often publish one), with its own citation. Every other currency stays
+  `null` and the lens carries `priceIncomplete: true`; the site shows the price
+  tagged as USD. Don't run `compute-prices.js` fill mode on new lenses — ratio
+  estimates drifted up to 35% from real local prices when checked (Sony AU,
+  2026-10), and the Tamron 16-50mm's estimated JPY was 28% under Tamron Japan's
+  own figure. Discontinued lenses keep their historical USD launch RRP and need
+  no flag.
 - Depth backfill (ASINs, regional refresh across the whole dataset) belongs to
   [`check-prices-and-buy-links`](../check-prices-and-buy-links/SKILL.md).
 
@@ -393,8 +401,8 @@ render — a wrong-product photo is worse than the placeholder card.
       per the Step 2 table (no cross-file copying)
 - [ ] every lens in exactly one `── <Maker> ──` dropdown group
 - [ ] images: Commons + `imageCredit`, or maker image, or allowlisted with a reason
-- [ ] all 7 currencies filled via `compute-prices.js`; `priceIncomplete` only
-      where deliberate
+- [ ] USD from the price the cited stores agree on, every store in `priceSource`;
+      local prices only where confirmed, else `null` + `priceIncomplete: true`
 - [ ] `npm test` green; `verify-images.js` clean; preview eyeballed in lenses mode
 - [ ] `generate-seo.js` re-run (and `dataVerified` deliberately left alone)
 - [ ] OpenSpec change archived after the PR merges

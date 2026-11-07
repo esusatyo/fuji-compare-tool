@@ -183,7 +183,7 @@ test('discontinued and current cameras from different brands price independently
   const slot0 = window.document.getElementById('slot-0');
   const slot1 = window.document.getElementById('slot-1');
   assert.match(slot0.textContent, /Discontinued/, 'discontinued label shown');
-  assert.match(slot0.textContent, /Launch: \$/, 'launch price tagged as USD');
+  assert.match(slot0.textContent, /Launch: USD \$/, 'launch price tagged as USD');
   assert.match(slot1.querySelector('.slot-price').textContent, /€/, 'current camera shows local price');
   assert.doesNotMatch(slot1.querySelector('.slot-price').textContent, /\$/, 'no mismatched symbol');
 });

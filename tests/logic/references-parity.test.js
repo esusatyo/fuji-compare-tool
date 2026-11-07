@@ -47,7 +47,20 @@ const FIXTURES = {
       { url: 'https://b.example/2', tier: 'T2', title: 'Second' },
     ],
   },
+  'several price sources, in array order': {
+    productUrl: null,
+    priceSource: [
+      { url: 'https://store.example/x', tier: 'T1', title: 'Maker store' },
+      { url: 'https://www.bhphotovideo.com/c/product/x', tier: 'T3', title: 'B&H' },
+      { url: 'https://www.adorama.com/x', tier: 'T3' },
+    ],
+  },
 };
+
+test('several price sources: one Price source link each, in order', () => {
+  const refs = generator.collectReferences(FIXTURES['several price sources, in array order']);
+  assert.deepEqual(refs.price.map(r => r.text), ['Maker store', 'B&H', 'adorama.com/x']);
+});
 
 for (const [name, item] of Object.entries(FIXTURES)) {
   test(`[parity] ${name}`, () => {
