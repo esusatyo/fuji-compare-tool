@@ -82,3 +82,22 @@ entry got a dated citation (confirmed or "X -> Y").
   Sony E (discontinued) and MFT (olympus, panasonic) - no dated mirrorless
   CS II launch found (the E-mount 8mm f/3.5 VG10 version shipped May 2011;
   a Swiss retailer lists the E CS II from 2016-10-18; Wayback was offline).
+- 4.3 Other estimates: Samyang AF 14 FE 2017 -> 2016, AF 24-70 FE 2024 ->
+  2021 (the "early 2024" note was wrong; launch spec table also gives 9
+  blades, was null), Nokton 21 E 2020 -> 2019. Confirmed: Zeiss ZM 25/28/35/
+  Planar 50 2004, Biogon 21 2005 (shipped Oct 2005), C Biogon 35 2008, C
+  Sonnar 50 2006, Thypoch Eureka 50 2024, Meike AF 35 E 2024, Samyang AF 18
+  2019 / AF 35 2017. **Left as is:** 7Artisans M 28 f/1.4 = 2019 (announced
+  Nov 2018; first shipping date not found).
+- 4.4 Store-listing years, at-risk ones checked: TTArtisan 11mm fisheye Z/L
+  2022 -> 2020; TTArtisan TS 17mm Z/L 2025 -> 2026 (those mounts came March
+  2026); TTArtisan 35 f/1.4 E 2022 -> 2020; Viltrox AF 28 f/1.8 FE 2024 ->
+  2023. Confirmed with a dated source: TTArtisan M 50 f/1.4 and f/0.95, TS 17
+  E, Samyang AF 12 E, FE II 50/35/85, P 35/16/85, 14-24 FE, Viltrox 35 LAB,
+  SG-image 35 f/1.2, 50 f/1.4, 7.5, 12, 24 (all mounts). SG-image's store was
+  rebuilt Aug-Sep 2025, so all its listing dates read 2025. **Ambiguous, left
+  at 2025:** SG-image 25 f/1.8 MF and 35 f/0.95 (announced in China
+  Feb/Apr 2024; Japanese/global launch July 2025) and 50 f/1.8 shaped
+  aperture (shown July/Nov 2024, no ship date). Not re-checked (recent
+  launches where a listing date is reliable): the other Viltrox 2024-2026,
+  Thypoch, 7Artisans 6mm / M 75 II, TTArtisan 14mm ASPH and 7.5 f/2.
