@@ -2,9 +2,7 @@
 
 ## Purpose
 Let a comparison be bookmarked and shared: the URL hash names the mode and the items on screen, and loading it restores that comparison.
-
 ## Requirements
-
 ### Requirement: URL hash encodes the current comparison
 The engine SHALL encode the active comparison in the URL hash using the grammar `#<mode>=<slug>,<slug>[,…]`, where `<mode>` is `cameras` or `lenses` and the slugs are the item ids **on screen**, in slot order — so the entry count is the visible slot count (2 to 4; one when a mount filter offers a single item). On every selection change, slot-count change and mode switch, the engine SHALL rewrite the hash via `history.replaceState` (creating no new history entries). Once a selection hash is present, the engine SHALL also rewrite it whenever the number of visible slots changes — the viewport crossing the mobile breakpoint, or a mount filter. Choices hidden by the viewport SHALL be kept in memory, so widening restores both the slots and their slugs.
 
@@ -61,3 +59,35 @@ A bare `#cameras`, `#lenses`, or empty hash SHALL behave exactly as before this 
 #### Scenario: Clean visit leaves URL clean
 - **WHEN** a brand page loads with no hash, on any viewport, and the viewport is then resized across the mobile breakpoint
 - **THEN** `location.hash` remains empty
+
+### Requirement: Compare-page hash grammar
+On the compare page the hash grammar SHALL be
+`#cameras=<brand>:<slug>,…` with 2–4 comma-separated brand-namespaced ids.
+The number of ids written SHALL equal the user's chosen slot count (not the
+responsive-clamped visible count), and every selection or slot-count change
+SHALL rewrite the hash via `history.replaceState` (no new history entries).
+Brand-page hash grammar (bare slugs, fixed three) is unchanged.
+
+#### Scenario: Compare selection writes namespaced hash
+- **WHEN** a compare-page user with 3 slots selects `fujifilm:x-t5`, `sony:a7-iv`, `canon:eos-r6-iii`
+- **THEN** `location.hash` becomes `#cameras=fujifilm:x-t5,sony:a7-iv,canon:eos-r6-iii` and `history.length` is unchanged
+
+#### Scenario: Mobile clamp does not truncate the hash
+- **WHEN** a compare-page user with a 4-slot choice is on a viewport showing only 2 slots and changes a selection
+- **THEN** the written hash contains all four namespaced ids
+
+### Requirement: Loading a compare hash restores selection and slot count
+On compare-page init, a hash with N valid entries (2 ≤ N ≤ 4) SHALL set the
+slot count to N and preselect those cameras before first render. An id whose
+brand prefix or slug does not resolve SHALL fall back per-slot to the compare
+default; counts outside [2,4] SHALL be clamped. The engine SHALL NOT rewrite
+the hash during init.
+
+#### Scenario: Four-camera deep link
+- **WHEN** the compare page loads with `#cameras=fujifilm:x-t5,sony:a7-iv,canon:eos-r6-iii,nikon:z6-iii`
+- **THEN** four slots render (viewport permitting) with those cameras in order
+
+#### Scenario: Invalid entry falls back per slot
+- **WHEN** the compare page loads with `#cameras=fujifilm:x-t5,sony:not-a-camera`
+- **THEN** slot 0 shows `fujifilm:x-t5` and slot 1 shows the compare default for that slot
+

@@ -1,8 +1,11 @@
 # Price Display
 
+## Purpose
+How prices are shown: currency symbols, discontinued launch prices and the cheapest-price highlight.
+## Requirements
 ### Requirement: Prices never display with a mismatched currency symbol
 
-The system SHALL NOT render a USD price value with a non-USD currency symbol. When the item has no price for the selected currency, the system SHALL fall back to a clearly tagged USD value (e.g. `USD $1,199`) or, if no price exists at all, the text "Price unavailable". This rule applies to both the slot price display and the comparison-table price row, for cameras and lenses alike.
+The system SHALL NOT render a USD price value with a non-USD currency symbol or with a bare `$` that could read as the selected currency's dollar. When the item has no price for the selected currency, the system SHALL fall back to a clearly tagged USD value (e.g. `USD $1,199`) or, if no price exists at all, the text "Price unavailable". This rule applies to the slot price display, the discontinued launch price, and the comparison-table price row, for cameras and lenses alike.
 
 #### Scenario: Lens missing the selected-currency price
 
@@ -22,7 +25,12 @@ The system SHALL NOT render a USD price value with a non-USD currency symbol. Wh
 #### Scenario: Comparison-table price row uses the same fallback
 
 - **WHEN** a lens missing the selected-currency price is shown in the comparison table
-- **THEN** the table price cell uses the same tagged-USD / "Price unavailable" fallback as the slot, never a foreign symbol on the USD number
+- **THEN** the table price cell shows the tagged USD value (e.g. `USD $1,199`), never "—" and never a foreign symbol on the USD number
+
+#### Scenario: Discontinued launch price is labelled USD
+
+- **WHEN** a discontinued item has only a USD launch price and the selected currency is not USD
+- **THEN** the slot shows "Discontinued" with the launch price tagged as USD (e.g. `Launch: USD $1,299`)
 
 ### Requirement: Price is labeled as RRP
 
@@ -46,3 +54,18 @@ The footer disclaimer SHALL describe the displayed prices as approximate manufac
 
 - **WHEN** the page footer is rendered
 - **THEN** the disclaimer refers to RRP / list pricing and points to the Buy link for live prices, and does not say "launch prices"
+
+### Requirement: The cheapest-price highlight compares like with like
+
+The comparison table SHALL highlight the lowest price only when every selected item has a price in the selected currency. A missing local price means the price isn't published in that currency, not that it is higher, and a tagged USD fallback is not comparable with a local price.
+
+#### Scenario: One selected lens has no local price
+
+- **WHEN** two lenses are compared in AUD, one with `prices.AUD = 999` and the other with `prices.AUD = null` and a USD price
+- **THEN** neither price cell is highlighted as the winner
+
+#### Scenario: Every selected item has a local price
+
+- **WHEN** every selected item has a price in the selected currency
+- **THEN** the lowest one is highlighted as before
+

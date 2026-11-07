@@ -1,33 +1,33 @@
 # Brand Engine
 
+## Purpose
+The shared rendering engine: brand-agnostic rendering, the BRAND_CONFIG contract, and brand-tagged spec sections.
+## Requirements
 ### Requirement: Engine is brand-agnostic
-The engine SHALL render any brand's comparison page without containing brand-specific data, colors, or copy. All brand identity SHALL be supplied at runtime via `BRAND_CONFIG`.
+The engine SHALL render any brand's comparison page without containing brand-specific data or copy. All brand identity SHALL be supplied at runtime via `BRAND_CONFIG`, resolved from the `window.BRAND_DATA` registry rather than bare globals. On a page with exactly one registered brand the engine SHALL run in single-brand mode; the engine SHALL NOT read `CAMERAS`, `BRAND_CONFIG`, or any other brand dataset key as a global variable. Page theming SHALL NOT vary by brand: every brand page renders with the shared design-system tokens, and the header shows the shared site lockup (not a per-brand logo) alongside brand-specific header/hero copy from `BRAND_CONFIG`.
 
 #### Scenario: Engine loads Fujifilm brand
 - **WHEN** `fujifilm/index.html` is loaded (which includes `fujifilm/data.js` before `engine.js` init)
-- **THEN** the page header shows the Fujifilm logo, accent color is `#cc0000`, and Film Simulations spec section is visible
+- **THEN** the page header shows the shared site lockup, the hero/header copy is Fujifilm's, and the Film Simulations spec section is visible
 
 #### Scenario: Engine loads Canon brand
 - **WHEN** `canon/index.html` is loaded (which includes `canon/data.js` before `engine.js` init)
-- **THEN** the page header shows the Canon logo, accent color is `#cc0000`, and DPAF / C-Log spec sections are visible while Film Simulations section is absent
+- **THEN** the page header shows the shared site lockup, the hero/header copy is Canon's, and DPAF / C-Log spec sections are visible while Film Simulations section is absent
+
+#### Scenario: Theme identical across brands
+- **WHEN** any brand page initialises
+- **THEN** the engine sets no brand-specific color properties and the computed accent colors equal the shared design-system tokens
 
 ### Requirement: BRAND_CONFIG contract
-Each brand's `data.js` SHALL declare a `BRAND_CONFIG` constant with the following required fields: `name`, `slug`, `families`, `brandSections`, `heroCamera`, `mount`, `mounts`, `cameras`, `lenses`. `mount` stays the landing-tile display string; `mounts` is an ordered array of `{ id, label }` describing every mount the brand spans, and is the machine-readable list the filter reads.
+Each brand's `data.js` SHALL declare a `BRAND_CONFIG` constant with the following required fields: `name`, `families`, `brandSections`. Theming fields (`accentColor`, `heroDark`, `logoText`, `logoAccent`) SHALL NOT be part of the contract — brand files SHALL NOT declare them, and the engine SHALL NOT read them.
 
 #### Scenario: Missing BRAND_CONFIG field
 - **WHEN** `BRAND_CONFIG` is declared without a required field
-- **THEN** `tests/data/config.test.js` fails naming the brand and the missing field
+- **THEN** the engine SHALL fall back to a sensible default and not throw a runtime error
 
-#### Scenario: Single-mount brand declares a one-entry array
-- **WHEN** `canon/data.js` is loaded
-- **THEN** `BRAND_CONFIG.mounts` is `[{ id:'rf', label:'RF-Mount' }]` and `BRAND_CONFIG.mount` still reads `'RF-Mount'`
-
-### Requirement: Accent color applied via CSS custom property
-The engine SHALL set `--accent-color` on the `<html>` element using `BRAND_CONFIG.accentColor` at init time, replacing any hardcoded brand color references in the CSS.
-
-#### Scenario: Accent color applied on load
-- **WHEN** a brand page initialises
-- **THEN** `document.documentElement.style.getPropertyValue('--accent-color')` equals `BRAND_CONFIG.accentColor`
+#### Scenario: Theming fields rejected by schema
+- **WHEN** a brand `data.js` declares `accentColor` (or `heroDark`/`logoText`/`logoAccent`) in `BRAND_CONFIG`
+- **THEN** the Tier 1 schema test fails, flagging the field as no longer part of the contract
 
 ### Requirement: Conditional spec sections
 The engine SHALL only render spec sections whose `brand` field matches an entry in `BRAND_CONFIG.brandSections`, or whose `brand` field is absent (universal sections).
@@ -80,3 +80,52 @@ The engine SHALL render no chip row, and apply no filtering, for a brand whose `
 #### Scenario: Compare page shows no chip row
 - **WHEN** `compare/index.html` initialises with its synthesized cross-brand config
 - **THEN** no chip row renders
+
+### Requirement: Conditional spec sections in cross-brand mode
+In cross-brand mode a section with a `brand` field SHALL render when any selected camera's owning brand matches;
+sections without a `brand` field SHALL always render. Single-brand pages keep
+the existing rule (`BRAND_CONFIG.brandSections` membership) unchanged.
+
+#### Scenario: Section appears when a matching camera is added
+- **WHEN** a compare-page selection with no Fujifilm camera gains a Fujifilm camera in any slot
+- **THEN** the Film Simulations section appears in the table
+
+#### Scenario: Section disappears with its last matching camera
+- **WHEN** the only Fujifilm camera in a compare-page selection is replaced by a Canon camera
+- **THEN** the Film Simulations section is no longer rendered
+
+### Requirement: Spec functions tolerate foreign cameras
+Every spec `fn` — including brand-specific ones — SHALL return safely
+(`undefined`/`null`, no throw) when given a camera that lacks the fields the
+spec reads, and the renderer SHALL display "—" for such values.
+
+#### Scenario: Brand-specific spec on a foreign camera
+- **WHEN** a Fujifilm-tagged spec's `fn` is applied to a Sony camera during a cross-brand render
+- **THEN** no exception is thrown and the cell renders "—"
+
+### Requirement: Header context label names the brand or the lens mode
+The header text next to the logo lockup SHALL be the active brand's name (e.g. "Fujifilm", "Canon"; "All Brands" on the cross-brand compare page) while in cameras mode, and "Lens Compare" while in lenses mode. The label SHALL NOT read "Camera Compare". Switching modes SHALL update the label immediately, and the value SHALL continue to flow from `BRAND_CONFIG.<mode>.headerTitle` (no engine-side branching).
+
+#### Scenario: Brand page in cameras mode
+- **WHEN** `fujifilm/index.html` loads in cameras mode
+- **THEN** the header context label reads "Fujifilm"
+
+#### Scenario: Brand page switched to lenses mode
+- **WHEN** the user toggles a brand page to lenses mode
+- **THEN** the header context label reads "Lens Compare"
+
+#### Scenario: Cross-brand compare page
+- **WHEN** `compare/index.html` loads
+- **THEN** the header context label reads "All Brands"
+
+### Requirement: Compare label cell shows exactly one label
+The left cell of the compare header SHALL show exactly one label at a time: when the "Cameras to compare" slot-count field is visible, the "Compare" label SHALL be hidden; when the slot-count field is hidden (below the mobile breakpoint, or on pages without a slot-count field), the "Compare" label SHALL be shown alone. Both labels SHALL never be visible simultaneously.
+
+#### Scenario: Desktop with slot-count field
+- **WHEN** a brand or compare page renders at a viewport ≥ 600px
+- **THEN** the cell shows the "Cameras to compare" field and the "Compare" label is not visible
+
+#### Scenario: Mobile clamp hides the field
+- **WHEN** the same page renders below the 600px breakpoint (slot count clamped to 2, field hidden)
+- **THEN** the cell shows only the "Compare" label
+

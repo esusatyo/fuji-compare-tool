@@ -1,5 +1,8 @@
 # Home Landing
 
+## Purpose
+The landing page: brand cards and the entry points into each brand and the cross-brand compare page.
+## Requirements
 ### Requirement: Root page is an indexable landing page
 The root `index.html` SHALL render crawlable HTML content in its `<body>` for any visitor without a stored brand preference — including search-engine crawlers, which have no `localStorage`. The body content SHALL be generator-owned, living between `<!-- seo:body:begin -->` and `<!-- seo:body:end -->` markers, and SHALL NOT depend on JavaScript execution to be present in the served HTML.
 
@@ -36,3 +39,14 @@ The landing page SHALL link to a deterministic selection of generated vs-pages, 
 #### Scenario: Links only target generated pages
 - **WHEN** the landing page's vs-page links are resolved against the generator's output
 - **THEN** every target exists in the generated file set
+
+### Requirement: Landing page links to the cross-brand compare page
+The landing page SHALL contain a generator-owned link to
+`./compare/` presented as a peer of the brand cards (e.g. an
+"All brands — compare across brands" card), so the cross-brand tool is
+reachable from the root without JavaScript.
+
+#### Scenario: Crawler reaches the compare page from the root
+- **WHEN** the root page's HTML is parsed without executing scripts
+- **THEN** it contains an `<a>` whose href resolves to `compare/index.html`
+
