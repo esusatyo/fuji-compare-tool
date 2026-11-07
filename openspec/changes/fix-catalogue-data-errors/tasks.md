@@ -25,7 +25,7 @@
 
 - [x] 5.1 Samyang AF 14-24 magnification, Viltrox AF 50 f/1.4 Pro blades, Voigtländer Septon 40 smallest aperture, Viltrox 35 EVO / 40 Air / 26 EVO magnification
 - [x] 5.2 Weather sealing: 7Artisans, Meike 35 f/1.8 Pro, Viltrox 75 f/1.2 Pro, 135 f/1.8 LAB, 16 f/1.8
-- [ ] 5.3 Voigtländer Nokton 40 f/1.2, Nokton 28 f/1.5, APO-Lanthar 28 f/2 per-mount figures
+- [x] 5.3 Voigtländer Nokton 40 f/1.2, Nokton 28 f/1.5, APO-Lanthar 28 f/2 per-mount figures
 - [ ] 5.4 Fujifilm Samyang 100mm macro, Fujifilm Tamron 150-500
 - [ ] 5.5 `afType` labels for the same motor across brands
 

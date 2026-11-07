@@ -2729,8 +2729,8 @@ const LENSES = {
   'voigtlander-nokton-40mm-f12': {
     name:'Voigtländer Nokton 40mm f/1.2 Z', manufacturer:'Voigtländer', line:'Nokton', type:'Prime',
     mount:'z', focalLength:40, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'40mm',
-    maxAperture:1.2, minAperture:22, weight:315, length:53.9, diameter:67.6,
-    filterThread:58, minFocusDist:35, maxMagnification:0.1,
+    maxAperture:1.2, minAperture:22, weight:351, length:53.9, diameter:67.7,
+    filterThread:58, minFocusDist:30, maxMagnification:0.2,
     elements:8, groups:6, blades:10, afType:'Manual',
     weatherSealed:false, ois:false, oisStops:null, year:2022, discontinued:false,
     // 2026-09-06: repointed off voigtlaender.de — broken TLS chain (see note above).
@@ -2741,6 +2741,7 @@ const LENSES = {
       { url:'https://www.bhphotovideo.com/c/product/1734166-REG/x.html', tier:'T3', title:'B&H - Voigtländer Nokton 40mm f/1.2 Aspherical (Nikon Z)', note:'$899, no strikethrough (checked 2026-10-24)', date:'2026-10-24' },
       { url:'https://www.cosina.co.jp/voigtlander/z-mount/nokton-40mm-f1-2-aspherical/', tier:'T1', title:'Cosina (Voigtländer maker) Japan - NOKTON 40mm F1.2 Aspherical (Z-mount)', note:'suggested retail ¥105,000 before tax; JPY stored with 10% consumption tax: ¥115,500 (read 2026-10-24)', date:'2026-10-24' },
     ],
+    specSources: [{ url:'https://www.cosina.co.jp/voigtlander/en/z-mount/nokton-40mm-f1-2-aspherical/', tier:'T1', title:'Cosina - Voigtländer NOKTON 40mm F1.2 Aspherical (Z-mount) specifications', note:'Minimum focus 0.3m, maximum reproduction ratio 1:4.9 (0.20x), 67.7 x 53.9 mm, 58mm filter, 351 g, F22, 10 blades, 8 elements / 6 groups - same optics and close focus as the RF version (0.3m, 1:4.9); the stored 315 g had its digits swapped. Corrected: minFocusDist 35 -> 30; maxMagnification 0.1 -> 0.2; diameter 67.6 -> 67.7; weight 315 -> 351.', date:'2026-11-07' }],
     priceIncomplete:true, productUrl:'https://www.cosina.co.jp/voigtlander/en/z-mount/nokton-40mm-f1-2-aspherical/',
   },
 
@@ -2794,7 +2795,7 @@ const LENSES = {
     name:'Voigtländer Nokton 28mm f/1.5 Aspherical Z', manufacturer:'Voigtländer', line:'Nokton', type:'Prime',
     mount:'z', focalLength:28, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'28mm',
     maxAperture:1.5, minAperture:16, weight:360, length:57.0, diameter:67.6,
-    filterThread:52, minFocusDist:28, maxMagnification:null,
+    filterThread:52, minFocusDist:28, maxMagnification:0.146,
     elements:10, groups:8, blades:12, afType:'Manual',
     weatherSealed:false, ois:false, oisStops:null, year:2025, discontinued:false,
     // 2026-09-06: repointed off voigtlaender.de — broken TLS chain (see note above).
@@ -2803,6 +2804,7 @@ const LENSES = {
     priceSource: { url:'https://www.bhphotovideo.com/c/search?q=voigtlander%20nikon%20z', tier:'T3', title:'B&H Photo listing', note:'USD $1226 -> $899: B&H lists "Nokton 28mm f/1.5 Aspherical Lens (Nikon Z)" at a regular price of $899. Voigtländer publishes no US price of its own (cosina.co.jp/voigtlaender.de give JPY/EUR only), and B&H is the main US retailer; this replaces the earlier EUR-converted estimate. Read 2026-10-11', date:'2026-10-11' },
     asin:'B0FFZVN1SZ',
     prices:{USD:899,AUD:null,EUR:1049,GBP:null,JPY:null,CAD:null,SGD:null},
+    specSources: [{ url:'https://www.cosina.co.jp/voigtlander/en/z-mount/nokton-28mm-f1-5-aspherical/', tier:'T1', title:'Cosina - Voigtländer NOKTON 28mm F1.5 Aspherical (Z-mount) specifications', note:'Maximum reproduction ratio 1:6.87 (0.146x), 0.28m, F16, 12 blades, 67.6 x 57.0 mm, 360 g. The 52mm filter is correct for Z: the E version is a smaller barrel with a 49mm filter (62.6 x 55 mm, 320 g), a genuine per-mount difference. Corrected: maxMagnification null -> 0.146.', date:'2026-11-07' }],
     priceIncomplete:true, productUrl:'https://www.cosina.co.jp/voigtlander/en/z-mount/nokton-28mm-f1-5-aspherical/',
   },
 
@@ -2811,7 +2813,7 @@ const LENSES = {
     mount:'z', focalLength:28, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'28mm',
     maxAperture:2.0, minAperture:16, weight:350, length:60.0, diameter:68.8,
     filterThread:58, minFocusDist:28, maxMagnification:0.145,
-    elements:12, groups:8, blades:null, afType:'Manual',
+    elements:12, groups:8, blades:12, afType:'Manual',
     weatherSealed:false, ois:false, oisStops:null, year:2025, discontinued:false,
     // 2026-09-06: repointed off voigtlaender.de — broken TLS chain (see note above).
     imageUrl:'https://www.cosina.co.jp/wp/wp-content/uploads/2025/11/Z-28_20-01-ikws.jpg',
@@ -2819,6 +2821,7 @@ const LENSES = {
     priceSource: { url:'https://www.bhphotovideo.com/c/search?q=voigtlander%20nikon%20z', tier:'T3', title:'B&H Photo listing', note:'USD $1343 -> $1149: B&H lists "APO-LANTHAR 28mm f/2 Aspherical Lens (Nikon Z)" at a regular price of $1149. Voigtländer publishes no US price of its own (cosina.co.jp/voigtlaender.de give JPY/EUR only), and B&H is the main US retailer; this replaces the earlier EUR-converted estimate. Read 2026-10-11', date:'2026-10-11' },
     asin:null,
     prices:{USD:1149,AUD:null,EUR:1149,GBP:null,JPY:null,CAD:null,SGD:null},
+    specSources: [{ url:'https://www.cosina.co.jp/voigtlander/en/z-mount/apo-lanthar-28mm-f2-aspherical/', tier:'T1', title:'Cosina - Voigtländer APO-LANTHAR 28mm F2 Aspherical (Z-mount) specifications', note:'12 aperture blades, 0.28m, 1:6.9, F16, 68.8 x 60.0 mm, 350 g. The 58mm filter is correct for Z: the E version takes 49mm (62.6 x 58.8 mm, 325 g), a genuine per-mount difference. Corrected: blades null -> 12.', date:'2026-11-07' }],
     priceIncomplete:true, productUrl:'https://www.cosina.co.jp/voigtlander/en/z-mount/apo-lanthar-28mm-f2-aspherical/',
   },
 
