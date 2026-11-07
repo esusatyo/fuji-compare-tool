@@ -6,7 +6,7 @@
 
 - [x] 2.1 Nikon Z 24-70 f/2.8 S II, Z 70-200 f/2.8 VR S II, Z 24-105 f/4-7.1, Z 28-135 f/4 PZ, Z DX 16-50 f/2.8 VR: re-read the full spec row from Nikon, fix, cite
 - [x] 2.2 Sony FE 100mm F2.8 Macro GM, FE 100-400 F4.5 GM, FE 100-400 F5.6-8: re-read the full spec row from Sony, fix, cite
-- [ ] 2.3 Tighten the schema guard to >= 150 cm and > 1.4x the longest focal length, with tests
+- [x] 2.3 Tighten the schema guard to >= 150 cm and > 1.4x the longest focal length, with tests
 
 ## 3. Prices
 
