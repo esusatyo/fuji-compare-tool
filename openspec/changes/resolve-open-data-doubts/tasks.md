@@ -7,7 +7,7 @@
 
 - [x] 2.1 Samyang 8mm f/3.5 UMC Fisheye CS II on Sony E and MFT
 - [x] 2.2 SG-image 25mm f/1.8 MF, 35mm f/0.95 and 50mm f/1.8 shaped aperture (all mounts)
-- [ ] 2.3 7Artisans M 28mm f/1.4
+- [x] 2.3 7Artisans M 28mm f/1.4
 
 ## 3. Specs
 
