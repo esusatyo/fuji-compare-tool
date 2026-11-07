@@ -12,7 +12,7 @@
 
 - [x] 3.1 Nikon Yongnuo 35mm f/1.8 DA, Nikon Samyang 14mm f/2.8: multi-store USD, regional prices confirmed or null
 - [x] 3.2 Fujifilm 7Artisans 27mm f/2.8, 55mm f/1.4, 18mm f/6.3 II: multi-store USD, regional prices confirmed or null
-- [ ] 3.3 The 42 current items with CAD under 1.1x USD: check each against the official Canadian store or a Canadian dealer; fix, cite, or null
+- [x] 3.3 The 42 current items with CAD under 1.1x USD: check each against the official Canadian store or a Canadian dealer; fix, cite, or null
 
 ## 4. Release years
 

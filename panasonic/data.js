@@ -1387,8 +1387,9 @@ const LENSES = {
     weatherSealed:true, ois:true, oisStops:null, year:2016, discontinued:false,
     imageUrl:'https://shop.panasonic.com/cdn/shop/products/bplm0qt8kujpg0aic8ah.jpg',
     imageSource: { url:'https://shop.panasonic.com/products/g-series-100-300mm-f4-0-5-6-asph-lens', tier:'T1', note:'official Panasonic shop.panasonic.com product page; barrel reads "G VARIO 1:4.0-5.6/100-300 ASPH." and "100-300" — Panasonic only ever sold this focal range as the "II" (H-FSA100300), so the single current listing is this entry', date:'2026-08-17' },
-    prices:{USD:849,AUD:949,EUR:null,GBP:null,JPY:null,CAD:799,SGD:null},
+    prices:{USD:849,AUD:949,EUR:null,GBP:null,JPY:null,CAD:899,SGD:null},
     priceIncomplete:true,
+    priceSource: { url:'https://www.panasonic.com/ca/consumer/cameras-camcorders/interchangeable-lenses/micro-four-thirds/h-fsa100300.html', tier:'T1', title:'Panasonic Canada - H-FSA100300', note:'CAD 799 -> 899: Panasonic Canada price $899.99 ("suggested retail price applicable to all provinces except for Quebec"), no sale price set.', date:'2026-11-07' },
     productUrl:'https://shop.panasonic.com/products/g-series-100-300mm-f4-0-5-6-asph-lens',
   },
 
