@@ -1704,14 +1704,61 @@ ${items}
 }
 
 // ─── Sitemap & robots ────────────────────────
-function sitemapXML(site, paths) {
-  const urls = paths.map(p => `  <url><loc>${site.baseUrl}/${cleanUrl(p)}</loc></url>`).join('\n');
+// `paths` are sitemap paths ('' = the root); `lastmods` maps each one's
+// clean form to its YYYY-MM-DD date (omitted → no <lastmod>).
+function sitemapXML(site, paths, lastmods = {}) {
+  const urls = ['', ...paths].map(p => {
+    const clean = cleanUrl(p);
+    const mod = lastmods[clean] ? `<lastmod>${lastmods[clean]}</lastmod>` : '';
+    return `  <url><loc>${site.baseUrl}/${clean}</loc>${mod}</url>`;
+  }).join('\n');
   return `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>${site.baseUrl}/</loc></url>
 ${urls}
 </urlset>
 `;
+}
+
+// ─── Sitemap <lastmod> ───────────────────────
+// Google uses <lastmod> only while it stays accurate, so a date moves only
+// when that page's content does. sitemap-lastmod.json (a generated,
+// committed artifact) records per clean sitemap path the content hash and
+// the date that hash last changed. A brand page's content includes its
+// data.js, since its specs render client-side from it; shared assets
+// (engine.js/.css) deliberately don't count, or every date would move at once.
+const LASTMOD_MANIFEST = 'sitemap-lastmod.json';
+
+// Pure: keep the previous entry while the hash matches, stamp `today`
+// when it changed or is new, and drop paths no longer in `hashes`.
+function lastmodManifest(prev, hashes, today) {
+  const out = {};
+  for (const p of Object.keys(hashes).sort()) {
+    const old = prev[p];
+    out[p] = old && old.hash === hashes[p] ? old : { hash: hashes[p], lastmod: today };
+  }
+  return out;
+}
+
+function readLastmodManifest() {
+  const abs = path.join(ROOT, LASTMOD_MANIFEST);
+  return fs.existsSync(abs) ? JSON.parse(fs.readFileSync(abs, 'utf8')) : {};
+}
+
+// Content hash per clean sitemap path. `files` is buildSite()'s map of
+// generated pages; every sitemap path is one of them.
+function sitemapHashes(paths, files) {
+  const hashes = {};
+  for (const p of ['', ...paths]) {
+    const file = p === '' || p.endsWith('/') ? `${p}index.html` : p;
+    let content = files.get(file);
+    if (content === undefined) throw new Error(`sitemap path ${p || '/'} has no generated page (${file})`);
+    const brand = p.match(/^([^/]+)\/$/);
+    if (brand && fs.existsSync(path.join(ROOT, brand[1], 'data.js'))) {
+      content += fs.readFileSync(path.join(ROOT, brand[1], 'data.js'), 'utf8');
+    }
+    hashes[cleanUrl(p)] = cardHash(content);
+  }
+  return hashes;
 }
 
 function robotsTxt(site) {
@@ -1725,7 +1772,8 @@ Sitemap: ${site.baseUrl}/sitemap.xml
 // ─── Build everything (pure) ───
 // Returns { files: path → content, cards: og/ image path → share card }.
 // Cards are built alongside their pages so the two lists can't diverge.
-function buildSite() {
+// `today` (UTC YYYY-MM-DD) only matters for pages whose content changed.
+function buildSite({ today = new Date().toISOString().slice(0, 10) } = {}) {
   const site = siteConfig();
   const files = new Map();
   const cards = new Map();
@@ -1822,7 +1870,10 @@ function buildSite() {
   rootHtml = withHeadBlock(rootHtml, rootHeadBlock(site, brandNames, homeCard), 'index.html');
   rootHtml = withBodyBlock(rootHtml, rootBodyBlock(site, brandInfo, matchups.slice(0, 4), resolveFavourites(brandData)), 'index.html');
   files.set('index.html', rootHtml);
-  files.set('sitemap.xml', sitemapXML(site, sitemapPaths));
+  const lastmods = lastmodManifest(readLastmodManifest(), sitemapHashes(sitemapPaths, files), today);
+  files.set(LASTMOD_MANIFEST, `${JSON.stringify(lastmods, null, 2)}\n`);
+  files.set('sitemap.xml', sitemapXML(site, sitemapPaths,
+    Object.fromEntries(Object.entries(lastmods).map(([p, e]) => [p, e.lastmod]))));
   files.set('robots.txt', robotsTxt(site));
   return { files, cards };
 }
@@ -1856,4 +1907,4 @@ if (require.main === module) {
   console.log(`generate-seo: ${files.size} artifacts (${written} written, ${removed} stale removed)`);
 }
 
-module.exports = { ROOT_TITLE, buildSite, uniqueItemCount, cardHash, vsCardHTML, infoCardHTML, shareTags, CARD_W, CARD_H, LANDING_CARD_ORDER, ALL_BRANDS_MOSAIC, orderLandingBrands, allBrandsPhotoHTML, siteConfig, curatedPairs, successorPairKeys, resolvePins, withPins, PINNED_VS_PAIRS, SUCCESSOR_INDEX_SINCE, relatedPairs, vsPageHTML, vsSummary, vsSummaryFacts, resolveMatchups, crossVsPageHTML, crossTitle, CROSS_BRAND_MATCHUPS, compareHeadBlock, compareBodyBlock, brandHeadBlock, rootHeadBlock, brandBodyBlock, rootBodyBlock, withHeadBlock, withBodyBlock, sitemapXML, robotsTxt, buildAll, SEO_BEGIN, SEO_END, SEO_BODY_BEGIN, SEO_BODY_END, ID_HEAD_BEGIN, ID_HEAD_END, ID_HEADER_BEGIN, ID_HEADER_END, ID_FOOTER_BEGIN, ID_FOOTER_END, identityToken, logoMark, cleanUrl, cleanHref, themeToggleHTML, collectReferences, citationText, refHostname, REFERENCE_ROWS, referenceRowsHTML };
+module.exports = { ROOT_TITLE, buildSite, uniqueItemCount, cardHash, lastmodManifest, sitemapHashes, LASTMOD_MANIFEST, vsCardHTML, infoCardHTML, shareTags, CARD_W, CARD_H, LANDING_CARD_ORDER, ALL_BRANDS_MOSAIC, orderLandingBrands, allBrandsPhotoHTML, siteConfig, curatedPairs, successorPairKeys, resolvePins, withPins, PINNED_VS_PAIRS, SUCCESSOR_INDEX_SINCE, relatedPairs, vsPageHTML, vsSummary, vsSummaryFacts, resolveMatchups, crossVsPageHTML, crossTitle, CROSS_BRAND_MATCHUPS, compareHeadBlock, compareBodyBlock, brandHeadBlock, rootHeadBlock, brandBodyBlock, rootBodyBlock, withHeadBlock, withBodyBlock, sitemapXML, robotsTxt, buildAll, SEO_BEGIN, SEO_END, SEO_BODY_BEGIN, SEO_BODY_END, ID_HEAD_BEGIN, ID_HEAD_END, ID_HEADER_BEGIN, ID_HEADER_END, ID_FOOTER_BEGIN, ID_FOOTER_END, identityToken, logoMark, cleanUrl, cleanHref, themeToggleHTML, collectReferences, citationText, refHostname, REFERENCE_ROWS, referenceRowsHTML };

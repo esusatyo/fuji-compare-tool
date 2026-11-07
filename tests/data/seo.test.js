@@ -7,7 +7,7 @@ const assert = require('node:assert/strict');
 const fs = require('fs');
 const path = require('path');
 const { loadBrand, brandDirs, ROOT } = require('../helpers/load-brand');
-const { buildAll, curatedPairs, siteConfig, vsSummary, vsSummaryFacts, referenceRowsHTML,
+const { buildAll, buildSite, lastmodManifest, sitemapHashes, LASTMOD_MANIFEST, curatedPairs, siteConfig, vsSummary, vsSummaryFacts, referenceRowsHTML,
         resolvePins, resolveMatchups, withPins, successorPairKeys, PINNED_VS_PAIRS, SUCCESSOR_INDEX_SINCE,
         ID_HEAD_BEGIN, ID_HEAD_END, ID_HEADER_BEGIN, ID_HEADER_END } = require('../../scripts/generate-seo');
 
@@ -68,6 +68,49 @@ test('sitemap covers root, every brand page, every indexable vs-page, and trust 
     if (isNoindexed(content)) assert.ok(!sitemapHas(rel), `sitemap lists noindexed ${rel}`);
     else assert.ok(sitemapHas(rel), `sitemap missing indexable ${rel}`);
   }
+});
+
+test('every sitemap URL carries the <lastmod> its manifest entry records', () => {
+  const base = siteConfig().baseUrl;
+  const manifest = JSON.parse(generated.get(LASTMOD_MANIFEST));
+  const entries = [...generated.get('sitemap.xml').matchAll(/<url><loc>([^<]+)<\/loc>(?:<lastmod>([^<]+)<\/lastmod>)?<\/url>/g)];
+  assert.ok(entries.length > 0);
+  assert.deepEqual(entries.map(e => e[1].slice(base.length + 1)).sort(), Object.keys(manifest).sort(),
+    'manifest must cover exactly the sitemap URLs');
+  for (const [, loc, lastmod] of entries) {
+    assert.match(lastmod || '', /^\d{4}-\d{2}-\d{2}$/, `${loc}: missing or malformed <lastmod>`);
+    assert.equal(lastmod, manifest[loc.slice(base.length + 1)].lastmod, `${loc}: <lastmod> disagrees with the manifest`);
+  }
+});
+
+test('a brand page\'s <lastmod> hash covers its data.js, not just the thin HTML', () => {
+  // Brand pages render their specs client-side, so a price edit in data.js
+  // must move the date even though the generated HTML may not change.
+  const hash = s => require('crypto').createHash('sha256').update(s).digest('hex').slice(0, 16);
+  const files = new Map([['index.html', '<root>'], ['sony/index.html', '<sony>'], ['about.html', '<about>']]);
+  const data = fs.readFileSync(path.join(ROOT, 'sony', 'data.js'), 'utf8');
+  const hashes = sitemapHashes(['sony/', 'about.html'], files);
+  assert.equal(hashes['sony/'], hash('<sony>' + data));
+  assert.equal(hashes.about, hash('<about>'), 'non-brand pages hash their HTML alone');
+});
+
+test('lastmodManifest keeps unchanged dates, stamps changed or new pages, and drops removed ones', () => {
+  const prev = {
+    '': { hash: 'aaa', lastmod: '2026-01-01' },
+    'sony/': { hash: 'bbb', lastmod: '2026-01-02' },
+    'vs/gone': { hash: 'ccc', lastmod: '2026-01-03' },
+  };
+  assert.deepEqual(lastmodManifest(prev, { '': 'aaa', 'sony/': 'BBB', 'vs/new': 'ddd' }, '2026-11-05'), {
+    '': { hash: 'aaa', lastmod: '2026-01-01' },
+    'sony/': { hash: 'BBB', lastmod: '2026-11-05' },
+    'vs/new': { hash: 'ddd', lastmod: '2026-11-05' },
+  });
+});
+
+test('regenerating on a later day changes no <lastmod> (dates follow content, not the calendar)', () => {
+  const later = buildSite({ today: '2099-12-31' }).files;
+  assert.equal(later.get('sitemap.xml'), generated.get('sitemap.xml'));
+  assert.equal(later.get(LASTMOD_MANIFEST), generated.get(LASTMOD_MANIFEST));
 });
 
 test('every vs-page is either noindexed or in the sitemap — never both, never neither', () => {
