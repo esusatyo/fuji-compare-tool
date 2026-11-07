@@ -2797,9 +2797,14 @@ const LENSES = {
     weatherSealed:false, ois:false, oisStops:null, year:2014, discontinued:false,
     imageUrl:null,
     asin:'B00JD4T9M4',
-    prices:{USD:239,AUD:399,EUR:299,GBP:199,JPY:37000,CAD:299,SGD:299},
+    priceIncomplete:true,
+    prices:{USD:249,AUD:null,EUR:null,GBP:null,JPY:null,CAD:null,SGD:null},
     specSources: [{ url:'https://samyangus.com/products/8mm-f2-8-fisheye', tier:'T1', note:'weight/dimensions/optical formula/price, via product JSON compare_at_price for regular (non-sale) price', date:'2026-08-15' }, { url:'https://www.fujirumors.com/samyang-unveils-four-new-x-mount-lenses/', tier:'NEWS', title:'Fuji Rumors - Samyang unveils four new X-mount lenses (2014-03-21)', note:'Year 2011 -> 2014: 8mm f/2.8 UMC Fish-Eye II pre-orders from 2014-03-21; Photography Life lists its release date as 2014-03-21 for Canon EF-M, Fujifilm X, Samsung NX and Sony E. The current Samyang US "8mm F2.8 Compact Fisheye" (11/8 formula) is this Fisheye II.', date:'2026-11-07' }],
-    priceSource: { url:'https://www.bhphotovideo.com/c/product/1039912-REG/x.html', tier:'T3', title:'B&H - Samyang 8mm f/2.8 Fisheye (FUJIFILM X)', note:'USD $349 -> $239: B&H\'s current price for the FUJIFILM X version (lowest new listing, B&H listing #1039912; crossed-out $299). Owner rule 2026-10-22 for Samyang: use the selling price - Samyang/Rokinon list prices are discounted almost permanently at Samyang\'s US store and at B&H, and B&H\'s two listings of one lens often show different "regular" prices. Previously: regular price $349 (Fuji X variant) = compare-at; on sale at $248 at the time, not used; read from the store\'s products.json (samyangus.com); non-USD not examined', date:'2026-10-22' },
+    priceSource: [
+      { url:'https://samyangus.com/products/8mm-f2-8-fisheye', tier:'T1', title:'Samyang US store - 8mm F2.8 Compact Fisheye (Fuji X variant)', note:'USD 239 -> 249: Fuji X variant selling price $249 (compare-at $349; owner rule: Samyang = selling price). Regional prices removed (AUD 399, EUR 299, GBP 199, JPY 37000, CAD 299, SGD 299 had no source); USD-only (owner rule 2026-10-24).', date:'2026-11-08' },
+      { url:'https://www.bhphotovideo.com/c/product/1039912-REG/samyang_sy8mbk28_fx_8mm_f_2_8_umc_fisheye.html', tier:'T3', title:'B&H - Samyang 8mm f/2.8 Fisheye II (Fujifilm X)', note:'$249 (holiday savings from $279); the Rokinon-branded X listing is the same. The stored $239 was an earlier sale.', date:'2026-11-08' },
+      { url:'https://www.bhphotovideo.com/c/product/1039912-REG/x.html', tier:'T3', title:'B&H - Samyang 8mm f/2.8 Fisheye (FUJIFILM X)', note:'USD $349 -> $239: B&H\'s current price for the FUJIFILM X version (lowest new listing, B&H listing #1039912; crossed-out $299). Owner rule 2026-10-22 for Samyang: use the selling price - Samyang/Rokinon list prices are discounted almost permanently at Samyang\'s US store and at B&H, and B&H\'s two listings of one lens often show different "regular" prices. Previously: regular price $349 (Fuji X variant) = compare-at; on sale at $248 at the time, not used; read from the store\'s products.json (samyangus.com); non-USD not examined', date:'2026-10-22' },
+    ],
     productUrl:'https://samyangus.com/products/8mm-f2-8-fisheye',
   },
   'samyang-10mm-f28': {
