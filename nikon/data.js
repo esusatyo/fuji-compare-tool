@@ -2434,8 +2434,14 @@ const LENSES = {
     imageUrl:'https://samyangus.com/cdn/shop/products/MF14_2.8Z_Front.jpg',
     imageSource: { url:'https://samyangus.com/products/14mm-f2-8-full-frame-ultra-wide-angle-nikon-z', tier:'T1', note:'official Samyang US store, dedicated Nikon Z product page (SKU SYZ14-N); front product shot, file named "MF14_2.8Z_Front"', date:'2026-09-06' },
     asin:'B07QRVHBXS',
-    prices:{USD:429,AUD:1099,EUR:799,GBP:599,JPY:80000,CAD:899,SGD:999},
-    priceSource: { url:'https://www.bhphotovideo.com/c/product/1480695-REG/x.html', tier:'T3', title:'B&H - Samyang 14mm F2.8 Z (Nikon Z)', note:'USD $499 -> $429: B&H\'s current price for the Nikon Z version (lowest new listing, B&H listing #1480695). Owner rule 2026-10-22 for Samyang: use the selling price - Samyang/Rokinon list prices are discounted almost permanently at Samyang\'s US store and at B&H, and B&H\'s two listings of one lens often show different "regular" prices. Previously: USD $707 -> $499: Samyang US lists the Nikon Z version with a regular (compare-at) price of $499, currently selling at $428 (store catalogue feed, priceCurrency USD). The old figure matched no Samyang US price. Read 2026-10-11 (samyangus.com); non-USD not examined', date:'2026-10-22' },
+    priceIncomplete:true,
+    prices:{USD:429,AUD:null,EUR:null,GBP:null,JPY:null,CAD:null,SGD:null},
+    priceSource: [
+      { url:'https://samyangus.com/products/14mm-f2-8-full-frame-ultra-wide-angle-nikon-z', tier:'T1', title:'Samyang US store - 14mm F2.8 (Nikon Z)', note:'Selling price $429 (compare-at $499; owner rule: Samyang = selling price), in stock. Regional prices removed (were AUD 1099, EUR 799, GBP 599, JPY 80000, CAD 899, SGD 999, near the AF 14mm\'s prices): none had a source and they contradicted USD; no confirmed local price, so USD-only (owner rule 2026-10-24).', date:'2026-11-07' },
+      { url:'https://www.bhphotovideo.com/c/product/1480695-REG/samyang_syz14_n_14mm_f_2_8_lens_for.html', tier:'T3', title:'B&H - Samyang MF 14mm f/2.8 for Nikon Z', note:'$429.', date:'2026-11-07' },
+      { url:'https://www.amazon.com/dp/B07QRVHBXS', tier:'T3', title:'Amazon - Samyang SYZ14 14mm F2.8 (Nikon Z)', note:'$429.00.', date:'2026-11-07' },
+      { url:'https://www.bhphotovideo.com/c/product/1480695-REG/x.html', tier:'T3', title:'B&H - Samyang 14mm F2.8 Z (Nikon Z)', note:'USD $499 -> $429: B&H\'s current price for the Nikon Z version (lowest new listing, B&H listing #1480695). Owner rule 2026-10-22 for Samyang: use the selling price - Samyang/Rokinon list prices are discounted almost permanently at Samyang\'s US store and at B&H, and B&H\'s two listings of one lens often show different "regular" prices. Previously: USD $707 -> $499: Samyang US lists the Nikon Z version with a regular (compare-at) price of $499, currently selling at $428 (store catalogue feed, priceCurrency USD). The old figure matched no Samyang US price. Read 2026-10-11 (samyangus.com); non-USD not examined', date:'2026-10-22' },
+    ],
     productUrl:'https://samyangus.com/products/14mm-f2-8-full-frame-ultra-wide-angle-nikon-z',
   },
 
@@ -4088,8 +4094,13 @@ const LENSES = {
     imageUrl:'https://yongnuo.eu/wp-content/uploads/2024/10/YN_35mm_f1.8_APS-C_1.jpg',
     imageSource: { url:'https://yongnuo.eu/lenses/nikon-z-f/yongnuo-35mm-f-1-8-aps-c-lens-for-nikon-z-mount-camera-auto-focus-large-aperture-remote-control/', tier:'T1', note:'official Yongnuo EU store, Nikon Z/F lens listing; shot carries a "Z mount" / "APS-C" / "Auto Focus" badge overlay', date:'2026-09-06' },
     asin:'B0F66GW8Q8',
-    prices:{USD:135,AUD:499,EUR:299,GBP:299,JPY:42000,CAD:399,SGD:399},
-    priceSource: { url:'https://www.bhphotovideo.com/c/search?q=yongnuo%20lens%20nikon%20z', tier:'T3', title:'B&H Photo listing', note:'USD $300 -> $135: B&H lists "Yongnuo YN 35mm f/1.8 DA DSM WL Lens (Nikon Z, Black)" at $135, not on sale. Yongnuo has no US store of its own (yongnuo.eu prices in EUR). Read 2026-10-11', date:'2026-10-11' },
+    priceIncomplete:true,
+    prices:{USD:135,AUD:null,EUR:null,GBP:null,JPY:null,CAD:null,SGD:null},
+    priceSource: [
+      { url:'https://www.bhphotovideo.com/c/product/1860798-REG/yongnuo_yn35mm_f1_8z_da_dsm_wl_yn_35mm_f_1_8_da.html', tier:'T3', title:'B&H - Yongnuo YN 35mm f/1.8 DA DSM WL (Nikon Z)', note:'$135, not on sale; the white (1928787) and YN35mm f/1.8S DA (1964739) listings are $135 too. Regional prices removed (were AUD 499, EUR 299, GBP 299, JPY 42000, CAD 399, SGD 399): none had a source and they contradicted USD; no confirmed local price, so USD-only (owner rule 2026-10-24).', date:'2026-11-07' },
+      { url:'https://www.amazon.com/dp/B0F66GW8Q8', tier:'T3', title:'Amazon - YONGNUO YN35mm F1.8Z DA DSM (Nikon Z), sold by YNLENS', note:'$135.00, sold by Yongnuo\'s own Amazon store.', date:'2026-11-07' },
+      { url:'https://www.bhphotovideo.com/c/search?q=yongnuo%20lens%20nikon%20z', tier:'T3', title:'B&H Photo listing', note:'USD $300 -> $135: B&H lists "Yongnuo YN 35mm f/1.8 DA DSM WL Lens (Nikon Z, Black)" at $135, not on sale. Yongnuo has no US store of its own (yongnuo.eu prices in EUR). Read 2026-10-11', date:'2026-10-11' },
+    ],
     productUrl:'https://yongnuo.eu/lenses/nikon-z-f/yongnuo-35mm-f-1-8-aps-c-lens-for-nikon-z-mount-camera-auto-focus-large-aperture-remote-control/',
   },
 
