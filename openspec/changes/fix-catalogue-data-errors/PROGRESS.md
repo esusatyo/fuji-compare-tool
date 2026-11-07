@@ -135,3 +135,18 @@ tables), B&H's per-mount listing where the maker says nothing.
   split between stepping motor and HSM), Laowa 180 / 200 / ACRIS 35 and 12
   Lite E, 7Artisans AF 10 X, Tamron OSD (Tamron: DC motor; retailers:
   stepping), Samyang AF 14 / 35 FE "STM" and AF 85 FE "Linear Ultrasonic".
+
+## 6. Standing doubts (2026-11-07)
+
+- 6.1 Sony FX5 maxBurst 10: Sony publishes no stills burst for the FX5 (US
+  page, Help Guide index); mhohner.de's tech data (compiled from Sony docs)
+  gives 10/8/6/3 fps, 10 with AF -> value kept, now cited (T4).
+- 6.2 Panasonic S1R photo: the old Commons shot showed no model badge; a
+  Commons photo (CC BY-SA 4.0) showing the "S1R" front badge beside a "LUMIX
+  S1R" Camera GP 2019 placard replaces it.
+- 6.3 Thypoch Eureka 28 / 50 and Ksana 21 / 35 M diameters: **not fixable.**
+  Thypoch publishes only the front diameter; B&H repeats it (Eureka 50) or
+  lists box dimensions only; `diameter` cannot be null. Left as published,
+  the existing notes say which diameter it is.
+- 6.4 Fujifilm TTArtisan 35 f/0.95: 45 x 55 mm (Pergear, impossible with a
+  52mm filter) -> 57 x 41 mm (B&H X listing, same as the Sony E version).
