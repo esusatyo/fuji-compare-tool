@@ -23,3 +23,6 @@ CLAUDE.md
 
 # Share-card freshness manifest: a build input for tests, not a page asset.
 og/manifest.json
+
+# Sitemap <lastmod> manifest: a generator input, not a page asset.
+sitemap-lastmod.json

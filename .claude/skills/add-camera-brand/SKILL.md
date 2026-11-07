@@ -174,6 +174,9 @@ group) and `npm run test:data`.
 
 ## Step 8 — Verify
 
+- `node scripts/generate-seo.js` — generates the brand's head/body blocks, vs-pages
+  and sitemap entries. The new pages get today's `<lastmod>` in
+  `sitemap-lastmod.json`; commit it and `sitemap.xml` with the brand.
 - `npm test` must be fully green (data + logic; logic tests auto-cover the
   new brand — winners, currency, pickers, buy-links, spec-section gating, switcher).
 - Optionally `RUN_LINK_TESTS=1 npm run test:links` to spot-check live URLs.
@@ -207,6 +210,7 @@ group) and `npm run test:data`.
 - [ ] `tests/logic/root-redirect.test.js` honours `<slug>`
 - [ ] `compare/index.html` loads `<brand>/data.js`
 - [ ] new items in `KNOWN_IMAGE_GAPS[<slug>]` until images land
+- [ ] `generate-seo.js` re-run; `sitemap-lastmod.json` + `sitemap.xml` committed
 - [ ] `npm test` green
 - [ ] OpenSpec change archived after the PR merges
 

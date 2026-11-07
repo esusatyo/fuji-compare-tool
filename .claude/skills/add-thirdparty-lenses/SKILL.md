@@ -366,7 +366,7 @@ Owner rules 2026-10-22 and 2026-10-24; full text in
 - `node scripts/verify-images.js <brand>` — every `imageUrl` returns an image.
 - `RUN_LINK_TESTS=1 npm run test:links` to spot-check the new `productUrl`s.
 - Re-run `node scripts/generate-seo.js` (lens counts change, so the generated
-  pages go stale — a `seo.test.js` test fails until you do).
+  pages go stale — a `seo.test.js` test fails until you do). This also moves the sitemap `<lastmod>` of every page whose content changed (a brand page counts its `data.js`), so commit `sitemap-lastmod.json` and `sitemap.xml` in the same commit as the data edit — never hand-edit their dates.
 - **Leave `dataVerified` in `site-config.js` alone.** It backs the page claim
   "Specs & prices last verified: <date>", which is a statement about the
   *whole* dataset — all five brands, cameras and lenses. This skill verifies
@@ -404,7 +404,7 @@ Owner rules 2026-10-22 and 2026-10-24; full text in
 - [ ] USD from the price the cited stores agree on, every store in `priceSource`;
       local prices only where confirmed, else `null` + `priceIncomplete: true`
 - [ ] `npm test` green; `verify-images.js` clean; preview eyeballed in lenses mode
-- [ ] `generate-seo.js` re-run (and `dataVerified` deliberately left alone)
+- [ ] `generate-seo.js` re-run, `sitemap-lastmod.json` + `sitemap.xml` committed with the data (and `dataVerified` deliberately left alone)
 - [ ] OpenSpec change archived after the PR merges
 
 ## Resumability
