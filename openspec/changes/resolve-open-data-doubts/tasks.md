@@ -23,4 +23,4 @@
 ## 5. Verify
 
 - [x] 5.1 npm test, generate-seo, test:links
-- [ ] 5.2 PR description, push
+- [x] 5.2 PR description, push
