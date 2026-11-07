@@ -17,7 +17,7 @@
 
 ## 4. Prices
 
-- [ ] 4.1 Canon EOS R100 CAD
+- [x] 4.1 Canon EOS R100 CAD
 - [x] 4.2 Fujifilm Samyang 8mm f/2.8 Fisheye II USD
 
 ## 5. Verify
