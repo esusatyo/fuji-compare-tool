@@ -150,3 +150,19 @@ tables), B&H's per-mount listing where the maker says nothing.
   the existing notes say which diameter it is.
 - 6.4 Fujifilm TTArtisan 35 f/0.95: 45 x 55 mm (Pergear, impossible with a
   52mm filter) -> 57 x 41 mm (B&H X listing, same as the Sony E version).
+
+## 7. Verify (2026-11-08)
+
+- `npm test` 869/869; `generate-seo.js` clean; `RUN_LINK_TESTS=1 npm run
+  test:links` 2/2 pass (warnings only: the usual bot-blocked hosts - B&H,
+  Wikimedia rate limits, usa.canon.com, DPReview, maker Shopify 429s).
+- Scan re-run: no MFD outliers left (12 magnification flags remain, all
+  macro/fisheye or a zoom whose MFD is the wide-end figure - false
+  positives); no lens year before its mount; price-ratio outliers 157 -> 114
+  (the rest are official regional prices that sit below USD because US
+  tariffs moved USD only); CAD under 1.1x USD 42 -> 18, all store-confirmed
+  except the EOS R100.
+- **Still open for the next sweep:** 8mm f/3.5 CS II years (E, MFT x2;
+  Wayback offline all session), EOS R100 CAD, Thypoch M diameters, SG-image
+  25 MF / 35 f/0.95 / 50 f/1.8 years, 7Artisans M 28 year, the motor labels
+  listed under 5.5, and the ~660 lenses / ~125 cameras with no spec source.
