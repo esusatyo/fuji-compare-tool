@@ -34,7 +34,7 @@
 - [x] 6.1 Sony FX5 `maxBurst`
 - [x] 6.2 Panasonic S1R photo
 - [x] 6.3 Thypoch M-mount diameters
-- [ ] 6.4 Fujifilm TTArtisan 35mm f/0.95 dimensions
+- [x] 6.4 Fujifilm TTArtisan 35mm f/0.95 dimensions
 
 ## 7. Verify
 

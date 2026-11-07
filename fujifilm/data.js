@@ -2372,7 +2372,7 @@ const LENSES = {
   'ttartisan-35mm-f095': {
     name:'TTArtisan 35mm f/0.95', manufacturer:'TTArtisan', line:'Manual', type:'Prime',
     mount:'x', focalLength:35, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'53mm',
-    maxAperture:0.95, minAperture:16, weight:258, length:55, diameter:45,
+    maxAperture:0.95, minAperture:16, weight:258, length:41, diameter:57,
     filterThread:52, minFocusDist:35, maxMagnification:null,
     elements:7, groups:5, blades:10, afType:'Manual',
     weatherSealed:false, ois:false, oisStops:null, year:2022, discontinued:false,
@@ -2380,7 +2380,7 @@ const LENSES = {
     imageSource: { url:'https://ttartisan.store/products/aps-c-35mm-f0-95', tier:'T1', note:'official TTArtisan store page, explicitly switched the mount selector to "Fuji X" before capturing (page defaults to Sony E); barrel reads "35 ... 0.95 ... TTArtisan"', date:'2026-08-17' },
     asin:'B0BMVCHNT7',
     prices:{USD:210,AUD:299,EUR:199,GBP:199,JPY:29000,CAD:299,SGD:299},
-    specSources: [{ url:'https://ttartisan.store/products/aps-c-35mm-f0-95', tier:'T1', note:'mount/price/optical formula confirmation', date:'2026-08-15' }, { url:'https://www.pergear.com/products/ttartisan-35mm-f0-95', tier:'T3', note:'dimensions (ø x L: 45 x 55mm) — not published on the maker\'s own page', date:'2026-08-15' }],
+    specSources: [{ url:'https://ttartisan.store/products/aps-c-35mm-f0-95', tier:'T1', note:'mount/price/optical formula confirmation', date:'2026-08-15' }, { url:'https://www.pergear.com/products/ttartisan-35mm-f0-95', tier:'T3', note:'dimensions (ø x L: 45 x 55mm) — not published on the maker\'s own page', date:'2026-08-15' }, { url:'https://www.bhphotovideo.com/c/product/1738817-REG/ttartisan_c35095_bs_x_aps_c_35mm_f_0_95_lens.html/specs', tier:'T3', title:'B&H - TTArtisan 35mm f/0.95 Lens for FUJIFILM X specifications', note:'"57 x 41 mm (Diameter x Length)", 52mm filter, 0.35 m, 7 elements in 5 groups - same as B&H\'s Sony E listing. The previous 45 x 55 mm (Pergear) could not take a 52mm filter; TTArtisan gives the size only as an image. Corrected: diameter 45 -> 57; length 55 -> 41.', date:'2026-11-07' }],
     priceSource: { url:'https://ttartisan.store/products/aps-c-35mm-f0-95', tier:'T1', title:'TTArtisan official store', note:'regular price $210 (Fuji X / Black&silver variant); read from the store\'s products.json', date:'2026-10-19' },
     productUrl:'https://ttartisan.store/products/aps-c-35mm-f0-95',
   },
