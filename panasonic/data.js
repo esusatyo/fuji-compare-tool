@@ -255,8 +255,10 @@ const CAMERAS = {
     name:'Lumix S1R', series:'Lumix S (Full-frame)', mount:'l', year:2019, discontinued:true,
     tagline:'Original 47MP High-Res',
     productUrl:null,
-    imageUrl:'https://upload.wikimedia.org/wikipedia/commons/thumb/f/fd/Panasonic.Lumix.S1R.50f1.4.jpg/500px-Panasonic.Lumix.S1R.50f1.4.jpg',
-    imageCredit:{author:"Bautsch", licence:"CC0", licenceUrl:"http://creativecommons.org/publicdomain/zero/1.0/deed.en", source:"https://commons.wikimedia.org/wiki/File:Panasonic.Lumix.S1R.50f1.4.jpg"},
+    // 2026-11-07: replaced a trade-show shot with no visible model badge (S1, S1R and S1H share one body) by a photo
+    // showing the red "S1R" front badge next to a "LUMIX S1R" Camera GP Japan 2019 placard.
+    imageUrl:'https://upload.wikimedia.org/wikipedia/commons/thumb/5/5f/Panasonic_Lumix_DC-S1R_26_oct_2019.jpg/500px-Panasonic_Lumix_DC-S1R_26_oct_2019.jpg',
+    imageCredit:{author:"昼落ち", licence:"CC BY-SA 4.0", licenceUrl:"https://creativecommons.org/licenses/by-sa/4.0", source:"https://commons.wikimedia.org/wiki/File:Panasonic_Lumix_DC-S1R_26_oct_2019.jpg"},
     asin:null,
     prices:{USD:3699,AUD:null,EUR:null,GBP:null,JPY:null,CAD:null,SGD:null},
     sensorMP:47.3, sensorType:'Full-frame CMOS', processor:'Venus Engine',
