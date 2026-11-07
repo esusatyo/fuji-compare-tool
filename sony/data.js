@@ -691,6 +691,7 @@ const CAMERAS = {
   'fx5': {
     name:'FX5', series:'Cinema Line', mount:'e', year:2026, discontinued:false,
     tagline:'5K Open Gate + Internal X-OCN RAW',
+    specSources: [{ url:'https://www.mhohner.de/sony-minolta/onebody/ilme-fx5?lg=e', tier:'T4', title:'Sony ILME-FX5 camera tech data (mhohner.de)', note:'Stills drive "Frame rate [fps] 10, 8, 6, 3", "Frame rate with AF [fps] 10.0" (compiled from Sony\'s documentation). Sony\'s US product page lists no stills burst rate for this cinema body; the 10 fps placeholder (copied from FX3/FX30 in July 2026) now has this secondary source. Stored values confirmed.', date:'2026-11-07' }],
     productUrl:'https://electronics.sony.com/imaging/interchangeable-lens-cameras/all-interchangeable-lens-cameras/p/ilmefx5b',
     imageUrl:null,
     asin:null,

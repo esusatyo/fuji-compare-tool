@@ -31,7 +31,7 @@
 
 ## 6. Standing doubts
 
-- [ ] 6.1 Sony FX5 `maxBurst`
+- [x] 6.1 Sony FX5 `maxBurst`
 - [ ] 6.2 Panasonic S1R photo
 - [ ] 6.3 Thypoch M-mount diameters
 - [ ] 6.4 Fujifilm TTArtisan 35mm f/0.95 dimensions
