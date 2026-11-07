@@ -22,5 +22,5 @@
 
 ## 5. Verify
 
-- [ ] 5.1 npm test, generate-seo, test:links
+- [x] 5.1 npm test, generate-seo, test:links
 - [ ] 5.2 PR description, push
