@@ -39,4 +39,4 @@
 ## 7. Verify
 
 - [x] 7.1 npm test, generate-seo, test:links, plausibility scan re-run
-- [ ] 7.2 PR description, push
+- [x] 7.2 PR description, push
