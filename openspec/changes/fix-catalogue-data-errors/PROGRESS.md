@@ -101,3 +101,37 @@ entry got a dated citation (confirmed or "X -> Y").
   aperture (shown July/Nov 2024, no ship date). Not re-checked (recent
   launches where a listing date is reliable): the other Viltrox 2024-2026,
   Thypoch, 7Artisans 6mm / M 75 II, TTArtisan 14mm ASPH and 7.5 f/2.
+
+## 5. Cross-mount disagreements (2026-11-07)
+
+Every value re-read from the maker's page for that mount (Chrome for Viltrox
+and Tamron, Shopify product data for Samyang / 7Artisans / Meike, Cosina's
+tables), B&H's per-mount listing where the maker says nothing.
+
+- 5.1 Wrong side fixed: Samyang 14-24 Sony E 0.17 -> 0.26x (0.17 is the 14mm
+  figure; L entries were right); Viltrox 50 Pro Z 9 -> 11 blades; Septon 40 Z
+  f/16 -> f/22, blades 10, 0.19x; Viltrox 35 EVO Z 0.1 -> 0.15x, 40 Air Z 0.1
+  -> 0.14x; Viltrox 26 EVO Z 9 -> 7 blades, Sony 0.22 -> 0.2x.
+- 5.2 Sealing: the 7 Nikon 7Artisans "sealed" values came from zsystemuser.com
+  only (Minna Camera says the LITE series drops dust/splash proofing; no maker
+  or B&H claim for any of them) -> false. Sony Meike 35 Pro, Viltrox 75 Pro and
+  135 LAB -> true (B&H / Viltrox text, same on every mount). Viltrox 16 f/1.8:
+  E/Z "dust-proof structure" only vs L "weather sealed" - the maker's own
+  per-mount difference, kept and cited.
+- 5.3 Nikon Nokton 40 f/1.2 Z: 35 -> 30 cm, 0.1 -> 0.2x, 315 -> 351 g (digits
+  swapped), 67.6 -> 67.7 mm. Nokton 28 / APO-Lanthar 28 filter sizes differ
+  per mount for real (smaller E barrels).
+- 5.4 Fujifilm Tamron 150-500 (A057X) had six wrong fields (18 groups, 9
+  blades, 150 cm, 0.33x, 88 mm dia, 1725 g) -> Tamron's X table. Samyang 100
+  macro: f/32 on every mount (Fujifilm said f/22).
+- 5.5 afType: 61 synonym labels unified per maker (Viltrox / TTArtisan /
+  7Artisans / Meike "Stepping Motor" -> "STM"; Sigma "HLA" variants -> "HLA
+  Linear" / "Dual HLA Linear"; Tamron "RXD" -> "Stepping Motor"). Cited
+  changes: Zeiss Batis x5 "Autofocus" -> "Linear Motor" (Zeiss Q&A), Laowa
+  10mm E -> "Stepping Motor" (PetaPixel), Samyang AF 12 / 75 X -> "Linear
+  STM" (Samyang). **Left generic/unchanged, motor not confirmable:** Zeiss
+  Touit (Zeiss: motor type varies per lens; Fujifilm entries say Stepping
+  Motor without a source), Sigma 105 DG DN Macro Sony "Autofocus" (sources
+  split between stepping motor and HSM), Laowa 180 / 200 / ACRIS 35 and 12
+  Lite E, 7Artisans AF 10 X, Tamron OSD (Tamron: DC motor; retailers:
+  stepping), Samyang AF 14 / 35 FE "STM" and AF 85 FE "Linear Ultrasonic".
