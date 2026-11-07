@@ -380,13 +380,15 @@ function validateLens(id, lens, mountIds = null) {
   add(checkField(lens, 'blades', { type: 'number', nullable: true, min: 1, max: 20 }));
 
   add(checkField(lens, 'minFocusDist', { type: 'number', min: 0 }));
-  // minFocusDist is in cm. Seven entries once stored the figure 10x too large
-  // (an 85mm at 790 cm instead of 0.79 m), which also flipped the "closest
-  // focus" winner. Real lenses stay under ~3x their longest focal length in
-  // mm (Leica M wides: 70 cm at 21mm); 150 cm keeps supertelephotos clear.
+  // minFocusDist is in cm. Fifteen entries once stored the figure 10x too
+  // large (an 85mm at 790 cm instead of 0.79 m, a 24-70mm at 240 cm instead
+  // of 0.24 m), which also flipped the "closest focus" winner. From 150 cm up,
+  // no real lens in the catalogue exceeds 1.11x its longest focal length in mm
+  // (Leica APO-Telyt-M 135mm at 150 cm; supertelephotos sit near 0.7x); the
+  // 150 cm floor keeps rangefinder wides clear (70 cm at 21mm).
   const longest = lens.type === 'Zoom' ? lens.focalLengthMax : lens.focalLength;
   if (typeof lens.minFocusDist === 'number' && typeof longest === 'number'
-      && lens.minFocusDist >= 150 && lens.minFocusDist > 3.5 * longest) {
+      && lens.minFocusDist >= 150 && lens.minFocusDist > 1.4 * longest) {
     e.push(`minFocusDist (${lens.minFocusDist} cm) is implausible for a ${longest}mm lens - entered 10x too large?`);
   }
   add(checkField(lens, 'maxMagnification', { type: 'number', nullable: true, min: 0 }));

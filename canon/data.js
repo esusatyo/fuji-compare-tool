@@ -749,8 +749,11 @@ const LENSES = {
     imageUrl:'https://upload.wikimedia.org/wikipedia/commons/thumb/4/4e/Canon_RF_600_11-8055.jpg/500px-Canon_RF_600_11-8055.jpg',
     imageCredit:{author:"GodeNehler", licence:"CC BY-SA 4.0", licenceUrl:"https://creativecommons.org/licenses/by-sa/4.0", source:"https://commons.wikimedia.org/wiki/File:Canon_RF_600_11-8055.jpg"},
     asin:'B08CL3V63G',
-    prices:{USD:929,AUD:1349,EUR:789,GBP:879,JPY:123200,CAD:899,SGD:1299},
-    priceSource: { url:'https://www.cpricewatch.com/price-changes/?p=07205', tier:'T4', title:'Canon USA store price (via Canon Price Watch)', note:'Canon Store regular $929.99 (its pre-sale "was" price on 2026-09-07); on sale at $729.99 at the time (fall instant rebate), not used. Canon Price Watch logs the Canon USA store price (usa.canon.com is geo-blocked from here)', date:'2026-10-19' },
+    prices:{USD:929,AUD:1349,EUR:789,GBP:879,JPY:123200,CAD:1099,SGD:1299},
+    priceSource: [
+      { url:'https://www.canon.ca/en/product?name=RF_600mm_F11_IS_STM', tier:'T1', title:'Canon Canada - RF 600mm F11 IS STM', note:'CAD 899 -> 1099: Canon Canada "MSRP: $1,099.99", item code 3986C002.', date:'2026-11-07' },
+      { url:'https://www.cpricewatch.com/price-changes/?p=07205', tier:'T4', title:'Canon USA store price (via Canon Price Watch)', note:'Canon Store regular $929.99 (its pre-sale "was" price on 2026-09-07); on sale at $729.99 at the time (fall instant rebate), not used. Canon Price Watch logs the Canon USA store price (usa.canon.com is geo-blocked from here)', date:'2026-10-19' },
+    ],
     productUrl:'https://www.canon.com.au/camera-lenses/rf-600mm-f11-is-stm',
   },
 
@@ -899,8 +902,11 @@ const LENSES = {
     imageUrl:'https://www.canon.com.au/-/media/images/canon/products/lenses/fisheye-lenses/rf-s-3-9mm-f3-5-stm-dual-fisheye/carousel-1-rfs39mmf35stm-1400x960.jpg',
     imageSource: { url:'https://www.canon.com.au/camera-lenses/rf-s-3-9mm-f3-5-stm-dual-fisheye', tier:'T1', note:'official Canon Australia product page, barrel reads "CANON LENS RF-S 3.9mm F3.5 STM" and "DUAL FISHEYE"', date:'2026-08-17' },
     asin:'B0D6NKM451',
-    prices:{USD:1299,AUD:1999,EUR:1299,GBP:999,JPY:166000,CAD:1399,SGD:1599},
-    priceSource: { url:'https://www.cpricewatch.com/price-changes/?p=08212', tier:'T4', title:'Canon USA store price (via Canon Price Watch)', note:'Canon Store regular $1299.00 (its pre-sale "was" price on 2026-09-07); on sale at $1099.00 at the time (fall instant rebate), not used; agrees with the B&H regular price recorded 2026-10-11. Canon Price Watch logs the Canon USA store price (usa.canon.com is geo-blocked from here)', date:'2026-10-19' },
+    prices:{USD:1299,AUD:1999,EUR:1299,GBP:999,JPY:166000,CAD:1599,SGD:1599},
+    priceSource: [
+      { url:'https://www.canon.ca/en/product?name=RF-S3.9mm_F3.5_STM_DUAL_FISHEYE', tier:'T1', title:'Canon Canada - RF-S3.9mm F3.5 STM DUAL FISHEYE', note:'CAD 1399 -> 1599: Canon Canada "MSRP: $1,599.99", item code 6578C002.', date:'2026-11-07' },
+      { url:'https://www.cpricewatch.com/price-changes/?p=08212', tier:'T4', title:'Canon USA store price (via Canon Price Watch)', note:'Canon Store regular $1299.00 (its pre-sale "was" price on 2026-09-07); on sale at $1099.00 at the time (fall instant rebate), not used; agrees with the B&H regular price recorded 2026-10-11. Canon Price Watch logs the Canon USA store price (usa.canon.com is geo-blocked from here)', date:'2026-10-19' },
+    ],
     productUrl:'https://www.canon.com.au/camera-lenses/rf-s-3-9mm-f3-5-stm-dual-fisheye',
   },
 
@@ -914,8 +920,11 @@ const LENSES = {
     imageUrl:'https://www.canon.com.au/-/media/images/canon/products/lenses/vr-lenses/rf-s-7-8mm-f4-stm-dual/carousel-1-rfs78mmf4stmdual-1400x960.jpg',
     imageSource: { url:'https://www.canon.com.au/camera-lenses/rf-s-7-8mm-f4-stm-dual', tier:'T1', note:'official Canon Australia product page, barrel reads "Canon RF-S ... DUAL LENS", compact dual-fisheye VR body shape matches', date:'2026-08-17' },
     asin:'B0DKZCXF78',
-    prices:{USD:509,AUD:799,EUR:499,GBP:399,JPY:64000,CAD:499,SGD:599},
-    priceSource: { url:'https://www.cpricewatch.com/price-changes/?p=08290', tier:'T4', title:'Canon USA store price (via Canon Price Watch)', note:'Canon Store regular $509.99 (its pre-sale "was" price on 2026-09-07); on sale at $409.99 at the time (fall instant rebate), not used; agrees with the B&H regular price recorded 2026-10-11. Canon Price Watch logs the Canon USA store price (usa.canon.com is geo-blocked from here)', date:'2026-10-19' },
+    prices:{USD:509,AUD:799,EUR:499,GBP:399,JPY:64000,CAD:649,SGD:599},
+    priceSource: [
+      { url:'https://www.canon.ca/en/product?name=RF-S7.8mm_F4_STM_DUAL', tier:'T1', title:'Canon Canada - RF-S7.8mm F4 STM DUAL', note:'CAD 499 -> 649: Canon Canada "MSRP: $649.99", item code 6795C002.', date:'2026-11-07' },
+      { url:'https://www.cpricewatch.com/price-changes/?p=08290', tier:'T4', title:'Canon USA store price (via Canon Price Watch)', note:'Canon Store regular $509.99 (its pre-sale "was" price on 2026-09-07); on sale at $409.99 at the time (fall instant rebate), not used; agrees with the B&H regular price recorded 2026-10-11. Canon Price Watch logs the Canon USA store price (usa.canon.com is geo-blocked from here)', date:'2026-10-19' },
+    ],
     productUrl:'https://www.canon.com.au/camera-lenses/rf-s-7-8mm-f4-stm-dual',
   },
 
@@ -1151,8 +1160,11 @@ const LENSES = {
     imageUrl:'https://upload.wikimedia.org/wikipedia/commons/thumb/4/45/Canon_RF_15-30mm_F4.5-6.3_IS_STM.jpg/500px-Canon_RF_15-30mm_F4.5-6.3_IS_STM.jpg',
     imageCredit:{author:"Henry Söderlund", licence:"CC BY 2.0", licenceUrl:"https://creativecommons.org/licenses/by/2.0", source:"https://commons.wikimedia.org/wiki/File:Canon_RF_15-30mm_F4.5-6.3_IS_STM.jpg"},
     asin:'B0B69P2LJG',
-    prices:{USD:639,AUD:899,EUR:599,GBP:499,JPY:77000,CAD:699,SGD:799},
-    priceSource: { url:'https://www.cpricewatch.com/price-changes/?p=07671', tier:'T4', title:'Canon USA store price (via Canon Price Watch)', note:'Canon Store regular $639.99 (its pre-sale "was" price on 2026-09-07); on sale at $539.99 at the time (fall instant rebate), not used; agrees with the B&H regular price recorded 2026-10-11. Canon Price Watch logs the Canon USA store price (usa.canon.com is geo-blocked from here)', date:'2026-10-19' },
+    prices:{USD:639,AUD:899,EUR:599,GBP:499,JPY:77000,CAD:799,SGD:799},
+    priceSource: [
+      { url:'https://www.canon.ca/en/product?name=RF15-30mm_F4.5-6.3_IS_STM', tier:'T1', title:'Canon Canada - RF15-30mm F4.5-6.3 IS STM', note:'CAD 699 -> 799: Canon Canada "MSRP: $799.99", item code 5775C002.', date:'2026-11-07' },
+      { url:'https://www.cpricewatch.com/price-changes/?p=07671', tier:'T4', title:'Canon USA store price (via Canon Price Watch)', note:'Canon Store regular $639.99 (its pre-sale "was" price on 2026-09-07); on sale at $539.99 at the time (fall instant rebate), not used; agrees with the B&H regular price recorded 2026-10-11. Canon Price Watch logs the Canon USA store price (usa.canon.com is geo-blocked from here)', date:'2026-10-19' },
+    ],
     productUrl:'https://www.canon.com.au/camera-lenses/rf-15-30mm-f4-5-6-3-is-stm',
   },
 
@@ -1286,8 +1298,11 @@ const LENSES = {
     imageUrl:'https://upload.wikimedia.org/wikipedia/commons/5/54/Canon_RF-S_10-18mm_F4.5-6.3_IS_STM_by_Henry_S%C3%B6derlund.jpg',
     imageCredit:{author:"Henry Söderlund", licence:"CC BY 2.0", licenceUrl:"https://creativecommons.org/licenses/by/2.0", source:"https://commons.wikimedia.org/wiki/File:Canon_RF-S_10-18mm_F4.5-6.3_IS_STM_by_Henry_S%C3%B6derlund.jpg"},
     asin:'B0CMDC61MZ',
-    prices:{USD:369,AUD:499,EUR:399,GBP:299,JPY:53000,CAD:399,SGD:499},
-    priceSource: { url:'https://www.cpricewatch.com/price-changes/?p=08050', tier:'T4', title:'Canon USA store price (via Canon Price Watch)', note:'Canon Store regular $369.99 (its pre-sale "was" price on 2026-09-07); on sale at $319.99 at the time (fall instant rebate), not used; agrees with the B&H regular price recorded 2026-10-11. Canon Price Watch logs the Canon USA store price (usa.canon.com is geo-blocked from here)', date:'2026-10-19' },
+    prices:{USD:369,AUD:499,EUR:399,GBP:299,JPY:53000,CAD:479,SGD:499},
+    priceSource: [
+      { url:'https://www.canon.ca/en/product?name=RF-S10-18mm_F4.5-6.3_IS_STM', tier:'T1', title:'Canon Canada - RF-S10-18mm F4.5-6.3 IS STM', note:'CAD 399 -> 479: Canon Canada "MSRP: $479.99", item code 6262C002.', date:'2026-11-07' },
+      { url:'https://www.cpricewatch.com/price-changes/?p=08050', tier:'T4', title:'Canon USA store price (via Canon Price Watch)', note:'Canon Store regular $369.99 (its pre-sale "was" price on 2026-09-07); on sale at $319.99 at the time (fall instant rebate), not used; agrees with the B&H regular price recorded 2026-10-11. Canon Price Watch logs the Canon USA store price (usa.canon.com is geo-blocked from here)', date:'2026-10-19' },
+    ],
     productUrl:'https://www.usa.canon.com/shop/p/rfs10-18mmf45-63isstm',
   },
 
@@ -1788,8 +1803,13 @@ const LENSES = {
     imageUrl:'https://ttartisan.store/cdn/shop/files/C5012-1.jpg',
     imageSource: { url:'https://ttartisan.store/products/ttartisan-50mm-f1-2', tier:'T1', note:'official TTArtisan store page, barrel reads "TTArtisan"; Canon RF is a selectable mount option. No mount-specific marking visible (front barrel is mount-agnostic for this manual lens), accepted since nothing in the image contradicts confirmed RF availability', date:'2026-08-17' },
     asin:'B0B9G3SYBX',
-    prices:{USD:109,AUD:199,EUR:99,GBP:99,JPY:17000,CAD:99,SGD:199},
-    priceSource: { url:'https://ttartisan.store/products/ttartisan-50mm-f1-2', tier:'T1', title:'TTArtisan official store', note:'Canon RF / Black variant $109, no sale; was $98 in the data', date:'2026-10-19' },
+    priceIncomplete:true,
+    prices:{USD:109,AUD:null,EUR:null,GBP:null,JPY:null,CAD:null,SGD:null},
+    priceSource: [
+      { url:'https://ttartisan.store/products/ttartisan-50mm-f1-2', tier:'T1', title:'TTArtisan store - APS-C 50mm F1.2', note:'Canon RF / Black $109, no compare-at. Regional prices removed (AUD/EUR/GBP/JPY/CAD/SGD were round placeholders with no source); the maker sells in USD only and no confirmed local price was found, so USD-only (owner rule 2026-10-24).', date:'2026-11-07' },
+      { url:'https://www.bhphotovideo.com/c/product/1722510-REG/ttartisan_c5012_b_rf_50mm_f_1_2_aps_c_lens.html', tier:'T3', title:'B&H - TTArtisan 50mm f/1.2 for Canon RF', note:'$109.', date:'2026-11-07' },
+      { url:'https://ttartisan.store/products/ttartisan-50mm-f1-2', tier:'T1', title:'TTArtisan official store', note:'Canon RF / Black variant $109, no sale; was $98 in the data', date:'2026-10-19' },
+    ],
     productUrl:'https://www.ttartisan.com/?aps-c-lenses%2F73.html=',
   },
 
@@ -1842,9 +1862,13 @@ const LENSES = {
       { url:'https://ttartisan.store/products/aps-c-23mm-f1-4-black', tier:'T1', note:'spec table and Mount selector confirming Canon RF; weight published as a range ("around 222~250g") — top of range used, consistent with this dataset\'s existing convention for TTArtisan cross-mount ranges (RF/L tend to be the heaviest variant), not independently re-measured for this specific lens', date:'2026-08-29' },
       { url:'https://ttartisan.store/products/aps-c-23mm-f1-4-black', tier:'T1', note:'the "Size" row image gives per-mount L x diameter; RF column = 63x41mm, read directly off the downloaded image', date:'2026-08-29' },
     ],
-    priceSource: { url:'https://ttartisan.store/products/aps-c-23mm-f1-4-black', tier:'T1', title:'TTArtisan official store', note:'Canon RF variant $114, no sale (out of stock at the time)', date:'2026-10-19' },
+    priceSource: [
+      { url:'https://ttartisan.store/products/aps-c-23mm-f1-4-black', tier:'T1', title:'TTArtisan store - APS-C 23mm F1.4', note:'Canon RF variant $114, no compare-at (out of stock); no B&H listing. Regional prices removed (AUD/EUR/GBP/JPY/CAD/SGD were round placeholders with no source); the maker sells in USD only and no confirmed local price was found, so USD-only (owner rule 2026-10-24).', date:'2026-11-07' },
+      { url:'https://ttartisan.store/products/aps-c-23mm-f1-4-black', tier:'T1', title:'TTArtisan official store', note:'Canon RF variant $114, no sale (out of stock at the time)', date:'2026-10-19' },
+    ],
     asin:'B0BJ1PQGXH',
-    prices:{USD:114,AUD:199,EUR:99,GBP:99,JPY:15000,CAD:99,SGD:199},
+    priceIncomplete:true,
+    prices:{USD:114,AUD:null,EUR:null,GBP:null,JPY:null,CAD:null,SGD:null},
     productUrl:'https://ttartisan.store/products/aps-c-23mm-f1-4-black',
   },
 
@@ -2044,8 +2068,13 @@ const LENSES = {
     imageUrl:'https://7artisans.store/cdn/shop/files/1_96c2e869-d8ac-4ba3-973e-07af921c5409.jpg',
     imageSource: { url:'https://7artisans.store/products/35mm-f-1-4-full-frame-lens-for-e-eos-r-z-l', tier:'T1', note:'official 7Artisans store page ("MF 35mm f/1.4 Ⅲ...for E/EOS-R/Z/L" — confirms Mark III specifically), aperture/focus scales match; "EOS-R mount" is a selectable option. No mount-specific marking visible (front barrel is mount-agnostic for this manual lens), accepted since nothing in the image contradicts confirmed RF availability', date:'2026-08-17' },
     asin:'B0BRKB1P34',
-    prices:{USD:189,AUD:299,EUR:199,GBP:199,JPY:29000,CAD:199,SGD:299},
-    priceSource: { url:'https://7artisans.store/products/35mm-f-1-4-full-frame-lens-for-e-eos-r-z-l', tier:'T1', title:'7Artisans official store', note:'EOS-R mount / Black variant $189, no sale', date:'2026-10-19' },
+    priceIncomplete:true,
+    prices:{USD:189,AUD:null,EUR:null,GBP:null,JPY:null,CAD:null,SGD:null},
+    priceSource: [
+      { url:'https://7artisans.store/products/35mm-f-1-4-full-frame-lens-for-e-eos-r-z-l', tier:'T1', title:'7Artisans store - MF 35mm f/1.4 III', note:'EOS-R mount / Black $189, no compare-at. Regional prices removed (AUD/EUR/GBP/JPY/CAD/SGD were round placeholders with no source); the maker sells in USD only and no confirmed local price was found, so USD-only (owner rule 2026-10-24).', date:'2026-11-07' },
+      { url:'https://www.bhphotovideo.com/c/product/1857135-REG/7artisans_photoelectric_35f14b_r_35mm_f_1_4_mark_iii.html', tier:'T3', title:'B&H - 7Artisans 35mm f/1.4 Mark III (Canon RF)', note:'$189.', date:'2026-11-07' },
+      { url:'https://7artisans.store/products/35mm-f-1-4-full-frame-lens-for-e-eos-r-z-l', tier:'T1', title:'7Artisans official store', note:'EOS-R mount / Black variant $189, no sale', date:'2026-10-19' },
+    ],
     productUrl:'https://7artisans.store/products/35mm-f-1-4-full-frame-lens-for-e-eos-r-z-l',
   },
 

@@ -176,7 +176,14 @@ test('a minimum focus distance entered 10x too large is rejected', () => {
   reports(validateLens('mfd-x10', prime({ focalLength: 85, minFocusDist: 790 })), 'minFocusDist');
 });
 
+test('a zoom or macro minimum focus distance entered 10x too large is rejected', () => {
+  reports(validateLens('mfd-zoom-x10', lens({ focalLengthMin: 24, focalLengthMax: 70, minFocusDist: 240 })), 'minFocusDist');
+  reports(validateLens('mfd-macro-x10', prime({ focalLength: 100, minFocusDist: 260 })), 'minFocusDist');
+});
+
 test('a long but real minimum focus distance passes the unit guard', () => {
   assert.deepEqual(validateLens('mfd-tele', prime({ focalLength: 600, minFocusDist: 420 })), []);
+  assert.deepEqual(validateLens('mfd-rangefinder-tele', prime({ focalLength: 135, minFocusDist: 150 })), []);
+  assert.deepEqual(validateLens('mfd-tele-zoom', lens({ focalLengthMin: 200, focalLengthMax: 600, minFocusDist: 240 })), []);
   assert.deepEqual(validateLens('mfd-rangefinder-wide', prime({ focalLength: 21, minFocusDist: 70 })), []);
 });
