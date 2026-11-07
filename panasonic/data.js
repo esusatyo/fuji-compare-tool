@@ -2678,6 +2678,7 @@ const LENSES = {
     imageUrl:'https://viltrox.com/cdn/shop/files/AF_16mm_F1.8_L_-front_view.png',
     imageSource: { url:'https://viltrox.com/products/af-16mm-f1-8-l', tier:'T1', note:'official Viltrox store, single-mount L-only product page; barrel reads "AF 16/1.8 L" — the first DOM-order image on this page was actually the Sony FE-mount SKU photo pulled in from a related-product widget, rejected in favor of the explicitly "_L_"-tagged filename', date:'2026-08-17' }, asin:'B0GLGC7C21',
     prices:{USD:580,AUD:null,EUR:null,GBP:null,JPY:null,CAD:null,SGD:null},
+    specSources: [{ url:'https://viltrox.com/products/af-16mm-f1-8-l', tier:'T1', title:'Viltrox - AF 16mm F1.8 L', note:'"Durable Weather-Sealed Body: High-grade weather sealing" - unlike the E/Z version, which claims dust-proofing only. Stored values confirmed.', date:'2026-11-07' }],
     priceIncomplete:true, productUrl:'https://viltrox.com/products/af-16mm-f1-8-l',
   },
 
