@@ -16,7 +16,7 @@
 
 ## 1. Generator: at-a-glance block (scripts/generate-seo.js)
 
-- [ ] 1.1 Add helpers next to `VS_ROWS`: `vsRow(label)` lookup, `sizeText(cam)`, and
+- [x] 1.1 Add helpers next to `VS_ROWS`: `vsRow(label)` lookup, `sizeText(cam)`, and
       `GLANCE_COLS` (the 8 columns of design D4, each `[header, cam => value|null]`). Export
       `GLANCE_COLS`, `sizeText`. No output change yet; `npm test` green.
 - [ ] 1.2 Add `brandGlanceHTML(brand, data, isIndexable, pairs)` returning the

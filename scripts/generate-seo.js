@@ -251,6 +251,27 @@ const VS_ROWS = [
   ['Lens mount', c => c.lensType],
 ];
 
+// The VS_ROWS formatter for a row label, so a brand page's at-a-glance table
+// and a vs-page can never word the same value differently.
+const vsRow = label => VS_ROWS.find(r => r[0] === label)[1];
+
+// Body size as "W × H × D mm"; null unless all three dimensions are known.
+function sizeText(c) {
+  return [c.width, c.height, c.depth].every(v => v != null)
+    ? `${c.width} × ${c.height} × ${c.depth} mm` : null;
+}
+
+// Columns of the brand page's at-a-glance table (after the camera name).
+const GLANCE_COLS = [
+  ['Announced',     vsRow('Announced')],
+  ['Sensor',        vsRow('Sensor')],
+  ['Stabilization', vsRow('In-body stabilization')],
+  ['Max video',     vsRow('Max video')],
+  ['Weight',        vsRow('Weight')],
+  ['Size (W×H×D)',  sizeText],
+  ['Price (USD)',   vsRow('Price (USD RRP)')],
+];
+
 // ─── References (Spec/Price/Image/Product source citations) ────
 // Mirrors engine.js's collectReferences()/citationText()/refHostname() —
 // duplicated rather than shared because engine.js is a browser-only script
@@ -1907,4 +1928,4 @@ if (require.main === module) {
   console.log(`generate-seo: ${files.size} artifacts (${written} written, ${removed} stale removed)`);
 }
 
-module.exports = { ROOT_TITLE, buildSite, uniqueItemCount, cardHash, lastmodManifest, sitemapHashes, LASTMOD_MANIFEST, vsCardHTML, infoCardHTML, shareTags, CARD_W, CARD_H, LANDING_CARD_ORDER, ALL_BRANDS_MOSAIC, orderLandingBrands, allBrandsPhotoHTML, siteConfig, curatedPairs, successorPairKeys, resolvePins, withPins, PINNED_VS_PAIRS, SUCCESSOR_INDEX_SINCE, relatedPairs, vsPageHTML, vsSummary, vsSummaryFacts, resolveMatchups, crossVsPageHTML, crossTitle, CROSS_BRAND_MATCHUPS, compareHeadBlock, compareBodyBlock, brandHeadBlock, rootHeadBlock, brandBodyBlock, rootBodyBlock, withHeadBlock, withBodyBlock, sitemapXML, robotsTxt, buildAll, SEO_BEGIN, SEO_END, SEO_BODY_BEGIN, SEO_BODY_END, ID_HEAD_BEGIN, ID_HEAD_END, ID_HEADER_BEGIN, ID_HEADER_END, ID_FOOTER_BEGIN, ID_FOOTER_END, identityToken, logoMark, cleanUrl, cleanHref, themeToggleHTML, collectReferences, citationText, refHostname, REFERENCE_ROWS, referenceRowsHTML };
+module.exports = { ROOT_TITLE, buildSite, GLANCE_COLS, sizeText, uniqueItemCount, cardHash, lastmodManifest, sitemapHashes, LASTMOD_MANIFEST, vsCardHTML, infoCardHTML, shareTags, CARD_W, CARD_H, LANDING_CARD_ORDER, ALL_BRANDS_MOSAIC, orderLandingBrands, allBrandsPhotoHTML, siteConfig, curatedPairs, successorPairKeys, resolvePins, withPins, PINNED_VS_PAIRS, SUCCESSOR_INDEX_SINCE, relatedPairs, vsPageHTML, vsSummary, vsSummaryFacts, resolveMatchups, crossVsPageHTML, crossTitle, CROSS_BRAND_MATCHUPS, compareHeadBlock, compareBodyBlock, brandHeadBlock, rootHeadBlock, brandBodyBlock, rootBodyBlock, withHeadBlock, withBodyBlock, sitemapXML, robotsTxt, buildAll, SEO_BEGIN, SEO_END, SEO_BODY_BEGIN, SEO_BODY_END, ID_HEAD_BEGIN, ID_HEAD_END, ID_HEADER_BEGIN, ID_HEADER_END, ID_FOOTER_BEGIN, ID_FOOTER_END, identityToken, logoMark, cleanUrl, cleanHref, themeToggleHTML, collectReferences, citationText, refHostname, REFERENCE_ROWS, referenceRowsHTML };
