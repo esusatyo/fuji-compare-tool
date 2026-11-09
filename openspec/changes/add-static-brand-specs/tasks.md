@@ -35,27 +35,27 @@
 Use `tests/helpers/load-brand.js` (`brandDirs`, `loadBrand`) and parse each committed
 `<brand>/index.html` with jsdom (`new JSDOM(html)`). Test names start with `[brand-specs]`.
 
-- [ ] 2.1 Per brand: the `.seo-glance tbody tr` count equals the number of non-discontinued
+- [x] 2.1 Per brand: the `.seo-glance tbody tr` count equals the number of non-discontinued
       cameras, and row order equals `CAMERA_ORDER` filtered to current cameras (compare the
       row-header text against `cam.name`).
-- [ ] 2.2 Per brand, per row: each cell's text equals `esc`-decoded `GLANCE_COLS[i][1](cam) ?? '—'`
+- [x] 2.2 Per brand, per row: each cell's text equals `esc`-decoded `GLANCE_COLS[i][1](cam) ?? '—'`
       (i.e. the table matches the data, including `—` for nulls). Include one hand-written spot check
       for a known camera (e.g. Sony A7 IV's weight and size strings) so the test doesn't only compare
       the generator with itself.
-- [ ] 2.3 Per brand: the older-cameras line lists exactly the discontinued cameras' names in
+- [x] 2.3 Per brand: the older-cameras line lists exactly the discontinued cameras' names in
       `CAMERA_ORDER` order. The line is absent when there are none.
-- [ ] 2.4 Per brand: the lens line's total equals `Object.keys(LENSES).length`; per-maker counts
+- [x] 2.4 Per brand: the lens line's total equals `Object.keys(LENSES).length`; per-maker counts
       sum to the total; the brand's own maker is listed first.
-- [ ] 2.5 Per brand: every `<a>` in `.seo-glance` is extensionless, points at `vs/<a>-vs-<b>` for a
+- [x] 2.5 Per brand: every `<a>` in `.seo-glance` is extensionless, points at `vs/<a>-vs-<b>` for a
       file that exists, and that page is indexable (no `noindex` meta in the file). A current camera
       with no indexable pair has no link (assert at least one such case exists somewhere, or build one
       in a unit test of `brandGlanceHTML` with a fake `isIndexable` returning false).
-- [ ] 2.6 Unit tests of `brandGlanceHTML` with small fake `data` objects (no files):
+- [x] 2.6 Unit tests of `brandGlanceHTML` with small fake `data` objects (no files):
       (a) zero current cameras → no `<table>` but the older and lens lines render;
       (b) one current camera → singular wording;
       (c) a name containing `<` / `&` is escaped;
       (d) a camera missing `depth` → size cell `—`.
-- [ ] 2.7 Mutation check (manual, then note it in the commit message): temporarily mark one Sony
+- [x] 2.7 Mutation check (manual, then note it in the commit message): temporarily mark one Sony
       camera `discontinued: true` in memory (not on disk) and assert `brandGlanceHTML` moves it from
       the table to the older line. This can be a real test using a cloned data object.
 
