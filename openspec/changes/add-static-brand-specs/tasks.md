@@ -73,7 +73,7 @@ Use `tests/helpers/load-brand.js` (`brandDirs`, `loadBrand`) and parse each comm
 
 ## 4. Styles (engine.css)
 
-- [ ] 4.1 Add the `.seo-table-wrap` / `.seo-table` rules of design D8 next to `.seo-links`, using
+- [x] 4.1 Add the `.seo-table-wrap` / `.seo-table` rules of design D8 next to `.seo-links`, using
       existing tokens only (both themes). `npm test` (design-system tests) green.
 
 ## 5. Docs

@@ -710,6 +710,28 @@ footer a:hover { text-decoration: underline; }
 .seo-links a { color: var(--accent-primary); text-decoration: none; }
 .seo-links a:hover { text-decoration: underline; }
 
+/* At-a-glance spec table on brand pages (generator-owned, in the seo:body
+   block). A quiet reference appendix: scrolls inside its own box so a narrow
+   screen never scrolls the page sideways. Tokens only, so both themes work. */
+.seo-glance p { max-width: 70ch; }
+.seo-table-wrap { overflow-x: auto; margin: 0 0 12px; }
+.seo-table {
+  width: 100%;
+  min-width: 720px;
+  border-collapse: collapse;
+  font-size: 13px;
+}
+.seo-table th,
+.seo-table td {
+  padding: 6px 10px;
+  text-align: left;
+  white-space: nowrap;
+  border-bottom: 1px solid var(--border);
+}
+.seo-table thead th { color: var(--text-secondary); font-weight: 600; }
+.seo-table tbody th { color: var(--text-primary); font-weight: 600; }
+.seo-table td { color: var(--text-secondary); }
+
 /* ─── RESPONSIVE ─── */
 @media (max-width: 599px) {
   :root { --num-slots: 2; }
