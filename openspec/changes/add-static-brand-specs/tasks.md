@@ -23,7 +23,7 @@
       `<section class="seo-links seo-glance">` of design D2/D3/D5/D6 (table + older line + lens line;
       table omitted when there are no current cameras; singular wording for count 1; every value `esc()`'d;
       null → `—`). Export it. Not wired in yet.
-- [ ] 1.3 Wire it in: `brandBodyBlock(brand, data, site, pairs, isIndexable = () => false)`
+- [x] 1.3 Wire it in: `brandBodyBlock(brand, data, site, pairs, isIndexable = () => false)`
       emits `brandGlanceHTML(...)` before the existing popular-comparisons section, inside the markers.
       In `buildSite`, pass `(a, b) => indexable(\`${brand}/vs/${a}-vs-${b}.html\`, a, b)`. Check the exact `rel`
       format `indexable` expects by reading how vs-page files are keyed in `buildSite`.

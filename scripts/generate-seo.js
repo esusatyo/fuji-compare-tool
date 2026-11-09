@@ -1411,7 +1411,7 @@ ${parts.join('\n')}
 
 // Links every curated vs-page for the brand, so no vs-page is orphaned: each
 // is reachable from its brand page even before cross-linking.
-function brandBodyBlock(brand, data, site, pairs) {
+function brandBodyBlock(brand, data, site, pairs, isIndexable = () => false) {
   const name = data.BRAND_CONFIG.name;
   const cams = data.CAMERAS;
   const nCams = Object.keys(cams).length;
@@ -1420,6 +1420,7 @@ function brandBodyBlock(brand, data, site, pairs) {
     `      <li><a href="vs/${a}-vs-${b}">${esc(name)} ${esc(cams[a].name)} vs ${esc(cams[b].name)}</a></li>`
   ).join('\n');
   return `${SEO_BODY_BEGIN}
+  ${brandGlanceHTML(brand, data, isIndexable, pairs)}
   <section class="seo-links" aria-label="Popular ${esc(name)} comparisons">
     <h2>Popular ${esc(name)} camera comparisons</h2>
     <p>Compare all ${nCams} ${esc(name)} cameras and ${nLenses} lenses side by side — price, sensor, autofocus, stabilization and video, in seven currencies. Popular head-to-head comparisons:</p>
@@ -1875,7 +1876,8 @@ function buildSite({ today = new Date().toISOString().slice(0, 10) } = {}) {
     const idx = path.join(brand, 'index.html');
     let idxHtml = fs.readFileSync(path.join(ROOT, idx), 'utf8');
     idxHtml = withHeadBlock(idxHtml, brandHeadBlock(brand, data, site, addCard(brandShareCard(brand, data))), idx);
-    idxHtml = withBodyBlock(idxHtml, brandBodyBlock(brand, data, site, pairs), idx);
+    idxHtml = withBodyBlock(idxHtml, brandBodyBlock(brand, data, site, pairs,
+      (a, b) => indexable(`${brand}/vs/${a}-vs-${b}.html`, a, b)), idx);
     files.set(idx, idxHtml);
     sitemapPaths.push(`${brand}/`);
 
