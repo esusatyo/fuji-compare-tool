@@ -94,7 +94,7 @@ Use `tests/helpers/load-brand.js` (`brandDirs`, `loadBrand`) and parse each comm
 
 ## 7. PR
 
-- [ ] 7.1 Open the PR (title: "Static at-a-glance specs on brand pages"), with screenshots and the
+- [x] 7.1 Open the PR (title: "Static at-a-glance specs on brand pages"), with screenshots and the
       before/after crawlable text size per brand page. Ask the owner to check one brand page on a real phone.
 
 ## 8. After merge
