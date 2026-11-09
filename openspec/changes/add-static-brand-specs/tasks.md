@@ -19,7 +19,7 @@
 - [x] 1.1 Add helpers next to `VS_ROWS`: `vsRow(label)` lookup, `sizeText(cam)`, and
       `GLANCE_COLS` (the 8 columns of design D4, each `[header, cam => value|null]`). Export
       `GLANCE_COLS`, `sizeText`. No output change yet; `npm test` green.
-- [ ] 1.2 Add `brandGlanceHTML(brand, data, isIndexable, pairs)` returning the
+- [x] 1.2 Add `brandGlanceHTML(brand, data, isIndexable, pairs)` returning the
       `<section class="seo-links seo-glance">` of design D2/D3/D5/D6 (table + older line + lens line;
       table omitted when there are no current cameras; singular wording for count 1; every value `esc()`'d;
       null → `—`). Export it. Not wired in yet.
