@@ -54,6 +54,9 @@ and whether the interactive tool gets a "size" view as well.
 
 ## 3. Static specs on brand pages — medium to large
 
+**Status (2026-11-09): built as `add-static-brand-specs`** (open table above the footer, one row per
+current camera, older models and lens counts as text). Measure it 4–8 weeks after it ships.
+
 **Problem.** Brand pages are the site's richest pages but serve almost no text to
 crawlers, so Google and AI answer engines can't rank or cite their specs.
 

@@ -78,7 +78,7 @@ Use `tests/helpers/load-brand.js` (`brandDirs`, `loadBrand`) and parse each comm
 
 ## 5. Docs
 
-- [ ] 5.1 CLAUDE.md: one sentence in the Architecture section that brand pages' `seo:body` block
+- [x] 5.1 CLAUDE.md: one sentence in the Architecture section that brand pages' `seo:body` block
       now carries an at-a-glance spec table generated from `data.js` (and that the engine moves its
       footer below the static sections). Update `docs/growth-backlog.md` item 3 to "in progress: add-static-brand-specs".
 
