@@ -731,6 +731,8 @@ footer a:hover { text-decoration: underline; }
 .seo-table thead th { color: var(--text-secondary); font-weight: 600; }
 .seo-table tbody th { color: var(--text-primary); font-weight: 600; }
 .seo-table td { color: var(--text-secondary); }
+/* Sensor text is the one long cell: let it wrap so the table fits the desktop column. */
+.seo-table td:nth-child(3) { white-space: normal; min-width: 14em; }
 
 /* ─── RESPONSIVE ─── */
 @media (max-width: 599px) {

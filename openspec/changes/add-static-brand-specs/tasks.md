@@ -84,13 +84,13 @@ Use `tests/helpers/load-brand.js` (`brandDirs`, `loadBrand`) and parse each comm
 
 ## 6. Verify in a browser
 
-- [ ] 6.1 `python3 scripts/preview.py 3456`; open `/sony/`, `/sigma/` (1 current camera), `/leica/`
+- [x] 6.1 `python3 scripts/preview.py 3456`; open `/sony/`, `/sigma/` (1 current camera), `/leica/`
       (long older line) and `/compare/` in light and dark at desktop and 375px wide. The page must not
       scroll sideways (only the table box scrolls), the footer must come last, and the tool must work.
       Take screenshots for the PR.
-- [ ] 6.2 View the raw HTML (`curl -s localhost:3456/sony/ | grep -c '<tr>'`) and confirm the table is in
+- [x] 6.2 View the raw HTML (`curl -s localhost:3456/sony/ | grep -c '<tr>'`) and confirm the table is in
       the served HTML (crawler view, no JS).
-- [ ] 6.3 `npm test` green; `RUN_LINK_TESTS=1 npm run test:links` is not needed (no new external URLs).
+- [x] 6.3 `npm test` green; `RUN_LINK_TESTS=1 npm run test:links` is not needed (no new external URLs).
 
 ## 7. PR
 
