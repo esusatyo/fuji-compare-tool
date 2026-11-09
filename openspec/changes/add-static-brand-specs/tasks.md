@@ -61,10 +61,10 @@ Use `tests/helpers/load-brand.js` (`brandDirs`, `loadBrand`) and parse each comm
 
 ## 3. Engine: footer after the static sections (engine.js)
 
-- [ ] 3.1 Before editing, grep for `footer` in `engine.js`, `theme.js`, `analytics.js`, `tests/`
+- [x] 3.1 Before editing, grep for `footer` in `engine.js`, `theme.js`, `analytics.js`, `tests/`
       and note any selector that assumes the footer is inside `#app`. Fix it or adjust the approach.
-- [ ] 3.2 Implement design D7 at the end of `injectBody()`.
-- [ ] 3.3 Tests in `tests/logic/render-container.test.js`:
+- [x] 3.2 Implement design D7 at the end of `injectBody()`.
+- [x] 3.3 Tests in `tests/logic/render-container.test.js`:
       (a) with `<div id="app">` + two `<section class="seo-links">` after it, the footer ends up after
       the last section, and both sections' content is unchanged;
       (b) with no static sections, the footer stays inside `#app` (current behaviour);

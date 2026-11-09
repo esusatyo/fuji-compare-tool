@@ -845,6 +845,12 @@ function injectBody() {
     <button class="theme-btn active" data-theme-pref="system">System</button>
   </div>
 </footer>`;
+  // The generator-owned static sections (crawlable specs, popular comparisons)
+  // follow #app in the HTML, so the footer would render above them. Move it
+  // below them so the page ends with it; the static HTML order is untouched.
+  const statics = document.querySelectorAll('body > .seo-links');
+  const footer = mount.querySelector('footer');
+  if (statics.length && footer) statics[statics.length - 1].after(footer);
 }
 
 // ─────────────────────────────────────────────
