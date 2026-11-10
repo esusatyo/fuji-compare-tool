@@ -51,3 +51,36 @@ test('[render] section-toggle handlers still work when rendered into #app', () =
   header.dispatchEvent(new window.Event('click', { bubbles: true }));
   assert.notEqual(body.classList.contains('collapsed'), before, 'clicking a header should toggle its section body');
 });
+
+const STATIC_SECTIONS = '<section class="seo-links" id="glance"><h2>Glance</h2><p>specs</p></section>'
+  + '<section class="seo-links" id="popular"><h2>Popular</h2><a href="vs/a-vs-b">A vs B</a></section>';
+
+test('[render] the footer moves below the generator-owned static sections', () => {
+  const { window } = loadBrand(ONE_BRAND, {
+    engine: true,
+    html: `<!DOCTYPE html><html><head></head><body><div id="app"></div>${STATIC_SECTIONS}</body></html>`,
+  });
+  const doc = window.document;
+  const kids = [...doc.body.children].filter(el => el.matches('#app, .seo-links, footer')).map(el => el.id || el.tagName.toLowerCase());
+  assert.deepEqual(kids, ['app', 'glance', 'popular', 'footer'], 'footer is last, static order unchanged');
+  assert.equal(doc.getElementById('glance').querySelector('p').textContent, 'specs');
+  assert.ok(doc.getElementById('popular').querySelector('a[href="vs/a-vs-b"]'), 'static link intact');
+  assert.equal(doc.querySelectorAll('footer').length, 1, 'footer moved, not duplicated');
+});
+
+test('[render] with no static sections the footer stays inside #app', () => {
+  const { window } = loadBrand(ONE_BRAND, { engine: true });
+  assert.ok(window.document.getElementById('app').querySelector('footer'));
+});
+
+test('[render] the moved footer keeps its theme toggle and affiliate slot', () => {
+  const { window } = loadBrand(ONE_BRAND, {
+    engine: true,
+    html: `<!DOCTYPE html><html><head></head><body><div id="app"></div>${STATIC_SECTIONS}</body></html>`,
+  });
+  const footer = window.document.querySelector('footer');
+  assert.equal(footer.parentElement, window.document.body);
+  assert.deepEqual([...footer.querySelectorAll('.theme-toggle .theme-btn')].map(b => b.dataset.themePref),
+    ['light', 'dark', 'system']);
+  assert.ok(footer.querySelector('#affiliate-disclosure'));
+});
