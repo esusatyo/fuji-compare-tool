@@ -251,6 +251,27 @@ const VS_ROWS = [
   ['Lens mount', c => c.lensType],
 ];
 
+// The VS_ROWS formatter for a row label, so a brand page's at-a-glance table
+// and a vs-page can never word the same value differently.
+const vsRow = label => VS_ROWS.find(r => r[0] === label)[1];
+
+// Body size as "W × H × D mm"; null unless all three dimensions are known.
+function sizeText(c) {
+  return [c.width, c.height, c.depth].every(v => v != null)
+    ? `${c.width} × ${c.height} × ${c.depth} mm` : null;
+}
+
+// Columns of the brand page's at-a-glance table (after the camera name).
+const GLANCE_COLS = [
+  ['Announced',     vsRow('Announced')],
+  ['Sensor',        vsRow('Sensor')],
+  ['Stabilization', vsRow('In-body stabilization')],
+  ['Max video',     vsRow('Max video')],
+  ['Weight',        vsRow('Weight')],
+  ['Size (W×H×D)',  sizeText],
+  ['Price (USD)',   vsRow('Price (USD RRP)')],
+];
+
 // ─── References (Spec/Price/Image/Product source citations) ────
 // Mirrors engine.js's collectReferences()/citationText()/refHostname() —
 // duplicated rather than shared because engine.js is a browser-only script
@@ -1336,9 +1357,61 @@ function rootHeadBlock(site, brandNames, card = null) {
 // outside it. Refuses to write when either marker is missing, so a page that
 // lost its markers fails loudly instead of silently dropping generated content.
 // Crawlable block appended to each brand page, below the interactive tool.
+// The brand page's visible "at a glance" reference: one row per current camera
+// (same formatters as the vs-page spec table), the discontinued cameras by name,
+// and the lens count by maker. Specs otherwise render only in the browser, so
+// this is what a crawler that doesn't run JavaScript can read. A camera's name
+// links to its first *indexable* vs-page (never a noindexed one), else is plain.
+function brandGlanceHTML(brand, data, isIndexable = () => false, pairs = []) {
+  const name = data.BRAND_CONFIG.name;
+  const cams = data.CAMERAS;
+  const order = data.CAMERA_ORDER.filter(id => cams[id]);
+  const current = order.filter(id => !cams[id].discontinued);
+  const older = order.filter(id => cams[id].discontinued);
+  const val = (col, c) => { const v = col[1](c); return v == null || v === '' ? '\u2014' : esc(v); };
+  const nameCell = id => {
+    const pair = pairs.find(([a, b]) => (a === id || b === id) && isIndexable(a, b));
+    const label = esc(cams[id].name);
+    return pair ? `<a href="vs/${pair[0]}-vs-${pair[1]}">${label}</a>` : label;
+  };
+
+  const parts = [];
+  if (current.length) {
+    const head = ['Camera', ...GLANCE_COLS.map(c => c[0])]
+      .map(h => `<th scope="col">${esc(h)}</th>`).join('');
+    const rows = current.map(id =>
+      `        <tr><th scope="row">${nameCell(id)}</th>${GLANCE_COLS.map(c => `<td>${val(c, cams[id])}</td>`).join('')}</tr>`
+    ).join('\n');
+    const n = current.length;
+    parts.push(`    <p>The ${n === 1 ? 'current' : `${n} current`} ${esc(name)} ${n === 1 ? 'camera' : 'cameras'} in this comparison. Use the tool above to compare ${n === 1 ? 'it' : 'any of them'} side by side.</p>
+    <div class="seo-table-wrap">
+      <table class="seo-table">
+        <thead><tr>${head}</tr></thead>
+        <tbody>
+${rows}
+        </tbody>
+      </table>
+    </div>`);
+  }
+  if (older.length) {
+    parts.push(`    <p>Older ${esc(name)} cameras in this comparison: ${older.map(id => esc(cams[id].name)).join(', ')}.</p>`);
+  }
+  const byMaker = {};
+  for (const l of Object.values(data.LENSES)) byMaker[l.manufacturer] = (byMaker[l.manufacturer] || 0) + 1;
+  const makers = Object.entries(byMaker).sort((x, y) =>
+    ((y[0] === name) - (x[0] === name)) || (y[1] - x[1]) || x[0].localeCompare(y[0]));
+  const nLenses = Object.keys(data.LENSES).length;
+  parts.push(`    <p>Lenses: ${nLenses} for ${esc(name)} cameras: ${makers.map(([m, n]) => `${esc(m)} ${n}`).join(', ')}.</p>`);
+
+  return `<section class="seo-links seo-glance" aria-label="${esc(name)} cameras at a glance">
+    <h2>${esc(name)} cameras at a glance</h2>
+${parts.join('\n')}
+  </section>`;
+}
+
 // Links every curated vs-page for the brand, so no vs-page is orphaned: each
 // is reachable from its brand page even before cross-linking.
-function brandBodyBlock(brand, data, site, pairs) {
+function brandBodyBlock(brand, data, site, pairs, isIndexable = () => false) {
   const name = data.BRAND_CONFIG.name;
   const cams = data.CAMERAS;
   const nCams = Object.keys(cams).length;
@@ -1347,6 +1420,7 @@ function brandBodyBlock(brand, data, site, pairs) {
     `      <li><a href="vs/${a}-vs-${b}">${esc(name)} ${esc(cams[a].name)} vs ${esc(cams[b].name)}</a></li>`
   ).join('\n');
   return `${SEO_BODY_BEGIN}
+  ${brandGlanceHTML(brand, data, isIndexable, pairs)}
   <section class="seo-links" aria-label="Popular ${esc(name)} comparisons">
     <h2>Popular ${esc(name)} camera comparisons</h2>
     <p>Compare all ${nCams} ${esc(name)} cameras and ${nLenses} lenses side by side — price, sensor, autofocus, stabilization and video, in seven currencies. Popular head-to-head comparisons:</p>
@@ -1802,7 +1876,8 @@ function buildSite({ today = new Date().toISOString().slice(0, 10) } = {}) {
     const idx = path.join(brand, 'index.html');
     let idxHtml = fs.readFileSync(path.join(ROOT, idx), 'utf8');
     idxHtml = withHeadBlock(idxHtml, brandHeadBlock(brand, data, site, addCard(brandShareCard(brand, data))), idx);
-    idxHtml = withBodyBlock(idxHtml, brandBodyBlock(brand, data, site, pairs), idx);
+    idxHtml = withBodyBlock(idxHtml, brandBodyBlock(brand, data, site, pairs,
+      (a, b) => indexable(`${brand}/vs/${a}-vs-${b}.html`, a, b)), idx);
     files.set(idx, idxHtml);
     sitemapPaths.push(`${brand}/`);
 
@@ -1907,4 +1982,4 @@ if (require.main === module) {
   console.log(`generate-seo: ${files.size} artifacts (${written} written, ${removed} stale removed)`);
 }
 
-module.exports = { ROOT_TITLE, buildSite, uniqueItemCount, cardHash, lastmodManifest, sitemapHashes, LASTMOD_MANIFEST, vsCardHTML, infoCardHTML, shareTags, CARD_W, CARD_H, LANDING_CARD_ORDER, ALL_BRANDS_MOSAIC, orderLandingBrands, allBrandsPhotoHTML, siteConfig, curatedPairs, successorPairKeys, resolvePins, withPins, PINNED_VS_PAIRS, SUCCESSOR_INDEX_SINCE, relatedPairs, vsPageHTML, vsSummary, vsSummaryFacts, resolveMatchups, crossVsPageHTML, crossTitle, CROSS_BRAND_MATCHUPS, compareHeadBlock, compareBodyBlock, brandHeadBlock, rootHeadBlock, brandBodyBlock, rootBodyBlock, withHeadBlock, withBodyBlock, sitemapXML, robotsTxt, buildAll, SEO_BEGIN, SEO_END, SEO_BODY_BEGIN, SEO_BODY_END, ID_HEAD_BEGIN, ID_HEAD_END, ID_HEADER_BEGIN, ID_HEADER_END, ID_FOOTER_BEGIN, ID_FOOTER_END, identityToken, logoMark, cleanUrl, cleanHref, themeToggleHTML, collectReferences, citationText, refHostname, REFERENCE_ROWS, referenceRowsHTML };
+module.exports = { ROOT_TITLE, buildSite, GLANCE_COLS, sizeText, brandGlanceHTML, uniqueItemCount, cardHash, lastmodManifest, sitemapHashes, LASTMOD_MANIFEST, vsCardHTML, infoCardHTML, shareTags, CARD_W, CARD_H, LANDING_CARD_ORDER, ALL_BRANDS_MOSAIC, orderLandingBrands, allBrandsPhotoHTML, siteConfig, curatedPairs, successorPairKeys, resolvePins, withPins, PINNED_VS_PAIRS, SUCCESSOR_INDEX_SINCE, relatedPairs, vsPageHTML, vsSummary, vsSummaryFacts, resolveMatchups, crossVsPageHTML, crossTitle, CROSS_BRAND_MATCHUPS, compareHeadBlock, compareBodyBlock, brandHeadBlock, rootHeadBlock, brandBodyBlock, rootBodyBlock, withHeadBlock, withBodyBlock, sitemapXML, robotsTxt, buildAll, SEO_BEGIN, SEO_END, SEO_BODY_BEGIN, SEO_BODY_END, ID_HEAD_BEGIN, ID_HEAD_END, ID_HEADER_BEGIN, ID_HEADER_END, ID_FOOTER_BEGIN, ID_FOOTER_END, identityToken, logoMark, cleanUrl, cleanHref, themeToggleHTML, collectReferences, citationText, refHostname, REFERENCE_ROWS, referenceRowsHTML };

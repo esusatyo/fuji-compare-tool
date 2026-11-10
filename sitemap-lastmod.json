@@ -5,11 +5,11 @@
   },
   "about": {
     "hash": "8bc9579e2ba7d42f",
-    "lastmod": "2026-11-07"
+    "lastmod": "2026-11-09"
   },
   "canon/": {
-    "hash": "0256b50ccdd0ea21",
-    "lastmod": "2026-11-07"
+    "hash": "5c3f3431f7b84365",
+    "lastmod": "2026-11-09"
   },
   "canon/vs/eos-r1-vs-eos-r3": {
     "hash": "185eefb7e6baf6fd",
@@ -56,8 +56,8 @@
     "lastmod": "2026-10-21"
   },
   "fujifilm/": {
-    "hash": "4bc0060d7c1cfd02",
-    "lastmod": "2026-11-07"
+    "hash": "e9f040cc938f825c",
+    "lastmod": "2026-11-10"
   },
   "fujifilm/vs/x-t30iii-vs-x-t30ii": {
     "hash": "44cb44fb1601c037",
@@ -68,24 +68,24 @@
     "lastmod": "2026-10-21"
   },
   "leica/": {
-    "hash": "7b98ffda6f56359f",
-    "lastmod": "2026-11-07"
+    "hash": "72ed91b7c0e18bbf",
+    "lastmod": "2026-11-10"
   },
   "nikon/": {
-    "hash": "678b98928351a027",
-    "lastmod": "2026-11-07"
+    "hash": "b75e4f22a7acdf99",
+    "lastmod": "2026-11-10"
   },
   "nikon/vs/z5-ii-vs-z5": {
     "hash": "e2caa7994f2647f0",
-    "lastmod": "2026-11-07"
+    "lastmod": "2026-11-09"
   },
   "nikon/vs/zr-vs-z5-ii": {
     "hash": "c5f269df655b7d8f",
     "lastmod": "2026-10-21"
   },
   "olympus/": {
-    "hash": "ba71d4350a01d6c8",
-    "lastmod": "2026-11-07"
+    "hash": "bed9ee17be20d08e",
+    "lastmod": "2026-11-10"
   },
   "olympus/vs/om-3-vs-om-1": {
     "hash": "146ae27eb5e1946b",
@@ -96,8 +96,8 @@
     "lastmod": "2026-10-21"
   },
   "panasonic/": {
-    "hash": "9d77effe1eed46f3",
-    "lastmod": "2026-11-07"
+    "hash": "643ff8a2f610418e",
+    "lastmod": "2026-11-10"
   },
   "panasonic/vs/g9-ii-vs-g9": {
     "hash": "9af830200df447bd",
@@ -133,7 +133,7 @@
   },
   "panasonic/vs/s1r-ii-vs-s1r": {
     "hash": "20b23b00d75c21e4",
-    "lastmod": "2026-11-07"
+    "lastmod": "2026-11-09"
   },
   "panasonic/vs/s5-iix-vs-s5-ii": {
     "hash": "24dcb4c1dbc49d7c",
@@ -156,12 +156,12 @@
     "lastmod": "2026-11-07"
   },
   "sigma/": {
-    "hash": "59212dddcf6fc11b",
-    "lastmod": "2026-11-07"
+    "hash": "1ed3240675e314cd",
+    "lastmod": "2026-11-10"
   },
   "sony/": {
-    "hash": "d9a1240e06ec8e39",
-    "lastmod": "2026-11-07"
+    "hash": "b9336c493931ac69",
+    "lastmod": "2026-11-10"
   },
   "sony/vs/a7-v-vs-a7-iv": {
     "hash": "204b13c39de4dc1c",
@@ -181,7 +181,7 @@
   },
   "sony/vs/fx5-vs-fx3": {
     "hash": "590600519f5d51ad",
-    "lastmod": "2026-11-07"
+    "lastmod": "2026-11-09"
   },
   "vs/canon-eos-r5-ii-vs-sony-a7r-v": {
     "hash": "0b75cb8207091597",
