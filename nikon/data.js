@@ -1284,6 +1284,25 @@ const LENSES = {
     priceIncomplete:true,
     productUrl:'https://www.sigma-global.com/en/lenses/c018_56_14/',
   },
+  'sigma-16-300mm-f35-67': {
+    name:'Sigma 16-300mm f/3.5-6.7 DC OS', manufacturer:'Sigma', line:'Contemporary', type:'Zoom',
+    mount:'z', focalLength:null, focalLengthMin:16, focalLengthMax:300, focalLengthEquiv:'24-450mm',
+    maxAperture:3.5, minAperture:22, weight:630, length:125.4, diameter:73.8,
+    filterThread:67, minFocusDist:17, maxMagnification:0.5,
+    elements:20, groups:14, blades:9, afType:'HLA Linear',
+    weatherSealed:true, ois:true, oisStops:6, year:2026, discontinued:false,
+    imageUrl:'https://www.sigma-global.com/lenses/c025_16_300_35_67_product_img01.png',
+    imageSource: { url:'https://www.sigma-global.com/en/lenses/c025_16_300_35_67/', tier:'T1', note:'official Sigma product image (_product_img01), the same shot the Canon RF, Fujifilm X and Sony E entries use; barrel reads "16-300mm 1:3.5-6.7 DC OS"; the page lists Nikon Z mount under available mounts', date:'2026-11-13' },
+    asin:null,
+    prices:{USD:769,AUD:null,EUR:null,GBP:null,JPY:null,CAD:null,SGD:null},
+    priceIncomplete:true,
+    priceSource: [
+      { url:'https://press.sigmaphoto.com/product/10/sigma-announces-release-of-16-300mm-f3-5-6-7-dc-os-contemporary-lens-for-nikon-z-mount/', tier:'T1', title:'Sigma America press release (2026-10-08)', note:'"available from Sigma-authorized dealers starting Thursday, November 5, 2026, for $769 USD"', date:'2026-11-13' },
+      { url:'https://www.sigmaphoto.com/16-300mm-f3-5-6-7-dc-os-c', tier:'T1', title:'Sigma America official store', note:'Nikon Z variant (option 32734) regular price $769, on sale at $694 at the time (not used). No regional Z-mount price confirmed yet', date:'2026-11-13' },
+    ],
+    specSources: [{ url:'https://www.sigma-global.com/en/lenses/c025_16_300_35_67/', tier:'T1', title:'Sigma 16-300mm F3.5-6.7 DC OS official page', note:'Nikon Z mount: φ73.8 x 125.4mm, 630g (other mounts differ); 20 elements in 14 groups, 9 rounded blades, F22 min, MFD 17cm (W), 1:2 at 70mm, φ67mm filter, HLA motor, OS 6 stops (W) / 4.5 stops (T), dust- and splash-resistant. Year: Z-mount release 2026-11-05 (the E/X/RF/L versions shipped in 2025)', date:'2026-11-13' }],
+    productUrl:'https://www.sigma-global.com/en/lenses/c025_16_300_35_67/',
+  },
 
   /* ── Viltrox (Z mount AF) — largest third-party line on Z ── */
   /* Optical specs shared with the E-mount versions (verified); Z APS-C = 1.5×. */
@@ -4296,7 +4315,7 @@ const LENS_DROPDOWN_GROUPS = [
   { label: '── Standard / Travel Zooms ──', ids: ['z-17-28mm-f2-8', 'z-24-50mm-f4-6-3', 'z-24-105mm-f4-71', 'z-28-75mm-f2-8', 'z-24-200mm-f4-6-3-vr', 'z-28-400mm-f4-8-vr', 'z-28-135mm-f4-pz'] },
   { label: '── Telephoto / Super-Telephoto ──', ids: ['z-70-180mm-f2-8', 'z-180-600mm-f5-6-6-3-vr', 'z-400mm-f4-5-vr-s', 'z-400mm-f2-8-tc-vr-s', 'z-600mm-f6-3-vr-s-pf', 'z-600mm-f4-tc-vr-s', 'z-800mm-f6-3-vr-s-pf'] },
   { label: '── DX Lenses ──',     ids: ['z-dx-24mm-f1-7', 'z-dx-mc-35mm-f17', 'z-dx-12-28mm-pz-vr', 'z-dx-16-50mm-vr', 'z-dx-16-50mm-f28-vr', 'z-dx-18-140mm-vr', 'z-dx-50-250mm-vr'] },
-  { label: '── Sigma ──', ids: ['sigma-16mm-f14', 'sigma-30mm-f14', 'sigma-56mm-f14'] },
+  { label: '── Sigma ──', ids: ['sigma-16mm-f14', 'sigma-30mm-f14', 'sigma-56mm-f14', 'sigma-16-300mm-f35-67'] },
   { label: '── Viltrox ──', ids: ['viltrox-13mm-f14', 'viltrox-16mm-f18', 'viltrox-27mm-f12', 'viltrox-33mm-f14', 'viltrox-56mm-f14', 'viltrox-85mm-f18-ii', 'viltrox-85mm-f20-evo', 'viltrox-85mm-f14-pro', 'viltrox-24mm-f18', 'viltrox-35mm-f18-evo', 'viltrox-40mm-f25-air', 'viltrox-90mm-f22-evo', 'viltrox-75mm-f18-evo', 'viltrox-56mm-f12-pro', 'viltrox-9mm-f28-air', 'viltrox-15mm-f17-air', 'viltrox-25mm-f17-air', 'viltrox-35mm-f17-air', 'viltrox-23mm-f14', 'viltrox-75mm-f12-pro', 'viltrox-56mm-f17-air', 'viltrox-26mm-f28-evo', 'viltrox-55mm-f18-evo', 'viltrox-50mm-f14-pro', 'viltrox-35mm-f12-lab', 'viltrox-135mm-f18-lab', 'viltrox-14mm-f4-air', 'viltrox-28mm-f45', 'viltrox-50mm-f2-air', 'viltrox-20mm-f28-air', 'viltrox-28mm-f18', 'viltrox-20mm-f18-mf'] },
   { label: '── Tamron ──', ids: ['tamron-12-20mm-f28', 'tamron-16-30mm-f28-g2', 'tamron-17-70mm-f28', 'tamron-18-300mm-f35-63', 'tamron-20-40mm-f28', 'tamron-28-75mm-f28-g2', 'tamron-35-100mm-f28', 'tamron-35-150mm-f2-28', 'tamron-50-400mm-f45-63', 'tamron-70-180mm-f28-g2', 'tamron-70-300mm-f45-63', 'tamron-90mm-f28-macro', 'tamron-150-500mm-f5-67'] },
   { label: '── Voigtländer ──', ids: ['voigtlander-apo-lanthar-50mm-f2', 'voigtlander-nokton-40mm-f12', 'voigtlander-super-wide-heliar-15mm-f45', 'voigtlander-nokton-d23mm-f12', 'voigtlander-nokton-28mm-f15', 'voigtlander-apo-lanthar-28mm-f2', 'voigtlander-nokton-d35mm-f12', 'voigtlander-macro-apo-ultron-d35mm-f2', 'voigtlander-apo-lanthar-35mm-f2', 'voigtlander-septon-40mm-f2', 'voigtlander-nokton-50mm-f10', 'voigtlander-macro-apo-lanthar-65mm-f2', 'voigtlander-portrait-heliar-75mm-f18', 'voigtlander-nokton-classic-35mm-f14', 'voigtlander-nokton-75mm-f15'] },
