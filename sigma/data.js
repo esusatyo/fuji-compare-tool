@@ -20,7 +20,7 @@ const BRAND_CONFIG = {
     heroTitle:    '<span>Sigma</span> Camera Comparison',
     heroSubtitle: 'Compare Sigma L-Mount full-frame cameras side-by-side — the BF and the fp series',
     headerTitle:  'Sigma',
-    defaultSelected: ['bf', 'fp-l', 'fp'],
+    defaultSelected: ['fp2', 'bf', 'fp-l'],
   },
   lenses: {
     heroEyebrow:  'SIGMA L-Mount Lenses',
@@ -72,6 +72,37 @@ const SERIES_COLORS = {
 // anything still on sale. Discontinued bodies carry their launch RRP.
 // ─────────────────────────────────────────────
 const CAMERAS = {
+  'fp2': {
+    name:'FP2', series:'fp Series', mount:'l', year:2026, discontinued:false,
+    tagline:'Pocketable Full-Frame, Still & Cine',
+    productUrl:'https://www.sigma-global.com/en/cameras/fp2/',
+    imageUrl:'https://www.sigma-global.com/cameras/images/09_PPhoto_FP_Beauty_front_50mm_F2_Black_1000px.png',
+    imageSource: { url:'https://www.sigma-global.com/en/cameras/fp2/', tier:'T1', note:'official Sigma FP2 product page gallery; front view of the body (badge reads "FP") with the 50mm F2 DG Contemporary', date:'2026-11-13' },
+    asin:null,
+    prices:{USD:2199,AUD:3299,EUR:2199,GBP:1899,JPY:346500,CAD:2899,SGD:2888},
+    priceSource: [
+      { url:'https://press.sigmaphoto.com/product/10/sigma-announces-fp2-camera/', tier:'T1', title:'Sigma America press release (2026-10-23)', note:'USD: "starting at $2,199 USD (body only)", on sale 11 November 2026', date:'2026-11-13' },
+      { url:'https://sigmaphoto.com.au/products/c48900/sigma-fp2-digital-camera', tier:'T1', title:'Sigma Australia (C.R. Kennedy, sole authorised distributor) store', note:'AUD: body A$3,299.95 (stored without cents)', date:'2026-11-13' },
+      { url:'https://www.calumet.de/product/sigma-fp2', tier:'T3', title:'Calumet Germany', note:'EUR: body 2.199,00 €, matching the 2,199 EUR UVP reported at launch (Notebookcheck)', date:'2026-11-13' },
+      { url:'https://www.parkcameras.com/shop/sigma-fp2-digital-camera-body_g012961f', tier:'T3', title:'Park Cameras (UK authorised dealer)', note:'GBP: body £1,899.00 (product code G012961F); read via search listing, the page blocks automated fetches', date:'2026-11-13' },
+      { url:'https://blog.skeg.jp/?p=38196', tier:'NEWS', title:'Sigma FP2 launch report (Japan)', note:'JPY: Sigma direct-shop body price 346,500 yen incl. tax; Sigma Japan announces it as open price, and price aggregators show the same figure', date:'2026-11-13' },
+      { url:'https://www.sigmacanada.ca/products/fp2', tier:'T1', title:'Sigma Canada official store', note:'CAD: "Body Only - $2,899.95" (stored without cents)', date:'2026-11-13' },
+      { url:'https://alanphoto.com.sg/Sigma-FP2-Mirrorless-Camera', tier:'T3', title:'Alan Photo (Singapore)', note:'SGD: "Sigma FP2: SGD2,888 (incl. GST)"; TK Foto lists the same S$2,888. Sigma Singapore publishes no price', date:'2026-11-13' },
+    ],
+    specSources: [{ url:'https://www.sigmaphoto.com/fp2', tier:'T1', title:'Sigma America FP2 product page and specifications', note:'24.5MP partially stacked CMOS; 112.8 x 69.9 x 41.8mm; 446g with battery; tilting 3.15" 2.1M-dot touch LCD; no built-in EVF (optional EVF-21); EIS for video only; electronic shutter; 20fps; 6K open gate up to 59.94p; L-Log; 70GB internal + SDXC UHS-II; ~370 shots; dust and splash resistant; USB PD charging; no Wi-Fi or Bluetooth listed', date:'2026-11-13' }],
+    sensorMP:24.5, sensorType:'Full-frame partially stacked CMOS', processor:'Not disclosed',
+    width:112.8, height:69.9, depth:41.8, weight:446, weatherSealed:true,
+    lcdSize:'3.15"', lcdDots:2100, lcdType:'Tilting Touch',
+    evfType:null, evfDots:null, evfMag:null,
+    faceDetection:true, subjectDetection:'Human / Animal / Bird',
+    ibis:false, ibisStops:null, maxBurst:20,
+    maxVideoRes:'6K Open Gate / 60P',
+    logVideo:true,
+    foveonGen:null, shutterType:'Electronic only', internalStorage:'70GB', lLog:true,
+    bluetooth:false, wifi:false,
+    cardSlots:'Single SD UHS-II + 70GB internal', batteryLife:370, usbCharging:true,
+    lensType:'Interchangeable', lensSpec:null,
+  },
   'bf': {
     name:'BF', series:'BF', mount:'l', year:2025, discontinued:false,
     tagline:'Radically Simple Full-Frame',
@@ -191,10 +222,10 @@ const CAMERAS = {
   },
 };
 
-const CAMERA_ORDER = ['bf', 'fp-l', 'fp', 'sd-quattro-h', 'sd-quattro'];
+const CAMERA_ORDER = ['fp2', 'bf', 'fp-l', 'fp', 'sd-quattro-h', 'sd-quattro'];
 
 const DROPDOWN_GROUPS = [
-  { label: '── Current (L-Mount) ──',        ids: ['bf'] },
+  { label: '── Current (L-Mount) ──',        ids: ['fp2', 'bf'] },
   { label: '── fp Series (discontinued) ──', ids: ['fp-l', 'fp'] },
   { label: '── Foveon (SA-Mount) ──',        ids: ['sd-quattro-h', 'sd-quattro'] },
 ];
