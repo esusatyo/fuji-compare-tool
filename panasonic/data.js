@@ -2339,6 +2339,25 @@ const LENSES = {
      yet entered. NOTE: Laowa lists this as incompatible with the Lumix S5 II,
      S5 IIX, S1 II, S1 IIE and S1R II — the shift mechanism fouls the EVF
      housing — i.e. most of Panasonic's current L-mount line. */
+  'laowa-24mm-f2-tilt-shift-l': {
+    name:'Laowa 24mm f/2 Zero-D Tilt-Shift', manufacturer:'Laowa', line:'Zero-D', type:'Prime',
+    mount:'l', focalLength:24, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'24mm',
+    maxAperture:2, minAperture:22, weight:860, length:119, diameter:93,
+    filterThread:77, minFocusDist:25, maxMagnification:0.194,
+    elements:13, groups:10, blades:14, afType:'Manual',
+    weatherSealed:false, ois:false, oisStops:null, year:2026, discontinued:false,
+    imageUrl:'https://laowa.com.au/wp-content/uploads/2026/11/01_VE2420TS-FE-1200x800.png',
+    imageSource: { url:'https://laowa.com.au/', tier:'T1', title:'Laowa Australia (official regional site)', note:'Laowa\'s only product shot (file VE2420TS-FE), lens alone; "T/S 24mm F2" legible on the barrel. Laowa publishes no per-mount photo, so the mount itself is not visible', date:'2026-11-13' },
+    asin:null,
+    prices:{USD:1249,AUD:null,EUR:null,GBP:null,JPY:null,CAD:null,SGD:null},
+    priceIncomplete:true,
+    priceSource: { url:'https://www.venuslens.net/product/laowa-24mm-f2-zero-d-tilt-shift/', tier:'T1', title:'Laowa (Venus Optics) official store', note:'L Mount variation regular price $1,249 (store API, same for every mount); on sale from 2026-11-05. No regional price published', date:'2026-11-13' },
+    specSources: [
+      { url:'https://www.venuslens.net/product/laowa-24mm-f2-zero-d-tilt-shift/', tier:'T1', title:'Laowa 24mm f/2 Zero-D Tilt-Shift - Laowa (Venus Optics) official product page', note:'Specifications table (read from the store API description, one table for all mounts): full frame, f/2-22, 84°, tilt ±10°, shift ±12mm, 360° rotation, 0.194x, manual focus, 13 elements in 10 groups, 14 blades, 25cm MFD, Ø77mm filter, Ø93 x 119mm, 860g. Mounts: Sony E / Nikon Z / Canon RF / L / GFX / XCD. *L-Mount version "Not compatible with the following Panasonic Lumix models: S52 / S52X / S1M2 / S1M2E / S1R2"', date:'2026-11-13' },
+      { url:'https://petapixel.com/2026/11/05/the-laowa-24mm-f-2-zero-d-tilt-shift-is-the-fastest-tilt-shift-lens-ever/', tier:'NEWS', title:'PetaPixel announcement', note:'announced 2026-11-04, on sale 2026-11-05 at $1,249', date:'2026-11-13' },
+    ],
+    productUrl:'https://www.venuslens.net/product/laowa-24mm-f2-zero-d-tilt-shift/',
+  },
   'laowa-17mm-f4-tilt-shift-l': {
     name:'Laowa 17mm f/4 Zero-D Tilt-Shift', manufacturer:'Laowa', line:'Zero-D', type:'Prime',
     mount:'l', focalLength:17, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'17mm',
@@ -4625,7 +4644,7 @@ const LENS_DROPDOWN_GROUPS = [
   { label: '── Sigma Zooms (L-Mount) ──', ids: ['sigma-16-28mm-f28-dg', 'sigma-20-60mm-f28-4-dg', 'sigma-28-70mm-f28-dg', 'sigma-24-70mm-f28-dg-ii', 'sigma-28-45mm-f18-dg', 'sigma-70-200mm-f28-dg', 'sigma-100-400mm-f5-63-dg', 'sigma-150-600mm-f5-63-dg', 'sigma-14-24mm-f28-dg', 'sigma-24-70mm-f28-dg', 'sigma-28-105mm-f28-dg', 'sigma-20-200mm-f35-63-dg', 'sigma-60-600mm-f45-63-dg', 'sigma-300-600mm-f4-dg'] },
   { label: '── Leica SL Primes (L-Mount) ──', ids: ['super-apo-summicron-sl-21mm-f2-asph', 'apo-summicron-sl-28mm-f2-asph', 'apo-summicron-sl-35mm-f2-asph', 'summicron-sl-35mm-f2-asph', 'summilux-sl-50mm-f14-asph', 'apo-summicron-sl-50mm-f2-asph', 'summicron-sl-50mm-f2-asph', 'apo-summicron-sl-75mm-f2-asph', 'apo-summicron-sl-90mm-f2-asph', 'apo-macro-elmarit-sl-100mm-f28'] },
   { label: '── Leica SL Zooms (L-Mount) ──', ids: ['super-vario-elmarit-sl-14-24mm-f28-asph', 'super-vario-elmar-sl-16-35mm-f35-45-asph', 'vario-elmarit-sl-24-70mm-f28-asph', 'vario-elmarit-sl-28-70mm-f28-asph', 'vario-elmarit-sl-24-90mm-f28-4-asph', 'vario-elmarit-sl-70-200mm-f28-asph', 'apo-vario-elmarit-sl-90-280mm-f28-4', 'vario-elmar-sl-100-400mm-f5-63'] },
-  { label: '── Laowa (L-Mount) ──', ids: ['laowa-15mm-f2-l', 'laowa-17mm-f4-tilt-shift-l', 'laowa-90mm-f28-macro-l', 'laowa-180mm-f45-macro-l', 'laowa-aksen-45mm-f28-l', 'laowa-aksen-17-5mm-f17-l', 'laowa-35mm-f28-tilt-shift-macro-l', 'laowa-11mm-f45-rl-l', 'laowa-12mm-f28-lite-zero-d-l', 'laowa-8-15mm-f28-fisheye-l', 'laowa-15mm-f45-macro-l', 'laowa-55mm-f28-tilt-shift-macro-l', 'laowa-100mm-f28-tilt-shift-macro-l', 'laowa-10mm-f28-l', 'laowa-argus-28mm-f12-l', 'laowa-58mm-f28-2x-macro-l', 'laowa-20mm-f4-shift-l', 'laowa-15mm-f45-shift-l', 'laowa-14mm-f4-rl-l', 'laowa-9mm-f56-rl-l', 'laowa-100mm-f28-2x-macro-l', 'laowa-10-18mm-f45-56-l', 'laowa-25mm-f28-25-5x-macro-l'] },
+  { label: '── Laowa (L-Mount) ──', ids: ['laowa-15mm-f2-l', 'laowa-17mm-f4-tilt-shift-l', 'laowa-24mm-f2-tilt-shift-l', 'laowa-90mm-f28-macro-l', 'laowa-180mm-f45-macro-l', 'laowa-aksen-45mm-f28-l', 'laowa-aksen-17-5mm-f17-l', 'laowa-35mm-f28-tilt-shift-macro-l', 'laowa-11mm-f45-rl-l', 'laowa-12mm-f28-lite-zero-d-l', 'laowa-8-15mm-f28-fisheye-l', 'laowa-15mm-f45-macro-l', 'laowa-55mm-f28-tilt-shift-macro-l', 'laowa-100mm-f28-tilt-shift-macro-l', 'laowa-10mm-f28-l', 'laowa-argus-28mm-f12-l', 'laowa-58mm-f28-2x-macro-l', 'laowa-20mm-f4-shift-l', 'laowa-15mm-f45-shift-l', 'laowa-14mm-f4-rl-l', 'laowa-9mm-f56-rl-l', 'laowa-100mm-f28-2x-macro-l', 'laowa-10-18mm-f45-56-l', 'laowa-25mm-f28-25-5x-macro-l'] },
   { label: '── Viltrox (L-Mount) ──', ids: ['viltrox-16mm-f18-l', 'viltrox-28mm-f45-l', 'viltrox-14mm-f4-air-l', 'viltrox-20mm-f28-air-l', 'viltrox-40mm-f25-air-l', 'viltrox-50mm-f2-air-l'] },
   { label: '── Samyang (L-Mount) ──', ids: ['samyang-14-24mm-f28-l', 'samyang-35-150mm-f2-28-l'] },
   { label: '── TTArtisan (L-Mount) ──', ids: ['ttartisan-50mm-f18-neo-l', 'ttartisan-40mm-f2-l', 'ttartisan-14mm-f28-asph-l', 'ttartisan-75mm-f2-l', 'ttartisan-11mm-f28-fisheye-l', 'ttartisan-tilt-shift-17mm-f4-asph-l'] },

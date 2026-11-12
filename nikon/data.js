@@ -2108,6 +2108,25 @@ const LENSES = {
     productUrl:'https://www.venuslens.net/product/laowa-argus-33mm-f-0-95-cf-apo/',
   },
 
+  'laowa-24mm-f2-tilt-shift': {
+    name:'Laowa 24mm f/2 Zero-D Tilt-Shift', manufacturer:'Laowa', line:'Tilt-Shift', type:'Prime',
+    mount:'z', focalLength:24, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'24mm',
+    maxAperture:2, minAperture:22, weight:860, length:119, diameter:93,
+    filterThread:77, minFocusDist:25, maxMagnification:0.194,
+    elements:13, groups:10, blades:14, afType:'Manual',
+    weatherSealed:false, ois:false, oisStops:null, year:2026, discontinued:false,
+    imageUrl:'https://laowa.com.au/wp-content/uploads/2026/11/01_VE2420TS-FE-1200x800.png',
+    imageSource: { url:'https://laowa.com.au/', tier:'T1', title:'Laowa Australia (official regional site)', note:'Laowa\'s only product shot (file VE2420TS-FE), lens alone; "T/S 24mm F2" legible on the barrel. Laowa publishes no per-mount photo, so the mount itself is not visible', date:'2026-11-13' },
+    asin:null,
+    prices:{USD:1249,AUD:null,EUR:null,GBP:null,JPY:null,CAD:null,SGD:null},
+    priceIncomplete:true,
+    priceSource: { url:'https://www.venuslens.net/product/laowa-24mm-f2-zero-d-tilt-shift/', tier:'T1', title:'Laowa (Venus Optics) official store', note:'Nikon Z variation regular price $1,249 (store API, same for every mount); on sale from 2026-11-05. No regional price published', date:'2026-11-13' },
+    specSources: [
+      { url:'https://www.venuslens.net/product/laowa-24mm-f2-zero-d-tilt-shift/', tier:'T1', title:'Laowa 24mm f/2 Zero-D Tilt-Shift - Laowa (Venus Optics) official product page', note:'Specifications table (read from the store API description, one table for all mounts): full frame, f/2-22, 84°, tilt ±10°, shift ±12mm, 360° rotation, 0.194x, manual focus, 13 elements in 10 groups, 14 blades, 25cm MFD, Ø77mm filter, Ø93 x 119mm, 860g. Mounts: Sony E / Nikon Z / Canon RF / L / GFX / XCD', date:'2026-11-13' },
+      { url:'https://petapixel.com/2026/11/05/the-laowa-24mm-f-2-zero-d-tilt-shift-is-the-fastest-tilt-shift-lens-ever/', tier:'NEWS', title:'PetaPixel announcement', note:'announced 2026-11-04, on sale 2026-11-05 at $1,249', date:'2026-11-13' },
+    ],
+    productUrl:'https://www.venuslens.net/product/laowa-24mm-f2-zero-d-tilt-shift/',
+  },
   'laowa-17mm-f4-tilt-shift': {
     // 2026-10-21: length/diameter were swapped; B&H Z listing (1958220) gives 93 x 111mm diameter x length
     name:'Laowa 17mm f/4 Zero-D Tilt-Shift / Shift', manufacturer:'Laowa', line:'Tilt-Shift', type:'Prime',
@@ -4358,7 +4377,7 @@ const LENS_DROPDOWN_GROUPS = [
   { label: '── Tamron ──', ids: ['tamron-12-20mm-f28', 'tamron-16-30mm-f28-g2', 'tamron-16-50mm-f28', 'tamron-17-70mm-f28', 'tamron-18-300mm-f35-63', 'tamron-20-40mm-f28', 'tamron-28-75mm-f28-g2', 'tamron-35-100mm-f28', 'tamron-35-150mm-f2-28', 'tamron-50-400mm-f45-63', 'tamron-70-180mm-f28-g2', 'tamron-70-300mm-f45-63', 'tamron-90mm-f28-macro', 'tamron-150-500mm-f5-67'] },
   { label: '── Voigtländer ──', ids: ['voigtlander-apo-lanthar-50mm-f2', 'voigtlander-nokton-40mm-f12', 'voigtlander-super-wide-heliar-15mm-f45', 'voigtlander-nokton-d23mm-f12', 'voigtlander-nokton-28mm-f15', 'voigtlander-apo-lanthar-28mm-f2', 'voigtlander-nokton-d35mm-f12', 'voigtlander-macro-apo-ultron-d35mm-f2', 'voigtlander-apo-lanthar-35mm-f2', 'voigtlander-septon-40mm-f2', 'voigtlander-nokton-50mm-f10', 'voigtlander-macro-apo-lanthar-65mm-f2', 'voigtlander-portrait-heliar-75mm-f18', 'voigtlander-nokton-classic-35mm-f14', 'voigtlander-nokton-75mm-f15'] },
   { label: '── Zeiss ──', ids: ['zeiss-otus-ml-35mm-f14', 'zeiss-otus-ml-50mm-f14', 'zeiss-otus-ml-85mm-f14'] },
-  { label: '── Laowa ──', ids: ['laowa-10mm-f4-cookie', 'laowa-10mm-f28-af', 'laowa-12mm-f28-lite-zero-d', 'laowa-15mm-f2', 'laowa-15mm-f45-macro', 'laowa-15mm-f5-cookie', 'laowa-15mm-f45-shift', 'laowa-17mm-f4-tilt-shift', 'laowa-20mm-f4-shift', 'laowa-25mm-f28-25-5x-macro', 'laowa-35mm-f28-tilt-shift-macro', 'laowa-55mm-f28-tilt-shift-macro', 'laowa-58mm-f28-2x-macro', 'laowa-65mm-f28-2x-macro', 'laowa-85mm-f56-2x-macro', 'laowa-90mm-f28-macro', 'laowa-100mm-f28-2x-macro', 'laowa-100mm-f28-tilt-shift-macro', 'laowa-argus-28mm-f12', 'laowa-argus-33mm-f095', 'laowa-8-15mm-f28-fisheye', 'laowa-8-16mm-f35-5', 'laowa-10-18mm-f45-56', 'laowa-12-24mm-f56-shift', 'laowa-aksen-45mm-f28', 'laowa-aksen-17-5mm-f17', 'laowa-4-5-10mm-f28-fisheye', 'laowa-200mm-f2-af', 'laowa-180mm-f45-macro', 'laowa-11mm-f45-rl', 'laowa-14mm-f4-rl', 'laowa-9mm-f56-rl', 'laowa-argus-35mm-f095', 'laowa-argus-45mm-f095', 'laowa-9mm-f28', 'laowa-12-24mm-f56', 'laowa-4mm-f28-fisheye', 'laowa-argus-25mm-f095'] },
+  { label: '── Laowa ──', ids: ['laowa-10mm-f4-cookie', 'laowa-10mm-f28-af', 'laowa-12mm-f28-lite-zero-d', 'laowa-15mm-f2', 'laowa-15mm-f45-macro', 'laowa-15mm-f5-cookie', 'laowa-15mm-f45-shift', 'laowa-17mm-f4-tilt-shift', 'laowa-24mm-f2-tilt-shift', 'laowa-20mm-f4-shift', 'laowa-25mm-f28-25-5x-macro', 'laowa-35mm-f28-tilt-shift-macro', 'laowa-55mm-f28-tilt-shift-macro', 'laowa-58mm-f28-2x-macro', 'laowa-65mm-f28-2x-macro', 'laowa-85mm-f56-2x-macro', 'laowa-90mm-f28-macro', 'laowa-100mm-f28-2x-macro', 'laowa-100mm-f28-tilt-shift-macro', 'laowa-argus-28mm-f12', 'laowa-argus-33mm-f095', 'laowa-8-15mm-f28-fisheye', 'laowa-8-16mm-f35-5', 'laowa-10-18mm-f45-56', 'laowa-12-24mm-f56-shift', 'laowa-aksen-45mm-f28', 'laowa-aksen-17-5mm-f17', 'laowa-4-5-10mm-f28-fisheye', 'laowa-200mm-f2-af', 'laowa-180mm-f45-macro', 'laowa-11mm-f45-rl', 'laowa-14mm-f4-rl', 'laowa-9mm-f56-rl', 'laowa-argus-35mm-f095', 'laowa-argus-45mm-f095', 'laowa-9mm-f28', 'laowa-12-24mm-f56', 'laowa-4mm-f28-fisheye', 'laowa-argus-25mm-f095'] },
   { label: '── Samyang ──', ids: ['samyang-14mm-f28', 'samyang-85mm-f14'] },
   { label: '── Thypoch ──', ids: ['thypoch-simera-28mm-f14', 'thypoch-simera-35mm-f14', 'thypoch-simera-50mm-f14'] },
   { label: '── SG-image ──', ids: ['sgimage-25mm-f18', 'sgimage-55mm-f18', 'sgimage-50mm-f14', 'sgimage-35mm-f12', 'sgimage-35mm-f095', 'sgimage-25mm-f18-mf', 'sgimage-24mm-f63', 'sgimage-12mm-f28', 'sgimage-7-5mm-f28-fisheye', 'sgimage-50mm-f18'] },

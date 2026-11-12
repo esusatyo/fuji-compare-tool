@@ -3183,6 +3183,25 @@ const LENSES = {
     productUrl:'https://www.venuslens.net/product/4-5-10mm-f-2-8-cf-zoom-fisheye/',
   },
 
+  'laowa-24mm-f2-tilt-shift': {
+    name:'Laowa 24mm f/2 Zero-D Tilt-Shift', manufacturer:'Laowa', line:'Tilt-Shift', type:'Prime',
+    mount:'e', focalLength:24, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'24mm',
+    maxAperture:2, minAperture:22, weight:860, length:119, diameter:93,
+    filterThread:77, minFocusDist:25, maxMagnification:0.194,
+    elements:13, groups:10, blades:14, afType:'Manual',
+    weatherSealed:false, ois:false, oisStops:null, year:2026, discontinued:false,
+    imageUrl:'https://laowa.com.au/wp-content/uploads/2026/11/01_VE2420TS-FE-1200x800.png',
+    imageSource: { url:'https://laowa.com.au/', tier:'T1', title:'Laowa Australia (official regional site)', note:'Laowa\'s only product shot (file VE2420TS-FE), lens alone; "T/S 24mm F2" legible on the barrel. Laowa publishes no per-mount photo', date:'2026-11-13' },
+    asin:null,
+    prices:{USD:1249,AUD:null,EUR:null,GBP:null,JPY:null,CAD:null,SGD:null},
+    priceIncomplete:true,
+    priceSource: { url:'https://www.venuslens.net/product/laowa-24mm-f2-zero-d-tilt-shift/', tier:'T1', title:'Laowa (Venus Optics) official store', note:'Sony E variation regular price $1,249 (store API, same for every mount); on sale from 2026-11-05. No regional price published', date:'2026-11-13' },
+    specSources: [
+      { url:'https://www.venuslens.net/product/laowa-24mm-f2-zero-d-tilt-shift/', tier:'T1', title:'Laowa 24mm f/2 Zero-D Tilt-Shift - Laowa (Venus Optics) official product page', note:'Specifications table (read from the store API description, one table for all mounts): full frame, f/2-22, 84°, tilt ±10°, shift ±12mm, 360° rotation, 0.194x, manual focus, 13 elements in 10 groups, 14 blades, 25cm MFD, Ø77mm filter, Ø93 x 119mm, 860g. Mounts: Sony E / Nikon Z / Canon RF / L / GFX / XCD', date:'2026-11-13' },
+      { url:'https://petapixel.com/2026/11/05/the-laowa-24mm-f-2-zero-d-tilt-shift-is-the-fastest-tilt-shift-lens-ever/', tier:'NEWS', title:'PetaPixel announcement', note:'announced 2026-11-04, on sale 2026-11-05 at $1,249', date:'2026-11-13' },
+    ],
+    productUrl:'https://www.venuslens.net/product/laowa-24mm-f2-zero-d-tilt-shift/',
+  },
   'laowa-17mm-f4-tilt-shift': {
     name:'Laowa 17mm f/4 Zero-D Tilt-Shift', manufacturer:'Laowa', line:'Tilt-Shift', type:'Prime',
     mount:'e', focalLength:17, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'17mm',
@@ -6734,7 +6753,7 @@ const LENS_DROPDOWN_GROUPS = [
   { label: '── Laowa ──', ids: [
     'laowa-10mm-f4-cookie', 'laowa-15mm-f2', 'laowa-90mm-f28-macro',
     'laowa-acris-35mm-f28-macro', 'laowa-aksen-45mm-f28', 'laowa-aksen-17-5mm-f17', 'laowa-4-5-10mm-f28-fisheye',
-    'laowa-17mm-f4-tilt-shift', 'laowa-35mm-f28-tilt-shift-macro', 'laowa-argus-33mm-f095', 'laowa-11mm-f45-rl',
+    'laowa-17mm-f4-tilt-shift', 'laowa-24mm-f2-tilt-shift', 'laowa-35mm-f28-tilt-shift-macro', 'laowa-argus-33mm-f095', 'laowa-11mm-f45-rl',
     'laowa-200mm-f2-af', 'laowa-180mm-f45-macro', 'laowa-12mm-f28-lite-zero-d', 'laowa-8-15mm-f28-fisheye',
     'laowa-15mm-f45-macro', 'laowa-55mm-f28-tilt-shift-macro', 'laowa-100mm-f28-tilt-shift-macro', 'laowa-15mm-f5-cookie',
     'laowa-12-24mm-f56-shift', 'laowa-10mm-f28-af', 'laowa-8-16mm-f35-5', 'laowa-argus-28mm-f12',

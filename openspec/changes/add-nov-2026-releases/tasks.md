@@ -16,7 +16,7 @@
 - [x] 3.4 Sigma 16-300mm F3.5-6.7 DC OS, Nikon Z (nikon)
 - [x] 3.5 Tamron 16-50mm F2.8 A, Nikon Z and Fujifilm X (nikon, fujifilm)
 - [x] 3.6 Viltrox AF 35mm F1.4 Pro, Sony E and Nikon Z (sony, nikon)
-- [ ] 3.7 Laowa 24mm f/2 Zero-D Tilt-Shift (every mount the catalogue covers)
+- [x] 3.7 Laowa 24mm f/2 Zero-D Tilt-Shift (every mount the catalogue covers)
 - [ ] 3.8 Thypoch Sculptor AF 23mm f/1.4 (fujifilm, plus other shipped mounts)
 - [ ] 3.9 Sigma 50mm F1.4 CL DG Contemporary, Sony E and L-Mount (pre-release, no price)
 

@@ -1,15 +1,15 @@
 {
   "": {
-    "hash": "0195301cc4425db3",
+    "hash": "c7e99aa6919f364b",
     "lastmod": "2026-11-12"
   },
   "about": {
-    "hash": "10d13a3a50100e05",
+    "hash": "48528da9972b37ab",
     "lastmod": "2026-11-12"
   },
   "canon/": {
-    "hash": "5c3f3431f7b84365",
-    "lastmod": "2026-11-09"
+    "hash": "2e2bf831929a0e9b",
+    "lastmod": "2026-11-12"
   },
   "canon/vs/eos-r1-vs-eos-r3": {
     "hash": "185eefb7e6baf6fd",
@@ -68,11 +68,11 @@
     "lastmod": "2026-10-21"
   },
   "leica/": {
-    "hash": "72ed91b7c0e18bbf",
-    "lastmod": "2026-11-10"
+    "hash": "f8d4c47cedc5c8c8",
+    "lastmod": "2026-11-12"
   },
   "nikon/": {
-    "hash": "521f3523cc1f15e4",
+    "hash": "97be68d4c899db9f",
     "lastmod": "2026-11-12"
   },
   "nikon/vs/z5-ii-vs-z5": {
@@ -96,8 +96,8 @@
     "lastmod": "2026-10-21"
   },
   "panasonic/": {
-    "hash": "643ff8a2f610418e",
-    "lastmod": "2026-11-10"
+    "hash": "609cdc7648a3d76e",
+    "lastmod": "2026-11-12"
   },
   "panasonic/vs/g9-ii-vs-g9": {
     "hash": "9af830200df447bd",
@@ -152,7 +152,7 @@
     "lastmod": "2026-10-21"
   },
   "privacy": {
-    "hash": "2433962290990cdf",
+    "hash": "b0b434064c6db3c5",
     "lastmod": "2026-11-12"
   },
   "sigma/": {
@@ -160,7 +160,7 @@
     "lastmod": "2026-11-12"
   },
   "sony/": {
-    "hash": "f91a4e358bf3aa50",
+    "hash": "eec4b8b90414ebc3",
     "lastmod": "2026-11-12"
   },
   "sony/vs/a7-v-vs-a7-iv": {
