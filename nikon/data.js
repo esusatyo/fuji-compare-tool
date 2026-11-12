@@ -1084,6 +1084,31 @@ const LENSES = {
     productUrl:'https://www.nikonusa.com/p/nikkor-z-400mm-f28-tc-vr-s/20111/overview',
   },
 
+  'z-120-300mm-f2-8-tc-vr-s': {
+    name:'NIKKOR Z 120-300mm f/2.8 TC VR S', manufacturer:'Nikon', line:'S-Line', type:'Zoom', mount:'z', asin:null,
+    focalLength:null, focalLengthMin:120, focalLengthMax:300, focalLengthEquiv:'120-300mm (168-420mm w/ TC)',
+    maxAperture:2.8, minAperture:22, weight:2735, length:353.5, diameter:128.0,
+    filterThread:112, minFocusDist:98, maxMagnification:0.18,
+    elements:30, groups:24, blades:9, afType:'Silky Swift VCM',
+    weatherSealed:true, ois:true, oisStops:6.5, year:2026, discontinued:false,
+    imageUrl:'https://imaging.nikon.com/imaging/lineup/lens/z-mount/z_120-300mmf28_tc_vr_s/img/product_01_01.jpg',
+    imageSource: { url:'https://imaging.nikon.com/imaging/lineup/lens/z-mount/z_120-300mmf28_tc_vr_s/', tier:'T1', note:'official Nikon global product page; side view, barrel reads "Z 120-300mm 1:2.8 TC VR S" and "120-300/2.8 S Teleconverter Built-in"', date:'2026-11-13' },
+    prices:{USD:13999,AUD:23699,EUR:15749,GBP:13999,JPY:2549800,CAD:19999,SGD:null},
+    priceIncomplete:true,
+    priceSource: [
+      { url:'https://www.nikonusa.com/press-room/NIKKOR-Z-120-300mm', tier:'T1', title:'Nikon USA launch press release', note:'USD: "suggested retail price of $13,999.95", available mid-November 2026 (stored without cents)', date:'2026-11-13' },
+      { url:'https://en.nikon.ca/press-room/NIKKOR-Z-120-300mm', tier:'T1', title:'Nikon Canada launch press release', note:'CAD: "suggested retail price of $19,999.95" (stored without cents)', date:'2026-11-13' },
+      { url:'https://www.nikon.de/de_DE/product/lenses/mirrorless/nikkor-z-120-300mm-f2.8-tc-vr-s-JMA728DA', tier:'T1', title:'Nikon Germany store', note:'EUR: JSON-LD Offer price 15749.00 EUR (backorder)', date:'2026-11-13' },
+      { url:'https://www.nikon.co.uk/en_GB/product/lenses/mirrorless/nikkor-z-120-300mm-f2.8-tc-vr-s-JMA728DA', tier:'T1', title:'Nikon UK store', note:'GBP: JSON-LD Offer price 13999.00 GBP (backorder)', date:'2026-11-13' },
+      { url:'https://dc.watch.impress.co.jp/docs/news/2152238.html', tier:'NEWS', title:'Digital Camera Watch launch report (Japan)', note:'JPY: open price, Nikon Direct price 2,549,800 yen; on sale 13 November 2026', date:'2026-11-13' },
+      { url:'https://itbrief.com.au/story/nikon-launches-120-300mm-f-2-8-lens-with-teleconverter', tier:'NEWS', title:'IT Brief Australia launch report', note:'AUD: "retail pricing in Australia is AUD $23,699"; no Nikon Australia store listing found. SGD: no Singapore price published yet', date:'2026-11-13' },
+    ],
+    specSources: [
+      { url:'https://imaging.nikon.com/imaging/lineup/lens/z-mount/z_120-300mmf28_tc_vr_s/', tier:'T1', title:'Nikon global product page and specifications', note:'120-300mm (168-420mm with built-in 1.4x TC), f/2.8-22 (f/4-32 with TC); 30 elements / 24 groups incl. 8/5 in the TC; MFD 0.98 m at 120mm to 2 m at 300mm; 0.18x at 150mm (0.25x with TC); 9 rounded blades; 112mm filter (46mm slip-in); approx. 128 x 353.5 mm; approx. 2,735 g; Silky Swift VCM', date:'2026-11-13' },
+      { url:'https://www.nikonusa.com/press-room/NIKKOR-Z-120-300mm', tier:'T1', title:'Nikon USA launch press release', note:'"Powerful 6.5-stop vibration reduction (VR) performance"; "superior dust- and drip-resistant performance through extensive sealing"', date:'2026-11-13' },
+    ],
+    productUrl:'https://imaging.nikon.com/imaging/lineup/lens/z-mount/z_120-300mmf28_tc_vr_s/',
+  },
   'z-600mm-f6-3-vr-s-pf': {
     name:'NIKKOR Z 600mm f/6.3 VR S (PF)', manufacturer:'Nikon', line:'S-Line', type:'Prime', mount:'z', asin:'B0CKTYF2ZZ',
     focalLength:600, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'600mm',
@@ -4267,7 +4292,7 @@ const LENSES = {
 const LENS_DROPDOWN_GROUPS = [
   { label: '── S-Line Primes ──', ids: ['z-20mm-f1-8-s', 'z-24mm-f1-8-s', 'z-35mm-f1-8-s', 'z-50mm-f1-8-s', 'z-85mm-f1-8-s', 'z-35mm-f1-2-s', 'z-50mm-f1-2-s', 'z-85mm-f1-2-s', 'z-135mm-f1-8-s-plena', 'z-mc-105mm-f2-8-vr-s', 'z-58mm-f0-95-s-noct'] },
   { label: '── Standard Primes ──', ids: ['z-26mm-f2-8', 'z-28mm-f2-8', 'z-28mm-f2-8-se', 'z-35mm-f1-4', 'z-40mm-f2', 'z-40mm-f2-se', 'z-50mm-f1-4', 'z-50mm-f2-8-mc'] },
-  { label: '── S-Line Zooms ──',  ids: ['z-14-24mm-f2-8-s', 'z-24-70mm-f2-8-s', 'z-24-70mm-f2-8-s-ii', 'z-24-70mm-f4-s', 'z-14-30mm-f4-s', 'z-24-120mm-f4-s', 'z-70-200mm-f2-8-vr-s', 'z-70-200mm-f2-8-vr-s-ii', 'z-100-400mm-f4-5-5-6-vr-s'] },
+  { label: '── S-Line Zooms ──',  ids: ['z-14-24mm-f2-8-s', 'z-24-70mm-f2-8-s', 'z-24-70mm-f2-8-s-ii', 'z-24-70mm-f4-s', 'z-14-30mm-f4-s', 'z-24-120mm-f4-s', 'z-70-200mm-f2-8-vr-s', 'z-70-200mm-f2-8-vr-s-ii', 'z-100-400mm-f4-5-5-6-vr-s', 'z-120-300mm-f2-8-tc-vr-s'] },
   { label: '── Standard / Travel Zooms ──', ids: ['z-17-28mm-f2-8', 'z-24-50mm-f4-6-3', 'z-24-105mm-f4-71', 'z-28-75mm-f2-8', 'z-24-200mm-f4-6-3-vr', 'z-28-400mm-f4-8-vr', 'z-28-135mm-f4-pz'] },
   { label: '── Telephoto / Super-Telephoto ──', ids: ['z-70-180mm-f2-8', 'z-180-600mm-f5-6-6-3-vr', 'z-400mm-f4-5-vr-s', 'z-400mm-f2-8-tc-vr-s', 'z-600mm-f6-3-vr-s-pf', 'z-600mm-f4-tc-vr-s', 'z-800mm-f6-3-vr-s-pf'] },
   { label: '── DX Lenses ──',     ids: ['z-dx-24mm-f1-7', 'z-dx-mc-35mm-f17', 'z-dx-12-28mm-pz-vr', 'z-dx-16-50mm-vr', 'z-dx-16-50mm-f28-vr', 'z-dx-18-140mm-vr', 'z-dx-50-250mm-vr'] },
