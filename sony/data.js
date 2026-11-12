@@ -2828,6 +2828,25 @@ const LENSES = {
     productUrl:'https://viltrox.com/products/af-85mm-f1-4-fe',
   },
 
+  'viltrox-35mm-f14-pro': {
+    name:'Viltrox AF 35mm f/1.4 Pro FE', manufacturer:'Viltrox', line:'Pro', type:'Prime',
+    mount:'e', focalLength:35, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'35mm',
+    maxAperture:1.4, minAperture:16, weight:760, length:111, diameter:84.5,
+    filterThread:77, minFocusDist:30, maxMagnification:0.18,
+    elements:16, groups:11, blades:11, afType:'VCM',
+    weatherSealed:true, ois:false, oisStops:null, year:2026, discontinued:false,
+    imageUrl:'https://cdn.shopify.com/s/files/1/0104/0380/7298/files/AF_35mm_F1.4_Pro_FE-front_view.png',
+    imageSource: { url:'https://viltrox.com/products/af-35mm-f1-4-fe', tier:'T1', title:'Viltrox official store', note:'first product image, lens alone; barrel reads "AF 35/1.4 FE"', date:'2026-11-13' },
+    asin:null,
+    prices:{USD:829,AUD:null,EUR:null,GBP:null,JPY:null,CAD:null,SGD:null},
+    priceIncomplete:true,
+    priceSource: { url:'https://viltrox.com/products/af-35mm-f1-4-fe', tier:'T1', title:'Viltrox official store', note:'regular (compare-at) price $829, matching the announced US list price (Imaging Resource, 2026-10-29); the $663.20 shown is a limited-time introductory price and is not stored. No regional price published yet', date:'2026-11-13' },
+    specSources: [
+      { url:'https://viltrox.com/products/af-35mm-f1-4-fe', tier:'T1', title:'Viltrox AF 35mm F1.4 Pro FE official store page', note:'FE spec table: 16 elements in 11 groups (3 ED, 4 HR, 2 UA), F1.4-F16, 11 blades, 0.3m, 0.18x, VCM (HyperVCM) internal focusing, Φ84.5 x 111mm, ≈760g bare lens, Φ77mm filter; "all-weather-sealed build". Year: store listing published 2026-10-29', date:'2026-11-13' },
+      { url:'https://www.imaging-resource.com/news/viltrox-af-35mm-f1-4-pro-completes-full-frame-pro-lens-lineup/', tier:'NEWS', title:'Imaging Resource announcement', note:'announced 2026-10-29 for Sony E and Nikon Z, US list $829, 0.3m MFD, HyperVCM', date:'2026-11-13' },
+    ],
+    productUrl:'https://viltrox.com/products/af-35mm-f1-4-fe',
+  },
   'viltrox-35mm-f12-lab': {
     name:'Viltrox AF 35mm f/1.2 LAB FE', manufacturer:'Viltrox', line:'LAB', type:'Prime',
     mount:'e', focalLength:35, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'35mm',
@@ -6688,7 +6707,7 @@ const LENS_DROPDOWN_GROUPS = [
   { label: '── Viltrox ──', ids: [
     'viltrox-13mm-f14', 'viltrox-16mm-f18', 'viltrox-26mm-f28-evo', 'viltrox-27mm-f12', 'viltrox-28mm-f45', 'viltrox-33mm-f14',
     'viltrox-56mm-f14', 'viltrox-85mm-f18-ii',
-    'viltrox-90mm-f22-evo', 'viltrox-75mm-f18-evo', 'viltrox-55mm-f18-evo', 'viltrox-35mm-f18-evo', 'viltrox-85mm-f2-evo', 'viltrox-50mm-f14-pro',
+    'viltrox-90mm-f22-evo', 'viltrox-75mm-f18-evo', 'viltrox-55mm-f18-evo', 'viltrox-35mm-f18-evo', 'viltrox-85mm-f2-evo', 'viltrox-50mm-f14-pro', 'viltrox-35mm-f14-pro',
     'viltrox-9mm-f28-air', 'viltrox-14mm-f4-air', 'viltrox-56mm-f12-pro', 'viltrox-15mm-f17-air', 'viltrox-85mm-f14-pro', 'viltrox-35mm-f12-lab',
     'viltrox-50mm-f2-air', 'viltrox-25mm-f17-air', 'viltrox-35mm-f17-air', 'viltrox-135mm-f18-lab', 'viltrox-40mm-f25-air', 'viltrox-56mm-f17-air',
     'viltrox-28mm-f18', 'viltrox-20mm-f28-air', 'viltrox-75mm-f12-pro',
