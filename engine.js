@@ -942,7 +942,8 @@ function buildSelectHTML(currentId, slotIndex) {
 //   1. Local-currency price available → show with local symbol + RRP label
 //   2. Discontinued → show "Discontinued / Launch: USD $X" (no RRP label)
 //   3. Live item, no local price but USD exists → show tagged "USD $X" + RRP label
-//   4. No price at all → "Price unavailable"
+//   4. Announced, not on sale, no price yet → "Price not announced"
+//   5. No price at all → "Price unavailable"
 // ─────────────────────────────────────────────
 function renderPriceHTML(item) {
   const prices = item.prices;
@@ -958,6 +959,7 @@ function renderPriceHTML(item) {
   if (prices.USD != null) {
     return `<div class="slot-price"><span class="price-rrp-label">RRP</span> ${usdTaggedHTML(prices.USD)}</div>`;
   }
+  if (item.preRelease) return `<div class="slot-price discontinued">Price not announced</div>`;
   return `<div class="slot-price discontinued">Price unavailable</div>`;
 }
 
