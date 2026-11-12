@@ -419,6 +419,21 @@ const LENSES = {
     prices:{USD:719,AUD:1099,EUR:799,GBP:599,JPY:106000,CAD:899,SGD:999},
     productUrl:'https://www.sigma-global.com/en/lenses/c023_50_2/',
   },
+  'sigma-50mm-f14-cl-dg': {
+    name:'Sigma 50mm f/1.4 CL DG Contemporary', manufacturer:'Sigma', line:'Contemporary', type:'Prime',
+    mount:'l', focalLength:50, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'50mm',
+    maxAperture:1.4, minAperture:16, weight:375, length:54.0, diameter:64.7,
+    filterThread:52, minFocusDist:45, maxMagnification:0.147,
+    elements:9, groups:6, blades:14, afType:'RDD',
+    weatherSealed:true, ois:false, oisStops:null, year:2027, discontinued:false, preRelease:true,
+    imageUrl:'https://www.sigma-global.com/lenses/images/06_PPhoto_Iseries2026_50mm_f14_CL_black_Lmt_representative_1000px.png',
+    imageSource: { url:'https://www.sigma-global.com/en/lenses/c027_50_14/', tier:'T1', title:'Sigma global product page', note:'official product shot (black, L-Mount, without hood); barrel reads "50mm 1:1.4 CL DG ø52"', date:'2026-11-13' },
+    asin:null,
+    prices:{USD:null,AUD:null,EUR:null,GBP:null,JPY:null,CAD:null,SGD:null},
+    priceSource: { url:'https://press.sigmaphoto.com/product/10/sigma-announces-50mm-f1-4-cl-dg-contemporary/', tier:'T1', title:'Sigma America press release (2026-10-23)', note:'"available from Sigma-authorized dealers starting in early spring 2027. Retail price will be announced at a later date." Pre-release: no price stored until Sigma announces one', date:'2026-11-13' },
+    specSources: [{ url:'https://www.sigma-global.com/en/lenses/c027_50_14/', tier:'T1', title:'Sigma 50mm F1.4 CL DG Contemporary official page', note:'L-Mount: φ64.7 x 54.0mm, 375g; 9 elements in 6 groups (1 FLD, 3 aspherical), 14 rounded blades, F16, MFD 45cm, 1:6.8, φ52mm filter, whole-lens extension focusing driven by the new RDD (Rotary Direct Drive) actuator, dust- and splash-resistant structure. Year: Sigma gives "early spring 2027" for availability', date:'2026-11-13' }],
+    productUrl:'https://www.sigma-global.com/en/lenses/c027_50_14/',
+  },
   'sigma-65mm-f2-dg': {
     name:'Sigma 65mm f/2 DG DN Contemporary', manufacturer:'Sigma', line:'Contemporary', type:'Prime',
     mount:'l', focalLength:65, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'65mm',
@@ -741,7 +756,7 @@ const LENSES = {
 const LENS_DROPDOWN_GROUPS = [
   { label: '── Art Primes (L-Mount) ──', ids: ['sigma-14mm-f14-dg', 'sigma-15mm-f14-dg-fisheye', 'sigma-20mm-f14-dg', 'sigma-24mm-f14-dg', 'sigma-35mm-f12-dg-ii', 'sigma-35mm-f14-dg', 'sigma-35mm-f14-dg-ii', 'sigma-50mm-f12-dg', 'sigma-50mm-f14-dg', 'sigma-85mm-f12-dg', 'sigma-85mm-f14-dg', 'sigma-105mm-f28-dg-macro', 'sigma-135mm-f14-dg'] },
   { label: '── Art Zooms (L-Mount) ──', ids: ['sigma-14-24mm-f28-dg', 'sigma-24-70mm-f28-dg', 'sigma-24-70mm-f28-dg-ii', 'sigma-28-45mm-f18-dg', 'sigma-28-105mm-f28-dg'] },
-  { label: '── Contemporary Primes (L-Mount) ──', ids: ['sigma-17mm-f4-dg', 'sigma-20mm-f2-dg', 'sigma-24mm-f2-dg', 'sigma-24mm-f35-dg', 'sigma-35mm-f2-dg', 'sigma-45mm-f28-dg', 'sigma-50mm-f2-dg', 'sigma-65mm-f2-dg', 'sigma-90mm-f28-dg'] },
+  { label: '── Contemporary Primes (L-Mount) ──', ids: ['sigma-17mm-f4-dg', 'sigma-20mm-f2-dg', 'sigma-24mm-f2-dg', 'sigma-24mm-f35-dg', 'sigma-35mm-f2-dg', 'sigma-45mm-f28-dg', 'sigma-50mm-f2-dg', 'sigma-50mm-f14-cl-dg', 'sigma-65mm-f2-dg', 'sigma-90mm-f28-dg'] },
   { label: '── Contemporary Zooms (L-Mount) ──', ids: ['sigma-16-28mm-f28-dg', 'sigma-20-60mm-f28-4-dg', 'sigma-20-200mm-f35-63-dg', 'sigma-28-70mm-f28-dg', 'sigma-100-400mm-f5-63-dg'] },
   { label: '── Sports (L-Mount) ──', ids: ['sigma-200mm-f2-dg', 'sigma-500mm-f56-dg', 'sigma-60-600mm-f45-63-dg', 'sigma-70-200mm-f28-dg', 'sigma-150-600mm-f5-63-dg', 'sigma-300-600mm-f4-dg'] },
 ];

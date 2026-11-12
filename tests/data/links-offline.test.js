@@ -218,9 +218,10 @@ const KNOWN_SHARED_LINKS = new Map([
 // Sept-Nov 2026 releases (add-nov-2026-releases, 2026-11-13): new entries ship
 // with asin: null until the ASIN backfill. Sigma fp2 and Nikkor Z 120-300mm fit
 // in the existing headroom; then +1 Sony FE 8-14mm Fisheye G, +1 Sigma 16-300mm Z,
-// +2 Tamron 16-50mm Z / X, +2 Viltrox 35mm F1.4 Pro E / Z,
-// +5 Laowa 24mm f/2 Tilt-Shift (E / Z / RF / L in panasonic and leica).
-const ASIN_GAP_BASELINE = 632;
+// +2 Viltrox 35mm F1.4 Pro E / Z, +5 Laowa 24mm f/2 Tilt-Shift (E / Z / RF /
+// L in panasonic and leica). Pre-release items (Tamron 16-50mm Z / X, Sigma
+// 50mm F1.4 CL) are not counted until they ship.
+const ASIN_GAP_BASELINE = 630;
 
 const allItems = () => brandDirs().flatMap(brand => {
   const { data } = loadBrand(brand);
@@ -340,7 +341,8 @@ test('items sharing an ASIN describe the same product', () => {
 });
 
 test('ASIN coverage does not regress', () => {
-  const missing = allItems().filter(({ item }) => !item.discontinued && !item.asin);
+  // Pre-release items aren't on sale, so no Amazon listing can exist yet.
+  const missing = allItems().filter(({ item }) => !item.discontinued && !item.preRelease && !item.asin);
   assert.ok(missing.length <= ASIN_GAP_BASELINE,
     `${missing.length} current items lack an asin, above the ${ASIN_GAP_BASELINE} baseline:\n`
     + missing.map(m => `  ${m.brand}/${m.id}`).join('\n'));
