@@ -22,4 +22,4 @@
 
 ## 4. Verify
 
-- [ ] 4.1 `npm test` and `RUN_LINK_TESTS=1 npm run test:links` pass; PR opened
+- [x] 4.1 `npm test` and `RUN_LINK_TESTS=1 npm run test:links` pass; PR opened
