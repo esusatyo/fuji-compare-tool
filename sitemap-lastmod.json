@@ -1,10 +1,10 @@
 {
   "": {
-    "hash": "89e8aede37a283b6",
+    "hash": "5019912cb0985d98",
     "lastmod": "2026-11-12"
   },
   "about": {
-    "hash": "a5c027c5651a2bbf",
+    "hash": "395069ecd4d52950",
     "lastmod": "2026-11-12"
   },
   "canon/": {
@@ -152,7 +152,7 @@
     "lastmod": "2026-10-21"
   },
   "privacy": {
-    "hash": "eeb73e6d24b4f3c1",
+    "hash": "f499c56222d9906d",
     "lastmod": "2026-11-12"
   },
   "sigma/": {
@@ -160,8 +160,8 @@
     "lastmod": "2026-11-12"
   },
   "sony/": {
-    "hash": "b9336c493931ac69",
-    "lastmod": "2026-11-10"
+    "hash": "9693679ae8575abe",
+    "lastmod": "2026-11-12"
   },
   "sony/vs/a7-v-vs-a7-iv": {
     "hash": "204b13c39de4dc1c",

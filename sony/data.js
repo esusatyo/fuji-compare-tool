@@ -1069,6 +1069,27 @@ const LENSES = {
   },
 
   /* ── Sony FE G + standard primes ── */
+  'fe-8-14mm-f35-fisheye-g': {
+    name:'FE 8-14mm F3.5 Fisheye G', manufacturer:'Sony', line:'FE G', type:'Zoom', mount:'e', asin:null,
+    focalLength:null, focalLengthMin:8, focalLengthMax:14, focalLengthEquiv:'8-14mm',
+    maxAperture:3.5, minAperture:22, weight:314, length:82.8, diameter:63.1,
+    filterThread:null, minFocusDist:15, maxMagnification:0.22,
+    elements:16, groups:13, blades:7, afType:'Linear Motor',
+    weatherSealed:true, ois:false, oisStops:null, year:2026, discontinued:false,
+    imageUrl:'https://d1ncau8tqf99kp.cloudfront.net/converted/157754_original_local_1200x1050_v3_converted.webp',
+    imageSource: { url:'https://electronics.sony.com/imaging/lenses/all-e-mount/p/sel814g', tier:'T1', note:'official Sony US store product image (the page\'s og:image); fisheye front element, 9/11/14 zoom scale, G badge and AF/MF/FH switch visible', date:'2026-11-13' },
+    prices:{USD:1599,AUD:2299,EUR:1700,GBP:1500,JPY:null,CAD:1999,SGD:2049},
+    priceIncomplete:true,
+    priceSource: [
+      { url:'https://electronics.sony.com/imaging/lenses/all-e-mount/p/sel814g', tier:'T1', title:'Sony Electronics US store', note:'USD: "MSRP is listed as $1,599.99" (stored without cents)', date:'2026-11-13' },
+      { url:'https://www.sony.ca/en/imaging/lenses/all-e-mount/p/sel814g', tier:'T1', title:'Sony Canada store', note:'CAD: priceData 1999.99 CAD (stored without cents)', date:'2026-11-13' },
+      { url:'https://www.sony.com.au/electronics/e-mount-lenses/sel814g', tier:'T1', title:'Sony Australia store', note:'AUD: page price 2299.00 (Digital Camera Warehouse sells at A$2,099, a dealer discount)', date:'2026-11-13' },
+      { url:'https://www.sony.com.sg/electronics/e-mount-lenses/sel814g', tier:'T1', title:'Sony Singapore store', note:'SGD: page price 2049.00', date:'2026-11-13' },
+      { url:'https://www.sony.eu/presscentre/sony-introduces-its-first-fisheye-zoom-g-lens', tier:'T1', title:'Sony Europe press release', note:'EUR / GBP: "1,700EUR/1,500£". JPY: Sony Japan lists an open price and no Sony Store figure was found, so it stays empty', date:'2026-11-13' },
+    ],
+    specSources: [{ url:'https://www.sony.com.au/electronics/e-mount-lenses/sel814g/specifications', tier:'T1', title:'Sony Australia SEL814G specifications', note:'8-14mm, 180° circular (8mm) to diagonal (14mm) fisheye; 13 groups / 16 elements; f/3.5-22; 7 circular blades; MFD 0.15 m; 0.22x; no front filter (rear sheet-filter holder); 63.1 x 82.8 mm; 314 g; linear-motor AF; dust and moisture resistant design; internal zoom', date:'2026-11-13' }],
+    productUrl:'https://electronics.sony.com/imaging/lenses/all-e-mount/p/sel814g',
+  },
   'fe-16mm-f18-g': {
     name:'FE 16mm F1.8 G', manufacturer:'Sony', line:'FE G', type:'Prime', mount:'e', asin:'B0DYK97L9M',
     focalLength:16, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'16mm',
@@ -6618,7 +6639,7 @@ const LENS_DROPDOWN_GROUPS = [
     'fe-400mm-f45-gm-oss', 'fe-600mm-f63-gm-oss',
   ] },
   { label: '── Sony FE Zooms ──',  ids: [
-    'fe-12-24mm-f28-gm', 'fe-12-24mm-f4-g', 'fe-16-25mm-f28-g', 'fe-16-35mm-f28-gm-ii',
+    'fe-8-14mm-f35-fisheye-g', 'fe-12-24mm-f28-gm', 'fe-12-24mm-f4-g', 'fe-16-25mm-f28-g', 'fe-16-35mm-f28-gm-ii',
     'fe-16-35mm-f28-gm', 'fe-16-35mm-f4-pz-g', 'fe-16-35mm-f4-za-oss', 'fe-20-70mm-f4-g',
     'fe-24-50mm-f28-g', 'fe-24-70mm-f28-gm-ii', 'fe-24-70mm-f4-za-oss', 'fe-24-105mm-f4-g-oss',
     'fe-24-240mm-f35-63-oss', 'fe-28-60mm-f4-56', 'fe-28-70mm-f2-gm',

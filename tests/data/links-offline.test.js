@@ -215,7 +215,10 @@ const KNOWN_SHARED_LINKS = new Map([
 // Canon missing-lens pass (add-canon-missing-thirdparty-lenses, 2026-10-22+),
 // same approach: +29 Laowa RF, +5 Voigtländer RF, +3 TTArtisan RF, +6 7Artisans RF,
 // +1 Thypoch RF, +1 Samyang RF, +1 Tamron RF (16-50mm, not on sale until 2026-10-29).
-const ASIN_GAP_BASELINE = 621;
+// Sept-Nov 2026 releases (add-nov-2026-releases, 2026-11-13): new entries ship
+// with asin: null until the ASIN backfill. Sigma fp2 and Nikkor Z 120-300mm fit
+// in the existing headroom; then +1 Sony FE 8-14mm Fisheye G.
+const ASIN_GAP_BASELINE = 622;
 
 const allItems = () => brandDirs().flatMap(brand => {
   const { data } = loadBrand(brand);
