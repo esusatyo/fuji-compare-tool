@@ -542,6 +542,11 @@ const KNOWN_IMAGE_GAPS = {
     // 2026-09-23 refresh — too new for a freely-licensed Commons photo yet
     // (ship Oct 2026).
     'fe-400mm-f45-gm-oss', 'fe-600mm-f63-gm-oss',
+    // fe-8-14mm-f35-fisheye-g: added 2026-11-13. No Commons photo yet, and
+    // Sony's own images don't work as a hotlink: the US store's gallery file
+    // is served as application/octet-stream (test:links rejects it), and the
+    // sony.com.au / CloudFront product shots 403 outside Sony's pages.
+    'fe-8-14mm-f35-fisheye-g',
     // Laowa batch (add-sony-missing-thirdparty-lenses, 2026-10-21): the RL
     // lenses' official galleries (laowa.com.au) show only the Leica M version
     // — a different, shorter barrel than the E version — or the lens mounted

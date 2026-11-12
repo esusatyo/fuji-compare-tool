@@ -1076,8 +1076,6 @@ const LENSES = {
     filterThread:null, minFocusDist:15, maxMagnification:0.22,
     elements:16, groups:13, blades:7, afType:'Linear Motor',
     weatherSealed:true, ois:false, oisStops:null, year:2026, discontinued:false,
-    imageUrl:'https://d1ncau8tqf99kp.cloudfront.net/converted/157754_original_local_1200x1050_v3_converted.webp',
-    imageSource: { url:'https://electronics.sony.com/imaging/lenses/all-e-mount/p/sel814g', tier:'T1', note:'official Sony US store product image (the page\'s og:image); fisheye front element, 9/11/14 zoom scale, G badge and AF/MF/FH switch visible', date:'2026-11-13' },
     prices:{USD:1599,AUD:2299,EUR:1700,GBP:1500,JPY:null,CAD:1999,SGD:2049},
     priceIncomplete:true,
     priceSource: [
