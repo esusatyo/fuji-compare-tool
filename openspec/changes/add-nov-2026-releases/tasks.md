@@ -5,7 +5,7 @@
 
 ## 2. Pre-release items
 
-- [ ] 2.1 `preRelease` flag in the schema (USD may be null, all-currency exemption, not with `discontinued`) with data tests
+- [x] 2.1 `preRelease` flag in the schema (USD may be null, all-currency exemption, not with `discontinued`) with data tests
 - [ ] 2.2 Price cell reads "Price not announced" for a pre-release item with no price, with a logic test; document the flag in CLAUDE.md
 
 ## 3. New items
