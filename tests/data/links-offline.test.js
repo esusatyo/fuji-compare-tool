@@ -217,8 +217,9 @@ const KNOWN_SHARED_LINKS = new Map([
 // +1 Thypoch RF, +1 Samyang RF, +1 Tamron RF (16-50mm, not on sale until 2026-10-29).
 // Sept-Nov 2026 releases (add-nov-2026-releases, 2026-11-13): new entries ship
 // with asin: null until the ASIN backfill. Sigma fp2 and Nikkor Z 120-300mm fit
-// in the existing headroom; then +1 Sony FE 8-14mm Fisheye G, +1 Sigma 16-300mm Z.
-const ASIN_GAP_BASELINE = 623;
+// in the existing headroom; then +1 Sony FE 8-14mm Fisheye G, +1 Sigma 16-300mm Z,
+// +2 Tamron 16-50mm Z / X.
+const ASIN_GAP_BASELINE = 625;
 
 const allItems = () => brandDirs().flatMap(brand => {
   const { data } = loadBrand(brand);
