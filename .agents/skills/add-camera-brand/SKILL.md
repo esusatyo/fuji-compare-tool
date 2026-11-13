@@ -90,7 +90,7 @@ The data tests auto-discover any directory with a `data.js`, so wire these
    for lens placeholder cards; `manufacturer` on each lens must match a key here).
 4. Add a `[<brand>]` case to `tests/logic/root-redirect.test.js` asserting a
    stored brand of `'<slug>'` redirects to `./<slug>/`.
-5. Add `<script src="../<slug>/data.js"></script>` to `compare/index.html`
+5. Add `<script src="../<slug>/data.js"></script>` to `compare/index.html` **and to `size/index.html`**
    (alongside the other brands, before `engine.js`) so the cross-brand compare
    page picks up the new brand's cameras.
 
@@ -200,7 +200,7 @@ group) and `npm run test:data`.
 - [ ] `engine.js` `MANUFACTURER_COLORS` has the brand
 - [ ] (optional) `engine.js` `SPEC_SECTIONS` brand section + `schema.js` branch
 - [ ] `tests/logic/root-redirect.test.js` honours `<slug>`
-- [ ] `compare/index.html` loads `<brand>/data.js`
+- [ ] `compare/index.html` and `size/index.html` load `<brand>/data.js`
 - [ ] new items in `KNOWN_IMAGE_GAPS[<slug>]` until images land
 - [ ] `npm test` green
 - [ ] OpenSpec change archived after the PR merges

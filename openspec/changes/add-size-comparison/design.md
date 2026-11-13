@@ -117,6 +117,27 @@ switch via `trackEvent`; on static size pages the inline script calls `window.tr
 with `size-view:page:<overlay|side>`. `size-seen:<pathname>` is owned by `analytics.js`
 (IntersectionObserver on `.size-diagram`, once per load), like `specs-seen`.
 
+## As built (differences from the decisions above)
+
+- **D2/D3 — no single `<svg>` with a millimetre viewBox.** Text inside one scaled svg would
+  shrink with it on phones. Instead each outline is its own small svg (viewBox in mm) whose
+  CSS width is `calc((100cqw - gutter) * <mm> / var(--size-total))` — a share of the container
+  proportional to its millimetres — so one drawing still has exactly one px-per-mm and the
+  labels stay ordinary HTML. The public function is `SizeDiagram.block(o)`, which returns the
+  whole block (switch, both layouts, legend, sentence, table, note); there is no separate `svg()`.
+- **D3 — no dimension lines on the drawing.** All numbers are in the table.
+- **D5/D6 — both layouts are always in the markup**; the switch only sets `data-layout` on the
+  wrapper, and CSS picks by viewport while it is `auto`. The click handler lives in `size.js`
+  (delegated on `document`), so the tool and the static pages share it and a table re-render
+  keeps the choice.
+- **D6 — the hero subtitle is a plain description**, not the difference sentence (which sits
+  directly under the drawing; twice on one screen read as a mistake).
+- **D10 — share cards untouched** (task 1.3): their freshness is a hash of the card HTML.
+- **D10 — vs-page section position**: directly after the spec-and-references card (the
+  references are rows of the same table, so "above References" would mean splitting it).
+- **D13 — extra static-link events** on size pages: `size-to-interactive`, `size-to-vs`,
+  `size-related`, and `size-hub` on the homepage card.
+
 ## Risks
 
 - **More templated pages.** 45 size pages sit beside 45 indexable vs-pages for the same
@@ -128,7 +149,7 @@ with `size-view:page:<overlay|side>`. `size-seen:<pathname>` is owned by `analyt
 - **Share cards** must stay pixel-identical after D10's refactor.
 - **Real devices.** The side-by-side layout at phone width needs a hands-on check.
 
-## Open points for the owner
+## Open points for the owner — both confirmed 2026-11-13
 
 1. D8: keep inches/ounces in small text, or millimetres and grams only?
 2. Size pages are generated for the **45 indexable** vs-pairs (my reading of "the same pairs

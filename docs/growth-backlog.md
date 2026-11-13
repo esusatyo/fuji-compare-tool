@@ -44,6 +44,13 @@ Add a `quick-compare` event.
 
 ## 2. Size-comparison pages — large (the main growth bet)
 
+**Status (2026-11-13): built as `add-size-comparison`** — bodies (and lens-vs-lens) drawn to scale as
+rounded boxes with a credit card for reference: a "Size" section in the tool on every page, a compact
+section in every vs-page, a dedicated size page for each indexable vs-pair, and an interactive `/size/`
+page. **Not built yet: a lens mounted on a body** (needs the mount's position within the body depth).
+Measure 4–8 weeks after it ships: Bing/Google impressions for "size" queries, landings under `/size/`
+and `*/size/*`, and the `size-seen` / `size-view` events.
+
 **Problem.** Size is the strongest demand signal we have: it leads the Bing queries,
 the Copilot grounding queries, and people search a competitor's brand name. The site has
 the data (width/height/depth/weight for cameras and lenses) but no page that targets
