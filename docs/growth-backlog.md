@@ -25,6 +25,12 @@ Already done from the same review: accurate sitemap `<lastmod>` dates (`add-site
 
 ## 1. Quick-compare box on the homepage — small to medium
 
+**Status (2026-11-13): built as `add-search-picker`**, and wider than written below: the tool itself
+is embedded in the homepage (search a camera, the table appears in place — no hop to `/compare/`),
+and the same type-to-search picker replaced the dropdowns on every page. Measure it 4–8 weeks after
+it ships: `quick-compare:first` / `quick-compare:pair` against homepage views, and
+`picker-pick:*:search` against `:browse`.
+
 **Problem.** People searching "camera comparison" or "camera size comparison" land on a
 brand picker and have to choose a brand, wait for the tool to load, then pick cameras. Most leave.
 
