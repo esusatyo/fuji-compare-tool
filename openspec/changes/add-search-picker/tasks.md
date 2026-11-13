@@ -36,7 +36,7 @@
 
 - [x] 4.1 Browser check on the local preview: homepage (search, pick, count, shared link),
       a brand lens page, phone-width frame.
-- [ ] 4.2 `npm run test:links` (URLs unchanged by this change — run anyway per house rule).
-- [ ] 4.3 Open the PR.
+- [x] 4.2 `npm run test:links` (URLs unchanged by this change — run anyway per house rule). Green 2026-11-13.
+- [x] 4.3 Open the PR (#88).
 - [ ] 4.4 Owner: real-device check — iPhone Safari (sheet + keyboard), iPad, Android Chrome.
 - [ ] 4.5 After merge: verify live, archive this change, review the events after 4–8 weeks.
