@@ -535,7 +535,11 @@ const CAMERAS = {
     prices:{USD:1599,AUD:2199,EUR:1599,GBP:1199,JPY:264000,CAD:1899,SGD:1899},
     priceSource: { url:'https://www.fuji-store.de/p/fujifilm-x-t50-gehaeuse-silber', tier:'T3', note:'EUR raised to €1,599 (from €1,499) per Fujifilm\'s Aug 1–Sep 1 2026 EU-wide price adjustment (FujiAddict/Imaging Resource, 2026-07-26), confirmed as the current UVP at Fuji-Store.de; USD $1,599 unchanged, confirmed current at Best Buy JPY ¥264,000 (tax-included, body only) from Fujifilm\'s own Japan store https://mall-jp.fujifilm.com/shop/g/g16945408/ (2026-10-11), after Fujifilm\'s 2026-10-01 Japan-only price revision; previously ¥199,000.', date:'2026-08-23' },
     sensorMP:40.2, sensorType:'X-Trans CMOS 5 HR', processor:'X-Processor 5',
-    width:123.8, height:84.0, depth:49.0, weight:438, weatherSealed:true,
+    specSources: [
+      { url:'https://www.fujifilm-x.com/global/products/cameras/x-t50/', tier:'T1', title:'Fujifilm X-T50 official product page', note:'weatherSealed true -> false: neither the X-T50 product page nor its specifications page claims any weather or dust resistance, while the X-T5 page advertises "56 weather-sealed points". The wrong value dates from the project\'s initial commit (2026-03-13)', date:'2026-11-13' },
+      { url:'https://www.tomsguide.com/cameras-photography/fujifilm-x-t50-review', tier:'T2', title:"Tom's Guide X-T50 review", note:'lists the lack of weather sealing as a con; Cameralabs, Stuff and RTINGS likewise say it is not weather-sealed and point to the X-T5 for that', date:'2026-11-13' },
+    ],
+    width:123.8, height:84.0, depth:49.0, weight:438, weatherSealed:false,
     lcdSize:'3.0"', lcdDots:1840, lcdType:'Tilt',
     evfType:'EVF', evfDots:2.36, evfMag:0.62,
     faceDetection:true, subjectDetection:'Animal / Bird / Vehicle / Plane / Train',
