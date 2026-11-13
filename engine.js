@@ -1523,6 +1523,10 @@ function computeWinners(spec) {
   if (spec.needsAll && items.some((it, i) => it && nums[i] === null)) return none;
   const valid = nums.filter(v => v !== null);
   const best = spec.higherBetter ? Math.max(...valid) : Math.min(...valid);
+  // A dead heat across every item has no winner: highlighting the whole row
+  // would mark a difference where there is none. (A tie for best among some
+  // of them still highlights each of those.)
+  if (valid.length === filled.length && valid.every(v => v === best)) return none;
   return nums.map(v => v !== null && v === best);
 }
 
@@ -1653,6 +1657,11 @@ function renderReferencesSection() {
   return html;
 }
 
+// "Show differences only": hides every spec row whose cells all read the same,
+// and any section left with no rows. Page state only — not in the URL, not
+// remembered across visits — so a shared link always opens the full table.
+let diffOnly = false;
+
 function renderTable() {
   const table = document.getElementById('compare-table');
   let html = '';
@@ -1671,36 +1680,61 @@ function renderTable() {
     if (!showing) { table.innerHTML = ''; return; }
   }
 
+  // Rows are compared as rendered — what the reader sees is what counts as
+  // "the same" — across the slots that hold an item. Fewer than two items is
+  // not a comparison: no toggle, nothing hidden.
+  const shownIds = cfg().selectedIds().slice(0, numSlots);
+  const filled = shownIds.map((id, i) => (cfg().items[id] ? i : -1)).filter(i => i >= 0);
+  const comparable = filled.length >= 2;
+  let specCount = 0;
+  let differCount = 0;
+  let sections = '';
+
   for (const section of cfg().specSections) {
     if (!sectionVisible(section)) continue;
 
-    html += `<div class="spec-section">
-      <div class="section-header" data-section="${section.id}">
-        <span class="section-title">${section.label}</span>
-        <span class="section-toggle open">▾</span>
-      </div>
-      <div class="section-body" id="body-${section.id}">`;
-
+    let rowsHtml = '';
     for (const spec of section.specs) {
+      const cells = shownIds.map(id => (id ? formatVal(spec, cfg().items[id]) : null));
+      const differs = comparable && new Set(filled.map(i => cells[i])).size > 1;
+      specCount++;
+      if (differs) differCount++;
+      if (diffOnly && comparable && !differs) continue;
+
       const winners = computeWinners(spec);
-      html += `<div class="spec-row">
+      rowsHtml += `<div class="spec-row">
         <div class="spec-label">${spec.label}</div>`;
       for (let i = 0; i < numSlots; i++) {
-        const id = cfg().selectedIds()[i];
-        const item = cfg().items[id];
         const winClass = winners[i] ? ' winner' : '';
         const slotHide = (i === 2 && numSlots < 3) ? ' slot-3-hide' : '';
         // An empty homepage slot keeps its column, blank — a dash would claim
         // a camera that lacks the feature.
-        html += id
-          ? `<div class="spec-value${winClass}${slotHide}">${formatVal(spec, item)}</div>`
+        rowsHtml += shownIds[i]
+          ? `<div class="spec-value${winClass}${slotHide}">${cells[i]}</div>`
           : `<div class="spec-value spec-value--empty${slotHide}"></div>`;
       }
-      html += `</div>`;
+      rowsHtml += `</div>`;
     }
+    if (!rowsHtml) continue; // every row in it was identical
 
-    html += `</div></div>`;
+    sections += `<div class="spec-section">
+      <div class="section-header" data-section="${section.id}">
+        <span class="section-title">${section.label}</span>
+        <span class="section-toggle open">▾</span>
+      </div>
+      <div class="section-body" id="body-${section.id}">${rowsHtml}</div></div>`;
   }
+
+  if (comparable) {
+    html += `<div class="diff-bar">
+      <label class="diff-toggle"><input type="checkbox" id="diff-only"${diffOnly ? ' checked' : ''}><span>Show differences only</span></label>
+      <span class="diff-count">${differCount} of ${specCount} specs differ</span>
+    </div>`;
+    if (diffOnly && !differCount) {
+      html += `<p class="diff-none">No differences: these ${modeNoun(true)} match on every spec listed.</p>`;
+    }
+  }
+  html += sections;
 
   html += renderReferencesSection();
 
@@ -1856,6 +1890,14 @@ function attachEventListeners() {
   // Delegated on the table container, which persists across renderTable()
   // rebuilding its innerHTML (unlike .section-header, which is re-attached
   // per render since the whole element is recreated).
+  document.getElementById('compare-table')?.addEventListener('change', e => {
+    if (e.target.id !== 'diff-only') return;
+    diffOnly = e.target.checked;
+    track(`diff-only:${trackPage()}:${diffOnly ? 'on' : 'off'}`, `Differences only: ${diffOnly ? 'on' : 'off'}`);
+    renderTable();
+    // The checkbox was re-rendered with the table; keep the keyboard on it.
+    document.getElementById('diff-only')?.focus();
+  });
   document.getElementById('compare-table')?.addEventListener('click', e => {
     const link = e.target.closest('a.ref-link');
     if (!link) return;
@@ -1890,6 +1932,7 @@ function attachEventListeners() {
   document.getElementById('reset-btn')?.addEventListener('click', () => {
     closePicker(false);
     selectedCameraIds = selectedCameraIds.map(() => null);
+    diffOnly = false;
     track('quick-compare:reset', 'Quick compare: reset');
     updateHash();
     renderAll();
