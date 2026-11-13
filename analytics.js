@@ -20,6 +20,7 @@
 //   view-product:tool:<brand>:<slug>  view-product:vs:<brand>:<slug>
 //   camera-swap:<brand>:<slug>        lens-swap:<brand>:<slug>
 //   picker-pick:<brand|compare|home>:<search|browse>   (how it was found; never the typed text)
+//   diff-only:<brand|compare|home>:<on|off>   (the "Show differences only" toggle)
 //   size-view:<brand|compare|home|size|page>:<overlay|side>   (size.js: the drawing's layout switch)
 //   size-toggle:<page>:<hide|show>    (size.js: a legend name pressed to hide/show its outlines)
 //   size-seen:<pathname>              (a size drawing entered the viewport)
