@@ -6,6 +6,9 @@
 // a regional RRP is genuinely unavailable (e.g. no official distribution).
 // Items with this flag skip the currency-completeness check but still require
 // a valid USD price. Remove the flag once the price is filled in.
+//
+// `preRelease: true` (announced, not on sale yet) also skips the check; the
+// schema lets such an item carry no price at all. Remove it once the item ships.
 const { test } = require('node:test');
 const assert = require('node:assert/strict');
 const { loadBrand, brandDirs } = require('../helpers/load-brand');
@@ -539,6 +542,11 @@ const KNOWN_IMAGE_GAPS = {
     // 2026-09-23 refresh — too new for a freely-licensed Commons photo yet
     // (ship Oct 2026).
     'fe-400mm-f45-gm-oss', 'fe-600mm-f63-gm-oss',
+    // fe-8-14mm-f35-fisheye-g: added 2026-11-13. No Commons photo yet, and
+    // Sony's own images don't work as a hotlink: the US store's gallery file
+    // is served as application/octet-stream (test:links rejects it), and the
+    // sony.com.au / CloudFront product shots 403 outside Sony's pages.
+    'fe-8-14mm-f35-fisheye-g',
     // Laowa batch (add-sony-missing-thirdparty-lenses, 2026-10-21): the RL
     // lenses' official galleries (laowa.com.au) show only the Leica M version
     // — a different, shorter barrel than the E version — or the lens mounted
@@ -629,6 +637,7 @@ for (const brand of brandDirs()) {
     const gaps = [];
     for (const [id, c] of Object.entries(data.CAMERAS)) {
       if (c.discontinued) continue; // discontinued bodies legitimately show USD only
+      if (c.preRelease) continue;   // announced, not on sale: regional prices don't exist yet
       for (const cur of CURRENCIES) {
         if (c.prices[cur] == null) gaps.push(`${id}: missing ${cur}`);
       }
@@ -641,6 +650,7 @@ for (const brand of brandDirs()) {
     for (const [id, l] of Object.entries(data.LENSES)) {
       if (l.discontinued) continue;   // discontinued lenses show USD only
       if (l.priceIncomplete) continue; // explicit acknowledgement — no regional RRP available
+      if (l.preRelease) continue;      // announced, not on sale: regional prices don't exist yet
       for (const cur of CURRENCIES) {
         if (l.prices[cur] == null) gaps.push(`${id}: missing ${cur}`);
       }

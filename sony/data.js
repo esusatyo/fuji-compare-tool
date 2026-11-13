@@ -1069,6 +1069,25 @@ const LENSES = {
   },
 
   /* ── Sony FE G + standard primes ── */
+  'fe-8-14mm-f35-fisheye-g': {
+    name:'FE 8-14mm F3.5 Fisheye G', manufacturer:'Sony', line:'FE G', type:'Zoom', mount:'e', asin:null,
+    focalLength:null, focalLengthMin:8, focalLengthMax:14, focalLengthEquiv:'8-14mm',
+    maxAperture:3.5, minAperture:22, weight:314, length:82.8, diameter:63.1,
+    filterThread:null, minFocusDist:15, maxMagnification:0.22,
+    elements:16, groups:13, blades:7, afType:'Linear Motor',
+    weatherSealed:true, ois:false, oisStops:null, year:2026, discontinued:false,
+    prices:{USD:1599,AUD:2299,EUR:1700,GBP:1500,JPY:null,CAD:1999,SGD:2049},
+    priceIncomplete:true,
+    priceSource: [
+      { url:'https://electronics.sony.com/imaging/lenses/all-e-mount/p/sel814g', tier:'T1', title:'Sony Electronics US store', note:'USD: "MSRP is listed as $1,599.99" (stored without cents)', date:'2026-11-13' },
+      { url:'https://www.sony.ca/en/imaging/lenses/all-e-mount/p/sel814g', tier:'T1', title:'Sony Canada store', note:'CAD: priceData 1999.99 CAD (stored without cents)', date:'2026-11-13' },
+      { url:'https://www.sony.com.au/electronics/e-mount-lenses/sel814g', tier:'T1', title:'Sony Australia store', note:'AUD: page price 2299.00 (Digital Camera Warehouse sells at A$2,099, a dealer discount)', date:'2026-11-13' },
+      { url:'https://www.sony.com.sg/electronics/e-mount-lenses/sel814g', tier:'T1', title:'Sony Singapore store', note:'SGD: page price 2049.00', date:'2026-11-13' },
+      { url:'https://www.sony.eu/presscentre/sony-introduces-its-first-fisheye-zoom-g-lens', tier:'T1', title:'Sony Europe press release', note:'EUR / GBP: "1,700EUR/1,500£". JPY: Sony Japan lists an open price and no Sony Store figure was found, so it stays empty', date:'2026-11-13' },
+    ],
+    specSources: [{ url:'https://www.sony.com.au/electronics/e-mount-lenses/sel814g/specifications', tier:'T1', title:'Sony Australia SEL814G specifications', note:'8-14mm, 180° circular (8mm) to diagonal (14mm) fisheye; 13 groups / 16 elements; f/3.5-22; 7 circular blades; MFD 0.15 m; 0.22x; no front filter (rear sheet-filter holder); 63.1 x 82.8 mm; 314 g; linear-motor AF; dust and moisture resistant design; internal zoom', date:'2026-11-13' }],
+    productUrl:'https://electronics.sony.com/imaging/lenses/all-e-mount/p/sel814g',
+  },
   'fe-16mm-f18-g': {
     name:'FE 16mm F1.8 G', manufacturer:'Sony', line:'FE G', type:'Prime', mount:'e', asin:'B0DYK97L9M',
     focalLength:16, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'16mm',
@@ -2807,6 +2826,25 @@ const LENSES = {
     productUrl:'https://viltrox.com/products/af-85mm-f1-4-fe',
   },
 
+  'viltrox-35mm-f14-pro': {
+    name:'Viltrox AF 35mm f/1.4 Pro FE', manufacturer:'Viltrox', line:'Pro', type:'Prime',
+    mount:'e', focalLength:35, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'35mm',
+    maxAperture:1.4, minAperture:16, weight:760, length:111, diameter:84.5,
+    filterThread:77, minFocusDist:30, maxMagnification:0.18,
+    elements:16, groups:11, blades:11, afType:'VCM',
+    weatherSealed:true, ois:false, oisStops:null, year:2026, discontinued:false,
+    imageUrl:'https://cdn.shopify.com/s/files/1/0104/0380/7298/files/AF_35mm_F1.4_Pro_FE-front_view.png',
+    imageSource: { url:'https://viltrox.com/products/af-35mm-f1-4-fe', tier:'T1', title:'Viltrox official store', note:'first product image, lens alone; barrel reads "AF 35/1.4 FE"', date:'2026-11-13' },
+    asin:null,
+    prices:{USD:829,AUD:null,EUR:null,GBP:null,JPY:null,CAD:null,SGD:null},
+    priceIncomplete:true,
+    priceSource: { url:'https://viltrox.com/products/af-35mm-f1-4-fe', tier:'T1', title:'Viltrox official store', note:'regular (compare-at) price $829, matching the announced US list price (Imaging Resource, 2026-10-29); the $663.20 shown is a limited-time introductory price and is not stored. No regional price published yet', date:'2026-11-13' },
+    specSources: [
+      { url:'https://viltrox.com/products/af-35mm-f1-4-fe', tier:'T1', title:'Viltrox AF 35mm F1.4 Pro FE official store page', note:'FE spec table: 16 elements in 11 groups (3 ED, 4 HR, 2 UA), F1.4-F16, 11 blades, 0.3m, 0.18x, VCM (HyperVCM) internal focusing, Φ84.5 x 111mm, ≈760g bare lens, Φ77mm filter; "all-weather-sealed build". Year: store listing published 2026-10-29', date:'2026-11-13' },
+      { url:'https://www.imaging-resource.com/news/viltrox-af-35mm-f1-4-pro-completes-full-frame-pro-lens-lineup/', tier:'NEWS', title:'Imaging Resource announcement', note:'announced 2026-10-29 for Sony E and Nikon Z, US list $829, 0.3m MFD, HyperVCM', date:'2026-11-13' },
+    ],
+    productUrl:'https://viltrox.com/products/af-35mm-f1-4-fe',
+  },
   'viltrox-35mm-f12-lab': {
     name:'Viltrox AF 35mm f/1.2 LAB FE', manufacturer:'Viltrox', line:'LAB', type:'Prime',
     mount:'e', focalLength:35, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'35mm',
@@ -3143,6 +3181,25 @@ const LENSES = {
     productUrl:'https://www.venuslens.net/product/4-5-10mm-f-2-8-cf-zoom-fisheye/',
   },
 
+  'laowa-24mm-f2-tilt-shift': {
+    name:'Laowa 24mm f/2 Zero-D Tilt-Shift', manufacturer:'Laowa', line:'Tilt-Shift', type:'Prime',
+    mount:'e', focalLength:24, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'24mm',
+    maxAperture:2, minAperture:22, weight:860, length:119, diameter:93,
+    filterThread:77, minFocusDist:25, maxMagnification:0.194,
+    elements:13, groups:10, blades:14, afType:'Manual',
+    weatherSealed:false, ois:false, oisStops:null, year:2026, discontinued:false,
+    imageUrl:'https://laowa.com.au/wp-content/uploads/2026/11/01_VE2420TS-FE-1200x800.png',
+    imageSource: { url:'https://laowa.com.au/', tier:'T1', title:'Laowa Australia (official regional site)', note:'Laowa\'s only product shot (file VE2420TS-FE), lens alone; "T/S 24mm F2" legible on the barrel. Laowa publishes no per-mount photo', date:'2026-11-13' },
+    asin:null,
+    prices:{USD:1249,AUD:null,EUR:null,GBP:null,JPY:null,CAD:null,SGD:null},
+    priceIncomplete:true,
+    priceSource: { url:'https://www.venuslens.net/product/laowa-24mm-f2-zero-d-tilt-shift/', tier:'T1', title:'Laowa (Venus Optics) official store', note:'Sony E variation regular price $1,249 (store API, same for every mount); on sale from 2026-11-05. No regional price published', date:'2026-11-13' },
+    specSources: [
+      { url:'https://www.venuslens.net/product/laowa-24mm-f2-zero-d-tilt-shift/', tier:'T1', title:'Laowa 24mm f/2 Zero-D Tilt-Shift - Laowa (Venus Optics) official product page', note:'Specifications table (read from the store API description, one table for all mounts): full frame, f/2-22, 84°, tilt ±10°, shift ±12mm, 360° rotation, 0.194x, manual focus, 13 elements in 10 groups, 14 blades, 25cm MFD, Ø77mm filter, Ø93 x 119mm, 860g. Mounts: Sony E / Nikon Z / Canon RF / L / GFX / XCD', date:'2026-11-13' },
+      { url:'https://petapixel.com/2026/11/05/the-laowa-24mm-f-2-zero-d-tilt-shift-is-the-fastest-tilt-shift-lens-ever/', tier:'NEWS', title:'PetaPixel announcement', note:'announced 2026-11-04, on sale 2026-11-05 at $1,249', date:'2026-11-13' },
+    ],
+    productUrl:'https://www.venuslens.net/product/laowa-24mm-f2-zero-d-tilt-shift/',
+  },
   'laowa-17mm-f4-tilt-shift': {
     name:'Laowa 17mm f/4 Zero-D Tilt-Shift', manufacturer:'Laowa', line:'Tilt-Shift', type:'Prime',
     mount:'e', focalLength:17, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'17mm',
@@ -6062,6 +6119,21 @@ const LENSES = {
     prices:{USD:719,AUD:1099,EUR:799,GBP:599,JPY:106000,CAD:899,SGD:999},
     productUrl:'https://www.sigma-global.com/en/lenses/c023_50_2/',
   },
+  'sigma-50mm-f14-cl-dg': {
+    name:'Sigma 50mm f/1.4 CL DG Contemporary', manufacturer:'Sigma', line:'Contemporary', type:'Prime',
+    mount:'e', focalLength:50, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'50mm',
+    maxAperture:1.4, minAperture:16, weight:375, length:56.0, diameter:64.7,
+    filterThread:52, minFocusDist:45, maxMagnification:0.147,
+    elements:9, groups:6, blades:14, afType:'RDD',
+    weatherSealed:true, ois:false, oisStops:null, year:2027, discontinued:false, preRelease:true,
+    imageUrl:'https://www.sigma-global.com/lenses/images/06_PPhoto_Iseries2026_50mm_f14_CL_black_Lmt_representative_1000px.png',
+    imageSource: { url:'https://www.sigma-global.com/en/lenses/c027_50_14/', tier:'T1', title:'Sigma global product page', note:'official product shot (black, L-Mount, without hood); barrel reads "50mm 1:1.4 CL DG ø52". Sigma shows only L-Mount photos; the Sony E version looks the same apart from the mount', date:'2026-11-13' },
+    asin:null,
+    prices:{USD:null,AUD:null,EUR:null,GBP:null,JPY:null,CAD:null,SGD:null},
+    priceSource: { url:'https://press.sigmaphoto.com/product/10/sigma-announces-50mm-f1-4-cl-dg-contemporary/', tier:'T1', title:'Sigma America press release (2026-10-23)', note:'"available from Sigma-authorized dealers starting in early spring 2027. Retail price will be announced at a later date." Pre-release: no price stored until Sigma announces one', date:'2026-11-13' },
+    specSources: [{ url:'https://www.sigma-global.com/en/lenses/c027_50_14/', tier:'T1', title:'Sigma 50mm F1.4 CL DG Contemporary official page', note:'Sony E-mount: φ64.7 x 56.0mm, 375g; 9 elements in 6 groups (1 FLD, 3 aspherical), 14 rounded blades, F16, MFD 45cm, 1:6.8, φ52mm filter, whole-lens extension focusing driven by the new RDD (Rotary Direct Drive) actuator, dust- and splash-resistant structure. Year: Sigma gives "early spring 2027" for availability', date:'2026-11-13' }],
+    productUrl:'https://www.sigma-global.com/en/lenses/c027_50_14/',
+  },
 
   'sigma-14-24mm-f28-dg': {
     name:'Sigma 14-24mm f/2.8 DG DN Art', manufacturer:'Sigma', line:'Art', type:'Zoom',
@@ -6618,7 +6690,7 @@ const LENS_DROPDOWN_GROUPS = [
     'fe-400mm-f45-gm-oss', 'fe-600mm-f63-gm-oss',
   ] },
   { label: '── Sony FE Zooms ──',  ids: [
-    'fe-12-24mm-f28-gm', 'fe-12-24mm-f4-g', 'fe-16-25mm-f28-g', 'fe-16-35mm-f28-gm-ii',
+    'fe-8-14mm-f35-fisheye-g', 'fe-12-24mm-f28-gm', 'fe-12-24mm-f4-g', 'fe-16-25mm-f28-g', 'fe-16-35mm-f28-gm-ii',
     'fe-16-35mm-f28-gm', 'fe-16-35mm-f4-pz-g', 'fe-16-35mm-f4-za-oss', 'fe-20-70mm-f4-g',
     'fe-24-50mm-f28-g', 'fe-24-70mm-f28-gm-ii', 'fe-24-70mm-f4-za-oss', 'fe-24-105mm-f4-g-oss',
     'fe-24-240mm-f35-63-oss', 'fe-28-60mm-f4-56', 'fe-28-70mm-f2-gm',
@@ -6645,7 +6717,7 @@ const LENS_DROPDOWN_GROUPS = [
   ] },
   { label: '── Sigma (FF Primes) ──', ids: [
     'sigma-20mm-f2-dg', 'sigma-20mm-f14-dg', 'sigma-24mm-f2-dg', 'sigma-24mm-f14-dg', 'sigma-35mm-f2-dg',
-    'sigma-35mm-f14-dg', 'sigma-35mm-f14-dg-ii', 'sigma-45mm-f28-dg', 'sigma-50mm-f2-dg', 'sigma-50mm-f14-dg',
+    'sigma-35mm-f14-dg', 'sigma-35mm-f14-dg-ii', 'sigma-45mm-f28-dg', 'sigma-50mm-f2-dg', 'sigma-50mm-f14-cl-dg', 'sigma-50mm-f14-dg',
     'sigma-65mm-f2-dg', 'sigma-85mm-f12-dg', 'sigma-85mm-f14-dg', 'sigma-90mm-f28-dg', 'sigma-17mm-f4-dg',
     'sigma-105mm-f28-dg-macro', 'sigma-14mm-f14-dg', 'sigma-15mm-f14-dg-fisheye', 'sigma-50mm-f12-dg', 'sigma-135mm-f14-dg',
     'sigma-35mm-f12-dg-ii', 'sigma-24mm-f35-dg', 'sigma-500mm-f56-dg', 'sigma-200mm-f2-dg',
@@ -6667,7 +6739,7 @@ const LENS_DROPDOWN_GROUPS = [
   { label: '── Viltrox ──', ids: [
     'viltrox-13mm-f14', 'viltrox-16mm-f18', 'viltrox-26mm-f28-evo', 'viltrox-27mm-f12', 'viltrox-28mm-f45', 'viltrox-33mm-f14',
     'viltrox-56mm-f14', 'viltrox-85mm-f18-ii',
-    'viltrox-90mm-f22-evo', 'viltrox-75mm-f18-evo', 'viltrox-55mm-f18-evo', 'viltrox-35mm-f18-evo', 'viltrox-85mm-f2-evo', 'viltrox-50mm-f14-pro',
+    'viltrox-90mm-f22-evo', 'viltrox-75mm-f18-evo', 'viltrox-55mm-f18-evo', 'viltrox-35mm-f18-evo', 'viltrox-85mm-f2-evo', 'viltrox-50mm-f14-pro', 'viltrox-35mm-f14-pro',
     'viltrox-9mm-f28-air', 'viltrox-14mm-f4-air', 'viltrox-56mm-f12-pro', 'viltrox-15mm-f17-air', 'viltrox-85mm-f14-pro', 'viltrox-35mm-f12-lab',
     'viltrox-50mm-f2-air', 'viltrox-25mm-f17-air', 'viltrox-35mm-f17-air', 'viltrox-135mm-f18-lab', 'viltrox-40mm-f25-air', 'viltrox-56mm-f17-air',
     'viltrox-28mm-f18', 'viltrox-20mm-f28-air', 'viltrox-75mm-f12-pro',
@@ -6694,7 +6766,7 @@ const LENS_DROPDOWN_GROUPS = [
   { label: '── Laowa ──', ids: [
     'laowa-10mm-f4-cookie', 'laowa-15mm-f2', 'laowa-90mm-f28-macro',
     'laowa-acris-35mm-f28-macro', 'laowa-aksen-45mm-f28', 'laowa-aksen-17-5mm-f17', 'laowa-4-5-10mm-f28-fisheye',
-    'laowa-17mm-f4-tilt-shift', 'laowa-35mm-f28-tilt-shift-macro', 'laowa-argus-33mm-f095', 'laowa-11mm-f45-rl',
+    'laowa-17mm-f4-tilt-shift', 'laowa-24mm-f2-tilt-shift', 'laowa-35mm-f28-tilt-shift-macro', 'laowa-argus-33mm-f095', 'laowa-11mm-f45-rl',
     'laowa-200mm-f2-af', 'laowa-180mm-f45-macro', 'laowa-12mm-f28-lite-zero-d', 'laowa-8-15mm-f28-fisheye',
     'laowa-15mm-f45-macro', 'laowa-55mm-f28-tilt-shift-macro', 'laowa-100mm-f28-tilt-shift-macro', 'laowa-15mm-f5-cookie',
     'laowa-12-24mm-f56-shift', 'laowa-10mm-f28-af', 'laowa-8-16mm-f35-5', 'laowa-argus-28mm-f12',
