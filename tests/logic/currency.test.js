@@ -2,7 +2,7 @@
 const { test } = require('node:test');
 const assert = require('node:assert/strict');
 const { loadBrand, brandDirs } = require('../helpers/load-brand');
-const { setCurrency, setSlot, clickMode, slotSelect } = require('../helpers/dom');
+const { setCurrency, setSlot, clickMode, slotValue } = require('../helpers/dom');
 
 for (const brand of brandDirs()) {
   test(`[${brand}] formatPrice formats per currency`, () => {
@@ -17,7 +17,7 @@ for (const brand of brandDirs()) {
   test(`[${brand}] switching currency updates the rendered camera price`, () => {
     const { window, data } = loadBrand(brand, { engine: true });
     setCurrency(window, 'USD');
-    const id = slotSelect(window, 0).value;
+    const id = slotValue(window, 0);
     const usd = data.CAMERAS[id].prices.USD;
     const priceText = window.document.querySelector('#slot-0 .slot-price').textContent;
     assert.ok(priceText.includes(usd.toLocaleString()),
@@ -40,7 +40,7 @@ for (const brand of brandDirs()) {
         `lens "${id}" should fall back to USD ${lens.prices.USD}`);
     } else {
       // Otherwise just confirm EUR price renders for the default lens.
-      const id = slotSelect(window, 0).value;
+      const id = slotValue(window, 0);
       const lens = data.LENSES[id];
       const expected = (lens.prices[ 'EUR'] ?? lens.prices.USD).toLocaleString();
       const priceText = window.document.querySelector('#slot-0 .slot-price').textContent;
@@ -83,7 +83,7 @@ test('price row: the cheapest still wins when every slot has a local price', () 
   const dear = priced.filter(([, l]) => l.prices.EUR > cheapEur).map(([id]) => id);
   setCurrency(window, 'EUR');
   // Every visible slot needs a local price, or nothing is highlighted.
-  const slots = window.document.querySelectorAll('.slot-select').length || 3;
+  const slots = window.document.querySelectorAll('.slot-picker').length || 3;
   setSlot(window, 0, dear[0]);
   setSlot(window, 1, cheap);
   for (let i = 2; i < slots; i++) setSlot(window, i, dear[i - 1]);

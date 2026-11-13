@@ -13,6 +13,7 @@ const fs = require('fs');
 const path = require('path');
 const { JSDOM } = require('jsdom');
 const { loadBrand, ROOT } = require('../helpers/load-brand');
+const { pickerOptions, setSlot } = require('../helpers/dom');
 const { loadCompare } = require('../helpers/load-compare');
 
 function record(window) {
@@ -24,10 +25,8 @@ function record(window) {
 const brandPage = (brand, opts = {}) => loadBrand(brand, { engine: true, ...opts }).window;
 
 function pickOther(doc, slotIdx = 0) {
-  const sel = doc.querySelectorAll('.slot-select')[slotIdx];
-  const opt = [...sel.options].find(o => !o.disabled && !o.selected);
-  sel.value = opt.value;
-  sel.dispatchEvent(new doc.defaultView.Event('change', { bubbles: true }));
+  const opt = pickerOptions(doc.defaultView, slotIdx).options.find(o => !o.disabled && !o.selected);
+  setSlot(doc.defaultView, slotIdx, opt.value);
   return opt.value;
 }
 
@@ -46,14 +45,15 @@ test('[fujifilm] changing a camera picker reports camera-swap with the picked mo
   const window = brandPage('fujifilm');
   const calls = record(window);
   const picked = pickOther(window.document);
-  assert.deepEqual(calls, [`camera-swap:fujifilm:${picked}`]);
+  // The second event says how it was found: scrolled to here, not typed.
+  assert.deepEqual(calls, [`camera-swap:fujifilm:${picked}`, 'picker-pick:fujifilm:browse']);
 });
 
 test('[sony] changing a lens picker reports lens-swap with the picked model', () => {
   const window = brandPage('sony', { hash: '#lenses' });
   const calls = record(window);
   const picked = pickOther(window.document, 1);
-  assert.deepEqual(calls, [`lens-swap:sony:${picked}`]);
+  assert.deepEqual(calls, [`lens-swap:sony:${picked}`, 'picker-pick:sony:browse']);
 });
 
 test('[fujifilm] mount chips report mount-filter, including "All", but not the active chip', () => {
@@ -152,7 +152,7 @@ test('[compare] events use the page\'s brand-qualified ids and "compare" as the 
   sw.value = 'canon';
   sw.dispatchEvent(new window.Event('change', { bubbles: true }));
   assert.match(picked, /^[a-z]+:/);
-  assert.deepEqual(calls, [`camera-swap:${picked}`, `buy-click:tool:${id}`, 'brand-switch:compare:canon']);
+  assert.deepEqual(calls, [`camera-swap:${picked}`, 'picker-pick:compare:browse', `buy-click:tool:${id}`, 'brand-switch:compare:canon']);
 });
 
 test('[fujifilm] no trackEvent on the page (blocked counter) breaks nothing', () => {

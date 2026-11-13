@@ -4,10 +4,10 @@
 const { test } = require('node:test');
 const assert = require('node:assert/strict');
 const { loadBrand, brandDirs } = require('../helpers/load-brand');
-const { setSlot, clickMode, slotSelect } = require('../helpers/dom');
+const { setSlot, clickMode, slotValue } = require('../helpers/dom');
 
 function slotValues(window) {
-  return [0, 1, 2].map(i => slotSelect(window, i).value);
+  return [0, 1, 2].map(i => slotValue(window, i));
 }
 
 function visibleCount(window) {
@@ -130,7 +130,7 @@ test('[fujifilm] a two- or four-entry hash restores that many slots', () => {
     const hash = `#cameras=${ids.slice(0, n).join(',')}`;
     const { window } = loadBrand('fujifilm', { engine: true, hash });
     assert.equal(visibleCount(window), n);
-    assert.deepEqual([...Array(n).keys()].map(i => slotSelect(window, i).value), ids.slice(0, n));
+    assert.deepEqual([...Array(n).keys()].map(i => slotValue(window, i)), ids.slice(0, n));
     assert.equal(window.location.hash, hash, 'a link that fits the screen is not rewritten');
   }
 });

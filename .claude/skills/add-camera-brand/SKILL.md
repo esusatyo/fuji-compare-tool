@@ -84,7 +84,8 @@ The data tests auto-discover any directory with a `data.js`, so wire these
 
 1. Add `{ slug: '<slug>', name: '<Name>' }` to `REGISTERED_BRANDS` in **every**
    brand's `data.js` (all must list the identical set — `config.test.js` enforces).
-2. Add `'<slug>'` to `VALID_BRANDS` in the root `index.html` redirector.
+2. Nothing to edit in the root `index.html`: its brand cards, its camera search index and the
+   list of data files it fetches are all generated from the brand directories (`node scripts/generate-seo.js`).
 3. Add a `'<Manufacturer>'` entry to `MANUFACTURER_COLORS` in `engine.js` (used
    for lens placeholder cards; `manufacturer` on each lens must match a key here).
 4. Add a `[<brand>]` case to `tests/logic/root-redirect.test.js` asserting a
@@ -204,7 +205,7 @@ group) and `npm run test:data`.
 - [ ] `BRAND_CONFIG.mount` + `BRAND_CONFIG.heroCamera` set (landing-tile mount badge + photo)
 - [ ] `BRAND_CARD_ACCENTS` in `scripts/generate-seo.js` has the new brand's stripe color
 - [ ] `REGISTERED_BRANDS` updated in **all** brands' `data.js` (identical sets)
-- [ ] root `index.html` `VALID_BRANDS` includes `<slug>`
+- [ ] root `index.html` regenerated (brand card + the brand's cameras in the search index)
 - [ ] `engine.js` `MANUFACTURER_COLORS` has the brand
 - [ ] (optional) `engine.js` `SPEC_SECTIONS` brand section + `schema.js` branch
 - [ ] `tests/logic/root-redirect.test.js` honours `<slug>`
