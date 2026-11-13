@@ -1675,9 +1675,8 @@ function renderSizeSection() {
     entries.push({
       item,
       name: IS_COMPARE ? withBrand(brandNameOf(id), item.name) : item.name,
-      // Column identity, as in the slot headers: odd columns primary, even secondary.
-      color: i % 2 ? 'var(--accent-secondary)' : 'var(--accent-primary)',
-      dashed: i >= 2,
+      // One colour per column: the first two are the columns' own accents.
+      color: SizeDiagram.COLORS[i],
     });
   });
   const block = SizeDiagram.block({ entries, kind, page: trackPage(), variant: 'tool' });

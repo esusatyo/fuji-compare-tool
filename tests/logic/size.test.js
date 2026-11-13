@@ -197,8 +197,9 @@ test('[brand] it draws the cameras on screen, in column colours, and redraws on 
   const shown = () => Array.from(window.cfg().selectedIds().slice(0, 3), id => data.CAMERAS[id].name);
   assert.deepEqual(names(), shown());
   const swatches = [...sizeSection(doc).querySelectorAll('.size-swatch')];
-  assert.deepEqual(swatches.map(s => s.style.color), ['var(--accent-primary)', 'var(--accent-secondary)', 'var(--accent-primary)']);
-  assert.deepEqual(swatches.map(s => s.classList.contains('size-swatch--dashed')), [false, false, true]);
+  // A colour of its own per column — the third is not a repeat of the first.
+  assert.deepEqual(swatches.map(s => s.style.color), ['var(--accent-primary)', 'var(--accent-secondary)', 'var(--size-c3)']);
+  assert.equal(sizeSection(doc).querySelector('[stroke-dasharray]:not(.size-fig--card *)'), null, 'no dashed outlines for items');
 
   setSlot(window, 0, 'gfx100-ii');
   assert.deepEqual(names(), shown());
@@ -299,4 +300,82 @@ test('[/size/] a shared link restores the pair', () => {
   const { window } = loadCompare({ page: 'size', hash: '#cameras=nikon:zf,fujifilm:x-t5' });
   assert.deepEqual([...sizeSection(window.document).querySelectorAll('.size-legend li')].map(li => li.textContent),
     ['Nikon Zf', 'Fujifilm X-T5']);
+});
+
+// ── colours and the legend switches ─────────────────────────────────
+test('four items get four different colours, each defined for both themes', () => {
+  assert.equal(new Set(SizeDiagram.COLORS).size, 4);
+  const css = require('fs').readFileSync(require('path').join(__dirname, '..', '..', 'engine.css'), 'utf8');
+  for (const token of ['--size-c3', '--size-c4']) {
+    assert.equal((css.match(new RegExp(`^\\s*${token}:\\s*#[0-9A-Fa-f]{6};`, 'gm')) || []).length, 2, `${token}: one per theme block`);
+  }
+  const { window } = loadCompare({ config: { defaultSlots: 4 } });
+  const sec = sizeSection(window.document);
+  assert.deepEqual([...sec.querySelectorAll('.size-swatch')].map(s => s.style.color), SizeDiagram.COLORS);
+  // Every outline carries its item's colour and index.
+  const frontRow = [...sec.querySelectorAll('.size-views--side .size-row')][0];
+  assert.deepEqual([...frontRow.querySelectorAll('.size-fig:not(.size-fig--card) rect')].map(r => [r.getAttribute('stroke'), r.dataset.item]),
+    SizeDiagram.COLORS.map((c, i) => [c, String(i)]));
+});
+
+test('legend names are switches: pressing one hides that item everywhere in the drawing, and again shows it', () => {
+  const { window } = loadCompare();
+  const doc = window.document;
+  const calls = [];
+  window.trackEvent = p => calls.push(p);
+  const diagram = () => sizeSection(doc).querySelector('.size-diagram');
+  const btn = i => diagram().querySelectorAll('.size-legend-btn')[i];
+  assert.equal(diagram().querySelectorAll('.size-legend-btn').length, 3);
+  assert.ok([0, 1, 2].every(i => btn(i).getAttribute('aria-pressed') === 'true'));
+  assert.equal(diagram().dataset.hidden, '');
+  // Every drawn outline of item 1 is addressable by the attribute the CSS hides on.
+  assert.equal(diagram().querySelectorAll('.size-stage [data-item="1"]').length, 3 + 3 + 3,
+    '3 overlay rects, plus 3 side-by-side figures and the rect inside each');
+
+  btn(1).click();
+  assert.equal(btn(1).getAttribute('aria-pressed'), 'false');
+  assert.equal(diagram().dataset.hidden, '1');
+  btn(2).click();
+  assert.equal(diagram().dataset.hidden, '1 2');
+  // The last one showing stays: an empty drawing helps nobody.
+  btn(0).click();
+  assert.equal(btn(0).getAttribute('aria-pressed'), 'true');
+  assert.equal(diagram().dataset.hidden, '1 2');
+
+  btn(1).click();
+  assert.equal(diagram().dataset.hidden, '2');
+  assert.deepEqual(calls, ['size-toggle:compare:hide', 'size-toggle:compare:hide', 'size-toggle:compare:show']);
+  // The table and the names are untouched — only the drawing changes.
+  assert.equal(diagram().querySelectorAll('.size-table thead th').length, 4);
+});
+
+test('a hidden item stays hidden through a re-render, and the choice lapses when that item leaves', () => {
+  const { window } = loadCompare();
+  const doc = window.document;
+  const diagram = () => sizeSection(doc).querySelector('.size-diagram');
+  const pressed = () => [...diagram().querySelectorAll('.size-legend-btn')].map(b => b.getAttribute('aria-pressed'));
+  diagram().querySelectorAll('.size-legend-btn')[1].click(); // hide the Sony A7 IV
+  setSlot(window, 0, 'nikon:zf');                            // re-render; the A7 IV is still slot 1
+  assert.deepEqual(pressed(), ['true', 'false', 'true']);
+  assert.equal(diagram().dataset.hidden, '1');
+  setSlot(window, 1, 'nikon:z8');                            // the hidden camera is replaced
+  assert.deepEqual(pressed(), ['true', 'true', 'true']);
+  assert.equal(diagram().dataset.hidden, '');
+});
+
+test('the CSS hides exactly what the attribute names, for all four positions', () => {
+  const css = require('fs').readFileSync(require('path').join(__dirname, '..', '..', 'engine.css'), 'utf8');
+  for (const i of [0, 1, 2, 3]) {
+    assert.ok(css.includes(`.size-diagram[data-hidden~="${i}"] .size-stage [data-item="${i}"]`), `no hide rule for item ${i}`);
+  }
+});
+
+test('no switches where they would do nothing: a single item, and the script-less vs-page section', () => {
+  const one = parse(SizeDiagram.block({ entries: [entry('X-T5', xt5)] }));
+  assert.equal(one.querySelector('.size-legend-btn'), null);
+  const compact = parse(SizeDiagram.block({ entries: [entry('X-T5', xt5), entry('A7 IV', a7iv)], variant: 'compact' }));
+  assert.equal(compact.querySelector('.size-legend-btn'), null);
+  assert.equal(compact.querySelectorAll('.size-legend li').length, 2);
+  const page = parse(SizeDiagram.block({ entries: [entry('X-T5', xt5), entry('A7 IV', a7iv)], variant: 'page' }));
+  assert.equal(page.querySelectorAll('.size-legend-btn').length, 2, 'size pages load size.js, so the legend works there');
 });

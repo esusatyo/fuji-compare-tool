@@ -637,8 +637,8 @@ function productCardHTML(data, brandName, slug, c, displayName) {
 // Two cameras as size.js entries, in the vs-page's column colours.
 function sizeEntries(nameA, camA, nameB, camB) {
   return [
-    { name: nameA, item: camA, color: 'var(--accent-primary)' },
-    { name: nameB, item: camB, color: 'var(--accent-secondary)' },
+    { name: nameA, item: camA, color: SizeDiagram.COLORS[0] },
+    { name: nameB, item: camB, color: SizeDiagram.COLORS[1] },
   ];
 }
 

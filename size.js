@@ -24,6 +24,11 @@
   // ISO/IEC 7810 ID-1: a credit card, the reference object in every drawing.
   const CARD = { w: 85.6, h: 53.98 };
 
+  // One colour per column, so three or four outlines can be told apart at a
+  // glance. The first two are the columns' own accents; the third and fourth
+  // are size-only tokens (engine.css defines all four for both themes).
+  const COLORS = ['var(--accent-primary)', 'var(--accent-secondary)', 'var(--size-c3)', 'var(--size-c4)'];
+
   function esc(text) {
     return String(text).replace(/[&<>"']/g, c =>
       ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
@@ -132,10 +137,10 @@
   // Corner radius in mm: a little of the shorter side, never a pill.
   const radius = (w, h) => +Math.min(Math.min(w, h) * 0.08, 8).toFixed(2);
 
-  // One outline. Strokes are a constant 2px however the svg is scaled.
+  // One outline, tagged with its entry's index so the legend can hide it.
+  // Strokes are a constant 2px however the svg is scaled.
   function shape(view, w, h, x, y, e) {
-    const paint = `fill="${e.color}" fill-opacity="0.1" stroke="${e.color}" stroke-width="2" vector-effect="non-scaling-stroke"`
-      + (e.dashed ? ' stroke-dasharray="6 4"' : '');
+    const paint = `data-item="${e.index}" fill="${e.color}" fill-opacity="0.1" stroke="${e.color}" stroke-width="2" vector-effect="non-scaling-stroke"`;
     if (view.round) {
       return `<ellipse cx="${trim(x + w / 2, 2)}" cy="${trim(y + h / 2, 2)}" rx="${trim(w / 2, 2)}" ry="${trim(h / 2, 2)}" ${paint}/>`;
     }
@@ -144,8 +149,8 @@
 
   // A figure: an svg `mmW` millimetres wide, sized by the shared scale. The
   // data-mm-* attributes restate its true size for tests and the curious.
-  function figure(mmW, mmH, inner, caption, extra = '') {
-    return `<figure class="size-fig${extra}" data-mm-w="${trim(mmW, 2)}" data-mm-h="${trim(mmH, 2)}" style="--mm:${trim(mmW, 2)}">`
+  function figure(mmW, mmH, inner, caption, extra = '', attrs = '') {
+    return `<figure class="size-fig${extra}"${attrs} data-mm-w="${trim(mmW, 2)}" data-mm-h="${trim(mmH, 2)}" style="--mm:${trim(mmW, 2)}">`
       + `<svg viewBox="0 0 ${trim(mmW, 2)} ${trim(mmH, 2)}" aria-hidden="true" focusable="false">${inner}</svg>`
       + (caption ? `<figcaption>${esc(caption)}</figcaption>` : '')
       + `</figure>`;
@@ -189,7 +194,7 @@
       const figs = drawn.map(e => {
         const w = e.box[view.x], h = e.box[view.y];
         rowMm += w;
-        return figure(w, h, shape(view, w, h, 0, 0, e), '');
+        return figure(w, h, shape(view, w, h, 0, 0, e), '', '', ` data-item="${e.index}"`);
       });
       if (vi === 0) { figs.push(cardFigure()); rowMm += CARD.w; }
       widest = Math.max(widest, rowMm);
@@ -212,6 +217,11 @@
   // button is pressed. Kept here so a re-render by the engine keeps it.
   let layoutChoice = 'auto';
 
+  // Items the visitor has switched off in the legend, by name — so the choice
+  // survives the engine re-rendering the table, and lapses by itself when that
+  // item leaves the comparison.
+  let hiddenNames = new Set();
+
   const NOTE = {
     tool: 'Outlines are each maker’s stated outer dimensions, drawn to scale as rounded boxes. Real bodies have grips and viewfinder humps, and makers do not all measure the same way. Sources for each item are under References, below.',
     page: 'Outlines are each maker’s stated outer dimensions, drawn to scale as rounded boxes. Real bodies have grips and viewfinder humps, and makers do not all measure the same way. Sources for each camera are under References, below.',
@@ -221,7 +231,7 @@
   /**
    * The whole size block as HTML.
    * @param {object} o
-   * @param {{name:string,color:string,dashed?:boolean,item:object}[]} o.entries  1–4, in column order
+   * @param {{name:string,color:string,item:object}[]} o.entries  1–4, in column order
    * @param {'camera'|'lens'} [o.kind='camera']
    * @param {string} [o.page='page']    names the page in the size-view event
    * @param {'tool'|'page'|'compact'} [o.variant='tool']
@@ -231,16 +241,27 @@
   function block(o) {
     const kind = o.kind === 'lens' ? 'lens' : 'camera';
     const variant = o.variant || 'tool';
-    const entries = o.entries.map(e => ({ ...e, box: box(e.item, kind) }));
+    const entries = o.entries.map((e, index) => ({ ...e, index, box: box(e.item, kind) }));
     const drawn = entries.filter(e => e.box);
     if (!drawn.length) return '';
     const compact = variant === 'compact';
 
+    // Forget hidden items that are gone; never start with everything hidden.
+    hiddenNames = new Set(drawn.map(e => e.name).filter(n => hiddenNames.has(n)));
+    if (hiddenNames.size >= drawn.length) hiddenNames.clear();
+    const hidden = compact ? [] : drawn.filter(e => hiddenNames.has(e.name));
+
     const label = `Size drawing to scale: ${list(drawn.map(e =>
       `${e.name} ${kind === 'lens' ? `${trim(e.box.w)} mm diameter × ${trim(e.box.d)} mm long` : `${trim(e.box.w)} × ${trim(e.box.h)} × ${trim(e.box.d)} mm`}`))}, with a credit card for reference.`;
 
-    const legend = `<ul class="size-legend">${drawn.map(e =>
-      `<li><span class="size-swatch${e.dashed ? ' size-swatch--dashed' : ''}" style="color:${e.color}"></span>${esc(e.name)}</li>`).join('')}</ul>`;
+    // The legend doubles as a set of switches: press a name to take its
+    // outlines out of the drawing (and again to put them back). Only where
+    // there is more than one item, and not on vs-pages, which load no script.
+    const swatch = e => `<span class="size-swatch" style="color:${e.color}"></span>`;
+    const switchable = !compact && drawn.length > 1;
+    const legend = `<ul class="size-legend${switchable ? ' size-legend--toggles' : ''}">${drawn.map(e => (switchable
+      ? `<li><button type="button" class="size-legend-btn" data-item="${e.index}" data-name="${esc(e.name)}" aria-pressed="${!hiddenNames.has(e.name)}" title="Show or hide ${esc(e.name)} in the drawing">${swatch(e)}${esc(e.name)}</button></li>`
+      : `<li>${swatch(e)}${esc(e.name)}</li>`)).join('')}</ul>`;
 
     const switcher = compact ? '' : `<div class="size-layout" role="group" aria-label="Drawing layout">`
       + `<button type="button" class="size-layout-btn" data-layout="overlay">Overlay</button>`
@@ -265,7 +286,7 @@
     const more = compact && o.moreHref
       ? `<p class="size-more"><a href="${esc(o.moreHref)}">Full size comparison: all dimensions &rarr;</a></p>` : '';
 
-    return `<div class="size-diagram${compact ? ' size-diagram--compact' : ''}" data-layout="${compact ? 'auto' : layoutChoice}" data-page="${esc(o.page || 'page')}" data-kind="${kind}">`
+    return `<div class="size-diagram${compact ? ' size-diagram--compact' : ''}" data-layout="${compact ? 'auto' : layoutChoice}" data-hidden="${hidden.map(e => e.index).join(' ')}" data-page="${esc(o.page || 'page')}" data-kind="${kind}">`
       + switcher
       + `<div class="size-stage" role="img" aria-label="${esc(label)}">`
       + viewsHTML(drawn, kind, 'overlay') + viewsHTML(drawn, kind, 'side')
@@ -276,7 +297,7 @@
       + `</div>`;
   }
 
-  const api = { CARD, box, facts, rows, block, valueHTML, getLayout: () => layoutChoice, setLayout: v => { layoutChoice = v; } };
+  const api = { CARD, COLORS, box, facts, rows, block, valueHTML };
 
   // ── the layout switch ─────────────────────────────────────────────
   // Wired once here, by delegation, for every page that loads this file — the
@@ -284,6 +305,25 @@
   // alike. Both layouts are already in the markup; the switch only flips an
   // attribute.
   if (typeof document !== 'undefined') {
+    // Legend switches: hide or show one item's outlines. The last one showing
+    // can't be hidden — an empty drawing is a dead end.
+    document.addEventListener('click', e => {
+      const btn = e.target.closest && e.target.closest('.size-legend-btn');
+      const diagram = btn && btn.closest('.size-diagram');
+      if (!diagram) return;
+      const showing = btn.getAttribute('aria-pressed') === 'true';
+      const others = diagram.querySelectorAll('.size-legend-btn[aria-pressed="true"]').length - (showing ? 1 : 0);
+      if (showing && others < 1) return;
+      const name = btn.dataset.name;
+      if (showing) hiddenNames.add(name); else hiddenNames.delete(name);
+      btn.setAttribute('aria-pressed', String(!showing));
+      diagram.dataset.hidden = [...diagram.querySelectorAll('.size-legend-btn[aria-pressed="false"]')]
+        .map(b => b.dataset.item).join(' ');
+      if (typeof window.trackEvent === 'function') {
+        window.trackEvent(`size-toggle:${diagram.dataset.page}:${showing ? 'hide' : 'show'}`, `Size drawing: ${showing ? 'hide' : 'show'} an item`);
+      }
+    });
+
     document.addEventListener('click', e => {
       const btn = e.target.closest && e.target.closest('.size-layout-btn');
       if (!btn) return;

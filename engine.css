@@ -24,6 +24,8 @@
   --overlay-weak: rgba(255,255,255,0.06);   /* subtle raised-surface wash (selects, mode toggle) */
   --overlay-medium: rgba(255,255,255,0.12); /* hover state of the above */
   --stripe: rgba(255,255,255,0.02);         /* table zebra striping */
+  --size-c3: #F0A04B;        /* size drawing: third item (orange) */
+  --size-c4: #6FA8F5;        /* size drawing: fourth item (blue) */
   --header-h: 54px;
   --compare-h: 196px;
   --label-w: 190px;
@@ -59,6 +61,8 @@
   --overlay-weak: rgba(0,0,0,0.04);
   --overlay-medium: rgba(0,0,0,0.08);
   --stripe: rgba(0,0,0,0.02);
+  --size-c3: #D2638A;        /* rose: the light theme's second accent is already a sand/orange */
+  --size-c4: #3F7FD0;
 }
 
 /* `clip`, not `hidden`: `hidden` on body makes it a scroll container that
@@ -1035,8 +1039,32 @@ footer a:hover { text-decoration: underline; }
   color: var(--text-primary);
 }
 .size-legend li { display: inline-flex; align-items: center; gap: 7px; }
-.size-swatch { width: 14px; height: 10px; border: 2px solid currentColor; border-radius: 3px; }
-.size-swatch--dashed { border-style: dashed; }
+.size-swatch { width: 14px; height: 10px; border: 2px solid currentColor; border-radius: 3px; flex-shrink: 0; }
+/* The legend as switches: a pressed name shows its outlines; press again to
+   hide them. A hidden item's name is struck through and its swatch hollowed. */
+.size-legend--toggles { gap: 8px 10px; }
+.size-legend-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 5px 12px;
+  font: inherit;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-primary);
+  background: var(--overlay-weak);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-pill);
+  cursor: pointer;
+  transition: background 0.15s, border-color 0.15s, opacity 0.15s;
+}
+.size-legend-btn:hover { background: var(--overlay-medium); border-color: var(--text-secondary); }
+.size-legend-btn[aria-pressed="true"] .size-swatch { background: color-mix(in srgb, currentColor 35%, transparent); }
+.size-legend-btn[aria-pressed="false"] { opacity: 0.55; text-decoration: line-through; background: none; }
+.size-diagram[data-hidden~="0"] .size-stage [data-item="0"],
+.size-diagram[data-hidden~="1"] .size-stage [data-item="1"],
+.size-diagram[data-hidden~="2"] .size-stage [data-item="2"],
+.size-diagram[data-hidden~="3"] .size-stage [data-item="3"] { display: none; }
 .size-sentence { margin: 16px auto 0; max-width: 62ch; text-align: center; font-size: 14px; color: var(--text-primary); }
 .size-table-wrap { margin-top: 18px; overflow-x: auto; }
 .size-table { width: 100%; border-collapse: collapse; font-size: 13px; }

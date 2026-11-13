@@ -21,6 +21,7 @@
 //   camera-swap:<brand>:<slug>        lens-swap:<brand>:<slug>
 //   picker-pick:<brand|compare|home>:<search|browse>   (how it was found; never the typed text)
 //   size-view:<brand|compare|home|size|page>:<overlay|side>   (size.js: the drawing's layout switch)
+//   size-toggle:<page>:<hide|show>    (size.js: a legend name pressed to hide/show its outlines)
 //   size-seen:<pathname>              (a size drawing entered the viewport)
 //   size-hub  size-to-interactive:<pair>  size-to-vs:<pair>  size-related:<pair>   (static links)
 //   quick-compare:<first|pair|reset>  (homepage: first camera picked, first two side by side, Reset pressed)
