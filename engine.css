@@ -1122,6 +1122,134 @@ footer a:hover { text-decoration: underline; }
 .size-hub-title { font-size: 19px; font-weight: 700; letter-spacing: -0.01em; }
 .size-hub-text { color: var(--text-secondary); font-size: 14px; }
 .size-hub-card .brand-go { margin-top: 6px; }
+/* The homepage's tool cards (size comparison, kit builder) side by side. */
+.hub-cards { display: grid; gap: 16px; }
+@media (min-width: 600px) { .hub-cards { grid-template-columns: 1fr 1fr; } }
+
+/* ─── KIT BUILDER (/kit/) ───
+   Two kits side by side at every width, as cards: body, lens rows, "Add a
+   lens", then the totals pinned to the card's foot so they line up across
+   the two columns however many lenses each holds. */
+.kit-app { max-width: 1100px; margin: 0 auto; padding: 24px 16px 40px; }
+.kit-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; align-items: stretch; }
+.kit-col {
+  --col-accent: var(--accent-primary);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  min-width: 0;
+  padding: 18px;
+  background: var(--bg-surface);
+  border: 1px solid var(--border);
+  border-top: 3px solid var(--col-accent);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+.kit-col:nth-child(2) { --col-accent: var(--accent-secondary); }
+.kit-col--empty { align-items: center; text-align: center; }
+.kit-title {
+  align-self: flex-start;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-secondary);
+}
+.kit-dot { width: 10px; height: 10px; border-radius: 50%; background: var(--col-accent); }
+.kit-body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  padding-bottom: 14px;
+  border-bottom: 1px solid var(--border);
+}
+.kit-col .slot-picker { max-width: 280px; }
+.kit-add .slot-picker { max-width: none; }
+.kit-meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 4px 10px;
+  font-size: 13px;
+  color: var(--text-secondary);
+  font-variant-numeric: tabular-nums;
+}
+.kit-body .kit-meta { justify-content: center; }
+.kit-price { color: var(--text-primary); font-weight: 600; }
+.kit-price--none { color: var(--text-secondary); font-weight: 500; }
+.kit-tag {
+  padding: 1px 7px;
+  border-radius: 999px;
+  background: var(--overlay-medium);
+  font-size: 11px;
+  font-weight: 600;
+}
+.kit-buy { font-size: 12px; font-weight: 600; color: var(--accent-secondary); text-decoration: none; }
+.kit-buy:hover { text-decoration: underline; }
+.kit-lenses { list-style: none; display: flex; flex-direction: column; }
+.kit-lens { position: relative; padding: 10px 36px 10px 0; border-bottom: 1px solid var(--border); }
+.kit-lens-name { margin-bottom: 3px; font-size: 14px; font-weight: 600; color: var(--text-primary); overflow-wrap: anywhere; }
+.kit-remove {
+  position: absolute;
+  top: 9px;
+  right: 0;
+  width: 28px;
+  height: 28px;
+  border: 1px solid var(--border);
+  border-radius: 50%;
+  background: transparent;
+  color: var(--text-secondary);
+  font: inherit;
+  font-size: 18px;
+  line-height: 1;
+  cursor: pointer;
+}
+.kit-remove:hover, .kit-remove:focus-visible { color: var(--text-primary); border-color: var(--col-accent); outline: none; }
+.kit-hint { font-size: 13px; line-height: 1.5; color: var(--text-secondary); }
+.kit-totals { margin-top: auto; display: flex; flex-direction: column; gap: 6px; padding-top: 4px; }
+.kit-total {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 10px;
+  padding: 8px 10px;
+  border-radius: var(--radius-btn);
+  background: var(--bg-surface-2);
+}
+.kit-total dt { font-size: 12px; font-weight: 600; color: var(--text-secondary); }
+.kit-total dd { font-size: 15px; font-weight: 700; color: var(--text-primary); text-align: right; font-variant-numeric: tabular-nums; }
+.kit-total dd small { display: block; font-size: 11px; font-weight: 500; color: var(--text-secondary); }
+/* The lighter / cheaper total: the same green as a winning spec cell. */
+.kit-total.kit-win { background: var(--win-tint); }
+.kit-total.kit-win dd { color: var(--win); }
+.kit-clear {
+  align-self: center;
+  padding: 4px;
+  border: none;
+  background: none;
+  color: var(--text-secondary);
+  font: inherit;
+  font-size: 12px;
+  text-decoration: underline;
+  cursor: pointer;
+}
+.kit-clear:hover { color: var(--text-primary); }
+.kit-verdict { margin: 22px auto 0; max-width: 62ch; text-align: center; font-size: 16px; font-weight: 600; color: var(--text-primary); }
+.kit-notes {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin: 16px auto 0;
+  max-width: 78ch;
+  text-align: center;
+  font-size: 12px;
+  line-height: 1.55;
+  color: var(--text-secondary);
+}
 
 /* ─── RESPONSIVE ─── */
 @media (max-width: 599px) {
@@ -1176,4 +1304,17 @@ footer a:hover { text-decoration: underline; }
   .compare-slot:nth-child(2) { border-left: none; }
   .spec-label { grid-column: 1 / -1; border-right: none; padding: 10px 12px 0; }
   .spec-value { padding-top: 6px; }
+}
+
+/* Kit builder on phones. Kept after the main responsive block above: a test
+   reads the first 599px query in this file as *the* mobile breakpoint. */
+@media (max-width: 599px) {
+  .kit-app { padding: 16px 8px 32px; }
+  .kit-grid { gap: 8px; }
+  .kit-col { padding: 12px 10px; gap: 10px; }
+  .kit-lens-name { font-size: 13px; }
+  .kit-meta { font-size: 12px; gap: 2px 8px; }
+  .kit-total { flex-direction: column; align-items: flex-start; gap: 2px; }
+  .kit-total dd { text-align: left; }
+  .kit-verdict { font-size: 15px; }
 }

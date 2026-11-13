@@ -7,10 +7,10 @@
 
 ## 2. The page
 
-- [ ] 2.1 `kit/index.html` loader (`COMPARE_CONFIG.kit`), `kit.js` before `engine.js`
-- [ ] 2.2 `engine.js`: kit mode — state, render, picker hooks, URL state, events
-- [ ] 2.3 `engine.css`: kit layout (two columns at every width), winner highlight, both themes
-- [ ] 2.4 `tests/logic/kit-page.test.js` (jsdom): pick body, add/remove lens, totals, fallback note, fixed-lens body, hash round trip
+- [x] 2.1 `kit/index.html` loader (`COMPARE_CONFIG.kit`), `kit.js` before `engine.js`
+- [x] 2.2 `engine.js`: kit mode — state, render, picker hooks, URL state, events
+- [x] 2.3 `engine.css`: kit layout (two columns at every width), winner highlight, both themes
+- [x] 2.4 `tests/logic/kit-page.test.js` (jsdom): pick body, add/remove lens, totals, fallback note, fixed-lens body, hash round trip
 
 ## 3. Generator and links
 
