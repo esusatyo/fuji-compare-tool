@@ -15,5 +15,5 @@
 ## 2. Ship
 
 - [x] 2.1 Browser check on the local preview (compare page, toggle on, light theme).
-- [ ] 2.2 Open the PR against `add-search-picker`.
+- [x] 2.2 Open the PR against `add-search-picker` (#89).
 - [ ] 2.3 After merge: archive this change.
