@@ -14,9 +14,16 @@
 // ─────────────────────────────────────────────
 // BRAND DATA RESOLUTION
 // ─────────────────────────────────────────────
-const REGISTRY = window.BRAND_DATA || {};
+// Assigned back so brand files that load *after* the engine (the homepage
+// fetches them on demand) register into this same object.
+const REGISTRY = window.BRAND_DATA = window.BRAND_DATA || {};
 const COMPARE_CONFIG = window.COMPARE_CONFIG || null;
 const IS_COMPARE = !!COMPARE_CONFIG;
+// The homepage embeds the cross-brand tool between its own header and
+// footer: slots start empty, no brand data is loaded until it is needed, and
+// the picker searches a small generated name index (COMPARE_CONFIG.index)
+// in the meantime. See the HOMEPAGE EMBED section below.
+const IS_EMBED = IS_COMPARE && !!COMPARE_CONFIG.embed;
 const ACTIVE_BRAND = IS_COMPARE ? null : REGISTRY[Object.keys(REGISTRY)[0]];
 const MIN_SLOTS = 2;
 const MAX_SLOTS = 4;
@@ -42,7 +49,7 @@ function trackKey(id) {
 }
 
 function trackPage() {
-  return IS_COMPARE ? 'compare' : BRAND_CONFIG.slug;
+  return IS_EMBED ? 'home' : IS_COMPARE ? 'compare' : BRAND_CONFIG.slug;
 }
 function brandDataOf(id) {
   return (IS_COMPARE ? REGISTRY[brandOf(id)] : ACTIVE_BRAND) || null;
@@ -58,7 +65,9 @@ function mergedCameras() {
 
 // One dropdown group per brand, cameras in that brand's own order.
 function compareDropdownGroups() {
-  const order = (Object.values(REGISTRY)[0].REGISTERED_BRANDS || [])
+  const first = Object.values(REGISTRY)[0];
+  if (!first) return []; // homepage, before any brand file has loaded
+  const order = (first.REGISTERED_BRANDS || [])
     .filter(b => REGISTRY[b.slug]);
   return order.map(b => ({
     label: b.name,
@@ -81,7 +90,7 @@ function compareBrandConfig() {
       heroTitle:    c.heroTitle || 'Cross-Brand Camera Comparison',
       heroSubtitle: c.heroSubtitle || '',
       headerTitle:  c.headerTitle || 'All Brands',
-      defaultSelected: c.defaultSelected.slice(),
+      defaultSelected: (c.defaultSelected || []).slice(),
     },
     lenses: { heroEyebrow: '', heroTitle: '', heroSubtitle: '', headerTitle: '', defaultSelected: [] },
     footerLinks: c.footerLinks || [],
@@ -95,19 +104,35 @@ const LENSES = IS_COMPARE ? {} : ACTIVE_BRAND.LENSES;
 const LENS_DROPDOWN_GROUPS = IS_COMPARE ? [] : ACTIVE_BRAND.LENS_DROPDOWN_GROUPS;
 const REGISTERED_BRANDS = (Object.values(REGISTRY)[0] || {}).REGISTERED_BRANDS;
 
+// Homepage only: every camera's name, year and status, keyed like a compare
+// id, from the index generate-seo.js inlines. It stands in for the catalogue
+// until the brand files arrive — enough to search, and to name a slot whose
+// specs are still loading. Empty on every other page.
+const NAME_INDEX = {};
+const NAME_INDEX_GROUPS = [];
+for (const b of (IS_EMBED && COMPARE_CONFIG.index) || []) {
+  const ids = [];
+  for (const [slug, name, year, discontinued] of b.cameras) {
+    const id = `${b.slug}:${slug}`;
+    NAME_INDEX[id] = { name, year, discontinued: !!discontinued, brand: b.name };
+    ids.push(id);
+  }
+  NAME_INDEX_GROUPS.push({ label: b.name, ids });
+}
+
 // Mount id → display label, merged across every brand loaded on the page (one
 // on a brand page, all six on compare/). Ids are site-wide rather than
 // brand-scoped — `l` is L-Mount for both Panasonic and Sigma — and a Tier 1
 // test pins that no two brands give the same id different labels. The merged
 // map is what lets a spec row resolve a label from the item alone: spec `fn`s
 // receive the item, not the id, so they cannot reach their own brand's config.
-const MOUNTS_BY_ID = (() => {
-  const map = {};
+const MOUNTS_BY_ID = {};
+function indexMounts() {
   for (const data of Object.values(REGISTRY)) {
-    for (const m of (data.BRAND_CONFIG.mounts || [])) map[m.id] = m;
+    for (const m of (data.BRAND_CONFIG.mounts || [])) MOUNTS_BY_ID[m.id] = m;
   }
-  return map;
-})();
+}
+indexMounts(); // again in hydrateCatalogue(), once the homepage's brand files are in
 
 // A fixed-lens body has no mount. It carries its lineup's id so it stays
 // visible under that filter chip (an X100VI belongs in the X list), but
@@ -173,7 +198,8 @@ const AMAZON_MARKETPLACE = {
 
 function brandNameOf(id) {
   const data = brandDataOf(id);
-  return (data && data.BRAND_CONFIG.name) || BRAND_CONFIG.name;
+  if (data) return data.BRAND_CONFIG.name;
+  return (NAME_INDEX[id] && NAME_INDEX[id].brand) || BRAND_CONFIG.name;
 }
 
 function amazonBuyUrl(item, cur = currentCurrency, brandName = BRAND_CONFIG.name) {
@@ -500,6 +526,9 @@ function cfg() { return MODE_CONFIG[currentMode]; }
 // STATE
 // ─────────────────────────────────────────────
 let currentMode = 'cameras';
+// Whether the catalogue is in memory. Always 'ready' except on the homepage,
+// which loads the brand files on demand: idle → loading → ready | error.
+let dataState = IS_EMBED ? 'idle' : 'ready';
 let selectedCameraIds = withFillers(BRAND_CONFIG.cameras.defaultSelected, 'cameras');
 let selectedLensIds   = withFillers(BRAND_CONFIG.lenses.defaultSelected, 'lenses');
 let currentCurrency = 'AUD';
@@ -522,6 +551,9 @@ function brandSlotChoice(mode) {
 // body rather than a GFX. A catalogue too small to fill every slot leaves
 // holes, which availableCount() keeps off screen.
 function withFillers(ids, mode) {
+  // The homepage starts empty and stays as the visitor left it: a slot holds
+  // what they picked, or nothing (null).
+  if (IS_EMBED) return Array.from({ length: MAX_SLOTS }, (_, i) => ids[i] || null);
   const out = Array.from({ length: MAX_SLOTS }, (_, i) => ids[i]);
   const first = MODE_CONFIG[mode].items[out.find(Boolean)];
   const sameMount = first ? itemsInMount(mode, first.mount) : [];
@@ -594,6 +626,7 @@ function itemsInMount(mode, mountId) {
 // leaves to fill slots with. Unfiltered it only binds for a catalogue smaller
 // than MAX_SLOTS, which would otherwise render an empty slot and throw.
 function availableCount() {
+  if (IS_EMBED && dataState !== 'ready') return Object.keys(NAME_INDEX).length;
   return itemsInMount(currentMode, activeMount).length;
 }
 
@@ -616,6 +649,13 @@ function parseHash(hash) {
   if (m[2] === undefined) return { mode, ids: null };
   const items = MODE_CONFIG[mode].items;
   const given = m[2].split(',');
+  if (IS_EMBED) {
+    // No defaults to fall back on: unknown ids are dropped, the rest close up.
+    const known = [...new Set(given.filter(id => items[id] || NAME_INDEX[id]))].slice(0, MAX_SLOTS);
+    if (!known.length) return { mode: 'cameras', ids: null };
+    return { mode, ids: withFillers(known, mode), given: given.length,
+      count: Math.min(Math.max(known.length, MIN_SLOTS), MAX_SLOTS) };
+  }
   const defaults = BRAND_CONFIG[mode].defaultSelected;
   const ids = withFillers(Array.from({ length: MAX_SLOTS },
     (_, i) => (items[given[i]] ? given[i] : defaults[i])), mode);
@@ -627,8 +667,12 @@ function parseHash(hash) {
 // its sender saw, not with others they never did. The hidden choices stay in
 // memory, so widening the window brings them (and their slugs) back.
 function updateHash() {
-  const shown = cfg().selectedIds().slice(0, numSlots);
-  history.replaceState(null, '', `#${currentMode}=${shown.join(',')}`);
+  // Empty slots (homepage only) are not items, so they are not in the link;
+  // with nothing picked there is no selection to name and the URL goes clean.
+  const shown = cfg().selectedIds().slice(0, numSlots).filter(Boolean);
+  history.replaceState(null, '', shown.length
+    ? `#${currentMode}=${shown.join(',')}`
+    : location.pathname + location.search);
 }
 
 // Keep an existing selection hash in step with the screen. A clean or
@@ -770,11 +814,120 @@ const LOGO_SVG = `<svg viewBox="0 0 64 64" width="24" height="24" aria-hidden="t
 // lockup reliably lands on the brand picker.
 const HOME_HREF = '../?brands';
 
+const CURRENCY_SELECT_HTML = `<select id="currency-select" class="header-select" aria-label="Currency">
+      <option value="USD">USD ($)</option>
+      <option value="AUD" selected>AUD (A$)</option>
+      <option value="EUR">EUR (€)</option>
+      <option value="GBP">GBP (£)</option>
+      <option value="JPY">JPY (¥)</option>
+      <option value="CAD">CAD (C$)</option>
+      <option value="SGD">SGD (S$)</option>
+    </select>`;
+
+const SHARE_HTML = `<div class="share">
+    <button type="button" class="share-btn" id="share-btn"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v13M7 8l5-5 5 5M5 13v6a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-6"/></svg><span id="share-btn-label">Share this comparison</span></button>
+    <input class="share-url" id="share-url" type="text" readonly hidden aria-label="Link to this comparison">
+  </div>`;
+
+function compareGridHTML() {
+  return `<div class="compare-grid" id="compare-grid-header">
+    <div class="compare-label-cell${MAX_SLOTS > MIN_SLOTS && !IS_EMBED ? ' compare-label-cell--compare' : ''}">
+      <span class="compare-label-text">Compare</span>
+      ${IS_EMBED ? '' : buildSlotCountSlot()}
+    </div>
+    ${Array.from({ length: MAX_SLOTS }, (_, i) =>
+      `<div class="compare-slot${i === 2 && !IS_COMPARE ? ' slot-3-hide' : ''}" id="slot-${i}"></div>`).join('\n    ')}
+  </div>`;
+}
+
+// ─────────────────────────────────────────────
+// HOMEPAGE EMBED
+//
+// The homepage keeps its own header, hero and footer (generate-seo.js owns
+// them) and gives the engine one container. Into it go a bar — the slot
+// count as visible buttons, and currency + share once there is something to
+// price or share — then the same slot row and spec table every tool page
+// has. The table is a <div> here: the homepage already has its <main>.
+// ─────────────────────────────────────────────
+function injectEmbed(mount) {
+  mount.innerHTML = `
+<div class="embed-bar">
+  <div class="embed-count">
+    <span class="embed-count-label">Compare</span>
+    <div class="count-chips" id="slot-count-chips" role="group" aria-label="Number of cameras to compare"></div>
+    <span class="embed-count-label">cameras</span>
+  </div>
+  <div class="embed-tools" id="embed-tools" hidden>
+    ${CURRENCY_SELECT_HTML}
+    ${SHARE_HTML}
+  </div>
+</div>
+<div id="compare-header" class="is-idle">
+  ${compareGridHTML()}
+</div>
+<div id="compare-table"></div>`;
+}
+
+function buildCountChips() {
+  let html = '';
+  for (let n = MIN_SLOTS; n <= MAX_SLOTS; n++) {
+    const on = n === slotChoice;
+    html += `<button type="button" class="count-chip${on ? ' active' : ''}" data-count="${n}" aria-pressed="${on}">${n}</button>`;
+  }
+  return html;
+}
+
+// Fetch every brand file (the homepage's COMPARE_CONFIG.dataScripts), then
+// fold them into the catalogue the rest of the engine already reads. Called
+// when the picker first opens — so the specs are usually here by the time a
+// camera is chosen — and again, as a no-op, on every pick.
+function ensureData() {
+  if (dataState === 'ready' || dataState === 'loading') return;
+  dataState = 'loading';
+  const srcs = COMPARE_CONFIG.dataScripts || [];
+  let pending = srcs.length;
+  let failed = false;
+  const settle = ok => {
+    if (!ok) failed = true;
+    if (--pending > 0) return;
+    if (failed) { dataState = 'error'; renderAll(); return; }
+    hydrateCatalogue();
+  };
+  if (!pending) { pending = 1; settle(false); return; }
+  for (const src of srcs) {
+    const tag = document.createElement('script');
+    tag.src = src;
+    tag.async = true;
+    tag.onload = () => settle(true);
+    tag.onerror = () => { tag.remove(); settle(false); };
+    document.head.appendChild(tag);
+  }
+}
+
+// CAMERAS and DROPDOWN_GROUPS are filled in place: MODE_CONFIG and every
+// render path hold references to these same objects.
+function hydrateCatalogue() {
+  Object.assign(CAMERAS, mergedCameras());
+  indexMounts();
+  DROPDOWN_GROUPS.length = 0;
+  DROPDOWN_GROUPS.push(...compareDropdownGroups());
+  // The index and the brand files come from one build, so a picked id the
+  // catalogue lacks means a stale cached page — leave that slot empty.
+  selectedCameraIds = selectedCameraIds.map(id => (id && CAMERAS[id] ? id : null));
+  dataState = 'ready';
+  pickerCache = null;
+  numSlots = getNumSlots();
+  syncHash();
+  renderAll();
+  if (pickerSlot !== null) { renderPickerList(); positionPicker(); }
+}
+
 function injectBody() {
   // Render into #app when present so generator-owned static content outside
   // the container (crawlable SEO blocks) survives; fall back to the body for
   // pages/tests that don't provide the container.
   const mount = document.getElementById('app') || document.body;
+  if (IS_EMBED) { injectEmbed(mount); return; }
   mount.innerHTML = `
 <header id="site-header">
   <div class="header-brand">
@@ -788,15 +941,7 @@ function injectBody() {
   </div>`}
   ${buildBrandSwitcher()}
   <div class="header-controls">
-    <select id="currency-select" class="header-select" aria-label="Currency">
-      <option value="USD">USD ($)</option>
-      <option value="AUD" selected>AUD (A$)</option>
-      <option value="EUR">EUR (€)</option>
-      <option value="GBP">GBP (£)</option>
-      <option value="JPY">JPY (¥)</option>
-      <option value="CAD">CAD (C$)</option>
-      <option value="SGD">SGD (S$)</option>
-    </select>
+    ${CURRENCY_SELECT_HTML}
   </div>
 </header>
 
@@ -804,22 +949,12 @@ function injectBody() {
   <div class="hero-eyebrow" id="hero-eyebrow">${BRAND_CONFIG.cameras.heroEyebrow}</div>
   <h1 class="hero-title" id="hero-title">${BRAND_CONFIG.cameras.heroTitle}</h1>
   <p class="hero-subtitle" id="hero-subtitle">${BRAND_CONFIG.cameras.heroSubtitle}</p>
-  <div class="share">
-    <button type="button" class="share-btn" id="share-btn"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v13M7 8l5-5 5 5M5 13v6a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-6"/></svg><span id="share-btn-label">Share this comparison</span></button>
-    <input class="share-url" id="share-url" type="text" readonly hidden aria-label="Link to this comparison">
-  </div>
+  ${SHARE_HTML}
 </div>
 
 <div id="compare-header">
   ${buildMountFilterSlot()}
-  <div class="compare-grid" id="compare-grid-header">
-    <div class="compare-label-cell${MAX_SLOTS > MIN_SLOTS ? ' compare-label-cell--compare' : ''}">
-      <span class="compare-label-text">Compare</span>
-      ${buildSlotCountSlot()}
-    </div>
-    ${Array.from({ length: MAX_SLOTS }, (_, i) =>
-      `<div class="compare-slot${i === 2 && !IS_COMPARE ? ' slot-3-hide' : ''}" id="slot-${i}"></div>`).join('\n    ')}
-  </div>
+  ${compareGridHTML()}
 </div>
 
 <main id="compare-table"></main>
@@ -911,29 +1046,372 @@ function buildPlaceholder(item, id) {
 }
 
 // ─────────────────────────────────────────────
-// BUILD DROPDOWN HTML
+// ITEM PICKER
+//
+// Each slot shows its item as a button; pressing it opens one shared popover
+// holding a search field and a list. With nothing typed the list is the whole
+// catalogue under its dropdown-group headings, so browsing works as the old
+// <select> did; typing replaces it with ranked matches. The list is built
+// only while open — four slots no longer each carry every option.
 // ─────────────────────────────────────────────
-function buildSelectHTML(currentId, slotIndex) {
-  const otherIds = cfg().selectedIds().filter((_, i) => i !== slotIndex && i < numSlots);
-  let html = `<select class="slot-select" data-slot="${slotIndex}">`;
-  for (const grp of cfg().dropdownGroups) {
-    const ids = grp.ids.filter(id => {
-      const it = cfg().items[id];
-      return it && (!activeMount || it.mount === activeMount);
-    });
-    if (!ids.length) continue; // a group wholly outside the active mount
-    html += `<optgroup label="${grp.label}">`;
-    for (const id of ids) {
-      const item = cfg().items[id];
-      if (!item) continue;
-      const disabled = otherIds.includes(id) ? 'disabled' : '';
-      const selected = id === currentId ? 'selected' : '';
-      html += `<option value="${id}" ${selected} ${disabled}>${item.name} (${item.year})</option>`;
-    }
-    html += `</optgroup>`;
+function escHTML(text) {
+  return String(text).replace(/[&<>"']/g, c =>
+    ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+}
+
+// "Sigma" + "Sigma 56mm f/1.4" must not read "Sigma Sigma 56mm".
+function withBrand(brand, name) {
+  return !brand || name.toLowerCase().startsWith(brand.toLowerCase()) ? name : `${brand} ${name}`;
+}
+
+function modeNoun(plural) {
+  const lens = currentMode === 'lenses';
+  return plural ? (lens ? 'lenses' : 'cameras') : (lens ? 'lens' : 'camera');
+}
+
+// What a slot's button says. On the homepage the name can come from the index
+// while the specs are still on their way.
+function pickerLabel(id) {
+  const it = cfg().items[id] || NAME_INDEX[id];
+  if (!it) return '';
+  return `${IS_COMPARE ? withBrand(brandNameOf(id), it.name) : it.name} (${it.year})`;
+}
+
+const SEARCH_ICON = `<svg class="picker-icon" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.6-3.6"/></svg>`;
+const CHEVRON_ICON = `<svg class="picker-icon" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>`;
+
+function buildPickerHTML(currentId, slotIndex) {
+  const attrs = `data-slot="${slotIndex}" data-value="${currentId || ''}" aria-haspopup="listbox" aria-expanded="${pickerSlot === slotIndex}"`;
+  if (!currentId) {
+    return `<button type="button" class="slot-picker slot-picker--empty" ${attrs}>${SEARCH_ICON}<span class="slot-picker-label">Search ${modeNoun(true)}…</span></button>`;
   }
-  html += `</select>`;
-  return html;
+  return `<button type="button" class="slot-picker" ${attrs}><span class="slot-picker-label">${escHTML(pickerLabel(currentId))}</span>${CHEVRON_ICON}</button>`;
+}
+
+// Everything the open picker can offer, in dropdown order. `brand` is what a
+// typed brand name matches against: the item's own brand on the compare page
+// and the homepage, the page's brand for cameras, the maker for lenses.
+function pickerEntries() {
+  const fromIndex = IS_EMBED && dataState !== 'ready';
+  const groups = fromIndex ? NAME_INDEX_GROUPS : cfg().dropdownGroups;
+  const items = fromIndex ? NAME_INDEX : cfg().items;
+  const out = [];
+  for (const grp of groups) {
+    const group = grp.label.replace(/^[─\s]+|[─\s]+$/g, '');
+    for (const id of grp.ids) {
+      const it = items[id];
+      if (!it || (activeMount && it.mount !== activeMount)) continue;
+      const brand = IS_COMPARE ? brandNameOf(id)
+        : currentMode === 'lenses' ? (it.manufacturer || BRAND_CONFIG.name) : BRAND_CONFIG.name;
+      out.push({
+        id, group, brand, name: it.name, year: it.year, discontinued: !!it.discontinued,
+        label: IS_COMPARE ? withBrand(brand, it.name) : it.name,
+      });
+    }
+  }
+  return out;
+}
+
+// ─────────────────────────────────────────────
+// SEARCH
+//
+// Matching ignores case, accents and punctuation ("xt5" finds X-T5), treats
+// roman and arabic generation numbers alike ("a7 4", "a7iv" and "A7 IV" are
+// one camera), drops "Mark" and a focal length's "mm", and lets a typed brand — even a prefix, "fuji" —
+// narrow to that brand without having to appear in the model name.
+// Pure functions: tests call them directly.
+// ─────────────────────────────────────────────
+const ROMAN = { ii: '2', iii: '3', iv: '4', v: '5', vi: '6', vii: '7', viii: '8' };
+
+function searchTokens(text) {
+  return String(text).toLowerCase()
+    .normalize('NFKD').replace(/[̀-ͯ]/g, '')
+    .replace(/α/g, 'a')
+    .split(/[^a-z0-9.]+/)
+    // Lens shorthand: "56mm" is 56 and "F1.4" is f + 1.4, so "56 1.4",
+    // "56mm f1.4" and "56mm f/1.4" are the same three words.
+    .flatMap(t => t.replace(/^\.+|\.+$/g, '').replace(/^(\d[\d.]*)mm$/, '$1').split(/^(f)(?=\d)/))
+    .filter(t => t && t !== 'mark' && t !== 'mk');
+}
+
+// Two readings of the same tokens — as typed, and with generation numerals
+// made arabic ("iv" → "4", "z6iii" → "z63") — each also squashed into one
+// string for punctuation-blind comparison. Both sides of a match go through
+// here, so the readings always line up.
+function searchForms(tokens) {
+  const arabic = tokens.map(t =>
+    ROMAN[t] || t.replace(/^(.*\d)(viii|vii|vi|iv|v|iii|ii)$/, (_, head, r) => head + ROMAN[r]));
+  const squash = ts => ts.join('').replace(/\./g, '');
+  return [{ t: tokens, c: squash(tokens) }, { t: arabic, c: squash(arabic) }];
+}
+
+// Lower is better; Infinity is no match.
+//   0 the whole name   1 the name starts with it (1.5 if mid-word)   2 every word is a word of the name
+//   3 every word starts one (or only a brand was typed)   4 it appears inside the name
+//   5 every word appears somewhere
+function searchScore(entry, queryTokens) {
+  const key = entry.searchKey || (entry.searchKey = {
+    brand: searchTokens(entry.brand || ''),
+    name: searchForms(searchTokens(entry.name)),
+  });
+  // A brand word is set aside rather than matched against the model name. Not
+  // a single letter, though: the "C" of "Canon EOS R5 C" is part of the name.
+  const rest = queryTokens.filter(t => !(t.length > 1 && key.brand.some(b => b.startsWith(t))));
+  if (!rest.length) return 3;
+  const query = searchForms(rest);
+  let best = Infinity;
+  for (let f = 0; f < 2; f++) {
+    const { t: qt, c: qc } = query[f];
+    const { t: nt, c: nc } = key.name[f];
+    let score = Infinity;
+    if (nc === qc) score = 0;
+    // "23 f2" starts both "23mm f/2" and "23mm f/2.8"; only one has those words.
+    else if (nc.startsWith(qc)) score = qt.every(t => nt.includes(t)) ? 1 : 1.5;
+    else if (qt.every(t => nt.includes(t))) score = 2;
+    else if (qt.every(t => nt.some(n => n.startsWith(t)))) score = 3;
+    // Two characters turn up inside far too many names to mean anything.
+    else if (qc.length > 2 && nc.includes(qc)) score = 4;
+    else if (qt.every(t => nt.some(n => n.startsWith(t))
+      || (t.replace(/\./g, '').length > 2 && nc.includes(t.replace(/\./g, ''))))) score = 5;
+    if (score < best) best = score;
+  }
+  return best;
+}
+
+// Ranked matches. Ties go to what a shopper most likely means: current models
+// before discontinued, newer before older, the shorter name, then list order.
+function searchItems(entries, query) {
+  const tokens = searchTokens(query);
+  if (!tokens.length) return entries.slice();
+  return entries
+    .map((entry, order) => ({ entry, order, score: searchScore(entry, tokens) }))
+    .filter(m => m.score !== Infinity)
+    .sort((a, b) => a.score - b.score
+      || a.entry.discontinued - b.entry.discontinued
+      || (b.entry.year || 0) - (a.entry.year || 0)
+      || a.entry.name.length - b.entry.name.length
+      || a.order - b.order)
+    .map(m => m.entry);
+}
+
+// ─────────────────────────────────────────────
+// PICKER POPOVER
+// One element for the whole page, created on first use and appended to
+// <body>, so re-rendering the slots never destroys it mid-typing.
+// ─────────────────────────────────────────────
+const PICKER_MAX_RESULTS = 60;
+let pickerSlot = null;    // the slot the popover is open for, or null
+let pickerCache = null;   // pickerEntries(), kept while open so search keys are built once
+let pickerShown = [];     // the entries listed right now, in order
+let pickerActive = -1;    // index into pickerShown of the highlighted option
+let pickerSearching = false;
+
+function slotButton(slotIndex) {
+  return document.querySelector(`.slot-picker[data-slot="${slotIndex}"]`);
+}
+
+function pickerEl() {
+  let pop = document.getElementById('picker-pop');
+  if (pop) return pop;
+  pop = document.createElement('div');
+  pop.id = 'picker-pop';
+  pop.className = 'picker-pop';
+  pop.hidden = true;
+  pop.innerHTML = `<div class="picker-head">
+    <input class="picker-input" id="picker-input" type="search" role="combobox" aria-autocomplete="list" aria-expanded="true" aria-controls="picker-list" autocomplete="off" autocapitalize="off" autocorrect="off" spellcheck="false" enterkeyhint="done">
+    <button type="button" class="picker-cancel" id="picker-cancel">Cancel</button>
+  </div>
+  <ul class="picker-list" id="picker-list" role="listbox"></ul>`;
+  document.body.appendChild(pop);
+
+  const input = pop.querySelector('.picker-input');
+  const list = pop.querySelector('.picker-list');
+  input.addEventListener('input', renderPickerList);
+  input.addEventListener('keydown', e => {
+    if (e.key === 'ArrowDown' || e.key === 'ArrowUp') {
+      e.preventDefault();
+      movePickerActive(e.key === 'ArrowDown' ? 1 : -1);
+    } else if (e.key === 'Enter') {
+      e.preventDefault();
+      if (pickerActive >= 0) choosePickerOption(pickerActive);
+    } else if (e.key === 'Escape') {
+      e.preventDefault();
+      closePicker(true);
+    } else if (e.key === 'Tab') {
+      closePicker(false);
+    }
+  });
+  // Keep focus in the field while the list is clicked or scrolled by mouse.
+  list.addEventListener('mousedown', e => e.preventDefault());
+  list.addEventListener('click', e => {
+    const opt = e.target.closest('.picker-option');
+    if (opt) choosePickerOption(Number(opt.dataset.index));
+  });
+  pop.querySelector('.picker-cancel').addEventListener('click', () => closePicker(true));
+  return pop;
+}
+
+function openPicker(slotIndex) {
+  const pop = pickerEl();
+  if (pickerSlot !== null) closePicker(false);
+  pickerSlot = slotIndex;
+  pickerCache = null;
+  const input = pop.querySelector('.picker-input');
+  input.value = '';
+  input.placeholder = `Search ${modeNoun(true)}…`;
+  input.setAttribute('aria-label', `Search ${modeNoun(true)}`);
+  pop.querySelector('.picker-list').setAttribute('aria-label', modeNoun(true));
+  pop.hidden = false;
+  renderPickerList();
+  positionPicker();
+  const btn = slotButton(slotIndex);
+  if (btn) btn.setAttribute('aria-expanded', 'true');
+  input.focus();
+  // Start fetching specs now: by the time a camera is chosen they are here.
+  if (IS_EMBED) ensureData();
+}
+
+function closePicker(refocus) {
+  if (pickerSlot === null) return;
+  const btn = slotButton(pickerSlot);
+  pickerSlot = null;
+  pickerCache = null;
+  pickerEl().hidden = true;
+  if (btn) {
+    btn.setAttribute('aria-expanded', 'false');
+    if (refocus) btn.focus();
+  }
+}
+
+function renderPickerList() {
+  const pop = pickerEl();
+  const list = pop.querySelector('.picker-list');
+  const query = pop.querySelector('.picker-input').value;
+  const entries = pickerCache || (pickerCache = pickerEntries());
+  pickerSearching = searchTokens(query).length > 0;
+  pickerShown = pickerSearching
+    ? searchItems(entries, query).slice(0, PICKER_MAX_RESULTS)
+    : entries;
+
+  // As with the old <select>: an item showing in another slot can't be picked
+  // twice, and only *visible* slots count.
+  const ids = cfg().selectedIds();
+  const current = ids[pickerSlot];
+  const taken = new Set(ids.filter((id, i) => id && i !== pickerSlot && i < numSlots));
+
+  let html = '';
+  let group = null;
+  pickerShown.forEach((e, i) => {
+    if (!pickerSearching && e.group !== group) {
+      group = e.group;
+      html += `<li class="picker-group" role="presentation">${escHTML(group)}</li>`;
+    }
+    const off = taken.has(e.id);
+    html += `<li class="picker-option" role="option" id="picker-opt-${i}" data-index="${i}" data-value="${escHTML(e.id)}"`
+      + ` aria-selected="${e.id === current}"${off ? ' aria-disabled="true"' : ''}>`
+      + `<span class="picker-option-name">${escHTML(e.label)}</span>`
+      + `<span class="picker-option-meta">${off ? 'Added' : escHTML(e.year)}</span></li>`;
+  });
+  if (!pickerShown.length) {
+    html = `<li class="picker-none" role="presentation">No ${modeNoun(true)} match “${escHTML(query.trim())}”.</li>`;
+  }
+  list.innerHTML = html;
+  list.scrollTop = 0;
+
+  // Typing: Enter takes the best match. Browsing: start at the current item.
+  const enabled = i => i >= 0 && i < pickerShown.length && !taken.has(pickerShown[i].id);
+  let start = pickerSearching
+    ? pickerShown.findIndex((_, i) => enabled(i))
+    : pickerShown.findIndex(e => e.id === current);
+  setPickerActive(start, !pickerSearching);
+}
+
+function setPickerActive(index, scroll) {
+  const pop = pickerEl();
+  const input = pop.querySelector('.picker-input');
+  const prev = pop.querySelector('.picker-option.active');
+  if (prev) prev.classList.remove('active');
+  pickerActive = index;
+  const el = index >= 0 ? document.getElementById(`picker-opt-${index}`) : null;
+  if (!el) { input.removeAttribute('aria-activedescendant'); pickerActive = -1; return; }
+  el.classList.add('active');
+  input.setAttribute('aria-activedescendant', el.id);
+  if (scroll && typeof el.scrollIntoView === 'function') el.scrollIntoView({ block: 'nearest' });
+}
+
+function movePickerActive(step) {
+  const opts = [...pickerEl().querySelectorAll('.picker-option')];
+  if (!opts.length) return;
+  // From "nothing highlighted", Down lands on the first option and Up on the last.
+  let i = pickerActive >= 0 ? pickerActive : (step > 0 ? -1 : 0);
+  for (let n = 0; n < opts.length; n++) {
+    i = (i + step + opts.length) % opts.length;
+    if (opts[i].getAttribute('aria-disabled') !== 'true') { setPickerActive(i, true); return; }
+  }
+}
+
+function choosePickerOption(index) {
+  const entry = pickerShown[index];
+  const el = document.getElementById(`picker-opt-${index}`);
+  if (!entry || !el || el.getAttribute('aria-disabled') === 'true') return;
+  const slotIndex = pickerSlot;
+  const how = pickerSearching ? 'search' : 'browse';
+  const unchanged = cfg().selectedIds()[slotIndex] === entry.id;
+  closePicker(unchanged);
+  if (unchanged) return;
+  selectItem(slotIndex, entry.id, how);
+  const btn = slotButton(slotIndex);
+  if (btn) btn.focus();
+}
+
+// Desktop: a panel under the slot's button, kept inside the viewport. Phones:
+// a full-screen sheet (CSS), sized to the *visual* viewport so the list ends
+// at the on-screen keyboard instead of running underneath it.
+function positionPicker() {
+  if (pickerSlot === null) return;
+  const pop = pickerEl();
+  const btn = slotButton(pickerSlot);
+  pop.style.cssText = '';
+  if (window.innerWidth < 600) {
+    const vv = window.visualViewport;
+    if (vv) { pop.style.top = `${vv.offsetTop}px`; pop.style.height = `${vv.height}px`; }
+    return;
+  }
+  if (!btn) return;
+  const r = btn.getBoundingClientRect();
+  const width = Math.min(360, window.innerWidth - 16);
+  const left = Math.max(8, Math.min(r.left + r.width / 2 - width / 2, window.innerWidth - width - 8));
+  const top = Math.max(8, r.bottom + 6);
+  pop.style.width = `${width}px`;
+  pop.style.left = `${left}px`;
+  pop.style.top = `${top}px`;
+  pop.style.maxHeight = `${Math.max(220, window.innerHeight - top - 12)}px`;
+}
+
+// Put `id` in a slot — the one path every pick takes.
+let quickCompareSeen = 0;
+function selectItem(slotIndex, id, how) {
+  // The picker only blocks items held by *visible* slots, so the pick may be
+  // sitting in a hidden one. Hand that slot the item this one gives up, or
+  // revealing it later would show the same item twice.
+  const ids = cfg().selectedIds();
+  const holder = ids.indexOf(id);
+  if (holder >= numSlots) cfg().setSelectedId(holder, ids[slotIndex]);
+  cfg().setSelectedId(slotIndex, id);
+  const named = cfg().items[id] || NAME_INDEX[id];
+  track(`${currentMode === 'lenses' ? 'lens' : 'camera'}-swap:${trackKey(id)}`,
+    `${brandNameOf(id)} ${named.name}`);
+  // Typed or scrolled to: says whether the search field earns its place.
+  track(`picker-pick:${trackPage()}:${how}`, `Picked by ${how}`);
+  if (IS_EMBED) {
+    // Once each per visit: the first camera, then the first real comparison.
+    const filled = cfg().selectedIds().slice(0, numSlots).filter(Boolean).length;
+    if (filled >= 1 && quickCompareSeen < 1) { quickCompareSeen = 1; track('quick-compare:first', 'Quick compare: first camera'); }
+    if (filled >= 2 && quickCompareSeen < 2) { quickCompareSeen = 2; track('quick-compare:pair', 'Quick compare: two cameras'); }
+    ensureData();
+  }
+  updateHash();
+  renderAll();
 }
 
 // ─────────────────────────────────────────────
@@ -975,7 +1453,23 @@ function renderSlot(slotIndex) {
   if (!el) return;
   const id = cfg().selectedIds()[slotIndex];
   const item = cfg().items[id];
-  if (!item) return;
+  if (!item) {
+    if (!IS_EMBED) return;
+    // Homepage: nothing picked yet, or picked while its specs are in flight.
+    if (!id) {
+      el.innerHTML = `
+    <button type="button" class="cam-image-wrap cam-image-wrap--empty" tabindex="-1" aria-hidden="true">+</button>
+    ${buildPickerHTML(null, slotIndex)}`;
+      return;
+    }
+    el.innerHTML = `
+    <div class="cam-image-wrap cam-image-wrap--empty" aria-hidden="true"></div>
+    ${buildPickerHTML(id, slotIndex)}
+    <div class="slot-price discontinued" role="status">${dataState === 'error'
+      ? 'Couldn’t load the specs. <button type="button" class="slot-retry">Try again</button>'
+      : 'Loading specs…'}</div>`;
+    return;
+  }
 
   const priceHTML = renderPriceHTML(item);
   let linkHTML;
@@ -998,7 +1492,7 @@ function renderSlot(slotIndex) {
 
   el.innerHTML = `
     <div class="cam-image-wrap">${buildPlaceholder(item, id)}</div>
-    ${buildSelectHTML(id, slotIndex)}
+    ${buildPickerHTML(id, slotIndex)}
     ${priceHTML}
     ${linkHTML}
   `;
@@ -1008,15 +1502,22 @@ function renderSlot(slotIndex) {
 // COMPUTE WINNERS PER SPEC ROW
 // ─────────────────────────────────────────────
 function computeWinners(spec) {
-  const vals = cfg().selectedIds().slice(0, numSlots).map(id => spec.fn(cfg().items[id]));
+  // An empty slot (homepage) has no item: it never wins, and it is not a
+  // competitor either — `needsAll` means every *camera*, not every column.
+  const items = cfg().selectedIds().slice(0, numSlots).map(id => cfg().items[id]);
+  const none = items.map(() => false);
+  const filled = items.filter(Boolean);
   // One column wins every row it has a value for, which is noise rather than
-  // information. A single slot only happens under a mount filter that offers
-  // one item.
-  if (numSlots < 2) return vals.map(() => false);
-  if (!spec.higherBetter && !spec.lowerBetter) return vals.map(() => false);
-  const nums = vals.map(v => typeof v === 'number' ? v : null);
-  if (nums.every(v => v === null)) return vals.map(() => false);
-  if (spec.needsAll && nums.some(v => v === null)) return vals.map(() => false);
+  // information. A single item happens under a mount filter that offers one,
+  // and on the homepage after the first pick.
+  if (filled.length < 2) return none;
+  if (!spec.higherBetter && !spec.lowerBetter) return none;
+  const nums = items.map(it => {
+    const v = it ? spec.fn(it) : null;
+    return typeof v === 'number' ? v : null;
+  });
+  if (nums.every(v => v === null)) return none;
+  if (spec.needsAll && items.some((it, i) => it && nums[i] === null)) return none;
   const valid = nums.filter(v => v !== null);
   const best = spec.higherBetter ? Math.max(...valid) : Math.min(...valid);
   return nums.map(v => v !== null && v === best);
@@ -1108,7 +1609,7 @@ function collectReferences(item) {
 function sectionVisible(section) {
   if (!section.brand) return true;
   if (!IS_COMPARE) return BRAND_CONFIG.brandSections.includes(section.brand);
-  return cfg().selectedIds().slice(0, numSlots).some(id => brandOf(id) === section.brand);
+  return cfg().selectedIds().slice(0, numSlots).some(id => id && brandOf(id) === section.brand);
 }
 
 function renderRefLinks(refs, kind) {
@@ -1138,7 +1639,9 @@ function renderReferencesSection() {
       <div class="spec-label">${row.label}</div>`;
     for (let i = 0; i < numSlots; i++) {
       const slotHide = (i === 2 && numSlots < 3) ? ' slot-3-hide' : '';
-      html += `<div class="spec-value ref-cell${slotHide}">${renderRefLinks(refsPerSlot[i][row.key], row.key)}</div>`;
+      html += cfg().selectedIds()[i]
+        ? `<div class="spec-value ref-cell${slotHide}">${renderRefLinks(refsPerSlot[i][row.key], row.key)}</div>`
+        : `<div class="spec-value spec-value--empty${slotHide}"></div>`;
     }
     html += `</div>`;
   }
@@ -1150,6 +1653,18 @@ function renderReferencesSection() {
 function renderTable() {
   const table = document.getElementById('compare-table');
   let html = '';
+
+  // Homepage: no table until something is picked and its specs have arrived.
+  // The slot headers above say what is loading, or what went wrong.
+  if (IS_EMBED) {
+    const picked = cfg().selectedIds().slice(0, numSlots).filter(Boolean);
+    const tools = document.getElementById('embed-tools');
+    if (tools) tools.hidden = !picked.length;
+    const showing = picked.length > 0 && dataState === 'ready';
+    // The slot row sticks to the top only while there is a table to scroll.
+    document.getElementById('compare-header').classList.toggle('is-idle', !showing);
+    if (!showing) { table.innerHTML = ''; return; }
+  }
 
   for (const section of cfg().specSections) {
     if (!sectionVisible(section)) continue;
@@ -1166,10 +1681,15 @@ function renderTable() {
       html += `<div class="spec-row">
         <div class="spec-label">${spec.label}</div>`;
       for (let i = 0; i < numSlots; i++) {
-        const item = cfg().items[cfg().selectedIds()[i]];
+        const id = cfg().selectedIds()[i];
+        const item = cfg().items[id];
         const winClass = winners[i] ? ' winner' : '';
         const slotHide = (i === 2 && numSlots < 3) ? ' slot-3-hide' : '';
-        html += `<div class="spec-value${winClass}${slotHide}">${formatVal(spec, item)}</div>`;
+        // An empty homepage slot keeps its column, blank — a dash would claim
+        // a camera that lacks the feature.
+        html += id
+          ? `<div class="spec-value${winClass}${slotHide}">${formatVal(spec, item)}</div>`
+          : `<div class="spec-value spec-value--empty${slotHide}"></div>`;
       }
       html += `</div>`;
     }
@@ -1208,6 +1728,8 @@ function renderAll() {
 
   const countSlot = document.getElementById('slot-count-slot');
   if (countSlot) countSlot.innerHTML = buildSlotCountField();
+  const countChips = document.getElementById('slot-count-chips');
+  if (countChips) countChips.innerHTML = buildCountChips();
 
   for (let i = 0; i < MAX_SLOTS; i++) {
     const el = document.getElementById(`slot-${i}`);
@@ -1216,30 +1738,8 @@ function renderAll() {
 
   for (let i = 0; i < MAX_SLOTS; i++) renderSlot(i);
   renderTable();
-  attachSlotListeners();
-}
-
-// ─────────────────────────────────────────────
-// EVENT LISTENERS
-// ─────────────────────────────────────────────
-function attachSlotListeners() {
-  document.querySelectorAll('.slot-select').forEach(sel => {
-    sel.addEventListener('change', e => {
-      const slotIdx = parseInt(e.target.dataset.slot);
-      // Pickers only disable items held by *visible* slots, so the pick may be
-      // sitting in a hidden one. Hand that slot the item this one gives up, or
-      // revealing it later would show the same item twice.
-      const ids = cfg().selectedIds();
-      const holder = ids.indexOf(e.target.value);
-      if (holder >= numSlots) cfg().setSelectedId(holder, ids[slotIdx]);
-      cfg().setSelectedId(slotIdx, e.target.value);
-      const picked = e.target.value;
-      track(`${currentMode === 'lenses' ? 'lens' : 'camera'}-swap:${trackKey(picked)}`,
-        `${brandNameOf(picked)} ${cfg().items[picked].name}`);
-      updateHash();
-      renderAll();
-    });
-  });
+  // A change that hides the slot the picker is open for takes the picker with it.
+  if (pickerSlot !== null && pickerSlot >= numSlots) closePicker(false);
 }
 
 // Activating a mount replaces every slot holding an item from another mount
@@ -1283,6 +1783,9 @@ function applyMountFilter(mountId) {
   renderAll();
 }
 
+// ─────────────────────────────────────────────
+// EVENT LISTENERS
+// ─────────────────────────────────────────────
 function attachEventListeners() {
   // Delegated: the chip row is re-rendered on every mode switch and filter change.
   document.getElementById('mount-filter-slot')?.addEventListener('click', e => {
@@ -1311,6 +1814,40 @@ function attachEventListeners() {
   document.getElementById('compare-header')?.addEventListener('click', onSlotLink);
   document.getElementById('compare-header')?.addEventListener('auxclick', onSlotLink);
 
+  // Delegated, for the same reason. A slot's button (or, on the homepage, the
+  // empty photo box above it) opens the picker; pressing it again closes it.
+  document.getElementById('compare-header')?.addEventListener('click', e => {
+    if (e.target.closest('.slot-retry')) {
+      dataState = 'idle';
+      ensureData();
+      renderAll();
+      return;
+    }
+    const opener = e.target.closest('.slot-picker, .cam-image-wrap--empty');
+    const slot = opener && opener.closest('.compare-slot');
+    if (!slot) return;
+    const index = Number(slot.id.replace('slot-', ''));
+    if (pickerSlot === index) closePicker(true); else openPicker(index);
+  });
+  document.getElementById('compare-header')?.addEventListener('keydown', e => {
+    const btn = e.target.closest && e.target.closest('.slot-picker');
+    if (!btn || (e.key !== 'ArrowDown' && e.key !== 'ArrowUp')) return;
+    e.preventDefault();
+    openPicker(Number(btn.dataset.slot));
+  });
+  // A press anywhere outside the open picker dismisses it.
+  document.addEventListener('pointerdown', e => {
+    if (pickerSlot === null) return;
+    const t = e.target;
+    if (t.closest && (t.closest('#picker-pop') || t.closest('.slot-picker, .cam-image-wrap--empty'))) return;
+    closePicker(false);
+  });
+  window.addEventListener('scroll', positionPicker, { passive: true });
+  if (window.visualViewport) {
+    window.visualViewport.addEventListener('resize', positionPicker);
+    window.visualViewport.addEventListener('scroll', positionPicker);
+  }
+
   // Delegated on the table container, which persists across renderTable()
   // rebuilding its innerHTML (unlike .section-header, which is re-attached
   // per render since the whole element is recreated).
@@ -1332,14 +1869,20 @@ function attachEventListeners() {
   // Delegated: the select is re-rendered whenever the mount filter changes what
   // counts it can honestly offer, so a listener bound to the element itself
   // would be orphaned after the first re-render.
-  document.getElementById('slot-count-slot')?.addEventListener('change', e => {
-    if (e.target.id !== 'slot-count-select') return;
-    const n = parseInt(e.target.value, 10);
+  const setSlotChoice = n => {
     if (!n || n === slotChoice) return;
     slotChoice = n;
     numSlots = getNumSlots();
     updateHash();
     renderAll();
+  };
+  document.getElementById('slot-count-slot')?.addEventListener('change', e => {
+    if (e.target.id === 'slot-count-select') setSlotChoice(parseInt(e.target.value, 10));
+  });
+  // Homepage: the same choice as visible buttons.
+  document.getElementById('slot-count-chips')?.addEventListener('click', e => {
+    const chip = e.target.closest('.count-chip');
+    if (chip) setSlotChoice(parseInt(chip.dataset.count, 10));
   });
 
   document.getElementById('mode-toggle')?.addEventListener('click', e => {
@@ -1392,6 +1935,7 @@ function attachEventListeners() {
       syncHash();
       renderAll();
     }
+    positionPicker();
   });
 }
 
@@ -1439,4 +1983,6 @@ function attachEventListeners() {
   if (restored && initial.given !== numSlots) updateHash();
   attachEventListeners();
   renderAll();
+  // Homepage opened from a shared link: its cameras are named, not yet loaded.
+  if (IS_EMBED && restored) ensureData();
 })();

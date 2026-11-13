@@ -7,7 +7,7 @@
 const { test } = require('node:test');
 const assert = require('node:assert/strict');
 const { loadBrand, brandDirs } = require('../helpers/load-brand');
-const { setCurrency, slotSelect } = require('../helpers/dom');
+const { setCurrency, slotValue } = require('../helpers/dom');
 
 // currency -> expected Amazon host
 const MARKETPLACE = {
@@ -52,7 +52,7 @@ for (const brand of brandDirs()) {
 
   test(`[${brand}] rendered Buy button follows the active currency`, () => {
     const { window, data } = loadBrand(brand, { engine: true });
-    const id = slotSelect(window, 0).value;
+    const id = slotValue(window, 0);
     const cam = data.CAMERAS[id];
 
     for (const [cur, host] of Object.entries(MARKETPLACE)) {

@@ -1533,7 +1533,43 @@ function resolveFavourites(brandData, favourites = FAVOURITE_LINKS) {
 
 // Crawlable landing content for the root page: brand cards with live counts
 // plus a sample of vs-pages, so the root passes authority into the cluster.
-function rootBodyBlock(site, brands, crossSample = [], favourites = []) {
+// The homepage's search index: every camera's name, year and status, per
+// brand, in the order the compare page lists them (REGISTERED_BRANDS, then
+// each brand's CAMERA_ORDER). It is what lets the homepage search — and name a
+// picked camera — before any brand file has been fetched; engine.js reads it
+// from COMPARE_CONFIG.index. A row is [slug, name, year, discontinued 0|1].
+function cameraIndex(brandData) {
+  const first = Object.values(brandData)[0];
+  const order = ((first && first.REGISTERED_BRANDS) || []).map(b => b.slug).filter(s => brandData[s]);
+  // A brand directory missing from REGISTERED_BRANDS still gets listed, last.
+  for (const slug of Object.keys(brandData)) if (!order.includes(slug)) order.push(slug);
+  return order.map(slug => {
+    const d = brandData[slug];
+    return {
+      slug,
+      name: d.BRAND_CONFIG.name,
+      cameras: d.CAMERA_ORDER.filter(id => d.CAMERAS[id]).map(id => {
+        const c = d.CAMERAS[id];
+        return [id, c.name, c.year, c.discontinued ? 1 : 0];
+      }),
+    };
+  });
+}
+
+// The inline config that puts the engine in homepage-embed mode. JSON is
+// valid JavaScript; "<" is escaped so no camera name can close the <script>.
+function homeConfigScript(index) {
+  const config = {
+    embed: true,
+    defaultSlots: 2,
+    defaultSelected: [],
+    dataScripts: index.map(b => `./${b.slug}/data.js`),
+    index,
+  };
+  return `<script>window.COMPARE_CONFIG = ${JSON.stringify(config).replace(/</g, '\\u003c')};</script>`;
+}
+
+function rootBodyBlock(site, brands, crossSample = [], favourites = [], index = []) {
   // No stripe override: the all-brands card takes the shared accent.
   const compareCard = `        <li class="brand-card">
           <a href="./compare/" data-goatcounter-click="brand-pick:compare" data-goatcounter-title="Brand pick: All brands">
@@ -1577,7 +1613,13 @@ function rootBodyBlock(site, brands, crossSample = [], favourites = []) {
   </header>
   <div class="page-hero">
     <h1 class="hero-title">${esc(site.siteName)}</h1>
+    <p class="hero-subtitle">Search for any mirrorless camera and compare up to four, side by side.</p>
   </div>
+  <section class="quick-compare" aria-label="Compare cameras">
+    <div id="app"></div>
+    <noscript><p class="quick-compare-noscript">The comparison tool needs JavaScript. The pages linked below work without it.</p></noscript>
+  </section>
+  ${homeConfigScript(index)}
   <main class="landing">
     <section class="landing-intro">
       <p>Compare Camera Specs is a free tool for comparing mirrorless cameras and lenses
@@ -1588,7 +1630,7 @@ function rootBodyBlock(site, brands, crossSample = [], favourites = []) {
          often incomplete, bury the details in enormous PDFs, and leave pricing scattered all
          over the place. I built Compare Camera Specs so that you don't have to do that
          digging yourself.</p>
-      <p>Pick a brand below, or choose All Brands if you are shopping across brands.
+      <p>Search for a camera above, or pick a brand below to browse its cameras and lenses.
          Happy browsing!</p>
       <p class="landing-intro-sig">Made in Sydney, Australia.</p>
     </section>
@@ -1943,7 +1985,7 @@ function buildSite({ today = new Date().toISOString().slice(0, 10) } = {}) {
   }
   let rootHtml = fs.readFileSync(path.join(ROOT, 'index.html'), 'utf8');
   rootHtml = withHeadBlock(rootHtml, rootHeadBlock(site, brandNames, homeCard), 'index.html');
-  rootHtml = withBodyBlock(rootHtml, rootBodyBlock(site, brandInfo, matchups.slice(0, 4), resolveFavourites(brandData)), 'index.html');
+  rootHtml = withBodyBlock(rootHtml, rootBodyBlock(site, brandInfo, matchups.slice(0, 4), resolveFavourites(brandData), cameraIndex(brandData)), 'index.html');
   files.set('index.html', rootHtml);
   const lastmods = lastmodManifest(readLastmodManifest(), sitemapHashes(sitemapPaths, files), today);
   files.set(LASTMOD_MANIFEST, `${JSON.stringify(lastmods, null, 2)}\n`);
@@ -1982,4 +2024,4 @@ if (require.main === module) {
   console.log(`generate-seo: ${files.size} artifacts (${written} written, ${removed} stale removed)`);
 }
 
-module.exports = { ROOT_TITLE, buildSite, GLANCE_COLS, sizeText, brandGlanceHTML, uniqueItemCount, cardHash, lastmodManifest, sitemapHashes, LASTMOD_MANIFEST, vsCardHTML, infoCardHTML, shareTags, CARD_W, CARD_H, LANDING_CARD_ORDER, ALL_BRANDS_MOSAIC, orderLandingBrands, allBrandsPhotoHTML, siteConfig, curatedPairs, successorPairKeys, resolvePins, withPins, PINNED_VS_PAIRS, SUCCESSOR_INDEX_SINCE, relatedPairs, vsPageHTML, vsSummary, vsSummaryFacts, resolveMatchups, crossVsPageHTML, crossTitle, CROSS_BRAND_MATCHUPS, compareHeadBlock, compareBodyBlock, brandHeadBlock, rootHeadBlock, brandBodyBlock, rootBodyBlock, withHeadBlock, withBodyBlock, sitemapXML, robotsTxt, buildAll, SEO_BEGIN, SEO_END, SEO_BODY_BEGIN, SEO_BODY_END, ID_HEAD_BEGIN, ID_HEAD_END, ID_HEADER_BEGIN, ID_HEADER_END, ID_FOOTER_BEGIN, ID_FOOTER_END, identityToken, logoMark, cleanUrl, cleanHref, themeToggleHTML, collectReferences, citationText, refHostname, REFERENCE_ROWS, referenceRowsHTML };
+module.exports = { ROOT_TITLE, cameraIndex, homeConfigScript, buildSite, GLANCE_COLS, sizeText, brandGlanceHTML, uniqueItemCount, cardHash, lastmodManifest, sitemapHashes, LASTMOD_MANIFEST, vsCardHTML, infoCardHTML, shareTags, CARD_W, CARD_H, LANDING_CARD_ORDER, ALL_BRANDS_MOSAIC, orderLandingBrands, allBrandsPhotoHTML, siteConfig, curatedPairs, successorPairKeys, resolvePins, withPins, PINNED_VS_PAIRS, SUCCESSOR_INDEX_SINCE, relatedPairs, vsPageHTML, vsSummary, vsSummaryFacts, resolveMatchups, crossVsPageHTML, crossTitle, CROSS_BRAND_MATCHUPS, compareHeadBlock, compareBodyBlock, brandHeadBlock, rootHeadBlock, brandBodyBlock, rootBodyBlock, withHeadBlock, withBodyBlock, sitemapXML, robotsTxt, buildAll, SEO_BEGIN, SEO_END, SEO_BODY_BEGIN, SEO_BODY_END, ID_HEAD_BEGIN, ID_HEAD_END, ID_HEADER_BEGIN, ID_HEADER_END, ID_FOOTER_BEGIN, ID_FOOTER_END, identityToken, logoMark, cleanUrl, cleanHref, themeToggleHTML, collectReferences, citationText, refHostname, REFERENCE_ROWS, referenceRowsHTML };

@@ -6,7 +6,7 @@
 const { test } = require('node:test');
 const assert = require('node:assert/strict');
 const { loadCompare } = require('../helpers/load-compare');
-const { setSlot, setCurrency, slotSelect } = require('../helpers/dom');
+const { setSlot, setCurrency, slotValue, pickerOptions } = require('../helpers/dom');
 
 const DEFAULTS = ['fujifilm:x-t5', 'sony:a7-iv', 'canon:eos-r6-iii', 'nikon:z6-iii'];
 
@@ -42,7 +42,7 @@ test('default render: 3 visible slots, 4th hidden, defaults selected', () => {
   const { window } = loadCompare();
   assert.equal(visibleSlots(window).length, 3);
   assert.equal(window.document.querySelectorAll('.compare-slot').length, 4);
-  assert.deepEqual([0, 1, 2].map(i => slotSelect(window, i).value), DEFAULTS.slice(0, 3));
+  assert.deepEqual([0, 1, 2].map(i => slotValue(window, i)), DEFAULTS.slice(0, 3));
 });
 
 test('cameras only: no mode toggle, slot-count dropdown instead', () => {
@@ -59,11 +59,10 @@ test('cameras only: no mode toggle, slot-count dropdown instead', () => {
     'slot-count control lives inside the Compare label cell');
 });
 
-test('dropdowns group by brand and every option id is namespaced', () => {
+test('the picker groups by brand and every option id is namespaced', () => {
   const { window } = loadCompare();
-  const groups = [...slotSelect(window, 0).querySelectorAll('optgroup')];
-  assert.deepEqual(groups.map(g => g.label), ['Fujifilm', 'Canon', 'Sony', 'Nikon', 'Panasonic', 'Sigma', 'Olympus', 'Leica']);
-  const opts = [...slotSelect(window, 0).querySelectorAll('option')];
+  const { groups, options: opts } = pickerOptions(window, 0);
+  assert.deepEqual(groups, ['Fujifilm', 'Canon', 'Sony', 'Nikon', 'Panasonic', 'Sigma', 'Olympus', 'Leica']);
   assert.ok(opts.length > 100, 'all brands\' cameras offered');
   for (const o of opts) {
     const [brand] = o.value.split(':');
@@ -74,8 +73,7 @@ test('dropdowns group by brand and every option id is namespaced', () => {
 test('duplicate prevention works across brands', () => {
   const { window } = loadCompare();
   setSlot(window, 1, 'sony:a6700');
-  const inSlot0 = [...slotSelect(window, 0).querySelectorAll('option')]
-    .find(o => o.value === 'sony:a6700');
+  const inSlot0 = pickerOptions(window, 0).options.find(o => o.value === 'sony:a6700');
   assert.ok(inSlot0.disabled, 'camera selected in slot 1 is disabled in slot 0');
 });
 
@@ -93,7 +91,7 @@ test('choosing 4 slots renders 4 columns in header and table', () => {
   const { window } = loadCompare();
   clickSlotCount(window, 4);
   assert.equal(visibleSlots(window).length, 4);
-  assert.equal(slotSelect(window, 3).value, DEFAULTS[3]);
+  assert.equal(slotValue(window, 3), DEFAULTS[3]);
   const row = rowByLabel(window, 'Resolution');
   assert.equal(row.querySelectorAll('.spec-value').length, 4);
 });
@@ -238,7 +236,7 @@ test('deep link restores selection and slot count without rewriting the hash', (
   const hash = '#cameras=fujifilm:x100vi,sony:a6700';
   const { window } = loadCompare({ hash });
   assert.equal(visibleSlots(window).length, 2, 'two entries → two slots');
-  assert.deepEqual([0, 1].map(i => slotSelect(window, i).value), ['fujifilm:x100vi', 'sony:a6700']);
+  assert.deepEqual([0, 1].map(i => slotValue(window, i)), ['fujifilm:x100vi', 'sony:a6700']);
   assert.equal(window.location.hash, hash, 'a link that fits the screen is not rewritten');
 });
 
@@ -246,12 +244,12 @@ test('four-camera deep link renders four slots', () => {
   const ids = ['canon:eos-r5-ii', 'nikon:z8', 'sony:a7r-v', 'panasonic:s1r-ii'];
   const { window } = loadCompare({ hash: `#cameras=${ids.join(',')}` });
   assert.equal(visibleSlots(window).length, 4);
-  assert.deepEqual([0, 1, 2, 3].map(i => slotSelect(window, i).value), ids);
+  assert.deepEqual([0, 1, 2, 3].map(i => slotValue(window, i)), ids);
 });
 
 test('bad slug and bad brand prefix fall back per slot', () => {
   const { window } = loadCompare({ hash: '#cameras=kodak:dc290,sony:not-a-camera,canon:eos-r7' });
-  assert.deepEqual([0, 1, 2].map(i => slotSelect(window, i).value),
+  assert.deepEqual([0, 1, 2].map(i => slotValue(window, i)),
     [DEFAULTS[0], DEFAULTS[1], 'canon:eos-r7']);
 });
 
@@ -261,7 +259,7 @@ test('entry counts outside 2–4 are clamped', () => {
   assert.equal(visibleSlots(many.window).length, 4, '5 entries clamp to 4 slots');
   const one = loadCompare({ hash: '#cameras=sony:a6700' });
   assert.equal(visibleSlots(one.window).length, 2, '1 entry clamps to 2 slots');
-  assert.equal(slotSelect(one.window, 1).value, DEFAULTS[1], 'second slot falls back to default');
+  assert.equal(slotValue(one.window, 1), DEFAULTS[1], 'second slot falls back to default');
 });
 
 test('clean visit leaves the URL clean', () => {

@@ -8,6 +8,7 @@
 const { test } = require('node:test');
 const assert = require('node:assert/strict');
 const { loadBrand } = require('../helpers/load-brand');
+const { pickerOptions, openPicker, closePicker } = require('../helpers/dom');
 const { loadCompare } = require('../helpers/load-compare');
 
 const page = (brand, opts = {}) => loadBrand(brand, { engine: true, ...opts }).window;
@@ -17,7 +18,7 @@ const chip = (doc, mount) => doc.querySelector(`.mount-chip[data-mount="${mount}
 // back to showing its first option — exactly the contradiction under test.
 const selected = doc => doc.defaultView.cfg().selectedIds()
   .slice(0, Number(doc.documentElement.style.getPropertyValue('--num-slots')));
-const options = doc => [...doc.querySelectorAll('.slot-select')[0].options].map(o => o.value);
+const options = doc => pickerOptions(doc.defaultView, 0).options.map(o => o.value);
 
 // ── 1. who gets a row ───────────────────────────────────────────────
 for (const brand of ['fujifilm', 'panasonic', 'sigma']) {
@@ -57,11 +58,13 @@ test('[panasonic] a chip restricts every slot dropdown to that mount', () => {
   assert.ok(shown.length < all, 'the filter should remove options');
   assert.ok(shown.every(id => LENSES[id].mount === 'mft'),
     'every offered lens should be Micro Four Thirds');
-  for (const sel of doc.querySelectorAll('.slot-select')) {
-    for (const grp of sel.querySelectorAll('optgroup')) {
-      assert.ok(grp.querySelectorAll('option').length > 0, 'no empty optgroup should render');
-    }
+  // A group heading is only ever followed by one of its options.
+  openPicker(doc.defaultView, 0);
+  for (const grp of doc.querySelectorAll('#picker-list .picker-group')) {
+    assert.ok(grp.nextElementSibling && grp.nextElementSibling.classList.contains('picker-option'),
+      `no empty group should render (${grp.textContent})`);
   }
+  closePicker(doc.defaultView);
 });
 
 test('[fujifilm] fixed-lens bodies stay with their lineup', () => {

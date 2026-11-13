@@ -1,11 +1,12 @@
-// Tier 2 — Dropdown pickers, mode toggle, and brand switcher behaviour.
+// Tier 2 — Slot pickers, mode toggle, and brand switcher behaviour.
+// (The search field and keyboard handling have their own file: search-picker.test.js.)
 const { test } = require('node:test');
 const assert = require('node:assert/strict');
 const fs = require('fs');
 const path = require('path');
 const { JSDOM } = require('jsdom');
 const { loadBrand, brandDirs, ROOT } = require('../helpers/load-brand');
-const { setSlot, clickMode, selectBrand, slotSelect } = require('../helpers/dom');
+const { setSlot, clickMode, selectBrand, slotValue, pickerOptions } = require('../helpers/dom');
 
 function optionsOf(select) {
   return [...select.querySelectorAll('option')];
@@ -41,7 +42,7 @@ test('Compare label cell (and its slot-count dropdown) is hidden below the mobil
 for (const brand of brandDirs()) {
   test(`[${brand}] renders four slot pickers in cameras mode, three visible by default`, () => {
     const { window } = loadBrand(brand, { engine: true });
-    assert.equal(window.document.querySelectorAll('.slot-select').length, 4);
+    assert.equal(window.document.querySelectorAll('.slot-picker').length, 4);
     const visible = [...window.document.querySelectorAll('.compare-slot')]
       .filter(s => s.style.display !== 'none');
     assert.equal(visible.length, 3);
@@ -51,9 +52,8 @@ for (const brand of brandDirs()) {
     const { window, data } = loadBrand(brand, { engine: true });
     const defaults = data.BRAND_CONFIG.cameras.defaultSelected;
     // slot-0's selection should be disabled as an option in slot-1.
-    const slot0Id = slotSelect(window, 0).value;
-    const slot1Options = optionsOf(slotSelect(window, 1));
-    const opt = slot1Options.find(o => o.value === slot0Id);
+    const slot0Id = slotValue(window, 0);
+    const opt = pickerOptions(window, 1).options.find(o => o.value === slot0Id);
     assert.ok(opt, `slot-1 has no option for ${slot0Id}`);
     assert.ok(opt.disabled, `slot-0's selection (${slot0Id}) should be disabled in slot-1`);
     assert.ok(defaults.includes(slot0Id));
@@ -66,14 +66,16 @@ for (const brand of brandDirs()) {
     setSlot(window, 0, fresh);
     // Now `fresh` should be disabled in slot-1 and slot-2.
     for (const i of [1, 2]) {
-      const opt = optionsOf(slotSelect(window, i)).find(o => o.value === fresh);
+      const opt = pickerOptions(window, i).options.find(o => o.value === fresh);
       assert.ok(opt.disabled, `${fresh} should be disabled in slot-${i} after selecting it in slot-0`);
     }
   });
 
-  test(`[${brand}] every dropdown option maps to a real item`, () => {
+  test(`[${brand}] every picker option maps to a real item, and every item is offered`, () => {
     const { window, data } = loadBrand(brand, { engine: true });
-    for (const opt of optionsOf(slotSelect(window, 0))) {
+    const { options } = pickerOptions(window, 0);
+    assert.equal(options.length, Object.keys(data.CAMERAS).length);
+    for (const opt of options) {
       assert.ok(data.CAMERAS[opt.value], `option "${opt.value}" not in CAMERAS`);
     }
   });
@@ -85,15 +87,15 @@ for (const brand of brandDirs()) {
     assert.equal(window.document.getElementById('header-title').textContent,
       data.BRAND_CONFIG.lenses.headerTitle);
     // Slot options are now lenses.
-    const optVals = optionsOf(slotSelect(window, 0)).map(o => o.value);
-    assert.ok(optVals.every(v => data.LENSES[v]), 'lens-mode options should be lenses');
+    const optVals = pickerOptions(window, 0).options.map(o => o.value);
+    assert.ok(optVals.length && optVals.every(v => data.LENSES[v]), 'lens-mode options should be lenses');
     // A lens-only section label should now be present.
     const labels = [...window.document.querySelectorAll('.section-title')].map(e => e.textContent);
     assert.ok(labels.includes('Optical Design'), 'expected lens spec section "Optical Design"');
 
     clickMode(window, 'cameras');
-    const back = optionsOf(slotSelect(window, 0)).map(o => o.value);
-    assert.ok(back.every(v => data.CAMERAS[v]), 'switching back should restore cameras');
+    const back = pickerOptions(window, 0).options.map(o => o.value);
+    assert.ok(back.length && back.every(v => data.CAMERAS[v]), 'switching back should restore cameras');
   });
 
   test(`[${brand}] only this brand's spec sections render`, () => {
@@ -170,7 +172,7 @@ for (const brand of brandDirs()) {
     assert.equal(window.document.getElementById('slot-3').style.display, '');
     const row = window.document.querySelector('.spec-row');
     assert.equal(row.querySelectorAll('.spec-value').length, 4);
-    const ids = [0, 1, 2, 3].map(i => slotSelect(window, i).value);
+    const ids = [0, 1, 2, 3].map(i => slotValue(window, i));
     assert.equal(new Set(ids).size, 4, `expected four distinct items, got ${ids.join(', ')}`);
     assert.equal(window.location.hash, `#cameras=${ids.join(',')}`);
     // The engine-filled fourth stays in slot 0's mount whenever that mount has
@@ -186,12 +188,12 @@ for (const brand of brandDirs()) {
   // picked — and revealing that slot must not then show it twice.
   test(`[${brand}] picking the hidden slot's item, then showing 4, has no duplicate`, () => {
     const { window } = loadBrand(brand, { engine: true });
-    const hiddenItem = slotSelect(window, 3).value;
+    const hiddenItem = slotValue(window, 3);
     setSlot(window, 0, hiddenItem);
     const sel = window.document.getElementById('slot-count-select');
     sel.value = '4';
     sel.dispatchEvent(new window.Event('change', { bubbles: true }));
-    const ids = [0, 1, 2, 3].map(i => slotSelect(window, i).value);
+    const ids = [0, 1, 2, 3].map(i => slotValue(window, i));
     assert.equal(ids[0], hiddenItem);
     assert.equal(new Set(ids).size, 4, `expected four distinct items, got ${ids.join(', ')}`);
   });
