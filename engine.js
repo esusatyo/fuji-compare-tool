@@ -49,6 +49,7 @@ function trackKey(id) {
 }
 
 function trackPage() {
+  if (IS_COMPARE && COMPARE_CONFIG.sizeFirst) return 'size';
   return IS_EMBED ? 'home' : IS_COMPARE ? 'compare' : BRAND_CONFIG.slug;
 }
 function brandDataOf(id) {
@@ -1655,6 +1656,40 @@ function renderReferencesSection() {
   return html;
 }
 
+// ─────────────────────────────────────────────
+// SIZE SECTION
+// The items on screen drawn to scale (size.js), with the difference in words
+// and a dimensions table. Sits after the spec sections and just above
+// References — or first, on the /size/ page (COMPARE_CONFIG.sizeFirst). Empty
+// homepage slots are skipped; an item without full dimensions is listed in
+// the table but not drawn. '' when nothing can be drawn, or when a page has
+// not loaded size.js.
+// ─────────────────────────────────────────────
+function renderSizeSection() {
+  if (typeof SizeDiagram === 'undefined') return '';
+  const kind = currentMode === 'lenses' ? 'lens' : 'camera';
+  const entries = [];
+  cfg().selectedIds().slice(0, numSlots).forEach((id, i) => {
+    const item = cfg().items[id];
+    if (!item) return;
+    entries.push({
+      item,
+      name: IS_COMPARE ? withBrand(brandNameOf(id), item.name) : item.name,
+      // Column identity, as in the slot headers: odd columns primary, even secondary.
+      color: i % 2 ? 'var(--accent-secondary)' : 'var(--accent-primary)',
+      dashed: i >= 2,
+    });
+  });
+  const block = SizeDiagram.block({ entries, kind, page: trackPage(), variant: 'tool' });
+  if (!block) return '';
+  return `<div class="spec-section size-section">
+      <div class="section-header" data-section="size">
+        <span class="section-title">Size</span>
+        <span class="section-toggle open">▾</span>
+      </div>
+      <div class="section-body" id="body-size">${block}</div></div>`;
+}
+
 function renderTable() {
   const table = document.getElementById('compare-table');
   let html = '';
@@ -1672,6 +1707,9 @@ function renderTable() {
     document.getElementById('compare-header').classList.toggle('is-idle', !showing);
     if (!showing) { table.innerHTML = ''; return; }
   }
+
+  const sizeFirst = IS_COMPARE && COMPARE_CONFIG.sizeFirst;
+  if (sizeFirst) html += renderSizeSection();
 
   for (const section of cfg().specSections) {
     if (!sectionVisible(section)) continue;
@@ -1704,6 +1742,7 @@ function renderTable() {
     html += `</div></div>`;
   }
 
+  if (!sizeFirst) html += renderSizeSection();
   html += renderReferencesSection();
 
   table.innerHTML = html;

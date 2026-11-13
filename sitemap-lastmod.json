@@ -1,6 +1,6 @@
 {
   "": {
-    "hash": "eb6b5804cd60155a",
+    "hash": "c011ab788471d4c8",
     "lastmod": "2026-11-13"
   },
   "about": {
@@ -8,223 +8,407 @@
     "lastmod": "2026-11-13"
   },
   "canon/": {
-    "hash": "2e2bf831929a0e9b",
+    "hash": "0c94d4f79b7451c3",
+    "lastmod": "2026-11-13"
+  },
+  "canon/size/eos-r1-vs-eos-r3": {
+    "hash": "15e7e16f478beaaa",
+    "lastmod": "2026-11-13"
+  },
+  "canon/size/eos-r5-ii-vs-eos-r5": {
+    "hash": "c5c013529c95f7d8",
+    "lastmod": "2026-11-13"
+  },
+  "canon/size/eos-r50v-vs-eos-r10": {
+    "hash": "c19c70d61b646941",
+    "lastmod": "2026-11-13"
+  },
+  "canon/size/eos-r50v-vs-eos-r50": {
+    "hash": "ecfe5f4ca956a6e2",
+    "lastmod": "2026-11-13"
+  },
+  "canon/size/eos-r6-iii-vs-eos-r5": {
+    "hash": "ea2bf987a4be9593",
+    "lastmod": "2026-11-13"
+  },
+  "canon/size/eos-r6-iii-vs-eos-r5c": {
+    "hash": "ddda65e60ca2e89e",
+    "lastmod": "2026-11-13"
+  },
+  "canon/size/eos-r6-iii-vs-eos-r6-ii": {
+    "hash": "6cf8e768dfd5155c",
+    "lastmod": "2026-11-13"
+  },
+  "canon/size/eos-r6-v-vs-eos-r6-iii": {
+    "hash": "b75584035535e376",
+    "lastmod": "2026-11-13"
+  },
+  "canon/size/eos-r8-ii-vs-eos-r8": {
+    "hash": "598400acb379f8a5",
+    "lastmod": "2026-11-13"
+  },
+  "canon/size/eos-r8-vs-eos-r10": {
+    "hash": "05726056c0253351",
     "lastmod": "2026-11-13"
   },
   "canon/vs/eos-r1-vs-eos-r3": {
-    "hash": "185eefb7e6baf6fd",
-    "lastmod": "2026-11-07"
+    "hash": "87bac916ec90db89",
+    "lastmod": "2026-11-13"
   },
   "canon/vs/eos-r5-ii-vs-eos-r5": {
-    "hash": "35a46d64a85fa7ac",
-    "lastmod": "2026-11-07"
+    "hash": "109c542fd3362c0e",
+    "lastmod": "2026-11-13"
   },
   "canon/vs/eos-r50v-vs-eos-r10": {
-    "hash": "a86de7bd04b666d5",
-    "lastmod": "2026-11-07"
+    "hash": "611f58fd85e8be7b",
+    "lastmod": "2026-11-13"
   },
   "canon/vs/eos-r50v-vs-eos-r50": {
-    "hash": "0a08252d98252b5a",
-    "lastmod": "2026-11-07"
+    "hash": "17d72061d62e4f19",
+    "lastmod": "2026-11-13"
   },
   "canon/vs/eos-r6-iii-vs-eos-r5": {
-    "hash": "60afea9ed8af93bd",
-    "lastmod": "2026-11-07"
+    "hash": "ddfa1d3666106842",
+    "lastmod": "2026-11-13"
   },
   "canon/vs/eos-r6-iii-vs-eos-r5c": {
-    "hash": "858857b889424b2b",
-    "lastmod": "2026-11-07"
+    "hash": "5e50e7c80748a3c2",
+    "lastmod": "2026-11-13"
   },
   "canon/vs/eos-r6-iii-vs-eos-r6-ii": {
-    "hash": "c2fcb9a5c47e01bd",
-    "lastmod": "2026-11-07"
+    "hash": "e8b3e1d0258136c3",
+    "lastmod": "2026-11-13"
   },
   "canon/vs/eos-r6-v-vs-eos-r6-iii": {
-    "hash": "75048f18fa5c7a2a",
-    "lastmod": "2026-11-07"
+    "hash": "b65f0f8064adb783",
+    "lastmod": "2026-11-13"
   },
   "canon/vs/eos-r8-ii-vs-eos-r8": {
-    "hash": "c8e89f322564090c",
-    "lastmod": "2026-11-07"
+    "hash": "6bf69252d93d7db0",
+    "lastmod": "2026-11-13"
   },
   "canon/vs/eos-r8-vs-eos-r10": {
-    "hash": "d21332d1006fd9d3",
-    "lastmod": "2026-11-07"
+    "hash": "fd3adcbdd6e43f3c",
+    "lastmod": "2026-11-13"
   },
   "compare/": {
-    "hash": "0eb90c29b22f71ae",
+    "hash": "93157e5e5ff08a0a",
     "lastmod": "2026-11-13"
   },
   "fujifilm/": {
-    "hash": "164d2eaaef5306f7",
+    "hash": "0141c8725ad05ae9",
+    "lastmod": "2026-11-13"
+  },
+  "fujifilm/size/x-t30iii-vs-x-t30ii": {
+    "hash": "bb2c59c0bf362d66",
+    "lastmod": "2026-11-13"
+  },
+  "fujifilm/size/x-t50-vs-x100v": {
+    "hash": "570767ac197a829d",
     "lastmod": "2026-11-13"
   },
   "fujifilm/vs/x-t30iii-vs-x-t30ii": {
-    "hash": "44cb44fb1601c037",
-    "lastmod": "2026-10-21"
+    "hash": "85321311271c5db1",
+    "lastmod": "2026-11-13"
   },
   "fujifilm/vs/x-t50-vs-x100v": {
-    "hash": "4fffc9e5e405e215",
-    "lastmod": "2026-10-21"
+    "hash": "8987ebac84acadcd",
+    "lastmod": "2026-11-13"
   },
   "leica/": {
-    "hash": "fd5c19cc33112048",
+    "hash": "73b44553bb054a8e",
     "lastmod": "2026-11-13"
   },
   "nikon/": {
-    "hash": "33017ead4a80f992",
+    "hash": "c25207766eda2ca6",
+    "lastmod": "2026-11-13"
+  },
+  "nikon/size/z5-ii-vs-z5": {
+    "hash": "ec310dc1854b5703",
+    "lastmod": "2026-11-13"
+  },
+  "nikon/size/zr-vs-z5-ii": {
+    "hash": "224401146e06f0fd",
     "lastmod": "2026-11-13"
   },
   "nikon/vs/z5-ii-vs-z5": {
-    "hash": "e2caa7994f2647f0",
-    "lastmod": "2026-11-09"
+    "hash": "234a7408a3227ad7",
+    "lastmod": "2026-11-13"
   },
   "nikon/vs/zr-vs-z5-ii": {
-    "hash": "c5f269df655b7d8f",
-    "lastmod": "2026-10-21"
+    "hash": "9c637fcaf5538478",
+    "lastmod": "2026-11-13"
   },
   "olympus/": {
-    "hash": "bed9ee17be20d08e",
-    "lastmod": "2026-11-10"
+    "hash": "9ea1a759a6c54efb",
+    "lastmod": "2026-11-13"
+  },
+  "olympus/size/om-3-vs-om-1": {
+    "hash": "0e7dbc26b276ca22",
+    "lastmod": "2026-11-13"
+  },
+  "olympus/size/om-5-ii-vs-om-5": {
+    "hash": "5bf7db47da8f9065",
+    "lastmod": "2026-11-13"
   },
   "olympus/vs/om-3-vs-om-1": {
-    "hash": "146ae27eb5e1946b",
-    "lastmod": "2026-10-21"
+    "hash": "40c2c352e231e05c",
+    "lastmod": "2026-11-13"
   },
   "olympus/vs/om-5-ii-vs-om-5": {
-    "hash": "985bf801325bfc77",
-    "lastmod": "2026-10-21"
+    "hash": "95537533483b57b1",
+    "lastmod": "2026-11-13"
   },
   "panasonic/": {
-    "hash": "b9c832a6d4d475c6",
+    "hash": "57eeaf186d241aa2",
+    "lastmod": "2026-11-13"
+  },
+  "panasonic/size/g9-ii-vs-g9": {
+    "hash": "624e5a729dbf194e",
+    "lastmod": "2026-11-13"
+  },
+  "panasonic/size/g97-vs-g95": {
+    "hash": "9725fac6ae53ea09",
+    "lastmod": "2026-11-13"
+  },
+  "panasonic/size/gh7-vs-gh6": {
+    "hash": "8d86af5c7a36710d",
+    "lastmod": "2026-11-13"
+  },
+  "panasonic/size/l10-vs-s9": {
+    "hash": "4b7beca45609e747",
+    "lastmod": "2026-11-13"
+  },
+  "panasonic/size/s1-ii-vs-s1": {
+    "hash": "d73fdd9ca3535bf3",
+    "lastmod": "2026-11-13"
+  },
+  "panasonic/size/s1-ii-vs-s1h": {
+    "hash": "8a261ac4b4813162",
+    "lastmod": "2026-11-13"
+  },
+  "panasonic/size/s1r-ii-vs-s1-ii": {
+    "hash": "767a87fa53171923",
+    "lastmod": "2026-11-13"
+  },
+  "panasonic/size/s1r-ii-vs-s1h": {
+    "hash": "7f222417ee6dec5d",
+    "lastmod": "2026-11-13"
+  },
+  "panasonic/size/s1r-ii-vs-s1r": {
+    "hash": "37a0bbdfd9efa7b5",
+    "lastmod": "2026-11-13"
+  },
+  "panasonic/size/s5-iix-vs-s5-ii": {
+    "hash": "3ace22622834e361",
+    "lastmod": "2026-11-13"
+  },
+  "panasonic/size/s9-vs-g100d": {
+    "hash": "2297d9889b7d1193",
+    "lastmod": "2026-11-13"
+  },
+  "panasonic/size/s9-vs-g9-ii": {
+    "hash": "371f59da3420e77e",
+    "lastmod": "2026-11-13"
+  },
+  "panasonic/size/s9-vs-s5": {
+    "hash": "483b3af07e1963df",
     "lastmod": "2026-11-13"
   },
   "panasonic/vs/g9-ii-vs-g9": {
-    "hash": "9af830200df447bd",
-    "lastmod": "2026-10-21"
+    "hash": "5707c3a00470a62f",
+    "lastmod": "2026-11-13"
   },
   "panasonic/vs/g97-vs-g95": {
-    "hash": "e814119f6adbe725",
-    "lastmod": "2026-10-21"
+    "hash": "85cb8a02a40ea7fc",
+    "lastmod": "2026-11-13"
   },
   "panasonic/vs/gh7-vs-gh6": {
-    "hash": "ad6e3f69ac16c6a1",
-    "lastmod": "2026-10-21"
+    "hash": "8eabf59341766126",
+    "lastmod": "2026-11-13"
   },
   "panasonic/vs/l10-vs-s9": {
-    "hash": "f0e7de75897953aa",
-    "lastmod": "2026-10-21"
+    "hash": "0b9879d2c22a325b",
+    "lastmod": "2026-11-13"
   },
   "panasonic/vs/s1-ii-vs-s1": {
-    "hash": "96480621f6b59ca8",
-    "lastmod": "2026-10-21"
+    "hash": "d521fec3a843138e",
+    "lastmod": "2026-11-13"
   },
   "panasonic/vs/s1-ii-vs-s1h": {
-    "hash": "83500542f8611a64",
-    "lastmod": "2026-10-21"
+    "hash": "d504103bdbab57d8",
+    "lastmod": "2026-11-13"
   },
   "panasonic/vs/s1r-ii-vs-s1-ii": {
-    "hash": "1408abbf435df39b",
-    "lastmod": "2026-10-21"
+    "hash": "f6eb321c878ba7a6",
+    "lastmod": "2026-11-13"
   },
   "panasonic/vs/s1r-ii-vs-s1h": {
-    "hash": "3b3429081a65e3a4",
-    "lastmod": "2026-10-21"
+    "hash": "7e6e1cc4b2025774",
+    "lastmod": "2026-11-13"
   },
   "panasonic/vs/s1r-ii-vs-s1r": {
-    "hash": "20b23b00d75c21e4",
-    "lastmod": "2026-11-09"
+    "hash": "a5abdf4287f87646",
+    "lastmod": "2026-11-13"
   },
   "panasonic/vs/s5-iix-vs-s5-ii": {
-    "hash": "24dcb4c1dbc49d7c",
-    "lastmod": "2026-10-21"
+    "hash": "d0f7bf6dce837269",
+    "lastmod": "2026-11-13"
   },
   "panasonic/vs/s9-vs-g100d": {
-    "hash": "40a166caf6fdc9ce",
-    "lastmod": "2026-10-21"
+    "hash": "b31a28eefe73d36a",
+    "lastmod": "2026-11-13"
   },
   "panasonic/vs/s9-vs-g9-ii": {
-    "hash": "a7971fb794638996",
-    "lastmod": "2026-10-21"
+    "hash": "200d2aa4839f4608",
+    "lastmod": "2026-11-13"
   },
   "panasonic/vs/s9-vs-s5": {
-    "hash": "021298ef505fc60d",
-    "lastmod": "2026-10-21"
+    "hash": "3317d1b1663658b0",
+    "lastmod": "2026-11-13"
   },
   "privacy": {
-    "hash": "2478455dceff90bb",
+    "hash": "1163a411604d8489",
     "lastmod": "2026-11-13"
   },
   "sigma/": {
-    "hash": "5dfead94de0d7ca3",
+    "hash": "d9599dfba5d92982",
+    "lastmod": "2026-11-13"
+  },
+  "size/": {
+    "hash": "6a155e67156b0087",
+    "lastmod": "2026-11-13"
+  },
+  "size/canon-eos-r5-ii-vs-sony-a7r-v": {
+    "hash": "9039d75a98a50abe",
+    "lastmod": "2026-11-13"
+  },
+  "size/fujifilm-x-t50-vs-nikon-zfc": {
+    "hash": "353a54de953e568b",
+    "lastmod": "2026-11-13"
+  },
+  "size/nikon-z5-ii-vs-sony-a7c-ii": {
+    "hash": "27b557f962c9732a",
+    "lastmod": "2026-11-13"
+  },
+  "size/nikon-zf-vs-fujifilm-x-t5": {
+    "hash": "f84b5d62b1c71684",
+    "lastmod": "2026-11-13"
+  },
+  "size/nikon-zr-vs-sony-zv-e1": {
+    "hash": "7a5f0bb6d65ac4bc",
+    "lastmod": "2026-11-13"
+  },
+  "size/sony-a1-ii-vs-canon-eos-r1": {
+    "hash": "25c1d322aa4d630c",
+    "lastmod": "2026-11-13"
+  },
+  "size/sony-a1-ii-vs-canon-eos-r5-ii": {
+    "hash": "fefca58f54419bcf",
+    "lastmod": "2026-11-13"
+  },
+  "size/sony-a1-ii-vs-nikon-z9": {
+    "hash": "e2cb4cd8fc070837",
+    "lastmod": "2026-11-13"
+  },
+  "size/sony-a7-v-vs-nikon-z6-iii": {
+    "hash": "9b954ab46c52e2c9",
+    "lastmod": "2026-11-13"
+  },
+  "size/sony-a7r-vi-vs-canon-eos-r5-ii": {
+    "hash": "dd669d5dccd52c6e",
+    "lastmod": "2026-11-13"
+  },
+  "size/sony-zv-e10-ii-vs-fujifilm-x-m5": {
+    "hash": "82925b45386c9b72",
     "lastmod": "2026-11-13"
   },
   "sony/": {
-    "hash": "293b3dbc32e56c84",
+    "hash": "366501cc68be848d",
+    "lastmod": "2026-11-13"
+  },
+  "sony/size/a7-v-vs-a7-iv": {
+    "hash": "e2369e6d465cfda6",
+    "lastmod": "2026-11-13"
+  },
+  "sony/size/a7r-vi-vs-a7r-v": {
+    "hash": "d48a05f76d9ead57",
+    "lastmod": "2026-11-13"
+  },
+  "sony/size/fx2-vs-fx3": {
+    "hash": "044c3add93cad539",
+    "lastmod": "2026-11-13"
+  },
+  "sony/size/fx3-vs-a7s-iii": {
+    "hash": "bb947dfb1b12d876",
+    "lastmod": "2026-11-13"
+  },
+  "sony/size/fx5-vs-fx3": {
+    "hash": "2c829988353eb054",
     "lastmod": "2026-11-13"
   },
   "sony/vs/a7-v-vs-a7-iv": {
-    "hash": "204b13c39de4dc1c",
-    "lastmod": "2026-10-21"
+    "hash": "651d4d864f525513",
+    "lastmod": "2026-11-13"
   },
   "sony/vs/a7r-vi-vs-a7r-v": {
-    "hash": "31f5113d69247d53",
-    "lastmod": "2026-10-21"
+    "hash": "10d94ed2cf5ee510",
+    "lastmod": "2026-11-13"
   },
   "sony/vs/fx2-vs-fx3": {
-    "hash": "f1f0d3199b93db0c",
-    "lastmod": "2026-10-21"
+    "hash": "5fb3677864bda4e9",
+    "lastmod": "2026-11-13"
   },
   "sony/vs/fx3-vs-a7s-iii": {
-    "hash": "e18883d86d43fb01",
-    "lastmod": "2026-10-21"
+    "hash": "332c11e709bd8e69",
+    "lastmod": "2026-11-13"
   },
   "sony/vs/fx5-vs-fx3": {
-    "hash": "590600519f5d51ad",
-    "lastmod": "2026-11-09"
+    "hash": "fcf925353c5bd20b",
+    "lastmod": "2026-11-13"
   },
   "vs/canon-eos-r5-ii-vs-sony-a7r-v": {
-    "hash": "0b75cb8207091597",
-    "lastmod": "2026-11-07"
+    "hash": "c557e7ccd7ace37c",
+    "lastmod": "2026-11-13"
   },
   "vs/fujifilm-x-t50-vs-nikon-zfc": {
-    "hash": "7269323bfc29fa1d",
-    "lastmod": "2026-10-21"
+    "hash": "bc36b23a48e4e813",
+    "lastmod": "2026-11-13"
   },
   "vs/nikon-z5-ii-vs-sony-a7c-ii": {
-    "hash": "853e039f90533230",
-    "lastmod": "2026-10-21"
+    "hash": "ad68e15a0f9159fb",
+    "lastmod": "2026-11-13"
   },
   "vs/nikon-zf-vs-fujifilm-x-t5": {
-    "hash": "412ee63e9c18ca63",
-    "lastmod": "2026-10-21"
+    "hash": "b9e4a37f1d517090",
+    "lastmod": "2026-11-13"
   },
   "vs/nikon-zr-vs-sony-zv-e1": {
-    "hash": "98f57162b4c4961d",
-    "lastmod": "2026-10-21"
+    "hash": "1156577a9cf6f2b9",
+    "lastmod": "2026-11-13"
   },
   "vs/sony-a1-ii-vs-canon-eos-r1": {
-    "hash": "98823248813fc1ef",
-    "lastmod": "2026-11-07"
+    "hash": "dfd511239a9d953c",
+    "lastmod": "2026-11-13"
   },
   "vs/sony-a1-ii-vs-canon-eos-r5-ii": {
-    "hash": "0435512f1efd9655",
-    "lastmod": "2026-11-07"
+    "hash": "ddabab03f0885620",
+    "lastmod": "2026-11-13"
   },
   "vs/sony-a1-ii-vs-nikon-z9": {
-    "hash": "d905b3c0ce8f26df",
-    "lastmod": "2026-10-21"
+    "hash": "ddd2336156fac516",
+    "lastmod": "2026-11-13"
   },
   "vs/sony-a7-v-vs-nikon-z6-iii": {
-    "hash": "3842c7f72a9b0cf0",
-    "lastmod": "2026-10-21"
+    "hash": "bb270f574712e892",
+    "lastmod": "2026-11-13"
   },
   "vs/sony-a7r-vi-vs-canon-eos-r5-ii": {
-    "hash": "60f768075fe541bd",
-    "lastmod": "2026-11-07"
+    "hash": "a3092de378c71ea0",
+    "lastmod": "2026-11-13"
   },
   "vs/sony-zv-e10-ii-vs-fujifilm-x-m5": {
-    "hash": "9359088913934147",
-    "lastmod": "2026-10-21"
+    "hash": "4b10efec057b8acd",
+    "lastmod": "2026-11-13"
   }
 }

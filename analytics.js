@@ -20,6 +20,9 @@
 //   view-product:tool:<brand>:<slug>  view-product:vs:<brand>:<slug>
 //   camera-swap:<brand>:<slug>        lens-swap:<brand>:<slug>
 //   picker-pick:<brand|compare|home>:<search|browse>   (how it was found; never the typed text)
+//   size-view:<brand|compare|home|size|page>:<overlay|side>   (size.js: the drawing's layout switch)
+//   size-seen:<pathname>              (a size drawing entered the viewport)
+//   size-hub  size-to-interactive:<pair>  size-to-vs:<pair>  size-related:<pair>   (static links)
 //   quick-compare:<first|pair|reset>  (homepage: first camera picked, first two side by side, Reset pressed)
 //   mode-switch:<brand|compare>:<cameras|lenses>
 //   brand-switch:<from>:<to>          brand-pick:<brand|compare>
@@ -108,5 +111,42 @@
     var el = document.querySelector(SPEC_TABLE);
     if (el) watch(el);
     else addEventListener('load', function () { watch(document.querySelector(SPEC_TABLE)); });
+  }
+
+  // ── did a size drawing get seen ───────────────────────────────────
+  // Same idea for the to-scale drawing (size.js), which sits near the bottom
+  // of the table: once, when it first intersects the viewport. On tool pages
+  // the engine re-renders the table (and the drawing with it) on every change
+  // — and on the homepage there is no drawing until a camera is picked — so
+  // the table container is watched for the drawing to appear or be replaced.
+  if (typeof window.IntersectionObserver === 'function') {
+    var SIZE = '.size-diagram';
+    var sizeSeen = false, sizeIO = null, sizeNode = null;
+    var watchSize = function () {
+      if (sizeSeen) return;
+      var node = document.querySelector(SIZE);
+      if (!node || node === sizeNode) return;
+      if (sizeIO) sizeIO.disconnect();
+      sizeNode = node;
+      sizeIO = new IntersectionObserver(function (entries) {
+        if (sizeSeen) return;
+        for (var i = 0; i < entries.length; i++) {
+          if (!entries[i].isIntersecting) continue;
+          sizeSeen = true;
+          sizeIO.disconnect();
+          if (sizeMO) sizeMO.disconnect();
+          trackEvent('size-seen:' + page, 'Size seen: ' + page);
+          return;
+        }
+      });
+      sizeIO.observe(node);
+    };
+    var sizeMO = null;
+    var table = document.getElementById('compare-table');
+    if (table && typeof window.MutationObserver === 'function') {
+      sizeMO = new MutationObserver(watchSize);
+      sizeMO.observe(table, { childList: true });
+    }
+    watchSize();
   }
 })();
