@@ -1,9 +1,9 @@
 ## 1. Kit maths (`kit.js`)
 
-- [ ] 1.1 `kit.js`: lens catalogue (mount match, shared-mount de-duplication, browse groups), `takesLenses`, `sanitize`
-- [ ] 1.2 `priceView`, `totals`, `focalRange`, `filterSizes`, `verdict`
-- [ ] 1.3 `parseHash` / `formatHash`
-- [ ] 1.4 `tests/logic/kit.test.js` covering 1.1–1.3 against real brand data
+- [x] 1.1 `kit.js`: lens catalogue (mount match, shared-mount de-duplication, browse groups), `takesLenses`, `sanitize`
+- [x] 1.2 `priceView`, `totals`, `focalRange`, `filterSizes`, `verdict`
+- [x] 1.3 `parseHash` / `formatHash`
+- [x] 1.4 `tests/logic/kit.test.js` covering 1.1–1.3 against real brand data
 
 ## 2. The page
 
