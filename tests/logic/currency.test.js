@@ -92,6 +92,24 @@ test('price row: the cheapest still wins when every slot has a local price', () 
   assert.ok(!cells[0].winner && cells[1].winner, 'the lower EUR price is highlighted');
 });
 
+test('a pre-release lens with no price says the price is not announced', () => {
+  const { window, data } = loadBrand('sony', { engine: true });
+  clickMode(window, 'lenses');
+  const [a, b] = Object.keys(data.LENSES).filter(id => !data.LENSES[id].discontinued);
+  // Mutate the live registry objects the engine renders from: no brand
+  // necessarily ships a priceless pre-release lens at any given time.
+  const live = window.__BRAND__.LENSES;
+  live[a].preRelease = true;
+  for (const cur of Object.keys(live[a].prices)) live[a].prices[cur] = null;
+  live[b].preRelease = true;
+  setCurrency(window, 'AUD');
+  setSlot(window, 0, a);
+  setSlot(window, 1, b);
+  const text = i => window.document.querySelector(`#slot-${i} .slot-price`).textContent.replace(/\s+/g, ' ').trim();
+  assert.equal(text(0), 'Price not announced');
+  assert.doesNotMatch(text(1), /not announced/, 'a pre-release lens with a price still shows it');
+});
+
 test('discontinued item in a non-USD currency labels its launch price USD', () => {
   const { window, data } = loadBrand('fujifilm', { engine: true });
   const [id, cam] = Object.entries(data.CAMERAS).find(([, c]) => c.discontinued && c.prices.EUR == null && c.prices.USD != null);

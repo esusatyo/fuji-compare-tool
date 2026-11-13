@@ -117,6 +117,30 @@ test('an unrecognised currency key is rejected', () => {
   reports(validateCamera('bad-cur', bad, []), 'not a recognised currency');
 });
 
+// ── Pre-release items (announced, not on sale) ───────────────────────
+
+const NO_PRICE = { USD: null, AUD: null, EUR: null, GBP: null, JPY: null, CAD: null, SGD: null };
+
+test('a pre-release lens with no announced price is accepted', () => {
+  assert.deepEqual(validateLens('announced', lens({ preRelease: true, prices: NO_PRICE })), []);
+});
+
+test('a null USD price without the pre-release flag is rejected', () => {
+  reports(validateLens('unpriced', lens({ prices: NO_PRICE })), 'prices.USD');
+});
+
+test('a pre-release item with a regional price but no USD price is rejected', () => {
+  reports(validateLens('eur-only', lens({ preRelease: true, prices: { ...NO_PRICE, EUR: 999 } })), 'prices.EUR');
+});
+
+test('pre-release on a discontinued item is rejected', () => {
+  reports(validateLens('both', lens({ preRelease: true, discontinued: true })), 'preRelease');
+});
+
+test('a non-boolean pre-release flag is rejected', () => {
+  reports(validateCamera('str', camera({ preRelease: 'yes' }), []), 'preRelease');
+});
+
 // ── ASIN ─────────────────────────────────────────────────────────────
 
 test('a malformed ASIN is rejected', () => {

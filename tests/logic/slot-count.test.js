@@ -14,7 +14,8 @@ const assert = require('node:assert/strict');
 const { loadBrand, brandDirs } = require('../helpers/load-brand');
 
 const twoCameraDefaults = src =>
-  src.replace(/defaultSelected: \['bf', 'fp-l', 'fp'\]/, "defaultSelected: ['bf', 'fp-l']");
+  // First match is the cameras block (lenses come after); keep its first two.
+  src.replace(/defaultSelected: \['([^']+)', '([^']+)', '[^']+'\]/, "defaultSelected: ['$1', '$2']");
 
 test('[sigma] a two-default brand renders two slots and does not throw', () => {
   const { window, data } = loadBrand('sigma', { engine: true, patchData: twoCameraDefaults });

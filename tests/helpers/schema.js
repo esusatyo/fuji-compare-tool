@@ -56,11 +56,21 @@ const CURRENCIES = ['USD', 'AUD', 'EUR', 'GBP', 'JPY', 'CAD', 'SGD'];
  * A `null` currency value is allowed — it means "unavailable" (e.g. a
  * discontinued body, or a lens with no regional pricing). `requireAll`
  * (current cameras) additionally requires every currency to be non-null.
+ * A `preRelease: true` item (announced, not on sale) may have no price at
+ * all — `USD: null` with every other currency null too.
  */
 function checkPrices(obj, { requireAll = false } = {}) {
   const errs = [];
   const p = obj.prices;
   if (typeof p !== 'object' || p === null) return ['"prices" missing or not an object'];
+  if (obj.preRelease === true && p.USD === null) {
+    // Announced but not on sale, and the announcement gave no price: no
+    // regional price can exist without a USD one either.
+    for (const cur of CURRENCIES) {
+      if (p[cur] != null) errs.push(`"prices.${cur}" is set but "prices.USD" is null (pre-release items price USD first)`);
+    }
+    return errs;
+  }
   if (typeof p.USD !== 'number' || p.USD <= 0) errs.push('"prices.USD" must be a positive number');
   for (const cur of CURRENCIES) {
     const present = Object.prototype.hasOwnProperty.call(p, cur);
@@ -78,6 +88,20 @@ function checkPrices(obj, { requireAll = false } = {}) {
   for (const cur of Object.keys(p)) {
     if (!CURRENCIES.includes(cur)) errs.push(`"prices.${cur}" is not a recognised currency`);
   }
+  return errs;
+}
+
+/**
+ * Validate the optional `preRelease` flag: an item that is officially
+ * announced but not on sale yet. It relaxes the price rules (see checkPrices
+ * and the completeness tests), so it must be a real boolean and can't sit on
+ * a discontinued item. Remove it once the item ships.
+ */
+function checkPreRelease(obj) {
+  if (!Object.prototype.hasOwnProperty.call(obj, 'preRelease')) return [];
+  const errs = [];
+  if (typeof obj.preRelease !== 'boolean') errs.push(`"preRelease" must be a boolean, got ${JSON.stringify(obj.preRelease)}`);
+  if (obj.preRelease === true && obj.discontinued === true) errs.push('"preRelease" and "discontinued" cannot both be true');
   return errs;
 }
 
@@ -297,6 +321,7 @@ function validateCamera(id, cam, brandSections = [], mountIds = null) {
   // Prices: USD required & positive; other currencies may be null
   // (the UI falls back to the USD launch price for those).
   add(checkPrices(cam));
+  add(checkPreRelease(cam));
 
   // Brand-specific fields.
   if (brandSections.includes('fujifilm')) {
@@ -421,6 +446,7 @@ function validateLens(id, lens, mountIds = null) {
   add(checkSources(lens));
 
   add(checkPrices(lens));
+  add(checkPreRelease(lens));
 
   return e.map(m => `${id}: ${m}`);
 }
