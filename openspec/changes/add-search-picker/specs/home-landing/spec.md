@@ -19,6 +19,13 @@ The root page SHALL render the cross-brand camera comparison inside its own layo
 - **WHEN** a visitor at a desktop viewport chooses 4
 - **THEN** four slots show, and any not yet picked stay empty
 
+### Requirement: Homepage comparison can be reset
+Once at least one camera is picked, the root page SHALL show a "Reset" button below the spec table. Pressing it SHALL clear every slot, remove the table and the URL hash, keep the chosen slot count, and report `quick-compare:reset`. The button SHALL NOT appear while no camera is picked, nor on any other page.
+
+#### Scenario: Reset after comparing
+- **WHEN** a visitor with two cameras picked presses Reset
+- **THEN** both slots return to empty search fields, no table is shown, and the URL has no hash
+
 ### Requirement: Landing page searches a generated index and loads brand data on demand
 The root page SHALL NOT load any brand `data.js` in its HTML. `scripts/generate-seo.js` SHALL emit, in the page's generated block, an index of every brand's cameras (slug, name, year, discontinued) and the list of brand data files, both derived from the brand directories. The picker SHALL search this index before brand data is present. Brand data SHALL be fetched when a picker is first opened, when a camera is picked, or at load when the URL names cameras. While a picked camera's data is in flight its slot SHALL show the camera's name and a loading state; if the fetch fails the slot SHALL say so and offer a retry.
 

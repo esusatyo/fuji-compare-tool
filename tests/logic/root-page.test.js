@@ -56,3 +56,10 @@ test('[root] loads the engine after the generated block, and no brand data up fr
   assert.deepEqual(srcs.filter(s => /data\.js$/.test(s)), [],
     'brand files are fetched on demand by the engine, never by a tag in the page');
 });
+
+test('[root] page order: tool, then the brand cards, then the intro', () => {
+  const at = needle => { const i = html.indexOf(needle); assert.ok(i !== -1, `missing: ${needle}`); return i; };
+  const order = ['class="quick-compare"', '<h2>Compare a camera brand</h2>', 'class="landing-intro"', '<h2>My favourite pages</h2>'];
+  const pos = order.map(at);
+  assert.deepEqual(pos, [...pos].sort((a, b) => a - b), `expected order: ${order.join(' → ')}`);
+});

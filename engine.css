@@ -569,6 +569,21 @@ button.cam-image-wrap--empty:hover { border-color: var(--col-accent, var(--accen
 .quick-compare #compare-table { padding: 20px 16px 24px; }
 .quick-compare #compare-table:empty { display: none; }
 .spec-value--empty { background: none; }
+.embed-reset { display: flex; justify-content: center; padding: 0 16px 22px; }
+.embed-reset[hidden] { display: none; }
+.reset-btn {
+  padding: 6px 16px;
+  font: inherit;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-secondary);
+  background: var(--overlay-weak);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-pill);
+  cursor: pointer;
+  transition: all 0.15s;
+}
+.reset-btn:hover { color: var(--text-primary); background: var(--overlay-medium); border-color: var(--accent-primary); }
 
 
 .slot-price {

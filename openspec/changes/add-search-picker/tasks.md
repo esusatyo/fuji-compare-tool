@@ -32,6 +32,12 @@
 - [x] 3.1 `privacy.html` and the `analytics.js` grammar list the two new events.
 - [x] 3.2 `CLAUDE.md`, `add-camera-brand` skill (no `VALID_BRANDS` step), growth backlog status.
 
+## 3b. Owner adjustments (2026-11-13, after first review)
+
+- [x] 3b.1 Intro moved below the brand cards; heading "Choose a brand" → "Compare a camera brand".
+- [x] 3b.2 Homepage "Reset" button below the table: clears every slot, keeps the slot count,
+      cleans the URL; `quick-compare:reset` event; tests.
+
 ## 4. Verify and ship
 
 - [x] 4.1 Browser check on the local preview: homepage (search, pick, count, shared link),

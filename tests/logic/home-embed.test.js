@@ -207,6 +207,51 @@ test('currency and buy links work once a camera is in', () => {
   assert.match(slot.querySelector('.slot-buy').href, /^https:\/\/www\.amazon\.com\//);
 });
 
+// ── reset ───────────────────────────────────────────────────────────
+test('Reset is hidden until a camera is picked, and sits below the table', () => {
+  const home = loadHome();
+  const { window } = home;
+  const doc = window.document;
+  const wrap = doc.getElementById('embed-reset');
+  assert.equal(wrap.hidden, true);
+  assert.equal(doc.getElementById('reset-btn').textContent, 'Reset');
+  assert.equal(doc.getElementById('compare-table').nextElementSibling, wrap);
+  setSlot(window, 0, 'fujifilm:x-t5');
+  assert.equal(wrap.hidden, false);
+});
+
+test('Reset clears every slot, the table and the URL, and keeps the slot count', () => {
+  const home = loadHome();
+  const { window } = home;
+  const doc = window.document;
+  const calls = record(window);
+  press(chip(doc, 3));
+  setSlot(window, 0, 'fujifilm:x-t5');
+  home.deliverData();
+  setSlot(window, 2, 'sony:a7-iv');
+  calls.length = 0;
+
+  press(doc.getElementById('reset-btn'));
+  assert.deepEqual([0, 1, 2, 3].map(i => slotValue(window, i)), ['', '', '', '']);
+  assert.equal(rows(doc).length, 0);
+  assert.equal(window.location.hash, '');
+  assert.equal(visibleSlots(doc).length, 3, 'the chosen count survives');
+  assert.equal(doc.getElementById('embed-reset').hidden, true);
+  assert.equal(doc.getElementById('embed-tools').hidden, true);
+  assert.ok(doc.getElementById('compare-header').classList.contains('is-idle'));
+  assert.equal(doc.activeElement, slotPicker(window, 0), 'focus returns to the first search slot');
+  assert.deepEqual(calls, ['quick-compare:reset']);
+
+  // …and the tool is immediately usable again, with the data still in memory.
+  setSlot(window, 0, 'nikon:zf');
+  assert.ok(rows(doc).length > 20);
+  assert.equal(home.pendingData().length, 0);
+});
+
+test('other pages have no Reset', () => {
+  assert.equal(loadBrand('fujifilm', { engine: true }).window.document.getElementById('reset-btn'), null);
+});
+
 // ── shared links ────────────────────────────────────────────────────
 test('a shared link names its cameras at once and fills in when the data lands', () => {
   const home = loadHome({ hash: '#cameras=fujifilm:x-t5,sony:a7-iv,canon:eos-r6-iii' });

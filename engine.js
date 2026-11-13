@@ -865,7 +865,10 @@ function injectEmbed(mount) {
 <div id="compare-header" class="is-idle">
   ${compareGridHTML()}
 </div>
-<div id="compare-table"></div>`;
+<div id="compare-table"></div>
+<div class="embed-reset" id="embed-reset" hidden>
+  <button type="button" class="reset-btn" id="reset-btn">Reset</button>
+</div>`;
 }
 
 function buildCountChips() {
@@ -1660,6 +1663,8 @@ function renderTable() {
     const picked = cfg().selectedIds().slice(0, numSlots).filter(Boolean);
     const tools = document.getElementById('embed-tools');
     if (tools) tools.hidden = !picked.length;
+    const reset = document.getElementById('embed-reset');
+    if (reset) reset.hidden = !picked.length;
     const showing = picked.length > 0 && dataState === 'ready';
     // The slot row sticks to the top only while there is a table to scroll.
     document.getElementById('compare-header').classList.toggle('is-idle', !showing);
@@ -1878,6 +1883,18 @@ function attachEventListeners() {
   };
   document.getElementById('slot-count-slot')?.addEventListener('change', e => {
     if (e.target.id === 'slot-count-select') setSlotChoice(parseInt(e.target.value, 10));
+  });
+  // Homepage: back to the empty state — every slot cleared, the chosen slot
+  // count kept, the URL clean. Focus goes to the first search slot, which is
+  // also what scrolls the (now much shorter) page back up to the tool.
+  document.getElementById('reset-btn')?.addEventListener('click', () => {
+    closePicker(false);
+    selectedCameraIds = selectedCameraIds.map(() => null);
+    track('quick-compare:reset', 'Quick compare: reset');
+    updateHash();
+    renderAll();
+    const first = slotButton(0);
+    if (first) first.focus();
   });
   // Homepage: the same choice as visible buttons.
   document.getElementById('slot-count-chips')?.addEventListener('click', e => {

@@ -1621,6 +1621,12 @@ function rootBodyBlock(site, brands, crossSample = [], favourites = [], index = 
   </section>
   ${homeConfigScript(index)}
   <main class="landing">
+    <section>
+      <h2>Compare a camera brand</h2>
+      <ul class="brand-grid">
+${cards}
+      </ul>
+    </section>
     <section class="landing-intro">
       <p>Compare Camera Specs is a free tool for comparing mirrorless cameras and lenses
          side by side. Put up to four of them next to each other and see every spec — sensor,
@@ -1633,12 +1639,6 @@ function rootBodyBlock(site, brands, crossSample = [], favourites = [], index = 
       <p>Search for a camera above, or pick a brand below to browse its cameras and lenses.
          Happy browsing!</p>
       <p class="landing-intro-sig">Made in Sydney, Australia.</p>
-    </section>
-    <section>
-      <h2>Choose a brand</h2>
-      <ul class="brand-grid">
-${cards}
-      </ul>
     </section>
     <section>
       <h2>My favourite pages</h2>
