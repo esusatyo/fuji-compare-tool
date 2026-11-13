@@ -26,6 +26,8 @@
   --stripe: rgba(255,255,255,0.02);         /* table zebra striping */
   --win: #5ED391;            /* winning spec cell: text */
   --win-tint: color-mix(in srgb, var(--win) 14%, transparent); /* …and its background */
+  --size-c3: #F0A04B;        /* size drawing: third item (orange) */
+  --size-c4: #6FA8F5;        /* size drawing: fourth item (blue) */
   --header-h: 54px;
   --compare-h: 196px;
   --label-w: 190px;
@@ -63,6 +65,8 @@
   --stripe: rgba(0,0,0,0.02);
   --win: #1B7A4A;
   --win-tint: color-mix(in srgb, var(--win) 11%, transparent);
+  --size-c3: #D2638A;        /* rose: the light theme's second accent is already a sand/orange */
+  --size-c4: #3F7FD0;
 }
 
 /* `clip`, not `hidden`: `hidden` on body makes it a scroll container that
@@ -976,6 +980,149 @@ footer a:hover { text-decoration: underline; }
 /* Sensor text is the one long cell: let it wrap so the table fits the desktop column. */
 .seo-table td:nth-child(3) { white-space: normal; min-width: 14em; }
 
+/* ─── SIZE DIAGRAM (size.js) ───
+   Used by the tool's "Size" section, by vs-pages and by size pages. Each
+   outline is its own svg, as wide as its millimetres' share of the container
+   (see size.js), so every outline in a drawing shares one scale. */
+.size-diagram { padding: 18px 16px 20px; }
+.size-section .size-diagram { border-top: 1px solid var(--border); }
+.size-stage { container-type: inline-size; display: flex; justify-content: center; }
+.size-views {
+  --size-total: var(--size-total-wide);
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  justify-content: center;
+  gap: 18px 16px;
+  color: var(--text-secondary);
+}
+.size-fig {
+  margin: 0;
+  flex: 0 0 auto;
+  width: calc((100cqw - 56px) * var(--mm) / var(--size-total));
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+.size-fig svg { display: block; width: 100%; height: auto; overflow: visible; }
+.size-fig figcaption, .size-row-label {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--text-secondary);
+  white-space: nowrap;
+}
+.size-views--side { flex-direction: column; align-items: center; gap: 22px; }
+.size-row { width: 100%; display: flex; flex-direction: column; align-items: center; gap: 10px; }
+.size-row-figs { width: 100%; display: flex; align-items: flex-end; justify-content: center; gap: 16px; }
+
+/* Which layout shows: the visitor's choice, else by viewport (overlay from
+   600px, side by side below). Both are always in the markup. */
+.size-views--side { display: none; }
+.size-diagram[data-layout="side"] .size-views--overlay { display: none; }
+.size-diagram[data-layout="side"] .size-views--side { display: flex; }
+
+.size-layout {
+  display: flex;
+  width: fit-content;
+  margin: 0 auto 18px;
+  padding: 3px;
+  gap: 2px;
+  background: var(--overlay-weak);
+  border-radius: var(--radius-pill);
+}
+.size-layout-btn {
+  padding: 5px 14px;
+  font: inherit;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text-secondary);
+  background: none;
+  border: none;
+  border-radius: var(--radius-pill);
+  cursor: pointer;
+  transition: background 0.15s, color 0.15s;
+}
+.size-layout-btn:hover { color: var(--text-primary); }
+.size-diagram[data-layout="overlay"] .size-layout-btn[data-layout="overlay"],
+.size-diagram[data-layout="side"] .size-layout-btn[data-layout="side"] { background: var(--accent-primary); color: var(--bg-deep); }
+@media (min-width: 600px) {
+  .size-diagram[data-layout="auto"] .size-layout-btn[data-layout="overlay"] { background: var(--accent-primary); color: var(--bg-deep); }
+}
+
+.size-legend {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 6px 18px;
+  margin-top: 18px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+.size-legend li { display: inline-flex; align-items: center; gap: 7px; }
+.size-swatch { width: 14px; height: 10px; border: 2px solid currentColor; border-radius: 3px; flex-shrink: 0; }
+/* The legend as switches: a pressed name shows its outlines; press again to
+   hide them. A hidden item's name is struck through and its swatch hollowed. */
+.size-legend--toggles { gap: 8px 10px; }
+.size-legend-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 5px 12px;
+  font: inherit;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-primary);
+  background: var(--overlay-weak);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-pill);
+  cursor: pointer;
+  transition: background 0.15s, border-color 0.15s, opacity 0.15s;
+}
+.size-legend-btn:hover { background: var(--overlay-medium); border-color: var(--text-secondary); }
+.size-legend-btn[aria-pressed="true"] .size-swatch { background: color-mix(in srgb, currentColor 35%, transparent); }
+.size-legend-btn[aria-pressed="false"] { opacity: 0.55; text-decoration: line-through; background: none; }
+.size-diagram[data-hidden~="0"] .size-stage [data-item="0"],
+.size-diagram[data-hidden~="1"] .size-stage [data-item="1"],
+.size-diagram[data-hidden~="2"] .size-stage [data-item="2"],
+.size-diagram[data-hidden~="3"] .size-stage [data-item="3"] { display: none; }
+.size-sentence { margin: 16px auto 0; max-width: 62ch; text-align: center; font-size: 14px; color: var(--text-primary); }
+.size-table-wrap { margin-top: 18px; overflow-x: auto; }
+.size-table { width: 100%; border-collapse: collapse; font-size: 13px; }
+.size-table th, .size-table td { padding: 9px 10px; text-align: center; border-top: 1px solid var(--border); }
+.size-table thead th { border-top: none; font-weight: 700; color: var(--text-primary); }
+.size-table td { white-space: nowrap; }
+.size-table tbody th { text-align: left; font-weight: 500; color: var(--text-secondary); white-space: nowrap; }
+.size-table small { display: block; font-size: 11px; color: var(--text-secondary); font-weight: 400; }
+.size-diff { font-weight: 600; font-variant-numeric: tabular-nums; white-space: nowrap; }
+.size-note { margin: 14px auto 0; max-width: 70ch; text-align: center; font-size: 12px; line-height: 1.55; color: var(--text-secondary); }
+.size-more { margin-top: 12px; text-align: center; font-size: 14px; font-weight: 600; }
+.size-more a { color: var(--accent-primary); text-decoration: none; }
+.size-more a:hover { text-decoration: underline; }
+
+.size-hub-card {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: 18px 20px;
+  background: var(--bg-surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  text-decoration: none;
+  color: var(--text-primary);
+  transition: transform .12s ease, border-color .12s ease;
+}
+.size-hub-card:hover { transform: translateY(-2px); border-color: var(--accent-primary); }
+.size-hub-title { font-size: 19px; font-weight: 700; letter-spacing: -0.01em; }
+.size-hub-text { color: var(--text-secondary); font-size: 14px; }
+.size-hub-card .brand-go { margin-top: 6px; }
+
 /* ─── RESPONSIVE ─── */
 @media (max-width: 599px) {
   :root { --num-slots: 2; }
@@ -1016,6 +1163,16 @@ footer a:hover { text-decoration: underline; }
   .quick-compare { padding: 0 12px; margin-top: 18px; }
   .embed-bar { padding: 12px; }
   .quick-compare #compare-table { padding: 12px 8px 16px; }
+  /* Size drawing: side by side unless the visitor chose otherwise; the
+     overlay, when chosen, wraps its views instead of shrinking them. */
+  .size-views { --size-total: var(--size-total-narrow); }
+  .size-diagram[data-layout="auto"] .size-views--overlay { display: none; }
+  .size-diagram[data-layout="auto"] .size-views--side { display: flex; }
+  .size-diagram[data-layout="auto"] .size-layout-btn[data-layout="side"] { background: var(--accent-primary); color: var(--bg-deep); }
+  .size-diagram { padding: 14px 10px 16px; }
+  .size-table { font-size: 12px; }
+  .size-table th, .size-table td { padding: 8px 6px; }
+  .size-fig { width: calc((100cqw - 40px) * var(--mm) / var(--size-total)); }
   .compare-slot:nth-child(2) { border-left: none; }
   .spec-label { grid-column: 1 / -1; border-right: none; padding: 10px 12px 0; }
   .spec-value { padding-top: 6px; }

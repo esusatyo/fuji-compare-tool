@@ -86,6 +86,8 @@ function loadBrand(brand, opts = {}) {
   }
   run(window, dataSrc + `\n;window.__BRAND__ = window.BRAND_DATA[${JSON.stringify(brand)}];`);
   if (engine) {
+    // size.js precedes engine.js on every real page (the engine's Size section calls it).
+    run(window, fs.readFileSync(path.join(ROOT, 'size.js'), 'utf8'));
     const engineSrc = fs.readFileSync(path.join(ROOT, 'engine.js'), 'utf8');
     run(window, engineSrc + shimFor('__ENGINE__', ENGINE_GLOBALS));
   }

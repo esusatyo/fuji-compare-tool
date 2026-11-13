@@ -57,7 +57,8 @@ test('a section with nothing left is dropped; References always stays', () => {
   const { window } = loadCompare();
   const doc = window.document;
   toggle(window, true);
-  for (const sec of doc.querySelectorAll('.spec-section:not(.refs-section)')) {
+  // (The Size section is a drawing, not spec rows; the toggle leaves it alone.)
+  for (const sec of doc.querySelectorAll('.spec-section:not(.refs-section):not(.size-section)')) {
     assert.ok(sec.querySelectorAll('.spec-row').length > 0, `${sec.querySelector('.section-title').textContent} rendered empty`);
   }
   assert.ok(doc.querySelector('.refs-section .spec-row'), 'references are sources, not specs');
@@ -153,4 +154,13 @@ test('winning cells use one dedicated colour, defined for both themes', () => {
   assert.match(rule, /background:\s*var\(--win-tint\)/);
   assert.doesNotMatch(rule, /col-accent/, 'no longer the column\'s own accent');
   assert.equal((css.match(/^\s*--win:\s*#[0-9A-Fa-f]{6};/gm) || []).length, 2, 'one --win per theme block');
+});
+
+test('the size drawing is not a spec: the toggle never hides it', () => {
+  const { window } = loadCompare();
+  const doc = window.document;
+  toggle(window, true);
+  const size = doc.querySelector('#compare-table .size-section');
+  assert.ok(size && size.querySelector('.size-fig'));
+  assert.ok(size.nextElementSibling.classList.contains('refs-section'));
 });

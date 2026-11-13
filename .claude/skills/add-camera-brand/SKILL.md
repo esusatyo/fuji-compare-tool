@@ -90,7 +90,7 @@ The data tests auto-discover any directory with a `data.js`, so wire these
    for lens placeholder cards; `manufacturer` on each lens must match a key here).
 4. No homepage test to extend: `tests/logic/home-embed.test.js` checks that the generated
    search index and fetch list cover every brand directory, so a missing regeneration fails there.
-5. Add `<script src="../<slug>/data.js"></script>` to `compare/index.html`
+5. Add `<script src="../<slug>/data.js"></script>` to `compare/index.html` **and to `size/index.html`**
    (alongside the other brands, before `engine.js`) so the cross-brand compare
    page picks up the new brand's cameras.
 
@@ -209,7 +209,7 @@ group) and `npm run test:data`.
 - [ ] `engine.js` `MANUFACTURER_COLORS` has the brand
 - [ ] (optional) `engine.js` `SPEC_SECTIONS` brand section + `schema.js` branch
 - [ ] `npm test` green, including `tests/logic/home-embed.test.js` (index ↔ brand files)
-- [ ] `compare/index.html` loads `<brand>/data.js`
+- [ ] `compare/index.html` and `size/index.html` load `<brand>/data.js`
 - [ ] new items in `KNOWN_IMAGE_GAPS[<slug>]` until images land
 - [ ] `generate-seo.js` re-run; `sitemap-lastmod.json` + `sitemap.xml` committed
 - [ ] `npm test` green

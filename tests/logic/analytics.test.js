@@ -182,8 +182,8 @@ test('[theme] the footer toggle reports theme changes, not re-clicks', () => {
 });
 
 // ── analytics.js ────────────────────────────────────────────────────
-function loadAnalytics({ goatcounter = true, specTable = true } = {}) {
-  const body = specTable ? '<main id="compare-table"></main>' : '';
+function loadAnalytics({ goatcounter = true, specTable = true, body: custom = null } = {}) {
+  const body = custom !== null ? custom : specTable ? '<main id="compare-table"></main>' : '';
   const dom = new JSDOM(`<!DOCTYPE html><html><head></head><body>${body}</body></html>`, {
     runScripts: 'dangerously', url: 'https://example.test/fujifilm/', pretendToBeVisual: true,
   });
@@ -250,4 +250,21 @@ test('[analytics.js] without GoatCounter: trackEvent is a no-op, no timer, no ob
   assert.doesNotThrow(() => window.trackEvent('theme:dark'));
   assert.equal(timers.length, 0);
   assert.equal(observers.length, 0);
+});
+
+test('[analytics.js] size-seen fires once when a size drawing enters the viewport', () => {
+  const { sent, observers } = loadAnalytics({ body: '<main id="compare-table"><div class="size-diagram"></div></main>' });
+  const size = observers.find(o => o.node.classList.contains('size-diagram'));
+  assert.ok(size, 'expected the size drawing to be observed');
+  size.cb([{ isIntersecting: false }]);
+  assert.deepEqual(sent, []);
+  size.cb([{ isIntersecting: true }]);
+  size.cb([{ isIntersecting: true }]);
+  assert.deepEqual(sent.map(e => e.path), ['size-seen:/fujifilm/']);
+  assert.ok(size.disconnected);
+});
+
+test('[analytics.js] a static page\'s size drawing is watched too (no tool table needed)', () => {
+  const { observers } = loadAnalytics({ body: '<div class="vs-card"></div><div class="size-diagram"></div>' });
+  assert.ok(observers.some(o => o.node.classList.contains('size-diagram')));
 });

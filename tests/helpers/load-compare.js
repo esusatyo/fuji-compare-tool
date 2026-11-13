@@ -19,11 +19,12 @@ const NAV_NOT_IMPLEMENTED = /Not implemented: navigation/;
  * @param {string} [opts.hash='']   initial location hash
  * @param {number} [opts.width]     viewport width (default jsdom's 1024)
  * @param {object} [opts.config]    override window.COMPARE_CONFIG fields
+ * @param {string} [opts.page='compare']  the page directory to boot: 'compare', or 'size' (the same tool, size first)
  * @returns {{ window, engine, errors, dom }}
  */
 function loadCompare(opts = {}) {
-  const { hash = '', width, config } = opts;
-  const html = fs.readFileSync(path.join(ROOT, 'compare', 'index.html'), 'utf8');
+  const { hash = '', width, config, page = 'compare' } = opts;
+  const html = fs.readFileSync(path.join(ROOT, page, 'index.html'), 'utf8');
 
   const errors = [];
   const vc = new VirtualConsole();
@@ -31,7 +32,7 @@ function loadCompare(opts = {}) {
 
   const dom = new JSDOM(html, {
     runScripts: 'dangerously',
-    url: `https://example.test/compare/${hash}`,
+    url: `https://example.test/${page}/${hash}`,
     virtualConsole: vc,
     pretendToBeVisual: true,
   });
@@ -45,7 +46,7 @@ function loadCompare(opts = {}) {
   for (const tag of window.document.querySelectorAll('script[src]')) {
     const src = tag.getAttribute('src');
     if (!src.startsWith('../')) continue; // external (analytics) — skipped
-    const abs = path.join(ROOT, 'compare', src);
+    const abs = path.join(ROOT, page, src);
     const code = fs.readFileSync(abs, 'utf8');
     const isEngine = src.endsWith('engine.js') && !src.includes('data');
     const shim = isEngine
