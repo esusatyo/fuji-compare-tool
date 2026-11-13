@@ -20,6 +20,7 @@
 //   view-product:tool:<brand>:<slug>  view-product:vs:<brand>:<slug>
 //   camera-swap:<brand>:<slug>        lens-swap:<brand>:<slug>
 //   picker-pick:<brand|compare|home>:<search|browse>   (how it was found; never the typed text)
+//   diff-only:<brand|compare|home>:<on|off>   (the "Show differences only" toggle)
 //   quick-compare:<first|pair|reset>  (homepage: first camera picked, first two side by side, Reset pressed)
 //   mode-switch:<brand|compare>:<cameras|lenses>
 //   brand-switch:<from>:<to>          brand-pick:<brand|compare>

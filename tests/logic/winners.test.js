@@ -21,7 +21,8 @@ for (const brand of brandDirs()) {
     const spec = findSpec(engine.SPEC_SECTIONS, 'sensorMP');
     const vals = ids.map(id => data.CAMERAS[id].sensorMP);
     const max = Math.max(...vals);
-    const expected = vals.map(v => v === max);
+    // A dead heat across all three has no winner.
+    const expected = vals.every(v => v === max) ? vals.map(() => false) : vals.map(v => v === max);
 
     assert.deepEqual(Array.from(window.computeWinners(spec)), expected);
   });
@@ -34,7 +35,7 @@ for (const brand of brandDirs()) {
     const spec = findSpec(engine.SPEC_SECTIONS, 'weight');
     const vals = ids.map(id => data.CAMERAS[id].weight);
     const min = Math.min(...vals);
-    const expected = vals.map(v => v === min);
+    const expected = vals.every(v => v === min) ? vals.map(() => false) : vals.map(v => v === min);
 
     assert.deepEqual(Array.from(window.computeWinners(spec)), expected);
   });
@@ -50,23 +51,27 @@ for (const brand of brandDirs()) {
     assert.deepEqual(Array.from(window.computeWinners(boolSpec)), [false, false, false]);
   });
 
-  test(`[${brand}] ties produce multiple winners`, () => {
+  test(`[${brand}] a tie for best highlights each of the tied; a dead heat highlights none`, () => {
     const { window, engine, data } = loadBrand(brand, { engine: true });
-    const ids = Object.keys(data.CAMERAS);
-    // Same camera in slots 0 and 1 → identical sensorMP → both win.
-    setSlot(window, 0, ids[0]);
-    setSlot(window, 1, ids[0]);
-    setSlot(window, 2, ids[1]);
-
     const spec = findSpec(engine.SPEC_SECTIONS, 'sensorMP');
-    const winners = Array.from(window.computeWinners(spec));
-    const sameMP = data.CAMERAS[ids[0]].sensorMP >= data.CAMERAS[ids[1]].sensorMP;
-    if (sameMP) {
-      assert.equal(winners[0], true);
-      assert.equal(winners[1], true);
-    }
-    // The two identical slots must always agree.
-    assert.equal(winners[0], winners[1]);
+    const ids = Object.keys(data.CAMERAS);
+    const mp = id => data.CAMERAS[id].sensorMP;
+    // The same camera in slots 0 and 1 is a guaranteed tie; slot 2 holds one
+    // with fewer megapixels, so the tied pair is strictly ahead of something.
+    const top = ids.reduce((a, b) => (mp(b) > mp(a) ? b : a));
+    const lower = ids.find(id => mp(id) < mp(top));
+    assert.ok(lower, 'fixture: the brand needs two different sensor resolutions');
+    setSlot(window, 0, top);
+    setSlot(window, 1, top);
+    setSlot(window, 2, lower);
+    assert.deepEqual(Array.from(window.computeWinners(spec)), [true, true, false]);
+
+    // All three the same: nobody is ahead, so nothing is highlighted.
+    setSlot(window, 2, top);
+    assert.deepEqual(Array.from(window.computeWinners(spec)), [false, false, false]);
+    const row = [...window.document.querySelectorAll('.spec-row')]
+      .find(r => r.querySelector('.spec-label').textContent === spec.label);
+    assert.equal(row.querySelectorAll('.winner').length, 0);
   });
 
   test(`[${brand}] winner classes render in the table`, () => {

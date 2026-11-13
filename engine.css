@@ -24,6 +24,8 @@
   --overlay-weak: rgba(255,255,255,0.06);   /* subtle raised-surface wash (selects, mode toggle) */
   --overlay-medium: rgba(255,255,255,0.12); /* hover state of the above */
   --stripe: rgba(255,255,255,0.02);         /* table zebra striping */
+  --win: #5ED391;            /* winning spec cell: text */
+  --win-tint: color-mix(in srgb, var(--win) 14%, transparent); /* …and its background */
   --header-h: 54px;
   --compare-h: 196px;
   --label-w: 190px;
@@ -59,6 +61,8 @@
   --overlay-weak: rgba(0,0,0,0.04);
   --overlay-medium: rgba(0,0,0,0.08);
   --stripe: rgba(0,0,0,0.02);
+  --win: #1B7A4A;
+  --win-tint: color-mix(in srgb, var(--win) 11%, transparent);
 }
 
 /* `clip`, not `hidden`: `hidden` on body makes it a scroll container that
@@ -735,15 +739,37 @@ button.cam-image-wrap--empty:hover { border-color: var(--col-accent, var(--accen
   transition: background 0.12s;
 }
 
-/* Winner cell: subtle tint of the column's accent (handoff: accent/0.15
-   background + emphasized text). rgba fallback first, color-mix override
-   for engines that support it. */
+/* Winner cell: one "better" colour — green — in every column and both
+   themes, so it reads as a verdict. (It used to take the column's own accent,
+   purple or teal, which read as column identity rather than as a win.) */
 .spec-value.winner {
-  background: var(--col-accent-tint) !important;
-  background: color-mix(in srgb, var(--col-accent) 15%, transparent) !important;
-  color: var(--col-accent);
+  background: var(--win-tint) !important;
+  color: var(--win);
   font-weight: 700;
 }
+
+/* ─── DIFFERENCES-ONLY BAR ─── */
+.diff-bar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px 14px;
+  margin-bottom: 16px;
+  padding: 0 4px;
+  font-size: 13px;
+}
+.diff-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 600;
+  color: var(--text-primary);
+  cursor: pointer;
+  user-select: none;
+}
+.diff-toggle input { width: 16px; height: 16px; margin: 0; accent-color: var(--accent-primary); cursor: pointer; }
+.diff-count { color: var(--text-secondary); font-variant-numeric: tabular-nums; }
+.diff-none { margin: 0 4px 20px; color: var(--text-secondary); font-size: 14px; }
 
 .check { color: var(--accent-secondary); font-size: 15px; }
 .cross { color: var(--text-secondary); font-size: 15px; }
