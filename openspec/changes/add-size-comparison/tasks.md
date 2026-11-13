@@ -79,8 +79,9 @@
 - [x] 6.1 Browser check on the local preview (desktop Chrome, dark theme): `/size/`, a
       cross-brand size page in both layouts, a vs-page, the Sony lens page, the homepage card,
       and a 390px frame of a size page and `/size/`. **Not checked: the light theme.**
-- [ ] 6.2 `npm run test:links`.
-- [ ] 6.3 `openspec validate add-size-comparison --strict`; open the PR.
+- [x] 6.2 `npm run test:links`: one failure not from this change — 13 Canon `usa.canon.com/cameras/…`
+      product URLs answer 404 to the checker (Canon blocks command-line requests; unverified). Separate follow-up.
+- [x] 6.3 `openspec validate add-size-comparison --strict`; PR #91 opened.
 - [ ] 6.4 Owner: real-device check (phone layout of the drawing).
 - [ ] 6.5 After merge: verify live; **ask the owner before** requesting indexing in Search
       Console; archive the change; review Bing/Google "size" impressions and landings under
