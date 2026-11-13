@@ -126,6 +126,7 @@ Use this rather than `python3 -m http.server`: extensionless URLs need a server 
 
 - **Planning uses OpenSpec** (`openspec/changes/<name>/` with proposal/design/tasks/spec + research). `openspec validate <name> --strict` should pass; archive a change after its PR merges.
 - **Git**: branch off `main` for changes; one logical change per PR. Because `engine.js` (`MANUFACTURER_COLORS`) is shared, parallel brand branches will conflict there — resolve by taking the **union** of color entries.
+- **No stacked PRs.** Every PR targets `main`, never another PR's branch. Follow-up work on an open PR goes onto that PR's own branch; if the PR has already merged, branch fresh off `origin/main`. (PRs here are squash-merged and head branches aren't auto-deleted, so a PR stacked on another one never gets retargeted: #89 landed on #88's branch instead of `main` and had to be re-landed as #90.)
 - Keep changes minimal and match surrounding style (the data files are hand-formatted, aligned `const` object literals).
 
 ## Effort policy
