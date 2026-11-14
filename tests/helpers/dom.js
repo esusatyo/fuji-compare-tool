@@ -113,5 +113,5 @@ function selectBrand(window, slug) {
 module.exports = {
   setSlot, setCurrency, clickMode, selectBrand,
   slotPicker, slotValue, pickerOptions, openPicker, closePicker,
-  typeInPicker, pressInPicker, listedOptions, listedGroups,
+  typeInPicker, pressInPicker, listedOptions, listedGroups, click,
 };

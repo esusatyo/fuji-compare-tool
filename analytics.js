@@ -16,22 +16,24 @@
 // Event paths are `<event>:<detail>` (GoatCounter keeps one title per path, so
 // anything worth breaking down by has to live in the path). Search the
 // dashboard for the prefix to see a whole family:
-//   buy-click:tool:<brand>:<slug>     buy-click:vs:<brand>:<slug>
+//   buy-click:tool:<brand>:<slug>     buy-click:vs:<brand>:<slug>     buy-click:kit:<brand>:<slug>
 //   view-product:tool:<brand>:<slug>  view-product:vs:<brand>:<slug>
 //   camera-swap:<brand>:<slug>        lens-swap:<brand>:<slug>
-//   picker-pick:<brand|compare|home>:<search|browse>   (how it was found; never the typed text)
+//   picker-pick:<brand|compare|home|kit>:<search|browse>   (how it was found; never the typed text)
 //   diff-only:<brand|compare|home>:<on|off>   (the "Show differences only" toggle)
 //   size-view:<brand|compare|home|size|page>:<overlay|side>   (size.js: the drawing's layout switch)
 //   size-toggle:<page>:<hide|show>    (size.js: a legend name pressed to hide/show its outlines)
 //   size-seen:<pathname>              (a size drawing entered the viewport)
 //   size-hub  size-to-interactive:<pair>  size-to-vs:<pair>  size-related:<pair>   (static links)
+//   kit-body:<brand>:<slug>  kit-lens:<brand>:<slug>   (kit builder: a body picked, a lens added)
+//   kit-remove:<lens|kit>    kit-pair   kit-hub         (a lens removed or a kit cleared; both kits first filled; the homepage card)
 //   quick-compare:<first|pair|reset>  (homepage: first camera picked, first two side by side, Reset pressed)
 //   mode-switch:<brand|compare>:<cameras|lenses>
 //   brand-switch:<from>:<to>          brand-pick:<brand|compare>
 //   mount-filter:<brand>:<mount|all>  theme:<light|dark|system>
 //   currency:<CUR>                    spec-section:<id>:<open|close>
 //   vs-to-interactive:<brand|cross>:<pair>   vs-related:<brand|cross>:<pair>
-//   share-link:<brand|compare>:<cameras|lenses>:<native|copy>
+//   share-link:<brand|compare|kit>:<cameras|lenses|kit>:<native|copy>
 //   engaged-30s:<pathname>  engaged-120s:<pathname>  specs-seen:<pathname>
 (function () {
   // Cumulative visible-time marks, in order.
