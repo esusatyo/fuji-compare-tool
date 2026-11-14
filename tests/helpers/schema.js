@@ -292,6 +292,18 @@ function validateCamera(id, cam, brandSections = [], mountIds = null) {
   add(checkField(cam, 'faceDetection', { type: 'boolean' }));
   add(checkField(cam, 'subjectDetection', { type: 'string', nullable: true }));
   add(checkField(cam, 'maxBurst', { type: 'number', min: 0 }));
+  // Split burst (optional, being rolled out brand by brand via verify-specs):
+  // both keys together, each a number or null, an optional crop factor that
+  // only makes sense with an electronic rate, and `maxBurst` kept equal to the
+  // faster of the two so every legacy consumer still reads the top speed.
+  if ('maxBurstMech' in cam || 'maxBurstElec' in cam || 'maxBurstElecCrop' in cam) {
+    add(checkField(cam, 'maxBurstMech', { type: 'number', nullable: true, min: 0 }));
+    add(checkField(cam, 'maxBurstElec', { type: 'number', nullable: true, min: 0 }));
+    add(checkField(cam, 'maxBurstElecCrop', { type: 'number', nullable: true, required: false, min: 1, max: 3 }));
+    if (cam.maxBurstElecCrop != null && cam.maxBurstElec == null) e.push('"maxBurstElecCrop" set without "maxBurstElec"');
+    const top = Math.max(cam.maxBurstMech ?? 0, cam.maxBurstElec ?? 0);
+    if (top > 0 && cam.maxBurst !== top) e.push(`"maxBurst" (${cam.maxBurst}) should equal the faster split rate (${top})`);
+  }
 
   add(checkField(cam, 'ibis', { type: 'boolean' }));
   add(checkField(cam, 'ibisStops', { type: 'number', nullable: true, min: 0 }));

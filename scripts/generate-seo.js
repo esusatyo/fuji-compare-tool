@@ -245,7 +245,17 @@ const VS_ROWS = [
   ['Sensor', c => `${c.sensorMP} MP ${c.sensorType}`],
   ['Processor', c => c.processor],
   ['In-body stabilization', c => c.ibis ? `Yes${c.ibisStops ? ` (${c.ibisStops} stops)` : ''}` : 'No'],
-  ['Max burst', c => c.maxBurst == null ? null : `${c.maxBurst} fps`],
+  ['Max burst', c => {
+    // Split burst (see engine.js hasBurstSplit) reads "8 fps mechanical · 20 fps
+    // electronic (1.29× crop)"; legacy cameras keep the single figure.
+    if ('maxBurstMech' in c || 'maxBurstElec' in c) {
+      const parts = [];
+      if (c.maxBurstMech != null) parts.push(`${c.maxBurstMech} fps mechanical`);
+      if (c.maxBurstElec != null) parts.push(`${c.maxBurstElec} fps electronic${c.maxBurstElecCrop ? ` (${c.maxBurstElecCrop}× crop)` : ''}`);
+      return parts.length ? parts.join(' · ') : null;
+    }
+    return c.maxBurst == null ? null : `${c.maxBurst} fps`;
+  }],
   ['Max video', c => c.maxVideoRes],
   ['Weather sealed', c => c.weatherSealed ? 'Yes' : 'No'],
   ['Weight', c => c.weight == null ? null : `${c.weight} g`],
