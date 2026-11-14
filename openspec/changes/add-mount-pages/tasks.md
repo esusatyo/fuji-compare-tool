@@ -1,0 +1,17 @@
+## 1. Pages
+
+- [ ] 1.1 `generate-seo.js`: mount model (slug, name, bodies, lenses by maker) from brand data + `kit.js` catalogue
+- [ ] 1.2 Mount page and `/mount/` index templates; sitemap entries; stale-file removal for `mount/`
+- [ ] 1.3 `tests/data/mount-pages.test.js`; regenerate
+
+## 2. Links
+
+- [ ] 2.1 Homepage "Browse by lens mount" section after the brand cards; styles in `engine.css`
+- [ ] 2.2 Brand pages link their mount pages
+- [ ] 2.3 Analytics event grammar, `privacy.html`
+
+## 3. Docs and ship
+
+- [ ] 3.1 `CLAUDE.md`
+- [ ] 3.2 `npm test`, `npm run test:links`, `openspec validate add-mount-pages --strict`, screenshots
+- [ ] 3.3 PR
