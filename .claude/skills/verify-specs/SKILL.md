@@ -3,7 +3,7 @@ name: verify-specs
 description: Audit existing camera and lens specs for factual correctness against the maker's own published figures — weight, dimensions, sensor, EVF/LCD, IBIS, burst, video, weather sealing, optical formula, focus distance and the rest — and record a durable specSources citation for every item checked. Scope can be a camera brand, a lens maker across all brands (e.g. all Sigma lenses), a mount (e.g. L-mount), or just one or a few named items. Research first, report mismatches, apply only what the owner approves. Use when the user wants to check, verify, audit or fact-check specs, find wrong data, or add spec citations to uncited items.
 metadata:
   author: fuji-compare-tool
-  version: "1.0"
+  version: "1.1"
 ---
 
 Check that the specs already in the dataset are **true**, not just well-formed.
@@ -173,10 +173,11 @@ Fields in scope (everything factual and spec-like):
 | `lcdDots` | thousands of dots (`1840`) |
 | `evfDots` | millions of dots (`3.69`) |
 | `evfMag` | 35mm-equivalent magnification (`0.8`) |
-| `batteryLife` | CIPA shots |
+| `batteryLife` | CIPA shots — where the maker gives several modes, the **Normal** (not Economy) figure (owner rule 2026-11-14) |
+| burst | **Split** (owner rule 2026-11-14): `maxBurstMech` = top mechanical-shutter rate, `maxBurstElec` = top electronic rate *including* crop modes, `maxBurstElecCrop` = that rate's crop factor (omit if none), `maxBurst` = the faster of the two (schema-enforced). `null` = no such shutter / not published. Convert a camera to the split fields when you verify it; if the source is ambiguous for either rate, leave it on legacy `maxBurst` and list it |
 | `focalLengthEquiv` | native × crop (X/E APS-C/DX/TL 1.5, RF-S 1.6, MFT 2.0, FF 1.0); dual-fisheye lenses take no crop |
 | `year` | first shipping year **in this mount**, not the design's original launch |
-| `weatherSealed` | `true` **only** if the maker claims sealing/dust- and splash-resistance. A review calling it "robust", or a rear mount gasket alone, is `false`. Silence from the maker = `false` |
+| `weatherSealed` | `true` **only** if the maker claims sealing/dust- and splash-resistance. A review calling it "robust", or a rear mount gasket alone, is `false`. Silence from the maker = `false`. Weather resistance that needs an accessory (adapter ring + filter on X100VI/GFX100RF) = `false` (owner rule 2026-11-14) |
 | `afType` | the maker's own motor name (`VXD`, `HLD`, `Stepping Motor`, `Manual focus`) |
 
 **Unit traps:** convert from the maker's metric figure, never round-trip oz/in.
