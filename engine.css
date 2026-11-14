@@ -1315,3 +1315,6 @@ footer a:hover { text-decoration: underline; }
   .kit-total dd { text-align: left; }
   .kit-verdict { font-size: 15px; }
 }
+@media (max-width: 599px) {
+  .kit-add .slot-picker--empty { padding: 8px 9px; font-size: 12px; }
+}
