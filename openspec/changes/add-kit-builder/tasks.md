@@ -20,8 +20,8 @@
 
 ## 4. Analytics, privacy, docs
 
-- [ ] 4.1 Events + `analytics.js` grammar; `privacy.html`
-- [ ] 4.2 `CLAUDE.md`, `add-camera-brand` skill (add `data.js` to `kit/index.html`)
+- [x] 4.1 Events + `analytics.js` grammar; `privacy.html`
+- [x] 4.2 `CLAUDE.md`, `add-camera-brand` skill (add `data.js` to `kit/index.html`)
 
 ## 5. Verify and ship
 
