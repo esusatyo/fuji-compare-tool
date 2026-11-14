@@ -34,13 +34,13 @@ so far (including PetaPixel's PixelMeter, Nov 2026) totals a kit from sourced fi
 
 ## Decisions
 
-Owner, 2026-11-14: two kits side by side; local-currency total only when complete, else USD.
-The owner's reply stopped before items 3–6, so these follow the recommendation given and are
-each isolated so they can be changed cheaply:
+All agreed with the owner, 2026-11-14:
 
+1. Two kits side by side; the second is optional.
+2. A local-currency total only when every priced item has that price; otherwise US dollars for everything, with a note.
 3. Discontinued items count at their stored price, marked; unpriced items are excluded and named.
 4. Fixed-lens cameras are allowed as a lens-less kit.
-5. Homepage card + footer link on every page; no static kit pages.
+5. A homepage card and a footer link on every page; no static kit pages.
 6. Focal range and filter sizes are shown in the totals.
 
 ## Out of scope

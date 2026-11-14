@@ -26,5 +26,5 @@
 ## 5. Verify and ship
 
 - [ ] 5.1 `npm test`, `npm run test:links`, `openspec validate add-kit-builder --strict`
-- [ ] 5.2 Browser check (desktop, 390px frame, both themes)
+- [x] 5.2 Browser check (desktop, 390px frame, both themes) — headless Chrome screenshots; clicks covered by jsdom tests only
 - [ ] 5.3 PR; ask the owner for a real-device check
