@@ -8,10 +8,10 @@
 
 - [x] 2.1 Homepage "Browse by lens mount" section after the brand cards; styles in `engine.css`
 - [x] 2.2 Brand pages link their mount pages
-- [ ] 2.3 Analytics event grammar, `privacy.html`
+- [x] 2.3 Analytics event grammar, `privacy.html`
 
 ## 3. Docs and ship
 
-- [ ] 3.1 `CLAUDE.md`
+- [x] 3.1 `CLAUDE.md`
 - [ ] 3.2 `npm test`, `npm run test:links`, `openspec validate add-mount-pages --strict`, screenshots
 - [ ] 3.3 PR
