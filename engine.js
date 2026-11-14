@@ -24,6 +24,9 @@ const IS_COMPARE = !!COMPARE_CONFIG;
 // the picker searches a small generated name index (COMPARE_CONFIG.index)
 // in the meantime. See the HOMEPAGE EMBED section below.
 const IS_EMBED = IS_COMPARE && !!COMPARE_CONFIG.embed;
+// /kit/: the cross-brand page as a kit builder — a body plus lenses, totalled,
+// in place of the slot row and spec table. See the KIT BUILDER section below.
+const IS_KIT = IS_COMPARE && !!COMPARE_CONFIG.kit;
 const ACTIVE_BRAND = IS_COMPARE ? null : REGISTRY[Object.keys(REGISTRY)[0]];
 const MIN_SLOTS = 2;
 const MAX_SLOTS = 4;
@@ -50,6 +53,7 @@ function trackKey(id) {
 
 function trackPage() {
   if (IS_COMPARE && COMPARE_CONFIG.sizeFirst) return 'size';
+  if (IS_KIT) return 'kit';
   return IS_EMBED ? 'home' : IS_COMPARE ? 'compare' : BRAND_CONFIG.slug;
 }
 function brandDataOf(id) {
@@ -668,6 +672,10 @@ function parseHash(hash) {
 // its sender saw, not with others they never did. The hidden choices stay in
 // memory, so widening the window brings them (and their slugs) back.
 function updateHash() {
+  if (IS_KIT) {
+    history.replaceState(null, '', KitBuilder.formatHash(kits) || location.pathname + location.search);
+    return;
+  }
   // Empty slots (homepage only) are not items, so they are not in the link;
   // with nothing picked there is no selection to name and the URL goes clean.
   const shown = cfg().selectedIds().slice(0, numSlots).filter(Boolean);
@@ -765,7 +773,7 @@ function buildMountFilterHTML() {
 // sheet or a failed copy counts nothing.
 async function shareComparison() {
   const url = location.href;
-  const done = how => track(`share-link:${trackPage()}:${currentMode}:${how}`, `Share link (${how})`);
+  const done = how => track(`share-link:${trackPage()}:${IS_KIT ? 'kit' : currentMode}:${how}`, `Share link (${how})`);
   if (typeof navigator.share === 'function') {
     try {
       await navigator.share({ title: document.title, url });
@@ -782,7 +790,7 @@ async function shareComparison() {
     const label = document.getElementById('share-btn-label');
     label.textContent = 'Link copied';
     clearTimeout(shareComparison.reset);
-    shareComparison.reset = setTimeout(() => { label.textContent = 'Share this comparison'; }, 2000);
+    shareComparison.reset = setTimeout(() => { label.textContent = SHARE_LABEL; }, 2000);
   } catch (e) {
     const field = document.getElementById('share-url');
     field.value = url;
@@ -825,8 +833,9 @@ const CURRENCY_SELECT_HTML = `<select id="currency-select" class="header-select"
       <option value="SGD">SGD (S$)</option>
     </select>`;
 
+const SHARE_LABEL = IS_KIT ? 'Share these kits' : 'Share this comparison';
 const SHARE_HTML = `<div class="share">
-    <button type="button" class="share-btn" id="share-btn"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v13M7 8l5-5 5 5M5 13v6a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-6"/></svg><span id="share-btn-label">Share this comparison</span></button>
+    <button type="button" class="share-btn" id="share-btn"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v13M7 8l5-5 5 5M5 13v6a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-6"/></svg><span id="share-btn-label">${SHARE_LABEL}</span></button>
     <input class="share-url" id="share-url" type="text" readonly hidden aria-label="Link to this comparison">
   </div>`;
 
@@ -956,12 +965,12 @@ function injectBody() {
   ${SHARE_HTML}
 </div>
 
-<div id="compare-header">
+${IS_KIT ? `<main id="kit-app" class="kit-app"></main>` : `<div id="compare-header">
   ${buildMountFilterSlot()}
   ${compareGridHTML()}
 </div>
 
-<main id="compare-table"></main>
+<main id="compare-table"></main>`}
 
 <footer>
   <p>${BRAND_CONFIG.name} Camera ${IS_COMPARE ? '' : '&amp; Lens '}Comparison &mdash; For informational purposes only.</p>
@@ -970,6 +979,8 @@ function injectBody() {
   ${buildVerifiedLine()}
   <div id="affiliate-disclosure"></div>
   <p>
+    <a href="../kit/">Kit builder</a>
+    &middot;
     <a href="../about">About</a>
     &middot;
     <a href="../privacy">Privacy</a>
@@ -1069,7 +1080,7 @@ function withBrand(brand, name) {
 }
 
 function modeNoun(plural) {
-  const lens = currentMode === 'lenses';
+  const lens = IS_KIT ? kitSlot(pickerSlot).kind === 'lens' : currentMode === 'lenses';
   return plural ? (lens ? 'lenses' : 'cameras') : (lens ? 'lens' : 'camera');
 }
 
@@ -1096,6 +1107,9 @@ function buildPickerHTML(currentId, slotIndex) {
 // typed brand name matches against: the item's own brand on the compare page
 // and the homepage, the page's brand for cameras, the maker for lenses.
 function pickerEntries() {
+  // The kit builder's lens search lists what fits that kit's body; its body
+  // search is the ordinary cross-brand camera list below.
+  if (IS_KIT && kitSlot(pickerSlot).kind === 'lens') return kitLensEntries(kitSlot(pickerSlot).k);
   const fromIndex = IS_EMBED && dataState !== 'ready';
   const groups = fromIndex ? NAME_INDEX_GROUPS : cfg().dropdownGroups;
   const items = fromIndex ? NAME_INDEX : cfg().items;
@@ -1299,9 +1313,12 @@ function renderPickerList() {
 
   // As with the old <select>: an item showing in another slot can't be picked
   // twice, and only *visible* slots count.
-  const ids = cfg().selectedIds();
-  const current = ids[pickerSlot];
-  const taken = new Set(ids.filter((id, i) => id && i !== pickerSlot && i < numSlots));
+  // A kit may hold a lens once; a body can be in both kits (same camera,
+  // different lenses is a fair comparison).
+  const ids = IS_KIT ? [] : cfg().selectedIds();
+  const current = IS_KIT ? kitPickerCurrent() : ids[pickerSlot];
+  const taken = IS_KIT ? kitPickerTaken()
+    : new Set(ids.filter((id, i) => id && i !== pickerSlot && i < numSlots));
 
   let html = '';
   let group = null;
@@ -1360,6 +1377,13 @@ function choosePickerOption(index) {
   if (!entry || !el || el.getAttribute('aria-disabled') === 'true') return;
   const slotIndex = pickerSlot;
   const how = pickerSearching ? 'search' : 'browse';
+  if (IS_KIT) {
+    closePicker(false);
+    kitPick(slotIndex, entry.id, how);
+    const again = slotButton(slotIndex);
+    if (again) again.focus();
+    return;
+  }
   const unchanged = cfg().selectedIds()[slotIndex] === entry.id;
   closePicker(unchanged);
   if (unchanged) return;
@@ -1798,9 +1822,260 @@ function renderTable() {
 }
 
 // ─────────────────────────────────────────────
+// KIT BUILDER (/kit/ — COMPARE_CONFIG.kit)
+//
+// Two kits side by side, each one body plus up to KitBuilder.MAX_LENSES
+// lenses that fit its mount. kit.js owns the arithmetic and the URL grammar;
+// this section owns the state, the markup and the picker hooks. A picker slot
+// here is '<kit>:body' or '<kit>:lens' rather than a slot number.
+// ─────────────────────────────────────────────
+let kits = IS_KIT ? KitBuilder.parseHash('') : [];
+let kitCat = null;
+let kitPairSeen = false;
+
+function kitCatalogue() {
+  return kitCat || (kitCat = KitBuilder.catalogue(REGISTRY));
+}
+
+function kitSlot(key) {
+  const [k, kind] = String(key).split(':');
+  return { k: Number(k), kind };
+}
+
+// A kit's items as data objects: the body first, then its lenses.
+function kitItems(kit) {
+  const cat = kitCatalogue();
+  return kit.body ? [cat.cameras[kit.body], ...kit.lenses.map(id => cat.lenses[id])] : [];
+}
+
+function kitBodyName(id) {
+  return withBrand(brandNameOf(id), kitCatalogue().cameras[id].name);
+}
+
+function kitLensName(lens) {
+  return withBrand(lens.manufacturer, lens.name);
+}
+
+// What the lens search offers kit `k`: every lens of its body's mount, from
+// every brand file, the body's own brand first.
+function kitLensEntries(k) {
+  const cat = kitCatalogue();
+  const body = cat.cameras[kits[k].body];
+  const out = [];
+  if (!body) return out;
+  for (const grp of KitBuilder.lensGroups(cat, body.mount, brandOf(kits[k].body))) {
+    for (const id of grp.ids) {
+      const it = cat.lenses[id];
+      out.push({
+        id, group: grp.label, brand: it.manufacturer, name: it.name, year: it.year,
+        discontinued: !!it.discontinued, label: kitLensName(it),
+      });
+    }
+  }
+  return out;
+}
+
+function kitPickerCurrent() {
+  const { k, kind } = kitSlot(pickerSlot);
+  return kind === 'body' ? kits[k].body : null;
+}
+
+function kitPickerTaken() {
+  const { k, kind } = kitSlot(pickerSlot);
+  return new Set(kind === 'lens' ? kits[k].lenses : []);
+}
+
+// The one path every kit pick takes. A new body keeps the lenses that still
+// fit it (sanitize drops the rest).
+function kitPick(key, id, how) {
+  const { k, kind } = kitSlot(key);
+  const cat = kitCatalogue();
+  if (kind === 'body') {
+    if (kits[k].body === id || !cat.cameras[id]) return;
+    kits[k] = KitBuilder.sanitize({ body: id, lenses: kits[k].lenses }, cat);
+    track(`kit-body:${id}`, `Kit body: ${kitBodyName(id)}`);
+    if (!kitPairSeen && kits.every(kit => kit.body)) {
+      kitPairSeen = true;
+      track('kit-pair', 'Kit builder: two kits');
+    }
+  } else {
+    const kit = kits[k];
+    if (!kit.body || !cat.lenses[id] || kit.lenses.includes(id) || kit.lenses.length >= KitBuilder.MAX_LENSES) return;
+    kit.lenses.push(id);
+    track(`kit-lens:${id}`, `Kit lens: ${kitLensName(cat.lenses[id])}`);
+  }
+  track(`picker-pick:${trackPage()}:${how}`, `Picked by ${how}`);
+  updateHash();
+  renderAll();
+}
+
+function kitRemoveLens(k, index) {
+  if (!kits[k] || kits[k].lenses[index] === undefined) return;
+  kits[k].lenses.splice(index, 1);
+  track('kit-remove:lens', 'Kit builder: lens removed');
+  updateHash();
+  renderAll();
+  slotButton(`${k}:lens`)?.focus();
+}
+
+function kitClear(k) {
+  if (!kits[k] || !kits[k].body) return;
+  kits[k] = { body: null, lenses: [] };
+  track('kit-remove:kit', 'Kit builder: kit cleared');
+  updateHash();
+  renderAll();
+  slotButton(`${k}:body`)?.focus();
+}
+
+// "A", "A and B", "A, B and C" — each name once.
+function kitNameList(names) {
+  const list = [...new Set(names)].map(escHTML);
+  return list.length < 2 ? list.join('') : `${list.slice(0, -1).join(', ')} and ${list[list.length - 1]}`;
+}
+
+// An amount in the page's one price currency (see KitBuilder.priceView). US
+// dollars shown while another currency is selected are tagged, so a bare "$"
+// can't read as A$, C$ or S$.
+function kitMoney(amount, view) {
+  if (view.currency === 'USD' && currentCurrency !== 'USD') return `USD $${amount.toLocaleString('en-US')}`;
+  return formatPrice(amount, view.currency);
+}
+
+function kitPickerButton(key, id, label, placeholder) {
+  const attrs = `data-slot="${key}" data-value="${id || ''}" aria-haspopup="listbox" aria-expanded="${pickerSlot === key}"`;
+  return id
+    ? `<button type="button" class="slot-picker" ${attrs}><span class="slot-picker-label">${escHTML(label)}</span>${CHEVRON_ICON}</button>`
+    : `<button type="button" class="slot-picker slot-picker--empty" ${attrs}>${SEARCH_ICON}<span class="slot-picker-label">${placeholder}</span></button>`;
+}
+
+// One item's figures: weight, price in the page currency, a Buy link on the
+// selected currency's marketplace. `buyBrand` is the name an Amazon search
+// should lead with — the lens maker, not the brand file the entry came from.
+function kitMetaHTML(item, id, view, buyBrand, fullName) {
+  const priced = item.prices && item.prices.USD != null;
+  const price = priced ? kitMoney(item.prices[view.currency], view)
+    : (item.preRelease ? 'Price not announced' : 'Price unavailable');
+  return `<div class="kit-meta">
+        <span class="kit-weight">${item.weight.toLocaleString('en-US')} g</span>
+        <span class="kit-price${priced ? '' : ' kit-price--none'}">${price}</span>
+        ${item.discontinued ? '<span class="kit-tag">Discontinued</span>' : ''}
+        <a href="${amazonBuyUrl(item, currentCurrency, buyBrand)}" target="_blank" rel="noopener" class="kit-buy" data-kit-item="${escHTML(id)}" data-kit-name="${escHTML(fullName)}">Buy ↗</a>
+      </div>`;
+}
+
+function kitTotalsHTML(kit, items, sum, view, win) {
+  const lenses = items.slice(1);
+  const range = KitBuilder.focalRange(lenses);
+  const filters = KitBuilder.filterSizes(lenses);
+  const row = (label, value, cls = '') => `<div class="kit-total${cls}"><dt>${label}</dt><dd>${value}</dd></div>`;
+  const price = sum.price == null ? '—' : kitMoney(sum.price, view);
+  const left = sum.unpriced.length && sum.price != null
+    ? ` <small>excl. ${sum.unpriced.length} not priced</small>` : '';
+  return `<dl class="kit-totals">
+      ${row('Total weight', `${sum.weight.toLocaleString('en-US')} g <small>${KitBuilder.ounces(sum.weight)} oz</small>`, win.weight ? ' kit-win' : '')}
+      ${row('Total price', `${price}${left}`, win.price ? ' kit-win' : '')}
+      ${range ? row('Focal range', `${range.min === range.max ? range.min : `${range.min}–${range.max}`}mm <small>full-frame equivalent</small>`) : ''}
+      ${filters.length ? row(filters.length > 1 ? 'Filter sizes' : 'Filter size', `${filters.join(', ')} mm`) : ''}
+    </dl>`;
+}
+
+function kitColumnHTML(k, view, sum, win) {
+  const cat = kitCatalogue();
+  const kit = kits[k];
+  const cam = cat.cameras[kit.body];
+  const n = k + 1;
+  const title = `<h2 class="kit-title"><span class="kit-dot" aria-hidden="true"></span>Kit ${n}</h2>`;
+  if (!cam) {
+    return `<section class="kit-col kit-col--empty" data-kit="${k}" aria-label="Kit ${n}">
+    ${title}
+    <button type="button" class="cam-image-wrap cam-image-wrap--empty" data-slot="${k}:body" tabindex="-1" aria-hidden="true">+</button>
+    ${kitPickerButton(`${k}:body`, null, '', 'Search cameras…')}
+    <p class="kit-hint">${k === 0 ? 'Start with a camera body, then add its lenses.' : 'Optional: build a second kit to compare.'}</p>
+  </section>`;
+  }
+
+  const items = kitItems(kit);
+  const lensRows = kit.lenses.map((id, i) => {
+    const lens = cat.lenses[id];
+    const name = kitLensName(lens);
+    return `<li class="kit-lens">
+        <div class="kit-lens-name">${escHTML(name)}</div>
+        ${kitMetaHTML(lens, id, view, lens.manufacturer, name)}
+        <button type="button" class="kit-remove" data-kit="${k}" data-index="${i}" aria-label="Remove ${escHTML(name)} from kit ${n}">&times;</button>
+      </li>`;
+  }).join('\n      ');
+
+  let adder;
+  if (!KitBuilder.takesLenses(cam)) {
+    adder = `<p class="kit-hint">Built-in lens${cam.lensSpec ? `: ${escHTML(cam.lensSpec)}` : ''}. This camera takes no other lenses.</p>`;
+  } else if (!kitLensEntries(k).length) {
+    adder = `<p class="kit-hint">No ${escHTML(mountName(cam.mount))} lenses in our data yet.</p>`;
+  } else if (kit.lenses.length >= KitBuilder.MAX_LENSES) {
+    adder = `<p class="kit-hint">${KitBuilder.MAX_LENSES} lenses is the most a kit holds here. Remove one to add another.</p>`;
+  } else {
+    adder = kitPickerButton(`${k}:lens`, null, '', kit.lenses.length ? 'Add another lens…' : 'Add a lens…');
+  }
+
+  const bodyName = kitBodyName(kit.body);
+  return `<section class="kit-col" data-kit="${k}" aria-label="Kit ${n}">
+    ${title}
+    <div class="kit-body">
+      <div class="cam-image-wrap">${buildPlaceholder(cam, kit.body)}</div>
+      ${kitPickerButton(`${k}:body`, kit.body, `${bodyName} (${cam.year})`, '')}
+      ${kitMetaHTML(cam, kit.body, view, brandNameOf(kit.body), bodyName)}
+    </div>
+    ${lensRows ? `<ul class="kit-lenses" aria-label="Lenses in kit ${n}">
+      ${lensRows}
+    </ul>` : ''}
+    <div class="kit-add">${adder}</div>
+    ${kitTotalsHTML(kit, items, sum, view, win)}
+    <button type="button" class="kit-clear" data-kit="${k}">Clear kit ${n}</button>
+  </section>`;
+}
+
+function renderKit() {
+  const app = document.getElementById('kit-app');
+  if (!app) return;
+  const itemsByKit = kits.map(kitItems);
+  const all = itemsByKit.flat();
+  const view = KitBuilder.priceView(all, currentCurrency);
+  const sums = itemsByKit.map(items => KitBuilder.totals(items, view.currency));
+  const both = kits.every(kit => kit.body);
+  const verdict = both ? KitBuilder.verdict(sums[0], sums[1], amount => kitMoney(amount, view)) : null;
+  const win = k => ({
+    weight: !!verdict && verdict.weightWinner === k,
+    price: !!verdict && verdict.priceWinner === k,
+  });
+
+  const notes = [];
+  if (view.fallback) {
+    notes.push(`No ${currentCurrency} list price is published for ${kitNameList(view.missing)}, so every price here is in US dollars.`);
+  }
+  const unpriced = sums.flatMap(s => s.unpriced);
+  if (unpriced.length) {
+    notes.push(`${kitNameList(unpriced)} ${new Set(unpriced).size > 1 ? 'have' : 'has'} no announced price and ${new Set(unpriced).size > 1 ? 'are' : 'is'} left out of the total.`);
+  }
+  const gone = sums.flatMap(s => s.discontinued);
+  if (gone.length) {
+    notes.push(`${kitNameList(gone)} ${new Set(gone).size > 1 ? 'are' : 'is'} discontinued: the price counted is the list price we hold, and you may only find ${new Set(gone).size > 1 ? 'them' : 'it'} used.`);
+  }
+  if (all.length) {
+    notes.push('Totals add up each item’s list price (RRP); retail bundles are often cheaper. Weights are the makers’ stated figures, and a camera’s normally includes its battery and card.');
+  }
+
+  app.innerHTML = `
+<div class="kit-grid">
+  ${kits.map((_, k) => kitColumnHTML(k, view, sums[k], win(k))).join('\n  ')}
+</div>
+${verdict ? `<p class="kit-verdict" id="kit-verdict" role="status">${escHTML(verdict.text)}</p>` : ''}
+${notes.length ? `<div class="kit-notes" id="kit-notes">${notes.map(n => `<p>${n}</p>`).join('')}</div>` : ''}`;
+}
+
+// ─────────────────────────────────────────────
 // FULL RE-RENDER
 // ─────────────────────────────────────────────
 function renderAll() {
+  if (IS_KIT) { renderKit(); return; }
   document.documentElement.style.setProperty('--num-slots', numSlots);
 
   const filterSlot = document.getElementById('mount-filter-slot');
@@ -1915,6 +2190,38 @@ function attachEventListeners() {
     e.preventDefault();
     openPicker(Number(btn.dataset.slot));
   });
+  // Kit builder: the same picker, opened by a kit's body or "Add a lens"
+  // button; plus its own remove, clear and Buy controls. All delegated — the
+  // whole kit area is re-rendered on every change.
+  const kitApp = document.getElementById('kit-app');
+  if (kitApp) {
+    kitApp.addEventListener('click', e => {
+      const opener = e.target.closest('.slot-picker, .cam-image-wrap--empty');
+      if (opener) {
+        const key = opener.dataset.slot;
+        if (pickerSlot === key) closePicker(true); else openPicker(key);
+        return;
+      }
+      const remove = e.target.closest('.kit-remove');
+      if (remove) { kitRemoveLens(Number(remove.dataset.kit), Number(remove.dataset.index)); return; }
+      const clear = e.target.closest('.kit-clear');
+      if (clear) kitClear(Number(clear.dataset.kit));
+    });
+    kitApp.addEventListener('keydown', e => {
+      const btn = e.target.closest && e.target.closest('.slot-picker');
+      if (!btn || (e.key !== 'ArrowDown' && e.key !== 'ArrowUp')) return;
+      e.preventDefault();
+      openPicker(btn.dataset.slot);
+    });
+    const onKitBuy = e => {
+      if (e.type === 'auxclick' && e.button !== 1) return;
+      const link = e.target.closest('a.kit-buy');
+      if (link) track(`buy-click:kit:${link.dataset.kitItem}`, `Buy: ${link.dataset.kitName}`);
+    };
+    kitApp.addEventListener('click', onKitBuy);
+    kitApp.addEventListener('auxclick', onKitBuy);
+  }
+
   // A press anywhere outside the open picker dismisses it.
   document.addEventListener('pointerdown', e => {
     if (pickerSlot === null) return;
@@ -2075,6 +2382,15 @@ function attachEventListeners() {
     if (initial.mode === 'cameras') selectedCameraIds = initial.ids;
     else selectedLensIds = initial.ids;
     slotChoice = initial.count;
+  }
+
+  // Kit builder: restore both kits from the link, keeping only what the data
+  // holds and what fits (see KitBuilder.sanitize). A link that named anything
+  // else is rewritten to what is on screen.
+  if (IS_KIT) {
+    kits = KitBuilder.parseHash(location.hash).map(kit => KitBuilder.sanitize(kit, kitCatalogue()));
+    kitPairSeen = kits.every(kit => kit.body);
+    if (location.hash.includes('=') && KitBuilder.formatHash(kits) !== location.hash) updateHash();
   }
 
   numSlots = getNumSlots();
