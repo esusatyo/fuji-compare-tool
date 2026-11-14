@@ -1304,6 +1304,45 @@ footer a:hover { text-decoration: underline; }
 /* Read by screen readers only: the verdict in words, not colour alone. */
 .key-sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
 
+/* ─── LENS MOUNTS ───
+   Homepage "Browse by lens mount" links and /mount/ (.mount-grid), and the
+   generated mount pages (tables reuse .seo-table). */
+.mount-grid { list-style: none; display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 10px; padding: 0; margin: 0; }
+.mount-card {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  height: 100%;
+  padding: 12px 14px;
+  background: var(--bg-surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  color: var(--text-primary);
+  text-decoration: none;
+  transition: transform .12s ease, border-color .12s ease;
+}
+.mount-card:hover { transform: translateY(-2px); border-color: var(--accent-primary); }
+.seo-links .mount-card:hover { text-decoration: none; }
+.mount-card-name { font-size: 16px; font-weight: 700; letter-spacing: -0.01em; color: var(--text-primary); }
+.mount-card-brands { font-size: 13px; color: var(--text-secondary); }
+.mount-card-count { font-size: 12px; color: var(--text-secondary); font-variant-numeric: tabular-nums; }
+.mount-main { padding-top: 24px; }
+.mount-main h2 { margin-top: 24px; }
+.mount-main h3 { margin: 22px 0 8px; font-size: 15px; color: var(--text-primary); scroll-margin-top: 16px; }
+.mount-count { margin-left: 6px; font-size: 12px; font-weight: 500; color: var(--text-secondary); }
+.mount-links { display: flex; flex-wrap: wrap; gap: 4px 20px; font-weight: 600; }
+.mount-jump { line-height: 1.9; }
+.mount-disc {
+  margin-left: 6px;
+  padding: 1px 6px;
+  border-radius: 999px;
+  background: var(--overlay-medium);
+  color: var(--text-secondary);
+  font-size: 10px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
 /* ─── RESPONSIVE ─── */
 @media (max-width: 599px) {
   :root { --num-slots: 2; }
