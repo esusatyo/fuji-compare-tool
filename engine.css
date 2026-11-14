@@ -1122,9 +1122,6 @@ footer a:hover { text-decoration: underline; }
 .size-hub-title { font-size: 19px; font-weight: 700; letter-spacing: -0.01em; }
 .size-hub-text { color: var(--text-secondary); font-size: 14px; }
 .size-hub-card .brand-go { margin-top: 6px; }
-/* The homepage's tool cards (size comparison, kit builder) side by side. */
-.hub-cards { display: grid; gap: 16px; }
-@media (min-width: 600px) { .hub-cards { grid-template-columns: 1fr 1fr; } }
 
 /* ─── KIT BUILDER (/kit/) ───
    Two kits side by side at every width, as cards: body, lens rows, "Add a

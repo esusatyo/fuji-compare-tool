@@ -733,6 +733,8 @@ ${referenceRowsHTML(ea.item, eb.item)}
 ${p.footerLinks.map(l => `      <a href="${l.href}">${l.label}</a>\n      &middot;`).join('\n')}
       <a href="${p.prefix}size/">Camera size comparison</a>
       &middot;
+      <a href="${p.prefix}kit/">Kit builder</a>
+      &middot;
       <a href="${p.prefix}about">About</a>
       &middot;
       <a href="${p.prefix}privacy">Privacy</a>
@@ -836,6 +838,36 @@ ${lists}
   ${SEO_BODY_END}`;
 }
 
+// ─── /kit/ page blocks ───────────────────────
+const KIT_TITLE = 'Camera Kit Builder: Total Weight and Price of a Body and Lenses';
+
+function kitHeadBlock(site, brandNames, nCams, nLenses, card = null) {
+  return metaBlock(
+    site,
+    `${site.baseUrl}/kit/`,
+    'Camera Kit Builder',
+    `Build a camera kit from ${nCams} mirrorless bodies and ${nLenses.toLocaleString('en-US')} lenses from ${brandNames.join(', ')}: pick a body, add the lenses that fit its mount, and see the total weight and list price — or compare two kits side by side.`,
+    '../',
+    card
+  );
+}
+
+// Crawlable block for kit/index.html: what the page does, in words, and links
+// to each brand's own pages. `brands` is [{ slug, name }].
+function kitBodyBlock(brands) {
+  return `${SEO_BODY_BEGIN}
+  <section class="seo-links" aria-label="About the kit builder">
+    <h2>How the kit builder works</h2>
+    <p>Choose a camera body from ${esc(prose(brands.map(b => b.name)))}, then add up to six lenses. Only lenses for that body's mount are offered, including third-party lenses and, on shared mounts such as L-Mount and Micro Four Thirds, lenses from the other brands that use it. The kit builder adds up the weight and the list price of the body and its lenses, shows the focal range they cover and the filter sizes they take, and can put a second kit beside the first to compare.</p>
+    <p>Totals are sums of each item's manufacturer list price; when an item has no list price in your currency, every price is shown in US dollars rather than mixing currencies.</p>
+    <h3>Cameras and lenses by brand</h3>
+    <ul>
+${brands.map(b => `      <li><a href="../${b.slug}/">${esc(b.name)} cameras and lenses</a></li>`).join('\n')}
+    </ul>
+  </section>
+  ${SEO_BODY_END}`;
+}
+
 function vsPageHTML(brand, data, site, aId, bId, allPairs, indexable = true, card = null, sizeHref = null) {
   const cams = data.CAMERAS;
   const brandName = data.BRAND_CONFIG.name;
@@ -935,6 +967,8 @@ ${referenceRowsHTML(a, b)}
     <div id="affiliate-disclosure"></div>
     <p>
       <a href="../">All ${esc(brandName)} cameras &amp; lenses</a>
+      &middot;
+      <a href="../../kit/">Kit builder</a>
       &middot;
       <a href="../../about">About</a>
       &middot;
@@ -1231,6 +1265,8 @@ ${referenceRowsHTML(a.cam, b.cam)}
       <a href="../${a.brand}/">All ${esc(a.brandName)} cameras</a>
       &middot;
       <a href="../${b.brand}/">All ${esc(b.brandName)} cameras</a>
+      &middot;
+      <a href="../kit/">Kit builder</a>
       &middot;
       <a href="../about">About</a>
       &middot;
@@ -1850,6 +1886,14 @@ ${cards}
         <span class="brand-go">Compare sizes &rarr;</span>
       </a>
     </section>
+    <section>
+      <h2>Build a camera kit</h2>
+      <a class="size-hub-card" href="./kit/" data-goatcounter-click="kit-hub" data-goatcounter-title="Kit builder page">
+        <span class="size-hub-title">Camera kit builder</span>
+        <span class="size-hub-text">Add up the weight and price of a body and its lenses, and compare two kits side by side.</span>
+        <span class="brand-go">Build a kit &rarr;</span>
+      </a>
+    </section>
     <section class="landing-intro">
       <p>Compare Camera Specs is a free tool for comparing mirrorless cameras and lenses
          side by side. Put up to four of them next to each other and see every spec — sensor,
@@ -1883,6 +1927,8 @@ ${cluster}
     <p>Specs &amp; prices last verified: ${esc(site.dataVerified)}</p>
     <div id="affiliate-disclosure"></div>
     <p>
+      <a href="./kit/">Kit builder</a>
+      &middot;
       <a href="./about">About</a>
       &middot;
       <a href="./privacy">Privacy</a>
@@ -2188,7 +2234,7 @@ function buildSite({ today = new Date().toISOString().slice(0, 10) } = {}) {
   }
 
   // Cross-brand: the /compare/ page plus the curated root vs/ cluster.
-  sitemapPaths.push('compare/', 'size/');
+  sitemapPaths.push('compare/', 'size/', 'kit/');
   const crossHasSizePage = x => pins.files.has(x.file);
   const crossSizeLinks = [];
   for (const m of matchups) {
@@ -2219,6 +2265,14 @@ function buildSite({ today = new Date().toISOString().slice(0, 10) } = {}) {
   files.set(hub, hubHtml);
 
   const totalLenses = uniqueItemCount(brandData, 'LENSES');
+
+  // The kit builder: the same engine in kit mode. It shares the compare page's
+  // share card.
+  const kitPage = path.join('kit', 'index.html');
+  let kitHtml = fs.readFileSync(path.join(ROOT, kitPage), 'utf8');
+  kitHtml = withHeadBlock(kitHtml, kitHeadBlock(site, brandNames, totalCams, totalLenses, compareShareCard(brandNames, totalCams)), kitPage);
+  kitHtml = withBodyBlock(kitHtml, kitBodyBlock(brandInfo.map(b => ({ slug: b.slug, name: b.name }))), kitPage);
+  files.set(kitPage, kitHtml);
   const homeCard = addCard(homeShareCard(brandNames, totalCams, totalLenses));
 
   sitemapPaths.push('about.html', 'privacy.html');
@@ -2277,4 +2331,4 @@ if (require.main === module) {
   console.log(`generate-seo: ${files.size} artifacts (${written} written, ${removed} stale removed)`);
 }
 
-module.exports = { ROOT_TITLE, sizeEntries, vsSizeSectionHTML, sizePageHTML, crossSizePageHTML, sizeHubHeadBlock, sizeHubBodyBlock, SIZE_HUB_TITLE, cameraIndex, homeConfigScript, buildSite, GLANCE_COLS, sizeText, brandGlanceHTML, uniqueItemCount, cardHash, lastmodManifest, sitemapHashes, LASTMOD_MANIFEST, vsCardHTML, infoCardHTML, shareTags, CARD_W, CARD_H, LANDING_CARD_ORDER, ALL_BRANDS_MOSAIC, orderLandingBrands, allBrandsPhotoHTML, siteConfig, curatedPairs, successorPairKeys, resolvePins, withPins, PINNED_VS_PAIRS, SUCCESSOR_INDEX_SINCE, relatedPairs, vsPageHTML, vsSummary, vsSummaryFacts, resolveMatchups, crossVsPageHTML, crossTitle, CROSS_BRAND_MATCHUPS, compareHeadBlock, compareBodyBlock, brandHeadBlock, rootHeadBlock, brandBodyBlock, rootBodyBlock, withHeadBlock, withBodyBlock, sitemapXML, robotsTxt, buildAll, SEO_BEGIN, SEO_END, SEO_BODY_BEGIN, SEO_BODY_END, ID_HEAD_BEGIN, ID_HEAD_END, ID_HEADER_BEGIN, ID_HEADER_END, ID_FOOTER_BEGIN, ID_FOOTER_END, identityToken, logoMark, cleanUrl, cleanHref, themeToggleHTML, collectReferences, citationText, refHostname, REFERENCE_ROWS, referenceRowsHTML };
+module.exports = { ROOT_TITLE, sizeEntries, vsSizeSectionHTML, sizePageHTML, crossSizePageHTML, sizeHubHeadBlock, sizeHubBodyBlock, SIZE_HUB_TITLE, kitHeadBlock, kitBodyBlock, KIT_TITLE, cameraIndex, homeConfigScript, buildSite, GLANCE_COLS, sizeText, brandGlanceHTML, uniqueItemCount, cardHash, lastmodManifest, sitemapHashes, LASTMOD_MANIFEST, vsCardHTML, infoCardHTML, shareTags, CARD_W, CARD_H, LANDING_CARD_ORDER, ALL_BRANDS_MOSAIC, orderLandingBrands, allBrandsPhotoHTML, siteConfig, curatedPairs, successorPairKeys, resolvePins, withPins, PINNED_VS_PAIRS, SUCCESSOR_INDEX_SINCE, relatedPairs, vsPageHTML, vsSummary, vsSummaryFacts, resolveMatchups, crossVsPageHTML, crossTitle, CROSS_BRAND_MATCHUPS, compareHeadBlock, compareBodyBlock, brandHeadBlock, rootHeadBlock, brandBodyBlock, rootBodyBlock, withHeadBlock, withBodyBlock, sitemapXML, robotsTxt, buildAll, SEO_BEGIN, SEO_END, SEO_BODY_BEGIN, SEO_BODY_END, ID_HEAD_BEGIN, ID_HEAD_END, ID_HEADER_BEGIN, ID_HEADER_END, ID_FOOTER_BEGIN, ID_FOOTER_END, identityToken, logoMark, cleanUrl, cleanHref, themeToggleHTML, collectReferences, citationText, refHostname, REFERENCE_ROWS, referenceRowsHTML };

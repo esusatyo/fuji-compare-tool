@@ -14,9 +14,9 @@
 
 ## 3. Generator and links
 
-- [ ] 3.1 `generate-seo.js`: head and body blocks for `kit/index.html`, sitemap entry
-- [ ] 3.2 Homepage card beside "Compare camera sizes"; footer link on every page
-- [ ] 3.3 `tests/data/kit-page.test.js`; regenerate
+- [x] 3.1 `generate-seo.js`: head and body blocks for `kit/index.html`, sitemap entry
+- [x] 3.2 Homepage card beside "Compare camera sizes"; footer link on every page
+- [x] 3.3 `tests/data/kit-page.test.js`; regenerate
 
 ## 4. Analytics, privacy, docs
 
