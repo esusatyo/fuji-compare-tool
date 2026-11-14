@@ -761,7 +761,7 @@ function mountPageHTML(site, m, card = null) {
   const jump = m.makers.map(k => `<a href="#${k.anchor}">${esc(k.name)} (${k.lenses.length})</a>`).join(' &middot; ');
   const lensSections = m.makers.map(k => `    <h3 id="${k.anchor}">${esc(k.name)} <span class="mount-count">${k.lenses.length} ${k.lenses.length === 1 ? 'lens' : 'lenses'}</span></h3>
     <div class="seo-table-wrap">
-      <table class="seo-table">
+      <table class="seo-table mount-table mount-lens-table">
         <thead><tr><th scope="col">Lens</th>${head(MOUNT_LENS_COLS)}</tr></thead>
         <tbody>
 ${k.lenses.map(l => `          <tr><th scope="row">${esc(withBrandName(k.name, l.name))}${discTag(l)}</th>${MOUNT_LENS_COLS.map(col => `<td>${cellOf(col, l)}</td>`).join('')}</tr>`).join('\n')}
@@ -812,7 +812,7 @@ ${k.lenses.map(l => `          <tr><th scope="row">${esc(withBrandName(k.name, l
     </p>
     <h2 id="cameras">${esc(m.name)} cameras</h2>
     <div class="seo-table-wrap">
-      <table class="seo-table">
+      <table class="seo-table mount-table">
         <thead><tr><th scope="col">Camera</th>${head(MOUNT_CAMERA_COLS)}</tr></thead>
         <tbody>
 ${camRows}

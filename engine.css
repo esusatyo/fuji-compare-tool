@@ -1332,6 +1332,16 @@ footer a:hover { text-decoration: underline; }
 .mount-count { margin-left: 6px; font-size: 12px; font-weight: 500; color: var(--text-secondary); }
 .mount-links { display: flex; flex-wrap: wrap; gap: 4px 20px; font-weight: 600; }
 .mount-jump { line-height: 1.9; }
+/* Lens tables have no long sensor cell: undo the shared rule that lets
+   column 3 wrap at 14em (here it is the aperture). */
+.mount-lens-table td:nth-child(3) { white-space: nowrap; min-width: 0; }
+/* The name column stays in view while a wide table scrolls sideways. */
+.mount-table tbody th, .mount-table thead th:first-child {
+  position: sticky;
+  left: 0;
+  z-index: 1;
+  background: var(--bg-deep);
+}
 .mount-disc {
   margin-left: 6px;
   padding: 1px 6px;
@@ -1422,4 +1432,9 @@ footer a:hover { text-decoration: underline; }
   .key-tile { padding: 10px 12px; }
   .key-tile:last-child:nth-child(odd) { grid-column: 1 / -1; }
   .key-row dd { font-size: 15px; }
+}
+
+/* Mount pages on phones: names wrap so the sticky column stays narrow. */
+@media (max-width: 599px) {
+  .mount-table tbody th { white-space: normal; min-width: 9em; max-width: 11em; }
 }

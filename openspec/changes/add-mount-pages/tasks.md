@@ -13,5 +13,5 @@
 ## 3. Docs and ship
 
 - [x] 3.1 `CLAUDE.md`
-- [ ] 3.2 `npm test`, `npm run test:links`, `openspec validate add-mount-pages --strict`, screenshots
+- [x] 3.2 `npm test`, `npm run test:links`, `openspec validate add-mount-pages --strict`, screenshots
 - [ ] 3.3 PR
