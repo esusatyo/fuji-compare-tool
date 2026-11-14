@@ -6,12 +6,12 @@
 
 ## 2. Tiles on vs-pages
 
-- [ ] 2.1 `generate-seo.js`: tiles above the table on same-brand and cross-brand vs-pages
-- [ ] 2.2 `engine.css`: tile styles, both themes, phone width
-- [ ] 2.3 `tests/data/key-specs.test.js`; regenerate
+- [x] 2.1 `generate-seo.js`: tiles above the table on same-brand and cross-brand vs-pages
+- [x] 2.2 `engine.css`: tile styles, both themes, phone width
+- [x] 2.3 `tests/data/key-specs.test.js`; regenerate
 
 ## 3. Docs and ship
 
-- [ ] 3.1 `CLAUDE.md`
-- [ ] 3.2 `npm test`, `openspec validate add-key-spec-tiles --strict`, screenshots (desktop, 390px, light)
+- [x] 3.1 `CLAUDE.md`
+- [x] 3.2 `npm test`, `openspec validate add-key-spec-tiles --strict`, screenshots (desktop, 390px, light)
 - [ ] 3.3 PR

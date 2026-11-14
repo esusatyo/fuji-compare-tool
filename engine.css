@@ -1123,6 +1123,62 @@ footer a:hover { text-decoration: underline; }
 .size-hub-text { color: var(--text-secondary); font-size: 14px; }
 .size-hub-card .brand-go { margin-top: 6px; }
 
+/* ─── KEY SPECS ───
+   The few specs that answer "which one?" at a glance, as tiles above a spec
+   table (key-specs.js builds the markup; SITE_CONFIG.keySpecs lists them).
+   Each row's dot is its column colour; the better value takes the same green
+   as a winning spec cell. */
+.key-specs { margin: 0 0 20px; }
+.key-specs-title {
+  margin-bottom: 10px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-secondary);
+}
+.key-tiles { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 10px; }
+.key-tile {
+  min-width: 0;
+  padding: 12px 14px;
+  background: var(--bg-surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+}
+.key-tile-label {
+  margin-bottom: 8px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-secondary);
+}
+.key-row { padding: 7px 0; border-top: 1px solid var(--border); }
+.key-row:first-child { padding-top: 0; border-top: none; }
+.key-row:last-child { padding-bottom: 0; }
+.key-row dt {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  color: var(--text-secondary);
+  overflow-wrap: anywhere;
+}
+.key-row dt::before {
+  content: '';
+  flex: none;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--key-c, var(--accent-primary));
+}
+.key-row dd { font-size: 16px; font-weight: 700; line-height: 1.3; color: var(--text-primary); overflow-wrap: anywhere; }
+.key-row dd small { display: block; font-size: 11px; font-weight: 500; line-height: 1.35; color: var(--text-secondary); }
+.key-row.key-better dd { color: var(--win); }
+.key-row.key-better dd small { color: var(--text-secondary); }
+/* Read by screen readers only: the verdict in words, not colour alone. */
+.key-sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+
 /* ─── RESPONSIVE ─── */
 @media (max-width: 599px) {
   :root { --num-slots: 2; }
@@ -1176,4 +1232,14 @@ footer a:hover { text-decoration: underline; }
   .compare-slot:nth-child(2) { border-left: none; }
   .spec-label { grid-column: 1 / -1; border-right: none; padding: 10px 12px 0; }
   .spec-value { padding-top: 6px; }
+}
+
+/* Key-spec tiles on phones: two per row, an odd last one spanning both. Kept
+   after the main responsive block above — a test reads the first 599px query
+   in this file as *the* mobile breakpoint. */
+@media (max-width: 599px) {
+  .key-tiles { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; }
+  .key-tile { padding: 10px 12px; }
+  .key-tile:last-child:nth-child(odd) { grid-column: 1 / -1; }
+  .key-row dd { font-size: 15px; }
 }
