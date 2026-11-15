@@ -1,14 +1,14 @@
 {
   "": {
-    "hash": "4cb380832beee3ce",
-    "lastmod": "2026-11-13"
+    "hash": "6f917fac2e8575ca",
+    "lastmod": "2026-11-15"
   },
   "about": {
     "hash": "fac55d7da6a5767c",
     "lastmod": "2026-11-13"
   },
   "canon/": {
-    "hash": "ddd3295f9786d04c",
+    "hash": "d882ad894845120a",
     "lastmod": "2026-11-15"
   },
   "canon/size/eos-r1-vs-eos-r3": {
@@ -96,7 +96,7 @@
     "lastmod": "2026-11-13"
   },
   "fujifilm/": {
-    "hash": "0e83bba22c772d5a",
+    "hash": "ee186dd10ed3d0c6",
     "lastmod": "2026-11-15"
   },
   "fujifilm/size/x-t30iii-vs-x-t30ii": {
@@ -120,11 +120,47 @@
     "lastmod": "2026-11-13"
   },
   "leica/": {
-    "hash": "73b44553bb054a8e",
-    "lastmod": "2026-11-13"
+    "hash": "dedb439e56d79fc4",
+    "lastmod": "2026-11-15"
+  },
+  "mount/": {
+    "hash": "1849d21e43ef1d41",
+    "lastmod": "2026-11-15"
+  },
+  "mount/e-mount": {
+    "hash": "1dce047a8770e435",
+    "lastmod": "2026-11-15"
+  },
+  "mount/g-mount": {
+    "hash": "3922d88ac80b2f43",
+    "lastmod": "2026-11-15"
+  },
+  "mount/l-mount": {
+    "hash": "3528ca1ff8a9e6c5",
+    "lastmod": "2026-11-15"
+  },
+  "mount/m-mount": {
+    "hash": "1ec0370f1dd0aa3d",
+    "lastmod": "2026-11-15"
+  },
+  "mount/micro-four-thirds-mount": {
+    "hash": "9a2a5325275fa999",
+    "lastmod": "2026-11-15"
+  },
+  "mount/rf-mount": {
+    "hash": "fc93f0f90ac5a3fb",
+    "lastmod": "2026-11-15"
+  },
+  "mount/x-mount": {
+    "hash": "7d2b1f657ba2ff96",
+    "lastmod": "2026-11-15"
+  },
+  "mount/z-mount": {
+    "hash": "c1b552d4bef32bcd",
+    "lastmod": "2026-11-15"
   },
   "nikon/": {
-    "hash": "cf9b6f661fc41060",
+    "hash": "66d0ad66468f1f95",
     "lastmod": "2026-11-15"
   },
   "nikon/size/z5-ii-vs-z5": {
@@ -144,8 +180,8 @@
     "lastmod": "2026-11-15"
   },
   "olympus/": {
-    "hash": "9ea1a759a6c54efb",
-    "lastmod": "2026-11-13"
+    "hash": "1153aee250eec86b",
+    "lastmod": "2026-11-15"
   },
   "olympus/size/om-3-vs-om-1": {
     "hash": "16722f982ae5c5c1",
@@ -164,8 +200,8 @@
     "lastmod": "2026-11-14"
   },
   "panasonic/": {
-    "hash": "57eeaf186d241aa2",
-    "lastmod": "2026-11-13"
+    "hash": "b1b499bdad10dec3",
+    "lastmod": "2026-11-15"
   },
   "panasonic/size/g9-ii-vs-g9": {
     "hash": "2700ed75f8e8ea7a",
@@ -272,12 +308,12 @@
     "lastmod": "2026-11-14"
   },
   "privacy": {
-    "hash": "14d36930b9f79b88",
-    "lastmod": "2026-11-14"
+    "hash": "2051622f985f62f9",
+    "lastmod": "2026-11-15"
   },
   "sigma/": {
-    "hash": "d9599dfba5d92982",
-    "lastmod": "2026-11-13"
+    "hash": "ab421a0eaee59622",
+    "lastmod": "2026-11-15"
   },
   "size/": {
     "hash": "6a155e67156b0087",
@@ -328,7 +364,7 @@
     "lastmod": "2026-11-15"
   },
   "sony/": {
-    "hash": "8919de5b2218a8e7",
+    "hash": "92bc1ea3d37b6345",
     "lastmod": "2026-11-15"
   },
   "sony/size/a7-v-vs-a7-iv": {

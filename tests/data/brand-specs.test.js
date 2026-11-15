@@ -86,7 +86,8 @@ for (const brand of brandDirs()) {
   });
 
   test(`[brand-specs] ${brand}: camera links are extensionless and reach an indexable vs-page`, () => {
-    for (const a of pageOf(brand).querySelectorAll('.seo-glance a')) {
+    // Camera names in the table; the mount-page links below it are checked in mount-pages.test.js.
+    for (const a of pageOf(brand).querySelectorAll('.seo-glance tbody a')) {
       const href = a.getAttribute('href');
       assert.doesNotMatch(href, /\.html/, `${href} must be extensionless`);
       assert.match(href, /^vs\/[^/]+-vs-[^/]+$/);
