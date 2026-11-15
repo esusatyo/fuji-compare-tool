@@ -128,3 +128,13 @@ test('html: a section of tiles, values escaped, the verdict readable without col
   assert.equal(burst.querySelectorAll('dd')[1].textContent, '—');
   assert.equal(KeySpecs.html([]), '');
 });
+
+test('tiles: burst notes which shutter the figure is from once a camera has split rates', () => {
+  const tiles = KeySpecs.tiles('cameras', ['burst'], entries(
+    cam({ maxBurst: 20, maxBurstMech: 15, maxBurstElec: 20, maxBurstElecCrop: 1.29 }),
+    cam({ maxBurst: 7, maxBurstMech: 7, maxBurstElec: 4.1 }),
+    cam({ maxBurst: 8 }), // legacy single figure: no note
+  ));
+  assert.deepEqual(tile(tiles, 'burst').rows.map(r => r.value), ['20 fps', '7 fps', '8 fps']);
+  assert.deepEqual(tile(tiles, 'burst').rows.map(r => r.note), ['electronic, 1.29× crop', 'mechanical', null]);
+});

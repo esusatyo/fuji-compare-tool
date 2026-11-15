@@ -53,6 +53,14 @@
       burst: {
         label: 'Burst',
         value: c => (c.maxBurst ? `${c.maxBurst} fps` : null),
+        // maxBurst is the faster of the split rates (maxBurstMech /
+        // maxBurstElec) once a camera has them; say which shutter it is, and
+        // the crop, so "20 fps" isn't read as a full-frame mechanical figure.
+        note: c => {
+          if (!c.maxBurst || !('maxBurstMech' in c || 'maxBurstElec' in c)) return null;
+          if (c.maxBurstElec === c.maxBurst) return c.maxBurstElecCrop ? `electronic, ${c.maxBurstElecCrop}× crop` : 'electronic';
+          return c.maxBurstMech === c.maxBurst ? 'mechanical' : null;
+        },
         rank: c => c.maxBurst || null,
         better: 'higher',
       },
