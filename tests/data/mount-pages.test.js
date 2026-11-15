@@ -92,6 +92,10 @@ for (const m of withMount) {
       assert.equal(lens.mount, m.id);
       assert.ok(a.textContent.endsWith(lens.name), `link text "${a.textContent}" is not ${lens.name}`);
       assert.match(a.dataset.goatcounterClick, /^mount-lens:/);
+      const row = a.closest('tr');
+      const col = [...row.closest('table').querySelectorAll('thead th')].findIndex(th => th.textContent === 'Announced');
+      assert.ok(col > 0, 'lens table has an Announced column');
+      assert.equal(row.children[col].textContent, String(lens.year), `${lens.name}: Announced is not its year`);
     }
   });
 

@@ -1333,7 +1333,7 @@ footer a:hover { text-decoration: underline; }
 .mount-links { display: flex; flex-wrap: wrap; gap: 4px 20px; font-weight: 600; }
 .mount-jump { line-height: 1.9; }
 /* Lens tables have no long sensor cell: undo the shared rule that lets
-   column 3 wrap at 14em (here it is the aperture). */
+   column 3 wrap at 14em (here it is the focal length). */
 .mount-lens-table td:nth-child(3) { white-space: nowrap; min-width: 0; }
 /* The name column stays in view while a wide table scrolls sideways. */
 .mount-table tbody th, .mount-table thead th:first-child {

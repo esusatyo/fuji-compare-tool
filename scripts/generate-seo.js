@@ -778,6 +778,7 @@ const MOUNT_CAMERA_COLS = [
 ];
 
 const MOUNT_LENS_COLS = [
+  ['Announced',     l => l.year],
   ['Focal length',  l => l.focalLengthEquiv ? `${l.focalLengthEquiv} equiv.` : null],
   ['Max aperture',  l => l.maxAperture == null ? null : `f/${l.maxAperture}`],
   ['Weight',        l => l.weight == null ? null : `${l.weight} g`],
