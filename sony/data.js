@@ -902,6 +902,7 @@ const LENSES = {
   'fe-50mm-f14-gm': {
     name:'FE 50mm F1.4 GM', manufacturer:'Sony', line:'FE GM', type:'Prime', mount:'e', asin:'B0BWFSJXQC',
     focalLength:50, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'50mm',
+    specSources: [{ url:'https://electronics.sony.com/imaging/lenses/full-frame-e-mount/p/sel50f14gm', tier:'T1', title:'Sony USA specifications', note:'verify-specs 2026-11-15: weight, dimensions, filter, blades, groups/elements, min aperture, magnification re-read from the embedded spec sheet (minimum focus not compared: inches, AF/MF)', date:'2026-11-15' }],
     maxAperture:1.4, minAperture:16, weight:516, length:96.0, diameter:80.6,
     filterThread:67, minFocusDist:38, maxMagnification:0.16,
     elements:14, groups:11, blades:11, afType:'XD Linear',
@@ -917,6 +918,7 @@ const LENSES = {
   'fe-14mm-f18-gm': {
     name:'FE 14mm F1.8 GM', manufacturer:'Sony', line:'FE GM', type:'Prime', mount:'e', asin:'B09316YPCH',
     focalLength:14, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'14mm',
+    specSources: [{ url:'https://electronics.sony.com/imaging/lenses/full-frame-e-mount/p/sel14f18gm', tier:'T1', title:'Sony USA specifications', note:'verify-specs 2026-11-15: weight, dimensions, filter, blades, groups/elements, min aperture, magnification re-read from the embedded spec sheet (minimum focus not compared: inches, AF/MF)', date:'2026-11-15' }],
     maxAperture:1.8, minAperture:16, weight:460, length:99.8, diameter:83.0,
     filterThread:null, minFocusDist:25, maxMagnification:0.10,
     elements:14, groups:11, blades:9, afType:'XD Linear',
@@ -931,6 +933,7 @@ const LENSES = {
   'fe-24mm-f14-gm': {
     name:'FE 24mm F1.4 GM', manufacturer:'Sony', line:'FE GM', type:'Prime', mount:'e', asin:'B07HJXVHSS',
     focalLength:24, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'24mm',
+    specSources: [{ url:'https://electronics.sony.com/imaging/lenses/full-frame-e-mount/p/sel24f14gm', tier:'T1', title:'Sony USA specifications', note:'verify-specs 2026-11-15: weight, dimensions, filter, blades, groups/elements, min aperture, magnification re-read from the embedded spec sheet (minimum focus not compared: inches, AF/MF)', date:'2026-11-15' }],
     maxAperture:1.4, minAperture:16, weight:445, length:92.4, diameter:75.4,
     filterThread:67, minFocusDist:24, maxMagnification:0.17,
     elements:13, groups:10, blades:11, afType:'DDSSM',
@@ -946,6 +949,7 @@ const LENSES = {
   'fe-35mm-f14-gm': {
     name:'FE 35mm F1.4 GM', manufacturer:'Sony', line:'FE GM', type:'Prime', mount:'e', asin:'B08SWMH186',
     focalLength:35, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'35mm',
+    specSources: [{ url:'https://electronics.sony.com/imaging/lenses/full-frame-e-mount/p/sel35f14gm', tier:'T1', title:'Sony USA specifications', note:'verify-specs 2026-11-15: weight, dimensions, filter, blades, groups/elements, min aperture, magnification re-read from the embedded spec sheet (minimum focus not compared: inches, AF/MF)', date:'2026-11-15' }],
     maxAperture:1.4, minAperture:16, weight:524, length:96.0, diameter:76.0,
     filterThread:67, minFocusDist:25, maxMagnification:0.26,
     elements:14, groups:10, blades:11, afType:'XD Linear',
@@ -960,6 +964,7 @@ const LENSES = {
   'fe-50mm-f12-gm': {
     name:'FE 50mm F1.2 GM', manufacturer:'Sony', line:'FE GM', type:'Prime', mount:'e', asin:'B08Z4HVBXC',
     focalLength:50, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'50mm',
+    specSources: [{ url:'https://electronics.sony.com/imaging/lenses/full-frame-e-mount/p/sel50f12gm', tier:'T1', title:'Sony USA specifications', note:'verify-specs 2026-11-15: weight, dimensions, filter, blades, groups/elements, min aperture, magnification re-read from the embedded spec sheet (minimum focus not compared: inches, AF/MF)', date:'2026-11-15' }],
     maxAperture:1.2, minAperture:16, weight:778, length:108.0, diameter:87.0,
     filterThread:72, minFocusDist:40, maxMagnification:0.17,
     elements:14, groups:10, blades:11, afType:'XD Linear',
@@ -975,6 +980,7 @@ const LENSES = {
   'fe-85mm-f14-gm-ii': {
     name:'FE 85mm F1.4 GM II', manufacturer:'Sony', line:'FE GM', type:'Prime', mount:'e', asin:'B0DFHSFL7L',
     focalLength:85, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'85mm',
+    specSources: [{ url:'https://electronics.sony.com/imaging/lenses/full-frame-e-mount/p/sel85f14gm2', tier:'T1', title:'Sony USA specifications', note:'verify-specs 2026-11-15: weight, dimensions, filter, blades, groups/elements, min aperture, magnification re-read from the embedded spec sheet (minimum focus not compared: inches, AF/MF)', date:'2026-11-15' }],
     maxAperture:1.4, minAperture:16, weight:642, length:107.3, diameter:84.7,
     filterThread:77, minFocusDist:80, maxMagnification:0.12,
     elements:14, groups:11, blades:11, afType:'XD Linear',
@@ -990,6 +996,7 @@ const LENSES = {
   'fe-85mm-f14-gm': {
     name:'FE 85mm F1.4 GM', manufacturer:'Sony', line:'FE GM', type:'Prime', mount:'e', asin:'B01BESR5KO',
     focalLength:85, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'85mm',
+    specSources: [{ url:'https://electronics.sony.com/imaging/lenses/full-frame-e-mount/p/sel85f14gm', tier:'T1', title:'Sony USA specifications', note:'verify-specs 2026-11-15: weight, dimensions, filter, blades, groups/elements, min aperture, magnification re-read from the embedded spec sheet (minimum focus not compared: inches, AF/MF)', date:'2026-11-15' }],
     maxAperture:1.4, minAperture:16, weight:820, length:107.5, diameter:89.5,
     filterThread:77, minFocusDist:80, maxMagnification:0.12,
     elements:11, groups:8, blades:11, afType:'SSM',
@@ -1003,6 +1010,7 @@ const LENSES = {
   'fe-100mm-f28-stf-gm': {
     name:'FE 100mm F2.8 STF GM OSS', manufacturer:'Sony', line:'FE GM', type:'Prime', mount:'e', asin:'B06WRMXVKK',
     focalLength:100, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'100mm',
+    specSources: [{ url:'https://electronics.sony.com/imaging/lenses/full-frame-e-mount/p/sel100f28gm', tier:'T1', title:'Sony USA specifications', note:'verify-specs 2026-11-15: weight, dimensions, filter, blades, groups/elements, min aperture, magnification re-read from the embedded spec sheet (minimum focus not compared: inches, AF/MF)', date:'2026-11-15' }],
     maxAperture:2.8, minAperture:20, weight:700, length:118.1, diameter:85.2,
     filterThread:72, minFocusDist:57, maxMagnification:0.25,
     elements:13, groups:10, blades:11, afType:'DDSSM',
@@ -1018,6 +1026,7 @@ const LENSES = {
   'fe-135mm-f18-gm': {
     name:'FE 135mm F1.8 GM', manufacturer:'Sony', line:'FE GM', type:'Prime', mount:'e', asin:'B07P6MNC3R',
     focalLength:135, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'135mm',
+    specSources: [{ url:'https://electronics.sony.com/imaging/lenses/full-frame-e-mount/p/sel135f18gm', tier:'T1', title:'Sony USA specifications', note:'verify-specs 2026-11-15: weight, dimensions, filter, blades, groups/elements, min aperture, magnification re-read from the embedded spec sheet (minimum focus not compared: inches, AF/MF)', date:'2026-11-15' }],
     maxAperture:1.8, minAperture:22, weight:950, length:127.0, diameter:89.5,
     filterThread:82, minFocusDist:70, maxMagnification:0.25,
     elements:13, groups:10, blades:11, afType:'XD Linear',
@@ -1033,6 +1042,7 @@ const LENSES = {
   'fe-300mm-f28-gm': {
     name:'FE 300mm F2.8 GM OSS', manufacturer:'Sony', line:'FE GM', type:'Prime', mount:'e', asin:'B0CMV75475',
     focalLength:300, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'300mm',
+    specSources: [{ url:'https://electronics.sony.com/imaging/lenses/full-frame-e-mount/p/sel300f28gm', tier:'T1', title:'Sony USA specifications', note:'verify-specs 2026-11-15: weight, dimensions, filter, blades, groups/elements, min aperture, magnification re-read from the embedded spec sheet (minimum focus not compared: inches, AF/MF)', date:'2026-11-15' }],
     maxAperture:2.8, minAperture:22, weight:1470, length:265.0, diameter:124.0,
     filterThread:40.5, minFocusDist:200, maxMagnification:0.16,
     elements:21, groups:17, blades:11, afType:'XD Linear',
@@ -1047,6 +1057,7 @@ const LENSES = {
   'fe-400mm-f28-gm': {
     name:'FE 400mm F2.8 GM OSS', manufacturer:'Sony', line:'FE GM', type:'Prime', mount:'e', asin:'B07FHDZ3Z6',
     focalLength:400, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'400mm',
+    specSources: [{ url:'https://electronics.sony.com/imaging/lenses/full-frame-e-mount/p/sel400f28gm', tier:'T1', title:'Sony USA specifications', note:'verify-specs 2026-11-15: weight, dimensions, filter, blades, groups/elements, min aperture, magnification re-read from the embedded spec sheet (minimum focus not compared: inches, AF/MF)', date:'2026-11-15' }],
     maxAperture:2.8, minAperture:22, weight:2895, length:359.0, diameter:158.1,
     filterThread:40.5, minFocusDist:270, maxMagnification:0.16,
     elements:23, groups:17, blades:11, afType:'DDSSM',
@@ -1062,6 +1073,7 @@ const LENSES = {
   'fe-600mm-f4-gm': {
     name:'FE 600mm F4 GM OSS', manufacturer:'Sony', line:'FE GM', type:'Prime', mount:'e', asin:'B07SZVGKMD',
     focalLength:600, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'600mm',
+    specSources: [{ url:'https://electronics.sony.com/imaging/lenses/full-frame-e-mount/p/sel600f40gm', tier:'T1', title:'Sony USA specifications', note:'verify-specs 2026-11-15: weight, dimensions, filter, blades, groups/elements, min aperture, magnification re-read from the embedded spec sheet (minimum focus not compared: inches, AF/MF)', date:'2026-11-15' }],
     maxAperture:4.0, minAperture:22, weight:3040, length:449.0, diameter:163.6,
     filterThread:40.5, minFocusDist:450, maxMagnification:0.14,
     elements:24, groups:18, blades:11, afType:'DDSSM',
@@ -1125,6 +1137,7 @@ const LENSES = {
   'fe-16mm-f18-g': {
     name:'FE 16mm F1.8 G', manufacturer:'Sony', line:'FE G', type:'Prime', mount:'e', asin:'B0DYK97L9M',
     focalLength:16, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'16mm',
+    specSources: [{ url:'https://electronics.sony.com/imaging/lenses/full-frame-e-mount/p/sel16f18g', tier:'T1', title:'Sony USA specifications', note:'verify-specs 2026-11-15: weight, dimensions, filter, blades, groups/elements, min aperture, magnification re-read from the embedded spec sheet (minimum focus not compared: inches, AF/MF)', date:'2026-11-15' }],
     maxAperture:1.8, minAperture:22, weight:304, length:73.8, diameter:73.8,
     filterThread:67, minFocusDist:15, maxMagnification:0.25,
     elements:15, groups:12, blades:11, afType:'XD Linear',
@@ -1140,6 +1153,7 @@ const LENSES = {
   'fe-20mm-f18-g': {
     name:'FE 20mm F1.8 G', manufacturer:'Sony', line:'FE G', type:'Prime', mount:'e', asin:'B08556WW56',
     focalLength:20, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'20mm',
+    specSources: [{ url:'https://electronics.sony.com/imaging/lenses/full-frame-e-mount/p/sel20f18g', tier:'T1', title:'Sony USA specifications', note:'verify-specs 2026-11-15: weight, dimensions, filter, blades, groups/elements, min aperture, magnification re-read from the embedded spec sheet (minimum focus not compared: inches, AF/MF)', date:'2026-11-15' }],
     maxAperture:1.8, minAperture:22, weight:373, length:84.7, diameter:73.5,
     filterThread:67, minFocusDist:18, maxMagnification:0.20,
     elements:14, groups:12, blades:9, afType:'XD Linear',
@@ -1155,6 +1169,7 @@ const LENSES = {
   'fe-24mm-f28-g': {
     name:'FE 24mm F2.8 G', manufacturer:'Sony', line:'FE G', type:'Prime', mount:'e', asin:'B08ZSWL58M',
     focalLength:24, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'24mm',
+    specSources: [{ url:'https://electronics.sony.com/imaging/lenses/full-frame-e-mount/p/sel24f28g', tier:'T1', title:'Sony USA specifications', note:'verify-specs 2026-11-15: weight, dimensions, filter, blades, groups/elements, min aperture, magnification re-read from the embedded spec sheet (minimum focus not compared: inches, AF/MF)', date:'2026-11-15' }],
     maxAperture:2.8, minAperture:22, weight:162, length:45.0, diameter:68.0,
     filterThread:49, minFocusDist:24, maxMagnification:0.13,
     elements:8, groups:7, blades:7, afType:'Linear',
@@ -1170,6 +1185,7 @@ const LENSES = {
   'fe-40mm-f25-g': {
     name:'FE 40mm F2.5 G', manufacturer:'Sony', line:'FE G', type:'Prime', mount:'e', asin:'B08ZSW1PHB',
     focalLength:40, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'40mm',
+    specSources: [{ url:'https://electronics.sony.com/imaging/lenses/full-frame-e-mount/p/sel40f25g', tier:'T1', title:'Sony USA specifications', note:'verify-specs 2026-11-15: weight, dimensions, filter, blades, groups/elements, min aperture, magnification re-read from the embedded spec sheet (minimum focus not compared: inches, AF/MF)', date:'2026-11-15' }],
     maxAperture:2.5, minAperture:22, weight:173, length:45.0, diameter:68.0,
     filterThread:49, minFocusDist:28, maxMagnification:0.20,
     elements:9, groups:9, blades:7, afType:'Linear',
@@ -1185,6 +1201,7 @@ const LENSES = {
   'fe-50mm-f25-g': {
     name:'FE 50mm F2.5 G', manufacturer:'Sony', line:'FE G', type:'Prime', mount:'e', asin:'B08ZSYM3K1',
     focalLength:50, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'50mm',
+    specSources: [{ url:'https://electronics.sony.com/imaging/lenses/full-frame-e-mount/p/sel50f25g', tier:'T1', title:'Sony USA specifications', note:'verify-specs 2026-11-15: weight, dimensions, filter, blades, groups/elements, min aperture, magnification re-read from the embedded spec sheet (minimum focus not compared: inches, AF/MF)', date:'2026-11-15' }],
     maxAperture:2.5, minAperture:22, weight:174, length:45.0, diameter:68.0,
     filterThread:49, minFocusDist:31, maxMagnification:0.18,
     elements:9, groups:9, blades:7, afType:'Linear',
@@ -1200,6 +1217,7 @@ const LENSES = {
   'fe-90mm-f28-macro-g': {
     name:'FE 90mm F2.8 Macro G OSS', manufacturer:'Sony', line:'FE G', type:'Prime', mount:'e', asin:'B00U29GNEG',
     focalLength:90, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'90mm',
+    specSources: [{ url:'https://electronics.sony.com/imaging/lenses/full-frame-e-mount/p/sel90m28g', tier:'T1', title:'Sony USA specifications', note:'verify-specs 2026-11-15: weight, dimensions, filter, blades, groups/elements, min aperture, magnification re-read from the embedded spec sheet (minimum focus not compared: inches, AF/MF)', date:'2026-11-15' }],
     maxAperture:2.8, minAperture:22, weight:602, length:130.5, diameter:79.0,
     filterThread:62, minFocusDist:28, maxMagnification:1.0,
     elements:15, groups:11, blades:9, afType:'DDSSM',
@@ -1231,6 +1249,7 @@ const LENSES = {
   'fe-28mm-f2': {
     name:'FE 28mm F2', manufacturer:'Sony', line:'FE', type:'Prime', mount:'e', asin:'B00U29GN6O',
     focalLength:28, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'28mm',
+    specSources: [{ url:'https://electronics.sony.com/imaging/lenses/full-frame-e-mount/p/sel28f20', tier:'T1', title:'Sony USA specifications', note:'verify-specs 2026-11-15: weight, dimensions, filter, blades, groups/elements, min aperture, magnification re-read from the embedded spec sheet (minimum focus not compared: inches, AF/MF)', date:'2026-11-15' }],
     maxAperture:2.0, minAperture:22, weight:200, length:60.0, diameter:64.0,
     filterThread:49, minFocusDist:29, maxMagnification:0.13,
     elements:9, groups:8, blades:9, afType:'Linear',
@@ -1246,6 +1265,7 @@ const LENSES = {
   'fe-35mm-f18': {
     name:'FE 35mm F1.8', manufacturer:'Sony', line:'FE', type:'Prime', mount:'e', asin:'B07V8X4KGG',
     focalLength:35, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'35mm',
+    specSources: [{ url:'https://electronics.sony.com/imaging/lenses/full-frame-e-mount/p/sel35f18f', tier:'T1', title:'Sony USA specifications', note:'verify-specs 2026-11-15: weight, dimensions, filter, blades, groups/elements, min aperture, magnification re-read from the embedded spec sheet (minimum focus not compared: inches, AF/MF)', date:'2026-11-15' }],
     maxAperture:1.8, minAperture:22, weight:280, length:73.0, diameter:65.6,
     filterThread:55, minFocusDist:22, maxMagnification:0.24,
     elements:11, groups:8, blades:9, afType:'Linear',
@@ -1260,6 +1280,7 @@ const LENSES = {
   'fe-50mm-f18': {
     name:'FE 50mm F1.8', manufacturer:'Sony', line:'FE', type:'Prime', mount:'e', asin:'B01DLMD5O6',
     focalLength:50, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'50mm',
+    specSources: [{ url:'https://electronics.sony.com/imaging/lenses/full-frame-e-mount/p/sel50f18f-2', tier:'T1', title:'Sony USA specifications', note:'verify-specs 2026-11-15: weight, dimensions, filter, blades, groups/elements, min aperture, magnification re-read from the embedded spec sheet (minimum focus not compared: inches, AF/MF)', date:'2026-11-15' }],
     maxAperture:1.8, minAperture:22, weight:186, length:59.5, diameter:68.6,
     filterThread:49, minFocusDist:45, maxMagnification:0.14,
     elements:6, groups:5, blades:7, afType:'DC Motor',
@@ -1275,6 +1296,7 @@ const LENSES = {
   'fe-50mm-f28-macro': {
     name:'FE 50mm F2.8 Macro', manufacturer:'Sony', line:'FE', type:'Prime', mount:'e', asin:'B01LC8GMV4',
     focalLength:50, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'50mm',
+    specSources: [{ url:'https://electronics.sony.com/imaging/lenses/full-frame-e-mount/p/sel50m28', tier:'T1', title:'Sony USA specifications', note:'verify-specs 2026-11-15: weight, dimensions, filter, blades, groups/elements, min aperture, magnification re-read from the embedded spec sheet (minimum focus not compared: inches, AF/MF)', date:'2026-11-15' }],
     maxAperture:2.8, minAperture:16, weight:236, length:71.0, diameter:70.8,
     filterThread:55, minFocusDist:16, maxMagnification:1.0,
     elements:8, groups:7, blades:7, afType:'DC Motor',
@@ -1291,6 +1313,7 @@ const LENSES = {
   'fe-35mm-f14-za': {
     name:'FE 35mm F1.4 ZA Distagon', manufacturer:'Sony', line:'FE ZA', type:'Prime', mount:'e', asin:'B00U29GNBO',
     focalLength:35, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'35mm',
+    specSources: [{ url:'https://electronics.sony.com/imaging/lenses/full-frame-e-mount/p/sel35f14z', tier:'T1', title:'Sony USA specifications', note:'verify-specs 2026-11-15: weight, dimensions, filter, blades, groups/elements, min aperture, magnification re-read from the embedded spec sheet (minimum focus not compared: inches, AF/MF)', date:'2026-11-15' }],
     maxAperture:1.4, minAperture:16, weight:630, length:112.0, diameter:78.5,
     filterThread:72, minFocusDist:30, maxMagnification:0.18,
     elements:12, groups:8, blades:9, afType:'DDSSM',
@@ -1304,6 +1327,7 @@ const LENSES = {
   'fe-35mm-f28-za': {
     name:'FE 35mm F2.8 ZA Sonnar', manufacturer:'Sony', line:'FE ZA', type:'Prime', mount:'e', asin:'B00FSB79KU',
     focalLength:35, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'35mm',
+    specSources: [{ url:'https://electronics.sony.com/imaging/lenses/full-frame-e-mount/p/sel35f28z', tier:'T1', title:'Sony USA specifications', note:'verify-specs 2026-11-15: weight, dimensions, filter, blades, groups/elements, min aperture, magnification re-read from the embedded spec sheet (minimum focus not compared: inches, AF/MF)', date:'2026-11-15' }],
     maxAperture:2.8, minAperture:22, weight:120, length:36.5, diameter:61.5,
     filterThread:49, minFocusDist:35, maxMagnification:0.12,
     elements:7, groups:5, blades:7, afType:'Linear',
@@ -1317,6 +1341,7 @@ const LENSES = {
   'fe-50mm-f14-za': {
     name:'FE 50mm F1.4 ZA Planar', manufacturer:'Sony', line:'FE ZA', type:'Prime', mount:'e', asin:'B01IALYGU0',
     focalLength:50, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'50mm',
+    specSources: [{ url:'https://electronics.sony.com/imaging/lenses/full-frame-e-mount/p/sel50f14z', tier:'T1', title:'Sony USA specifications', note:'verify-specs 2026-11-15: weight, dimensions, filter, blades, groups/elements, min aperture, magnification re-read from the embedded spec sheet (minimum focus not compared: inches, AF/MF)', date:'2026-11-15' }],
     maxAperture:1.4, minAperture:16, weight:778, length:108.0, diameter:83.5,
     filterThread:72, minFocusDist:45, maxMagnification:0.15,
     elements:12, groups:9, blades:11, afType:'DDSSM',
@@ -1330,6 +1355,7 @@ const LENSES = {
   'fe-55mm-f18-za': {
     name:'FE 55mm F1.8 ZA Sonnar', manufacturer:'Sony', line:'FE ZA', type:'Prime', mount:'e', asin:'B00FSB799Q',
     focalLength:55, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'55mm',
+    specSources: [{ url:'https://electronics.sony.com/imaging/lenses/full-frame-e-mount/p/sel55f18z', tier:'T1', title:'Sony USA specifications', note:'verify-specs 2026-11-15: weight, dimensions, filter, blades, groups/elements, min aperture, magnification re-read from the embedded spec sheet (minimum focus not compared: inches, AF/MF)', date:'2026-11-15' }],
     maxAperture:1.8, minAperture:22, weight:281, length:70.5, diameter:64.4,
     filterThread:49, minFocusDist:50, maxMagnification:0.14,
     elements:7, groups:5, blades:9, afType:'Linear',
@@ -1346,6 +1372,7 @@ const LENSES = {
   'fe-24-70mm-f28-gm-ii': {
     name:'FE 24-70mm F2.8 GM II', manufacturer:'Sony', line:'FE GM', type:'Zoom', mount:'e', asin:'B09YYY6P98',
     focalLength:null, focalLengthMin:24, focalLengthMax:70, focalLengthEquiv:'24-70mm',
+    specSources: [{ url:'https://electronics.sony.com/imaging/lenses/full-frame-e-mount/p/sel2470gm2', tier:'T1', title:'Sony USA specifications', note:'verify-specs 2026-11-15: weight, dimensions, filter, blades, groups/elements, min aperture, magnification re-read from the embedded spec sheet (minimum focus not compared: inches, AF/MF)', date:'2026-11-15' }],
     maxAperture:2.8, minAperture:22, weight:695, length:119.9, diameter:87.8,
     filterThread:82, minFocusDist:21, maxMagnification:0.32,
     elements:20, groups:15, blades:11, afType:'XD Linear',
@@ -1361,6 +1388,7 @@ const LENSES = {
   'fe-70-200mm-f28-gm-oss-ii': {
     name:'FE 70-200mm F2.8 GM OSS II', manufacturer:'Sony', line:'FE GM', type:'Zoom', mount:'e', asin:'B09JCMLP46',
     focalLength:null, focalLengthMin:70, focalLengthMax:200, focalLengthEquiv:'70-200mm',
+    specSources: [{ url:'https://electronics.sony.com/imaging/lenses/full-frame-e-mount/p/sel70200gm2', tier:'T1', title:'Sony USA specifications', note:'verify-specs 2026-11-15: weight, dimensions, filter, blades, groups/elements, min aperture, magnification re-read from the embedded spec sheet (minimum focus not compared: inches, AF/MF)', date:'2026-11-15' }],
     maxAperture:2.8, minAperture:22, weight:1045, length:200.0, diameter:88.0,
     filterThread:77, minFocusDist:40, maxMagnification:0.30,
     elements:17, groups:14, blades:11, afType:'XD Linear',
@@ -1376,6 +1404,7 @@ const LENSES = {
   'fe-12-24mm-f28-gm': {
     name:'FE 12-24mm F2.8 GM', manufacturer:'Sony', line:'FE GM', type:'Zoom', mount:'e', asin:'B08CHN22SJ',
     focalLength:null, focalLengthMin:12, focalLengthMax:24, focalLengthEquiv:'12-24mm',
+    specSources: [{ url:'https://electronics.sony.com/imaging/lenses/full-frame-e-mount/p/sel1224gm', tier:'T1', title:'Sony USA specifications', note:'verify-specs 2026-11-15: weight, dimensions, filter, blades, groups/elements, min aperture, magnification re-read from the embedded spec sheet (minimum focus not compared: inches, AF/MF)', date:'2026-11-15' }],
     maxAperture:2.8, minAperture:22, weight:847, length:137.0, diameter:97.6,
     filterThread:null, minFocusDist:28, maxMagnification:0.14,
     elements:17, groups:14, blades:9, afType:'XD Linear',
@@ -1391,7 +1420,8 @@ const LENSES = {
   'fe-16-35mm-f28-gm-ii': {
     name:'FE 16-35mm F2.8 GM II', manufacturer:'Sony', line:'FE GM', type:'Zoom', mount:'e', asin:'B0CGTW24VF',
     focalLength:null, focalLengthMin:16, focalLengthMax:35, focalLengthEquiv:'16-35mm',
-    maxAperture:2.8, minAperture:22, weight:547, length:121.6, diameter:87.8,
+    specSources: [{ url:'https://electronics.sony.com/imaging/lenses/full-frame-e-mount/p/sel1635gm2', tier:'T1', title:'Sony USA specifications', note:'verify-specs 2026-11-15: weight, dimensions, filter, blades, groups/elements, min aperture, magnification re-read from the embedded spec sheet (minimum focus not compared: inches, AF/MF)', date:'2026-11-15' }],
+    maxAperture:2.8, minAperture:22, weight:547, length:111.5, diameter:87.8,
     filterThread:82, minFocusDist:22, maxMagnification:0.32,
     elements:15, groups:12, blades:11, afType:'XD Linear',
     weatherSealed:true, ois:false, oisStops:null, year:2023, discontinued:false,
@@ -1406,6 +1436,7 @@ const LENSES = {
   'fe-16-35mm-f28-gm': {
     name:'FE 16-35mm F2.8 GM', manufacturer:'Sony', line:'FE GM', type:'Zoom', mount:'e', asin:'B071LHLS11',
     focalLength:null, focalLengthMin:16, focalLengthMax:35, focalLengthEquiv:'16-35mm',
+    specSources: [{ url:'https://electronics.sony.com/imaging/lenses/full-frame-e-mount/p/sel1635gm', tier:'T1', title:'Sony USA specifications', note:'verify-specs 2026-11-15: weight, dimensions, filter, blades, groups/elements, min aperture, magnification re-read from the embedded spec sheet (minimum focus not compared: inches, AF/MF)', date:'2026-11-15' }],
     maxAperture:2.8, minAperture:22, weight:680, length:121.6, diameter:88.5,
     filterThread:82, minFocusDist:28, maxMagnification:0.19,
     elements:16, groups:13, blades:11, afType:'DDSSM',
@@ -1419,6 +1450,7 @@ const LENSES = {
   'fe-28-70mm-f2-gm': {
     name:'FE 28-70mm F2 GM', manufacturer:'Sony', line:'FE GM', type:'Zoom', mount:'e', asin:'B0DNKVBCYL',
     focalLength:null, focalLengthMin:28, focalLengthMax:70, focalLengthEquiv:'28-70mm',
+    specSources: [{ url:'https://electronics.sony.com/imaging/lenses/full-frame-e-mount/p/sel2870gm', tier:'T1', title:'Sony USA specifications', note:'verify-specs 2026-11-15: weight, dimensions, filter, blades, groups/elements, min aperture, magnification re-read from the embedded spec sheet (minimum focus not compared: inches, AF/MF)', date:'2026-11-15' }],
     maxAperture:2.0, minAperture:22, weight:918, length:139.8, diameter:92.9,
     filterThread:86, minFocusDist:38, maxMagnification:0.23,
     elements:20, groups:14, blades:11, afType:'XD Linear',
@@ -1433,6 +1465,7 @@ const LENSES = {
   'fe-50-150mm-f2-gm': {
     name:'FE 50-150mm F2 GM', manufacturer:'Sony', line:'FE GM', type:'Zoom', mount:'e', asin:'B0F5X657S5',
     focalLength:null, focalLengthMin:50, focalLengthMax:150, focalLengthEquiv:'50-150mm',
+    specSources: [{ url:'https://electronics.sony.com/imaging/lenses/full-frame-e-mount/p/sel50150gm', tier:'T1', title:'Sony USA specifications', note:'verify-specs 2026-11-15: weight, dimensions, filter, blades, groups/elements, min aperture, magnification re-read from the embedded spec sheet (minimum focus not compared: inches, AF/MF)', date:'2026-11-15' }],
     maxAperture:2.0, minAperture:22, weight:1340, length:200.0, diameter:102.8,
     filterThread:95, minFocusDist:40, maxMagnification:0.20,
     elements:19, groups:17, blades:11, afType:'XD Linear',
@@ -1448,6 +1481,7 @@ const LENSES = {
   'fe-100-400mm-f45-63-gm-oss': {
     name:'FE 100-400mm F4.5-5.6 GM OSS', manufacturer:'Sony', line:'FE GM', type:'Zoom', mount:'e', asin:'B071RFR318',
     focalLength:null, focalLengthMin:100, focalLengthMax:400, focalLengthEquiv:'100-400mm',
+    specSources: [{ url:'https://electronics.sony.com/imaging/lenses/full-frame-e-mount/p/sel100400gm', tier:'T1', title:'Sony USA specifications', note:'verify-specs 2026-11-15: weight, dimensions, filter, blades, groups/elements, min aperture, magnification re-read from the embedded spec sheet (minimum focus not compared: inches, AF/MF)', date:'2026-11-15' }],
     maxAperture:4.5, minAperture:32, weight:1395, length:205.0, diameter:93.9,
     filterThread:77, minFocusDist:98, maxMagnification:0.35,
     elements:22, groups:16, blades:9, afType:'DDSSM',
@@ -1494,6 +1528,7 @@ const LENSES = {
   'fe-12-24mm-f4-g': {
     name:'FE 12-24mm F4 G', manufacturer:'Sony', line:'FE G', type:'Zoom', mount:'e', asin:'B072J4B6WS',
     focalLength:null, focalLengthMin:12, focalLengthMax:24, focalLengthEquiv:'12-24mm',
+    specSources: [{ url:'https://electronics.sony.com/imaging/lenses/full-frame-e-mount/p/sel1224g', tier:'T1', title:'Sony USA specifications', note:'verify-specs 2026-11-15: weight, dimensions, filter, blades, groups/elements, min aperture, magnification re-read from the embedded spec sheet (minimum focus not compared: inches, AF/MF)', date:'2026-11-15' }],
     maxAperture:4.0, minAperture:22, weight:565, length:117.4, diameter:87.0,
     filterThread:null, minFocusDist:28, maxMagnification:0.14,
     elements:17, groups:13, blades:7, afType:'DDSSM',
@@ -1512,6 +1547,7 @@ const LENSES = {
   'fe-16-25mm-f28-g': {
     name:'FE 16-25mm F2.8 G', manufacturer:'Sony', line:'FE G', type:'Zoom', mount:'e', asin:'B0D1VWRW46',
     focalLength:null, focalLengthMin:16, focalLengthMax:25, focalLengthEquiv:'16-25mm',
+    specSources: [{ url:'https://electronics.sony.com/imaging/lenses/full-frame-e-mount/p/sel1625g', tier:'T1', title:'Sony USA specifications', note:'verify-specs 2026-11-15: weight, dimensions, filter, blades, groups/elements, min aperture, magnification re-read from the embedded spec sheet (minimum focus not compared: inches, AF/MF)', date:'2026-11-15' }],
     maxAperture:2.8, minAperture:22, weight:409, length:91.4, diameter:74.8,
     filterThread:67, minFocusDist:18, maxMagnification:0.20,
     elements:16, groups:13, blades:11, afType:'XD Linear',
@@ -1526,6 +1562,7 @@ const LENSES = {
   'fe-16-35mm-f4-pz-g': {
     name:'FE 16-35mm F4 PZ G', manufacturer:'Sony', line:'FE G', type:'Zoom', mount:'e', asin:'B09W6CG368',
     focalLength:null, focalLengthMin:16, focalLengthMax:35, focalLengthEquiv:'16-35mm',
+    specSources: [{ url:'https://electronics.sony.com/imaging/lenses/all-e-mount/p/selp1635g', tier:'T1', title:'Sony USA specifications', note:'verify-specs 2026-11-15: weight, dimensions, filter, blades, groups/elements, min aperture, magnification re-read from the embedded spec sheet (minimum focus not compared: inches, AF/MF)', date:'2026-11-15' }],
     maxAperture:4.0, minAperture:22, weight:353, length:88.1, diameter:80.5,
     filterThread:72, minFocusDist:24, maxMagnification:0.23,
     elements:13, groups:12, blades:7, afType:'Linear',
@@ -1540,6 +1577,7 @@ const LENSES = {
   'fe-20-70mm-f4-g': {
     name:'FE 20-70mm F4 G', manufacturer:'Sony', line:'FE G', type:'Zoom', mount:'e', asin:'B0BSHFF5WX',
     focalLength:null, focalLengthMin:20, focalLengthMax:70, focalLengthEquiv:'20-70mm',
+    specSources: [{ url:'https://electronics.sony.com/imaging/lenses/full-frame-e-mount/p/sel2070g', tier:'T1', title:'Sony USA specifications', note:'verify-specs 2026-11-15: weight, dimensions, filter, blades, groups/elements, min aperture, magnification re-read from the embedded spec sheet (minimum focus not compared: inches, AF/MF)', date:'2026-11-15' }],
     maxAperture:4.0, minAperture:22, weight:488, length:99.0, diameter:78.7,
     filterThread:72, minFocusDist:25, maxMagnification:0.39,
     elements:16, groups:13, blades:9, afType:'XD Linear',
@@ -1554,6 +1592,7 @@ const LENSES = {
   'fe-24-50mm-f28-g': {
     name:'FE 24-50mm F2.8 G', manufacturer:'Sony', line:'FE G', type:'Zoom', mount:'e', asin:'B0CVSLTYLK',
     focalLength:null, focalLengthMin:24, focalLengthMax:50, focalLengthEquiv:'24-50mm',
+    specSources: [{ url:'https://electronics.sony.com/imaging/lenses/full-frame-e-mount/p/sel2450g', tier:'T1', title:'Sony USA specifications', note:'verify-specs 2026-11-15: weight, dimensions, filter, blades, groups/elements, min aperture, magnification re-read from the embedded spec sheet (minimum focus not compared: inches, AF/MF)', date:'2026-11-15' }],
     maxAperture:2.8, minAperture:22, weight:440, length:92.3, diameter:74.8,
     filterThread:67, minFocusDist:19, maxMagnification:0.33,
     elements:16, groups:13, blades:11, afType:'Linear',
@@ -1568,6 +1607,7 @@ const LENSES = {
   'fe-24-105mm-f4-g-oss': {
     name:'FE 24-105mm F4 G OSS', manufacturer:'Sony', line:'FE G', type:'Zoom', mount:'e', asin:'B076V9P58R',
     focalLength:null, focalLengthMin:24, focalLengthMax:105, focalLengthEquiv:'24-105mm',
+    specSources: [{ url:'https://electronics.sony.com/imaging/lenses/all-e-mount/p/sel24105g-2', tier:'T1', title:'Sony USA specifications', note:'verify-specs 2026-11-15: weight, dimensions, filter, blades, groups/elements, min aperture, magnification re-read from the embedded spec sheet (minimum focus not compared: inches, AF/MF)', date:'2026-11-15' }],
     maxAperture:4.0, minAperture:22, weight:663, length:113.3, diameter:83.4,
     filterThread:77, minFocusDist:38, maxMagnification:0.31,
     elements:17, groups:14, blades:9, afType:'DDSSM',
@@ -1583,6 +1623,7 @@ const LENSES = {
   'fe-70-200mm-f4-g-oss': {
     name:'FE 70-200mm F4 G OSS', manufacturer:'Sony', line:'FE G', type:'Zoom', mount:'e', asin:'B00I8BICEO',
     focalLength:null, focalLengthMin:70, focalLengthMax:200, focalLengthEquiv:'70-200mm',
+    specSources: [{ url:'https://electronics.sony.com/imaging/lenses/full-frame-e-mount/p/sel70200g', tier:'T1', title:'Sony USA specifications', note:'verify-specs 2026-11-15: weight, dimensions, filter, blades, groups/elements, min aperture, magnification re-read from the embedded spec sheet (minimum focus not compared: inches, AF/MF)', date:'2026-11-15' }],
     maxAperture:4.0, minAperture:22, weight:840, length:175.0, diameter:80.0,
     filterThread:72, minFocusDist:100, maxMagnification:0.13,
     elements:21, groups:15, blades:9, afType:'DDSSM',
@@ -1596,6 +1637,7 @@ const LENSES = {
   'fe-70-200mm-f4-macro-g-oss-ii': {
     name:'FE 70-200mm F4 Macro G OSS II', manufacturer:'Sony', line:'FE G', type:'Zoom', mount:'e', asin:'B0CBNBDVMZ',
     focalLength:null, focalLengthMin:70, focalLengthMax:200, focalLengthEquiv:'70-200mm',
+    specSources: [{ url:'https://electronics.sony.com/imaging/lenses/full-frame-e-mount/p/sel70200g2', tier:'T1', title:'Sony USA specifications', note:'verify-specs 2026-11-15: weight, dimensions, filter, blades, groups/elements, min aperture, magnification re-read from the embedded spec sheet (minimum focus not compared: inches, AF/MF)', date:'2026-11-15' }],
     maxAperture:4.0, minAperture:22, weight:794, length:149.0, diameter:82.2,
     filterThread:72, minFocusDist:26, maxMagnification:0.50,
     elements:19, groups:13, blades:9, afType:'XD Linear',
@@ -1611,7 +1653,8 @@ const LENSES = {
   'fe-70-300mm-f45-56-g-oss': {
     name:'FE 70-300mm F4.5-5.6 G OSS', manufacturer:'Sony', line:'FE G', type:'Zoom', mount:'e', asin:'B01DLMD7DK',
     focalLength:null, focalLengthMin:70, focalLengthMax:300, focalLengthEquiv:'70-300mm',
-    maxAperture:4.5, minAperture:32, weight:854, length:143.5, diameter:84.0,
+    specSources: [{ url:'https://electronics.sony.com/imaging/lenses/full-frame-e-mount/p/sel70300g', tier:'T1', title:'Sony USA specifications', note:'verify-specs 2026-11-15: weight, dimensions, filter, blades, groups/elements, min aperture, magnification re-read from the embedded spec sheet (minimum focus not compared: inches, AF/MF)', date:'2026-11-15' }],
+    maxAperture:4.5, minAperture:29, weight:854, length:143.5, diameter:84.0,
     filterThread:72, minFocusDist:90, maxMagnification:0.31,
     elements:16, groups:13, blades:9, afType:'DDSSM',
     weatherSealed:true, ois:true, oisStops:null, year:2016, discontinued:false,
@@ -1626,6 +1669,7 @@ const LENSES = {
   'fe-200-600mm-f56-63-g-oss': {
     name:'FE 200-600mm F5.6-6.3 G OSS', manufacturer:'Sony', line:'FE G', type:'Zoom', mount:'e', asin:'B07SZXDN9X',
     focalLength:null, focalLengthMin:200, focalLengthMax:600, focalLengthEquiv:'200-600mm',
+    specSources: [{ url:'https://electronics.sony.com/imaging/lenses/full-frame-e-mount/p/sel200600g', tier:'T1', title:'Sony USA specifications', note:'verify-specs 2026-11-15: weight, dimensions, filter, blades, groups/elements, min aperture, magnification re-read from the embedded spec sheet (minimum focus not compared: inches, AF/MF)', date:'2026-11-15' }],
     maxAperture:5.6, minAperture:36, weight:2115, length:318.0, diameter:111.5,
     filterThread:95, minFocusDist:240, maxMagnification:0.20,
     elements:24, groups:17, blades:11, afType:'DDSSM',
@@ -1640,7 +1684,8 @@ const LENSES = {
   'fe-400-800mm-f63-8-g-oss': {
     name:'FE 400-800mm F6.3-8 G OSS', manufacturer:'Sony', line:'FE G', type:'Zoom', mount:'e', asin:'B0DYKB9RY9',
     focalLength:null, focalLengthMin:400, focalLengthMax:800, focalLengthEquiv:'400-800mm',
-    maxAperture:6.3, minAperture:51, weight:2475, length:348.0, diameter:119.8,
+    specSources: [{ url:'https://electronics.sony.com/imaging/lenses/full-frame-e-mount/p/sel400800g', tier:'T1', title:'Sony USA specifications', note:'verify-specs 2026-11-15: weight, dimensions, filter, blades, groups/elements, min aperture, magnification re-read from the embedded spec sheet (minimum focus not compared: inches, AF/MF)', date:'2026-11-15' }],
+    maxAperture:6.3, minAperture:45, weight:2475, length:348.0, diameter:119.8,
     filterThread:105, minFocusDist:170, maxMagnification:0.23,
     elements:27, groups:19, blades:11, afType:'DDSSM',
     weatherSealed:true, ois:true, oisStops:null, year:2025, discontinued:false,
@@ -1654,6 +1699,7 @@ const LENSES = {
   'fe-16-35mm-f4-za-oss': {
     name:'FE 16-35mm F4 ZA OSS Vario-Tessar', manufacturer:'Sony', line:'FE ZA', type:'Zoom', mount:'e', asin:'B00NN6J3AG',
     focalLength:null, focalLengthMin:16, focalLengthMax:35, focalLengthEquiv:'16-35mm',
+    specSources: [{ url:'https://electronics.sony.com/imaging/lenses/full-frame-e-mount/p/sel1635z', tier:'T1', title:'Sony USA specifications', note:'verify-specs 2026-11-15: weight, dimensions, filter, blades, groups/elements, min aperture, magnification re-read from the embedded spec sheet (minimum focus not compared: inches, AF/MF)', date:'2026-11-15' }],
     maxAperture:4.0, minAperture:22, weight:518, length:98.5, diameter:78.5,
     filterThread:72, minFocusDist:28, maxMagnification:0.19,
     elements:12, groups:10, blades:7, afType:'Linear',
@@ -1667,6 +1713,7 @@ const LENSES = {
   'fe-24-70mm-f4-za-oss': {
     name:'FE 24-70mm F4 ZA OSS Vario-Tessar', manufacturer:'Sony', line:'FE ZA', type:'Zoom', mount:'e', asin:'B00FSB79FU',
     focalLength:null, focalLengthMin:24, focalLengthMax:70, focalLengthEquiv:'24-70mm',
+    specSources: [{ url:'https://electronics.sony.com/imaging/lenses/full-frame-e-mount/p/sel2470z', tier:'T1', title:'Sony USA specifications', note:'verify-specs 2026-11-15: weight, dimensions, filter, blades, groups/elements, min aperture, magnification re-read from the embedded spec sheet (minimum focus not compared: inches, AF/MF)', date:'2026-11-15' }],
     maxAperture:4.0, minAperture:22, weight:426, length:94.5, diameter:73.0,
     filterThread:67, minFocusDist:40, maxMagnification:0.20,
     elements:12, groups:10, blades:7, afType:'Linear',
@@ -1680,6 +1727,7 @@ const LENSES = {
   'fe-24-240mm-f35-63-oss': {
     name:'FE 24-240mm F3.5-6.3 OSS', manufacturer:'Sony', line:'FE', type:'Zoom', mount:'e', asin:'B00U29GNC8',
     focalLength:null, focalLengthMin:24, focalLengthMax:240, focalLengthEquiv:'24-240mm',
+    specSources: [{ url:'https://electronics.sony.com/imaging/lenses/full-frame-e-mount/p/sel24240', tier:'T1', title:'Sony USA specifications', note:'verify-specs 2026-11-15: weight, dimensions, filter, blades, groups/elements, min aperture, magnification re-read from the embedded spec sheet (minimum focus not compared: inches, AF/MF)', date:'2026-11-15' }],
     maxAperture:3.5, minAperture:40, weight:780, length:118.5, diameter:80.5,
     filterThread:72, minFocusDist:50, maxMagnification:0.27,
     elements:17, groups:12, blades:7, afType:'Linear',
@@ -1695,6 +1743,7 @@ const LENSES = {
   'fe-28-60mm-f4-56': {
     name:'FE 28-60mm F4-5.6', manufacturer:'Sony', line:'FE', type:'Zoom', mount:'e', asin:'B08J3HTGQX',
     focalLength:null, focalLengthMin:28, focalLengthMax:60, focalLengthEquiv:'28-60mm',
+    specSources: [{ url:'https://electronics.sony.com/imaging/lenses/full-frame-e-mount/p/sel2860', tier:'T1', title:'Sony USA specifications', note:'verify-specs 2026-11-15: weight, dimensions, filter, blades, groups/elements, min aperture, magnification re-read from the embedded spec sheet (minimum focus not compared: inches, AF/MF)', date:'2026-11-15' }],
     maxAperture:4.0, minAperture:22, weight:167, length:45.0, diameter:66.6,
     filterThread:40.5, minFocusDist:30, maxMagnification:0.16,
     elements:8, groups:7, blades:7, afType:'Linear',
@@ -1722,7 +1771,8 @@ const LENSES = {
   'fe-28-70mm-f35-56-oss-ii': {
     name:'FE 28-70mm F3.5-5.6 OSS II', manufacturer:'Sony', line:'FE', type:'Zoom', mount:'e', asin:'B0G4SC388G',
     focalLength:null, focalLengthMin:28, focalLengthMax:70, focalLengthEquiv:'28-70mm',
-    maxAperture:3.5, minAperture:22, weight:290, length:83.0, diameter:72.5,
+    specSources: [{ url:'https://electronics.sony.com/imaging/lenses/full-frame-e-mount/p/sel28702', tier:'T1', title:'Sony USA specifications', note:'verify-specs 2026-11-15: weight, dimensions, filter, blades, groups/elements, min aperture, magnification re-read from the embedded spec sheet (minimum focus not compared: inches, AF/MF)', date:'2026-11-15' }],
+    maxAperture:3.5, minAperture:22, weight:293, length:83.0, diameter:72.5,
     filterThread:55, minFocusDist:30, maxMagnification:0.19,
     elements:11, groups:9, blades:7, afType:'Linear',
     weatherSealed:true, ois:true, oisStops:null, year:2025, discontinued:false,
@@ -1737,6 +1787,7 @@ const LENSES = {
   'e-11mm-f18': {
     name:'E 11mm F1.8', manufacturer:'Sony', line:'E', type:'Prime', mount:'e', asin:'B0B2RZZBPN',
     focalLength:11, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'16.5mm',
+    specSources: [{ url:'https://electronics.sony.com/imaging/lenses/aps-c-e-mount/p/sel11f18', tier:'T1', title:'Sony USA specifications', note:'verify-specs 2026-11-15: weight, dimensions, filter, blades, groups/elements, min aperture, magnification re-read from the embedded spec sheet (minimum focus not compared: inches, AF/MF)', date:'2026-11-15' }],
     maxAperture:1.8, minAperture:16, weight:181, length:57.5, diameter:66.0,
     filterThread:55, minFocusDist:12, maxMagnification:0.20,
     elements:12, groups:11, blades:7, afType:'Linear',
@@ -1752,6 +1803,7 @@ const LENSES = {
   'e-15mm-f14-g': {
     name:'E 15mm F1.4 G', manufacturer:'Sony', line:'E G', type:'Prime', mount:'e', asin:'B0B2X335XB',
     focalLength:15, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'22.5mm',
+    specSources: [{ url:'https://electronics.sony.com/imaging/lenses/all-e-mount/p/sel15f14g', tier:'T1', title:'Sony USA specifications', note:'verify-specs 2026-11-15: weight, dimensions, filter, blades, groups/elements, min aperture, magnification re-read from the embedded spec sheet (minimum focus not compared: inches, AF/MF)', date:'2026-11-15' }],
     maxAperture:1.4, minAperture:16, weight:219, length:69.5, diameter:66.0,
     filterThread:55, minFocusDist:17, maxMagnification:0.17,
     elements:14, groups:11, blades:7, afType:'Linear',
@@ -1767,6 +1819,7 @@ const LENSES = {
   'e-16mm-f28': {
     name:'E 16mm F2.8', manufacturer:'Sony', line:'E', type:'Prime', mount:'e', asin:'B003OUX6MW',
     focalLength:16, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'24mm',
+    specSources: [{ url:'https://electronics.sony.com/imaging/lenses/aps-c-e-mount/p/sel16f28', tier:'T1', title:'Sony USA specifications', note:'verify-specs 2026-11-15: weight, dimensions, filter, blades, groups/elements, min aperture, magnification re-read from the embedded spec sheet (minimum focus not compared: inches, AF/MF)', date:'2026-11-15' }],
     maxAperture:2.8, minAperture:22, weight:67, length:22.5, diameter:62.0,
     filterThread:49, minFocusDist:24, maxMagnification:0.078,
     elements:5, groups:5, blades:7, afType:'DC Motor',
@@ -1780,7 +1833,8 @@ const LENSES = {
   'e-20mm-f28': {
     name:'E 20mm F2.8', manufacturer:'Sony', line:'E', type:'Prime', mount:'e', asin:'B00B20OYUO',
     focalLength:20, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'30mm',
-    maxAperture:2.8, minAperture:22, weight:69, length:20.4, diameter:62.6,
+    specSources: [{ url:'https://electronics.sony.com/imaging/lenses/aps-c-e-mount/p/sel20f28b', tier:'T1', title:'Sony USA specifications', note:'verify-specs 2026-11-15: weight, dimensions, filter, blades, groups/elements, min aperture, magnification re-read from the embedded spec sheet (minimum focus not compared: inches, AF/MF)', date:'2026-11-15' }],
+    maxAperture:2.8, minAperture:16, weight:69, length:20.4, diameter:62.6,
     filterThread:49, minFocusDist:20, maxMagnification:0.12,
     elements:6, groups:6, blades:7, afType:'Linear',
     weatherSealed:false, ois:false, oisStops:null, year:2013, discontinued:false,
@@ -1795,6 +1849,7 @@ const LENSES = {
   'e-24mm-f18-za': {
     name:'E 24mm F1.8 ZA Sonnar', manufacturer:'Sony', line:'E ZA', type:'Prime', mount:'e', asin:'B005LLIEO2',
     focalLength:24, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'36mm',
+    specSources: [{ url:'https://electronics.sony.com/imaging/lenses/aps-c-e-mount/p/sel24f18z', tier:'T1', title:'Sony USA specifications', note:'verify-specs 2026-11-15: weight, dimensions, filter, blades, groups/elements, min aperture, magnification re-read from the embedded spec sheet (minimum focus not compared: inches, AF/MF)', date:'2026-11-15' }],
     maxAperture:1.8, minAperture:22, weight:225, length:65.5, diameter:63.0,
     filterThread:49, minFocusDist:16, maxMagnification:0.25,
     elements:10, groups:8, blades:7, afType:'Linear',
@@ -1808,6 +1863,7 @@ const LENSES = {
   'e-30mm-f35-macro': {
     name:'E 30mm F3.5 Macro', manufacturer:'Sony', line:'E', type:'Prime', mount:'e', asin:'B0054I54JU',
     focalLength:30, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'45mm',
+    specSources: [{ url:'https://electronics.sony.com/imaging/lenses/aps-c-e-mount/p/sel30m35', tier:'T1', title:'Sony USA specifications', note:'verify-specs 2026-11-15: weight, dimensions, filter, blades, groups/elements, min aperture, magnification re-read from the embedded spec sheet (minimum focus not compared: inches, AF/MF)', date:'2026-11-15' }],
     maxAperture:3.5, minAperture:22, weight:138, length:55.5, diameter:62.0,
     filterThread:49, minFocusDist:9.5, maxMagnification:1.0,
     elements:7, groups:6, blades:7, afType:'DC Motor',
@@ -1821,6 +1877,7 @@ const LENSES = {
   'e-35mm-f18-oss': {
     name:'E 35mm F1.8 OSS', manufacturer:'Sony', line:'E', type:'Prime', mount:'e', asin:'B0096W1P5W',
     focalLength:35, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'52.5mm',
+    specSources: [{ url:'https://electronics.sony.com/imaging/lenses/aps-c-e-mount/p/sel35f18', tier:'T1', title:'Sony USA specifications', note:'verify-specs 2026-11-15: weight, dimensions, filter, blades, groups/elements, min aperture, magnification re-read from the embedded spec sheet (minimum focus not compared: inches, AF/MF)', date:'2026-11-15' }],
     maxAperture:1.8, minAperture:22, weight:154, length:45.0, diameter:63.0,
     filterThread:49, minFocusDist:30, maxMagnification:0.15,
     elements:8, groups:6, blades:7, afType:'DC Motor',
@@ -1836,6 +1893,7 @@ const LENSES = {
   'e-50mm-f18-oss': {
     name:'E 50mm F1.8 OSS', manufacturer:'Sony', line:'E', type:'Prime', mount:'e', asin:'B00EPWC30O',
     focalLength:50, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'75mm',
+    specSources: [{ url:'https://electronics.sony.com/imaging/lenses/aps-c-e-mount/p/sel50f18', tier:'T1', title:'Sony USA specifications', note:'verify-specs 2026-11-15: weight, dimensions, filter, blades, groups/elements, min aperture, magnification re-read from the embedded spec sheet (minimum focus not compared: inches, AF/MF)', date:'2026-11-15' }],
     maxAperture:1.8, minAperture:22, weight:202, length:62.0, diameter:62.0,
     filterThread:49, minFocusDist:39, maxMagnification:0.16,
     elements:9, groups:8, blades:7, afType:'DC Motor',
@@ -1869,6 +1927,7 @@ const LENSES = {
   'e-10-20mm-f4-pz-g': {
     name:'E 10-20mm F4 PZ G', manufacturer:'Sony', line:'E G', type:'Zoom', mount:'e', asin:'B0B2RYSS32',
     focalLength:null, focalLengthMin:10, focalLengthMax:20, focalLengthEquiv:'15-30mm',
+    specSources: [{ url:'https://electronics.sony.com/imaging/lenses/all-e-mount/p/selp1020g', tier:'T1', title:'Sony USA specifications', note:'verify-specs 2026-11-15: weight, dimensions, filter, blades, groups/elements, min aperture, magnification re-read from the embedded spec sheet (minimum focus not compared: inches, AF/MF)', date:'2026-11-15' }],
     maxAperture:4.0, minAperture:22, weight:178, length:55.0, diameter:69.8,
     filterThread:62, minFocusDist:18, maxMagnification:0.18,
     elements:11, groups:10, blades:7, afType:'Linear',
@@ -1884,6 +1943,7 @@ const LENSES = {
   'e-16-50mm-f35-56-pz-oss': {
     name:'E 16-50mm F3.5-5.6 PZ OSS', manufacturer:'Sony', line:'E', type:'Zoom', mount:'e', asin:'B0096W1PG6',
     focalLength:null, focalLengthMin:16, focalLengthMax:50, focalLengthEquiv:'24-75mm',
+    specSources: [{ url:'https://electronics.sony.com/imaging/lenses/aps-c-e-mount/p/selp1650', tier:'T1', title:'Sony USA specifications', note:'verify-specs 2026-11-15: weight, dimensions, filter, blades, groups/elements, min aperture, magnification re-read from the embedded spec sheet (minimum focus not compared: inches, AF/MF)', date:'2026-11-15' }],
     maxAperture:3.5, minAperture:22, weight:116, length:29.9, diameter:64.7,
     filterThread:40.5, minFocusDist:25, maxMagnification:0.215,
     elements:9, groups:8, blades:7, afType:'Linear',
@@ -1897,7 +1957,8 @@ const LENSES = {
   'e-16-50mm-f35-56-pz-oss-ii': {
     name:'E 16-50mm F3.5-5.6 PZ OSS II', manufacturer:'Sony', line:'E', type:'Zoom', mount:'e', asin:'B0771TQZP8',
     focalLength:null, focalLengthMin:16, focalLengthMax:50, focalLengthEquiv:'24-75mm',
-    maxAperture:3.5, minAperture:22, weight:107, length:31.3, diameter:64.7,
+    specSources: [{ url:'https://electronics.sony.com/imaging/lenses/aps-c-e-mount/p/selp16502', tier:'T1', title:'Sony USA specifications', note:'verify-specs 2026-11-15: weight, dimensions, filter, blades, groups/elements, min aperture, magnification re-read from the embedded spec sheet (minimum focus not compared: inches, AF/MF)', date:'2026-11-15' }],
+    maxAperture:3.5, minAperture:22, weight:107, length:31.3, diameter:66,
     filterThread:40.5, minFocusDist:25, maxMagnification:0.22,
     elements:9, groups:8, blades:7, afType:'Linear',
     weatherSealed:false, ois:true, oisStops:null, year:2024, discontinued:false,
@@ -1910,6 +1971,7 @@ const LENSES = {
   'e-16-55mm-f28-g': {
     name:'E 16-55mm F2.8 G', manufacturer:'Sony', line:'E G', type:'Zoom', mount:'e', asin:'B07WZVKZHK',
     focalLength:null, focalLengthMin:16, focalLengthMax:55, focalLengthEquiv:'24-82.5mm',
+    specSources: [{ url:'https://electronics.sony.com/imaging/lenses/aps-c-e-mount/p/sel1655g', tier:'T1', title:'Sony USA specifications', note:'verify-specs 2026-11-15: weight, dimensions, filter, blades, groups/elements, min aperture, magnification re-read from the embedded spec sheet (minimum focus not compared: inches, AF/MF)', date:'2026-11-15' }],
     maxAperture:2.8, minAperture:22, weight:494, length:100.0, diameter:73.0,
     filterThread:67, minFocusDist:33, maxMagnification:0.20,
     elements:17, groups:12, blades:9, afType:'XD Linear',
@@ -1925,6 +1987,7 @@ const LENSES = {
   'e-16-70mm-f4-za-oss': {
     name:'E 16-70mm F4 ZA OSS Vario-Tessar', manufacturer:'Sony', line:'E ZA', type:'Zoom', mount:'e', asin:'B00ENZRPG0',
     focalLength:null, focalLengthMin:16, focalLengthMax:70, focalLengthEquiv:'24-105mm',
+    specSources: [{ url:'https://electronics.sony.com/imaging/lenses/aps-c-e-mount/p/sel1670z', tier:'T1', title:'Sony USA specifications', note:'verify-specs 2026-11-15: weight, dimensions, filter, blades, groups/elements, min aperture, magnification re-read from the embedded spec sheet (minimum focus not compared: inches, AF/MF)', date:'2026-11-15' }],
     maxAperture:4.0, minAperture:22, weight:308, length:75.0, diameter:66.6,
     filterThread:55, minFocusDist:35, maxMagnification:0.23,
     elements:12, groups:10, blades:7, afType:'Linear',
@@ -1938,6 +2001,7 @@ const LENSES = {
   'e-18-105mm-f4-g-oss-pz': {
     name:'E 18-105mm F4 G OSS PZ', manufacturer:'Sony', line:'E G', type:'Zoom', mount:'e', asin:'B00ENZRQH8',
     focalLength:null, focalLengthMin:18, focalLengthMax:105, focalLengthEquiv:'27-157.5mm',
+    specSources: [{ url:'https://electronics.sony.com/imaging/lenses/aps-c-e-mount/p/selp18105g', tier:'T1', title:'Sony USA specifications', note:'verify-specs 2026-11-15: weight, dimensions, filter, blades, groups/elements, min aperture, magnification re-read from the embedded spec sheet (minimum focus not compared: inches, AF/MF)', date:'2026-11-15' }],
     maxAperture:4.0, minAperture:22, weight:427, length:110.0, diameter:78.0,
     filterThread:72, minFocusDist:45, maxMagnification:0.11,
     elements:16, groups:12, blades:7, afType:'Linear',
@@ -1953,6 +2017,7 @@ const LENSES = {
   'e-18-135mm-f35-56-oss': {
     name:'E 18-135mm F3.5-5.6 OSS', manufacturer:'Sony', line:'E', type:'Zoom', mount:'e', asin:'B078VPM6WM',
     focalLength:null, focalLengthMin:18, focalLengthMax:135, focalLengthEquiv:'27-202.5mm',
+    specSources: [{ url:'https://electronics.sony.com/imaging/lenses/aps-c-e-mount/p/sel18135', tier:'T1', title:'Sony USA specifications', note:'verify-specs 2026-11-15: weight, dimensions, filter, blades, groups/elements, min aperture, magnification re-read from the embedded spec sheet (minimum focus not compared: inches, AF/MF)', date:'2026-11-15' }],
     maxAperture:3.5, minAperture:22, weight:325, length:88.0, diameter:67.2,
     filterThread:55, minFocusDist:45, maxMagnification:0.29,
     elements:16, groups:12, blades:7, afType:'Linear',
@@ -1968,6 +2033,7 @@ const LENSES = {
   'e-55-210mm-f45-63-oss': {
     name:'E 55-210mm F4.5-6.3 OSS', manufacturer:'Sony', line:'E', type:'Zoom', mount:'e', asin:'B00HNJWSDS',
     focalLength:null, focalLengthMin:55, focalLengthMax:210, focalLengthEquiv:'82.5-315mm',
+    specSources: [{ url:'https://electronics.sony.com/imaging/lenses/aps-c-e-mount/p/sel55210', tier:'T1', title:'Sony USA specifications', note:'verify-specs 2026-11-15: weight, dimensions, filter, blades, groups/elements, min aperture, magnification re-read from the embedded spec sheet (minimum focus not compared: inches, AF/MF)', date:'2026-11-15' }],
     maxAperture:4.5, minAperture:32, weight:345, length:108.0, diameter:63.8,
     filterThread:49, minFocusDist:100, maxMagnification:0.225,
     elements:13, groups:9, blades:7, afType:'DC Motor',
@@ -1983,6 +2049,7 @@ const LENSES = {
   'e-70-350mm-f45-63-g-oss': {
     name:'E 70-350mm F4.5-6.3 G OSS', manufacturer:'Sony', line:'E G', type:'Zoom', mount:'e', asin:'B07X72DMLC',
     focalLength:null, focalLengthMin:70, focalLengthMax:350, focalLengthEquiv:'105-525mm',
+    specSources: [{ url:'https://electronics.sony.com/imaging/lenses/aps-c-e-mount/p/sel70350g', tier:'T1', title:'Sony USA specifications', note:'verify-specs 2026-11-15: weight, dimensions, filter, blades, groups/elements, min aperture, magnification re-read from the embedded spec sheet (minimum focus not compared: inches, AF/MF)', date:'2026-11-15' }],
     maxAperture:4.5, minAperture:32, weight:625, length:142.0, diameter:77.0,
     filterThread:67, minFocusDist:110, maxMagnification:0.23,
     elements:19, groups:13, blades:7, afType:'XD Linear',
