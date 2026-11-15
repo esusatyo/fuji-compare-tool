@@ -2068,6 +2068,7 @@ const LENSES = {
   'sigma-16mm-f14': {
     name:'Sigma 16mm f/1.4 DC DN', manufacturer:'Sigma', line:'Contemporary', type:'Prime',
     mount:'e', focalLength:16, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'24mm',
+    specSources: [{ url:'https://www.sigma-global.com/en/lenses/c017_16_14/', tier:'T1', title:'Sigma global product page', note:'verify-specs 2026-11-15: Sony E-mount rows of the per-mount spec table re-read', date:'2026-11-15' }],
     maxAperture:1.4, minAperture:16, weight:405, length:92.3, diameter:72.2,
     filterThread:67, minFocusDist:25, maxMagnification:0.1,
     elements:16, groups:13, blades:9, afType:'Stepping Motor',
@@ -2083,6 +2084,7 @@ const LENSES = {
   'sigma-23mm-f14': {
     name:'Sigma 23mm f/1.4 DC DN', manufacturer:'Sigma', line:'Contemporary', type:'Prime',
     mount:'e', focalLength:23, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'35mm',
+    specSources: [{ url:'https://www.sigma-global.com/en/lenses/c023_23_14/', tier:'T1', title:'Sigma global product page', note:'verify-specs 2026-11-15: Sony E-mount rows of the per-mount spec table re-read', date:'2026-11-15' }],
     maxAperture:1.4, minAperture:16, weight:330, length:78.9, diameter:65.8,
     filterThread:52, minFocusDist:25, maxMagnification:0.14,
     elements:13, groups:10, blades:9, afType:'Stepping Motor',
@@ -2098,6 +2100,7 @@ const LENSES = {
   'sigma-30mm-f14': {
     name:'Sigma 30mm f/1.4 DC DN', manufacturer:'Sigma', line:'Contemporary', type:'Prime',
     mount:'e', focalLength:30, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'45mm',
+    specSources: [{ url:'https://www.sigma-global.com/en/lenses/c016_30_14/', tier:'T1', title:'Sigma global product page', note:'verify-specs 2026-11-15: Sony E-mount rows of the per-mount spec table re-read', date:'2026-11-15' }],
     maxAperture:1.4, minAperture:16, weight:265, length:73.3, diameter:64.8,
     filterThread:52, minFocusDist:30, maxMagnification:0.14,
     elements:9, groups:7, blades:9, afType:'Stepping Motor',
@@ -2113,6 +2116,7 @@ const LENSES = {
   'sigma-56mm-f14': {
     name:'Sigma 56mm f/1.4 DC DN', manufacturer:'Sigma', line:'Contemporary', type:'Prime',
     mount:'e', focalLength:56, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'84mm',
+    specSources: [{ url:'https://www.sigma-global.com/en/lenses/c018_56_14/', tier:'T1', title:'Sigma global product page', note:'verify-specs 2026-11-15: Sony E-mount rows of the per-mount spec table re-read', date:'2026-11-15' }],
     maxAperture:1.4, minAperture:16, weight:280, length:59.5, diameter:66.5,
     filterThread:55, minFocusDist:50, maxMagnification:0.14,
     elements:10, groups:6, blades:9, afType:'Stepping Motor',
@@ -2128,6 +2132,7 @@ const LENSES = {
   'sigma-10-18mm-f28': {
     name:'Sigma 10-18mm f/2.8 DC DN', manufacturer:'Sigma', line:'Contemporary', type:'Zoom',
     mount:'e', focalLength:null, focalLengthMin:10, focalLengthMax:18, focalLengthEquiv:'15-27mm',
+    specSources: [{ url:'https://www.sigma-global.com/en/lenses/c023_10_18_28/', tier:'T1', title:'Sigma global product page', note:'verify-specs 2026-11-15: Sony E-mount rows of the per-mount spec table re-read', date:'2026-11-15' }],
     maxAperture:2.8, minAperture:22, weight:255, length:64.0, diameter:72.2,
     filterThread:67, minFocusDist:11.6, maxMagnification:0.25,
     elements:13, groups:10, blades:7, afType:'Stepping Motor',
@@ -2143,6 +2148,7 @@ const LENSES = {
   'sigma-18-50mm-f28': {
     name:'Sigma 18-50mm f/2.8 DC DN', manufacturer:'Sigma', line:'Contemporary', type:'Zoom',
     mount:'e', focalLength:null, focalLengthMin:18, focalLengthMax:50, focalLengthEquiv:'27-75mm',
+    specSources: [{ url:'https://www.sigma-global.com/en/lenses/c021_18_50_28/', tier:'T1', title:'Sigma global product page', note:'verify-specs 2026-11-15: Sony E-mount rows of the per-mount spec table re-read', date:'2026-11-15' }],
     maxAperture:2.8, minAperture:22, weight:290, length:76.5, diameter:61.6,
     filterThread:55, minFocusDist:12.1, maxMagnification:0.36,
     elements:13, groups:10, blades:7, afType:'Stepping Motor',
@@ -2176,6 +2182,7 @@ const LENSES = {
   'sigma-24mm-f14-dg': {
     name:'Sigma 24mm f/1.4 DG DN Art', manufacturer:'Sigma', line:'Art', type:'Prime',
     mount:'e', focalLength:24, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'24mm',
+    specSources: [{ url:'https://www.sigma-global.com/en/lenses/a022_24_14/', tier:'T1', title:'Sigma global product page', note:'verify-specs 2026-11-15: Sony E-mount rows of the per-mount spec table re-read', date:'2026-11-15' }],
     maxAperture:1.4, minAperture:16, weight:510, length:97.5, diameter:75.7,
     filterThread:72, minFocusDist:25, maxMagnification:0.14,
     elements:17, groups:14, blades:11, afType:'Stepping Motor',
@@ -2190,6 +2197,7 @@ const LENSES = {
   'sigma-35mm-f14-dg': {
     name:'Sigma 35mm f/1.4 DG DN Art', manufacturer:'Sigma', line:'Art', type:'Prime',
     mount:'e', focalLength:35, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'35mm',
+    specSources: [{ url:'https://www.sigma-global.com/en/lenses/a021_35_14/', tier:'T1', title:'Sigma global product page', note:'verify-specs 2026-11-15: Sony E-mount rows of the per-mount spec table re-read', date:'2026-11-15' }],
     maxAperture:1.4, minAperture:16, weight:640, length:111.5, diameter:75.5,
     filterThread:67, minFocusDist:30, maxMagnification:0.19,
     elements:15, groups:11, blades:11, afType:'Stepping Motor',
@@ -2220,6 +2228,7 @@ const LENSES = {
   'sigma-50mm-f14-dg': {
     name:'Sigma 50mm f/1.4 DG DN Art', manufacturer:'Sigma', line:'Art', type:'Prime',
     mount:'e', focalLength:50, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'50mm',
+    specSources: [{ url:'https://www.sigma-global.com/en/lenses/a023_50_14/', tier:'T1', title:'Sigma global product page', note:'verify-specs 2026-11-15: Sony E-mount rows of the per-mount spec table re-read', date:'2026-11-15' }],
     maxAperture:1.4, minAperture:16, weight:660, length:111.5, diameter:78.2,
     filterThread:72, minFocusDist:45, maxMagnification:0.15,
     elements:14, groups:11, blades:11, afType:'HLA Linear',
@@ -2234,6 +2243,7 @@ const LENSES = {
   'sigma-85mm-f14-dg': {
     name:'Sigma 85mm f/1.4 DG DN Art', manufacturer:'Sigma', line:'Art', type:'Prime',
     mount:'e', focalLength:85, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'85mm',
+    specSources: [{ url:'https://www.sigma-global.com/en/lenses/a020_85_14/', tier:'T1', title:'Sigma global product page', note:'verify-specs 2026-11-15: Sony E-mount rows of the per-mount spec table re-read', date:'2026-11-15' }],
     maxAperture:1.4, minAperture:16, weight:625, length:96.1, diameter:82.8,
     filterThread:77, minFocusDist:85, maxMagnification:0.12,
     elements:15, groups:11, blades:11, afType:'Stepping Motor',
@@ -2265,6 +2275,7 @@ const LENSES = {
   'sigma-20mm-f14-dg': {
     name:'Sigma 20mm f/1.4 DG DN Art', manufacturer:'Sigma', line:'Art', type:'Prime',
     mount:'e', focalLength:20, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'20mm',
+    specSources: [{ url:'https://www.sigma-global.com/en/lenses/a022_20_14/', tier:'T1', title:'Sigma global product page', note:'verify-specs 2026-11-15: Sony E-mount rows of the per-mount spec table re-read', date:'2026-11-15' }],
     maxAperture:1.4, minAperture:16, weight:630, length:113.2, diameter:87.8,
     filterThread:82, minFocusDist:23, maxMagnification:0.16,
     elements:17, groups:15, blades:11, afType:'Stepping Motor',
@@ -2282,6 +2293,7 @@ const LENSES = {
   'sigma-20mm-f2-dg': {
     name:'Sigma 20mm f/2 DG DN Contemporary', manufacturer:'Sigma', line:'Contemporary', type:'Prime',
     mount:'e', focalLength:20, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'20mm',
+    specSources: [{ url:'https://www.sigma-global.com/en/lenses/c022_20_2/', tier:'T1', title:'Sigma global product page', note:'verify-specs 2026-11-15: Sony E-mount rows of the per-mount spec table re-read', date:'2026-11-15' }],
     maxAperture:2.0, minAperture:22, weight:370, length:74.4, diameter:70,
     filterThread:62, minFocusDist:22, maxMagnification:0.15,
     elements:13, groups:11, blades:9, afType:'Stepping Motor',
@@ -2295,6 +2307,7 @@ const LENSES = {
   'sigma-24mm-f2-dg': {
     name:'Sigma 24mm f/2 DG DN Contemporary', manufacturer:'Sigma', line:'Contemporary', type:'Prime',
     mount:'e', focalLength:24, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'24mm',
+    specSources: [{ url:'https://www.sigma-global.com/en/lenses/c021_24_2/', tier:'T1', title:'Sigma global product page', note:'verify-specs 2026-11-15: Sony E-mount rows of the per-mount spec table re-read', date:'2026-11-15' }],
     maxAperture:2.0, minAperture:22, weight:360, length:74, diameter:70,
     filterThread:62, minFocusDist:24.5, maxMagnification:0.15,
     elements:13, groups:11, blades:9, afType:'Stepping Motor',
@@ -2308,6 +2321,7 @@ const LENSES = {
   'sigma-35mm-f2-dg': {
     name:'Sigma 35mm f/2 DG DN Contemporary', manufacturer:'Sigma', line:'Contemporary', type:'Prime',
     mount:'e', focalLength:35, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'35mm',
+    specSources: [{ url:'https://www.sigma-global.com/en/lenses/c020_35_2/', tier:'T1', title:'Sigma global product page', note:'verify-specs 2026-11-15: Sony E-mount rows of the per-mount spec table re-read', date:'2026-11-15' }],
     maxAperture:2.0, minAperture:22, weight:325, length:67.4, diameter:70,
     filterThread:58, minFocusDist:27, maxMagnification:0.18,
     elements:10, groups:9, blades:9, afType:'Stepping Motor',
@@ -2321,6 +2335,7 @@ const LENSES = {
   'sigma-65mm-f2-dg': {
     name:'Sigma 65mm f/2 DG DN Contemporary', manufacturer:'Sigma', line:'Contemporary', type:'Prime',
     mount:'e', focalLength:65, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'65mm',
+    specSources: [{ url:'https://www.sigma-global.com/en/lenses/c020_65_2/', tier:'T1', title:'Sigma global product page', note:'verify-specs 2026-11-15: Sony E-mount rows of the per-mount spec table re-read', date:'2026-11-15' }],
     maxAperture:2.0, minAperture:22, weight:405, length:76.7, diameter:72,
     filterThread:62, minFocusDist:55, maxMagnification:0.15,
     elements:12, groups:9, blades:9, afType:'Stepping Motor',
@@ -2334,6 +2349,7 @@ const LENSES = {
   'sigma-90mm-f28-dg': {
     name:'Sigma 90mm f/2.8 DG DN Contemporary', manufacturer:'Sigma', line:'Contemporary', type:'Prime',
     mount:'e', focalLength:90, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'90mm',
+    specSources: [{ url:'https://www.sigma-global.com/en/lenses/c021_90_28/', tier:'T1', title:'Sigma global product page', note:'verify-specs 2026-11-15: Sony E-mount rows of the per-mount spec table re-read', date:'2026-11-15' }],
     maxAperture:2.8, minAperture:22, weight:295, length:61.7, diameter:64,
     filterThread:55, minFocusDist:50, maxMagnification:0.2,
     elements:11, groups:10, blades:9, afType:'Stepping Motor',
@@ -2349,6 +2365,7 @@ const LENSES = {
   'sigma-16-28mm-f28-dg': {
     name:'Sigma 16-28mm f/2.8 DG DN Contemporary', manufacturer:'Sigma', line:'Contemporary', type:'Zoom',
     mount:'e', focalLength:null, focalLengthMin:16, focalLengthMax:28, focalLengthEquiv:'16-28mm',
+    specSources: [{ url:'https://www.sigma-global.com/en/lenses/c022_16_28_28/', tier:'T1', title:'Sigma global product page', note:'verify-specs 2026-11-15: Sony E-mount rows of the per-mount spec table re-read', date:'2026-11-15' }],
     maxAperture:2.8, minAperture:22, weight:450, length:102.6, diameter:77.2,
     filterThread:72, minFocusDist:25, maxMagnification:0.18,
     elements:16, groups:11, blades:9, afType:'Stepping Motor',
@@ -2363,6 +2380,7 @@ const LENSES = {
   'sigma-28-70mm-f28-dg': {
     name:'Sigma 28-70mm f/2.8 DG DN Contemporary', manufacturer:'Sigma', line:'Contemporary', type:'Zoom',
     mount:'e', focalLength:null, focalLengthMin:28, focalLengthMax:70, focalLengthEquiv:'28-70mm',
+    specSources: [{ url:'https://www.sigma-global.com/en/lenses/c021_28_70_28/', tier:'T1', title:'Sigma global product page', note:'verify-specs 2026-11-15: Sony E-mount rows of the per-mount spec table re-read', date:'2026-11-15' }],
     maxAperture:2.8, minAperture:22, weight:470, length:103.5, diameter:72.2,
     filterThread:67, minFocusDist:19, maxMagnification:0.3,
     elements:16, groups:12, blades:9, afType:'Stepping Motor',
@@ -2395,6 +2413,7 @@ const LENSES = {
   'sigma-28-45mm-f18-dg': {
     name:'Sigma 28-45mm f/1.8 DG DN Art', manufacturer:'Sigma', line:'Art', type:'Zoom',
     mount:'e', focalLength:null, focalLengthMin:28, focalLengthMax:45, focalLengthEquiv:'28-45mm',
+    specSources: [{ url:'https://www.sigma-global.com/en/lenses/a024_28_45_18/', tier:'T1', title:'Sigma global product page', note:'verify-specs 2026-11-15: Sony E-mount rows of the per-mount spec table re-read', date:'2026-11-15' }],
     maxAperture:1.8, minAperture:16, weight:950, length:153.4, diameter:87.8,
     filterThread:82, minFocusDist:30, maxMagnification:0.25,
     elements:18, groups:15, blades:11, afType:'HLA Linear',
@@ -2409,6 +2428,7 @@ const LENSES = {
   'sigma-70-200mm-f28-dg': {
     name:'Sigma 70-200mm f/2.8 DG DN OS Sports', manufacturer:'Sigma', line:'Sports', type:'Zoom',
     mount:'e', focalLength:null, focalLengthMin:70, focalLengthMax:200, focalLengthEquiv:'70-200mm',
+    specSources: [{ url:'https://www.sigma-global.com/en/lenses/s023_70_200_28/', tier:'T1', title:'Sigma global product page', note:'verify-specs 2026-11-15: Sony E-mount rows of the per-mount spec table re-read', date:'2026-11-15' }],
     maxAperture:2.8, minAperture:22, weight:1335, length:207.0, diameter:90.6,
     filterThread:77, minFocusDist:65, maxMagnification:0.19,
     elements:20, groups:15, blades:11, afType:'HLA Linear',
@@ -2423,8 +2443,9 @@ const LENSES = {
   'sigma-24-70mm-f28-dg-ii': {
     name:'Sigma 24-70mm f/2.8 DG DN II Art', manufacturer:'Sigma', line:'Art', type:'Zoom',
     mount:'e', focalLength:null, focalLengthMin:24, focalLengthMax:70, focalLengthEquiv:'24-70mm',
+    specSources: [{ url:'https://www.sigma-global.com/en/lenses/a024_24_70_28_ii/', tier:'T1', title:'Sigma global product page', note:'verify-specs 2026-11-15: Sony E-mount rows of the per-mount spec table re-read', date:'2026-11-15' }],
     maxAperture:2.8, minAperture:22, weight:735, length:122.2, diameter:87.8,
-    filterThread:82, minFocusDist:17, maxMagnification:0.34,
+    filterThread:82, minFocusDist:17, maxMagnification:0.37,
     elements:19, groups:15, blades:11, afType:'HLA Linear',
     weatherSealed:true, ois:false, oisStops:null, year:2024, discontinued:false,
     imageUrl:'https://www.sigma-global.com/lenses/a024_24_70_28_ii_product_img01.png',
@@ -2437,6 +2458,7 @@ const LENSES = {
   'sigma-100-400mm-f5-63-dg': {
     name:'Sigma 100-400mm f/5-6.3 DG DN OS Contemporary', manufacturer:'Sigma', line:'Contemporary', type:'Zoom',
     mount:'e', focalLength:null, focalLengthMin:100, focalLengthMax:400, focalLengthEquiv:'100-400mm',
+    specSources: [{ url:'https://www.sigma-global.com/en/lenses/c020_100_400_5_63/', tier:'T1', title:'Sigma global product page', note:'verify-specs 2026-11-15: Sony E-mount rows of the per-mount spec table re-read', date:'2026-11-15' }],
     maxAperture:5.0, minAperture:22, weight:1140, length:199.2, diameter:86,
     filterThread:67, minFocusDist:112, maxMagnification:0.24,
     elements:22, groups:16, blades:9, afType:'Stepping Motor',
@@ -2452,7 +2474,8 @@ const LENSES = {
   'sigma-150-600mm-f5-63-dg': {
     name:'Sigma 150-600mm f/5-6.3 DG DN OS Sports', manufacturer:'Sigma', line:'Sports', type:'Zoom',
     mount:'e', focalLength:null, focalLengthMin:150, focalLengthMax:600, focalLengthEquiv:'150-600mm',
-    maxAperture:5.0, minAperture:22, weight:2100, length:263.6, diameter:109.4,
+    specSources: [{ url:'https://www.sigma-global.com/en/lenses/s021_150_600_5_63/', tier:'T1', title:'Sigma global product page', note:'verify-specs 2026-11-15: Sony E-mount rows of the per-mount spec table re-read', date:'2026-11-15' }],
+    maxAperture:5.0, minAperture:22, weight:2100, length:265.6, diameter:109.4,
     filterThread:95, minFocusDist:58, maxMagnification:0.34,
     elements:25, groups:15, blades:9, afType:'Stepping Motor',
     weatherSealed:true, ois:true, oisStops:6.5, year:2021, discontinued:false,
@@ -2484,6 +2507,7 @@ const LENSES = {
   'tamron-16-30mm-f28-g2': {
     name:'Tamron 16-30mm f/2.8 Di III VXD G2', manufacturer:'Tamron', line:'Di III', type:'Zoom',
     mount:'e', focalLength:null, focalLengthMin:16, focalLengthMax:30, focalLengthEquiv:'16-30mm',
+    specSources: [{ url:'https://tamron-americas.com/product/16-30mm-f-2-8-di-iii-vxd-g2/', tier:'T1', title:'Tamron Americas technical specifications', note:'verify-specs 2026-11-15: Sony figures of the spec table re-read', date:'2026-11-15' }],
     maxAperture:2.8, minAperture:16, weight:440, length:101.8, diameter:74.8,
     filterThread:67, minFocusDist:19, maxMagnification:0.19,
     elements:16, groups:12, blades:9, afType:'Linear Motor',
@@ -2498,6 +2522,7 @@ const LENSES = {
   'tamron-20-40mm-f28': {
     name:'Tamron 20-40mm f/2.8 Di III VXD', manufacturer:'Tamron', line:'Di III', type:'Zoom',
     mount:'e', focalLength:null, focalLengthMin:20, focalLengthMax:40, focalLengthEquiv:'20-40mm',
+    specSources: [{ url:'https://tamron-americas.com/product/20-40mm-f-2-8-di-iii-vxd/', tier:'T1', title:'Tamron Americas technical specifications', note:'verify-specs 2026-11-15: Sony figures of the spec table re-read', date:'2026-11-15' }],
     maxAperture:2.8, minAperture:22, weight:365, length:86.5, diameter:74.4,
     filterThread:67, minFocusDist:17, maxMagnification:0.26,
     elements:12, groups:11, blades:9, afType:'Linear Motor',
@@ -2513,6 +2538,7 @@ const LENSES = {
   'tamron-28-75mm-f28-g2': {
     name:'Tamron 28-75mm f/2.8 Di III VXD G2', manufacturer:'Tamron', line:'Di III', type:'Zoom',
     mount:'e', focalLength:null, focalLengthMin:28, focalLengthMax:75, focalLengthEquiv:'28-75mm',
+    specSources: [{ url:'https://tamron-americas.com/product/28-75mm-f-2-8-di-iii-vxd-g2/', tier:'T1', title:'Tamron Americas technical specifications', note:'verify-specs 2026-11-15: Sony figures of the spec table re-read', date:'2026-11-15' }],
     maxAperture:2.8, minAperture:22, weight:540, length:117.6, diameter:75.8,
     filterThread:67, minFocusDist:18, maxMagnification:0.37,
     elements:17, groups:15, blades:9, afType:'Linear Motor',
@@ -2528,6 +2554,7 @@ const LENSES = {
   'tamron-35-150mm-f2-28': {
     name:'Tamron 35-150mm f/2-2.8 Di III VXD', manufacturer:'Tamron', line:'Di III', type:'Zoom',
     mount:'e', focalLength:null, focalLengthMin:35, focalLengthMax:150, focalLengthEquiv:'35-150mm',
+    specSources: [{ url:'https://tamron-americas.com/product/35-150mm-f-2-2-8-di-iii-vxd/', tier:'T1', title:'Tamron Americas technical specifications', note:'verify-specs 2026-11-15: Sony figures of the spec table re-read', date:'2026-11-15' }],
     maxAperture:2.0, minAperture:22, weight:1165, length:158, diameter:89.2,
     filterThread:82, minFocusDist:33, maxMagnification:0.18,
     elements:21, groups:15, blades:9, afType:'Linear Motor',
@@ -2543,6 +2570,7 @@ const LENSES = {
   'tamron-50-400mm-f45-63': {
     name:'Tamron 50-400mm f/4.5-6.3 Di III VC VXD', manufacturer:'Tamron', line:'Di III', type:'Zoom',
     mount:'e', focalLength:null, focalLengthMin:50, focalLengthMax:400, focalLengthEquiv:'50-400mm',
+    specSources: [{ url:'https://tamron-americas.com/product/50-400mm-f-4-5-6-3-di-iii-vc-vxd/', tier:'T1', title:'Tamron Americas technical specifications', note:'verify-specs 2026-11-15: Sony figures of the spec table re-read', date:'2026-11-15' }],
     maxAperture:4.5, minAperture:22, weight:1155, length:183.4, diameter:88.5,
     filterThread:67, minFocusDist:25, maxMagnification:0.5,
     elements:24, groups:18, blades:9, afType:'Linear Motor',
@@ -2559,6 +2587,7 @@ const LENSES = {
   'tamron-70-180mm-f28-g2': {
     name:'Tamron 70-180mm f/2.8 Di III VC VXD G2', manufacturer:'Tamron', line:'Di III', type:'Zoom',
     mount:'e', focalLength:null, focalLengthMin:70, focalLengthMax:180, focalLengthEquiv:'70-180mm',
+    specSources: [{ url:'https://tamron-americas.com/product/70-180mm-f-2-8-di-iii-vc-vxd-g2/', tier:'T1', title:'Tamron Americas technical specifications', note:'verify-specs 2026-11-15: Sony figures of the spec table re-read', date:'2026-11-15' }],
     maxAperture:2.8, minAperture:22, weight:855, length:156.5, diameter:83,
     filterThread:67, minFocusDist:30, maxMagnification:0.38,
     elements:20, groups:15, blades:9, afType:'Linear Motor',
@@ -2575,6 +2604,7 @@ const LENSES = {
   'tamron-17-70mm-f28': {
     name:'Tamron 17-70mm f/2.8 Di III-A VC RXD', manufacturer:'Tamron', line:'Di III-A', type:'Zoom',
     mount:'e', focalLength:null, focalLengthMin:17, focalLengthMax:70, focalLengthEquiv:'26-105mm',
+    specSources: [{ url:'https://tamron-americas.com/product/17-70mm-f-2-8-di-iii-a-vc-rxd/', tier:'T1', title:'Tamron Americas technical specifications', note:'verify-specs 2026-11-15: Sony figures of the spec table re-read', date:'2026-11-15' }],
     maxAperture:2.8, minAperture:22, weight:525, length:119.3, diameter:74.6,
     filterThread:67, minFocusDist:19, maxMagnification:0.21,
     elements:16, groups:12, blades:9, afType:'Stepping Motor',
@@ -2591,6 +2621,7 @@ const LENSES = {
   'tamron-11-20mm-f28': {
     name:'Tamron 11-20mm f/2.8 Di III-A RXD', manufacturer:'Tamron', line:'Di III-A', type:'Zoom',
     mount:'e', focalLength:null, focalLengthMin:11, focalLengthMax:20, focalLengthEquiv:'17-30mm',
+    specSources: [{ url:'https://tamron-americas.com/product/11-20mm-f-2-8-di-iii-a-rxd/', tier:'T1', title:'Tamron Americas technical specifications', note:'verify-specs 2026-11-15: Sony figures of the spec table re-read', date:'2026-11-15' }],
     maxAperture:2.8, minAperture:16, weight:335, length:86.2, diameter:73,
     filterThread:67, minFocusDist:15, maxMagnification:0.25,
     elements:12, groups:10, blades:7, afType:'Stepping Motor',
@@ -3171,6 +3202,7 @@ const LENSES = {
   'laowa-90mm-f28-macro': {
     name:'Laowa 90mm f/2.8 2x Ultra Macro APO', manufacturer:'Laowa', line:'Ultra Macro APO', type:'Prime',
     mount:'e', focalLength:90, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'90mm',
+    specSources: [{ url:'https://www.venuslens.net/product/laowa-90mm-f-2-8-2x-macro-apo/', tier:'T1', title:'Laowa official product page', note:'verify-specs 2026-11-15: spec table re-read (Laowa gives one figure for all mounts)', date:'2026-11-15' }],
     maxAperture:2.8, minAperture:22, weight:619, length:120, diameter:74,
     filterThread:67, minFocusDist:20.5, maxMagnification:2.0,
     elements:13, groups:10, blades:13, afType:'Manual',
@@ -3186,8 +3218,9 @@ const LENSES = {
   'laowa-15mm-f2': {
     name:'Laowa 15mm f/2 FE Zero-D', manufacturer:'Laowa', line:'Zero-D', type:'Prime',
     mount:'e', focalLength:15, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'15mm',
-    maxAperture:2.0, minAperture:22, weight:500, length:82, diameter:66,
-    filterThread:72, minFocusDist:15, maxMagnification:0.1,
+    specSources: [{ url:'https://www.venuslens.net/product/laowa-15mm-f2/', tier:'T1', title:'Laowa official product page', note:'verify-specs 2026-11-15: spec table re-read (Laowa gives one figure for all mounts)', date:'2026-11-15' }],
+    maxAperture:2.0, minAperture:22, weight:500, length:82, diameter:77.2,
+    filterThread:72, minFocusDist:15, maxMagnification:0.25,
     elements:12, groups:9, blades:5, afType:'Manual',
     weatherSealed:false, ois:false, oisStops:null, year:2018, discontinued:false,
     imageUrl:'https://laowa.com.au/wp-content/uploads/2017/12/15-2-4-768x529.jpg',
@@ -3202,8 +3235,9 @@ const LENSES = {
   'laowa-10mm-f4-cookie': {
     name:'Laowa 10mm f/4 Cookie', manufacturer:'Laowa', line:'Cookie', type:'Prime',
     mount:'e', focalLength:10, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'15mm',
-    maxAperture:4.0, minAperture:22, weight:130, length:25, diameter:54,
-    filterThread:37, minFocusDist:10, maxMagnification:0.1,
+    specSources: [{ url:'https://www.venuslens.net/product/laowa-10mm-f-4-cookie/', tier:'T1', title:'Laowa official product page', note:'verify-specs 2026-11-15: spec table re-read (Laowa gives one figure for all mounts)', date:'2026-11-15' }],
+    maxAperture:4.0, minAperture:22, weight:130, length:25, diameter:59.8,
+    filterThread:37, minFocusDist:10, maxMagnification:0.15,
     elements:12, groups:8, blades:5, afType:'Manual',
     weatherSealed:false, ois:false, oisStops:null, year:2022, discontinued:false,
     imageUrl:'https://laowa.com.au/wp-content/uploads/2022/07/1040-X-04-768x512.png',
@@ -4053,6 +4087,7 @@ const LENSES = {
   'voigtlander-apo-lanthar-35mm-f2': {
     name:'Voigtländer APO-Lanthar 35mm f/2 Aspherical', manufacturer:'Voigtländer', line:'APO-Lanthar', type:'Prime',
     mount:'e', focalLength:35, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'35mm',
+    specSources: [{ url:'https://www.cosina.co.jp/voigtlander/en/e-mount/apo-lanthar-35mm-f2-aspherical/', tier:'T1', title:'Cosina Voigtländer official specifications', note:'verify-specs 2026-11-15: construction, blades, focus distance, size, filter, weight re-read', date:'2026-11-15' }],
     maxAperture:2.0, minAperture:16, weight:352, length:67.3, diameter:62.6,
     filterThread:49, minFocusDist:35, maxMagnification:0.19,
     elements:11, groups:9, blades:12, afType:'Manual',
@@ -4074,6 +4109,7 @@ const LENSES = {
   'voigtlander-apo-lanthar-50mm-f2': {
     name:'Voigtländer APO-Lanthar 50mm f/2 Aspherical', manufacturer:'Voigtländer', line:'APO-Lanthar', type:'Prime',
     mount:'e', focalLength:50, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'50mm',
+    specSources: [{ url:'https://www.cosina.co.jp/voigtlander/en/e-mount/apo-lanthar-50mm-f2-aspherical/', tier:'T1', title:'Cosina Voigtländer official specifications', note:'verify-specs 2026-11-15: construction, blades, focus distance, size, filter, weight re-read', date:'2026-11-15' }],
     maxAperture:2.0, minAperture:16, weight:364, length:61, diameter:63,
     filterThread:49, minFocusDist:45, maxMagnification:0.15,
     elements:10, groups:8, blades:12, afType:'Manual',
@@ -6185,6 +6221,7 @@ const LENSES = {
   'sigma-17mm-f4-dg': {
     name:'Sigma 17mm f/4 DG DN Contemporary', manufacturer:'Sigma', line:'Contemporary', type:'Prime',
     mount:'e', focalLength:17, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'17mm',
+    specSources: [{ url:'https://www.sigma-global.com/en/lenses/c023_17_4/', tier:'T1', title:'Sigma global product page', note:'verify-specs 2026-11-15: Sony E-mount rows of the per-mount spec table re-read', date:'2026-11-15' }],
     maxAperture:4.0, minAperture:22, weight:220, length:50.8, diameter:64,
     filterThread:55, minFocusDist:12, maxMagnification:0.28,
     elements:9, groups:8, blades:7, afType:'Stepping Motor',
@@ -6198,6 +6235,7 @@ const LENSES = {
   'sigma-45mm-f28-dg': {
     name:'Sigma 45mm f/2.8 DG DN Contemporary', manufacturer:'Sigma', line:'Contemporary', type:'Prime',
     mount:'e', focalLength:45, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'45mm',
+    specSources: [{ url:'https://www.sigma-global.com/en/lenses/c019_45_28/', tier:'T1', title:'Sigma global product page', note:'verify-specs 2026-11-15: Sony E-mount rows of the per-mount spec table re-read', date:'2026-11-15' }],
     maxAperture:2.8, minAperture:22, weight:230, length:48.2, diameter:64,
     filterThread:55, minFocusDist:24, maxMagnification:0.25,
     elements:8, groups:7, blades:7, afType:'Stepping Motor',
@@ -6211,6 +6249,7 @@ const LENSES = {
   'sigma-50mm-f2-dg': {
     name:'Sigma 50mm f/2 DG DN Contemporary', manufacturer:'Sigma', line:'Contemporary', type:'Prime',
     mount:'e', focalLength:50, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'50mm',
+    specSources: [{ url:'https://www.sigma-global.com/en/lenses/c023_50_2/', tier:'T1', title:'Sigma global product page', note:'verify-specs 2026-11-15: Sony E-mount rows of the per-mount spec table re-read', date:'2026-11-15' }],
     maxAperture:2.0, minAperture:22, weight:345, length:70, diameter:70,
     filterThread:58, minFocusDist:45, maxMagnification:0.14,
     elements:11, groups:9, blades:9, afType:'Stepping Motor',
@@ -6528,8 +6567,9 @@ const LENSES = {
   'tamron-70-300mm-f45-63': {
     name:'Tamron 70-300mm f/4.5-6.3 Di III RXD', manufacturer:'Tamron', line:'Di III', type:'Zoom',
     mount:'e', focalLength:null, focalLengthMin:70, focalLengthMax:300, focalLengthEquiv:'70-300mm',
+    specSources: [{ url:'https://tamron-americas.com/product/70-300mm-f-4-5-6-3-di-iii-rxd/', tier:'T1', title:'Tamron Americas technical specifications', note:'verify-specs 2026-11-15: Sony figures of the spec table re-read', date:'2026-11-15' }],
     maxAperture:4.5, minAperture:22, weight:545, length:148, diameter:77,
-    filterThread:67, minFocusDist:80, maxMagnification:0.11,
+    filterThread:67, minFocusDist:80, maxMagnification:0.2,
     elements:15, groups:10, blades:7, afType:'Stepping Motor',
     weatherSealed:true, ois:false, oisStops:null, year:2020, discontinued:false,
     imageUrl:null,
