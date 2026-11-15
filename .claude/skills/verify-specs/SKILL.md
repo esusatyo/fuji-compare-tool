@@ -3,7 +3,7 @@ name: verify-specs
 description: Audit existing camera and lens specs for factual correctness against the maker's own published figures — weight, dimensions, sensor, EVF/LCD, IBIS, burst, video, weather sealing, optical formula, focus distance and the rest — and record a durable specSources citation for every item checked. Scope can be a camera brand, a lens maker across all brands (e.g. all Sigma lenses), a mount (e.g. L-mount), or just one or a few named items. Research first, report mismatches, apply only what the owner approves. Use when the user wants to check, verify, audit or fact-check specs, find wrong data, or add spec citations to uncited items.
 metadata:
   author: fuji-compare-tool
-  version: "1.2"
+  version: "1.3"
 ---
 
 Check that the specs already in the dataset are **true**, not just well-formed.
@@ -136,6 +136,32 @@ Traps already paid for — check these before trusting a page:
 No tier-1 or tier-2 source for an item after reasonable effort → verdict
 **unverifiable**, listed in the report with what you tried. Never "verify"
 from memory.
+
+### Per-brand source recipes (learned 2026-11-14/15, re-check if a page moves)
+
+Most maker sites block plain fetches, so work in Chrome: open one page on the
+maker's domain, then `fetch()` the rest **from that same origin** inside
+`javascript_tool` and parse with `DOMParser` (much faster than navigating
+page by page, and immune to the 403s). Launch big fetch loops without awaiting
+them (store results on `window`) and poll, since a single call times out after about 45 s.
+Results over about 1,000 chars get truncated, so return compact diffs, not pages; and the
+extension blocks output that looks like cookies/query strings, so strip URLs
+and odd characters from what you return. Write `\x5c` rather than a backslash-u
+escape in the JS you send, or the tool rejects the call.
+
+| maker | where the full spec lives | notes |
+|---|---|---|
+| Fujifilm | `fujifilm-x.com/global/products/cameras/<slug>/specifications/` | rows are `.camera-specifications h6` blocks; battery gives Economy + Normal (use Normal) |
+| Canon cameras | `canon.co.uk/cameras/<slug>/specifications/` | usa.canon.com geo-blocks; canon.com.au has only a summary; read `textContent` (accordions are collapsed); IBIS stops are in footnotes; no Bluetooth version |
+| Canon lenses | `canon.co.uk/lenses/<slug>/specifications/`, slugs from `/sitemap/sitemap-product-detail-page-uk-en.xml` | rows `li.product-specification-detail__list-line`; **remove `<sup>` footnotes**, because in plain text they run into the values; zooms list AF and MF figures |
+| Nikon | summary on `imaging.nikon.com/imaging/lineup/{mirrorless,lens/z-mount}/<slug>/`; full sheet (battery, Bluetooth) on the Nikon USA product page | battery has Energy-saving ON/OFF (use OFF); "with tripod collar" weights and "with built-in TC" magnifications are not the stored convention |
+| Sony | `electronics.sony.com/.../p/<model>`: the full spec sheet is embedded JSON (`"featureValues":[{"value":…}],"name":…`); older bodies on `sony.com/electronics/support/<series>/<model>/specifications` | headline depth (not grip-to-monitor) is the stored convention; lens minimum focus is in inches with no AF/MF label, so don't compare it from there |
+| Sigma | `sigma-global.com/en/lenses/<code>/` | one page lists every mount: read the `<Mount name>` rows for size and weight |
+| Tamron | `tamron.com/global/consumer/lenses/<model>/spec.html` or `tamron-americas.com/product/<slug>/` "Technical Specifications" | per-mount length and weight in parentheses |
+| Laowa | `venuslens.net/product/<slug>/` | one figure for all mounts (owner-accepted) |
+| Voigtländer | `cosina.co.jp/voigtlander/en/<mount>/<slug>/` | some pages are script-rendered shells: unverifiable |
+| Viltrox, 7Artisans | specs only in images / multi-lens comparison tables | treat as unverifiable rather than map columns by guess |
+| Yongnuo, Samyang US | yongnuo.eu, samyangus.com are distributors | not T1; use the maker's own site |
 
 ---
 
