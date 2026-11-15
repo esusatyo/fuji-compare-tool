@@ -292,6 +292,18 @@ function validateCamera(id, cam, brandSections = [], mountIds = null) {
   add(checkField(cam, 'faceDetection', { type: 'boolean' }));
   add(checkField(cam, 'subjectDetection', { type: 'string', nullable: true }));
   add(checkField(cam, 'maxBurst', { type: 'number', min: 0 }));
+  // Split burst (optional, being rolled out brand by brand via verify-specs):
+  // both keys together, each a number or null, an optional crop factor that
+  // only makes sense with an electronic rate, and `maxBurst` kept equal to the
+  // faster of the two so every legacy consumer still reads the top speed.
+  if ('maxBurstMech' in cam || 'maxBurstElec' in cam || 'maxBurstElecCrop' in cam) {
+    add(checkField(cam, 'maxBurstMech', { type: 'number', nullable: true, min: 0 }));
+    add(checkField(cam, 'maxBurstElec', { type: 'number', nullable: true, min: 0 }));
+    add(checkField(cam, 'maxBurstElecCrop', { type: 'number', nullable: true, required: false, min: 1, max: 3 }));
+    if (cam.maxBurstElecCrop != null && cam.maxBurstElec == null) e.push('"maxBurstElecCrop" set without "maxBurstElec"');
+    const top = Math.max(cam.maxBurstMech ?? 0, cam.maxBurstElec ?? 0);
+    if (top > 0 && cam.maxBurst !== top) e.push(`"maxBurst" (${cam.maxBurst}) should equal the faster split rate (${top})`);
+  }
 
   add(checkField(cam, 'ibis', { type: 'boolean' }));
   add(checkField(cam, 'ibisStops', { type: 'number', nullable: true, min: 0 }));
@@ -306,6 +318,15 @@ function validateCamera(id, cam, brandSections = [], mountIds = null) {
   add(checkField(cam, 'wifi', { type: 'boolean' }));
   add(checkField(cam, 'cardSlots', { type: 'string' }));
   add(checkField(cam, 'batteryLife', { type: 'number', nullable: true, min: 0 }));
+  // Split battery (optional, rolled out brand by brand via verify-specs): both
+  // keys together; `batteryLife` kept equal to the screen figure (the maker's
+  // headline CIPA number) so legacy consumers still read one consistent value.
+  if ('batteryLifeLcd' in cam || 'batteryLifeEvf' in cam) {
+    add(checkField(cam, 'batteryLifeLcd', { type: 'number', nullable: true, min: 0 }));
+    add(checkField(cam, 'batteryLifeEvf', { type: 'number', nullable: true, min: 0 }));
+    if (cam.batteryLifeLcd != null && cam.batteryLife !== cam.batteryLifeLcd) e.push(`"batteryLife" (${cam.batteryLife}) should equal "batteryLifeLcd" (${cam.batteryLifeLcd})`);
+    if (cam.batteryLifeEvf != null && cam.evfType == null) e.push('"batteryLifeEvf" set on a camera with no viewfinder');
+  }
   add(checkField(cam, 'usbCharging', { type: 'boolean' }));
   add(checkField(cam, 'lensType', { type: 'string' }));
 
