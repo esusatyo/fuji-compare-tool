@@ -8,7 +8,7 @@ Scope commands:
 
 - [x] Batch 1: Sigma lenses (35 L-Mount in `sigma/` and `panasonic/`, plus 3 Sigma MFT in `panasonic/`), 5 Sigma cameras, 24 Panasonic cameras
 - [x] Batch 2: Panasonic first-party lenses (LUMIX S, LUMIX G, Leica DG): 50, mirrored into the `leica/` (21) and `olympus/` (29) copies
-- [ ] Batch 3: OM System lenses in `panasonic/` (27)
+- [ ] Batch 3: OM System lenses in `panasonic/` (33, same slugs in `olympus/`; mirror every fix there). Source: `explore.omsystem.com/us/en/<productUrl slug>`, spec rows "Lens configuration", "Maximum image magnification … (Micro Four Thirds)", "Closest focusing distance", "Number of aperture blades", "Diameter", "Length", "Filter diamater" (sic), "Weight". Not started: the session ended while fetching
 - [ ] Batch 4: Laowa, Viltrox, Samyang, Voigtländer in `panasonic/` (9; Viltrox likely unverifiable)
 
 ## Sources
