@@ -1426,6 +1426,7 @@ const LENSES = {
   'sigma-16mm-f14': {
     name:'Sigma 16mm f/1.4 DC DN', manufacturer:'Sigma', line:'Contemporary', type:'Prime',
     mount:'rf', focalLength:16, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'26mm',
+    specSources: [{ url:'https://www.sigma-global.com/en/lenses/c017_16_14/', tier:'T1', title:'Sigma global product page', note:'verify-specs 2026-11-15: Canon RF Mount rows of the per-mount spec table re-read', date:'2026-11-15' }],
     maxAperture:1.4, minAperture:16, weight:415, length:90.3, diameter:72.2,
     filterThread:67, minFocusDist:25, maxMagnification:0.1,
     elements:16, groups:13, blades:9, afType:'Stepping Motor',
@@ -1440,6 +1441,7 @@ const LENSES = {
   'sigma-12mm-f14': {
     name:'Sigma 12mm f/1.4 DC', manufacturer:'Sigma', line:'Contemporary', type:'Prime',
     mount:'rf', focalLength:12, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'19mm',
+    specSources: [{ url:'https://www.sigma-global.com/en/lenses/c025_12_14/', tier:'T1', title:'Sigma global product page', note:'verify-specs 2026-11-15: Canon RF Mount rows of the per-mount spec table re-read', date:'2026-11-15' }],
     maxAperture:1.4, minAperture:16, weight:250, length:67.4, diameter:69.0,
     filterThread:62, minFocusDist:17.2, maxMagnification:0.12,
     elements:14, groups:12, blades:9, afType:'Stepping Motor',
@@ -1454,6 +1456,7 @@ const LENSES = {
   'sigma-15mm-f14': {
     name:'Sigma 15mm f/1.4 DC', manufacturer:'Sigma', line:'Contemporary', type:'Prime',
     mount:'rf', focalLength:15, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'24mm',
+    specSources: [{ url:'https://www.sigma-global.com/en/lenses/c026_15_14/', tier:'T1', title:'Sigma global product page', note:'verify-specs 2026-11-15: Canon RF Mount rows of the per-mount spec table re-read', date:'2026-11-15' }],
     maxAperture:1.4, minAperture:16, weight:240, length:62.8, diameter:69.0,
     filterThread:58, minFocusDist:17.7, maxMagnification:0.13,
     elements:13, groups:11, blades:9, afType:'Stepping Motor',
@@ -1468,6 +1471,7 @@ const LENSES = {
   'sigma-23mm-f14': {
     name:'Sigma 23mm f/1.4 DC DN', manufacturer:'Sigma', line:'Contemporary', type:'Prime',
     mount:'rf', focalLength:23, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'37mm',
+    specSources: [{ url:'https://www.sigma-global.com/en/lenses/c023_23_14/', tier:'T1', title:'Sigma global product page', note:'verify-specs 2026-11-15: Canon RF Mount rows of the per-mount spec table re-read', date:'2026-11-15' }],
     maxAperture:1.4, minAperture:16, weight:345, length:76.9, diameter:69.0,
     filterThread:52, minFocusDist:25, maxMagnification:0.14,
     elements:13, groups:10, blades:9, afType:'Stepping Motor',
@@ -1482,6 +1486,7 @@ const LENSES = {
   'sigma-30mm-f14': {
     name:'Sigma 30mm f/1.4 DC DN', manufacturer:'Sigma', line:'Contemporary', type:'Prime',
     mount:'rf', focalLength:30, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'48mm',
+    specSources: [{ url:'https://www.sigma-global.com/en/lenses/c016_30_14/', tier:'T1', title:'Sigma global product page', note:'verify-specs 2026-11-15: Canon RF Mount rows of the per-mount spec table re-read', date:'2026-11-15' }],
     maxAperture:1.4, minAperture:16, weight:285, length:71.3, diameter:69.0,
     filterThread:52, minFocusDist:30, maxMagnification:0.14,
     elements:9, groups:7, blades:9, afType:'Stepping Motor',
@@ -1496,6 +1501,7 @@ const LENSES = {
   'sigma-56mm-f14': {
     name:'Sigma 56mm f/1.4 DC DN', manufacturer:'Sigma', line:'Contemporary', type:'Prime',
     mount:'rf', focalLength:56, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'90mm',
+    specSources: [{ url:'https://www.sigma-global.com/en/lenses/c018_56_14/', tier:'T1', title:'Sigma global product page', note:'verify-specs 2026-11-15: Canon RF Mount rows of the per-mount spec table re-read', date:'2026-11-15' }],
     maxAperture:1.4, minAperture:16, weight:290, length:57.5, diameter:69.0,
     filterThread:55, minFocusDist:50, maxMagnification:0.14,
     elements:10, groups:6, blades:9, afType:'Stepping Motor',
@@ -1510,6 +1516,7 @@ const LENSES = {
   'sigma-10-18mm-f28': {
     name:'Sigma 10-18mm f/2.8 DC DN', manufacturer:'Sigma', line:'Contemporary', type:'Zoom',
     mount:'rf', focalLength:null, focalLengthMin:10, focalLengthMax:18, focalLengthEquiv:'16-29mm',
+    specSources: [{ url:'https://www.sigma-global.com/en/lenses/c023_10_18_28/', tier:'T1', title:'Sigma global product page', note:'verify-specs 2026-11-15: Canon RF Mount rows of the per-mount spec table re-read', date:'2026-11-15' }],
     maxAperture:2.8, minAperture:22, weight:270, length:62.0, diameter:72.2,
     filterThread:67, minFocusDist:11.6, maxMagnification:0.25,
     elements:13, groups:10, blades:7, afType:'Stepping Motor',
@@ -1524,6 +1531,7 @@ const LENSES = {
   'sigma-18-50mm-f28': {
     name:'Sigma 18-50mm f/2.8 DC DN', manufacturer:'Sigma', line:'Contemporary', type:'Zoom',
     mount:'rf', focalLength:null, focalLengthMin:18, focalLengthMax:50, focalLengthEquiv:'29-80mm',
+    specSources: [{ url:'https://www.sigma-global.com/en/lenses/c021_18_50_28/', tier:'T1', title:'Sigma global product page', note:'verify-specs 2026-11-15: Canon RF Mount rows of the per-mount spec table re-read', date:'2026-11-15' }],
     maxAperture:2.8, minAperture:22, weight:300, length:74.5, diameter:69.2,
     filterThread:55, minFocusDist:12.1, maxMagnification:0.36,
     elements:13, groups:10, blades:7, afType:'Stepping Motor',
@@ -1554,6 +1562,7 @@ const LENSES = {
   'sigma-17-40mm-f18': {
     name:'Sigma 17-40mm f/1.8 DC', manufacturer:'Sigma', line:'Art', type:'Zoom',
     mount:'rf', focalLength:null, focalLengthMin:17, focalLengthMax:40, focalLengthEquiv:'27-64mm',
+    specSources: [{ url:'https://www.sigma-global.com/en/lenses/a025_17_40_18/', tier:'T1', title:'Sigma global product page', note:'verify-specs 2026-11-15: Canon RF Mount rows of the per-mount spec table re-read', date:'2026-11-15' }],
     maxAperture:1.8, minAperture:16, weight:560, length:115.9, diameter:72.9,
     filterThread:67, minFocusDist:28, maxMagnification:0.21,
     elements:17, groups:11, blades:11, afType:'HLA Linear',
@@ -1568,6 +1577,7 @@ const LENSES = {
   'sigma-16-300mm-f35-67': {
     name:'Sigma 16-300mm f/3.5-6.7 DC OS', manufacturer:'Sigma', line:'Contemporary', type:'Zoom',
     mount:'rf', focalLength:null, focalLengthMin:16, focalLengthMax:300, focalLengthEquiv:'26-480mm',
+    specSources: [{ url:'https://www.sigma-global.com/en/lenses/c025_16_300_35_67/', tier:'T1', title:'Sigma global product page', note:'verify-specs 2026-11-15: Canon RF Mount rows of the per-mount spec table re-read', date:'2026-11-15' }],
     maxAperture:3.5, minAperture:22, weight:625, length:121.4, diameter:73.8,
     filterThread:67, minFocusDist:17, maxMagnification:0.50,
     elements:20, groups:14, blades:9, afType:'HLA Linear',
@@ -1584,6 +1594,7 @@ const LENSES = {
   'tamron-11-20mm-f28': {
     name:'Tamron 11-20mm f/2.8 Di III-A RXD', manufacturer:'Tamron', line:'Di III-A', type:'Zoom',
     mount:'rf', focalLength:null, focalLengthMin:11, focalLengthMax:20, focalLengthEquiv:'18-32mm',
+    specSources: [{ url:'https://www.tamron.com/global/consumer/lenses/b060/spec.html', tier:'T1', title:'Tamron global specifications', note:'verify-specs 2026-11-15: CANON RF mount figures re-read', date:'2026-11-15' }],
     maxAperture:2.8, minAperture:16, weight:340, length:84.2, diameter:73,
     filterThread:67, minFocusDist:15, maxMagnification:0.25,
     elements:12, groups:10, blades:7, afType:'Stepping Motor',
@@ -1616,6 +1627,7 @@ const LENSES = {
   'tamron-18-300mm-f35-63': {
     name:'Tamron 18-300mm f/3.5-6.3 Di III-A VC VXD', manufacturer:'Tamron', line:'Di III-A', type:'Zoom',
     mount:'rf', focalLength:null, focalLengthMin:18, focalLengthMax:300, focalLengthEquiv:'29-480mm',
+    specSources: [{ url:'https://www.tamron.com/global/consumer/lenses/b061/spec.html', tier:'T1', title:'Tamron global specifications', note:'verify-specs 2026-11-15: CANON RF mount figures re-read', date:'2026-11-15' }],
     maxAperture:3.5, minAperture:22, weight:625, length:123.6, diameter:75.5,
     filterThread:67, minFocusDist:15, maxMagnification:0.5,
     elements:19, groups:15, blades:7, afType:'Linear Motor',
@@ -1747,6 +1759,7 @@ const LENSES = {
   'laowa-90mm-f28-macro': {
     name:'Laowa 90mm f/2.8 2x Ultra Macro APO', manufacturer:'Laowa', line:'Ultra Macro APO', type:'Prime',
     mount:'rf', focalLength:90, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'90mm',
+    specSources: [{ url:'https://www.venuslens.net/product/laowa-90mm-f-2-8-2x-macro-apo/', tier:'T1', title:'Laowa official product page', note:'verify-specs 2026-11-15: spec table re-read (Laowa gives one figure for all mounts)', date:'2026-11-15' }],
     maxAperture:2.8, minAperture:22, weight:619, length:120, diameter:74,
     filterThread:67, minFocusDist:20.5, maxMagnification:2.0,
     elements:13, groups:10, blades:13, afType:'Manual',
@@ -1762,6 +1775,7 @@ const LENSES = {
   'laowa-58mm-f28-macro': {
     name:'Laowa 58mm f/2.8 2x Ultra Macro APO', manufacturer:'Laowa', line:'Ultra Macro APO', type:'Prime',
     mount:'rf', focalLength:58, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'58mm',
+    specSources: [{ url:'https://www.venuslens.net/product/5828-2x-ultra-macro-apo/', tier:'T1', title:'Laowa official product page', note:'verify-specs 2026-11-15: spec table re-read (Laowa gives one figure for all mounts)', date:'2026-11-15' }],
     maxAperture:2.8, minAperture:22, weight:595, length:117, diameter:74,
     filterThread:67, minFocusDist:18.5, maxMagnification:2.0,
     elements:14, groups:11, blades:13, afType:'Manual',
@@ -1776,6 +1790,7 @@ const LENSES = {
   'laowa-100mm-f28-macro': {
     name:'Laowa 100mm f/2.8 2x Ultra Macro APO', manufacturer:'Laowa', line:'Ultra Macro APO', type:'Prime',
     mount:'rf', focalLength:100, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'100mm',
+    specSources: [{ url:'https://www.venuslens.net/product/laowa-100mm-f-2-8-2x-macro-apo/', tier:'T1', title:'Laowa official product page', note:'verify-specs 2026-11-15: spec table re-read (Laowa gives one figure for all mounts)', date:'2026-11-15' }],
     maxAperture:2.8, minAperture:22, weight:650, length:155, diameter:72,
     filterThread:67, minFocusDist:25, maxMagnification:2.0,
     elements:12, groups:10, blades:13, afType:'Manual',
@@ -1790,8 +1805,9 @@ const LENSES = {
   'laowa-15mm-f2': {
     name:'Laowa 15mm f/2 FE Zero-D', manufacturer:'Laowa', line:'Zero-D', type:'Prime',
     mount:'rf', focalLength:15, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'15mm',
-    maxAperture:2.0, minAperture:22, weight:500, length:82, diameter:66,
-    filterThread:72, minFocusDist:15, maxMagnification:0.1,
+    specSources: [{ url:'https://www.venuslens.net/product/laowa-15mm-f2/', tier:'T1', title:'Laowa official product page', note:'verify-specs 2026-11-15: spec table re-read (Laowa gives one figure for all mounts)', date:'2026-11-15' }],
+    maxAperture:2.0, minAperture:22, weight:500, length:82, diameter:77.2,
+    filterThread:72, minFocusDist:15, maxMagnification:0.25,
     elements:12, groups:9, blades:5, afType:'Manual',
     weatherSealed:false, ois:false, oisStops:null, year:2021, discontinued:false,
     imageUrl:'https://laowa.com.au/wp-content/uploads/2017/12/15-2-4-768x529.jpg',
@@ -1805,8 +1821,9 @@ const LENSES = {
   'laowa-10mm-f4-cookie': {
     name:'Laowa 10mm f/4 Cookie', manufacturer:'Laowa', line:'Cookie', type:'Prime',
     mount:'rf', focalLength:10, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'16mm',
-    maxAperture:4.0, minAperture:22, weight:130, length:25, diameter:54,
-    filterThread:37, minFocusDist:10, maxMagnification:0.1,
+    specSources: [{ url:'https://www.venuslens.net/product/laowa-10mm-f-4-cookie/', tier:'T1', title:'Laowa official product page', note:'verify-specs 2026-11-15: spec table re-read (Laowa gives one figure for all mounts)', date:'2026-11-15' }],
+    maxAperture:4.0, minAperture:22, weight:130, length:25, diameter:59.8,
+    filterThread:37, minFocusDist:10, maxMagnification:0.15,
     elements:12, groups:8, blades:5, afType:'Manual',
     weatherSealed:false, ois:false, oisStops:null, year:2022, discontinued:false,
     imageUrl:'https://laowa.com.au/wp-content/uploads/2022/07/1040-RF-04-510x340.png',
@@ -1820,6 +1837,7 @@ const LENSES = {
   'ttartisan-50mm-f14-asph': {
     name:'TTArtisan 50mm f/1.4 ASPH', manufacturer:'TTArtisan', line:'Full Frame', type:'Prime',
     mount:'rf', focalLength:50, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'50mm',
+    specSources: [{ url:'https://www.ttartisan.com/?full-frame-lenses/55.html', tier:'T1', title:'TTArtisan official product page', note:'verify-specs 2026-11-15: blades, filter, construction, weight re-read; dimensions not published', date:'2026-11-15' }],
     maxAperture:1.4, minAperture:16, weight:457, length:69, diameter:60,
     filterThread:49, minFocusDist:50, maxMagnification:null,
     elements:10, groups:8, blades:12, afType:'Manual',
@@ -1835,6 +1853,7 @@ const LENSES = {
   'ttartisan-tilt-50mm-f14': {
     name:'TTArtisan Tilt 50mm f/1.4', manufacturer:'TTArtisan', line:'Full Frame', type:'Prime',
     mount:'rf', focalLength:50, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'50mm',
+    specSources: [{ url:'https://www.ttartisan.com/?full-frame-lenses/60.html', tier:'T1', title:'TTArtisan official product page', note:'verify-specs 2026-11-15: blades, filter, construction, weight re-read; dimensions not published', date:'2026-11-15' }],
     maxAperture:1.4, minAperture:16, weight:452, length:68, diameter:70,
     filterThread:62, minFocusDist:50, maxMagnification:null,
     elements:7, groups:6, blades:13, afType:'Manual',
@@ -1850,6 +1869,7 @@ const LENSES = {
   'ttartisan-500mm-f63': {
     name:'TTArtisan 500mm f/6.3', manufacturer:'TTArtisan', line:'Full Frame', type:'Prime',
     mount:'rf', focalLength:500, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'500mm',
+    specSources: [{ url:'https://www.ttartisan.com/?full-frame-lenses/500-F6-3.html', tier:'T1', title:'TTArtisan official product page', note:'verify-specs 2026-11-15: blades, filter, construction, weight re-read; dimensions not published', date:'2026-11-15' }],
     maxAperture:6.3, minAperture:32, weight:1603, length:317, diameter:88,
     filterThread:82, minFocusDist:330, maxMagnification:null,
     elements:8, groups:5, blades:12, afType:'Manual',
@@ -1865,6 +1885,7 @@ const LENSES = {
   'ttartisan-50mm-f12': {
     name:'TTArtisan APS-C 50mm f/1.2', manufacturer:'TTArtisan', line:'APS-C', type:'Prime',
     mount:'rf', focalLength:50, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'80mm',
+    specSources: [{ url:'https://www.ttartisan.com/?aps-c-lenses/73.html', tier:'T1', title:'TTArtisan official product page', note:'verify-specs 2026-11-15: blades, filter, construction, weight re-read; dimensions not published', date:'2026-11-15' }],
     maxAperture:1.2, minAperture:16, weight:336, length:60, diameter:62,
     filterThread:52, minFocusDist:50, maxMagnification:null,
     elements:7, groups:5, blades:10, afType:'Manual',
@@ -1885,6 +1906,7 @@ const LENSES = {
   'ttartisan-50mm-f095': {
     name:'TTArtisan APS-C 50mm f/0.95', manufacturer:'TTArtisan', line:'APS-C', type:'Prime',
     mount:'rf', focalLength:50, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'80mm',
+    specSources: [{ url:'https://www.ttartisan.com/?aps-c-lenses/77.html', tier:'T1', title:'TTArtisan official product page', note:'verify-specs 2026-11-15: blades, filter, construction, weight re-read; dimensions not published', date:'2026-11-15' }],
     maxAperture:0.95, minAperture:16, weight:411, length:60, diameter:62,
     filterThread:58, minFocusDist:50, maxMagnification:null,
     elements:8, groups:6, blades:10, afType:'Manual',
