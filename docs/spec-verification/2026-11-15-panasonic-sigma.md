@@ -7,7 +7,7 @@ Scope commands:
 ## PROGRESS (resume here)
 
 - [x] Batch 1: Sigma lenses (35 L-Mount in `sigma/` and `panasonic/`, plus 3 Sigma MFT in `panasonic/`), 5 Sigma cameras, 24 Panasonic cameras
-- [ ] Batch 2: Panasonic first-party lenses (LUMIX S, LUMIX G, Leica DG): about 50
+- [x] Batch 2: Panasonic first-party lenses (LUMIX S, LUMIX G, Leica DG): 50, mirrored into the `leica/` (21) and `olympus/` (29) copies
 - [ ] Batch 3: OM System lenses in `panasonic/` (27)
 - [ ] Batch 4: Laowa, Viltrox, Samyang, Voigtländer in `panasonic/` (9; Viltrox likely unverifiable)
 
@@ -61,6 +61,30 @@ Panasonic cameras (panasonic.jp, T1):
 | l10 | batteryLife | null → 420 |
 
 The burst split was applied to 22 Panasonic bodies (all except the BS1H and BGH1 box cameras). The battery split was applied to 13, where the page gives monitor and LVF figures.
+
+## Batch 2 — Panasonic lenses (panasonic.jp `/dc/products/<model>/spec.html`, T1)
+
+Magnification is the native figure (the page also prints the 35mm-equivalent one in brackets). The pages do not state weather sealing, so `weatherSealed` was not checked.
+
+| item | field | stored → source |
+|---|---|---|
+| lumix-s-18mm-f1-8 | maxMagnification / groups / minAperture | 0.08 / 11 / 22 → 0.2 / 12 / 16 |
+| lumix-s-24mm-f1-8 | minAperture | 22 → 16 |
+| lumix-s-35mm-f1-8 | maxMagnification / groups | 0.15 / 10 → 0.22 / 9 |
+| lumix-s-pro-16-35mm-f4 | length / diameter | 100 / 84.6 → 99.6 / 85 |
+| lumix-s-14-28mm-f4-5-6-macro | length / blades | 89.6 / 9 → 89.8 / 7 |
+| lumix-s-24-60mm-f2-8 | length / diameter / filter / minFocus / mag / elements | 99.7 / 77.5 / 67 / 30 / 0.2 / 13 → 99.9 / 84 / 77 / 19 / 0.3 / 14 (stored figures looked like the 20-60's) |
+| lumix-s-28-200mm-f4-7-1-macro | blades / minAperture | 7 / 22 → 9 / 32 (F32-45) |
+| lumix-s-70-300mm-f4-5-5-6-macro | blades | 9 → 11 |
+| leica-dg-9mm-f1-7 | diameter | 60.3 → 60.8 |
+| leica-dg-25mm-f1-4-ii | weight / blades | 200 / 9 → 205 / 7 |
+| leica-dg-42-5mm-f1-2-nocticron | maxMagnification | 0.2 → 0.1 (0.2 is the 35mm-equivalent) |
+| lumix-g-35-100mm-f2-8-ii | weight / length | 360 / 100 → 357 / 99.9 |
+| leica-dg-25-50mm-f1-7 | length / maxMagnification | 128 / 0.18 → 127.6 / 0.21 |
+| leica-dg-50-200mm-f2-8-4 | maxMagnification | 0.21 → 0.25 |
+| leica-dg-100-400mm-f4-6-3-ii | length | 172 → 171.5 |
+
+The other 35 lenses matched on every field the page states.
 
 ## Open questions (not changed)
 
