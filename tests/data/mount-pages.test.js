@@ -81,6 +81,20 @@ for (const m of withMount) {
     }
   });
 
+  test(`${rel}: every lens name opens a brand page's lens tool on that lens`, () => {
+    const links = [...doc(rel).querySelectorAll('main table')].slice(1).flatMap(t => [...t.querySelectorAll('tbody th a')]);
+    assert.equal(links.length, lensesOf(m.id).size, 'every lens row has a link');
+    for (const a of links) {
+      const match = /^\.\.\/([a-z]+)\/#lenses=([a-z0-9-]+)$/.exec(a.getAttribute('href'));
+      assert.ok(match, `unexpected lens link ${a.getAttribute('href')}`);
+      const lens = brands[match[1]] && brands[match[1]].LENSES[match[2]];
+      assert.ok(lens, `${match[1]}:${match[2]} is not a lens in that brand file`);
+      assert.equal(lens.mount, m.id);
+      assert.ok(a.textContent.endsWith(lens.name), `link text "${a.textContent}" is not ${lens.name}`);
+      assert.match(a.dataset.goatcounterClick, /^mount-lens:/);
+    }
+  });
+
   test(`${rel}: head, canonical and sitemap entry`, () => {
     const html = files.get(rel);
     const url = `${site.baseUrl}/mount/${mountSlug(m.label)}`;

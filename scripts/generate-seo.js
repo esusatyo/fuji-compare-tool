@@ -660,6 +660,30 @@ function mountModel(brandData) {
   for (const [slug, data] of Object.entries(brandData)) registry[slug] = data;
   const cat = KitBuilder.catalogue(registry);
   const brands = Object.keys(brandData);
+  // Where a lens's name links: a brand page's lens tool. A lens stored in
+  // several brand files (shared mounts) links to the file of the brand that
+  // makes it — by name (Sigma → sigma/), else the brand whose own first-party
+  // line it is (OM System → olympus/) — and otherwise the catalogue's copy.
+  const copies = new Map();
+  for (const [copy, kept] of Object.entries(cat.canonical)) {
+    if (!copies.has(kept)) copies.set(kept, []);
+    copies.get(kept).push(copy);
+  }
+  const firstParty = {};
+  for (const b of brands) {
+    const grp = brandData[b].LENS_DROPDOWN_GROUPS[0];
+    const lens = grp && brandData[b].LENSES[grp.ids[0]];
+    firstParty[b] = lens ? lens.manufacturer : null;
+  }
+  const linkOf = lensId => {
+    const maker = cat.lenses[lensId].manufacturer;
+    const all = copies.get(lensId) || [lensId];
+    const pick = all.find(c => brandData[c.split(':')[0]].BRAND_CONFIG.name === maker)
+      || all.find(c => firstParty[c.split(':')[0]] === maker)
+      || lensId;
+    const [brand, slug] = pick.split(':');
+    return { brand, slug };
+  };
   const declared = new Map();
   for (const b of brands) {
     for (const m of brandData[b].BRAND_CONFIG.mounts || []) if (!declared.has(m.id)) declared.set(m.id, m);
@@ -691,7 +715,7 @@ function mountModel(brandData) {
             if (!lens || lens.mount !== id || seen.has(lensId)) continue;
             seen.add(lensId);
             if (!byMaker.has(lens.manufacturer)) byMaker.set(lens.manufacturer, []);
-            byMaker.get(lens.manufacturer).push(lens);
+            byMaker.get(lens.manufacturer).push({ lens, ...linkOf(lensId) });
           }
         }
       }
@@ -764,7 +788,7 @@ function mountPageHTML(site, m, card = null) {
       <table class="seo-table mount-table mount-lens-table">
         <thead><tr><th scope="col">Lens</th>${head(MOUNT_LENS_COLS)}</tr></thead>
         <tbody>
-${k.lenses.map(l => `          <tr><th scope="row">${esc(withBrandName(k.name, l.name))}${discTag(l)}</th>${MOUNT_LENS_COLS.map(col => `<td>${cellOf(col, l)}</td>`).join('')}</tr>`).join('\n')}
+${k.lenses.map(({ lens: l, brand, slug }) => `          <tr><th scope="row"><a href="${prefix}${brand}/#lenses=${slug}" data-goatcounter-click="mount-lens:${m.id}:${brand}:${slug}" data-goatcounter-title="Mount page lens: ${esc(withBrandName(k.name, l.name))}">${esc(withBrandName(k.name, l.name))}</a>${discTag(l)}</th>${MOUNT_LENS_COLS.map(col => `<td>${cellOf(col, l)}</td>`).join('')}</tr>`).join('\n')}
         </tbody>
       </table>
     </div>`).join('\n');
