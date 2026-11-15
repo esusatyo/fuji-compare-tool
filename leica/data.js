@@ -2714,7 +2714,8 @@ const LENSES = {
   'sigma-45mm-f28-dg': {
     name:'Sigma 45mm f/2.8 DG DN Contemporary', manufacturer:'Sigma', line:'Contemporary', type:'Prime',
     mount:'l', focalLength:45, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'45mm',
-    maxAperture:2.8, minAperture:22, weight:220, length:46.2, diameter:64,
+    specSources: [{ url:'https://www.sigma-global.com/en/lenses/c019_45_28/', tier:'T1', title:'Sigma global product page', note:'verify-specs 2026-11-15: L-Mount rows for size and weight; optics, aperture, focus, filter re-read', date:'2026-11-15' }],
+    maxAperture:2.8, minAperture:22, weight:215, length:46.2, diameter:64,
     filterThread:55, minFocusDist:24, maxMagnification:0.25,
     elements:8, groups:7, blades:7, afType:'Stepping Motor',
     weatherSealed:false, ois:false, oisStops:null, year:2019, discontinued:false,
@@ -2954,8 +2955,9 @@ const LENSES = {
   'sigma-24-70mm-f28-dg-ii': {
     name:'Sigma 24-70mm f/2.8 DG DN II Art', manufacturer:'Sigma', line:'Art', type:'Zoom',
     mount:'l', focalLength:null, focalLengthMin:24, focalLengthMax:70, focalLengthEquiv:'24-70mm',
+    specSources: [{ url:'https://www.sigma-global.com/en/lenses/a024_24_70_28_ii/', tier:'T1', title:'Sigma global product page', note:'verify-specs 2026-11-15: L-Mount rows for size and weight; optics, aperture, focus, filter re-read; max magnification 1:2.7 (W)', date:'2026-11-15' }],
     maxAperture:2.8, minAperture:22, weight:745, length:120.2, diameter:87.8,
-    filterThread:82, minFocusDist:17, maxMagnification:0.34,
+    filterThread:82, minFocusDist:17, maxMagnification:0.37,
     elements:19, groups:15, blades:11, afType:'HLA Linear',
     weatherSealed:true, ois:false, oisStops:null, year:2024, discontinued:false,
     imageUrl:'https://www.sigma-global.com/lenses/a024_24_70_28_ii_product_img01.png',
@@ -2996,10 +2998,11 @@ const LENSES = {
   'sigma-100-400mm-f5-63-dg': {
     name:'Sigma 100-400mm f/5-6.3 DG DN OS Contemporary', manufacturer:'Sigma', line:'Contemporary', type:'Zoom',
     mount:'l', focalLength:null, focalLengthMin:100, focalLengthMax:400, focalLengthEquiv:'100-400mm',
+    specSources: [{ url:'https://www.sigma-global.com/en/lenses/c020_100_400_5_63/', tier:'T1', title:'Sigma global product page', note:'verify-specs 2026-11-15: L-Mount rows for size and weight; optics, aperture, focus, filter re-read; weatherSealed false: Sigma claims only a dust- and splash-resistant mount (gasket), not a sealed barrel', date:'2026-11-15' }],
     maxAperture:5.0, minAperture:22, weight:1135, length:197.2, diameter:86,
     filterThread:67, minFocusDist:112, maxMagnification:0.24,
     elements:22, groups:16, blades:9, afType:'Stepping Motor',
-    weatherSealed:true, ois:true, oisStops:4, year:2020, discontinued:false,
+    weatherSealed:false, ois:true, oisStops:4, year:2020, discontinued:false,
     imageUrl:'https://www.sigma-global.com/lenses/c020_100_400_5_63_product_img01.png',
     imageSource: { url:'https://www.sigma-global.com/en/lenses/c020_100_400_5_63/', tier:'T1', note:'official sigma-global.com product page; barrel reads "100-400mm 1:5-6.3 DG DN" and "SIGMA"', date:'2026-08-17' },
     asin:'B08HRY1VFW',

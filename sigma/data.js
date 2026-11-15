@@ -111,12 +111,13 @@ const CAMERAS = {
     imageCredit:{author:"昼落ち", licence:"CC0", licenceUrl:"http://creativecommons.org/publicdomain/zero/1.0/deed.en", source:"https://commons.wikimedia.org/wiki/File:Sigma_BF_11_may_2025b.jpg"},
     asin:'B0DY926Z1P',
     prices:{USD:2199,AUD:3399,EUR:2499,GBP:1999,JPY:339000,CAD:2899,SGD:3199},
+    specSources: [{ url:'https://www.sigma-global.com/en/cameras/bf/', tier:'T1', title:'Sigma global product page (specifications)', note:'verify-specs 2026-11-15: sensor, dimensions, weight, monitor, viewfinder, burst, video, battery re-read; electronic shutter only', date:'2026-11-15' }],
     sensorMP:24.6, sensorType:'Full-frame BSI CMOS', processor:'Not disclosed',
     width:130.1, height:72.8, depth:36.8, weight:446, weatherSealed:true,
     lcdSize:'3.15"', lcdDots:2100, lcdType:'Fixed Touch',
     evfType:null, evfDots:null, evfMag:null,
     faceDetection:true, subjectDetection:'Human / Animal (people, dogs, cats)',
-    ibis:false, ibisStops:null, maxBurst:8,
+    ibis:false, ibisStops:null, maxBurst:8, maxBurstMech:null, maxBurstElec:8,
     maxVideoRes:'6K / 30P (6016 x 3384)',
     logVideo:true,
     foveonGen:null, shutterType:'Electronic only', internalStorage:'230GB SSD', lLog:true,
@@ -131,12 +132,13 @@ const CAMERAS = {
     imageUrl:'https://www.sigma-global.com/cameras/fpl_product_img01.png',
     asin:'B0916G94WV',
     prices:{USD:2499,AUD:null,EUR:null,GBP:null,JPY:null,CAD:null,SGD:null},
+    specSources: [{ url:'https://www.sigma-global.com/en/cameras/fpl/', tier:'T1', title:'Sigma global product page (specifications)', note:'verify-specs 2026-11-15: sensor, dimensions, weight, monitor, viewfinder, burst, video, battery re-read; electronic shutter only', date:'2026-11-15' }],
     sensorMP:61, sensorType:'Full-frame BSI Bayer CMOS', processor:'Not disclosed',
     width:112.6, height:69.9, depth:45.3, weight:427, weatherSealed:true,
     lcdSize:'3.15"', lcdDots:2100, lcdType:'Fixed Touch',
     evfType:null, evfDots:null, evfMag:null,
     faceDetection:true, subjectDetection:'Face / Eye',
-    ibis:false, ibisStops:null, maxBurst:10,
+    ibis:false, ibisStops:null, maxBurst:10, maxBurstMech:null, maxBurstElec:10,
     maxVideoRes:'UHD 4K / 30P',
     logVideo:false,
     foveonGen:null, shutterType:'Electronic only', internalStorage:null, lLog:false,
@@ -152,13 +154,14 @@ const CAMERAS = {
     imageCredit:{author:"昼落ち", licence:"CC BY-SA 4.0", licenceUrl:"https://creativecommons.org/licenses/by-sa/4.0", source:"https://commons.wikimedia.org/wiki/File:Sigma_fp_26_oct_2019a.jpg"},
     asin:'B07YV8R6B1',
     prices:{USD:1899,AUD:null,EUR:null,GBP:null,JPY:null,CAD:null,SGD:null},
+    specSources: [{ url:'https://www.sigma-global.com/en/cameras/fp/', tier:'T1', title:'Sigma global product page (specifications)', note:'verify-specs 2026-11-15: sensor, dimensions, weight, monitor, viewfinder, burst, video, battery re-read; 4K frame rates listed up to 29.97p; electronic shutter only', date:'2026-11-15' }],
     sensorMP:24.6, sensorType:'Full-frame BSI CMOS', processor:'Not disclosed',
     width:112.6, height:69.9, depth:45.3, weight:422, weatherSealed:true,
     lcdSize:'3.15"', lcdDots:2100, lcdType:'Fixed Touch',
     evfType:null, evfDots:null, evfMag:null,
     faceDetection:true, subjectDetection:'Face / Eye',
-    ibis:false, ibisStops:null, maxBurst:18,
-    maxVideoRes:'UHD 4K / 24P',
+    ibis:false, ibisStops:null, maxBurst:18, maxBurstMech:null, maxBurstElec:18,
+    maxVideoRes:'UHD 4K / 30P',
     logVideo:false,
     foveonGen:null, shutterType:'Electronic only', internalStorage:null, lLog:false,
     bluetooth:false, wifi:false,
@@ -179,6 +182,7 @@ const CAMERAS = {
     imageCredit:{author:"Morio", licence:"CC BY-SA 3.0", licenceUrl:"https://creativecommons.org/licenses/by-sa/3.0", source:"https://commons.wikimedia.org/wiki/File:Sigma_sd_Quattro_front-right_2017_CP+.jpg"},
     asin:'B01HHR56S4',
     prices:{USD:799,AUD:null,EUR:null,GBP:null,JPY:null,CAD:null,SGD:null},
+    specSources: [{ url:'https://www.sigma-global.com/en/cameras/sd-quattro/', tier:'T1', title:'Sigma global product page (specifications)', note:'verify-specs 2026-11-15: sensor, dimensions, weight, monitor, viewfinder, burst, video, battery re-read; weight is the only figure Sigma gives (without battery and card); page has no burst rate or weather-resistance claim (stored values kept, open question)', date:'2026-11-15' }],
     sensorMP:19.6, sensorType:'Foveon X3 Quattro (APS-C, 3-layer)', processor:'Dual TRUE III',
     // NOTE: 625g is Sigma's published body-only figure — every other brand on
     // the site stores weight WITH battery and card. Sigma publishes no
@@ -207,6 +211,7 @@ const CAMERAS = {
     imageCredit:{author:"Morio", licence:"CC BY-SA 3.0", licenceUrl:"https://creativecommons.org/licenses/by-sa/3.0", source:"https://commons.wikimedia.org/wiki/File:Sigma_sd_Quattro_H_front-right_2017_CP+.jpg"},
     asin:'B01N5C96X3',
     prices:{USD:1199,AUD:null,EUR:null,GBP:null,JPY:null,CAD:null,SGD:null},
+    specSources: [{ url:'https://www.sigma-global.com/en/cameras/sd-quattro-h/', tier:'T1', title:'Sigma global product page (specifications)', note:'verify-specs 2026-11-15: sensor, dimensions, weight, monitor, viewfinder, burst, video, battery re-read; weight is the only figure Sigma gives (without battery and card); page has no burst rate or weather-resistance claim (stored values kept, open question)', date:'2026-11-15' }],
     sensorMP:25.5, sensorType:'Foveon X3 Quattro (APS-H, 3-layer)', processor:'Dual TRUE III',
     width:147, height:95.1, depth:90.8, weight:635, weatherSealed:true,
     lcdSize:'3.0"', lcdDots:1620, lcdType:'Fixed TFT',
@@ -242,6 +247,7 @@ const LENSES = {
   'sigma-20mm-f14-dg': {
     name:'Sigma 20mm f/1.4 DG DN Art', manufacturer:'Sigma', line:'Art', type:'Prime',
     mount:'l', focalLength:20, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'20mm',
+    specSources: [{ url:'https://www.sigma-global.com/en/lenses/a022_20_14/', tier:'T1', title:'Sigma global product page', note:'verify-specs 2026-11-15: L-Mount rows for size and weight; optics, aperture, focus, filter re-read', date:'2026-11-15' }],
     maxAperture:1.4, minAperture:16, weight:635, length:111.2, diameter:87.8,
     filterThread:82, minFocusDist:23, maxMagnification:0.16,
     elements:17, groups:15, blades:11, afType:'Stepping Motor',
@@ -255,6 +261,7 @@ const LENSES = {
   'sigma-24mm-f14-dg': {
     name:'Sigma 24mm f/1.4 DG DN Art', manufacturer:'Sigma', line:'Art', type:'Prime',
     mount:'l', focalLength:24, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'24mm',
+    specSources: [{ url:'https://www.sigma-global.com/en/lenses/a022_24_14/', tier:'T1', title:'Sigma global product page', note:'verify-specs 2026-11-15: L-Mount rows for size and weight; optics, aperture, focus, filter re-read', date:'2026-11-15' }],
     maxAperture:1.4, minAperture:16, weight:520, length:95.5, diameter:75.7,
     filterThread:72, minFocusDist:25, maxMagnification:0.14,
     elements:17, groups:14, blades:11, afType:'Stepping Motor',
@@ -268,6 +275,7 @@ const LENSES = {
   'sigma-35mm-f14-dg': {
     name:'Sigma 35mm f/1.4 DG DN Art', manufacturer:'Sigma', line:'Art', type:'Prime',
     mount:'l', focalLength:35, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'35mm',
+    specSources: [{ url:'https://www.sigma-global.com/en/lenses/a021_35_14/', tier:'T1', title:'Sigma global product page', note:'verify-specs 2026-11-15: L-Mount rows for size and weight; optics, aperture, focus, filter re-read', date:'2026-11-15' }],
     maxAperture:1.4, minAperture:16, weight:645, length:109.5, diameter:75.5,
     filterThread:67, minFocusDist:30, maxMagnification:0.19,
     elements:15, groups:11, blades:11, afType:'Stepping Motor',
@@ -281,6 +289,7 @@ const LENSES = {
   'sigma-35mm-f14-dg-ii': {
     name:'Sigma 35mm f/1.4 DG II Art', manufacturer:'Sigma', line:'Art', type:'Prime',
     mount:'l', focalLength:35, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'35mm',
+    specSources: [{ url:'https://www.sigma-global.com/en/lenses/a026_35_14/', tier:'T1', title:'Sigma global product page', note:'verify-specs 2026-11-15: L-Mount rows for size and weight; optics, aperture, focus, filter re-read', date:'2026-11-15' }],
     maxAperture:1.4, minAperture:16, weight:530, length:94.0, diameter:73.0,
     filterThread:67, minFocusDist:28, maxMagnification:0.19,
     elements:15, groups:12, blades:11, afType:'Dual HLA Linear',
@@ -295,6 +304,7 @@ const LENSES = {
   'sigma-50mm-f14-dg': {
     name:'Sigma 50mm f/1.4 DG DN Art', manufacturer:'Sigma', line:'Art', type:'Prime',
     mount:'l', focalLength:50, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'50mm',
+    specSources: [{ url:'https://www.sigma-global.com/en/lenses/a023_50_14/', tier:'T1', title:'Sigma global product page', note:'verify-specs 2026-11-15: L-Mount rows for size and weight; optics, aperture, focus, filter re-read', date:'2026-11-15' }],
     maxAperture:1.4, minAperture:16, weight:670, length:109.5, diameter:78.2,
     filterThread:72, minFocusDist:45, maxMagnification:0.15,
     elements:14, groups:11, blades:11, afType:'HLA Linear',
@@ -308,6 +318,7 @@ const LENSES = {
   'sigma-85mm-f14-dg': {
     name:'Sigma 85mm f/1.4 DG DN Art', manufacturer:'Sigma', line:'Art', type:'Prime',
     mount:'l', focalLength:85, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'85mm',
+    specSources: [{ url:'https://www.sigma-global.com/en/lenses/a020_85_14/', tier:'T1', title:'Sigma global product page', note:'verify-specs 2026-11-15: L-Mount rows for size and weight; optics, aperture, focus, filter re-read', date:'2026-11-15' }],
     maxAperture:1.4, minAperture:16, weight:630, length:94.1, diameter:82.8,
     filterThread:77, minFocusDist:85, maxMagnification:0.12,
     elements:15, groups:11, blades:11, afType:'Stepping Motor',
@@ -337,6 +348,7 @@ const LENSES = {
   'sigma-135mm-f14-dg': {
     name:'Sigma 135mm f/1.4 DG Art', manufacturer:'Sigma', line:'Art', type:'Prime',
     mount:'l', focalLength:135, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'135mm',
+    specSources: [{ url:'https://www.sigma-global.com/en/lenses/a025_135_14/', tier:'T1', title:'Sigma global product page', note:'verify-specs 2026-11-15: L-Mount rows for size and weight; optics, aperture, focus, filter re-read', date:'2026-11-15' }],
     maxAperture:1.4, minAperture:16, weight:1430, length:135.5, diameter:111.7,
     filterThread:105, minFocusDist:110, maxMagnification:0.14,
     elements:17, groups:13, blades:13, afType:'Dual HLA Linear',
@@ -350,6 +362,7 @@ const LENSES = {
   'sigma-17mm-f4-dg': {
     name:'Sigma 17mm f/4 DG DN Contemporary', manufacturer:'Sigma', line:'Contemporary', type:'Prime',
     mount:'l', focalLength:17, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'17mm',
+    specSources: [{ url:'https://www.sigma-global.com/en/lenses/c023_17_4/', tier:'T1', title:'Sigma global product page', note:'verify-specs 2026-11-15: L-Mount rows for size and weight; optics, aperture, focus, filter re-read', date:'2026-11-15' }],
     maxAperture:4.0, minAperture:22, weight:225, length:48.8, diameter:64,
     filterThread:55, minFocusDist:12, maxMagnification:0.28,
     elements:9, groups:8, blades:7, afType:'Stepping Motor',
@@ -362,6 +375,7 @@ const LENSES = {
   'sigma-20mm-f2-dg': {
     name:'Sigma 20mm f/2 DG DN Contemporary', manufacturer:'Sigma', line:'Contemporary', type:'Prime',
     mount:'l', focalLength:20, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'20mm',
+    specSources: [{ url:'https://www.sigma-global.com/en/lenses/c022_20_2/', tier:'T1', title:'Sigma global product page', note:'verify-specs 2026-11-15: L-Mount rows for size and weight; optics, aperture, focus, filter re-read', date:'2026-11-15' }],
     maxAperture:2.0, minAperture:22, weight:370, length:72.4, diameter:70,
     filterThread:62, minFocusDist:22, maxMagnification:0.15,
     elements:13, groups:11, blades:9, afType:'Stepping Motor',
@@ -374,6 +388,7 @@ const LENSES = {
   'sigma-24mm-f2-dg': {
     name:'Sigma 24mm f/2 DG DN Contemporary', manufacturer:'Sigma', line:'Contemporary', type:'Prime',
     mount:'l', focalLength:24, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'24mm',
+    specSources: [{ url:'https://www.sigma-global.com/en/lenses/c021_24_2/', tier:'T1', title:'Sigma global product page', note:'verify-specs 2026-11-15: L-Mount rows for size and weight; optics, aperture, focus, filter re-read', date:'2026-11-15' }],
     maxAperture:2.0, minAperture:22, weight:365, length:72.0, diameter:70,
     filterThread:62, minFocusDist:24.5, maxMagnification:0.15,
     elements:13, groups:11, blades:9, afType:'Stepping Motor',
@@ -386,6 +401,7 @@ const LENSES = {
   'sigma-35mm-f2-dg': {
     name:'Sigma 35mm f/2 DG DN Contemporary', manufacturer:'Sigma', line:'Contemporary', type:'Prime',
     mount:'l', focalLength:35, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'35mm',
+    specSources: [{ url:'https://www.sigma-global.com/en/lenses/c020_35_2/', tier:'T1', title:'Sigma global product page', note:'verify-specs 2026-11-15: L-Mount rows for size and weight; optics, aperture, focus, filter re-read', date:'2026-11-15' }],
     maxAperture:2.0, minAperture:22, weight:325, length:65.4, diameter:70,
     filterThread:58, minFocusDist:27, maxMagnification:0.18,
     elements:10, groups:9, blades:9, afType:'Stepping Motor',
@@ -398,7 +414,8 @@ const LENSES = {
   'sigma-45mm-f28-dg': {
     name:'Sigma 45mm f/2.8 DG DN Contemporary', manufacturer:'Sigma', line:'Contemporary', type:'Prime',
     mount:'l', focalLength:45, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'45mm',
-    maxAperture:2.8, minAperture:22, weight:220, length:46.2, diameter:64,
+    specSources: [{ url:'https://www.sigma-global.com/en/lenses/c019_45_28/', tier:'T1', title:'Sigma global product page', note:'verify-specs 2026-11-15: L-Mount rows for size and weight; optics, aperture, focus, filter re-read', date:'2026-11-15' }],
+    maxAperture:2.8, minAperture:22, weight:215, length:46.2, diameter:64,
     filterThread:55, minFocusDist:24, maxMagnification:0.25,
     elements:8, groups:7, blades:7, afType:'Stepping Motor',
     weatherSealed:false, ois:false, oisStops:null, year:2019, discontinued:false,
@@ -410,6 +427,7 @@ const LENSES = {
   'sigma-50mm-f2-dg': {
     name:'Sigma 50mm f/2 DG DN Contemporary', manufacturer:'Sigma', line:'Contemporary', type:'Prime',
     mount:'l', focalLength:50, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'50mm',
+    specSources: [{ url:'https://www.sigma-global.com/en/lenses/c023_50_2/', tier:'T1', title:'Sigma global product page', note:'verify-specs 2026-11-15: L-Mount rows for size and weight; optics, aperture, focus, filter re-read', date:'2026-11-15' }],
     maxAperture:2.0, minAperture:22, weight:350, length:68.0, diameter:70,
     filterThread:58, minFocusDist:45, maxMagnification:0.14,
     elements:11, groups:9, blades:9, afType:'Stepping Motor',
@@ -437,6 +455,7 @@ const LENSES = {
   'sigma-65mm-f2-dg': {
     name:'Sigma 65mm f/2 DG DN Contemporary', manufacturer:'Sigma', line:'Contemporary', type:'Prime',
     mount:'l', focalLength:65, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'65mm',
+    specSources: [{ url:'https://www.sigma-global.com/en/lenses/c020_65_2/', tier:'T1', title:'Sigma global product page', note:'verify-specs 2026-11-15: L-Mount rows for size and weight; optics, aperture, focus, filter re-read', date:'2026-11-15' }],
     maxAperture:2.0, minAperture:22, weight:405, length:74.7, diameter:72,
     filterThread:62, minFocusDist:55, maxMagnification:0.15,
     elements:12, groups:9, blades:9, afType:'Stepping Motor',
@@ -449,6 +468,7 @@ const LENSES = {
   'sigma-90mm-f28-dg': {
     name:'Sigma 90mm f/2.8 DG DN Contemporary', manufacturer:'Sigma', line:'Contemporary', type:'Prime',
     mount:'l', focalLength:90, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'90mm',
+    specSources: [{ url:'https://www.sigma-global.com/en/lenses/c021_90_28/', tier:'T1', title:'Sigma global product page', note:'verify-specs 2026-11-15: L-Mount rows for size and weight; optics, aperture, focus, filter re-read', date:'2026-11-15' }],
     maxAperture:2.8, minAperture:22, weight:295, length:59.7, diameter:64,
     filterThread:55, minFocusDist:50, maxMagnification:0.2,
     elements:11, groups:10, blades:9, afType:'Stepping Motor',
@@ -462,6 +482,7 @@ const LENSES = {
   'sigma-16-28mm-f28-dg': {
     name:'Sigma 16-28mm f/2.8 DG DN Contemporary', manufacturer:'Sigma', line:'Contemporary', type:'Zoom',
     mount:'l', focalLength:null, focalLengthMin:16, focalLengthMax:28, focalLengthEquiv:'16-28mm',
+    specSources: [{ url:'https://www.sigma-global.com/en/lenses/c022_16_28_28/', tier:'T1', title:'Sigma global product page', note:'verify-specs 2026-11-15: L-Mount rows for size and weight; optics, aperture, focus, filter re-read; page does not mention weather resistance (stored true kept, open question)', date:'2026-11-15' }],
     maxAperture:2.8, minAperture:22, weight:450, length:100.6, diameter:77.2,
     filterThread:72, minFocusDist:25, maxMagnification:0.18,
     elements:16, groups:11, blades:9, afType:'Stepping Motor',
@@ -475,6 +496,7 @@ const LENSES = {
   'sigma-28-70mm-f28-dg': {
     name:'Sigma 28-70mm f/2.8 DG DN Contemporary', manufacturer:'Sigma', line:'Contemporary', type:'Zoom',
     mount:'l', focalLength:null, focalLengthMin:28, focalLengthMax:70, focalLengthEquiv:'28-70mm',
+    specSources: [{ url:'https://www.sigma-global.com/en/lenses/c021_28_70_28/', tier:'T1', title:'Sigma global product page', note:'verify-specs 2026-11-15: L-Mount rows for size and weight; optics, aperture, focus, filter re-read', date:'2026-11-15' }],
     maxAperture:2.8, minAperture:22, weight:470, length:101.5, diameter:72.2,
     filterThread:67, minFocusDist:19, maxMagnification:0.3,
     elements:16, groups:12, blades:9, afType:'Stepping Motor',
@@ -505,6 +527,7 @@ const LENSES = {
   'sigma-24-70mm-f28-dg': {
     name:'Sigma 24-70mm f/2.8 DG DN Art', manufacturer:'Sigma', line:'Art', type:'Zoom',
     mount:'l', focalLength:null, focalLengthMin:24, focalLengthMax:70, focalLengthEquiv:'24-70mm',
+    specSources: [{ url:'https://www.sigma-global.com/en/lenses/a019_24_70_28/', tier:'T1', title:'Sigma global product page', note:'verify-specs 2026-11-15: L-Mount rows for size and weight; optics, aperture, focus, filter re-read', date:'2026-11-15' }],
     maxAperture:2.8, minAperture:22, weight:835, length:122.9, diameter:87.8,
     filterThread:82, minFocusDist:18, maxMagnification:0.34,
     elements:19, groups:15, blades:11, afType:'Stepping Motor',
@@ -518,8 +541,9 @@ const LENSES = {
   'sigma-24-70mm-f28-dg-ii': {
     name:'Sigma 24-70mm f/2.8 DG DN II Art', manufacturer:'Sigma', line:'Art', type:'Zoom',
     mount:'l', focalLength:null, focalLengthMin:24, focalLengthMax:70, focalLengthEquiv:'24-70mm',
+    specSources: [{ url:'https://www.sigma-global.com/en/lenses/a024_24_70_28_ii/', tier:'T1', title:'Sigma global product page', note:'verify-specs 2026-11-15: L-Mount rows for size and weight; optics, aperture, focus, filter re-read; max magnification 1:2.7 (W)', date:'2026-11-15' }],
     maxAperture:2.8, minAperture:22, weight:745, length:120.2, diameter:87.8,
-    filterThread:82, minFocusDist:17, maxMagnification:0.34,
+    filterThread:82, minFocusDist:17, maxMagnification:0.37,
     elements:19, groups:15, blades:11, afType:'HLA Linear',
     weatherSealed:true, ois:false, oisStops:null, year:2024, discontinued:false,
     imageUrl:'https://www.sigma-global.com/lenses/a024_24_70_28_ii_product_img01.png',
@@ -531,6 +555,7 @@ const LENSES = {
   'sigma-28-45mm-f18-dg': {
     name:'Sigma 28-45mm f/1.8 DG DN Art', manufacturer:'Sigma', line:'Art', type:'Zoom',
     mount:'l', focalLength:null, focalLengthMin:28, focalLengthMax:45, focalLengthEquiv:'28-45mm',
+    specSources: [{ url:'https://www.sigma-global.com/en/lenses/a024_28_45_18/', tier:'T1', title:'Sigma global product page', note:'verify-specs 2026-11-15: L-Mount rows for size and weight; optics, aperture, focus, filter re-read', date:'2026-11-15' }],
     maxAperture:1.8, minAperture:16, weight:960, length:151.4, diameter:87.8,
     filterThread:82, minFocusDist:30, maxMagnification:0.25,
     elements:18, groups:15, blades:11, afType:'HLA Linear',
@@ -544,6 +569,7 @@ const LENSES = {
   'sigma-70-200mm-f28-dg': {
     name:'Sigma 70-200mm f/2.8 DG DN OS Sports', manufacturer:'Sigma', line:'Sports', type:'Zoom',
     mount:'l', focalLength:null, focalLengthMin:70, focalLengthMax:200, focalLengthEquiv:'70-200mm',
+    specSources: [{ url:'https://www.sigma-global.com/en/lenses/s023_70_200_28/', tier:'T1', title:'Sigma global product page', note:'verify-specs 2026-11-15: L-Mount rows for size and weight; optics, aperture, focus, filter re-read', date:'2026-11-15' }],
     maxAperture:2.8, minAperture:22, weight:1345, length:205.0, diameter:90.6,
     filterThread:77, minFocusDist:65, maxMagnification:0.19,
     elements:20, groups:15, blades:11, afType:'HLA Linear',
@@ -557,10 +583,11 @@ const LENSES = {
   'sigma-100-400mm-f5-63-dg': {
     name:'Sigma 100-400mm f/5-6.3 DG DN OS Contemporary', manufacturer:'Sigma', line:'Contemporary', type:'Zoom',
     mount:'l', focalLength:null, focalLengthMin:100, focalLengthMax:400, focalLengthEquiv:'100-400mm',
+    specSources: [{ url:'https://www.sigma-global.com/en/lenses/c020_100_400_5_63/', tier:'T1', title:'Sigma global product page', note:'verify-specs 2026-11-15: L-Mount rows for size and weight; optics, aperture, focus, filter re-read; weatherSealed false: Sigma claims only a dust- and splash-resistant mount (gasket), not a sealed barrel', date:'2026-11-15' }],
     maxAperture:5.0, minAperture:22, weight:1135, length:197.2, diameter:86,
     filterThread:67, minFocusDist:112, maxMagnification:0.24,
     elements:22, groups:16, blades:9, afType:'Stepping Motor',
-    weatherSealed:true, ois:true, oisStops:4, year:2020, discontinued:false,
+    weatherSealed:false, ois:true, oisStops:4, year:2020, discontinued:false,
     imageUrl:'https://www.sigma-global.com/lenses/c020_100_400_5_63_product_img01.png',
     imageSource: { url:'https://www.sigma-global.com/en/lenses/c020_100_400_5_63/', tier:'T1', note:'official sigma-global.com product page; barrel reads "100-400mm 1:5-6.3 DG DN" and "SIGMA"', date:'2026-08-17' },
     asin:'B08HRY1VFW',
@@ -571,6 +598,7 @@ const LENSES = {
   'sigma-150-600mm-f5-63-dg': {
     name:'Sigma 150-600mm f/5-6.3 DG DN OS Sports', manufacturer:'Sigma', line:'Sports', type:'Zoom',
     mount:'l', focalLength:null, focalLengthMin:150, focalLengthMax:600, focalLengthEquiv:'150-600mm',
+    specSources: [{ url:'https://www.sigma-global.com/en/lenses/s021_150_600_5_63/', tier:'T1', title:'Sigma global product page', note:'verify-specs 2026-11-15: L-Mount rows for size and weight; optics, aperture, focus, filter re-read', date:'2026-11-15' }],
     maxAperture:5.0, minAperture:22, weight:2100, length:263.6, diameter:109.4,
     filterThread:95, minFocusDist:58, maxMagnification:0.34,
     elements:25, groups:15, blades:9, afType:'Stepping Motor',
@@ -584,6 +612,7 @@ const LENSES = {
   'sigma-14mm-f14-dg': {
     name:'Sigma 14mm f/1.4 DG DN Art', manufacturer:'Sigma', line:'Art', type:'Prime',
     mount:'l', focalLength:14, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'14mm',
+    specSources: [{ url:'https://www.sigma-global.com/en/lenses/a023_14_14_re/', tier:'T1', title:'Sigma global product page', note:'verify-specs 2026-11-15: L-Mount rows for size and weight; optics, aperture, focus, filter re-read', date:'2026-11-15' }],
     maxAperture:1.4, minAperture:16, weight:1170, length:149.9, diameter:101.4,
     filterThread:null, minFocusDist:30, maxMagnification:0.084,
     elements:19, groups:15, blades:11, afType:'HLA Linear',
@@ -597,6 +626,7 @@ const LENSES = {
   'sigma-15mm-f14-dg-fisheye': {
     name:'Sigma 15mm f/1.4 DG DN Diagonal Fisheye Art', manufacturer:'Sigma', line:'Art', type:'Prime',
     mount:'l', focalLength:15, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'15mm',
+    specSources: [{ url:'https://www.sigma-global.com/en/lenses/a024_15_14/', tier:'T1', title:'Sigma global product page', note:'verify-specs 2026-11-15: L-Mount rows for size and weight; optics, aperture, focus, filter re-read', date:'2026-11-15' }],
     maxAperture:1.4, minAperture:16, weight:1360, length:157.9, diameter:104,
     filterThread:null, minFocusDist:38.5, maxMagnification:0.063,
     elements:21, groups:15, blades:11, afType:'HLA Linear',
@@ -610,6 +640,7 @@ const LENSES = {
   'sigma-35mm-f12-dg-ii': {
     name:'Sigma 35mm f/1.2 DG II Art', manufacturer:'Sigma', line:'Art', type:'Prime',
     mount:'l', focalLength:35, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'35mm',
+    specSources: [{ url:'https://www.sigma-global.com/en/lenses/a025_35_12/', tier:'T1', title:'Sigma global product page', note:'verify-specs 2026-11-15: L-Mount rows for size and weight; optics, aperture, focus, filter re-read', date:'2026-11-15' }],
     maxAperture:1.2, minAperture:16, weight:755, length:111.4, diameter:81,
     filterThread:72, minFocusDist:28, maxMagnification:0.189,
     elements:17, groups:13, blades:11, afType:'Dual HLA Linear',
@@ -623,6 +654,7 @@ const LENSES = {
   'sigma-50mm-f12-dg': {
     name:'Sigma 50mm f/1.2 DG DN Art', manufacturer:'Sigma', line:'Art', type:'Prime',
     mount:'l', focalLength:50, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'50mm',
+    specSources: [{ url:'https://www.sigma-global.com/en/lenses/a024_50_12/', tier:'T1', title:'Sigma global product page', note:'verify-specs 2026-11-15: L-Mount rows for size and weight; optics, aperture, focus, filter re-read', date:'2026-11-15' }],
     maxAperture:1.2, minAperture:16, weight:745, length:108.8, diameter:81,
     filterThread:72, minFocusDist:40, maxMagnification:0.161,
     elements:17, groups:12, blades:13, afType:'Dual HLA Linear',
@@ -650,6 +682,7 @@ const LENSES = {
   'sigma-24mm-f35-dg': {
     name:'Sigma 24mm f/3.5 DG DN Contemporary', manufacturer:'Sigma', line:'Contemporary', type:'Prime',
     mount:'l', focalLength:24, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'24mm',
+    specSources: [{ url:'https://www.sigma-global.com/en/lenses/c021_24_35_re/', tier:'T1', title:'Sigma global product page', note:'verify-specs 2026-11-15: L-Mount rows for size and weight; optics, aperture, focus, filter re-read', date:'2026-11-15' }],
     maxAperture:3.5, minAperture:22, weight:225, length:48.8, diameter:64,
     filterThread:55, minFocusDist:10.8, maxMagnification:0.5,
     elements:10, groups:8, blades:7, afType:'Stepping Motor',
@@ -663,6 +696,7 @@ const LENSES = {
   'sigma-14-24mm-f28-dg': {
     name:'Sigma 14-24mm f/2.8 DG DN Art', manufacturer:'Sigma', line:'Art', type:'Zoom',
     mount:'l', focalLength:null, focalLengthMin:14, focalLengthMax:24, focalLengthEquiv:'14-24mm',
+    specSources: [{ url:'https://www.sigma-global.com/en/lenses/a019_14_24_28/', tier:'T1', title:'Sigma global product page', note:'verify-specs 2026-11-15: L-Mount rows for size and weight; optics, aperture, focus, filter re-read', date:'2026-11-15' }],
     maxAperture:2.8, minAperture:22, weight:795, length:131, diameter:85,
     filterThread:null, minFocusDist:28, maxMagnification:0.137,
     elements:18, groups:13, blades:11, afType:'Stepping Motor',
@@ -676,6 +710,7 @@ const LENSES = {
   'sigma-28-105mm-f28-dg': {
     name:'Sigma 28-105mm f/2.8 DG DN Art', manufacturer:'Sigma', line:'Art', type:'Zoom',
     mount:'l', focalLength:null, focalLengthMin:28, focalLengthMax:105, focalLengthEquiv:'28-105mm',
+    specSources: [{ url:'https://www.sigma-global.com/en/lenses/a024_28_105_28/', tier:'T1', title:'Sigma global product page', note:'verify-specs 2026-11-15: L-Mount rows for size and weight; optics, aperture, focus, filter re-read', date:'2026-11-15' }],
     maxAperture:2.8, minAperture:22, weight:995, length:157.9, diameter:87.8,
     filterThread:82, minFocusDist:40, maxMagnification:0.323,
     elements:18, groups:13, blades:12, afType:'HLA Linear',
@@ -689,6 +724,7 @@ const LENSES = {
   'sigma-20-200mm-f35-63-dg': {
     name:'Sigma 20-200mm f/3.5-6.3 DG Contemporary', manufacturer:'Sigma', line:'Contemporary', type:'Zoom',
     mount:'l', focalLength:null, focalLengthMin:20, focalLengthMax:200, focalLengthEquiv:'20-200mm',
+    specSources: [{ url:'https://www.sigma-global.com/en/lenses/c025_20_200_35_63/', tier:'T1', title:'Sigma global product page', note:'verify-specs 2026-11-15: L-Mount rows for size and weight; optics, aperture, focus, filter re-read', date:'2026-11-15' }],
     maxAperture:3.5, minAperture:22, weight:550, length:115.5, diameter:77.2,
     filterThread:72, minFocusDist:16.5, maxMagnification:0.5,
     elements:18, groups:14, blades:9, afType:'HLA Linear',
@@ -702,6 +738,7 @@ const LENSES = {
   'sigma-200mm-f2-dg': {
     name:'Sigma 200mm f/2 DG OS Sports', manufacturer:'Sigma', line:'Sports', type:'Prime',
     mount:'l', focalLength:200, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'200mm',
+    specSources: [{ url:'https://www.sigma-global.com/en/lenses/s025_200_2/', tier:'T1', title:'Sigma global product page', note:'verify-specs 2026-11-15: L-Mount rows for size and weight; optics, aperture, focus, filter re-read', date:'2026-11-15' }],
     maxAperture:2.0, minAperture:22, weight:1820, length:201, diameter:118.9,
     filterThread:105, minFocusDist:170, maxMagnification:0.132,
     elements:19, groups:14, blades:11, afType:'HLA Linear',
@@ -715,6 +752,7 @@ const LENSES = {
   'sigma-500mm-f56-dg': {
     name:'Sigma 500mm f/5.6 DG DN OS Sports', manufacturer:'Sigma', line:'Sports', type:'Prime',
     mount:'l', focalLength:500, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'500mm',
+    specSources: [{ url:'https://www.sigma-global.com/en/lenses/s024_500_56/', tier:'T1', title:'Sigma global product page', note:'verify-specs 2026-11-15: L-Mount rows for size and weight; optics, aperture, focus, filter re-read', date:'2026-11-15' }],
     maxAperture:5.6, minAperture:32, weight:1370, length:234.6, diameter:107.6,
     filterThread:95, minFocusDist:320, maxMagnification:0.167,
     elements:20, groups:14, blades:11, afType:'HLA Linear',
@@ -728,6 +766,7 @@ const LENSES = {
   'sigma-60-600mm-f45-63-dg': {
     name:'Sigma 60-600mm f/4.5-6.3 DG DN OS Sports', manufacturer:'Sigma', line:'Sports', type:'Zoom',
     mount:'l', focalLength:null, focalLengthMin:60, focalLengthMax:600, focalLengthEquiv:'60-600mm',
+    specSources: [{ url:'https://www.sigma-global.com/en/lenses/s023_60_600_45_63/', tier:'T1', title:'Sigma global product page', note:'verify-specs 2026-11-15: L-Mount rows for size and weight; optics, aperture, focus, filter re-read', date:'2026-11-15' }],
     maxAperture:4.5, minAperture:22, weight:2495, length:279.2, diameter:119.4,
     filterThread:105, minFocusDist:45, maxMagnification:0.417,
     elements:27, groups:19, blades:9, afType:'HLA Linear',
@@ -741,6 +780,7 @@ const LENSES = {
   'sigma-300-600mm-f4-dg': {
     name:'Sigma 300-600mm f/4 DG OS Sports', manufacturer:'Sigma', line:'Sports', type:'Zoom',
     mount:'l', focalLength:null, focalLengthMin:300, focalLengthMax:600, focalLengthEquiv:'300-600mm',
+    specSources: [{ url:'https://www.sigma-global.com/en/lenses/s025_300_600_4/', tier:'T1', title:'Sigma global product page', note:'verify-specs 2026-11-15: L-Mount rows for size and weight; optics, aperture, focus, filter re-read', date:'2026-11-15' }],
     maxAperture:4.0, minAperture:22, weight:3985, length:467.9, diameter:167,
     filterThread:null, minFocusDist:280, maxMagnification:0.167,
     elements:28, groups:21, blades:13, afType:'HLA Linear',

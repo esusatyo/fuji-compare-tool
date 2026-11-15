@@ -2130,7 +2130,8 @@ const LENSES = {
   'sigma-16mm-f14-mft': {
     name:'Sigma 16mm f/1.4 DC DN', manufacturer:'Sigma', line:'Contemporary', type:'Prime',
     mount:'mft', focalLength:16, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'32mm',
-    maxAperture:1.4, minAperture:16, weight:405, length:92.3, diameter:72.2,
+    specSources: [{ url:'https://www.sigma-global.com/en/lenses/c017_16_14/', tier:'T1', title:'Sigma global product page', note:'verify-specs 2026-11-15: Micro Four Thirds rows for size and weight; optics, aperture, focus, filter re-read', date:'2026-11-15' }],
+    maxAperture:1.4, minAperture:16, weight:395, length:91.1, diameter:72.2,
     filterThread:67, minFocusDist:25, maxMagnification:0.1,
     elements:16, groups:13, blades:9, afType:'Stepping Motor',
     weatherSealed:false, ois:false, oisStops:null, year:2017, discontinued:false,
@@ -2144,7 +2145,8 @@ const LENSES = {
   'sigma-30mm-f14-mft': {
     name:'Sigma 30mm f/1.4 DC DN', manufacturer:'Sigma', line:'Contemporary', type:'Prime',
     mount:'mft', focalLength:30, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'60mm',
-    maxAperture:1.4, minAperture:16, weight:265, length:73.3, diameter:64.8,
+    specSources: [{ url:'https://www.sigma-global.com/en/lenses/c016_30_14/', tier:'T1', title:'Sigma global product page', note:'verify-specs 2026-11-15: Micro Four Thirds rows for size and weight; optics, aperture, focus, filter re-read', date:'2026-11-15' }],
+    maxAperture:1.4, minAperture:16, weight:260, length:72.1, diameter:64.8,
     filterThread:52, minFocusDist:30, maxMagnification:0.14,
     elements:9, groups:7, blades:9, afType:'Stepping Motor',
     weatherSealed:false, ois:false, oisStops:null, year:2016, discontinued:false,
@@ -2158,7 +2160,8 @@ const LENSES = {
   'sigma-56mm-f14-mft': {
     name:'Sigma 56mm f/1.4 DC DN', manufacturer:'Sigma', line:'Contemporary', type:'Prime',
     mount:'mft', focalLength:56, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'112mm',
-    maxAperture:1.4, minAperture:16, weight:280, length:59.5, diameter:66.5,
+    specSources: [{ url:'https://www.sigma-global.com/en/lenses/c018_56_14/', tier:'T1', title:'Sigma global product page', note:'verify-specs 2026-11-15: Micro Four Thirds rows for size and weight; optics, aperture, focus, filter re-read', date:'2026-11-15' }],
+    maxAperture:1.4, minAperture:16, weight:256, length:58.1, diameter:66.5,
     filterThread:55, minFocusDist:50, maxMagnification:0.14,
     elements:10, groups:6, blades:9, afType:'Stepping Motor',
     weatherSealed:false, ois:false, oisStops:null, year:2018, discontinued:false,

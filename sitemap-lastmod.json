@@ -120,8 +120,8 @@
     "lastmod": "2026-11-13"
   },
   "leica/": {
-    "hash": "73b44553bb054a8e",
-    "lastmod": "2026-11-13"
+    "hash": "3b86063ac6d5b67c",
+    "lastmod": "2026-11-15"
   },
   "nikon/": {
     "hash": "cf9b6f661fc41060",
@@ -144,8 +144,8 @@
     "lastmod": "2026-11-15"
   },
   "olympus/": {
-    "hash": "9ea1a759a6c54efb",
-    "lastmod": "2026-11-13"
+    "hash": "b006eddc1422f973",
+    "lastmod": "2026-11-15"
   },
   "olympus/size/om-3-vs-om-1": {
     "hash": "16722f982ae5c5c1",
@@ -164,120 +164,120 @@
     "lastmod": "2026-11-14"
   },
   "panasonic/": {
-    "hash": "57eeaf186d241aa2",
-    "lastmod": "2026-11-13"
+    "hash": "d7cb4e4eb67bc94f",
+    "lastmod": "2026-11-15"
   },
   "panasonic/size/g9-ii-vs-g9": {
-    "hash": "2700ed75f8e8ea7a",
-    "lastmod": "2026-11-13"
+    "hash": "63893875db962589",
+    "lastmod": "2026-11-15"
   },
   "panasonic/size/g97-vs-g95": {
-    "hash": "b1619b8785fc36e4",
-    "lastmod": "2026-11-13"
+    "hash": "df8b297c5622f516",
+    "lastmod": "2026-11-15"
   },
   "panasonic/size/gh7-vs-gh6": {
-    "hash": "8d15ae1d9588dbaa",
-    "lastmod": "2026-11-13"
+    "hash": "4a5103a5e3998436",
+    "lastmod": "2026-11-15"
   },
   "panasonic/size/l10-vs-s9": {
-    "hash": "cd2eae23e3e1430c",
-    "lastmod": "2026-11-13"
+    "hash": "610127a5a7001169",
+    "lastmod": "2026-11-15"
   },
   "panasonic/size/s1-ii-vs-s1": {
-    "hash": "420e0fe8b71f092e",
-    "lastmod": "2026-11-13"
+    "hash": "a90aab84b581ba50",
+    "lastmod": "2026-11-15"
   },
   "panasonic/size/s1-ii-vs-s1h": {
-    "hash": "c1248785acda5253",
-    "lastmod": "2026-11-13"
+    "hash": "7e27bd6a97ca43df",
+    "lastmod": "2026-11-15"
   },
   "panasonic/size/s1r-ii-vs-s1-ii": {
-    "hash": "393b2e492c9cb693",
-    "lastmod": "2026-11-13"
+    "hash": "684169c389381138",
+    "lastmod": "2026-11-15"
   },
   "panasonic/size/s1r-ii-vs-s1h": {
-    "hash": "5d980eb9ab0dcf02",
-    "lastmod": "2026-11-13"
+    "hash": "934155afd18b0d87",
+    "lastmod": "2026-11-15"
   },
   "panasonic/size/s1r-ii-vs-s1r": {
-    "hash": "7bbbc4a1eb572026",
-    "lastmod": "2026-11-13"
+    "hash": "cd256dfa0f5ed159",
+    "lastmod": "2026-11-15"
   },
   "panasonic/size/s5-iix-vs-s5-ii": {
-    "hash": "c9ed402e0543f402",
-    "lastmod": "2026-11-13"
+    "hash": "c0e07f8470a421a2",
+    "lastmod": "2026-11-15"
   },
   "panasonic/size/s9-vs-g100d": {
-    "hash": "b9fdfcac982b296c",
-    "lastmod": "2026-11-13"
+    "hash": "523458c59b0fc70e",
+    "lastmod": "2026-11-15"
   },
   "panasonic/size/s9-vs-g9-ii": {
-    "hash": "412889022f7bdc5a",
-    "lastmod": "2026-11-13"
+    "hash": "2da15d46006f02df",
+    "lastmod": "2026-11-15"
   },
   "panasonic/size/s9-vs-s5": {
-    "hash": "19de838de2f8e8cc",
-    "lastmod": "2026-11-13"
+    "hash": "196318743257301a",
+    "lastmod": "2026-11-15"
   },
   "panasonic/vs/g9-ii-vs-g9": {
-    "hash": "bdfe4abd352886f2",
-    "lastmod": "2026-11-14"
+    "hash": "fae8bf5b1b387e2b",
+    "lastmod": "2026-11-15"
   },
   "panasonic/vs/g97-vs-g95": {
-    "hash": "653ff0627683a354",
-    "lastmod": "2026-11-14"
+    "hash": "0efe189c943f3b71",
+    "lastmod": "2026-11-15"
   },
   "panasonic/vs/gh7-vs-gh6": {
-    "hash": "30b5066cb208cdcd",
-    "lastmod": "2026-11-14"
+    "hash": "03515e58753e03a0",
+    "lastmod": "2026-11-15"
   },
   "panasonic/vs/l10-vs-s9": {
-    "hash": "a321cd6adde5efd5",
-    "lastmod": "2026-11-14"
+    "hash": "a0023a9e62496da6",
+    "lastmod": "2026-11-15"
   },
   "panasonic/vs/s1-ii-vs-s1": {
-    "hash": "2d581d67438f2457",
-    "lastmod": "2026-11-14"
+    "hash": "7d9debbc26224719",
+    "lastmod": "2026-11-15"
   },
   "panasonic/vs/s1-ii-vs-s1h": {
-    "hash": "14473f7b6345ee5a",
-    "lastmod": "2026-11-14"
+    "hash": "6783bf2048b51024",
+    "lastmod": "2026-11-15"
   },
   "panasonic/vs/s1r-ii-vs-s1-ii": {
-    "hash": "6d15151d61932e3e",
-    "lastmod": "2026-11-14"
+    "hash": "0bc2207bf72caba0",
+    "lastmod": "2026-11-15"
   },
   "panasonic/vs/s1r-ii-vs-s1h": {
-    "hash": "10aebc0a2d74cc33",
-    "lastmod": "2026-11-14"
+    "hash": "aedf98e3b63f7075",
+    "lastmod": "2026-11-15"
   },
   "panasonic/vs/s1r-ii-vs-s1r": {
-    "hash": "e4c64d6420102d40",
-    "lastmod": "2026-11-14"
+    "hash": "99df99af4983dad1",
+    "lastmod": "2026-11-15"
   },
   "panasonic/vs/s5-iix-vs-s5-ii": {
-    "hash": "7126999f0b767267",
-    "lastmod": "2026-11-14"
+    "hash": "5e05ac785efa55e1",
+    "lastmod": "2026-11-15"
   },
   "panasonic/vs/s9-vs-g100d": {
-    "hash": "e41deda272990a87",
-    "lastmod": "2026-11-14"
+    "hash": "11d36fea2922fbd8",
+    "lastmod": "2026-11-15"
   },
   "panasonic/vs/s9-vs-g9-ii": {
-    "hash": "849b850e0633c872",
-    "lastmod": "2026-11-14"
+    "hash": "e8ef5de235f713c6",
+    "lastmod": "2026-11-15"
   },
   "panasonic/vs/s9-vs-s5": {
-    "hash": "612e7a3fd796f1ab",
-    "lastmod": "2026-11-14"
+    "hash": "7cbb399901b19945",
+    "lastmod": "2026-11-15"
   },
   "privacy": {
     "hash": "14d36930b9f79b88",
     "lastmod": "2026-11-14"
   },
   "sigma/": {
-    "hash": "d9599dfba5d92982",
-    "lastmod": "2026-11-13"
+    "hash": "8bd82578011e75cf",
+    "lastmod": "2026-11-15"
   },
   "size/": {
     "hash": "6a155e67156b0087",
