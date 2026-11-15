@@ -63,3 +63,21 @@ test('winner on the electronic row compares the numbers, ignoring the crop note'
   const max = Math.max(...vals);
   assert.deepEqual(Array.from(window.computeWinners(spec)), vals.map(v => v === max));
 });
+
+// ── Split battery (batteryLifeLcd / batteryLifeEvf) — same mechanism ──
+test('battery: split cameras show screen + viewfinder rows; legacy row only when needed', () => {
+  const { window, data } = loadBrand('canon', { engine: true });
+  const cams = Object.entries(data.CAMERAS);
+  const split = cams.filter(([, c]) => 'batteryLifeLcd' in c && c.batteryLifeEvf != null).map(([id]) => id);
+  const legacy = cams.filter(([, c]) => !('batteryLifeLcd' in c) && c.batteryLife != null).map(([id]) => id);
+  assert.ok(split.length >= 3 && legacy.length >= 1);
+
+  split.slice(0, 3).forEach((id, i) => setSlot(window, i, id));
+  let r = rows(window);
+  assert.ok('Battery (Screen, CIPA)' in r && 'Battery (Viewfinder, CIPA)' in r);
+  assert.ok(!('Battery Life (CIPA)' in r));
+
+  [split[0], split[1], legacy[0]].forEach((id, i) => setSlot(window, i, id));
+  r = rows(window);
+  assert.ok('Battery (Screen, CIPA)' in r && 'Battery Life (CIPA)' in r);
+});

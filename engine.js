@@ -352,7 +352,14 @@ const SPEC_SECTIONS = [
   {
     id: 'power', label: 'Power',
     specs: [
-      { key: 'batteryLife',  label: 'Battery Life (CIPA)', type: 'number', higherBetter: true, fn: c => c.batteryLife, fmt: v => v + ' shots' },
+      // Battery is split into screen and viewfinder rows where the maker
+      // publishes both (Canon, Sony, Nikon, Panasonic), rolled out per brand
+      // by verify-specs like burst. Cameras with batteryLifeLcd/batteryLifeEvf
+      // show the two rows; the rest keep the legacy single row. hideWhenEmpty
+      // drops whichever rows no selected camera fills.
+      { key: 'batteryLife',  label: 'Battery Life (CIPA)', type: 'number', higherBetter: true, hideWhenEmpty: true, fn: c => hasBatterySplit(c) ? null : c.batteryLife, fmt: v => v + ' shots' },
+      { key: 'batteryLcd',   label: 'Battery (Screen, CIPA)', type: 'number', higherBetter: true, hideWhenEmpty: true, fn: c => hasBatterySplit(c) ? c.batteryLifeLcd : null, fmt: v => v + ' shots' },
+      { key: 'batteryEvf',   label: 'Battery (Viewfinder, CIPA)', type: 'number', higherBetter: true, hideWhenEmpty: true, fn: c => hasBatterySplit(c) ? c.batteryLifeEvf : null, fmt: v => v + ' shots' },
       { key: 'usbCharging',  label: 'USB Charging',      type: 'boolean', fn: c => c.usbCharging },
     ]
   },
@@ -1575,6 +1582,12 @@ function computeWinners(spec) {
 // presence of the key, not a value, is the signal.
 function hasBurstSplit(c) {
   return !!c && ('maxBurstMech' in c || 'maxBurstElec' in c);
+}
+
+// True once a camera records screen and viewfinder battery life separately.
+// batteryLifeEvf is null on a body without a viewfinder.
+function hasBatterySplit(c) {
+  return !!c && ('batteryLifeLcd' in c || 'batteryLifeEvf' in c);
 }
 
 function formatVal(spec, item) {

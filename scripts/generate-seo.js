@@ -262,7 +262,16 @@ const VS_ROWS = [
   ['Max video', c => c.maxVideoRes],
   ['Weather sealed', c => c.weatherSealed ? 'Yes' : 'No'],
   ['Weight', c => c.weight == null ? null : `${c.weight} g`],
-  ['Battery (CIPA)', c => c.batteryLife == null ? null : `${c.batteryLife} shots`],
+  ['Battery (CIPA)', c => {
+    // Split battery (engine.js hasBatterySplit): "630 shots (screen) · 340 shots (viewfinder)".
+    if ('batteryLifeLcd' in c || 'batteryLifeEvf' in c) {
+      const parts = [];
+      if (c.batteryLifeLcd != null) parts.push(`${c.batteryLifeLcd} shots (screen)`);
+      if (c.batteryLifeEvf != null) parts.push(`${c.batteryLifeEvf} shots (viewfinder)`);
+      return parts.length ? parts.join(' · ') : null;
+    }
+    return c.batteryLife == null ? null : `${c.batteryLife} shots`;
+  }],
   ['Card slots', c => c.cardSlots],
   ['Lens mount', c => c.lensType],
 ];

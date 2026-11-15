@@ -318,6 +318,15 @@ function validateCamera(id, cam, brandSections = [], mountIds = null) {
   add(checkField(cam, 'wifi', { type: 'boolean' }));
   add(checkField(cam, 'cardSlots', { type: 'string' }));
   add(checkField(cam, 'batteryLife', { type: 'number', nullable: true, min: 0 }));
+  // Split battery (optional, rolled out brand by brand via verify-specs): both
+  // keys together; `batteryLife` kept equal to the screen figure (the maker's
+  // headline CIPA number) so legacy consumers still read one consistent value.
+  if ('batteryLifeLcd' in cam || 'batteryLifeEvf' in cam) {
+    add(checkField(cam, 'batteryLifeLcd', { type: 'number', nullable: true, min: 0 }));
+    add(checkField(cam, 'batteryLifeEvf', { type: 'number', nullable: true, min: 0 }));
+    if (cam.batteryLifeLcd != null && cam.batteryLife !== cam.batteryLifeLcd) e.push(`"batteryLife" (${cam.batteryLife}) should equal "batteryLifeLcd" (${cam.batteryLifeLcd})`);
+    if (cam.batteryLifeEvf != null && cam.evfType == null) e.push('"batteryLifeEvf" set on a camera with no viewfinder');
+  }
   add(checkField(cam, 'usbCharging', { type: 'boolean' }));
   add(checkField(cam, 'lensType', { type: 'string' }));
 
