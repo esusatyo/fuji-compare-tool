@@ -82,9 +82,10 @@ const CAMERAS = {
     asin:'B09KHC4XCT',
     prices:{USD:5899,AUD:9899,EUR:5499,GBP:4999,JPY:772200,CAD:7499,SGD:8399},
     priceSource: { url:'https://www.nikonusa.com/p/z-9/1669/overview', tier:'T1', title:'Nikon USA product page (list price)', note:'USD $5299 -> $5899: Nikon USA\'s own page data gives the list (base) price as $5,899.95, currently discounted to $5,299.95 ("You Save" promotion) (read 2026-10-11). The stored figure was stale. US-only correction. Regional prices from Nikon\'s own regional stores, read 2026-10-11: AUD 9899 (nikon.com.au store), CAD 7499 (store.nikon.ca, no sale price set), EUR 5499 (nikon.de), GBP 4999 (nikon.co.uk), JPY 772200 (Nikon Direct Japan), SGD 8399 (nikon.com.sg body only).', date:'2026-10-11' },
+    specSources: [{ url:'https://imaging.nikon.com/imaging/lineup/mirrorless/z_9/', tier:'T1', title:'Nikon global product page', note:'verify-specs 2026-11-15: sensor, dimensions, weight, monitor, viewfinder re-read', date:'2026-11-15' }, { url:'https://www.nikonusa.com/en/nikon-products/product/mirrorless-cameras/z-9.html', tier:'T1', title:'Nikon USA specifications', note:'verify-specs 2026-11-15: Bluetooth version re-read', date:'2026-11-15' }],
     sensorMP:45.7, sensorType:'Full-frame Stacked BSI CMOS', processor:'EXPEED 7',
     width:149.0, height:149.5, depth:90.5, weight:1340, weatherSealed:true,
-    lcdSize:'3.2"', lcdDots:2089, lcdType:'4-axis Tilting',
+    lcdSize:'3.2"', lcdDots:2100, lcdType:'4-axis Tilting',
     evfType:'EVF', evfDots:3.69, evfMag:0.80,
     faceDetection:true, subjectDetection:'9 types (People / Animals / Birds / Vehicles / Aircraft)',
     ibis:true, ibisStops:6.0, maxBurst:20,
@@ -105,9 +106,10 @@ const CAMERAS = {
     asin:'B0C4Q71JBY',
     prices:{USD:4299,AUD:7449,EUR:3899,GBP:3699,JPY:575300,CAD:5499,SGD:5599},
     priceSource: { url:'https://www.nikonusa.com/p/z-8/1695/overview', tier:'T1', title:'Nikon USA product page (list price)', note:'USD $3599 -> $4299: Nikon USA\'s own page data gives the list (base) price as $4,299.95, currently discounted to $3,299.95 ("You Save" promotion) (read 2026-10-11). The stored figure was stale. US-only correction. Regional prices from Nikon\'s own regional stores, read 2026-10-11: AUD 7449 (nikon.com.au store regular price; on sale at 5899), CAD 5499 (store.nikon.ca, no sale price set), EUR 3899 (nikon.de), GBP 3699 (nikon.co.uk), JPY 575300 (Nikon Direct Japan), SGD 5599 (nikon.com.sg body only).', date:'2026-10-11' },
+    specSources: [{ url:'https://imaging.nikon.com/imaging/lineup/mirrorless/z_8/', tier:'T1', title:'Nikon global product page', note:'verify-specs 2026-11-15: sensor, dimensions, weight, monitor, viewfinder re-read', date:'2026-11-15' }, { url:'https://www.nikonusa.com/en/nikon-products/product/mirrorless-cameras/z-8.html', tier:'T1', title:'Nikon USA specifications', note:'verify-specs 2026-11-15: Bluetooth version re-read', date:'2026-11-15' }],
     sensorMP:45.7, sensorType:'Full-frame Stacked BSI CMOS', processor:'EXPEED 7',
     width:144.0, height:118.5, depth:83.0, weight:910, weatherSealed:true,
-    lcdSize:'3.2"', lcdDots:2089, lcdType:'4-axis Tilting',
+    lcdSize:'3.2"', lcdDots:2100, lcdType:'4-axis Tilting',
     evfType:'EVF', evfDots:3.69, evfMag:0.80,
     faceDetection:true, subjectDetection:'9 types (People / Animals / Birds / Vehicles / Aircraft)',
     ibis:true, ibisStops:6.0, maxBurst:20,
@@ -128,6 +130,7 @@ const CAMERAS = {
     asin:'B0D77SL8CY',
     prices:{USD:2699,AUD:4499,EUR:2499,GBP:2199,JPY:396000,CAD:3499,SGD:3599},
     priceSource: { url:'https://www.nikonusa.com/p/z6iii/1890/overview', tier:'T1', title:'Nikon USA product page (list price)', note:'USD $2199 -> $2699: Nikon USA\'s own page data gives the list (base) price as $2,699.95, currently discounted to $2,199.95 ("You Save" promotion) (read 2026-10-11). The stored figure was stale. US-only correction. Regional prices from Nikon\'s own regional stores, read 2026-10-11: AUD 4499 (nikon.com.au store regular price; on sale at 3699), CAD 3499 (store.nikon.ca, no sale price set), EUR 2499 (nikon.de), GBP 2199 (nikon.co.uk), JPY 396000 (Nikon Direct Japan, body), SGD 3599 (nikon.com.sg body only).', date:'2026-10-11' },
+    specSources: [{ url:'https://imaging.nikon.com/imaging/lineup/mirrorless/z6_3/', tier:'T1', title:'Nikon global product page', note:'verify-specs 2026-11-15: sensor, dimensions, weight, monitor, viewfinder re-read', date:'2026-11-15' }, { url:'https://www.nikonusa.com/p/z6iii/1890/overview', tier:'T1', title:'Nikon USA specifications', note:'verify-specs 2026-11-15: Bluetooth version and battery life (Energy saving OFF figures, viewfinder / monitor) re-read', date:'2026-11-15' }],
     sensorMP:24.5, sensorType:'Full-frame Partially-Stacked BSI CMOS', processor:'EXPEED 7',
     width:138.5, height:101.5, depth:74.0, weight:760, weatherSealed:true,
     lcdSize:'3.2"', lcdDots:2100, lcdType:'Vari-angle',
@@ -138,7 +141,7 @@ const CAMERAS = {
     logVideo:true,
     expeed:'EXPEED 7', nRaw:'6K', pixelShift:'96MP', preCapture:true,
     bluetooth:'5.0', wifi:true,
-    cardSlots:'1× CFexpress Type B + 1× SD UHS-II', batteryLife:360, usbCharging:true,
+    cardSlots:'1× CFexpress Type B + 1× SD UHS-II', batteryLife:390, batteryLifeLcd:390, batteryLifeEvf:360, usbCharging:true,
     lensType:'Interchangeable', lensSpec:null,
   },
 
@@ -150,6 +153,7 @@ const CAMERAS = {
     imageCredit:{author:"TTTNIS", licence:"CC0", licenceUrl:"http://creativecommons.org/publicdomain/zero/1.0/deed.en", source:"https://commons.wikimedia.org/wiki/File:Nikon_Z5II_03.jpg"},
     asin:'B0F3HJD64Y',
     prices:{USD:1849,AUD:2499,EUR:1799,GBP:1399,JPY:250000,CAD:2099,SGD:2299},
+    specSources: [{ url:'https://imaging.nikon.com/imaging/lineup/mirrorless/z5_2/', tier:'T1', title:'Nikon global product page', note:'verify-specs 2026-11-15: sensor, dimensions, weight, monitor, viewfinder re-read', date:'2026-11-15' }, { url:'https://www.nikonusa.com/p/z5ii/1680/overview', tier:'T1', title:'Nikon USA specifications', note:'verify-specs 2026-11-15: Bluetooth version and battery life (Energy saving OFF figures, viewfinder / monitor) re-read', date:'2026-11-15' }],
     sensorMP:24.5, sensorType:'Full-frame BSI CMOS', processor:'EXPEED 7',
     width:134.0, height:100.5, depth:72.0, weight:700, weatherSealed:true,
     lcdSize:'3.2"', lcdDots:2100, lcdType:'Vari-angle',
@@ -160,7 +164,7 @@ const CAMERAS = {
     logVideo:true,
     expeed:'EXPEED 7', nRaw:null, pixelShift:'96MP', preCapture:true,
     bluetooth:'5.0', wifi:true,
-    cardSlots:'2× SD UHS-II', batteryLife:330, usbCharging:true,
+    cardSlots:'2× SD UHS-II', batteryLife:350, batteryLifeLcd:350, batteryLifeEvf:330, usbCharging:true,
     lensType:'Interchangeable', lensSpec:null,
   },
 
@@ -173,7 +177,7 @@ const CAMERAS = {
     imageCredit:{author:"昼落ち", licence:"CC0", licenceUrl:"http://creativecommons.org/publicdomain/zero/1.0/deed.en", source:"https://commons.wikimedia.org/wiki/File:Nikon_Z5IIC_11_oct_2026b.jpg"},
     asin:null,
     prices:{USD:1399,AUD:2199,EUR:1549,GBP:1349,JPY:218000,CAD:1899,SGD:2199},
-    specSources: [
+    specSources: [{ url:'https://imaging.nikon.com/imaging/lineup/mirrorless/z5_2c/', tier:'T1', title:'Nikon global product page', note:'verify-specs 2026-11-15: sensor, dimensions, weight, monitor, viewfinder re-read', date:'2026-11-15' }, { url:'https://www.nikonusa.com/p/z5iic/2082/overview', tier:'T1', title:'Nikon USA specifications', note:'verify-specs 2026-11-15: Bluetooth version and battery life (Energy saving OFF figures, viewfinder / monitor) re-read', date:'2026-11-15' }, 
       { url:'https://imaging.nikon.com/imaging/lineup/mirrorless/z5_2c/', tier:'T1', title:'Nikon Z5IIC official product page (Nikon global)', note:'Approx. 134.0 x 80.5 x 72.0 mm; approx. 620 g with battery and memory card (538 g body only); 3.2in vari-angle TFT touch LCD approx. 1040k dots; no viewfinder; single SD/SDHC/SDXC slot, UHS-II; EN-EL15c; approx. 14 fps continuous (mechanical)', date:'2026-10-11' },
       { url:'https://www.nikonusa.com/p/z5iic/2082/overview', tier:'T1', title:'Nikon USA Z5IIC product page', note:'$1,399.95 body; approx. 390 shots (CIPA, energy saving on), approx. 85 min video; Bluetooth 5.0; 14 fps mechanical / up to 30 fps electronic; pre-release capture; detection of 10 subject types incl. fish; USB-C charging', date:'2026-10-11' },
       { url:'https://www.nikonusa.com/press-room/z5iic', tier:'T1', title:'Nikon USA Z5IIC press release', note:'24.5 MP BSI CMOS, EXPEED 7; 5-axis VR up to 7.5 stops; 4K UHD 60p (APS-C crop at 50/60p per CineD), FHD 120p; H.265 10-bit with N-Log; N-RAW to SD card (12-bit, up to 4032x2268 per CineD, stored as nRaw 4K); dust- and drip-resistant magnesium alloy; available mid-October 2026. Pixel-shift shooting not mentioned in any Nikon source read, so pixelShift is null', date:'2026-10-11' }],
@@ -188,7 +192,7 @@ const CAMERAS = {
     logVideo:true,
     expeed:'EXPEED 7', nRaw:'4K', pixelShift:null, preCapture:true,
     bluetooth:'5.0', wifi:true,
-    cardSlots:'1× SD UHS-II', batteryLife:390, usbCharging:true,
+    cardSlots:'1× SD UHS-II', batteryLife:350, batteryLifeLcd:350, batteryLifeEvf:null, usbCharging:true,
     lensType:'Interchangeable', lensSpec:null,
   },
 
@@ -201,7 +205,7 @@ const CAMERAS = {
     imageCredit:{author:"昼落ち", licence:"CC0", licenceUrl:"http://creativecommons.org/publicdomain/zero/1.0/deed.en", source:"https://commons.wikimedia.org/wiki/File:Nikon_ZR_27_nov_2025a.jpg"},
     asin:'B0FPXLG8X7',
     prices:{USD:2499,AUD:3499,EUR:2349,GBP:1999,JPY:299200,CAD:2999,SGD:3199},
-    specSources: [{ url:'https://onlinemanual.nikonimglib.com/zr/en/15-12.html', tier:'T1', note:'"batteryLife" filled from null — Nikon\'s own manual gives 370 shots (Energy Saving ON, CIPA standard) or 350 shots (Energy Saving OFF) with the EN-EL15c; 370 (the higher, Energy Saving ON figure) used here', date:'2026-08-23' }],
+    specSources: [{ url:'https://imaging.nikon.com/imaging/lineup/z_cinema/z_r/', tier:'T1', title:'Nikon global product page', note:'verify-specs 2026-11-15: sensor, dimensions, weight, monitor, viewfinder re-read', date:'2026-11-15' }, { url:'https://onlinemanual.nikonimglib.com/zr/en/15-12.html', tier:'T1', note:'"batteryLife" filled from null — Nikon\'s own manual gives 370 shots (Energy Saving ON, CIPA standard) or 350 shots (Energy Saving OFF) with the EN-EL15c; 370 (the higher, Energy Saving ON figure) used here', date:'2026-08-23' }],
     priceSource: { url:'https://www.nikonusa.com/p/zr/2043/overview', tier:'T1', title:'Nikon USA product page (list price)', note:'USD $2199 -> $2499: Nikon USA\'s own page data gives the list (base) price as $2,499.95 (read 2026-10-11). The stored figure was stale. US-only correction. Regional prices from Nikon\'s own regional stores, read 2026-10-11: AUD 3499 (nikon.com.au store), CAD 2999 (store.nikon.ca, no sale price set), EUR 2349 (nikon.de), GBP 1999 (nikon.co.uk), JPY 299200 (Nikon Direct Japan, body), SGD 3199 (nikon.com.sg body only).', date:'2026-10-11' },
     sensorMP:24.5, sensorType:'Full-frame Partially-Stacked BSI CMOS', processor:'EXPEED 7',
     width:134.0, height:80.5, depth:49.0, weight:630, weatherSealed:true,
@@ -236,6 +240,7 @@ const CAMERAS = {
     imageUrl:'https://upload.wikimedia.org/wikipedia/commons/thumb/6/6e/Nikon_Z_7II_with_Nikkor_Z_24-70mm_F4_S_-_by_Henry_S%C3%B6derlund_%2850723434183%29.jpg/500px-Nikon_Z_7II_with_Nikkor_Z_24-70mm_F4_S_-_by_Henry_S%C3%B6derlund_%2850723434183%29.jpg',
     imageCredit:{author:"Henry Söderlund from Helsinki, Finland", licence:"CC BY 2.0", licenceUrl:"https://creativecommons.org/licenses/by/2.0", source:"https://commons.wikimedia.org/wiki/File:Nikon_Z_7II_with_Nikkor_Z_24-70mm_F4_S_-_by_Henry_S%C3%B6derlund_(50723434183).jpg"}, asin:'B08L614R6K',
     prices:{USD:2499,AUD:2999,EUR:2199,GBP:1699,JPY:296000,CAD:3499,SGD:2799},
+    specSources: [{ url:'https://imaging.nikon.com/imaging/lineup/mirrorless/z_7_2/', tier:'T1', title:'Nikon global product page', note:'verify-specs 2026-11-15: sensor, dimensions, weight, monitor, viewfinder re-read', date:'2026-11-15' }, { url:'https://www.nikonusa.com/en/nikon-products/product/mirrorless-cameras/z-7ii.html', tier:'T1', title:'Nikon USA specifications', note:'verify-specs 2026-11-15: Bluetooth version re-read', date:'2026-11-15' }],
     sensorMP:45.7, sensorType:'Full-frame BSI CMOS', processor:'Dual EXPEED 6',
     width:134.0, height:100.5, depth:69.5, weight:705, weatherSealed:true,
     lcdSize:'3.2"', lcdDots:2100, lcdType:'Tilting',
@@ -245,7 +250,7 @@ const CAMERAS = {
     maxVideoRes:'4K / 60P',
     logVideo:true,
     expeed:'EXPEED 6', nRaw:null, pixelShift:null, preCapture:false,
-    bluetooth:'5.0', wifi:true,
+    bluetooth:'4.2', wifi:true,
     cardSlots:'1× CFexpress Type B + 1× SD UHS-II', batteryLife:420, usbCharging:true,
     lensType:'Interchangeable', lensSpec:null,
   },
@@ -257,6 +262,7 @@ const CAMERAS = {
     imageUrl:'https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Nikon_Z7.jpg/500px-Nikon_Z7.jpg',
     imageCredit:{author:"Phiarc", licence:"CC BY-SA 4.0", licenceUrl:"https://creativecommons.org/licenses/by-sa/4.0", source:"https://commons.wikimedia.org/wiki/File:Nikon_Z7.jpg"}, asin:null,
     prices:{USD:3399,AUD:null,EUR:null,GBP:null,JPY:null,CAD:null,SGD:null},
+    specSources: [{ url:'https://imaging.nikon.com/imaging/lineup/mirrorless/z_7/', tier:'T1', title:'Nikon global product page', note:'verify-specs 2026-11-15: sensor, dimensions, weight, monitor, viewfinder re-read', date:'2026-11-15' }, { url:'https://www.nikonusa.com/en/nikon-products/product/mirrorless-cameras/z-7.html', tier:'T1', title:'Nikon USA specifications', note:'verify-specs 2026-11-15: Bluetooth version re-read', date:'2026-11-15' }],
     sensorMP:45.7, sensorType:'Full-frame BSI CMOS', processor:'EXPEED 6',
     width:134.0, height:100.5, depth:67.5, weight:675, weatherSealed:true,
     lcdSize:'3.2"', lcdDots:2100, lcdType:'Tilting',
@@ -279,6 +285,7 @@ const CAMERAS = {
     imageUrl:'https://upload.wikimedia.org/wikipedia/commons/thumb/2/26/Nikon_Z_6II_2.jpg/500px-Nikon_Z_6II_2.jpg',
     imageCredit:{author:"Thilo Parg", licence:"CC BY-SA 4.0", licenceUrl:"https://creativecommons.org/licenses/by-sa/4.0", source:"https://commons.wikimedia.org/wiki/File:Nikon_Z_6II_2.jpg"}, asin:'B08L5Z4355',
     prices:{USD:1749,AUD:2199,EUR:1599,GBP:1299,JPY:218000,CAD:2399,SGD:1999},
+    specSources: [{ url:'https://imaging.nikon.com/imaging/lineup/mirrorless/z_6_2/', tier:'T1', title:'Nikon global product page', note:'verify-specs 2026-11-15: sensor, dimensions, weight, monitor, viewfinder re-read', date:'2026-11-15' }, { url:'https://www.nikonusa.com/en/nikon-products/product/mirrorless-cameras/z-6ii.html', tier:'T1', title:'Nikon USA specifications', note:'verify-specs 2026-11-15: Bluetooth version re-read', date:'2026-11-15' }],
     sensorMP:24.5, sensorType:'Full-frame BSI CMOS', processor:'Dual EXPEED 6',
     width:134.0, height:100.5, depth:69.5, weight:705, weatherSealed:true,
     lcdSize:'3.2"', lcdDots:2100, lcdType:'Tilting',
@@ -288,7 +295,7 @@ const CAMERAS = {
     maxVideoRes:'4K / 60P',
     logVideo:true,
     expeed:'EXPEED 6', nRaw:null, pixelShift:null, preCapture:false,
-    bluetooth:'5.0', wifi:true,
+    bluetooth:'4.2', wifi:true,
     cardSlots:'1× CFexpress Type B + 1× SD UHS-II', batteryLife:410, usbCharging:true,
     lensType:'Interchangeable', lensSpec:null,
   },
@@ -300,6 +307,7 @@ const CAMERAS = {
     imageUrl:'https://upload.wikimedia.org/wikipedia/commons/thumb/c/cc/Nikon_Z_6_28_nov_2018a.jpg/500px-Nikon_Z_6_28_nov_2018a.jpg',
     imageCredit:{author:"昼落ち", licence:"CC BY-SA 4.0", licenceUrl:"https://creativecommons.org/licenses/by-sa/4.0", source:"https://commons.wikimedia.org/wiki/File:Nikon_Z_6_28_nov_2018a.jpg"}, asin:null,
     prices:{USD:1999,AUD:null,EUR:null,GBP:null,JPY:null,CAD:null,SGD:null},
+    specSources: [{ url:'https://imaging.nikon.com/imaging/lineup/mirrorless/z_6/', tier:'T1', title:'Nikon global product page', note:'verify-specs 2026-11-15: sensor, dimensions, weight, monitor, viewfinder re-read', date:'2026-11-15' }, { url:'https://www.nikonusa.com/en/nikon-products/product/mirrorless-cameras/z-6.html', tier:'T1', title:'Nikon USA specifications', note:'verify-specs 2026-11-15: Bluetooth version re-read', date:'2026-11-15' }],
     sensorMP:24.5, sensorType:'Full-frame BSI CMOS', processor:'EXPEED 6',
     width:134.0, height:100.5, depth:67.5, weight:675, weatherSealed:true,
     lcdSize:'3.2"', lcdDots:2100, lcdType:'Tilting',
@@ -322,6 +330,7 @@ const CAMERAS = {
     imageUrl:'https://upload.wikimedia.org/wikipedia/commons/thumb/b/ba/Nikon_Z_5_21_Oct_2020a.jpg/500px-Nikon_Z_5_21_Oct_2020a.jpg',
     imageCredit:{author:"昼落ち", licence:"CC BY-SA 4.0", licenceUrl:"https://creativecommons.org/licenses/by-sa/4.0", source:"https://commons.wikimedia.org/wiki/File:Nikon_Z_5_21_Oct_2020a.jpg"}, asin:'B08DCJNTBX',
     prices:{USD:1449,AUD:1799,EUR:1299,GBP:999,JPY:179000,CAD:1799,SGD:1699},
+    specSources: [{ url:'https://imaging.nikon.com/imaging/lineup/mirrorless/z_5/', tier:'T1', title:'Nikon global product page', note:'verify-specs 2026-11-15: sensor, dimensions, weight, monitor, viewfinder re-read', date:'2026-11-15' }, { url:'https://www.nikonusa.com/en/nikon-products/product/mirrorless-cameras/z-5.html', tier:'T1', title:'Nikon USA specifications', note:'verify-specs 2026-11-15: Bluetooth version re-read', date:'2026-11-15' }],
     sensorMP:24.3, sensorType:'Full-frame CMOS', processor:'EXPEED 6',
     width:134.0, height:100.5, depth:69.5, weight:675, weatherSealed:true,
     lcdSize:'3.2"', lcdDots:1040, lcdType:'Tilting',
@@ -331,7 +340,7 @@ const CAMERAS = {
     maxVideoRes:'4K / 30P (1.7× crop)',
     logVideo:false,
     expeed:'EXPEED 6', nRaw:null, pixelShift:null, preCapture:false,
-    bluetooth:'5.0', wifi:true,
+    bluetooth:'4.2', wifi:true,
     cardSlots:'2× SD UHS-II', batteryLife:470, usbCharging:true,
     lensType:'Interchangeable', lensSpec:null,
   },
@@ -347,6 +356,7 @@ const CAMERAS = {
     asin:'B0DMJBLQGP',
     prices:{USD:1010,AUD:1449,EUR:1049,GBP:849,JPY:150000,CAD:1249,SGD:1299},
     priceSource: { url:'https://www.nikonusa.com/p/z50ii/1784/overview', tier:'T1', note:'"Starting at $1,009.95" body-only on nikonusa.com (Aug 2026); corrects the stale $1,007 figure previously stored here', date:'2026-08-23' },
+    specSources: [{ url:'https://imaging.nikon.com/imaging/lineup/mirrorless/z50_2/', tier:'T1', title:'Nikon global product page', note:'verify-specs 2026-11-15: sensor, dimensions, weight, monitor, viewfinder re-read', date:'2026-11-15' }, { url:'https://www.nikonusa.com/p/z50ii/1784/overview', tier:'T1', title:'Nikon USA specifications', note:'verify-specs 2026-11-15: Bluetooth version and battery life (Energy saving OFF figures, viewfinder / monitor) re-read', date:'2026-11-15' }],
     sensorMP:20.9, sensorType:'APS-C (DX) CMOS', processor:'EXPEED 7',
     width:127.0, height:96.8, depth:66.5, weight:550, weatherSealed:false,
     lcdSize:'3.2"', lcdDots:1040, lcdType:'Vari-angle',
@@ -357,7 +367,7 @@ const CAMERAS = {
     logVideo:true,
     expeed:'EXPEED 7', nRaw:null, pixelShift:null, preCapture:true,
     bluetooth:'5.0', wifi:true,
-    cardSlots:'1× SD UHS-II', batteryLife:230, usbCharging:true,
+    cardSlots:'1× SD UHS-II', batteryLife:230, batteryLifeLcd:230, batteryLifeEvf:220, usbCharging:true,
     lensType:'Interchangeable', lensSpec:null,
   },
 
@@ -369,6 +379,7 @@ const CAMERAS = {
     imageUrl:'https://upload.wikimedia.org/wikipedia/commons/thumb/8/86/Nikon_Z_50_0.jpg/500px-Nikon_Z_50_0.jpg',
     imageCredit:{author:"Thilo Parg", licence:"CC BY-SA 4.0", licenceUrl:"https://creativecommons.org/licenses/by-sa/4.0", source:"https://commons.wikimedia.org/wiki/File:Nikon_Z_50_0.jpg"}, asin:null,
     prices:{USD:860,AUD:null,EUR:null,GBP:null,JPY:null,CAD:null,SGD:null},
+    specSources: [{ url:'https://imaging.nikon.com/imaging/lineup/mirrorless/z_50/', tier:'T1', title:'Nikon global product page', note:'verify-specs 2026-11-15: sensor, dimensions, weight, monitor, viewfinder re-read', date:'2026-11-15' }, { url:'https://www.nikonusa.com/en/nikon-products/product/mirrorless-cameras/z-50.html', tier:'T1', title:'Nikon USA specifications', note:'verify-specs 2026-11-15: Bluetooth version re-read', date:'2026-11-15' }],
     sensorMP:20.9, sensorType:'APS-C (DX) CMOS', processor:'EXPEED 6',
     width:126.5, height:93.5, depth:60.0, weight:450, weatherSealed:false,
     lcdSize:'3.2"', lcdDots:1040, lcdType:'Tilting',
@@ -391,6 +402,7 @@ const CAMERAS = {
     imageUrl:'https://upload.wikimedia.org/wikipedia/commons/thumb/f/fe/Nikon_Z30.jpg/500px-Nikon_Z30.jpg',
     imageCredit:{author:"Phiarc", licence:"CC BY-SA 4.0", licenceUrl:"https://creativecommons.org/licenses/by-sa/4.0", source:"https://commons.wikimedia.org/wiki/File:Nikon_Z30.jpg"}, asin:'B0B527JD1C',
     prices:{USD:809,AUD:999,EUR:699,GBP:499,JPY:95000,CAD:879,SGD:899},
+    specSources: [{ url:'https://imaging.nikon.com/imaging/lineup/mirrorless/z_30/', tier:'T1', title:'Nikon global product page', note:'verify-specs 2026-11-15: sensor, dimensions, weight, monitor, viewfinder re-read', date:'2026-11-15' }, { url:'https://www.nikonusa.com/p/z-30/1737/overview', tier:'T1', title:'Nikon USA specifications', note:'verify-specs 2026-11-15: Bluetooth version re-read', date:'2026-11-15' }],
     sensorMP:20.9, sensorType:'APS-C (DX) CMOS', processor:'EXPEED 6',
     width:128.0, height:73.5, depth:60.0, weight:405, weatherSealed:false,
     lcdSize:'3.0"', lcdDots:1040, lcdType:'Vari-angle',
@@ -413,6 +425,7 @@ const CAMERAS = {
     imageUrl:'https://upload.wikimedia.org/wikipedia/commons/thumb/3/3e/Nikon_Z_f_8_nov_2023a.jpg/500px-Nikon_Z_f_8_nov_2023a.jpg',
     imageCredit:{author:"昼落ち", licence:"CC0", licenceUrl:"http://creativecommons.org/publicdomain/zero/1.0/deed.en", source:"https://commons.wikimedia.org/wiki/File:Nikon_Z_f_8_nov_2023a.jpg"}, asin:'B0CJDHSFTN',
     prices:{USD:2199,AUD:3199,EUR:2399,GBP:1799,JPY:320000,CAD:2699,SGD:2999},
+    specSources: [{ url:'https://imaging.nikon.com/imaging/lineup/mirrorless/z_f/', tier:'T1', title:'Nikon global product page', note:'verify-specs 2026-11-15: sensor, dimensions, weight, monitor, viewfinder re-read', date:'2026-11-15' }, { url:'https://www.nikonusa.com/en/nikon-products/product/mirrorless-cameras/z-f.html', tier:'T1', title:'Nikon USA specifications', note:'verify-specs 2026-11-15: Bluetooth version re-read', date:'2026-11-15' }],
     sensorMP:24.5, sensorType:'Full-frame BSI CMOS', processor:'EXPEED 7',
     width:144.0, height:103.0, depth:49.0, weight:710, weatherSealed:true,
     lcdSize:'3.2"', lcdDots:2100, lcdType:'Vari-angle',
@@ -435,6 +448,7 @@ const CAMERAS = {
     imageUrl:'https://upload.wikimedia.org/wikipedia/commons/thumb/6/64/Nikon_Z_fc_3_aug_2021a.jpg/500px-Nikon_Z_fc_3_aug_2021a.jpg',
     imageCredit:{author:"昼落ち", licence:"CC BY-SA 4.0", licenceUrl:"https://creativecommons.org/licenses/by-sa/4.0", source:"https://commons.wikimedia.org/wiki/File:Nikon_Z_fc_3_aug_2021a.jpg"}, asin:'B09883MWLL',
     prices:{USD:1059,AUD:1499,EUR:1099,GBP:899,JPY:150000,CAD:1199,SGD:1399},
+    specSources: [{ url:'https://imaging.nikon.com/imaging/lineup/mirrorless/z_fc/', tier:'T1', title:'Nikon global product page', note:'verify-specs 2026-11-15: sensor, dimensions, weight, monitor, viewfinder re-read', date:'2026-11-15' }, { url:'https://www.nikonusa.com/en/nikon-products/product/mirrorless-cameras/z-fc.html', tier:'T1', title:'Nikon USA specifications', note:'verify-specs 2026-11-15: Bluetooth version re-read', date:'2026-11-15' }],
     sensorMP:20.9, sensorType:'APS-C (DX) CMOS', processor:'EXPEED 6',
     width:134.5, height:93.5, depth:43.5, weight:445, weatherSealed:false,
     lcdSize:'3.0"', lcdDots:1040, lcdType:'Vari-angle',
@@ -478,6 +492,7 @@ const LENSES = {
   'z-50mm-f1-8-s': {
     name:'NIKKOR Z 50mm f/1.8 S', manufacturer:'Nikon', line:'S-Line', type:'Prime', mount:'z', asin:'B07GQ6FR5F',
     focalLength:50, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'50mm',
+    specSources: [{ url:'https://imaging.nikon.com/imaging/lineup/lens/z-mount/z_50mmf18s/', tier:'T1', title:'Nikon global product page', note:'verify-specs 2026-11-15: construction, focus distance, magnification, blades, filter, dimensions, weight re-read', date:'2026-11-15' }],
     maxAperture:1.8, minAperture:16, weight:415, length:86.5, diameter:76.0,
     filterThread:62, minFocusDist:40, maxMagnification:0.15,
     elements:12, groups:9, blades:9, afType:'Stepping Motor',
@@ -493,6 +508,7 @@ const LENSES = {
   'z-20mm-f1-8-s': {
     name:'NIKKOR Z 20mm f/1.8 S', manufacturer:'Nikon', line:'S-Line', type:'Prime', mount:'z', asin:'B084QPDT1H',
     focalLength:20, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'20mm',
+    specSources: [{ url:'https://imaging.nikon.com/imaging/lineup/lens/z-mount/z_20mmf18s/', tier:'T1', title:'Nikon global product page', note:'verify-specs 2026-11-15: construction, focus distance, magnification, blades, filter, dimensions, weight re-read', date:'2026-11-15' }],
     maxAperture:1.8, minAperture:16, weight:505, length:108.5, diameter:84.5,
     filterThread:77, minFocusDist:20, maxMagnification:0.19,
     elements:14, groups:11, blades:9, afType:'Stepping Motor',
@@ -508,6 +524,7 @@ const LENSES = {
   'z-24mm-f1-8-s': {
     name:'NIKKOR Z 24mm f/1.8 S', manufacturer:'Nikon', line:'S-Line', type:'Prime', mount:'z', asin:'B07W86M8FG',
     focalLength:24, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'24mm',
+    specSources: [{ url:'https://imaging.nikon.com/imaging/lineup/lens/z-mount/z_24mmf18s/', tier:'T1', title:'Nikon global product page', note:'verify-specs 2026-11-15: construction, focus distance, magnification, blades, filter, dimensions, weight re-read', date:'2026-11-15' }],
     maxAperture:1.8, minAperture:16, weight:450, length:96.5, diameter:78.0,
     filterThread:72, minFocusDist:25, maxMagnification:0.15,
     elements:12, groups:10, blades:9, afType:'Stepping Motor',
@@ -523,6 +540,7 @@ const LENSES = {
   'z-35mm-f1-8-s': {
     name:'NIKKOR Z 35mm f/1.8 S', manufacturer:'Nikon', line:'S-Line', type:'Prime', mount:'z', asin:'B07GPVJ6HG',
     focalLength:35, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'35mm',
+    specSources: [{ url:'https://imaging.nikon.com/imaging/lineup/lens/z-mount/z_35mmf18s/', tier:'T1', title:'Nikon global product page', note:'verify-specs 2026-11-15: construction, focus distance, magnification, blades, filter, dimensions, weight re-read', date:'2026-11-15' }],
     maxAperture:1.8, minAperture:16, weight:370, length:86.0, diameter:73.0,
     filterThread:62, minFocusDist:25, maxMagnification:0.19,
     elements:11, groups:9, blades:9, afType:'Stepping Motor',
@@ -538,6 +556,7 @@ const LENSES = {
   'z-85mm-f1-8-s': {
     name:'NIKKOR Z 85mm f/1.8 S', manufacturer:'Nikon', line:'S-Line', type:'Prime', mount:'z', asin:'B07VQWGNHR',
     focalLength:85, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'85mm',
+    specSources: [{ url:'https://imaging.nikon.com/imaging/lineup/lens/z-mount/z_85mmf18s/', tier:'T1', title:'Nikon global product page', note:'verify-specs 2026-11-15: construction, focus distance, magnification, blades, filter, dimensions, weight re-read', date:'2026-11-15' }],
     maxAperture:1.8, minAperture:16, weight:470, length:99.0, diameter:75.0,
     filterThread:67, minFocusDist:80, maxMagnification:0.12,
     elements:12, groups:8, blades:9, afType:'Stepping Motor',
@@ -553,8 +572,9 @@ const LENSES = {
   'z-35mm-f1-2-s': {
     name:'NIKKOR Z 35mm f/1.2 S', manufacturer:'Nikon', line:'S-Line', type:'Prime', mount:'z', asin:'B0DVZRWJSG',
     focalLength:35, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'35mm',
+    specSources: [{ url:'https://imaging.nikon.com/imaging/lineup/lens/z-mount/z_35mmf12s/', tier:'T1', title:'Nikon global product page', note:'verify-specs 2026-11-15: construction, focus distance, magnification, blades, filter, dimensions, weight re-read', date:'2026-11-15' }],
     maxAperture:1.2, minAperture:16, weight:1060, length:150.0, diameter:90.0,
-    filterThread:82, minFocusDist:30, maxMagnification:0.17,
+    filterThread:82, minFocusDist:30, maxMagnification:0.2,
     elements:17, groups:15, blades:11, afType:'Multi-Focus Stepping Motor',
     weatherSealed:true, ois:false, oisStops:null, year:2025, discontinued:false,
     imageUrl:'https://images.cdn.us-central1.gcp.commercetools.com/f7c8f2bb-aff1-4581-a826-1ad2527be222/Z35_1-2-_0000_Z35_1--4oP8TO0u-large.png',
@@ -568,6 +588,7 @@ const LENSES = {
   'z-50mm-f1-2-s': {
     name:'NIKKOR Z 50mm f/1.2 S', manufacturer:'Nikon', line:'S-Line', type:'Prime', mount:'z', asin:'B08J7FDF6G',
     focalLength:50, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'50mm',
+    specSources: [{ url:'https://imaging.nikon.com/imaging/lineup/lens/z-mount/z_50mmf12s/', tier:'T1', title:'Nikon global product page', note:'verify-specs 2026-11-15: construction, focus distance, magnification, blades, filter, dimensions, weight re-read', date:'2026-11-15' }],
     maxAperture:1.2, minAperture:16, weight:1090, length:150.0, diameter:89.5,
     filterThread:82, minFocusDist:45, maxMagnification:0.15,
     elements:17, groups:15, blades:9, afType:'Multi-Focus Stepping Motor',
@@ -582,6 +603,7 @@ const LENSES = {
   'z-85mm-f1-2-s': {
     name:'NIKKOR Z 85mm f/1.2 S', manufacturer:'Nikon', line:'S-Line', type:'Prime', mount:'z', asin:'B0BTZZTTRH',
     focalLength:85, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'85mm',
+    specSources: [{ url:'https://imaging.nikon.com/imaging/lineup/lens/z-mount/z_85mmf12s/', tier:'T1', title:'Nikon global product page', note:'verify-specs 2026-11-15: construction, focus distance, magnification, blades, filter, dimensions, weight re-read', date:'2026-11-15' }],
     maxAperture:1.2, minAperture:16, weight:1160, length:141.5, diameter:102.5,
     filterThread:82, minFocusDist:85, maxMagnification:0.11,
     elements:15, groups:10, blades:11, afType:'Multi-Focus Stepping Motor',
@@ -597,6 +619,7 @@ const LENSES = {
   'z-135mm-f1-8-s-plena': {
     name:'NIKKOR Z 135mm f/1.8 S Plena', manufacturer:'Nikon', line:'S-Line', type:'Prime', mount:'z', asin:'B0CJWJ2PMY',
     focalLength:135, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'135mm',
+    specSources: [{ url:'https://imaging.nikon.com/imaging/lineup/lens/z-mount/z_135mmf18s/', tier:'T1', title:'Nikon global product page', note:'verify-specs 2026-11-15: construction, focus distance, magnification, blades, filter, dimensions, weight re-read', date:'2026-11-15' }],
     maxAperture:1.8, minAperture:16, weight:995, length:139.5, diameter:98.0,
     filterThread:82, minFocusDist:82, maxMagnification:0.19,
     elements:16, groups:14, blades:11, afType:'Multi-Focus Stepping Motor',
@@ -611,6 +634,7 @@ const LENSES = {
   'z-mc-105mm-f2-8-vr-s': {
     name:'NIKKOR Z MC 105mm f/2.8 VR S', manufacturer:'Nikon', line:'S-Line', type:'Prime', mount:'z', asin:'B096DHS1BF',
     focalLength:105, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'105mm',
+    specSources: [{ url:'https://imaging.nikon.com/imaging/lineup/lens/z-mount/z_mc105mmf28_vr_s/', tier:'T1', title:'Nikon global product page', note:'verify-specs 2026-11-15: construction, focus distance, magnification, blades, filter, dimensions, weight re-read', date:'2026-11-15' }],
     maxAperture:2.8, minAperture:32, weight:630, length:140.0, diameter:85.0,
     filterThread:62, minFocusDist:29, maxMagnification:1.0,
     elements:16, groups:11, blades:9, afType:'Stepping Motor',
@@ -626,6 +650,7 @@ const LENSES = {
   'z-58mm-f0-95-s-noct': {
     name:'NIKKOR Z 58mm f/0.95 S Noct', manufacturer:'Nikon', line:'S-Line', type:'Prime', mount:'z', asin:'B07YXBWK3W',
     focalLength:58, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'58mm',
+    specSources: [{ url:'https://imaging.nikon.com/imaging/lineup/lens/z-mount/z_58mmf095s/', tier:'T1', title:'Nikon global product page', note:'verify-specs 2026-11-15: construction, focus distance, magnification, blades, filter, dimensions, weight re-read', date:'2026-11-15' }],
     maxAperture:0.95, minAperture:16, weight:2000, length:153.0, diameter:102.0,
     filterThread:82, minFocusDist:50, maxMagnification:0.19,
     elements:17, groups:10, blades:11, afType:'Manual',
@@ -641,6 +666,7 @@ const LENSES = {
   'z-24-70mm-f2-8-s': {
     name:'NIKKOR Z 24-70mm f/2.8 S', manufacturer:'Nikon', line:'S-Line', type:'Zoom', mount:'z', asin:'B07NLQ46M2',
     focalLength:null, focalLengthMin:24, focalLengthMax:70, focalLengthEquiv:'24-70mm',
+    specSources: [{ url:'https://imaging.nikon.com/imaging/lineup/lens/z-mount/z_24-70mmf28s/', tier:'T1', title:'Nikon global product page', note:'verify-specs 2026-11-15: construction, focus distance, magnification, blades, filter, dimensions, weight re-read', date:'2026-11-15' }],
     maxAperture:2.8, minAperture:22, weight:805, length:126.0, diameter:89.0,
     filterThread:82, minFocusDist:38, maxMagnification:0.22,
     elements:17, groups:15, blades:9, afType:'Stepping Motor',
@@ -663,7 +689,7 @@ const LENSES = {
     imageUrl:'https://images.cdn.us-central1.gcp.commercetools.com/1edf6bc9-82c5-4c0f-afdd-be6dbf27da7f/20129-Z24-70-2-8-S-I-_1WTHAVw.png',
     imageSource: { url:'https://www.nikonusa.com/p/nikkor-z-24-70mm-f28-s-ii/20129/overview', tier:'T1', note:'official Nikon USA product page; side view, barrel reads "NIKKOR Z 24-70mm 1:2.8 S II" and "24-70/2.8 S II" (Nikon re-uploaded its product images in Nov 2026 and the previous file 404s)', date:'2026-11-12' },
     prices:{USD:2800,AUD:4399,EUR:null,GBP:null,JPY:null,CAD:3599,SGD:null},
-    specSources: [{ url:'https://www.nikonusa.com/p/nikkor-z-24-70mm-f28-s-ii/20129/overview', tier:'T1', title:'Nikon USA - NIKKOR Z 24-70mm f/2.8 S II specifications', note:'Minimum focus distance 0.24 m (24/28mm) to 0.33 m (70mm); max reproduction 0.21x wide / 0.32x tele; 14 elements / 10 groups, 11 blades, f/22, 77mm filter, 84 x 142 mm, 675 g, Silky Swift VCM, dust and drip resistant. minFocusDist corrected 240 -> 24 cm (was stored 10x too large); the other fields were already correct.', date:'2026-11-07' }],
+    specSources: [{ url:'https://imaging.nikon.com/imaging/lineup/lens/z-mount/z_24-70mmf28s2/', tier:'T1', title:'Nikon global product page', note:'verify-specs 2026-11-15: construction, focus distance, magnification, blades, filter, dimensions, weight re-read', date:'2026-11-15' }, { url:'https://www.nikonusa.com/p/nikkor-z-24-70mm-f28-s-ii/20129/overview', tier:'T1', title:'Nikon USA - NIKKOR Z 24-70mm f/2.8 S II specifications', note:'Minimum focus distance 0.24 m (24/28mm) to 0.33 m (70mm); max reproduction 0.21x wide / 0.32x tele; 14 elements / 10 groups, 11 blades, f/22, 77mm filter, 84 x 142 mm, 675 g, Silky Swift VCM, dust and drip resistant. minFocusDist corrected 240 -> 24 cm (was stored 10x too large); the other fields were already correct.', date:'2026-11-07' }],
     priceIncomplete:true,
     priceSource: { url:'https://www.nikonusa.com/p/nikkor-z-24-70mm-f28-s-ii/20129/overview', tier:'T1', note:'"$2,799.95" on nikonusa.com (Aug 2026), confirmed unchanged and consistent with the stored $2,800', date:'2026-08-23' },
     productUrl:'https://www.nikonusa.com/p/nikkor-z-24-70mm-f28-s-ii/20129/overview',
@@ -672,6 +698,7 @@ const LENSES = {
   'z-70-200mm-f2-8-vr-s': {
     name:'NIKKOR Z 70-200mm f/2.8 VR S', manufacturer:'Nikon', line:'S-Line', type:'Zoom', mount:'z', asin:'B083K3C5P2',
     focalLength:null, focalLengthMin:70, focalLengthMax:200, focalLengthEquiv:'70-200mm',
+    specSources: [{ url:'https://imaging.nikon.com/imaging/lineup/lens/z-mount/z_70-200mmf28_vr_s/', tier:'T1', title:'Nikon global product page', note:'verify-specs 2026-11-15: construction, focus distance, magnification, blades, filter, dimensions, weight re-read', date:'2026-11-15' }],
     maxAperture:2.8, minAperture:22, weight:1440, length:220.0, diameter:89.0,
     filterThread:77, minFocusDist:50, maxMagnification:0.20,
     elements:21, groups:18, blades:9, afType:'Stepping Motor',
@@ -693,7 +720,7 @@ const LENSES = {
     imageUrl:'https://images.cdn.us-central1.gcp.commercetools.com/1edf6bc9-82c5-4c0f-afdd-be6dbf27da7f/20130-Z70-200_28_VR_-PQyZAW_P.png',
     imageSource: { url:'https://www.nikonusa.com/p/nikkor-z-70-200mm-f28-vr-s-ii/20130/overview', tier:'T1', note:'official Nikon USA product page; side view, barrel reads "70-200/2.8 S II" (Nikon re-uploaded its product images in Nov 2026 and the previous file 404s)', date:'2026-11-12' },
     prices:{USD:3200,AUD:4999,EUR:null,GBP:null,JPY:null,CAD:4199,SGD:null},
-    specSources: [{ url:'https://www.nikonusa.com/p/nikkor-z-70-200mm-f28-vr-s-ii/20130/overview', tier:'T1', title:'Nikon USA - NIKKOR Z 70-200mm f/2.8 VR S II specifications', note:'Minimum focus distance 0.38 m (70/85mm) to 0.8 m (200mm); 0.3x at 70mm; 18 elements / 16 groups, 11 blades, f/22, 77mm filter, 90 x 208 mm, 998 g, Silky Swift VCM, dust and drip resistant; VR "6.0 stops (Compliant with the CIPA 2024 standard ... telephoto end, NORMAL mode)". minFocusDist corrected 380 -> 38 cm (was stored 10x too large); oisStops 5.5 -> 6.0 (Nikon\'s published figure).', date:'2026-11-07' }],
+    specSources: [{ url:'https://imaging.nikon.com/imaging/lineup/lens/z-mount/z_70-200mmf28_vr_s2/', tier:'T1', title:'Nikon global product page', note:'verify-specs 2026-11-15: construction, focus distance, magnification, blades, filter, dimensions, weight re-read', date:'2026-11-15' }, { url:'https://www.nikonusa.com/p/nikkor-z-70-200mm-f28-vr-s-ii/20130/overview', tier:'T1', title:'Nikon USA - NIKKOR Z 70-200mm f/2.8 VR S II specifications', note:'Minimum focus distance 0.38 m (70/85mm) to 0.8 m (200mm); 0.3x at 70mm; 18 elements / 16 groups, 11 blades, f/22, 77mm filter, 90 x 208 mm, 998 g, Silky Swift VCM, dust and drip resistant; VR "6.0 stops (Compliant with the CIPA 2024 standard ... telephoto end, NORMAL mode)". minFocusDist corrected 380 -> 38 cm (was stored 10x too large); oisStops 5.5 -> 6.0 (Nikon\'s published figure).', date:'2026-11-07' }],
     priceIncomplete:true,
     priceSource: { url:'https://www.nikonusa.com/p/nikkor-z-70-200mm-f28-vr-s-ii/20130/overview', tier:'T1', note:'"$3,199.95" on nikonusa.com (Aug 2026), confirmed unchanged and consistent with the stored $3,200', date:'2026-08-23' },
     productUrl:'https://www.nikonusa.com/p/nikkor-z-70-200mm-f28-vr-s-ii/20130/overview',
@@ -703,6 +730,7 @@ const LENSES = {
   'z-26mm-f2-8': {
     name:'NIKKOR Z 26mm f/2.8', manufacturer:'Nikon', line:'NIKKOR Z', type:'Prime', mount:'z', asin:'B0BV11Z35L',
     focalLength:26, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'26mm',
+    specSources: [{ url:'https://imaging.nikon.com/imaging/lineup/lens/z-mount/z_26mmf28/', tier:'T1', title:'Nikon global product page', note:'verify-specs 2026-11-15: construction, focus distance, magnification, blades, filter, dimensions, weight re-read', date:'2026-11-15' }],
     maxAperture:2.8, minAperture:16, weight:125, length:23.5, diameter:70.0,
     filterThread:52, minFocusDist:20, maxMagnification:0.19,
     elements:8, groups:6, blades:7, afType:'Stepping Motor',
@@ -718,9 +746,10 @@ const LENSES = {
   'z-28mm-f2-8': {
     name:'NIKKOR Z 28mm f/2.8', manufacturer:'Nikon', line:'NIKKOR Z', type:'Prime', mount:'z', asin:'B09M62RJK2',
     focalLength:28, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'28mm',
+    specSources: [{ url:'https://imaging.nikon.com/imaging/lineup/lens/z-mount/z_28mmf28/', tier:'T1', title:'Nikon global product page', note:'verify-specs 2026-11-15: construction, focus distance, magnification, blades, filter, dimensions, weight re-read', date:'2026-11-15' }],
     maxAperture:2.8, minAperture:16, weight:155, length:43.0, diameter:70.0,
     filterThread:52, minFocusDist:19, maxMagnification:0.20,
-    elements:9, groups:8, blades:9, afType:'Stepping Motor',
+    elements:9, groups:8, blades:7, afType:'Stepping Motor',
     weatherSealed:false, ois:false, oisStops:null, year:2021, discontinued:false,
     imageUrl:'https://upload.wikimedia.org/wikipedia/commons/thumb/c/c0/Nikon_NIKKOR_Z_28mm_f_2.8_%2851770949640%29.jpg/500px-Nikon_NIKKOR_Z_28mm_f_2.8_%2851770949640%29.jpg',
     imageCredit:{author:"Henry Söderlund from Helsinki, Finland", licence:"CC BY 2.0", licenceUrl:"https://creativecommons.org/licenses/by/2.0", source:"https://commons.wikimedia.org/wiki/File:Nikon_NIKKOR_Z_28mm_f_2.8_(51770949640).jpg"},
@@ -733,9 +762,10 @@ const LENSES = {
   'z-28mm-f2-8-se': {
     name:'NIKKOR Z 28mm f/2.8 (SE)', manufacturer:'Nikon', line:'NIKKOR Z', type:'Prime', mount:'z', asin:'B0982T5T68',
     focalLength:28, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'28mm',
+    specSources: [{ url:'https://imaging.nikon.com/imaging/lineup/lens/z-mount/z_28mmf28_se/', tier:'T1', title:'Nikon global product page', note:'verify-specs 2026-11-15: construction, focus distance, magnification, blades, filter, dimensions, weight re-read', date:'2026-11-15' }],
     maxAperture:2.8, minAperture:16, weight:160, length:43.0, diameter:71.5,
     filterThread:52, minFocusDist:19, maxMagnification:0.20,
-    elements:9, groups:8, blades:9, afType:'Stepping Motor',
+    elements:9, groups:8, blades:7, afType:'Stepping Motor',
     weatherSealed:false, ois:false, oisStops:null, year:2021, discontinued:false,
     imageUrl:'https://upload.wikimedia.org/wikipedia/commons/thumb/c/c1/Nikon_Z_fc_with_Nikkor_Z_28mm_F2.8_SE_-_by_Henry_S%C3%B6derlund_%2851675302954%29.jpg/500px-Nikon_Z_fc_with_Nikkor_Z_28mm_F2.8_SE_-_by_Henry_S%C3%B6derlund_%2851675302954%29.jpg',
     imageCredit:{author:"Henry Söderlund from Helsinki, Finland", licence:"CC BY 2.0", licenceUrl:"https://creativecommons.org/licenses/by/2.0", source:"https://commons.wikimedia.org/wiki/File:Nikon_Z_fc_with_Nikkor_Z_28mm_F2.8_SE_-_by_Henry_S%C3%B6derlund_(51675302954).jpg"},
@@ -748,6 +778,7 @@ const LENSES = {
   'z-35mm-f1-4': {
     name:'NIKKOR Z 35mm f/1.4', manufacturer:'Nikon', line:'NIKKOR Z', type:'Prime', mount:'z', asin:'B0D83PR5SQ',
     focalLength:35, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'35mm',
+    specSources: [{ url:'https://imaging.nikon.com/imaging/lineup/lens/z-mount/z_35mmf14/', tier:'T1', title:'Nikon global product page', note:'verify-specs 2026-11-15: construction, focus distance, magnification, blades, filter, dimensions, weight re-read', date:'2026-11-15' }],
     maxAperture:1.4, minAperture:16, weight:415, length:86.5, diameter:74.5,
     filterThread:62, minFocusDist:27, maxMagnification:0.18,
     elements:11, groups:9, blades:9, afType:'Stepping Motor',
@@ -762,6 +793,7 @@ const LENSES = {
   'z-40mm-f2': {
     name:'NIKKOR Z 40mm f/2', manufacturer:'Nikon', line:'NIKKOR Z', type:'Prime', mount:'z', asin:'B09G57BXZ4',
     focalLength:40, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'40mm',
+    specSources: [{ url:'https://imaging.nikon.com/imaging/lineup/lens/z-mount/z_40mmf2/', tier:'T1', title:'Nikon global product page', note:'verify-specs 2026-11-15: construction, focus distance, magnification, blades, filter, dimensions, weight re-read', date:'2026-11-15' }],
     maxAperture:2.0, minAperture:16, weight:170, length:45.5, diameter:70.0,
     filterThread:52, minFocusDist:29, maxMagnification:0.17,
     elements:6, groups:4, blades:9, afType:'Stepping Motor',
@@ -777,6 +809,7 @@ const LENSES = {
   'z-40mm-f2-se': {
     name:'NIKKOR Z 40mm f/2 (SE)', manufacturer:'Nikon', line:'NIKKOR Z', type:'Prime', mount:'z', asin:'B0BLTDSVM2',
     focalLength:40, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'40mm',
+    specSources: [{ url:'https://imaging.nikon.com/imaging/lineup/lens/z-mount/z_40mmf2_se/', tier:'T1', title:'Nikon global product page', note:'verify-specs 2026-11-15: construction, focus distance, magnification, blades, filter, dimensions, weight re-read', date:'2026-11-15' }],
     maxAperture:2.0, minAperture:16, weight:170, length:45.5, diameter:71.5,
     filterThread:52, minFocusDist:29, maxMagnification:0.17,
     elements:6, groups:4, blades:9, afType:'Stepping Motor',
@@ -792,6 +825,7 @@ const LENSES = {
   'z-50mm-f1-4': {
     name:'NIKKOR Z 50mm f/1.4', manufacturer:'Nikon', line:'NIKKOR Z', type:'Prime', mount:'z', asin:'B0DGHTDNY7',
     focalLength:50, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'50mm',
+    specSources: [{ url:'https://imaging.nikon.com/imaging/lineup/lens/z-mount/z_50mmf14/', tier:'T1', title:'Nikon global product page', note:'verify-specs 2026-11-15: construction, focus distance, magnification, blades, filter, dimensions, weight re-read', date:'2026-11-15' }],
     maxAperture:1.4, minAperture:16, weight:420, length:86.5, diameter:74.5,
     filterThread:62, minFocusDist:37, maxMagnification:0.18,
     elements:10, groups:7, blades:9, afType:'Stepping Motor',
@@ -806,6 +840,7 @@ const LENSES = {
   'z-50mm-f2-8-mc': {
     name:'NIKKOR Z MC 50mm f/2.8', manufacturer:'Nikon', line:'NIKKOR Z', type:'Prime', mount:'z', asin:'B096DVRX22',
     focalLength:50, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'50mm',
+    specSources: [{ url:'https://imaging.nikon.com/imaging/lineup/lens/z-mount/z_mc50mmf28/', tier:'T1', title:'Nikon global product page', note:'verify-specs 2026-11-15: construction, focus distance, magnification, blades, filter, dimensions, weight re-read', date:'2026-11-15' }],
     maxAperture:2.8, minAperture:22, weight:260, length:66.0, diameter:74.5,
     filterThread:46, minFocusDist:16, maxMagnification:1.0,
     elements:10, groups:7, blades:9, afType:'Stepping Motor',
@@ -821,9 +856,10 @@ const LENSES = {
   'z-dx-24mm-f1-7': {
     name:'NIKKOR Z DX 24mm f/1.7', manufacturer:'Nikon', line:'DX', type:'Prime', mount:'z', asin:'B0C6P4CTTT',
     focalLength:24, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'36mm',
+    specSources: [{ url:'https://imaging.nikon.com/imaging/lineup/lens/z-mount/z_dx_24mmf17/', tier:'T1', title:'Nikon global product page', note:'verify-specs 2026-11-15: construction, focus distance, magnification, blades, filter, dimensions, weight re-read', date:'2026-11-15' }],
     maxAperture:1.7, minAperture:16, weight:135, length:40.0, diameter:70.0,
     filterThread:46, minFocusDist:18, maxMagnification:0.20,
-    elements:9, groups:8, blades:9, afType:'Stepping Motor',
+    elements:9, groups:8, blades:7, afType:'Stepping Motor',
     weatherSealed:false, ois:false, oisStops:null, year:2023, discontinued:false,
     imageUrl:'https://images.cdn.us-central1.gcp.commercetools.com/f7c8f2bb-aff1-4581-a826-1ad2527be222/FrontLeft-Z24DX_1_7_-KomKgyzE-large.png',
     imageSource: { url:'https://www.nikonusa.com/p/nikkor-z-dx-24mm-f17/20119/overview', tier:'T1', note:'official Nikon USA product page, barrel explicitly reads "NIKKOR DX 24/1.7"', date:'2026-08-17' },
@@ -842,7 +878,7 @@ const LENSES = {
     imageUrl:'https://images.cdn.us-central1.gcp.commercetools.com/f7c8f2bb-aff1-4581-a826-1ad2527be222/20131-35-1-7-angle-1-XUQsD1C9-large.png',
     imageSource: { url:'https://www.nikonusa.com/p/nikkor-z-dx-mc-35mm-f17/20131/overview', tier:'T1', note:'official Nikon USA product page, barrel explicitly reads "NIKKOR Z DX MC 35mm 1:1.7"', date:'2026-08-17' },
     prices:{USD:450,AUD:699,EUR:null,GBP:null,JPY:null,CAD:599,SGD:null},
-    specSources: [{ url:'https://www.nikonusa.com/p/nikkor-z-dx-mc-35mm-f17/20131/overview', tier:'T1', title:'Nikon USA - NIKKOR Z DX MC 35mm f/1.7 specifications', note:'Minimum focus distance "0.16 m (0.53 ft) from focal plane", 0.67x. minFocusDist corrected 160 -> 16 cm (was stored 10x too large)', date:'2026-11-05' }],
+    specSources: [{ url:'https://imaging.nikon.com/imaging/lineup/lens/z-mount/z_dx_mc35mmf17/', tier:'T1', title:'Nikon global product page', note:'verify-specs 2026-11-15: construction, focus distance, magnification, blades, filter, dimensions, weight re-read', date:'2026-11-15' }, { url:'https://www.nikonusa.com/p/nikkor-z-dx-mc-35mm-f17/20131/overview', tier:'T1', title:'Nikon USA - NIKKOR Z DX MC 35mm f/1.7 specifications', note:'Minimum focus distance "0.16 m (0.53 ft) from focal plane", 0.67x. minFocusDist corrected 160 -> 16 cm (was stored 10x too large)', date:'2026-11-05' }],
     priceIncomplete:true,
     productUrl:'https://www.nikonusa.com/p/nikkor-z-dx-mc-35mm-f17/20131/overview',
   },
@@ -851,6 +887,7 @@ const LENSES = {
   'z-14-24mm-f2-8-s': {
     name:'NIKKOR Z 14-24mm f/2.8 S', manufacturer:'Nikon', line:'S-Line', type:'Zoom', mount:'z', asin:'B08J7FHHWX',
     focalLength:null, focalLengthMin:14, focalLengthMax:24, focalLengthEquiv:'14-24mm',
+    specSources: [{ url:'https://imaging.nikon.com/imaging/lineup/lens/z-mount/z_14-24mmf28s/', tier:'T1', title:'Nikon global product page', note:'verify-specs 2026-11-15: construction, focus distance, magnification, blades, filter, dimensions, weight re-read', date:'2026-11-15' }],
     maxAperture:2.8, minAperture:22, weight:650, length:124.5, diameter:88.5,
     filterThread:112, minFocusDist:28, maxMagnification:0.13,
     elements:16, groups:11, blades:9, afType:'Stepping Motor',
@@ -866,6 +903,7 @@ const LENSES = {
   'z-14-30mm-f4-s': {
     name:'NIKKOR Z 14-30mm f/4 S', manufacturer:'Nikon', line:'S-Line', type:'Zoom', mount:'z', asin:'B07MS6299X',
     focalLength:null, focalLengthMin:14, focalLengthMax:30, focalLengthEquiv:'14-30mm',
+    specSources: [{ url:'https://imaging.nikon.com/imaging/lineup/lens/z-mount/z_14-30mmf4s/', tier:'T1', title:'Nikon global product page', note:'verify-specs 2026-11-15: construction, focus distance, magnification, blades, filter, dimensions, weight re-read', date:'2026-11-15' }],
     maxAperture:4.0, minAperture:22, weight:485, length:85.0, diameter:89.0,
     filterThread:82, minFocusDist:28, maxMagnification:0.16,
     elements:14, groups:12, blades:7, afType:'Stepping Motor',
@@ -881,6 +919,7 @@ const LENSES = {
   'z-24-70mm-f4-s': {
     name:'NIKKOR Z 24-70mm f/4 S', manufacturer:'Nikon', line:'S-Line', type:'Zoom', mount:'z', asin:'B07GPX4HK5',
     focalLength:null, focalLengthMin:24, focalLengthMax:70, focalLengthEquiv:'24-70mm',
+    specSources: [{ url:'https://imaging.nikon.com/imaging/lineup/lens/z-mount/z_24-70mmf4s/', tier:'T1', title:'Nikon global product page', note:'verify-specs 2026-11-15: construction, focus distance, magnification, blades, filter, dimensions, weight re-read', date:'2026-11-15' }],
     maxAperture:4.0, minAperture:22, weight:500, length:88.5, diameter:77.5,
     filterThread:72, minFocusDist:30, maxMagnification:0.30,
     elements:14, groups:11, blades:7, afType:'Stepping Motor',
@@ -895,6 +934,7 @@ const LENSES = {
   'z-24-120mm-f4-s': {
     name:'NIKKOR Z 24-120mm f/4 S', manufacturer:'Nikon', line:'S-Line', type:'Zoom', mount:'z', asin:'B09KHB76TP',
     focalLength:null, focalLengthMin:24, focalLengthMax:120, focalLengthEquiv:'24-120mm',
+    specSources: [{ url:'https://imaging.nikon.com/imaging/lineup/lens/z-mount/z_24-120mmf4s/', tier:'T1', title:'Nikon global product page', note:'verify-specs 2026-11-15: construction, focus distance, magnification, blades, filter, dimensions, weight re-read', date:'2026-11-15' }],
     maxAperture:4.0, minAperture:22, weight:630, length:118.0, diameter:84.0,
     filterThread:77, minFocusDist:35, maxMagnification:0.39,
     elements:16, groups:13, blades:9, afType:'Stepping Motor',
@@ -909,6 +949,7 @@ const LENSES = {
   'z-100-400mm-f4-5-5-6-vr-s': {
     name:'NIKKOR Z 100-400mm f/4.5-5.6 VR S', manufacturer:'Nikon', line:'S-Line', type:'Zoom', mount:'z', asin:'B09KH9X5DL',
     focalLength:null, focalLengthMin:100, focalLengthMax:400, focalLengthEquiv:'100-400mm',
+    specSources: [{ url:'https://imaging.nikon.com/imaging/lineup/lens/z-mount/z_100-400mmf45-56_vr_s/', tier:'T1', title:'Nikon global product page', note:'verify-specs 2026-11-15: construction, focus distance, magnification, blades, filter, dimensions, weight re-read', date:'2026-11-15' }],
     maxAperture:4.5, minAperture:32, weight:1435, length:222.0, diameter:98.0,
     filterThread:77, minFocusDist:75, maxMagnification:0.38,
     elements:25, groups:20, blades:9, afType:'Stepping Motor',
@@ -924,6 +965,7 @@ const LENSES = {
   'z-17-28mm-f2-8': {
     name:'NIKKOR Z 17-28mm f/2.8', manufacturer:'Nikon', line:'NIKKOR Z', type:'Zoom', mount:'z', asin:'B0BFTX4DS7',
     focalLength:null, focalLengthMin:17, focalLengthMax:28, focalLengthEquiv:'17-28mm',
+    specSources: [{ url:'https://imaging.nikon.com/imaging/lineup/lens/z-mount/z_17-28mmf28/', tier:'T1', title:'Nikon global product page', note:'verify-specs 2026-11-15: construction, focus distance, magnification, blades, filter, dimensions, weight re-read', date:'2026-11-15' }],
     maxAperture:2.8, minAperture:22, weight:450, length:101.0, diameter:75.0,
     filterThread:67, minFocusDist:19, maxMagnification:0.19,
     elements:13, groups:11, blades:9, afType:'Stepping Motor',
@@ -939,6 +981,7 @@ const LENSES = {
   'z-24-50mm-f4-6-3': {
     name:'NIKKOR Z 24-50mm f/4-6.3', manufacturer:'Nikon', line:'NIKKOR Z', type:'Zoom', mount:'z', asin:'B08D8QK5LP',
     focalLength:null, focalLengthMin:24, focalLengthMax:50, focalLengthEquiv:'24-50mm',
+    specSources: [{ url:'https://imaging.nikon.com/imaging/lineup/lens/z-mount/z_24-50mmf4-63/', tier:'T1', title:'Nikon global product page', note:'verify-specs 2026-11-15: construction, focus distance, magnification, blades, filter, dimensions, weight re-read', date:'2026-11-15' }],
     maxAperture:4.0, minAperture:22, weight:195, length:51.0, diameter:73.5,
     filterThread:52, minFocusDist:35, maxMagnification:0.17,
     elements:11, groups:10, blades:7, afType:'Stepping Motor',
@@ -960,7 +1003,7 @@ const LENSES = {
     imageUrl:'https://images.cdn.us-central1.gcp.commercetools.com/f7c8f2bb-aff1-4581-a826-1ad2527be222/20132-NIKKOR-Z-24-10-8irjOZ9i-large.png',
     imageSource: { url:'https://www.nikonusa.com/p/nikkor-z-24-105mm-f4-71/20132/overview', tier:'T1', note:'official Nikon USA product page, barrel explicitly reads "NIKKOR 24-105/4-7.1"', date:'2026-08-17' },
     prices:{USD:550,AUD:899,EUR:null,GBP:null,JPY:null,CAD:699,SGD:null},
-    specSources: [{ url:'https://www.nikonusa.com/p/nikkor-z-24-105mm-f4-71/20132/overview', tier:'T1', title:'Nikon USA - NIKKOR Z 24-105mm f/4-7.1 specifications', note:'Minimum focus distance 0.2 m (24/50mm) to 0.28 m (105mm); 0.5x at 70-105mm; 12 elements / 10 groups, 7 blades, aperture range f/4-22 (24mm) to f/7.1-40 (105mm), 67mm filter, 73.5 x 106.5 mm, 350 g, stepping motor, dust and drip resistant. minFocusDist corrected 200 -> 20 cm (was stored 10x too large); the other fields were already correct.', date:'2026-11-07' },
+    specSources: [{ url:'https://imaging.nikon.com/imaging/lineup/lens/z-mount/z_24-105mmf4-71/', tier:'T1', title:'Nikon global product page', note:'verify-specs 2026-11-15: construction, focus distance, magnification, blades, filter, dimensions, weight re-read', date:'2026-11-15' }, { url:'https://www.nikonusa.com/p/nikkor-z-24-105mm-f4-71/20132/overview', tier:'T1', title:'Nikon USA - NIKKOR Z 24-105mm f/4-7.1 specifications', note:'Minimum focus distance 0.2 m (24/50mm) to 0.28 m (105mm); 0.5x at 70-105mm; 12 elements / 10 groups, 7 blades, aperture range f/4-22 (24mm) to f/7.1-40 (105mm), 67mm filter, 73.5 x 106.5 mm, 350 g, stepping motor, dust and drip resistant. minFocusDist corrected 200 -> 20 cm (was stored 10x too large); the other fields were already correct.', date:'2026-11-07' },
       { url:'https://www.nikonusa.com/press-room/nikkor-z-24-105mm-f4-7-1', tier:'T1', title:'Nikon USA press release - NIKKOR Z 24-105mm f/4-7.1', note:'Announced 2026-01-07 (year 2026 confirmed), $549.95.', date:'2026-11-07' }],
     priceIncomplete:true,
     productUrl:'https://www.nikonusa.com/p/nikkor-z-24-105mm-f4-71/20132/overview',
@@ -978,7 +1021,7 @@ const LENSES = {
     imageSource: { url:'https://www.nikonusa.com/p/nikkor-z-28-135mm-f4-pz/20127/overview', tier:'T1', note:'official Nikon USA product page, barrel explicitly reads "NIKKOR 28-135/4 PZ"', date:'2026-08-17' },
     prices:{USD:2799,AUD:3399,EUR:null,GBP:null,JPY:null,CAD:3599,SGD:null},
     priceSource: { url:'https://www.nikonusa.com/p/nikkor-z-28-135mm-f4-pz/20127/overview', tier:'T1', title:'Nikon USA product page (list price)', note:'USD $2500 -> $2799: Nikon USA\'s own page data gives the list (base) price as $2,799.95, currently discounted to $2,599.95 ("You Save" promotion) (read 2026-10-11). The stored figure was stale. US-only correction. Regional prices from Nikon\'s own regional stores, read 2026-10-11: AUD 3399 (nikon.com.au store), CAD 3599 (store.nikon.ca, no sale price set).', date:'2026-10-11' },
-    specSources: [{ url:'https://www.nikonusa.com/p/nikkor-z-28-135mm-f4-pz/20127/overview', tier:'T1', title:'Nikon USA - NIKKOR Z 28-135mm f/4 PZ specifications', note:'Minimum focus distance 0.34 m (28-50mm) to 0.57 m (135mm); 0.25x at 55-135mm; 18 elements / 13 groups, 9 blades, f/22, 95mm filter, 105 x 177.5 mm, 1120 g, stepping motor, "Dust and Moisture-Sealed". minFocusDist corrected 340 -> 34 cm (was stored 10x too large); the other fields were already correct.', date:'2026-11-07' }],
+    specSources: [{ url:'https://imaging.nikon.com/imaging/lineup/lens/z-mount/z_28-135mmf4/', tier:'T1', title:'Nikon global product page', note:'verify-specs 2026-11-15: construction, focus distance, magnification, blades, filter, dimensions, weight re-read', date:'2026-11-15' }, { url:'https://www.nikonusa.com/p/nikkor-z-28-135mm-f4-pz/20127/overview', tier:'T1', title:'Nikon USA - NIKKOR Z 28-135mm f/4 PZ specifications', note:'Minimum focus distance 0.34 m (28-50mm) to 0.57 m (135mm); 0.25x at 55-135mm; 18 elements / 13 groups, 9 blades, f/22, 95mm filter, 105 x 177.5 mm, 1120 g, stepping motor, "Dust and Moisture-Sealed". minFocusDist corrected 340 -> 34 cm (was stored 10x too large); the other fields were already correct.', date:'2026-11-07' }],
     priceIncomplete:true,
     productUrl:'https://www.nikonusa.com/p/nikkor-z-28-135mm-f4-pz/20127/overview',
   },
@@ -986,6 +1029,7 @@ const LENSES = {
   'z-24-200mm-f4-6-3-vr': {
     name:'NIKKOR Z 24-200mm f/4-6.3 VR', manufacturer:'Nikon', line:'NIKKOR Z', type:'Zoom', mount:'z', asin:'B084QP747Q',
     focalLength:null, focalLengthMin:24, focalLengthMax:200, focalLengthEquiv:'24-200mm',
+    specSources: [{ url:'https://imaging.nikon.com/imaging/lineup/lens/z-mount/z_24-200mmf4-63_vr/', tier:'T1', title:'Nikon global product page', note:'verify-specs 2026-11-15: construction, focus distance, magnification, blades, filter, dimensions, weight re-read', date:'2026-11-15' }],
     maxAperture:4.0, minAperture:22, weight:570, length:114.0, diameter:76.5,
     filterThread:67, minFocusDist:50, maxMagnification:0.28,
     elements:19, groups:15, blades:7, afType:'Stepping Motor',
@@ -1000,6 +1044,7 @@ const LENSES = {
   'z-28-75mm-f2-8': {
     name:'NIKKOR Z 28-75mm f/2.8', manufacturer:'Nikon', line:'NIKKOR Z', type:'Zoom', mount:'z', asin:'B09NLBL2F1',
     focalLength:null, focalLengthMin:28, focalLengthMax:75, focalLengthEquiv:'28-75mm',
+    specSources: [{ url:'https://imaging.nikon.com/imaging/lineup/lens/z-mount/z_28-75mmf28/', tier:'T1', title:'Nikon global product page', note:'verify-specs 2026-11-15: construction, focus distance, magnification, blades, filter, dimensions, weight re-read', date:'2026-11-15' }],
     maxAperture:2.8, minAperture:22, weight:565, length:120.5, diameter:75.0,
     filterThread:67, minFocusDist:19, maxMagnification:0.34,
     elements:15, groups:12, blades:9, afType:'Stepping Motor',
@@ -1015,6 +1060,7 @@ const LENSES = {
   'z-28-400mm-f4-8-vr': {
     name:'NIKKOR Z 28-400mm f/4-8 VR', manufacturer:'Nikon', line:'NIKKOR Z', type:'Zoom', mount:'z', asin:'B0CZ4JX9JW',
     focalLength:null, focalLengthMin:28, focalLengthMax:400, focalLengthEquiv:'28-400mm',
+    specSources: [{ url:'https://imaging.nikon.com/imaging/lineup/lens/z-mount/z_28-400mmf4-8_vr/', tier:'T1', title:'Nikon global product page', note:'verify-specs 2026-11-15: construction, focus distance, magnification, blades, filter, dimensions, weight re-read', date:'2026-11-15' }],
     maxAperture:4.0, minAperture:32, weight:725, length:142.0, diameter:85.0,
     filterThread:77, minFocusDist:20, maxMagnification:0.35,
     elements:21, groups:15, blades:9, afType:'Stepping Motor',
@@ -1031,6 +1077,7 @@ const LENSES = {
   'z-70-180mm-f2-8': {
     name:'NIKKOR Z 70-180mm f/2.8', manufacturer:'Nikon', line:'NIKKOR Z', type:'Zoom', mount:'z', asin:'B0C8QL89L5',
     focalLength:null, focalLengthMin:70, focalLengthMax:180, focalLengthEquiv:'70-180mm',
+    specSources: [{ url:'https://imaging.nikon.com/imaging/lineup/lens/z-mount/z_70-180mmf28/', tier:'T1', title:'Nikon global product page', note:'verify-specs 2026-11-15: construction, focus distance, magnification, blades, filter, dimensions, weight re-read', date:'2026-11-15' }],
     maxAperture:2.8, minAperture:22, weight:795, length:151.0, diameter:83.5,
     filterThread:67, minFocusDist:27, maxMagnification:0.48,
     elements:19, groups:14, blades:9, afType:'Stepping Motor',
@@ -1045,6 +1092,7 @@ const LENSES = {
   'z-180-600mm-f5-6-6-3-vr': {
     name:'NIKKOR Z 180-600mm f/5.6-6.3 VR', manufacturer:'Nikon', line:'NIKKOR Z', type:'Zoom', mount:'z', asin:'B0C8QFSPFQ',
     focalLength:null, focalLengthMin:180, focalLengthMax:600, focalLengthEquiv:'180-600mm',
+    specSources: [{ url:'https://imaging.nikon.com/imaging/lineup/lens/z-mount/z_180-600mmf56-63_vr/', tier:'T1', title:'Nikon global product page', note:'verify-specs 2026-11-15: construction, focus distance, magnification, blades, filter, dimensions, weight re-read', date:'2026-11-15' }],
     maxAperture:5.6, minAperture:32, weight:2140, length:315.5, diameter:110.0,
     filterThread:95, minFocusDist:130, maxMagnification:0.25,
     elements:25, groups:17, blades:9, afType:'Stepping Motor',
@@ -1059,6 +1107,7 @@ const LENSES = {
   'z-400mm-f4-5-vr-s': {
     name:'NIKKOR Z 400mm f/4.5 VR S', manufacturer:'Nikon', line:'S-Line', type:'Prime', mount:'z', asin:'B0B52C7Z7D',
     focalLength:400, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'400mm',
+    specSources: [{ url:'https://imaging.nikon.com/imaging/lineup/lens/z-mount/z_400mmf45_vr_s/', tier:'T1', title:'Nikon global product page', note:'verify-specs 2026-11-15: construction, focus distance, magnification, blades, filter, dimensions, weight re-read', date:'2026-11-15' }],
     maxAperture:4.5, minAperture:32, weight:1245, length:234.5, diameter:104.0,
     filterThread:95, minFocusDist:250, maxMagnification:0.16,
     elements:19, groups:13, blades:9, afType:'Stepping Motor',
@@ -1073,6 +1122,7 @@ const LENSES = {
   'z-400mm-f2-8-tc-vr-s': {
     name:'NIKKOR Z 400mm f/2.8 TC VR S', manufacturer:'Nikon', line:'S-Line', type:'Prime', mount:'z', asin:'B09QP4SSYW',
     focalLength:400, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'400mm (560mm w/ TC)',
+    specSources: [{ url:'https://imaging.nikon.com/imaging/lineup/lens/z-mount/z_400mmf28_tc_vr_s/', tier:'T1', title:'Nikon global product page', note:'verify-specs 2026-11-15: construction, focus distance, magnification, blades, filter, dimensions, weight re-read', date:'2026-11-15' }],
     maxAperture:2.8, minAperture:22, weight:2950, length:380.0, diameter:156.0,
     filterThread:46, minFocusDist:250, maxMagnification:0.16,
     elements:25, groups:19, blades:9, afType:'Silky Swift VCM',
@@ -1103,7 +1153,7 @@ const LENSES = {
       { url:'https://dc.watch.impress.co.jp/docs/news/2152238.html', tier:'NEWS', title:'Digital Camera Watch launch report (Japan)', note:'JPY: open price, Nikon Direct price 2,549,800 yen; on sale 13 November 2026', date:'2026-11-13' },
       { url:'https://itbrief.com.au/story/nikon-launches-120-300mm-f-2-8-lens-with-teleconverter', tier:'NEWS', title:'IT Brief Australia launch report', note:'AUD: "retail pricing in Australia is AUD $23,699"; no Nikon Australia store listing found. SGD: no Singapore price published yet', date:'2026-11-13' },
     ],
-    specSources: [
+    specSources: [{ url:'https://imaging.nikon.com/imaging/lineup/lens/z-mount/z_120-300mmf28_tc_vr_s/', tier:'T1', title:'Nikon global product page', note:'verify-specs 2026-11-15: construction, focus distance, magnification, blades, filter, dimensions, weight re-read', date:'2026-11-15' }, 
       { url:'https://imaging.nikon.com/imaging/lineup/lens/z-mount/z_120-300mmf28_tc_vr_s/', tier:'T1', title:'Nikon global product page and specifications', note:'120-300mm (168-420mm with built-in 1.4x TC), f/2.8-22 (f/4-32 with TC); 30 elements / 24 groups incl. 8/5 in the TC; MFD 0.98 m at 120mm to 2 m at 300mm; 0.18x at 150mm (0.25x with TC); 9 rounded blades; 112mm filter (46mm slip-in); approx. 128 x 353.5 mm; approx. 2,735 g; Silky Swift VCM', date:'2026-11-13' },
       { url:'https://www.nikonusa.com/press-room/NIKKOR-Z-120-300mm', tier:'T1', title:'Nikon USA launch press release', note:'"Powerful 6.5-stop vibration reduction (VR) performance"; "superior dust- and drip-resistant performance through extensive sealing"', date:'2026-11-13' },
     ],
@@ -1112,6 +1162,7 @@ const LENSES = {
   'z-600mm-f6-3-vr-s-pf': {
     name:'NIKKOR Z 600mm f/6.3 VR S (PF)', manufacturer:'Nikon', line:'S-Line', type:'Prime', mount:'z', asin:'B0CKTYF2ZZ',
     focalLength:600, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'600mm',
+    specSources: [{ url:'https://imaging.nikon.com/imaging/lineup/lens/z-mount/z_600mmf63_vr_s/', tier:'T1', title:'Nikon global product page', note:'verify-specs 2026-11-15: construction, focus distance, magnification, blades, filter, dimensions, weight re-read', date:'2026-11-15' }],
     maxAperture:6.3, minAperture:32, weight:1470, length:278.0, diameter:106.5,
     filterThread:95, minFocusDist:400, maxMagnification:0.16,
     elements:21, groups:14, blades:9, afType:'Stepping Motor',
@@ -1127,8 +1178,9 @@ const LENSES = {
   'z-600mm-f4-tc-vr-s': {
     name:'NIKKOR Z 600mm f/4 TC VR S', manufacturer:'Nikon', line:'S-Line', type:'Prime', mount:'z', asin:'B0BL5FKJF7',
     focalLength:600, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'600mm (840mm w/ TC)',
+    specSources: [{ url:'https://imaging.nikon.com/imaging/lineup/lens/z-mount/z_600mmf4_tc_vr_s/', tier:'T1', title:'Nikon global product page', note:'verify-specs 2026-11-15: construction, focus distance, magnification, blades, filter, dimensions, weight re-read', date:'2026-11-15' }],
     maxAperture:4.0, minAperture:22, weight:3260, length:437.0, diameter:165.0,
-    filterThread:46, minFocusDist:440, maxMagnification:0.14,
+    filterThread:46, minFocusDist:430, maxMagnification:0.14,
     elements:26, groups:20, blades:9, afType:'Silky Swift VCM',
     weatherSealed:true, ois:true, oisStops:5.5, year:2022, discontinued:false,
     imageUrl:'https://upload.wikimedia.org/wikipedia/commons/thumb/3/32/Nikon_Nikkor_Z_600mm_F4_TC_VR_S_20260516113641.jpg/500px-Nikon_Nikkor_Z_600mm_F4_TC_VR_S_20260516113641.jpg',
@@ -1141,6 +1193,7 @@ const LENSES = {
   'z-800mm-f6-3-vr-s-pf': {
     name:'NIKKOR Z 800mm f/6.3 VR S (PF)', manufacturer:'Nikon', line:'S-Line', type:'Prime', mount:'z', asin:'B09X8TBSFZ',
     focalLength:800, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'800mm',
+    specSources: [{ url:'https://imaging.nikon.com/imaging/lineup/lens/z-mount/z_800mmf63_vr_s/', tier:'T1', title:'Nikon global product page', note:'verify-specs 2026-11-15: construction, focus distance, magnification, blades, filter, dimensions, weight re-read', date:'2026-11-15' }],
     maxAperture:6.3, minAperture:32, weight:2385, length:385.0, diameter:140.0,
     filterThread:46, minFocusDist:500, maxMagnification:0.16,
     elements:22, groups:14, blades:9, afType:'Stepping Motor',
@@ -1157,6 +1210,7 @@ const LENSES = {
   'z-dx-12-28mm-pz-vr': {
     name:'NIKKOR Z DX 12-28mm f/3.5-5.6 PZ VR', manufacturer:'Nikon', line:'DX', type:'Zoom', mount:'z', asin:'B0C2RHKLDK',
     focalLength:null, focalLengthMin:12, focalLengthMax:28, focalLengthEquiv:'18-42mm',
+    specSources: [{ url:'https://imaging.nikon.com/imaging/lineup/lens/z-mount/z_dx_12-28mmf35-56_pz_vr/', tier:'T1', title:'Nikon global product page', note:'verify-specs 2026-11-15: construction, focus distance, magnification, blades, filter, dimensions, weight re-read', date:'2026-11-15' }],
     maxAperture:3.5, minAperture:22, weight:205, length:63.5, diameter:72.0,
     filterThread:67, minFocusDist:19, maxMagnification:0.21,
     elements:12, groups:11, blades:7, afType:'Stepping Motor',
@@ -1172,6 +1226,7 @@ const LENSES = {
   'z-dx-16-50mm-vr': {
     name:'NIKKOR Z DX 16-50mm f/3.5-6.3 VR', manufacturer:'Nikon', line:'DX', type:'Zoom', mount:'z', asin:'B07YX95XJL',
     focalLength:null, focalLengthMin:16, focalLengthMax:50, focalLengthEquiv:'24-75mm',
+    specSources: [{ url:'https://imaging.nikon.com/imaging/lineup/lens/z-mount/z_dx_16-50mmf35-63_vr/', tier:'T1', title:'Nikon global product page', note:'verify-specs 2026-11-15: construction, focus distance, magnification, blades, filter, dimensions, weight re-read', date:'2026-11-15' }],
     maxAperture:3.5, minAperture:22, weight:135, length:32.0, diameter:70.0,
     filterThread:46, minFocusDist:20, maxMagnification:0.20,
     elements:9, groups:7, blades:7, afType:'Stepping Motor',
@@ -1197,7 +1252,7 @@ const LENSES = {
     imageUrl:'https://images.contentstack.io/v3/assets/blt0e5ec1de4817c440/blt8b35b096fe184040/68dc1e5c877911c2e788b1b6/20133-hero.jpg',
     imageSource: { url:'https://www.nikonusa.com/p/nikkor-z-dx-16-50mm-f28-vr/20133/overview', tier:'T1', note:'official Nikon USA product page', date:'2026-08-22' },
     prices:{USD:900,AUD:1399,EUR:null,GBP:null,JPY:null,CAD:1199,SGD:null},
-    specSources: [{ url:'https://www.nikonusa.com/p/nikkor-z-dx-16-50mm-f28-vr/20133/overview', tier:'T1', title:'Nikon USA - NIKKOR Z DX 16-50mm f/2.8 VR specifications', note:'Minimum focus distance 0.15 m (16mm) to 0.25 m (50mm); 0.24x at 50mm; 12 elements / 11 groups, 9 blades, f/22, 67mm filter, 74.5 x 88 mm, 330 g, stepping motor, VR up to 5 stops, dust and drip resistant. minFocusDist corrected 150 -> 15 cm (was stored 10x too large); the other fields were already correct.', date:'2026-11-07' }],
+    specSources: [{ url:'https://imaging.nikon.com/imaging/lineup/lens/z-mount/z_dx16-50mmf28_vr/', tier:'T1', title:'Nikon global product page', note:'verify-specs 2026-11-15: construction, focus distance, magnification, blades, filter, dimensions, weight re-read', date:'2026-11-15' }, { url:'https://www.nikonusa.com/p/nikkor-z-dx-16-50mm-f28-vr/20133/overview', tier:'T1', title:'Nikon USA - NIKKOR Z DX 16-50mm f/2.8 VR specifications', note:'Minimum focus distance 0.15 m (16mm) to 0.25 m (50mm); 0.24x at 50mm; 12 elements / 11 groups, 9 blades, f/22, 67mm filter, 74.5 x 88 mm, 330 g, stepping motor, VR up to 5 stops, dust and drip resistant. minFocusDist corrected 150 -> 15 cm (was stored 10x too large); the other fields were already correct.', date:'2026-11-07' }],
     priceIncomplete:true,
     productUrl:'https://www.nikonusa.com/p/nikkor-z-dx-16-50mm-f28-vr/20133/overview',
   },
@@ -1205,6 +1260,7 @@ const LENSES = {
   'z-dx-18-140mm-vr': {
     name:'NIKKOR Z DX 18-140mm f/3.5-6.3 VR', manufacturer:'Nikon', line:'DX', type:'Zoom', mount:'z', asin:'B09JBJKRBZ',
     focalLength:null, focalLengthMin:18, focalLengthMax:140, focalLengthEquiv:'27-210mm',
+    specSources: [{ url:'https://imaging.nikon.com/imaging/lineup/lens/z-mount/z_dx_18-140mmf35-63_vr/', tier:'T1', title:'Nikon global product page', note:'verify-specs 2026-11-15: construction, focus distance, magnification, blades, filter, dimensions, weight re-read', date:'2026-11-15' }],
     maxAperture:3.5, minAperture:22, weight:315, length:90.0, diameter:73.0,
     filterThread:62, minFocusDist:20, maxMagnification:0.33,
     elements:17, groups:13, blades:7, afType:'Stepping Motor',
@@ -1219,6 +1275,7 @@ const LENSES = {
   'z-dx-50-250mm-vr': {
     name:'NIKKOR Z DX 50-250mm f/4.5-6.3 VR', manufacturer:'Nikon', line:'DX', type:'Zoom', mount:'z', asin:'B07YX9KYQZ',
     focalLength:null, focalLengthMin:50, focalLengthMax:250, focalLengthEquiv:'75-375mm',
+    specSources: [{ url:'https://imaging.nikon.com/imaging/lineup/lens/z-mount/z_dx_50-250mmf45-63_vr/', tier:'T1', title:'Nikon global product page', note:'verify-specs 2026-11-15: construction, focus distance, magnification, blades, filter, dimensions, weight re-read', date:'2026-11-15' }],
     maxAperture:4.5, minAperture:22, weight:405, length:110.0, diameter:74.0,
     filterThread:62, minFocusDist:50, maxMagnification:0.23,
     elements:16, groups:12, blades:7, afType:'Stepping Motor',
@@ -1246,6 +1303,7 @@ const LENSES = {
   'sigma-16mm-f14': {
     name:'Sigma 16mm f/1.4 DC DN', manufacturer:'Sigma', line:'Contemporary', type:'Prime',
     mount:'z', focalLength:16, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'24mm',
+    specSources: [{ url:'https://www.sigma-global.com/en/lenses/c017_16_14/', tier:'T1', title:'Sigma global product page', note:'verify-specs 2026-11-15: Nikon Z mount rows of the per-mount spec table re-read', date:'2026-11-15' }],
     maxAperture:1.4, minAperture:16, weight:420, length:94.3, diameter:72.2,
     filterThread:67, minFocusDist:25, maxMagnification:0.1,
     elements:16, groups:13, blades:9, afType:'Stepping Motor',
@@ -1260,6 +1318,7 @@ const LENSES = {
   'sigma-30mm-f14': {
     name:'Sigma 30mm f/1.4 DC DN', manufacturer:'Sigma', line:'Contemporary', type:'Prime',
     mount:'z', focalLength:30, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'45mm',
+    specSources: [{ url:'https://www.sigma-global.com/en/lenses/c016_30_14/', tier:'T1', title:'Sigma global product page', note:'verify-specs 2026-11-15: Nikon Z mount rows of the per-mount spec table re-read', date:'2026-11-15' }],
     maxAperture:1.4, minAperture:16, weight:285, length:75.3, diameter:70,
     filterThread:52, minFocusDist:30, maxMagnification:0.14,
     elements:9, groups:7, blades:9, afType:'Stepping Motor',
@@ -1274,6 +1333,7 @@ const LENSES = {
   'sigma-56mm-f14': {
     name:'Sigma 56mm f/1.4 DC DN', manufacturer:'Sigma', line:'Contemporary', type:'Prime',
     mount:'z', focalLength:56, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'84mm',
+    specSources: [{ url:'https://www.sigma-global.com/en/lenses/c018_56_14/', tier:'T1', title:'Sigma global product page', note:'verify-specs 2026-11-15: Nikon Z mount rows of the per-mount spec table re-read', date:'2026-11-15' }],
     maxAperture:1.4, minAperture:16, weight:295, length:61.5, diameter:70,
     filterThread:55, minFocusDist:50, maxMagnification:0.14,
     elements:10, groups:6, blades:9, afType:'Stepping Motor',
@@ -1589,6 +1649,7 @@ const LENSES = {
   'tamron-18-300mm-f35-63': {
     name:'Tamron 18-300mm f/3.5-6.3 Di III-A VC VXD', manufacturer:'Tamron', line:'Di III-A', type:'Zoom',
     mount:'z', focalLength:null, focalLengthMin:18, focalLengthMax:300, focalLengthEquiv:'27-450mm',
+    specSources: [{ url:'https://www.tamron.com/global/consumer/lenses/b061/spec.html', tier:'T1', title:'Tamron global specifications', note:'verify-specs 2026-11-15: NIKON Z mount figures re-read', date:'2026-11-15' }],
     maxAperture:3.5, minAperture:22, weight:635, length:127.6, diameter:75.5,
     filterThread:67, minFocusDist:15, maxMagnification:0.5,
     elements:19, groups:15, blades:7, afType:'Linear Motor',
@@ -1658,6 +1719,7 @@ const LENSES = {
   'tamron-150-500mm-f5-67': {
     name:'Tamron 150-500mm f/5-6.7 Di III VC VXD', manufacturer:'Tamron', line:'Di III', type:'Zoom',
     mount:'z', focalLength:null, focalLengthMin:150, focalLengthMax:500, focalLengthEquiv:'150-500mm',
+    specSources: [{ url:'https://www.tamron.com/global/consumer/lenses/a057/spec.html', tier:'T1', title:'Tamron global specifications', note:'verify-specs 2026-11-15: Nikon figures re-read (weight without tripod mount)', date:'2026-11-15' }],
     maxAperture:5.0, minAperture:22, weight:1720, length:212.3, diameter:93,
     filterThread:82, minFocusDist:60, maxMagnification:0.32,
     elements:25, groups:16, blades:7, afType:'Linear Motor',
@@ -1822,6 +1884,7 @@ const LENSES = {
   'laowa-90mm-f28-macro': {
     name:'Laowa 90mm f/2.8 2x Ultra Macro APO', manufacturer:'Laowa', line:'Ultra Macro APO', type:'Prime',
     mount:'z', focalLength:90, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'90mm',
+    specSources: [{ url:'https://www.venuslens.net/product/laowa-90mm-f-2-8-2x-macro-apo/', tier:'T1', title:'Laowa official product page', note:'verify-specs 2026-11-15: spec table re-read (Laowa gives one figure for all mounts)', date:'2026-11-15' }],
     maxAperture:2.8, minAperture:22, weight:619, length:120, diameter:74,
     filterThread:67, minFocusDist:20.5, maxMagnification:2.0,
     elements:13, groups:10, blades:13, afType:'Manual',
@@ -1837,8 +1900,9 @@ const LENSES = {
   'laowa-15mm-f2': {
     name:'Laowa 15mm f/2 Zero-D', manufacturer:'Laowa', line:'Zero-D', type:'Prime',
     mount:'z', focalLength:15, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'15mm',
-    maxAperture:2.0, minAperture:22, weight:500, length:82, diameter:66,
-    filterThread:72, minFocusDist:15, maxMagnification:0.1,
+    specSources: [{ url:'https://www.venuslens.net/product/laowa-15mm-f2/', tier:'T1', title:'Laowa official product page', note:'verify-specs 2026-11-15: spec table re-read (Laowa gives one figure for all mounts)', date:'2026-11-15' }],
+    maxAperture:2.0, minAperture:22, weight:500, length:82, diameter:77.2,
+    filterThread:72, minFocusDist:15, maxMagnification:0.25,
     elements:12, groups:9, blades:5, afType:'Manual',
     weatherSealed:false, ois:false, oisStops:null, year:2021, discontinued:false,
     imageUrl:'https://laowa.com.au/wp-content/uploads/2017/12/15-2-4-768x529.jpg',
@@ -1852,8 +1916,9 @@ const LENSES = {
   'laowa-10mm-f4-cookie': {
     name:'Laowa 10mm f/4 Cookie', manufacturer:'Laowa', line:'Cookie', type:'Prime',
     mount:'z', focalLength:10, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'15mm',
-    maxAperture:4.0, minAperture:22, weight:130, length:25, diameter:54,
-    filterThread:37, minFocusDist:10, maxMagnification:0.1,
+    specSources: [{ url:'https://www.venuslens.net/product/laowa-10mm-f-4-cookie/', tier:'T1', title:'Laowa official product page', note:'verify-specs 2026-11-15: spec table re-read (Laowa gives one figure for all mounts)', date:'2026-11-15' }],
+    maxAperture:4.0, minAperture:22, weight:130, length:25, diameter:59.8,
+    filterThread:37, minFocusDist:10, maxMagnification:0.15,
     elements:12, groups:8, blades:5, afType:'Manual',
     weatherSealed:false, ois:false, oisStops:null, year:2022, discontinued:false,
     imageUrl:'https://laowa.com.au/wp-content/uploads/2022/07/1040-X-04-768x512.png',
@@ -2812,7 +2877,8 @@ const LENSES = {
   'voigtlander-apo-lanthar-50mm-f2': {
     name:'Voigtländer APO-Lanthar 50mm f/2 Aspherical II Z', manufacturer:'Voigtländer', line:'APO-Lanthar', type:'Prime',
     mount:'z', focalLength:50, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'50mm',
-    maxAperture:2.0, minAperture:16, weight:370, length:64.3, diameter:63,
+    specSources: [{ url:'https://www.cosina.co.jp/voigtlander/en/z-mount/apo-lanthar-50mm-f2-aspherical-ii/', tier:'T1', title:'Cosina Voigtländer official specifications', note:'verify-specs 2026-11-15: construction, blades, focus distance, reproduction ratio, size, filter, weight re-read', date:'2026-11-15' }],
+    maxAperture:2.0, minAperture:16, weight:370, length:64.3, diameter:68.8,
     filterThread:58, minFocusDist:45, maxMagnification:0.15,
     elements:10, groups:8, blades:12, afType:'Manual',
     weatherSealed:false, ois:false, oisStops:null, year:2024, discontinued:false,
@@ -2863,9 +2929,10 @@ const LENSES = {
   'voigtlander-super-wide-heliar-15mm-f45': {
     name:'Voigtländer Super Wide Heliar 15mm f/4.5 Aspherical Z', manufacturer:'Voigtländer', line:'Heliar', type:'Prime',
     mount:'z', focalLength:15, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'15mm',
+    specSources: [{ url:'https://www.cosina.co.jp/voigtlander/en/z-mount/super-wide-heliar-15mm-f4-5-aspherical/', tier:'T1', title:'Cosina Voigtländer official specifications', note:'verify-specs 2026-11-15: construction, blades, focus distance, reproduction ratio, size, filter, weight re-read', date:'2026-11-15' }],
     maxAperture:4.5, minAperture:22, weight:290, length:67.0, diameter:67.6,
-    filterThread:58, minFocusDist:12.6, maxMagnification:null,
-    elements:11, groups:9, blades:null, afType:'Manual',
+    filterThread:58, minFocusDist:12.6, maxMagnification:0.25,
+    elements:11, groups:9, blades:10, afType:'Manual',
     weatherSealed:false, ois:false, oisStops:null, year:2023, discontinued:false,
     // 2026-09-06: repointed off voigtlaender.de — broken TLS chain (see note above).
     imageUrl:'https://www.cosina.co.jp/wp/wp-content/uploads/2023/01/Z-15_45_01kjhuy.jpg',
@@ -2961,8 +3028,9 @@ const LENSES = {
   'voigtlander-apo-lanthar-35mm-f2': {
     name:'Voigtländer APO-Lanthar 35mm f/2 Aspherical II Z', manufacturer:'Voigtländer', line:'APO-Lanthar', type:'Prime',
     mount:'z', focalLength:35, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'35mm',
-    maxAperture:2.0, minAperture:16, weight:360, length:70.4, diameter:67.6,
-    filterThread:58, minFocusDist:35, maxMagnification:null,
+    specSources: [{ url:'https://www.cosina.co.jp/voigtlander/en/z-mount/apo-lanthar-35mm-f2-aspherical-ii/', tier:'T1', title:'Cosina Voigtländer official specifications', note:'verify-specs 2026-11-15: construction, blades, focus distance, reproduction ratio, size, filter, weight re-read', date:'2026-11-15' }],
+    maxAperture:2.0, minAperture:16, weight:420, length:70.4, diameter:68.8,
+    filterThread:58, minFocusDist:27, maxMagnification:0.22,
     elements:11, groups:9, blades:12, afType:'Manual',
     weatherSealed:false, ois:false, oisStops:null, year:2025, discontinued:false,
     // 2026-09-06: repointed off voigtlaender.de — broken TLS chain (see note above).
@@ -2994,8 +3062,9 @@ const LENSES = {
   'voigtlander-nokton-50mm-f10': {
     name:'Voigtländer Nokton 50mm f/1.0 Aspherical Z', manufacturer:'Voigtländer', line:'Nokton', type:'Prime',
     mount:'z', focalLength:50, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'50mm',
-    maxAperture:1.0, minAperture:16, weight:598, length:66.6, diameter:67.6,
-    filterThread:62, minFocusDist:45, maxMagnification:null,
+    specSources: [{ url:'https://www.cosina.co.jp/voigtlander/en/z-mount/nokton-50mm-f1-aspherical/', tier:'T1', title:'Cosina Voigtländer official specifications', note:'verify-specs 2026-11-15: construction, blades, focus distance, reproduction ratio, size, filter, weight re-read', date:'2026-11-15' }],
+    maxAperture:1.0, minAperture:16, weight:598, length:66.6, diameter:79.3,
+    filterThread:62, minFocusDist:45, maxMagnification:0.15,
     elements:9, groups:7, blades:12, afType:'Manual',
     weatherSealed:false, ois:false, oisStops:null, year:2023, discontinued:false,
     // 2026-09-06: repointed off voigtlaender.de — broken TLS chain (see note above).
@@ -3010,6 +3079,7 @@ const LENSES = {
   'voigtlander-macro-apo-lanthar-65mm-f2': {
     name:'Voigtländer Macro APO-Lanthar 65mm f/2 Aspherical Z', manufacturer:'Voigtländer', line:'APO-Lanthar', type:'Prime',
     mount:'z', focalLength:65, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'65mm',
+    specSources: [{ url:'https://www.cosina.co.jp/voigtlander/en/z-mount/macro-apo-lanthar-65mm-f2-aspherical/', tier:'T1', title:'Cosina Voigtländer official specifications', note:'verify-specs 2026-11-15: construction, blades, focus distance, reproduction ratio, size, filter, weight re-read', date:'2026-11-15' }],
     maxAperture:2.0, minAperture:22, weight:618, length:88.8, diameter:78,
     filterThread:67, minFocusDist:31, maxMagnification:0.5,
     elements:10, groups:8, blades:10, afType:'Manual',
@@ -3026,9 +3096,10 @@ const LENSES = {
   'voigtlander-portrait-heliar-75mm-f18': {
     name:'Voigtländer Portrait Heliar 75mm f/1.8 Z', manufacturer:'Voigtländer', line:'Heliar', type:'Prime',
     mount:'z', focalLength:75, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'75mm',
-    maxAperture:1.8, minAperture:11, weight:580, length:88.0, diameter:70.0,
-    filterThread:62, minFocusDist:70, maxMagnification:null,
-    elements:6, groups:3, blades:null, afType:'Manual',
+    specSources: [{ url:'https://www.cosina.co.jp/voigtlander/en/z-mount/portrait-heliar-75mm-f1-8/', tier:'T1', title:'Cosina Voigtländer official specifications', note:'verify-specs 2026-11-15: construction, blades, focus distance, reproduction ratio, size, filter, weight re-read', date:'2026-11-15' }],
+    maxAperture:1.8, minAperture:11, weight:580, length:90, diameter:71.2,
+    filterThread:62, minFocusDist:70, maxMagnification:0.14,
+    elements:6, groups:3, blades:9, afType:'Manual',
     weatherSealed:false, ois:false, oisStops:null, year:2025, discontinued:false,
     // 2026-09-06: repointed off voigtlaender.de — broken TLS chain (see note above).
     imageUrl:'https://www.cosina.co.jp/wp/wp-content/uploads/2026/01/Z-75_18-web01-lkpe.jpg',

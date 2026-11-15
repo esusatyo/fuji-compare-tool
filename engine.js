@@ -309,7 +309,17 @@ const SPEC_SECTIONS = [
       // maxBurst is non-nullable in the schema, so bodies that publish no
       // stills burst rate at all (the BS1H/BGH1 box cameras) carry 0. Render
       // that as "—" rather than "0 fps", which reads as a measured figure.
-      { key: 'maxBurst',     label: 'Max Burst Speed',   type: 'number', higherBetter: true,  fn: c => c.maxBurst || null, fmt: v => v + ' fps' },
+      //
+      // Burst is being split into mechanical and electronic rows, one brand
+      // at a time as verify-specs reaches it. A camera that carries the split
+      // fields (maxBurstMech/maxBurstElec, see hasBurstSplit) shows the two
+      // new rows; one that doesn't yet keeps the legacy single row. Each row
+      // hides itself when no selected camera has a value for it, so a
+      // comparison shows only the rows that apply to the cameras in it.
+      { key: 'maxBurst',     label: 'Max Burst Speed',   type: 'number', higherBetter: true,  hideWhenEmpty: true, fn: c => hasBurstSplit(c) ? null : (c.maxBurst || null), fmt: v => v + ' fps' },
+      { key: 'burstMech',    label: 'Burst (Mechanical)', type: 'number', higherBetter: true, hideWhenEmpty: true, fn: c => hasBurstSplit(c) ? c.maxBurstMech : null, fmt: v => v + ' fps' },
+      { key: 'burstElec',    label: 'Burst (Electronic)', type: 'number', higherBetter: true, hideWhenEmpty: true, fn: c => hasBurstSplit(c) ? c.maxBurstElec : null,
+        fmt: (v, c) => v + ' fps' + (c && c.maxBurstElecCrop ? ` (${c.maxBurstElecCrop}× crop)` : '') },
     ]
   },
   {
@@ -342,7 +352,14 @@ const SPEC_SECTIONS = [
   {
     id: 'power', label: 'Power',
     specs: [
-      { key: 'batteryLife',  label: 'Battery Life (CIPA)', type: 'number', higherBetter: true, fn: c => c.batteryLife, fmt: v => v + ' shots' },
+      // Battery is split into screen and viewfinder rows where the maker
+      // publishes both (Canon, Sony, Nikon, Panasonic), rolled out per brand
+      // by verify-specs like burst. Cameras with batteryLifeLcd/batteryLifeEvf
+      // show the two rows; the rest keep the legacy single row. hideWhenEmpty
+      // drops whichever rows no selected camera fills.
+      { key: 'batteryLife',  label: 'Battery Life (CIPA)', type: 'number', higherBetter: true, hideWhenEmpty: true, fn: c => hasBatterySplit(c) ? null : c.batteryLife, fmt: v => v + ' shots' },
+      { key: 'batteryLcd',   label: 'Battery (Screen, CIPA)', type: 'number', higherBetter: true, hideWhenEmpty: true, fn: c => hasBatterySplit(c) ? c.batteryLifeLcd : null, fmt: v => v + ' shots' },
+      { key: 'batteryEvf',   label: 'Battery (Viewfinder, CIPA)', type: 'number', higherBetter: true, hideWhenEmpty: true, fn: c => hasBatterySplit(c) ? c.batteryLifeEvf : null, fmt: v => v + ' shots' },
       { key: 'usbCharging',  label: 'USB Charging',      type: 'boolean', fn: c => c.usbCharging },
     ]
   },
@@ -1560,6 +1577,19 @@ function computeWinners(spec) {
 // ─────────────────────────────────────────────
 // FORMAT SPEC VALUE
 // ─────────────────────────────────────────────
+// True once a camera records mechanical and electronic burst separately.
+// Either field may be null (no mechanical shutter, or no published rate), so
+// presence of the key, not a value, is the signal.
+function hasBurstSplit(c) {
+  return !!c && ('maxBurstMech' in c || 'maxBurstElec' in c);
+}
+
+// True once a camera records screen and viewfinder battery life separately.
+// batteryLifeEvf is null on a body without a viewfinder.
+function hasBatterySplit(c) {
+  return !!c && ('batteryLifeLcd' in c || 'batteryLifeEvf' in c);
+}
+
 function formatVal(spec, item) {
   // A slot can legitimately hold nothing (a brand with fewer items than slots),
   // and every spec fn dereferences its argument — so bail before calling it.
@@ -1571,7 +1601,7 @@ function formatVal(spec, item) {
       : `<span class="cross">—</span>`;
   }
   if (raw === null || raw === undefined) return (spec.fallback && spec.fallback(item)) || '<span class="cross">—</span>';
-  if (spec.fmt && typeof raw === 'number') return spec.fmt(raw);
+  if (spec.fmt && typeof raw === 'number') return spec.fmt(raw, item);
   return raw;
 }
 
@@ -1755,6 +1785,9 @@ function renderTable() {
 
     let rowsHtml = '';
     for (const spec of section.specs) {
+      // A row marked hideWhenEmpty only exists when some selected item has a
+      // value for it (see the burst rows). It is not a "difference" either way.
+      if (spec.hideWhenEmpty && filled.every(i => spec.fn(cfg().items[shownIds[i]]) == null)) continue;
       const cells = shownIds.map(id => (id ? formatVal(spec, cfg().items[id]) : null));
       const differs = comparable && new Set(filled.map(i => cells[i])).size > 1;
       specCount++;
