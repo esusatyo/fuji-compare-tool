@@ -1353,6 +1353,136 @@ footer a:hover { text-decoration: underline; }
   white-space: nowrap;
 }
 
+/* ─── FINDERS ───
+   /cameras/ and /lenses/ (generated; finder.js filters the rows). The table
+   reuses .seo-table + .mount-table (sticky name column). The form starts
+   hidden and is revealed by the script. */
+.finder-main { max-width: 1100px; }
+.finder-form { margin: 0 0 14px; }
+.finder-top { display: flex; flex-wrap: wrap; align-items: center; gap: 10px 16px; margin-bottom: 10px; }
+.finder-inline { display: inline-flex; align-items: center; gap: 8px; font-size: 13px; font-weight: 600; color: var(--text-secondary); }
+.finder-form select,
+.finder-form input[type="number"] {
+  font: inherit;
+  font-size: 13px;
+  color: var(--text-primary);
+  background: var(--overlay-weak);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-btn);
+  padding: 6px 8px;
+  min-width: 0;
+}
+.finder-form input[type="number"] { width: 100%; }
+.finder-form select:focus-visible,
+.finder-form input:focus-visible { outline: 2px solid var(--accent-primary); outline-offset: 1px; }
+.finder-panel {
+  background: var(--bg-surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 0 14px;
+}
+.finder-panel > summary {
+  cursor: pointer;
+  padding: 11px 0;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--text-primary);
+  list-style-position: inside;
+}
+.finder-panel[open] > summary { border-bottom: 1px solid var(--border); margin-bottom: 12px; }
+.finder-groups {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
+  gap: 14px 18px;
+}
+.finder-group { display: flex; flex-direction: column; gap: 6px; min-width: 0; border: 0; padding: 0; margin: 0; }
+.finder-group > label,
+.finder-group > legend {
+  padding: 0;
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--text-secondary);
+}
+/* Many-option groups (brand, mount, maker, features) span the whole row. */
+.finder-wide { grid-column: 1 / -1; }
+.finder-group > legend + .finder-chips { margin-top: 6px; }
+.finder-chips { display: flex; flex-wrap: wrap; gap: 6px; }
+.finder-chip { position: relative; display: inline-flex; cursor: pointer; }
+/* The real checkbox stays in the accessibility tree and takes keyboard focus;
+   the pill beside it shows its state. */
+.finder-chip input { position: absolute; opacity: 0; width: 1px; height: 1px; }
+.finder-chip span {
+  padding: 5px 12px;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text-secondary);
+  background: var(--overlay-weak);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-pill);
+  white-space: nowrap;
+  transition: all 0.15s;
+}
+.finder-chip:hover span { color: var(--text-primary); background: var(--overlay-medium); }
+.finder-chip input:checked + span { background: var(--accent-primary); color: var(--bg-deep); border-color: var(--accent-primary); }
+.finder-chip input:focus-visible + span { outline: 2px solid var(--accent-primary); outline-offset: 2px; }
+.finder-range { display: flex; align-items: center; gap: 6px; color: var(--text-secondary); }
+.finder-clear,
+.finder-empty button,
+.finder-compare-clear {
+  font: inherit;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--accent-primary);
+  background: none;
+  border: 0;
+  padding: 0;
+  cursor: pointer;
+}
+.finder-clear { margin: 14px 0 12px; }
+.finder-clear:hover, .finder-empty button:hover, .finder-compare-clear:hover { text-decoration: underline; }
+.seo-links .finder-status { margin: 0 0 8px; font-size: 13px; font-weight: 600; color: var(--text-primary); font-variant-numeric: tabular-nums; }
+.finder-note { display: block; margin-top: 2px; font-weight: 500; color: var(--text-secondary); }
+.seo-links .finder-empty { padding: 16px; border: 1px dashed var(--border); border-radius: var(--radius); }
+.finder-table td { white-space: nowrap; font-variant-numeric: tabular-nums; }
+/* Undo the shared .seo-table rule that lets column 3 wrap at 14em. */
+.finder-table td:nth-child(3) { white-space: nowrap; min-width: 0; }
+.finder-table .finder-price { color: var(--text-primary); font-weight: 600; }
+.finder-pick { margin: 0 8px 0 0; vertical-align: -2px; accent-color: var(--accent-primary); }
+.finder-rank { width: 2.5em; text-align: right; color: var(--text-secondary); }
+.finder-presets { margin-top: 28px; }
+.finder-presets ul { columns: 2 240px; }
+/* The compare bar rides along the bottom of the screen once a camera is ticked. */
+.finder-compare {
+  position: sticky;
+  bottom: 12px;
+  z-index: 5;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px 16px;
+  margin-top: 16px;
+  padding: 10px 14px;
+  background: var(--bg-surface-2);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  font-size: 13px;
+  color: var(--text-primary);
+}
+.finder-compare[hidden] { display: none; }
+.seo-links .finder-compare-go {
+  padding: 7px 16px;
+  border-radius: 999px;
+  background: var(--accent-primary);
+  color: var(--bg-deep);
+  font-weight: 700;
+  text-decoration: none;
+}
+.seo-links .finder-compare-go:hover { text-decoration: none; filter: brightness(1.08); }
+.seo-links .finder-compare-go.disabled { background: var(--overlay-medium); color: var(--text-secondary); cursor: default; }
+
 /* ─── RESPONSIVE ─── */
 @media (max-width: 599px) {
   :root { --num-slots: 2; }
@@ -1437,4 +1567,13 @@ footer a:hover { text-decoration: underline; }
 /* Mount pages on phones: names wrap so the sticky column stays narrow. */
 @media (max-width: 599px) {
   .mount-table tbody th { white-space: normal; min-width: 9em; max-width: 11em; }
+}
+
+/* Finders on phones: the top controls stack, the compare bar spans the
+   screen. Kept after the main responsive block above — a test reads the
+   first 599px query in this file as *the* mobile breakpoint. */
+@media (max-width: 599px) {
+  .finder-top { gap: 8px 12px; }
+  .finder-groups { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+  .finder-compare { bottom: 8px; padding: 9px 12px; }
 }

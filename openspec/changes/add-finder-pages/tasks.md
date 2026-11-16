@@ -37,7 +37,7 @@ Owner said "execute the plan now" (2026-11-16) without answering these, so the b
 - [x] 2.2b URL state (read on load and on hashchange, written on change)
 - [x] 2.2c Currency selector, price column, and the "hidden: no price" note
 - [x] 2.3 "Compare these" for 2–4 ticked rows → `/compare/#…`
-- [ ] 2.4 Styles in `engine.css` (after the main RESPONSIVE block for phone rules), both themes; phone layout with a collapsible filter panel
+- [x] 2.4 Styles in `engine.css` (after the main RESPONSIVE block for phone rules), both themes; phone layout with a collapsible filter panel
 
 ## 3. Lens finder
 

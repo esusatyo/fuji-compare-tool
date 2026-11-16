@@ -1077,7 +1077,7 @@ function finderOptions(kind, model, key) {
     return [...n.keys()].sort((a, b) => a.localeCompare(b)).map(v => ({ value: v, label: v, n: n.get(v) }));
   }
   if (key === 'type') return opts('type', [['prime', 'Prime'], ['zoom', 'Zoom']]);
-  if (key === 'focus') return opts('focus', [['af', 'Autofocus'], ['manual', 'Manual focus']]);
+  if (key === 'focus') return opts('focus', [['af', 'Autofocus'], ['manual', 'Manual']]);
   throw new Error(`finder: no options for ${kind} filter "${key}"`);
 }
 
@@ -1087,9 +1087,11 @@ function finderFormHTML(kind, model) {
   for (const def of Finder.FILTERS[kind]) {
     const id = `f-${def.key}`;
     if (def.type === 'choice') {
-      const chips = finderOptions(kind, model, def.key).map(o =>
+      const options = finderOptions(kind, model, def.key);
+      const chips = options.map(o =>
         `<label class="finder-chip"><input type="checkbox" name="${def.key}" value="${esc(o.value)}"><span>${esc(o.label)}</span></label>`).join('');
-      groups.push(`<fieldset class="finder-group finder-choice"><legend>${esc(def.label)}</legend><div class="finder-chips">${chips}</div></fieldset>`);
+      // A long list of chips takes the whole row; two or three sit in the grid.
+      groups.push(`<fieldset class="finder-group${options.length > 3 ? ' finder-wide' : ''}"><legend>${esc(def.label)}</legend><div class="finder-chips">${chips}</div></fieldset>`);
     } else if (def.type === 'yes') {
       yes.push(`<label class="finder-chip"><input type="checkbox" name="${def.key}" value="1"><span>${esc(def.label)}</span></label>`);
     } else if (def.type === 'range') {
@@ -1107,7 +1109,7 @@ function finderFormHTML(kind, model) {
       groups.push(`<div class="finder-group"><label for="${id}">${esc(def.label)}</label><input id="${id}" type="number" name="${def.key}" min="0" step="any" inputmode="decimal" placeholder="Any"></div>`);
     }
   }
-  if (yes.length) groups.push(`<fieldset class="finder-group finder-choice"><legend>Features</legend><div class="finder-chips">${yes.join('')}</div></fieldset>`);
+  if (yes.length) groups.push(`<fieldset class="finder-group finder-wide"><legend>Features</legend><div class="finder-chips">${yes.join('')}</div></fieldset>`);
   const sorts = Finder.SORTS[kind].map(s => `<option value="${s.key}">${esc(s.label)}</option>`).join('');
   const curs = Finder.CURRENCIES.map(c => `<option value="${c}">${c}</option>`).join('');
   return `<form id="finder-form" class="finder-form" hidden>
