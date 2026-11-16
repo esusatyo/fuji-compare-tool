@@ -24,6 +24,7 @@
 //   size-view:<brand|compare|home|size|page>:<overlay|side>   (size.js: the drawing's layout switch)
 //   size-toggle:<page>:<hide|show>    (size.js: a legend name pressed to hide/show its outlines)
 //   size-seen:<pathname>              (a size drawing entered the viewport)
+//   mount-pick:<home|index|brand>:<mount>  mount-camera:<mount>:<brand>:<slug>  mount-lens:<mount>:<brand>:<slug>  mount-brand:<mount>:<brand>   (static links to and on /mount/ pages)
 //   size-hub  size-to-interactive:<pair>  size-to-vs:<pair>  size-related:<pair>   (static links)
 //   kit-body:<brand>:<slug>  kit-lens:<brand>:<slug>   (kit builder: a body picked, a lens added)
 //   kit-remove:<lens|kit>    kit-pair   kit-hub         (a lens removed or a kit cleared; both kits first filled; the homepage card)
