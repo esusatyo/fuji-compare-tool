@@ -16,7 +16,7 @@ Settled by the owner (2026-11-16):
 - Prices in all seven currencies, never converted; an item with no price in the selected currency is hidden, and the page says so.
 - Discontinued items hidden by default, with a switch to show them.
 
-Assumed, not yet confirmed (confirm before the task that depends on it):
+Owner said "execute the plan now" (2026-11-16) without answering these, so the build follows the recommendations below. Each is listed in the PR for the owner to confirm or change:
 - "Hidden" for a missing price applies only while a price filter or price sort is active (task 2.2).
 - Lens finder at `/lenses/`; one PR for both (task 3.1).
 - Focal length filter uses the full-frame equivalent (task 3.2).
@@ -24,11 +24,11 @@ Assumed, not yet confirmed (confirm before the task that depends on it):
 
 ## 0. Before starting
 
-- [ ] 0.1 Owner answers the open decisions: focal length basis (equivalent vs engraved), the six camera presets, whether any lens presets ship
+- [x] 0.1 Open decisions: building on the recommendations (see Decisions); owner confirms in PR review
 
 ## 1. Shared module
 
-- [ ] 1.1 `finder.js`: field definitions for cameras and lenses, `sensorFormat`, `isAutofocus`, `matches`, `compare`, `parseState` / `formatState`; `tests/logic/finder.test.js` (every camera classifies, every lens classifies, each filter, range overlap, price rule per currency, grammar round-trip, bad input dropped)
+- [x] 1.1 `finder.js`: field definitions for cameras and lenses, `sensorFormat`, `isAutofocus`, `matches`, `compare`, `parseState` / `formatState`; `tests/logic/finder.test.js` (every camera classifies, every lens classifies, each filter, range overlap, price rule per currency, grammar round-trip, bad input dropped)
 
 ## 2. Camera finder
 
@@ -65,4 +65,8 @@ Assumed, not yet confirmed (confirm before the task that depends on it):
 
 ## Progress notes
 
-(Empty. Add dated notes here for anything a later session must know: half-finished tasks, surprises, things tried that failed.)
+Add dated notes here for anything a later session must know: half-finished tasks, surprises, things tried that failed.
+
+- 2026-11-16: the engine keeps no stored currency (it defaults to AUD on every load), so the finder does not share a storage key with it as design.md first said. The finder defaults to USD (the static HTML is in USD, like the mount pages) and keeps the chosen currency in the URL (`cur=`).
+- 2026-11-16: sensor formats are `medium-format`, `full-frame`, `aps-h`, `aps-c`, `four-thirds`, `1-inch`, `small` (the Olympus TG compacts' 1/2.3"). The Four Thirds *sensor* is labelled "Four Thirds", not "Micro Four Thirds" (that is the mount).
+- 2026-11-16: cameras have a separate `lens` filter (interchangeable / fixed) and `mount` filter; a mount choice matches interchangeable bodies only, because fixed-lens cameras carry their system's mount id (X100 → `x`, Olympus TG → `mft`).
