@@ -1260,6 +1260,76 @@ ${presets.map(p => `        <li><a href="${p.slug}" data-goatcounter-click="find
   });
 }
 
+// ─── Finder preset pages (/cameras/<slug>, /lenses/<slug>) ─
+// SITE_CONFIG.finderPresets: each entry is a saved finder search that gets a
+// static, ranked page. The rows are exactly Finder.run over the same records
+// the finder page carries, so a preset can never disagree with the finder.
+// Throws, naming the entry, on anything the finder would not accept, a
+// repeated slug, or a list that comes out empty.
+function finderPresets(site, model) {
+  const out = {};
+  const config = site.finderPresets || {};
+  for (const kind of Object.keys(config)) {
+    if (!Finder.FILTERS[kind]) throw new Error(`site-config.js finderPresets: unknown kind "${kind}" (cameras or lenses)`);
+  }
+  for (const kind of ['cameras', 'lenses']) {
+    const seen = new Set();
+    out[kind] = (config[kind] || []).map(preset => {
+      const state = Finder.presetState(kind, preset);
+      if (seen.has(preset.slug)) throw new Error(`site-config.js finderPresets.${kind}: slug "${preset.slug}" is used twice`);
+      seen.add(preset.slug);
+      const byRec = new Map(model[kind].map(r => [r.rec, r]));
+      let items = Finder.run(kind, model[kind].map(r => r.rec), state).items;
+      if (preset.limit) items = items.slice(0, preset.limit);
+      if (!items.length) throw new Error(`site-config.js finderPresets.${kind} "${preset.slug}": matches nothing — loosen its filters or remove it`);
+      return { ...preset, kind, state, rows: items.map(rec => byRec.get(rec)), hash: Finder.formatState(kind, state) };
+    });
+  }
+  return out;
+}
+
+function presetDescription(p) {
+  if (p.intro) return p.intro;
+  const [one, many] = FINDER_NOUN[p.kind];
+  const sort = Finder.SORTS[p.kind].find(x => x.key === p.state.sort);
+  const n = p.rows.length;
+  const brands = new Set(p.rows.map(r => (p.kind === 'cameras' ? r.rec.brand : r.rec.maker))).size;
+  return `${p.title}: ${n} ${n === 1 ? one : many} from ${brands} ${p.kind === 'cameras' ? (brands === 1 ? 'brand' : 'brands') : (brands === 1 ? 'maker' : 'makers')}, ${sort.phrase}, with ${p.kind === 'cameras' ? 'sensor, resolution, stabilization, weight' : 'mount, focal length, aperture, weight'} and list price.`;
+}
+
+function presetPageHTML(site, p, all, card = null) {
+  const [, many] = FINDER_NOUN[p.kind];
+  const finderName = p.kind === 'cameras' ? 'camera finder' : 'lens finder';
+  const cur = p.state.cur;
+  // The table shows the preset's currency; finderRowHTML writes USD, so
+  // re-word the price cell when the preset names another.
+  const table = finderTableHTML(p.kind, p.rows, { ranked: true })
+    .replace(/<td class="finder-price">[^<]*<\/td>/g, (() => { let i = 0; return () => `<td class="finder-price">${esc(Finder.priceText(p.rows[i++].rec, cur))}</td>`; })())
+    .replace('>Price (USD)<', `>Price (${cur})<`);
+  const others = all.filter(x => x.slug !== p.slug);
+  const sort = Finder.SORTS[p.kind].find(x => x.key === p.state.sort);
+  const main = `  <main class="seo-links mount-main finder-main finder-preset-main">
+    <p class="mount-links"><a href="./${p.hash}" data-goatcounter-click="finder-preset-edit:${p.kind}:${p.slug}" data-goatcounter-title="Finder preset: change filters">Change these filters in the ${finderName} &rarr;</a></p>
+    ${table}
+    <p class="vs-note">Ranked ${esc(sort.phrase)}. ${p.state.disc ? 'Includes discontinued models. ' : 'Current models only. '}Prices are approximate manufacturer list prices (RRP) in ${cur}${p.state.filters.maxprice != null || p.state.sort === 'price' ? `; ${many} without a ${cur} list price are left out` : ''}.${p.kind === 'lenses' ? ' Focal lengths are full-frame equivalents.' : ''}</p>${others.length ? `
+    <section class="finder-presets">
+      <h2>More lists</h2>
+      <ul>
+${others.map(o => `        <li><a href="${o.slug}" data-goatcounter-click="finder-preset:${p.kind}:${o.slug}" data-goatcounter-title="Finder preset: ${esc(o.title)}">${esc(o.title)}</a></li>`).join('\n')}
+      </ul>
+    </section>` : ''}
+  </main>`;
+  return finderDoc(site, {
+    title: p.title, desc: presetDescription(p), card,
+    url: `${site.baseUrl}/${p.kind}/${p.slug}`,
+    heroEyebrow: p.kind === 'cameras' ? 'Camera finder' : 'Lens finder',
+    heroTitle: p.title,
+    heroSub: `${p.rows.length} ${p.rows.length === 1 ? FINDER_NOUN[p.kind][0] : many}, ${sort.phrase}.`,
+    back: { href: './', label: p.kind === 'cameras' ? 'Camera finder' : 'Lens finder' },
+    main, script: false,
+  });
+}
+
 // ─── Key-spec tiles (static) ─────────────────
 // The tiles above a vs-page's spec table: one per id in SITE_CONFIG.keySpecs,
 // both cameras' values, the better one marked. vs-pages are priced in USD.
@@ -2930,9 +3000,15 @@ function buildSite({ today = new Date().toISOString().slice(0, 10) } = {}) {
   // The camera and lens finders. They share the compare page's share card
   // for now.
   const finder = finderModel(brandData, mounts);
+  const presets = finderPresets(site, finder);
   for (const kind of ['cameras', 'lenses']) {
-    files.set(`${kind}/index.html`, finderPageHTML(site, kind, finder, { card: compareShareCard(brandNames, totalCams) }));
+    const card = compareShareCard(brandNames, totalCams);
+    files.set(`${kind}/index.html`, finderPageHTML(site, kind, finder, { card, presets: presets[kind] }));
     sitemapPaths.push(`${kind}/`);
+    for (const p of presets[kind]) {
+      files.set(`${kind}/${p.slug}.html`, presetPageHTML(site, p, presets[kind], card));
+      sitemapPaths.push(`${kind}/${p.slug}.html`);
+    }
   }
 
   // The kit builder: the same engine in kit mode. It shares the compare page's
@@ -3000,4 +3076,4 @@ if (require.main === module) {
   console.log(`generate-seo: ${files.size} artifacts (${written} written, ${removed} stale removed)`);
 }
 
-module.exports = { ROOT_TITLE, finderModel, finderPageHTML, finderOptions, FINDER_TITLE, mountSlug, mountModel, mountPageHTML, mountIndexHTML, MOUNT_INDEX_TITLE, keySpecsHTML, sizeEntries, vsSizeSectionHTML, sizePageHTML, crossSizePageHTML, sizeHubHeadBlock, sizeHubBodyBlock, SIZE_HUB_TITLE, kitHeadBlock, kitBodyBlock, KIT_TITLE, cameraIndex, homeConfigScript, buildSite, GLANCE_COLS, sizeText, brandGlanceHTML, uniqueItemCount, cardHash, lastmodManifest, sitemapHashes, LASTMOD_MANIFEST, vsCardHTML, infoCardHTML, shareTags, CARD_W, CARD_H, LANDING_CARD_ORDER, ALL_BRANDS_MOSAIC, orderLandingBrands, allBrandsPhotoHTML, siteConfig, curatedPairs, successorPairKeys, resolvePins, withPins, PINNED_VS_PAIRS, SUCCESSOR_INDEX_SINCE, relatedPairs, vsPageHTML, vsSummary, vsSummaryFacts, resolveMatchups, crossVsPageHTML, crossTitle, CROSS_BRAND_MATCHUPS, compareHeadBlock, compareBodyBlock, brandHeadBlock, rootHeadBlock, brandBodyBlock, rootBodyBlock, withHeadBlock, withBodyBlock, sitemapXML, robotsTxt, buildAll, SEO_BEGIN, SEO_END, SEO_BODY_BEGIN, SEO_BODY_END, ID_HEAD_BEGIN, ID_HEAD_END, ID_HEADER_BEGIN, ID_HEADER_END, ID_FOOTER_BEGIN, ID_FOOTER_END, identityToken, logoMark, cleanUrl, cleanHref, themeToggleHTML, collectReferences, citationText, refHostname, REFERENCE_ROWS, referenceRowsHTML };
+module.exports = { ROOT_TITLE, finderModel, finderPageHTML, finderPresets, presetPageHTML, finderOptions, FINDER_TITLE, mountSlug, mountModel, mountPageHTML, mountIndexHTML, MOUNT_INDEX_TITLE, keySpecsHTML, sizeEntries, vsSizeSectionHTML, sizePageHTML, crossSizePageHTML, sizeHubHeadBlock, sizeHubBodyBlock, SIZE_HUB_TITLE, kitHeadBlock, kitBodyBlock, KIT_TITLE, cameraIndex, homeConfigScript, buildSite, GLANCE_COLS, sizeText, brandGlanceHTML, uniqueItemCount, cardHash, lastmodManifest, sitemapHashes, LASTMOD_MANIFEST, vsCardHTML, infoCardHTML, shareTags, CARD_W, CARD_H, LANDING_CARD_ORDER, ALL_BRANDS_MOSAIC, orderLandingBrands, allBrandsPhotoHTML, siteConfig, curatedPairs, successorPairKeys, resolvePins, withPins, PINNED_VS_PAIRS, SUCCESSOR_INDEX_SINCE, relatedPairs, vsPageHTML, vsSummary, vsSummaryFacts, resolveMatchups, crossVsPageHTML, crossTitle, CROSS_BRAND_MATCHUPS, compareHeadBlock, compareBodyBlock, brandHeadBlock, rootHeadBlock, brandBodyBlock, rootBodyBlock, withHeadBlock, withBodyBlock, sitemapXML, robotsTxt, buildAll, SEO_BEGIN, SEO_END, SEO_BODY_BEGIN, SEO_BODY_END, ID_HEAD_BEGIN, ID_HEAD_END, ID_HEADER_BEGIN, ID_HEADER_END, ID_FOOTER_BEGIN, ID_FOOTER_END, identityToken, logoMark, cleanUrl, cleanHref, themeToggleHTML, collectReferences, citationText, refHostname, REFERENCE_ROWS, referenceRowsHTML };

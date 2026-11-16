@@ -8,7 +8,31 @@
     "lastmod": "2026-11-13"
   },
   "cameras/": {
-    "hash": "d5cd8216e99589be",
+    "hash": "4ef19918bf0cf1cf",
+    "lastmod": "2026-11-16"
+  },
+  "cameras/cheapest-full-frame": {
+    "hash": "9bd3ffb0d5820872",
+    "lastmod": "2026-11-16"
+  },
+  "cameras/fixed-lens-compacts": {
+    "hash": "f7ce41c4cedc1417",
+    "lastmod": "2026-11-16"
+  },
+  "cameras/highest-resolution": {
+    "hash": "0951f6e9b8d95bf0",
+    "lastmod": "2026-11-16"
+  },
+  "cameras/lightest-aps-c": {
+    "hash": "d522c1b41ef4784f",
+    "lastmod": "2026-11-16"
+  },
+  "cameras/lightest-full-frame": {
+    "hash": "5a8b78c2b46531ce",
+    "lastmod": "2026-11-16"
+  },
+  "cameras/weather-sealed-under-1500": {
+    "hash": "95e9e0df8ac81a04",
     "lastmod": "2026-11-16"
   },
   "canon/": {

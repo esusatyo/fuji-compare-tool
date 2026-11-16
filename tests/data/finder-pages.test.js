@@ -138,3 +138,64 @@ test('/lenses/: controls for every filter, head and sitemap', () => {
   assert.ok(sitemap.includes(`<loc>${site.baseUrl}/lenses/</loc>`));
   assert.ok(!d.getElementById('finder-compare'), 'no compare bar for lenses');
 });
+
+// ── Preset list pages ──
+const { finderModel, finderPresets, presetPageHTML, mountModel } = require('../../scripts/generate-seo');
+const model = finderModel(brands, mountModel(brands));
+
+for (const kind of ['cameras', 'lenses']) {
+  for (const preset of (site.finderPresets || {})[kind] || []) {
+    const rel = `${kind}/${preset.slug}.html`;
+    test(`${rel}: exactly the finder's own answer to the saved search`, () => {
+      assert.ok(files.has(rel), `${rel} not generated`);
+      // Recompute from the finder page's rows, not from the generator's model.
+      const recs = rowsOf(`${kind}/index.html`).map(tr => Object.assign(Finder.readRow(kind, tr.dataset), { name: tr.querySelector('th a').textContent }));
+      let want = Finder.run(kind, recs, Finder.presetState(kind, preset)).items.map(r => r.id);
+      if (preset.limit) want = want.slice(0, preset.limit);
+      const got = [...doc(rel).querySelectorAll('tbody tr')].map(tr => tr.dataset.id);
+      assert.deepEqual(got, want);
+      assert.ok(got.length > 0);
+      // Ranks 1..n, and the price cells in the preset's currency.
+      const cur = preset.currency || 'USD';
+      [...doc(rel).querySelectorAll('tbody tr')].forEach((tr, i) => {
+        assert.equal(tr.querySelector('.finder-rank').textContent, String(i + 1));
+        assert.equal(tr.querySelector('.finder-price').textContent, Finder.priceText(Finder.readRow(kind, tr.dataset), cur));
+      });
+    });
+
+    test(`${rel}: linked from the finder, indexable, in the sitemap, and links back to the same search`, () => {
+      const html = files.get(rel);
+      assert.ok(doc(`${kind}/index.html`).querySelector(`.finder-presets a[href="${preset.slug}"]`), 'not linked from the finder');
+      assert.ok(html.includes(`<link rel="canonical" href="${site.baseUrl}/${kind}/${preset.slug}">`));
+      assert.ok(!html.includes('noindex'));
+      assert.ok(html.includes(`<title>${preset.title.replace(/&/g, '&amp;')}</title>`));
+      assert.ok(sitemap.includes(`<loc>${site.baseUrl}/${kind}/${preset.slug}</loc>`));
+      const edit = doc(rel).querySelector('main .mount-links a');
+      assert.ok(edit, 'no link back to the finder');
+      assert.equal(edit.getAttribute('href'), `./${Finder.formatState(kind, Finder.presetState(kind, preset))}`);
+      assert.ok(!html.includes('finder.js'), 'preset pages are static');
+    });
+  }
+}
+
+test('a preset added to the config produces a page; removing it removes the page', () => {
+  const fixture = { ...site, finderPresets: { cameras: [{ slug: 'sony-under-1000g', title: 'Sony Cameras Under 1 kg', filters: { brand: 'sony', maxweight: 1000 }, sort: 'weight' }], lenses: [{ slug: 'fast-e-primes', title: 'Fast E-Mount Primes', filters: { mount: 'e', type: 'prime', maxaperture: 1.4 }, sort: 'aperture', limit: 10 }] } };
+  const presets = finderPresets(fixture, model);
+  assert.equal(presets.cameras.length, 1);
+  assert.ok(presets.cameras[0].rows.every(r => r.rec.brand === 'sony' && r.rec.weight <= 1000 && !r.rec.disc));
+  assert.equal(presets.lenses[0].rows.length, 10);
+  assert.ok(presets.lenses[0].rows.every(r => r.rec.mount === 'e' && r.rec.aperture <= 1.4));
+  const html = presetPageHTML(fixture, presets.lenses[0], presets.lenses);
+  assert.match(html, /<title>Fast E-Mount Primes<\/title>/);
+  assert.equal(new JSDOM(html).window.document.querySelectorAll('tbody tr').length, 10);
+  assert.deepEqual(finderPresets({ ...site, finderPresets: {} }, model), { cameras: [], lenses: [] });
+});
+
+test('a misconfigured preset stops the build with a message naming it', () => {
+  const run = cameras => () => finderPresets({ ...site, finderPresets: { cameras } }, model);
+  assert.throws(run([{ slug: 'x', title: 'X', filters: { colour: 'red' } }]), /"x".*unknown filter "colour"/);
+  assert.throws(run([{ slug: 'x', title: 'X', sort: 'fastest' }]), /"x".*unknown sort/);
+  assert.throws(run([{ slug: 'x', title: 'X' }, { slug: 'x', title: 'Y' }]), /"x" is used twice/);
+  assert.throws(run([{ slug: 'x', title: 'X', filters: { maxweight: 1 } }]), /"x": matches nothing/);
+  assert.throws(() => finderPresets({ ...site, finderPresets: { bodies: [] } }, model), /unknown kind "bodies"/);
+});

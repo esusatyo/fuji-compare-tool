@@ -201,21 +201,22 @@
   };
 
   // Each sort has one natural direction; missing values always sort last.
+  // `label` is the control's wording, `phrase` the same in running text.
   const SORTS = {
     cameras: [
-      { key: 'year', label: 'Newest first', field: 'year', dir: -1 },
-      { key: 'price', label: 'Price: low to high', field: 'price', dir: 1 },
-      { key: 'weight', label: 'Lightest first', field: 'weight', dir: 1 },
-      { key: 'mp', label: 'Most megapixels', field: 'mp', dir: -1 },
-      { key: 'name', label: 'Name A–Z', field: 'name', dir: 1 },
+      { key: 'year', label: 'Newest first', field: 'year', phrase: 'newest first', dir: -1 },
+      { key: 'price', label: 'Price: low to high', field: 'price', phrase: 'cheapest first', dir: 1 },
+      { key: 'weight', label: 'Lightest first', field: 'weight', phrase: 'lightest first', dir: 1 },
+      { key: 'mp', label: 'Most megapixels', field: 'mp', phrase: 'highest resolution first', dir: -1 },
+      { key: 'name', label: 'Name A–Z', field: 'name', phrase: 'in name order', dir: 1 },
     ],
     lenses: [
-      { key: 'year', label: 'Newest first', field: 'year', dir: -1 },
-      { key: 'price', label: 'Price: low to high', field: 'price', dir: 1 },
-      { key: 'weight', label: 'Lightest first', field: 'weight', dir: 1 },
-      { key: 'focal', label: 'Widest first', field: 'fmin', dir: 1 },
-      { key: 'aperture', label: 'Brightest first', field: 'aperture', dir: 1 },
-      { key: 'name', label: 'Name A–Z', field: 'name', dir: 1 },
+      { key: 'year', label: 'Newest first', field: 'year', phrase: 'newest first', dir: -1 },
+      { key: 'price', label: 'Price: low to high', field: 'price', phrase: 'cheapest first', dir: 1 },
+      { key: 'weight', label: 'Lightest first', field: 'weight', phrase: 'lightest first', dir: 1 },
+      { key: 'focal', label: 'Widest first', field: 'fmin', phrase: 'widest first', dir: 1 },
+      { key: 'aperture', label: 'Brightest first', field: 'aperture', phrase: 'brightest aperture first', dir: 1 },
+      { key: 'name', label: 'Name A–Z', field: 'name', phrase: 'in name order', dir: 1 },
     ],
   };
   const DEFAULT_SORT = 'year';

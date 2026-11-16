@@ -47,8 +47,8 @@ Owner said "execute the plan now" (2026-11-16) without answering these, so the b
 
 ## 4. Presets
 
-- [ ] 4.1 `SITE_CONFIG.finderPresets` with the six camera presets and an empty lens list; generator validation (throws on unknown key/sort, duplicate or reserved slug, empty result)
-- [ ] 4.2 Generate `/cameras/<slug>` pages, link them from `/cameras/`, sitemap; tests (rows equal `Finder.matches` over the data, order equals the sort, a preset added in a test fixture produces a page)
+- [x] 4.1 `SITE_CONFIG.finderPresets` with the six camera presets and an empty lens list; generator validation (throws on unknown key/sort, duplicate or reserved slug, empty result)
+- [x] 4.2 Generate `/cameras/<slug>` pages, link them from `/cameras/`, sitemap; tests (rows equal `Finder.matches` over the data, order equals the sort, a preset added in a test fixture produces a page)
 
 ## 5. Site wiring
 
@@ -75,3 +75,4 @@ Add dated notes here for anything a later session must know: half-finished tasks
 - 2026-11-16: cameras have a separate `lens` filter (interchangeable / fixed) and `mount` filter; a mount choice matches interchangeable bodies only, because fixed-lens cameras carry their system's mount id (X100 → `x`, Olympus TG → `mft`).
 - 2026-11-16 (3.3): measured over the DevTools protocol in headless Chrome on localhost (no network delay; external fonts/analytics made to fail fast). `/lenses/` (1,245 rows, 14,014 DOM nodes): ready at 107 ms unthrottled, 500 ms at 4× CPU slowdown, 624 ms at 6×; one filter or sort change 10 ms median unthrottled, 40 ms at 4×, 60 ms (max 91 ms) at 6×. `/cameras/` at 6×: ready 215 ms, change 15 ms. Acceptable; the "require a mount first" fallback in design.md is not needed. Real-phone check still owed by the owner.
 - 2026-11-16: `.tmp-perf.html` (a throwaway measuring page) is untracked in the worktree; deleting it was denied by the permission prompt. Never commit it; the owner can delete it.
+- 2026-11-16 (4.x): presets are `SITE_CONFIG.finderPresets` (`site-config.js`, documented in place). Six camera presets ship (limit 25 except fixed-lens compacts, all 35 incl. discontinued, and weather-sealed under $1,500, 8 today); the lens list is empty. Preset pages are static (no finder.js), ranked, and link back to the finder on the same search. 4.1 and 4.2 in one commit: validation is only meaningful with the pages it guards.
