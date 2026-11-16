@@ -1865,9 +1865,10 @@ const LENSES = {
   'sigma-18-50mm-f28': {
     name:'Sigma 18-50mm f/2.8 DC DN', manufacturer:'Sigma', line:'Contemporary', type:'Zoom',
     mount:'x', focalLength:null, focalLengthMin:18, focalLengthMax:50, focalLengthEquiv:'27-76mm',
-    maxAperture:2.8, minAperture:22, weight:290, length:76.7, diameter:65.4,
-    filterThread:58, minFocusDist:12.1, maxMagnification:0.2,
-    elements:17, groups:13, blades:7, afType:'Stepping Motor',
+    specSources: [{ url:'https://www.sigma-global.com/en/lenses/c021_18_50_28/', tier:'T1', title:'Sigma global product page', note:'verify-specs 2026-11-16: FUJIFILM X Mount rows for size and weight; 13 elements in 10 groups; magnification 1:2.8 (W)', date:'2026-11-16' }],
+    maxAperture:2.8, minAperture:22, weight:285, length:76.8, diameter:61.6,
+    filterThread:55, minFocusDist:12.1, maxMagnification:0.36,
+    elements:13, groups:10, blades:7, afType:'Stepping Motor',
     weatherSealed:false, ois:false, oisStops:null, year:2022, discontinued:false,
     imageUrl:'https://www.sigma-global.com/lenses/c021_18_50_28_product_img01.png',
     asin:'B0BMD377VK',
@@ -2320,6 +2321,7 @@ const LENSES = {
   'ttartisan-56mm-f18': {
     name:'TTArtisan AF 56mm f/1.8', manufacturer:'TTArtisan', line:'AF', type:'Prime',
     mount:'x', focalLength:56, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'85mm',
+    specSources: [{ url:'https://ttartisan.store/products/56mm', tier:'T1', title:'TTArtisan official store (specification table)', note:'verify-specs 2026-11-16: optics, blades, apertures, focus, filter and weight re-read (weight given as 233~245 g; size not published)', date:'2026-11-16' }],
     maxAperture:1.8, minAperture:16, weight:235, length:62, diameter:65,
     filterThread:52, minFocusDist:50, maxMagnification:0.1,
     elements:10, groups:9, blades:9, afType:'STM',
@@ -2334,6 +2336,7 @@ const LENSES = {
   'ttartisan-40mm-f28-macro': {
     name:'TTArtisan 40mm f/2.8 Macro', manufacturer:'TTArtisan', line:'Macro', type:'Prime',
     mount:'x', focalLength:40, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'60mm',
+    specSources: [{ url:'https://ttartisan.store/products/aps-c-40mm-f2-8-marco', tier:'T1', title:'TTArtisan official store (specification table)', note:'verify-specs 2026-11-16: optics, blades, apertures, focus, filter and weight re-read (weight given as 371~403 g)', date:'2026-11-16' }],
     maxAperture:2.8, minAperture:16, weight:371, length:76, diameter:62,
     filterThread:52, minFocusDist:17, maxMagnification:1.0,
     elements:8, groups:7, blades:11, afType:'Manual',
@@ -2348,9 +2351,10 @@ const LENSES = {
   'ttartisan-17mm-f14': {
     name:'TTArtisan 17mm f/1.4', manufacturer:'TTArtisan', line:'MF', type:'Prime',
     mount:'x', focalLength:17, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'26mm',
-    maxAperture:1.4, minAperture:16, weight:247, length:62, diameter:54,
+    specSources: [{ url:'https://ttartisan.store/products/ttartisan-17mm-f1-4-apsc-lens', tier:'T1', title:'TTArtisan official store (specification table)', note:'verify-specs 2026-11-16: optics, blades, apertures, focus, filter and weight re-read', date:'2026-11-16' }],
+    maxAperture:1.4, minAperture:16, weight:248, length:62, diameter:54,
     filterThread:40.5, minFocusDist:20, maxMagnification:0.1,
-    elements:9, groups:8, blades:10, afType:'Manual',
+    elements:9, groups:8, blades:8, afType:'Manual',
     weatherSealed:false, ois:false, oisStops:null, year:2021, discontinued:false,
     imageUrl:'https://media.foto-erhardt.de/images/product_images/original_images/430/ttartisan-17mm-f14-fuji-x-mount-164457237043050304.jpg',
     asin:'B08ZND8HZ6',
@@ -2362,6 +2366,7 @@ const LENSES = {
   'ttartisan-23mm-f14': {
     name:'TTArtisan 23mm f/1.4', manufacturer:'TTArtisan', line:'MF', type:'Prime',
     mount:'x', focalLength:23, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'35mm',
+    specSources: [{ url:'https://ttartisan.store/products/aps-c-23mm-f1-4-black', tier:'T1', title:'TTArtisan official store (specification table)', note:'verify-specs 2026-11-16: optics, blades, apertures, focus, filter and weight re-read (weight given as 222~250 g)', date:'2026-11-16' }],
     maxAperture:1.4, minAperture:16, weight:230, length:40.5, diameter:60,
     filterThread:43, minFocusDist:20, maxMagnification:0.1,
     elements:8, groups:6, blades:10, afType:'Manual',
@@ -2376,6 +2381,7 @@ const LENSES = {
   'ttartisan-50mm-f12': {
     name:'TTArtisan 50mm f/1.2', manufacturer:'TTArtisan', line:'MF', type:'Prime',
     mount:'x', focalLength:50, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'76mm',
+    specSources: [{ url:'https://ttartisan.store/products/ttartisan-50mm-f1-2', tier:'T1', title:'TTArtisan official store (specification table)', note:'verify-specs 2026-11-16: optics, blades, apertures, focus, filter and weight re-read', date:'2026-11-16' }],
     maxAperture:1.2, minAperture:16, weight:336, length:60, diameter:62,
     filterThread:52, minFocusDist:50, maxMagnification:0.1,
     elements:7, groups:5, blades:10, afType:'Manual',
@@ -2391,6 +2397,7 @@ const LENSES = {
     // 2026-10-22: length/diameter checked against TTArtisan's per-mount size diagram (X column 74mm long x 67mm diameter (diameter was 65)); was length 74 / diameter 65.
     name:'TTArtisan AF 75mm f/2', manufacturer:'TTArtisan', line:'AF', type:'Prime',
     mount:'x', focalLength:75, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'114mm',
+    specSources: [{ url:'https://ttartisan.store/products/ttartisan-af-75mm-f2', tier:'T1', title:'TTArtisan official store (specification table)', note:'verify-specs 2026-11-16: optics, blades, apertures, focus, filter and weight re-read (weight given as 326-340 g)', date:'2026-11-16' }],
     maxAperture:2.0, minAperture:16, weight:326, length:74, diameter:67,
     filterThread:62, minFocusDist:75, maxMagnification:0.1,
     elements:10, groups:7, blades:9, afType:'STM',
@@ -3189,7 +3196,8 @@ const LENSES = {
   'laowa-9mm-f28': {
     name:'Laowa 9mm f/2.8 Zero-D', manufacturer:'Laowa', line:'Zero-D', type:'Prime',
     mount:'x', focalLength:9, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'14mm',
-    maxAperture:2.8, minAperture:22, weight:215, length:60, diameter:53,
+    specSources: [{ url:'https://www.venuslens.net/product/9mm/', tier:'T1', title:'Laowa (Venus Optics) official product page', note:'verify-specs 2026-11-16: 60 x 53 mm is diameter x length (stored values were swapped)', date:'2026-11-16' }],
+    maxAperture:2.8, minAperture:22, weight:215, length:53, diameter:60,
     filterThread:49, minFocusDist:12, maxMagnification:0.13,
     elements:15, groups:10, blades:7, afType:'Manual',
     weatherSealed:false, ois:false, oisStops:null, year:2018, discontinued:false,
@@ -3204,6 +3212,7 @@ const LENSES = {
   'laowa-65mm-f28-macro': {
     name:'Laowa 65mm f/2.8 2X Ultra Macro APO', manufacturer:'Laowa', line:'Ultra Macro APO', type:'Prime',
     mount:'x', focalLength:65, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'98mm',
+    specSources: [{ url:'https://www.venuslens.net/product/laowa-65mm-f-2-8-2x-ultra-macro-apo/', tier:'T1', title:'Laowa (Venus Optics) official product page', note:'verify-specs 2026-11-16: optics, blades, apertures, focus, filter and weight re-read', date:'2026-11-16' }],
     maxAperture:2.8, minAperture:22, weight:335, length:100, diameter:57,
     filterThread:52, minFocusDist:17, maxMagnification:2.0,
     elements:14, groups:10, blades:9, afType:'Manual',
@@ -3220,6 +3229,7 @@ const LENSES = {
     // 2026-10-21: length/diameter were swapped; B&H X listing (1542241) gives 45.2 x 25.5mm diameter x length
     name:'Laowa 4mm f/2.8 Circular Fisheye', manufacturer:'Laowa', line:'Fisheye', type:'Prime',
     mount:'x', focalLength:4, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'6mm',
+    specSources: [{ url:'https://www.venuslens.net/product/laowa-4mm-f-2-8-mft/', tier:'T1', title:'Laowa (Venus Optics) official product page', note:'verify-specs 2026-11-16: optics, blades, apertures, focus, filter and weight re-read', date:'2026-11-16' }],
     maxAperture:2.8, minAperture:16, weight:135, length:25.5, diameter:45.2,
     filterThread:null, minFocusDist:8, maxMagnification:0.11,
     elements:7, groups:6, blades:7, afType:'Manual',
