@@ -43,7 +43,7 @@ Owner said "execute the plan now" (2026-11-16) without answering these, so the b
 
 - [x] 3.1 Generator: `lenses/index.html` from `KitBuilder.catalogue()`, each lens once, linked to its brand page; tests as 2.1
 - [x] 3.2 Lens controls (mount, maker, type, focal range, aperture, filter thread, autofocus); jsdom tests
-- [ ] 3.3 Measure the page's size and load on a throttled profile; record the numbers in the PR
+- [x] 3.3 Measure the page's size and load on a throttled profile; record the numbers in the PR
 
 ## 4. Presets
 
@@ -73,3 +73,5 @@ Add dated notes here for anything a later session must know: half-finished tasks
 - 2026-11-16: rows carry `data-id` plus one packed `data-f` attribute (field order in `Finder.FIELDS`), the name comes from the link text, and the camera compare checkboxes are added by the script. Sizes: `/cameras/` 101 KB (15 KB gzip), `/lenses/` 488 KB (66 KB gzip), above the 300 KB estimate.
 - 2026-11-16: "Viewfinder" = `evfType` set, or a Leica M's `focusingSystem: 'Rangefinder'`. Data problem found, not fixed here (needs owner approval per verify-specs): Fujifilm X-T100 and X-T200 have no `evfType` although both have an EVF, so the finder lists them as having no viewfinder.
 - 2026-11-16: cameras have a separate `lens` filter (interchangeable / fixed) and `mount` filter; a mount choice matches interchangeable bodies only, because fixed-lens cameras carry their system's mount id (X100 → `x`, Olympus TG → `mft`).
+- 2026-11-16 (3.3): measured over the DevTools protocol in headless Chrome on localhost (no network delay; external fonts/analytics made to fail fast). `/lenses/` (1,245 rows, 14,014 DOM nodes): ready at 107 ms unthrottled, 500 ms at 4× CPU slowdown, 624 ms at 6×; one filter or sort change 10 ms median unthrottled, 40 ms at 4×, 60 ms (max 91 ms) at 6×. `/cameras/` at 6×: ready 215 ms, change 15 ms. Acceptable; the "require a mount first" fallback in design.md is not needed. Real-phone check still owed by the owner.
+- 2026-11-16: `.tmp-perf.html` (a throwaway measuring page) is untracked in the worktree; deleting it was denied by the permission prompt. Never commit it; the owner can delete it.
