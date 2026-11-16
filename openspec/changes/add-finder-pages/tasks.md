@@ -33,16 +33,16 @@ Owner said "execute the plan now" (2026-11-16) without answering these, so the b
 ## 2. Camera finder
 
 - [x] 2.1 Generator: `cameras/index.html` with every camera as a row, controls, head, canonical, sitemap entry, stale-file removal; `tests/data/finder-pages.test.js` (every camera once, links resolve, attributes match the data)
-- [ ] 2.2a Browser side of `finder.js`: filtering, sorting, result count, empty state, discontinued switch; `tests/logic/finder-page.test.js` (jsdom)
-- [ ] 2.2b URL state (read on load and on hashchange, written on change)
-- [ ] 2.2c Currency selector, price column, and the "hidden: no price" note
-- [ ] 2.3 "Compare these" for 2–4 ticked rows → `/compare/#…`
+- [x] 2.2a Browser side of `finder.js`: filtering, sorting, result count, empty state, discontinued switch; `tests/logic/finder-page.test.js` (jsdom)
+- [x] 2.2b URL state (read on load and on hashchange, written on change)
+- [x] 2.2c Currency selector, price column, and the "hidden: no price" note
+- [x] 2.3 "Compare these" for 2–4 ticked rows → `/compare/#…`
 - [ ] 2.4 Styles in `engine.css` (after the main RESPONSIVE block for phone rules), both themes; phone layout with a collapsible filter panel
 
 ## 3. Lens finder
 
 - [x] 3.1 Generator: `lenses/index.html` from `KitBuilder.catalogue()`, each lens once, linked to its brand page; tests as 2.1
-- [ ] 3.2 Lens controls (mount, maker, type, focal range, aperture, filter thread, autofocus); jsdom tests
+- [x] 3.2 Lens controls (mount, maker, type, focal range, aperture, filter thread, autofocus); jsdom tests
 - [ ] 3.3 Measure the page's size and load on a throttled profile; record the numbers in the PR
 
 ## 4. Presets
