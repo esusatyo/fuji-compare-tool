@@ -2415,6 +2415,7 @@ const LENSES = {
   'laowa-90mm-f28-macro-l': {
     name:'Laowa 90mm f/2.8 2x Ultra Macro APO', manufacturer:'Laowa', line:'Ultra Macro APO', type:'Prime',
     mount:'l', focalLength:90, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'90mm',
+    specSources: [{ url:'https://www.venuslens.net/product/laowa-90mm-f-2-8-2x-macro-apo/', tier:'T1', title:'Laowa (Venus Optics) official product page', note:'verify-specs 2026-11-16: optics, blades, aperture, focus, magnification, filter, size and weight re-read (one figure for all mounts)', date:'2026-11-16' }],
     maxAperture:2.8, minAperture:22, weight:619, length:120, diameter:74,
     filterThread:67, minFocusDist:20.5, maxMagnification:2.0,
     elements:13, groups:10, blades:13, afType:'Manual',
@@ -2428,8 +2429,9 @@ const LENSES = {
   'laowa-15mm-f2-l': {
     name:'Laowa 15mm f/2 Zero-D', manufacturer:'Laowa', line:'Zero-D', type:'Prime',
     mount:'l', focalLength:15, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'15mm',
+    specSources: [{ url:'https://www.venuslens.net/product/laowa-15mm-f2/', tier:'T1', title:'Laowa (Venus Optics) official product page', note:'verify-specs 2026-11-16: max magnification 1:4; page gives 77.2 x 82 mm, stored diameter 66 kept (open question)', date:'2026-11-16' }],
     maxAperture:2.0, minAperture:22, weight:500, length:82, diameter:66,
-    filterThread:72, minFocusDist:15, maxMagnification:0.1,
+    filterThread:72, minFocusDist:15, maxMagnification:0.25,
     elements:12, groups:9, blades:5, afType:'Manual',
     weatherSealed:false, ois:false, oisStops:null, year:2021, discontinued:false,
     imageUrl:'https://laowa.com.au/wp-content/uploads/2017/12/15-2-4-768x529.jpg',
@@ -2448,6 +2450,7 @@ const LENSES = {
   'laowa-180mm-f45-macro-l': {
     name:'Laowa 180mm f/4.5 1.5x Ultra Macro APO', manufacturer:'Laowa', line:'Ultra Macro APO', type:'Prime',
     mount:'l', focalLength:180, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'180mm',
+    specSources: [{ url:'https://www.venuslens.net/product/laowa-180mm-f-4-5-1-5x-ultra-macro-apo/', tier:'T1', title:'Laowa (Venus Optics) official product page', note:'verify-specs 2026-11-16: optics, blades, aperture (MF version F4.5-32), focus, magnification, filter re-read; size and weight published only for Canon EF and Sony E, stored L-Mount figures kept', date:'2026-11-16' }],
     maxAperture:4.5, minAperture:32, weight:499, length:134, diameter:67.6,
     filterThread:62, minFocusDist:30, maxMagnification:1.5,
     elements:12, groups:9, blades:9, afType:'Manual',
@@ -2485,6 +2488,7 @@ const LENSES = {
   'laowa-17mm-f4-tilt-shift-l': {
     name:'Laowa 17mm f/4 Zero-D Tilt-Shift', manufacturer:'Laowa', line:'Zero-D', type:'Prime',
     mount:'l', focalLength:17, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'17mm',
+    specSources: [{ url:'https://www.venuslens.net/product/laowa-17mm-f-4-zero-d-tilt-shift-shift/', tier:'T1', title:'Laowa (Venus Optics) official product page', note:'verify-specs 2026-11-16: optics, blades, aperture, focus, size and weight re-read', date:'2026-11-16' }],
     maxAperture:4.0, minAperture:22, weight:810, length:111, diameter:93,
     filterThread:86, minFocusDist:25, maxMagnification:0.131,
     elements:18, groups:12, blades:14, afType:'Manual',
@@ -2910,6 +2914,7 @@ const LENSES = {
   'samyang-14-24mm-f28-l': {
     name:'Samyang AF 14-24mm F2.8 L', manufacturer:'Samyang', line:'AF', type:'Zoom',
     mount:'l', focalLength:null, focalLengthMin:14, focalLengthMax:24, focalLengthEquiv:'14-24mm',
+    specSources: [{ url:'https://www.lksamyang.com/en/products/131/af-14-24mm-f28-l', tier:'T1', title:'Samyang official product page (L mount)', note:'verify-specs 2026-11-16: optics, focus, magnification, filter, size, weight and weather sealing re-read', date:'2026-11-16' }],
     maxAperture:2.8, minAperture:22, weight:441, length:96.6, diameter:84,
     filterThread:77, minFocusDist:18, maxMagnification:0.26,
     elements:15, groups:11, blades:9, afType:'Linear STM',
@@ -3917,8 +3922,9 @@ const LENSES = {
   'voigtlander-nokton-25mm-f095': {
     name:'Voigtländer Nokton 25mm f/0.95', manufacturer:'Voigtländer', line:'Nokton', type:'Prime',
     mount:'mft', focalLength:25, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'50mm',
+    specSources: [{ url:'https://www.cosina.co.jp/voigtlander/en/micro-four-thirds/nokton-25mm-f0-95-type-ii/', tier:'T1', title:'Cosina Voigtländer official specifications', note:'verify-specs 2026-11-16: max reproduction ratio 1:3.9', date:'2026-11-16' }],
     maxAperture:0.95, minAperture:16, weight:435, length:70, diameter:60.6,
-    filterThread:52, minFocusDist:17, maxMagnification:0.11,
+    filterThread:52, minFocusDist:17, maxMagnification:0.26,
     elements:11, groups:8, blades:10, afType:'Manual',
     weatherSealed:false, ois:false, oisStops:null, year:2017, discontinued:false,
     // 2026-09-06: repointed off voigtlaender.de — that whole domain sends an
@@ -3936,7 +3942,8 @@ const LENSES = {
   'laowa-7-5mm-f2-mft': {
     name:'Laowa 7.5mm f/2 MFT', manufacturer:'Laowa', line:'Zero-D', type:'Prime',
     mount:'mft', focalLength:7.5, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'15mm',
-    maxAperture:2.0, minAperture:22, weight:170, length:55, diameter:55,
+    specSources: [{ url:'https://www.venuslens.net/product/laowa-7-5mm-f2/', tier:'T1', title:'Laowa (Venus Optics) official product page', note:'verify-specs 2026-11-16: standard version, about 50 x 55 mm (diameter x length)', date:'2026-11-16' }],
+    maxAperture:2.0, minAperture:22, weight:170, length:55, diameter:50,
     filterThread:46, minFocusDist:12, maxMagnification:0.11,
     elements:13, groups:9, blades:7, afType:'Manual',
     weatherSealed:false, ois:false, oisStops:null, year:2017, discontinued:false,
@@ -3950,6 +3957,7 @@ const LENSES = {
   'laowa-90mm-f28-macro-mft': {
     name:'Laowa 90mm f/2.8 2x Ultra Macro APO', manufacturer:'Laowa', line:'Ultra Macro APO', type:'Prime',
     mount:'mft', focalLength:90, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'180mm',
+    specSources: [{ url:'https://www.venuslens.net/product/laowa-90mm-f-2-8-2x-macro-apo/', tier:'T1', title:'Laowa (Venus Optics) official product page', note:'verify-specs 2026-11-16: optics, blades, aperture, focus, magnification, filter, size and weight re-read (one figure for all mounts)', date:'2026-11-16' }],
     maxAperture:2.8, minAperture:22, weight:619, length:120, diameter:74,
     filterThread:67, minFocusDist:20.5, maxMagnification:2.0,
     elements:13, groups:10, blades:13, afType:'Manual',

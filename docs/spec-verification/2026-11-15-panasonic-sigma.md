@@ -9,7 +9,7 @@ Scope commands:
 - [x] Batch 1: Sigma lenses (35 L-Mount in `sigma/` and `panasonic/`, plus 3 Sigma MFT in `panasonic/`), 5 Sigma cameras, 24 Panasonic cameras
 - [x] Batch 2: Panasonic first-party lenses (LUMIX S, LUMIX G, Leica DG): 50, mirrored into the `leica/` (21) and `olympus/` (29) copies
 - [x] Batch 3: OM System lenses (29 of 33 cited in `panasonic/`, same 29 in `olympus/`; fixes mirrored). Source `explore.omsystem.com/us/en/<slug>`
-- [ ] Batch 4: Laowa, Viltrox, Samyang, Voigtländer in `panasonic/` (9; Viltrox likely unverifiable)
+- [x] Batch 4: Laowa, Samyang, Voigtländer (8 cited; Viltrox AF 28mm F4.5 left unverifiable: specs only in images)
 
 ## Sources
 
@@ -110,6 +110,18 @@ The page's "Maximum image magnification" gives the Micro Four Thirds figure firs
 Not cited: 17mm f/1.2 PRO, 45mm f/1.8 and 14-42mm III (their pages carry no spec table), and the discontinued 25mm f/1.8 (no product page).
 
 Open: 40-150mm f/4 PRO, where the page says 19 elements / 9 groups. The stored 15 is kept; this looks like a page error and needs a second source.
+
+## Batch 4 — Laowa / Samyang / Voigtländer (T1 maker pages)
+
+| item | field | stored → source |
+|---|---|---|
+| laowa-15mm-f2-l (panasonic, leica) | maxMagnification | 0.1 → 0.25 (1:4) |
+| laowa-7-5mm-f2-mft (panasonic, olympus) | diameter | 55 → 50 (standard version, about 50 x 55 mm) |
+| voigtlander-nokton-25mm-f095 (panasonic, olympus) | maxMagnification | 0.11 → 0.26 (1:3.9) |
+
+Checked clean: Laowa 90mm 2x macro (L and MFT), 17mm tilt-shift, 180mm 1.5x macro (L-Mount size and weight not published; stored values kept), Samyang AF 14-24mm F2.8 L.
+
+Open: laowa-15mm-f2-l diameter. The Laowa page says 77.2 x 82 mm; the stored 66 was kept because the gap is large and the Laowa page may describe a different mount build. A second source is needed.
 
 ## Open questions (not changed)
 

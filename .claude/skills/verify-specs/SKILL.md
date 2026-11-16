@@ -118,6 +118,8 @@ exactly what this skill hunts).
 
 Traps already paid for — check these before trusting a page:
 
+- **The same lens in several brand files must agree** (`tests/data/shared-mount.test.js`): a fix to a Sigma, Panasonic, Laowa or OM lens in one brand file has to be mirrored into every other file that holds that slug for the same mount (e.g. `panasonic/` ↔ `leica/`, `sigma/`, `olympus/`). (2026-11-16)
+
 - **Combined spec tables.** A third-party page listing "Sony E / Nikon Z /
   Canon RF / L-Mount" often prints *one* set of figures, usually one mount's.
   Weight and length genuinely differ by mount (L-Mount barrels run ~2 mm
@@ -156,9 +158,11 @@ escape in the JS you send, or the tool rejects the call.
 | Canon lenses | `canon.co.uk/lenses/<slug>/specifications/`, slugs from `/sitemap/sitemap-product-detail-page-uk-en.xml` | rows `li.product-specification-detail__list-line`; **remove `<sup>` footnotes**, because in plain text they run into the values; zooms list AF and MF figures |
 | Nikon | summary on `imaging.nikon.com/imaging/lineup/{mirrorless,lens/z-mount}/<slug>/`; full sheet (battery, Bluetooth) on the Nikon USA product page | battery has Energy-saving ON/OFF (use OFF); "with tripod collar" weights and "with built-in TC" magnifications are not the stored convention |
 | Sony | `electronics.sony.com/.../p/<model>`: the full spec sheet is embedded JSON (`"featureValues":[{"value":…}],"name":…`); older bodies on `sony.com/electronics/support/<series>/<model>/specifications` | headline depth (not grip-to-monitor) is the stored convention; lens minimum focus is in inches with no AF/MF label, so don't compare it from there |
-| Sigma | `sigma-global.com/en/lenses/<code>/` | one page lists every mount: read the `<Mount name>` rows for size and weight |
+| Sigma | `sigma-global.com/en/lenses/<code>/`; cameras `/en/cameras/<slug>/` | one page lists every mount: read the `<Mount name>` rows for size and weight (MFT row is "Micro Four Thirds mount"); a "mount with dust and splash resistant structure" is a gasket only, so `weatherSealed` = false |
+| Panasonic | `panasonic.jp/dc/products/<model>/spec.html` (cameras `DC-…`, lenses `S-…`/`H-…`) | US shop and UK/AU/SG pages show only a summary. Japanese model codes differ for some bodies (G97 = DC-G99D, G95 = DC-G99, GX9 = DC-GX7MK3, G100 = DC-G100V, G100D = DC-G100DV). Bodies with CFexpress/XQD + SD list two CIPA sets: use the SD set. Lens magnification: the first figure is native, the bracketed one is 35mm-equivalent. The server is slow (about 8 s per page) |
+| OM System | `explore.omsystem.com/us/en/<slug>` | "Maximum image magnification" gives the MFT figure, then the 35mm one; some pages give only the 35mm figure (halve it) or none. Weights may include the tripod foot. A few pages have no spec table |
 | Tamron | `tamron.com/global/consumer/lenses/<model>/spec.html` or `tamron-americas.com/product/<slug>/` "Technical Specifications" | per-mount length and weight in parentheses |
-| Laowa | `venuslens.net/product/<slug>/` | one figure for all mounts (owner-accepted) |
+| Laowa | `venuslens.net/product/<slug>/` | one figure for all mounts (owner-accepted); search `/?s=<focal>&post_type=product` when a slug 404s |
 | Voigtländer | `cosina.co.jp/voigtlander/en/<mount>/<slug>/` | some pages are script-rendered shells: unverifiable |
 | Viltrox, 7Artisans | specs only in images / multi-lens comparison tables | treat as unverifiable rather than map columns by guess |
 | Yongnuo, Samyang US | yongnuo.eu, samyangus.com are distributors | not T1; use the maker's own site |
