@@ -571,8 +571,14 @@
     const bar = doc.getElementById('finder-compare');
     const barText = doc.getElementById('finder-compare-text');
     const barLink = doc.getElementById('finder-compare-link');
+    // Ticked cameras in the order they were ticked (the comparison's slot
+    // order), leaving out any a later filter has hidden.
+    let tickOrder = [];
     function picked() {
-      return rows.filter(r => !r.tr.hidden && r.tr.querySelector('input[name="pick"]:checked')).map(r => r.rec.id);
+      return tickOrder.filter(id => {
+        const r = byId.get(id);
+        return r && !r.tr.hidden && r.tr.querySelector('input[name="pick"]:checked');
+      });
     }
     function updatePicks() {
       if (!bar) return;
@@ -603,7 +609,12 @@
         const th = r.tr.querySelector('th');
         th.insertBefore(box, th.firstChild);
       }
-      tbody.addEventListener('change', e => { if (e.target.name === 'pick') updatePicks(); });
+      tbody.addEventListener('change', e => {
+        if (e.target.name !== 'pick') return;
+        tickOrder = tickOrder.filter(id => id !== e.target.value);
+        if (e.target.checked) tickOrder.push(e.target.value);
+        updatePicks();
+      });
       barLink.addEventListener('click', e => {
         const n = picked().length;
         if (n < COMPARE_MIN) { e.preventDefault(); return; }
@@ -612,6 +623,7 @@
       const reset = doc.getElementById('finder-compare-clear');
       if (reset) reset.addEventListener('click', () => {
         for (const box of tbody.querySelectorAll('input[name="pick"]:checked')) box.checked = false;
+        tickOrder = [];
         updatePicks();
       });
     }

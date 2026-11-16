@@ -179,3 +179,19 @@ test('on a phone the filter panel starts folded', async () => {
   assert.equal((await load('cameras', { width: 390 })).doc.getElementById('finder-panel').open, false);
   assert.equal((await load('cameras', { width: 1200 })).doc.getElementById('finder-panel').open, true);
 });
+
+test('the compare link opens the comparison page on exactly the ticked cameras', async () => {
+  const { loadCompare } = require('../helpers/load-compare');
+  const { slotValue } = require('../helpers/dom');
+  const p = await load('cameras', { hash: '#disc=1' });
+  // Cameras from three brands, including a discontinued one.
+  const pickIds = ['fujifilm:x-t5', 'sony:a7-iii', 'leica:m11'];
+  for (const id of pickIds) {
+    const box = p.rows().find(tr => tr.dataset.id === id).querySelector('input[name="pick"]');
+    box.checked = true;
+    box.dispatchEvent(new p.window.Event('change', { bubbles: true }));
+  }
+  const href = p.doc.getElementById('finder-compare-link').getAttribute('href');
+  const { window } = loadCompare({ hash: href.slice(href.indexOf('#')) });
+  assert.deepEqual([0, 1, 2].map(i => slotValue(window, i)), pickIds);
+});
