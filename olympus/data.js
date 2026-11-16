@@ -1169,7 +1169,7 @@ const LENSES = {
   'omsystem-12-40mm-f28-pro': {
     name:'OM System M.Zuiko 12-40mm f/2.8 PRO II', manufacturer:'OM System', line:'PRO', type:'Zoom',
     mount:'mft', focalLength:null, focalLengthMin:12, focalLengthMax:40, focalLengthEquiv:'24-80mm',
-    maxAperture:2.8, minAperture:22, weight:382, length:84, diameter:70,
+    maxAperture:2.8, minAperture:22, weight:382, length:84, diameter:69.9,
     filterThread:62, minFocusDist:20, maxMagnification:0.3,
     elements:14, groups:9, blades:7, afType:'Stepping Motor',
     weatherSealed:true, ois:false, oisStops:null, year:2022, discontinued:false,
@@ -1197,7 +1197,7 @@ const LENSES = {
   'omsystem-17mm-f18': {
     name:'OM System M.Zuiko 17mm f/1.8 II', manufacturer:'OM System', line:'Premium', type:'Prime',
     mount:'mft', focalLength:17, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'34mm',
-    maxAperture:1.8, minAperture:22, weight:112, length:38, diameter:58,
+    maxAperture:1.8, minAperture:22, weight:112, length:37.6, diameter:57.6,
     filterThread:46, minFocusDist:25, maxMagnification:0.08,
     elements:9, groups:6, blades:7, afType:'Stepping Motor',
     weatherSealed:true, ois:false, oisStops:null, year:2024, discontinued:false,
@@ -1216,8 +1216,8 @@ const LENSES = {
   'omsystem-40-150mm-f4-pro': {
     name:'OM System M.Zuiko 40-150mm f/4 PRO', manufacturer:'OM System', line:'PRO', type:'Zoom',
     mount:'mft', focalLength:null, focalLengthMin:40, focalLengthMax:150, focalLengthEquiv:'80-300mm',
-    maxAperture:4.0, minAperture:22, weight:382, length:99, diameter:69,
-    filterThread:62, minFocusDist:70, maxMagnification:0.2,
+    maxAperture:4.0, minAperture:22, weight:382, length:99.4, diameter:68.9,
+    filterThread:62, minFocusDist:70, maxMagnification:0.21,
     elements:15, groups:9, blades:7, afType:'Stepping Motor',
     weatherSealed:true, ois:false, oisStops:null, year:2023, discontinued:false,
     imageUrl:'https://upload.wikimedia.org/wikipedia/commons/thumb/7/7f/OM_System_M.Zuiko_Digital_ED_40-150mm_F4_Pro_(51925455226).jpg/500px-OM_System_M.Zuiko_Digital_ED_40-150mm_F4_Pro_(51925455226).jpg',
@@ -1230,7 +1230,7 @@ const LENSES = {
   'omsystem-12-100mm-f4-pro': {
     name:'OM System M.Zuiko 12-100mm f/4 IS PRO', manufacturer:'OM System', line:'PRO', type:'Zoom',
     mount:'mft', focalLength:null, focalLengthMin:12, focalLengthMax:100, focalLengthEquiv:'24-200mm',
-    maxAperture:4.0, minAperture:22, weight:561, length:117, diameter:78,
+    maxAperture:4.0, minAperture:22, weight:561, length:116.5, diameter:77.5,
     filterThread:72, minFocusDist:15, maxMagnification:0.3,
     elements:17, groups:11, blades:7, afType:'Stepping Motor',
     weatherSealed:true, ois:true, oisStops:6.5, year:2016, discontinued:false,
@@ -1344,8 +1344,8 @@ const LENSES = {
   'omsystem-7-14mm-f28-pro': {
     name:'OM System M.Zuiko 7-14mm f/2.8 PRO', manufacturer:'OM System', line:'PRO', type:'Zoom',
     mount:'mft', focalLength:null, focalLengthMin:7, focalLengthMax:14, focalLengthEquiv:'14-28mm',
-    maxAperture:2.8, minAperture:22, weight:534, length:106, diameter:79,
-    filterThread:null, minFocusDist:20, maxMagnification:0.12,
+    maxAperture:2.8, minAperture:22, weight:534, length:105.8, diameter:78.9,
+    filterThread:null, minFocusDist:20, maxMagnification:0.11,
     elements:14, groups:11, blades:7, afType:'Stepping Motor',
     weatherSealed:true, ois:false, oisStops:null, year:2015, discontinued:false,
     imageUrl:'https://nala.explore.omsystem.com/media/catalog/product/7/-/7-14mm_f2.8_pro-om.webp',
@@ -1358,7 +1358,7 @@ const LENSES = {
   'omsystem-8mm-f18-fisheye-pro': {
     name:'OM System M.Zuiko 8mm f/1.8 Fisheye PRO', manufacturer:'OM System', line:'PRO', type:'Prime',
     mount:'mft', focalLength:8, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'16mm',
-    maxAperture:1.8, minAperture:22, weight:314, length:80, diameter:62,
+    maxAperture:1.8, minAperture:22, weight:315, length:80, diameter:62,
     filterThread:null, minFocusDist:12, maxMagnification:0.2,
     elements:17, groups:15, blades:7, afType:'Stepping Motor',
     weatherSealed:true, ois:false, oisStops:null, year:2015, discontinued:false,
@@ -1372,8 +1372,8 @@ const LENSES = {
   'omsystem-8-25mm-f4-pro': {
     name:'OM System M.Zuiko 8-25mm f/4 PRO', manufacturer:'OM System', line:'PRO', type:'Zoom',
     mount:'mft', focalLength:null, focalLengthMin:8, focalLengthMax:25, focalLengthEquiv:'16-50mm',
-    maxAperture:4.0, minAperture:22, weight:411, length:89, diameter:77,
-    filterThread:72, minFocusDist:23, maxMagnification:0.14,
+    maxAperture:4.0, minAperture:22, weight:411, length:88.5, diameter:77,
+    filterThread:72, minFocusDist:23, maxMagnification:0.21,
     elements:16, groups:10, blades:7, afType:'Linear Motor',
     weatherSealed:true, ois:false, oisStops:null, year:2021, discontinued:false,
     imageUrl:'https://nala.explore.omsystem.com/media/catalog/product/8/-/8-25mm_f4.0_pro-om_-_main.webp',
@@ -1386,7 +1386,7 @@ const LENSES = {
   'omsystem-20mm-f14-pro': {
     name:'OM System M.Zuiko 20mm f/1.4 PRO', manufacturer:'OM System', line:'PRO', type:'Prime',
     mount:'mft', focalLength:20, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'40mm',
-    maxAperture:1.4, minAperture:22, weight:247, length:62, diameter:63.4,
+    maxAperture:1.4, minAperture:16, weight:247, length:61.7, diameter:63.4,
     filterThread:58, minFocusDist:25, maxMagnification:0.11,
     elements:11, groups:10, blades:9, afType:'Stepping Motor',
     weatherSealed:true, ois:false, oisStops:null, year:2021, discontinued:false,
@@ -1400,7 +1400,7 @@ const LENSES = {
   'omsystem-40-150mm-f28-pro': {
     name:'OM System M.Zuiko 40-150mm f/2.8 PRO', manufacturer:'OM System', line:'PRO', type:'Zoom',
     mount:'mft', focalLength:null, focalLengthMin:40, focalLengthMax:150, focalLengthEquiv:'80-300mm',
-    maxAperture:2.8, minAperture:22, weight:880, length:160, diameter:79,
+    maxAperture:2.8, minAperture:22, weight:760, length:160, diameter:79.4,
     filterThread:72, minFocusDist:70, maxMagnification:0.21,
     elements:16, groups:10, blades:9, afType:'Dual VCM (MSC)',
     weatherSealed:true, ois:false, oisStops:null, year:2014, discontinued:false,
@@ -1440,7 +1440,7 @@ const LENSES = {
     name:'OM System M.Zuiko 300mm f/4 IS PRO', manufacturer:'OM System', line:'PRO', type:'Prime',
     mount:'mft', focalLength:300, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'600mm',
     maxAperture:4.0, minAperture:22, weight:1270, length:227, diameter:92.5,
-    filterThread:77, minFocusDist:140, maxMagnification:0.48,
+    filterThread:77, minFocusDist:140, maxMagnification:0.24,
     elements:17, groups:10, blades:9, afType:'MSC',
     weatherSealed:true, ois:true, oisStops:6.0, year:2016, discontinued:false,
     imageUrl:'https://nala.explore.omsystem.com/media/catalog/product/3/0/300mm_f4.0_is_pro-oly_1.webp',
@@ -1470,9 +1470,9 @@ const LENSES = {
   'omsystem-150-400mm-f45-tc125x-is-pro': {
     name:'OM System M.Zuiko 150-400mm f/4.5 TC1.25x IS PRO', manufacturer:'OM System', line:'PRO', type:'Zoom',
     mount:'mft', focalLength:null, focalLengthMin:150, focalLengthMax:400, focalLengthEquiv:'300-800mm',
-    maxAperture:4.5, minAperture:22, weight:1875, length:314, diameter:116,
+    maxAperture:4.5, minAperture:22, weight:1875, length:314.3, diameter:115.8,
     filterThread:95, minFocusDist:130, maxMagnification:0.29,
-    elements:28, groups:17, blades:9, afType:'Linear Motor (MSC)',
+    elements:28, groups:18, blades:9, afType:'Linear Motor (MSC)',
     weatherSealed:true, ois:true, oisStops:8.0, year:2022, discontinued:false,
     // Built-in 1.25x teleconverter (native 187.5-500mm / 375-1000mm equiv
     // when engaged) has no dedicated schema field -- stored as the base
@@ -1500,7 +1500,7 @@ const LENSES = {
     name:'OM System M.Zuiko 30mm f/3.5 Macro', manufacturer:'OM System', line:'Macro', type:'Prime',
     mount:'mft', focalLength:30, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'60mm',
     maxAperture:3.5, minAperture:22, weight:128, length:60, diameter:57,
-    filterThread:46, minFocusDist:10, maxMagnification:1.25,
+    filterThread:46, minFocusDist:9.5, maxMagnification:1.25,
     elements:7, groups:6, blades:7, afType:'MSC',
     weatherSealed:false, ois:false, oisStops:null, year:2016, discontinued:false,
     imageUrl:'https://nala.explore.omsystem.com/media/catalog/product/3/0/30mm_f3.5_macro-om_2.webp',
@@ -1577,8 +1577,8 @@ const LENSES = {
   'omsystem-12-200mm-f35-63': {
     name:'OM System M.Zuiko 12-200mm f/3.5-6.3', manufacturer:'OM System', line:'M.Zuiko', type:'Zoom',
     mount:'mft', focalLength:null, focalLengthMin:12, focalLengthMax:200, focalLengthEquiv:'24-400mm',
-    maxAperture:3.5, minAperture:22, weight:455, length:100, diameter:78,
-    filterThread:72, minFocusDist:22, maxMagnification:0.46,
+    maxAperture:3.5, minAperture:22, weight:455, length:99.7, diameter:77.5,
+    filterThread:72, minFocusDist:22, maxMagnification:0.23,
     elements:16, groups:11, blades:7, afType:'Stepping Motor',
     weatherSealed:true, ois:false, oisStops:null, year:2019, discontinued:false,
     imageUrl:'https://nala.explore.omsystem.com/media/catalog/product/1/2/12-200mm_f3.5-6.3-om_-_main.webp',
@@ -1592,7 +1592,7 @@ const LENSES = {
     name:'OM System M.Zuiko 150-600mm f/5-6.3 IS', manufacturer:'OM System', line:'M.Zuiko', type:'Zoom',
     mount:'mft', focalLength:null, focalLengthMin:150, focalLengthMax:600, focalLengthEquiv:'300-1200mm',
     maxAperture:5.0, minAperture:22, weight:2065, length:264.4, diameter:109.4,
-    filterThread:95, minFocusDist:56, maxMagnification:0.7,
+    filterThread:95, minFocusDist:56, maxMagnification:0.35,
     elements:25, groups:15, blades:9, afType:'Stepping Motor',
     weatherSealed:true, ois:true, oisStops:7.0, year:2024, discontinued:false,
     imageUrl:'https://nala.explore.omsystem.com/media/catalog/product/transparent/1/5/150-600mm-product-image_o_85.webp',

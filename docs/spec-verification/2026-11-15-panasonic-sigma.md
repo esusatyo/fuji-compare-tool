@@ -8,7 +8,7 @@ Scope commands:
 
 - [x] Batch 1: Sigma lenses (35 L-Mount in `sigma/` and `panasonic/`, plus 3 Sigma MFT in `panasonic/`), 5 Sigma cameras, 24 Panasonic cameras
 - [x] Batch 2: Panasonic first-party lenses (LUMIX S, LUMIX G, Leica DG): 50, mirrored into the `leica/` (21) and `olympus/` (29) copies
-- [ ] Batch 3: OM System lenses in `panasonic/` (33, same slugs in `olympus/`; mirror every fix there). Source: `explore.omsystem.com/us/en/<productUrl slug>`, spec rows "Lens configuration", "Maximum image magnification … (Micro Four Thirds)", "Closest focusing distance", "Number of aperture blades", "Diameter", "Length", "Filter diamater" (sic), "Weight". Not started: the session ended while fetching
+- [x] Batch 3: OM System lenses (29 of 33 cited in `panasonic/`, same 29 in `olympus/`; fixes mirrored). Source `explore.omsystem.com/us/en/<slug>`
 - [ ] Batch 4: Laowa, Viltrox, Samyang, Voigtländer in `panasonic/` (9; Viltrox likely unverifiable)
 
 ## Sources
@@ -85,6 +85,31 @@ Magnification is the native figure (the page also prints the 35mm-equivalent one
 | leica-dg-100-400mm-f4-6-3-ii | length | 172 → 171.5 |
 
 The other 35 lenses matched on every field the page states.
+
+## Batch 3 — OM System lenses (explore.omsystem.com, T1)
+
+The page's "Maximum image magnification" gives the Micro Four Thirds figure first and the 35mm-equivalent one second. The dataset stores the native figure.
+
+| item | field | stored → source |
+|---|---|---|
+| omsystem-12-40mm-f28-pro | diameter | 70 → 69.9 |
+| omsystem-40-150mm-f4-pro | length / diameter / mag | 99 / 69 / 0.2 → 99.4 / 68.9 / 0.21 |
+| omsystem-12-100mm-f4-pro | length / diameter | 117 / 78 → 116.5 / 77.5 |
+| omsystem-17mm-f18 | length / diameter | 38 / 58 → 37.6 / 57.6 |
+| omsystem-7-14mm-f28-pro | length / diameter / mag | 106 / 79 / 0.12 → 105.8 / 78.9 / 0.11 |
+| omsystem-8mm-f18-fisheye-pro | weight | 314 → 315 |
+| omsystem-8-25mm-f4-pro | length / mag | 89 / 0.14 → 88.5 / 0.21 |
+| omsystem-20mm-f14-pro | length / minAperture | 62 / 22 → 61.7 / 16 |
+| omsystem-40-150mm-f28-pro | weight / diameter | 880 / 79 → 760 / 79.4 (880 includes the removable tripod foot) |
+| omsystem-150-400mm-f45-tc125x-is-pro | length / diameter / groups | 314 / 116 / 17 → 314.3 / 115.8 / 18 |
+| omsystem-30mm-f35-macro | minFocusDist | 10 → 9.5 |
+| omsystem-12-200mm-f35-63 | length / diameter / mag | 100 / 78 / 0.46 → 99.7 / 77.5 / 0.23 (0.46 is the 35mm-equivalent) |
+| omsystem-300mm-f4-is-pro | maxMagnification | 0.48 → 0.24 (same) |
+| omsystem-150-600mm-f5-63-is | maxMagnification | 0.7 → 0.35 (same) |
+
+Not cited: 17mm f/1.2 PRO, 45mm f/1.8 and 14-42mm III (their pages carry no spec table), and the discontinued 25mm f/1.8 (no product page).
+
+Open: 40-150mm f/4 PRO, where the page says 19 elements / 9 groups. The stored 15 is kept; this looks like a page error and needs a second source.
 
 ## Open questions (not changed)
 
