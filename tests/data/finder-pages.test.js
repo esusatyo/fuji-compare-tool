@@ -199,3 +199,30 @@ test('a misconfigured preset stops the build with a message naming it', () => {
   assert.throws(run([{ slug: 'x', title: 'X', filters: { maxweight: 1 } }]), /"x": matches nothing/);
   assert.throws(() => finderPresets({ ...site, finderPresets: { bodies: [] } }, model), /unknown kind "bodies"/);
 });
+
+// ── Links to the finders ──
+test('the homepage links both finders, after the mount links and before the size card', () => {
+  const html = files.get('index.html');
+  const pos = ['Browse by lens mount', 'href="./cameras/"', 'href="./lenses/"', 'class="size-hub-card" href="./size/"'].map(n => html.indexOf(n));
+  assert.ok(pos.every(i => i !== -1), 'a section is missing');
+  assert.deepEqual(pos, [...pos].sort((a, b) => a - b));
+  const d = doc('index.html');
+  assert.equal(d.querySelector('a[href="./cameras/"]').dataset.goatcounterClick, 'finder-hub:home:cameras');
+  assert.equal(d.querySelector('a[href="./lenses/"]').dataset.goatcounterClick, 'finder-hub:home:lenses');
+});
+
+test('every generated page and the engine footer link both finders', () => {
+  const fs = require('fs');
+  const path = require('path');
+  const { ROOT } = require('../helpers/load-brand');
+  for (const [rel, html] of files) {
+    if (!rel.endsWith('.html')) continue;
+    const footer = (html.match(/<footer[\s\S]*?<\/footer>/) || [''])[0];
+    if (!footer) continue; // the engine renders this page's footer (checked below)
+    const prefix = '../'.repeat(rel.split('/').length - 1) || './';
+    assert.ok(footer.includes(`href="${prefix}cameras/"`), `${rel}: footer has no camera finder link`);
+    assert.ok(footer.includes(`href="${prefix}lenses/"`), `${rel}: footer has no lens finder link`);
+  }
+  const engine = fs.readFileSync(path.join(ROOT, 'engine.js'), 'utf8');
+  assert.ok(engine.includes('<a href="../cameras/">Camera finder</a>') && engine.includes('<a href="../lenses/">Lens finder</a>'));
+});

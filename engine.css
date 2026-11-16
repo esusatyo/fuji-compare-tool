@@ -1453,6 +1453,8 @@ footer a:hover { text-decoration: underline; }
 .finder-rank { width: 2.5em; text-align: right; color: var(--text-secondary); }
 .finder-presets { margin-top: 28px; }
 .finder-presets ul { columns: 2 240px; }
+/* Homepage: the two finder cards side by side (stacked on phones). */
+.finder-hub-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 12px; }
 /* The compare bar rides along the bottom of the screen once a camera is ticked. */
 .finder-compare {
   position: sticky;

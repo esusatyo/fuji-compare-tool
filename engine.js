@@ -996,6 +996,10 @@ ${IS_KIT ? `<main id="kit-app" class="kit-app"></main>` : `<div id="compare-head
   ${buildVerifiedLine()}
   <div id="affiliate-disclosure"></div>
   <p>
+    <a href="../cameras/">Camera finder</a>
+    &middot;
+    <a href="../lenses/">Lens finder</a>
+    &middot;
     <a href="../kit/">Kit builder</a>
     &middot;
     <a href="../about">About</a>

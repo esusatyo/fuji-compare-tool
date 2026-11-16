@@ -880,6 +880,10 @@ ${lensSections}
       &middot;
       <a href="${prefix}size/">Camera size comparison</a>
       &middot;
+      <a href="${prefix}cameras/">Camera finder</a>
+      &middot;
+      <a href="${prefix}lenses/">Lens finder</a>
+      &middot;
       <a href="${prefix}kit/">Kit builder</a>
       &middot;
       <a href="${prefix}about">About</a>
@@ -962,6 +966,10 @@ function mountIndexHTML(site, mounts, card = null) {
     <div id="affiliate-disclosure"></div>
     <p>
       <a href="${prefix}size/">Camera size comparison</a>
+      &middot;
+      <a href="${prefix}cameras/">Camera finder</a>
+      &middot;
+      <a href="${prefix}lenses/">Lens finder</a>
       &middot;
       <a href="${prefix}kit/">Kit builder</a>
       &middot;
@@ -1442,6 +1450,10 @@ ${referenceRowsHTML(ea.item, eb.item)}
 ${p.footerLinks.map(l => `      <a href="${l.href}">${l.label}</a>\n      &middot;`).join('\n')}
       <a href="${p.prefix}size/">Camera size comparison</a>
       &middot;
+      <a href="${p.prefix}cameras/">Camera finder</a>
+      &middot;
+      <a href="${p.prefix}lenses/">Lens finder</a>
+      &middot;
       <a href="${p.prefix}kit/">Kit builder</a>
       &middot;
       <a href="${p.prefix}about">About</a>
@@ -1676,6 +1688,10 @@ ${referenceRowsHTML(a, b)}
     <div id="affiliate-disclosure"></div>
     <p>
       <a href="../">All ${esc(brandName)} cameras &amp; lenses</a>
+      &middot;
+      <a href="../../cameras/">Camera finder</a>
+      &middot;
+      <a href="../../lenses/">Lens finder</a>
       &middot;
       <a href="../../kit/">Kit builder</a>
       &middot;
@@ -1974,6 +1990,10 @@ ${referenceRowsHTML(a.cam, b.cam)}
       <a href="../${a.brand}/">All ${esc(a.brandName)} cameras</a>
       &middot;
       <a href="../${b.brand}/">All ${esc(b.brandName)} cameras</a>
+      &middot;
+      <a href="../cameras/">Camera finder</a>
+      &middot;
+      <a href="../lenses/">Lens finder</a>
       &middot;
       <a href="../kit/">Kit builder</a>
       &middot;
@@ -2598,6 +2618,21 @@ ${cards}
       ${mountLinksHTML(mounts, './mount/', 'home')}
     </section>` : ''}
     <section>
+      <h2>Find a camera or lens</h2>
+      <div class="finder-hub-grid">
+        <a class="size-hub-card" href="./cameras/" data-goatcounter-click="finder-hub:home:cameras" data-goatcounter-title="Camera finder page">
+          <span class="size-hub-title">Camera finder</span>
+          <span class="size-hub-text">Filter every camera by sensor size, weight, price, stabilization and weather sealing.</span>
+          <span class="brand-go">Find a camera &rarr;</span>
+        </a>
+        <a class="size-hub-card" href="./lenses/" data-goatcounter-click="finder-hub:home:lenses" data-goatcounter-title="Lens finder page">
+          <span class="size-hub-title">Lens finder</span>
+          <span class="size-hub-text">Filter every lens by mount, focal length, aperture, weight and price.</span>
+          <span class="brand-go">Find a lens &rarr;</span>
+        </a>
+      </div>
+    </section>
+    <section>
       <h2>Compare camera sizes</h2>
       <a class="size-hub-card" href="./size/" data-goatcounter-click="size-hub" data-goatcounter-title="Size comparison page">
         <span class="size-hub-title">Camera size comparison</span>
@@ -2646,6 +2681,10 @@ ${cluster}
     <p>Specs &amp; prices last verified: ${esc(site.dataVerified)}</p>
     <div id="affiliate-disclosure"></div>
     <p>
+      <a href="./cameras/">Camera finder</a>
+      &middot;
+      <a href="./lenses/">Lens finder</a>
+      &middot;
       <a href="./kit/">Kit builder</a>
       &middot;
       <a href="./about">About</a>
