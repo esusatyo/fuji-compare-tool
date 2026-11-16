@@ -59,7 +59,7 @@ Owner said "execute the plan now" (2026-11-16) without answering these, so the b
 
 ## 6. Verify
 
-- [ ] 6.1 `npm test`, `npm run test:links`, `openspec validate add-finder-pages --strict`
+- [x] 6.1 `npm test`, `npm run test:links`, `openspec validate add-finder-pages --strict`
 - [ ] 6.2 Screenshots at desktop and 390 px, both themes; PR with the open risks listed
 - [ ] 6.3 After merge: verify live, owner real-phone check, ask before any Search Console indexing request, archive this change
 
@@ -76,3 +76,5 @@ Add dated notes here for anything a later session must know: half-finished tasks
 - 2026-11-16 (3.3): measured over the DevTools protocol in headless Chrome on localhost (no network delay; external fonts/analytics made to fail fast). `/lenses/` (1,245 rows, 14,014 DOM nodes): ready at 107 ms unthrottled, 500 ms at 4× CPU slowdown, 624 ms at 6×; one filter or sort change 10 ms median unthrottled, 40 ms at 4×, 60 ms (max 91 ms) at 6×. `/cameras/` at 6×: ready 215 ms, change 15 ms. Acceptable; the "require a mount first" fallback in design.md is not needed. Real-phone check still owed by the owner.
 - 2026-11-16: `.tmp-perf.html` (a throwaway measuring page) is untracked in the worktree; deleting it was denied by the permission prompt. Never commit it; the owner can delete it.
 - 2026-11-16 (4.x): presets are `SITE_CONFIG.finderPresets` (`site-config.js`, documented in place). Six camera presets ship (limit 25 except fixed-lens compacts, all 35 incl. discontinued, and weather-sealed under $1,500, 8 today); the lens list is empty. Preset pages are static (no finder.js), ranked, and link back to the finder on the same search. 4.1 and 4.2 in one commit: validation is only meaningful with the pages it guards.
+- 2026-11-16 (6.1): `npm test` 1,181 pass; `openspec validate --strict` passes; `npm run test:links`: internal links pass; product/image check failed only on 3 timeouts in data this branch does not touch (Wikimedia Canon EOS R50 photo, x-kamera.de X-H2 page, overgaard.dk Leica M8 PDF), plus non-failing 403 warnings from canon.co.uk / canon.com.au. Re-run before merging.
+- 2026-11-16 (6.2): screenshots taken (desktop dark + light, 390 px phone, preset page, homepage, share cards). Not pushed and no PR: waiting for the owner to ask.
