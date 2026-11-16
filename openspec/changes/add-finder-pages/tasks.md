@@ -32,7 +32,7 @@ Owner said "execute the plan now" (2026-11-16) without answering these, so the b
 
 ## 2. Camera finder
 
-- [ ] 2.1 Generator: `cameras/index.html` with every camera as a row, controls, head, canonical, sitemap entry, stale-file removal; `tests/data/finder-pages.test.js` (every camera once, links resolve, attributes match the data)
+- [x] 2.1 Generator: `cameras/index.html` with every camera as a row, controls, head, canonical, sitemap entry, stale-file removal; `tests/data/finder-pages.test.js` (every camera once, links resolve, attributes match the data)
 - [ ] 2.2a Browser side of `finder.js`: filtering, sorting, result count, empty state, discontinued switch; `tests/logic/finder-page.test.js` (jsdom)
 - [ ] 2.2b URL state (read on load and on hashchange, written on change)
 - [ ] 2.2c Currency selector, price column, and the "hidden: no price" note
@@ -41,7 +41,7 @@ Owner said "execute the plan now" (2026-11-16) without answering these, so the b
 
 ## 3. Lens finder
 
-- [ ] 3.1 Generator: `lenses/index.html` from `KitBuilder.catalogue()`, each lens once, linked to its brand page; tests as 2.1
+- [x] 3.1 Generator: `lenses/index.html` from `KitBuilder.catalogue()`, each lens once, linked to its brand page; tests as 2.1
 - [ ] 3.2 Lens controls (mount, maker, type, focal range, aperture, filter thread, autofocus); jsdom tests
 - [ ] 3.3 Measure the page's size and load on a throttled profile; record the numbers in the PR
 
@@ -69,4 +69,7 @@ Add dated notes here for anything a later session must know: half-finished tasks
 
 - 2026-11-16: the engine keeps no stored currency (it defaults to AUD on every load), so the finder does not share a storage key with it as design.md first said. The finder defaults to USD (the static HTML is in USD, like the mount pages) and keeps the chosen currency in the URL (`cur=`).
 - 2026-11-16: sensor formats are `medium-format`, `full-frame`, `aps-h`, `aps-c`, `four-thirds`, `1-inch`, `small` (the Olympus TG compacts' 1/2.3"). The Four Thirds *sensor* is labelled "Four Thirds", not "Micro Four Thirds" (that is the mount).
+- 2026-11-16: 2.1 and 3.1 were done in one commit: the shared footer links both finders, and the link test fails while either page is missing.
+- 2026-11-16: rows carry `data-id` plus one packed `data-f` attribute (field order in `Finder.FIELDS`), the name comes from the link text, and the camera compare checkboxes are added by the script. Sizes: `/cameras/` 101 KB (15 KB gzip), `/lenses/` 488 KB (66 KB gzip), above the 300 KB estimate.
+- 2026-11-16: "Viewfinder" = `evfType` set, or a Leica M's `focusingSystem: 'Rangefinder'`. Data problem found, not fixed here (needs owner approval per verify-specs): Fujifilm X-T100 and X-T200 have no `evfType` although both have an EVF, so the finder lists them as having no viewfinder.
 - 2026-11-16: cameras have a separate `lens` filter (interchangeable / fixed) and `mount` filter; a mount choice matches interchangeable bodies only, because fixed-lens cameras carry their system's mount id (X100 → `x`, Olympus TG → `mft`).

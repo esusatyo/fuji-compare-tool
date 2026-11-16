@@ -53,6 +53,7 @@ test('row attributes round-trip through a dataset', () => {
     for (const rec of recs.slice(0, 40)) {
       const d = new JSDOM(`<table><tr${Finder.rowAttrs(kind, rec)}><th>x</th></tr></table>`).window.document;
       const back = Finder.readRow(kind, d.querySelector('tr').dataset);
+      assert.equal(back.id, rec.id);
       for (const key of Object.keys(Finder.FIELDS[kind])) {
         const want = rec[key] === undefined ? null : rec[key];
         if (Finder.FIELDS[kind][key] === 'bool') assert.equal(back[key], !!want, `${rec.id}.${key}`);

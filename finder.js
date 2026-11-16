@@ -45,6 +45,12 @@
     return f ? f.id : null;
   }
 
+  // An electronic finder, or a Leica M's optical rangefinder (stored as
+  // focusingSystem, with no evfType). Rear-screen-only bodies have neither.
+  function hasViewfinder(cam) {
+    return !!cam.evfType || cam.focusingSystem === 'Rangefinder';
+  }
+
   // The mount pages' rule: anything but "Manual" is an autofocus motor.
   function isAutofocus(lens) {
     return lens.afType !== 'Manual';
@@ -87,7 +93,7 @@
         mount: item.mount,
         ibis: !!item.ibis,
         sealed: !!item.weatherSealed,
-        evf: !!item.evfType,
+        evf: hasViewfinder(item),
       });
     }
     const range = focalRange(item) || [null, null];
@@ -104,14 +110,17 @@
     });
   }
 
-  // How each record field travels in a row's data-* attributes.
+  // How each record field travels in a row's attributes: `data-id`, plus one
+  // `data-f` holding the fields below in this order, '|'-separated (empty =
+  // none). One packed attribute instead of a dozen named ones keeps the lens
+  // page about a third smaller. The name is read from the row's link text.
   const FIELDS = {
     cameras: {
-      id: 'str', brand: 'str', year: 'num', weight: 'num', disc: 'bool', pre: 'bool', prices: 'prices',
+      brand: 'str', year: 'num', weight: 'num', disc: 'bool', pre: 'bool', prices: 'prices',
       sensor: 'str', mp: 'num', lens: 'str', mount: 'str', ibis: 'bool', sealed: 'bool', evf: 'bool',
     },
     lenses: {
-      id: 'str', brand: 'str', year: 'num', weight: 'num', disc: 'bool', pre: 'bool', prices: 'prices',
+      year: 'num', weight: 'num', disc: 'bool', pre: 'bool', prices: 'prices',
       maker: 'str', mount: 'str', type: 'str', fmin: 'num', fmax: 'num', aperture: 'num',
       focus: 'str', ois: 'bool', sealed: 'bool', filter: 'num',
     },
@@ -119,35 +128,35 @@
 
   const attrEsc = s => String(s).replace(/&/g, '&amp;').replace(/"/g, '&quot;').replace(/</g, '&lt;');
 
-  // ' data-id="sony:a7-iv" data-year="2021" …' — empty values are left out.
+  // ' data-id="sony:a7-iv" data-f="sony|2021|658|…"'
   function rowAttrs(kind, rec) {
-    let out = '';
-    for (const [key, type] of Object.entries(FIELDS[kind])) {
+    const parts = Object.entries(FIELDS[kind]).map(([key, type]) => {
       const v = rec[key];
-      let s;
-      if (type === 'bool') s = v ? '1' : null;
-      else if (type === 'prices') s = Object.entries(v || {}).map(([c, n]) => `${c}:${n}`).join(' ') || null;
-      else s = v == null || v === '' ? null : String(v);
-      if (s != null) out += ` data-${key}="${attrEsc(s)}"`;
-    }
-    return out;
+      if (type === 'bool') return v ? '1' : '';
+      if (type === 'prices') return Object.entries(v || {}).map(([c, n]) => `${c}:${n}`).join(',');
+      const s = v == null ? '' : String(v);
+      if (s.includes('|')) throw new Error(`finder: ${rec.id}.${key} contains "|"`);
+      return s;
+    });
+    return ` data-id="${attrEsc(rec.id)}" data-f="${attrEsc(parts.join('|'))}"`;
   }
 
   // The inverse of rowAttrs, from an element's `dataset`.
   function readRow(kind, dataset) {
-    const rec = {};
-    for (const [key, type] of Object.entries(FIELDS[kind])) {
-      const s = dataset[key];
+    const vals = String(dataset.f || '').split('|');
+    const rec = { id: dataset.id };
+    Object.entries(FIELDS[kind]).forEach(([key, type], i) => {
+      const s = vals[i] == null ? '' : vals[i];
       if (type === 'bool') rec[key] = s === '1';
       else if (type === 'prices') {
         rec[key] = {};
-        for (const pair of String(s || '').split(' ').filter(Boolean)) {
+        for (const pair of s.split(',').filter(Boolean)) {
           const [c, n] = pair.split(':');
           rec[key][c] = Number(n);
         }
-      } else if (type === 'num') rec[key] = s == null || s === '' ? null : Number(s);
-      else rec[key] = s == null ? null : s;
-    }
+      } else if (type === 'num') rec[key] = s === '' ? null : Number(s);
+      else rec[key] = s === '' ? null : s;
+    });
     return rec;
   }
 
@@ -442,7 +451,7 @@
     const total = tbody.rows.length;
     const rows = [...tbody.rows].map(tr => {
       const rec = readRow(kind, tr.dataset);
-      rec.name = tr.dataset.name || tr.querySelector('th').textContent.trim();
+      rec.name = tr.querySelector('th a').textContent.trim();
       return { tr, rec, price: tr.querySelector('.finder-price') };
     });
     const byId = new Map(rows.map(r => [r.rec.id, r]));
@@ -582,6 +591,17 @@
       barLink.href = ready ? `${barLink.dataset.base}#cameras=${ids.join(',')}` : barLink.dataset.base;
     }
     if (bar) {
+      // The boxes do nothing without this script, so it adds them.
+      for (const r of rows) {
+        const box = doc.createElement('input');
+        box.type = 'checkbox';
+        box.name = 'pick';
+        box.className = 'finder-pick';
+        box.value = r.rec.id;
+        box.setAttribute('aria-label', `Select ${r.rec.name} to compare`);
+        const th = r.tr.querySelector('th');
+        th.insertBefore(box, th.firstChild);
+      }
       tbody.addEventListener('change', e => { if (e.target.name === 'pick') updatePicks(); });
       barLink.addEventListener('click', e => {
         const n = picked().length;
@@ -607,7 +627,7 @@
 
   const api = {
     CURRENCIES, COMPARE_MIN, COMPARE_MAX, SENSOR_FORMATS, FILTERS, SORTS, DEFAULT_SORT, FIELDS,
-    sensorFormat, isAutofocus, focalRange, record, rowAttrs, readRow,
+    sensorFormat, hasViewfinder, isAutofocus, focalRange, record, rowAttrs, readRow,
     emptyState, parseState, formatState, stateFromPairs, matches, sortItems, run, usesPrice,
     money, priceText, summary, presetState, boot,
   };

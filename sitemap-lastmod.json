@@ -7,6 +7,10 @@
     "hash": "fac55d7da6a5767c",
     "lastmod": "2026-11-13"
   },
+  "cameras/": {
+    "hash": "34a2d667967eb102",
+    "lastmod": "2026-11-16"
+  },
   "canon/": {
     "hash": "d882ad894845120a",
     "lastmod": "2026-11-15"
@@ -122,6 +126,10 @@
   "leica/": {
     "hash": "dedb439e56d79fc4",
     "lastmod": "2026-11-15"
+  },
+  "lenses/": {
+    "hash": "6a986307098a532b",
+    "lastmod": "2026-11-16"
   },
   "mount/": {
     "hash": "1849d21e43ef1d41",
