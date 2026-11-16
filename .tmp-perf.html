@@ -1,0 +1,29 @@
+<!doctype html><meta charset="utf-8"><title>perf</title><pre id="out">running</pre>
+<script>
+const out = [];
+function measure(path, done) {
+  const f = document.createElement('iframe');
+  f.style.width = '1280px'; f.style.height = '900px';
+  const t0 = performance.now();
+  const poll = setInterval(() => {
+    const w = f.contentWindow; const doc = w && w.document; const form = doc && doc.getElementById('finder-form');
+    if (!form || form.hidden) return;
+    clearInterval(poll);
+    const booted = performance.now() - t0;
+    const nav = w.performance.getEntriesByType('navigation')[0];
+    const runs = [];
+    const fire = el => el.dispatchEvent(new w.Event('change', { bubbles: true }));
+    for (let i = 0; i < 5; i++) {
+      const box = form.querySelector('[name="mount"][value="e"]') || form.querySelector('[name="sensor"][value="full-frame"]');
+      let t = performance.now(); box.checked = !box.checked; fire(box); runs.push(performance.now() - t);
+      const sort = form.querySelector('[name="sort"]');
+      t = performance.now(); sort.value = i % 2 ? 'price' : 'weight'; fire(sort); runs.push(performance.now() - t);
+    }
+    out.push(`${path}: finder ready ${booted.toFixed(0)} ms after the iframe was added (DOMContentLoaded ${nav.domContentLoadedEventEnd.toFixed(0)} ms), transfer ${nav.transferSize} B, decoded ${nav.decodedBodySize} B, rows ${doc.querySelectorAll('#finder-rows tr').length}, DOM nodes ${doc.getElementsByTagName('*').length}, filter/sort change median ${runs.sort((a,b)=>a-b)[5].toFixed(1)} ms max ${runs[runs.length-1].toFixed(1)} ms`);
+    f.remove(); done();
+  }, 5);
+  f.src = path;
+  document.body.appendChild(f);
+}
+measure('/lenses/', () => measure('/cameras/', () => { document.getElementById('out').textContent = out.join('\n'); document.title = 'done'; }));
+</script>

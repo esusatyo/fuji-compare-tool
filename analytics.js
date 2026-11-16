@@ -28,6 +28,9 @@
 //   size-hub  size-to-interactive:<pair>  size-to-vs:<pair>  size-related:<pair>   (static links)
 //   kit-body:<brand>:<slug>  kit-lens:<brand>:<slug>   (kit builder: a body picked, a lens added)
 //   kit-remove:<lens|kit>    kit-pair   kit-hub         (a lens removed or a kit cleared; both kits first filled; the homepage card)
+//   finder-filter:<cameras|lenses>:<key>  finder-sort:<cameras|lenses>:<sort>  finder-currency:<cameras|lenses>:<CUR>   (finder.js: which filter changed — never its value; the sort and currency chosen)
+//   finder-disc:<cameras|lenses>:<on|off>  finder-clear:<cameras|lenses>  finder-item:<cameras|lenses>  finder-compare:<n>   (the discontinued switch, Clear filters, a result opened, n cameras compared)
+//   finder-hub:home:<cameras|lenses>  finder-preset:<cameras|lenses>:<slug>  finder-preset-edit:<cameras|lenses>:<slug>   (static links: homepage cards, ready-made lists, "Change these filters")
 //   quick-compare:<first|pair|reset>  (homepage: first camera picked, first two side by side, Reset pressed)
 //   mode-switch:<brand|compare>:<cameras|lenses>
 //   brand-switch:<from>:<to>          brand-pick:<brand|compare>
