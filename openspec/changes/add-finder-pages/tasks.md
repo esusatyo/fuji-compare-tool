@@ -53,7 +53,7 @@ Owner said "execute the plan now" (2026-11-16) without answering these, so the b
 ## 5. Site wiring
 
 - [x] 5.1a Homepage card(s) and footer links on every page (`engine.js` footer, `about.html`, `privacy.html`, generator templates)
-- [ ] 5.1b Share cards `og/cameras.png` + `og/lenses.png` (presets reuse them); needs Chrome
+- [x] 5.1b Share cards `og/cameras.png` + `og/lenses.png` (presets reuse them); needs Chrome
 - [ ] 5.2 Usage events and the `privacy.html` list
 - [ ] 5.3 `CLAUDE.md` (architecture entry, how to add a preset, new-brand checklist if anything changes)
 

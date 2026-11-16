@@ -2228,6 +2228,32 @@ function compareShareCard(brandNames, nCams) {
   };
 }
 
+// /cameras/ and /lenses/ (their preset pages reuse it).
+function finderShareCard(kind, model) {
+  const rows = model[kind];
+  const groups = [...new Set(rows.map(r => (kind === 'cameras' ? model.brands.find(b => b.slug === r.rec.brand).name : r.rec.maker)))];
+  const n = rows.length.toLocaleString('en-US');
+  return kind === 'cameras' ? {
+    path: 'og/cameras.png',
+    alt: `Camera finder: filter ${n} cameras from ${groups.length} brands by sensor size, weight, price and features`,
+    html: infoCardHTML({
+      kicker: 'Camera finder',
+      title: 'Find a camera',
+      subtitle: `${n} cameras · filter by sensor, weight, price`,
+      chips: Finder.SENSOR_FORMATS.filter(f => rows.some(r => r.rec.sensor === f.id)).map(f => f.label),
+    }),
+  } : {
+    path: 'og/lenses.png',
+    alt: `Lens finder: filter ${n} lenses from ${groups.length} makers by mount, focal length, aperture, weight and price`,
+    html: infoCardHTML({
+      kicker: 'Lens finder',
+      title: 'Find a lens',
+      subtitle: `${n} lenses · filter by mount, focal length, aperture`,
+      chips: [...model.mountLabel].filter(([id]) => rows.some(r => r.rec.mount === id)).map(([, label]) => label),
+    }),
+  };
+}
+
 // Site-wide totals count each product once. Third-party lenses are stored
 // per brand, so one L-Mount lens can sit on the Panasonic, Leica and Sigma
 // pages (and an MFT lens on Panasonic and Olympus) under the same slug. The
@@ -3036,12 +3062,12 @@ function buildSite({ today = new Date().toISOString().slice(0, 10) } = {}) {
     sitemapPaths.push('mount/');
   }
 
-  // The camera and lens finders. They share the compare page's share card
-  // for now.
+  // The camera and lens finders, and their preset list pages (which reuse
+  // their finder's share card).
   const finder = finderModel(brandData, mounts);
   const presets = finderPresets(site, finder);
   for (const kind of ['cameras', 'lenses']) {
-    const card = compareShareCard(brandNames, totalCams);
+    const card = addCard(finderShareCard(kind, finder));
     files.set(`${kind}/index.html`, finderPageHTML(site, kind, finder, { card, presets: presets[kind] }));
     sitemapPaths.push(`${kind}/`);
     for (const p of presets[kind]) {
