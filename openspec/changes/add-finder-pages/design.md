@@ -3,9 +3,10 @@
 The dataset is small (232 cameras, ~1,245 lenses), so there is no query engine.
 
 1. **`scripts/generate-seo.js`** writes one `<table>` per finder with every item as a row.
-   Each row carries the values the filters need as `data-*` attributes (numbers as numbers,
-   categories as short ids, the seven prices as one compact attribute). The page is complete
-   and readable without JavaScript.
+   Each row carries `data-id` plus one packed `data-f` attribute holding the values the
+   filters need, in `Finder.FIELDS` order (as built: one attribute instead of a dozen named
+   ones cut the lens page by about a third). The page is complete and readable without
+   JavaScript. The camera finder's compare checkboxes are added by the script.
 2. **`finder.js`** (`window.Finder`, also `require`d by the generator and tests — the
    `kit.js` / `size.js` pattern) holds the pure parts: the field definitions for each kind,
    `parseState` / `formatState` (the URL grammar), `matches(item, state, currency)`,
@@ -23,7 +24,7 @@ attributes, the URL grammar, the presets' validation, and the tests.
 **Cameras** — brand; sensor format (derived from `sensorType`: `medium-format`,
 `full-frame`, `aps-h`, `aps-c`, `mft`, `1-inch`, plus whatever else the data needs — a test
 fails on any camera that does not classify); lens (`fixed` or a mount id); price (max);
-weight (max); megapixels (min); `ibis`, `weatherSealed`, viewfinder (`evfType` present);
+weight (max); megapixels (min); `ibis`, `weatherSealed`, viewfinder (`evfType` present, or a Leica M rangefinder);
 year (min); discontinued switch. Columns shown: name (link to the brand page on that
 camera), brand, announced, sensor, megapixels, stabilisation, viewfinder, weight, price.
 Left out on purpose: burst (not one basis across brands) and battery life (22 cameras have
@@ -42,14 +43,14 @@ means one field of view on every mount; the alternative is the engraved focal le
 
 ## Prices and currency
 
-- A currency selector (the same seven currencies, the same `localStorage` key the tool uses)
-  sets the price column, the price filter and the price sort.
+- A currency selector (the same seven currencies) sets the price column, the price filter
+  and the price sort. As built: the engine stores no currency, so the finder defaults to USD
+  (the static HTML is in USD) and keeps the choice in the URL (`cur=`).
 - No conversion, ever. An item with no price in the selected currency shows "—".
 - While a **max price** is set or the table is **sorted by price**, items with no price in
   that currency are hidden, and a line under the controls says
   "N cameras hidden: no AUD price. Switch to USD to see them." Without a price filter or
   price sort they stay listed with "—".
-- Discontinued items show their USD launch price, labelled as such.
 - Pre-release items with no announced price read "Price not announced".
 
 ## URL grammar
@@ -91,7 +92,8 @@ finderPresets: {
 
 ## Page weight
 
-`/cameras/` is small. `/lenses/` is about 300 KB uncompressed (estimate). Accepted for now;
+`/cameras/` is small. `/lenses/` is 488 KB uncompressed, 66 KB gzipped (measured; the estimate was 300 KB). At 6×
+CPU slowdown it is ready in about 0.6 s and a filter change takes about 60 ms (tasks.md). Accepted for now;
 if it proves slow on a real phone, the fallback is to require a mount before rendering rows
 from a generated JSON file. Not built unless needed.
 
