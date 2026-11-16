@@ -3306,6 +3306,7 @@ const LENSES = {
   'omsystem-12-40mm-f28-pro': {
     name:'OM System M.Zuiko 12-40mm f/2.8 PRO II', manufacturer:'OM System', line:'PRO', type:'Zoom',
     mount:'mft', focalLength:null, focalLengthMin:12, focalLengthMax:40, focalLengthEquiv:'24-80mm',
+    specSources: [{ url:'https://explore.omsystem.com/us/en/m-zuiko-ed-12-40mm-f2-8-pro-ii', tier:'T1', title:'OM SYSTEM official product page', note:'verify-specs 2026-11-16: optics, blades, apertures, focus, magnification (Micro Four Thirds, not 35mm-equivalent), filter, size, weight and weather sealing re-read', date:'2026-11-16' }],
     maxAperture:2.8, minAperture:22, weight:382, length:84, diameter:69.9,
     filterThread:62, minFocusDist:20, maxMagnification:0.3,
     elements:14, groups:9, blades:7, afType:'Stepping Motor',
@@ -3320,6 +3321,7 @@ const LENSES = {
   'omsystem-40-150mm-f4-pro': {
     name:'OM System M.Zuiko 40-150mm f/4 PRO', manufacturer:'OM System', line:'PRO', type:'Zoom',
     mount:'mft', focalLength:null, focalLengthMin:40, focalLengthMax:150, focalLengthEquiv:'80-300mm',
+    specSources: [{ url:'https://explore.omsystem.com/us/en/m-zuiko-ed-40-150mm-f4-0-pro', tier:'T1', title:'OM SYSTEM official product page', note:'verify-specs 2026-11-16: optics, blades, apertures, focus, magnification (Micro Four Thirds, not 35mm-equivalent), filter, size, weight and weather sealing re-read; page lists 19 elements / 9 groups, stored 15 kept (open question)', date:'2026-11-16' }],
     maxAperture:4.0, minAperture:22, weight:382, length:99.4, diameter:68.9,
     filterThread:62, minFocusDist:70, maxMagnification:0.21,
     elements:15, groups:9, blades:7, afType:'Stepping Motor',
@@ -3334,6 +3336,7 @@ const LENSES = {
   'omsystem-12-100mm-f4-pro': {
     name:'OM System M.Zuiko 12-100mm f/4 IS PRO', manufacturer:'OM System', line:'PRO', type:'Zoom',
     mount:'mft', focalLength:null, focalLengthMin:12, focalLengthMax:100, focalLengthEquiv:'24-200mm',
+    specSources: [{ url:'https://explore.omsystem.com/us/en/m-zuiko-ed-12-100mm-f4-0-is-pro', tier:'T1', title:'OM SYSTEM official product page', note:'verify-specs 2026-11-16: optics, blades, apertures, focus, magnification (Micro Four Thirds, not 35mm-equivalent), filter, size, weight and weather sealing re-read', date:'2026-11-16' }],
     maxAperture:4.0, minAperture:22, weight:561, length:116.5, diameter:77.5,
     filterThread:72, minFocusDist:15, maxMagnification:0.3,
     elements:17, groups:11, blades:7, afType:'Stepping Motor',
@@ -3350,6 +3353,7 @@ const LENSES = {
   'omsystem-100-400mm-f5-63-ii': {
     name:'OM System M.Zuiko 100-400mm f/5-6.3 IS II', manufacturer:'OM System', line:'M.Zuiko', type:'Zoom',
     mount:'mft', focalLength:null, focalLengthMin:100, focalLengthMax:400, focalLengthEquiv:'200-800mm',
+    specSources: [{ url:'https://explore.omsystem.com/us/en/m-zuiko-ed-100-400mm-f5-0-6-3-is-ii', tier:'T1', title:'OM SYSTEM official product page', note:'verify-specs 2026-11-16: optics, blades, apertures, focus, magnification (Micro Four Thirds, not 35mm-equivalent), filter, size, weight and weather sealing re-read', date:'2026-11-16' }],
     maxAperture:5.0, minAperture:22, weight:1125, length:205.6, diameter:86.4,
     filterThread:72, minFocusDist:130, maxMagnification:0.29,
     elements:21, groups:15, blades:9, afType:'MSC',
@@ -3383,6 +3387,7 @@ const LENSES = {
   'omsystem-25mm-f12-pro': {
     name:'OM System M.Zuiko 25mm f/1.2 PRO', manufacturer:'OM System', line:'PRO', type:'Prime',
     mount:'mft', focalLength:25, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'50mm',
+    specSources: [{ url:'https://explore.omsystem.com/us/en/m-zuiko-ed-25mm-f1-2-pro', tier:'T1', title:'OM SYSTEM official product page', note:'verify-specs 2026-11-16: optics, blades, apertures, focus, magnification (Micro Four Thirds, not 35mm-equivalent), filter, size, weight and weather sealing re-read', date:'2026-11-16' }],
     maxAperture:1.2, minAperture:16, weight:410, length:87, diameter:70,
     filterThread:62, minFocusDist:30, maxMagnification:0.11,
     elements:19, groups:14, blades:9, afType:'Stepping Motor',
@@ -3397,6 +3402,7 @@ const LENSES = {
   'omsystem-45mm-f12-pro': {
     name:'OM System M.Zuiko 45mm f/1.2 PRO', manufacturer:'OM System', line:'PRO', type:'Prime',
     mount:'mft', focalLength:45, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'90mm',
+    specSources: [{ url:'https://explore.omsystem.com/us/en/m-zuiko-ed-45mm-f1-2-pro', tier:'T1', title:'OM SYSTEM official product page', note:'verify-specs 2026-11-16: optics, blades, apertures, focus, magnification (Micro Four Thirds, not 35mm-equivalent), filter, size, weight and weather sealing re-read', date:'2026-11-16' }],
     maxAperture:1.2, minAperture:16, weight:410, length:84.9, diameter:70,
     filterThread:62, minFocusDist:50, maxMagnification:0.1,
     elements:14, groups:10, blades:9, afType:'Stepping Motor',
@@ -3411,6 +3417,7 @@ const LENSES = {
   'omsystem-60mm-f28-macro': {
     name:'OM System M.Zuiko 60mm f/2.8 Macro', manufacturer:'OM System', line:'Macro', type:'Prime',
     mount:'mft', focalLength:60, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'120mm',
+    specSources: [{ url:'https://explore.omsystem.com/us/en/m-zuiko-ed-60mm-f2-8-macro', tier:'T1', title:'OM SYSTEM official product page', note:'verify-specs 2026-11-16: optics, blades, apertures, focus, magnification (Micro Four Thirds, not 35mm-equivalent), filter, size, weight and weather sealing re-read', date:'2026-11-16' }],
     maxAperture:2.8, minAperture:22, weight:185, length:82, diameter:56,
     filterThread:46, minFocusDist:19, maxMagnification:1.0,
     elements:13, groups:10, blades:7, afType:'Stepping Motor',
@@ -3425,6 +3432,7 @@ const LENSES = {
   'omsystem-17mm-f18': {
     name:'OM System M.Zuiko 17mm f/1.8 II', manufacturer:'OM System', line:'Premium', type:'Prime',
     mount:'mft', focalLength:17, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'34mm',
+    specSources: [{ url:'https://explore.omsystem.com/us/en/m-zuiko-17mm-f1-8-ii', tier:'T1', title:'OM SYSTEM official product page', note:'verify-specs 2026-11-16: optics, blades, apertures, focus, magnification (Micro Four Thirds, not 35mm-equivalent), filter, size, weight and weather sealing re-read', date:'2026-11-16' }],
     maxAperture:1.8, minAperture:22, weight:112, length:37.6, diameter:57.6,
     filterThread:46, minFocusDist:25, maxMagnification:0.08,
     elements:9, groups:6, blades:7, afType:'Stepping Motor',
@@ -3458,6 +3466,7 @@ const LENSES = {
   'omsystem-25mm-f18-ii': {
     name:'OM System M.Zuiko 25mm f/1.8 II', manufacturer:'OM System', line:'Premium', type:'Prime',
     mount:'mft', focalLength:25, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'50mm',
+    specSources: [{ url:'https://explore.omsystem.com/us/en/m-zuiko-25mm-f1-8-ii', tier:'T1', title:'OM SYSTEM official product page', note:'verify-specs 2026-11-16: optics, blades, apertures, focus, magnification (Micro Four Thirds, not 35mm-equivalent), filter, size, weight and weather sealing re-read', date:'2026-11-16' }],
     maxAperture:1.8, minAperture:22, weight:156, length:42, diameter:59.4,
     filterThread:46, minFocusDist:25, maxMagnification:0.12,
     elements:9, groups:7, blades:7, afType:'Stepping Motor (MSC)',
@@ -3488,6 +3497,7 @@ const LENSES = {
   'omsystem-7-14mm-f28-pro': {
     name:'OM System M.Zuiko 7-14mm f/2.8 PRO', manufacturer:'OM System', line:'PRO', type:'Zoom',
     mount:'mft', focalLength:null, focalLengthMin:7, focalLengthMax:14, focalLengthEquiv:'14-28mm',
+    specSources: [{ url:'https://explore.omsystem.com/us/en/m-zuiko-ed-7-14mm-f2-8-pro', tier:'T1', title:'OM SYSTEM official product page', note:'verify-specs 2026-11-16: optics, blades, apertures, focus, magnification (Micro Four Thirds, not 35mm-equivalent), filter, size, weight and weather sealing re-read', date:'2026-11-16' }],
     maxAperture:2.8, minAperture:22, weight:534, length:105.8, diameter:78.9,
     filterThread:null, minFocusDist:20, maxMagnification:0.11,
     elements:14, groups:11, blades:7, afType:'Stepping Motor',
@@ -3503,6 +3513,7 @@ const LENSES = {
   'omsystem-8mm-f18-fisheye-pro': {
     name:'OM System M.Zuiko 8mm f/1.8 Fisheye PRO', manufacturer:'OM System', line:'PRO', type:'Prime',
     mount:'mft', focalLength:8, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'16mm',
+    specSources: [{ url:'https://explore.omsystem.com/us/en/m-zuiko-ed-8mm-f1-8-fisheye-pro', tier:'T1', title:'OM SYSTEM official product page', note:'verify-specs 2026-11-16: optics, blades, apertures, focus, magnification (Micro Four Thirds, not 35mm-equivalent), filter, size, weight and weather sealing re-read', date:'2026-11-16' }],
     maxAperture:1.8, minAperture:22, weight:315, length:80, diameter:62,
     filterThread:null, minFocusDist:12, maxMagnification:0.2,
     elements:17, groups:15, blades:7, afType:'Stepping Motor',
@@ -3518,6 +3529,7 @@ const LENSES = {
   'omsystem-8-25mm-f4-pro': {
     name:'OM System M.Zuiko 8-25mm f/4 PRO', manufacturer:'OM System', line:'PRO', type:'Zoom',
     mount:'mft', focalLength:null, focalLengthMin:8, focalLengthMax:25, focalLengthEquiv:'16-50mm',
+    specSources: [{ url:'https://explore.omsystem.com/us/en/m-zuiko-ed-8-25mm-f4-pro', tier:'T1', title:'OM SYSTEM official product page', note:'verify-specs 2026-11-16: optics, blades, apertures, focus, magnification (Micro Four Thirds, not 35mm-equivalent), filter, size, weight and weather sealing re-read', date:'2026-11-16' }],
     maxAperture:4.0, minAperture:22, weight:411, length:88.5, diameter:77,
     filterThread:72, minFocusDist:23, maxMagnification:0.21,
     elements:16, groups:10, blades:7, afType:'Linear Motor',
@@ -3533,6 +3545,7 @@ const LENSES = {
   'omsystem-20mm-f14-pro': {
     name:'OM System M.Zuiko 20mm f/1.4 PRO', manufacturer:'OM System', line:'PRO', type:'Prime',
     mount:'mft', focalLength:20, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'40mm',
+    specSources: [{ url:'https://explore.omsystem.com/us/en/m-zuiko-ed-20mm-f1-4-pro', tier:'T1', title:'OM SYSTEM official product page', note:'verify-specs 2026-11-16: optics, blades, apertures, focus, magnification (Micro Four Thirds, not 35mm-equivalent), filter, size, weight and weather sealing re-read', date:'2026-11-16' }],
     maxAperture:1.4, minAperture:16, weight:247, length:61.7, diameter:63.4,
     filterThread:58, minFocusDist:25, maxMagnification:0.11,
     elements:11, groups:10, blades:9, afType:'Stepping Motor',
@@ -3565,6 +3578,7 @@ const LENSES = {
   'omsystem-40-150mm-f28-pro': {
     name:'OM System M.Zuiko 40-150mm f/2.8 PRO', manufacturer:'OM System', line:'PRO', type:'Zoom',
     mount:'mft', focalLength:null, focalLengthMin:40, focalLengthMax:150, focalLengthEquiv:'80-300mm',
+    specSources: [{ url:'https://explore.omsystem.com/us/en/m-zuiko-ed-40-150mm-f2-8-pro', tier:'T1', title:'OM SYSTEM official product page', note:'verify-specs 2026-11-16: optics, blades, apertures, focus, magnification (Micro Four Thirds, not 35mm-equivalent), filter, size, weight and weather sealing re-read; weight without the removable tripod foot (880 g with it)', date:'2026-11-16' }],
     maxAperture:2.8, minAperture:22, weight:760, length:160, diameter:79.4,
     filterThread:72, minFocusDist:70, maxMagnification:0.21,
     elements:16, groups:10, blades:9, afType:'Dual VCM (MSC)',
@@ -3585,6 +3599,7 @@ const LENSES = {
   'omsystem-50-200mm-f28-is-pro': {
     name:'OM System M.Zuiko 50-200mm f/2.8 IS PRO', manufacturer:'OM System', line:'PRO', type:'Zoom',
     mount:'mft', focalLength:null, focalLengthMin:50, focalLengthMax:200, focalLengthEquiv:'100-400mm',
+    specSources: [{ url:'https://explore.omsystem.com/us/en/m-zuiko-ed-50-200mm-f2-8-is-pro', tier:'T1', title:'OM SYSTEM official product page', note:'verify-specs 2026-11-16: optics, blades, apertures, focus, magnification (Micro Four Thirds, not 35mm-equivalent), filter, size, weight and weather sealing re-read', date:'2026-11-16' }],
     maxAperture:2.8, minAperture:22, weight:1075, length:225.8, diameter:91.4,
     filterThread:77, minFocusDist:78, maxMagnification:0.25,
     elements:21, groups:13, blades:9, afType:'Linear Motor (MSC)',
@@ -3603,6 +3618,7 @@ const LENSES = {
   'omsystem-90mm-f35-macro-is-pro': {
     name:'OM System M.Zuiko 90mm f/3.5 Macro IS PRO', manufacturer:'OM System', line:'PRO', type:'Prime',
     mount:'mft', focalLength:90, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'180mm',
+    specSources: [{ url:'https://explore.omsystem.com/us/en/m-zuiko-ed-90mm-f3-5-macro-is-pro', tier:'T1', title:'OM SYSTEM official product page', note:'verify-specs 2026-11-16: optics, blades, apertures, focus, magnification (Micro Four Thirds, not 35mm-equivalent), filter, size, weight and weather sealing re-read; 2.0x is the S-MACRO mode figure', date:'2026-11-16' }],
     maxAperture:3.5, minAperture:22, weight:453, length:136, diameter:69.8,
     filterThread:62, minFocusDist:22.4, maxMagnification:2.0,
     elements:18, groups:13, blades:7, afType:'MSC',
@@ -3624,6 +3640,7 @@ const LENSES = {
   'omsystem-300mm-f4-is-pro': {
     name:'OM System M.Zuiko 300mm f/4 IS PRO', manufacturer:'OM System', line:'PRO', type:'Prime',
     mount:'mft', focalLength:300, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'600mm',
+    specSources: [{ url:'https://explore.omsystem.com/us/en/m-zuiko-ed-300mm-f4-0-is-pro', tier:'T1', title:'OM SYSTEM official product page', note:'verify-specs 2026-11-16: optics, blades, apertures, focus, magnification (Micro Four Thirds, not 35mm-equivalent), filter, size, weight and weather sealing re-read', date:'2026-11-16' }],
     maxAperture:4.0, minAperture:22, weight:1270, length:227, diameter:92.5,
     filterThread:77, minFocusDist:140, maxMagnification:0.24,
     elements:17, groups:10, blades:9, afType:'MSC',
@@ -3639,6 +3656,7 @@ const LENSES = {
   'omsystem-150-400mm-f45-tc125x-is-pro': {
     name:'OM System M.Zuiko 150-400mm f/4.5 TC1.25x IS PRO', manufacturer:'OM System', line:'PRO', type:'Zoom',
     mount:'mft', focalLength:null, focalLengthMin:150, focalLengthMax:400, focalLengthEquiv:'300-800mm',
+    specSources: [{ url:'https://explore.omsystem.com/us/en/m-zuiko-ed-150-400mm-f4-5-tc1-25x-is-pro', tier:'T1', title:'OM SYSTEM official product page', note:'verify-specs 2026-11-16: optics, blades, apertures, focus, magnification (Micro Four Thirds, not 35mm-equivalent), filter, size, weight and weather sealing re-read', date:'2026-11-16' }],
     maxAperture:4.5, minAperture:22, weight:1875, length:314.3, diameter:115.8,
     filterThread:95, minFocusDist:130, maxMagnification:0.29,
     elements:28, groups:18, blades:9, afType:'Linear Motor (MSC)',
@@ -3693,6 +3711,7 @@ const LENSES = {
   'omsystem-30mm-f35-macro': {
     name:'OM System M.Zuiko 30mm f/3.5 Macro', manufacturer:'OM System', line:'Macro', type:'Prime',
     mount:'mft', focalLength:30, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'60mm',
+    specSources: [{ url:'https://explore.omsystem.com/us/en/m-zuiko-ed-30mm-f3-5-macro', tier:'T1', title:'OM SYSTEM official product page', note:'verify-specs 2026-11-16: optics, blades, apertures, focus, magnification (Micro Four Thirds, not 35mm-equivalent), filter, size, weight and weather sealing re-read', date:'2026-11-16' }],
     maxAperture:3.5, minAperture:22, weight:128, length:60, diameter:57,
     filterThread:46, minFocusDist:9.5, maxMagnification:1.25,
     elements:7, groups:6, blades:7, afType:'MSC',
@@ -3751,6 +3770,7 @@ const LENSES = {
   'omsystem-9-18mm-f4-56-ii': {
     name:'OM System M.Zuiko 9-18mm f/4-5.6 II', manufacturer:'OM System', line:'M.Zuiko', type:'Zoom',
     mount:'mft', focalLength:null, focalLengthMin:9, focalLengthMax:18, focalLengthEquiv:'18-36mm',
+    specSources: [{ url:'https://explore.omsystem.com/us/en/m-zuiko-ed-9-18mm-f4-0-5-6-ii', tier:'T1', title:'OM SYSTEM official product page', note:'verify-specs 2026-11-16: optics, blades, apertures, focus, magnification (Micro Four Thirds, not 35mm-equivalent), filter, size, weight and weather sealing re-read', date:'2026-11-16' }],
     maxAperture:4.0, minAperture:22, weight:154, length:49.3, diameter:56.2,
     filterThread:52, minFocusDist:25, maxMagnification:0.1,
     elements:12, groups:8, blades:7, afType:'Micromotor',
@@ -3785,6 +3805,7 @@ const LENSES = {
   'omsystem-14-150mm-f4-56-ii': {
     name:'OM System M.Zuiko 14-150mm f/4-5.6 II', manufacturer:'OM System', line:'M.Zuiko', type:'Zoom',
     mount:'mft', focalLength:null, focalLengthMin:14, focalLengthMax:150, focalLengthEquiv:'28-300mm',
+    specSources: [{ url:'https://explore.omsystem.com/us/en/m-zuiko-ed-14-150mm-f4-0-5-6-ii', tier:'T1', title:'OM SYSTEM official product page', note:'verify-specs 2026-11-16: optics, blades, apertures, focus, magnification (Micro Four Thirds, not 35mm-equivalent), filter, size, weight and weather sealing re-read', date:'2026-11-16' }],
     maxAperture:4.0, minAperture:22, weight:285, length:83, diameter:63.5,
     filterThread:58, minFocusDist:50, maxMagnification:0.22,
     elements:15, groups:11, blades:7, afType:'Micromotor',
@@ -3800,6 +3821,7 @@ const LENSES = {
   'omsystem-75-300mm-f48-67-ii': {
     name:'OM System M.Zuiko 75-300mm f/4.8-6.7 II', manufacturer:'OM System', line:'M.Zuiko', type:'Zoom',
     mount:'mft', focalLength:null, focalLengthMin:75, focalLengthMax:300, focalLengthEquiv:'150-600mm',
+    specSources: [{ url:'https://explore.omsystem.com/us/en/m-zuiko-ed-75-300mm-f4-8-6-7-ii', tier:'T1', title:'OM SYSTEM official product page', note:'verify-specs 2026-11-16: optics, blades, apertures, focus, magnification (Micro Four Thirds, not 35mm-equivalent), filter, size, weight and weather sealing re-read', date:'2026-11-16' }],
     maxAperture:4.8, minAperture:22, weight:423, length:116.5, diameter:69,
     filterThread:58, minFocusDist:90, maxMagnification:0.18,
     elements:18, groups:13, blades:7, afType:'Micromotor',
@@ -3815,6 +3837,7 @@ const LENSES = {
   'omsystem-12-200mm-f35-63': {
     name:'OM System M.Zuiko 12-200mm f/3.5-6.3', manufacturer:'OM System', line:'M.Zuiko', type:'Zoom',
     mount:'mft', focalLength:null, focalLengthMin:12, focalLengthMax:200, focalLengthEquiv:'24-400mm',
+    specSources: [{ url:'https://explore.omsystem.com/us/en/m-zuiko-ed-12-200mm-f3-5-6-3', tier:'T1', title:'OM SYSTEM official product page', note:'verify-specs 2026-11-16: optics, blades, apertures, focus, magnification (Micro Four Thirds, not 35mm-equivalent), filter, size, weight and weather sealing re-read', date:'2026-11-16' }],
     maxAperture:3.5, minAperture:22, weight:455, length:99.7, diameter:77.5,
     filterThread:72, minFocusDist:22, maxMagnification:0.23,
     elements:16, groups:11, blades:7, afType:'Stepping Motor',
@@ -3830,6 +3853,7 @@ const LENSES = {
   'omsystem-150-600mm-f5-63-is': {
     name:'OM System M.Zuiko 150-600mm f/5-6.3 IS', manufacturer:'OM System', line:'M.Zuiko', type:'Zoom',
     mount:'mft', focalLength:null, focalLengthMin:150, focalLengthMax:600, focalLengthEquiv:'300-1200mm',
+    specSources: [{ url:'https://explore.omsystem.com/us/en/m-zuiko-ed-150-600mm-f5-0-6-3-is', tier:'T1', title:'OM SYSTEM official product page', note:'verify-specs 2026-11-16: optics, blades, apertures, focus, magnification (Micro Four Thirds, not 35mm-equivalent), filter, size, weight and weather sealing re-read', date:'2026-11-16' }],
     maxAperture:5.0, minAperture:22, weight:2065, length:264.4, diameter:109.4,
     filterThread:95, minFocusDist:56, maxMagnification:0.35,
     elements:25, groups:15, blades:9, afType:'Stepping Motor',
