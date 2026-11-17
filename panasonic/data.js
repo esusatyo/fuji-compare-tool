@@ -3378,6 +3378,7 @@ const LENSES = {
   'omsystem-17mm-f12-pro': {
     name:'OM System M.Zuiko 17mm f/1.2 PRO', manufacturer:'OM System', line:'PRO', type:'Prime',
     mount:'mft', focalLength:17, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'34mm',
+    specSources: [{ url:'https://jp.omsystem.com/product/lens/single/pro/17_12pro/spec.html', tier:'T1', title:'OM SYSTEM Japan lens spec page (Japanese)', note:'verify-specs 2026-11-17: weight, size, filter, close focus, magnification (native), elements/groups, blades re-read', date:'2026-11-17' }],
     maxAperture:1.2, minAperture:16, weight:390, length:87, diameter:68,
     filterThread:62, minFocusDist:20, maxMagnification:0.15,
     elements:15, groups:11, blades:9, afType:'Stepping Motor',
@@ -3458,7 +3459,8 @@ const LENSES = {
   'omsystem-25mm-f18': {
     name:'OM System M.Zuiko 25mm f/1.8', manufacturer:'OM System', line:'Premium', type:'Prime',
     mount:'mft', focalLength:25, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'50mm',
-    maxAperture:1.8, minAperture:22, weight:136, length:41, diameter:56,
+    specSources: [{ url:'https://jp.omsystem.com/product/lens/single/premi/25_18/spec.html', tier:'T1', title:'OM SYSTEM Japan lens spec page (Japanese)', note:'verify-specs 2026-11-17: weight, size, filter, close focus, magnification (native), elements/groups, blades re-read', date:'2026-11-17' }],
+    maxAperture:1.8, minAperture:22, weight:136, length:42, diameter:57.8,
     filterThread:46, minFocusDist:25, maxMagnification:0.12,
     elements:9, groups:7, blades:7, afType:'Stepping Motor',
     weatherSealed:false, ois:false, oisStops:null, year:2014, discontinued:true,
@@ -3486,6 +3488,7 @@ const LENSES = {
   'omsystem-45mm-f18': {
     name:'OM System M.Zuiko 45mm f/1.8', manufacturer:'OM System', line:'Premium', type:'Prime',
     mount:'mft', focalLength:45, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'90mm',
+    specSources: [{ url:'https://jp.omsystem.com/product/lens/single/premi/45_18/spec.html', tier:'T1', title:'OM SYSTEM Japan lens spec page (Japanese)', note:'verify-specs 2026-11-17: weight, size, filter, close focus, magnification (native), elements/groups, blades re-read', date:'2026-11-17' }],
     maxAperture:1.8, minAperture:22, weight:116, length:46, diameter:56,
     filterThread:37, minFocusDist:50, maxMagnification:0.11,
     elements:9, groups:8, blades:7, afType:'Stepping Motor',
@@ -3572,7 +3575,7 @@ const LENSES = {
     weatherSealed:true, ois:false, oisStops:null, year:2020, discontinued:false,
     imageUrl:'https://nala.explore.omsystem.com/media/catalog/product/1/2/12-45mm_f4.0_pro-om_1.webp',
     imageSource: { url:'https://explore.omsystem.com/us/en/m-zuiko-ed-12-45mm-f4-0-pro', tier:'T1', note:'official OM System explore.omsystem.com product page main image', date:'2026-09-26' },
-    specSources: [{ url:'https://explore.omsystem.com/us/en/m-zuiko-ed-12-45mm-f4-0-pro', tier:'T1', note:'official spec table: 12 elements/9 groups, 7 blades, F22, MFD 0.12m, 0.25x (MFT), φ58mm filter, φ63.4×70mm, 254g, dust/splash/freezeproof (IPX1), MSC; announced Feb 2020', date:'2026-09-26', title:'OM System M.Zuiko ED 12-45mm F4.0 PRO official page' }],
+    specSources: [{ url:'https://jp.omsystem.com/product/lens/zoom/pro/12-45_4pro/spec.html', tier:'T1', title:'OM SYSTEM Japan lens spec page (Japanese)', note:'verify-specs 2026-11-17: weight, size, filter, close focus, magnification (native), elements/groups, blades re-read', date:'2026-11-17' }, { url:'https://explore.omsystem.com/us/en/m-zuiko-ed-12-45mm-f4-0-pro', tier:'T1', note:'official spec table: 12 elements/9 groups, 7 blades, F22, MFD 0.12m, 0.25x (MFT), φ58mm filter, φ63.4×70mm, 254g, dust/splash/freezeproof (IPX1), MSC; announced Feb 2020', date:'2026-09-26', title:'OM System M.Zuiko ED 12-45mm F4.0 PRO official page' }],
     asin:'B083X5Y8RY',
     prices:{USD:849,AUD:null,EUR:null,GBP:null,JPY:null,CAD:null,SGD:null},
     priceIncomplete:true,
@@ -3688,7 +3691,7 @@ const LENSES = {
     weatherSealed:false, ois:false, oisStops:null, year:2011, discontinued:false,
     imageUrl:'https://nala.explore.omsystem.com/media/catalog/product/m/_/m.zuiko_digital_ed_12mm_f2.0_-_tech_1.webp',
     imageSource: { url:'https://explore.omsystem.com/us/en/m-zuiko-ed-12mm-f2-0', tier:'T1', note:'official OM System explore.omsystem.com product page image', date:'2026-09-26' },
-    specSources: [{ url:'https://explore.omsystem.com/us/en/m-zuiko-ed-12mm-f2-0', tier:'T1', note:'official spec table: 11 elements/8 groups, 7 blades, F22, MFD 0.2m, 0.08x (MFT), φ46mm filter, φ56×43mm, 130g, MSC; announced June 2011 alongside the E-P3', date:'2026-09-26', title:'OM System M.Zuiko ED 12mm F2.0 official page' }],
+    specSources: [{ url:'https://jp.omsystem.com/product/lens/single/premi/12_20/spec.html', tier:'T1', title:'OM SYSTEM Japan lens spec page (Japanese)', note:'verify-specs 2026-11-17: weight, size, filter, close focus, magnification (native), elements/groups, blades re-read', date:'2026-11-17' }, { url:'https://explore.omsystem.com/us/en/m-zuiko-ed-12mm-f2-0', tier:'T1', note:'official spec table: 11 elements/8 groups, 7 blades, F22, MFD 0.2m, 0.08x (MFT), φ46mm filter, φ56×43mm, 130g, MSC; announced June 2011 alongside the E-P3', date:'2026-09-26', title:'OM System M.Zuiko ED 12mm F2.0 official page' }],
     asin:'B00MCWSQZU',
     prices:{USD:949,AUD:null,EUR:null,GBP:null,JPY:null,CAD:null,SGD:null},
     priceIncomplete:true,
@@ -3705,7 +3708,7 @@ const LENSES = {
     weatherSealed:false, ois:false, oisStops:null, year:2012, discontinued:false,
     imageUrl:'https://nala.explore.omsystem.com/media/catalog/product/m/_/m.zuiko_digital_ed_75mm_f1.8_black-om_-_tech.webp',
     imageSource: { url:'https://explore.omsystem.com/us/en/m-zuiko-ed-75mm-f1-8', tier:'T1', note:'official OM System explore.omsystem.com product page image (black)', date:'2026-09-26' },
-    specSources: [{ url:'https://explore.omsystem.com/us/en/m-zuiko-ed-75mm-f1-8', tier:'T1', note:'official spec table: 10 elements/9 groups, 9 blades, F22, MFD 0.84m, 0.10x (MFT), φ58mm filter, φ64×69mm, 305g, MSC; announced 2012', date:'2026-09-26', title:'OM System M.Zuiko ED 75mm F1.8 official page' }],
+    specSources: [{ url:'https://jp.omsystem.com/product/lens/single/premi/75_18/spec.html', tier:'T1', title:'OM SYSTEM Japan lens spec page (Japanese)', note:'verify-specs 2026-11-17: weight, size, filter, close focus, magnification (native), elements/groups, blades re-read', date:'2026-11-17' }, { url:'https://explore.omsystem.com/us/en/m-zuiko-ed-75mm-f1-8', tier:'T1', note:'official spec table: 10 elements/9 groups, 9 blades, F22, MFD 0.84m, 0.10x (MFT), φ58mm filter, φ64×69mm, 305g, MSC; announced 2012', date:'2026-09-26', title:'OM System M.Zuiko ED 75mm F1.8 official page' }],
     asin:'B00CI3TQSO',
     prices:{USD:999,AUD:null,EUR:null,GBP:null,JPY:null,CAD:null,SGD:null},
     priceIncomplete:true,
@@ -3733,7 +3736,7 @@ const LENSES = {
     name:'OM System M.Zuiko 14-42mm f/3.5-5.6 III', manufacturer:'OM System', line:'M.Zuiko', type:'Zoom',
     mount:'mft', focalLength:null, focalLengthMin:14, focalLengthMax:42, focalLengthEquiv:'28-84mm',
     maxAperture:3.5, minAperture:22, weight:125, length:50.5, diameter:60,
-    filterThread:46, minFocusDist:13, maxMagnification:0.53,
+    filterThread:46, minFocusDist:13, maxMagnification:0.26,
     elements:8, groups:7, blades:7, afType:'Stepping Motor (MSC)',
     weatherSealed:true, ois:false, oisStops:null, year:2026, discontinued:false,
     // Announced 2026-09-09 as the kit zoom of the new PEN body, shipping
@@ -3745,7 +3748,7 @@ const LENSES = {
     // figure (also corroborated by the same review).
     imageUrl:'https://nala.explore.omsystem.com/media/catalog/product/1/4/14-42mm_f3.5-5.6_iii_black-om_-_main_1.webp',
     imageSource: { url:'https://explore.omsystem.com/us/en/m-zuiko-14-42mm-f3-5-5-6-iii-black', tier:'T1', note:'official OM System explore.omsystem.com product page main image (black)', date:'2026-09-26' },
-    specSources: [{ url:'https://petapixel.com/2026/09/08/om-systems-updated-14-42mm-kit-lens-is-splashproof-and-focuses-closer/', tier:'NEWS', note:'announcement dated 2026-09-08 -- used for year only', date:'2026-09-26', title:'PetaPixel: OM System updated 14-42mm kit lens' }],
+    specSources: [{ url:'https://jp.omsystem.com/product/lens/zoom/mzuiko/14-42_35-56_3/spec.html', tier:'T1', title:'OM SYSTEM Japan lens spec page (Japanese)', note:'verify-specs 2026-11-17: weight, size, filter, close focus, magnification (native), elements/groups, blades re-read; 0.53 was the 35mm-equivalent figure (native 0.26 at 14 mm)', date:'2026-11-17' }, { url:'https://petapixel.com/2026/09/08/om-systems-updated-14-42mm-kit-lens-is-splashproof-and-focuses-closer/', tier:'NEWS', note:'announcement dated 2026-09-08 -- used for year only', date:'2026-09-26', title:'PetaPixel: OM System updated 14-42mm kit lens' }],
     asin:'B0HHQTFMTH',
     prices:{USD:350,AUD:479,EUR:null,GBP:349,JPY:null,CAD:null,SGD:null},
     priceIncomplete:true,
@@ -3799,7 +3802,7 @@ const LENSES = {
     // optical design to the 2010 original. 2011 is the R's own date.
     imageUrl:'https://nala.explore.omsystem.com/media/catalog/product/4/0/40-150mm_f4-5.6_r-om_-_tech.webp',
     imageSource: { url:'https://explore.omsystem.com/us/en/m-zuiko-ed-40-150mm-f4-0-5-6-r', tier:'T1', note:'official OM System explore.omsystem.com product page image', date:'2026-09-26' },
-    specSources: [{ url:'https://explore.omsystem.com/us/en/m-zuiko-ed-40-150mm-f4-0-5-6-r', tier:'T1', note:'official spec table: 13 elements/10 groups, 7 blades, F22, MFD 0.9m, 0.16x (MFT), φ58mm filter, φ63.5×83mm, 190g, MSC', date:'2026-09-26', title:'OM System M.Zuiko ED 40-150mm F4.0-5.6 R official page' }],
+    specSources: [{ url:'https://jp.omsystem.com/product/lens/zoom/mzuiko/40-150_40-56_r/spec.html', tier:'T1', title:'OM SYSTEM Japan lens spec page (Japanese)', note:'verify-specs 2026-11-17: weight, size, filter, close focus, magnification (native), elements/groups, blades re-read', date:'2026-11-17' }, { url:'https://explore.omsystem.com/us/en/m-zuiko-ed-40-150mm-f4-0-5-6-r', tier:'T1', note:'official spec table: 13 elements/10 groups, 7 blades, F22, MFD 0.9m, 0.16x (MFT), φ58mm filter, φ63.5×83mm, 190g, MSC', date:'2026-09-26', title:'OM System M.Zuiko ED 40-150mm F4.0-5.6 R official page' }],
     asin:'B0066J6EOU',
     prices:{USD:239,AUD:null,EUR:null,GBP:null,JPY:null,CAD:null,SGD:null},
     priceIncomplete:true,
@@ -4127,7 +4130,7 @@ const LENSES = {
   'laowa-9mm-f28-mft': {
     name:'Laowa 9mm f/2.8 Zero-D', manufacturer:'Laowa', line:'Zero-D', type:'Prime',
     mount:'mft', focalLength:9, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'18mm',
-    maxAperture:2.8, minAperture:22, weight:215, length:60, diameter:53,
+    maxAperture:2.8, minAperture:22, weight:215, length:53, diameter:60,
     filterThread:49, minFocusDist:12, maxMagnification:0.13,
     elements:15, groups:10, blades:7, afType:'Manual',
     weatherSealed:false, ois:false, oisStops:null, year:2018, discontinued:false,

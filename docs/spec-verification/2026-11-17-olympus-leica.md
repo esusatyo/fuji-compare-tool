@@ -8,7 +8,7 @@ Almost everything already carried a citation, but those were added when the bran
 - [x] Batch O1: 43 Olympus / OM System cameras (33 verified and cited, 10 with no surviving maker source)
 - [x] Batch L1: 49 Leica cameras (25 re-read from Leica pages/PDFs; 12 cited Leica PDFs now return 502; the rest have no maker source)
 - [x] Batch L2: 48 Leica lenses (41 SL/M from Leica's web pages, 5 TL from Leica PDFs, 2 TL with dead PDFs)
-- [ ] Batch T: third-party lenses in `olympus/` and `leica/` not checked in #98 (Laowa, Samyang, Voigtländer, Zeiss, Thypoch, TTArtisan, 7Artisans, SG-image, Meike, Viltrox)
+- [x] Batch T: third-party and OM lenses in `olympus/` and `leica/` not checked in #98: 90 verified and cited, the rest unverifiable (below)
 
 ## Sources (Olympus)
 
@@ -154,3 +154,33 @@ Rejected page values (Leica's own pages contradict themselves):
 Open question: **APO-Summicron-M 35 length**. Leica's web page says 49.3 mm; the stored 40.9 came from Leica's PDF (now 404). Given the copy errors above, I held it.
 
 Everything else on the 46 lenses read matched: weight, length, diameter, filter, close focus, scale, elements/groups and smallest aperture.
+
+## Batch T — OM System leftovers and third-party lenses
+
+Lens fixes are mirrored into `panasonic/` wherever the same MFT or L-Mount slug lives there (shared-mount test).
+
+| maker | source (T1) | checked | result |
+|---|---|---|---|
+| OM System (8) | `jp.omsystem.com/product/lens/<type>/<line>/<code>/spec.html` | 17/1.2 PRO, 45/1.8, 25/1.8 (old), 14-42 III, 12-45 PRO, 12/2, 75/1.8, 40-150 R | 3 fixes (below). 14-42 EZ: no spec page |
+| Sigma (4, `leica/`) | sigma-global.com, L-Mount rows | 85/1.2, 50/1.4, 105 macro, 20-60 | clean |
+| Voigtländer (34) | `cosina.co.jp/voigtlander/en/<mount>/<slug>/` | all 5 MFT + 29 VM | clean. Weights that seem to differ are finish or Type I/II variants, and the stored value is one of them |
+| Laowa (30) | venuslens.net product pages | 27 lens pages (+3 M-mount RL copies of the same pages) | 1 fix |
+| TTArtisan (12) | ttartisan.store specification table | 12 of 13 (the 11mm fisheye page has no table) | 1 fix |
+| Thypoch (8) | store.thypoch.com (Thypoch's own store) | Simera 21/28/35/50/75, Ksana 21/35, Eureka 28 | clean |
+
+| item | field | stored → source |
+|---|---|---|
+| omsystem-25mm-f18 (olympus, panasonic) | length / diameter | 41 / 56 → 42 / 57.8 |
+| omsystem-14-42mm-f35-56-iii (olympus, panasonic) | maxMagnification | 0.53 → 0.26 (0.53 was the 35mm-equivalent) |
+| laowa-9mm-f28-mft (olympus, panasonic) | length / diameter | 60 / 53 → 53 / 60 (Laowa lists diameter × length; same swap #98 fixed on the X-mount copy) |
+| ttartisan-m-50mm-f14-asph | weight | 399 → 429 |
+
+Held: laowa-25mm-f28-25-5x-macro-l. The page says "82 x 65 mm" without saying which figure is the diameter, so the stored 65 × 82 was kept.
+
+Unverifiable this run:
+- **Zeiss ZM (9)**: zeiss.com returns Access Denied (Akamai) to both curl and Chrome, on every regional path.
+- **SG-image (9)**: specs are images only. Separately, **sgimage-50mm-f18 (olympus, leica) stores minAperture 1.8**, which equals its maximum aperture and is certainly wrong. It needs a source.
+- **Samyang (14)**: samyangus.com is a distributor (not T1), and the maker pages were not reached in this run.
+- **7Artisans (20), Viltrox (6), Meike (2)**: specs are images only.
+- **Laowa via laowa.com.au (4)**: 18mm f/0.95, 10mm f/2, 6mm f/2 MFT and 15mm f/2 M were not re-read. The Aksen 17.5mm shares one page with the Aksen 45mm, so it was left.
+- OM 14-42 EZ (no spec page), TTArtisan 11mm fisheye (no table), Thypoch Eureka 50 (not fetched).
