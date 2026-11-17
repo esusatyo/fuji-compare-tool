@@ -40,6 +40,7 @@
 ## 4. Publish and measure
 
 - [x] 4.1 Preview check in both themes and at phone width.
+- [x] 4.2a `write-guide` skill (`.claude/skills/write-guide/SKILL.md`): the step-by-step for new guides and articles.
 - [ ] 4.2 PR; owner approves the final text and does a real-device check.
 - [ ] 4.3 After merge: verify live, ask the owner before requesting indexing, log a baseline, review
       after 4–8 weeks.
