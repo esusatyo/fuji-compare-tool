@@ -13,8 +13,8 @@ and `sigma/index.html` (loading `../engine.css`, `./data.js`, `../engine.js`),
 such that `sigma/` renders through the shared engine.
 
 Sigma SHALL be registered consistently across the multi-brand wiring: every
-brand's `REGISTERED_BRANDS` MUST list the same six brands including Sigma, the
-root `index.html` redirector's `VALID_BRANDS` MUST include `'sigma'`,
+brand's `REGISTERED_BRANDS` MUST list the same six brands including Sigma, the generated root `index.html` MUST list `sigma` in its camera search index
+and its brand-data fetch list,
 `compare/index.html` MUST load `../sigma/data.js`, and
 `scripts/generate-seo.js` `BRAND_CARD_ACCENTS` MUST carry a Sigma stripe colour.
 `engine.js` `MANUFACTURER_COLORS` already contains a `Sigma` entry and MUST be
@@ -33,10 +33,11 @@ reused unchanged.
   (`fujifilm`, `canon`, `sony`, `nikon`, `panasonic`, `sigma`), and each slug has
   a matching brand directory
 
-#### Scenario: Root redirector honours Sigma
+#### Scenario: Homepage search finds Sigma cameras
 
-- **WHEN** `localStorage['brand']` is `'sigma'`
-- **THEN** the root `index.html` redirects to `./sigma/` (preserving any hash)
+- **WHEN** a visitor types a Sigma camera's name into a homepage search slot
+- **THEN** it is offered from the generated index, and picking it fetches
+  `./sigma/data.js` and renders that camera's specs
 
 #### Scenario: Sigma cameras are selectable on the cross-brand compare page
 

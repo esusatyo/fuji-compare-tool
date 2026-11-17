@@ -1,5 +1,8 @@
 # Sony Brand Data
 
+## Purpose
+The Sony brand directory, its registration and its camera and lens dataset.
+## Requirements
 ### Requirement: Sony brand directory and registration
 
 The system SHALL provide a self-contained `sony/` brand consisting of
@@ -11,8 +14,8 @@ the shared engine with no engine changes required to display a brand page.
 
 Sony SHALL be registered consistently across the multi-brand wiring: every
 brand's `REGISTERED_BRANDS` (Fujifilm, Canon, Sony) MUST list the same set of
-brands including Sony, the root `index.html` redirector's `VALID_BRANDS` MUST
-include `'sony'`, and `engine.js` `MANUFACTURER_COLORS` MUST include a `Sony`
+brands including Sony, the generated root `index.html` MUST list `sony` in its camera search index
+and its brand-data fetch list, and `engine.js` `MANUFACTURER_COLORS` MUST include a `Sony`
 entry.
 
 #### Scenario: Sony page loads and renders
@@ -27,10 +30,11 @@ entry.
 - **THEN** all brands' `REGISTERED_BRANDS` resolve to the same slug set
   (`fujifilm`, `canon`, `sony`), and each slug has a matching brand directory
 
-#### Scenario: Root redirector honours Sony
+#### Scenario: Homepage search finds Sony cameras
 
-- **WHEN** `localStorage['brand']` is `'sony'`
-- **THEN** the root `index.html` redirects to `./sony/` (preserving any hash)
+- **WHEN** a visitor types a Sony camera's name into a homepage search slot
+- **THEN** it is offered from the generated index, and picking it fetches
+  `./sony/data.js` and renders that camera's specs
 
 ### Requirement: Sony camera and lens dataset is complete and valid
 
@@ -85,3 +89,4 @@ Sony camera fields MUST be validated in `tests/helpers/schema.js` under the
 - **WHEN** the schema test validates Sony cameras
 - **THEN** the Sony-specific fields are required/typed for Sony entries and are
   not required for other brands
+

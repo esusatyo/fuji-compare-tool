@@ -14,7 +14,8 @@ such that `olympus/` renders through the shared engine.
 
 Olympus SHALL be registered consistently across the multi-brand wiring: every
 brand's `REGISTERED_BRANDS` MUST list the same seven brands including Olympus,
-the root `index.html` redirector's `VALID_BRANDS` MUST include `'olympus'`,
+the generated root `index.html` MUST list `olympus` in its camera search index
+and its brand-data fetch list,
 `compare/index.html` MUST load `../olympus/data.js`, and
 `scripts/generate-seo.js` `BRAND_CARD_ACCENTS` MUST carry an Olympus stripe
 colour distinct from Panasonic's blue.
@@ -35,10 +36,11 @@ colour distinct from Panasonic's blue.
   (`fujifilm`, `canon`, `sony`, `nikon`, `panasonic`, `sigma`, `olympus`), and
   each slug has a matching brand directory
 
-#### Scenario: Root redirector honours Olympus
+#### Scenario: Homepage search finds Olympus cameras
 
-- **WHEN** `localStorage['brand']` is `'olympus'`
-- **THEN** the root `index.html` redirects to `./olympus/` (preserving any hash)
+- **WHEN** a visitor types a Olympus camera's name into a homepage search slot
+- **THEN** it is offered from the generated index, and picking it fetches
+  `./olympus/data.js` and renders that camera's specs
 
 #### Scenario: Olympus cameras are selectable on the cross-brand compare page
 

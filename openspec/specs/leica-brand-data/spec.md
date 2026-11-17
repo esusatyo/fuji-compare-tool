@@ -12,8 +12,8 @@ The system SHALL provide a self-contained `leica/` brand consisting of
 and `leica/index.html` (loading `../engine.css`, `./data.js`, `../engine.js`).
 
 Leica SHALL be registered consistently: every brand's `REGISTERED_BRANDS` MUST
-list the same eight brands including Leica, the root `index.html` `VALID_BRANDS`
-MUST include `'leica'`, `compare/index.html` MUST load `../leica/data.js`, and
+list the same eight brands including Leica, the generated root `index.html` MUST list `leica` in its camera search index
+and its brand-data fetch list, `compare/index.html` MUST load `../leica/data.js`, and
 `scripts/generate-seo.js` `BRAND_CARD_ACCENTS` MUST carry a Leica stripe colour
 that is not the red shared by Canon and Fujifilm.
 
