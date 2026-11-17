@@ -16,17 +16,17 @@
 
 ## 2. Engine (guides and articles)
 
-- [ ] 2.1 Source format: one module per page in `content/guides/` or `content/articles/` (meta, query
+- [x] 2.1 Source format: one module per page in `content/guides/` or `content/articles/` (meta, query
       evidence, `snapshot(data)`, `render(snap, kit)`, `claims(snap)`); `scripts/articles.js` loads and
       renders them (page shell, tables, bar charts); `content/` kept out of the deployed assets.
-- [ ] 2.2 Port both drafts to `content/guides/`; drop `drafts/` and `build-drafts.js`.
-- [ ] 2.3 Generator: `/guides/<slug>` and `/articles/<slug>` pages, index pages once non-empty,
+- [x] 2.2 Port both drafts to `content/guides/`; drop `drafts/` and `build-drafts.js`.
+- [x] 2.3 Generator: `/guides/<slug>` and `/articles/<slug>` pages, index pages once non-empty,
       sitemap entries, share cards, Updated date from the lastmod manifest; article snapshots via
       `scripts/snapshot-article.js`.
-- [ ] 2.4 Styles in `engine.css` (tokens only, both themes, chart colours validated), 375px without
+- [x] 2.4 Styles in `engine.css` (tokens only, both themes, chart colours validated), 375px without
       sideways scroll.
-- [ ] 2.5 Links to guides from the homepage and `/size/`.
-- [ ] 2.6 `guide-link` / `article-link` events; update `privacy.html`.
+- [x] 2.5 Links to guides from the homepage and `/size/`.
+- [x] 2.6 `guide-link` / `article-link` events; update `privacy.html`.
 
 ## 3. Tests
 

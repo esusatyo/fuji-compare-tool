@@ -12,6 +12,8 @@ tests/
 scripts/
 openspec/
 docs/
+# Guide/article sources: generate-seo.js renders them into guides/ and articles/.
+content/
 
 package.json
 package-lock.json
