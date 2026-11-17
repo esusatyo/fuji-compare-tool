@@ -91,3 +91,48 @@ the hash during init.
 - **WHEN** the compare page loads with `#cameras=fujifilm:x-t5,sony:not-a-camera`
 - **THEN** slot 0 shows `fujifilm:x-t5` and slot 1 shows the compare default for that slot
 
+### Requirement: Share button hands off the current comparison
+Brand pages and the cross-brand compare page SHALL show a share button in the page hero, above the comparison. Activating it SHALL hand the current `location.href` (including the selection hash) to `navigator.share` when that API exists, otherwise copy it with `navigator.clipboard.writeText` and confirm with a visible "Link copied" state, and otherwise reveal the URL in a selected read-only text field. It SHALL NOT use `alert()`, `confirm()` or `prompt()`.
+
+#### Scenario: Desktop copy
+- **WHEN** a visitor on a browser without `navigator.share` activates the button while comparing X-T5 and X-S20
+- **THEN** the clipboard holds the page URL ending in `#cameras=x-t5,x-s20` and the button shows "Link copied"
+
+#### Scenario: Phone share sheet
+- **WHEN** a visitor on a browser with `navigator.share` activates the button
+- **THEN** `navigator.share` is called with the current URL and page title
+
+#### Scenario: No clipboard access
+- **WHEN** neither `navigator.share` nor `navigator.clipboard` is available
+- **THEN** the URL appears in a selected read-only field and no browser dialog opens
+
+### Requirement: Share button use is counted anonymously
+Each successful share hand-off SHALL report the event `share-link:<brand|compare>:<cameras|lenses>:<native|copy>` through `window.trackEvent`. A cancelled share sheet or a failed copy SHALL NOT report the event. `analytics.js`'s event grammar header and `privacy.html`'s list of counted interactions SHALL name it.
+
+#### Scenario: Cancelled share sheet
+- **WHEN** a visitor opens the native share sheet and dismisses it
+- **THEN** no `share-link` event is sent
+
+#### Scenario: Copy on the compare page
+- **WHEN** a visitor copies the link on `compare/` in cameras mode
+- **THEN** the event `share-link:compare:cameras:copy` is sent
+
+### Requirement: Homepage hash names the picked cameras
+On the root page the hash SHALL use the compare-page grammar `#cameras=<brand>:<slug>[,…]` and SHALL list exactly the cameras in the visible slots, omitting empty slots. With no camera picked the URL SHALL carry no hash. Loading the root page with such a hash SHALL restore those cameras in order, show as many slots as there are valid entries (at least 2, at most 4, subject to the mobile clamp) and fetch the brand data without further interaction. Entries that are not known cameras, and repeated entries, SHALL be dropped; a hash with no valid entry SHALL leave the page in its empty state.
+
+#### Scenario: Link from a comparison
+- **WHEN** a visitor picks the X-T5 and the A7 IV on the root page
+- **THEN** the URL is `/#cameras=fujifilm:x-t5,sony:a7-iv`
+
+#### Scenario: Opening a shared link
+- **WHEN** a visitor opens `/#cameras=fujifilm:x-t5,sony:a7-iv,canon:eos-r6-iii`
+- **THEN** three slots name those cameras at once and the three-column table renders when the data has loaded
+
+#### Scenario: Unknown entries
+- **WHEN** a visitor opens `/#cameras=nope:x,nikon:zf`
+- **THEN** the Nikon Zf is in the first slot, the second is empty, and the URL is rewritten to `#cameras=nikon:zf`
+
+#### Scenario: Emptying has no hash
+- **WHEN** no slot on the root page holds a camera
+- **THEN** the URL has no hash
+
