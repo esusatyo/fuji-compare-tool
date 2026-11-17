@@ -30,16 +30,16 @@
 
 ## 3. Tests
 
-- [ ] 3.1 Every guide link resolves to an existing, indexable page; hash slugs resolve.
-- [ ] 3.2 Every declared claim holds; no unresolved placeholder in the output.
-- [ ] 3.3 One H1, title of at most 60 characters, meta description of 140–160, Article JSON-LD with
+- [x] 3.1 Every guide link resolves to an existing, indexable page; hash slugs resolve.
+- [x] 3.2 Every declared claim holds; no unresolved placeholder in the output.
+- [x] 3.3 One H1, title of at most 60 characters, meta description of 140–160, Article JSON-LD with
       the site as author, the date at the top.
-- [ ] 3.4 Articles render from their snapshot (a data change can't move them); the articles index
+- [x] 3.4 Articles render from their snapshot (a data change can't move them); the articles index
       is absent while there are no articles.
 
 ## 4. Publish and measure
 
-- [ ] 4.1 Preview check in both themes and at phone width.
+- [x] 4.1 Preview check in both themes and at phone width.
 - [ ] 4.2 PR; owner approves the final text and does a real-device check.
 - [ ] 4.3 After merge: verify live, ask the owner before requesting indexing, log a baseline, review
       after 4–8 weeks.
