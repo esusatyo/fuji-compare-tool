@@ -1,5 +1,8 @@
 # Panasonic Brand Data
 
+## Purpose
+The Panasonic brand directory, its registration and its camera and lens dataset.
+## Requirements
 ### Requirement: Panasonic brand directory and registration
 
 The system SHALL provide a self-contained `panasonic/` brand consisting of
@@ -12,8 +15,8 @@ page.
 
 Panasonic SHALL be registered consistently across the multi-brand wiring: every
 brand's `REGISTERED_BRANDS` (Fujifilm, Canon, Sony, Nikon, Panasonic) MUST list
-the same set of brands including Panasonic, the root `index.html` redirector's
-`VALID_BRANDS` MUST include `'panasonic'`, and `engine.js` `MANUFACTURER_COLORS`
+the same set of brands including Panasonic, the generated root `index.html` MUST list `panasonic` in its camera search index
+and its brand-data fetch list, and `engine.js` `MANUFACTURER_COLORS`
 MUST include a `Panasonic` entry.
 
 #### Scenario: Panasonic page loads and renders
@@ -30,11 +33,11 @@ MUST include a `Panasonic` entry.
   (`fujifilm`, `canon`, `sony`, `nikon`, `panasonic`), and each slug has a
   matching directory
 
-#### Scenario: Root redirector honours Panasonic
+#### Scenario: Homepage search finds Panasonic cameras
 
-- **WHEN** `localStorage['brand']` is `'panasonic'`
-- **THEN** the root `index.html` redirects to `./panasonic/` (preserving any
-  hash)
+- **WHEN** a visitor types a Panasonic camera's name into a homepage search slot
+- **THEN** it is offered from the generated index, and picking it fetches
+  `./panasonic/data.js` and renders that camera's specs
 
 ### Requirement: Panasonic camera and lens dataset is complete and valid
 
@@ -92,3 +95,4 @@ validated in `tests/helpers/schema.js` under the
 - **WHEN** the schema test validates Panasonic cameras
 - **THEN** the Panasonic-specific fields are required/typed for Panasonic
   entries and are not required for other brands
+

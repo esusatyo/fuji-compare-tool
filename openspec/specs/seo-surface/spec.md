@@ -1,5 +1,8 @@
 # SEO Surface
 
+## Purpose
+What the generator emits for search engines and sharing: head tags, vs-pages and their indexability, sitemap, robots and freshness.
+## Requirements
 ### Requirement: Single-source site configuration
 The site SHALL define `baseUrl`, `siteName`, and `dataVerified` in exactly one file (`site-config.js`), loaded by every brand page as a plain browser script and evaluated by the SEO generator. No other hand-maintained file SHALL contain an absolute site URL. Until launch, `baseUrl` SHALL be a clearly-fake reserved-TLD placeholder.
 
@@ -8,7 +11,7 @@ The site SHALL define `baseUrl`, `siteName`, and `dataVerified` in exactly one f
 - **THEN** every canonical, OG URL, sitemap entry, and robots sitemap reference reflects the new domain with no other manual edits
 
 ### Requirement: Every page has SEO head tags
-Each brand `index.html` and the root `index.html` SHALL contain a generator-owned block (between `<!-- seo:begin -->` and `<!-- seo:end -->` markers) providing a meta description, canonical URL, and Open Graph/Twitter-card tags. Brand descriptions SHALL embed the live camera and lens counts from that brand's data.
+Each brand `index.html` and the root `index.html` SHALL contain a generator-owned block (between `<!-- seo:begin -->` and `<!-- seo:end -->` markers) providing a meta description, canonical URL, and Open Graph/Twitter-card tags. Brand descriptions SHALL embed the live camera and lens counts from that brand's data. Every generated page head (root, brand pages, `compare/`, About, Privacy, and every vs-page) SHALL also carry `og:image` and `twitter:image` as absolute URLs built from `baseUrl`, `og:image:width` 1200, `og:image:height` 630, a non-empty `og:image:alt`, and `twitter:card` set to `summary_large_image`.
 
 #### Scenario: Brand page head block
 - **WHEN** the generator runs against a brand with 35 cameras and 86 lenses
@@ -17,6 +20,10 @@ Each brand `index.html` and the root `index.html` SHALL contain a generator-owne
 #### Scenario: Missing markers fail loudly
 - **WHEN** the generator encounters an `index.html` without both seo marker comments
 - **THEN** it exits with an error instead of writing the file
+
+#### Scenario: Large share card tags
+- **WHEN** the generator emits any page's head block
+- **THEN** it contains `twitter:card` = `summary_large_image` and an `og:image` beginning with `<baseUrl>/og/` and ending in `.png`
 
 ### Requirement: Curated prerendered vs-pages
 The generator SHALL emit static comparison pages at `<brand>/vs/<a>-vs-<b>.html` for a curated, deterministic set of camera pairs per brand: consecutive generations within a model line (lines derived from slug structure — roman-numeral suffixes and numbered tiers with a price-similarity gate — with the newer camera not discontinued), plus each non-discontinued camera paired with its two nearest USD-price neighbours, deduplicated. It SHALL NOT emit all possible pairs. Each page SHALL contain a crawlable HTML table of key specs built from schema-guaranteed data fields, `Product` JSON-LD, a canonical URL, and a link into the interactive tool using the shareable-hash format `../index.html#cameras=<a>,<b>`.
@@ -83,7 +90,7 @@ The generator SHALL emit a root `sitemap.xml` listing, as absolute URLs under `b
 - every **indexable** vs-page;
 - the About and Privacy pages.
 
-It SHALL NOT list any non-indexable vs-page. The generator SHALL also emit a `robots.txt` that permits crawling and references the sitemap's absolute URL. Non-indexable pages SHALL be excluded through the page-level robots meta tag, not through `robots.txt` disallow rules.
+It SHALL NOT list any non-indexable vs-page. Every entry SHALL carry a `<lastmod>` date (`YYYY-MM-DD`) that changes only when that page's content changes; for a brand page, content includes its `data.js`. The dates SHALL be kept in a committed manifest of per-page content hashes. The generator SHALL also emit a `robots.txt` that permits crawling and references the sitemap's absolute URL. Non-indexable pages SHALL be excluded through the page-level robots meta tag, not through `robots.txt` disallow rules.
 
 #### Scenario: Sitemap covers all indexable pages
 - **WHEN** the generator runs
@@ -97,12 +104,24 @@ It SHALL NOT list any non-indexable vs-page. The generator SHALL also emit a `ro
 - **WHEN** the generator emits `robots.txt`
 - **THEN** it contains no `Disallow` rule matching any vs-page path
 
+#### Scenario: Unchanged pages keep their date
+- **WHEN** the generator runs on a later day with no content change
+- **THEN** every `<lastmod>` is unchanged and the generator writes nothing
+
+#### Scenario: Brand data changes
+- **WHEN** a price in `sony/data.js` changes and the generator runs
+- **THEN** the `<lastmod>` of `/sony/` becomes the run's date, and pages whose content did not change keep theirs
+
 ### Requirement: Generated output cannot go stale
-Generated artifacts (head blocks, vs-pages, sitemap, robots) SHALL be committed, and a Tier 1 test SHALL regenerate them in memory and fail on any difference from the committed files.
+Generated artifacts (head blocks, vs-pages, sitemap, robots) SHALL be committed, and a Tier 1 test SHALL regenerate them in memory and fail on any difference from the committed files. Share images SHALL be held to the same rule through their manifest hashes (see the `share-images` capability).
 
 #### Scenario: Data edit without regeneration fails tests
 - **WHEN** a camera's USD price changes in `data.js` but the generator is not rerun
 - **THEN** `npm test` fails, naming the stale artifact
+
+#### Scenario: Card change without rendering fails tests
+- **WHEN** a camera's `sensorMP` changes and the generator is rerun but the renderer is not
+- **THEN** `npm test` fails, naming the stale share image
 
 ### Requirement: No generated page is orphaned
 Every generated page except the root SHALL be the target of at least one crawlable `<a href>` link from another page in the generated output. A sitemap entry SHALL NOT be considered a link for this purpose. A Tier 1 test SHALL build the generator's output in memory, resolve every anchor href relative to its containing file, and fail naming any generated page that no other page links to.
@@ -122,6 +141,13 @@ Every generated page except the root SHALL be the target of at least one crawlab
 ### Requirement: Brand pages carry a generated crawlable block
 Each `<brand>/index.html` SHALL contain a generator-owned block between `<!-- seo:body:begin -->` and `<!-- seo:body:end -->` markers, positioned outside the engine's render container so it survives rendering. The block SHALL contain crawlable prose naming the brand with its live camera and lens counts, and links to that brand's generated vs-pages. As with head blocks, the generator SHALL refuse to write a brand page missing either marker.
 
+The block SHALL also contain, as visible content:
+- a table with exactly one row per current (non-discontinued) camera, in `CAMERA_ORDER` order, giving announcement year, sensor, in-body stabilization, maximum video, weight, size (width × height × depth) and USD price, formatted identically to the vs-page spec table, with `—` for a missing value;
+- a line naming every discontinued camera of the brand, when there is at least one;
+- a line giving the brand's total lens count and the count per lens maker.
+
+A camera's name in the table SHALL link (extensionless) to one of its indexable vs-pages when one exists, and SHALL be plain text otherwise. When a brand has no current cameras, the table SHALL be omitted. The engine SHALL place its footer after the generator-owned static sections once rendered.
+
 #### Scenario: Brand block links its comparisons
 - **WHEN** the generator runs against a brand with generated vs-pages
 - **THEN** that brand's `index.html` body block links to those vs-pages, and the links survive engine rendering
@@ -133,6 +159,22 @@ Each `<brand>/index.html` SHALL contain a generator-owned block between `<!-- se
 #### Scenario: Missing body markers fail loudly
 - **WHEN** the generator encounters a brand `index.html` without both `seo:body` marker comments
 - **THEN** it exits with an error instead of writing the file
+
+#### Scenario: Current cameras appear in the static table
+- **WHEN** a brand's `data.js` has N cameras without `discontinued: true`
+- **THEN** its brand page's at-a-glance table has exactly N body rows, in `CAMERA_ORDER` order, each matching that camera's data
+
+#### Scenario: Discontinuing a camera moves it to the older line
+- **WHEN** a camera is marked `discontinued: true` and the generator is rerun
+- **THEN** its row leaves the table and its name appears in the older-cameras line
+
+#### Scenario: Names link only to indexable comparisons
+- **WHEN** a current camera appears in no indexable vs-page
+- **THEN** its table name is plain text, never a link to a noindexed page
+
+#### Scenario: Footer ends the rendered page
+- **WHEN** the engine renders a brand page that has generator-owned static sections
+- **THEN** the footer is the last of those elements in document order, and the static sections are unchanged
 
 ### Requirement: Vs-pages link related comparisons
 Each generated vs-page SHALL link to other vs-pages for the same brand that share a camera with it, selected deterministically from the curated pair set and capped at six links, so the comparison pages form a connected cluster rather than isolated leaves. Related links SHALL only target pages the generator actually emits.
@@ -148,3 +190,27 @@ Each generated vs-page SHALL link to other vs-pages for the same brand that shar
 #### Scenario: No link to a non-existent page
 - **WHEN** a vs-page's related links are resolved
 - **THEN** every target exists in the generated file set
+
+### Requirement: Search engines are notified of changed pages
+The site SHALL serve its IndexNow key file at the root. After each successful production deploy, it SHALL submit to IndexNow the sitemap URLs whose pages changed in the deployed commit range, plus any URLs dropped from the sitemap in that range. It SHALL NOT submit URLs that are neither in the current sitemap nor dropped from it.
+
+#### Scenario: A vs-page changes
+- **WHEN** a push to `main` changes `vs/sony-a7r-vi-vs-nikon-z8.html`, which is in the sitemap, and the Workers Builds deploy succeeds
+- **THEN** `https://comparecameraspecs.com/vs/sony-a7r-vi-vs-nikon-z8` is submitted to IndexNow
+
+#### Scenario: A noindexed page changes
+- **WHEN** a push changes a vs-page that is not in the sitemap
+- **THEN** that URL is not submitted
+
+#### Scenario: A page leaves the sitemap
+- **WHEN** a push removes a URL from `sitemap.xml`
+- **THEN** that URL is submitted, so the engine re-crawls it and sees the removal
+
+#### Scenario: Brand data changes
+- **WHEN** a push changes `sony/data.js`
+- **THEN** `https://comparecameraspecs.com/sony/` is submitted
+
+#### Scenario: Deploy fails
+- **WHEN** the Workers Builds check for the pushed commit fails or does not finish within the timeout
+- **THEN** nothing is submitted
+

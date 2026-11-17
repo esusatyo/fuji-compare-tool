@@ -28,6 +28,12 @@
   --win-tint: color-mix(in srgb, var(--win) 14%, transparent); /* …and its background */
   --size-c3: #F0A04B;        /* size drawing: third item (orange) */
   --size-c4: #6FA8F5;        /* size drawing: fourth item (blue) */
+  /* Guide charts: categorical series 1-4, validated with the dataviz palette
+     checker against --bg-deep in each theme (CVD, lightness, contrast). */
+  --chart-1: #3987E5;
+  --chart-2: #D95926;
+  --chart-3: #199E70;
+  --chart-4: #C98500;
   --header-h: 54px;
   --compare-h: 196px;
   --label-w: 190px;
@@ -67,6 +73,10 @@
   --win-tint: color-mix(in srgb, var(--win) 11%, transparent);
   --size-c3: #D2638A;        /* rose: the light theme's second accent is already a sand/orange */
   --size-c4: #3F7FD0;
+  --chart-1: #2A78D6;        /* light-theme steps of the same four hues; below 3:1 on   */
+  --chart-2: #EB6834;        /* the page for 2-4, so every bar carries a visible value  */
+  --chart-3: #1BAF7A;        /* label and a table view (dataviz contrast rule)          */
+  --chart-4: #EDA100;
 }
 
 /* `clip`, not `hidden`: `hidden` on body makes it a scroll container that
@@ -1437,4 +1447,59 @@ footer a:hover { text-decoration: underline; }
 /* Mount pages on phones: names wrap so the sticky column stays narrow. */
 @media (max-width: 599px) {
   .mount-table tbody th { white-space: normal; min-width: 9em; max-width: 11em; }
+}
+
+/* ─── GUIDES AND ARTICLES (scripts/articles.js, generate-seo.js) ───
+   A reading column: one H1, a dek, the byline and date, short paragraphs,
+   tables that scroll sideways on their own, and HTML bar charts whose labels
+   stay real text at any width. */
+.guide-main { max-width: 720px; margin: 0 auto; padding: 28px 16px 56px; }
+.guide { font-size: 17px; line-height: 1.65; color: var(--text-primary); }
+.guide h1 { font-size: 34px; line-height: 1.15; letter-spacing: -0.02em; margin: 8px 0 8px; }
+.guide-dek { font-size: 19px; color: var(--text-secondary); margin: 0 0 8px; }
+.guide-byline { font-size: 13px; color: var(--text-secondary); margin: 0 0 24px; }
+.guide h2 { font-size: 22px; line-height: 1.25; margin: 40px 0 10px; }
+.guide p { margin: 0 0 14px; }
+.guide a { color: var(--accent-primary); }
+.guide-answer { background: var(--bg-surface); border: 1px solid var(--border); border-left: 4px solid var(--accent-primary);
+                border-radius: var(--radius-btn); padding: 14px 16px; margin: 0 0 8px !important; }
+.guide-links { margin: 0 0 14px 20px; }
+.guide-links li { margin-bottom: 6px; }
+.guide-dated { font-size: 13px; color: var(--text-secondary); margin-top: 32px !important; padding-top: 14px;
+               border-top: 1px solid var(--border); }
+.guide-table-wrap { overflow-x: auto; margin: 4px 0 16px; }
+.guide-table { width: 100%; border-collapse: collapse; font-size: 14px; line-height: 1.4; }
+.guide-table th, .guide-table td { text-align: left; padding: 8px 10px; border-bottom: 1px solid var(--border); white-space: nowrap; }
+.guide-table thead th { color: var(--text-secondary); font-weight: 600; font-size: 13px; }
+.guide-table tbody th { font-weight: 600; }
+.guide-table td { color: var(--text-secondary); }
+.gbar-chart { margin: 8px 0 18px; }
+.gbar-legend { display: flex; flex-wrap: wrap; gap: 6px 16px; font-size: 13px; color: var(--text-secondary); margin-bottom: 10px; }
+.gbar-legend i { display: inline-block; width: 12px; height: 12px; border-radius: 3px; margin-right: 6px; vertical-align: -1px; }
+.gbars { display: grid; gap: 2px; }
+.gbar-row { display: grid; grid-template-columns: minmax(96px, 34%) 1fr; align-items: center; gap: 12px;
+            padding: 4px 0; border-radius: 6px; }
+.gbar-row:hover { background: var(--overlay-weak); }
+.gbar-label { font-size: 13px; line-height: 1.25; text-align: right; }
+.gbar-label span { display: block; color: var(--text-primary); font-weight: 600; }
+.gbar-label small { display: block; color: var(--text-secondary); font-size: 12px; }
+/* Bars are a share of the track; the value label sits just past each bar's
+   end, in the room the track's right margin leaves for it. */
+.gbar-track { position: relative; height: 18px; margin-right: 56px; }
+.gbar { position: absolute; left: 0; top: 0; height: 18px; border-radius: 0 4px 4px 0; }
+.gbar-val { position: absolute; top: 50%; transform: translateY(-50%); margin-left: 6px;
+            font-size: 13px; font-weight: 600; color: var(--text-primary); white-space: nowrap; }
+.gbar-c1 { background: var(--chart-1); }
+.gbar-c2 { background: var(--chart-2); }
+.gbar-c3 { background: var(--chart-3); }
+.gbar-c4 { background: var(--chart-4); }
+.gbar-chart figcaption { font-size: 13px; color: var(--text-secondary); margin-top: 10px; }
+.gbar-chart details { margin-top: 8px; font-size: 14px; }
+.gbar-chart summary { cursor: pointer; color: var(--accent-primary); }
+.guide-index { list-style: none; display: grid; gap: 14px; }
+@media (max-width: 599px) {
+  .guide { font-size: 16px; }
+  .guide h1 { font-size: 28px; }
+  .guide h2 { font-size: 20px; }
+  .gbar-row { grid-template-columns: minmax(88px, 38%) 1fr; gap: 8px; }
 }

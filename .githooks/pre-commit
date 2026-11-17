@@ -26,7 +26,7 @@ NODE_BIN=$(command -v node) || {
   exit 1
 }
 
-TRIGGER='(^|/)data\.js$|^site-config\.js$|^scripts/generate-seo\.js$|^scripts/render-share-images\.js$|^engine\.css$|^assets/logo\.svg$'
+TRIGGER='(^|/)data\.js$|^site-config\.js$|^scripts/generate-seo\.js$|^scripts/render-share-images\.js$|^engine\.css$|^assets/logo\.svg$|^scripts/articles\.js$|^content/'
 if ! git diff --cached --name-only | grep -qE "$TRIGGER"; then
   exit 0
 fi
