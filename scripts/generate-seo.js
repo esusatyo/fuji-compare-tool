@@ -1148,12 +1148,13 @@ function guideIndexShareCard(kind, pages) {
 }
 
 // The homepage section and /size/ list that link to every guide.
-function guideCardsHTML(guides, prefix, from) {
+function guideCardsHTML(guides, prefix, from, kind = 'guide') {
+  const Label = kind === 'article' ? 'Article' : 'Guide';
   return `<ul class="guide-index">
-${guides.map(g => `        <li><a class="size-hub-card" href="${prefix}${g.slug}" data-goatcounter-click="guide-pick:${from}:${g.slug}" data-goatcounter-title="Guide pick: ${esc(g.headline)}">
+${guides.map(g => `        <li><a class="size-hub-card" href="${prefix}${g.slug}" data-goatcounter-click="${kind}-pick:${from}:${g.slug}" data-goatcounter-title="${Label} pick: ${esc(g.headline)}">
           <span class="size-hub-title">${esc(g.headline)}</span>
           <span class="size-hub-text">${esc(g.dek)}</span>
-          <span class="brand-go">Read the guide &rarr;</span>
+          <span class="brand-go">Read the ${kind} &rarr;</span>
         </a></li>`).join('\n')}
       </ul>`;
 }
@@ -2358,7 +2359,7 @@ function homeConfigScript(index) {
   return `<script>window.COMPARE_CONFIG = ${JSON.stringify(config).replace(/</g, '\\u003c')};</script>`;
 }
 
-function rootBodyBlock(site, brands, crossSample = [], favourites = [], index = [], mounts = [], guides = []) {
+function rootBodyBlock(site, brands, crossSample = [], favourites = [], index = [], mounts = [], guides = [], articles = []) {
   // No stripe override: the all-brands card takes the shared accent.
   const compareCard = `        <li class="brand-card">
           <a href="./compare/" data-goatcounter-click="brand-pick:compare" data-goatcounter-title="Brand pick: All brands">
@@ -2439,6 +2440,10 @@ ${cards}
     <section>
       <h2>Guides</h2>
       ${guideCardsHTML(guides, './guides/', 'home')}
+    </section>` : ''}${articles.length ? `
+    <section>
+      <h2>Articles</h2>
+      ${guideCardsHTML(articles, './articles/', 'home', 'article')}
     </section>` : ''}
     <section class="landing-intro">
       <h2>About this site</h2>
@@ -2723,6 +2728,7 @@ function buildSite({ today = new Date().toISOString().slice(0, 10) } = {}) {
   // Guides render from live data, articles from their committed snapshots.
   const content = Articles.loadContent().map(page => ({ page, ...Articles.renderContent(page, brandData) }));
   const guides = content.filter(c => c.page.kind === 'guide').map(c => ({ slug: c.page.slug, headline: c.page.mod.headline, dek: c.page.mod.dek }));
+  const articles = content.filter(c => c.page.kind === 'article').map(c => ({ slug: c.page.slug, headline: c.page.mod.headline, dek: c.page.mod.dek }));
 
   for (const brand of brandDirs()) {
     const data = brandData[brand];
@@ -2864,7 +2870,7 @@ function buildSite({ today = new Date().toISOString().slice(0, 10) } = {}) {
   }
   let rootHtml = fs.readFileSync(path.join(ROOT, 'index.html'), 'utf8');
   rootHtml = withHeadBlock(rootHtml, rootHeadBlock(site, brandNames, homeCard), 'index.html');
-  rootHtml = withBodyBlock(rootHtml, rootBodyBlock(site, brandInfo, matchups.slice(0, 4), resolveFavourites(brandData), cameraIndex(brandData), mounts, guides), 'index.html');
+  rootHtml = withBodyBlock(rootHtml, rootBodyBlock(site, brandInfo, matchups.slice(0, 4), resolveFavourites(brandData), cameraIndex(brandData), mounts, guides, articles), 'index.html');
   files.set('index.html', rootHtml);
   const lastmods = lastmodManifest(readLastmodManifest(), sitemapHashes(sitemapPaths, files), today);
   files.set(LASTMOD_MANIFEST, `${JSON.stringify(lastmods, null, 2)}\n`);

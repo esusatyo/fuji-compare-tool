@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Camera Specs We Got Wrong in 2026, and Why</title>
+  <meta name="description" content="A Canon EOS R1 listed 455 g too heavy, cameras missing their viewfinders, a body wearing its sibling's size: what checking specs against makers found.">
+  <link rel="canonical" href="https://comparecameraspecs.com/articles/camera-specs-we-got-wrong-2026">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="Compare Camera Specs">
+  <meta property="og:title" content="The camera specs we got wrong (and why it happens)">
+  <meta property="og:description" content="A Canon EOS R1 listed 455 g too heavy, cameras missing their viewfinders, a body wearing its sibling's size: what checking specs against makers found.">
+  <meta property="og:url" content="https://comparecameraspecs.com/articles/camera-specs-we-got-wrong-2026">
+  <meta property="article:published_time" content="2026-11-18">
+  <meta property="article:modified_time" content="2026-11-18">
+  <meta property="og:image" content="https://comparecameraspecs.com/og/articles/camera-specs-we-got-wrong-2026.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="The camera specs we got wrong (and why it happens)">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://comparecameraspecs.com/og/articles/camera-specs-we-got-wrong-2026.png">
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"The camera specs we got wrong (and why it happens)","description":"A Canon EOS R1 listed 455 g too heavy, cameras missing their viewfinders, a body wearing its sibling's size: what checking specs against makers found.","datePublished":"2026-11-18","dateModified":"2026-11-18","author":{"@type":"Organization","name":"Compare Camera Specs","url":"https://comparecameraspecs.com/"},"publisher":{"@type":"Organization","name":"Compare Camera Specs","url":"https://comparecameraspecs.com/"},"mainEntityOfPage":"https://comparecameraspecs.com/articles/camera-specs-we-got-wrong-2026","image":"https://comparecameraspecs.com/og/articles/camera-specs-we-got-wrong-2026.png"}</script>
+  <script data-goatcounter="https://esusatyo.goatcounter.com/count" defer src="https://gc.zgo.at/count.js"></script>
+  <script defer src="../analytics.js"></script>
+  <script>
+  (function(){
+    try {
+      var p = localStorage.getItem('theme-pref');
+      if (p !== 'light' && p !== 'dark' && p !== 'system') p = 'system';
+      var eff = p === 'system'
+        ? (matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark')
+        : p;
+      document.documentElement.setAttribute('data-theme', eff);
+    } catch (e) { /* storage/matchMedia unavailable — dark default stands */ }
+  })();
+  </script>
+  <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+  <link rel="apple-touch-icon" href="../apple-touch-icon.png">
+  <meta name="theme-color" content="#131722">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap">
+  <script>
+  addEventListener('load', function () {
+    var css = document.querySelector('link[href$="engine.css"]');
+    var app = document.getElementById('app');
+    var broken = (css && !css.sheet) || (app && !app.children.length);
+    try {
+      if (broken && !sessionStorage.getItem('cc-selfheal')) {
+        sessionStorage.setItem('cc-selfheal', '1');
+        location.reload();
+      } else if (!broken) {
+        sessionStorage.removeItem('cc-selfheal');
+      }
+    } catch (e) { /* storage unavailable — never loop, so do nothing */ }
+  });
+  </script>
+  <link rel="stylesheet" href="../engine.css">
+  <style>
+    .header-back { font-size: 13px; color: var(--text-secondary); text-decoration: none; white-space: nowrap;
+                 overflow: hidden; text-overflow: ellipsis; }
+  .header-back:hover { color: var(--text-primary); }
+
+  .vs-main { max-width: 840px; margin: 0 auto; padding: 8px 20px 40px; }
+
+  .vs-products { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 24px 0 8px; }
+  .vs-product { background: var(--bg-surface); border: 1px solid var(--border); border-radius: var(--radius);
+                box-shadow: var(--shadow); padding: 18px; display: flex; flex-direction: column;
+                align-items: center; gap: 10px; text-align: center; }
+  .vs-photo { width: 100%; height: 160px; display: flex; align-items: center; justify-content: center;
+              background: var(--photo-chip); border-radius: 12px; padding: 8px; }
+  .vs-img { max-width: 100%; max-height: 144px; object-fit: contain; }
+  .vs-ph { width: 100%; height: 100%; border-radius: 8px; align-items: center; justify-content: center;
+           font-weight: 700; font-size: 14px; padding: 10px; text-align: center; }
+  .vs-pname { font-weight: 700; font-size: 16px; color: var(--text-primary); }
+  .vs-pprice { font-weight: 700; font-size: 18px; color: var(--text-primary); }
+  .vs-plinks { display: flex; gap: 8px; flex-wrap: wrap; justify-content: center; margin-top: 2px; }
+  .vs-view { font-size: 12px; font-weight: 600; color: var(--accent-primary); background: rgba(180,140,224,.18);
+             text-decoration: none; padding: 5px 14px; border-radius: 999px; transition: all .15s; }
+  .vs-view:hover { background: var(--accent-primary); color: var(--bg-deep); }
+  .vs-view.na { color: var(--text-secondary); background: rgba(156,163,181,.14); }
+  .vs-buy { font-size: 12px; font-weight: 600; color: var(--accent-secondary); background: rgba(79,199,176,.18);
+            text-decoration: none; padding: 5px 14px; border-radius: 999px; transition: all .15s; }
+  .vs-buy:hover { background: var(--accent-secondary); color: var(--bg-deep); }
+
+  .vs-summary { font-size: 14px; line-height: 1.5; color: var(--text-secondary); text-align: center;
+                max-width: 640px; margin: 4px auto 20px; }
+
+  .vs-cta { display: inline-flex; align-items: center; gap: 9px; background: var(--accent-primary); color: var(--bg-deep);
+            text-decoration: none; padding: 12px 22px; border-radius: 999px; font-weight: 600; font-size: 14px;
+            margin: 24px 0 20px; box-shadow: var(--shadow); transition: transform .12s ease, box-shadow .12s ease; }
+  .vs-cta:hover { transform: translateY(-1px); box-shadow: 0 6px 18px rgba(0,0,0,.4); }
+  .vs-cta .play { font-size: 11px; }
+
+  .vs-card { background: var(--bg-surface); border: 1px solid var(--border); border-radius: var(--radius);
+             box-shadow: var(--shadow); overflow: hidden; }
+  /* Fixed layout: value columns must have a bounded width for .vs-ref-link's
+     ellipsis to take effect (auto layout would just grow the column instead
+     of clipping). Existing spec rows wrap onto a 2nd line instead of
+     overflowing, which is fine — none of VS_ROWS' values are long. */
+  .vs-card table { border-collapse: collapse; width: 100%; table-layout: fixed; }
+  .vs-card thead th { background: var(--bg-surface-2); color: var(--text-primary); font-weight: 600; font-size: 14px;
+                      padding: 14px 12px; text-align: center; }
+  .vs-card thead th:first-child { text-align: left; font-weight: 500; color: var(--text-secondary); font-size: 12px; }
+  .vs-card th[scope="row"] { text-align: left; font-weight: 500; color: var(--text-secondary); font-size: 12px;
+                             padding: 11px 16px; width: 34%; }
+  .vs-card td { text-align: center; font-size: 13px; color: var(--text-primary); padding: 11px 12px; font-weight: 500; }
+  .vs-card tbody tr { border-top: 1px solid var(--border); }
+  .vs-card tbody tr:nth-child(odd) { background: rgba(255,255,255,.02); }
+
+  .vs-refs-heading th { background: var(--bg-surface-2); color: var(--text-secondary); font-size: 11px;
+                        font-weight: 700; text-transform: uppercase; letter-spacing: .08em;
+                        text-align: left; padding: 10px 16px; }
+  .vs-ref-cell { text-align: left; overflow: hidden; }
+  .vs-ref-link { display: block; max-width: 100%; overflow: hidden; text-overflow: ellipsis;
+                 white-space: nowrap; font-size: 12px; color: var(--accent-primary); text-decoration: none; }
+  .vs-ref-link:hover { text-decoration: underline; }
+  .vs-ref-link + .vs-ref-link { margin-top: 4px; }
+
+  .vs-note { color: var(--text-secondary); font-size: 12px; margin: 16px 2px 0; }
+
+  .vs-size { margin-top: 28px; background: var(--bg-surface); border: 1px solid var(--border);
+             border-radius: var(--radius); box-shadow: var(--shadow); }
+  .vs-size h2 { font-size: 15px; text-transform: uppercase; letter-spacing: .06em; color: var(--text-secondary);
+                font-weight: 700; padding: 16px 18px 0; }
+  .size-main .vs-card + .vs-card { margin-top: 20px; }
+  .size-links { display: flex; flex-wrap: wrap; align-items: center; gap: 4px 22px; }
+  .size-links a:not(.vs-cta) { color: var(--accent-primary); text-decoration: none; font-weight: 600; font-size: 14px; }
+  .size-links a:not(.vs-cta):hover { text-decoration: underline; }
+
+  .vs-related { margin-top: 36px; }
+  .vs-related h2 { font-size: 15px; text-transform: uppercase; letter-spacing: .06em; color: var(--text-secondary);
+                   margin-bottom: 14px; font-weight: 700; }
+  .vs-related ul { list-style: none; display: grid; gap: 8px 24px;
+                   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); }
+  .vs-related a { color: var(--text-secondary); text-decoration: none; font-size: 14px; display: inline-block;
+                  padding: 3px 0; border-bottom: 1px solid transparent; }
+  .vs-related a:hover { color: var(--accent-primary); border-bottom-color: var(--accent-primary); }
+  </style>
+</head>
+<body>
+  <header id="site-header">
+    <div class="header-brand">
+      <a class="brand-home" href="../?brands" aria-label="Compare Camera Specs — choose a brand"><svg viewBox="0 0 64 64" width="24" height="24" aria-hidden="true" focusable="false"><path d="M4 16 V4 H16 M48 4 H60 V16 M60 48 V60 H48 M16 60 H4 V48" fill="none" stroke="#BFC6D4" stroke-width="3" stroke-linecap="round"></path><circle cx="24" cy="32" r="10" fill="#B48CE0"></circle><circle cx="40" cy="32" r="10" fill="#4FC7B0"></circle></svg><span class="brand-wordmark">Compare Camera Specs</span></a>
+      <span class="header-sep">|</span>
+      <a class="header-back" href="./">All articles</a>
+    </div>
+  </header>
+  <main class="guide-main">
+    <article class="guide">
+      <h1>The camera specs we got wrong (and why it happens)</h1>
+      <p class="guide-dek">We checked every spec against the maker. The maker won. Often.</p>
+      <p class="guide-byline">By Compare Camera Specs &middot; Published <time datetime="2026-11-18">18 November 2026</time></p>
+<p class="guide-answer">We checked 1,369 cameras and lenses against their makers' own spec pages. Among the misses: a Canon EOS R1 listed <strong>455 g</strong> too heavy, four cameras listed without the viewfinder they actually have, and a camera wearing its sibling's dimensions.</p>
+
+<p>Spec sites copy from each other. So did we. Here's what turned up when we went back to the source, and the patterns behind it, so you can spot them elsewhere.</p>
+
+<h2>1. The phantom 455 grams</h2>
+<p>We had Canon's flagship EOS R1 at 1,570 g. <a href="https://www.canon.co.uk/cameras/eos-r1/specifications/" target="_blank" rel="noopener" data-goatcounter-click="article-link:camera-specs-we-got-wrong-2026:source:canon.co.uk" data-goatcounter-title="Article source: canon.co.uk">Canon says</a> 1,115 g with battery and card. That's a whole prime lens of difference.</p>
+<p>See the corrected numbers in the <a href="../canon/vs/eos-r1-vs-eos-r3" data-goatcounter-click="article-link:camera-specs-we-got-wrong-2026:canon/vs/eos-r1-vs-eos-r3" data-goatcounter-title="Article link: EOS R1 vs EOS R3 comparison">EOS R1 vs EOS R3 comparison</a>.</p>
+
+<h2>2. Hand-me-down specs</h2>
+<p>The classic: a new model inheriting its older sibling's numbers. The EOS R50 V carried the EOS R50's dimensions. <a href="https://www.canon.co.uk/cameras/eos-r50v/specifications/" target="_blank" rel="noopener" data-goatcounter-click="article-link:camera-specs-we-got-wrong-2026:source:canon.co.uk" data-goatcounter-title="Article source: canon.co.uk">In reality</a> it's 45.2 mm deep, not 68.8 mm.</p>
+<p>Same story for the OM-5 II (it had the OM-5's depth) and Sony's FE 16-35mm GM II, which carried the first GM's length of 121.6 mm. <a href="https://electronics.sony.com/imaging/lenses/full-frame-e-mount/p/sel1635gm2" target="_blank" rel="noopener" data-goatcounter-click="article-link:camera-specs-we-got-wrong-2026:source:electronics.sony.com" data-goatcounter-title="Article source: electronics.sony.com">Sony lists</a> 111.5 mm.</p>
+<p>See how different the R50 V really is in the <a href="../canon/size/eos-r50v-vs-eos-r50" data-goatcounter-click="article-link:camera-specs-we-got-wrong-2026:canon/size/eos-r50v-vs-eos-r50" data-goatcounter-title="Article link: EOS R50 V vs EOS R50 size comparison">EOS R50 V vs EOS R50 size comparison</a>.</p>
+
+<h2>3. The viewfinders that vanished</h2>
+<p>Four cameras were listed with no viewfinder at all: Canon's EOS R50 and EOS R100, and Fujifilm's X-T100 and X-T200. All four have an electronic viewfinder, as <a href="https://www.canon.co.uk/cameras/eos-r100/specifications/" target="_blank" rel="noopener" data-goatcounter-click="article-link:camera-specs-we-got-wrong-2026:source:canon.co.uk" data-goatcounter-title="Article source: canon.co.uk">Canon</a> and <a href="https://www.fujifilm-x.com/en-us/products/cameras/x-t200/" target="_blank" rel="noopener" data-goatcounter-click="article-link:camera-specs-we-got-wrong-2026:source:fujifilm-x.com" data-goatcounter-title="Article source: fujifilm-x.com">Fujifilm</a> list.</p>
+<p>The X-T100 was also 54 g light: <a href="https://www.fujifilm-x.com/en-us/products/cameras/x-t100/" target="_blank" rel="noopener" data-goatcounter-click="article-link:camera-specs-we-got-wrong-2026:source:fujifilm-x.com" data-goatcounter-title="Article source: fujifilm-x.com">Fujifilm says</a> 448 g, not 394. Compare the <a href="../canon/vs/eos-r50-vs-eos-r100" data-goatcounter-click="article-link:camera-specs-we-got-wrong-2026:canon/vs/eos-r50-vs-eos-r100" data-goatcounter-title="Article link: EOS R50 and EOS R100">EOS R50 and EOS R100</a>, or the <a href="../fujifilm/#cameras=x-t100,x-t200" data-goatcounter-click="article-link:camera-specs-we-got-wrong-2026:fujifilm/" data-goatcounter-title="Article link: X-T100 and X-T200">X-T100 and X-T200</a>.</p>
+
+<h2>4. Weather sealing, both ways</h2>
+<p>We had the Fujifilm X-T50 down as weather-sealed. <a href="https://www.fujifilm-x.com/global/products/cameras/x-t50/specifications/" target="_blank" rel="noopener" data-goatcounter-click="article-link:camera-specs-we-got-wrong-2026:source:fujifilm-x.com" data-goatcounter-title="Article source: fujifilm-x.com">Fujifilm never says so</a>, and it isn't.</p>
+<p>The Canon EOS R8 went the other way: we had it unsealed, but <a href="https://www.canon.co.uk/cameras/eos-r8/specifications/" target="_blank" rel="noopener" data-goatcounter-click="article-link:camera-specs-we-got-wrong-2026:source:canon.co.uk" data-goatcounter-title="Article source: canon.co.uk">Canon lists</a> "weather-resistant construction". See the <a href="../fujifilm/vs/x-t50-vs-x100v" data-goatcounter-click="article-link:camera-specs-we-got-wrong-2026:fujifilm/vs/x-t50-vs-x100v" data-goatcounter-title="Article link: X-T50 vs X100V">X-T50 vs X100V</a> and <a href="../canon/vs/eos-r8-vs-eos-r10" data-goatcounter-click="article-link:camera-specs-we-got-wrong-2026:canon/vs/eos-r8-vs-eos-r10" data-goatcounter-title="Article link: EOS R8 vs EOS R10">EOS R8 vs EOS R10</a> comparisons.</p>
+
+<h2>5. Hood on, zoomed out, battery out</h2>
+<p>Some numbers aren't wrong, just measured differently. Leica's Summilux-M 28mm f/1.4 was 81 mm long with its hood on; <a href="https://leica-camera.com/sites/default/files/pm-14481-Technical-Data_Leica-Summilux-M_1-4_28mm_EN_2.pdf" target="_blank" rel="noopener" data-goatcounter-click="article-link:camera-specs-we-got-wrong-2026:source:leica-camera.com" data-goatcounter-title="Article source: leica-camera.com">without it</a> it's 67 mm.</p>
+<p>Fujifilm's XF 55-200mm was listed at 175 mm, its length zoomed all the way out. <a href="https://www.fujifilm-x.com/global/products/lenses/xf55-200mmf35-48-r-lm-ois/specifications/" target="_blank" rel="noopener" data-goatcounter-click="article-link:camera-specs-we-got-wrong-2026:source:fujifilm-x.com" data-goatcounter-title="Article source: fujifilm-x.com">At rest</a> it's 118 mm. And the Olympus E-PL5 was 279 g body only; <a href="https://jp.omsystem.com/cms/record/dslr/epl5/spec.pdf" target="_blank" rel="noopener" data-goatcounter-click="article-link:camera-specs-we-got-wrong-2026:source:jp.omsystem.com" data-goatcounter-title="Article source: jp.omsystem.com">with battery and card</a> it's 325 g, the way we list every camera.</p>
+
+<h2>6. Right lens, wrong mount</h2>
+<p>Third-party lenses are made for several mounts, and the sizes differ. 19 of the 22 Sigma L-Mount lenses we checked were carrying their Sony E-mount dimensions.</p>
+<p><a href="https://www.sigma-global.com/en/lenses/a024_24_70_28_ii/" target="_blank" rel="noopener" data-goatcounter-click="article-link:camera-specs-we-got-wrong-2026:source:sigma-global.com" data-goatcounter-title="Article source: sigma-global.com">Sigma’s spec tables</a> list each mount separately, and the L-Mount versions are usually a couple of millimeters shorter. Browse the corrected <a href="../mount/l-mount" data-goatcounter-click="article-link:camera-specs-we-got-wrong-2026:mount/l-mount" data-goatcounter-title="Article link: L-Mount lenses">L-Mount lenses</a>.</p>
+
+<h2>How to spot a bad spec</h2>
+<ul class="guide-links">
+<li><strong>Two models, same numbers?</strong> Suspicious. New bodies rarely match old ones to the millimeter.</li>
+<li><strong>Check what's included.</strong> Battery and card? Hood? Zoomed in or out?</li>
+<li><strong>Go to the maker.</strong> If the maker doesn't claim it (weather sealing, especially), don't believe it.</li>
+</ul>
+<p>Nobody's safe. Fujifilm, the brand I shoot with, had 19 mismatches across its first 13 cameras. Even my own X-S20 was 0.6 mm too short and missing its <a href="https://www.fujifilm-x.com/global/products/cameras/x-s20/specifications/" target="_blank" rel="noopener" data-goatcounter-click="article-link:camera-specs-we-got-wrong-2026:source:fujifilm-x.com" data-goatcounter-title="Article source: fujifilm-x.com">UHS-II card support</a>.</p>
+
+<h2>What we do now</h2>
+<p>Every camera and lens we've checked now links to its maker's own spec page, shown under References in the <a href="../compare/" data-goatcounter-click="article-link:camera-specs-we-got-wrong-2026:compare/" data-goatcounter-title="Article link: comparison tool">comparison tool</a>. That's 1,369 so far, and counting. <a href="../about" data-goatcounter-click="article-link:camera-specs-we-got-wrong-2026:about" data-goatcounter-title="Article link: How we source our data">How we source our data</a>.</p>
+      <p class="guide-dated">Published <time datetime="2026-11-18">18 November 2026</time>. Specs and prices change; the <a href="../compare/">comparison tool</a> always shows today's numbers.</p>
+    </article>
+  </main>
+  <footer>
+    <p>Compare Camera Specs &mdash; For informational purposes only.</p>
+    <p>Prices shown are approximate manufacturer list prices (RRP) and may differ from live retail prices.</p>
+    <div id="affiliate-disclosure"></div>
+    <p>
+      <a href="../guides/">Guides</a>
+      &middot;
+      <a href="../size/">Camera size comparison</a>
+      &middot;
+      <a href="../kit/">Kit builder</a>
+      &middot;
+      <a href="../about">About</a>
+      &middot;
+      <a href="../privacy">Privacy</a>
+    </p>
+    <p>Created by <a href="https://esusatyo.net" target="_blank" rel="noopener">Enrico Susatyo</a> &middot; Assisted by <a href="https://claude.ai" target="_blank" rel="noopener">Claude</a></p>
+  </footer>
+</body>
+</html>

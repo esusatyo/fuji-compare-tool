@@ -1,0 +1,90 @@
+{
+  "cited": 1369,
+  "r1": {
+    "name": "EOS R1",
+    "source": "https://www.canon.co.uk/cameras/eos-r1/specifications/",
+    "weight": 1115
+  },
+  "r50v": {
+    "name": "EOS R50 V",
+    "source": "https://www.canon.co.uk/cameras/eos-r50v/specifications/",
+    "width": 119.3,
+    "height": 73.7,
+    "depth": 45.2
+  },
+  "r50": {
+    "name": "EOS R50",
+    "source": "https://www.canon.co.uk/cameras/eos-r50/specifications/",
+    "width": 116.3,
+    "height": 85.5,
+    "depth": 68.8,
+    "evfType": "EVF"
+  },
+  "r100": {
+    "name": "EOS R100",
+    "source": "https://www.canon.co.uk/cameras/eos-r100/specifications/",
+    "evfType": "EVF"
+  },
+  "xt100": {
+    "name": "X-T100",
+    "source": "https://www.fujifilm-x.com/en-us/products/cameras/x-t100/",
+    "weight": 448,
+    "evfType": "EVF"
+  },
+  "xt200": {
+    "name": "X-T200",
+    "source": "https://www.fujifilm-x.com/en-us/products/cameras/x-t200/",
+    "evfType": "EVF"
+  },
+  "xt50": {
+    "name": "X-T50",
+    "source": "https://www.fujifilm-x.com/global/products/cameras/x-t50/specifications/",
+    "weatherSealed": false
+  },
+  "xs20": {
+    "name": "X-S20",
+    "source": "https://www.fujifilm-x.com/global/products/cameras/x-s20/specifications/",
+    "height": 85.1,
+    "cardSlots": "1× SD UHS-II"
+  },
+  "r8": {
+    "name": "EOS R8",
+    "source": "https://www.canon.co.uk/cameras/eos-r8/specifications/",
+    "weatherSealed": true
+  },
+  "om5ii": {
+    "name": "OM-5 Mark II",
+    "source": "https://jp.omsystem.com/product/dslr/om-omd/om/om5mk2/spec.html",
+    "depth": 52
+  },
+  "summilux": {
+    "name": "Leica Summilux-M 28 f/1.4 ASPH.",
+    "source": "https://leica-camera.com/sites/default/files/pm-14481-Technical-Data_Leica-Summilux-M_1-4_28mm_EN_2.pdf",
+    "length": 67
+  },
+  "xf55200": {
+    "name": "XF 55-200mm f/3.5-4.8 R LM OIS",
+    "source": "https://www.fujifilm-x.com/global/products/lenses/xf55-200mmf35-48-r-lm-ois/specifications/",
+    "length": 118
+  },
+  "epl5": {
+    "name": "PEN Lite E-PL5",
+    "source": "https://jp.omsystem.com/cms/record/dslr/epl5/spec.pdf",
+    "weight": 325
+  },
+  "gm2": {
+    "name": "FE 16-35mm F2.8 GM II",
+    "source": "https://electronics.sony.com/imaging/lenses/full-frame-e-mount/p/sel1635gm2",
+    "length": 111.5
+  },
+  "gm1": {
+    "name": "FE 16-35mm F2.8 GM",
+    "source": "https://electronics.sony.com/imaging/lenses/full-frame-e-mount/p/sel1635gm",
+    "length": 121.6
+  },
+  "sigma": {
+    "name": "Sigma 24-70mm f/2.8 DG DN II Art",
+    "source": "https://www.sigma-global.com/en/lenses/a024_24_70_28_ii/",
+    "length": 120.2
+  }
+}

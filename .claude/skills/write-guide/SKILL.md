@@ -100,6 +100,9 @@ Body order (design G4):
   The byline is the site name, added by the shell.
 - US spelling, matching the site ("stabilization", "colored").
 - Words people search with, varied naturally. No keyword stuffing, no "click here".
+- **Only say what the data or a cited source supports.** A sentence about history ("until 2024 …")
+  needs a source or must be narrowed to what our data shows ("every one of them arrived in 2024 or
+  later"). Never invent the owner's habits or opinions beyond what they've told you.
 - **Every number comes from `snap`** through `${...}`. Never type a weight, price, count or year
   that came from the data. Fixed editorial facts (a soda can, a paperclip) need no claim but must
   be true.
@@ -115,12 +118,19 @@ Body order (design G4):
 - Deep links (`compare/#cameras=brand:slug,…`, `<brand>/#lenses=a,b`, `kit/#kit=body,lens`) are fine
   for readers; the slugs must resolve. They don't count as SEO links (crawlers drop the hash).
 - Link the new page from a related guide's link list where it fits.
+- **Cite primary sources** with `kit.src(url, 'anchor')`: the maker's spec page (an item's
+  `specSources[0].url` with tier T1, pulled into the snapshot), a maker press release, an official
+  alliance site. Opens in a new tab and is counted as a `source` click. Check each URL loads in a
+  real browser (some makers block scripts) and link the final address, not one that redirects.
+  Never cite a retailer or review site for a fact the maker publishes.
 
 ### Charts (design G7, dataviz rules)
 - `kit.bars({ caption, bars: [{ label, sub, value, series }], max, legend, table })` — horizontal
   bars from zero, a visible value on every bar, a legend when colour carries meaning, and the same
   numbers as a table. Series 1–4 map to the validated `--chart-1..4` tokens; assign them by a
   fixed meaning (brand, sensor format), never by rank, and never more than four.
+- `kit.stacked({ caption, rows: [{ label, parts: [{ value, series }] }], legend, table })` splits each
+  bar into parts (e.g. first-party vs third-party), 2px apart, with the total after the bar.
 - Keep `sub` labels short (strip apertures: `LUMIX G Vario 12-32mm`) so rows don't wrap on phones.
 - If a new chart type is needed, add it to `makeKit` in `scripts/articles.js` with tokens only,
   and validate any new colours with the dataviz skill's palette validator in both themes.

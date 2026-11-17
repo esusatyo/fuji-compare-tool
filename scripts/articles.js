@@ -91,6 +91,13 @@ function makeKit(page) {
       const target = href.split('#')[0] || href;
       return `<a href="../${href}" data-goatcounter-click="${page.event}:${page.slug}:${esc(target)}" data-goatcounter-title="${page.label} link: ${esc(text.replace(/<[^>]+>/g, ''))}">${text}</a>`;
     },
+    // A primary source outside the site (the maker's spec page, a press
+    // release). Opens in a new tab; counted as `<event>:<slug>:source:<host>`.
+    src(url, text) {
+      if (!/^https:\/\//.test(url)) throw new Error(`${page.url}: a source must be an https URL, got "${url}"`);
+      const host = new URL(url).hostname.replace(/^www\./, '');
+      return `<a href="${esc(url)}" target="_blank" rel="noopener" data-goatcounter-click="${page.event}:${page.slug}:source:${esc(host)}" data-goatcounter-title="${page.label} source: ${esc(host)}">${text}</a>`;
+    },
     // head: column labels; rows: arrays of cell HTML; the `rowHeader` column
     // becomes <th scope="row">.
     table(head, rows, { rowHeader = 0, caption = '' } = {}) {
@@ -118,6 +125,33 @@ ${rows.map(r => `<tr>${cells(r)}</tr>`).join('\n')}
 ${key}
 <div class="gbars">
 ${rows}
+</div>
+<figcaption>${caption}</figcaption>
+${table ? `<details><summary>Show as a table</summary>${kit.table(table.head, table.rows, { rowHeader: table.rowHeader || 0 })}</details>` : ''}
+</figure>`;
+    },
+    // Stacked horizontal bars: each row's parts sit end to end from zero with
+    // a 2px gap, the total labelled after the bar. rows: [{ label, sub,
+    // parts: [{ value, series }] }]; legend names each series.
+    stacked({ caption, rows, max, unit = '', legend = [], table }) {
+      const total = r => r.parts.reduce((n, p) => n + p.value, 0);
+      const top = max || Math.max(...rows.map(total));
+      const names = Object.fromEntries(legend.map(([label, s]) => [s, label]));
+      const html = rows.map(r => {
+        const t = total(r);
+        const pct = Math.max(0.5, (t / top) * 100).toFixed(1);
+        const tip = `${r.label}: ${t}${unit ? ' ' + unit : ''} (${r.parts.map(p => `${p.value} ${names[p.series] || ''}`.trim()).join(', ')})`;
+        const parts = r.parts.filter(p => p.value > 0).map(p => `<span class="gbar-part gbar-c${p.series}" style="flex:${p.value} 0 0"></span>`).join('');
+        return `<div class="gbar-row" title="${esc(tip)}">
+  <div class="gbar-label"><span>${esc(r.label)}</span>${r.sub ? `<small>${esc(r.sub)}</small>` : ''}</div>
+  <div class="gbar-track"><span class="gbar gbar-stack" style="width:${pct}%">${parts}</span><span class="gbar-val" style="left:${pct}%">${t}${unit ? ' ' + unit : ''}</span></div>
+</div>`;
+      }).join('\n');
+      const key = legend.length ? `<div class="gbar-legend">${legend.map(([label, s]) => `<span><i class="gbar-c${s}"></i>${esc(label)}</span>`).join('')}</div>` : '';
+      return `<figure class="gbar-chart">
+${key}
+<div class="gbars">
+${html}
 </div>
 <figcaption>${caption}</figcaption>
 ${table ? `<details><summary>Show as a table</summary>${kit.table(table.head, table.rows, { rowHeader: table.rowHeader || 0 })}</details>` : ''}
