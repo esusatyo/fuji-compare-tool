@@ -80,11 +80,24 @@ keywords, heading counts) are deliberately not rules here.
   Every bar carries a visible label, so colour is never the only cue.
 - A table of the same numbers sits under every chart for screen readers and copy-paste.
 
-### G8. Freshness and scope
-- Guides regenerate with the data, like every other generated page, and the sitemap `<lastmod>`
-  hash covers them.
+### G8. Dates, freshness and scope
+- Every article shows its date twice: under the dek ("By Compare Camera Specs · Data as of
+  17 November 2026") and in the closing note, which also points readers to the tool for today's
+  numbers. `dateModified` in the JSON-LD matches it.
+- Two kinds of article (owner to confirm, D5):
+  - **Rankings** ("lightest APS-C cameras"): one evergreen URL with no date in it. A refresh
+    re-runs the data, moves the "data as of" date and the year in the title, and keeps the links
+    the URL has earned. The data is frozen at the "as of" date between refreshes, so the text
+    never changes under a reader without the date moving too.
+  - **Dated pieces** (`/articles/cameras-released-in-2026`, `/articles/camera-prices-november-2026`):
+    a snapshot of one period, the period in the URL, never rewritten after publishing except a link
+    to the newer edition. These are how new content keeps coming without competing with the rankings.
 - The method note states the scope plainly. For example: the database covers current mirrorless
   mounts, so Canon's retired EF-M cameras aren't included.
+- Engine consequence: each article declares its kind. A ranking renders from a data snapshot
+  taken at its "as of" date (the generator must not silently change a published article when
+  `data.js` changes; the claim tests flag it for a refresh instead). A dated piece is rendered once
+  and stored.
 
 ### G9. Measuring
 - A GoatCounter event for links out of a guide (`article-link:<slug>:<target>`), added to
@@ -103,6 +116,8 @@ keywords, heading counts) are deliberately not rules here.
   `canon/vs/eos-r50-vs-eos-r100` and `vs/fujifilm-x-m5-vs-canon-eos-r50` (which also generates
   `canon/size/eos-r50-vs-eos-r100` and `size/fujifilm-x-m5-vs-canon-eos-r50`).
 - Writing: keep the short, witty style; add a short lead-in sentence before every table and chart.
+- D5 (open). Article kinds and dating as in G8: rankings at an evergreen URL with a visible
+  "data as of" date and yearly refreshes; dated pieces with the period in the URL.
 - Publishing pace: the first two articles together, then one about every one to two weeks, each
   reviewed against Bing and Search Console before the next batch (see G9).
 

@@ -89,8 +89,8 @@ ul.links li{margin-bottom:6px}
 <body>
 <main>
 <p class="draft">Draft for review. Numbers are pulled from the site's data on ${UPDATED.text}. Not published.</p>
-${body}
-<p class="meta">By ${esc(siteName)}. Updated <time datetime="${UPDATED.iso}">${UPDATED.text}</time>.</p>
+${body.replace(/(<p class="dek">.*?<\/p>)/, `$1\n<p class="byline">By ${esc(siteName)} · Data as of <time datetime="${UPDATED.iso}">${UPDATED.text}</time></p>`)}
+<p class="meta">Data as of <time datetime="${UPDATED.iso}">${UPDATED.text}</time>. Specs and prices change; the <a href="/compare/">comparison tool</a> always shows today's numbers.</p>
 </main>
 </body>
 </html>
