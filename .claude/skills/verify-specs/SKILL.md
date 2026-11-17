@@ -118,6 +118,7 @@ exactly what this skill hunts).
 
 Traps already paid for — check these before trusting a page:
 
+- **Units drift per brand file.** Leica stored `lcdDots`/`evfDots` as raw dot counts (2332800) while every other brand uses thousands and millions, so the site printed "2,332,800K dots" and Leica won every resolution row. Before verifying a brand, grep its file for `lcdDots:[0-9]{5,}` / `evfDots:[0-9]{3,}` and other out-of-range magnitudes. (2026-11-17)
 - **The same lens in several brand files must agree** (`tests/data/shared-mount.test.js`): a fix to a Sigma, Panasonic, Laowa or OM lens in one brand file has to be mirrored into every other file that holds that slug for the same mount (e.g. `panasonic/` ↔ `leica/`, `sigma/`, `olympus/`). (2026-11-16)
 
 - **Combined spec tables.** A third-party page listing "Sony E / Nikon Z /
@@ -161,9 +162,13 @@ escape in the JS you send, or the tool rejects the call.
 | Sigma | `sigma-global.com/en/lenses/<code>/`; cameras `/en/cameras/<slug>/` | one page lists every mount: read the `<Mount name>` rows for size and weight (MFT row is "Micro Four Thirds mount"); a "mount with dust and splash resistant structure" is a gasket only, so `weatherSealed` = false |
 | Panasonic | `panasonic.jp/dc/products/<model>/spec.html` (cameras `DC-…`, lenses `S-…`/`H-…`) | US shop and UK/AU/SG pages show only a summary. Japanese model codes differ for some bodies (G97 = DC-G99D, G95 = DC-G99, GX9 = DC-GX7MK3, G100 = DC-G100V, G100D = DC-G100DV). Bodies with CFexpress/XQD + SD list two CIPA sets: use the SD set. Lens magnification: the first figure is native, the bracketed one is 35mm-equivalent. The server is slow (about 8 s per page) |
 | OM System | `explore.omsystem.com/us/en/<slug>` | "Maximum image magnification" gives the MFT figure, then the 35mm one; some pages give only the 35mm figure (halve it) or none. Weights may include the tripod foot. A few pages have no spec table |
+| OM System / Olympus (full sheets, incl. discontinued) | `jp.omsystem.com/product/dslr/<code>/spec.html` (cameras; redirects to the real path or to an archived `cms/record/<dslr\|compact>/<code>/spec.pdf`) and `jp.omsystem.com/product/lens/<type>/<line>/<code>/spec.html` | Japanese. Codes: em1mk3, em10mk4, epl10, om1mk2, om5mk2, `pen/pen` (2026 PEN), `compact/tg7`. The archived PDFs are screenshots with no text layer: OCR them with macOS Vision (`VNRecognizeTextRequest`, ja-JP, tile ~1,600 px), since tesseract has no Japanese here. Viewfinder magnification is native (divide by 2; store the finder-style maximum). A 403 on a PDF means it does not exist (E-P1/2/3/5, E-PL1/2/3, E-PM1, TG-1/2) |
+| Leica | `leica-camera.com/en-US/photography/<cameras\|lenses>/<line>/<slug>/technical-specification`; slugs from `/sitemap.xml` (24 child sitemaps) | many older `sites/default/files/pm-…pdf` links now 404/502. Leica's lens pages contain copy errors (a diameter copied from another lens, a scale contradicting its own object field): cross-check against the object field and against sibling pages before applying. Weights for SL bodies are without battery |
+| Thypoch, TTArtisan | store.thypoch.com / ttartisan.store (maker's own Shopify) | read in Chrome; `.json` endpoints are blocked. TTArtisan gives weight ranges across mounts |
+| Zeiss ZM | zeiss.com | Access Denied (Akamai) to curl and Chrome on every regional path, as of 2026-11-17: unverifiable |
 | Tamron | `tamron.com/global/consumer/lenses/<model>/spec.html` or `tamron-americas.com/product/<slug>/` "Technical Specifications" | per-mount length and weight in parentheses |
 | Laowa | `venuslens.net/product/<slug>/` | one figure for all mounts (owner-accepted); search `/?s=<focal>&post_type=product` when a slug 404s |
-| Voigtländer | `cosina.co.jp/voigtlander/en/<mount>/<slug>/` | some pages are script-rendered shells: unverifiable |
+| Voigtländer | `cosina.co.jp/voigtlander/en/<mount>/<slug>/` | plain curl works (2026-11-17, all 34 VM/MFT pages read). Weights are listed per finish / Type I-II; the stored value only has to match one |
 | Viltrox, 7Artisans | specs only in images / multi-lens comparison tables | treat as unverifiable rather than map columns by guess |
 | Yongnuo, Samyang US | yongnuo.eu, samyangus.com are distributors | not T1; use the maker's own site |
 
