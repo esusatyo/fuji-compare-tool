@@ -887,11 +887,8 @@ ${lensSections}
       <a href="${prefix}about">About</a>
       &middot;
       <a href="${prefix}privacy">Privacy</a>
-      &middot;
-      Created by <a href="https://esusatyo.net" target="_blank" rel="noopener">Enrico Susatyo</a>
-      &middot;
-      Assisted by <a href="https://claude.ai" target="_blank" rel="noopener">Claude</a>
     </p>
+    <p>Created by <a href="https://esusatyo.net" target="_blank" rel="noopener">Enrico Susatyo</a> &middot; Assisted by <a href="https://claude.ai" target="_blank" rel="noopener">Claude</a></p>
   </footer>
 </body>
 </html>
@@ -970,11 +967,8 @@ function mountIndexHTML(site, mounts, card = null) {
       <a href="${prefix}about">About</a>
       &middot;
       <a href="${prefix}privacy">Privacy</a>
-      &middot;
-      Created by <a href="https://esusatyo.net" target="_blank" rel="noopener">Enrico Susatyo</a>
-      &middot;
-      Assisted by <a href="https://claude.ai" target="_blank" rel="noopener">Claude</a>
     </p>
+    <p>Created by <a href="https://esusatyo.net" target="_blank" rel="noopener">Enrico Susatyo</a> &middot; Assisted by <a href="https://claude.ai" target="_blank" rel="noopener">Claude</a></p>
   </footer>
 </body>
 </html>
@@ -1002,11 +996,8 @@ function guideFooterHTML(site, prefix) {
       <a href="${prefix}about">About</a>
       &middot;
       <a href="${prefix}privacy">Privacy</a>
-      &middot;
-      Created by <a href="https://esusatyo.net" target="_blank" rel="noopener">Enrico Susatyo</a>
-      &middot;
-      Assisted by <a href="https://claude.ai" target="_blank" rel="noopener">Claude</a>
     </p>
+    <p>Created by <a href="https://esusatyo.net" target="_blank" rel="noopener">Enrico Susatyo</a> &middot; Assisted by <a href="https://claude.ai" target="_blank" rel="noopener">Claude</a></p>
   </footer>`;
 }
 
@@ -1284,11 +1275,8 @@ ${p.footerLinks.map(l => `      <a href="${l.href}">${l.label}</a>\n      &middo
       <a href="${p.prefix}about">About</a>
       &middot;
       <a href="${p.prefix}privacy">Privacy</a>
-      &middot;
-      Created by <a href="https://esusatyo.net" target="_blank" rel="noopener">Enrico Susatyo</a>
-      &middot;
-      Assisted by <a href="https://claude.ai" target="_blank" rel="noopener">Claude</a>
     </p>
+    <p>Created by <a href="https://esusatyo.net" target="_blank" rel="noopener">Enrico Susatyo</a> &middot; Assisted by <a href="https://claude.ai" target="_blank" rel="noopener">Claude</a></p>
   </footer>
   <script defer src="${p.prefix}size.js"></script>
 </body>
@@ -1523,11 +1511,8 @@ ${referenceRowsHTML(a, b)}
       <a href="../../about">About</a>
       &middot;
       <a href="../../privacy">Privacy</a>
-      &middot;
-      Created by <a href="https://esusatyo.net" target="_blank" rel="noopener">Enrico Susatyo</a>
-      &middot;
-      Assisted by <a href="https://claude.ai" target="_blank" rel="noopener">Claude</a>
     </p>
+    <p>Created by <a href="https://esusatyo.net" target="_blank" rel="noopener">Enrico Susatyo</a> &middot; Assisted by <a href="https://claude.ai" target="_blank" rel="noopener">Claude</a></p>
   </footer>
 </body>
 </html>
@@ -1821,11 +1806,8 @@ ${referenceRowsHTML(a.cam, b.cam)}
       <a href="../about">About</a>
       &middot;
       <a href="../privacy">Privacy</a>
-      &middot;
-      Created by <a href="https://esusatyo.net" target="_blank" rel="noopener">Enrico Susatyo</a>
-      &middot;
-      Assisted by <a href="https://claude.ai" target="_blank" rel="noopener">Claude</a>
     </p>
+    <p>Created by <a href="https://esusatyo.net" target="_blank" rel="noopener">Enrico Susatyo</a> &middot; Assisted by <a href="https://claude.ai" target="_blank" rel="noopener">Claude</a></p>
   </footer>
 </body>
 </html>
@@ -2437,10 +2419,6 @@ ${cards}
     <section>
       <h2>Browse by lens mount</h2>
       ${mountLinksHTML(mounts, './mount/', 'home')}
-    </section>` : ''}${guides.length ? `
-    <section>
-      <h2>Guides</h2>
-      ${guideCardsHTML(guides, './guides/', 'home')}
     </section>` : ''}
     <section>
       <h2>Compare camera sizes</h2>
@@ -2457,8 +2435,13 @@ ${cards}
         <span class="size-hub-text">Add up the weight and price of a body and its lenses, and compare two kits side by side.</span>
         <span class="brand-go">Build a kit &rarr;</span>
       </a>
-    </section>
+    </section>${guides.length ? `
+    <section>
+      <h2>Guides</h2>
+      ${guideCardsHTML(guides, './guides/', 'home')}
+    </section>` : ''}
     <section class="landing-intro">
+      <h2>About this site</h2>
       <p>Compare Camera Specs is a free tool for comparing mirrorless cameras and lenses
          side by side. Put up to four of them next to each other and see every spec — sensor,
          autofocus, stabilisation, video, size and weight — with prices in seven currencies.</p>
@@ -2496,11 +2479,8 @@ ${cluster}
       <a href="./about">About</a>
       &middot;
       <a href="./privacy">Privacy</a>
-      &middot;
-      Created by <a href="https://esusatyo.net" target="_blank" rel="noopener">Enrico Susatyo</a>
-      &middot;
-      Assisted by <a href="https://claude.ai" target="_blank" rel="noopener">Claude</a>
     </p>
+    <p>Created by <a href="https://esusatyo.net" target="_blank" rel="noopener">Enrico Susatyo</a> &middot; Assisted by <a href="https://claude.ai" target="_blank" rel="noopener">Claude</a></p>
     ${themeToggleHTML()}
   </footer>
   ${SEO_BODY_END}`;

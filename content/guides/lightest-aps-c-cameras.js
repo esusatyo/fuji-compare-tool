@@ -139,7 +139,7 @@ ${chart}
 <li>${k.a('canon/vs/eos-r50v-vs-eos-r50', 'Canon EOS R50 V vs EOS R50')}</li>
 <li>${k.a('fujifilm/vs/x-t30iii-vs-x-t30ii', 'Fujifilm X-T30 III vs X-T30 II')}</li>
 <li>${k.a('compare/#cameras=' + s.current.slice(0, 4).map(c => `${c.b}:${c.id}`).join(','), 'The four lightest, side by side')}</li>
-<li>Next: ${k.a('guides/lightest-zoom-lenses', 'the lightest zoom lenses for every mount')}</li>
+<li>Next: ${k.a('guides/lightest-aps-c-zoom-lenses', 'the lightest APS-C zoom lenses')}</li>
 </ul>
 
 <h2>How we weighed them</h2>

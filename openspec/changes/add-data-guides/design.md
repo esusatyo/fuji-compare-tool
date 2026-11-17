@@ -107,8 +107,9 @@ Two kinds of page, one engine (owner decision 2026-11-17):
   **`/articles/`** for dated pieces, added later (see G2).
 - D2. Byline: **the site name** ("Compare Camera Specs"), as an `Organization` in the JSON-LD.
   The prose may still speak in the owner's first person (the owner shoots a Fujifilm X-S20).
-- D3. Next article: **the lightest zoom lenses across the brands**, drafted in
-  `drafts/lightest-zoom-lenses.html` (now `content/guides/lightest-zoom-lenses.js`). Later candidates: smallest full-frame camera, lightest
+- D3. Next article: **the lightest zoom lenses across the brands**, narrowed by the owner to
+  APS-C (`content/guides/lightest-aps-c-zoom-lenses.js`; no Micro Four Thirds or GFX; full-frame
+  kept as an extension section). Later candidates: smallest full-frame camera, lightest
   Micro Four Thirds camera, lightest travel kit per mount.
 - D4. Every link must reach an indexable, live page. Pinned for the first article:
   `canon/vs/eos-r50-vs-eos-r100` and `vs/fujifilm-x-m5-vs-canon-eos-r50` (which also generates
@@ -133,12 +134,13 @@ link and every declared claim (a failed claim exits non-zero). Rerun it after an
 - By brand: Fujifilm 6 of 10 years, Canon 2, Sony 1, Nikon 1.
 - Lightest ever in the data: Fujifilm X-M1 (2013), 280 g.
 
-### Second article: lightest zoom lenses (pulled 2026-11-17)
+### Second article: lightest APS-C zoom lenses (pulled 2026-11-17)
 - Zoom = lens `type: 'Zoom'`, current (not discontinued, not pre-release), one entry per lens per
-  mount. Format from the crop in `focalLengthEquiv` (about 1.0 = full-frame; MFT and G by mount).
-- Lightest overall: Panasonic LUMIX G 12-32mm, 70 g. Lightest per mount: Sony E 16-50mm PZ II
-  107 g, Fujifilm XC 13-33mm 125 g, Canon RF-S 18-45mm 130 g, Nikon Z DX 16-50mm 135 g,
-  Panasonic LUMIX S 18-40mm (full-frame) 155 g, Fujifilm GF35-70mm 390 g.
-- Lightest full-frame per mount: LUMIX S 18-40mm 155 g, Sony FE 28-60mm 167 g,
+  mount. APS-C from the crop in `focalLengthEquiv` (about 1.0 = full-frame); MFT, GFX and Leica M
+  out of scope. 75 APS-C zooms across Sony E, Fujifilm X, Canon RF-S and Nikon Z DX.
+- Lightest per mount: Sony E 16-50mm PZ II 107 g, Fujifilm XC 13-33mm 125 g, Canon RF-S 18-45mm
+  130 g, Nikon Z DX 16-50mm 135 g (28 g spread). Half of the ten lightest are power zooms.
+- Lightest full-frame per mount (extension): LUMIX S 18-40mm 155 g, Sony FE 28-60mm 167 g,
   Nikon Z 24-50mm 195 g, Canon RF 24-50mm 210 g.
-- Lightest constant f/2.8 zoom: Sigma 10-18mm f/2.8 DC DN (X), 250 g.
+- Lightest constant f/2.8 APS-C zoom: Sigma 10-18mm f/2.8 DC DN (X), 250 g.
+- The owner's X-S20 zoom of choice: XC 15-45mm, 135 g.

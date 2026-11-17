@@ -10,7 +10,7 @@
 - [x] 1.3 Owner reviews the draft and the guideline; record decisions D1–D4.
 - [x] 1.4 Apply the review: `/articles/` URLs, site byline, lead-ins before tables and charts, the
       owner's X-S20 note; pin the noindexed pairs the first article links to.
-- [x] 1.5 Draft the second article: `drafts/lightest-zoom-lenses.html`; `drafts/build-drafts.js`
+- [x] 1.5 Draft the second article: `drafts/lightest-aps-c-zoom-lenses.html`; `drafts/build-drafts.js`
       builds both drafts and checks their links and claims.
 - [x] 1.6 Owner approves both drafts for `/guides/` (2026-11-17); final text sign-off at the PR (4.2).
 
@@ -41,6 +41,7 @@
 
 - [x] 4.1 Preview check in both themes and at phone width.
 - [x] 4.2a `write-guide` skill (`.claude/skills/write-guide/SKILL.md`): the step-by-step for new guides and articles.
+- [x] 4.2b Owner review round 1 (2026-11-17): zoom guide narrowed to APS-C (no MFT/GFX), full-frame kept as an extension, X-S20 + XC 15-45mm note, link to the three lightest X-mount zooms; homepage Guides below the tools and an "About this site" heading; footer "Created by" on its own line.
 - [ ] 4.2 PR; owner approves the final text and does a real-device check.
 - [ ] 4.3 After merge: verify live, ask the owner before requesting indexing, log a baseline, review
       after 4–8 weeks.

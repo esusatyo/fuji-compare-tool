@@ -1001,11 +1001,8 @@ ${IS_KIT ? `<main id="kit-app" class="kit-app"></main>` : `<div id="compare-head
     <a href="../about">About</a>
     &middot;
     <a href="../privacy">Privacy</a>
-    &middot;
-    Created by <a href="https://esusatyo.net" target="_blank" rel="noopener">Enrico Susatyo</a>
-    &middot;
-    Assisted by <a href="https://claude.ai" target="_blank" rel="noopener">Claude</a>
   </p>
+  <p>Created by <a href="https://esusatyo.net" target="_blank" rel="noopener">Enrico Susatyo</a> &middot; Assisted by <a href="https://claude.ai" target="_blank" rel="noopener">Claude</a></p>
   <div class="theme-toggle" role="group" aria-label="Color theme">
     <button class="theme-btn" data-theme-pref="light">Light</button>
     <button class="theme-btn" data-theme-pref="dark">Dark</button>

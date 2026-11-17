@@ -10,7 +10,7 @@ Write one guide or article as a content module that the generator turns into a p
 
 The engine and the full rule set live in the repo; read them before writing:
 - `scripts/articles.js` — the module contract (header comment) and the `kit` helpers.
-- `content/guides/lightest-aps-c-cameras.js`, `content/guides/lightest-zoom-lenses.js` —
+- `content/guides/lightest-aps-c-cameras.js`, `content/guides/lightest-aps-c-zoom-lenses.js` —
   worked examples. Copy their shape.
 - `openspec/changes/add-data-guides/design.md` (or its archived copy under
   `openspec/changes/archive/` / `openspec/specs/data-guides/`) — guideline G1–G9 and the
@@ -56,7 +56,7 @@ brand that keeps winning, the surprise. Conventions to respect:
 - Camera `weight` is the maker's figure with battery and card; lens `weight` is the maker's figure.
 - Skip `discontinued` and `preRelease` items for "on sale now" rankings; say so in the method note.
 - A third-party lens appears once per brand file of its mount — fold copies by
-  maker + name + mount (see `lightest-zoom-lenses.js`). Never key by slug alone.
+  maker + name + mount (see `lightest-aps-c-zoom-lenses.js`). Never key by slug alone.
 - Sensor format: `sensorType` for cameras; for lenses, the crop in `focalLengthEquiv` (≈1.0 =
   full-frame), with `mft` and `g` known by mount.
 - Fixed-lens and DSLR-era gaps: the site is mirrorless-only (e.g. Canon EOS M isn't in the
@@ -94,7 +94,8 @@ Body order (design G4):
 ### Voice
 - Short, plain, a bit witty. **Paragraphs of one to three sentences.** 400–800 words; no minimum.
 - A short lead-in sentence before **every** table and chart.
-- First person is the owner's voice. The owner shoots a **Fujifilm X-S20** and enjoys it; a brief,
+- First person is the owner's voice. The owner shoots a **Fujifilm X-S20** and enjoys it, with the
+  **XC 15-45mm** as their zoom of choice; a brief,
   honest aside about it is welcome where relevant (never invent other gear, trips or opinions).
   The byline is the site name, added by the shell.
 - US spelling, matching the site ("stabilization", "colored").
