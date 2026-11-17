@@ -13,14 +13,18 @@ keywords, heading counts) are deliberately not rules here.
 - The article must say something a table alone can't: a ranking, a trend, a verdict. If it would
   only repeat a size page, don't write it.
 
-### G2. URL
-- `/articles/<slug>`: short, lowercase, hyphenated, the plain words of the question
-  (`/articles/lightest-aps-c-cameras`). Extensionless, like every URL on the site.
-- No date or year in the slug. These articles are refreshed with the data, so a dated URL
-  (`/articles/2026/...` or `...-2026`) would look stale next year and force a redirect to a new
-  URL, which throws away the links the old one earned. The year goes in the title and the
-  visible updated date instead, where it can change freely. Google says keywords in a URL
-  have only a small effect, so the short descriptive slug is the SEO-friendly choice.
+### G2. URLs: guides and articles
+Two kinds of page, one engine (owner decision 2026-11-17):
+- **Guides** at `/guides/<slug>`: rankings and buying guides that answer a question people ask
+  every year ("lightest APS-C cameras"). Evergreen URL, no date in it, so the links it earns keep
+  counting. Rendered from live data; the **Updated** date sits at the top.
+- **Articles** at `/articles/<slug>`: dated pieces about one period ("cameras released in 2026",
+  "camera prices, November 2026"). The period goes in the slug. Rendered from a data snapshot
+  committed with the article, so they never change after publishing; the **Published** date
+  sits at the top. The only later edit is a link to the newer edition.
+- Slugs are short, lowercase, hyphenated and extensionless, like every URL on the site.
+- `/guides/` and `/articles/` index pages list their pages. An index is generated (and in the
+  sitemap) only once it has at least one page: an empty listing is thin content.
 
 ### G3. Head tags (generator-owned, like every other page)
 - **Title**, at most about 60 characters, the main phrase first, then the year:
@@ -81,23 +85,16 @@ keywords, heading counts) are deliberately not rules here.
 - A table of the same numbers sits under every chart for screen readers and copy-paste.
 
 ### G8. Dates, freshness and scope
-- Every article shows its date twice: under the dek ("By Compare Camera Specs · Data as of
-  17 November 2026") and in the closing note, which also points readers to the tool for today's
-  numbers. `dateModified` in the JSON-LD matches it.
-- Two kinds of article (owner to confirm, D5):
-  - **Rankings** ("lightest APS-C cameras"): one evergreen URL with no date in it. A refresh
-    re-runs the data, moves the "data as of" date and the year in the title, and keeps the links
-    the URL has earned. The data is frozen at the "as of" date between refreshes, so the text
-    never changes under a reader without the date moving too.
-  - **Dated pieces** (`/articles/cameras-released-in-2026`, `/articles/camera-prices-november-2026`):
-    a snapshot of one period, the period in the URL, never rewritten after publishing except a link
-    to the newer edition. These are how new content keeps coming without competing with the rankings.
+- **Guides** re-render with the data on every generator run. Their **Updated** date is the page's
+  sitemap `<lastmod>`: it moves only when the rendered content changes (the hash ignores the date
+  itself), so the date on the page is always the date its numbers last changed.
+- **Articles** render from `content/articles/<slug>.snapshot.json`, written once by
+  `node scripts/snapshot-article.js <slug>`. A data change never touches them. The **Published**
+  date comes from the article's source.
+- Both show the date at the top ("By Compare Camera Specs · Updated 17 November 2026") and in the
+  closing note, which points readers to the tool for today's numbers. `dateModified` matches.
 - The method note states the scope plainly. For example: the database covers current mirrorless
   mounts, so Canon's retired EF-M cameras aren't included.
-- Engine consequence: each article declares its kind. A ranking renders from a data snapshot
-  taken at its "as of" date (the generator must not silently change a published article when
-  `data.js` changes; the claim tests flag it for a refresh instead). A dated piece is rendered once
-  and stored.
 
 ### G9. Measuring
 - A GoatCounter event for links out of a guide (`article-link:<slug>:<target>`), added to
@@ -106,18 +103,19 @@ keywords, heading counts) are deliberately not rules here.
 - Stop writing new guides if the first three earn nothing after eight weeks.
 
 ## Owner decisions (2026-11-17)
-- D1. Section and URL: **`/articles/`**, with SEO-friendly slugs and no date in the slug (see G2).
+- D1. Sections and URLs: **`/guides/`** for evergreen rankings (both first drafts) and
+  **`/articles/`** for dated pieces, added later (see G2).
 - D2. Byline: **the site name** ("Compare Camera Specs"), as an `Organization` in the JSON-LD.
   The prose may still speak in the owner's first person (the owner shoots a Fujifilm X-S20).
 - D3. Next article: **the lightest zoom lenses across the brands**, drafted in
-  `drafts/lightest-zoom-lenses.html`. Later candidates: smallest full-frame camera, lightest
+  `drafts/lightest-zoom-lenses.html` (now `content/guides/lightest-zoom-lenses.js`). Later candidates: smallest full-frame camera, lightest
   Micro Four Thirds camera, lightest travel kit per mount.
 - D4. Every link must reach an indexable, live page. Pinned for the first article:
   `canon/vs/eos-r50-vs-eos-r100` and `vs/fujifilm-x-m5-vs-canon-eos-r50` (which also generates
   `canon/size/eos-r50-vs-eos-r100` and `size/fujifilm-x-m5-vs-canon-eos-r50`).
 - Writing: keep the short, witty style; add a short lead-in sentence before every table and chart.
-- D5 (open). Article kinds and dating as in G8: rankings at an evergreen URL with a visible
-  "data as of" date and yearly refreshes; dated pieces with the period in the URL.
+- D5. Guides are live with an Updated date at the top; articles are frozen snapshots with a
+  Published date (G8). Build the engine for both now; the first article comes later.
 - Publishing pace: the first two articles together, then one about every one to two weeks, each
   reviewed against Bing and Search Console before the next batch (see G9).
 

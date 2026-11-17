@@ -12,33 +12,34 @@
       owner's X-S20 note; pin the noindexed pairs the first article links to.
 - [x] 1.5 Draft the second article: `drafts/lightest-zoom-lenses.html`; `drafts/build-drafts.js`
       builds both drafts and checks their links and claims.
-- [ ] 1.6 Owner approves both drafts' final text.
+- [x] 1.6 Owner approves both drafts for `/guides/` (2026-11-17); final text sign-off at the PR (4.2).
 
-## 2. Generator
+## 2. Engine (guides and articles)
 
-- [ ] 2.1 A guide source format: prose with `{{placeholders}}`, a data query, declared claims, front matter
-      (query evidence, dates, links).
-- [ ] 2.2 Guide page template following design G3/G4 (static H1, short answer, table, chart, sections,
-      links, method note, Article JSON-LD).
-- [ ] 2.3 Chart renderer: static inline SVG plus the table of the same numbers.
-- [ ] 2.4 `/articles/` index page; sitemap entries; share cards.
-- [ ] 2.5 Links to guides from the homepage, `/size/` and relevant brand pages.
+- [ ] 2.1 Source format: one module per page in `content/guides/` or `content/articles/` (meta, query
+      evidence, `snapshot(data)`, `render(snap, kit)`, `claims(snap)`); `scripts/articles.js` loads and
+      renders them (page shell, tables, bar charts); `content/` kept out of the deployed assets.
+- [ ] 2.2 Port both drafts to `content/guides/`; drop `drafts/` and `build-drafts.js`.
+- [ ] 2.3 Generator: `/guides/<slug>` and `/articles/<slug>` pages, index pages once non-empty,
+      sitemap entries, share cards, Updated date from the lastmod manifest; article snapshots via
+      `scripts/snapshot-article.js`.
+- [ ] 2.4 Styles in `engine.css` (tokens only, both themes, chart colours validated), 375px without
+      sideways scroll.
+- [ ] 2.5 Links to guides from the homepage and `/size/`.
+- [ ] 2.6 `guide-link` / `article-link` events; update `privacy.html`.
 
 ## 3. Tests
 
-- [ ] 3.1 Generated guides match the committed files (existing freshness pattern).
-- [ ] 3.2 Every internal link in a guide resolves and points at an indexable page.
-- [ ] 3.3 Every declared claim holds for the current data; no unresolved placeholder in the output.
-- [ ] 3.4 One H1, a title of at most 60 characters, a meta description of 140–160 characters, Article JSON-LD.
+- [ ] 3.1 Every guide link resolves to an existing, indexable page; hash slugs resolve.
+- [ ] 3.2 Every declared claim holds; no unresolved placeholder in the output.
+- [ ] 3.3 One H1, title of at most 60 characters, meta description of 140–160, Article JSON-LD with
+      the site as author, the date at the top.
+- [ ] 3.4 Articles render from their snapshot (a data change can't move them); the articles index
+      is absent while there are no articles.
 
-## 4. Styles and analytics
+## 4. Publish and measure
 
-- [ ] 4.1 Article and chart styles in `engine.css`, tokens only, both themes, 375px wide without sideways scroll.
-- [ ] 4.2 `article-link` event; update `privacy.html`.
-
-## 5. Publish and measure
-
-- [ ] 5.1 Publish "The lightest APS-C cameras, ranked" and "The lightest zoom lenses, ranked by mount"; preview
-      check in both themes and on a phone.
-- [ ] 5.2 PR; owner real-device check.
-- [ ] 5.3 After merge: verify live, ask the owner before requesting indexing, log a baseline, review after 4–8 weeks.
+- [ ] 4.1 Preview check in both themes and at phone width.
+- [ ] 4.2 PR; owner approves the final text and does a real-device check.
+- [ ] 4.3 After merge: verify live, ask the owner before requesting indexing, log a baseline, review
+      after 4–8 weeks.
