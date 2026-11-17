@@ -1,7 +1,7 @@
 ## ADDED Requirements
 
 ### Requirement: Data-led guides answer one search question
-The site SHALL publish guides at `/guides/<slug>`, each answering one search question, with every number in the page generated from the brand data files. Each guide SHALL have a static H1, a first paragraph that answers the question, internal links only to indexable pages, a method note and a visible updated date.
+The site SHALL publish guides at `/articles/<slug>`, each answering one search question, with every number in the page generated from the brand data files. Each guide SHALL have a static H1, a first paragraph that answers the question, internal links only to indexable pages, a method note and a visible updated date.
 
 #### Scenario: Numbers follow the data
 - **WHEN** a camera's weight changes in its `data.js` and the generator is rerun

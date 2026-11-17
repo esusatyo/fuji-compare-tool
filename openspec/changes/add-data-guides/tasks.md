@@ -1,13 +1,18 @@
 ## How to work this change
 
 - Branch `search-and-marketing`. One commit per task, with its tick here. `npm test` green at every commit.
-- Nothing past section 1 starts until the owner has reviewed the draft and answered D1–D4 in design.md.
+- Owner decisions are recorded in design.md (2026-11-17). The owner approves each article's final text before it publishes.
 
 ## 1. Drafts (owner review)
 
 - [x] 1.1 Article structure guideline (design.md).
 - [x] 1.2 Draft the first article: `drafts/lightest-aps-c-cameras.html`.
-- [ ] 1.3 Owner reviews the draft and the guideline; record decisions D1–D4.
+- [x] 1.3 Owner reviews the draft and the guideline; record decisions D1–D4.
+- [x] 1.4 Apply the review: `/articles/` URLs, site byline, lead-ins before tables and charts, the
+      owner's X-S20 note; pin the noindexed pairs the first article links to.
+- [x] 1.5 Draft the second article: `drafts/lightest-zoom-lenses.html`; `drafts/build-drafts.js`
+      builds both drafts and checks their links and claims.
+- [ ] 1.6 Owner approves both drafts' final text.
 
 ## 2. Generator
 
@@ -16,7 +21,7 @@
 - [ ] 2.2 Guide page template following design G3/G4 (static H1, short answer, table, chart, sections,
       links, method note, Article JSON-LD).
 - [ ] 2.3 Chart renderer: static inline SVG plus the table of the same numbers.
-- [ ] 2.4 `/guides/` index page; sitemap entries; share cards.
+- [ ] 2.4 `/articles/` index page; sitemap entries; share cards.
 - [ ] 2.5 Links to guides from the homepage, `/size/` and relevant brand pages.
 
 ## 3. Tests
@@ -29,10 +34,11 @@
 ## 4. Styles and analytics
 
 - [ ] 4.1 Article and chart styles in `engine.css`, tokens only, both themes, 375px wide without sideways scroll.
-- [ ] 4.2 `guide-link` event; update `privacy.html`.
+- [ ] 4.2 `article-link` event; update `privacy.html`.
 
 ## 5. Publish and measure
 
-- [ ] 5.1 Publish "The lightest APS-C cameras, ranked"; preview check in both themes and on a phone.
+- [ ] 5.1 Publish "The lightest APS-C cameras, ranked" and "The lightest zoom lenses, ranked by mount"; preview
+      check in both themes and on a phone.
 - [ ] 5.2 PR; owner real-device check.
 - [ ] 5.3 After merge: verify live, ask the owner before requesting indexing, log a baseline, review after 4–8 weeks.

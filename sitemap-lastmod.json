@@ -8,8 +8,8 @@
     "lastmod": "2026-11-13"
   },
   "canon/": {
-    "hash": "d882ad894845120a",
-    "lastmod": "2026-11-15"
+    "hash": "3a867d96090590bd",
+    "lastmod": "2026-11-17"
   },
   "canon/size/eos-r1-vs-eos-r3": {
     "hash": "47e87f7a4a4c4512",
@@ -19,13 +19,17 @@
     "hash": "91aa269ff5c45eba",
     "lastmod": "2026-11-15"
   },
+  "canon/size/eos-r50-vs-eos-r100": {
+    "hash": "5bb8376adf1f9cb2",
+    "lastmod": "2026-11-17"
+  },
   "canon/size/eos-r50v-vs-eos-r10": {
     "hash": "6b8c7afa38991572",
     "lastmod": "2026-11-15"
   },
   "canon/size/eos-r50v-vs-eos-r50": {
-    "hash": "5510b17bf837f504",
-    "lastmod": "2026-11-15"
+    "hash": "f0e94f6759d8903b",
+    "lastmod": "2026-11-17"
   },
   "canon/size/eos-r6-iii-vs-eos-r5": {
     "hash": "50a650b5a10986b0",
@@ -58,6 +62,10 @@
   "canon/vs/eos-r5-ii-vs-eos-r5": {
     "hash": "e53363556ebfc9e1",
     "lastmod": "2026-11-15"
+  },
+  "canon/vs/eos-r50-vs-eos-r100": {
+    "hash": "0943ced2b193597c",
+    "lastmod": "2026-11-17"
   },
   "canon/vs/eos-r50v-vs-eos-r10": {
     "hash": "0e7c2a6725aeca6f",
@@ -316,12 +324,16 @@
     "lastmod": "2026-11-15"
   },
   "size/": {
-    "hash": "6a155e67156b0087",
-    "lastmod": "2026-11-13"
+    "hash": "1572edbb2c397a70",
+    "lastmod": "2026-11-17"
   },
   "size/canon-eos-r5-ii-vs-sony-a7r-v": {
     "hash": "1ec9ef06383488fc",
     "lastmod": "2026-11-15"
+  },
+  "size/fujifilm-x-m5-vs-canon-eos-r50": {
+    "hash": "d59490424a3fa071",
+    "lastmod": "2026-11-17"
   },
   "size/fujifilm-x-t50-vs-nikon-zfc": {
     "hash": "b3638cfdde38095c",
@@ -360,8 +372,8 @@
     "lastmod": "2026-11-15"
   },
   "size/sony-zv-e10-ii-vs-fujifilm-x-m5": {
-    "hash": "14a8632c71071557",
-    "lastmod": "2026-11-15"
+    "hash": "9b8cf399bbfe99be",
+    "lastmod": "2026-11-17"
   },
   "sony/": {
     "hash": "92bc1ea3d37b6345",
@@ -410,6 +422,10 @@
   "vs/canon-eos-r5-ii-vs-sony-a7r-v": {
     "hash": "77fc64647b8fb049",
     "lastmod": "2026-11-15"
+  },
+  "vs/fujifilm-x-m5-vs-canon-eos-r50": {
+    "hash": "e4765a8bd8ae5ccd",
+    "lastmod": "2026-11-17"
   },
   "vs/fujifilm-x-t50-vs-nikon-zfc": {
     "hash": "0c74bbd01a2e1cd1",

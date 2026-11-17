@@ -171,6 +171,7 @@ const SUCCESSOR_INDEX_SINCE = 2025;
 // page. A pin that stops resolving fails the build — remove it on purpose.
 const PINNED_VS_PAIRS = [
   'canon/vs/eos-r1-vs-eos-r3',
+  'canon/vs/eos-r50-vs-eos-r100', // linked from articles/lightest-aps-c-cameras
   'canon/vs/eos-r5-ii-vs-eos-r5',
   'canon/vs/eos-r50v-vs-eos-r10', // restored: dropped by price churn
   'canon/vs/eos-r50v-vs-eos-r50',
@@ -192,6 +193,7 @@ const PINNED_VS_PAIRS = [
   'sony/vs/a7-v-vs-a7-iv',
   'sony/vs/fx3-vs-a7s-iii',       // restored
   'vs/canon-eos-r5-ii-vs-sony-a7r-v',
+  'vs/fujifilm-x-m5-vs-canon-eos-r50', // linked from articles/lightest-aps-c-cameras
   'vs/fujifilm-x-t50-vs-nikon-zfc',
   'vs/nikon-z5-ii-vs-sony-a7c-ii',     // Bing click
   'vs/nikon-zf-vs-fujifilm-x-t5',

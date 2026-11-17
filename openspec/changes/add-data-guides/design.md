@@ -14,9 +14,13 @@ keywords, heading counts) are deliberately not rules here.
   only repeat a size page, don't write it.
 
 ### G2. URL
-- `/guides/<slug>`: short, lowercase, hyphenated, the plain words of the question
-  (`/guides/lightest-aps-c-cameras`). Extensionless, like every URL on the site.
-- No year in the URL. The year goes in the title, so the URL survives updates.
+- `/articles/<slug>`: short, lowercase, hyphenated, the plain words of the question
+  (`/articles/lightest-aps-c-cameras`). Extensionless, like every URL on the site.
+- No date or year in the slug. These articles are refreshed with the data, so a dated URL
+  (`/articles/2026/...` or `...-2026`) would look stale next year and force a redirect to a new
+  URL, which throws away the links the old one earned. The year goes in the title and the
+  visible updated date instead, where it can change freely. Google says keywords in a URL
+  have only a small effect, so the short descriptive slug is the SEO-friendly choice.
 
 ### G3. Head tags (generator-owned, like every other page)
 - **Title**, at most about 60 characters, the main phrase first, then the year:
@@ -59,8 +63,12 @@ keywords, heading counts) are deliberately not rules here.
 ### G6. Internal links
 - 3–8 links to comparison pages, size pages or the tool, with descriptive anchor text
   ("X-M5 vs ZV-E10 II size comparison", never "click here").
-- Link only to indexable pages. If a guide needs a pair that is currently noindexed, add it to
-  the pinned pairs so it becomes indexable in the same change.
+- Link only to indexable pages (in `sitemap.xml`) that exist. If an article needs a pair that is
+  currently noindexed, pin it (`PINNED_VS_PAIRS`, commented "linked from articles/<slug>") in the
+  same change; pinning also generates its size page. `drafts/build-drafts.js` checks this today,
+  and test 3.2 will once the generator exists.
+- Lens comparisons have no static pages yet, so lens articles link to the mount pages and use
+  brand-page deep links (`/<brand>/#lenses=a,b`) for readers.
 - Tool deep links (`/compare/#cameras=…`) are fine for readers, but don't count them as SEO links:
   crawlers ignore the hash.
 - Link back to each guide from where readers already are: the homepage, `/size/` and the relevant
@@ -79,20 +87,31 @@ keywords, heading counts) are deliberately not rules here.
   mounts, so Canon's retired EF-M cameras aren't included.
 
 ### G9. Measuring
-- A GoatCounter event for links out of a guide (`guide-link:<slug>:<target>`), added to
+- A GoatCounter event for links out of a guide (`article-link:<slug>:<target>`), added to
   `privacy.html`'s list of what's counted.
 - Bing and Search Console impressions per guide URL, reviewed 4–8 weeks after publishing.
 - Stop writing new guides if the first three earn nothing after eight weeks.
 
-## Decisions to confirm with the owner
-- D1. Section name and URL: `/guides/` (recommended) vs `/articles/` or `/blog/`.
-- D2. Byline: the owner's name (recommended, for trust) or the site name.
-- D3. Launch set after the first article: smallest full-frame, lightest Micro Four Thirds, lightest
-  travel kit per mount (from the kit builder).
-- D4. Whether to pin `fujifilm-x-m5-vs-canon-eos-r50` (currently noindexed) as indexable, since the
-  first article links to it.
+## Owner decisions (2026-11-17)
+- D1. Section and URL: **`/articles/`**, with SEO-friendly slugs and no date in the slug (see G2).
+- D2. Byline: **the site name** ("Compare Camera Specs"), as an `Organization` in the JSON-LD.
+  The prose may still speak in the owner's first person (the owner shoots a Fujifilm X-S20).
+- D3. Next article: **the lightest zoom lenses across the brands**, drafted in
+  `drafts/lightest-zoom-lenses.html`. Later candidates: smallest full-frame camera, lightest
+  Micro Four Thirds camera, lightest travel kit per mount.
+- D4. Every link must reach an indexable, live page. Pinned for the first article:
+  `canon/vs/eos-r50-vs-eos-r100` and `vs/fujifilm-x-m5-vs-canon-eos-r50` (which also generates
+  `canon/size/eos-r50-vs-eos-r100` and `size/fujifilm-x-m5-vs-canon-eos-r50`).
+- Writing: keep the short, witty style; add a short lead-in sentence before every table and chart.
+- Publishing pace: the first two articles together, then one about every one to two weeks, each
+  reviewed against Bing and Search Console before the next batch (see G9).
 
-## First article: data used (pulled 2026-11-17 from main 793d532)
+## Article data
+
+Both drafts are built from the brand data by `drafts/build-drafts.js`, which also checks every
+link and every declared claim (a failed claim exits non-zero). Rerun it after any data change.
+
+### First article: data used (pulled 2026-11-17 from main 793d532)
 - APS-C = `sensorType` containing APS-C, X-Trans or Bayer CMOS, excluding full-frame and APS-H.
   65 cameras. Weight = the maker's figure with battery and card (verify-specs convention).
 - Lightest new APS-C camera by launch year: 2016 X-E2S 350 g, 2017 X-E3 337 g, 2018 X-T100 394 g,
@@ -100,3 +119,13 @@ keywords, heading counts) are deliberately not rules here.
   2024 X-M5 355 g, 2025 EOS R50 V 370 g. No APS-C launches in the data for 2026 yet.
 - By brand: Fujifilm 6 of 10 years, Canon 2, Sony 1, Nikon 1.
 - Lightest ever in the data: Fujifilm X-M1 (2013), 280 g.
+
+### Second article: lightest zoom lenses (pulled 2026-11-17)
+- Zoom = lens `type: 'Zoom'`, current (not discontinued, not pre-release), one entry per lens per
+  mount. Format from the crop in `focalLengthEquiv` (about 1.0 = full-frame; MFT and G by mount).
+- Lightest overall: Panasonic LUMIX G 12-32mm, 70 g. Lightest per mount: Sony E 16-50mm PZ II
+  107 g, Fujifilm XC 13-33mm 125 g, Canon RF-S 18-45mm 130 g, Nikon Z DX 16-50mm 135 g,
+  Panasonic LUMIX S 18-40mm (full-frame) 155 g, Fujifilm GF35-70mm 390 g.
+- Lightest full-frame per mount: LUMIX S 18-40mm 155 g, Sony FE 28-60mm 167 g,
+  Nikon Z 24-50mm 195 g, Canon RF 24-50mm 210 g.
+- Lightest constant f/2.8 zoom: Sigma 10-18mm f/2.8 DC DN (X), 250 g.

@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Camera Reddit Radar</title>
+  <link rel="stylesheet" href="app.css">
+</head>
+<body>
+  <header>
+    <h1>Camera Reddit Radar <small>read-only — never posts</small></h1>
+    <div class="bar">
+      <button id="scan">Scan now</button>
+      <button id="copyall">Copy all as text</button>
+      <span id="status"></span>
+    </div>
+  </header>
+  <main>
+    <p class="note">Check each subreddit's self-promotion rules before replying, write the answer yourself, and keep the disclosure line.</p>
+    <div id="list"></div>
+    <p><button id="restore" class="link">Restore dismissed posts</button></p>
+    <details>
+      <summary>Settings</summary>
+      <label>Subreddits (one per line)<textarea id="subs" rows="8"></textarea></label>
+      <label>Max post age (hours)<input id="hours" type="number" min="1" max="168"></label>
+      <label class="row"><input id="daily" type="checkbox"> Scan once a day automatically (while Chrome is running)</label>
+      <button id="save">Save settings</button>
+    </details>
+  </main>
+  <script src="lib.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

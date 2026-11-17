@@ -16,7 +16,7 @@ website's presence" more than anything else it lists. Our evidence agrees:
 
 ## What changes
 
-- A new **guides** section: short, data-led articles at `/guides/<slug>`, plus a `/guides/`
+- A new **articles** section: short, data-led articles at `/articles/<slug>`, plus a `/articles/`
   index. Each article answers one search question, with numbers built from `data.js` by the
   generator and prose written or approved by the owner.
 - An **article structure guideline** (design.md) that every guide follows: title, meta,
