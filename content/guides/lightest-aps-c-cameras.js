@@ -101,7 +101,7 @@ module.exports = {
     );
     const chart = k.bars({
       caption: 'Lightest new APS-C camera launched each year, weight with battery and card. Bars start at zero.',
-      max: 450,
+      max: 500,
       bars: s.years.map(v => ({ label: String(v.year), sub: `${v.brand} ${v.name}`, value: v.weight, series: BRAND_SERIES[v.b] || 1 })),
       legend: [['Fujifilm', 1], ['Canon', 2], ['Sony', 3], ['Nikon', 4]],
       table: { head: ['Year', 'Lightest new APS-C camera', 'Weight'], rows: s.years.map(v => [v.year, k.esc(full(v)), `${v.weight} g`]) },

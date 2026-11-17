@@ -2242,9 +2242,10 @@ const LENSES = {
   'lumix-s-18mm-f1-8': {
     name:'LUMIX S 18mm F1.8', manufacturer:'Panasonic', line:'LUMIX S', type:'Prime', mount:'l', asin:'B0BDGGZ7NS',
     focalLength:18, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'18mm',
-    maxAperture:1.8, minAperture:22, weight:340, length:82.0, diameter:73.6,
-    filterThread:67, minFocusDist:18, maxMagnification:0.08,
-    elements:13, groups:11, blades:9, afType:'Stepping Motor',
+    specSources: [{ url:'https://panasonic.jp/dc/products/S-S18/spec.html', tier:'T1', title:'Panasonic Japan official specifications (S-S18)', note:'verify-specs 2026-11-15: optics, blades, apertures, focus, magnification (native, not 35mm-equivalent), filter, size and weight re-read; weather sealing not stated on this page', date:'2026-11-15' }],
+    maxAperture:1.8, minAperture:16, weight:340, length:82.0, diameter:73.6,
+    filterThread:67, minFocusDist:18, maxMagnification:0.2,
+    elements:13, groups:12, blades:9, afType:'Stepping Motor',
     weatherSealed:true, ois:false, oisStops:null, year:2022, discontinued:false,
     imageUrl:'https://shop.panasonic.com/cdn/shop/products/abpf3vlfulwsrz6gbjkd.jpg',
     imageSource: { url:'https://shop.panasonic.com/products/s-series-18mm-f1-8-l-mount-lens', tier:'T1', note:'official Panasonic shop.panasonic.com product page; barrel reads "S 1:1.8/18mm" and "18"', date:'2026-08-17' },
@@ -2272,7 +2273,8 @@ const LENSES = {
   'lumix-s-24mm-f1-8': {
     name:'LUMIX S 24mm F1.8', manufacturer:'Panasonic', line:'LUMIX S', type:'Prime', mount:'l', asin:'B09F6WGXHM',
     focalLength:24, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'24mm',
-    maxAperture:1.8, minAperture:22, weight:310, length:82.0, diameter:73.6,
+    specSources: [{ url:'https://panasonic.jp/dc/products/S-S24/spec.html', tier:'T1', title:'Panasonic Japan official specifications (S-S24)', note:'verify-specs 2026-11-15: optics, blades, apertures, focus, magnification (native, not 35mm-equivalent), filter, size and weight re-read; weather sealing not stated on this page', date:'2026-11-15' }],
+    maxAperture:1.8, minAperture:16, weight:310, length:82.0, diameter:73.6,
     filterThread:67, minFocusDist:24, maxMagnification:0.15,
     elements:12, groups:11, blades:9, afType:'Stepping Motor',
     weatherSealed:true, ois:false, oisStops:null, year:2021, discontinued:false,
@@ -2286,6 +2288,7 @@ const LENSES = {
   'lumix-s-26mm-f8': {
     name:'LUMIX S 26mm F8', manufacturer:'Panasonic', line:'LUMIX S', type:'Prime', mount:'l', asin:'B0D4SNH275',
     focalLength:26, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'26mm',
+    specSources: [{ url:'https://panasonic.jp/dc/products/S-R26/spec.html', tier:'T1', title:'Panasonic Japan official specifications (S-R26)', note:'verify-specs 2026-11-15: optics, blades, apertures, focus, magnification (native, not 35mm-equivalent), filter, size and weight re-read; weather sealing not stated on this page', date:'2026-11-15' }],
     maxAperture:8, minAperture:8, weight:58, length:18.1, diameter:67.1,
     filterThread:null, minFocusDist:25, maxMagnification:0.14,
     elements:5, groups:5, blades:null, afType:'Manual',
@@ -2300,9 +2303,10 @@ const LENSES = {
   'lumix-s-35mm-f1-8': {
     name:'LUMIX S 35mm F1.8', manufacturer:'Panasonic', line:'LUMIX S', type:'Prime', mount:'l', asin:'B09LD9DQG5',
     focalLength:35, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'35mm',
+    specSources: [{ url:'https://panasonic.jp/dc/products/S-S35/spec.html', tier:'T1', title:'Panasonic Japan official specifications (S-S35)', note:'verify-specs 2026-11-15: optics, blades, apertures, focus, magnification (native, not 35mm-equivalent), filter, size and weight re-read; weather sealing not stated on this page', date:'2026-11-15' }],
     maxAperture:1.8, minAperture:22, weight:295, length:82.0, diameter:73.6,
-    filterThread:67, minFocusDist:24, maxMagnification:0.15,
-    elements:11, groups:10, blades:9, afType:'Stepping Motor',
+    filterThread:67, minFocusDist:24, maxMagnification:0.22,
+    elements:11, groups:9, blades:9, afType:'Stepping Motor',
     weatherSealed:true, ois:false, oisStops:null, year:2021, discontinued:false,
     imageUrl:'https://upload.wikimedia.org/wikipedia/commons/thumb/7/76/Panasonic_Lumix_S_35mm_F1.8_%2852972339626%29.jpg/500px-Panasonic_Lumix_S_35mm_F1.8_%2852972339626%29.jpg',
     imageCredit:{author:"Henry Söderlund from Helsinki, Finland", licence:"CC BY 2.0", licenceUrl:"https://creativecommons.org/licenses/by/2.0", source:"https://commons.wikimedia.org/wiki/File:Panasonic_Lumix_S_35mm_F1.8_(52972339626).jpg"},
@@ -2315,6 +2319,7 @@ const LENSES = {
   'lumix-s-40mm-f2': {
     name:'LUMIX S 40mm F2', manufacturer:'Panasonic', line:'LUMIX S', type:'Prime', mount:'l', asin:'B0GY21YLS2',
     focalLength:40, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'40mm',
+    specSources: [{ url:'https://panasonic.jp/dc/products/S-S40/spec.html', tier:'T1', title:'Panasonic Japan official specifications (S-S40)', note:'verify-specs 2026-11-15: optics, blades, apertures, focus, magnification (native, not 35mm-equivalent), filter, size and weight re-read; weather sealing not stated on this page', date:'2026-11-15' }],
     maxAperture:2.0, minAperture:22, weight:144, length:40.9, diameter:69.4,
     filterThread:62, minFocusDist:30, maxMagnification:0.17,
     elements:7, groups:6, blades:7, afType:'Stepping Motor',
@@ -2330,6 +2335,7 @@ const LENSES = {
   'lumix-s-50mm-f1-8': {
     name:'LUMIX S 50mm F1.8', manufacturer:'Panasonic', line:'LUMIX S', type:'Prime', mount:'l', asin:'B093NKZCR4',
     focalLength:50, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'50mm',
+    specSources: [{ url:'https://panasonic.jp/dc/products/S-S50/spec.html', tier:'T1', title:'Panasonic Japan official specifications (S-S50)', note:'verify-specs 2026-11-15: optics, blades, apertures, focus, magnification (native, not 35mm-equivalent), filter, size and weight re-read; weather sealing not stated on this page', date:'2026-11-15' }],
     maxAperture:1.8, minAperture:22, weight:300, length:82.0, diameter:73.6,
     filterThread:67, minFocusDist:45, maxMagnification:0.14,
     elements:9, groups:8, blades:9, afType:'Stepping Motor',
@@ -2345,6 +2351,7 @@ const LENSES = {
   'lumix-s-pro-50mm-f1-4': {
     name:'LUMIX S PRO 50mm F1.4', manufacturer:'Panasonic', line:'LUMIX S', type:'Prime', mount:'l', asin:'B07N84VZ4Z',
     focalLength:50, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'50mm',
+    specSources: [{ url:'https://panasonic.jp/dc/products/S-X50/spec.html', tier:'T1', title:'Panasonic Japan official specifications (S-X50)', note:'verify-specs 2026-11-15: optics, blades, apertures, focus, magnification (native, not 35mm-equivalent), filter, size and weight re-read; weather sealing not stated on this page', date:'2026-11-15' }],
     maxAperture:1.4, minAperture:16, weight:955, length:130.0, diameter:90.0,
     filterThread:77, minFocusDist:44, maxMagnification:0.15,
     elements:13, groups:11, blades:11, afType:'Dual Phase Linear Motor',
@@ -2359,6 +2366,7 @@ const LENSES = {
   'lumix-s-85mm-f1-8': {
     name:'LUMIX S 85mm F1.8', manufacturer:'Panasonic', line:'LUMIX S', type:'Prime', mount:'l', asin:'B08M24BV12',
     focalLength:85, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'85mm',
+    specSources: [{ url:'https://panasonic.jp/dc/products/S-S85/spec.html', tier:'T1', title:'Panasonic Japan official specifications (S-S85)', note:'verify-specs 2026-11-15: optics, blades, apertures, focus, magnification (native, not 35mm-equivalent), filter, size and weight re-read; weather sealing not stated on this page', date:'2026-11-15' }],
     maxAperture:1.8, minAperture:22, weight:355, length:82.0, diameter:73.6,
     filterThread:67, minFocusDist:80, maxMagnification:0.13,
     elements:9, groups:8, blades:9, afType:'Stepping Motor',
@@ -2373,6 +2381,7 @@ const LENSES = {
   'lumix-s-100mm-f2-8-macro': {
     name:'LUMIX S 100mm F2.8 MACRO', manufacturer:'Panasonic', line:'LUMIX S', type:'Prime', mount:'l', asin:'B0CRSNV73W',
     focalLength:100, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'100mm',
+    specSources: [{ url:'https://panasonic.jp/dc/products/S-E100/spec.html', tier:'T1', title:'Panasonic Japan official specifications (S-E100)', note:'verify-specs 2026-11-15: optics, blades, apertures, focus, magnification (native, not 35mm-equivalent), filter, size and weight re-read; weather sealing not stated on this page', date:'2026-11-15' }],
     maxAperture:2.8, minAperture:22, weight:298, length:82.0, diameter:73.6,
     filterThread:67, minFocusDist:20, maxMagnification:1.0,
     elements:13, groups:11, blades:9, afType:'Dual Phase Linear Motor',
@@ -2388,6 +2397,7 @@ const LENSES = {
   'lumix-s-18-40mm-f4-5-6-3': {
     name:'LUMIX S 18-40mm F4.5-6.3', manufacturer:'Panasonic', line:'LUMIX S', type:'Zoom', mount:'l', asin:'B0DJG6ZS3V',
     focalLength:null, focalLengthMin:18, focalLengthMax:40, focalLengthEquiv:'18-40mm',
+    specSources: [{ url:'https://panasonic.jp/dc/products/S-R1840/spec.html', tier:'T1', title:'Panasonic Japan official specifications (S-R1840)', note:'verify-specs 2026-11-15: optics, blades, apertures, focus, magnification (native, not 35mm-equivalent), filter, size and weight re-read; weather sealing not stated on this page', date:'2026-11-15' }],
     maxAperture:4.5, minAperture:22, weight:155, length:40.9, diameter:67.9,
     filterThread:62, minFocusDist:15, maxMagnification:0.28,
     elements:8, groups:7, blades:7, afType:'Stepping Motor',
@@ -2402,9 +2412,10 @@ const LENSES = {
   'lumix-s-14-28mm-f4-5-6-macro': {
     name:'LUMIX S 14-28mm F4-5.6 MACRO', manufacturer:'Panasonic', line:'LUMIX S', type:'Zoom', mount:'l', asin:'B0BR8GF76K',
     focalLength:null, focalLengthMin:14, focalLengthMax:28, focalLengthEquiv:'14-28mm',
-    maxAperture:4.0, minAperture:22, weight:345, length:89.6, diameter:84.0,
+    specSources: [{ url:'https://panasonic.jp/dc/products/S-R1428/spec.html', tier:'T1', title:'Panasonic Japan official specifications (S-R1428)', note:'verify-specs 2026-11-15: optics, blades, apertures, focus, magnification (native, not 35mm-equivalent), filter, size and weight re-read; weather sealing not stated on this page', date:'2026-11-15' }],
+    maxAperture:4.0, minAperture:22, weight:345, length:89.8, diameter:84.0,
     filterThread:77, minFocusDist:15, maxMagnification:0.50,
-    elements:14, groups:10, blades:9, afType:'Stepping Motor',
+    elements:14, groups:10, blades:7, afType:'Stepping Motor',
     weatherSealed:true, ois:false, oisStops:null, year:2022, discontinued:false,
     imageUrl:'https://shop.panasonic.com/cdn/shop/products/zlxz0s0ges9jjwblrxla.jpg',
     imageSource: { url:'https://shop.panasonic.com/products/s-series-14-28mm-f4-5-6-l-mount-lens', tier:'T1', note:'official Panasonic shop.panasonic.com product page; barrel reads "S 1:4-5.6/14-28mm" and "14-28"', date:'2026-08-17' },
@@ -2416,7 +2427,8 @@ const LENSES = {
   'lumix-s-pro-16-35mm-f4': {
     name:'LUMIX S PRO 16-35mm F4', manufacturer:'Panasonic', line:'LUMIX S', type:'Zoom', mount:'l', asin:'B00JEZ0OFS',
     focalLength:null, focalLengthMin:16, focalLengthMax:35, focalLengthEquiv:'16-35mm',
-    maxAperture:4.0, minAperture:22, weight:500, length:100.0, diameter:84.6,
+    specSources: [{ url:'https://panasonic.jp/dc/products/S-R1635/spec.html', tier:'T1', title:'Panasonic Japan official specifications (S-R1635)', note:'verify-specs 2026-11-15: optics, blades, apertures, focus, magnification (native, not 35mm-equivalent), filter, size and weight re-read; weather sealing not stated on this page', date:'2026-11-15' }],
+    maxAperture:4.0, minAperture:22, weight:500, length:99.6, diameter:85,
     filterThread:77, minFocusDist:25, maxMagnification:0.23,
     elements:12, groups:9, blades:9, afType:'Linear Motor',
     weatherSealed:true, ois:false, oisStops:null, year:2020, discontinued:false,
@@ -2430,6 +2442,7 @@ const LENSES = {
   'lumix-s-20-60mm-f3-5-5-6': {
     name:'LUMIX S 20-60mm F3.5-5.6', manufacturer:'Panasonic', line:'LUMIX S', type:'Zoom', mount:'l', asin:'B088VSF94W',
     focalLength:null, focalLengthMin:20, focalLengthMax:60, focalLengthEquiv:'20-60mm',
+    specSources: [{ url:'https://panasonic.jp/dc/products/S-R2060/spec.html', tier:'T1', title:'Panasonic Japan official specifications (S-R2060)', note:'verify-specs 2026-11-15: optics, blades, apertures, focus, magnification (native, not 35mm-equivalent), filter, size and weight re-read; weather sealing not stated on this page', date:'2026-11-15' }],
     maxAperture:3.5, minAperture:22, weight:350, length:87.2, diameter:77.4,
     filterThread:67, minFocusDist:15, maxMagnification:0.43,
     elements:11, groups:9, blades:9, afType:'Stepping Motor',
@@ -2444,9 +2457,10 @@ const LENSES = {
   'lumix-s-24-60mm-f2-8': {
     name:'LUMIX S 24-60mm F2.8', manufacturer:'Panasonic', line:'LUMIX S', type:'Zoom', mount:'l', asin:'B0F8P9V67L',
     focalLength:null, focalLengthMin:24, focalLengthMax:60, focalLengthEquiv:'24-60mm',
-    maxAperture:2.8, minAperture:22, weight:544, length:99.7, diameter:77.5,
-    filterThread:67, minFocusDist:30, maxMagnification:0.20,
-    elements:13, groups:12, blades:9, afType:'Linear Motor',
+    specSources: [{ url:'https://panasonic.jp/dc/products/S-E2460/spec.html', tier:'T1', title:'Panasonic Japan official specifications (S-E2460)', note:'verify-specs 2026-11-15: optics, blades, apertures, focus, magnification (native, not 35mm-equivalent), filter, size and weight re-read; weather sealing not stated on this page', date:'2026-11-15' }],
+    maxAperture:2.8, minAperture:22, weight:544, length:99.9, diameter:84,
+    filterThread:77, minFocusDist:19, maxMagnification:0.3,
+    elements:14, groups:12, blades:9, afType:'Linear Motor',
     weatherSealed:true, ois:false, oisStops:null, year:2024, discontinued:false,
     imageUrl:'https://shop.panasonic.com/cdn/shop/files/S-E2460_slant.png',
     imageSource: { url:'https://shop.panasonic.com/products/s-series-24-60mm-f2-8-l-mount-lens-s-e2460', tier:'T1', note:'official Panasonic shop.panasonic.com product page; barrel reads "24-60" and "S" badge', date:'2026-08-17' },
@@ -2458,6 +2472,7 @@ const LENSES = {
   'lumix-s-24-70mm-f2-8-pro': {
     name:'LUMIX S PRO 24-70mm F2.8', manufacturer:'Panasonic', line:'LUMIX S', type:'Zoom', mount:'l', asin:'B07WRMBFF3',
     focalLength:null, focalLengthMin:24, focalLengthMax:70, focalLengthEquiv:'24-70mm',
+    specSources: [{ url:'https://panasonic.jp/dc/products/S-E2470/spec.html', tier:'T1', title:'Panasonic Japan official specifications (S-E2470)', note:'verify-specs 2026-11-15: optics, blades, apertures, focus, magnification (native, not 35mm-equivalent), filter, size and weight re-read; weather sealing not stated on this page', date:'2026-11-15' }],
     maxAperture:2.8, minAperture:22, weight:935, length:140.0, diameter:90.9,
     filterThread:82, minFocusDist:37, maxMagnification:0.25,
     elements:18, groups:16, blades:11, afType:'Linear Motor',
@@ -2473,6 +2488,7 @@ const LENSES = {
   'lumix-s-24-105mm-f4-macro': {
     name:'LUMIX S 24-105mm F4 MACRO O.I.S.', manufacturer:'Panasonic', line:'LUMIX S', type:'Zoom', mount:'l', asin:'B07N83WBTF',
     focalLength:null, focalLengthMin:24, focalLengthMax:105, focalLengthEquiv:'24-105mm',
+    specSources: [{ url:'https://panasonic.jp/dc/products/S-R24105/spec.html', tier:'T1', title:'Panasonic Japan official specifications (S-R24105)', note:'verify-specs 2026-11-15: optics, blades, apertures, focus, magnification (native, not 35mm-equivalent), filter, size and weight re-read; weather sealing not stated on this page', date:'2026-11-15' }],
     maxAperture:4.0, minAperture:22, weight:680, length:118.0, diameter:84.0,
     filterThread:77, minFocusDist:30, maxMagnification:0.50,
     elements:16, groups:13, blades:9, afType:'Linear Motor',
@@ -2487,9 +2503,10 @@ const LENSES = {
   'lumix-s-28-200mm-f4-7-1-macro': {
     name:'LUMIX S 28-200mm F4-7.1 MACRO O.I.S.', manufacturer:'Panasonic', line:'LUMIX S', type:'Zoom', mount:'l', asin:'B0CW8722BG',
     focalLength:null, focalLengthMin:28, focalLengthMax:200, focalLengthEquiv:'28-200mm',
-    maxAperture:4.0, minAperture:22, weight:413, length:93.4, diameter:77.3,
+    specSources: [{ url:'https://panasonic.jp/dc/products/S-R28200/spec.html', tier:'T1', title:'Panasonic Japan official specifications (S-R28200)', note:'verify-specs 2026-11-15: optics, blades, apertures, focus, magnification (native, not 35mm-equivalent), filter, size and weight re-read; weather sealing not stated on this page', date:'2026-11-15' }],
+    maxAperture:4.0, minAperture:32, weight:413, length:93.4, diameter:77.3,
     filterThread:67, minFocusDist:14, maxMagnification:0.50,
-    elements:17, groups:13, blades:7, afType:'Stepping Motor',
+    elements:17, groups:13, blades:9, afType:'Stepping Motor',
     weatherSealed:true, ois:true, oisStops:null, year:2023, discontinued:false,
     imageUrl:'https://shop.panasonic.com/cdn/shop/files/S-R28200_carousel.jpg',
     imageSource: { url:'https://shop.panasonic.com/products/s-series-28-200mm-l-mount-lens', tier:'T1', note:'official Panasonic shop.panasonic.com product page; barrel reads "S 1:4-7.1/28-200mm" and "28-200"', date:'2026-08-17' },
@@ -2501,6 +2518,7 @@ const LENSES = {
   'lumix-s-pro-70-200mm-f2-8': {
     name:'LUMIX S PRO 70-200mm F2.8 O.I.S.', manufacturer:'Panasonic', line:'LUMIX S', type:'Zoom', mount:'l', asin:'B07ZZQ3DCC',
     focalLength:null, focalLengthMin:70, focalLengthMax:200, focalLengthEquiv:'70-200mm',
+    specSources: [{ url:'https://panasonic.jp/dc/products/S-E70200/spec.html', tier:'T1', title:'Panasonic Japan official specifications (S-E70200)', note:'verify-specs 2026-11-15: optics, blades, apertures, focus, magnification (native, not 35mm-equivalent), filter, size and weight re-read; weather sealing not stated on this page', date:'2026-11-15' }],
     maxAperture:2.8, minAperture:22, weight:1570, length:208.6, diameter:94.4,
     filterThread:82, minFocusDist:95, maxMagnification:0.21,
     elements:22, groups:17, blades:11, afType:'Linear Motor',
@@ -2516,6 +2534,7 @@ const LENSES = {
   'lumix-s-pro-70-200mm-f4': {
     name:'LUMIX S PRO 70-200mm F4 O.I.S.', manufacturer:'Panasonic', line:'LUMIX S', type:'Zoom', mount:'l', asin:'B07N844X8Q',
     focalLength:null, focalLengthMin:70, focalLengthMax:200, focalLengthEquiv:'70-200mm',
+    specSources: [{ url:'https://panasonic.jp/dc/products/S-R70200/spec.html', tier:'T1', title:'Panasonic Japan official specifications (S-R70200)', note:'verify-specs 2026-11-15: optics, blades, apertures, focus, magnification (native, not 35mm-equivalent), filter, size and weight re-read; weather sealing not stated on this page', date:'2026-11-15' }],
     maxAperture:4.0, minAperture:22, weight:985, length:179.0, diameter:84.4,
     filterThread:77, minFocusDist:92, maxMagnification:0.25,
     elements:23, groups:17, blades:9, afType:'Linear Motor',
@@ -2530,9 +2549,10 @@ const LENSES = {
   'lumix-s-70-300mm-f4-5-5-6-macro': {
     name:'LUMIX S 70-300mm F4.5-5.6 MACRO O.I.S.', manufacturer:'Panasonic', line:'LUMIX S', type:'Zoom', mount:'l', asin:'B08XX5GTQZ',
     focalLength:null, focalLengthMin:70, focalLengthMax:300, focalLengthEquiv:'70-300mm',
+    specSources: [{ url:'https://panasonic.jp/dc/products/S-R70300/spec.html', tier:'T1', title:'Panasonic Japan official specifications (S-R70300)', note:'verify-specs 2026-11-15: optics, blades, apertures, focus, magnification (native, not 35mm-equivalent), filter, size and weight re-read; weather sealing not stated on this page', date:'2026-11-15' }],
     maxAperture:4.5, minAperture:22, weight:790, length:148.0, diameter:84.0,
     filterThread:77, minFocusDist:54, maxMagnification:0.50,
-    elements:17, groups:11, blades:9, afType:'Linear Motor',
+    elements:17, groups:11, blades:11, afType:'Linear Motor',
     weatherSealed:true, ois:true, oisStops:null, year:2021, discontinued:false,
     imageUrl:'https://upload.wikimedia.org/wikipedia/commons/thumb/6/60/Panasonic_Lumix_S_70-300mm_F4.5-5.6_Macro_O.I.S._20260621143312.jpg/500px-Panasonic_Lumix_S_70-300mm_F4.5-5.6_Macro_O.I.S._20260621143312.jpg',
     imageCredit:{author:"TurnOnTheNight", licence:"CC0", licenceUrl:"http://creativecommons.org/publicdomain/zero/1.0/deed.en", source:"https://commons.wikimedia.org/wiki/File:Panasonic_Lumix_S_70-300mm_F4.5-5.6_Macro_O.I.S._20260621143312.jpg"},
@@ -2544,6 +2564,7 @@ const LENSES = {
   'lumix-s-100-500mm-f5-7-1': {
     name:'LUMIX S 100-500mm F5-7.1 O.I.S.', manufacturer:'Panasonic', line:'LUMIX S', type:'Zoom', mount:'l', asin:'B0FS3C9BRG',
     focalLength:null, focalLengthMin:100, focalLengthMax:500, focalLengthEquiv:'100-500mm',
+    specSources: [{ url:'https://panasonic.jp/dc/products/S-R100500/spec.html', tier:'T1', title:'Panasonic Japan official specifications (S-R100500)', note:'verify-specs 2026-11-15: optics, blades, apertures, focus, magnification (native, not 35mm-equivalent), filter, size and weight re-read; weather sealing not stated on this page', date:'2026-11-15' }],
     maxAperture:5.0, minAperture:29, weight:1285, length:196.1, diameter:92.0,
     filterThread:82, minFocusDist:80, maxMagnification:0.36,
     elements:19, groups:12, blades:11, afType:'Dual Phase Linear Motor',
@@ -2559,6 +2580,7 @@ const LENSES = {
   'sigma-20mm-f14-dg': {
     name:'Sigma 20mm f/1.4 DG DN Art', manufacturer:'Sigma', line:'Art', type:'Prime',
     mount:'l', focalLength:20, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'20mm',
+    specSources: [{ url:'https://www.sigma-global.com/en/lenses/a022_20_14/', tier:'T1', title:'Sigma global product page', note:'verify-specs 2026-11-15: L-Mount rows for size and weight; optics, aperture, focus, filter re-read', date:'2026-11-15' }],
     maxAperture:1.4, minAperture:16, weight:635, length:111.2, diameter:87.8,
     filterThread:82, minFocusDist:23, maxMagnification:0.16,
     elements:17, groups:15, blades:11, afType:'Stepping Motor',
@@ -2573,6 +2595,7 @@ const LENSES = {
   'sigma-24mm-f14-dg': {
     name:'Sigma 24mm f/1.4 DG DN Art', manufacturer:'Sigma', line:'Art', type:'Prime',
     mount:'l', focalLength:24, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'24mm',
+    specSources: [{ url:'https://www.sigma-global.com/en/lenses/a022_24_14/', tier:'T1', title:'Sigma global product page', note:'verify-specs 2026-11-15: L-Mount rows for size and weight; optics, aperture, focus, filter re-read', date:'2026-11-15' }],
     maxAperture:1.4, minAperture:16, weight:520, length:95.5, diameter:75.7,
     filterThread:72, minFocusDist:25, maxMagnification:0.14,
     elements:17, groups:14, blades:11, afType:'Stepping Motor',
@@ -2587,6 +2610,7 @@ const LENSES = {
   'sigma-35mm-f14-dg': {
     name:'Sigma 35mm f/1.4 DG DN Art', manufacturer:'Sigma', line:'Art', type:'Prime',
     mount:'l', focalLength:35, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'35mm',
+    specSources: [{ url:'https://www.sigma-global.com/en/lenses/a021_35_14/', tier:'T1', title:'Sigma global product page', note:'verify-specs 2026-11-15: L-Mount rows for size and weight; optics, aperture, focus, filter re-read', date:'2026-11-15' }],
     maxAperture:1.4, minAperture:16, weight:645, length:109.5, diameter:75.5,
     filterThread:67, minFocusDist:30, maxMagnification:0.19,
     elements:15, groups:11, blades:11, afType:'Stepping Motor',
@@ -2601,6 +2625,7 @@ const LENSES = {
   'sigma-35mm-f14-dg-ii': {
     name:'Sigma 35mm f/1.4 DG II Art', manufacturer:'Sigma', line:'Art', type:'Prime',
     mount:'l', focalLength:35, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'35mm',
+    specSources: [{ url:'https://www.sigma-global.com/en/lenses/a026_35_14/', tier:'T1', title:'Sigma global product page', note:'verify-specs 2026-11-15: L-Mount rows for size and weight; optics, aperture, focus, filter re-read', date:'2026-11-15' }],
     maxAperture:1.4, minAperture:16, weight:530, length:94.0, diameter:73.0,
     filterThread:67, minFocusDist:28, maxMagnification:0.19,
     elements:15, groups:12, blades:11, afType:'Dual HLA Linear',
@@ -2616,6 +2641,7 @@ const LENSES = {
   'sigma-50mm-f14-dg': {
     name:'Sigma 50mm f/1.4 DG DN Art', manufacturer:'Sigma', line:'Art', type:'Prime',
     mount:'l', focalLength:50, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'50mm',
+    specSources: [{ url:'https://www.sigma-global.com/en/lenses/a023_50_14/', tier:'T1', title:'Sigma global product page', note:'verify-specs 2026-11-15: L-Mount rows for size and weight; optics, aperture, focus, filter re-read', date:'2026-11-15' }],
     maxAperture:1.4, minAperture:16, weight:670, length:109.5, diameter:78.2,
     filterThread:72, minFocusDist:45, maxMagnification:0.15,
     elements:14, groups:11, blades:11, afType:'HLA Linear',
@@ -2647,6 +2673,7 @@ const LENSES = {
   'sigma-85mm-f14-dg': {
     name:'Sigma 85mm f/1.4 DG DN Art', manufacturer:'Sigma', line:'Art', type:'Prime',
     mount:'l', focalLength:85, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'85mm',
+    specSources: [{ url:'https://www.sigma-global.com/en/lenses/a020_85_14/', tier:'T1', title:'Sigma global product page', note:'verify-specs 2026-11-15: L-Mount rows for size and weight; optics, aperture, focus, filter re-read', date:'2026-11-15' }],
     maxAperture:1.4, minAperture:16, weight:630, length:94.1, diameter:82.8,
     filterThread:77, minFocusDist:85, maxMagnification:0.12,
     elements:15, groups:11, blades:11, afType:'Stepping Motor',
@@ -2661,6 +2688,7 @@ const LENSES = {
   'sigma-135mm-f14-dg': {
     name:'Sigma 135mm f/1.4 DG Art', manufacturer:'Sigma', line:'Art', type:'Prime',
     mount:'l', focalLength:135, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'135mm',
+    specSources: [{ url:'https://www.sigma-global.com/en/lenses/a025_135_14/', tier:'T1', title:'Sigma global product page', note:'verify-specs 2026-11-15: L-Mount rows for size and weight; optics, aperture, focus, filter re-read', date:'2026-11-15' }],
     maxAperture:1.4, minAperture:16, weight:1430, length:135.5, diameter:111.7,
     filterThread:105, minFocusDist:110, maxMagnification:0.14,
     elements:17, groups:13, blades:13, afType:'Dual HLA Linear',
@@ -2675,6 +2703,7 @@ const LENSES = {
   'sigma-20mm-f2-dg': {
     name:'Sigma 20mm f/2 DG DN Contemporary', manufacturer:'Sigma', line:'Contemporary', type:'Prime',
     mount:'l', focalLength:20, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'20mm',
+    specSources: [{ url:'https://www.sigma-global.com/en/lenses/c022_20_2/', tier:'T1', title:'Sigma global product page', note:'verify-specs 2026-11-15: L-Mount rows for size and weight; optics, aperture, focus, filter re-read', date:'2026-11-15' }],
     maxAperture:2.0, minAperture:22, weight:370, length:72.4, diameter:70,
     filterThread:62, minFocusDist:22, maxMagnification:0.15,
     elements:13, groups:11, blades:9, afType:'Stepping Motor',
@@ -2688,6 +2717,7 @@ const LENSES = {
   'sigma-24mm-f2-dg': {
     name:'Sigma 24mm f/2 DG DN Contemporary', manufacturer:'Sigma', line:'Contemporary', type:'Prime',
     mount:'l', focalLength:24, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'24mm',
+    specSources: [{ url:'https://www.sigma-global.com/en/lenses/c021_24_2/', tier:'T1', title:'Sigma global product page', note:'verify-specs 2026-11-15: L-Mount rows for size and weight; optics, aperture, focus, filter re-read', date:'2026-11-15' }],
     maxAperture:2.0, minAperture:22, weight:365, length:72.0, diameter:70,
     filterThread:62, minFocusDist:24.5, maxMagnification:0.15,
     elements:13, groups:11, blades:9, afType:'Stepping Motor',
@@ -2701,6 +2731,7 @@ const LENSES = {
   'sigma-35mm-f2-dg': {
     name:'Sigma 35mm f/2 DG DN Contemporary', manufacturer:'Sigma', line:'Contemporary', type:'Prime',
     mount:'l', focalLength:35, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'35mm',
+    specSources: [{ url:'https://www.sigma-global.com/en/lenses/c020_35_2/', tier:'T1', title:'Sigma global product page', note:'verify-specs 2026-11-15: L-Mount rows for size and weight; optics, aperture, focus, filter re-read', date:'2026-11-15' }],
     maxAperture:2.0, minAperture:22, weight:325, length:65.4, diameter:70,
     filterThread:58, minFocusDist:27, maxMagnification:0.18,
     elements:10, groups:9, blades:9, afType:'Stepping Motor',
@@ -2714,7 +2745,8 @@ const LENSES = {
   'sigma-45mm-f28-dg': {
     name:'Sigma 45mm f/2.8 DG DN Contemporary', manufacturer:'Sigma', line:'Contemporary', type:'Prime',
     mount:'l', focalLength:45, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'45mm',
-    maxAperture:2.8, minAperture:22, weight:220, length:46.2, diameter:64,
+    specSources: [{ url:'https://www.sigma-global.com/en/lenses/c019_45_28/', tier:'T1', title:'Sigma global product page', note:'verify-specs 2026-11-15: L-Mount rows for size and weight; optics, aperture, focus, filter re-read', date:'2026-11-15' }],
+    maxAperture:2.8, minAperture:22, weight:215, length:46.2, diameter:64,
     filterThread:55, minFocusDist:24, maxMagnification:0.25,
     elements:8, groups:7, blades:7, afType:'Stepping Motor',
     weatherSealed:false, ois:false, oisStops:null, year:2019, discontinued:false,
@@ -2727,6 +2759,7 @@ const LENSES = {
   'sigma-50mm-f2-dg': {
     name:'Sigma 50mm f/2 DG DN Contemporary', manufacturer:'Sigma', line:'Contemporary', type:'Prime',
     mount:'l', focalLength:50, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'50mm',
+    specSources: [{ url:'https://www.sigma-global.com/en/lenses/c023_50_2/', tier:'T1', title:'Sigma global product page', note:'verify-specs 2026-11-15: L-Mount rows for size and weight; optics, aperture, focus, filter re-read', date:'2026-11-15' }],
     maxAperture:2.0, minAperture:22, weight:350, length:68.0, diameter:70,
     filterThread:58, minFocusDist:45, maxMagnification:0.14,
     elements:11, groups:9, blades:9, afType:'Stepping Motor',
@@ -2755,6 +2788,7 @@ const LENSES = {
   'sigma-65mm-f2-dg': {
     name:'Sigma 65mm f/2 DG DN Contemporary', manufacturer:'Sigma', line:'Contemporary', type:'Prime',
     mount:'l', focalLength:65, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'65mm',
+    specSources: [{ url:'https://www.sigma-global.com/en/lenses/c020_65_2/', tier:'T1', title:'Sigma global product page', note:'verify-specs 2026-11-15: L-Mount rows for size and weight; optics, aperture, focus, filter re-read', date:'2026-11-15' }],
     maxAperture:2.0, minAperture:22, weight:405, length:74.7, diameter:72,
     filterThread:62, minFocusDist:55, maxMagnification:0.15,
     elements:12, groups:9, blades:9, afType:'Stepping Motor',
@@ -2768,6 +2802,7 @@ const LENSES = {
   'sigma-90mm-f28-dg': {
     name:'Sigma 90mm f/2.8 DG DN Contemporary', manufacturer:'Sigma', line:'Contemporary', type:'Prime',
     mount:'l', focalLength:90, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'90mm',
+    specSources: [{ url:'https://www.sigma-global.com/en/lenses/c021_90_28/', tier:'T1', title:'Sigma global product page', note:'verify-specs 2026-11-15: L-Mount rows for size and weight; optics, aperture, focus, filter re-read', date:'2026-11-15' }],
     maxAperture:2.8, minAperture:22, weight:295, length:59.7, diameter:64,
     filterThread:55, minFocusDist:50, maxMagnification:0.2,
     elements:11, groups:10, blades:9, afType:'Stepping Motor',
@@ -2782,6 +2817,7 @@ const LENSES = {
   'sigma-17mm-f4-dg': {
     name:'Sigma 17mm f/4 DG DN Contemporary', manufacturer:'Sigma', line:'Contemporary', type:'Prime',
     mount:'l', focalLength:17, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'17mm',
+    specSources: [{ url:'https://www.sigma-global.com/en/lenses/c023_17_4/', tier:'T1', title:'Sigma global product page', note:'verify-specs 2026-11-15: L-Mount rows for size and weight; optics, aperture, focus, filter re-read', date:'2026-11-15' }],
     maxAperture:4.0, minAperture:22, weight:225, length:48.8, diameter:64,
     filterThread:55, minFocusDist:12, maxMagnification:0.28,
     elements:9, groups:8, blades:7, afType:'Stepping Motor',
@@ -2795,6 +2831,7 @@ const LENSES = {
   'sigma-14mm-f14-dg': {
     name:'Sigma 14mm f/1.4 DG DN Art', manufacturer:'Sigma', line:'Art', type:'Prime',
     mount:'l', focalLength:14, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'14mm',
+    specSources: [{ url:'https://www.sigma-global.com/en/lenses/a023_14_14_re/', tier:'T1', title:'Sigma global product page', note:'verify-specs 2026-11-15: L-Mount rows for size and weight; optics, aperture, focus, filter re-read', date:'2026-11-15' }],
     maxAperture:1.4, minAperture:16, weight:1170, length:149.9, diameter:101.4,
     filterThread:null, minFocusDist:30, maxMagnification:0.084,
     elements:19, groups:15, blades:11, afType:'HLA Linear',
@@ -2809,6 +2846,7 @@ const LENSES = {
   'sigma-15mm-f14-dg-fisheye': {
     name:'Sigma 15mm f/1.4 DG DN Diagonal Fisheye Art', manufacturer:'Sigma', line:'Art', type:'Prime',
     mount:'l', focalLength:15, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'15mm',
+    specSources: [{ url:'https://www.sigma-global.com/en/lenses/a024_15_14/', tier:'T1', title:'Sigma global product page', note:'verify-specs 2026-11-15: L-Mount rows for size and weight; optics, aperture, focus, filter re-read', date:'2026-11-15' }],
     maxAperture:1.4, minAperture:16, weight:1360, length:157.9, diameter:104,
     filterThread:null, minFocusDist:38.5, maxMagnification:0.063,
     elements:21, groups:15, blades:11, afType:'HLA Linear',
@@ -2823,6 +2861,7 @@ const LENSES = {
   'sigma-35mm-f12-dg-ii': {
     name:'Sigma 35mm f/1.2 DG II Art', manufacturer:'Sigma', line:'Art', type:'Prime',
     mount:'l', focalLength:35, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'35mm',
+    specSources: [{ url:'https://www.sigma-global.com/en/lenses/a025_35_12/', tier:'T1', title:'Sigma global product page', note:'verify-specs 2026-11-15: L-Mount rows for size and weight; optics, aperture, focus, filter re-read', date:'2026-11-15' }],
     maxAperture:1.2, minAperture:16, weight:755, length:111.4, diameter:81,
     filterThread:72, minFocusDist:28, maxMagnification:0.189,
     elements:17, groups:13, blades:11, afType:'Dual HLA Linear',
@@ -2837,6 +2876,7 @@ const LENSES = {
   'sigma-50mm-f12-dg': {
     name:'Sigma 50mm f/1.2 DG DN Art', manufacturer:'Sigma', line:'Art', type:'Prime',
     mount:'l', focalLength:50, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'50mm',
+    specSources: [{ url:'https://www.sigma-global.com/en/lenses/a024_50_12/', tier:'T1', title:'Sigma global product page', note:'verify-specs 2026-11-15: L-Mount rows for size and weight; optics, aperture, focus, filter re-read', date:'2026-11-15' }],
     maxAperture:1.2, minAperture:16, weight:745, length:108.8, diameter:81,
     filterThread:72, minFocusDist:40, maxMagnification:0.161,
     elements:17, groups:12, blades:13, afType:'Dual HLA Linear',
@@ -2866,6 +2906,7 @@ const LENSES = {
   'sigma-24mm-f35-dg': {
     name:'Sigma 24mm f/3.5 DG DN Contemporary', manufacturer:'Sigma', line:'Contemporary', type:'Prime',
     mount:'l', focalLength:24, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'24mm',
+    specSources: [{ url:'https://www.sigma-global.com/en/lenses/c021_24_35_re/', tier:'T1', title:'Sigma global product page', note:'verify-specs 2026-11-15: L-Mount rows for size and weight; optics, aperture, focus, filter re-read', date:'2026-11-15' }],
     maxAperture:3.5, minAperture:22, weight:225, length:48.8, diameter:64,
     filterThread:55, minFocusDist:10.8, maxMagnification:0.5,
     elements:10, groups:8, blades:7, afType:'Stepping Motor',
@@ -2880,6 +2921,7 @@ const LENSES = {
   'sigma-200mm-f2-dg': {
     name:'Sigma 200mm f/2 DG OS Sports', manufacturer:'Sigma', line:'Sports', type:'Prime',
     mount:'l', focalLength:200, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'200mm',
+    specSources: [{ url:'https://www.sigma-global.com/en/lenses/s025_200_2/', tier:'T1', title:'Sigma global product page', note:'verify-specs 2026-11-15: L-Mount rows for size and weight; optics, aperture, focus, filter re-read', date:'2026-11-15' }],
     maxAperture:2.0, minAperture:22, weight:1820, length:201, diameter:118.9,
     filterThread:105, minFocusDist:170, maxMagnification:0.132,
     elements:19, groups:14, blades:11, afType:'HLA Linear',
@@ -2894,6 +2936,7 @@ const LENSES = {
   'sigma-500mm-f56-dg': {
     name:'Sigma 500mm f/5.6 DG DN OS Sports', manufacturer:'Sigma', line:'Sports', type:'Prime',
     mount:'l', focalLength:500, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'500mm',
+    specSources: [{ url:'https://www.sigma-global.com/en/lenses/s024_500_56/', tier:'T1', title:'Sigma global product page', note:'verify-specs 2026-11-15: L-Mount rows for size and weight; optics, aperture, focus, filter re-read', date:'2026-11-15' }],
     maxAperture:5.6, minAperture:32, weight:1370, length:234.6, diameter:107.6,
     filterThread:95, minFocusDist:320, maxMagnification:0.167,
     elements:20, groups:14, blades:11, afType:'HLA Linear',
@@ -2908,6 +2951,7 @@ const LENSES = {
   'sigma-16-28mm-f28-dg': {
     name:'Sigma 16-28mm f/2.8 DG DN Contemporary', manufacturer:'Sigma', line:'Contemporary', type:'Zoom',
     mount:'l', focalLength:null, focalLengthMin:16, focalLengthMax:28, focalLengthEquiv:'16-28mm',
+    specSources: [{ url:'https://www.sigma-global.com/en/lenses/c022_16_28_28/', tier:'T1', title:'Sigma global product page', note:'verify-specs 2026-11-15: L-Mount rows for size and weight; optics, aperture, focus, filter re-read; page does not mention weather resistance (stored true kept, open question)', date:'2026-11-15' }],
     maxAperture:2.8, minAperture:22, weight:450, length:100.6, diameter:77.2,
     filterThread:72, minFocusDist:25, maxMagnification:0.18,
     elements:16, groups:11, blades:9, afType:'Stepping Motor',
@@ -2939,6 +2983,7 @@ const LENSES = {
   'sigma-28-70mm-f28-dg': {
     name:'Sigma 28-70mm f/2.8 DG DN Contemporary', manufacturer:'Sigma', line:'Contemporary', type:'Zoom',
     mount:'l', focalLength:null, focalLengthMin:28, focalLengthMax:70, focalLengthEquiv:'28-70mm',
+    specSources: [{ url:'https://www.sigma-global.com/en/lenses/c021_28_70_28/', tier:'T1', title:'Sigma global product page', note:'verify-specs 2026-11-15: L-Mount rows for size and weight; optics, aperture, focus, filter re-read', date:'2026-11-15' }],
     maxAperture:2.8, minAperture:22, weight:470, length:101.5, diameter:72.2,
     filterThread:67, minFocusDist:19, maxMagnification:0.3,
     elements:16, groups:12, blades:9, afType:'Stepping Motor',
@@ -2954,8 +2999,9 @@ const LENSES = {
   'sigma-24-70mm-f28-dg-ii': {
     name:'Sigma 24-70mm f/2.8 DG DN II Art', manufacturer:'Sigma', line:'Art', type:'Zoom',
     mount:'l', focalLength:null, focalLengthMin:24, focalLengthMax:70, focalLengthEquiv:'24-70mm',
+    specSources: [{ url:'https://www.sigma-global.com/en/lenses/a024_24_70_28_ii/', tier:'T1', title:'Sigma global product page', note:'verify-specs 2026-11-15: L-Mount rows for size and weight; optics, aperture, focus, filter re-read; max magnification 1:2.7 (W)', date:'2026-11-15' }],
     maxAperture:2.8, minAperture:22, weight:745, length:120.2, diameter:87.8,
-    filterThread:82, minFocusDist:17, maxMagnification:0.34,
+    filterThread:82, minFocusDist:17, maxMagnification:0.37,
     elements:19, groups:15, blades:11, afType:'HLA Linear',
     weatherSealed:true, ois:false, oisStops:null, year:2024, discontinued:false,
     imageUrl:'https://www.sigma-global.com/lenses/a024_24_70_28_ii_product_img01.png',
@@ -2968,6 +3014,7 @@ const LENSES = {
   'sigma-28-45mm-f18-dg': {
     name:'Sigma 28-45mm f/1.8 DG DN Art', manufacturer:'Sigma', line:'Art', type:'Zoom',
     mount:'l', focalLength:null, focalLengthMin:28, focalLengthMax:45, focalLengthEquiv:'28-45mm',
+    specSources: [{ url:'https://www.sigma-global.com/en/lenses/a024_28_45_18/', tier:'T1', title:'Sigma global product page', note:'verify-specs 2026-11-15: L-Mount rows for size and weight; optics, aperture, focus, filter re-read', date:'2026-11-15' }],
     maxAperture:1.8, minAperture:16, weight:960, length:151.4, diameter:87.8,
     filterThread:82, minFocusDist:30, maxMagnification:0.25,
     elements:18, groups:15, blades:11, afType:'HLA Linear',
@@ -2982,6 +3029,7 @@ const LENSES = {
   'sigma-70-200mm-f28-dg': {
     name:'Sigma 70-200mm f/2.8 DG DN OS Sports', manufacturer:'Sigma', line:'Sports', type:'Zoom',
     mount:'l', focalLength:null, focalLengthMin:70, focalLengthMax:200, focalLengthEquiv:'70-200mm',
+    specSources: [{ url:'https://www.sigma-global.com/en/lenses/s023_70_200_28/', tier:'T1', title:'Sigma global product page', note:'verify-specs 2026-11-15: L-Mount rows for size and weight; optics, aperture, focus, filter re-read', date:'2026-11-15' }],
     maxAperture:2.8, minAperture:22, weight:1345, length:205.0, diameter:90.6,
     filterThread:77, minFocusDist:65, maxMagnification:0.19,
     elements:20, groups:15, blades:11, afType:'HLA Linear',
@@ -2996,10 +3044,11 @@ const LENSES = {
   'sigma-100-400mm-f5-63-dg': {
     name:'Sigma 100-400mm f/5-6.3 DG DN OS Contemporary', manufacturer:'Sigma', line:'Contemporary', type:'Zoom',
     mount:'l', focalLength:null, focalLengthMin:100, focalLengthMax:400, focalLengthEquiv:'100-400mm',
+    specSources: [{ url:'https://www.sigma-global.com/en/lenses/c020_100_400_5_63/', tier:'T1', title:'Sigma global product page', note:'verify-specs 2026-11-15: L-Mount rows for size and weight; optics, aperture, focus, filter re-read; weatherSealed false: Sigma claims only a dust- and splash-resistant mount (gasket), not a sealed barrel', date:'2026-11-15' }],
     maxAperture:5.0, minAperture:22, weight:1135, length:197.2, diameter:86,
     filterThread:67, minFocusDist:112, maxMagnification:0.24,
     elements:22, groups:16, blades:9, afType:'Stepping Motor',
-    weatherSealed:true, ois:true, oisStops:4, year:2020, discontinued:false,
+    weatherSealed:false, ois:true, oisStops:4, year:2020, discontinued:false,
     imageUrl:'https://www.sigma-global.com/lenses/c020_100_400_5_63_product_img01.png',
     imageSource: { url:'https://www.sigma-global.com/en/lenses/c020_100_400_5_63/', tier:'T1', note:'official sigma-global.com product page; barrel reads "100-400mm 1:5-6.3 DG DN" and "SIGMA"', date:'2026-08-17' },
     asin:'B08HRY1VFW',
@@ -3011,6 +3060,7 @@ const LENSES = {
   'sigma-150-600mm-f5-63-dg': {
     name:'Sigma 150-600mm f/5-6.3 DG DN OS Sports', manufacturer:'Sigma', line:'Sports', type:'Zoom',
     mount:'l', focalLength:null, focalLengthMin:150, focalLengthMax:600, focalLengthEquiv:'150-600mm',
+    specSources: [{ url:'https://www.sigma-global.com/en/lenses/s021_150_600_5_63/', tier:'T1', title:'Sigma global product page', note:'verify-specs 2026-11-15: L-Mount rows for size and weight; optics, aperture, focus, filter re-read', date:'2026-11-15' }],
     maxAperture:5.0, minAperture:22, weight:2100, length:263.6, diameter:109.4,
     filterThread:95, minFocusDist:58, maxMagnification:0.34,
     elements:25, groups:15, blades:9, afType:'Stepping Motor',
@@ -3025,6 +3075,7 @@ const LENSES = {
   'sigma-14-24mm-f28-dg': {
     name:'Sigma 14-24mm f/2.8 DG DN Art', manufacturer:'Sigma', line:'Art', type:'Zoom',
     mount:'l', focalLength:null, focalLengthMin:14, focalLengthMax:24, focalLengthEquiv:'14-24mm',
+    specSources: [{ url:'https://www.sigma-global.com/en/lenses/a019_14_24_28/', tier:'T1', title:'Sigma global product page', note:'verify-specs 2026-11-15: L-Mount rows for size and weight; optics, aperture, focus, filter re-read', date:'2026-11-15' }],
     maxAperture:2.8, minAperture:22, weight:795, length:131, diameter:85,
     filterThread:null, minFocusDist:28, maxMagnification:0.137,
     elements:18, groups:13, blades:11, afType:'Stepping Motor',
@@ -3039,6 +3090,7 @@ const LENSES = {
   'sigma-24-70mm-f28-dg': {
     name:'Sigma 24-70mm f/2.8 DG DN Art', manufacturer:'Sigma', line:'Art', type:'Zoom',
     mount:'l', focalLength:null, focalLengthMin:24, focalLengthMax:70, focalLengthEquiv:'24-70mm',
+    specSources: [{ url:'https://www.sigma-global.com/en/lenses/a019_24_70_28/', tier:'T1', title:'Sigma global product page', note:'verify-specs 2026-11-15: L-Mount rows for size and weight; optics, aperture, focus, filter re-read', date:'2026-11-15' }],
     maxAperture:2.8, minAperture:22, weight:835, length:122.9, diameter:87.8,
     filterThread:82, minFocusDist:18, maxMagnification:0.34,
     elements:19, groups:15, blades:11, afType:'Stepping Motor',
@@ -3053,6 +3105,7 @@ const LENSES = {
   'sigma-28-105mm-f28-dg': {
     name:'Sigma 28-105mm f/2.8 DG DN Art', manufacturer:'Sigma', line:'Art', type:'Zoom',
     mount:'l', focalLength:null, focalLengthMin:28, focalLengthMax:105, focalLengthEquiv:'28-105mm',
+    specSources: [{ url:'https://www.sigma-global.com/en/lenses/a024_28_105_28/', tier:'T1', title:'Sigma global product page', note:'verify-specs 2026-11-15: L-Mount rows for size and weight; optics, aperture, focus, filter re-read', date:'2026-11-15' }],
     maxAperture:2.8, minAperture:22, weight:995, length:157.9, diameter:87.8,
     filterThread:82, minFocusDist:40, maxMagnification:0.323,
     elements:18, groups:13, blades:12, afType:'HLA Linear',
@@ -3067,6 +3120,7 @@ const LENSES = {
   'sigma-20-200mm-f35-63-dg': {
     name:'Sigma 20-200mm f/3.5-6.3 DG Contemporary', manufacturer:'Sigma', line:'Contemporary', type:'Zoom',
     mount:'l', focalLength:null, focalLengthMin:20, focalLengthMax:200, focalLengthEquiv:'20-200mm',
+    specSources: [{ url:'https://www.sigma-global.com/en/lenses/c025_20_200_35_63/', tier:'T1', title:'Sigma global product page', note:'verify-specs 2026-11-15: L-Mount rows for size and weight; optics, aperture, focus, filter re-read', date:'2026-11-15' }],
     maxAperture:3.5, minAperture:22, weight:550, length:115.5, diameter:77.2,
     filterThread:72, minFocusDist:16.5, maxMagnification:0.5,
     elements:18, groups:14, blades:9, afType:'HLA Linear',
@@ -3081,6 +3135,7 @@ const LENSES = {
   'sigma-60-600mm-f45-63-dg': {
     name:'Sigma 60-600mm f/4.5-6.3 DG DN OS Sports', manufacturer:'Sigma', line:'Sports', type:'Zoom',
     mount:'l', focalLength:null, focalLengthMin:60, focalLengthMax:600, focalLengthEquiv:'60-600mm',
+    specSources: [{ url:'https://www.sigma-global.com/en/lenses/s023_60_600_45_63/', tier:'T1', title:'Sigma global product page', note:'verify-specs 2026-11-15: L-Mount rows for size and weight; optics, aperture, focus, filter re-read', date:'2026-11-15' }],
     maxAperture:4.5, minAperture:22, weight:2495, length:279.2, diameter:119.4,
     filterThread:105, minFocusDist:45, maxMagnification:0.417,
     elements:27, groups:19, blades:9, afType:'HLA Linear',
@@ -3095,6 +3150,7 @@ const LENSES = {
   'sigma-300-600mm-f4-dg': {
     name:'Sigma 300-600mm f/4 DG OS Sports', manufacturer:'Sigma', line:'Sports', type:'Zoom',
     mount:'l', focalLength:null, focalLengthMin:300, focalLengthMax:600, focalLengthEquiv:'300-600mm',
+    specSources: [{ url:'https://www.sigma-global.com/en/lenses/s025_300_600_4/', tier:'T1', title:'Sigma global product page', note:'verify-specs 2026-11-15: L-Mount rows for size and weight; optics, aperture, focus, filter re-read', date:'2026-11-15' }],
     maxAperture:4.0, minAperture:22, weight:3985, length:467.9, diameter:167,
     filterThread:null, minFocusDist:280, maxMagnification:0.167,
     elements:28, groups:21, blades:13, afType:'HLA Linear',
@@ -3110,8 +3166,9 @@ const LENSES = {
   'laowa-15mm-f2-l': {
     name:'Laowa 15mm f/2 Zero-D', manufacturer:'Laowa', line:'Zero-D', type:'Prime',
     mount:'l', focalLength:15, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'15mm',
+    specSources: [{ url:'https://www.venuslens.net/product/laowa-15mm-f2/', tier:'T1', title:'Laowa (Venus Optics) official product page', note:'verify-specs 2026-11-16: max magnification 1:4; page gives 77.2 x 82 mm, stored diameter 66 kept (open question)', date:'2026-11-16' }],
     maxAperture:2.0, minAperture:22, weight:500, length:82, diameter:66,
-    filterThread:72, minFocusDist:15, maxMagnification:0.1,
+    filterThread:72, minFocusDist:15, maxMagnification:0.25,
     elements:12, groups:9, blades:5, afType:'Manual',
     weatherSealed:false, ois:false, oisStops:null, year:2021, discontinued:false,
     imageUrl:'https://laowa.com.au/wp-content/uploads/2017/12/15-2-4-768x529.jpg',
@@ -3143,6 +3200,7 @@ const LENSES = {
   'laowa-17mm-f4-tilt-shift-l': {
     name:'Laowa 17mm f/4 Zero-D Tilt-Shift', manufacturer:'Laowa', line:'Zero-D', type:'Prime',
     mount:'l', focalLength:17, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'17mm',
+    specSources: [{ url:'https://www.venuslens.net/product/laowa-17mm-f-4-zero-d-tilt-shift-shift/', tier:'T1', title:'Laowa (Venus Optics) official product page', note:'verify-specs 2026-11-16: optics, blades, aperture, focus, size and weight re-read', date:'2026-11-16' }],
     maxAperture:4.0, minAperture:22, weight:810, length:111, diameter:93,
     filterThread:86, minFocusDist:25, maxMagnification:0.131,
     elements:18, groups:12, blades:14, afType:'Manual',
@@ -3156,6 +3214,7 @@ const LENSES = {
   'laowa-90mm-f28-macro-l': {
     name:'Laowa 90mm f/2.8 2x Ultra Macro APO', manufacturer:'Laowa', line:'Ultra Macro APO', type:'Prime',
     mount:'l', focalLength:90, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'90mm',
+    specSources: [{ url:'https://www.venuslens.net/product/laowa-90mm-f-2-8-2x-macro-apo/', tier:'T1', title:'Laowa (Venus Optics) official product page', note:'verify-specs 2026-11-16: optics, blades, aperture, focus, magnification, filter, size and weight re-read (one figure for all mounts)', date:'2026-11-16' }],
     maxAperture:2.8, minAperture:22, weight:619, length:120, diameter:74,
     filterThread:67, minFocusDist:20.5, maxMagnification:2.0,
     elements:13, groups:10, blades:13, afType:'Manual',
@@ -3169,6 +3228,7 @@ const LENSES = {
   'laowa-180mm-f45-macro-l': {
     name:'Laowa 180mm f/4.5 1.5x Ultra Macro APO', manufacturer:'Laowa', line:'Ultra Macro APO', type:'Prime',
     mount:'l', focalLength:180, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'180mm',
+    specSources: [{ url:'https://www.venuslens.net/product/laowa-180mm-f-4-5-1-5x-ultra-macro-apo/', tier:'T1', title:'Laowa (Venus Optics) official product page', note:'verify-specs 2026-11-16: optics, blades, aperture (MF version F4.5-32), focus, magnification, filter re-read; size and weight published only for Canon EF and Sony E, stored L-Mount figures kept', date:'2026-11-16' }],
     maxAperture:4.5, minAperture:32, weight:499, length:134, diameter:67.6,
     filterThread:62, minFocusDist:30, maxMagnification:1.5,
     elements:12, groups:9, blades:9, afType:'Manual',
@@ -3588,6 +3648,7 @@ const LENSES = {
   'samyang-14-24mm-f28-l': {
     name:'Samyang AF 14-24mm F2.8 L', manufacturer:'Samyang', line:'AF', type:'Zoom',
     mount:'l', focalLength:null, focalLengthMin:14, focalLengthMax:24, focalLengthEquiv:'14-24mm',
+    specSources: [{ url:'https://www.lksamyang.com/en/products/131/af-14-24mm-f28-l', tier:'T1', title:'Samyang official product page (L mount)', note:'verify-specs 2026-11-16: optics, focus, magnification, filter, size, weight and weather sealing re-read', date:'2026-11-16' }],
     maxAperture:2.8, minAperture:22, weight:441, length:96.6, diameter:84,
     filterThread:77, minFocusDist:18, maxMagnification:0.26,
     elements:15, groups:11, blades:9, afType:'Linear STM',

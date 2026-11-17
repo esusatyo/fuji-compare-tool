@@ -1153,6 +1153,7 @@ const LENSES = {
   'omsystem-25mm-f12-pro': {
     name:'OM System M.Zuiko 25mm f/1.2 PRO', manufacturer:'OM System', line:'PRO', type:'Prime',
     mount:'mft', focalLength:25, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'50mm',
+    specSources: [{ url:'https://explore.omsystem.com/us/en/m-zuiko-ed-25mm-f1-2-pro', tier:'T1', title:'OM SYSTEM official product page', note:'verify-specs 2026-11-16: optics, blades, apertures, focus, magnification (Micro Four Thirds, not 35mm-equivalent), filter, size, weight and weather sealing re-read', date:'2026-11-16' }],
     maxAperture:1.2, minAperture:16, weight:410, length:87, diameter:70,
     filterThread:62, minFocusDist:30, maxMagnification:0.11,
     elements:19, groups:14, blades:9, afType:'Stepping Motor',
@@ -1169,7 +1170,8 @@ const LENSES = {
   'omsystem-12-40mm-f28-pro': {
     name:'OM System M.Zuiko 12-40mm f/2.8 PRO II', manufacturer:'OM System', line:'PRO', type:'Zoom',
     mount:'mft', focalLength:null, focalLengthMin:12, focalLengthMax:40, focalLengthEquiv:'24-80mm',
-    maxAperture:2.8, minAperture:22, weight:382, length:84, diameter:70,
+    specSources: [{ url:'https://explore.omsystem.com/us/en/m-zuiko-ed-12-40mm-f2-8-pro-ii', tier:'T1', title:'OM SYSTEM official product page', note:'verify-specs 2026-11-16: optics, blades, apertures, focus, magnification (Micro Four Thirds, not 35mm-equivalent), filter, size, weight and weather sealing re-read', date:'2026-11-16' }],
+    maxAperture:2.8, minAperture:22, weight:382, length:84, diameter:69.9,
     filterThread:62, minFocusDist:20, maxMagnification:0.3,
     elements:14, groups:9, blades:7, afType:'Stepping Motor',
     weatherSealed:true, ois:false, oisStops:null, year:2022, discontinued:false,
@@ -1183,6 +1185,7 @@ const LENSES = {
   'omsystem-45mm-f12-pro': {
     name:'OM System M.Zuiko 45mm f/1.2 PRO', manufacturer:'OM System', line:'PRO', type:'Prime',
     mount:'mft', focalLength:45, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'90mm',
+    specSources: [{ url:'https://explore.omsystem.com/us/en/m-zuiko-ed-45mm-f1-2-pro', tier:'T1', title:'OM SYSTEM official product page', note:'verify-specs 2026-11-16: optics, blades, apertures, focus, magnification (Micro Four Thirds, not 35mm-equivalent), filter, size, weight and weather sealing re-read', date:'2026-11-16' }],
     maxAperture:1.2, minAperture:16, weight:410, length:84.9, diameter:70,
     filterThread:62, minFocusDist:50, maxMagnification:0.1,
     elements:14, groups:10, blades:9, afType:'Stepping Motor',
@@ -1197,7 +1200,8 @@ const LENSES = {
   'omsystem-17mm-f18': {
     name:'OM System M.Zuiko 17mm f/1.8 II', manufacturer:'OM System', line:'Premium', type:'Prime',
     mount:'mft', focalLength:17, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'34mm',
-    maxAperture:1.8, minAperture:22, weight:112, length:38, diameter:58,
+    specSources: [{ url:'https://explore.omsystem.com/us/en/m-zuiko-17mm-f1-8-ii', tier:'T1', title:'OM SYSTEM official product page', note:'verify-specs 2026-11-16: optics, blades, apertures, focus, magnification (Micro Four Thirds, not 35mm-equivalent), filter, size, weight and weather sealing re-read', date:'2026-11-16' }],
+    maxAperture:1.8, minAperture:22, weight:112, length:37.6, diameter:57.6,
     filterThread:46, minFocusDist:25, maxMagnification:0.08,
     elements:9, groups:6, blades:7, afType:'Stepping Motor',
     weatherSealed:true, ois:false, oisStops:null, year:2024, discontinued:false,
@@ -1216,8 +1220,9 @@ const LENSES = {
   'omsystem-40-150mm-f4-pro': {
     name:'OM System M.Zuiko 40-150mm f/4 PRO', manufacturer:'OM System', line:'PRO', type:'Zoom',
     mount:'mft', focalLength:null, focalLengthMin:40, focalLengthMax:150, focalLengthEquiv:'80-300mm',
-    maxAperture:4.0, minAperture:22, weight:382, length:99, diameter:69,
-    filterThread:62, minFocusDist:70, maxMagnification:0.2,
+    specSources: [{ url:'https://explore.omsystem.com/us/en/m-zuiko-ed-40-150mm-f4-0-pro', tier:'T1', title:'OM SYSTEM official product page', note:'verify-specs 2026-11-16: optics, blades, apertures, focus, magnification (Micro Four Thirds, not 35mm-equivalent), filter, size, weight and weather sealing re-read; page lists 19 elements / 9 groups, stored 15 kept (open question)', date:'2026-11-16' }],
+    maxAperture:4.0, minAperture:22, weight:382, length:99.4, diameter:68.9,
+    filterThread:62, minFocusDist:70, maxMagnification:0.21,
     elements:15, groups:9, blades:7, afType:'Stepping Motor',
     weatherSealed:true, ois:false, oisStops:null, year:2023, discontinued:false,
     imageUrl:'https://upload.wikimedia.org/wikipedia/commons/thumb/7/7f/OM_System_M.Zuiko_Digital_ED_40-150mm_F4_Pro_(51925455226).jpg/500px-OM_System_M.Zuiko_Digital_ED_40-150mm_F4_Pro_(51925455226).jpg',
@@ -1230,7 +1235,8 @@ const LENSES = {
   'omsystem-12-100mm-f4-pro': {
     name:'OM System M.Zuiko 12-100mm f/4 IS PRO', manufacturer:'OM System', line:'PRO', type:'Zoom',
     mount:'mft', focalLength:null, focalLengthMin:12, focalLengthMax:100, focalLengthEquiv:'24-200mm',
-    maxAperture:4.0, minAperture:22, weight:561, length:117, diameter:78,
+    specSources: [{ url:'https://explore.omsystem.com/us/en/m-zuiko-ed-12-100mm-f4-0-is-pro', tier:'T1', title:'OM SYSTEM official product page', note:'verify-specs 2026-11-16: optics, blades, apertures, focus, magnification (Micro Four Thirds, not 35mm-equivalent), filter, size, weight and weather sealing re-read', date:'2026-11-16' }],
+    maxAperture:4.0, minAperture:22, weight:561, length:116.5, diameter:77.5,
     filterThread:72, minFocusDist:15, maxMagnification:0.3,
     elements:17, groups:11, blades:7, afType:'Stepping Motor',
     weatherSealed:true, ois:true, oisStops:6.5, year:2016, discontinued:false,
@@ -1244,6 +1250,7 @@ const LENSES = {
   'omsystem-100-400mm-f5-63-ii': {
     name:'OM System M.Zuiko 100-400mm f/5-6.3 IS II', manufacturer:'OM System', line:'M.Zuiko', type:'Zoom',
     mount:'mft', focalLength:null, focalLengthMin:100, focalLengthMax:400, focalLengthEquiv:'200-800mm',
+    specSources: [{ url:'https://explore.omsystem.com/us/en/m-zuiko-ed-100-400mm-f5-0-6-3-is-ii', tier:'T1', title:'OM SYSTEM official product page', note:'verify-specs 2026-11-16: optics, blades, apertures, focus, magnification (Micro Four Thirds, not 35mm-equivalent), filter, size, weight and weather sealing re-read', date:'2026-11-16' }],
     maxAperture:5.0, minAperture:22, weight:1125, length:205.6, diameter:86.4,
     filterThread:72, minFocusDist:130, maxMagnification:0.29,
     elements:21, groups:15, blades:9, afType:'MSC',
@@ -1275,6 +1282,7 @@ const LENSES = {
   'omsystem-60mm-f28-macro': {
     name:'OM System M.Zuiko 60mm f/2.8 Macro', manufacturer:'OM System', line:'Macro', type:'Prime',
     mount:'mft', focalLength:60, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'120mm',
+    specSources: [{ url:'https://explore.omsystem.com/us/en/m-zuiko-ed-60mm-f2-8-macro', tier:'T1', title:'OM SYSTEM official product page', note:'verify-specs 2026-11-16: optics, blades, apertures, focus, magnification (Micro Four Thirds, not 35mm-equivalent), filter, size, weight and weather sealing re-read', date:'2026-11-16' }],
     maxAperture:2.8, minAperture:22, weight:185, length:82, diameter:56,
     filterThread:46, minFocusDist:19, maxMagnification:1.0,
     elements:13, groups:10, blades:7, afType:'Stepping Motor',
@@ -1320,6 +1328,7 @@ const LENSES = {
   'omsystem-25mm-f18-ii': {
     name:'OM System M.Zuiko 25mm f/1.8 II', manufacturer:'OM System', line:'Premium', type:'Prime',
     mount:'mft', focalLength:25, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'50mm',
+    specSources: [{ url:'https://explore.omsystem.com/us/en/m-zuiko-25mm-f1-8-ii', tier:'T1', title:'OM SYSTEM official product page', note:'verify-specs 2026-11-16: optics, blades, apertures, focus, magnification (Micro Four Thirds, not 35mm-equivalent), filter, size, weight and weather sealing re-read', date:'2026-11-16' }],
     maxAperture:1.8, minAperture:22, weight:156, length:42, diameter:59.4,
     filterThread:46, minFocusDist:25, maxMagnification:0.12,
     elements:9, groups:7, blades:7, afType:'Stepping Motor (MSC)',
@@ -1344,8 +1353,9 @@ const LENSES = {
   'omsystem-7-14mm-f28-pro': {
     name:'OM System M.Zuiko 7-14mm f/2.8 PRO', manufacturer:'OM System', line:'PRO', type:'Zoom',
     mount:'mft', focalLength:null, focalLengthMin:7, focalLengthMax:14, focalLengthEquiv:'14-28mm',
-    maxAperture:2.8, minAperture:22, weight:534, length:106, diameter:79,
-    filterThread:null, minFocusDist:20, maxMagnification:0.12,
+    specSources: [{ url:'https://explore.omsystem.com/us/en/m-zuiko-ed-7-14mm-f2-8-pro', tier:'T1', title:'OM SYSTEM official product page', note:'verify-specs 2026-11-16: optics, blades, apertures, focus, magnification (Micro Four Thirds, not 35mm-equivalent), filter, size, weight and weather sealing re-read', date:'2026-11-16' }],
+    maxAperture:2.8, minAperture:22, weight:534, length:105.8, diameter:78.9,
+    filterThread:null, minFocusDist:20, maxMagnification:0.11,
     elements:14, groups:11, blades:7, afType:'Stepping Motor',
     weatherSealed:true, ois:false, oisStops:null, year:2015, discontinued:false,
     imageUrl:'https://nala.explore.omsystem.com/media/catalog/product/7/-/7-14mm_f2.8_pro-om.webp',
@@ -1358,7 +1368,8 @@ const LENSES = {
   'omsystem-8mm-f18-fisheye-pro': {
     name:'OM System M.Zuiko 8mm f/1.8 Fisheye PRO', manufacturer:'OM System', line:'PRO', type:'Prime',
     mount:'mft', focalLength:8, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'16mm',
-    maxAperture:1.8, minAperture:22, weight:314, length:80, diameter:62,
+    specSources: [{ url:'https://explore.omsystem.com/us/en/m-zuiko-ed-8mm-f1-8-fisheye-pro', tier:'T1', title:'OM SYSTEM official product page', note:'verify-specs 2026-11-16: optics, blades, apertures, focus, magnification (Micro Four Thirds, not 35mm-equivalent), filter, size, weight and weather sealing re-read', date:'2026-11-16' }],
+    maxAperture:1.8, minAperture:22, weight:315, length:80, diameter:62,
     filterThread:null, minFocusDist:12, maxMagnification:0.2,
     elements:17, groups:15, blades:7, afType:'Stepping Motor',
     weatherSealed:true, ois:false, oisStops:null, year:2015, discontinued:false,
@@ -1372,8 +1383,9 @@ const LENSES = {
   'omsystem-8-25mm-f4-pro': {
     name:'OM System M.Zuiko 8-25mm f/4 PRO', manufacturer:'OM System', line:'PRO', type:'Zoom',
     mount:'mft', focalLength:null, focalLengthMin:8, focalLengthMax:25, focalLengthEquiv:'16-50mm',
-    maxAperture:4.0, minAperture:22, weight:411, length:89, diameter:77,
-    filterThread:72, minFocusDist:23, maxMagnification:0.14,
+    specSources: [{ url:'https://explore.omsystem.com/us/en/m-zuiko-ed-8-25mm-f4-pro', tier:'T1', title:'OM SYSTEM official product page', note:'verify-specs 2026-11-16: optics, blades, apertures, focus, magnification (Micro Four Thirds, not 35mm-equivalent), filter, size, weight and weather sealing re-read', date:'2026-11-16' }],
+    maxAperture:4.0, minAperture:22, weight:411, length:88.5, diameter:77,
+    filterThread:72, minFocusDist:23, maxMagnification:0.21,
     elements:16, groups:10, blades:7, afType:'Linear Motor',
     weatherSealed:true, ois:false, oisStops:null, year:2021, discontinued:false,
     imageUrl:'https://nala.explore.omsystem.com/media/catalog/product/8/-/8-25mm_f4.0_pro-om_-_main.webp',
@@ -1386,7 +1398,8 @@ const LENSES = {
   'omsystem-20mm-f14-pro': {
     name:'OM System M.Zuiko 20mm f/1.4 PRO', manufacturer:'OM System', line:'PRO', type:'Prime',
     mount:'mft', focalLength:20, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'40mm',
-    maxAperture:1.4, minAperture:22, weight:247, length:62, diameter:63.4,
+    specSources: [{ url:'https://explore.omsystem.com/us/en/m-zuiko-ed-20mm-f1-4-pro', tier:'T1', title:'OM SYSTEM official product page', note:'verify-specs 2026-11-16: optics, blades, apertures, focus, magnification (Micro Four Thirds, not 35mm-equivalent), filter, size, weight and weather sealing re-read', date:'2026-11-16' }],
+    maxAperture:1.4, minAperture:16, weight:247, length:61.7, diameter:63.4,
     filterThread:58, minFocusDist:25, maxMagnification:0.11,
     elements:11, groups:10, blades:9, afType:'Stepping Motor',
     weatherSealed:true, ois:false, oisStops:null, year:2021, discontinued:false,
@@ -1400,7 +1413,8 @@ const LENSES = {
   'omsystem-40-150mm-f28-pro': {
     name:'OM System M.Zuiko 40-150mm f/2.8 PRO', manufacturer:'OM System', line:'PRO', type:'Zoom',
     mount:'mft', focalLength:null, focalLengthMin:40, focalLengthMax:150, focalLengthEquiv:'80-300mm',
-    maxAperture:2.8, minAperture:22, weight:880, length:160, diameter:79,
+    specSources: [{ url:'https://explore.omsystem.com/us/en/m-zuiko-ed-40-150mm-f2-8-pro', tier:'T1', title:'OM SYSTEM official product page', note:'verify-specs 2026-11-16: optics, blades, apertures, focus, magnification (Micro Four Thirds, not 35mm-equivalent), filter, size, weight and weather sealing re-read; weight without the removable tripod foot (880 g with it)', date:'2026-11-16' }],
+    maxAperture:2.8, minAperture:22, weight:760, length:160, diameter:79.4,
     filterThread:72, minFocusDist:70, maxMagnification:0.21,
     elements:16, groups:10, blades:9, afType:'Dual VCM (MSC)',
     weatherSealed:true, ois:false, oisStops:null, year:2014, discontinued:false,
@@ -1419,6 +1433,7 @@ const LENSES = {
   'omsystem-90mm-f35-macro-is-pro': {
     name:'OM System M.Zuiko 90mm f/3.5 Macro IS PRO', manufacturer:'OM System', line:'PRO', type:'Prime',
     mount:'mft', focalLength:90, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'180mm',
+    specSources: [{ url:'https://explore.omsystem.com/us/en/m-zuiko-ed-90mm-f3-5-macro-is-pro', tier:'T1', title:'OM SYSTEM official product page', note:'verify-specs 2026-11-16: optics, blades, apertures, focus, magnification (Micro Four Thirds, not 35mm-equivalent), filter, size, weight and weather sealing re-read; 2.0x is the S-MACRO mode figure', date:'2026-11-16' }],
     maxAperture:3.5, minAperture:22, weight:453, length:136, diameter:69.8,
     filterThread:62, minFocusDist:22.4, maxMagnification:2.0,
     elements:18, groups:13, blades:7, afType:'MSC',
@@ -1439,8 +1454,9 @@ const LENSES = {
   'omsystem-300mm-f4-is-pro': {
     name:'OM System M.Zuiko 300mm f/4 IS PRO', manufacturer:'OM System', line:'PRO', type:'Prime',
     mount:'mft', focalLength:300, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'600mm',
+    specSources: [{ url:'https://explore.omsystem.com/us/en/m-zuiko-ed-300mm-f4-0-is-pro', tier:'T1', title:'OM SYSTEM official product page', note:'verify-specs 2026-11-16: optics, blades, apertures, focus, magnification (Micro Four Thirds, not 35mm-equivalent), filter, size, weight and weather sealing re-read', date:'2026-11-16' }],
     maxAperture:4.0, minAperture:22, weight:1270, length:227, diameter:92.5,
-    filterThread:77, minFocusDist:140, maxMagnification:0.48,
+    filterThread:77, minFocusDist:140, maxMagnification:0.24,
     elements:17, groups:10, blades:9, afType:'MSC',
     weatherSealed:true, ois:true, oisStops:6.0, year:2016, discontinued:false,
     imageUrl:'https://nala.explore.omsystem.com/media/catalog/product/3/0/300mm_f4.0_is_pro-oly_1.webp',
@@ -1453,6 +1469,7 @@ const LENSES = {
   'omsystem-50-200mm-f28-is-pro': {
     name:'OM System M.Zuiko 50-200mm f/2.8 IS PRO', manufacturer:'OM System', line:'PRO', type:'Zoom',
     mount:'mft', focalLength:null, focalLengthMin:50, focalLengthMax:200, focalLengthEquiv:'100-400mm',
+    specSources: [{ url:'https://explore.omsystem.com/us/en/m-zuiko-ed-50-200mm-f2-8-is-pro', tier:'T1', title:'OM SYSTEM official product page', note:'verify-specs 2026-11-16: optics, blades, apertures, focus, magnification (Micro Four Thirds, not 35mm-equivalent), filter, size, weight and weather sealing re-read', date:'2026-11-16' }],
     maxAperture:2.8, minAperture:22, weight:1075, length:225.8, diameter:91.4,
     filterThread:77, minFocusDist:78, maxMagnification:0.25,
     elements:21, groups:13, blades:9, afType:'Linear Motor (MSC)',
@@ -1470,9 +1487,10 @@ const LENSES = {
   'omsystem-150-400mm-f45-tc125x-is-pro': {
     name:'OM System M.Zuiko 150-400mm f/4.5 TC1.25x IS PRO', manufacturer:'OM System', line:'PRO', type:'Zoom',
     mount:'mft', focalLength:null, focalLengthMin:150, focalLengthMax:400, focalLengthEquiv:'300-800mm',
-    maxAperture:4.5, minAperture:22, weight:1875, length:314, diameter:116,
+    specSources: [{ url:'https://explore.omsystem.com/us/en/m-zuiko-ed-150-400mm-f4-5-tc1-25x-is-pro', tier:'T1', title:'OM SYSTEM official product page', note:'verify-specs 2026-11-16: optics, blades, apertures, focus, magnification (Micro Four Thirds, not 35mm-equivalent), filter, size, weight and weather sealing re-read', date:'2026-11-16' }],
+    maxAperture:4.5, minAperture:22, weight:1875, length:314.3, diameter:115.8,
     filterThread:95, minFocusDist:130, maxMagnification:0.29,
-    elements:28, groups:17, blades:9, afType:'Linear Motor (MSC)',
+    elements:28, groups:18, blades:9, afType:'Linear Motor (MSC)',
     weatherSealed:true, ois:true, oisStops:8.0, year:2022, discontinued:false,
     // Built-in 1.25x teleconverter (native 187.5-500mm / 375-1000mm equiv
     // when engaged) has no dedicated schema field -- stored as the base
@@ -1499,8 +1517,9 @@ const LENSES = {
   'omsystem-30mm-f35-macro': {
     name:'OM System M.Zuiko 30mm f/3.5 Macro', manufacturer:'OM System', line:'Macro', type:'Prime',
     mount:'mft', focalLength:30, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'60mm',
+    specSources: [{ url:'https://explore.omsystem.com/us/en/m-zuiko-ed-30mm-f3-5-macro', tier:'T1', title:'OM SYSTEM official product page', note:'verify-specs 2026-11-16: optics, blades, apertures, focus, magnification (Micro Four Thirds, not 35mm-equivalent), filter, size, weight and weather sealing re-read', date:'2026-11-16' }],
     maxAperture:3.5, minAperture:22, weight:128, length:60, diameter:57,
-    filterThread:46, minFocusDist:10, maxMagnification:1.25,
+    filterThread:46, minFocusDist:9.5, maxMagnification:1.25,
     elements:7, groups:6, blades:7, afType:'MSC',
     weatherSealed:false, ois:false, oisStops:null, year:2016, discontinued:false,
     imageUrl:'https://nala.explore.omsystem.com/media/catalog/product/3/0/30mm_f3.5_macro-om_2.webp',
@@ -1535,6 +1554,7 @@ const LENSES = {
   'omsystem-9-18mm-f4-56-ii': {
     name:'OM System M.Zuiko 9-18mm f/4-5.6 II', manufacturer:'OM System', line:'M.Zuiko', type:'Zoom',
     mount:'mft', focalLength:null, focalLengthMin:9, focalLengthMax:18, focalLengthEquiv:'18-36mm',
+    specSources: [{ url:'https://explore.omsystem.com/us/en/m-zuiko-ed-9-18mm-f4-0-5-6-ii', tier:'T1', title:'OM SYSTEM official product page', note:'verify-specs 2026-11-16: optics, blades, apertures, focus, magnification (Micro Four Thirds, not 35mm-equivalent), filter, size, weight and weather sealing re-read', date:'2026-11-16' }],
     maxAperture:4.0, minAperture:22, weight:154, length:49.3, diameter:56.2,
     filterThread:52, minFocusDist:25, maxMagnification:0.1,
     elements:12, groups:8, blades:7, afType:'Micromotor',
@@ -1549,6 +1569,7 @@ const LENSES = {
   'omsystem-14-150mm-f4-56-ii': {
     name:'OM System M.Zuiko 14-150mm f/4-5.6 II', manufacturer:'OM System', line:'M.Zuiko', type:'Zoom',
     mount:'mft', focalLength:null, focalLengthMin:14, focalLengthMax:150, focalLengthEquiv:'28-300mm',
+    specSources: [{ url:'https://explore.omsystem.com/us/en/m-zuiko-ed-14-150mm-f4-0-5-6-ii', tier:'T1', title:'OM SYSTEM official product page', note:'verify-specs 2026-11-16: optics, blades, apertures, focus, magnification (Micro Four Thirds, not 35mm-equivalent), filter, size, weight and weather sealing re-read', date:'2026-11-16' }],
     maxAperture:4.0, minAperture:22, weight:285, length:83, diameter:63.5,
     filterThread:58, minFocusDist:50, maxMagnification:0.22,
     elements:15, groups:11, blades:7, afType:'Micromotor',
@@ -1563,6 +1584,7 @@ const LENSES = {
   'omsystem-75-300mm-f48-67-ii': {
     name:'OM System M.Zuiko 75-300mm f/4.8-6.7 II', manufacturer:'OM System', line:'M.Zuiko', type:'Zoom',
     mount:'mft', focalLength:null, focalLengthMin:75, focalLengthMax:300, focalLengthEquiv:'150-600mm',
+    specSources: [{ url:'https://explore.omsystem.com/us/en/m-zuiko-ed-75-300mm-f4-8-6-7-ii', tier:'T1', title:'OM SYSTEM official product page', note:'verify-specs 2026-11-16: optics, blades, apertures, focus, magnification (Micro Four Thirds, not 35mm-equivalent), filter, size, weight and weather sealing re-read', date:'2026-11-16' }],
     maxAperture:4.8, minAperture:22, weight:423, length:116.5, diameter:69,
     filterThread:58, minFocusDist:90, maxMagnification:0.18,
     elements:18, groups:13, blades:7, afType:'Micromotor',
@@ -1577,8 +1599,9 @@ const LENSES = {
   'omsystem-12-200mm-f35-63': {
     name:'OM System M.Zuiko 12-200mm f/3.5-6.3', manufacturer:'OM System', line:'M.Zuiko', type:'Zoom',
     mount:'mft', focalLength:null, focalLengthMin:12, focalLengthMax:200, focalLengthEquiv:'24-400mm',
-    maxAperture:3.5, minAperture:22, weight:455, length:100, diameter:78,
-    filterThread:72, minFocusDist:22, maxMagnification:0.46,
+    specSources: [{ url:'https://explore.omsystem.com/us/en/m-zuiko-ed-12-200mm-f3-5-6-3', tier:'T1', title:'OM SYSTEM official product page', note:'verify-specs 2026-11-16: optics, blades, apertures, focus, magnification (Micro Four Thirds, not 35mm-equivalent), filter, size, weight and weather sealing re-read', date:'2026-11-16' }],
+    maxAperture:3.5, minAperture:22, weight:455, length:99.7, diameter:77.5,
+    filterThread:72, minFocusDist:22, maxMagnification:0.23,
     elements:16, groups:11, blades:7, afType:'Stepping Motor',
     weatherSealed:true, ois:false, oisStops:null, year:2019, discontinued:false,
     imageUrl:'https://nala.explore.omsystem.com/media/catalog/product/1/2/12-200mm_f3.5-6.3-om_-_main.webp',
@@ -1591,8 +1614,9 @@ const LENSES = {
   'omsystem-150-600mm-f5-63-is': {
     name:'OM System M.Zuiko 150-600mm f/5-6.3 IS', manufacturer:'OM System', line:'M.Zuiko', type:'Zoom',
     mount:'mft', focalLength:null, focalLengthMin:150, focalLengthMax:600, focalLengthEquiv:'300-1200mm',
+    specSources: [{ url:'https://explore.omsystem.com/us/en/m-zuiko-ed-150-600mm-f5-0-6-3-is', tier:'T1', title:'OM SYSTEM official product page', note:'verify-specs 2026-11-16: optics, blades, apertures, focus, magnification (Micro Four Thirds, not 35mm-equivalent), filter, size, weight and weather sealing re-read', date:'2026-11-16' }],
     maxAperture:5.0, minAperture:22, weight:2065, length:264.4, diameter:109.4,
-    filterThread:95, minFocusDist:56, maxMagnification:0.7,
+    filterThread:95, minFocusDist:56, maxMagnification:0.35,
     elements:25, groups:15, blades:9, afType:'Stepping Motor',
     weatherSealed:true, ois:true, oisStops:7.0, year:2024, discontinued:false,
     imageUrl:'https://nala.explore.omsystem.com/media/catalog/product/transparent/1/5/150-600mm-product-image_o_85.webp',
@@ -1706,6 +1730,7 @@ const LENSES = {
   'leica-dg-200mm-f2-8': {
     name:'LEICA DG ELMARIT 200mm F2.8', manufacturer:'Panasonic', line:'LUMIX G', type:'Prime', mount:'mft', asin:'B0776C5KQH',
     focalLength:200, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'400mm',
+    specSources: [{ url:'https://panasonic.jp/dc/products/H-ES200/spec.html', tier:'T1', title:'Panasonic Japan official specifications (H-ES200)', note:'verify-specs 2026-11-15: optics, blades, apertures, focus, magnification (native, not 35mm-equivalent), filter, size and weight re-read; weather sealing not stated on this page', date:'2026-11-15' }],
     maxAperture:2.8, minAperture:22, weight:1245, length:174.0, diameter:87.5,
     filterThread:77, minFocusDist:115, maxMagnification:0.20,
     elements:15, groups:13, blades:9, afType:'Stepping Motor',
@@ -1719,6 +1744,7 @@ const LENSES = {
   'leica-dg-45mm-f28-macro': {
     name:'LEICA DG MACRO-ELMARIT 45mm F2.8', manufacturer:'Panasonic', line:'LUMIX G', type:'Prime', mount:'mft', asin:'B002P4A63A',
     focalLength:45, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'90mm',
+    specSources: [{ url:'https://panasonic.jp/dc/products/H-ES045/spec.html', tier:'T1', title:'Panasonic Japan official specifications (H-ES045)', note:'verify-specs 2026-11-15: optics, blades, apertures, focus, magnification (native, not 35mm-equivalent), filter, size and weight re-read; weather sealing not stated on this page', date:'2026-11-15' }],
     maxAperture:2.8, minAperture:22, weight:225, length:62.5, diameter:63,
     filterThread:46, minFocusDist:15, maxMagnification:1.0,
     elements:14, groups:10, blades:7, afType:'Linear Motor + Stepping Motor',
@@ -1732,8 +1758,9 @@ const LENSES = {
   'leica-dg-42-5mm-f1-2-nocticron': {
     name:'LEICA DG NOCTICRON 42.5mm F1.2', manufacturer:'Panasonic', line:'LUMIX G', type:'Prime', mount:'mft', asin:'B00HXE4GZQ',
     focalLength:42.5, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'85mm',
+    specSources: [{ url:'https://panasonic.jp/dc/products/H-NS043/spec.html', tier:'T1', title:'Panasonic Japan official specifications (H-NS043)', note:'verify-specs 2026-11-15: optics, blades, apertures, focus, magnification (native, not 35mm-equivalent), filter, size and weight re-read; weather sealing not stated on this page', date:'2026-11-15' }],
     maxAperture:1.2, minAperture:16, weight:425, length:76.8, diameter:74.0,
-    filterThread:67, minFocusDist:50, maxMagnification:0.20,
+    filterThread:67, minFocusDist:50, maxMagnification:0.1,
     elements:14, groups:11, blades:9, afType:'Stepping Motor',
     weatherSealed:true, ois:true, oisStops:null, year:2014, discontinued:false,
     imageUrl:'https://upload.wikimedia.org/wikipedia/commons/thumb/e/e3/Leica_DG_Nocticron_42.5mm_F1.2_01.jpg/500px-Leica_DG_Nocticron_42.5mm_F1.2_01.jpg',
@@ -1745,6 +1772,7 @@ const LENSES = {
   'leica-dg-12mm-f1-4': {
     name:'LEICA DG SUMMILUX 12mm F1.4', manufacturer:'Panasonic', line:'LUMIX G', type:'Prime', mount:'mft', asin:'B01H1MNW68',
     focalLength:12, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'24mm',
+    specSources: [{ url:'https://panasonic.jp/dc/products/H-X012/spec.html', tier:'T1', title:'Panasonic Japan official specifications (H-X012)', note:'verify-specs 2026-11-15: optics, blades, apertures, focus, magnification (native, not 35mm-equivalent), filter, size and weight re-read; weather sealing not stated on this page', date:'2026-11-15' }],
     maxAperture:1.4, minAperture:16, weight:335, length:70.0, diameter:70.0,
     filterThread:62, minFocusDist:20, maxMagnification:0.10,
     elements:15, groups:12, blades:9, afType:'Stepping Motor',
@@ -1758,6 +1786,7 @@ const LENSES = {
   'leica-dg-15mm-f1-7': {
     name:'LEICA DG SUMMILUX 15mm F1.7', manufacturer:'Panasonic', line:'LUMIX G', type:'Prime', mount:'mft', asin:'B00J8HV6DG',
     focalLength:15, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'30mm',
+    specSources: [{ url:'https://panasonic.jp/dc/products/H-X015/spec.html', tier:'T1', title:'Panasonic Japan official specifications (H-X015)', note:'verify-specs 2026-11-15: optics, blades, apertures, focus, magnification (native, not 35mm-equivalent), filter, size and weight re-read; weather sealing not stated on this page', date:'2026-11-15' }],
     maxAperture:1.7, minAperture:16, weight:115, length:36.0, diameter:57.5,
     filterThread:46, minFocusDist:20, maxMagnification:0.10,
     elements:9, groups:7, blades:7, afType:'Stepping Motor',
@@ -1771,9 +1800,10 @@ const LENSES = {
   'leica-dg-25mm-f1-4-ii': {
     name:'LEICA DG SUMMILUX 25mm F1.4 II', manufacturer:'Panasonic', line:'LUMIX G', type:'Prime', mount:'mft', asin:'B07X76CG5S',
     focalLength:25, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'50mm',
-    maxAperture:1.4, minAperture:16, weight:200, length:54.5, diameter:63.0,
+    specSources: [{ url:'https://panasonic.jp/dc/products/H-XA025/spec.html', tier:'T1', title:'Panasonic Japan official specifications (H-XA025)', note:'verify-specs 2026-11-15: optics, blades, apertures, focus, magnification (native, not 35mm-equivalent), filter, size and weight re-read; weather sealing not stated on this page', date:'2026-11-15' }],
+    maxAperture:1.4, minAperture:16, weight:205, length:54.5, diameter:63.0,
     filterThread:46, minFocusDist:30, maxMagnification:0.11,
-    elements:9, groups:7, blades:9, afType:'Stepping Motor',
+    elements:9, groups:7, blades:7, afType:'Stepping Motor',
     weatherSealed:true, ois:false, oisStops:null, year:2019, discontinued:false,
     imageUrl:'https://shop.panasonic.com/cdn/shop/products/fikloew2rdelrl5if804.jpg',
     imageSource: { url:'https://shop.panasonic.com/products/g-series-25mm-f1-4-aph-leica-lens', tier:'T1', note:'official Panasonic shop.panasonic.com product page (page title explicitly "LEICA 25mm F1.4 II DG SUMMILUX"); barrel reads "DG SUMMILUX 1:1.4/25 ASPH." and "25"', date:'2026-08-17' },
@@ -1785,7 +1815,8 @@ const LENSES = {
   'leica-dg-9mm-f1-7': {
     name:'LEICA DG SUMMILUX 9mm F1.7', manufacturer:'Panasonic', line:'LUMIX G', type:'Prime', mount:'mft', asin:'B0B1K7ZCDF',
     focalLength:9, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'18mm',
-    maxAperture:1.7, minAperture:16, weight:130, length:52.0, diameter:60.3,
+    specSources: [{ url:'https://panasonic.jp/dc/products/H-X09/spec.html', tier:'T1', title:'Panasonic Japan official specifications (H-X09)', note:'verify-specs 2026-11-15: optics, blades, apertures, focus, magnification (native, not 35mm-equivalent), filter, size and weight re-read; weather sealing not stated on this page', date:'2026-11-15' }],
+    maxAperture:1.7, minAperture:16, weight:130, length:52.0, diameter:60.8,
     filterThread:55, minFocusDist:9.5, maxMagnification:0.25,
     elements:12, groups:9, blades:7, afType:'Stepping Motor',
     weatherSealed:true, ois:false, oisStops:null, year:2022, discontinued:false,
@@ -1798,7 +1829,8 @@ const LENSES = {
   'leica-dg-100-400mm-f4-6-3-ii': {
     name:'LEICA DG VARIO-ELMAR 100-400mm F4-6.3 II', manufacturer:'Panasonic', line:'LUMIX G', type:'Zoom', mount:'mft', asin:'B0CHT96YC2',
     focalLength:null, focalLengthMin:100, focalLengthMax:400, focalLengthEquiv:'200-800mm',
-    maxAperture:4.0, minAperture:22, weight:985, length:172.0, diameter:83.0,
+    specSources: [{ url:'https://panasonic.jp/dc/products/H-RSA100400/spec.html', tier:'T1', title:'Panasonic Japan official specifications (H-RSA100400)', note:'verify-specs 2026-11-15: optics, blades, apertures, focus, magnification (native, not 35mm-equivalent), filter, size and weight re-read; weather sealing not stated on this page', date:'2026-11-15' }],
+    maxAperture:4.0, minAperture:22, weight:985, length:171.5, diameter:83.0,
     filterThread:72, minFocusDist:130, maxMagnification:0.25,
     elements:20, groups:13, blades:9, afType:'Stepping Motor',
     weatherSealed:true, ois:true, oisStops:null, year:2023, discontinued:false,
@@ -1811,6 +1843,7 @@ const LENSES = {
   'leica-dg-12-60mm-f2-8-4': {
     name:'LEICA DG VARIO-ELMARIT 12-60mm F2.8-4', manufacturer:'Panasonic', line:'LUMIX G', type:'Zoom', mount:'mft', asin:'B01N7LGSZO',
     focalLength:null, focalLengthMin:12, focalLengthMax:60, focalLengthEquiv:'24-120mm',
+    specSources: [{ url:'https://panasonic.jp/dc/products/H-ES12060/spec.html', tier:'T1', title:'Panasonic Japan official specifications (H-ES12060)', note:'verify-specs 2026-11-15: optics, blades, apertures, focus, magnification (native, not 35mm-equivalent), filter, size and weight re-read; weather sealing not stated on this page', date:'2026-11-15' }],
     maxAperture:2.8, minAperture:22, weight:320, length:86.0, diameter:68.4,
     filterThread:62, minFocusDist:20, maxMagnification:0.30,
     elements:14, groups:12, blades:9, afType:'Stepping Motor',
@@ -1825,7 +1858,8 @@ const LENSES = {
   'lumix-g-35-100mm-f2-8-ii': {
     name:'LUMIX G X Vario 35-100mm F2.8 II O.I.S.', manufacturer:'Panasonic', line:'LUMIX G', type:'Zoom', mount:'mft', asin:null,
     focalLength:null, focalLengthMin:35, focalLengthMax:100, focalLengthEquiv:'70-200mm',
-    maxAperture:2.8, minAperture:22, weight:360, length:100.0, diameter:67.4,
+    specSources: [{ url:'https://panasonic.jp/dc/products/H-HSA35100/spec.html', tier:'T1', title:'Panasonic Japan official specifications (H-HSA35100)', note:'verify-specs 2026-11-15: optics, blades, apertures, focus, magnification (native, not 35mm-equivalent), filter, size and weight re-read; weather sealing not stated on this page', date:'2026-11-15' }],
+    maxAperture:2.8, minAperture:22, weight:357, length:99.9, diameter:67.4,
     filterThread:58, minFocusDist:85, maxMagnification:0.10,
     elements:18, groups:13, blades:7, afType:'Stepping Motor',
     weatherSealed:true, ois:true, oisStops:null, year:2017, discontinued:true,
@@ -1846,6 +1880,7 @@ const LENSES = {
   'leica-dg-35-100mm-f2-8-power-ois': {
     name:'LEICA DG VARIO-ELMARIT 35-100mm F2.8 POWER O.I.S.', manufacturer:'Panasonic', line:'LUMIX G', type:'Zoom', mount:'mft', asin:'B0CHTFTN2B',
     focalLength:null, focalLengthMin:35, focalLengthMax:100, focalLengthEquiv:'70-200mm',
+    specSources: [{ url:'https://panasonic.jp/dc/products/H-ES35100/spec.html', tier:'T1', title:'Panasonic Japan official specifications (H-ES35100)', note:'verify-specs 2026-11-15: optics, blades, apertures, focus, magnification (native, not 35mm-equivalent), filter, size and weight re-read; weather sealing not stated on this page', date:'2026-11-15' }],
     maxAperture:2.8, minAperture:22, weight:360, length:99.9, diameter:67.4,
     filterThread:58, minFocusDist:85, maxMagnification:0.10,
     elements:18, groups:13, blades:7, afType:'Stepping Motor',
@@ -1859,8 +1894,9 @@ const LENSES = {
   'leica-dg-50-200mm-f2-8-4': {
     name:'LEICA DG VARIO-ELMARIT 50-200mm F2.8-4', manufacturer:'Panasonic', line:'LUMIX G', type:'Zoom', mount:'mft', asin:'B07B49V8QF',
     focalLength:null, focalLengthMin:50, focalLengthMax:200, focalLengthEquiv:'100-400mm',
+    specSources: [{ url:'https://panasonic.jp/dc/products/H-ES50200/spec.html', tier:'T1', title:'Panasonic Japan official specifications (H-ES50200)', note:'verify-specs 2026-11-15: optics, blades, apertures, focus, magnification (native, not 35mm-equivalent), filter, size and weight re-read; weather sealing not stated on this page', date:'2026-11-15' }],
     maxAperture:2.8, minAperture:22, weight:655, length:132.0, diameter:76.0,
-    filterThread:67, minFocusDist:75, maxMagnification:0.21,
+    filterThread:67, minFocusDist:75, maxMagnification:0.25,
     elements:21, groups:15, blades:9, afType:'Stepping Motor',
     weatherSealed:true, ois:true, oisStops:null, year:2018, discontinued:false,
     imageUrl:'https://shop.panasonic.com/cdn/shop/products/uvakbmtjmohu7ebdklmx.jpg',
@@ -1872,6 +1908,7 @@ const LENSES = {
   'leica-dg-8-18mm-f2-8-4': {
     name:'LEICA DG VARIO-ELMARIT 8-18mm F2.8-4', manufacturer:'Panasonic', line:'LUMIX G', type:'Zoom', mount:'mft', asin:'B071QWM469',
     focalLength:null, focalLengthMin:8, focalLengthMax:18, focalLengthEquiv:'16-36mm',
+    specSources: [{ url:'https://panasonic.jp/dc/products/H-E08018/spec.html', tier:'T1', title:'Panasonic Japan official specifications (H-E08018)', note:'verify-specs 2026-11-15: optics, blades, apertures, focus, magnification (native, not 35mm-equivalent), filter, size and weight re-read; weather sealing not stated on this page', date:'2026-11-15' }],
     maxAperture:2.8, minAperture:22, weight:315, length:88.0, diameter:73.4,
     filterThread:67, minFocusDist:23, maxMagnification:0.12,
     elements:15, groups:10, blades:7, afType:'Stepping Motor',
@@ -1885,6 +1922,7 @@ const LENSES = {
   'leica-dg-10-25mm-f1-7': {
     name:'LEICA DG VARIO-SUMMILUX 10-25mm F1.7', manufacturer:'Panasonic', line:'LUMIX G', type:'Zoom', mount:'mft', asin:'B07RS4VRL7',
     focalLength:null, focalLengthMin:10, focalLengthMax:25, focalLengthEquiv:'20-50mm',
+    specSources: [{ url:'https://panasonic.jp/dc/products/H-X1025/spec.html', tier:'T1', title:'Panasonic Japan official specifications (H-X1025)', note:'verify-specs 2026-11-15: optics, blades, apertures, focus, magnification (native, not 35mm-equivalent), filter, size and weight re-read; weather sealing not stated on this page', date:'2026-11-15' }],
     maxAperture:1.7, minAperture:16, weight:690, length:128.0, diameter:87.6,
     filterThread:77, minFocusDist:28, maxMagnification:0.14,
     elements:17, groups:12, blades:9, afType:'Stepping Motor',
@@ -1899,8 +1937,9 @@ const LENSES = {
   'leica-dg-25-50mm-f1-7': {
     name:'LEICA DG VARIO-SUMMILUX 25-50mm F1.7', manufacturer:'Panasonic', line:'LUMIX G', type:'Zoom', mount:'mft', asin:'B098R6QB2C',
     focalLength:null, focalLengthMin:25, focalLengthMax:50, focalLengthEquiv:'50-100mm',
-    maxAperture:1.7, minAperture:16, weight:654, length:128.0, diameter:87.6,
-    filterThread:77, minFocusDist:28, maxMagnification:0.18,
+    specSources: [{ url:'https://panasonic.jp/dc/products/H-X2550/spec.html', tier:'T1', title:'Panasonic Japan official specifications (H-X2550)', note:'verify-specs 2026-11-15: optics, blades, apertures, focus, magnification (native, not 35mm-equivalent), filter, size and weight re-read; weather sealing not stated on this page', date:'2026-11-15' }],
+    maxAperture:1.7, minAperture:16, weight:654, length:127.6, diameter:87.6,
+    filterThread:77, minFocusDist:28, maxMagnification:0.21,
     elements:16, groups:11, blades:9, afType:'Stepping Motor',
     weatherSealed:true, ois:false, oisStops:null, year:2021, discontinued:false,
     imageUrl:'https://shop.panasonic.com/cdn/shop/products/wmnrp3rcr5234tkhgeas.jpg',
@@ -1912,6 +1951,7 @@ const LENSES = {
   'lumix-g-14mm-f2-5-ii': {
     name:'LUMIX G 14mm F2.5 II ASPH.', manufacturer:'Panasonic', line:'LUMIX G', type:'Prime', mount:'mft', asin:'B00HV936AY',
     focalLength:14, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'28mm',
+    specSources: [{ url:'https://panasonic.jp/dc/products/H-H014A/spec.html', tier:'T1', title:'Panasonic Japan official specifications (H-H014A)', note:'verify-specs 2026-11-15: optics, blades, apertures, focus, magnification (native, not 35mm-equivalent), filter, size and weight re-read; weather sealing not stated on this page', date:'2026-11-15' }],
     maxAperture:2.5, minAperture:22, weight:55, length:20.5, diameter:55.5,
     filterThread:46, minFocusDist:18, maxMagnification:0.1,
     elements:6, groups:5, blades:7, afType:'Stepping Motor',
@@ -1925,6 +1965,7 @@ const LENSES = {
   'lumix-g-20mm-f1-7-ii': {
     name:'LUMIX G 20mm F1.7 II ASPH.', manufacturer:'Panasonic', line:'LUMIX G', type:'Prime', mount:'mft', asin:'B00DJS830Y',
     focalLength:20, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'40mm',
+    specSources: [{ url:'https://panasonic.jp/dc/products/H-H020A/spec.html', tier:'T1', title:'Panasonic Japan official specifications (H-H020A)', note:'verify-specs 2026-11-15: optics, blades, apertures, focus, magnification (native, not 35mm-equivalent), filter, size and weight re-read; weather sealing not stated on this page', date:'2026-11-15' }],
     maxAperture:1.7, minAperture:16, weight:87, length:25.5, diameter:63.0,
     filterThread:46, minFocusDist:20, maxMagnification:0.13,
     elements:7, groups:5, blades:7, afType:'Stepping Motor',
@@ -1938,6 +1979,7 @@ const LENSES = {
   'lumix-g-25mm-f1-7': {
     name:'LUMIX G 25mm F1.7 ASPH.', manufacturer:'Panasonic', line:'LUMIX G', type:'Prime', mount:'mft', asin:'B014RD6RC0',
     focalLength:25, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'50mm',
+    specSources: [{ url:'https://panasonic.jp/dc/products/H-H025/spec.html', tier:'T1', title:'Panasonic Japan official specifications (H-H025)', note:'verify-specs 2026-11-15: optics, blades, apertures, focus, magnification (native, not 35mm-equivalent), filter, size and weight re-read; weather sealing not stated on this page', date:'2026-11-15' }],
     maxAperture:1.7, minAperture:22, weight:125, length:52.0, diameter:60.8,
     filterThread:46, minFocusDist:25, maxMagnification:0.14,
     elements:8, groups:7, blades:7, afType:'Stepping Motor',
@@ -1951,6 +1993,7 @@ const LENSES = {
   'lumix-g-42-5mm-f1-7': {
     name:'LUMIX G 42.5mm F1.7 ASPH.', manufacturer:'Panasonic', line:'LUMIX G', type:'Prime', mount:'mft', asin:'B00H36U69Y',
     focalLength:42.5, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'85mm',
+    specSources: [{ url:'https://panasonic.jp/dc/products/H-HS043/spec.html', tier:'T1', title:'Panasonic Japan official specifications (H-HS043)', note:'verify-specs 2026-11-15: optics, blades, apertures, focus, magnification (native, not 35mm-equivalent), filter, size and weight re-read; weather sealing not stated on this page', date:'2026-11-15' }],
     maxAperture:1.7, minAperture:22, weight:130, length:50.0, diameter:55.0,
     filterThread:37, minFocusDist:31, maxMagnification:0.20,
     elements:10, groups:8, blades:7, afType:'Stepping Motor',
@@ -1964,6 +2007,7 @@ const LENSES = {
   'lumix-g-fisheye-8mm-f3-5': {
     name:'LUMIX G Fisheye 8mm F3.5', manufacturer:'Panasonic', line:'LUMIX G', type:'Prime', mount:'mft', asin:'B003O868UG',
     focalLength:8, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'16mm',
+    specSources: [{ url:'https://panasonic.jp/dc/products/H-F008/spec.html', tier:'T1', title:'Panasonic Japan official specifications (H-F008)', note:'verify-specs 2026-11-15: optics, blades, apertures, focus, magnification (native, not 35mm-equivalent), filter, size and weight re-read; weather sealing not stated on this page', date:'2026-11-15' }],
     maxAperture:3.5, minAperture:22, weight:165, length:51.7, diameter:60.7,
     filterThread:null, minFocusDist:10, maxMagnification:0.2,
     elements:10, groups:9, blades:7, afType:'Stepping Motor',
@@ -1977,6 +2021,7 @@ const LENSES = {
   'lumix-g-macro-30mm-f2-8': {
     name:'LUMIX G Macro 30mm F2.8 ASPH. MEGA O.I.S.', manufacturer:'Panasonic', line:'LUMIX G', type:'Prime', mount:'mft', asin:'B00TXOYHYE',
     focalLength:30, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'60mm',
+    specSources: [{ url:'https://panasonic.jp/dc/products/H-HS030/spec.html', tier:'T1', title:'Panasonic Japan official specifications (H-HS030)', note:'verify-specs 2026-11-15: optics, blades, apertures, focus, magnification (native, not 35mm-equivalent), filter, size and weight re-read; weather sealing not stated on this page', date:'2026-11-15' }],
     maxAperture:2.8, minAperture:22, weight:180, length:63.5, diameter:58.8,
     filterThread:46, minFocusDist:10.5, maxMagnification:1.0,
     elements:9, groups:9, blades:7, afType:'Stepping Motor',
@@ -1990,6 +2035,7 @@ const LENSES = {
   'lumix-g-100-300mm-f4-5-6-ii': {
     name:'LUMIX G Vario 100-300mm F4-5.6 II O.I.S.', manufacturer:'Panasonic', line:'LUMIX G', type:'Zoom', mount:'mft', asin:'B01N0U4BY2',
     focalLength:null, focalLengthMin:100, focalLengthMax:300, focalLengthEquiv:'200-600mm',
+    specSources: [{ url:'https://panasonic.jp/dc/products/H-FSA100300/spec.html', tier:'T1', title:'Panasonic Japan official specifications (H-FSA100300)', note:'verify-specs 2026-11-15: optics, blades, apertures, focus, magnification (native, not 35mm-equivalent), filter, size and weight re-read; weather sealing not stated on this page', date:'2026-11-15' }],
     maxAperture:4.0, minAperture:22, weight:520, length:126.0, diameter:73.6,
     filterThread:67, minFocusDist:150, maxMagnification:0.21,
     elements:17, groups:12, blades:7, afType:'Stepping Motor',
@@ -2004,6 +2050,7 @@ const LENSES = {
   'lumix-g-12-32mm-f3-5-5-6': {
     name:'LUMIX G Vario 12-32mm F3.5-5.6 O.I.S.', manufacturer:'Panasonic', line:'LUMIX G', type:'Zoom', mount:'mft', asin:'B00FYK2LE4',
     focalLength:null, focalLengthMin:12, focalLengthMax:32, focalLengthEquiv:'24-64mm',
+    specSources: [{ url:'https://panasonic.jp/dc/products/H-FS12032/spec.html', tier:'T1', title:'Panasonic Japan official specifications (H-FS12032)', note:'verify-specs 2026-11-15: optics, blades, apertures, focus, magnification (native, not 35mm-equivalent), filter, size and weight re-read; weather sealing not stated on this page', date:'2026-11-15' }],
     maxAperture:3.5, minAperture:22, weight:70, length:24.0, diameter:55.5,
     filterThread:37, minFocusDist:20, maxMagnification:0.13,
     elements:8, groups:7, blades:7, afType:'Stepping Motor',
@@ -2025,6 +2072,7 @@ const LENSES = {
   'lumix-g-12-60mm-f3-5-5-6': {
     name:'LUMIX G Vario 12-60mm F3.5-5.6 O.I.S.', manufacturer:'Panasonic', line:'LUMIX G', type:'Zoom', mount:'mft', asin:'B01C56V72Q',
     focalLength:null, focalLengthMin:12, focalLengthMax:60, focalLengthEquiv:'24-120mm',
+    specSources: [{ url:'https://panasonic.jp/dc/products/H-FS12060/spec.html', tier:'T1', title:'Panasonic Japan official specifications (H-FS12060)', note:'verify-specs 2026-11-15: optics, blades, apertures, focus, magnification (native, not 35mm-equivalent), filter, size and weight re-read; weather sealing not stated on this page', date:'2026-11-15' }],
     maxAperture:3.5, minAperture:22, weight:210, length:71.0, diameter:66.0,
     filterThread:58, minFocusDist:20, maxMagnification:0.27,
     elements:11, groups:9, blades:7, afType:'Stepping Motor',
@@ -2039,6 +2087,7 @@ const LENSES = {
   'lumix-g-14-140mm-f3-5-5-6-ii': {
     name:'LUMIX G Vario 14-140mm F3.5-5.6 II O.I.S.', manufacturer:'Panasonic', line:'LUMIX G', type:'Zoom', mount:'mft', asin:'B07PZB3YKH',
     focalLength:null, focalLengthMin:14, focalLengthMax:140, focalLengthEquiv:'28-280mm',
+    specSources: [{ url:'https://panasonic.jp/dc/products/H-FSA14140/spec.html', tier:'T1', title:'Panasonic Japan official specifications (H-FSA14140)', note:'verify-specs 2026-11-15: optics, blades, apertures, focus, magnification (native, not 35mm-equivalent), filter, size and weight re-read; weather sealing not stated on this page', date:'2026-11-15' }],
     maxAperture:3.5, minAperture:22, weight:265, length:75.0, diameter:67.0,
     filterThread:58, minFocusDist:30, maxMagnification:0.25,
     elements:14, groups:12, blades:7, afType:'Stepping Motor',
@@ -2052,6 +2101,7 @@ const LENSES = {
   'lumix-g-35-100mm-f4-5-6': {
     name:'LUMIX G Vario 35-100mm F4-5.6 ASPH. MEGA O.I.S.', manufacturer:'Panasonic', line:'LUMIX G', type:'Zoom', mount:'mft', asin:'B00NHZUFYG',
     focalLength:null, focalLengthMin:35, focalLengthMax:100, focalLengthEquiv:'70-200mm',
+    specSources: [{ url:'https://panasonic.jp/dc/products/H-FS35100/spec.html', tier:'T1', title:'Panasonic Japan official specifications (H-FS35100)', note:'verify-specs 2026-11-15: optics, blades, apertures, focus, magnification (native, not 35mm-equivalent), filter, size and weight re-read; weather sealing not stated on this page', date:'2026-11-15' }],
     maxAperture:4.0, minAperture:22, weight:135, length:50.0, diameter:55.5,
     filterThread:46, minFocusDist:90, maxMagnification:0.11,
     elements:12, groups:9, blades:7, afType:'Stepping Motor',
@@ -2065,6 +2115,7 @@ const LENSES = {
   'lumix-g-7-14mm-f4': {
     name:'LUMIX G Vario 7-14mm F4 ASPH.', manufacturer:'Panasonic', line:'LUMIX G', type:'Zoom', mount:'mft', asin:'B0028Y5GKK',
     focalLength:null, focalLengthMin:7, focalLengthMax:14, focalLengthEquiv:'14-28mm',
+    specSources: [{ url:'https://panasonic.jp/dc/products/H-F007014/spec.html', tier:'T1', title:'Panasonic Japan official specifications (H-F007014)', note:'verify-specs 2026-11-15: optics, blades, apertures, focus, magnification (native, not 35mm-equivalent), filter, size and weight re-read; weather sealing not stated on this page', date:'2026-11-15' }],
     maxAperture:4.0, minAperture:22, weight:300, length:83.1, diameter:70.0,
     filterThread:null, minFocusDist:25, maxMagnification:0.08,
     elements:16, groups:12, blades:7, afType:'Stepping Motor',
@@ -2078,6 +2129,7 @@ const LENSES = {
   'lumix-g-12-35mm-f2-8-ii': {
     name:'LUMIX G X Vario 12-35mm F2.8 II O.I.S.', manufacturer:'Panasonic', line:'LUMIX G', type:'Zoom', mount:'mft', asin:'B01MY1ICID',
     focalLength:null, focalLengthMin:12, focalLengthMax:35, focalLengthEquiv:'24-70mm',
+    specSources: [{ url:'https://panasonic.jp/dc/products/H-HSA12035/spec.html', tier:'T1', title:'Panasonic Japan official specifications (H-HSA12035)', note:'verify-specs 2026-11-15: optics, blades, apertures, focus, magnification (native, not 35mm-equivalent), filter, size and weight re-read; weather sealing not stated on this page', date:'2026-11-15' }],
     maxAperture:2.8, minAperture:22, weight:305, length:73.8, diameter:67.6,
     filterThread:58, minFocusDist:25, maxMagnification:0.17,
     elements:14, groups:9, blades:7, afType:'Stepping Motor',
@@ -2091,6 +2143,7 @@ const LENSES = {
   'lumix-g-x-pz-14-42mm-f3-5-5-6': {
     name:'LUMIX G X Vario PZ 14-42mm F3.5-5.6 POWER O.I.S.', manufacturer:'Panasonic', line:'LUMIX G', type:'Zoom', mount:'mft', asin:'B005J5UKIS',
     focalLength:null, focalLengthMin:14, focalLengthMax:42, focalLengthEquiv:'28-84mm',
+    specSources: [{ url:'https://panasonic.jp/dc/products/H-PS14042/spec.html', tier:'T1', title:'Panasonic Japan official specifications (H-PS14042)', note:'verify-specs 2026-11-15: optics, blades, apertures, focus, magnification (native, not 35mm-equivalent), filter, size and weight re-read; weather sealing not stated on this page', date:'2026-11-15' }],
     maxAperture:3.5, minAperture:22, weight:95, length:26.8, diameter:61.0,
     filterThread:37, minFocusDist:20, maxMagnification:0.17,
     elements:9, groups:8, blades:7, afType:'Stepping Motor',
@@ -2104,7 +2157,8 @@ const LENSES = {
   'laowa-7-5mm-f2-mft': {
     name:'Laowa 7.5mm f/2 MFT', manufacturer:'Laowa', line:'Zero-D', type:'Prime',
     mount:'mft', focalLength:7.5, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'15mm',
-    maxAperture:2.0, minAperture:22, weight:170, length:55, diameter:55,
+    specSources: [{ url:'https://www.venuslens.net/product/laowa-7-5mm-f2/', tier:'T1', title:'Laowa (Venus Optics) official product page', note:'verify-specs 2026-11-16: standard version, about 50 x 55 mm (diameter x length)', date:'2026-11-16' }],
+    maxAperture:2.0, minAperture:22, weight:170, length:55, diameter:50,
     filterThread:46, minFocusDist:12, maxMagnification:0.11,
     elements:13, groups:9, blades:7, afType:'Manual',
     weatherSealed:false, ois:false, oisStops:null, year:2017, discontinued:false,
@@ -2117,6 +2171,7 @@ const LENSES = {
   'laowa-90mm-f28-macro-mft': {
     name:'Laowa 90mm f/2.8 2x Ultra Macro APO', manufacturer:'Laowa', line:'Ultra Macro APO', type:'Prime',
     mount:'mft', focalLength:90, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'180mm',
+    specSources: [{ url:'https://www.venuslens.net/product/laowa-90mm-f-2-8-2x-macro-apo/', tier:'T1', title:'Laowa (Venus Optics) official product page', note:'verify-specs 2026-11-16: optics, blades, aperture, focus, magnification, filter, size and weight re-read (one figure for all mounts)', date:'2026-11-16' }],
     maxAperture:2.8, minAperture:22, weight:619, length:120, diameter:74,
     filterThread:67, minFocusDist:20.5, maxMagnification:2.0,
     elements:13, groups:10, blades:13, afType:'Manual',
@@ -2130,7 +2185,8 @@ const LENSES = {
   'sigma-16mm-f14-mft': {
     name:'Sigma 16mm f/1.4 DC DN', manufacturer:'Sigma', line:'Contemporary', type:'Prime',
     mount:'mft', focalLength:16, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'32mm',
-    maxAperture:1.4, minAperture:16, weight:405, length:92.3, diameter:72.2,
+    specSources: [{ url:'https://www.sigma-global.com/en/lenses/c017_16_14/', tier:'T1', title:'Sigma global product page', note:'verify-specs 2026-11-15: Micro Four Thirds rows for size and weight; optics, aperture, focus, filter re-read', date:'2026-11-15' }],
+    maxAperture:1.4, minAperture:16, weight:395, length:91.1, diameter:72.2,
     filterThread:67, minFocusDist:25, maxMagnification:0.1,
     elements:16, groups:13, blades:9, afType:'Stepping Motor',
     weatherSealed:false, ois:false, oisStops:null, year:2017, discontinued:false,
@@ -2144,7 +2200,8 @@ const LENSES = {
   'sigma-30mm-f14-mft': {
     name:'Sigma 30mm f/1.4 DC DN', manufacturer:'Sigma', line:'Contemporary', type:'Prime',
     mount:'mft', focalLength:30, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'60mm',
-    maxAperture:1.4, minAperture:16, weight:265, length:73.3, diameter:64.8,
+    specSources: [{ url:'https://www.sigma-global.com/en/lenses/c016_30_14/', tier:'T1', title:'Sigma global product page', note:'verify-specs 2026-11-15: Micro Four Thirds rows for size and weight; optics, aperture, focus, filter re-read', date:'2026-11-15' }],
+    maxAperture:1.4, minAperture:16, weight:260, length:72.1, diameter:64.8,
     filterThread:52, minFocusDist:30, maxMagnification:0.14,
     elements:9, groups:7, blades:9, afType:'Stepping Motor',
     weatherSealed:false, ois:false, oisStops:null, year:2016, discontinued:false,
@@ -2158,7 +2215,8 @@ const LENSES = {
   'sigma-56mm-f14-mft': {
     name:'Sigma 56mm f/1.4 DC DN', manufacturer:'Sigma', line:'Contemporary', type:'Prime',
     mount:'mft', focalLength:56, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'112mm',
-    maxAperture:1.4, minAperture:16, weight:280, length:59.5, diameter:66.5,
+    specSources: [{ url:'https://www.sigma-global.com/en/lenses/c018_56_14/', tier:'T1', title:'Sigma global product page', note:'verify-specs 2026-11-15: Micro Four Thirds rows for size and weight; optics, aperture, focus, filter re-read', date:'2026-11-15' }],
+    maxAperture:1.4, minAperture:16, weight:256, length:58.1, diameter:66.5,
     filterThread:55, minFocusDist:50, maxMagnification:0.14,
     elements:10, groups:6, blades:9, afType:'Stepping Motor',
     weatherSealed:false, ois:false, oisStops:null, year:2018, discontinued:false,
@@ -2172,8 +2230,9 @@ const LENSES = {
   'voigtlander-nokton-25mm-f095': {
     name:'Voigtländer Nokton 25mm f/0.95', manufacturer:'Voigtländer', line:'Nokton', type:'Prime',
     mount:'mft', focalLength:25, focalLengthMin:null, focalLengthMax:null, focalLengthEquiv:'50mm',
+    specSources: [{ url:'https://www.cosina.co.jp/voigtlander/en/micro-four-thirds/nokton-25mm-f0-95-type-ii/', tier:'T1', title:'Cosina Voigtländer official specifications', note:'verify-specs 2026-11-16: max reproduction ratio 1:3.9', date:'2026-11-16' }],
     maxAperture:0.95, minAperture:16, weight:435, length:70, diameter:60.6,
-    filterThread:52, minFocusDist:17, maxMagnification:0.11,
+    filterThread:52, minFocusDist:17, maxMagnification:0.26,
     elements:11, groups:8, blades:10, afType:'Manual',
     weatherSealed:false, ois:false, oisStops:null, year:2017, discontinued:false,
     // 2026-09-06: repointed off voigtlaender.de — that whole domain sends an
