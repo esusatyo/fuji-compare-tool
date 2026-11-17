@@ -6,7 +6,7 @@ Almost everything already carried a citation, but those were added when the bran
 ## PROGRESS (resume here)
 
 - [x] Batch O1: 43 Olympus / OM System cameras (33 verified and cited, 10 with no surviving maker source)
-- [ ] Batch L1: 49 Leica cameras
+- [x] Batch L1: 49 Leica cameras (25 re-read from Leica pages/PDFs; 12 cited Leica PDFs now return 502; the rest have no maker source)
 - [ ] Batch L2: 48 Leica lenses
 - [ ] Batch T: third-party lenses in `olympus/` and `leica/` not checked in #98 (Laowa, Samyang, Voigtländer, Zeiss, Thypoch, TTArtisan, 7Artisans, SG-image, Meike, Viltrox)
 
@@ -82,3 +82,51 @@ Unsourced on the page, kept: E-M1 II weight 574 (the sheet gives only the 498 g 
 ## Unverifiable (Olympus)
 
 E-P1, E-P2, E-P3, E-P5, E-PL1, E-PL2, E-PL3, E-PM1, TG-1 and TG-2: there is no HTML page, the archived PDF URL returns 403, and olympus-global.com press releases carry no spec table. Their existing T2 citations stay.
+
+## Batch L1 — Leica cameras
+
+Sources (T1):
+- `leica-camera.com/en-US/photography/cameras/<line>/<slug>/technical-specification` for the 12 current bodies.
+- The Leica spec PDFs and manuals already cited on the items (`leica-camera.com/sites/default/files/pm-…`): SL2, SL2-S, T, Q2, Q2 Monochrom, Q, Q-P, D-Lux 7, C-Lux, V-Lux (Typ 114), V-Lux 5, X1, M8, M9-P, M (Typ 240), M (Typ 262), M-D (Typ 262), M Monochrom (Typ 246), M10, M10-R, M10-P, M10-D and M10 Monochrom.
+
+### Dot units (bug, all 46 Leica cameras with a monitor)
+
+Leica stored `lcdDots` and `evfDots` as raw dot counts (`lcdDots:2332800`, `evfDots:5760000`). Every other brand uses thousands and millions (`1620`, `5.76`), as the skill's normalisation table and the engine's formatter (`v + 'K dots'`, `v + 'M dots'`) expect. The site was therefore printing "2,332,800K dots", and in cross-brand comparisons Leica won both resolution rows by a factor of 1,000.
+
+Converted: `lcdDots` divided by 1,000 and rounded (46 bodies), `evfDots` divided by 1,000,000 to two decimals (21 bodies).
+
+### Fixes
+
+| item | field(s) | stored → source |
+|---|---|---|
+| m-ev1 | batteryLife | 237 → 244, split LCD 244 / EVF 237 (Leica states both) |
+| q3-monochrom | batteryLife | 350 → 302 (350 is the Q3 / Q3 43 figure) |
+| m10-r, m10-monochrom | sensorMP | 40 → 40.9 (DNG 7864 × 5200, "40.89 MP") |
+| m8 | batteryLife | null → 400 ("approx. 400 pictures" to CIPA, manual) |
+
+Burst split (Leica marks each rate as mechanical-or-electronic or electronic only):
+
+| item | mechanical / electronic (fps) |
+|---|---|
+| sl3 | 7 / 15 |
+| sl3-s | 7 / 30 |
+| sl3-p | 7 / 40 |
+| sl2-s | 9 / 25 |
+| sl2 | 10 / 20 |
+| q3-monochrom | 5 / 15 |
+
+Not split: Q3 and Q3 43, whose pages list 2–15 fps without naming the shutter; and the M bodies, which are mechanical only.
+
+Checked clean: M11, M11-P, M11-D, M11 Monochrom, Q3, Q3 43, D-Lux 8, SL3 / SL3-S / SL3-P (battery, dims, EVF, Bluetooth), SL2, T, Q, Q-P, D-Lux 7, C-Lux, V-Lux (Typ 114), V-Lux 5 battery, X1, M9-P, M10, M10-D, M (Typ 240), M Monochrom (Typ 246).
+
+Unsourced convention:
+- SL2 / SL3 / SL3-S / SL3-P: Leica gives weight only without battery (835 / 769 / 768 / 768 g). The stored with-battery figures (916 / 854 / 852 / 852) cannot be checked from Leica.
+- SL3 family IBIS stops: not stated on the page.
+
+### Open questions (Leica)
+
+- **Q2 / Q2 Monochrom maxBurst 20**: Leica's tech-data sheet lists "10/5/3 fps (H/M/L)" only. 20 fps (electronic) is widely quoted for the Q2 but is not in the sheet. Change to 10, or find the 20 fps figure in a Leica source?
+
+### Unverifiable (Leica)
+
+The cited Leica PDFs for SL (Typ 601), CL, TL2, TL, X-U (Typ 113), X (Typ 113), X-E (Typ 102), X Vario, X2, D-Lux (Typ 109), M-E (Typ 220) and M-P (Typ 240) now return HTTP 502 from leica-camera.com, from both curl and Chrome; the M10 PDF on the same path still loads. M Monochrom (2012) and M-E (Typ 240) have no Leica source. Existing citations kept. Seen in passing: those 12 dead URLs are the `refresh-camera-data` / link-check skill's job.
