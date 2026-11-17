@@ -7,7 +7,7 @@ Almost everything already carried a citation, but those were added when the bran
 
 - [x] Batch O1: 43 Olympus / OM System cameras (33 verified and cited, 10 with no surviving maker source)
 - [x] Batch L1: 49 Leica cameras (25 re-read from Leica pages/PDFs; 12 cited Leica PDFs now return 502; the rest have no maker source)
-- [ ] Batch L2: 48 Leica lenses
+- [x] Batch L2: 48 Leica lenses (41 SL/M from Leica's web pages, 5 TL from Leica PDFs, 2 TL with dead PDFs)
 - [ ] Batch T: third-party lenses in `olympus/` and `leica/` not checked in #98 (Laowa, Samyang, Voigtländer, Zeiss, Thypoch, TTArtisan, 7Artisans, SG-image, Meike, Viltrox)
 
 ## Sources (Olympus)
@@ -130,3 +130,27 @@ Unsourced convention:
 ### Unverifiable (Leica)
 
 The cited Leica PDFs for SL (Typ 601), CL, TL2, TL, X-U (Typ 113), X (Typ 113), X-E (Typ 102), X Vario, X2, D-Lux (Typ 109), M-E (Typ 220) and M-P (Typ 240) now return HTTP 502 from leica-camera.com, from both curl and Chrome; the M10 PDF on the same path still loads. M Monochrom (2012) and M-E (Typ 240) have no Leica source. Existing citations kept. Seen in passing: those 12 dead URLs are the `refresh-camera-data` / link-check skill's job.
+
+## Batch L2 — Leica lenses
+
+Source: `leica-camera.com/en-US/photography/lenses/<sl|m>/<slug>/technical-specification` (T1), found through the leica-camera.com sitemap. The PDFs the items cited were checked first: 17 of the 48 now return 404 or 502. The 18 SL lenses also sit in `panasonic/`, and every fix and citation was mirrored there.
+
+| item | field | stored → source |
+|---|---|---|
+| summilux-m-28mm-f14-asph | length | 81 → 67 (81 is with hood) |
+| summicron-m-28mm-f2-asph | minFocusDist | 70 → 40 (the page's 1:11.3 scale agrees with 0.4 m) |
+| apo-summicron-m-75mm-f2-asph | minFocusDist | 77 → 70 |
+| apo-macro-elmarit-sl-100mm-f28 (leica, panasonic) | minFocusDist | 30 → 29 |
+| vario-elmarit-sl-70-200mm-f28-asph (leica, panasonic) | minFocusDist | 100 → 65 (0.65 m at 70 mm; shortest across the range) |
+| vario-elmar-sl-100-400mm-f5-63 (leica, panasonic) | minFocusDist | 159 → 110 (1.10 m at 100 mm, 1.59 m at 400 mm) |
+
+TL lenses checked clean against Leica's PDFs: 11-23, 18, 35, 55-135 and 60 macro. The 18-56 and 23 PDFs are dead.
+
+Rejected page values (Leica's own pages contradict themselves):
+- Summicron-M 35 ASPH: diameter 30.7. That figure is the Elmarit-M 28's length, copied across.
+- Elmarit-M 28 ASPH: length 66 / diameter 30.7, garbled. The lens is 30.7 mm long.
+- APO-Summicron-M 50: "largest scale 1:17,4" contradicts its own 271 × 407 mm object field (1:11.3), so the stored 0.09 is kept.
+
+Open question: **APO-Summicron-M 35 length**. Leica's web page says 49.3 mm; the stored 40.9 came from Leica's PDF (now 404). Given the copy errors above, I held it.
+
+Everything else on the 46 lenses read matched: weight, length, diameter, filter, close focus, scale, elements/groups and smallest aperture.
