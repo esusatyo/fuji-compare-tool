@@ -135,49 +135,49 @@ module.exports = {
     return `
 <p class="guide-answer">When we went back to the makers' own spec pages, we found a Canon EOS R1 listed <strong>${BEFORE.r1Weight - s.r1.weight} g</strong> too heavy, four cameras listed without the viewfinder they actually have, and a camera wearing its sibling's dimensions.</p>
 
-<p>Most wrong specs aren't typos. They're numbers from the wrong place: an older model, a different mount, a secondhand source, or nowhere at all. Here's what we found, and why each one happened.</p>
+<p>Most wrong specs aren't typos. They're numbers from the wrong place: a different mount, a secondhand source, an older model, or nowhere at all. Here's what we found, and why each one happened.</p>
 
-<h2>1. The phantom 455 grams</h2>
+<h2>1. Same lens, many mounts</h2>
+<p>Sigma makes most of its lenses for several camera systems. Of the ${s.sigmaLenses} current Sigma lenses in our database, ${s.sigmaMulti} are sold for more than one mount, and ${s.sigmaMultiWeightDiffers} of those weigh differently from one mount to the next.</p>
+<p>${k.src(s.sigma56z.source, "Sigma's page for the 56mm f/1.4")} lists ${FOUND.sigma56Mounts} mounts, from ${g(s.sigma56mft.weight)} on Micro Four Thirds to ${g(s.sigma56z.weight)} on Nikon Z. Each mount has its own diameter and sits a different distance from the sensor, so the barrel changes. Same glass, different lens.</p>
+<p>That's what caught us. ${BEFORE.sigmaWrong} of the ${BEFORE.sigmaChecked} Sigma L-Mount lenses we checked were carrying their Sony E-mount dimensions, read from the wrong row of ${k.src(s.sigma.source, "Sigma's spec table")}. L-Mount sits ${FOUND.flangeL - FOUND.flangeE} mm further from the sensor than Sony E (${FOUND.flangeL} mm vs ${FOUND.flangeE} mm), so L-Mount barrels are usually about ${FOUND.flangeL - FOUND.flangeE} mm shorter. Browse the corrected ${k.a('mount/l-mount', 'L-Mount lenses')}, or ${k.a('mount/z-mount', 'every Nikon Z lens')}.</p>
+
+<h2>2. Wikipedia isn't the maker</h2>
+<p>When we first added ${k.a('olympus/', 'Olympus')}, most of its cameras cited Wikipedia. Then we checked them against Olympus's own spec sheets.</p>
+<p>The E-M5 Mark II's battery life, as we'd taken it from Wikipedia, was ${BEFORE.em5iiBattery} shots. ${k.src(s.em5ii.source, 'Olympus says')} ${s.em5ii.batteryLife}, or ${FOUND.em5iiBatteryEco} in power-saving mode. ${BEFORE.em5iiBattery} matches neither. The PEN-F was ${BEFORE.penfWeight - s.penf.weight} g off and the E-M10 Mark II ${s.em10ii.weight - BEFORE.em10iiWeight} g.</p>
+<p>And the E-PL5's ${BEFORE.epl5Weight} g wasn't wrong, just body only. ${k.src(s.epl5.source, 'With battery and card')}, the way we list every camera, it's ${s.epl5.weight} g. Wikipedia is only as good as the reviews and spec sites it cites, and those often copy each other.</p>
+
+<h2>3. When the maker's page disappears</h2>
+<p>Makers quietly delete old spec pages. For ${FOUND.fujiGone} older Fujifilm cameras, including the original X100 and X-Pro1, the spec pages now redirect to Fujifilm's home page. Only the owner's manuals are left.</p>
+<p>Olympus is worse: ${FOUND.olyGone} older cameras have no maker spec page left at all. For others, the archive is a picture of the old page, which we had to run through text recognition, in Japanese.</p>
+<p>${k.a('leica/', 'Leica')}'s PDFs vanish too: ${FOUND.leicaCameraPdfs} of the camera spec sheets we'd cited, and ${FOUND.leicaLensPdfs} of ${FOUND.leicaLensPdfsChecked} lens sheets, now return errors. Once the maker's page is gone, the secondhand copies become the only record, mistakes and all.</p>
+
+<h2>4. The phantom 455 grams</h2>
 <p>We had Canon's flagship EOS R1 at ${g(BEFORE.r1Weight)}. ${k.src(s.r1.source, 'Canon says')} ${g(s.r1.weight)} with battery and card. The gap alone weighs more than an entire EOS R50.</p>
-<p>Where did ${g(BEFORE.r1Weight)} come from? Honestly, we don't know. It arrived with our first batch of Canon data in June 2026, put together with the help of an AI assistant, and no source was recorded. The rest of that entry was off too: the size, the megapixels and the screen.</p>
-<p>That's the real lesson. A number without a source can't be checked, so nobody ever fixes it. See the corrected figures in the ${k.a('canon/vs/eos-r1-vs-eos-r3', 'EOS R1 vs EOS R3 comparison')}.</p>
+<p>Where did ${g(BEFORE.r1Weight)} come from? We can't say. It arrived with our first batch of Canon data in June 2026, and back then we didn't save our citations while doing the research. The rest of that entry was off too: the size, the megapixels and the screen.</p>
+<p>That's the real lesson. A number without a source can't be checked, so nobody ever fixes it. Now every figure we check is saved with a link to where it came from. See the corrected figures in the ${k.a('canon/vs/eos-r1-vs-eos-r3', 'EOS R1 vs EOS R3 comparison')}.</p>
 
-<h2>2. Hand-me-down specs</h2>
+<h2>5. Hand-me-down specs</h2>
 <p>A classic: a new model carrying its predecessor's numbers. The EOS R50 V had the EOS R50's dimensions and weight. ${k.src(s.r50v.source, 'In reality')} it's ${mm(s.r50v.depth)} deep, not ${mm(s.r50.depth)}.</p>
 <p>Fujifilm's XF 16-55mm f/2.8 II carried the 2015 original's specs: ${g(BEFORE.xf1655Weight)} instead of ${k.src(s.xf1655.source, `${g(s.xf1655.weight)}`)}. The OM-5 II had the OM-5's depth, and Sony's FE 16-35mm GM II had the first GM's length (${k.src(s.gm2.source, `${mm(s.gm2.length)}`)}, not ${mm(s.gm1.length)}).</p>
 <p>Why? The quick way to add a new model is to start from the old one and change what the launch news mentions. Launch news is about sensors and autofocus, not millimeters, so the old size and weight ride along. Our own note on the Olympus E-PL8 said it outright: dimensions "assumed similar to e-pl7". ${k.src(s.epl8.source, "They weren't")}.</p>
 <p>See how different the R50 V really is in the ${k.a('canon/size/eos-r50v-vs-eos-r50', 'EOS R50 V vs EOS R50 size comparison')}, or the ${k.a('olympus/vs/om-5-ii-vs-om-5', 'OM-5 II vs OM-5')}.</p>
 
-<h2>3. The viewfinders that vanished</h2>
+<h2>6. The viewfinders that vanished</h2>
 <p>Four cameras were listed with no viewfinder: Canon's EOS R50 and EOS R100, and Fujifilm's X-T100 and X-T200. All four have an electronic viewfinder, as ${k.src(s.r100.source, 'Canon')} and ${k.src(s.xt200.source, 'Fujifilm')} list.</p>
 <p>Why? In a spec table, "we don't know" and "it doesn't have one" look exactly the same: an empty cell. All four are entry-level bodies, where a missing viewfinder sounds believable, so nobody questioned the blank.</p>
 <p>The R50 also has a near-twin that really has no viewfinder: the EOS R50 V. Our R50 V had the R50's size, and our R50 had the R50 V's missing viewfinder. It looks like the two got muddled.</p>
 <p>The X-T100 was also ${s.xt100.weight - BEFORE.xt100Weight} g light: ${k.src(s.xt100.source, 'Fujifilm says')} ${s.xt100.weight} g, not ${BEFORE.xt100Weight}. Compare the ${k.a('canon/vs/eos-r50-vs-eos-r100', 'EOS R50 and EOS R100')}, or the ${k.a('fujifilm/#cameras=x-t100,x-t200', 'X-T100 and X-T200')}.</p>
 
-<h2>4. Weather sealing, both ways</h2>
+<h2>7. Weather sealing, both ways</h2>
 <p>We had the Fujifilm X-T50 down as weather-sealed. ${k.src(s.xt50.source, 'Fujifilm never says so')}, and reviewers list the lack of sealing as a downside.</p>
 <p>The likely culprit is its name. The X-T50 sounds like a smaller X-T5, and the X-T5 ${k.src(s.xt5.source, 'has 56 weather-sealed points')}. Family resemblance isn't a spec.</p>
 <p>The Canon EOS R8 went the other way: we had it unsealed, but ${k.src(s.r8.source, 'Canon lists')} "weather-resistant construction".</p>
 <p>Why is this so easy to get wrong? There's no standard. Canon says "weather-resistant", Sigma says "dust and splash resistant", and on its ${k.src(s.sigma100400.source, '100-400mm')} that means a seal at the mount only. Many makers just say nothing. Silence isn't a no, but it isn't a yes either. We now mark a camera or lens sealed only when its maker says so. See the ${k.a('fujifilm/vs/x-t50-vs-x100v', 'X-T50 vs X100V')} and ${k.a('canon/vs/eos-r8-vs-eos-r10', 'EOS R8 vs EOS R10')}.</p>
 
-<h2>5. Hood on, zoomed out</h2>
+<h2>8. Hood on, zoomed out</h2>
 <p>Some numbers aren't wrong, just measured differently. Leica's Summilux-M 28mm f/1.4 was ${mm(BEFORE.summiluxLength)} long with its hood on; ${k.src(s.summilux.source, 'without it')} it's ${mm(s.summilux.length)}.</p>
 <p>Fujifilm's XF 55-200mm was listed at ${mm(BEFORE.xf55200Length)}, its length zoomed all the way out. ${k.src(s.xf55200.source, 'At rest')} it's ${mm(s.xf55200.length)}.</p>
-
-<h2>6. Same lens, many mounts</h2>
-<p>Sigma makes most of its lenses for several camera systems. Of the ${s.sigmaLenses} current Sigma lenses in our database, ${s.sigmaMulti} are sold for more than one mount, and ${s.sigmaMultiWeightDiffers} of those weigh differently from one mount to the next.</p>
-<p>${k.src(s.sigma56z.source, "Sigma's page for the 56mm f/1.4")} lists ${FOUND.sigma56Mounts} mounts, from ${g(s.sigma56mft.weight)} on Micro Four Thirds to ${g(s.sigma56z.weight)} on Nikon Z. Each mount has its own diameter and sits a different distance from the sensor, so the barrel changes. Same glass, different lens.</p>
-<p>That's what caught us. ${BEFORE.sigmaWrong} of the ${BEFORE.sigmaChecked} Sigma L-Mount lenses we checked were carrying their Sony E-mount dimensions, read from the wrong row of ${k.src(s.sigma.source, "Sigma's spec table")}. L-Mount sits ${FOUND.flangeL - FOUND.flangeE} mm further from the sensor than Sony E (${FOUND.flangeL} mm vs ${FOUND.flangeE} mm), so L-Mount barrels are usually about ${FOUND.flangeL - FOUND.flangeE} mm shorter. Browse the corrected ${k.a('mount/l-mount', 'L-Mount lenses')}, or ${k.a('mount/z-mount', 'every Nikon Z lens')}.</p>
-
-<h2>7. Wikipedia isn't the maker</h2>
-<p>When we first added ${k.a('olympus/', 'Olympus')}, most of its cameras cited Wikipedia. Then we checked them against Olympus's own spec sheets.</p>
-<p>The E-M5 Mark II's battery life, as we'd taken it from Wikipedia, was ${BEFORE.em5iiBattery} shots. ${k.src(s.em5ii.source, 'Olympus says')} ${s.em5ii.batteryLife}, or ${FOUND.em5iiBatteryEco} in power-saving mode. ${BEFORE.em5iiBattery} matches neither. The PEN-F was ${BEFORE.penfWeight - s.penf.weight} g off and the E-M10 Mark II ${s.em10ii.weight - BEFORE.em10iiWeight} g.</p>
-<p>And the E-PL5's ${BEFORE.epl5Weight} g wasn't wrong, just body only. ${k.src(s.epl5.source, 'With battery and card')}, the way we list every camera, it's ${s.epl5.weight} g. Wikipedia is only as good as the reviews and spec sites it cites, which brings us back to everyone copying everyone.</p>
-
-<h2>8. When the maker's page disappears</h2>
-<p>Makers quietly delete old spec pages. For ${FOUND.fujiGone} older Fujifilm cameras, including the original X100 and X-Pro1, the spec pages now redirect to Fujifilm's home page. Only the owner's manuals are left.</p>
-<p>Olympus is worse: ${FOUND.olyGone} older cameras have no maker spec page left at all. For others, the archive is a picture of the old page, which we had to run through text recognition, in Japanese.</p>
-<p>${k.a('leica/', 'Leica')}'s PDFs vanish too: ${FOUND.leicaCameraPdfs} of the camera spec sheets we'd cited, and ${FOUND.leicaLensPdfs} of ${FOUND.leicaLensPdfsChecked} lens sheets, now return errors. Once the maker's page is gone, the secondhand copies become the only record, mistakes and all.</p>
 
 <h2>How to spot a bad spec</h2>
 <ul class="guide-links">
