@@ -1489,11 +1489,6 @@ footer a:hover { text-decoration: underline; }
 .gbar { position: absolute; left: 0; top: 0; height: 18px; border-radius: 0 4px 4px 0; }
 .gbar-val { position: absolute; top: 50%; transform: translateY(-50%); margin-left: 6px;
             font-size: 13px; font-weight: 600; color: var(--text-primary); white-space: nowrap; }
-/* Stacked bars: the parts share the bar's width in proportion, 2px apart;
-   only the bar's far end is rounded. */
-.gbar-stack { display: flex; gap: 2px; background: none; }
-.gbar-part { display: block; height: 100%; min-width: 2px; }
-.gbar-stack .gbar-part:last-child { border-radius: 0 4px 4px 0; }
 .gbar-c1 { background: var(--chart-1); }
 .gbar-c2 { background: var(--chart-2); }
 .gbar-c3 { background: var(--chart-3); }

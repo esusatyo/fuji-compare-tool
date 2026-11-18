@@ -129,8 +129,6 @@ Body order (design G4):
   bars from zero, a visible value on every bar, a legend when colour carries meaning, and the same
   numbers as a table. Series 1–4 map to the validated `--chart-1..4` tokens; assign them by a
   fixed meaning (brand, sensor format), never by rank, and never more than four.
-- `kit.stacked({ caption, rows: [{ label, parts: [{ value, series }] }], legend, table })` splits each
-  bar into parts (e.g. first-party vs third-party), 2px apart, with the total after the bar.
 - Keep `sub` labels short (strip apertures: `LUMIX G Vario 12-32mm`) so rows don't wrap on phones.
 - If a new chart type is needed, add it to `makeKit` in `scripts/articles.js` with tokens only,
   and validate any new colours with the dataviz skill's palette validator in both themes.
