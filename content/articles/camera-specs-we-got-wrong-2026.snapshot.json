@@ -1,5 +1,8 @@
 {
   "cited": 1369,
+  "sigmaLenses": 56,
+  "sigmaMulti": 44,
+  "sigmaMultiWeightDiffers": 34,
   "r1": {
     "name": "EOS R1",
     "source": "https://www.canon.co.uk/cameras/eos-r1/specifications/",
@@ -10,7 +13,9 @@
     "source": "https://www.canon.co.uk/cameras/eos-r50v/specifications/",
     "width": 119.3,
     "height": 73.7,
-    "depth": 45.2
+    "depth": 45.2,
+    "weight": 370,
+    "evfType": null
   },
   "r50": {
     "name": "EOS R50",
@@ -18,6 +23,7 @@
     "width": 116.3,
     "height": 85.5,
     "depth": 68.8,
+    "weight": 375,
     "evfType": "EVF"
   },
   "r100": {
@@ -41,21 +47,25 @@
     "source": "https://www.fujifilm-x.com/global/products/cameras/x-t50/specifications/",
     "weatherSealed": false
   },
-  "xs20": {
-    "name": "X-S20",
-    "source": "https://www.fujifilm-x.com/global/products/cameras/x-s20/specifications/",
-    "height": 85.1,
-    "cardSlots": "1× SD UHS-II"
+  "xt5": {
+    "name": "X-T5",
+    "source": "https://www.fujifilm-x.com/global/products/cameras/x-t5/",
+    "weatherSealed": true
   },
   "r8": {
     "name": "EOS R8",
     "source": "https://www.canon.co.uk/cameras/eos-r8/specifications/",
     "weatherSealed": true
   },
-  "om5ii": {
-    "name": "OM-5 Mark II",
-    "source": "https://jp.omsystem.com/product/dslr/om-omd/om/om5mk2/spec.html",
-    "depth": 52
+  "xf1655": {
+    "name": "XF 16-55mm f/2.8 R LM WR II",
+    "source": "https://www.fujifilm-x.com/global/products/lenses/xf16-55mmf28-r-lm-wr-ii/specifications/",
+    "weight": 410
+  },
+  "epl8": {
+    "name": "PEN Lite E-PL8",
+    "source": "https://jp.omsystem.com/cms/record/dslr/epl8/spec.pdf",
+    "weight": 374
   },
   "summilux": {
     "name": "Leica Summilux-M 28 f/1.4 ASPH.",
@@ -66,11 +76,6 @@
     "name": "XF 55-200mm f/3.5-4.8 R LM OIS",
     "source": "https://www.fujifilm-x.com/global/products/lenses/xf55-200mmf35-48-r-lm-ois/specifications/",
     "length": 118
-  },
-  "epl5": {
-    "name": "PEN Lite E-PL5",
-    "source": "https://jp.omsystem.com/cms/record/dslr/epl5/spec.pdf",
-    "weight": 325
   },
   "gm2": {
     "name": "FE 16-35mm F2.8 GM II",
@@ -86,5 +91,40 @@
     "name": "Sigma 24-70mm f/2.8 DG DN II Art",
     "source": "https://www.sigma-global.com/en/lenses/a024_24_70_28_ii/",
     "length": 120.2
+  },
+  "sigma100400": {
+    "name": "Sigma 100-400mm f/5-6.3 DG DN OS Contemporary",
+    "source": "https://www.sigma-global.com/en/lenses/c020_100_400_5_63/",
+    "weatherSealed": false
+  },
+  "sigma56mft": {
+    "name": "Sigma 56mm f/1.4 DC DN",
+    "source": "https://www.sigma-global.com/en/lenses/c018_56_14/",
+    "weight": 256
+  },
+  "sigma56z": {
+    "name": "Sigma 56mm f/1.4 DC DN",
+    "source": "https://www.sigma-global.com/en/lenses/c018_56_14/",
+    "weight": 295
+  },
+  "em5ii": {
+    "name": "OM-D E-M5 Mark II",
+    "source": "https://jp.omsystem.com/cms/record/dslr/em5mk2/spec.pdf",
+    "batteryLife": 310
+  },
+  "penf": {
+    "name": "PEN-F",
+    "source": "https://jp.omsystem.com/cms/record/dslr/penf/spec.pdf",
+    "weight": 427
+  },
+  "em10ii": {
+    "name": "OM-D E-M10 Mark II",
+    "source": "https://jp.omsystem.com/cms/record/dslr/em10mk2/spec.pdf",
+    "weight": 399
+  },
+  "epl5": {
+    "name": "PEN Lite E-PL5",
+    "source": "https://jp.omsystem.com/cms/record/dslr/epl5/spec.pdf",
+    "weight": 325
   }
 }
