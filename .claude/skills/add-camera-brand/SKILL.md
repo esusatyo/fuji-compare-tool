@@ -3,7 +3,7 @@ name: add-camera-brand
 description: Add a brand-new camera brand (e.g. Nikon, OM System, Panasonic) to the multi-brand comparison tool end-to-end — research and validate the brand's cameras and lenses, scaffold the brand directory, wire it into the shared engine, add any brand-specific spec section, and verify the test suite. Use when the user wants to add/onboard a new camera brand.
 metadata:
   author: fuji-compare-tool
-  version: "1.1"
+  version: "1.2"
 ---
 
 Add a new camera brand to this repo end-to-end. This skill is **brand-agnostic** —
@@ -108,6 +108,11 @@ Sony = Log/AI AF):
 
 ## Step 5 — Camera data, in batches
 
+**Spec conventions** (which of a maker's several figures to store) are owned by
+`docs/data-methodology.md`, the single source of truth for every owner decision; read it
+before entering specs. If you settle a new convention with the owner, add it there
+(table row + decision log, dated, with the reason) and then here.
+
 Fill `CAMERAS` in small batches (by era/line); after each, add ids to
 `CAMERA_ORDER` (must match `CAMERAS` exactly) and `DROPDOWN_GROUPS` (every camera
 in exactly one group), then `npm run test:data`.
@@ -127,6 +132,17 @@ in exactly one group), then `npm run test:data`.
   display/EVF (nullable for no-EVF cinema bodies), AF, IBIS, video, connectivity,
   storage, power, plus any brand fields. `bluetooth` may be a version string,
   `false`, or `null`.
+- Camera spec conventions (owner decisions, full list and reasons in `docs/data-methodology.md`):
+    weight **with battery and card**; `lcdDots` in thousands, `evfDots` in millions;
+    `evfMag` **35mm-equivalent** (divide native by the crop) and, on hybrid finders, the
+    **optical** figure; `ibisStops` **body-only**, never Sync IS / Dual I.S.; `sensorMP`
+    effective (Foveon: top layer); battery = CIPA, Fujifilm Normal mode, Nikon Energy-saving
+    OFF, Panasonic the SD-card set, split into `batteryLifeLcd` / `batteryLifeEvf` when the
+    maker gives both (hybrid finders: `batteryLifeEvf` + `batteryLifeOvf`, `batteryLifeLcd:
+    null`); burst split into `maxBurstMech` (electronic first curtain counts as mechanical)
+    / `maxBurstElec` (incl. crop modes, `maxBurstElecCrop`; Nikon C30/C60/C120 excluded);
+    `weatherSealed` only on a maker claim (silence, a mount gasket, or sealing that needs an
+    accessory = `false`; conflicting maker pages = `false` until a third maker source).
 - **Engine renders `numSlots = 3`** from `defaultSelected`, and the picker dedup
   test needs a 4th non-default camera — so the first green checkpoint needs
   **≥4 cameras** entered with `defaultSelected` pointing at 3 of them.
@@ -141,6 +157,11 @@ group) and `npm run test:data`.
   zooms set `focalLengthMin`<`focalLengthMax` (and `focalLength: null`);
   `focalLengthEquiv` string (APS-C → 1.5×/1.6× crop equivalent); aperture,
   optics, size, `afType`, `weatherSealed`, `ois`/`oisStops`, year, discontinued.
+- Lens spec conventions (full list in `docs/data-methodology.md`): bare-lens weight;
+    length without hood, zoom shortest; `minFocusDist` cm, shortest across the range, the
+    **AF** figure where AF and MF differ (same for `maxMagnification`); `minAperture` on
+    variable zooms = the **wide-end** minimum; fixed-aperture lenses store min = max;
+    `weatherSealed` only on a maker claim.
 - `manufacturer` must match a `MANUFACTURER_COLORS` key (first-party = the brand).
 - Lenses may set `priceIncomplete: true` to ship with `USD` (+ partial regional)
   and skip the all-currencies check; discontinued lenses may be `USD`-only.

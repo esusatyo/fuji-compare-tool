@@ -6,9 +6,12 @@
 //
 //     npm run test:links
 //
-// Dead links (404/410, DNS failures) fail; anti-bot responses
-// (403/429/503) and timeouts only warn, since they say nothing about
-// whether the link works for a human.
+// Dead links (404/410, DNS failures, and any other 4xx/5xx that is still
+// there after one retry) fail; anti-bot responses (403/429/503) and
+// timeouts only warn, since they say nothing about whether the link works
+// for a human. Every URL the data cites is swept: productUrl, imageUrl and
+// every specSources / priceSource / imageSource citation (they render as
+// References links).
 // ─────────────────────────────────────────────
 const { test } = require('node:test');
 const assert = require('node:assert/strict');
@@ -52,9 +55,14 @@ function collectUrls() {
 //   404, 410            -> FAIL (dead link)
 //   403, 429, 503       -> WARN, not fail (anti-bot blocking, esp. Amazon)
 //   timeout             -> WARN (reported as 503)
+//   any other >= 400    -> retried once after a pause; FAIL if it persists.
+//                          (Leica answers a deleted PDF with 502, not 404:
+//                          ~30 dead spec-sheet citations passed silently
+//                          until 2026-11-18 because only 404/410 failed.)
 //   images: must also return Content-Type image/*
 const FAIL_STATUSES = new Set([404, 410]);
 const WARN_STATUSES = new Set([403, 429, 503]);
+const RETRY_PAUSE_MS = 3000;
 
 const UA = 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 ' +
            '(KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36';
@@ -112,8 +120,12 @@ test('all product/image links are reachable', { skip: !ENABLED }, async () => {
   const warnings = [];
   await runPool([...urls.entries()], async ([url, meta]) => {
     try {
-      const { status, contentType } = await checkUrl(url, meta.kind);
-      if (FAIL_STATUSES.has(status)) failures.push(`${status} ${url} (${meta.refs.join(', ')})`);
+      let { status, contentType } = await checkUrl(url, meta.kind);
+      if (status >= 400 && !FAIL_STATUSES.has(status) && !WARN_STATUSES.has(status)) {
+        await new Promise(r => setTimeout(r, RETRY_PAUSE_MS));
+        ({ status, contentType } = await checkUrl(url, meta.kind));
+      }
+      if (FAIL_STATUSES.has(status) || (status >= 400 && !WARN_STATUSES.has(status))) failures.push(`${status} ${url} (${meta.refs.join(', ')})`);
       else if (WARN_STATUSES.has(status)) warnings.push(`${status} ${url}`);
       else if (meta.kind === 'image' && !/^image\//.test(contentType || '')) {
         failures.push(`non-image content-type (${contentType}) for ${url} (${meta.refs.join(', ')})`);

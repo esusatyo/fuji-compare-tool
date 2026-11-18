@@ -321,11 +321,19 @@ function validateCamera(id, cam, brandSections = [], mountIds = null) {
   // Split battery (optional, rolled out brand by brand via verify-specs): both
   // keys together; `batteryLife` kept equal to the screen figure (the maker's
   // headline CIPA number) so legacy consumers still read one consistent value.
-  if ('batteryLifeLcd' in cam || 'batteryLifeEvf' in cam) {
+  // Hybrid optical/electronic finders (Fujifilm X100 / X-Pro) also carry
+  // `batteryLifeOvf`; their maker gives no screen figure, so `batteryLifeLcd`
+  // is null and `batteryLife` equals the EVF figure (owner rule 2026-11-18).
+  if ('batteryLifeLcd' in cam || 'batteryLifeEvf' in cam || 'batteryLifeOvf' in cam) {
     add(checkField(cam, 'batteryLifeLcd', { type: 'number', nullable: true, min: 0 }));
     add(checkField(cam, 'batteryLifeEvf', { type: 'number', nullable: true, min: 0 }));
     if (cam.batteryLifeLcd != null && cam.batteryLife !== cam.batteryLifeLcd) e.push(`"batteryLife" (${cam.batteryLife}) should equal "batteryLifeLcd" (${cam.batteryLifeLcd})`);
+    if (cam.batteryLifeLcd == null && cam.batteryLifeEvf != null && cam.batteryLife !== cam.batteryLifeEvf) e.push(`"batteryLife" (${cam.batteryLife}) should equal "batteryLifeEvf" (${cam.batteryLifeEvf}) when there is no screen figure`);
     if (cam.batteryLifeEvf != null && cam.evfType == null) e.push('"batteryLifeEvf" set on a camera with no viewfinder');
+    if ('batteryLifeOvf' in cam) {
+      add(checkField(cam, 'batteryLifeOvf', { type: 'number', nullable: false, min: 0 }));
+      if (!/OVF/.test(cam.evfType || '')) e.push('"batteryLifeOvf" set on a camera without an optical viewfinder');
+    }
   }
   add(checkField(cam, 'usbCharging', { type: 'boolean' }));
   add(checkField(cam, 'lensType', { type: 'string' }));

@@ -81,3 +81,15 @@ test('battery: split cameras show screen + viewfinder rows; legacy row only when
   r = rows(window);
   assert.ok('Battery (Screen, CIPA)' in r && 'Battery Life (CIPA)' in r);
 });
+
+test('battery: hybrid-finder bodies add an optical-viewfinder row', () => {
+  const { window, data } = loadBrand('fujifilm', { engine: true });
+  const cams = Object.entries(data.CAMERAS);
+  const hybrid = cams.filter(([, c]) => c.batteryLifeOvf != null).map(([id]) => id);
+  const legacy = cams.filter(([, c]) => !('batteryLifeLcd' in c) && !('batteryLifeOvf' in c) && c.batteryLife != null).map(([id]) => id);
+  assert.ok(hybrid.length >= 2 && legacy.length >= 1);
+
+  [hybrid[0], legacy[0]].forEach((id, i) => setSlot(window, i, id));
+  const r = rows(window);
+  assert.ok('Battery (Optical VF, CIPA)' in r && 'Battery (Viewfinder, CIPA)' in r && 'Battery Life (CIPA)' in r);
+});

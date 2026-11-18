@@ -3,7 +3,7 @@ name: refresh-camera-data
 description: Research live camera/lens data from the web and propose updates to brand data files — price changes, product/image URL changes, and newly released cameras and lenses. Use when the user wants to refresh, update, or check for new camera data, prices, or releases across brands.
 metadata:
   author: fuji-compare-tool
-  version: "1.5"
+  version: "1.6"
 ---
 
 Refresh the brand data files in this repo against current real-world data.
@@ -28,6 +28,28 @@ If the user said e.g. "just Fujifilm" or "only USD", restrict accordingly. Other
 ---
 
 ## What each entry looks like
+
+**Spec conventions** (which of a maker's several figures to store) are owned by
+`docs/data-methodology.md`, the single source of truth for every owner decision; read it
+before entering specs. If you settle a new convention with the owner, add it there
+(table row + decision log, dated, with the reason) and then here.
+
+- Camera spec conventions (owner decisions, full list and reasons in `docs/data-methodology.md`):
+    weight **with battery and card**; `lcdDots` in thousands, `evfDots` in millions;
+    `evfMag` **35mm-equivalent** (divide native by the crop) and, on hybrid finders, the
+    **optical** figure; `ibisStops` **body-only**, never Sync IS / Dual I.S.; `sensorMP`
+    effective (Foveon: top layer); battery = CIPA, Fujifilm Normal mode, Nikon Energy-saving
+    OFF, Panasonic the SD-card set, split into `batteryLifeLcd` / `batteryLifeEvf` when the
+    maker gives both (hybrid finders: `batteryLifeEvf` + `batteryLifeOvf`, `batteryLifeLcd:
+    null`); burst split into `maxBurstMech` (electronic first curtain counts as mechanical)
+    / `maxBurstElec` (incl. crop modes, `maxBurstElecCrop`; Nikon C30/C60/C120 excluded);
+    `weatherSealed` only on a maker claim (silence, a mount gasket, or sealing that needs an
+    accessory = `false`; conflicting maker pages = `false` until a third maker source).
+- Lens spec conventions (full list in `docs/data-methodology.md`): bare-lens weight;
+    length without hood, zoom shortest; `minFocusDist` cm, shortest across the range, the
+    **AF** figure where AF and MF differ (same for `maxMagnification`); `minAperture` on
+    variable zooms = the **wide-end** minimum; fixed-aperture lenses store min = max;
+    `weatherSealed` only on a maker claim.
 
 Both `CAMERAS` and `LENSES` are objects keyed by kebab-case slug. The fields this
 skill touches:

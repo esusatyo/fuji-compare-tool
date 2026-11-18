@@ -356,10 +356,13 @@ const SPEC_SECTIONS = [
       // publishes both (Canon, Sony, Nikon, Panasonic), rolled out per brand
       // by verify-specs like burst. Cameras with batteryLifeLcd/batteryLifeEvf
       // show the two rows; the rest keep the legacy single row. hideWhenEmpty
-      // drops whichever rows no selected camera fills.
+      // drops whichever rows no selected camera fills. Hybrid-finder bodies
+      // (Fujifilm X100 / X-Pro) add an optical-viewfinder row: the maker
+      // quotes OVF and EVF figures there, with no screen-only figure.
       { key: 'batteryLife',  label: 'Battery Life (CIPA)', type: 'number', higherBetter: true, hideWhenEmpty: true, fn: c => hasBatterySplit(c) ? null : c.batteryLife, fmt: v => v + ' shots' },
       { key: 'batteryLcd',   label: 'Battery (Screen, CIPA)', type: 'number', higherBetter: true, hideWhenEmpty: true, fn: c => hasBatterySplit(c) ? c.batteryLifeLcd : null, fmt: v => v + ' shots' },
       { key: 'batteryEvf',   label: 'Battery (Viewfinder, CIPA)', type: 'number', higherBetter: true, hideWhenEmpty: true, fn: c => hasBatterySplit(c) ? c.batteryLifeEvf : null, fmt: v => v + ' shots' },
+      { key: 'batteryOvf',   label: 'Battery (Optical VF, CIPA)', type: 'number', higherBetter: true, hideWhenEmpty: true, fn: c => hasBatterySplit(c) ? (c.batteryLifeOvf ?? null) : null, fmt: v => v + ' shots' },
       { key: 'usbCharging',  label: 'USB Charging',      type: 'boolean', fn: c => c.usbCharging },
     ]
   },
@@ -1582,9 +1585,10 @@ function hasBurstSplit(c) {
 }
 
 // True once a camera records screen and viewfinder battery life separately.
-// batteryLifeEvf is null on a body without a viewfinder.
+// batteryLifeEvf is null on a body without a viewfinder; batteryLifeOvf is
+// only on hybrid optical/electronic finders.
 function hasBatterySplit(c) {
-  return !!c && ('batteryLifeLcd' in c || 'batteryLifeEvf' in c);
+  return !!c && ('batteryLifeLcd' in c || 'batteryLifeEvf' in c || 'batteryLifeOvf' in c);
 }
 
 function formatVal(spec, item) {
