@@ -94,7 +94,13 @@ async function checkUrl(url, kind) {
     return r;
   } catch (err) {
     // Timeouts and resets say nothing about the link for a human: warn.
-    if (err.name === 'AbortError' || err.name === 'TimeoutError') return { status: 503, contentType: null };
+    // A socket-level timeout/reset (undici surfaces it as err.cause.code) is
+    // the same case as our own abort timer.
+    const code = err.cause && err.cause.code;
+    if (err.name === 'AbortError' || err.name === 'TimeoutError' ||
+        ['ETIMEDOUT', 'ECONNRESET', 'UND_ERR_CONNECT_TIMEOUT', 'UND_ERR_SOCKET'].includes(code)) {
+      return { status: 503, contentType: null };
+    }
     throw err; // DNS failure, TLS error → genuine dead link, let it fail
   }
 }
