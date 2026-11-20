@@ -99,10 +99,11 @@ function makeKit(page) {
       return `<a href="${esc(url)}" target="_blank" rel="noopener" data-goatcounter-click="${page.event}:${page.slug}:source:${esc(host)}" data-goatcounter-title="${page.label} source: ${esc(host)}">${text}</a>`;
     },
     // head: column labels; rows: arrays of cell HTML; the `rowHeader` column
-    // becomes <th scope="row">.
-    table(head, rows, { rowHeader = 0, caption = '' } = {}) {
+    // becomes <th scope="row">. `wrap: true` lets cells wrap, for tables of
+    // sentences rather than names and numbers.
+    table(head, rows, { rowHeader = 0, caption = '', wrap = false } = {}) {
       const cells = r => r.map((c, i) => (i === rowHeader ? `<th scope="row">${c}</th>` : `<td>${c}</td>`)).join('');
-      return `<div class="guide-table-wrap"><table class="guide-table">${caption ? `<caption>${caption}</caption>` : ''}
+      return `<div class="guide-table-wrap"><table class="guide-table${wrap ? ' guide-table-text' : ''}">${caption ? `<caption>${caption}</caption>` : ''}
 <thead><tr>${head.map(h => `<th scope="col">${h}</th>`).join('')}</tr></thead>
 <tbody>
 ${rows.map(r => `<tr>${cells(r)}</tr>`).join('\n')}

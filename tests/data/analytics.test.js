@@ -38,7 +38,7 @@ test('analytics.js exists and defines window.trackEvent', () => {
 
 test('GoatCounter is on the pages this suite expects (sanity: the scan found them)', () => {
   const rels = pages.map(p => p.rel);
-  for (const must of ['index.html', 'about.html', 'privacy.html', 'compare/index.html', 'fujifilm/index.html']) {
+  for (const must of ['index.html', 'about.html', 'methodology.html', 'privacy.html', 'compare/index.html', 'fujifilm/index.html']) {
     assert.ok(rels.includes(must), `expected ${must} to load GoatCounter`);
   }
   assert.ok(rels.some(r => /^[a-z]+\/vs\//.test(r)), 'expected brand vs-pages');

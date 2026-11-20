@@ -1,18 +1,22 @@
 {
   "": {
-    "hash": "bf93691282127456",
-    "lastmod": "2026-11-18"
+    "hash": "49c9d5a5ec724ce5",
+    "lastmod": "2026-11-20"
   },
   "about": {
-    "hash": "fac55d7da6a5767c",
-    "lastmod": "2026-11-13"
+    "hash": "24d457c6e3a821c9",
+    "lastmod": "2026-11-20"
   },
   "articles/": {
-    "hash": "4ae777d514fc9ef2",
-    "lastmod": "2026-11-18"
+    "hash": "de30037ea24dbee6",
+    "lastmod": "2026-11-20"
   },
   "articles/camera-specs-we-got-wrong-2026": {
     "hash": "02f8ebc38c5f541e",
+    "lastmod": "2026-11-20"
+  },
+  "articles/small-site-vs-spec-databases-2026": {
+    "hash": "00d03a0834b297b0",
     "lastmod": "2026-11-20"
   },
   "canon/": {
@@ -150,6 +154,10 @@
   "leica/": {
     "hash": "f2588aae2a37e8d4",
     "lastmod": "2026-11-18"
+  },
+  "methodology": {
+    "hash": "b0778d56694407ae",
+    "lastmod": "2026-11-20"
   },
   "mount/": {
     "hash": "bd1eb10c4a7e22bb",
