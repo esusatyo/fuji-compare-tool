@@ -3237,8 +3237,11 @@ const LENSES = {
     imageUrl:'https://laowa.com.au/wp-content/uploads/2018/01/358A7779.jpg',
     imageSource: { url:'https://laowa.com.au/product/laowa-9mm-f-2-8/', tier:'T1', title:'Laowa Australia (official regional site)', note:'top view mounted on a Fujifilm X body. Replaced the venuslens.net image 2026-10-13: its Cloudflare returns 403 to non-browser clients and embedded requests, so the card showed a placeholder', date:'2026-10-13' },
     asin:'B07BHQHKCF',
-    prices:{USD:399,AUD:null,EUR:null,GBP:null,JPY:null,CAD:null,SGD:null},
-    priceSource: { url:'https://www.venuslens.net/product/9mm/', tier:'T1', title:'Laowa (Venus Optics) official store', note:'USD $499 -> $399: Laowa\'s own store lists the Fuji X version at $399, regular price (not on sale). Read 2026-10-11', date:'2026-10-11' },
+    prices:{USD:399,AUD:769,EUR:null,GBP:null,JPY:null,CAD:null,SGD:null},
+    priceSource: [
+      { url:'https://www.venuslens.net/product/9mm/', tier:'T1', title:'Laowa (Venus Optics) official store', note:'USD $499 -> $399: Laowa\'s own store lists the Fuji X version at $399, regular price (not on sale). Read 2026-10-11', date:'2026-10-11' },
+      { url:'https://laowa.com.au/product/laowa-9mm-f-2-8/', tier:'T1', title:'Laowa Australia store', note:'AUD 769: Laowa Australia store regular price (LAOWA 9mm f/2.8)', date:'2026-11-21' },
+    ],
     priceIncomplete:true,
     productUrl:'https://www.venuslens.net/product/9mm/',
   },
@@ -3253,9 +3256,12 @@ const LENSES = {
     imageUrl:'https://laowa.com.au/wp-content/uploads/2020/02/01.jpg',
     imageSource: { url:'https://laowa.com.au/product/65mm/', tier:'T1', title:'Laowa Australia (official regional site)', note:'first gallery image, lens alone, side view; no mount plate legible. Replaced the venuslens.net image 2026-10-13: its Cloudflare returns 403 to non-browser clients and embedded requests, so the card showed a placeholder', date:'2026-10-13' },
     asin:'B0847MW9X6',
-    prices:{USD:399,AUD:null,EUR:null,GBP:null,JPY:null,CAD:null,SGD:null},
+    prices:{USD:399,AUD:809,EUR:null,GBP:null,JPY:null,CAD:null,SGD:null},
     priceIncomplete:true,
-    priceSource: { url:'https://www.venuslens.net/product/laowa-65mm-f-2-8-2x-ultra-macro-apo/', tier:'T1', title:'Laowa (Venus Optics) official store', note:'Fuji X variation regular $399 (store API, read in a browser)', date:'2026-10-19' },
+    priceSource: [
+      { url:'https://www.venuslens.net/product/laowa-65mm-f-2-8-2x-ultra-macro-apo/', tier:'T1', title:'Laowa (Venus Optics) official store', note:'Fuji X variation regular $399 (store API, read in a browser)', date:'2026-10-19' },
+      { url:'https://laowa.com.au/product/65mm/', tier:'T1', title:'Laowa Australia store', note:'AUD 809: Laowa Australia store regular price (LAOWA 65mm f/2.8 APO 2:1 Ultra Macro); on sale at 687, not used', date:'2026-11-21' },
+    ],
     productUrl:'https://www.venuslens.net/product/laowa-65mm-f-2-8-2x-ultra-macro-apo/',
   },
   'laowa-4mm-f28-fisheye': {
@@ -3270,9 +3276,12 @@ const LENSES = {
     imageUrl:'https://laowa.com.au/wp-content/uploads/2019/08/YZX_7419a.jpg',
     imageSource: { url:'https://laowa.com.au/product/4mm/', tier:'T1', title:'Laowa Australia (official regional site)', note:'lens alone, front three-quarter view; no mount plate legible. Replaced the venuslens.net image 2026-10-13: its Cloudflare returns 403 to non-browser clients and embedded requests, so the card showed a placeholder', date:'2026-10-13' },
     asin:'B08464QPP8',
-    prices:{USD:199,AUD:null,EUR:null,GBP:null,JPY:null,CAD:null,SGD:null},
+    prices:{USD:199,AUD:415,EUR:null,GBP:null,JPY:null,CAD:null,SGD:null},
     priceIncomplete:true,
-    priceSource: { url:'https://www.venuslens.net/product/laowa-4mm-f-2-8-mft/', tier:'T1', title:'Laowa (Venus Optics) official store', note:'Fuji X variation regular $199 (store API, read in a browser)', date:'2026-10-19' },
+    priceSource: [
+      { url:'https://www.venuslens.net/product/laowa-4mm-f-2-8-mft/', tier:'T1', title:'Laowa (Venus Optics) official store', note:'Fuji X variation regular $199 (store API, read in a browser)', date:'2026-10-19' },
+      { url:'https://laowa.com.au/product/4mm/', tier:'T1', title:'Laowa Australia store', note:'AUD 415: Laowa Australia store regular price (LAOWA 4mm f/2.8 Fisheye)', date:'2026-11-21' },
+    ],
     productUrl:'https://www.venuslens.net/product/laowa-4mm-f-2-8-mft/',
   },
   'laowa-aksen-45mm-f28': {
