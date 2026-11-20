@@ -43,7 +43,7 @@ module.exports = {
   title: 'Camera Specs We Got Wrong in 2026, and Why',
   headline: 'The camera specs we got wrong (and why it happens)',
   dek: 'We checked our specs against the makers. The makers won. Often.',
-  published: '2026-11-18',
+  published: '2026-11-20',
   query: {
     text: 'camera specs wrong / which camera spec sites are accurate',
     evidence: 'Owner decision 2026-11-18: a trust and outreach piece, not chasing search volume. Built from the November 2026 verify-specs runs against makers’ own spec pages.',
@@ -112,7 +112,7 @@ module.exports = {
       ['The EOS R50, EOS R100, X-T100 and X-T200 all have an EVF', [s.r50, s.r100, s.xt100, s.xt200].every(c => c.evfType === 'EVF')],
       ['The EOS R50 V has no viewfinder', s.r50v.evfType == null],
       ['The X-T100 weighs 448 g, 54 g more than we listed', s.xt100.weight === 448 && s.xt100.weight - BEFORE.xt100Weight === 54],
-      ['The X-T50 is not weather-sealed; the X-T5 is; the EOS R8 is weather-resistant', s.xt50.weatherSealed === false && s.xt5.weatherSealed === true && s.r8.weatherSealed === true],
+      ['The X-T50 is not weather-sealed; the X-T5 is; the EOS R8 is held as unsealed while Canon UK and Canon Japan disagree', s.xt50.weatherSealed === false && s.xt5.weatherSealed === true && s.r8.weatherSealed === false],
       ['A mount gasket alone does not count as sealed (Sigma 100-400mm)', s.sigma100400.weatherSealed === false],
       ['The Summilux-M 28mm is 67 mm long without its hood', s.summilux.length === 67],
       ['The XF 55-200mm is 118 mm long at rest', s.xf55200.length === 118],
@@ -172,8 +172,8 @@ module.exports = {
 <h2>7. Weather sealing, both ways</h2>
 <p>We had the Fujifilm X-T50 down as weather-sealed. ${k.src(s.xt50.source, 'Fujifilm never says so')}, and reviewers list the lack of sealing as a downside.</p>
 <p>The likely culprit is its name. The X-T50 sounds like a smaller X-T5, and the X-T5 ${k.src(s.xt5.source, 'has 56 weather-sealed points')}. Family resemblance isn't a spec.</p>
-<p>The Canon EOS R8 went the other way: we had it unsealed, but ${k.src(s.r8.source, 'Canon lists')} "weather-resistant construction".</p>
-<p>Why is this so easy to get wrong? There's no standard. Canon says "weather-resistant", Sigma says "dust and splash resistant", and on its ${k.src(s.sigma100400.source, '100-400mm')} that means a seal at the mount only. Many makers just say nothing. Silence isn't a no, but it isn't a yes either. We now mark a camera or lens sealed only when its maker says so. See the ${k.a('fujifilm/vs/x-t50-vs-x100v', 'X-T50 vs X100V')} and ${k.a('canon/vs/eos-r8-vs-eos-r10', 'EOS R8 vs EOS R10')}.</p>
+<p>The Canon EOS R8 shows how messy it gets. ${k.src(s.r8.source, 'Canon UK lists')} "weather-resistant construction"; Canon Japan's page makes no such claim. When a maker disagrees with itself, we leave it unsealed until another Canon source settles it.</p>
+<p>Why is this so easy to get wrong? There's no standard. Canon UK says "weather-resistant", Sigma says "dust and splash resistant", and on its ${k.src(s.sigma100400.source, '100-400mm')} that means a seal at the mount only. Many makers just say nothing. Silence isn't a no, but it isn't a yes either. We now mark a camera or lens sealed only when its maker says so. See the ${k.a('fujifilm/vs/x-t50-vs-x100v', 'X-T50 vs X100V')} and ${k.a('canon/vs/eos-r8-vs-eos-r10', 'EOS R8 vs EOS R10')}.</p>
 
 <h2>8. Hood on, zoomed out</h2>
 <p>Some numbers aren't wrong, just measured differently. Leica's Summilux-M 28mm f/1.4 was ${mm(BEFORE.summiluxLength)} long with its hood on; ${k.src(s.summilux.source, 'without it')} it's ${mm(s.summilux.length)}.</p>

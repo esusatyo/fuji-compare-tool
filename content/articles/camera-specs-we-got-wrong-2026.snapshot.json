@@ -55,7 +55,7 @@
   "r8": {
     "name": "EOS R8",
     "source": "https://www.canon.co.uk/cameras/eos-r8/specifications/",
-    "weatherSealed": true
+    "weatherSealed": false
   },
   "xf1655": {
     "name": "XF 16-55mm f/2.8 R LM WR II",
