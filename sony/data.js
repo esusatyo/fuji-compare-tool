@@ -917,7 +917,6 @@ const LENSES = {
       { url:'https://www.sony.com.sg/electronics/camera-lenses/sel50f14gm', tier:'T1', title:'Sony Singapore store', note:'SGD 2019: Sony Singapore "Original Price" (on promotion at 1769)', date:'2026-11-20' },
       { url:'https://www.sony.jp/ichigan/products/SEL50F14GM/', tier:'T1', title:'Sony Store Japan', note:'JPY 213400: Sony Store price, tax included', date:'2026-11-20' },
     ],
-    priceIncomplete:true,
     productUrl:'https://electronics.sony.com/imaging/lenses/full-frame-e-mount/p/sel50f14gm',
   },
 
@@ -938,7 +937,6 @@ const LENSES = {
       { url:'https://www.sony.com.sg/electronics/camera-lenses/sel14f18gm', tier:'T1', title:'Sony Singapore store', note:'SGD 2239: Sony Singapore "Original Price" (on promotion at 2089)', date:'2026-11-20' },
       { url:'https://www.sony.jp/ichigan/products/SEL14F18GM/', tier:'T1', title:'Sony Store Japan', note:'JPY 216700: Sony Store price, tax included', date:'2026-11-20' },
     ],
-    priceIncomplete:true,
     productUrl:'https://electronics.sony.com/imaging/lenses/full-frame-e-mount/p/sel14f18gm',
   },
 
@@ -960,7 +958,6 @@ const LENSES = {
       { url:'https://www.sony.com.sg/electronics/camera-lenses/sel24f14gm', tier:'T1', title:'Sony Singapore store', note:'SGD 2139: Sony Singapore "Original Price" (on promotion at 1889)', date:'2026-11-20' },
       { url:'https://www.sony.jp/ichigan/products/SEL24F14GM/', tier:'T1', title:'Sony Store Japan', note:'JPY 213400: Sony Store price, tax included', date:'2026-11-20' },
     ],
-    priceIncomplete:true,
     productUrl:'https://electronics.sony.com/imaging/lenses/full-frame-e-mount/p/sel24f14gm',
   },
 
@@ -981,7 +978,6 @@ const LENSES = {
       { url:'https://www.sony.com.sg/electronics/camera-lenses/sel35f14gm', tier:'T1', title:'Sony Singapore store', note:'SGD 2139: Sony Singapore "Original Price" (on promotion at 1889)', date:'2026-11-20' },
       { url:'https://www.sony.jp/ichigan/products/SEL35F14GM/', tier:'T1', title:'Sony Store Japan', note:'JPY 215600: Sony Store price, tax included', date:'2026-11-20' },
     ],
-    priceIncomplete:true,
     productUrl:'https://electronics.sony.com/imaging/lenses/full-frame-e-mount/p/sel35f14gm',
   },
 
@@ -996,7 +992,6 @@ const LENSES = {
     imageUrl:'https://upload.wikimedia.org/wikipedia/commons/thumb/8/8f/Sony_FE_50mm_F1.2_GM_-_by_Henry_S%C3%B6derlund_%2851170539376%29.jpg/500px-Sony_FE_50mm_F1.2_GM_-_by_Henry_S%C3%B6derlund_%2851170539376%29.jpg',
     imageCredit:{author:"Henry Söderlund from Helsinki, Finland", licence:"CC BY 2.0", licenceUrl:"https://creativecommons.org/licenses/by/2.0", source:"https://commons.wikimedia.org/wiki/File:Sony_FE_50mm_F1.2_GM_-_by_Henry_S%C3%B6derlund_(51170539376).jpg"},
     prices:{USD:2299,AUD:3099,EUR:2299,GBP:1999,JPY:315700,CAD:2599,SGD:3059},
-    priceIncomplete:true,
     priceSource: [
       { url:'https://electronics.sony.com/imaging/lenses/all-e-mount/p/sel50f12gm', tier:'T1', note:'official Sony US shop, FE 50mm F1.2 GM product page; Original Price $2,299.99 (current sale price $2,199.99, "Save $100.00") — treating the un-discounted Original Price as list price, resolving the conflicting $2,198/$2,300 figures from an earlier pass', date:'2026-08-23' },
       { url:'https://www.sony.co.uk/store/product/sel50f12gm.syx/FE-50mm-F1-2-GM', tier:'T1', title:'Sony UK store', note:'GBP 1999: Sony UK store regular (base) price, not the promotional price', date:'2026-11-21' },
@@ -1025,7 +1020,6 @@ const LENSES = {
       { url:'https://www.sony.com.sg/electronics/camera-lenses/sel85f14gm2', tier:'T1', title:'Sony Singapore store', note:'SGD 2599: Sony Singapore "Original Price" (on promotion at 2449)', date:'2026-11-20' },
       { url:'https://www.sony.jp/ichigan/products/SEL85F14GM2/', tier:'T1', title:'Sony Store Japan', note:'JPY 295900: Sony Store price, tax included', date:'2026-11-20' },
     ],
-    priceIncomplete:true,
     productUrl:'https://electronics.sony.com/imaging/lenses/full-frame-e-mount/p/sel85f14gm2',
   },
 
@@ -1061,7 +1055,6 @@ const LENSES = {
       { url:'https://www.sony.com.sg/electronics/camera-lenses/sel100f28gm', tier:'T1', title:'Sony Singapore store', note:'SGD 2299: Sony Singapore "Original Price"', date:'2026-11-20' },
       { url:'https://www.sony.jp/ichigan/products/SEL100F28GM/', tier:'T1', title:'Sony Store Japan', note:'JPY 229900: Sony Store price, tax included', date:'2026-11-20' },
     ],
-    priceIncomplete:true,
     productUrl:'https://electronics.sony.com/imaging/lenses/full-frame-e-mount/p/sel100f28gm',
   },
 
@@ -1083,7 +1076,6 @@ const LENSES = {
       { url:'https://www.sony.com.sg/electronics/camera-lenses/sel135f18gm', tier:'T1', title:'Sony Singapore store', note:'SGD 2599: Sony Singapore "Original Price" (on promotion at 2449)', date:'2026-11-20' },
       { url:'https://www.sony.jp/ichigan/products/SEL135F18GM/', tier:'T1', title:'Sony Store Japan', note:'JPY 272800: Sony Store price, tax included', date:'2026-11-20' },
     ],
-    priceIncomplete:true,
     productUrl:'https://electronics.sony.com/imaging/lenses/full-frame-e-mount/p/sel135f18gm',
   },
 
@@ -1104,7 +1096,6 @@ const LENSES = {
       { url:'https://www.sony.com.sg/electronics/camera-lenses/sel300f28gm', tier:'T1', title:'Sony Singapore store', note:'SGD 8999: Sony Singapore "Original Price" (on promotion at 8849)', date:'2026-11-20' },
       { url:'https://www.sony.jp/ichigan/products/SEL300F28GM/', tier:'T1', title:'Sony Store Japan', note:'JPY 966900: Sony Store price, tax included', date:'2026-11-20' },
     ],
-    priceIncomplete:true,
     productUrl:'https://electronics.sony.com/imaging/lenses/full-frame-e-mount/p/sel300f28gm',
   },
 
@@ -1126,7 +1117,6 @@ const LENSES = {
       { url:'https://www.sony.com.sg/electronics/camera-lenses/sel400f28gm', tier:'T1', title:'Sony Singapore store', note:'SGD 17829: Sony Singapore "Original Price"', date:'2026-11-20' },
       { url:'https://www.sony.jp/ichigan/products/SEL400F28GM/', tier:'T1', title:'Sony Store Japan', note:'JPY 1740200: Sony Store price, tax included', date:'2026-11-20' },
     ],
-    priceIncomplete:true,
     productUrl:'https://electronics.sony.com/imaging/lenses/full-frame-e-mount/p/sel400f28gm',
   },
 
@@ -1148,7 +1138,6 @@ const LENSES = {
       { url:'https://www.sony.com.sg/electronics/camera-lenses/sel600f40gm', tier:'T1', title:'Sony Singapore store', note:'SGD 19899: Sony Singapore "Original Price"', date:'2026-11-20' },
       { url:'https://www.sony.jp/ichigan/products/SEL600F40GM/', tier:'T1', title:'Sony Store Japan', note:'JPY 1969000: Sony Store price, tax included', date:'2026-11-20' },
     ],
-    priceIncomplete:true,
     productUrl:'https://electronics.sony.com/imaging/lenses/full-frame-e-mount/p/sel600f40gm',
   },
 
@@ -1218,7 +1207,6 @@ const LENSES = {
       { url:'https://www.sony.com.sg/electronics/camera-lenses/sel16f18g', tier:'T1', title:'Sony Singapore store', note:'SGD 1149: Sony Singapore "Original Price"', date:'2026-11-20' },
       { url:'https://www.sony.jp/ichigan/products/SEL16F18G/', tier:'T1', title:'Sony Store Japan', note:'JPY 136400: Sony Store price, tax included', date:'2026-11-20' },
     ],
-    priceIncomplete:true,
     productUrl:'https://electronics.sony.com/imaging/lenses/full-frame-e-mount/p/sel16f18g',
   },
 
@@ -1240,7 +1228,6 @@ const LENSES = {
       { url:'https://www.sony.com.sg/electronics/camera-lenses/sel20f18g', tier:'T1', title:'Sony Singapore store', note:'SGD 1379: Sony Singapore "Original Price" (on promotion at 1229)', date:'2026-11-20' },
       { url:'https://www.sony.jp/ichigan/products/SEL20F18G/', tier:'T1', title:'Sony Store Japan', note:'JPY 155100: Sony Store price, tax included', date:'2026-11-20' },
     ],
-    priceIncomplete:true,
     productUrl:'https://electronics.sony.com/imaging/lenses/full-frame-e-mount/p/sel20f18g',
   },
 
@@ -1255,7 +1242,6 @@ const LENSES = {
     imageUrl:'https://upload.wikimedia.org/wikipedia/commons/thumb/e/e2/Sony_FE_24mm_F2.8_G_-_by_Henry_S%C3%B6derlund_%2851147651085%29.jpg/500px-Sony_FE_24mm_F2.8_G_-_by_Henry_S%C3%B6derlund_%2851147651085%29.jpg',
     imageCredit:{author:"Henry Söderlund from Helsinki, Finland", licence:"CC BY 2.0", licenceUrl:"https://creativecommons.org/licenses/by/2.0", source:"https://commons.wikimedia.org/wiki/File:Sony_FE_24mm_F2.8_G_-_by_Henry_S%C3%B6derlund_(51147651085).jpg"},
     prices:{USD:798,AUD:949,EUR:599,GBP:629,JPY:94600,CAD:799,SGD:919},
-    priceIncomplete:true,
     priceSource: [
       { url:'https://www.sony.ca/en/imaging/lenses/all-e-mount/p/sel24f28g', tier:'T1', title:'Sony Canada store - FE 24mm F2.8 G', note:'CAD 749 -> 799: Sony Canada list price $799.99; on sale at $749.99 (not used).', date:'2026-11-07' },
       { url:'https://www.sony.co.uk/store/product/sel24f28g.syx/FE-24mm-F2-8-G', tier:'T1', title:'Sony UK store', note:'GBP 629: Sony UK store regular (base) price, not the promotional price', date:'2026-11-21' },
@@ -1277,7 +1263,6 @@ const LENSES = {
     imageUrl:'https://upload.wikimedia.org/wikipedia/commons/thumb/e/e8/Sony_FE_40mm_F2.5_G_-_by_Henry_S%C3%B6derlund_%2851147623105%29.jpg/500px-Sony_FE_40mm_F2.5_G_-_by_Henry_S%C3%B6derlund_%2851147623105%29.jpg',
     imageCredit:{author:"Henry Söderlund", licence:"CC BY 2.0", licenceUrl:"https://creativecommons.org/licenses/by/2.0", source:"https://commons.wikimedia.org/wiki/File:Sony_FE_40mm_F2.5_G_-_by_Henry_S%C3%B6derlund_(51147623105).jpg"},
     prices:{USD:798,AUD:949,EUR:599,GBP:629,JPY:94600,CAD:799,SGD:919},
-    priceIncomplete:true,
     priceSource: [
       { url:'https://www.sony.ca/en/imaging/lenses/all-e-mount/p/sel40f25g', tier:'T1', title:'Sony Canada store - FE 40mm F2.5 G', note:'CAD 749 -> 799: Sony Canada list price $799.99; on sale at $749.99 (not used).', date:'2026-11-07' },
       { url:'https://www.sony.co.uk/store/product/sel40f25g.syx/FE-40mm-F2-5-G', tier:'T1', title:'Sony UK store', note:'GBP 629: Sony UK store regular (base) price, not the promotional price', date:'2026-11-21' },
@@ -1299,7 +1284,6 @@ const LENSES = {
     imageUrl:'https://upload.wikimedia.org/wikipedia/commons/thumb/3/38/Sony_FE_50mm_F2.5_G_-_by_Henry_S%C3%B6derlund_%2851147326969%29.jpg/500px-Sony_FE_50mm_F2.5_G_-_by_Henry_S%C3%B6derlund_%2851147326969%29.jpg',
     imageCredit:{author:"Henry Söderlund from Helsinki, Finland", licence:"CC BY 2.0", licenceUrl:"https://creativecommons.org/licenses/by/2.0", source:"https://commons.wikimedia.org/wiki/File:Sony_FE_50mm_F2.5_G_-_by_Henry_S%C3%B6derlund_(51147326969).jpg"},
     prices:{USD:698,AUD:949,EUR:599,GBP:629,JPY:94600,CAD:799,SGD:919},
-    priceIncomplete:true,
     priceSource: [
       { url:'https://www.sony.ca/en/imaging/lenses/all-e-mount/p/sel50f25g', tier:'T1', title:'Sony Canada store - FE 50mm F2.5 G', note:'CAD 749 -> 799: Sony Canada list price $799.99; on sale at $749.99 (not used).', date:'2026-11-07' },
       { url:'https://www.sony.co.uk/store/product/sel50f25g.syx/FE-50mm-F2-5-G', tier:'T1', title:'Sony UK store', note:'GBP 629: Sony UK store regular (base) price, not the promotional price', date:'2026-11-21' },
@@ -1328,7 +1312,6 @@ const LENSES = {
       { url:'https://www.sony.com.sg/electronics/camera-lenses/sel90m28g', tier:'T1', title:'Sony Singapore store', note:'SGD 1629: Sony Singapore "Original Price" (on promotion at 1329)', date:'2026-11-20' },
       { url:'https://www.sony.jp/ichigan/products/SEL90M28G/', tier:'T1', title:'Sony Store Japan', note:'JPY 151800: Sony Store price, tax included', date:'2026-11-20' },
     ],
-    priceIncomplete:true,
     productUrl:'https://electronics.sony.com/imaging/lenses/full-frame-e-mount/p/sel90m28g',
   },
 
@@ -1350,7 +1333,6 @@ const LENSES = {
       { url:'https://www.sony.com.sg/electronics/camera-lenses/sel100m28gm', tier:'T1', title:'Sony Singapore store', note:'SGD 1799: Sony Singapore "Original Price"', date:'2026-11-20' },
       { url:'https://www.sony.jp/ichigan/products/SEL100M28GM/', tier:'T1', title:'Sony Store Japan', note:'JPY 199500: Sony Store price, tax included', date:'2026-11-20' },
     ],
-    priceIncomplete:true,
     productUrl:'https://electronics.sony.com/imaging/lenses/full-frame-e-mount/p/sel100m28gm',
   },
 
@@ -1364,14 +1346,14 @@ const LENSES = {
     weatherSealed:false, ois:false, oisStops:null, year:2015, discontinued:false,
     imageUrl:'https://upload.wikimedia.org/wikipedia/commons/thumb/a/ab/Sony_28mm_f2_SEL28F20.jpg/500px-Sony_28mm_f2_SEL28F20.jpg',
     imageCredit:{author:"Dllu", licence:"CC BY-SA 4.0", licenceUrl:"https://creativecommons.org/licenses/by-sa/4.0", source:"https://commons.wikimedia.org/wiki/File:Sony_28mm_f2_SEL28F20.jpg"},
-    prices:{USD:499,AUD:699,EUR:399,GBP:339,JPY:66000,CAD:599,SGD:null},
+    prices:{USD:499,AUD:699,EUR:399,GBP:339,JPY:66000,CAD:599,SGD:639},
     priceSource: [
       { url:'https://electronics.sony.com/imaging/lenses/full-frame-e-mount/p/sel28f20', tier:'T1', title:'Sony Electronics store listing (MSRP)', note:'USD $448 -> $499: Sony\'s own US store gives the MSRP as $499.99 (page data originalPrice, which matched the page\'s "MSRP is listed as" text in every spot check; read 2026-10-11). Regional prices from Sony\'s own regional stores, read 2026-10-11 (regular, not promotional): AUD 699 (sony.com.au regular price = highest in its 30-day price history), CAD 599 (sony.ca list).', date:'2026-10-11' },
       { url:'https://www.sony.co.uk/store/product/sel28f20.syx/FE-28mm-F2', tier:'T1', title:'Sony UK store', note:'GBP 339: Sony UK store regular (base) price, not the promotional price', date:'2026-11-21' },
       { url:'https://www.sony.de/store/product/sel28f20.syx/FE-28mm-F2', tier:'T1', title:'Sony Germany store', note:'EUR 399: Sony Germany store regular price, not the promotional price', date:'2026-11-21' },
       { url:'https://www.sony.jp/ichigan/products/SEL28F20/', tier:'T1', title:'Sony Store Japan', note:'JPY 66000: Sony Store price, tax included', date:'2026-11-20' },
+      { url:'https://www.cathayphoto.com.sg/cameras/lenses/sony-fe-28mm-f-2', tier:'T3', title:'Cathay Photo Singapore', note:'SGD 639: Cathay Photo regular price (sale 469 not used); not listed on Sony Singapore store', date:'2026-11-21' },
     ],
-    priceIncomplete:true,
     productUrl:'https://electronics.sony.com/imaging/lenses/full-frame-e-mount/p/sel28f20',
   },
 
@@ -1385,13 +1367,14 @@ const LENSES = {
     weatherSealed:true, ois:false, oisStops:null, year:2019, discontinued:false,
     imageUrl:'https://cdn.cs.1worldsync.com/syndication/feeds/sony/inline-content/BF/998D784EFC58E7CE3C370950E724E76CCCAC9B1E_8043F1140EA587950AA49CBBAF210178FMTPNGALPHASCL1_gallery.jpg',
     imageSource: { url:'https://electronics.sony.com/imaging/lenses/full-frame-e-mount/p/sel35f18f', tier:'T1', note:'official Sony US shop product gallery slide, alt "slide 1 of 5...fe 35 mm f1.8"; barrel visually confirmed reading "FE 1.8/35"', date:'2026-08-17' },
-    prices:{USD:798,AUD:1199,EUR:null,GBP:549,JPY:88000,CAD:949,SGD:1019},
+    prices:{USD:798,AUD:1199,EUR:699,GBP:549,JPY:88000,CAD:949,SGD:1019},
     priceSource: [
       { url:'https://www.sony.co.uk/store/product/sel35f18f.syx/FE-35mm-F1-8', tier:'T1', title:'Sony UK store', note:'GBP 549: Sony UK store regular (base) price, not the promotional price', date:'2026-11-21' },
       { url:'https://www.sony.com.sg/electronics/camera-lenses/sel35f18f', tier:'T1', title:'Sony Singapore store', note:'SGD 1019: Sony Singapore "Original Price" (on promotion at 919)', date:'2026-11-20' },
       { url:'https://www.sony.jp/ichigan/products/SEL35F18F/', tier:'T1', title:'Sony Store Japan', note:'JPY 88000: Sony Store price, tax included', date:'2026-11-20' },
+      { url:'https://www.calumet.de/product/sony-fe-35mm-f1-8', tier:'T3', title:'Calumet Germany', note:'EUR 699: manufacturer UVP shown by Calumet (Sony Germany store showed 503.11, a 30-day-lowest reference during a promotion, not the RRP)', date:'2026-11-21' },
+      { url:'https://www.mediamarkt.at/de/product/_sony-objektiv-fe-35mm-1-8-schwarz-sel35f18f-1740467.html', tier:'T3', title:'MediaMarkt Austria', note:'EUR 699: UVP shown by MediaMarkt Austria (corroborates)', date:'2026-11-21' },
     ],
-    priceIncomplete:true,
     productUrl:'https://electronics.sony.com/imaging/lenses/full-frame-e-mount/p/sel35f18f',
   },
 
@@ -1406,7 +1389,6 @@ const LENSES = {
     imageUrl:'https://upload.wikimedia.org/wikipedia/commons/thumb/2/21/Sony_FE_50mm_F1.8_2021.jpg/500px-Sony_FE_50mm_F1.8_2021.jpg',
     imageCredit:{author:"Commonists", licence:"CC BY-SA 4.0", licenceUrl:"https://creativecommons.org/licenses/by-sa/4.0", source:"https://commons.wikimedia.org/wiki/File:Sony_FE_50mm_F1.8_2021.jpg"},
     prices:{USD:249,AUD:499,EUR:179,GBP:159,JPY:38500,CAD:349,SGD:409},
-    priceIncomplete:true,
     priceSource: [
       { url:'https://electronics.sony.com/imaging/lenses/full-frame-e-mount/p/sel50f18f-2', tier:'T1', title:'Sony Electronics store listing (MSRP)', note:'USD $274 -> $249: Sony\'s own US store gives the MSRP as $249.99 (currently $199.99 on promotion) (page data originalPrice, which matched the page\'s "MSRP is listed as" text in every spot check; read 2026-10-11). Sony has lowered this MSRP since the stored figure was set. Regional prices from Sony\'s own regional stores, read 2026-10-11 (regular, not promotional): AUD 499 (sony.com.au regular price = highest in its 30-day price history), CAD 349 (sony.ca list; promo 299).', date:'2026-10-11' },
       { url:'https://www.sony.co.uk/store/product/sel50f18f.syx/FE-50mm-F1-8', tier:'T1', title:'Sony UK store', note:'GBP 159: Sony UK store regular (base) price, not the promotional price', date:'2026-11-21' },
@@ -1435,7 +1417,6 @@ const LENSES = {
       { url:'https://www.sony.com.sg/electronics/camera-lenses/sel50m28', tier:'T1', title:'Sony Singapore store', note:'SGD 769: Sony Singapore "Original Price"', date:'2026-11-20' },
       { url:'https://www.sony.jp/ichigan/products/SEL50M28/', tier:'T1', title:'Sony Store Japan', note:'JPY 64900: Sony Store price, tax included', date:'2026-11-20' },
     ],
-    priceIncomplete:true,
     productUrl:'https://electronics.sony.com/imaging/lenses/full-frame-e-mount/p/sel50m28',
   },
 
@@ -1500,7 +1481,6 @@ const LENSES = {
       { url:'https://www.sony.com.sg/electronics/camera-lenses/sel55f18z', tier:'T1', title:'Sony Singapore store', note:'SGD 1379: Sony Singapore "Original Price" (on promotion at 779)', date:'2026-11-20' },
       { url:'https://www.sony.jp/ichigan/products/SEL55F18Z/', tier:'T1', title:'Sony Store Japan', note:'JPY 117700: Sony Store price, tax included', date:'2026-11-20' },
     ],
-    priceIncomplete:true,
     productUrl:'https://electronics.sony.com/imaging/lenses/full-frame-e-mount/p/sel55f18z',
   },
 
@@ -1516,7 +1496,6 @@ const LENSES = {
     imageUrl:'https://upload.wikimedia.org/wikipedia/commons/thumb/7/76/Sony_FE_24-70mm_F2.8_GM_II_20240211_HOF07355_RAW-Export_000106cens.png/500px-Sony_FE_24-70mm_F2.8_GM_II_20240211_HOF07355_RAW-Export_000106cens.png',
     imageCredit:{author:"PantheraLeo1359531", licence:"CC BY 4.0", licenceUrl:"https://creativecommons.org/licenses/by/4.0", source:"https://commons.wikimedia.org/wiki/File:Sony_FE_24-70mm_F2.8_GM_II_20240211_HOF07355_RAW-Export_000106cens.png"},
     prices:{USD:2449,AUD:3399,EUR:2399,GBP:1699,JPY:319000,CAD:2900,SGD:3059},
-    priceIncomplete:true,
     priceSource: [
       { url:'https://electronics.sony.com/imaging/lenses/full-frame-e-mount/p/sel2470gm2', tier:'T1', note:'official Sony US shop, FE 24-70mm F2.8 GM II product page, active price $2,449.99 with no strikethrough/sale — up from the stale $2,298 previously stored', date:'2026-08-23' },
       { url:'https://www.sony.co.uk/store/product/sel2470gm2.syx/FE-24-70mm-F2-8-GM-II', tier:'T1', title:'Sony UK store', note:'GBP 1699: Sony UK store regular (base) price, not the promotional price', date:'2026-11-21' },
@@ -1538,7 +1517,6 @@ const LENSES = {
     imageUrl:'https://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/Sony_FE_70-200mm_F2.8_GM_OSS_II_-_by_Henry_S%C3%B6derlund_%2851707233845%29.jpg/500px-Sony_FE_70-200mm_F2.8_GM_OSS_II_-_by_Henry_S%C3%B6derlund_%2851707233845%29.jpg',
     imageCredit:{author:"Henry Söderlund from Helsinki, Finland, Finland", licence:"CC BY 2.0", licenceUrl:"https://creativecommons.org/licenses/by/2.0", source:"https://commons.wikimedia.org/wiki/File:Sony_FE_70-200mm_F2.8_GM_OSS_II_-_by_Henry_S%C3%B6derlund_(51707233845).jpg"},
     prices:{USD:3099,AUD:4299,EUR:2999,GBP:2199,JPY:385000,CAD:3600,SGD:3769},
-    priceIncomplete:true,
     priceSource: [
       { url:'https://electronics.sony.com/imaging/lenses/full-frame-e-mount/p/sel70200gm2', tier:'T1', note:'official Sony US shop, FE 70-200mm F2.8 GM OSS II product page, active price $3,099.99 with no strikethrough/sale — up from the stale $2,798 previously stored', date:'2026-08-23' },
       { url:'https://www.sony.co.uk/store/product/sel70200gm2.syx/FE-70-200mm-F2-8-GM-OSS-II', tier:'T1', title:'Sony UK store', note:'GBP 2199: Sony UK store regular (base) price, not the promotional price', date:'2026-11-21' },
@@ -1581,7 +1559,6 @@ const LENSES = {
     imageUrl:'https://upload.wikimedia.org/wikipedia/commons/thumb/0/0b/2026-01-16_Sony_FE_16%E2%80%9335_mm_F2.8_GM_II_HOF4929-HDR_RAW-Export.png/500px-2026-01-16_Sony_FE_16%E2%80%9335_mm_F2.8_GM_II_HOF4929-HDR_RAW-Export.png',
     imageCredit:{author:"PantheraLeo1359531", licence:"CC BY-SA 4.0", licenceUrl:"https://creativecommons.org/licenses/by-sa/4.0", source:"https://commons.wikimedia.org/wiki/File:2026-01-16_Sony_FE_16%E2%80%9335_mm_F2.8_GM_II_HOF4929-HDR_RAW-Export.png"},
     prices:{USD:2599,AUD:3599,EUR:2699,GBP:2099,JPY:358600,CAD:2999,SGD:3329},
-    priceIncomplete:true,
     priceSource: [
       { url:'https://electronics.sony.com/imaging/lenses/all-e-mount/p/sel1635gm2', tier:'T1', note:'official Sony US shop, FE 16-35mm F2.8 GM II product page, active price $2,599.99 with no strikethrough/sale — up from the stale $2,298 previously stored', date:'2026-08-23' },
       { url:'https://www.sony.co.uk/store/product/sel1635gm2.syx/FE-16-35mm-F2-8-GM-II', tier:'T1', title:'Sony UK store', note:'GBP 2099: Sony UK store regular (base) price, not the promotional price', date:'2026-11-21' },
@@ -1623,7 +1600,6 @@ const LENSES = {
       { url:'https://www.sony.com.sg/electronics/camera-lenses/sel2870gm', tier:'T1', title:'Sony Singapore store', note:'SGD 4069: Sony Singapore "Original Price"', date:'2026-11-20' },
       { url:'https://www.sony.jp/ichigan/products/SEL2870GM/', tier:'T1', title:'Sony Store Japan', note:'JPY 498300: Sony Store price, tax included', date:'2026-11-20' },
     ],
-    priceIncomplete:true,
     productUrl:'https://electronics.sony.com/imaging/lenses/full-frame-e-mount/p/sel2870gm',
   },
 
@@ -1645,7 +1621,6 @@ const LENSES = {
       { url:'https://www.sony.com.sg/electronics/camera-lenses/sel50150gm', tier:'T1', title:'Sony Singapore store', note:'SGD 4949: Sony Singapore "Original Price"', date:'2026-11-20' },
       { url:'https://www.sony.jp/ichigan/products/SEL50150GM/', tier:'T1', title:'Sony Store Japan', note:'JPY 597300: Sony Store price, tax included', date:'2026-11-20' },
     ],
-    priceIncomplete:true,
     productUrl:'https://electronics.sony.com/imaging/lenses/full-frame-e-mount/p/sel50150gm',
   },
 
@@ -1659,14 +1634,14 @@ const LENSES = {
     weatherSealed:true, ois:true, oisStops:null, year:2017, discontinued:false,
     imageUrl:'https://cdn.cs.1worldsync.com/syndication/feeds/sony/inline-content/06/3EED87B533BA3744D2FB1A04FE9DA3F8C0DA2136_C6C0513704682CB02FEF6BC49E84E358FMTPNGALPHASCL1_w_400_hero.jpg',
     imageSource: { url:'https://electronics.sony.com/imaging/lenses/full-frame-e-mount/p/sel100400gm', tier:'T1', note:'official Sony US shop product hero image, alt "G Master FE 100-400mm super-telephoto zoom lens"', date:'2026-08-17' },
-    prices:{USD:2799,AUD:3999,EUR:2199,GBP:2149,JPY:364100,CAD:3399,SGD:null},
+    prices:{USD:2799,AUD:3999,EUR:2199,GBP:2149,JPY:364100,CAD:3399,SGD:3869},
     priceSource: [
       { url:'https://electronics.sony.com/imaging/lenses/full-frame-e-mount/p/sel100400gm', tier:'T1', title:'Sony Electronics store listing (MSRP)', note:'USD $2698 -> $2799: Sony\'s own US store gives the MSRP as $2,799.99 (currently $2,699.99 on promotion) (page data originalPrice, which matched the page\'s "MSRP is listed as" text in every spot check; read 2026-10-11). Regional prices from Sony\'s own regional stores, read 2026-10-11 (regular, not promotional): AUD 3999 (sony.com.au regular price = highest in its 30-day price history), CAD 3399 (sony.ca list; promo 3299).', date:'2026-10-11' },
       { url:'https://www.sony.co.uk/store/product/sel100400gm.syx/FE-100-400mm-G-Master-super-telephoto-zoom-lens', tier:'T1', title:'Sony UK store', note:'GBP 2149: Sony UK store regular (base) price, not the promotional price', date:'2026-11-21' },
       { url:'https://www.sony.de/store/product/sel100400gm.syx/FE-100-400mm-G-Master-super-telephoto-zoom-lens', tier:'T1', title:'Sony Germany store', note:'EUR 2199: Sony Germany store regular price, not the promotional price', date:'2026-11-21' },
       { url:'https://www.sony.jp/ichigan/products/SEL100400GM/', tier:'T1', title:'Sony Store Japan', note:'JPY 364100: Sony Store price, tax included', date:'2026-11-20' },
+      { url:'https://www.cathayphoto.com.sg/cameras/lenses/sony-fe-100-400mm-f-4-5-5-6-gm-oss', tier:'T3', title:'Cathay Photo Singapore', note:'SGD 3869: Cathay Photo regular price (sale 2899 not used); not listed on Sony Singapore store', date:'2026-11-21' },
     ],
-    priceIncomplete:true,
     productUrl:'https://electronics.sony.com/imaging/lenses/full-frame-e-mount/p/sel100400gm',
   },
 
@@ -1688,7 +1663,6 @@ const LENSES = {
       { url:'https://www.sony.com.sg/electronics/camera-lenses/sel100400mc', tier:'T1', title:'Sony Singapore store', note:'SGD 5699: Sony Singapore "Original Price"', date:'2026-11-20' },
       { url:'https://www.sony.jp/ichigan/products/SEL100400MC/', tier:'T1', title:'Sony Store Japan', note:'JPY 726000: Sony Store price, tax included', date:'2026-11-20' },
     ],
-    priceIncomplete:true,
     productUrl:'https://electronics.sony.com/imaging/lenses/full-frame-e-mount/p/sel100400mc',
   },
 
@@ -1731,7 +1705,6 @@ const LENSES = {
       { url:'https://www.sony.com.sg/electronics/camera-lenses/sel1224g', tier:'T1', title:'Sony Singapore store', note:'SGD 2499: Sony Singapore "Original Price" (on promotion at 2099)', date:'2026-11-20' },
       { url:'https://www.sony.jp/ichigan/products/SEL1224G/', tier:'T1', title:'Sony Store Japan', note:'JPY 272800: Sony Store price, tax included', date:'2026-11-20' },
     ],
-    priceIncomplete:true,
     productUrl:'https://electronics.sony.com/imaging/lenses/full-frame-e-mount/p/sel1224g',
   },
 
@@ -1752,7 +1725,6 @@ const LENSES = {
       { url:'https://www.sony.com.sg/electronics/camera-lenses/sel1625g', tier:'T1', title:'Sony Singapore store', note:'SGD 1789: Sony Singapore "Original Price" (on promotion at 1639)', date:'2026-11-20' },
       { url:'https://www.sony.jp/ichigan/products/SEL1625G/', tier:'T1', title:'Sony Store Japan', note:'JPY 184800: Sony Store price, tax included', date:'2026-11-20' },
     ],
-    priceIncomplete:true,
     productUrl:'https://electronics.sony.com/imaging/lenses/full-frame-e-mount/p/sel1625g',
   },
 
@@ -1773,7 +1745,6 @@ const LENSES = {
       { url:'https://www.sony.com.sg/electronics/camera-lenses/selp1635g', tier:'T1', title:'Sony Singapore store', note:'SGD 1789: Sony Singapore "Original Price" (on promotion at 1639)', date:'2026-11-20' },
       { url:'https://www.sony.jp/ichigan/products/SELP1635G/', tier:'T1', title:'Sony Store Japan', note:'JPY 185900: Sony Store price, tax included', date:'2026-11-20' },
     ],
-    priceIncomplete:true,
     productUrl:'https://electronics.sony.com/imaging/lenses/all-e-mount/p/selp1635g',
   },
 
@@ -1794,7 +1765,6 @@ const LENSES = {
       { url:'https://www.sony.com.sg/electronics/camera-lenses/sel2070g', tier:'T1', title:'Sony Singapore store', note:'SGD 1689: Sony Singapore "Original Price" (on promotion at 1389)', date:'2026-11-20' },
       { url:'https://www.sony.jp/ichigan/products/SEL2070G/', tier:'T1', title:'Sony Store Japan', note:'JPY 191400: Sony Store price, tax included', date:'2026-11-20' },
     ],
-    priceIncomplete:true,
     productUrl:'https://electronics.sony.com/imaging/lenses/full-frame-e-mount/p/sel2070g',
   },
 
@@ -1815,7 +1785,6 @@ const LENSES = {
       { url:'https://www.sony.com.sg/electronics/camera-lenses/sel2450g', tier:'T1', title:'Sony Singapore store', note:'SGD 1639: Sony Singapore "Original Price" (on promotion at 1489)', date:'2026-11-20' },
       { url:'https://www.sony.jp/ichigan/products/SEL2450G/', tier:'T1', title:'Sony Store Japan', note:'JPY 180400: Sony Store price, tax included', date:'2026-11-20' },
     ],
-    priceIncomplete:true,
     productUrl:'https://electronics.sony.com/imaging/lenses/full-frame-e-mount/p/sel2450g',
   },
 
@@ -1837,7 +1806,6 @@ const LENSES = {
       { url:'https://www.sony.com.sg/electronics/camera-lenses/sel24105g', tier:'T1', title:'Sony Singapore store', note:'SGD 1989: Sony Singapore "Original Price" (on promotion at 1489)', date:'2026-11-20' },
       { url:'https://www.sony.jp/ichigan/products/SEL24105G/', tier:'T1', title:'Sony Store Japan', note:'JPY 170500: Sony Store price, tax included', date:'2026-11-20' },
     ],
-    priceIncomplete:true,
     productUrl:'https://electronics.sony.com/imaging/lenses/all-e-mount/p/sel24105g-2',
   },
 
@@ -1873,7 +1841,6 @@ const LENSES = {
       { url:'https://www.sony.com.sg/electronics/camera-lenses/sel70200g2', tier:'T1', title:'Sony Singapore store', note:'SGD 2419: Sony Singapore "Original Price"', date:'2026-11-20' },
       { url:'https://www.sony.jp/ichigan/products/SEL70200G2/', tier:'T1', title:'Sony Store Japan', note:'JPY 258500: Sony Store price, tax included', date:'2026-11-20' },
     ],
-    priceIncomplete:true,
     productUrl:'https://electronics.sony.com/imaging/lenses/full-frame-e-mount/p/sel70200g2',
   },
 
@@ -1895,7 +1862,6 @@ const LENSES = {
       { url:'https://www.sony.com.sg/electronics/camera-lenses/sel70300g', tier:'T1', title:'Sony Singapore store', note:'SGD 1989: Sony Singapore "Original Price" (on promotion at 1689)', date:'2026-11-20' },
       { url:'https://www.sony.jp/ichigan/products/SEL70300G/', tier:'T1', title:'Sony Store Japan', note:'JPY 195800: Sony Store price, tax included', date:'2026-11-20' },
     ],
-    priceIncomplete:true,
     productUrl:'https://electronics.sony.com/imaging/lenses/full-frame-e-mount/p/sel70300g',
   },
 
@@ -1916,7 +1882,6 @@ const LENSES = {
       { url:'https://www.sony.com.sg/electronics/camera-lenses/sel200600g', tier:'T1', title:'Sony Singapore store', note:'SGD 2749: Sony Singapore "Original Price" (on promotion at 2449)', date:'2026-11-20' },
       { url:'https://www.sony.jp/ichigan/products/SEL200600G/', tier:'T1', title:'Sony Store Japan', note:'JPY 301400: Sony Store price, tax included', date:'2026-11-20' },
     ],
-    priceIncomplete:true,
     productUrl:'https://electronics.sony.com/imaging/lenses/full-frame-e-mount/p/sel200600g',
   },
 
@@ -1937,7 +1902,6 @@ const LENSES = {
       { url:'https://www.sony.com.sg/electronics/camera-lenses/sel400800g', tier:'T1', title:'Sony Singapore store', note:'SGD 3699: Sony Singapore "Original Price"', date:'2026-11-20' },
       { url:'https://www.sony.jp/ichigan/products/SEL400800G/', tier:'T1', title:'Sony Store Japan', note:'JPY 409200: Sony Store price, tax included', date:'2026-11-20' },
     ],
-    priceIncomplete:true,
     productUrl:'https://electronics.sony.com/imaging/lenses/full-frame-e-mount/p/sel400800g',
   },
 
@@ -1987,7 +1951,6 @@ const LENSES = {
       { url:'https://www.sony.com.sg/electronics/camera-lenses/sel24240', tier:'T1', title:'Sony Singapore store', note:'SGD 1399: Sony Singapore "Original Price" (on promotion at 1229)', date:'2026-11-20' },
       { url:'https://www.sony.jp/ichigan/products/SEL24240/', tier:'T1', title:'Sony Store Japan', note:'JPY 169400: Sony Store price, tax included', date:'2026-11-20' },
     ],
-    priceIncomplete:true,
     productUrl:'https://electronics.sony.com/imaging/lenses/full-frame-e-mount/p/sel24240',
   },
 
@@ -2041,7 +2004,6 @@ const LENSES = {
       { url:'https://www.sony.com.sg/electronics/camera-lenses/sel28702', tier:'T1', title:'Sony Singapore store', note:'SGD 599: Sony Singapore "Original Price"', date:'2026-11-20' },
       { url:'https://www.sony.jp/ichigan/products/SEL28702/', tier:'T1', title:'Sony Store Japan', note:'JPY 42900: Sony Store price, tax included', date:'2026-11-20' },
     ],
-    priceIncomplete:true,
     productUrl:'https://electronics.sony.com/imaging/lenses/full-frame-e-mount/p/sel28702',
   },
 
@@ -2064,7 +2026,6 @@ const LENSES = {
       { url:'https://www.sony.com.sg/electronics/camera-lenses/sel11f18', tier:'T1', title:'Sony Singapore store', note:'SGD 819: Sony Singapore "Original Price" (on promotion at 669)', date:'2026-11-20' },
       { url:'https://www.sony.jp/ichigan/products/SEL11F18/', tier:'T1', title:'Sony Store Japan', note:'JPY 69300: Sony Store price, tax included', date:'2026-11-20' },
     ],
-    priceIncomplete:true,
     productUrl:'https://electronics.sony.com/imaging/lenses/aps-c-e-mount/p/sel11f18',
   },
 
@@ -2086,7 +2047,6 @@ const LENSES = {
       { url:'https://www.sony.com.sg/electronics/camera-lenses/sel15f14g', tier:'T1', title:'Sony Singapore store', note:'SGD 1119: Sony Singapore "Original Price" (on promotion at 919)', date:'2026-11-20' },
       { url:'https://www.sony.jp/ichigan/products/SEL15F14G/', tier:'T1', title:'Sony Store Japan', note:'JPY 99000: Sony Store price, tax included', date:'2026-11-20' },
     ],
-    priceIncomplete:true,
     productUrl:'https://electronics.sony.com/imaging/lenses/all-e-mount/p/sel15f14g',
   },
 
@@ -2122,7 +2082,6 @@ const LENSES = {
       { url:'https://www.sony.com.sg/electronics/camera-lenses/sel20f28', tier:'T1', title:'Sony Singapore store', note:'SGD 359: Sony Singapore "Original Price"', date:'2026-11-20' },
       { url:'https://www.sony.jp/ichigan/products/SEL20F28/', tier:'T1', title:'Sony Store Japan', note:'JPY 38500: Sony Store price, tax included', date:'2026-11-20' },
     ],
-    priceIncomplete:true,
     productUrl:'https://electronics.sony.com/imaging/lenses/aps-c-e-mount/p/sel20f28b',
   },
 
@@ -2172,7 +2131,6 @@ const LENSES = {
       { url:'https://www.sony.com.sg/electronics/camera-lenses/sel35f18', tier:'T1', title:'Sony Singapore store', note:'SGD 649: Sony Singapore "Original Price" (on promotion at 520)', date:'2026-11-20' },
       { url:'https://www.sony.jp/ichigan/products/SEL35F18/', tier:'T1', title:'Sony Store Japan', note:'JPY 58300: Sony Store price, tax included', date:'2026-11-20' },
     ],
-    priceIncomplete:true,
     productUrl:'https://electronics.sony.com/imaging/lenses/aps-c-e-mount/p/sel35f18',
   },
 
@@ -2187,7 +2145,6 @@ const LENSES = {
     imageUrl:'https://upload.wikimedia.org/wikipedia/commons/thumb/4/47/Sony_E_50mm_F1.8_OSS.jpg/500px-Sony_E_50mm_F1.8_OSS.jpg',
     imageCredit:{author:"Tiia Monto", licence:"CC BY-SA 4.0", licenceUrl:"https://creativecommons.org/licenses/by-sa/4.0", source:"https://commons.wikimedia.org/wiki/File:Sony_E_50mm_F1.8_OSS.jpg"},
     prices:{USD:448,AUD:549,EUR:279,GBP:249,JPY:39600,CAD:399,SGD:459},
-    priceIncomplete:true,
     priceSource: [
       { url:'https://www.sony.ca/en/imaging/lenses/all-e-mount/p/sel50f18', tier:'T1', title:'Sony Canada store - E 50mm F1.8 OSS', note:'CAD 449 -> 399: Sony Canada list price $399.99, no sale price set.', date:'2026-11-07' },
       { url:'https://www.sony.co.uk/store/product/sel50f18b.ae/E-50mm-F1-8-OSS', tier:'T1', title:'Sony UK store', note:'GBP 249: Sony UK store regular (base) price, not the promotional price', date:'2026-11-21' },
@@ -2227,7 +2184,6 @@ const LENSES = {
     imageUrl:'https://upload.wikimedia.org/wikipedia/commons/thumb/2/20/Sony_E_10-20mm_F4_PZ_G_-_by_Henry_S%C3%B6derlund_%2852177409524%29.jpg/500px-Sony_E_10-20mm_F4_PZ_G_-_by_Henry_S%C3%B6derlund_%2852177409524%29.jpg',
     imageCredit:{author:"Henry Söderlund from Helsinki, Finland", licence:"CC BY 2.0", licenceUrl:"https://creativecommons.org/licenses/by/2.0", source:"https://commons.wikimedia.org/wiki/File:Sony_E_10-20mm_F4_PZ_G_-_by_Henry_S%C3%B6derlund_(52177409524).jpg"},
     prices:{USD:948,AUD:1199,EUR:599,GBP:686,JPY:102300,CAD:949,SGD:1119},
-    priceIncomplete:true,
     priceSource: [
       { url:'https://www.sony.ca/en/imaging/lenses/all-e-mount/p/selp1020g', tier:'T1', title:'Sony Canada store - E PZ 10-20mm F4 G', note:'CAD 949 confirmed: Sony Canada list price $949.99; on sale at $849.99 (not used).', date:'2026-11-07' },
       { url:'https://www.sony.co.uk/store/product/selp1020g.syx/E-PZ-10-20mm-F4-G', tier:'T1', title:'Sony UK store', note:'GBP 686: Sony UK store regular (base) price, not the promotional price', date:'2026-11-21' },
@@ -2261,13 +2217,14 @@ const LENSES = {
     elements:9, groups:8, blades:7, afType:'Linear',
     weatherSealed:false, ois:true, oisStops:null, year:2024, discontinued:false,
     imageUrl:null,
-    prices:{USD:349,AUD:549,EUR:null,GBP:274,JPY:35300,CAD:449,SGD:449},
+    prices:{USD:349,AUD:549,EUR:329,GBP:274,JPY:35300,CAD:449,SGD:449},
     priceSource: [
       { url:'https://www.sony.co.uk/store/product/selp16502b.syx/E-PZ-16-50mm-F3-5-5-6-OSS-II', tier:'T1', title:'Sony UK store', note:'GBP 274: Sony UK store regular (base) price, not the promotional price', date:'2026-11-21' },
       { url:'https://www.sony.com.sg/electronics/camera-lenses/selp16502', tier:'T1', title:'Sony Singapore store', note:'SGD 449: Sony Singapore "Original Price"', date:'2026-11-20' },
       { url:'https://www.sony.jp/ichigan/products/SELP16502/', tier:'T1', title:'Sony Store Japan', note:'JPY 35300: Sony Store price, tax included', date:'2026-11-20' },
+      { url:'https://www.calumet.de/product/sony-e-pz-16-50mm-f3-5-5-6-oss-ii', tier:'T3', title:'Calumet Germany', note:'EUR 329: manufacturer UVP shown by Calumet (Sony Germany store showed 269.99, a 30-day-lowest reference, not the RRP)', date:'2026-11-21' },
+      { url:'https://www.coolblue.de/produkt/951922/sony-e-pz-16-50-mm-f-3-5-5-6-oss-ii.html', tier:'T3', title:'Coolblue Germany', note:'EUR 329: UVP shown by Coolblue (corroborates)', date:'2026-11-21' },
     ],
-    priceIncomplete:true,
     productUrl:'https://electronics.sony.com/imaging/lenses/aps-c-e-mount/p/selp16502',
   },
 
@@ -2282,7 +2239,6 @@ const LENSES = {
     imageUrl:'https://cdn.cs.1worldsync.com/syndication/feeds/sony/inline-content/6A/DD3EE0A3771F14AA0A0DB1B41515A273A908D492_C4CD155B3984159AC8050FD24AEF8281FMTPNGALPHASCL1_gallery.jpg',
     imageSource: { url:'https://electronics.sony.com/imaging/lenses/aps-c-e-mount/p/sel1655g', tier:'T1', note:'official Sony US shop product gallery slide, alt "slide 1 of 3...e 16–55mm f2.8 g"', date:'2026-08-17' },
     prices:{USD:1698,AUD:2199,EUR:849,GBP:1049,JPY:162800,CAD:1449,SGD:1839},
-    priceIncomplete:true,
     priceSource: [
       { url:'https://www.sony.ca/en/imaging/lenses/all-e-mount/p/sel1655g', tier:'T1', title:'Sony Canada store - E 16-55mm F2.8 G', note:'CAD 1799 -> 1449: Sony Canada list price $1,449.99; on sale at $1,249.99 (not used).', date:'2026-11-07' },
       { url:'https://www.sony.co.uk/store/product/sel1655g.syx/E-16-55mm-F2-8-G', tier:'T1', title:'Sony UK store', note:'GBP 1049: Sony UK store regular (base) price, not the promotional price', date:'2026-11-21' },
@@ -2325,7 +2281,6 @@ const LENSES = {
       { url:'https://www.sony.com.sg/electronics/camera-lenses/selp18105g', tier:'T1', title:'Sony Singapore store', note:'SGD 819: Sony Singapore "Original Price" (on promotion at 669)', date:'2026-11-20' },
       { url:'https://www.sony.jp/ichigan/products/SELP18105G/', tier:'T1', title:'Sony Store Japan', note:'JPY 74800: Sony Store price, tax included', date:'2026-11-20' },
     ],
-    priceIncomplete:true,
     productUrl:'https://electronics.sony.com/imaging/lenses/aps-c-e-mount/p/selp18105g',
   },
 
@@ -2347,7 +2302,6 @@ const LENSES = {
       { url:'https://www.sony.com.sg/electronics/camera-lenses/sel18135', tier:'T1', title:'Sony Singapore store', note:'SGD 919: Sony Singapore "Original Price"', date:'2026-11-20' },
       { url:'https://www.sony.jp/ichigan/products/SEL18135/', tier:'T1', title:'Sony Store Japan', note:'JPY 78100: Sony Store price, tax included', date:'2026-11-20' },
     ],
-    priceIncomplete:true,
     productUrl:'https://electronics.sony.com/imaging/lenses/aps-c-e-mount/p/sel18135',
   },
 
@@ -2361,11 +2315,12 @@ const LENSES = {
     weatherSealed:false, ois:true, oisStops:null, year:2011, discontinued:false,
     imageUrl:'https://upload.wikimedia.org/wikipedia/commons/5/53/Sony_Camera_2013_41_55-210mm_lens.jpg',
     imageCredit:{author:"Vernon Chan", licence:"CC BY 2.0", licenceUrl:"https://creativecommons.org/licenses/by/2.0", source:"https://commons.wikimedia.org/wiki/File:Sony_Camera_2013_41_55-210mm_lens.jpg"},
-    prices:{USD:329,AUD:499,EUR:259,GBP:228,JPY:null,CAD:399,SGD:null},
+    prices:{USD:329,AUD:499,EUR:259,GBP:228,JPY:null,CAD:399,SGD:609},
     priceSource: [
       { url:'https://electronics.sony.com/imaging/lenses/aps-c-e-mount/p/sel55210', tier:'T1', title:'Sony Electronics store listing (MSRP)', note:'USD $348 -> $329: Sony\'s own US store gives the MSRP as $329.99 (page data originalPrice, which matched the page\'s "MSRP is listed as" text in every spot check; read 2026-10-11). Sony has lowered this MSRP since the stored figure was set. Regional prices from Sony\'s own regional stores, read 2026-10-11 (regular, not promotional): AUD 499 (sony.com.au regular price = highest in its 30-day price history), CAD 399 (sony.ca list).', date:'2026-10-11' },
       { url:'https://www.sony.co.uk/store/product/sel55210b.ae/E-55-210mm-F4-5-6-3-OSS', tier:'T1', title:'Sony UK store', note:'GBP 228: Sony UK store regular (base) price, not the promotional price', date:'2026-11-21' },
       { url:'https://www.sony.de/store/product/sel55210b.ae/E-55-210mm-F4-5-6-3-OSS', tier:'T1', title:'Sony Germany store', note:'EUR 259: Sony Germany store regular price, not the promotional price', date:'2026-11-21' },
+      { url:'https://www.sony.com.sg/electronics/camera-lenses/sel55210', tier:'T1', title:'Sony Singapore store', note:'SGD 609: Sony Singapore "Original Price" (on promotion at 310); no second Singapore source found', date:'2026-11-20' },
     ],
     priceIncomplete:true,
     productUrl:'https://electronics.sony.com/imaging/lenses/aps-c-e-mount/p/sel55210',
@@ -2381,14 +2336,15 @@ const LENSES = {
     weatherSealed:true, ois:true, oisStops:null, year:2019, discontinued:false,
     imageUrl:'https://upload.wikimedia.org/wikipedia/commons/thumb/e/ea/HK_TST_%E5%B0%96%E6%B2%99%E5%92%80_Tsim_Sha_Tsui_East_%E6%A2%B3%E5%A3%AB%E5%B7%B4%E5%88%A9%E9%81%93_Salisbury_Road_K11_MUSEA_mall_shop_Sony_Camera_showroom_July_2021_SS2_08.jpg/500px-HK_TST_%E5%B0%96%E6%B2%99%E5%92%80_Tsim_Sha_Tsui_East_%E6%A2%B3%E5%A3%AB%E5%B7%B4%E5%88%A9%E9%81%93_Salisbury_Road_K11_MUSEA_mall_shop_Sony_Camera_showroom_July_2021_SS2_08.jpg',
     imageCredit:{author:"JaWings 2001", licence:"CC BY-SA 4.0", licenceUrl:"https://creativecommons.org/licenses/by-sa/4.0", source:"https://commons.wikimedia.org/wiki/File:HK_TST_%E5%B0%96%E6%B2%99%E5%92%80_Tsim_Sha_Tsui_East_%E6%A2%B3%E5%A3%AB%E5%B7%B4%E5%88%A9%E9%81%93_Salisbury_Road_K11_MUSEA_mall_shop_Sony_Camera_showroom_July_2021_SS2_08.jpg"},
-    prices:{USD:999,AUD:1499,EUR:null,GBP:769,JPY:123200,CAD:999,SGD:1329},
+    prices:{USD:999,AUD:1499,EUR:899,GBP:769,JPY:123200,CAD:999,SGD:1329},
     priceSource: [
       { url:'https://electronics.sony.com/imaging/lenses/aps-c-e-mount/p/sel70350g', tier:'T1', title:'Sony Electronics store listing (MSRP)', note:'USD $1198 -> $999: Sony\'s own US store gives the MSRP as $999.99 (currently $899.99 on promotion) (page data originalPrice, which matched the page\'s "MSRP is listed as" text in every spot check; read 2026-10-11). Sony has lowered this MSRP since the stored figure was set. Regional prices from Sony\'s own regional stores, read 2026-10-11 (regular, not promotional): AUD 1499 (sony.com.au regular price = highest in its 30-day price history; promo 1099), CAD 999 (sony.ca list; promo 899).', date:'2026-10-11' },
       { url:'https://www.sony.co.uk/store/product/sel70350g.syx/E-70-350mm-F4-5-6-3-G-OSS', tier:'T1', title:'Sony UK store', note:'GBP 769: Sony UK store regular (base) price, not the promotional price', date:'2026-11-21' },
       { url:'https://www.sony.com.sg/electronics/camera-lenses/sel70350g', tier:'T1', title:'Sony Singapore store', note:'SGD 1329: Sony Singapore "Original Price" (on promotion at 1179)', date:'2026-11-20' },
       { url:'https://www.sony.jp/ichigan/products/SEL70350G/', tier:'T1', title:'Sony Store Japan', note:'JPY 123200: Sony Store price, tax included', date:'2026-11-20' },
+      { url:'https://www.mediamarkt.at/de/product/_sony-objektiv-e-70-350mm-4-5-6-3-g-oss-schwarz-sel70350g-1745908.html', tier:'T3', title:'MediaMarkt Austria', note:'EUR 899: UVP shown by MediaMarkt Austria (Sony Germany store showed 698.99, a 30-day-lowest reference, not the RRP); Sony Estonia/Latvia list RRP EUR 900; 899 was the 2019 launch price', date:'2026-11-21' },
+      { url:'https://www.calumet.de/product/sony-e-70-350mm-f4-5-6-3-g-oss', tier:'T3', title:'Calumet Germany', note:'EUR 899 in the page price data (corroborates)', date:'2026-11-21' },
     ],
-    priceIncomplete:true,
     productUrl:'https://electronics.sony.com/imaging/lenses/aps-c-e-mount/p/sel70350g',
   },
 
