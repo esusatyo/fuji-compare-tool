@@ -1,11 +1,19 @@
 {
   "": {
-    "hash": "83e596df63aca424",
-    "lastmod": "2026-11-17"
+    "hash": "bf93691282127456",
+    "lastmod": "2026-11-18"
   },
   "about": {
     "hash": "fac55d7da6a5767c",
     "lastmod": "2026-11-13"
+  },
+  "articles/": {
+    "hash": "4ae777d514fc9ef2",
+    "lastmod": "2026-11-18"
+  },
+  "articles/camera-specs-we-got-wrong-2026": {
+    "hash": "02f8ebc38c5f541e",
+    "lastmod": "2026-11-20"
   },
   "canon/": {
     "hash": "ef281c2cd4160efc",
