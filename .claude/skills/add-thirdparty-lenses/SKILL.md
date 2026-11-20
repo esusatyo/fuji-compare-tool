@@ -3,7 +3,7 @@ name: add-thirdparty-lenses
 description: Add or expand third-party lenses (Sigma, Tamron, Viltrox, Samyang, Zeiss, Laowa, budget makers, …) for one camera brand in the comparison tool — research the mount's real third-party ecosystem, enter mount-specific specs sourced from the maker's own site, wire dropdown groups and manufacturer colours, fill images and regional prices, and verify the test suite. Use when the user wants to add third-party lenses to a brand, expand a brand's third-party coverage, or finish the third-party pass after onboarding a new brand.
 metadata:
   author: fuji-compare-tool
-  version: "1.3"
+  version: "1.4"
 ---
 
 Add comprehensive third-party lenses to **one brand** of this repo. The skill is
@@ -171,6 +171,11 @@ gap.
 
 ### Field normalisation (where "sources disagree" is usually definitional)
 
+**Spec conventions** (which of a maker's several figures to store) are owned by
+`docs/data-methodology.md`, the single source of truth for every owner decision; read it
+before entering specs. If you settle a new convention with the owner, add it there
+(table row + decision log, dated, with the reason) and then here.
+
 Two correct sources routinely print different numbers. Resolve by convention,
 not by picking one:
 
@@ -180,16 +185,16 @@ not by picking one:
 | `length` | mm | Maker's stated length **from the mount flange to the front tip**, retracted/at its shortest for a zoom. |
 | `diameter` | mm | Maximum barrel diameter, *not* the filter thread. |
 | `filterThread` | mm | Front thread only; `null` if the lens takes none (rear gels, bulbous fronts). |
-| `minFocusDist` | **cm** | From the **sensor/focal plane** (the maker's usual "minimum focusing distance"), not working distance from the front element. Zooms: the shortest across the range. Convert `0.121 m` → `12.1`. |
-| `maxMagnification` | decimal | `1:2` → `0.5`, `1:1` → `1.0`. Zooms: the maximum across the range. |
+| `minFocusDist` | **cm** | From the **sensor/focal plane** (the maker's usual "minimum focusing distance"), not working distance from the front element. Zooms: the shortest across the range. Convert `0.121 m` → `12.1`. Where the maker gives AF and MF figures, the **AF** one (owner rule 2026-11-18). |
+| `maxMagnification` | decimal | `1:2` → `0.5`, `1:1` → `1.0`. Zooms: the maximum across the range. AF figure where AF and MF differ (owner rule 2026-11-18). |
 | `maxAperture` | f-number | The widest; for variable zooms the **wide end** (18-300mm f/3.5-6.3 → `3.5`). Never a T-stop. |
-| `minAperture` | f-number | The narrowest; for variable zooms the **wide end's** minimum, matching how the row reads. |
-| `elements`/`groups` | count | Maker's optical construction. `null` is allowed if genuinely unpublished. |
+| `minAperture` | f-number | The narrowest; for variable zooms the **wide end's** minimum, matching how the row reads (owner confirmed 2026-11-18; Canon had stored tele-end values). A lens with no iris (fixed aperture, e.g. SG-image shaped-aperture 50mm f/1.8) stores min = max. |
+| `elements`/`groups` | count | Maker's optical construction. `null` is allowed if genuinely unpublished. The maker's current page wins over an older figure even when it looks odd (owner, 2026-11-18). |
 | `blades` | count | Diaphragm blades. Note "rounded" in nothing — the schema stores the count only. |
 | `year` | number | First shipping year **in this mount**, not the design's original launch in another mount. This one is mis-copied constantly. |
 | `focalLengthEquiv` | string | Native focal × the Step 1 crop factor, rounded to whole mm, formatted `'29-80mm'` / `'45mm'`. Full-frame lenses on a FF mount use the native value. |
 | `afType` | string | Match the maker's motor name (`Stepping Motor`, `VXD`, `HLD`, `Manual focus` for MF lenses). |
-| `weatherSealed` | boolean | `true` only for a claimed seal (gasket/"dust- and splash-resistant"). A rear mount gasket alone → `false`. |
+| `weatherSealed` | boolean | `true` only for a claimed seal ("dust- and splash-resistant"). Maker silence → `false` (owner, 2026-11-18: Sigma 16-28 DG DN). A rear mount gasket alone → `false`. Two maker pages that disagree → `false` until a third maker source settles it. |
 
 **Unit traps:** US retailer pages print oz and inches — convert from the
 maker's metric figure instead of round-tripping (3.5 oz → 99 g loses a gram).

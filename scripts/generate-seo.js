@@ -271,10 +271,11 @@ const VS_ROWS = [
   ['Weight', c => c.weight == null ? null : `${c.weight} g`],
   ['Battery (CIPA)', c => {
     // Split battery (engine.js hasBatterySplit): "630 shots (screen) · 340 shots (viewfinder)".
-    if ('batteryLifeLcd' in c || 'batteryLifeEvf' in c) {
+    if ('batteryLifeLcd' in c || 'batteryLifeEvf' in c || 'batteryLifeOvf' in c) {
       const parts = [];
       if (c.batteryLifeLcd != null) parts.push(`${c.batteryLifeLcd} shots (screen)`);
-      if (c.batteryLifeEvf != null) parts.push(`${c.batteryLifeEvf} shots (viewfinder)`);
+      if (c.batteryLifeEvf != null) parts.push(`${c.batteryLifeEvf} shots (${c.batteryLifeOvf != null ? 'EVF' : 'viewfinder'})`);
+      if (c.batteryLifeOvf != null) parts.push(`${c.batteryLifeOvf} shots (OVF)`);
       return parts.length ? parts.join(' · ') : null;
     }
     return c.batteryLife == null ? null : `${c.batteryLife} shots`;
