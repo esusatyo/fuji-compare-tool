@@ -1470,6 +1470,7 @@ footer a:hover { text-decoration: underline; }
 .guide-table-wrap { overflow-x: auto; margin: 4px 0 16px; }
 .guide-table { width: 100%; border-collapse: collapse; font-size: 14px; line-height: 1.4; }
 .guide-table th, .guide-table td { text-align: left; padding: 8px 10px; border-bottom: 1px solid var(--border); white-space: nowrap; }
+.guide-table-text th, .guide-table-text td { white-space: normal; vertical-align: top; }
 .guide-table thead th { color: var(--text-secondary); font-weight: 600; font-size: 13px; }
 .guide-table tbody th { font-weight: 600; }
 .guide-table td { color: var(--text-secondary); }

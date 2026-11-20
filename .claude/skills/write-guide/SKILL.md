@@ -85,6 +85,7 @@ Body order (design G4):
 1. `<p class="guide-answer">` — the answer with its number in one or two sentences. This is what
    snippets and AI answers quote.
 2. H2 + **a one-line lead-in** + `kit.table(...)` — the ranked table; every name links to a page.
+   Cells don't wrap (names and numbers); pass `{ wrap: true }` for a table of sentences.
 3. H2 phrased as a question + **a one-line lead-in** + `kit.bars(...)` when there's a trend or
    comparison worth seeing.
 4. Two or three more H2s phrased the way people ask ("Which brand makes the lightest…?").

@@ -1,6 +1,6 @@
 {
   "": {
-    "hash": "c11e24d2855781b4",
+    "hash": "49c9d5a5ec724ce5",
     "lastmod": "2026-11-20"
   },
   "about": {
@@ -8,11 +8,15 @@
     "lastmod": "2026-11-20"
   },
   "articles/": {
-    "hash": "4ae777d514fc9ef2",
-    "lastmod": "2026-11-18"
+    "hash": "de30037ea24dbee6",
+    "lastmod": "2026-11-20"
   },
   "articles/camera-specs-we-got-wrong-2026": {
     "hash": "02f8ebc38c5f541e",
+    "lastmod": "2026-11-20"
+  },
+  "articles/small-site-vs-spec-databases-2026": {
+    "hash": "00d03a0834b297b0",
     "lastmod": "2026-11-20"
   },
   "canon/": {
@@ -152,7 +156,7 @@
     "lastmod": "2026-11-18"
   },
   "methodology": {
-    "hash": "7ff39acfeb1e19bb",
+    "hash": "b0778d56694407ae",
     "lastmod": "2026-11-20"
   },
   "mount/": {
