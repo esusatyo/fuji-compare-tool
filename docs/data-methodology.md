@@ -10,6 +10,10 @@ Skills that gather data (`verify-specs`, `add-thirdparty-lenses`, `add-camera-br
 `refresh-camera-data`) restate the parts they need, but this file wins on any
 conflict. Update this file **first**, then the skills.
 
+The public page `methodology.html` (/methodology) restates sections 1–3 and the
+decision log in plain words. When this file changes, update that page in the same
+commit; `tests/data/methodology.test.js` fails when the two decision logs differ in length.
+
 Per-run evidence (every value read, every rejected value) lives in the ledgers under
 `docs/spec-verification/`. Each item's own evidence is in its `specSources` citations
 in `<brand>/data.js` (URL, tier, date, and a note saying what was read or changed).

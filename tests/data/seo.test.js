@@ -14,7 +14,7 @@ const { buildAll, buildSite, lastmodManifest, sitemapHashes, LASTMOD_MANIFEST, c
 const generated = buildAll();
 
 test('trust pages carry both identity marker pairs (generator refuses to write without them)', () => {
-  for (const page of ['about.html', 'privacy.html']) {
+  for (const page of ['about.html', 'methodology.html', 'privacy.html']) {
     const html = fs.readFileSync(path.join(ROOT, page), 'utf8');
     for (const marker of [ID_HEAD_BEGIN, ID_HEAD_END, ID_HEADER_BEGIN, ID_HEADER_END]) {
       assert.ok(html.includes(marker), `${page}: missing identity marker ${marker}`);
@@ -57,7 +57,7 @@ test('sitemap covers root, every brand page, every indexable vs-page, and trust 
   // The host 307-redirects .html to the extensionless URL, so sitemap
   // entries (like canonicals) must use the clean form.
   assert.ok(!sitemap.includes('.html</loc>'), 'sitemap must not contain .html URLs');
-  for (const p of ['about', 'privacy', 'compare/']) {
+  for (const p of ['about', 'methodology', 'privacy', 'compare/']) {
     assert.ok(sitemap.includes(`<loc>${site.baseUrl}/${p}</loc>`), `sitemap missing ${p}`);
   }
   for (const brand of brandDirs()) {
