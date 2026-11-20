@@ -2082,9 +2082,14 @@ const LENSES = {
     imageSource:{url:'https://leica-camera.com/en-US/photography/lenses/m/super-elmar-m-21mm-f3-4-asph-black', tier:'T1', date:'2026-09-26', title:'Leica Super-Elmar-M 21 f/3.4 ASPH. official product page'},
     asin:'B00579W0DE',
     specSources:[{ url:'https://leica-camera.com/en-US/photography/lenses/m/super-elmar-m-21mm-f3-4-asph-black/technical-specification', tier:'T1', title:'Leica technical specification page', note:'verify-specs 2026-11-17: weight, length, diameter, filter, close focus, scale, elements/groups, smallest aperture re-read; page gives imperial units only', date:'2026-11-17' }, {url:'https://leica-camera.com/sites/default/files/pm-14547-Super-Elmar-M21-TechnicalData.pdf', tier:'T1', note:'Leica\'s official datasheet (order no. 11145) confirms weight 279 g, diameter 53 mm, filter E46, 8 elements in 7 groups, focus range 0.7 m, largest ratio 1:29.8, smallest aperture f/16. Its length row is mislabelled (see entry comment).', date:'2026-09-26', title:'Leica datasheet: Leica Super-Elmar-M 21 f/3.4 ASPH.'}],
-    prices:{USD:4000,AUD:null,EUR:null,GBP:null,JPY:null,CAD:5640,SGD:null},
+    prices:{USD:4000,AUD:6250,EUR:null,GBP:null,JPY:627000,CAD:5640,SGD:5150},
     priceIncomplete:true,
-    priceSource:{url:'https://leicacamerausa.com/leica-super-elmar-m-21mm-f-3-4-asph-black-anodized.html', tier:'T1', note:'$4,000 list price on leicacamerausa.com (SKU 11145); Leica Store Miami independently lists the same price. Regional prices not researched. CAD $5,640 from Vistek, an authorized Leica dealer in Canada (https://www.vistek.ca/store/257778/, Mfr 11145), read 2026-10-10.', date:'2026-09-26', title:'Leica Camera USA'},
+    priceSource: [
+      {url:'https://leicacamerausa.com/leica-super-elmar-m-21mm-f-3-4-asph-black-anodized.html', tier:'T1', note:'$4,000 list price on leicacamerausa.com (SKU 11145); Leica Store Miami independently lists the same price. Regional prices not researched. CAD $5,640 from Vistek, an authorized Leica dealer in Canada (https://www.vistek.ca/store/257778/, Mfr 11145), read 2026-10-10.', date:'2026-09-26', title:'Leica Camera USA'},
+      { url:'https://leica-store.sg/products/leica-super-elmar-m-21mm-f-3-4-asph', tier:'T1', title:'Leica Store Singapore', note:'SGD 5150: Leica Store Singapore price (order no. 11145)', date:'2026-11-21' },
+      { url:'https://leica-store.com.au/products/11145?escape=false', tier:'T1', title:'Leica Store Australia', note:'AUD 6250: Leica Store Australia JSON-LD offer price (order no. 11145)', date:'2026-11-21' },
+      { url:'https://store.leica-camera.jp/products/list?name=11145', tier:'T1', title:'Leica Store Japan', note:'JPY 627000: Leica Store Japan price, tax included (order no. 11145, black)', date:'2026-11-21' },
+    ],
     productUrl:'https://leica-camera.com/en-US/photography/lenses/m/super-elmar-m-21mm-f3-4-asph-black',
   },
   'summilux-m-90mm-f15-asph': {
