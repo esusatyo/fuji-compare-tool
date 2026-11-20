@@ -42,11 +42,13 @@ Drives the real engine through the DOM (`helpers/dom.js`):
   visibility, brand switcher persistence.
 - **currency** — `formatPrice`, currency switching, lens USD fallback.
 
-### Tier 3 — Links (`tests/links/`) — STUB
-URL collector is real; the network checker is stubbed (`checkUrl` throws) and
-marked `todo`. Skipped unless `RUN_LINK_TESTS=1` (set by `npm run test:links`).
-Intended status policy when implemented: `404/410` → fail, `403/429/503`
-(anti-bot) → warn, images must return `image/*`. Best run on a schedule, never
+### Tier 3 — Links (`tests/links/`)
+Sweeps every URL the data holds: `productUrl`, `imageUrl` and every
+`specSources` / `priceSource` / `imageSource` citation (they render as
+References links). Skipped unless `RUN_LINK_TESTS=1` (set by `npm run test:links`).
+Status policy: `404/410` → fail; `403/429/503` and timeouts (anti-bot) → warn;
+any other `4xx/5xx` → retried once, then fail (Leica serves a deleted PDF as
+`502`); images must return `image/*`. Best run on a schedule, never
 as a blocking hook.
 
 ## Adding a brand

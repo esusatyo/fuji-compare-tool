@@ -3,10 +3,17 @@ name: verify-specs
 description: Audit existing camera and lens specs for factual correctness against the maker's own published figures — weight, dimensions, sensor, EVF/LCD, IBIS, burst, video, weather sealing, optical formula, focus distance and the rest — and record a durable specSources citation for every item checked. Scope can be a camera brand, a lens maker across all brands (e.g. all Sigma lenses), a mount (e.g. L-mount), or just one or a few named items. Research first, report mismatches, apply only what the owner approves. Use when the user wants to check, verify, audit or fact-check specs, find wrong data, or add spec citations to uncited items.
 metadata:
   author: fuji-compare-tool
-  version: "1.3"
+  version: "1.4"
 ---
 
 Check that the specs already in the dataset are **true**, not just well-formed.
+
+**Conventions and owner decisions live in `docs/data-methodology.md`** (the single
+source of truth, and the basis of the public methodology page). The table in
+Step 3 restates it for convenience; if they disagree, the methodology doc wins.
+Every new owner decision goes into that doc's tables **and** its decision log,
+with the date, the reason and the item that triggered it, before this skill is
+updated.
 
 `npm test` proves the data is structurally valid; it cannot tell a wrong weight
 from a right one. This skill re-reads each item's specs from its maker, reports
@@ -154,9 +161,10 @@ escape in the JS you send, or the tool rejects the call.
 
 | maker | where the full spec lives | notes |
 |---|---|---|
-| Fujifilm | `fujifilm-x.com/global/products/cameras/<slug>/specifications/` | rows are `.camera-specifications h6` blocks; battery gives Economy + Normal (use Normal) |
+| Fujifilm | `fujifilm-x.com/global/products/cameras/<slug>/specifications/` (plain curl works; some older bodies redirect to the overview page, which carries the table) | rows are `.camera-specifications h6` blocks; battery gives Economy + Normal (use Normal); hybrid-finder bodies give EVF / OVF figures (split, see Step 3). A discontinued slug may redirect to an unrelated camera (x-half → x-t30): check the final URL |
+| Canon (Japan, preferred since 2026-11-18) | `personal.canon.jp/product/camera/rf/<code>/spec` (lenses, e.g. `rf24-240-f4-63`, `rf-s18-150-f35-63`; codes from the links on `/product/camera/rf`) and `/product/camera/eos/<code>/spec` (cameras, e.g. `r8`, `r8mk2`) | Japanese `<tr>` rows: 最小絞り (min aperture, per focal length), 最短撮影距離 (close focus, AF時 / MF時), 最大撮影倍率 (magnification), 最大径×長さ (diameter × length). Sealing claims (防塵・防滴) are on the product page (no `/spec`), not in the table. canon.co.uk and canon.ie returned Akamai Access Denied to Chrome on 2026-11-18 |
 | Canon cameras | `canon.co.uk/cameras/<slug>/specifications/` | usa.canon.com geo-blocks; canon.com.au has only a summary; read `textContent` (accordions are collapsed); IBIS stops are in footnotes; no Bluetooth version |
-| Canon lenses | `canon.co.uk/lenses/<slug>/specifications/`, slugs from `/sitemap/sitemap-product-detail-page-uk-en.xml` | rows `li.product-specification-detail__list-line`; **remove `<sup>` footnotes**, because in plain text they run into the values; zooms list AF and MF figures |
+| Canon lenses | `canon.co.uk/lenses/<slug>/specifications/`, slugs from `/sitemap/sitemap-product-detail-page-uk-en.xml` | rows `li.product-specification-detail__list-line`; **remove `<sup>` footnotes**, because in plain text they run into the values; zooms list AF and MF figures. The "Dust/Moisture Resistance" row is unreliable (says Yes for the budget RF 75-300): confirm sealing on Canon Japan |
 | Nikon | summary on `imaging.nikon.com/imaging/lineup/{mirrorless,lens/z-mount}/<slug>/`; full sheet (battery, Bluetooth) on the Nikon USA product page | battery has Energy-saving ON/OFF (use OFF); "with tripod collar" weights and "with built-in TC" magnifications are not the stored convention |
 | Sony | `electronics.sony.com/.../p/<model>`: the full spec sheet is embedded JSON (`"featureValues":[{"value":…}],"name":…`); older bodies on `sony.com/electronics/support/<series>/<model>/specifications` | headline depth (not grip-to-monitor) is the stored convention; lens minimum focus is in inches with no AF/MF label, so don't compare it from there |
 | Sigma | `sigma-global.com/en/lenses/<code>/`; cameras `/en/cameras/<slug>/` | one page lists every mount: read the `<Mount name>` rows for size and weight (MFT row is "Micro Four Thirds mount"); a "mount with dust and splash resistant structure" is a gasket only, so `weatherSealed` = false |
@@ -202,18 +210,24 @@ Fields in scope (everything factual and spec-like):
 | lens `length` | mm, mount flange to front, zoom at shortest |
 | lens `diameter` | max barrel diameter, not filter thread |
 | camera `width`×`height`×`depth` | mm, maker's headline figures |
-| `minFocusDist` | **cm**, from the focal plane; zooms = shortest across the range (`0.121 m` → `12.1`) |
-| `maxMagnification` | decimal (`1:2` → `0.5`); zooms = max across range |
+| `minFocusDist` | **cm**, from the focal plane; zooms = shortest across the range (`0.121 m` → `12.1`). Where AF and MF figures differ, the **AF** figure (owner rule 2026-11-18) |
+| `maxMagnification` | decimal (`1:2` → `0.5`); zooms = max across range; **AF** figure where AF and MF differ (owner rule 2026-11-18) |
 | `maxAperture` | f-number at the wide end; never a T-stop |
+| `minAperture` | variable-aperture zooms: the **wide-end** minimum (Canon "22 (24mm) / 36 (240mm)" → 22; owner rule 2026-11-18). Fixed-aperture lenses with no iris (SG-image 50mm f/1.8 shaped-aperture) store min = max |
+| `elements`/`groups` | the maker's current page wins over an older stored count, even when it looks odd (owner, 2026-11-18: OM 40-150 f/4 PRO → 19) |
 | `lcdDots` | thousands of dots (`1840`) |
 | `evfDots` | millions of dots (`3.69`) |
-| `evfMag` | 35mm-equivalent magnification (`0.8`) |
-| `batteryLife` | CIPA shots — where the maker gives several modes, the **Normal** (not Economy) figure (owner rule 2026-11-14) |
+| `evfMag` | 35mm-equivalent magnification (`0.8`); divide native by the crop (APS-C 1.5, RF-S 1.6, APS-H 26.7/36, MFT 2.0). **Hybrid optical/electronic finders** (X100 / X-Pro): the **optical** figure (X100VI 0.52; owner rule 2026-11-18) |
+| camera `weight` from a body-only page | use the maker's with-battery figure for the identical body (OM-3 ASTRO = OM-3 496; owner 2026-11-18) |
+| `sensorMP` | effective MP; **Foveon** = top-layer figure (sd Quattro 19.6 / H 25.5, not 29.5 / 38.6; owner rule 2026-11-18) |
+| `ibisStops` | the **body-only** figure, never Sync IS / Dual I.S. 2 with a stabilised lens (owner rule 2026-11-18; OM System quotes both, Panasonic quotes B.I.S. vs Dual I.S. 2) |
+| `batteryLife` | CIPA shots — where the maker gives several modes, the **Normal** (not Economy) figure (owner rule 2026-11-14). **Nikon: Energy-saving OFF**; **Panasonic: the SD-card set** when CFexpress/XQD and SD are listed separately (both confirmed 2026-11-18) |
+| hybrid-finder battery | `batteryLifeEvf` + `batteryLifeOvf`, `batteryLifeLcd: null`, `batteryLife` = the EVF figure (schema-enforced; owner rule 2026-11-18). X100VI 310/450, X100V 350/420, X100F 270/390, X-Pro3 370/440, X-Pro2 250/350 |
 | battery split | **Split** (owner rule 2026-11-15) where the maker publishes both: `batteryLifeLcd` (screen) + `batteryLifeEvf` (viewfinder; `null` without one), `batteryLife` = the screen figure (schema-enforced). Canon, Sony, Nikon and Panasonic publish both; makers that give one figure per mode (Fujifilm Normal/Economy, Leica, Sigma) stay on `batteryLife` |
-| burst | **Split** (owner rule 2026-11-14): `maxBurstMech` = top mechanical-shutter rate (an electronic-first-curtain rate counts as mechanical — it uses the mechanical rear curtain; owner rule 2026-11-15), `maxBurstElec` = top electronic rate *including* crop modes, `maxBurstElecCrop` = that rate's crop factor (omit if none), `maxBurst` = the faster of the two (schema-enforced). `null` = no such shutter / not published. Convert a camera to the split fields when you verify it; if the source is ambiguous for either rate, leave it on legacy `maxBurst` and list it |
+| burst | **Split** (owner rule 2026-11-14): `maxBurstMech` = top mechanical-shutter rate (an electronic-first-curtain rate counts as mechanical — it uses the mechanical rear curtain; owner rule 2026-11-15), `maxBurstElec` = top electronic rate *including* crop modes, `maxBurstElecCrop` = that rate's crop factor (omit if none), `maxBurst` = the faster of the two (schema-enforced). `null` = no such shutter / not published. **Nikon**: the C30/C60/C120 high-speed frame capture modes are excluded (confirmed 2026-11-18). A rate that no maker source lists (Leica Q2 "20 fps") is not used. Convert a camera to the split fields when you verify it; if the source is ambiguous for either rate, leave it on legacy `maxBurst` and list it |
 | `focalLengthEquiv` | native × crop (X/E APS-C/DX/TL 1.5, RF-S 1.6, MFT 2.0, FF 1.0); dual-fisheye lenses take no crop |
 | `year` | first shipping year **in this mount**, not the design's original launch |
-| `weatherSealed` | `true` **only** if the maker claims sealing/dust- and splash-resistance. A review calling it "robust", or a rear mount gasket alone, is `false`. Silence from the maker = `false`. Weather resistance that needs an accessory (adapter ring + filter on X100VI/GFX100RF) = `false` (owner rule 2026-11-14) |
+| `weatherSealed` | `true` **only** if the maker claims sealing/dust- and splash-resistance. A review calling it "robust", or a rear mount gasket alone, is `false`. Silence from the maker = `false`. Weather resistance that needs an accessory (adapter ring + filter on X100VI/GFX100RF) = `false` (owner rule 2026-11-14). Two maker pages that disagree (Canon UK says sealed, Canon Japan silent) → find a third maker source; until then `false` (owner, 2026-11-18: EOS R8, RF 75-300). Canon Japan confirms the RF 16-28 f/2.8 IS STM, so it is `true` |
 | `afType` | the maker's own motor name (`VXD`, `HLD`, `Stepping Motor`, `Manual focus`) |
 
 **Unit traps:** convert from the maker's metric figure, never round-trip oz/in.
@@ -232,7 +246,12 @@ question; count it, don't list it) · **convention?** · **unsourced** (the
 source doesn't state this field) · **unverifiable** (no usable source at all).
 
 Sources still disagreeing after normalisation: tier 1 wins; record both
-values in the ledger with a one-line reason. Never average. Also record values
+values in the ledger with a one-line reason. Never average. A held or decided
+item is **re-raised** when a new T1 source contradicts the evidence the decision
+was made on (2026-11-18: the RF 16-28 was about to be set "not sealed" until
+Canon Japan confirmed the seal). Before calling a value "certainly wrong", read
+the maker's own wording: SG-image's min = max aperture looked like an error but
+is a fixed-aperture design. Also record values
 you **rejected** and why — that stops the next pass "correcting" a right
 number to a wrong one.
 
@@ -288,7 +307,8 @@ finish is "batch 1 of 4 done", never a verdict on the whole scope.
 4. A discontinued item gets the same treatment; its maker page may now be
    archived — the maker's PDF or an archived regional page is still tier 1.
 5. `npm test` must be green. If any URL in the data changed, also
-   `npm run test:links`.
+   `npm run test:links` (it sweeps every citation URL too, and fails on any
+   error status that survives a retry, e.g. Leica's 502 for a deleted PDF).
 6. **Commit per batch** — data edits + the ledger in one commit:
    `verify-specs: <scope> batch N — X fixes, Y citations`.
 7. All batches of one run go in **one** PR targeting `main`. Never merge it —
@@ -303,6 +323,11 @@ finish is "batch 1 of 4 done", never a verdict on the whole scope.
   or `refresh-camera-data` picks them up.
 - A new trap (a templated field, a mount-lumping table, a blocked domain and
   its workaround) → add it to Step 2's trap list in this file, dated.
+- Every owner decision on a convention → `docs/data-methodology.md` (table row
+  **and** decision log, with date, reason and triggering item), then this
+  skill's Step 3 table and the other data-gathering skills
+  (`add-thirdparty-lenses`, `add-camera-brand`, `refresh-camera-data`).
+  Keep superseded rules in the log; that doc feeds the public methodology page.
 
 ---
 
