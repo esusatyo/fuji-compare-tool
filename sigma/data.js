@@ -473,7 +473,10 @@ const LENSES = {
     weatherSealed:false, ois:false, oisStops:null, year:2023, discontinued:false,
     imageUrl:'https://www.sigma-global.com/lenses/c023_50_2_product_img01.png',
     asin:'B0BZWLTJ4G',
-    prices:{USD:719,AUD:1099,EUR:799,GBP:599,JPY:106000,CAD:899,SGD:999},
+    prices:{USD:719,AUD:1099,EUR:799,GBP:599,JPY:106000,CAD:949,SGD:999},
+    priceSource: [
+      { url:'https://www.sigmacanada.ca/products/50mm-f2-dg-dn-contemporary', tier:'T1', title:'Sigma Canada store', note:'CAD 949: Sigma Canada store regular price for the L-Mount variant; replaces an earlier uncited figure of 899', date:'2026-11-21' },
+    ],
     productUrl:'https://www.sigma-global.com/en/lenses/c023_50_2/',
   },
   'sigma-50mm-f14-cl-dg': {

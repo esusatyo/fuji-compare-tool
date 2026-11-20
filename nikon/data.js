@@ -2229,7 +2229,10 @@ const LENSES = {
     imageUrl:'https://laowa.com.au/wp-content/uploads/2024/02/VE1028AFFE-19-768x512.png',
     imageSource: { url:'https://laowa.com.au/product/10mm/', tier:'T1', title:'Laowa Australia (official regional site)', note:'10mm f/2.8 Zero-D FF (AF), lens alone, front view with built-in hood. Replaced the venuslens.net image 2026-10-19: its Cloudflare serves a bot challenge instead of the image, so embedded requests fail in real browsers too', date:'2026-10-19' },
     asin:'B0CW9MJW39',
-    prices:{USD:799,AUD:1199,EUR:899,GBP:699,JPY:121000,CAD:999,SGD:1199},
+    prices:{USD:799,AUD:1449,EUR:899,GBP:699,JPY:121000,CAD:999,SGD:1199},
+    priceSource: [
+      { url:'https://laowa.com.au/product/10mm/', tier:'T1', title:'Laowa Australia store', note:'AUD 1449: Laowa Australia store regular price (Laowa 10mm f/2.8 Zero-D FF); replaces an earlier uncited figure of 1199', date:'2026-11-21' },
+    ],
     productUrl:'https://www.venuslens.net/product/laowa-10mm-f-2-8-ff-zero-d/',
   },
 
@@ -2247,7 +2250,10 @@ const LENSES = {
     imageUrl:'https://laowa.com.au/wp-content/uploads/2025/06/03_VE1228AFFE-768x512.png',
     imageSource: { url:'https://laowa.com.au/product/12mmlite/', tier:'T1', title:'Laowa Australia (official regional site)', note:'lens alone, front three-quarter view. Replaced the venuslens.net image 2026-10-19: its Cloudflare serves a bot challenge instead of the image, so embedded requests fail in real browsers too', date:'2026-10-19' },
     asin:'B0GGLJ82Y3',
-    prices:{USD:699,AUD:1099,EUR:799,GBP:599,JPY:108000,CAD:899,SGD:999},
+    prices:{USD:699,AUD:1299,EUR:799,GBP:599,JPY:108000,CAD:899,SGD:999},
+    priceSource: [
+      { url:'https://laowa.com.au/product/12mmlite/', tier:'T1', title:'Laowa Australia store', note:'AUD 1299: Laowa Australia store regular price (LAOWA 12mm f/2.8 Lite Zero-D FF); replaces an earlier uncited figure of 1099', date:'2026-11-21' },
+    ],
     productUrl:'https://www.venuslens.net/product/laowa-12mm-f-2-8-lite-zero-d-ff/',
   },
 
@@ -2265,7 +2271,10 @@ const LENSES = {
     imageUrl:'https://laowa.com.au/wp-content/uploads/2025/06/03_VE815FE-768x512.png',
     imageSource: { url:'https://laowa.com.au/product/fisheyezoom/', tier:'T1', title:'Laowa Australia (official regional site)', note:'lens alone, front three-quarter view. Replaced the venuslens.net image 2026-10-19: its Cloudflare serves a bot challenge instead of the image, so embedded requests fail in real browsers too', date:'2026-10-19' },
     asin:'B0FKQG1FRX',
-    prices:{USD:699,AUD:1099,EUR:799,GBP:599,JPY:108000,CAD:899,SGD:999},
+    prices:{USD:699,AUD:1299,EUR:799,GBP:599,JPY:108000,CAD:899,SGD:999},
+    priceSource: [
+      { url:'https://laowa.com.au/product/fisheyezoom/', tier:'T1', title:'Laowa Australia store', note:'AUD 1299: Laowa Australia store regular price (LAOWA 8-15mm f/2.8 FF Zoom Fisheye); on sale at 1104, not used; replaces an earlier uncited figure of 1099', date:'2026-11-21' },
+    ],
     productUrl:'https://www.venuslens.net/product/laowa-8-15mm-f-2-8-ff-zoom-fisheye-2/',
   },
 
@@ -2283,7 +2292,10 @@ const LENSES = {
     imageUrl:'https://laowa.com.au/wp-content/uploads/2023/03/2812-E-04-768x512.png',
     imageSource: { url:'https://laowa.com.au/product/argus28mm/', tier:'T1', title:'Laowa Australia (official regional site)', note:'lens with hood, three-quarter view. Replaced the venuslens.net image 2026-10-19: its Cloudflare serves a bot challenge instead of the image, so embedded requests fail in real browsers too', date:'2026-10-19' },
     asin:null,
-    prices:{USD:599,AUD:899,EUR:699,GBP:499,JPY:88000,CAD:799,SGD:899},
+    prices:{USD:599,AUD:1099,EUR:699,GBP:499,JPY:88000,CAD:799,SGD:899},
+    priceSource: [
+      { url:'https://laowa.com.au/product/argus28mm/', tier:'T1', title:'Laowa Australia store', note:'AUD 1099: Laowa Australia store regular price (LAOWA Argus 28mm f1.2 FF); replaces an earlier uncited figure of 899', date:'2026-11-21' },
+    ],
     productUrl:'https://www.venuslens.net/product/laowa-argus-28mm-f-1-2-ff/',
   },
 
@@ -2319,7 +2331,10 @@ const LENSES = {
     imageUrl:'https://www.laowalenses.ca/wp-content/uploads/2024/11/VE1550FEAEBLK_002-768x768.jpg',
     imageSource: { url:'https://www.laowalenses.ca/product/laowa-15mm-f5-cookie-ff/', tier:'T1', title:'Laowa Canada (official regional site)', note:'first gallery image, "FF 15mm F5.0 Cookie" legible on the front ring; lens alone. Replaced the venuslens.net image 2026-10-19: its Cloudflare serves a bot challenge instead of the image, so embedded requests fail in real browsers too', date:'2026-10-19' },
     asin:'B0DQBCMNKB',
-    prices:{USD:399,AUD:599,EUR:499,GBP:399,JPY:60000,CAD:499,SGD:599},
+    prices:{USD:399,AUD:729,EUR:499,GBP:399,JPY:60000,CAD:499,SGD:599},
+    priceSource: [
+      { url:'https://laowa.com.au/product/15cookie/', tier:'T1', title:'Laowa Australia store', note:'AUD 729: Laowa Australia store regular price (Laowa 15mm f/5 Cookie FF); replaces an earlier uncited figure of 599', date:'2026-11-21' },
+    ],
     productUrl:'https://www.venuslens.net/product/laowa-15mm-f-5-cookie-ff/',
   },
 
@@ -2355,7 +2370,10 @@ const LENSES = {
     imageUrl:'https://laowa.com.au/wp-content/uploads/2022/09/5828_CanonR_6-768x512.png',
     imageSource: { url:'https://laowa.com.au/product/58mm/', tier:'T1', title:'Laowa Australia (official regional site)', note:'lens alone, front three-quarter view. Replaced the venuslens.net image 2026-10-19: its Cloudflare serves a bot challenge instead of the image, so embedded requests fail in real browsers too', date:'2026-10-19' },
     asin:'B0BH8J24YS',
-    prices:{USD:499,AUD:799,EUR:599,GBP:399,JPY:70000,CAD:599,SGD:699},
+    prices:{USD:499,AUD:835,EUR:599,GBP:399,JPY:70000,CAD:599,SGD:699},
+    priceSource: [
+      { url:'https://laowa.com.au/product/58mm/', tier:'T1', title:'Laowa Australia store', note:'AUD 835: Laowa Australia store regular price (Laowa 58mm f/2.8 2x Ultra Macro APO); replaces an earlier uncited figure of 799', date:'2026-11-21' },
+    ],
     productUrl:'https://www.venuslens.net/product/5828-2x-ultra-macro-apo/',
   },
 
@@ -2373,7 +2391,10 @@ const LENSES = {
     imageUrl:'https://laowa.com.au/wp-content/uploads/2020/02/01-768x512.jpg',
     imageSource: { url:'https://laowa.com.au/product/65mm/', tier:'T1', title:'Laowa Australia (official regional site)', note:'lens alone, side view. Replaced the venuslens.net image 2026-10-19: its Cloudflare serves a bot challenge instead of the image, so embedded requests fail in real browsers too', date:'2026-10-19' },
     asin:null,
-    prices:{USD:399,AUD:599,EUR:499,GBP:399,JPY:48000,CAD:499,SGD:599},
+    prices:{USD:399,AUD:809,EUR:499,GBP:399,JPY:48000,CAD:499,SGD:599},
+    priceSource: [
+      { url:'https://laowa.com.au/product/65mm/', tier:'T1', title:'Laowa Australia store', note:'AUD 809: Laowa Australia store regular price (LAOWA 65mm f/2.8 APO 2:1 Ultra Macro); on sale at 687, not used; replaces an earlier uncited figure of 599', date:'2026-11-21' },
+    ],
     productUrl:'https://www.venuslens.net/product/laowa-65mm-f-2-8-2x-ultra-macro-apo/',
   },
 
@@ -2391,7 +2412,10 @@ const LENSES = {
     imageUrl:'https://laowa.com.au/wp-content/uploads/2018/10/DSC06347-768x512.jpg',
     imageSource: { url:'https://laowa.com.au/product/10-18/', tier:'T1', title:'Laowa Australia (official regional site)', note:'lens alone, front three-quarter view. Replaced the venuslens.net image 2026-10-19: its Cloudflare serves a bot challenge instead of the image, so embedded requests fail in real browsers too', date:'2026-10-19' },
     asin:'B07VQLVPBN',
-    prices:{USD:599,AUD:899,EUR:699,GBP:499,JPY:68000,CAD:799,SGD:899},
+    prices:{USD:599,AUD:1099,EUR:699,GBP:499,JPY:68000,CAD:799,SGD:899},
+    priceSource: [
+      { url:'https://laowa.com.au/product/10-18/', tier:'T1', title:'Laowa Australia store', note:'AUD 1099: Laowa Australia store regular price (LAOWA 10-18mm f/4.5-5.6); replaces an earlier uncited figure of 899', date:'2026-11-21' },
+    ],
     productUrl:'https://www.venuslens.net/product/laowa-10-18mm-f-4-5-5-6-fe-zoom/',
   },
 
@@ -2410,7 +2434,10 @@ const LENSES = {
     imageUrl:'https://upload.wikimedia.org/wikipedia/commons/thumb/d/d2/Laowa_25_mm_ultra_macro.jpg/500px-Laowa_25_mm_ultra_macro.jpg',
     imageCredit:{author:"Bachrockt", licence:"CC BY-SA 4.0", licenceUrl:"https://creativecommons.org/licenses/by-sa/4.0", source:"https://commons.wikimedia.org/wiki/File:Laowa_25_mm_ultra_macro.jpg"},
     asin:'B082BDQSRH',
-    prices:{USD:399,AUD:599,EUR:499,GBP:399,JPY:48000,CAD:499,SGD:599},
+    prices:{USD:399,AUD:805,EUR:499,GBP:399,JPY:48000,CAD:499,SGD:599},
+    priceSource: [
+      { url:'https://laowa.com.au/product/ultramacro/', tier:'T1', title:'Laowa Australia store', note:'AUD 805: Laowa Australia store regular price (LAOWA 25mm f/2.8 2.5-5X Ultra Macro); on sale at 684, not used; replaces an earlier uncited figure of 599', date:'2026-11-21' },
+    ],
     productUrl:'https://www.venuslens.net/product/laowa-25mm-f-2-8-2-5-5x-ultra-macro-2/',
   },
 
@@ -2428,7 +2455,10 @@ const LENSES = {
     imageUrl:'https://laowa.com.au/wp-content/uploads/2019/05/LAOWA-100mm-vertical-768x468.jpg',
     imageSource: { url:'https://laowa.com.au/product/100mmapo/', tier:'T1', title:'Laowa Australia (official regional site)', note:'lens alone, front three-quarter view. Replaced the venuslens.net image 2026-10-19: its Cloudflare serves a bot challenge instead of the image, so embedded requests fail in real browsers too', date:'2026-10-19' },
     asin:'B0851QKVY4',
-    prices:{USD:499,AUD:799,EUR:599,GBP:399,JPY:60000,CAD:599,SGD:699},
+    prices:{USD:499,AUD:939,EUR:599,GBP:399,JPY:60000,CAD:599,SGD:699},
+    priceSource: [
+      { url:'https://laowa.com.au/product/100mmapo/', tier:'T1', title:'Laowa Australia store', note:'AUD 939: Laowa Australia store regular price (LAOWA 100mm f2.8 2:1 APO Ultra-Macro Lens); on sale at 798, not used; replaces an earlier uncited figure of 799', date:'2026-11-21' },
+    ],
     productUrl:'https://www.venuslens.net/product/laowa-100mm-f-2-8-2x-macro-apo/',
   },
 
@@ -2447,7 +2477,10 @@ const LENSES = {
     imageUrl:'https://laowa.com.au/wp-content/uploads/2022/03/Fuji-X-06-768x768.png',
     imageSource: { url:'https://laowa.com.au/product/33mm/', tier:'T1', title:'Laowa Australia (official regional site)', note:'lens with hood, three-quarter view; no mount plate visible. Replaced the venuslens.net image 2026-10-19: its Cloudflare serves a bot challenge instead of the image, so embedded requests fail in real browsers too', date:'2026-10-19' },
     asin:'B094346SV4',
-    prices:{USD:449,AUD:699,EUR:499,GBP:399,JPY:57000,CAD:599,SGD:699},
+    prices:{USD:449,AUD:839,EUR:499,GBP:399,JPY:57000,CAD:599,SGD:699},
+    priceSource: [
+      { url:'https://laowa.com.au/product/33mm/', tier:'T1', title:'Laowa Australia store', note:'AUD 839: Laowa Australia store regular price (LAOWA Argus 33mm f0.95); replaces an earlier uncited figure of 699', date:'2026-11-21' },
+    ],
     productUrl:'https://www.venuslens.net/product/laowa-argus-33mm-f-0-95-cf-apo/',
   },
 
@@ -2506,7 +2539,10 @@ const LENSES = {
     imageUrl:'https://laowa.com.au/wp-content/uploads/2025/11/VE3528FE03-768x512.png',
     imageSource: { url:'https://laowa.com.au/product/35mmts/', tier:'T1', title:'Laowa Australia (official regional site)', note:'lens with tripod foot, front three-quarter view. Replaced the venuslens.net image 2026-10-19: its Cloudflare serves a bot challenge instead of the image, so embedded requests fail in real browsers too', date:'2026-10-19' },
     asin:null,
-    prices:{USD:1249,AUD:1899,EUR:1399,GBP:1099,JPY:192000,CAD:1599,SGD:1799},
+    prices:{USD:1249,AUD:2150,EUR:1399,GBP:1099,JPY:192000,CAD:1599,SGD:1799},
+    priceSource: [
+      { url:'https://laowa.com.au/product/35mmts/', tier:'T1', title:'Laowa Australia store', note:'AUD 2150: Laowa Australia store regular price (Laowa 35mm f/2.8 Zero-D Tilt-Shift 0.5X Macro lens); on sale at 1827, not used; replaces an earlier uncited figure of 1899', date:'2026-11-21' },
+    ],
     productUrl:'https://www.venuslens.net/product/the-laowa-35mm-f-2-8-zero-d-tilt-shift-0-5x-macro/',
   },
 
@@ -2542,7 +2578,10 @@ const LENSES = {
     imageUrl:'https://laowa.com.au/wp-content/uploads/2024/12/03_VE10028TS-FE-768x512.png',
     imageSource: { url:'https://laowa.com.au/product/100shift/', tier:'T1', title:'Laowa Australia (official regional site)', note:'lens with tripod foot, front three-quarter view. Replaced the venuslens.net image 2026-10-19: its Cloudflare serves a bot challenge instead of the image, so embedded requests fail in real browsers too', date:'2026-10-19' },
     asin:'B0DVMPJM2L',
-    prices:{USD:1249,AUD:1899,EUR:1399,GBP:1099,JPY:192000,CAD:1599,SGD:1799},
+    prices:{USD:1249,AUD:2250,EUR:1399,GBP:1099,JPY:192000,CAD:1599,SGD:1799},
+    priceSource: [
+      { url:'https://laowa.com.au/product/100shift/', tier:'T1', title:'Laowa Australia store', note:'AUD 2250: Laowa Australia store regular price (Laowa 100mm f/2.8 Tilt-shift 1X Macro); on sale at 1912, not used; replaces an earlier uncited figure of 1899', date:'2026-11-21' },
+    ],
     productUrl:'https://www.venuslens.net/product/laowa-100mm-f-2-8-tilt-shift-1x-macro/',
   },
 
@@ -2560,7 +2599,10 @@ const LENSES = {
     ],
     imageUrl:null,
     asin:'B08NPXCZRQ',
-    prices:{USD:1199,AUD:1899,EUR:1399,GBP:1099,JPY:144000,CAD:1599,SGD:1699},
+    prices:{USD:1199,AUD:2099,EUR:1399,GBP:1099,JPY:144000,CAD:1599,SGD:1699},
+    priceSource: [
+      { url:'https://laowa.com.au/product/15shift/', tier:'T1', title:'Laowa Australia store', note:'AUD 2099: Laowa Australia store regular price (Laowa 15mm f4.5 Zero-D Shift); on sale at 1784, not used; replaces an earlier uncited figure of 1899', date:'2026-11-21' },
+    ],
     productUrl:'https://www.venuslens.net/product/15mm-f-4-5-zero-d-shift/',
   },
 
@@ -2578,7 +2620,10 @@ const LENSES = {
     imageUrl:'https://laowa.com.au/wp-content/uploads/2022/03/DSC_4064-768x512.png',
     imageSource: { url:'https://laowa.com.au/product/20mm/', tier:'T1', title:'Laowa Australia (official regional site)', note:'lens alone, front three-quarter view. Replaced the venuslens.net image 2026-10-19: its Cloudflare serves a bot challenge instead of the image, so embedded requests fail in real browsers too', date:'2026-10-19' },
     asin:null,
-    prices:{USD:1099,AUD:1699,EUR:1299,GBP:999,JPY:154000,CAD:1399,SGD:1599},
+    prices:{USD:1099,AUD:1835,EUR:1299,GBP:999,JPY:154000,CAD:1399,SGD:1599},
+    priceSource: [
+      { url:'https://laowa.com.au/product/20mm/', tier:'T1', title:'Laowa Australia store', note:'AUD 1835: Laowa Australia store regular price (Laowa 20mm f/4 Zero-D Shift); on sale at 1559, not used; replaces an earlier uncited figure of 1699', date:'2026-11-21' },
+    ],
     productUrl:'https://www.venuslens.net/product/laowa-20mm-f-4-zero-d-shift/',
   },
 
@@ -2596,7 +2641,10 @@ const LENSES = {
     imageUrl:'https://laowa.com.au/wp-content/uploads/2024/11/VE1224S-SE-03-768x512.png',
     imageSource: { url:'https://laowa.com.au/product/12mmshift/', tier:'T1', title:'Laowa Australia (official regional site)', note:'lens alone, front three-quarter view. Replaced the venuslens.net image 2026-10-19: its Cloudflare serves a bot challenge instead of the image, so embedded requests fail in real browsers too', date:'2026-10-19' },
     asin:'B0B6GYWRM1',
-    prices:{USD:699,AUD:1099,EUR:799,GBP:599,JPY:106000,CAD:899,SGD:999},
+    prices:{USD:699,AUD:1250,EUR:799,GBP:599,JPY:106000,CAD:899,SGD:999},
+    priceSource: [
+      { url:'https://laowa.com.au/product/12mmshift/', tier:'T1', title:'Laowa Australia store', note:'AUD 1250: Laowa Australia store regular price (Laowa 12-24mm f/5.6 Zoom Shift CF  APSC); on sale at 1062, not used; replaces an earlier uncited figure of 1099', date:'2026-11-21' },
+    ],
     productUrl:'https://www.venuslens.net/product/laowa-12-24mm-f-5-6-zoom-shift-cf/',
   },
 
@@ -4068,7 +4116,10 @@ const LENSES = {
       { url:'https://www.zsystemuser.com/z-mount-lenses/third-party-lenses/third-party-autofocus-lense/7artisans-autofocus-lenses/7artisans-10mm-f28-lens.html', tier:'T2', note:'Thom Hogan\'s Nikon-Z-specific third-party lens tracker; full spec table: APS-C (DX), 105.3° AoV, 11 elements/10 groups (2 aspherical/3 ED/2 high-refractive), 7-blade diaphragm, 62mm filter, 0.3m MFD, 72×69mm, 232g (8.2oz), $199, announced November 2025. No dust/splash-resistance claim on this lens (unlike every other 7Artisans lens in this batch)', date:'2026-08-31' },
     ],
     asin:'B0FVF5DL3T',
-    prices:{USD:199,AUD:299,EUR:199,GBP:199,JPY:31000,CAD:299,SGD:299},
+    prices:{USD:199,AUD:299,EUR:199,GBP:180,JPY:31000,CAD:299,SGD:299},
+    priceSource: [
+      { url:'https://7artisans.co.uk/products/10mm-f-2-8-auto-focus-aps-c', tier:'T3', title:'7Artisans UK store', note:'GBP 180: 7Artisans UK store regular price (10mm f/2.8 Auto Focus APS-C, Nikon Z); on sale at 170, not used; replaces an earlier figure of 199', date:'2026-11-21' },
+    ],
     productUrl:'https://7artisans.store/products/af-10mm-f2-8-aps-c-lens-for-e-fx-z',
     imageUrl:'https://7artisans.store/cdn/shop/files/1_b97a4138-6403-4c57-9fa4-10149af13b7e.jpg',
     imageSource: { url:'https://7artisans.store/products/af-10mm-f2-8-aps-c-lens-for-e-fx-z', tier:'T1', note:'official 7Artisans store product photo (og:image)', date:'2026-08-31' },
@@ -4201,7 +4252,10 @@ const LENSES = {
       { url:'https://www.bhphotovideo.com/c/product/1857144-REG/x.html', tier:'T3', title:'B&H - 7Artisans 85mm f/1.8 AF Lens (Nikon Z)', note:'No sealing claim on 7Artisans\' own store page or on B&H\'s Nikon Z listing (neither the overview nor the spec sheet mentions dust, splash or weather resistance); the "dust/splash-resistant design" line came from zsystemuser.com only and is not backed by the maker or a dealer. Matches the Sony E and L entries. Corrected: weatherSealed true -> false.', date:'2026-11-07' },
     ],
     asin:'B0D9B8JMLB',
-    prices:{USD:299,AUD:499,EUR:299,GBP:299,JPY:45000,CAD:399,SGD:399},
+    prices:{USD:299,AUD:499,EUR:299,GBP:280,JPY:45000,CAD:399,SGD:399},
+    priceSource: [
+      { url:'https://7artisans.co.uk/products/af-85mm-f-1-8-lens', tier:'T3', title:'7Artisans UK store', note:'GBP 280: 7Artisans UK store regular price (AF 85mm f/1.8 Lens, Nikon Z); replaces an earlier figure of 299', date:'2026-11-21' },
+    ],
     productUrl:'https://7artisans.store/products/af-85mm-f1-8-full-frame-lens-for-z',
     imageUrl:'https://7artisans.store/cdn/shop/files/6a0f48436f03bf48e8c7f28f9f150b4c_c346e238-3669-476d-83fe-548e5ba50c61.jpg',
     imageSource: { url:'https://7artisans.store/products/af-85mm-f1-8-full-frame-lens-for-z', tier:'T1', note:'official 7Artisans store product photo (og:image)', date:'2026-08-31' },
@@ -4408,11 +4462,11 @@ const LENSES = {
     imageUrl:'https://cdn.shopify.com/s/files/1/0555/8504/6736/files/1_db9d8e0b-ae96-4b07-96e3-bcc94c217e33.jpg',
     imageSource: { url:'https://7artisans.store/products/9mm-f-5-6-full-frame-wide-angle-lens-for-e-l-r-z', tier:'T1', title:'7Artisans official store', note:'first product image, lens alone; same photo as the Sony entry', date:'2026-10-21' },
     asin:null,
-    prices:{USD:335,AUD:null,EUR:null,GBP:450,JPY:null,CAD:null,SGD:null},
+    prices:{USD:335,AUD:null,EUR:null,GBP:380,JPY:null,CAD:null,SGD:null},
     specSources: [{ url:'https://www.bhphotovideo.com/c/product/1861713-REG/x.html/specs', tier:'T3', title:'B&H - 7Artisans 9mm f/5.6 (Nikon Z) specs', note:'Nikon Z listing: 70 x 86mm, 463g, f/5.6-22, 20cm, 16/11, 5 blades. Used because 7Artisans publishes most specs only as images; shared optics match the Sony E entry', date:'2026-10-21' }, { url:'https://7artisans.store/products/9mm-f-5-6-full-frame-wide-angle-lens-for-e-l-r-z', tier:'T1', title:'7Artisans 9mm f/5.6 - official 7Artisans store', note:'rear ND filter system, no front thread. confirms the Sony E version, focal length and maximum aperture. Year: 2023 (store listing / other-brand entries)', date:'2026-10-21' }],
     priceSource: [
       { url:'https://www.bhphotovideo.com/c/product/1861713-REG/x.html', tier:'T3', title:'B&H - 7Artisans 9mm f/5.6 Lens (Nikon Z, Rear ND Filter)', note:'USD $479 -> $335: B&H price $335 with no strikethrough. Previously the 7artisans.store compare-at ("Nikon Z / ND64" variant regular (compare-at) price $479; on sale at $335.3 at the time, rounded). USD is the price a dealer actually charges (owner rule 2026-10-22); the maker store\'s compare-at is not used; non-USD not examined', date:'2026-10-22' },
-      { url:'https://7artisans.co.uk/products/9mm-5-6', tier:'T3', title:'7Artisans UK store', note:'GBP 450: 7Artisans UK store regular price (9mm f/5.6 Wide-Angle Lens, Nikon Z); on sale at 380, not used', date:'2026-11-21' },
+      { url:'https://7artisans.co.uk/products/9mm-5-6', tier:'T3', title:'7Artisans UK store', note:'GBP 380: 7Artisans UK store regular price (9mm f/5.6 Wide-Angle Lens, Nikon Z); store lists a compare-at price of 450 that it does not charge (more than 15% above the selling price), not used; replaces an earlier figure of 450', date:'2026-11-21' },
     ],
     priceIncomplete:true,
     productUrl:'https://7artisans.store/products/9mm-f-5-6-full-frame-wide-angle-lens-for-e-l-r-z',

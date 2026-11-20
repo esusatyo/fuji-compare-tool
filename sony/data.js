@@ -6081,11 +6081,11 @@ const LENSES = {
     imageUrl:'https://cdn.shopify.com/s/files/1/0555/8504/6736/files/1_db9d8e0b-ae96-4b07-96e3-bcc94c217e33.jpg',
     imageSource: { url:'https://7artisans.store/products/9mm-f-5-6-full-frame-wide-angle-lens-for-e-l-r-z', tier:'T1', title:'7Artisans official store', note:'first product image, lens alone', date:'2026-10-21' },
     asin:null,
-    prices:{USD:335,AUD:null,EUR:null,GBP:450,JPY:null,CAD:null,SGD:null},
+    prices:{USD:335,AUD:null,EUR:null,GBP:380,JPY:null,CAD:null,SGD:null},
     specSources: [{ url:'https://www.bhphotovideo.com/c/product/1861710-REG/x.html/specs', tier:'T3', title:'B&H - 7Artisans 9mm f/5.6 (Sony E) specs', note:'Sony E listing: f/5.6-22, 16/11, 5 blades, MFD 20cm, no filter thread, 70 x 86mm (diameter x length), 463g. Used because 7Artisans publishes most specs only as images', date:'2026-10-21' }, { url:'https://7artisans.store/products/9mm-f-5-6-full-frame-wide-angle-lens-for-e-l-r-z', tier:'T1', title:'7Artisans 9mm f/5.6 - official 7Artisans store', note:'rear ND filter system, no front thread. confirms the Sony E version, focal length and maximum aperture. Year: 2023 (store listing / other-brand entries)', date:'2026-10-21' }],
     priceSource: [
       { url:'https://www.bhphotovideo.com/c/product/1861710-REG/x.html', tier:'T3', title:'B&H - 7Artisans 9mm f/5.6 Lens (Sony E, Rear ND Filter)', note:'USD $479 -> $335: B&H price $335 with no strikethrough. Previously the 7artisans.store compare-at (Sony E variant "Sony E / ND64" regular (compare-at) price $479; on sale at $335.3 at the time). USD is the price a dealer actually charges (owner rule 2026-10-22); the maker store\'s compare-at is not used; non-USD not examined', date:'2026-10-22' },
-      { url:'https://7artisans.co.uk/products/9mm-5-6', tier:'T3', title:'7Artisans UK store', note:'GBP 450: 7Artisans UK store regular price (9mm f/5.6 Wide-Angle Lens, Sony E); on sale at 380, not used', date:'2026-11-21' },
+      { url:'https://7artisans.co.uk/products/9mm-5-6', tier:'T3', title:'7Artisans UK store', note:'GBP 380: 7Artisans UK store regular price (9mm f/5.6 Wide-Angle Lens, Sony E); store lists a compare-at price of 450 that it does not charge (more than 15% above the selling price), not used; replaces an earlier figure of 450', date:'2026-11-21' },
     ],
     priceIncomplete:true,
     productUrl:'https://7artisans.store/products/9mm-f-5-6-full-frame-wide-angle-lens-for-e-l-r-z',
@@ -6862,7 +6862,10 @@ const LENSES = {
     weatherSealed:false, ois:false, oisStops:null, year:2023, discontinued:false,
     imageUrl:'https://www.sigma-global.com/lenses/c023_50_2_product_img01.png',
     asin:null,
-    prices:{USD:719,AUD:1099,EUR:799,GBP:599,JPY:106000,CAD:899,SGD:999},
+    prices:{USD:719,AUD:1099,EUR:799,GBP:599,JPY:106000,CAD:949,SGD:999},
+    priceSource: [
+      { url:'https://www.sigmacanada.ca/products/50mm-f2-dg-dn-contemporary', tier:'T1', title:'Sigma Canada store', note:'CAD 949: Sigma Canada store regular price for the Sony E-Mount variant (on sale at 499.95, not used); replaces an earlier uncited figure of 899', date:'2026-11-21' },
+    ],
     productUrl:'https://www.sigma-global.com/en/lenses/c023_50_2/',
   },
   'sigma-50mm-f14-cl-dg': {

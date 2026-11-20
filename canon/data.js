@@ -1433,8 +1433,12 @@ const LENSES = {
     weatherSealed:false, ois:false, oisStops:null, year:2025, discontinued:false,
     imageUrl:'https://www.sigma-global.com/lenses/c017_16_14_product_img01.png',
     asin:'B0DNLPJQLW',
-    prices:{USD:539,AUD:799,EUR:599,GBP:399,JPY:75000,CAD:599,SGD:699},
-    priceSource: { url:'https://www.sigmaphoto.com/16mm-f1-4-dc-dn-c', tier:'T1', title:'Sigma Corporation of America store (Canon RF variant)', note:'USD $489 -> $539: $489 was the RF version\'s launch price; Sigma\'s own US store now lists the Canon RF variant at a regular price of $539 (on promo at $414); B&H\'s Canon RF listing (https://www.bhphotovideo.com/c/product/1825072-REG/sigma_16mm_f_1_4_dc_dn.html) shows the same $539 regular price. Same post-tariff figure as the Sony E variant. Non-USD not examined', date:'2026-10-10' },
+    prices:{USD:539,AUD:617,EUR:599,GBP:399,JPY:75000,CAD:649,SGD:699},
+    priceSource: [
+      { url:'https://www.sigmaphoto.com/16mm-f1-4-dc-dn-c', tier:'T1', title:'Sigma Corporation of America store (Canon RF variant)', note:'USD $489 -> $539: $489 was the RF version\'s launch price; Sigma\'s own US store now lists the Canon RF variant at a regular price of $539 (on promo at $414); B&H\'s Canon RF listing (https://www.bhphotovideo.com/c/product/1825072-REG/sigma_16mm_f_1_4_dc_dn.html) shows the same $539 regular price. Same post-tariff figure as the Sony E variant. Non-USD not examined', date:'2026-10-10' },
+      { url:'https://www.sigmacanada.ca/products/16mm-f1-4-dc-dn-contemporary', tier:'T1', title:'Sigma Canada store', note:'CAD 649: Sigma Canada store regular price for the Canon RF Mount variant; replaces an earlier uncited figure of 599', date:'2026-11-21' },
+      { url:'https://sigmaphoto.com.au/products/4402972/sigma-16mm-f-1-4-dc-dn-contemporary-lens-for-canon-rf-mount', tier:'T1', title:'Sigma Australia store', note:'AUD 617: Sigma Australia (official distributor) store price, no sale shown (Sigma 16mm f/1.4 DC DN Contemporary Lens for Canon RF Mount); replaces an earlier uncited figure of 799', date:'2026-11-21' },
+    ],
     productUrl:'https://www.sigma-global.com/en/lenses/c017_16_14/',
   },
 
@@ -1448,8 +1452,12 @@ const LENSES = {
     weatherSealed:true, ois:false, oisStops:null, year:2025, discontinued:false,
     imageUrl:'https://www.sigma-global.com/lenses/c025_12_14_product_img01.png',
     asin:'B0FML65PRM',
-    prices:{USD:629,AUD:999,EUR:699,GBP:599,JPY:97000,CAD:799,SGD:899},
-    priceSource: { url:'https://www.sigmaphoto.com/12mm-f1-4-dc-c', tier:'T1', title:'Sigma America official store', note:'Canon RF variant regular price $629 (on sale at $579 at the time, not used)', date:'2026-10-19' },
+    prices:{USD:629,AUD:1100,EUR:699,GBP:599,JPY:97000,CAD:829,SGD:899},
+    priceSource: [
+      { url:'https://www.sigmaphoto.com/12mm-f1-4-dc-c', tier:'T1', title:'Sigma America official store', note:'Canon RF variant regular price $629 (on sale at $579 at the time, not used)', date:'2026-10-19' },
+      { url:'https://www.sigmacanada.ca/products/12mm-f1-4-dc-contemporary', tier:'T1', title:'Sigma Canada store', note:'CAD 829: Sigma Canada store regular price for the Canon RF Mount variant (on sale at 629.95, not used); replaces an earlier uncited figure of 799', date:'2026-11-21' },
+      { url:'https://sigmaphoto.com.au/products/4416972/sigma-12mm-f-1-4-dc-lens-for-canon-rf-mount', tier:'T1', title:'Sigma Australia store', note:'AUD 1100: Sigma Australia (official distributor) store price, no sale shown (Sigma 12mm f/1.4 DC Lens for Canon RF Mount); replaces an earlier uncited figure of 999', date:'2026-11-21' },
+    ],
     productUrl:'https://www.sigma-global.com/en/lenses/c025_12_14/',
   },
 
@@ -1463,8 +1471,11 @@ const LENSES = {
     weatherSealed:true, ois:false, oisStops:null, year:2026, discontinued:false,
     imageUrl:'https://www.sigma-global.com/lenses/images/c026_15_14_product_img01.png',
     asin:'B0GQJ2Y8MR',
-    prices:{USD:579,AUD:899,EUR:699,GBP:499,JPY:90000,CAD:799,SGD:799},
-    priceSource: { url:'https://www.sigmaphoto.com/15mm-f1-4-dc-c', tier:'T1', title:'Sigma America official store', note:'Canon RF variant regular price $579 (on sale at $529 at the time, not used)', date:'2026-10-19' },
+    prices:{USD:579,AUD:899,EUR:699,GBP:499,JPY:90000,CAD:699,SGD:799},
+    priceSource: [
+      { url:'https://www.sigmaphoto.com/15mm-f1-4-dc-c', tier:'T1', title:'Sigma America official store', note:'Canon RF variant regular price $579 (on sale at $529 at the time, not used)', date:'2026-10-19' },
+      { url:'https://www.sigmacanada.ca/products/15mm-f1-4-dc-contemporary', tier:'T1', title:'Sigma Canada store', note:'CAD 699: Sigma Canada store regular price for the Canon RF Mount variant (on sale at 539.95, not used); replaces an earlier uncited figure of 799', date:'2026-11-21' },
+    ],
     productUrl:'https://www.sigma-global.com/en/lenses/c026_15_14/',
   },
 
@@ -1478,8 +1489,11 @@ const LENSES = {
     weatherSealed:false, ois:false, oisStops:null, year:2025, discontinued:false,
     imageUrl:'https://www.sigma-global.com/lenses/c023_23_14_product_img01.png',
     asin:'B0DNLBDKFG',
-    prices:{USD:659,AUD:899,EUR:699,GBP:499,JPY:92000,CAD:799,SGD:899},
-    priceSource: { url:'https://www.sigmaphoto.com/23mm-f1-4-dc-dn-c', tier:'T1', title:'Sigma Corporation of America store (Canon RF variant)', note:'USD $599 -> $659: $599 was the RF version\'s launch price; Sigma\'s own US store now lists the Canon RF variant at a regular price of $659 (on promo at $609); B&H\'s Canon RF listing (https://www.bhphotovideo.com/c/product/1825073-REG/sigma_23mm_f_1_4_dc_dn.html) showed $643, read as a discount off the same $659 regular price B&H shows for the Sony E variant; single clean source, approved by the owner. Same post-tariff figure as the Sony E variant. Non-USD not examined', date:'2026-10-10' },
+    prices:{USD:659,AUD:817,EUR:699,GBP:499,JPY:92000,CAD:799,SGD:899},
+    priceSource: [
+      { url:'https://www.sigmaphoto.com/23mm-f1-4-dc-dn-c', tier:'T1', title:'Sigma Corporation of America store (Canon RF variant)', note:'USD $599 -> $659: $599 was the RF version\'s launch price; Sigma\'s own US store now lists the Canon RF variant at a regular price of $659 (on promo at $609); B&H\'s Canon RF listing (https://www.bhphotovideo.com/c/product/1825073-REG/sigma_23mm_f_1_4_dc_dn.html) showed $643, read as a discount off the same $659 regular price B&H shows for the Sony E variant; single clean source, approved by the owner. Same post-tariff figure as the Sony E variant. Non-USD not examined', date:'2026-10-10' },
+      { url:'https://sigmaphoto.com.au/products/4348972/sigma-23mm-f-1-4-dc-dn-contemporary-lens-for-canon-rf-mount', tier:'T1', title:'Sigma Australia store', note:'AUD 817: Sigma Australia (official distributor) store price, no sale shown (Sigma 23mm f/1.4 DC DN Contemporary Lens for Canon RF Mount); replaces an earlier uncited figure of 899', date:'2026-11-21' },
+    ],
     productUrl:'https://www.sigma-global.com/en/lenses/c023_23_14/',
   },
 
@@ -1493,8 +1507,11 @@ const LENSES = {
     weatherSealed:false, ois:false, oisStops:null, year:2024, discontinued:false,
     imageUrl:'https://www.sigma-global.com/lenses/c016_30_14_product_img01.png',
     asin:'B0DNLQ7K4V',
-    prices:{USD:419,AUD:599,EUR:399,GBP:299,JPY:56000,CAD:499,SGD:499},
-    priceSource: { url:'https://www.sigmaphoto.com/30mm-f1-4-dc-dn-c', tier:'T1', title:'Sigma Corporation of America store (Canon RF variant)', note:'USD $369 -> $419: $369 was the RF version\'s launch price; Sigma\'s own US store now lists the Canon RF variant at a regular price of $419 (on promo at $344); B&H\'s Canon RF listing (https://www.bhphotovideo.com/c/product/1825074-REG/sigma_30mm_f_1_4_dc_dn.html) shows the same $419 regular price. Same post-tariff figure as the Sony E variant. Non-USD not examined', date:'2026-10-10' },
+    prices:{USD:419,AUD:494,EUR:399,GBP:299,JPY:56000,CAD:499,SGD:499},
+    priceSource: [
+      { url:'https://www.sigmaphoto.com/30mm-f1-4-dc-dn-c', tier:'T1', title:'Sigma Corporation of America store (Canon RF variant)', note:'USD $369 -> $419: $369 was the RF version\'s launch price; Sigma\'s own US store now lists the Canon RF variant at a regular price of $419 (on promo at $344); B&H\'s Canon RF listing (https://www.bhphotovideo.com/c/product/1825074-REG/sigma_30mm_f_1_4_dc_dn.html) shows the same $419 regular price. Same post-tariff figure as the Sony E variant. Non-USD not examined', date:'2026-10-10' },
+      { url:'https://sigmaphoto.com.au/products/4302972/sigma-30mm-f-1-4-dc-dn-contemporary-lens-for-canon-rf-mount', tier:'T1', title:'Sigma Australia store', note:'AUD 494: Sigma Australia (official distributor) store price, no sale shown (Sigma 30mm f/1.4 DC DN Contemporary Lens for Canon RF Mount); replaces an earlier uncited figure of 599', date:'2026-11-21' },
+    ],
     productUrl:'https://www.sigma-global.com/en/lenses/c016_30_14/',
   },
 
@@ -1508,8 +1525,11 @@ const LENSES = {
     weatherSealed:false, ois:false, oisStops:null, year:2024, discontinued:false,
     imageUrl:'https://www.sigma-global.com/lenses/c018_56_14_product_img01.png',
     asin:'B0DNKF79MC',
-    prices:{USD:579,AUD:799,EUR:599,GBP:499,JPY:80000,CAD:699,SGD:799},
-    priceSource: { url:'https://www.sigmaphoto.com/56mm-f1-4-dc-dn-c', tier:'T1', title:'Sigma Corporation of America store (Canon RF variant)', note:'USD $529 -> $579: $529 was the RF version\'s launch price; Sigma\'s own US store now lists the Canon RF variant at a regular price of $579 (on promo at $454); B&H\'s Canon RF listing (https://www.bhphotovideo.com/c/product/1825075-REG/sigma_56mm_f_1_4_dc_dn.html) shows the same $579 regular price. Same post-tariff figure as the Sony E variant. Non-USD not examined', date:'2026-10-10' },
+    prices:{USD:579,AUD:646,EUR:599,GBP:499,JPY:80000,CAD:699,SGD:799},
+    priceSource: [
+      { url:'https://www.sigmaphoto.com/56mm-f1-4-dc-dn-c', tier:'T1', title:'Sigma Corporation of America store (Canon RF variant)', note:'USD $529 -> $579: $529 was the RF version\'s launch price; Sigma\'s own US store now lists the Canon RF variant at a regular price of $579 (on promo at $454); B&H\'s Canon RF listing (https://www.bhphotovideo.com/c/product/1825075-REG/sigma_56mm_f_1_4_dc_dn.html) shows the same $579 regular price. Same post-tariff figure as the Sony E variant. Non-USD not examined', date:'2026-10-10' },
+      { url:'https://sigmaphoto.com.au/products/4351972/sigma-56mm-f-1-4-dc-dn-contemporary-lens-for-canon-rf-mount', tier:'T1', title:'Sigma Australia store', note:'AUD 646: Sigma Australia (official distributor) store price, no sale shown (Sigma 56mm f/1.4 DC DN Contemporary Lens for Canon RF Mount); replaces an earlier uncited figure of 799', date:'2026-11-21' },
+    ],
     productUrl:'https://www.sigma-global.com/en/lenses/c018_56_14/',
   },
 
@@ -1523,8 +1543,12 @@ const LENSES = {
     weatherSealed:false, ois:false, oisStops:null, year:2024, discontinued:false,
     imageUrl:'https://www.sigma-global.com/lenses/c023_10_18_28_product_img01.png',
     asin:'B0GYFLG5HG',
-    prices:{USD:729,AUD:999,EUR:799,GBP:599,JPY:100000,CAD:899,SGD:999},
-    priceSource: { url:'https://www.sigmaphoto.com/10-18mm-f2-8-dc-dn-c', tier:'T1', title:'Sigma Corporation of America store (Canon RF variant)', note:'USD $659 -> $729: $659 was the RF version\'s launch price; Sigma\'s own US store now lists the Canon RF variant at a regular price of $729; B&H\'s Canon RF listing (https://www.bhphotovideo.com/c/product/1825071-REG/sigma_10_18mm_f_2_8_dc_dn.html) shows the same $729 regular price. Same post-tariff figure as the Sony E variant. Non-USD not examined', date:'2026-10-10' },
+    prices:{USD:729,AUD:1240,EUR:799,GBP:599,JPY:100000,CAD:949,SGD:999},
+    priceSource: [
+      { url:'https://www.sigmaphoto.com/10-18mm-f2-8-dc-dn-c', tier:'T1', title:'Sigma Corporation of America store (Canon RF variant)', note:'USD $659 -> $729: $659 was the RF version\'s launch price; Sigma\'s own US store now lists the Canon RF variant at a regular price of $729; B&H\'s Canon RF listing (https://www.bhphotovideo.com/c/product/1825071-REG/sigma_10_18mm_f_2_8_dc_dn.html) shows the same $729 regular price. Same post-tariff figure as the Sony E variant. Non-USD not examined', date:'2026-10-10' },
+      { url:'https://www.sigmacanada.ca/products/10-18mm-f2-8-dc-dn-contemporary', tier:'T1', title:'Sigma Canada store', note:'CAD 949: Sigma Canada store regular price for the Canon RF Mount variant (on sale at 849.95, not used); replaces an earlier uncited figure of 899', date:'2026-11-21' },
+      { url:'https://sigmaphoto.com.au/products/4207972/sigma-10-18mm-f-2-8-dc-dn-contemporary-lens-for-canon-rf-mount', tier:'T1', title:'Sigma Australia store', note:'AUD 1240: Sigma Australia (official distributor) store price, no sale shown (Sigma 10-18mm f/2.8 DC DN Contemporary Lens for Canon RF Mount); replaces an earlier uncited figure of 999', date:'2026-11-21' },
+    ],
     productUrl:'https://www.sigma-global.com/en/lenses/c023_10_18_28/',
   },
 
@@ -1538,8 +1562,12 @@ const LENSES = {
     weatherSealed:false, ois:false, oisStops:null, year:2024, discontinued:false,
     imageUrl:'https://www.sigma-global.com/lenses/c021_18_50_28_product_img01.png',
     asin:'B0D81586GK',
-    prices:{USD:659,AUD:899,EUR:699,GBP:499,JPY:90000,CAD:799,SGD:899},
-    priceSource: { url:'https://www.sigmaphoto.com/18-50mm-f2-8-dc-dn-c', tier:'T1', title:'Sigma Corporation of America store (Canon RF variant)', note:'USD $599 -> $659: $599 was the RF version\'s launch price; Sigma\'s own US store now lists the Canon RF variant at a regular price of $659; B&H\'s Canon RF listing (https://www.bhphotovideo.com/c/product/1825070-REG/sigma_18_50mm_f_2_8_dc_dn.html) shows $659. Same post-tariff figure as the Sony E variant. Non-USD not examined', date:'2026-10-10' },
+    prices:{USD:659,AUD:807,EUR:699,GBP:499,JPY:90000,CAD:829,SGD:899},
+    priceSource: [
+      { url:'https://www.sigmaphoto.com/18-50mm-f2-8-dc-dn-c', tier:'T1', title:'Sigma Corporation of America store (Canon RF variant)', note:'USD $599 -> $659: $599 was the RF version\'s launch price; Sigma\'s own US store now lists the Canon RF variant at a regular price of $659; B&H\'s Canon RF listing (https://www.bhphotovideo.com/c/product/1825070-REG/sigma_18_50mm_f_2_8_dc_dn.html) shows $659. Same post-tariff figure as the Sony E variant. Non-USD not examined', date:'2026-10-10' },
+      { url:'https://www.sigmacanada.ca/products/18-50mm-f2-8-dc-dn-contemporary', tier:'T1', title:'Sigma Canada store', note:'CAD 829: Sigma Canada store regular price for the Canon RF Mount variant (on sale at 699.95, not used); replaces an earlier uncited figure of 799', date:'2026-11-21' },
+      { url:'https://sigmaphoto.com.au/products/4585972/sigma-18-50mm-f-2-8-dc-dn-contemporary-lens-for-canon-rf-mount', tier:'T1', title:'Sigma Australia store', note:'AUD 807: Sigma Australia (official distributor) store price, no sale shown (Sigma 18-50mm f/2.8 DC DN Contemporary Lens for Canon RF Mount); replaces an earlier uncited figure of 899', date:'2026-11-21' },
+    ],
     productUrl:'https://www.sigma-global.com/en/lenses/c021_18_50_28/',
   },
 
@@ -1573,8 +1601,12 @@ const LENSES = {
     weatherSealed:true, ois:false, oisStops:null, year:2025, discontinued:false,
     imageUrl:'https://www.sigma-global.com/lenses/a025_17_40_18_product_img01.png',
     asin:'B0FDH65ZJD',
-    prices:{USD:919,AUD:1399,EUR:1099,GBP:799,JPY:142000,CAD:1199,SGD:1299},
-    priceSource: { url:'https://www.sigmaphoto.com/17-40mm-f1-8-dc-a', tier:'T1', title:'Sigma America official store', note:'Canon RF variant regular price $919', date:'2026-10-19' },
+    prices:{USD:919,AUD:1650,EUR:1099,GBP:799,JPY:142000,CAD:1249,SGD:1299},
+    priceSource: [
+      { url:'https://www.sigmaphoto.com/17-40mm-f1-8-dc-a', tier:'T1', title:'Sigma America official store', note:'Canon RF variant regular price $919', date:'2026-10-19' },
+      { url:'https://www.sigmacanada.ca/products/17-40mm-f1-8-dc-art', tier:'T1', title:'Sigma Canada store', note:'CAD 1249: Sigma Canada store regular price for the Canon RF Mount variant; replaces an earlier uncited figure of 1199', date:'2026-11-21' },
+      { url:'https://sigmaphoto.com.au/products/4214972/sigma-17-40mm-f-1-8-dc-art-lens-for-canon-rf-mount', tier:'T1', title:'Sigma Australia store', note:'AUD 1650: Sigma Australia (official distributor) store price, no sale shown (Sigma 17-40mm f/1.8 DC Art Lens for Canon RF Mount); replaces an earlier uncited figure of 1399', date:'2026-11-21' },
+    ],
     productUrl:'https://www.sigma-global.com/en/lenses/a025_17_40_18/',
   },
 
@@ -1588,8 +1620,11 @@ const LENSES = {
     weatherSealed:true, ois:true, oisStops:6, year:2025, discontinued:false,
     imageUrl:'https://www.sigma-global.com/lenses/c025_16_300_35_67_product_img01.png',
     asin:'B0DY97V8YH',
-    prices:{USD:769,AUD:1199,EUR:899,GBP:699,JPY:118000,CAD:999,SGD:1099},
-    priceSource: { url:'https://www.sigmaphoto.com/16-300mm-f3-5-6-7-dc-os-c', tier:'T1', title:'Sigma America official store', note:'Canon RF variant regular price $769 (on sale at $694 at the time, not used)', date:'2026-10-19' },
+    prices:{USD:769,AUD:1400,EUR:899,GBP:699,JPY:118000,CAD:999,SGD:1099},
+    priceSource: [
+      { url:'https://www.sigmaphoto.com/16-300mm-f3-5-6-7-dc-os-c', tier:'T1', title:'Sigma America official store', note:'Canon RF variant regular price $769 (on sale at $694 at the time, not used)', date:'2026-10-19' },
+      { url:'https://sigmaphoto.com.au/products/4887972/sigma-16-300mm-f-3-5-6-7-dc-os-contemporary-lens-for-canon-rf-mount', tier:'T1', title:'Sigma Australia store', note:'AUD 1400: Sigma Australia (official distributor) store price, no sale shown (Sigma 16-300mm f/3.5-6.7 DC OS Contemporary Lens for Canon RF Mount); replaces an earlier uncited figure of 1199', date:'2026-11-21' },
+    ],
     productUrl:'https://www.sigma-global.com/en/lenses/c025_16_300_35_67/',
   },
 
@@ -1771,8 +1806,11 @@ const LENSES = {
     imageUrl:'https://laowa.com.au/wp-content/uploads/2022/06/DSC_6447-768x512.png',
     imageSource: { url:'https://laowa.com.au/product/90mm/', tier:'T1', title:'Laowa Australia (official regional site)', note:'lens alone, front three-quarter view. Replaced the venuslens.net image 2026-10-19: its Cloudflare serves a bot challenge instead of the image, so embedded requests fail in real browsers too', date:'2026-10-19' },
     asin:'B0B347B7CJ',
-    prices:{USD:499,AUD:799,EUR:599,GBP:399,JPY:70000,CAD:599,SGD:699},
-    priceSource: { url:'https://www.venuslens.net/product/laowa-90mm-f-2-8-2x-macro-apo/', tier:'T1', title:'Laowa (Venus Optics) official store', note:'Canon RF variation regular $499 (store API, read in a browser)', date:'2026-10-19' },
+    prices:{USD:499,AUD:939,EUR:599,GBP:399,JPY:70000,CAD:599,SGD:699},
+    priceSource: [
+      { url:'https://www.venuslens.net/product/laowa-90mm-f-2-8-2x-macro-apo/', tier:'T1', title:'Laowa (Venus Optics) official store', note:'Canon RF variation regular $499 (store API, read in a browser)', date:'2026-10-19' },
+      { url:'https://laowa.com.au/product/90mm/', tier:'T1', title:'Laowa Australia store', note:'AUD 939: Laowa Australia store regular price (Laowa 90mm f/2.8 2x Ultra Macro APO); on sale at 798, not used; replaces an earlier uncited figure of 799', date:'2026-11-21' },
+    ],
     productUrl:'https://www.venuslens.net/product/laowa-90mm-f-2-8-2x-macro-apo/',
   },
 
@@ -1801,8 +1839,11 @@ const LENSES = {
     weatherSealed:false, ois:false, oisStops:null, year:2020, discontinued:false,
     imageUrl:'https://laowa.com.au/wp-content/uploads/2019/05/LAOWA-100mm-Macro.jpg',
     asin:'B0851QX7X5',
-    prices:{USD:499,AUD:799,EUR:599,GBP:399,JPY:60000,CAD:599,SGD:699},
-    priceSource: { url:'https://www.venuslens.net/product/laowa-100mm-f-2-8-2x-macro-apo/', tier:'T1', title:'Laowa (Venus Optics) official store', note:'Canon RF variation regular $499 (store API, read in a browser)', date:'2026-10-19' },
+    prices:{USD:499,AUD:939,EUR:599,GBP:399,JPY:60000,CAD:599,SGD:699},
+    priceSource: [
+      { url:'https://www.venuslens.net/product/laowa-100mm-f-2-8-2x-macro-apo/', tier:'T1', title:'Laowa (Venus Optics) official store', note:'Canon RF variation regular $499 (store API, read in a browser)', date:'2026-10-19' },
+      { url:'https://laowa.com.au/product/100mmapo/', tier:'T1', title:'Laowa Australia store', note:'AUD 939: Laowa Australia store regular price (LAOWA 100mm f2.8 2:1 APO Ultra-Macro Lens); on sale at 798, not used; replaces an earlier uncited figure of 799', date:'2026-11-21' },
+    ],
     productUrl:'https://www.venuslens.net/product/laowa-100mm-f-2-8-2x-macro-apo/',
   },
 
@@ -1833,8 +1874,11 @@ const LENSES = {
     imageUrl:'https://laowa.com.au/wp-content/uploads/2022/07/1040-RF-04-510x340.png',
     imageSource: { url:'https://laowa.com.au/product/cookie/', tier:'T1', note:'official Laowa Australia (Venus Optics) product page, "Canon RF" is a selectable mount option (SKU VE1040) and this default gallery image shows the lens mounted on an actual Canon EOS R6 body with "Canon" branding legible', date:'2026-08-17' },
     asin:'B0B7BG44XP',
-    prices:{USD:299,AUD:499,EUR:299,GBP:299,JPY:42000,CAD:399,SGD:399},
-    priceSource: { url:'https://www.venuslens.net/product/laowa-10mm-f-4-cookie/', tier:'T1', title:'Laowa (Venus Optics) official store', note:'Canon RF / Black variation regular $299 (store API, read in a browser)', date:'2026-10-19' },
+    prices:{USD:299,AUD:555,EUR:299,GBP:299,JPY:42000,CAD:399,SGD:399},
+    priceSource: [
+      { url:'https://www.venuslens.net/product/laowa-10mm-f-4-cookie/', tier:'T1', title:'Laowa (Venus Optics) official store', note:'Canon RF / Black variation regular $299 (store API, read in a browser)', date:'2026-10-19' },
+      { url:'https://laowa.com.au/product/cookie/', tier:'T1', title:'Laowa Australia store', note:'AUD 555: Laowa Australia store regular price (Laowa 10mm f/4 Cookie); replaces an earlier uncited figure of 499', date:'2026-11-21' },
+    ],
     productUrl:'https://www.venuslens.net/product/laowa-10mm-f-4-cookie/',
   },
 
@@ -2133,8 +2177,11 @@ const LENSES = {
     imageUrl:'https://7artisans.store/cdn/shop/files/1_db9d8e0b-ae96-4b07-96e3-bcc94c217e33.jpg',
     imageSource: { url:'https://7artisans.store/products/9mm-f-5-6-full-frame-wide-angle-lens-for-e-l-r-z', tier:'T1', note:'official 7Artisans store page ("MF 9mm f/5.6...for E/L/R/Z"), barrel reads "7Artisans 9mm F5.6"; "Canon EOS-R" is a selectable mount option. No mount-specific marking visible (front barrel is mount-agnostic for this manual lens), accepted since nothing in the image contradicts confirmed RF availability', date:'2026-08-17' },
     asin:'B0CHNR1GH2',
-    prices:{USD:335,AUD:499,EUR:399,GBP:299,JPY:52000,CAD:399,SGD:499},
-    priceSource: { url:'https://www.bhphotovideo.com/c/product/1861712-REG/x.html', tier:'T3', title:'B&H - 7Artisans 9mm f/5.6 Lens (Canon RF, Rear ND Filter)', note:'USD $479 -> $335: B&H price $335 with no strikethrough. Previously the 7artisans.store compare-at (Canon EOS-R / ND64 variant regular price $479 = compare-at (sold only with an ND filter; no lens-only variant); on sale at $335.30 at the time. Was $335 (the sale price) in the data; regular price used per the owner\'s 2026-10-19 rule). USD is the price a dealer actually charges (owner rule 2026-10-22); the maker store\'s compare-at is not used; non-USD not examined', date:'2026-10-22' },
+    prices:{USD:335,AUD:499,EUR:399,GBP:380,JPY:52000,CAD:399,SGD:499},
+    priceSource: [
+      { url:'https://www.bhphotovideo.com/c/product/1861712-REG/x.html', tier:'T3', title:'B&H - 7Artisans 9mm f/5.6 Lens (Canon RF, Rear ND Filter)', note:'USD $479 -> $335: B&H price $335 with no strikethrough. Previously the 7artisans.store compare-at (Canon EOS-R / ND64 variant regular price $479 = compare-at (sold only with an ND filter; no lens-only variant); on sale at $335.30 at the time. Was $335 (the sale price) in the data; regular price used per the owner\'s 2026-10-19 rule). USD is the price a dealer actually charges (owner rule 2026-10-22); the maker store\'s compare-at is not used; non-USD not examined', date:'2026-10-22' },
+      { url:'https://7artisans.co.uk/products/9mm-5-6', tier:'T3', title:'7Artisans UK store', note:'GBP 380: 7Artisans UK store regular price (9mm f/5.6 Wide-Angle Lens, Canon EOS-R); store lists a compare-at price of 450 that it does not charge (more than 15% above the selling price), not used; replaces an earlier figure of 299', date:'2026-11-21' },
+    ],
     productUrl:'https://7artisans.store/products/9mm-f-5-6-full-frame-wide-angle-lens-for-e-l-r-z',
   },
 
@@ -2148,8 +2195,11 @@ const LENSES = {
     imageUrl:'https://7artisans.store/cdn/shop/files/1_2b22d3ad-5e41-4177-a47f-2c8bbbc19d6a.jpg',
     imageSource: { url:'https://7artisans.store/products/10mm-f-2-8-ii-ultra-wide-angle-full-frame-fisheye-lens-for-e-l-r-z-1', tier:'T1', note:'official 7Artisans store page ("MF 10mm f/2.8 Mark II...for E/L/R/Z"), barrel reads "10mm 1:2.8 Fish-Eye ED / 7Artisans"; "Canon EOS-R" is a selectable mount option. No mount-specific marking visible (front barrel is mount-agnostic for this manual lens), accepted since nothing in the image contradicts confirmed RF availability', date:'2026-08-17' },
     asin:'B0DK1SJ4Q6',
-    prices:{USD:278,AUD:399,EUR:299,GBP:299,JPY:42000,CAD:399,SGD:399},
-    priceSource: { url:'https://7artisans.store/products/10mm-f-2-8-ii-ultra-wide-angle-full-frame-fisheye-lens-for-e-l-r-z-1', tier:'T1', title:'7Artisans official store', note:'Canon EOS-R variant $278, no sale', date:'2026-10-19' },
+    prices:{USD:278,AUD:399,EUR:299,GBP:265,JPY:42000,CAD:399,SGD:399},
+    priceSource: [
+      { url:'https://7artisans.store/products/10mm-f-2-8-ii-ultra-wide-angle-full-frame-fisheye-lens-for-e-l-r-z-1', tier:'T1', title:'7Artisans official store', note:'Canon EOS-R variant $278, no sale', date:'2026-10-19' },
+      { url:'https://7artisans.co.uk/products/10mm-f-2-8-mk-ii', tier:'T3', title:'7Artisans UK store', note:'GBP 265: 7Artisans UK store regular price (10mm f/2.8 MK II, Canon EOS-R Mount); replaces an earlier figure of 299', date:'2026-11-21' },
+    ],
     productUrl:'https://7artisans.store/products/10mm-f-2-8-ii-ultra-wide-angle-full-frame-fisheye-lens-for-e-l-r-z-1',
   },
 
