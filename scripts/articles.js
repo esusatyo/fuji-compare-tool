@@ -91,6 +91,13 @@ function makeKit(page) {
       const target = href.split('#')[0] || href;
       return `<a href="../${href}" data-goatcounter-click="${page.event}:${page.slug}:${esc(target)}" data-goatcounter-title="${page.label} link: ${esc(text.replace(/<[^>]+>/g, ''))}">${text}</a>`;
     },
+    // A primary source outside the site (the maker's spec page, a press
+    // release). Opens in a new tab; counted as `<event>:<slug>:source:<host>`.
+    src(url, text) {
+      if (!/^https:\/\//.test(url)) throw new Error(`${page.url}: a source must be an https URL, got "${url}"`);
+      const host = new URL(url).hostname.replace(/^www\./, '');
+      return `<a href="${esc(url)}" target="_blank" rel="noopener" data-goatcounter-click="${page.event}:${page.slug}:source:${esc(host)}" data-goatcounter-title="${page.label} source: ${esc(host)}">${text}</a>`;
+    },
     // head: column labels; rows: arrays of cell HTML; the `rowHeader` column
     // becomes <th scope="row">.
     table(head, rows, { rowHeader = 0, caption = '' } = {}) {
