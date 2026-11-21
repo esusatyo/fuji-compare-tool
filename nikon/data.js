@@ -1569,10 +1569,11 @@ const LENSES = {
     weatherSealed:false, ois:false, oisStops:null, year:2023, discontinued:false,
     imageUrl:'https://www.sigma-global.com/lenses/c016_30_14_product_img01.png',
     asin:'B0C1KNW8ND',
-    prices:{USD:419,AUD:null,EUR:409,GBP:null,JPY:null,CAD:599,SGD:null},
+    prices:{USD:419,AUD:null,EUR:409,GBP:359,JPY:null,CAD:599,SGD:null},
     priceSource: [
       { url:'https://www.sigmacanada.ca/products/30mm-f1-4-dc-dn-contemporary', tier:'T1', title:'Sigma Canada store', note:'CAD 599: Sigma Canada store regular price for the Nikon Z Mount variant', date:'2026-11-21' },
       { url:'https://www.sigma-foto.de/30mm-f1-4-dc-dn-c', tier:'T1', title:'Sigma Germany store', note:'EUR 409: Sigma Germany official store regular price (Nikon Z variant)', date:'2026-11-21' },
+      { url:'https://www.wexphotovideo.com/sigma-30mm-f1-4-dc-dn-contemporary-lens-for-nikon-z-3091839/', tier:'T3', title:'Wex Photo Video (UK)', note:'GBP 359: Wex Photo Video price, no sale shown (sigma-30mm-f1-4-dc-dn-contemporary-lens-for-nikon-z)', date:'2026-11-21' },
     ],
     priceIncomplete:true,
     productUrl:'https://www.sigma-global.com/en/lenses/c016_30_14/',
@@ -1588,10 +1589,11 @@ const LENSES = {
     weatherSealed:false, ois:false, oisStops:null, year:2023, discontinued:false,
     imageUrl:'https://www.sigma-global.com/lenses/c018_56_14_product_img01.png',
     asin:'B0C1L1XN3J',
-    prices:{USD:559,AUD:null,EUR:519,GBP:null,JPY:null,CAD:749,SGD:null},
+    prices:{USD:559,AUD:null,EUR:519,GBP:459,JPY:null,CAD:749,SGD:null},
     priceSource: [
       { url:'https://www.sigmacanada.ca/products/56mm-f1-4-dc-dn-contemporary', tier:'T1', title:'Sigma Canada store', note:'CAD 749: Sigma Canada store regular price for the Nikon Z Mount variant (on sale at 439.95, not used)', date:'2026-11-21' },
       { url:'https://www.sigma-foto.de/56mm-f1-4-dc-dn-c', tier:'T1', title:'Sigma Germany store', note:'EUR 519: Sigma Germany official store regular price (Nikon Z variant)', date:'2026-11-21' },
+      { url:'https://www.wexphotovideo.com/sigma-56mm-f1-4-dc-dn-contemporary-lens-for-nikon-z-3091840/', tier:'T3', title:'Wex Photo Video (UK)', note:'GBP 459: Wex Photo Video price, no sale shown (sigma-56mm-f1-4-dc-dn-contemporary-lens-for-nikon-z)', date:'2026-11-21' },
     ],
     priceIncomplete:true,
     productUrl:'https://www.sigma-global.com/en/lenses/c018_56_14/',
@@ -1630,9 +1632,10 @@ const LENSES = {
     imageUrl:'https://viltrox.com/cdn/shop/files/AF_13mm_F1.4_Z_e9851952-426c-4703-9f6b-6f852d5db7ce-869298.png',
     imageSource: { url:'https://viltrox.com/products/af-13mmf14-z-mount-aps-c-prime-lens-for-nikon-z', tier:'T1', note:'official Viltrox store page, barrel explicitly reads "AF 13/1.4 Z"', date:'2026-08-17' },
     asin:'B0BF9M4LM2',
-    prices:{USD:486,AUD:null,EUR:510,GBP:null,JPY:null,CAD:null,SGD:null},
+    prices:{USD:486,AUD:null,EUR:510,GBP:440,JPY:null,CAD:null,SGD:null},
     priceSource: [
       { url:'https://www.calumet.de/product/viltrox-13mm-f1-4-af-apsc-fuer-nikon-z-mount', tier:'T3', title:'Calumet Germany', note:'EUR 510.43: manufacturer UVP printed by Calumet for Viltrox 13mm F1.4 AF APSC für Nikon Z-Mount ; Calumet sells at 443.84, not used', date:'2026-11-21' },
+      { url:'https://www.wexphotovideo.com/viltrox-af-13mm-f1-4-stm-lens-for-nikon-z-3136637/', tier:'T3', title:'Wex Photo Video (UK)', note:'GBP 440: Wex Photo Video price, no sale shown (viltrox-af-13mm-f1-4-stm-lens-for-nikon-z)', date:'2026-11-21' },
     ],
     priceIncomplete:true, productUrl:null,
   },
@@ -1647,9 +1650,10 @@ const LENSES = {
     imageUrl:'https://viltrox.com/cdn/shop/files/AF16mm_F1.8_Z-924956.png',
     imageSource: { url:'https://viltrox.com/products/viltrox-af-16mm-f1-8-z', tier:'T1', note:'official Viltrox store page, barrel explicitly reads "AF 16/1.8 Z"', date:'2026-08-17' },
     asin:'B0D3LT5TK7',
-    prices:{USD:580,AUD:null,EUR:589,GBP:null,JPY:null,CAD:null,SGD:null},
+    prices:{USD:580,AUD:null,EUR:589,GBP:533,JPY:null,CAD:null,SGD:null},
     priceSource: [
       { url:'https://www.calumet.de/product/viltrox-16mm-f1-8-af-nikon-z-mount', tier:'T3', title:'Calumet Germany', note:'EUR 589.1: manufacturer UVP printed by Calumet for Viltrox 16mm F1.8 AF Nikon Z-Mount; Calumet sells at 496.07, not used', date:'2026-11-21' },
+      { url:'https://www.wexphotovideo.com/viltrox-af-16mm-f1-8-lens-for-nikon-z-3169670/', tier:'T3', title:'Wex Photo Video (UK)', note:'GBP 533: Wex Photo Video price, no sale shown (viltrox-af-16mm-f1-8-lens-for-nikon-z)', date:'2026-11-21' },
     ],
     specSources: [{ url:'https://viltrox.com/products/viltrox-af-16mm-f1-8-z', tier:'T1', title:'Viltrox - AF 16mm F1.8 (Nikon Z)', note:'The E/Z page claims only an "Efficient Dust-proof Structure" (no moisture or splash resistance); the L version is marketed as weather sealed. Stored values confirmed.', date:'2026-11-07' }],
     priceIncomplete:true, productUrl:null,
@@ -1683,7 +1687,10 @@ const LENSES = {
     imageUrl:'https://viltrox.com/cdn/shop/files/AF33mm_F1.4_Z-683315.png',
     imageSource: { url:'https://viltrox.com/products/viltrox-af-33mm-f1-4-aps-c-lens-for-nikon-z-mount', tier:'T1', note:'official Viltrox store page, barrel explicitly reads "AF 33/1.4 Z" and "Z-mount"', date:'2026-08-17' },
     asin:'B09DCYLR5L',
-    prices:{USD:239,AUD:null,EUR:null,GBP:null,JPY:null,CAD:null,SGD:null},
+    prices:{USD:239,AUD:null,EUR:null,GBP:279,JPY:null,CAD:null,SGD:null},
+    priceSource: [
+      { url:'https://www.wexphotovideo.com/viltrox-af-33mm-f1-4-stm-lens-for-nikon-z-3136635/', tier:'T3', title:'Wex Photo Video (UK)', note:'GBP 279: Wex Photo Video price, no sale shown (viltrox-af-33mm-f1-4-stm-lens-for-nikon-z)', date:'2026-11-21' },
+    ],
     priceIncomplete:true, productUrl:null,
   },
 
@@ -1806,7 +1813,10 @@ const LENSES = {
     imageUrl:'https://viltrox.com/cdn/shop/files/AF25mmF1.7Z8_f02ff988-cb8a-43aa-b012-af493494b169.png',
     imageSource: { url:'https://viltrox.com/products/af-25mm-f1-7-z', tier:'T1', note:'official Viltrox store page, spec dialog reads "AF 25/1.7 Air Z"', date:'2026-08-30' },
     asin:'B0G3GZK7BM',
-    prices:{USD:176,AUD:null,EUR:null,GBP:null,JPY:null,CAD:null,SGD:null},
+    prices:{USD:176,AUD:null,EUR:null,GBP:165,JPY:null,CAD:null,SGD:null},
+    priceSource: [
+      { url:'https://www.wexphotovideo.com/viltrox-af-25mm-f1-7-air-aps-c-lens-for-nikon-z-3236731/', tier:'T3', title:'Wex Photo Video (UK)', note:'GBP 165: Wex Photo Video price, no sale shown (viltrox-af-25mm-f1-7-air-aps-c-lens-for-nikon-z)', date:'2026-11-21' },
+    ],
     priceIncomplete:true, productUrl:'https://viltrox.com/products/af-25mm-f1-7-z',
   },
 
@@ -1834,7 +1844,10 @@ const LENSES = {
     imageUrl:'https://viltrox.com/cdn/shop/files/AF23mm_F1.4_Z-111561.png',
     imageSource: { url:'https://viltrox.com/products/viltrox-af-23mm-f1-4-aps-c-lens-for-nikon-z-mount', tier:'T1', note:'official Viltrox store page, Z-mount-specific spec table (comparison table separates E/Z/X mounts)', date:'2026-08-30' },
     asin:'B0FBGKSJKS',
-    prices:{USD:239,AUD:null,EUR:null,GBP:null,JPY:null,CAD:null,SGD:null},
+    prices:{USD:239,AUD:null,EUR:null,GBP:229,JPY:null,CAD:null,SGD:null},
+    priceSource: [
+      { url:'https://www.wexphotovideo.com/viltrox-af-23mm-f1-4-stm-lens-for-nikon-z-3136634/', tier:'T3', title:'Wex Photo Video (UK)', note:'GBP 229: Wex Photo Video price, no sale shown (viltrox-af-23mm-f1-4-stm-lens-for-nikon-z)', date:'2026-11-21' },
+    ],
     priceIncomplete:true, productUrl:'https://viltrox.com/products/viltrox-af-23mm-f1-4-aps-c-lens-for-nikon-z-mount',
   },
 
@@ -1904,10 +1917,11 @@ const LENSES = {
     specSources: [
       { url:'https://www.tamron.com/global/consumer/lenses/b070/spec.html', tier:'T1', note:'Nikon-Z-specific spec table: weight 540g / length 121.3mm — corrected from a stored 525g/119.3mm that matched the Sony E-mount column on the same page, not the Nikon Z column.', date:'2026-08-29' },
     ],
-    prices:{USD:749,AUD:null,EUR:649,GBP:null,JPY:null,CAD:949,SGD:null},
+    prices:{USD:749,AUD:null,EUR:649,GBP:549,JPY:null,CAD:949,SGD:null},
     priceSource: [
       { url:'https://tamron-americas.com/product/17-70mm-f-2-8-di-iii-a-vc-rxd/', tier:'T1', title:'Tamron Americas store (Canada price)', note:'CAD 949: Tamron Americas regular Canadian price for the Nikon Z mount (on sale at 899, not used)', date:'2026-11-21' },
       { url:'https://www.calumet.de/product/tamron-17-70mm-f2-8-di-iii-a-vc-rxd-fuer-nikon-z-mount', tier:'T3', title:'Calumet Germany', note:'EUR 649: Calumet regular price for Tamron 17-70mm F2.8 Di III-A VC RXD für Nikon Z-Mount (no UVP or sale shown)', date:'2026-11-21' },
+      { url:'https://www.wexphotovideo.com/tamron-17-70mm-f2-8-di-iii-a-vc-rxd-lens-for-nikon-z-3340054/', tier:'T3', title:'Wex Photo Video (UK)', note:'GBP 549: Wex Photo Video price, no sale shown (tamron-17-70mm-f2-8-di-iii-a-vc-rxd-lens-for-nikon-z)', date:'2026-11-21' },
     ],
     priceIncomplete:true,
     productUrl:'https://tamron-americas.com/product/17-70mm-f-2-8-di-iii-a-vc-rxd/',
@@ -1922,10 +1936,11 @@ const LENSES = {
     elements:19, groups:15, blades:7, afType:'Linear Motor',
     weatherSealed:true, ois:true, oisStops:null, year:2025, discontinued:false,
     imageUrl:null, asin:'B0FLPZ2YFQ',
-    prices:{USD:629,AUD:null,EUR:599,GBP:null,JPY:null,CAD:849,SGD:null},
+    prices:{USD:629,AUD:null,EUR:599,GBP:529,JPY:null,CAD:849,SGD:null},
     priceSource: [
       { url:'https://tamron-americas.com/product/18-300mm-f-3-5-6-3-di-iii-a-vc-vxd/', tier:'T1', title:'Tamron Americas store (Canada price)', note:'CAD 849: Tamron Americas regular Canadian price for the Nikon Z mount (on sale at 799, not used)', date:'2026-11-21' },
       { url:'https://www.calumet.de/product/tamron-18-300mm-f3-5-6-3-di-iii-a-vc-vxd-fuer-nikon-z-mount', tier:'T3', title:'Calumet Germany', note:'EUR 599: Calumet regular price for Tamron 18-300mm F3.5-6.3 Di III-A VC VXD für Nikon Z-Mount (no UVP or sale shown)', date:'2026-11-21' },
+      { url:'https://www.wexphotovideo.com/tamron-18-300mm-f3-5-6-3-di-iii-a-vc-vxd-lens-for-nikon-z-3248696/', tier:'T3', title:'Wex Photo Video (UK)', note:'GBP 529: Wex Photo Video regular (was) price; on sale at 499, not used (tamron-18-300mm-f3-5-6-3-di-iii-a-vc-vxd-lens-for-nikon-z)', date:'2026-11-21' },
     ],
     priceIncomplete:true,
     productUrl:'https://tamron-americas.com/product/18-300mm-f-3-5-6-3-di-iii-a-vc-vxd/',
@@ -1947,8 +1962,9 @@ const LENSES = {
       { url:'https://tamron-americas.com/product/35-150mm-f-2-2-8-di-iii-vxd/', tier:'T1', title:'Tamron Americas store', note:'USD $1999 -> $1799: Tamron Americas lists the Nikon z version at US $1799 / CA $2399 regular. Read 2026-10-11', date:'2026-10-11' },
       { url:'https://tamron-americas.com/product/35-150mm-f-2-2-8-di-iii-vxd/', tier:'T1', title:'Tamron Americas store (Canada price)', note:'CAD 2399: Tamron Americas regular Canadian price for the Nikon Z mount (on sale at 2199, not used)', date:'2026-11-21' },
       { url:'https://www.calumet.de/product/tamron-35-150mm-f2-2-8-di-iii-vxd-fuer-nikon-z-mount', tier:'T3', title:'Calumet Germany', note:'EUR 1499: Calumet regular price for Tamron 35-150mm F2-2.8 Di III VXD für Nikon Z-Mount (no UVP or sale shown)', date:'2026-11-21' },
+      { url:'https://www.wexphotovideo.com/tamron-35-150mm-f2-2-8-di-iii-vxd-for-nikon-z-3122515/', tier:'T3', title:'Wex Photo Video (UK)', note:'GBP 1599: Wex Photo Video regular (was) price; on sale at 1349, not used (tamron-35-150mm-f2-2-8-di-iii-vxd-for-nikon-z)', date:'2026-11-21' },
     ],
-    prices:{USD:1799,AUD:null,EUR:1499,GBP:null,JPY:null,CAD:2399,SGD:null},
+    prices:{USD:1799,AUD:null,EUR:1499,GBP:1599,JPY:null,CAD:2399,SGD:null},
     priceIncomplete:true,
     productUrl:'https://tamron-americas.com/product/35-150mm-f-2-2-8-di-iii-vxd/',
   },
@@ -1965,10 +1981,11 @@ const LENSES = {
     specSources: [
       { url:'https://www.tamron.com/global/consumer/lenses/a067/spec.html', tier:'T1', note:'Nikon-Z-specific spec table: weight 1,180g / length 185.8mm — corrected from a stored 1,155g/183.4mm that matched the Sony E-mount column, not Nikon Z.', date:'2026-08-29' },
     ],
-    prices:{USD:1299,AUD:null,EUR:1249,GBP:null,JPY:null,CAD:1749,SGD:null},
+    prices:{USD:1299,AUD:null,EUR:1249,GBP:999,JPY:null,CAD:1749,SGD:null},
     priceSource: [
       { url:'https://tamron-americas.com/product/50-400mm-f-4-5-6-3-di-iii-vc-vxd/', tier:'T1', title:'Tamron Americas store (Canada price)', note:'CAD 1749: Tamron Americas regular Canadian price for the Nikon Z mount (on sale at 1649, not used)', date:'2026-11-21' },
       { url:'https://www.calumet.de/product/tamron-50-400mm-f4-5-6-3-di-iii-vc-vxd-fuer-nikon-z-mount', tier:'T3', title:'Calumet Germany', note:'EUR 1249: Calumet regular price for Tamron 50-400mm F4.5-6.3 Di III VC VXD für Nikon Z-Mount (no UVP or sale shown)', date:'2026-11-21' },
+      { url:'https://www.wexphotovideo.com/tamron-50-400mm-f4-5-6-3-di-iii-vc-vxd-lens-nikon-z-3192488/', tier:'T3', title:'Wex Photo Video (UK)', note:'GBP 999: Wex Photo Video price, no sale shown (tamron-50-400mm-f4-5-6-3-di-iii-vc-vxd-lens-nikon-z)', date:'2026-11-21' },
     ],
     priceIncomplete:true,
     productUrl:'https://tamron-americas.com/product/50-400mm-f-4-5-6-3-di-iii-vc-vxd/',
@@ -1989,10 +2006,11 @@ const LENSES = {
     specSources: [
       { url:'https://www.tamron.com/global/consumer/lenses/a047/spec.html', tier:'T1', note:'Nikon-Z-specific spec table: weight 580g / length 150.3mm — corrected from a stored 545g/148mm that matched the Sony E-mount column, not Nikon Z. Also corrected maxMagnification: the page states 1:9.4 (WIDE) / 1:5.1 (TELE) — the TELE figure (0.20) is the true maximum across the range, not the stored 0.11 which had taken the WIDE figure.', date:'2026-08-29' },
     ],
-    prices:{USD:499,AUD:null,EUR:569,GBP:null,JPY:null,CAD:699,SGD:null},
+    prices:{USD:499,AUD:null,EUR:569,GBP:479,JPY:null,CAD:699,SGD:null},
     priceSource: [
       { url:'https://tamron-americas.com/product/70-300mm-f-4-5-6-3-di-iii-rxd/', tier:'T1', title:'Tamron Americas', note:'Nikon Z option US $499 / CA $699, no sale price (Sony E $399 / CA $549); read 2026-10-24', date:'2026-10-24' },
       { url:'https://www.calumet.de/product/tamron-70-300mm-f4-5-6-3-di-iii-rxd-fuer-nikon-z-mount', tier:'T3', title:'Calumet Germany', note:'EUR 569: Calumet regular price for Tamron 70-300mm F4.5-6.3 Di III RXD für Nikon Z-Mount (no UVP or sale shown)', date:'2026-11-21' },
+      { url:'https://www.wexphotovideo.com/tamron-70-300mm-f4-5-6-3-di-iii-rxd-for-nikon-z-mount-3065044/', tier:'T3', title:'Wex Photo Video (UK)', note:'GBP 479: Wex Photo Video price, no sale shown (tamron-70-300mm-f4-5-6-3-di-iii-rxd-for-nikon-z-mount)', date:'2026-11-21' },
     ],
     priceIncomplete:true,
     productUrl:'https://tamron-americas.com/product/70-300mm-f-4-5-6-3-di-iii-rxd/',
@@ -2013,10 +2031,11 @@ const LENSES = {
     // independently list $1,199 for the Nikon Z variant — down from the $1,399
     // launch-era figure last confirmed in 2023. Two-retailer agreement used in
     // place of the unreachable official price per sourcing convention.
-    prices:{USD:1199,AUD:null,EUR:1199,GBP:null,JPY:null,CAD:1599,SGD:null},
+    prices:{USD:1199,AUD:null,EUR:1199,GBP:1099,JPY:null,CAD:1599,SGD:null},
     priceSource: [
       { url:'https://tamron-americas.com/product/150-500mm-f-5-6-7-di-iii-vc-vxd/', tier:'T1', title:'Tamron Americas', note:'Nikon Z option US $1,199 / CA $1,599, no sale price (Sony E $1,399, Fujifilm X $1,499); read 2026-10-24', date:'2026-10-24' },
       { url:'https://www.calumet.de/product/tamron-150-500mm-f5-6-7-di-iii-vc-vxd-fuer-nikon-z-mount', tier:'T3', title:'Calumet Germany', note:'EUR 1199: Calumet regular price for Tamron 150-500mm F5-6.7 Di III VC VXD für Nikon Z-Mount (no UVP or sale shown)', date:'2026-11-21' },
+      { url:'https://www.wexphotovideo.com/tamron-150-500mm-f5-6-7-di-iii-vc-vxd-lens-for-nikon-z-3130214/', tier:'T3', title:'Wex Photo Video (UK)', note:'GBP 1099: Wex Photo Video regular (was) price; on sale at 999, not used (tamron-150-500mm-f5-6-7-di-iii-vc-vxd-lens-for-nikon-z)', date:'2026-11-21' },
     ],
     priceIncomplete:true,
     productUrl:'https://tamron-americas.com/product/150-500mm-f-5-6-7-di-iii-vc-vxd/',
@@ -2181,11 +2200,12 @@ const LENSES = {
     imageUrl:'https://laowa.com.au/wp-content/uploads/2022/06/DSC_6447-768x512.png',
     imageSource: { url:'https://laowa.com.au/product/90mm/', tier:'T1', title:'Laowa Australia (official regional site)', note:'lens alone, front three-quarter view. Replaced the venuslens.net image 2026-10-19: its Cloudflare serves a bot challenge instead of the image, so embedded requests fail in real browsers too', date:'2026-10-19' },
     asin:'B0B3486PRS',
-    prices:{USD:499,AUD:939,EUR:659,GBP:null,JPY:94050,CAD:null,SGD:null},
+    prices:{USD:499,AUD:939,EUR:659,GBP:539,JPY:94050,CAD:null,SGD:null},
     priceSource: [
       { url:'https://laowa.com.au/product/90mm/', tier:'T1', title:'Laowa Australia store', note:'AUD 939: Laowa Australia store regular price (Laowa 90mm f/2.8 2x Ultra Macro APO); on sale at 798, not used', date:'2026-11-21' },
       { url:'https://www.syumitto.jp/SHOP/LAO0276.html', tier:'T1', title:'Syumitto (Sightron Japan, official Laowa importer) store', note:'JPY 94050 tax-included: Sightron Japan\'s Syumitto store price for LAOWA 90mm F2.8 2x Ultra Macro APO 各マウント (ニコンZ); no sale price shown', date:'2026-11-21' },
       { url:'https://www.calumet.de/product/laowa-90mm-f2-8-2x-ultra-macro-apo-fuer-nikon-z-mount', tier:'T3', title:'Calumet Germany', note:'EUR 659: manufacturer UVP printed by Calumet for LAOWA 90mm F2.8 2X Ultra Macro APO für Nikon Z-Mount; Calumet sells at 589, not used', date:'2026-11-21' },
+      { url:'https://www.wexphotovideo.com/laowa-90mm-f2-8-2x-ultra-macro-apo-lens-for-nikon-z-3051091/', tier:'T3', title:'Wex Photo Video (UK)', note:'GBP 539: Wex Photo Video regular (was) price; on sale at 509, not used (laowa-90mm-f2-8-2x-ultra-macro-apo-lens-for-nikon-z)', date:'2026-11-21' },
     ],
     priceIncomplete:true,
     productUrl:'https://www.venuslens.net/product/laowa-90mm-f-2-8-2x-macro-apo/',
@@ -2224,11 +2244,12 @@ const LENSES = {
     imageUrl:'https://laowa.com.au/wp-content/uploads/2022/07/1040-X-04-768x512.png',
     imageSource: { url:'https://laowa.com.au/product/cookie/', tier:'T1', title:'Laowa Australia (official regional site)', note:'black version, lens alone, three-quarter view. Replaced the venuslens.net image 2026-10-19: its Cloudflare serves a bot challenge instead of the image, so embedded requests fail in real browsers too', date:'2026-10-19' },
     asin:'B0B7C112SB',
-    prices:{USD:299,AUD:555,EUR:null,GBP:null,JPY:55440,CAD:512,SGD:null},
+    prices:{USD:299,AUD:555,EUR:null,GBP:349,JPY:55440,CAD:512,SGD:null},
     priceSource: [
       { url:'https://laowa.com.au/product/cookie/', tier:'T1', title:'Laowa Australia store', note:'AUD 555: Laowa Australia store regular price (Laowa 10mm f/4 Cookie)', date:'2026-11-21' },
       { url:'https://www.syumitto.jp/SHOP/LAO0290.html', tier:'T1', title:'Syumitto (Sightron Japan, official Laowa importer) store', note:'JPY 55440 tax-included: Sightron Japan\'s Syumitto store price for LAOWA 10mm F4 Cookie 各マウント (ニコンZ); no sale price shown', date:'2026-11-21' },
       { url:'https://store.amplis.com/products/laowa-10mm-f-4-cookie', tier:'T1', title:'Amplis store (official Laowa distributor, Canada)', note:'CAD 512: Amplis regular price for Laowa - 10mm f/4 Cookie (Nikon Z); on sale at 471, not used', date:'2026-11-21' },
+      { url:'https://www.wexphotovideo.com/laowa-10mm-f4-cookie-lens-for-nikon-z-black-3055571/', tier:'T3', title:'Wex Photo Video (UK)', note:'GBP 349: Wex Photo Video price, no sale shown (laowa-10mm-f4-cookie-lens-for-nikon-z-black)', date:'2026-11-21' },
     ],
     priceIncomplete:true,
     productUrl:'https://www.venuslens.net/product/laowa-10mm-f-4-cookie/',
@@ -2769,7 +2790,7 @@ const LENSES = {
     imageUrl:'https://laowa.com.au/wp-content/uploads/2025/10/01_VE20020AFFE.png',
     imageSource: { url:'https://laowa.com.au/product/200f2/', tier:'T1', title:'Laowa Australia (official regional site)', note:'Sony FE version (file VE20020AFFE), lens alone, side view; same photo as the Sony entry', date:'2026-10-21' },
     asin:null,
-    prices:{USD:1999,AUD:2899,EUR:2299,GBP:null,JPY:376200,CAD:2899,SGD:null},
+    prices:{USD:1999,AUD:2899,EUR:2299,GBP:1999,JPY:376200,CAD:2899,SGD:null},
     specSources: [{ url:'https://www.venuslens.net/product/laowa-200mm-f-2-af-ff/', tier:'T1', title:'Laowa 200mm f/2 AF FF - Laowa (Venus Optics) official store', note:'f/2-22, 11/9, 9 blades, 1.5m MFD, 0.15x, ø105 front filter, Nikon Z ⌀118mm x 176.8mm (Sony E 174.8mm), approx. 1588g', date:'2026-10-21' }],
     priceSource: [
       { url:'https://www.venuslens.net/product/laowa-200mm-f-2-af-ff/', tier:'T1', title:'Laowa (Venus Optics) official store', note:'Nikon Z variation regular $1,999 (Woo Store API); non-USD not examined', date:'2026-10-21' },
@@ -2777,6 +2798,7 @@ const LENSES = {
       { url:'https://www.syumitto.jp/SHOP/LAO0842V.html', tier:'T1', title:'Syumitto (Sightron Japan, official Laowa importer) store', note:'JPY 376200 tax-included: Sightron Japan\'s Syumitto store price for LAOWA 200mm F2 AF FF フルフレーム対応の超望遠大口径レンズ (Nikon Z); no sale price shown', date:'2026-11-21' },
       { url:'https://thecamerastore.com/products/laowa-200mm-f2-af-ff-nikon-z', tier:'T3', title:'The Camera Store (Calgary)', note:'CAD 2899: The Camera Store regular price (Laowa 200mm f2 AF FF - Nikon Z); on sale at 2569, not used; Amplis (Laowa\'s Canadian distributor) lists a compare-at of 3099 against a selling price of 2619, more than 15% apart, so not used', date:'2026-11-21' },
       { url:'https://www.calumet.de/product/laowa-af-200mm-f2-ff-fuer-nikon-z-mount', tier:'T3', title:'Calumet Germany', note:'EUR 2299: manufacturer UVP printed by Calumet for LAOWA AF 200mm F2 FF für Nikon Z-Mount; Calumet sells at 2069, not used', date:'2026-11-21' },
+      { url:'https://www.wexphotovideo.com/laowa-200mm-f2-af-ff-lens-for-nikon-z-3281898/', tier:'T3', title:'Wex Photo Video (UK)', note:'GBP 1999: Wex Photo Video regular (was) price; on sale at 1799, not used (laowa-200mm-f2-af-ff-lens-for-nikon-z)', date:'2026-11-21' },
     ],
     priceIncomplete:true,
     productUrl:'https://www.venuslens.net/product/laowa-200mm-f-2-af-ff/',
@@ -2792,13 +2814,14 @@ const LENSES = {
     imageUrl:'https://laowa.com.au/wp-content/uploads/2025/09/01_VE18045AFFE.png',
     imageSource: { url:'https://laowa.com.au/product/180/', tier:'T1', title:'Laowa Australia (official regional site)', note:'Sony FE AF version (file VE18045AFFE), lens alone, side view; same photo as the Sony entry', date:'2026-10-21' },
     asin:null,
-    prices:{USD:499,AUD:939,EUR:579,GBP:null,JPY:94050,CAD:null,SGD:null},
+    prices:{USD:499,AUD:939,EUR:579,GBP:499,JPY:94050,CAD:null,SGD:null},
     specSources: [{ url:'https://www.venuslens.net/product/laowa-180mm-f-4-5-1-5x-ultra-macro-apo/', tier:'T1', title:'Laowa 180mm f/4.5 1.5X Ultra Macro APO - Laowa (Venus Optics) official store', note:'AF versions (Sony E / Nikon Z / Canon EF / Fuji X) F4.5-22, 12/9, 9 blades, 300mm MFD, 1.5X, ø62 filter, ø67.6mm front; Laowa gives dimensions/weight for EF and Sony E only, so the Z size/weight are B&H\'s; autofocus works only from 1.5m to infinity', date:'2026-10-21' }, { url:'https://www.bhphotovideo.com/c/product/1922383-REG/x.html/specs', tier:'T3', title:'B&H - Laowa 180mm f/4.5 1.5x Ultra-Macro APO (Nikon Z, VE18045AFNZ) specs', note:'Nikon Z: 67.6 x 134.4mm (diameter x length), 522g, 180mm f/4.5', date:'2026-10-21' }],
     priceSource: [
       { url:'https://www.venuslens.net/product/laowa-180mm-f-4-5-1-5x-ultra-macro-apo/', tier:'T1', title:'Laowa (Venus Optics) official store', note:'"Nikon Z (AF*)" variation regular $499 (Woo Store API); non-USD not examined', date:'2026-10-21' },
       { url:'https://laowa.com.au/product/180/', tier:'T1', title:'Laowa Australia store', note:'AUD 939: Laowa Australia store regular price (Laowa 180mm f/4.5 1.5X Ultra Macro APO); on sale at 798, not used', date:'2026-11-21' },
       { url:'https://www.syumitto.jp/SHOP/LAO0837v.html', tier:'T1', title:'Syumitto (Sightron Japan, official Laowa importer) store', note:'JPY 94050 tax-included: Sightron Japan\'s Syumitto store price for LAOWA 180mm F4.5 1.5x Ultra Macro APO (AF) Nikon Z); no sale price shown', date:'2026-11-21' },
       { url:'https://www.calumet.de/product/laowa-180mm-f4-5-1-5x-ultra-macro-apo-fuer-nikon-z-mount', tier:'T3', title:'Calumet Germany', note:'EUR 579: manufacturer UVP printed by Calumet for LAOWA 180mm F4.5 1,5X Ultra Macro APO für Nikon Z-Mount; Calumet sells at 519, not used', date:'2026-11-21' },
+      { url:'https://www.wexphotovideo.com/laowa-180mm-f4-5-1-5x-ultra-macro-apo-lens-for-nikon-z-3277313/', tier:'T3', title:'Wex Photo Video (UK)', note:'GBP 499: Wex Photo Video regular (was) price; on sale at 449, not used (laowa-180mm-f4-5-1-5x-ultra-macro-apo-lens-for-nikon-z)', date:'2026-11-21' },
     ],
     priceIncomplete:true,
     productUrl:'https://www.venuslens.net/product/laowa-180mm-f-4-5-1-5x-ultra-macro-apo/',
@@ -2854,13 +2877,14 @@ const LENSES = {
     weatherSealed:false, ois:false, oisStops:null, year:2020, discontinued:false,
     imageUrl:null,
     asin:null,
-    prices:{USD:599,AUD:null,EUR:799,GBP:null,JPY:132660,CAD:1027,SGD:null},
+    prices:{USD:599,AUD:null,EUR:799,GBP:699,JPY:132660,CAD:1027,SGD:null},
     specSources: [{ url:'https://www.venuslens.net/product/laowa-9mm-f-5-6-ff-rl/', tier:'T1', title:'Laowa 9mm f/5.6 FF RL - Laowa (Venus Optics) official store', note:'f/5.6, 14/10, 5 blades, 12cm MFD, 0.21x, no filter thread, 62.4 x 66mm, 350g; one size for all mounts. Stored as published on every mount (owner decision 2026-11-05): Laowa\'s spec table gives one size and weight for all mounts, and B&H repeats it on each mount\'s listing. The real barrel probably differs by mount (Leica M sits about 12mm further from the sensor than Nikon Z), but no per-mount figure is published.', date:'2026-10-21' }, { url:'https://web.archive.org/web/20251019041427/https://www.venuslens.net/product/laowa-9mm-f-5-6-ff-rl/', tier:'T1', title:'Laowa 9mm f/5.6 FF RL - Laowa official page, archived 19 Oct 2025 (Wayback Machine)', note:'Archived copy of Laowa\'s spec table, so the figure stays checkable if the live page changes: Dimensions 62.4 x 66 mm, Weight 350g, Mounts Leica M & L / Sony FE / Nikon Z - one row for every mount', date:'2026-11-05' }, { url:'https://www.bhphotovideo.com/c/product/1574413-REG/x.html/specs', tier:'T3', title:'B&H - Laowa 9mm f/5.6 FF RL (Nikon Z, VE956NZ) specs', note:'Nikon Z listing: 62.4 x 66mm (diameter x length), 350g, 12cm MFD, 14/10 - the same figure as Laowa\'s single table.', date:'2026-11-05' }],
     priceSource: [
       { url:'https://www.venuslens.net/product/laowa-9mm-f-5-6-ff-rl/', tier:'T1', title:'Laowa (Venus Optics) official store', note:'Nikon Z variation regular $599 (Woo Store API); non-USD not examined', date:'2026-10-21' },
       { url:'https://www.syumitto.jp/SHOP/LAO0068.html', tier:'T1', title:'Syumitto (Sightron Japan, official Laowa importer) store', note:'JPY 132660 tax-included: Sightron Japan\'s Syumitto store price for LAOWA 9mm F5.6 W-Dreamer BK 各マウント (ニコン Z); no sale price shown', date:'2026-11-21' },
       { url:'https://store.amplis.com/products/laowa-9mm-f-5-6-ff-rl', tier:'T1', title:'Amplis store (official Laowa distributor, Canada)', note:'CAD 1027: Amplis regular price for Laowa - 9mm f/5.6 FF RL (Nikon Z); on sale at 945, not used', date:'2026-11-21' },
       { url:'https://www.calumet.de/product/laowa-9mm-f5-6-ff-rl-fuer-nikon-z-mount', tier:'T3', title:'Calumet Germany', note:'EUR 799: Calumet regular price for LAOWA 9mm F5.6 FF RL für Nikon Z-Mount (no UVP or sale shown)', date:'2026-11-21' },
+      { url:'https://www.wexphotovideo.com/laowa-9mm-f5-6-ff-rl-lens-for-nikon-z-1779527/', tier:'T3', title:'Wex Photo Video (UK)', note:'GBP 699: Wex Photo Video price, no sale shown (laowa-9mm-f5-6-ff-rl-lens-for-nikon-z)', date:'2026-11-21' },
     ],
     priceIncomplete:true,
     productUrl:'https://www.venuslens.net/product/laowa-9mm-f-5-6-ff-rl/',
@@ -2987,13 +3011,14 @@ const LENSES = {
     imageUrl:'https://laowa.com.au/wp-content/uploads/2022/10/DSC_6648.png',
     imageSource: { url:'https://laowa.com.au/product/argus25apsc/', tier:'T1', title:'Laowa Australia (official distributor)', note:'lens alone, front three-quarter view, mount not visible', date:'2026-10-21' },
     asin:null,
-    prices:{USD:549,AUD:1099,EUR:null,GBP:null,JPY:103950,CAD:947,SGD:null},
+    prices:{USD:549,AUD:1099,EUR:null,GBP:649,JPY:103950,CAD:947,SGD:null},
     specSources: [{ url:'https://laowa.com.au/product/argus25apsc/', tier:'T1', title:'Laowa Argus 25mm f/0.95 CF APO - Laowa Australia (official distributor)', note:'APS-C; lens mounts Sony-E, Fuji-X, Canon-RF, Nikon-Z, EOS-M, MFT; f/0.95-11, 14/9, 9 blades, 34cm MFD, 0.15x, ø62 filter, about ø71.5 x 81mm, about 575g', date:'2026-10-21' }, { url:'https://www.bhphotovideo.com/c/product/1733768-REG/x.html/specs', tier:'T3', title:'B&H - Laowa Argus 25mm f/0.95 CF APO (Nikon Z, VE2595NZ) specs', note:'Nikon Z: 71.5 x 81mm, 575g, f/0.95-11, 34cm, 14/9, 9 blades - matches Laowa', date:'2026-10-21' }],
     priceSource: [
       { url:'https://www.bhphotovideo.com/c/product/1733768-REG/x.html', tier:'T3', title:'B&H - Laowa Argus 25mm f/0.95 CF APO (Nikon Z)', note:'regular (strikethrough) $549, on sale at $519 at the time; not sold on Laowa\'s US store any more; non-USD not examined', date:'2026-10-21' },
       { url:'https://laowa.com.au/product/argus25apsc/', tier:'T1', title:'Laowa Australia store', note:'AUD 1099: Laowa Australia store regular price (LAOWA Argus 25mm f0.95 APSC APO)', date:'2026-11-21' },
       { url:'https://www.syumitto.jp/SHOP/LAO0390.html', tier:'T1', title:'Syumitto (Sightron Japan, official Laowa importer) store', note:'JPY 103950 tax-included: Sightron Japan\'s Syumitto store price for LAOWA Argus 25mm F0.95 各マウント (ニコンZ); no sale price shown', date:'2026-11-21' },
       { url:'https://store.amplis.com/products/laowa-argus-25mm-f-0-95-cf-apo', tier:'T1', title:'Amplis store (official Laowa distributor, Canada)', note:'CAD 947: Amplis regular price for Laowa - Argus 25mm f/0.95 CF APO (Nikon Z); on sale at 871, not used', date:'2026-11-21' },
+      { url:'https://www.wexphotovideo.com/laowa-argus-25mm-f0-95-cf-apo-lens-for-nikon-z-3075472/', tier:'T3', title:'Wex Photo Video (UK)', note:'GBP 649: Wex Photo Video price, no sale shown (laowa-argus-25mm-f0-95-cf-apo-lens-for-nikon-z)', date:'2026-11-21' },
     ],
     priceIncomplete:true,
     productUrl:'https://laowa.com.au/product/argus25apsc/',
@@ -3058,9 +3083,10 @@ const LENSES = {
     weatherSealed:false, ois:false, oisStops:null, year:2022, discontinued:false,
     imageUrl:'https://viltrox.com/cdn/shop/files/AF24mm_F1.8_Z-661615.png',
     imageSource: { url:'https://viltrox.com/products/viltrox-af-24mm-f18-z-mount-full-frame-prime-lens', tier:'T1', note:'official Viltrox store page, barrel explicitly reads "AF 24/1.8 Z" and "Z-mount"', date:'2026-08-17' }, asin:'B09CPDBWJY',
-    prices:{USD:380,AUD:null,EUR:435,GBP:null,JPY:null,CAD:null,SGD:null},
+    prices:{USD:380,AUD:null,EUR:435,GBP:375,JPY:null,CAD:null,SGD:null},
     priceSource: [
       { url:'https://www.calumet.de/product/viltrox-24mm-f1-8-af-nikon-z-mount', tier:'T3', title:'Calumet Germany', note:'EUR 435: Calumet regular price for Viltrox 24mm F1.8 AF Nikon Z-Mount (no UVP or sale shown)', date:'2026-11-21' },
+      { url:'https://www.wexphotovideo.com/viltrox-af-24mm-f1-8-lens-for-nikon-z-3136631/', tier:'T3', title:'Wex Photo Video (UK)', note:'GBP 375: Wex Photo Video price, no sale shown (viltrox-af-24mm-f1-8-lens-for-nikon-z)', date:'2026-11-21' },
     ],
     priceIncomplete:true, productUrl:'https://viltrox.com/products/viltrox-af-24mm-f18-z-mount-full-frame-prime-lens',
   },
@@ -3106,9 +3132,10 @@ const LENSES = {
     imageUrl:'https://viltrox.com/cdn/shop/files/AF_85mm_F2.0_EVO_Z_-_front_view.png',
     imageSource: { url:'https://viltrox.com/products/af-85mm-f2-0-z', tier:'T1', note:'official Viltrox store page, barrel explicitly reads "AF 85/2.0 Z" with EVO badge', date:'2026-08-17' },
     asin:'B0FX2S93WV',
-    prices:{USD:275,AUD:null,EUR:309,GBP:null,JPY:null,CAD:null,SGD:null},
+    prices:{USD:275,AUD:null,EUR:309,GBP:272,JPY:null,CAD:null,SGD:null},
     priceSource: [
       { url:'https://www.calumet.de/product/viltrox-85mm-f2-0-af-evo-fuer-nikon-z-mount', tier:'T3', title:'Calumet Germany', note:'EUR 309.79: manufacturer UVP printed by Calumet for Viltrox 85mm F2.0 AF EVO für Nikon Z-Mount; Calumet sells at 200.68, not used', date:'2026-11-21' },
+      { url:'https://www.wexphotovideo.com/viltrox-af-85mm-f2-evo-full-frame-lens-for-nikon-z-3316556/', tier:'T3', title:'Wex Photo Video (UK)', note:'GBP 272: Wex Photo Video price, no sale shown (viltrox-af-85mm-f2-evo-full-frame-lens-for-nikon-z)', date:'2026-11-21' },
     ],
     specSources: [{ url:'https://viltrox.com/products/af-85mm-f2-0-z', tier:'T1', title:'Viltrox AF 85mm F2.0 EVO Z - Viltrox official store', note:'Z spec table: Shooting Distance 0.74m-infinity. minFocusDist corrected 740 -> 74 cm (was stored 10x too large)', date:'2026-11-05' }],
     priceIncomplete:true, productUrl:'https://viltrox.com/products/af-85mm-f2-0-z',
@@ -3143,7 +3170,10 @@ const LENSES = {
     imageUrl:'https://viltrox.com/cdn/shop/files/AF_26mm_F2.8_EVO_Z-front_view.png',
     imageSource: { url:'https://viltrox.com/products/af-26mm-f2-8-z', tier:'T1', note:'official Viltrox store page; pancake full-frame EVO, launched 2026-07-15 (corroborated by DPReview/PetaPixel coverage); Z-mount weight is 170g bare (vs the E-mount sibling\'s 130g — confirmed via the E-mount product page\'s own spec dialog, a genuine per-mount difference, not a scrape error) and Z-mount size is Φ69.4x25.8mm (vs E-mount\'s Φ66x23.8mm)', date:'2026-08-30' },
     asin:'B0H6RSTKLH',
-    prices:{USD:299,AUD:null,EUR:null,GBP:null,JPY:null,CAD:null,SGD:null},
+    prices:{USD:299,AUD:null,EUR:null,GBP:270,JPY:null,CAD:null,SGD:null},
+    priceSource: [
+      { url:'https://www.wexphotovideo.com/viltrox-af-26mm-f2-8-evo-lens-for-nikon-z-3347290/', tier:'T3', title:'Wex Photo Video (UK)', note:'GBP 270: Wex Photo Video price, no sale shown (viltrox-af-26mm-f2-8-evo-lens-for-nikon-z)', date:'2026-11-21' },
+    ],
     specSources: [{ url:'https://viltrox.com/products/af-26mm-f2-8-z', tier:'T1', title:'Viltrox - AF 26mm F2.8 EVO Z specifications', note:'"Number of Aperture Blades: 7", 0.2 m, 0.2x, 69.4 x 25.8 mm, 170 g, 43mm filter. Corrected: blades 9 -> 7.', date:'2026-11-07' }],
     priceIncomplete:true, productUrl:'https://viltrox.com/products/af-26mm-f2-8-z',
   },
@@ -3206,7 +3236,10 @@ const LENSES = {
     imageUrl:'https://viltrox.com/cdn/shop/files/AF_35mm_F1.2_LAB_Z_-Front_view.png',
     imageSource: { url:'https://viltrox.com/products/af-35mm-f1-2-z', tier:'T1', note:'official Viltrox store page, flagship LAB-series full-frame prime; "All-Metal Weather-Sealed" explicitly claimed', date:'2026-08-30' },
     asin:'B0G3TBBFP7',
-    prices:{USD:999,AUD:null,EUR:null,GBP:null,JPY:null,CAD:null,SGD:null},
+    prices:{USD:999,AUD:null,EUR:null,GBP:875,JPY:null,CAD:null,SGD:null},
+    priceSource: [
+      { url:'https://www.wexphotovideo.com/viltrox-af-35mm-f1-2-lens-for-nikon-z-3298352/', tier:'T3', title:'Wex Photo Video (UK)', note:'GBP 875: Wex Photo Video price, no sale shown (viltrox-af-35mm-f1-2-lens-for-nikon-z)', date:'2026-11-21' },
+    ],
     priceIncomplete:true, productUrl:'https://viltrox.com/products/af-35mm-f1-2-z',
   },
 
@@ -3251,7 +3284,10 @@ const LENSES = {
     imageUrl:'https://viltrox.com/cdn/shop/files/AF28mmF4.5Z-frontview.png',
     imageSource: { url:'https://viltrox.com/products/af-28mm-f4-5-z', tier:'T1', note:'official Viltrox store page; ultra-slim full-lens-focusing pancake with a FIXED F4.5 aperture (no iris/blades, hence maxAperture=minAperture and blades:null) — the page\'s own spec table literally reads "F4.5 fixed aperture" with no separate min-aperture row; filter thread also unpublished, likely none on this flush-front design', date:'2026-08-30' },
     asin:'B0F8VWR1FJ',
-    prices:{USD:99,AUD:null,EUR:null,GBP:null,JPY:null,CAD:null,SGD:null},
+    prices:{USD:99,AUD:null,EUR:null,GBP:99,JPY:null,CAD:null,SGD:null},
+    priceSource: [
+      { url:'https://www.wexphotovideo.com/viltrox-af-28mm-f4-5-lens-for-nikon-z-3253398/', tier:'T3', title:'Wex Photo Video (UK)', note:'GBP 99: Wex Photo Video price, no sale shown (viltrox-af-28mm-f4-5-lens-for-nikon-z)', date:'2026-11-21' },
+    ],
     priceIncomplete:true, productUrl:'https://viltrox.com/products/af-28mm-f4-5-z',
   },
 
@@ -3279,7 +3315,10 @@ const LENSES = {
     imageUrl:'https://viltrox.com/cdn/shop/files/AF20mm_F2.8_Z-457461.png',
     imageSource: { url:'https://viltrox.com/products/viltrox-af-20mm-f2-8-full-frame-lens-for-nikon-z-mount', tier:'T1', note:'official Viltrox store page; per-mount table explicitly separates "E-mount: 65x59.5mm/157g" from "Z-mount: 68x60.8mm/173g" — Z-mount figures used', date:'2026-08-30' },
     asin:'B0CPSLDM7G',
-    prices:{USD:176,AUD:null,EUR:null,GBP:null,JPY:null,CAD:null,SGD:null},
+    prices:{USD:176,AUD:null,EUR:null,GBP:165,JPY:null,CAD:null,SGD:null},
+    priceSource: [
+      { url:'https://www.wexphotovideo.com/viltrox-af-20mm-f2-8-lens-for-nikon-z-3165255/', tier:'T3', title:'Wex Photo Video (UK)', note:'GBP 165: Wex Photo Video price, no sale shown (viltrox-af-20mm-f2-8-lens-for-nikon-z)', date:'2026-11-21' },
+    ],
     priceIncomplete:true, productUrl:'https://viltrox.com/products/viltrox-af-20mm-f2-8-full-frame-lens-for-nikon-z-mount',
   },
 
@@ -3293,7 +3332,10 @@ const LENSES = {
     imageUrl:'https://viltrox.com/cdn/shop/files/AF28mm_F1.8_Z-729136.png',
     imageSource: { url:'https://viltrox.com/products/viltrox-af-28mm-f1-8', tier:'T1', note:'official Viltrox store page, confirmed Nikon Z-mount variant via the product\'s mount selector', date:'2026-08-30' },
     asin:'B0CH14JSXF',
-    prices:{USD:379,AUD:null,EUR:null,GBP:null,JPY:null,CAD:null,SGD:null},
+    prices:{USD:379,AUD:null,EUR:null,GBP:375,JPY:null,CAD:null,SGD:null},
+    priceSource: [
+      { url:'https://www.wexphotovideo.com/viltrox-af-28mm-f1-8-lens-for-nikon-z-3136642/', tier:'T3', title:'Wex Photo Video (UK)', note:'GBP 375: Wex Photo Video price, no sale shown (viltrox-af-28mm-f1-8-lens-for-nikon-z)', date:'2026-11-21' },
+    ],
     priceIncomplete:true, productUrl:'https://viltrox.com/products/viltrox-af-28mm-f1-8',
   },
 
@@ -3326,8 +3368,11 @@ const LENSES = {
     // Voigtländer is Cosina's brand) has a valid chain, so both fields now point there.
     imageUrl:'https://www.cosina.co.jp/wp/wp-content/uploads/2024/10/Z-50_20-APO-II-01-kjhgt.jpg',
     imageSource: { url:'https://www.cosina.co.jp/voigtlander/en/z-mount/apo-lanthar-50mm-f2-aspherical-ii/', tier:'T1', note:'Cosina\'s own EN product page for the Z-mount APO-LANTHAR 50mm F2 Aspherical II; replaces the voigtlaender.de source (TLS chain broken)', date:'2026-09-06' }, asin:'B0DPNK41Q7',
-    prices:{USD:899,AUD:null,EUR:null,GBP:null,JPY:null,CAD:null,SGD:null},
-    priceSource: { url:'https://www.bhphotovideo.com/c/search?q=voigtlander%20nikon%20z', tier:'T3', title:'B&H Photo listing', note:'USD $1049 -> $899: B&H lists "APO-LANTHAR 50mm f/2 Aspherical Version II Lens (Nikon Z)" at $899, not on sale. Voigtländer publishes no US price of its own, and B&H is the main US retailer; this replaces the earlier EUR-converted estimate. Read 2026-10-11', date:'2026-10-11' },
+    prices:{USD:899,AUD:null,EUR:null,GBP:849,JPY:null,CAD:null,SGD:null},
+    priceSource: [
+      { url:'https://www.bhphotovideo.com/c/search?q=voigtlander%20nikon%20z', tier:'T3', title:'B&H Photo listing', note:'USD $1049 -> $899: B&H lists "APO-LANTHAR 50mm f/2 Aspherical Version II Lens (Nikon Z)" at $899, not on sale. Voigtländer publishes no US price of its own, and B&H is the main US retailer; this replaces the earlier EUR-converted estimate. Read 2026-10-11', date:'2026-10-11' },
+      { url:'https://www.wexphotovideo.com/voigtlander-50mm-f2-apo-lanthar-ii-aspherical-lens-for-nikon-z-3209144/', tier:'T3', title:'Wex Photo Video (UK)', note:'GBP 849: Wex Photo Video regular (was) price; on sale at 764, not used (voigtlander-50mm-f2-apo-lanthar-ii-aspherical-lens-for-nikon-z)', date:'2026-11-21' },
+    ],
     priceIncomplete:true, productUrl:'https://www.cosina.co.jp/voigtlander/en/z-mount/apo-lanthar-50mm-f2-aspherical-ii/',
   },
 
@@ -3341,11 +3386,12 @@ const LENSES = {
     // 2026-09-06: repointed off voigtlaender.de — broken TLS chain (see note above).
     imageUrl:'https://www.cosina.co.jp/wp/wp-content/uploads/2022/09/40_12_Z_01thygfd.jpg',
     imageSource: { url:'https://www.cosina.co.jp/voigtlander/en/z-mount/nokton-40mm-f1-2-aspherical/', tier:'T1', note:'Cosina\'s own EN product page for the Z-mount NOKTON 40mm F1.2 Aspherical; replaces the voigtlaender.de source (TLS chain broken)', date:'2026-09-06' }, asin:'B0BMWKQ1WP',
-    prices:{USD:899,AUD:null,EUR:849,GBP:null,JPY:115500,CAD:null,SGD:null},
+    prices:{USD:899,AUD:null,EUR:849,GBP:729,JPY:115500,CAD:null,SGD:null},
     priceSource: [
       { url:'https://www.bhphotovideo.com/c/product/1734166-REG/x.html', tier:'T3', title:'B&H - Voigtländer Nokton 40mm f/1.2 Aspherical (Nikon Z)', note:'$899, no strikethrough (checked 2026-10-24)', date:'2026-10-24' },
       { url:'https://www.cosina.co.jp/voigtlander/z-mount/nokton-40mm-f1-2-aspherical/', tier:'T1', title:'Cosina (Voigtländer maker) Japan - NOKTON 40mm F1.2 Aspherical (Z-mount)', note:'suggested retail ¥105,000 before tax; JPY stored with 10% consumption tax: ¥115,500 (read 2026-10-24)', date:'2026-10-24' },
       { url:'https://www.calumet.de/product/voigtlaender-40mm-f1-2-nokton-asph-fuer-nikon-z-mount', tier:'T3', title:'Calumet Germany', note:'EUR 849: manufacturer UVP printed by Calumet for Voigtländer 40mm F1.2 Nokton Asph. für Nikon Z-Mount; Calumet sells at 769.01, not used', date:'2026-11-21' },
+      { url:'https://www.wexphotovideo.com/voigtlander-40mm-f1-2-nokton-lens-for-nikon-z-3067754/', tier:'T3', title:'Wex Photo Video (UK)', note:'GBP 729: Wex Photo Video regular (was) price; on sale at 656, not used (voigtlander-40mm-f1-2-nokton-lens-for-nikon-z)', date:'2026-11-21' },
     ],
     specSources: [{ url:'https://www.cosina.co.jp/voigtlander/en/z-mount/nokton-40mm-f1-2-aspherical/', tier:'T1', title:'Cosina - Voigtländer NOKTON 40mm F1.2 Aspherical (Z-mount) specifications', note:'Minimum focus 0.3m, maximum reproduction ratio 1:4.9 (0.20x), 67.7 x 53.9 mm, 58mm filter, 351 g, F22, 10 blades, 8 elements / 6 groups - same optics and close focus as the RF version (0.3m, 1:4.9); the stored 315 g had its digits swapped. Corrected: minFocusDist 35 -> 30; maxMagnification 0.1 -> 0.2; diameter 67.6 -> 67.7; weight 315 -> 351.', date:'2026-11-07' }],
     priceIncomplete:true, productUrl:'https://www.cosina.co.jp/voigtlander/en/z-mount/nokton-40mm-f1-2-aspherical/',
@@ -3376,9 +3422,12 @@ const LENSES = {
     // 2026-09-06: repointed off voigtlaender.de — broken TLS chain (see note above).
     imageUrl:'https://www.cosina.co.jp/wp/wp-content/uploads/2023/01/Z-15_45_01kjhuy.jpg',
     imageSource: { url:'https://www.cosina.co.jp/voigtlander/en/z-mount/super-wide-heliar-15mm-f4-5-aspherical/', tier:'T1', note:'Cosina\'s own EN product page for the Z-mount Super Wide-Heliar 15mm F4.5 Aspherical; replaces the voigtlaender.de source (TLS chain broken)', date:'2026-09-06' },
-    priceSource: { url:'https://www.bhphotovideo.com/c/search?q=voigtlander%20nikon%20z', tier:'T3', title:'B&H Photo listing', note:'USD $993 -> $749: B&H lists "Super Wide-Heliar 15mm f/4.5 Aspherical III Lens (Nikon Z)" at a regular price of $749 (currently on sale at $549). Voigtländer publishes no US price of its own (cosina.co.jp/voigtlaender.de give JPY/EUR only), and B&H is the main US retailer; this replaces the earlier EUR-converted estimate. Read 2026-10-11', date:'2026-10-11' },
+    priceSource: [
+      { url:'https://www.bhphotovideo.com/c/search?q=voigtlander%20nikon%20z', tier:'T3', title:'B&H Photo listing', note:'USD $993 -> $749: B&H lists "Super Wide-Heliar 15mm f/4.5 Aspherical III Lens (Nikon Z)" at a regular price of $749 (currently on sale at $549). Voigtländer publishes no US price of its own (cosina.co.jp/voigtlaender.de give JPY/EUR only), and B&H is the main US retailer; this replaces the earlier EUR-converted estimate. Read 2026-10-11', date:'2026-10-11' },
+      { url:'https://www.wexphotovideo.com/voigtlander-15mm-f4-5-super-wide-heliar-aspherical-lens-for-nikon-z-3086943/', tier:'T3', title:'Wex Photo Video (UK)', note:'GBP 849: Wex Photo Video regular (was) price; on sale at 764, not used (voigtlander-15mm-f4-5-super-wide-heliar-aspherical-lens-for-nikon-z)', date:'2026-11-21' },
+    ],
     asin:'B0BVY37JZ4',
-    prices:{USD:749,AUD:null,EUR:849,GBP:null,JPY:null,CAD:null,SGD:null},
+    prices:{USD:749,AUD:null,EUR:849,GBP:849,JPY:null,CAD:null,SGD:null},
     priceIncomplete:true, productUrl:'https://www.cosina.co.jp/voigtlander/en/z-mount/super-wide-heliar-15mm-f4-5-aspherical/',
   },
 
@@ -3392,9 +3441,12 @@ const LENSES = {
     // 2026-09-06: repointed off voigtlaender.de — broken TLS chain (see note above).
     imageUrl:'https://www.cosina.co.jp/wp/wp-content/uploads/2022/04/Z-D23_12-01-tgjtsxhgw.jpg',
     imageSource: { url:'https://www.cosina.co.jp/voigtlander/z-mount/nokton-d23mm-f1-2-aspherical/', tier:'T1', note:'Cosina\'s own product page for the Z-mount (APS-C/DX) NOKTON D23mm F1.2 Aspherical; replaces the voigtlaender.de source (TLS chain broken)', date:'2026-09-06' },
-    priceSource: { url:'https://www.bhphotovideo.com/c/search?q=voigtlander%20nikon%20z', tier:'T3', title:'B&H Photo listing', note:'USD $817 -> $709: B&H lists "Nokton 23mm f/1.2 Aspherical Lens (Nikon Z, Black)" at a regular price of $709 (currently on sale at $499). Voigtländer publishes no US price of its own (cosina.co.jp/voigtlaender.de give JPY/EUR only), and B&H is the main US retailer; this replaces the earlier EUR-converted estimate. Read 2026-10-11', date:'2026-10-11' },
+    priceSource: [
+      { url:'https://www.bhphotovideo.com/c/search?q=voigtlander%20nikon%20z', tier:'T3', title:'B&H Photo listing', note:'USD $817 -> $709: B&H lists "Nokton 23mm f/1.2 Aspherical Lens (Nikon Z, Black)" at a regular price of $709 (currently on sale at $499). Voigtländer publishes no US price of its own (cosina.co.jp/voigtlaender.de give JPY/EUR only), and B&H is the main US retailer; this replaces the earlier EUR-converted estimate. Read 2026-10-11', date:'2026-10-11' },
+      { url:'https://www.wexphotovideo.com/voigtlander-d-23mm-f1-2-nokton-lens-for-nikon-z-3049635/', tier:'T3', title:'Wex Photo Video (UK)', note:'GBP 649: Wex Photo Video regular (was) price; on sale at 584, not used (voigtlander-d-23mm-f1-2-nokton-lens-for-nikon-z)', date:'2026-11-21' },
+    ],
     asin:'B0B2VSXZV4',
-    prices:{USD:709,AUD:null,EUR:699,GBP:null,JPY:null,CAD:null,SGD:null},
+    prices:{USD:709,AUD:null,EUR:699,GBP:649,JPY:null,CAD:null,SGD:null},
     priceIncomplete:true, productUrl:'https://www.cosina.co.jp/voigtlander/z-mount/nokton-d23mm-f1-2-aspherical/',
   },
 
@@ -3408,9 +3460,12 @@ const LENSES = {
     // 2026-09-06: repointed off voigtlaender.de — broken TLS chain (see note above).
     imageUrl:'https://www.cosina.co.jp/wp/wp-content/uploads/2025/01/Z-28_15-01.jpg',
     imageSource: { url:'https://www.cosina.co.jp/voigtlander/en/z-mount/nokton-28mm-f1-5-aspherical/', tier:'T1', note:'Cosina\'s own EN product page for the Z-mount NOKTON 28mm F1.5 Aspherical; replaces the voigtlaender.de source (TLS chain broken)', date:'2026-09-06' },
-    priceSource: { url:'https://www.bhphotovideo.com/c/search?q=voigtlander%20nikon%20z', tier:'T3', title:'B&H Photo listing', note:'USD $1226 -> $899: B&H lists "Nokton 28mm f/1.5 Aspherical Lens (Nikon Z)" at a regular price of $899. Voigtländer publishes no US price of its own (cosina.co.jp/voigtlaender.de give JPY/EUR only), and B&H is the main US retailer; this replaces the earlier EUR-converted estimate. Read 2026-10-11', date:'2026-10-11' },
+    priceSource: [
+      { url:'https://www.bhphotovideo.com/c/search?q=voigtlander%20nikon%20z', tier:'T3', title:'B&H Photo listing', note:'USD $1226 -> $899: B&H lists "Nokton 28mm f/1.5 Aspherical Lens (Nikon Z)" at a regular price of $899. Voigtländer publishes no US price of its own (cosina.co.jp/voigtlaender.de give JPY/EUR only), and B&H is the main US retailer; this replaces the earlier EUR-converted estimate. Read 2026-10-11', date:'2026-10-11' },
+      { url:'https://www.wexphotovideo.com/voigtlander-28mm-f1-5-nokton-apherical-lens-for-nikon-z-3227558/', tier:'T3', title:'Wex Photo Video (UK)', note:'GBP 769: Wex Photo Video regular (was) price; on sale at 692, not used (voigtlander-28mm-f1-5-nokton-apherical-lens-for-nikon-z)', date:'2026-11-21' },
+    ],
     asin:'B0FFZVN1SZ',
-    prices:{USD:899,AUD:null,EUR:1049,GBP:null,JPY:null,CAD:null,SGD:null},
+    prices:{USD:899,AUD:null,EUR:1049,GBP:769,JPY:null,CAD:null,SGD:null},
     specSources: [{ url:'https://www.cosina.co.jp/voigtlander/en/z-mount/nokton-28mm-f1-5-aspherical/', tier:'T1', title:'Cosina - Voigtländer NOKTON 28mm F1.5 Aspherical (Z-mount) specifications', note:'Maximum reproduction ratio 1:6.87 (0.146x), 0.28m, F16, 12 blades, 67.6 x 57.0 mm, 360 g. The 52mm filter is correct for Z: the E version is a smaller barrel with a 49mm filter (62.6 x 55 mm, 320 g), a genuine per-mount difference. Corrected: maxMagnification null -> 0.146.', date:'2026-11-07' }],
     priceIncomplete:true, productUrl:'https://www.cosina.co.jp/voigtlander/en/z-mount/nokton-28mm-f1-5-aspherical/',
   },
@@ -3425,9 +3480,12 @@ const LENSES = {
     // 2026-09-06: repointed off voigtlaender.de — broken TLS chain (see note above).
     imageUrl:'https://www.cosina.co.jp/wp/wp-content/uploads/2025/11/Z-28_20-01-ikws.jpg',
     imageSource: { url:'https://www.cosina.co.jp/voigtlander/en/z-mount/apo-lanthar-28mm-f2-aspherical/', tier:'T1', note:'Cosina\'s own EN product page for the Z-mount APO-LANTHAR 28mm F2 Aspherical; replaces the voigtlaender.de source (TLS chain broken)', date:'2026-09-06' },
-    priceSource: { url:'https://www.bhphotovideo.com/c/search?q=voigtlander%20nikon%20z', tier:'T3', title:'B&H Photo listing', note:'USD $1343 -> $1149: B&H lists "APO-LANTHAR 28mm f/2 Aspherical Lens (Nikon Z)" at a regular price of $1149. Voigtländer publishes no US price of its own (cosina.co.jp/voigtlaender.de give JPY/EUR only), and B&H is the main US retailer; this replaces the earlier EUR-converted estimate. Read 2026-10-11', date:'2026-10-11' },
+    priceSource: [
+      { url:'https://www.bhphotovideo.com/c/search?q=voigtlander%20nikon%20z', tier:'T3', title:'B&H Photo listing', note:'USD $1343 -> $1149: B&H lists "APO-LANTHAR 28mm f/2 Aspherical Lens (Nikon Z)" at a regular price of $1149. Voigtländer publishes no US price of its own (cosina.co.jp/voigtlaender.de give JPY/EUR only), and B&H is the main US retailer; this replaces the earlier EUR-converted estimate. Read 2026-10-11', date:'2026-10-11' },
+      { url:'https://www.wexphotovideo.com/voigtlander-28mm-f2-apo-lanthar-lens-for-nikon-z-3290653/', tier:'T3', title:'Wex Photo Video (UK)', note:'GBP 819: Wex Photo Video regular (was) price; on sale at 737, not used (voigtlander-28mm-f2-apo-lanthar-lens-for-nikon-z)', date:'2026-11-21' },
+    ],
     asin:null,
-    prices:{USD:1149,AUD:null,EUR:1149,GBP:null,JPY:null,CAD:null,SGD:null},
+    prices:{USD:1149,AUD:null,EUR:1149,GBP:819,JPY:null,CAD:null,SGD:null},
     specSources: [{ url:'https://www.cosina.co.jp/voigtlander/en/z-mount/apo-lanthar-28mm-f2-aspherical/', tier:'T1', title:'Cosina - Voigtländer APO-LANTHAR 28mm F2 Aspherical (Z-mount) specifications', note:'12 aperture blades, 0.28m, 1:6.9, F16, 68.8 x 60.0 mm, 350 g. The 58mm filter is correct for Z: the E version takes 49mm (62.6 x 58.8 mm, 325 g), a genuine per-mount difference. Corrected: blades null -> 12.', date:'2026-11-07' }],
     priceIncomplete:true, productUrl:'https://www.cosina.co.jp/voigtlander/en/z-mount/apo-lanthar-28mm-f2-aspherical/',
   },
@@ -3442,9 +3500,12 @@ const LENSES = {
     // 2026-09-06: repointed off voigtlaender.de — broken TLS chain (see note above).
     imageUrl:'https://www.cosina.co.jp/wp/wp-content/uploads/2022/02/D35F12Z-top.jpg',
     imageSource: { url:'https://www.cosina.co.jp/voigtlander/z-mount/nokton-d35mm-f1-2/', tier:'T1', note:'Cosina\'s own product page for the Z-mount (APS-C/DX) NOKTON D35mm F1.2; replaces the voigtlaender.de source (TLS chain broken)', date:'2026-09-06' },
-    priceSource: { url:'https://www.bhphotovideo.com/c/search?q=voigtlander%20nikon%20z', tier:'T3', title:'B&H Photo listing', note:'USD $759 -> $649: B&H lists "Nokton 35mm f/1.2 Lens (Nikon Z)" at $649, not on sale. B&H drops the D prefix, but the D35 is the only Z-mount Nokton 35mm f/1.2, and 649 matches its EUR 649 RRP. Voigtländer publishes no US price of its own, and B&H is the main US retailer; this replaces the earlier EUR-converted estimate. Read 2026-10-11', date:'2026-10-11' },
+    priceSource: [
+      { url:'https://www.bhphotovideo.com/c/search?q=voigtlander%20nikon%20z', tier:'T3', title:'B&H Photo listing', note:'USD $759 -> $649: B&H lists "Nokton 35mm f/1.2 Lens (Nikon Z)" at $649, not on sale. B&H drops the D prefix, but the D35 is the only Z-mount Nokton 35mm f/1.2, and 649 matches its EUR 649 RRP. Voigtländer publishes no US price of its own, and B&H is the main US retailer; this replaces the earlier EUR-converted estimate. Read 2026-10-11', date:'2026-10-11' },
+      { url:'https://www.wexphotovideo.com/voigtlander-d-35mm-f1-2-nokton-lens-for-nikon-z-3044605/', tier:'T3', title:'Wex Photo Video (UK)', note:'GBP 549: Wex Photo Video regular (was) price; on sale at 494, not used (voigtlander-d-35mm-f1-2-nokton-lens-for-nikon-z)', date:'2026-11-21' },
+    ],
     asin:'B09VWW41S6',
-    prices:{USD:649,AUD:null,EUR:649,GBP:null,JPY:null,CAD:null,SGD:null},
+    prices:{USD:649,AUD:null,EUR:649,GBP:549,JPY:null,CAD:null,SGD:null},
     priceIncomplete:true, productUrl:'https://www.cosina.co.jp/voigtlander/z-mount/nokton-d35mm-f1-2/',
   },
 
@@ -3458,9 +3519,12 @@ const LENSES = {
     // 2026-09-06: repointed off voigtlaender.de — broken TLS chain (see note above).
     imageUrl:'https://www.cosina.co.jp/wp/wp-content/uploads/2022/09/D35_20_Z_01ertgfs.jpg',
     imageSource: { url:'https://www.cosina.co.jp/voigtlander/z-mount/macro-apo-ultron-d35mm-f2/', tier:'T1', note:'Cosina\'s own product page for the Z-mount (APS-C/DX) MACRO APO-ULTRON D35mm F2; replaces the voigtlaender.de source (TLS chain broken)', date:'2026-09-06' },
-    priceSource: { url:'https://www.bhphotovideo.com/c/search?q=voigtlander%20nikon%20z', tier:'T3', title:'B&H Photo listing', note:'USD $852 -> $899: B&H lists "D35mm f/2 Macro Apo-Ultron Lens for Nikon Z Mount" at a regular price of $899 (currently on sale at $549). Voigtländer publishes no US price of its own (cosina.co.jp/voigtlaender.de give JPY/EUR only), and B&H is the main US retailer; this replaces the earlier EUR-converted estimate. Read 2026-10-11', date:'2026-10-11' },
+    priceSource: [
+      { url:'https://www.bhphotovideo.com/c/search?q=voigtlander%20nikon%20z', tier:'T3', title:'B&H Photo listing', note:'USD $852 -> $899: B&H lists "D35mm f/2 Macro Apo-Ultron Lens for Nikon Z Mount" at a regular price of $899 (currently on sale at $549). Voigtländer publishes no US price of its own (cosina.co.jp/voigtlaender.de give JPY/EUR only), and B&H is the main US retailer; this replaces the earlier EUR-converted estimate. Read 2026-10-11', date:'2026-10-11' },
+      { url:'https://www.wexphotovideo.com/voigtlander-d35mm-f2-macro-apo-ultron-lens-for-nikon-z-mount-cameras-aps-c-3067753/', tier:'T3', title:'Wex Photo Video (UK)', note:'GBP 649: Wex Photo Video regular (was) price; on sale at 584, not used (voigtlander-d35mm-f2-macro-apo-ultron-lens-for-nikon-z-mount-cameras-aps-c)', date:'2026-11-21' },
+    ],
     asin:'B0BM8FYPZ2',
-    prices:{USD:899,AUD:null,EUR:729,GBP:null,JPY:null,CAD:null,SGD:null},
+    prices:{USD:899,AUD:null,EUR:729,GBP:649,JPY:null,CAD:null,SGD:null},
     priceIncomplete:true, productUrl:'https://www.cosina.co.jp/voigtlander/z-mount/macro-apo-ultron-d35mm-f2/',
   },
 
@@ -3491,9 +3555,12 @@ const LENSES = {
     // 2026-09-06: repointed off voigtlaender.de — broken TLS chain (see note above).
     imageUrl:'https://www.cosina.co.jp/wp/wp-content/uploads/2026/02/Z-40_20-web01-thoju.jpg',
     imageSource: { url:'https://www.cosina.co.jp/voigtlander/en/z-mount/septon-40mm-f2-aspherical/', tier:'T1', note:'Cosina\'s own EN product page for the Z-mount SEPTON 40mm F2 Aspherical; replaces the voigtlaender.de source (TLS chain broken)', date:'2026-09-06' },
-    priceSource: { url:'https://www.bhphotovideo.com/c/search?q=voigtlander%20nikon%20z', tier:'T3', title:'B&H Photo listing', note:'USD $759 -> $699: B&H lists "SEPTON 40mm f/2 Aspherical Lens (Nikon Z)" at a regular price of $699. Voigtländer publishes no US price of its own (cosina.co.jp/voigtlaender.de give JPY/EUR only), and B&H is the main US retailer; this replaces the earlier EUR-converted estimate. Read 2026-10-11', date:'2026-10-11' },
+    priceSource: [
+      { url:'https://www.bhphotovideo.com/c/search?q=voigtlander%20nikon%20z', tier:'T3', title:'B&H Photo listing', note:'USD $759 -> $699: B&H lists "SEPTON 40mm f/2 Aspherical Lens (Nikon Z)" at a regular price of $699. Voigtländer publishes no US price of its own (cosina.co.jp/voigtlaender.de give JPY/EUR only), and B&H is the main US retailer; this replaces the earlier EUR-converted estimate. Read 2026-10-11', date:'2026-10-11' },
+      { url:'https://www.wexphotovideo.com/voigtlander-40mm-f2-septon-aspherical-lens-for-nikon-z-3310167/', tier:'T3', title:'Wex Photo Video (UK)', note:'GBP 449: Wex Photo Video price, no sale shown (voigtlander-40mm-f2-septon-aspherical-lens-for-nikon-z)', date:'2026-11-21' },
+    ],
     asin:null,
-    prices:{USD:699,AUD:null,EUR:649,GBP:null,JPY:null,CAD:null,SGD:null},
+    prices:{USD:699,AUD:null,EUR:649,GBP:449,JPY:null,CAD:null,SGD:null},
     specSources: [{ url:'https://www.cosina.co.jp/voigtlander/en/z-mount/septon-40mm-f2-aspherical/', tier:'T1', title:'Cosina - Voigtländer SEPTON 40mm F2 Aspherical (Z-mount) specifications', note:'Minimum Aperture F22, 10 aperture blades, 0.3 m, maximum reproduction ratio 1:5.3 (0.19x), 68.3 x 32.0 mm, 52mm filter, 205 g - same optics as the E version (F22, 10 blades, 1:5.3). Corrected: minAperture 16 -> 22; blades null -> 10; maxMagnification null -> 0.19.', date:'2026-11-07' }],
     priceIncomplete:true, productUrl:'https://www.cosina.co.jp/voigtlander/en/z-mount/septon-40mm-f2-aspherical/',
   },
@@ -3509,9 +3576,12 @@ const LENSES = {
     // 2026-09-06: repointed off voigtlaender.de — broken TLS chain (see note above).
     imageUrl:'https://www.cosina.co.jp/wp/wp-content/uploads/2023/01/Z-50_10_01olktr.jpg',
     imageSource: { url:'https://www.cosina.co.jp/voigtlander/en/z-mount/nokton-50mm-f1-aspherical/', tier:'T1', note:'Cosina\'s own EN product page for the Z-mount NOKTON 50mm F1 Aspherical; replaces the voigtlaender.de source (TLS chain broken)', date:'2026-09-06' },
-    priceSource: { url:'https://www.bhphotovideo.com/c/search?q=voigtlander%20nikon%20z', tier:'T3', title:'B&H Photo listing', note:'USD $2103 -> $1799: B&H lists "Nokton 50mm f/1.0 Aspherical Lens (Nikon Z)" at a regular price of $1799 (currently on sale at $1699). Voigtländer publishes no US price of its own (cosina.co.jp/voigtlaender.de give JPY/EUR only), and B&H is the main US retailer; this replaces the earlier EUR-converted estimate. Read 2026-10-11', date:'2026-10-11' },
+    priceSource: [
+      { url:'https://www.bhphotovideo.com/c/search?q=voigtlander%20nikon%20z', tier:'T3', title:'B&H Photo listing', note:'USD $2103 -> $1799: B&H lists "Nokton 50mm f/1.0 Aspherical Lens (Nikon Z)" at a regular price of $1799 (currently on sale at $1699). Voigtländer publishes no US price of its own (cosina.co.jp/voigtlaender.de give JPY/EUR only), and B&H is the main US retailer; this replaces the earlier EUR-converted estimate. Read 2026-10-11', date:'2026-10-11' },
+      { url:'https://www.wexphotovideo.com/voigtlander-50mm-f1-0-nokton-aspherical-lens-for-nikon-z-3086944/', tier:'T3', title:'Wex Photo Video (UK)', note:'GBP 1699: Wex Photo Video regular (was) price; on sale at 1529, not used (voigtlander-50mm-f1-0-nokton-aspherical-lens-for-nikon-z)', date:'2026-11-21' },
+    ],
     asin:'B0BYRT9YGL',
-    prices:{USD:1799,AUD:null,EUR:1799,GBP:null,JPY:null,CAD:null,SGD:null},
+    prices:{USD:1799,AUD:null,EUR:1799,GBP:1699,JPY:null,CAD:null,SGD:null},
     priceIncomplete:true, productUrl:'https://www.cosina.co.jp/voigtlander/en/z-mount/nokton-50mm-f1-aspherical/',
   },
 
@@ -3526,9 +3596,12 @@ const LENSES = {
     // 2026-09-06: repointed off voigtlaender.de — broken TLS chain (see note above).
     imageUrl:'https://www.cosina.co.jp/wp/wp-content/uploads/2022/10/Z-65_20-01b.jpg',
     imageSource: { url:'https://www.cosina.co.jp/voigtlander/en/z-mount/macro-apo-lanthar-65mm-f2-aspherical/', tier:'T1', note:'Cosina\'s own EN product page for the Z-mount MACRO APO-LANTHAR 65mm F2 Aspherical; replaces the voigtlaender.de source (TLS chain broken)', date:'2026-09-06' },
-    priceSource: { url:'https://www.bhphotovideo.com/c/search?q=voigtlander%20nikon%20z', tier:'T3', title:'B&H Photo listing', note:'USD $1343 -> $799: B&H lists "MACRO APO-LANTHAR 65mm f/2 Aspherical for Nikon Z" at a regular price of $799 (currently on sale at $699). Voigtländer publishes no US price of its own (cosina.co.jp/voigtlaender.de give JPY/EUR only), and B&H is the main US retailer; this replaces the earlier EUR-converted estimate. Read 2026-10-11', date:'2026-10-11' },
+    priceSource: [
+      { url:'https://www.bhphotovideo.com/c/search?q=voigtlander%20nikon%20z', tier:'T3', title:'B&H Photo listing', note:'USD $1343 -> $799: B&H lists "MACRO APO-LANTHAR 65mm f/2 Aspherical for Nikon Z" at a regular price of $799 (currently on sale at $699). Voigtländer publishes no US price of its own (cosina.co.jp/voigtlaender.de give JPY/EUR only), and B&H is the main US retailer; this replaces the earlier EUR-converted estimate. Read 2026-10-11', date:'2026-10-11' },
+      { url:'https://www.wexphotovideo.com/voigtlander-65mm-f2-macro-apo-lanthar-aspherical-lens-for-nikon-z-3072724/', tier:'T3', title:'Wex Photo Video (UK)', note:'GBP 849: Wex Photo Video price, no sale shown (voigtlander-65mm-f2-macro-apo-lanthar-aspherical-lens-for-nikon-z)', date:'2026-11-21' },
+    ],
     asin:'B0BTRPNWSV',
-    prices:{USD:799,AUD:null,EUR:1149,GBP:null,JPY:null,CAD:null,SGD:null},
+    prices:{USD:799,AUD:null,EUR:1149,GBP:849,JPY:null,CAD:null,SGD:null},
     priceIncomplete:true, productUrl:'https://www.cosina.co.jp/voigtlander/en/z-mount/macro-apo-lanthar-65mm-f2-aspherical/',
   },
 
@@ -3546,9 +3619,10 @@ const LENSES = {
     priceSource: [
       { url:'https://www.bhphotovideo.com/c/product/1954823-REG/x.html', tier:'T3', title:'B&H - Voigtländer Portrait Heliar 75mm f/1.8 Aspherical (Nikon Z)', note:'$699, no strikethrough (checked 2026-10-24)', date:'2026-10-24' },
       { url:'https://www.cosina.co.jp/voigtlander/z-mount/portrait-heliar-75mm-f1-8/', tier:'T1', title:'Cosina (Voigtländer maker) Japan - Portrait Heliar 75mm F1.8 (Z-mount)', note:'suggested retail ¥150,000 before tax, the same on every mount; JPY stored with 10% consumption tax: ¥165,000 (read 2026-10-24)', date:'2026-10-24' },
+      { url:'https://www.wexphotovideo.com/voigtlander-75mm-f1-8-portrait-heliar-lens-for-nikon-z-3302328/', tier:'T3', title:'Wex Photo Video (UK)', note:'GBP 749: Wex Photo Video regular (was) price; on sale at 674, not used (voigtlander-75mm-f1-8-portrait-heliar-lens-for-nikon-z)', date:'2026-11-21' },
     ],
     asin:null,
-    prices:{USD:699,AUD:null,EUR:1199,GBP:null,JPY:165000,CAD:null,SGD:null},
+    prices:{USD:699,AUD:null,EUR:1199,GBP:749,JPY:165000,CAD:null,SGD:null},
     priceIncomplete:true, productUrl:'https://www.cosina.co.jp/voigtlander/en/z-mount/portrait-heliar-75mm-f1-8/',
   },
 
@@ -3562,11 +3636,12 @@ const LENSES = {
     imageUrl:'https://www.cosina.co.jp/wp/wp-content/uploads/2024/04/Z-75_15-01-cfderw.jpg',
     imageSource: { url:'https://www.cosina.co.jp/voigtlander/en/z-mount/nokton-75mm-f1-5-aspherical/', tier:'T1', title:'Cosina Voigtländer NOKTON 75mm F1.5 Aspherical (Z-mount)', note:'the page\'s first product shot (Z-75_15-01; the P00 file is a sample photo)', date:'2026-10-21' },
     asin:null,
-    prices:{USD:899,AUD:null,EUR:1149,GBP:null,JPY:null,CAD:null,SGD:null},
+    prices:{USD:899,AUD:null,EUR:1149,GBP:849,JPY:null,CAD:null,SGD:null},
     specSources: [{ url:'https://www.cosina.co.jp/voigtlander/en/z-mount/nokton-75mm-f1-5-aspherical/', tier:'T1', title:'Cosina Voigtländer NOKTON 75mm F1.5 Aspherical (Z-mount) - official page', note:'F1.5-F32, 7 elements in 6 groups, 12 blades, 0.5m, 1:4.8, φ74.0×75.9mm, φ62 filter, 530g, full frame, electrical contacts. Year from the page\'s image upload date (April 2024)', date:'2026-10-21' }],
     priceSource: [
       { url:'https://www.bhphotovideo.com/c/search?q=voigtlander%20nikon%20z', tier:'T3', title:'B&H Photo - Voigtländer Nikon Z search results', note:'"Nokton 75mm f/1.5 Aspherical Lens (Nikon Z)" $899, not on sale. Cosina publishes no US price; non-USD not examined', date:'2026-10-21' },
       { url:'https://www.calumet.de/product/voigtlaender-75mm-f1-5-nokton-asph-fuer-nikon-z-mount', tier:'T3', title:'Calumet Germany', note:'EUR 1149: manufacturer UVP printed by Calumet for Voigtländer 75mm F1.5 Nokton Asph. für Nikon Z-Mount ; Calumet sells at 1049.01, not used', date:'2026-11-21' },
+      { url:'https://www.wexphotovideo.com/voigtlander-75mm-f1-5-nokton-aspherical-lens-for-nikon-z-3166383/', tier:'T3', title:'Wex Photo Video (UK)', note:'GBP 849: Wex Photo Video regular (was) price; on sale at 764, not used (voigtlander-75mm-f1-5-nokton-aspherical-lens-for-nikon-z)', date:'2026-11-21' },
     ],
     priceIncomplete:true, productUrl:'https://www.cosina.co.jp/voigtlander/en/z-mount/nokton-75mm-f1-5-aspherical/',
   },
@@ -3581,11 +3656,12 @@ const LENSES = {
     imageUrl:'https://www.cosina.co.jp/wp/wp-content/uploads/2026/06/Z-35_14-web01juwsd.jpg',
     imageSource: { url:'https://www.cosina.co.jp/voigtlander/en/z-mount/nokton-classic-35mm-f1-4/', tier:'T1', title:'Cosina Voigtländer NOKTON classic 35mm F1.4 (Z-mount)', note:'the page\'s first product shot (Z-35_14-web01; the P00 file is a sample photo)', date:'2026-10-21' },
     asin:null,
-    prices:{USD:699,AUD:null,EUR:null,GBP:null,JPY:99000,CAD:null,SGD:null},
+    prices:{USD:699,AUD:null,EUR:null,GBP:499,JPY:99000,CAD:null,SGD:null},
     specSources: [{ url:'https://www.cosina.co.jp/voigtlander/en/z-mount/nokton-classic-35mm-f1-4/', tier:'T1', title:'Cosina Voigtländer NOKTON classic 35mm F1.4 (Z-mount) - official page', note:'F1.4-F16, 8 elements in 6 groups, 10 blades, 0.27m, 1:5.5, φ67.6×41.6mm, φ58 filter, 250g, full frame, electrical contacts. Year from the page\'s image upload date (June 2026)', date:'2026-10-21' }],
     priceSource: [
       { url:'https://www.bhphotovideo.com/c/product/1982279-REG/x.html', tier:'T3', title:'B&H - Voigtländer Nokton Classic 35mm f/1.4 (Nikon Z)', note:'$699, no strikethrough (checked 2026-10-24)', date:'2026-10-24' },
       { url:'https://www.cosina.co.jp/voigtlander/z-mount/nokton-classic-35mm-f1-4/', tier:'T1', title:'Cosina (Voigtländer maker) Japan - Nokton classic 35mm F1.4 (Z-mount)', note:'suggested retail ¥90,000 before tax; JPY stored with 10% consumption tax: ¥99,000 (read 2026-10-24)', date:'2026-10-24' },
+      { url:'https://www.wexphotovideo.com/voigtlander-35mm-f1-4-nokton-classic-lens-for-nikon-z-3340113/', tier:'T3', title:'Wex Photo Video (UK)', note:'GBP 499: Wex Photo Video regular (was) price; on sale at 449, not used (voigtlander-35mm-f1-4-nokton-classic-lens-for-nikon-z)', date:'2026-11-21' },
     ],
     priceIncomplete:true, productUrl:'https://www.cosina.co.jp/voigtlander/en/z-mount/nokton-classic-35mm-f1-4/',
   },
@@ -3600,11 +3676,12 @@ const LENSES = {
     weatherSealed:false, ois:false, oisStops:null, year:2026, discontinued:false,
     imageUrl:null,
     asin:null,
-    prices:{USD:2299,AUD:null,EUR:2399,GBP:null,JPY:null,CAD:null,SGD:null},
+    prices:{USD:2299,AUD:null,EUR:2399,GBP:2050,JPY:null,CAD:null,SGD:null},
     specSources: [{ url:'https://www.zeiss.com/photonics-and-optics/us/photography/products/lenses-for-mirrorless-system-cameras/otus-ml-lenses.html', tier:'T1', title:'ZEISS Otus ML lenses - official Technical Data', note:'Otus ML 1.4/35 column: f/1.4-16, 15/11, focusing range from 0.30m, filter M67, diameter max. 77mm; Z: length without caps 103mm, weight 737g (E: 101mm / 698g); MOD ratio 1:5.72; weather sealing not stated (entered false); blade count not published. Year: announced 2026-02-24 (CP+ 2026), US availability April 2026', date:'2026-10-21' }],
     priceSource: [
       { url:'https://www.bhphotovideo.com/c/search?q=zeiss%20otus%20ml%20nikon%20z', tier:'T3', title:'B&H Photo - Zeiss Otus ML Nikon Z search results', note:'"Otus ML 35mm f/1.4 Lens (Nikon Z)" $2,299, not on sale. Zeiss has no US web store; non-USD not examined', date:'2026-10-21' },
       { url:'https://www.calumet.de/product/zeiss-otus-ml-35mm-f1-4-fuer-nikon-z-mount', tier:'T3', title:'Calumet Germany', note:'EUR 2399: Calumet regular price for Zeiss Otus ML 35mm F1.4 für Nikon Z-Mount (no UVP or sale shown)', date:'2026-11-21' },
+      { url:'https://www.wexphotovideo.com/zeiss-35mm-f1-4-otus-ml-lens-for-nikon-z-3311169/', tier:'T3', title:'Wex Photo Video (UK)', note:'GBP 2050: Wex Photo Video price, no sale shown (zeiss-35mm-f1-4-otus-ml-lens-for-nikon-z)', date:'2026-11-21' },
     ],
     priceIncomplete:true,
     productUrl:'https://www.zeiss.com/photonics-and-optics/us/photography/products/lenses-for-mirrorless-system-cameras/otus-ml-lenses.html',
@@ -3619,11 +3696,12 @@ const LENSES = {
     weatherSealed:false, ois:false, oisStops:null, year:2025, discontinued:false,
     imageUrl:null,
     asin:null,
-    prices:{USD:2499,AUD:null,EUR:2259,GBP:null,JPY:null,CAD:null,SGD:null},
+    prices:{USD:2499,AUD:null,EUR:2259,GBP:1949,JPY:null,CAD:null,SGD:null},
     specSources: [{ url:'https://www.zeiss.com/photonics-and-optics/us/photography/products/lenses-for-mirrorless-system-cameras/otus-ml-lenses.html', tier:'T1', title:'ZEISS Otus ML lenses - official Technical Data', note:'Otus ML 1.4/50 column: f/1.4-16, 14/11, focusing range from 0.50m, filter M67, diameter max. 77mm; Z: length without caps 102mm, weight 718g (E: 100mm / 677g); MOD ratio 1:7.3; weather sealing not stated (entered false); blade count not published. Year: launch year', date:'2026-10-21' }],
     priceSource: [
       { url:'https://www.bhphotovideo.com/c/search?q=zeiss%20otus%20ml%20nikon%20z', tier:'T3', title:'B&H Photo - Zeiss Otus ML Nikon Z search results', note:'"Otus ML 50mm f/1.4 Lens (Nikon Z)" $2,499, not on sale. Zeiss has no US web store; non-USD not examined', date:'2026-10-21' },
       { url:'https://www.calumet.de/product/zeiss-otus-ml-50mm-f1-4-fuer-nikon-z-mount', tier:'T3', title:'Calumet Germany', note:'EUR 2259: manufacturer UVP printed by Calumet for Zeiss Otus ML 50mm F1.4 für Nikon Z-Mount; Calumet sells at 1502.29, not used', date:'2026-11-21' },
+      { url:'https://www.wexphotovideo.com/zeiss-50mm-f1-4-otus-ml-lens-nikon-z-3231642/', tier:'T3', title:'Wex Photo Video (UK)', note:'GBP 1949: Wex Photo Video price, no sale shown (zeiss-50mm-f1-4-otus-ml-lens-nikon-z)', date:'2026-11-21' },
     ],
     priceIncomplete:true,
     productUrl:'https://www.zeiss.com/photonics-and-optics/us/photography/products/lenses-for-mirrorless-system-cameras/otus-ml-lenses.html',
@@ -3638,11 +3716,12 @@ const LENSES = {
     weatherSealed:false, ois:false, oisStops:null, year:2025, discontinued:false,
     imageUrl:null,
     asin:null,
-    prices:{USD:2999,AUD:null,EUR:2799,GBP:null,JPY:null,CAD:null,SGD:null},
+    prices:{USD:2999,AUD:null,EUR:2799,GBP:2350,JPY:null,CAD:null,SGD:null},
     specSources: [{ url:'https://www.zeiss.com/photonics-and-optics/us/photography/products/lenses-for-mirrorless-system-cameras/otus-ml-lenses.html', tier:'T1', title:'ZEISS Otus ML lenses - official Technical Data', note:'Otus ML 1.4/85 column: f/1.4-16, 15/11, focusing range from 0.80m, filter M77, diameter max. 88mm; Z: length without caps 116mm, weight 1061g (E: 113mm / 1033g); MOD ratio 1:8.1; weather sealing not stated (entered false); blade count not published. Year: launch year', date:'2026-10-21' }],
     priceSource: [
       { url:'https://www.bhphotovideo.com/c/search?q=zeiss%20otus%20ml%20nikon%20z', tier:'T3', title:'B&H Photo - Zeiss Otus ML Nikon Z search results', note:'"Otus ML 85mm f/1.4 Lens (Nikon Z)" $2,999, not on sale. Zeiss has no US web store; non-USD not examined', date:'2026-10-21' },
       { url:'https://www.calumet.de/product/zeiss-otus-ml-85mm-f1-4-fuer-nikon-z-mount', tier:'T3', title:'Calumet Germany', note:'EUR 2799: manufacturer UVP printed by Calumet for Zeiss Otus ML 85mm F1.4 für Nikon Z-Mount; Calumet sells at 1861.39, not used', date:'2026-11-21' },
+      { url:'https://www.wexphotovideo.com/zeiss-85mm-f1-4-otus-ml-lens-nikon-z-3231659/', tier:'T3', title:'Wex Photo Video (UK)', note:'GBP 2350: Wex Photo Video price, no sale shown (zeiss-85mm-f1-4-otus-ml-lens-nikon-z)', date:'2026-11-21' },
     ],
     priceIncomplete:true,
     productUrl:'https://www.zeiss.com/photonics-and-optics/us/photography/products/lenses-for-mirrorless-system-cameras/otus-ml-lenses.html',
@@ -3659,9 +3738,12 @@ const LENSES = {
     imageUrl:'https://cdn.shopify.com/s/files/1/0756/5937/8928/files/Simera-28mm-f-1.4-Z-M-E-RF-X-Mount-Full-Frame-Manual-Lens-Thypoch-15970383.png',
     imageSource: { url:'https://store.thypoch.com/products/simera-28mm-f-1-4-e-rf-x-z-mount', tier:'T1', title:'Thypoch official store', note:'the Black / Nikon Z Mount variant\'s own image', date:'2026-10-21' },
     asin:null,
-    prices:{USD:549,AUD:null,EUR:null,GBP:null,JPY:null,CAD:null,SGD:null},
+    prices:{USD:549,AUD:null,EUR:null,GBP:382,JPY:null,CAD:null,SGD:null},
     specSources: [{ url:'https://thypoch.com/en/simera/28mm', tier:'T1', title:'Thypoch Simera 28mm f/1.4 - Thypoch official page', note:'per-mount spec table (columns M/Z/RF/E/X), Z column: 72.1mm long without hood, ≈368g, flange 16mm; shared: front ø54mm, 11/7, 14 blades, 0.4m from the sensor plane, ø49 filter, f/1.4-16', date:'2026-10-21' }],
-    priceSource: { url:'https://store.thypoch.com/products/simera-28mm-f-1-4-e-rf-x-z-mount', tier:'T1', title:'Thypoch official store', note:'"Black / Nikon Z Mount" variant regular (compare-at) price $549; on sale at $399 at the time; store products.json 2026-10-21; non-USD not examined', date:'2026-10-21' },
+    priceSource: [
+      { url:'https://store.thypoch.com/products/simera-28mm-f-1-4-e-rf-x-z-mount', tier:'T1', title:'Thypoch official store', note:'"Black / Nikon Z Mount" variant regular (compare-at) price $549; on sale at $399 at the time; store products.json 2026-10-21; non-USD not examined', date:'2026-10-21' },
+      { url:'https://www.wexphotovideo.com/thypoch-simera-28mm-f1-4-photography-ff-lens-for-nikon-z-black-3189966/', tier:'T3', title:'Wex Photo Video (UK)', note:'GBP 382: Wex Photo Video price, no sale shown (thypoch-simera-28mm-f1-4-photography-ff-lens-for-nikon-z-black)', date:'2026-11-21' },
+    ],
     priceIncomplete:true,
     productUrl:'https://store.thypoch.com/products/simera-28mm-f-1-4-e-rf-x-z-mount',
   },
@@ -3696,9 +3778,12 @@ const LENSES = {
     imageUrl:'https://cdn.shopify.com/s/files/1/0756/5937/8928/files/Simera-50mm-f-1.4-Z-M-Full-frame-Manual-Lens-Thypoch-15975393.png',
     imageSource: { url:'https://store.thypoch.com/products/simera-50mm-f-1-4-m-mount', tier:'T1', title:'Thypoch official store', note:'the Black / Nikon Z mount variant\'s own image', date:'2026-10-21' },
     asin:null,
-    prices:{USD:549,AUD:null,EUR:null,GBP:null,JPY:null,CAD:null,SGD:null},
+    prices:{USD:549,AUD:null,EUR:null,GBP:478,JPY:null,CAD:null,SGD:null},
     specSources: [{ url:'https://thypoch.com/en/simera/50mm', tier:'T1', title:'Thypoch Simera 50mm f/1.4 - Thypoch official page', note:'per-mount spec table (columns M/Z), Z column: 64.8mm long without hood, ≈309g, flange 16mm; shared: front ∮54mm, M49 filter, 8 elements in 6 groups, 14 blades, 0.45m from the sensor plane, F1.4-F16, full-frame image circle. Year from the store listing date (March 2025)', date:'2026-10-21' }],
-    priceSource: { url:'https://store.thypoch.com/products/simera-50mm-f-1-4-m-mount', tier:'T1', title:'Thypoch official store', note:'"Black / Nikon Z mount" variant regular (compare-at) price $549; on sale at $499 at the time (store products.json, 2026-10-21); non-USD not examined', date:'2026-10-21' },
+    priceSource: [
+      { url:'https://store.thypoch.com/products/simera-50mm-f-1-4-m-mount', tier:'T1', title:'Thypoch official store', note:'"Black / Nikon Z mount" variant regular (compare-at) price $549; on sale at $499 at the time (store products.json, 2026-10-21); non-USD not examined', date:'2026-10-21' },
+      { url:'https://www.wexphotovideo.com/thypoch-simera-50mm-f1-4-photography-ff-lens-for-nikon-z-black-3272694/', tier:'T3', title:'Wex Photo Video (UK)', note:'GBP 478: Wex Photo Video price, no sale shown (thypoch-simera-50mm-f1-4-photography-ff-lens-for-nikon-z-black)', date:'2026-11-21' },
+    ],
     priceIncomplete:true,
     productUrl:'https://store.thypoch.com/products/simera-50mm-f-1-4-m-mount',
   },
