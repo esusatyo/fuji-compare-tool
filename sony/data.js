@@ -4321,7 +4321,7 @@ const LENSES = {
     imageUrl:'https://laowa.com.au/wp-content/uploads/2024/02/VE1028AFFE-20.png',
     imageSource: { url:'https://laowa.com.au/product/10mm/', tier:'T1', title:'Laowa Australia (official regional site)', note:'Sony FE AF version (file VE1028AFFE), lens alone, front view', date:'2026-10-21' },
     asin:null,
-    prices:{USD:799,AUD:1449,EUR:979,GBP:null,JPY:148500,CAD:1372,SGD:null},
+    prices:{USD:799,AUD:1449,EUR:979,GBP:839,JPY:148500,CAD:1372,SGD:null},
     specSources: [{ url:'https://www.venuslens.net/product/laowa-10mm-f-2-8-ff-zero-d/', tier:'T1', title:'Laowa 10mm f/2.8 Zero-D FF - Laowa (Venus Optics) official product page', note:'Specifications table (read from the store API description): AF Sony E version: 15/9, 5 blades (14-blade MF variant exists), 12cm MFD, 0.24X, ø77 filter, ø82 x 70.8mm, 420g; Laowa lists the aperture as "F2.8" only', date:'2026-10-21' }, { url:'https://www.bhphotovideo.com/c/product/1811367-REG/venus_optics_ve1028affe_laowa_10mm_f_2_8_zero_d.html/specs', tier:'T3', title:'B&H - Laowa 10mm f/2.8 Zero-D FF Autofocus (Sony E) specs', note:'f/2.8 to f/22; 82 x 70.8mm diameter x length', date:'2026-10-21' }, { url:'https://petapixel.com/2024/11/01/laowa-10mm-f-2-8-zero-d-review-a-fun-lens-that-has-some-tradeoffs/', tier:'NEWS', title:'PetaPixel - Laowa 10mm f/2.8 Zero-D FF review', note:'Stepping motor (STM) autofocus on the Sony FE and Nikon Z versions; matches the Nikon Z entry. The generic "Autofocus" label named no motor. Corrected: afType \'Autofocus\' -> \'Stepping Motor\'.', date:'2026-11-07' }],
     priceSource: [
       { url:'https://www.venuslens.net/product/laowa-10mm-f-2-8-ff-zero-d/', tier:'T1', title:'Laowa (Venus Optics) official store', note:'Sony E variation regular price $799 (store API, 2026-10-19); non-USD not examined', date:'2026-10-19' },
@@ -4329,6 +4329,7 @@ const LENSES = {
       { url:'https://www.syumitto.jp/SHOP/LAO0484.html', tier:'T1', title:'Syumitto (Sightron Japan, official Laowa importer) store', note:'JPY 148500 tax-included: Sightron Japan\'s Syumitto store price for LAOWA 10mm F2.8 ZERO-D FF 各マウント (ソニーFE(AF); no sale price shown', date:'2026-11-21' },
       { url:'https://store.amplis.com/products/laowa-10mm-f-2-8-zero-d-ff', tier:'T1', title:'Amplis store (official Laowa distributor, Canada)', note:'CAD 1372: Amplis regular price for Laowa - 10mm f/2.8 Zero-D FF (AF/MF) (Sony FE / Auto Focus (5-blade Aperture) / *Sony FE / Manual Focus (14-blade Aperture)); on sale at 1262, not used', date:'2026-11-21' },
       { url:'https://www.calumet.de/product/laowa-af-10mm-f2-8-zero-d-ff-fuer-sony-e-mount', tier:'T3', title:'Calumet Germany', note:'EUR 979: Calumet regular price for LAOWA AF 10mm F2.8 Zero-D FF für Sony E-Mount (no UVP or sale shown)', date:'2026-11-21' },
+      { url:'https://www.parkcameras.com/shop/laowa-10mm-f28-zero-d-ff-lens-for-sony-e_l242100z', tier:'T3', title:'Park Cameras (UK)', note:'GBP 839: Park Cameras price, no sale shown', date:'2026-11-21' },
     ],
     priceIncomplete:true,
     productUrl:'https://www.venuslens.net/product/laowa-10mm-f-2-8-ff-zero-d/',
