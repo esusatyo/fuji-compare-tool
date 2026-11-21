@@ -9,8 +9,8 @@ const path = require('path');
 // Facts from our verification work, not from the data files.
 const FOUND = {
   // A large lens database (2026 add-thirdparty-lenses run): spec tables matched
-  // the makers, mount lists did not; six lenses listed for Canon RF that their
-  // makers don't sell for RF.
+  // the manufacturers, mount lists did not; six lenses listed for Canon RF that their
+  // manufacturers don't sell for RF.
   rfPhantoms: 6,
   // OM System's stabilization figure for the OM-5 Mark II with a Sync IS lens;
   // we store the body-only figure (owner decision 2026-11-18).
@@ -19,7 +19,7 @@ const FOUND = {
 const OM5II_SOURCE = 'https://explore.omsystem.com/us/en/om-5-mark-ii';
 const ISSUES = 'https://github.com/esusatyo/fuji-compare-tool/issues';
 
-// A "maker source" is a T1 citation: the maker's own page, PDF, manual or
+// A "manufacturer source" is a T1 citation: the manufacturer's own page, PDF, manual or
 // press release (docs/data-methodology.md, section 1).
 const maker = x => (x.specSources || []).some(src => src.tier === 'T1');
 const t1Url = x => ((x.specSources || []).find(src => src.tier === 'T1') || {}).url || null;
@@ -39,7 +39,7 @@ module.exports = {
   snapshot(brandData) {
     // One entry per camera, and per lens per mount: a lens sold for one mount
     // appears in several brand files (e.g. Sigma L-Mount in Sigma, Panasonic
-    // and Leica), so fold by mount + maker + name.
+    // and Leica), so fold by mount + manufacturer + name.
     const lenses = new Map();
     const brands = [];
     for (const [b, data] of Object.entries(brandData)) {
@@ -92,20 +92,20 @@ module.exports = {
   },
 
   description(s) {
-    return `${pct(s.itemsCited, s.items)}% of our ${s.items.toLocaleString('en-US')} cameras and lenses link to the maker's own spec page. Why a small site can out-check big spec databases, and where it can't.`;
+    return `${pct(s.itemsCited, s.items)}% of our ${s.items.toLocaleString('en-US')} cameras and lenses link to the manufacturer's own spec page. Why a small site can out-check big spec databases, and where it can't.`;
   },
 
   claims(s) {
     return [
-      ['More than nine in ten of our cameras and lenses cite the maker', s.itemsCited / s.items > 0.9],
-      ['Our citations point to more than 40 different maker websites', s.makerSites > 40],
+      ['More than nine in ten of our cameras and lenses cite the manufacturer', s.itemsCited / s.items > 0.9],
+      ['Our citations point to more than 40 different manufacturer websites', s.makerSites > 40],
       ['More than 200 lenses appear in more than one brand file', s.sharedLenses > 200],
-      ['Every camera without a maker source is discontinued', s.uncitedAllDiscontinued],
+      ['Every camera without a manufacturer source is discontinued', s.uncitedAllDiscontinued],
       ['The X100VI gets more shots through the optical finder than the electronic one', s.x100vi.ovf > s.x100vi.evf],
       ['We store the OM-5 II body-only stabilization, lower than the Sync IS figure', s.om5ii.ibis < FOUND.om5iiSync && s.om5ii.cited],
-      ['Some brands have every camera traced to the maker, some do not', s.brands.some(b => b.cited === b.cameras) && s.brands.some(b => b.cited < b.cameras)],
+      ['Some brands have every camera traced to the manufacturer, some do not', s.brands.some(b => b.cited === b.cameras) && s.brands.some(b => b.cited < b.cameras)],
       ['The rule-change log has entries', s.rules > 0],
-      ['Every source we link is an https maker page', [s.x100vi.source, s.om5ii.source].every(u => /^https:/.test(u || ''))],
+      ['Every source we link is an https manufacturer page', [s.x100vi.source, s.om5ii.source].every(u => /^https:/.test(u || ''))],
     ];
   },
 
@@ -114,20 +114,20 @@ module.exports = {
     const full = s.brands.filter(b => b.cited === b.cameras).map(b => b.name);
     const list = a => a.length > 1 ? `${a.slice(0, -1).join(', ')} and ${a[a.length - 1]}` : a[0];
     return `
-<p class="guide-answer">A big spec database lists more cameras than anyone can check by hand, so it copies. We list fewer, and <strong>${pct(s.itemsCited, s.items)}%</strong> of our ${n(s.items)} cameras and lenses link straight to the maker's own spec page. Being small is what makes that possible.</p>
+<p class="guide-answer">A big spec database lists more cameras than anyone can check by hand, so it copies. We list fewer, and <strong>${pct(s.itemsCited, s.items)}%</strong> of our ${n(s.items)} cameras and lenses link straight to the manufacturer's own spec page. Being small is what makes that possible.</p>
 
 <p>That's not a dig at the big sites. It's a trade-off: they win on coverage, we try to win on checking. And because a careful site can still be wrong, we publish ${k.a('methodology', 'the rules we check by')}.</p>
 
 <h2>Why big spec databases drift</h2>
 <p>Size is the problem, not care. Three things go wrong at scale.</p>
 <p><strong>Copies of copies.</strong> Most stores list specs from the same distributor feed, and databases often fill their gaps from stores and from each other. One typo can end up on a hundred pages that all "agree".</p>
-<p><strong>One entry for many mounts.</strong> A lens sold for five mounts is five products, with different weights and lengths. When we checked one large lens database this year, its spec tables matched the makers, yet it listed ${FOUND.rfPhantoms} lenses for Canon RF that their makers don't sell for RF.</p>
-<p><strong>Mixed rules.</strong> Makers quote the same thing in different ways, and a database with one "battery life" box has to pick. Fujifilm ${k.src(s.x100vi.source, 'rates the X100VI')} at ${s.x100vi.evf} shots with the electronic viewfinder and ${s.x100vi.ovf} with the optical one. OM System ${k.src(s.om5ii.source, 'rates the OM-5 Mark II')} at ${s.om5ii.ibis} stops of stabilization on its own and ${FOUND.om5iiSync} with a matching lens. Neither number is wrong. Comparing one camera's best case with another's normal case is.</p>
+<p><strong>One entry for many mounts.</strong> A lens sold for five mounts is five products, with different weights and lengths. When we checked one large lens database this year, its spec tables matched the manufacturers, yet it listed ${FOUND.rfPhantoms} lenses for Canon RF that their manufacturers don't sell for RF.</p>
+<p><strong>Mixed rules.</strong> Manufacturers quote the same thing in different ways, and a database with one "battery life" box has to pick. Fujifilm ${k.src(s.x100vi.source, 'rates the X100VI')} at ${s.x100vi.evf} shots with the electronic viewfinder and ${s.x100vi.ovf} with the optical one. OM System ${k.src(s.om5ii.source, 'rates the OM-5 Mark II')} at ${s.om5ii.ibis} stops of stabilization on its own and ${FOUND.om5iiSync} with a matching lens. Neither number is wrong. Comparing one camera's best case with another's normal case is.</p>
 
 <h2>What a small site can do instead</h2>
 <p>We can't out-list the big databases, so we try to out-check them.</p>
 ${k.table(['What we do', 'What it stops'], [
-  ['Read the maker\'s own spec page for every figure', 'Copied mistakes'],
+  ['Read the manufacturer\'s own spec page for every figure', 'Copied mistakes'],
   [`Store each mount on its own (${k.a('mount/l-mount', 'L-Mount lenses')} aren't Sony E lenses)`, 'One mount\'s figures on another'],
   ['Use one rule per spec for every brand', 'Battery and stabilization figures that don\'t compare'],
   ['Link the source on every item we\'ve checked', 'Numbers you have to take on trust'],
@@ -136,29 +136,29 @@ ${k.table(['What we do', 'What it stops'], [
   [`Log every rule change in public (${s.rules} so far)`, 'Rules changing quietly'],
 ], { rowHeader: 0, wrap: true })}
 
-<h2>How much of our data can you trace to the maker?</h2>
-<p>Here's the share of each brand's cameras that cite the maker's own spec, across ${s.makerSites} maker websites in all.</p>
+<h2>How much of our data can you trace to the manufacturer?</h2>
+<p>Here's the share of each brand's cameras that cite the manufacturer's own spec, across ${s.makerSites} manufacturer websites in all.</p>
 ${k.bars({
-  caption: `Cameras citing the maker's own spec, by brand. Lenses: ${pct(s.lensesCited, s.lenses)}% of ${n(s.lenses)}.`,
+  caption: `Cameras citing the manufacturer's own spec, by brand. Lenses: ${pct(s.lensesCited, s.lenses)}% of ${n(s.lenses)}.`,
   unit: '%',
   max: 100,
   bars: s.brands.map(b => ({ label: b.name, sub: `${b.cited} of ${b.cameras} cameras`, value: pct(b.cited, b.cameras), series: 1 })),
   table: {
-    head: ['Brand', 'Cameras', 'With a maker source', 'Share'],
+    head: ['Brand', 'Cameras', 'With a manufacturer source', 'Share'],
     rows: s.brands.map(b => [b.name, b.cameras, b.cited, `${pct(b.cited, b.cameras)}%`]),
   },
 })}
-<p>${list(full)} are fully traced. Every camera we can't yet trace is discontinued, the newest from ${s.uncitedNewest}. Their maker pages are gone, which is exactly where a secondhand number is most tempting.</p>
+<p>${list(full)} are fully traced. Every camera we can't yet trace is discontinued, the newest from ${s.uncitedNewest}. Their manufacturer pages are gone, which is exactly where a secondhand number is most tempting.</p>
 
 <h2>Where we're still weaker</h2>
-<p><strong>We don't weigh anything.</strong> We have no lab, so when a maker is wrong, we're wrong with it. Makers' own pages sometimes copy a figure from one product to another.</p>
-<p><strong>Old cameras are hard.</strong> When a maker deletes a page, we're left with manuals and archives, and some of those never made it online.</p>
+<p><strong>We don't weigh anything.</strong> We have no lab, so when a manufacturer is wrong, we're wrong with it. Manufacturers' own pages sometimes copy a figure from one product to another.</p>
+<p><strong>Old cameras are hard.</strong> When a manufacturer deletes a page, we're left with manuals and archives, and some of those never made it online.</p>
 <p><strong>We've made our own mistakes.</strong> ${k.a('articles/camera-specs-we-got-wrong-2026', 'We wrote up the specs we got wrong')}, from a Canon flagship listed far too heavy to cameras missing their viewfinders.</p>
 <p><strong>Coverage.</strong> A big database will have the camera you're looking for. We might not: we cover mirrorless cameras from ${s.brands.length} brands and their lenses.</p>
 
 <h2>Why we publish the rules</h2>
 <p>Checking is only half of it. If you can't see how a number was chosen, you can't tell a careful site from a confident one.</p>
-<p>So ${k.a('methodology', 'our methodology')} lists which sources we trust, which number we store when makers disagree, and every rule change with its date. A figure that breaks one of those rules is a bug, and you can ${k.src(ISSUES, 'report it on GitHub')}.</p>
+<p>So ${k.a('methodology', 'our methodology')} lists which sources we trust, which number we store when manufacturers disagree, and every rule change with its date. A figure that breaks one of those rules is a bug, and you can ${k.src(ISSUES, 'report it on GitHub')}.</p>
 
 <h2>Keep reading</h2>
 <ul>
@@ -169,7 +169,7 @@ ${k.bars({
 </ul>
 
 <h2>How we counted</h2>
-<p>Counts are from our data on the publish date, including discontinued models. A lens sold for one mount appears in several of our brand files (a Sigma L-Mount lens sits under Sigma, Panasonic and Leica), so it counts once per mount. A maker source is the maker's own spec page, spec sheet, manual or press release; reviews and stores don't count.</p>
+<p>Counts are from our data on the publish date, including discontinued models. A lens sold for one mount appears in several of our brand files (a Sigma L-Mount lens sits under Sigma, Panasonic and Leica), so it counts once per mount. A manufacturer source is the manufacturer's own spec page, spec sheet, manual or press release; reviews and stores don't count.</p>
 `;
   },
 };

@@ -2555,7 +2555,7 @@ function identityHeadBlock(page, site, title, desc, card = null) {
     .brand-home svg { width: 24px; height: 24px; display: block; }
     .brand-wordmark { font-size: 15px; font-weight: 700; color: var(--text-primary); letter-spacing: -0.01em; }
     footer { margin-top: 32px; font-size: .85rem; color: var(--text-secondary); }
-    .theme-toggle { display: inline-flex; background: var(--overlay-weak); border-radius: 9px;
+    .theme-toggle { display: flex; width: max-content; background: var(--overlay-weak); border-radius: 9px;
                     overflow: hidden; border: 1px solid var(--border); margin-top: 16px; }
     .theme-btn { padding: 5px 14px; font-size: 12px; font-weight: 600; color: var(--text-secondary);
                  background: transparent; border: none; cursor: pointer; font-family: inherit; }
@@ -2857,7 +2857,7 @@ function buildSite({ today = new Date().toISOString().slice(0, 10) } = {}) {
 
   sitemapPaths.push('about.html', 'methodology.html', 'privacy.html');
   const ABOUT_DESC = `What ${site.siteName} is, how the spec and price data is sourced and verified, image credits, and who built it.`;
-  const METHODOLOGY_DESC = `How ${site.siteName} checks camera and lens specs: which sources we trust, which number we store when makers differ, and every rule change.`;
+  const METHODOLOGY_DESC = `How ${site.siteName} checks camera and lens specs: which sources we trust, which number we store when manufacturers differ, and every rule change.`;
   const PRIVACY_DESC = `${site.siteName} privacy policy: cookieless analytics, no accounts, no personal data collected.`;
   for (const [page, title, desc] of [
     ['about.html', `About — ${site.siteName}`, ABOUT_DESC],

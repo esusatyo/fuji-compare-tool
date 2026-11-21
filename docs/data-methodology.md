@@ -174,8 +174,27 @@ are in `.claude/skills/verify-specs/SKILL.md` → "Per-brand source recipes". No
 
 ## 6. Decision log (append only)
 
+Rows before 2026-11-14 were reconstructed on 2026-11-21 from git history and project notes
+(the commit or PR is in the Trigger column); the log was kept live from 2026-11-14.
+
 | Date | Decision | By | Trigger |
 |---|---|---|---|
+| 2026-06-22 | Prices = manufacturer RRP per currency, labeled RRP | convention | currency mislabeling fix (8c0af58) |
+| 2026-07-03 | `focalLengthEquiv` crops: 1.5 X / Sony APS-C / DX, 1.6 RF-S, 2.0 MFT | convention | CLAUDE.md conventions (fc44c57) |
+| 2026-07-03 | Third-party lenses denormalized per brand file, per-mount weight/price | convention | CLAUDE.md conventions (fc44c57) |
+| 2026-07-03 | New item with an unsourceable non-nullable field → skip it | convention | CLAUDE.md conventions (fc44c57) |
+| 2026-08-05 | No copying between brand files; lumped-mount tables need a second source | convention | Canon third-party pass (#22) |
+| 2026-08-08 | Lens revisions are new coexisting entries; old one discontinued | owner | Nikon / Canon refresh |
+| 2026-08-08 | Dual-fisheye VR lenses: `focalLengthEquiv` = native | convention | Canon RF-S 3.9mm Dual Fisheye (#23) |
+| 2026-08-09 | Mount availability always confirmed against the maker | convention | fabricated Tamron Nikon Z entry removed (#25) |
+| 2026-08-16 | `specSources` / `priceSource` citations with tier and date | convention | durable provenance (#32) |
+| 2026-09-07 | Scope: mirrorless only, each brand from its mirrorless system | owner | scope pushback on a plan |
+| 2026-09-09 | Lens dimensions per mount; 19 Sigma L-Mount lenses fixed | convention | Sigma brand (#51) |
+| 2026-09-27 | `evfMag` = 35mm-equivalent | convention | Sept 2026 refresh follow-ups (#69) |
+| 2026-10-24 | Price = agreed regular price across stores; no exchange-rate estimates for missing currencies | owner | third-party price audit |
+| 2026-11-13 | Announced items added as `preRelease`; price only if announced | owner | Sept–Nov releases (#87) |
+| 2026-11-13 | No cine lenses, for now | owner | Fujifilm GF19-35mm T3.5 |
+| 2026-11-13 | Sealing requires a maker claim; X-T50 → not sealed | owner | X-T50 (#92) |
 | 2026-11-14 | Fujifilm battery = Normal mode | owner | verify-specs Fujifilm |
 | 2026-11-14 | Sealing that needs an accessory = not sealed | owner | X100VI, GFX100RF |
 | 2026-11-14 | Burst split into mechanical / electronic (with crop) | owner | Fujifilm mixed conventions |
