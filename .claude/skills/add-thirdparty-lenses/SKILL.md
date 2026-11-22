@@ -21,6 +21,22 @@ fallback). **No engine changes are needed** beyond colour entries.
 
 ---
 
+## Keep the methodology current
+
+If this work changes **how we collect, choose or verify data** (specs, prices, images, scope,
+a trusted or banned source, an exception, any owner decision), update these in the same commit:
+
+1. `docs/data-methodology.md`: the rule, plus a dated row in its decision log. Mark a replaced
+   rule superseded; never delete it.
+2. `methodology.html` (the public /methodology page): the rule in plain words, plus the matching
+   "Rule changes" row. Its test only compares row counts, so it won't catch stale wording: reread it.
+3. Every other skill, and `CLAUDE.md`, that restates the rule.
+4. `about.html` if it now says something untrue. Articles are frozen: tell the owner which
+   sentence is out of date and let them decide.
+
+A rule is not proof that the data follows it. Before public copy says "every", "never" or
+"always", count in the data, and state the gap if there is one.
+
 ## Golden rules
 
 - **The maker's own site is sufficient on its own** — including its official
@@ -121,7 +137,7 @@ mount **today**, not just "was announced".
 |---|---|---|
 | **1** | The maker's own product/spec page **for this mount** (sigma-global.com, tamron.com, viltrox.com, venuslens.net, …) | The primary for every spec. If tier 1 doesn't exist for this mount, the lens probably doesn't ship in this mount. |
 | **2** | Independent measurement/review: DPReview, LensTip, Opticallimits, ephotozine, admiringlight | The corroborating source. Independent lab data, not a reprinted press release. |
-| **3** | Retailers (B&H, Adorama, Amazon, WEX, digitalcamerawarehouse) | Corroboration and **price/ASIN only**. Never the sole second source — they share one distributor feed. |
+| **3** | Retailers (B&H, Adorama, Amazon, WEX, digitalcamerawarehouse) | **Price/ASIN only, never a spec** (rule since 2026-11-15) — they share one distributor feed. |
 | **✗** | Rumour sites, aggregator spec databases, AI summaries, another brand's `data.js` | Never. |
 
 **Tier 1 is sufficient on its own.** A spec taken from the maker's own site
@@ -141,8 +157,8 @@ you're taking don't vary by mount. Where it does vary and the page won't say,
 that's exactly when tier 2 earns its keep.
 
 **The independence test** (for when you *are* corroborating): if two pages could
-have been populated from the same upstream feed, they count once. Two retailers
-= one source. A retailer quoting "Manufacturer specs" = the tier-1 page again. A
+have been populated from the same upstream feed, they count once. Retailers
+never count for a spec, even when quoting "Manufacturer specs": read the tier-1 page itself. A
 review that *measured* the weight = genuinely independent.
 
 **Bot-blocked sources.** DPReview, FujiRumors and several retailers block
@@ -225,7 +241,7 @@ was used for and its reliability class:
 
 **T1** maker's own site, incl. official regional sites · **T2** independent
 measurement/review · **T3** retailer — price and availability only · **T4**
-aggregator — tables only, never mount attribution · **NEWS** dated
+aggregator — never a spec source (since 2026-11-15) · **NEWS** dated
 announcement, `year` only.
 
 Three rules that matter more than the format:
@@ -234,10 +250,10 @@ Three rules that matter more than the format:
    says 638 g; that's the combined DSLR row, so the RF entry keeps 650 g" is
    what stops a later pass "correcting" a right value to a wrong one.
 2. **A source's reliability doesn't travel as one lump.** lensfinder.org's spec
-   tables matched tier 1 exactly (8/8 on a verified Tamron) while its *mount
-   attribution* was ~30% wrong — it listed six lenses under Canon RF that the
-   makers don't sell in RF. Trust a source per-field, and **always confirm mount
-   availability against the maker.**
+   tables mostly matched tier 1 in spot-checks (Tamron 8/8; Sigma 10-18 6/8, with a
+   wrong weight) while three of its ten TTArtisan RF listings weren't sold in RF.
+   It is no longer a spec source at all, and **always confirm mount availability
+   against the maker.**
 3. **Populate `specSources`/`priceSource`/`imageSource`** on the entry itself
    where the field exists, so provenance ships with the data rather than only
    in the change folder — the site renders these as clickable references on

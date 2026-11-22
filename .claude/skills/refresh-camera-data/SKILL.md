@@ -13,6 +13,22 @@ against the committed data, present a review, and apply approved updates.
 
 ---
 
+## Keep the methodology current
+
+If this work changes **how we collect, choose or verify data** (specs, prices, images, scope,
+a trusted or banned source, an exception, any owner decision), update these in the same commit:
+
+1. `docs/data-methodology.md`: the rule, plus a dated row in its decision log. Mark a replaced
+   rule superseded; never delete it.
+2. `methodology.html` (the public /methodology page): the rule in plain words, plus the matching
+   "Rule changes" row. Its test only compares row counts, so it won't catch stale wording: reread it.
+3. Every other skill, and `CLAUDE.md`, that restates the rule.
+4. `about.html` if it now says something untrue. Articles are frozen: tell the owner which
+   sentence is out of date and let them decide.
+
+A rule is not proof that the data follows it. Before public copy says "every", "never" or
+"always", count in the data, and state the gap if there is one.
+
 ## Scope (defaults)
 
 - **Brands**: ALL registered brands unless the user names one. Don't hardcode
@@ -308,9 +324,10 @@ Use **WebSearch** and **WebFetch**. Work brand by brand. For each brand:
   family. Confirm via `canon.com.au/search?q=<name>` rather than constructing a
   slug; a guess 404s about as often as it hits.
 
-Cite the source URL for every proposed change. Prefer official/manufacturer sources,
-then major retailers (B&H), then reputable press; treat rumor sites as leads to verify,
-not as confirmation.
+Cite the source URL for every proposed change. Specs: official/manufacturer sources,
+with measured reviews as the only backup. Prices: the official store, then major retailers
+(B&H). Press is for dates and announcements; treat rumor sites as leads to verify, not as
+confirmation.
 
 ### 4. Present findings BEFORE editing
 Produce a per-brand review grouped into three sections. Keep it scannable:
@@ -431,7 +448,7 @@ the test result, and any items left under "Needs confirmation" for the user to d
   `research/sources.md` **as you read it**, with what it was used for and its
   reliability class (T1 maker's own site incl. official regional sites · T2
   independent review/measurement · T3 retailer, price and availability only · T4
-  aggregator, tables only · NEWS dated announcement, `year` only). Populate
+  aggregator, never a spec source · NEWS dated announcement, `year` only). Populate
   `specSources`/`priceSource` on the entry where the field exists, as
   `{ url, tier, date, title }` (`priceSource` takes a list when you read several
   stores for the price) — give `title` a short reader-facing label (e.g.
@@ -441,9 +458,9 @@ the test result, and any items left under "Needs confirmation" for the user to d
 - **Keep sources for facts you rejected**, with the reason. "This page says 638 g and
   we didn't use it because that's the DSLR row" is what stops the next run
   "correcting" a right value to a wrong one.
-- **A source's classes don't travel together.** An aggregator whose spec tables check
-  out can still be badly wrong about which mounts a lens ships in — lensfinder.org was
-  ~30% wrong on mount attribution while its tables matched tier 1 exactly. Verify
+- **A source's classes don't travel together.** An aggregator whose spec tables mostly
+  check out can still be badly wrong about which mounts a lens ships in — three of
+  lensfinder.org's ten TTArtisan RF listings were false. Verify
   availability against the maker, always.
 - **A third-party entry surviving several refreshes unchallenged is not evidence it's
   real — verify the mount exists, not just the specs.** Confirmed 2026-08-08: Nikon's

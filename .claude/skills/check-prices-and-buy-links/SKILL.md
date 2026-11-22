@@ -21,6 +21,22 @@ This is a maintenance audit meant to be run periodically. It has three parts:
 
 ---
 
+## Keep the methodology current
+
+If this work changes **how we collect, choose or verify data** (specs, prices, images, scope,
+a trusted or banned source, an exception, any owner decision), update these in the same commit:
+
+1. `docs/data-methodology.md`: the rule, plus a dated row in its decision log. Mark a replaced
+   rule superseded; never delete it.
+2. `methodology.html` (the public /methodology page): the rule in plain words, plus the matching
+   "Rule changes" row. Its test only compares row counts, so it won't catch stale wording: reread it.
+3. Every other skill, and `CLAUDE.md`, that restates the rule.
+4. `about.html` if it now says something untrue. Articles are frozen: tell the owner which
+   sentence is out of date and let them decide.
+
+A rule is not proof that the data follows it. Before public copy says "every", "never" or
+"always", count in the data, and state the gap if there is one.
+
 ## Background: how Buy links work now
 
 Buy links are **generated per-currency at render time**, not stored as full URLs.
@@ -235,9 +251,9 @@ so they stay in lockstep.
      launch at the exact same price point). Before editing, confirm the
      match is unique to your target; if not, widen the edit to include a
      line that is unique to it (e.g. `name:` or `asin:`).
-   - For a brand-new model where only USD is known, you may run
-     `node scripts/compute-prices.js <brand>` or hand-fill ratio-derived
-     non-USD figures following neighbouring magnitudes. Note what's derived.
+   - For a brand-new **camera** where only USD is known, you may run
+     `node scripts/compute-prices.js <brand> cameras` (note what's derived). A new
+     lens keeps missing currencies `null`: no ratio estimate (owner 2026-10-24).
 
 5. **Update tests if needed.** The data tests assert *shape*, not specific price
    values, so routine price edits don't require test changes. Add/adjust a test

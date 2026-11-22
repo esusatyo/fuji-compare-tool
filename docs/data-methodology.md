@@ -6,8 +6,9 @@ so it records *why* each rule exists, who decided it and when, and the cases tha
 shaped it. Keep everything: when a rule changes, mark the old one superseded and keep
 it in the log at the bottom rather than deleting it.
 
-Skills that gather data (`verify-specs`, `add-thirdparty-lenses`, `add-camera-brand`,
-`refresh-camera-data`) restate the parts they need, but this file wins on any
+Skills that gather or write about data (`verify-specs`, `add-thirdparty-lenses`,
+`add-camera-brand`, `refresh-camera-data`, `check-prices-and-buy-links`,
+`fetch-product-images`, `write-guide`) restate the parts they need, but this file wins on any
 conflict. Update this file **first**, then the skills.
 
 The public page `methodology.html` (/methodology) restates sections 1–3 and the
