@@ -5881,7 +5881,7 @@ const LENSES = {
     imageUrl:'https://cdn.shopify.com/s/files/1/0433/2224/5282/files/1_03076011-c664-40e3-962a-377db23cc259.jpg',
     imageSource: { url:'https://ttartisan.store/products/ttartisan-af-75mm-f2', tier:'T1', title:'TTArtisan official store', note:'first product image, lens alone', date:'2026-10-21' },
     asin:null,
-    prices:{USD:199,AUD:359,EUR:229,GBP:199,JPY:39600,CAD:null,SGD:null},
+    prices:{USD:199,AUD:359,EUR:229,GBP:199,JPY:39600,CAD:279,SGD:null},
     specSources: [{ url:'https://ttartisan.store/products/ttartisan-af-75mm-f2', tier:'T1', title:'TTArtisan AF 75mm f/2 - official TTArtisan store', note:'spec table: 75mm, F2-F16, Full Frame, 9 blades, 62mm filter, 0.75m MFD, 10E/7G, weight Around 326-340g, midpoint; mount list includes Sony E. Year: as the Nikon entry. Sony E dimensions (length x diameter 74 x 67mm) from the page\'s Size diagram, as recorded in the Nikon entry\'s source note', date:'2026-10-21' }],
     priceSource: [
       { url:'https://ttartisan.store/products/ttartisan-af-75mm-f2', tier:'T1', title:'TTArtisan official store', note:'Sony E variant price $199 (store products.json, 2026-10-21); non-USD not examined', date:'2026-10-21' },
@@ -5890,6 +5890,7 @@ const LENSES = {
       { url:'https://www.georges.com.au/products/ttartisan-75mm-f-2-af-lens-black', tier:'T3', title:'Georges Cameras (Australia)', note:'AUD 359: Georges Cameras (Australia) regular price (TTArtisan 75mm f/2 AF Lens Black Sony E Mount)', date:'2026-11-21' },
       { url:'https://www.stkb.jp/shopdetail/000000002139/', tier:'T1', title:'Shoten Kobo online store (Japanese importer)', note:'JPY 39600 tax-included: Shoten Kobo (焦点工房, the Japanese importer) store price for 銘匠光学 TTArtisan AF 75mm f/2「E/Z/L/Xマウント」単焦点レンズ「ブラック/シルバー」; no sale shown', date:'2026-11-21' },
       { url:'https://www.cliftoncameras.co.uk/ttartisan-af-75mm-f2-lens/lens-fitting/sony-e-mount', tier:'T3', title:'Clifton Cameras (UK)', note:'GBP 199: Clifton Cameras (UK) regular price (listing: TTArtisan AF 75mm F2 - Sony E Mount)', date:'2026-11-21' },
+      { url:'https://thecamerastore.com/products/ttartisan-75mm-f2-sony-e', tier:'T3', title:'The Camera Store (Canada)', note:'CAD 279: The Camera Store selling price (no compare-at) for TTArtisan 75mm f2 - Sony E', date:'2026-11-22' },
     ],
     priceIncomplete:true,
     productUrl:'https://ttartisan.store/products/ttartisan-af-75mm-f2',
