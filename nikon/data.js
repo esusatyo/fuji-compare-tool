@@ -81,7 +81,10 @@ const CAMERAS = {
     imageCredit:{author:"Peachyeung316", licence:"CC BY-SA 4.0", licenceUrl:"https://creativecommons.org/licenses/by-sa/4.0", source:"https://commons.wikimedia.org/wiki/File:Nikon_Z9.jpg"},
     asin:'B09KHC4XCT',
     prices:{USD:5899,AUD:9899,EUR:5499,GBP:4999,JPY:772200,CAD:7499,SGD:8399},
-    priceSource: { url:'https://www.nikonusa.com/p/z-9/1669/overview', tier:'T1', title:'Nikon USA product page (list price)', note:'USD $5299 -> $5899: Nikon USA\'s own page data gives the list (base) price as $5,899.95, currently discounted to $5,299.95 ("You Save" promotion) (read 2026-10-11). The stored figure was stale. US-only correction. Regional prices from Nikon\'s own regional stores, read 2026-10-11: AUD 9899 (nikon.com.au store), CAD 7499 (store.nikon.ca, no sale price set), EUR 5499 (nikon.de), GBP 4999 (nikon.co.uk), JPY 772200 (Nikon Direct Japan), SGD 8399 (nikon.com.sg body only).', date:'2026-10-11' },
+    priceSource: [
+      { url:'https://www.nikonusa.com/p/z-9/1669/overview', tier:'T1', title:'Nikon USA product page (list price)', note:'USD $5299 -> $5899: Nikon USA\'s own page data gives the list (base) price as $5,899.95, currently discounted to $5,299.95 ("You Save" promotion) (read 2026-10-11). The stored figure was stale. US-only correction. Regional prices from Nikon\'s own regional stores, read 2026-10-11: AUD 9899 (nikon.com.au store), CAD 7499 (store.nikon.ca, no sale price set), EUR 5499 (nikon.de), GBP 4999 (nikon.co.uk), JPY 772200 (Nikon Direct Japan), SGD 8399 (nikon.com.sg body only).', date:'2026-10-11' },
+      { url:'https://www.nikonusa.com/p/z-9/1669/overview', tier:'T1', title:'Nikon USA product page', note:'USD 5900 confirmed: Nikon USA\'s own page data lists the body-only list (base) price 5899.95 (before any instant-savings discount) (read 2026-11-22)', date:'2026-11-22' },
+    ],
     specSources: [{ url:'https://imaging.nikon.com/imaging/lineup/mirrorless/z_9/', tier:'T1', title:'Nikon global product page', note:'verify-specs 2026-11-15: sensor, dimensions, weight, monitor, viewfinder re-read', date:'2026-11-15' }, { url:'https://www.nikonusa.com/en/nikon-products/product/mirrorless-cameras/z-9.html', tier:'T1', title:'Nikon USA specifications', note:'verify-specs 2026-11-15: Bluetooth version re-read', date:'2026-11-15' }],
     sensorMP:45.7, sensorType:'Full-frame Stacked BSI CMOS', processor:'EXPEED 7',
     width:149.0, height:149.5, depth:90.5, weight:1340, weatherSealed:true,
@@ -105,7 +108,10 @@ const CAMERAS = {
     imageCredit:{author:"昼落ち", licence:"CC BY-SA 4.0", licenceUrl:"https://creativecommons.org/licenses/by-sa/4.0", source:"https://commons.wikimedia.org/wiki/File:Nikon_Z_8_27_may_2023b.jpg"},
     asin:'B0C4Q71JBY',
     prices:{USD:4299,AUD:7449,EUR:3899,GBP:3699,JPY:575300,CAD:5499,SGD:5599},
-    priceSource: { url:'https://www.nikonusa.com/p/z-8/1695/overview', tier:'T1', title:'Nikon USA product page (list price)', note:'USD $3599 -> $4299: Nikon USA\'s own page data gives the list (base) price as $4,299.95, currently discounted to $3,299.95 ("You Save" promotion) (read 2026-10-11). The stored figure was stale. US-only correction. Regional prices from Nikon\'s own regional stores, read 2026-10-11: AUD 7449 (nikon.com.au store regular price; on sale at 5899), CAD 5499 (store.nikon.ca, no sale price set), EUR 3899 (nikon.de), GBP 3699 (nikon.co.uk), JPY 575300 (Nikon Direct Japan), SGD 5599 (nikon.com.sg body only).', date:'2026-10-11' },
+    priceSource: [
+      { url:'https://www.nikonusa.com/p/z-8/1695/overview', tier:'T1', title:'Nikon USA product page (list price)', note:'USD $3599 -> $4299: Nikon USA\'s own page data gives the list (base) price as $4,299.95, currently discounted to $3,299.95 ("You Save" promotion) (read 2026-10-11). The stored figure was stale. US-only correction. Regional prices from Nikon\'s own regional stores, read 2026-10-11: AUD 7449 (nikon.com.au store regular price; on sale at 5899), CAD 5499 (store.nikon.ca, no sale price set), EUR 3899 (nikon.de), GBP 3699 (nikon.co.uk), JPY 575300 (Nikon Direct Japan), SGD 5599 (nikon.com.sg body only).', date:'2026-10-11' },
+      { url:'https://www.nikonusa.com/p/z-8/1695/overview', tier:'T1', title:'Nikon USA product page', note:'USD 4300 confirmed: Nikon USA\'s own page data lists the body-only list (base) price 4299.95 (before any instant-savings discount) (read 2026-11-22)', date:'2026-11-22' },
+    ],
     specSources: [{ url:'https://imaging.nikon.com/imaging/lineup/mirrorless/z_8/', tier:'T1', title:'Nikon global product page', note:'verify-specs 2026-11-15: sensor, dimensions, weight, monitor, viewfinder re-read', date:'2026-11-15' }, { url:'https://www.nikonusa.com/en/nikon-products/product/mirrorless-cameras/z-8.html', tier:'T1', title:'Nikon USA specifications', note:'verify-specs 2026-11-15: Bluetooth version re-read', date:'2026-11-15' }],
     sensorMP:45.7, sensorType:'Full-frame Stacked BSI CMOS', processor:'EXPEED 7',
     width:144.0, height:118.5, depth:83.0, weight:910, weatherSealed:true,
@@ -132,6 +138,7 @@ const CAMERAS = {
     priceSource: [
       { url:'https://www.nikonusa.com/p/z6iii/1890/overview', tier:'T1', title:'Nikon USA product page (list price)', note:'USD $2199 -> $2699: Nikon USA\'s own page data gives the list (base) price as $2,699.95, currently discounted to $2,199.95 ("You Save" promotion) (read 2026-10-11). The stored figure was stale. US-only correction. Regional prices from Nikon\'s own regional stores, read 2026-10-11: AUD 4499 (nikon.com.au store regular price; on sale at 3699), CAD 3499 (store.nikon.ca, no sale price set), EUR 2499 (nikon.de), GBP 2199 (nikon.co.uk), JPY 396000 (Nikon Direct Japan, body), SGD 3599 (nikon.com.sg body only).', date:'2026-10-11' },
       { url:'https://www.georges.com.au/products/nikon-z6-iii-mirrorless-camera-body-only', tier:'T3', title:'George\'s Camera (Australia)', note:'AUD 4499 confirmed: George\'s Camera (Australia) regular price 4499 (compare-at; selling at 2880.97) for Nikon Z6 III Mirrorless Camera - Body Only (read 2026-11-22)', date:'2026-11-22' },
+      { url:'https://www.nikonusa.com/p/z6iii/1890/overview', tier:'T1', title:'Nikon USA product page', note:'USD 2700 confirmed: Nikon USA\'s own page data lists the body-only list (base) price 2699.95 (before any instant-savings discount) (read 2026-11-22)', date:'2026-11-22' },
     ],
     specSources: [{ url:'https://imaging.nikon.com/imaging/lineup/mirrorless/z6_3/', tier:'T1', title:'Nikon global product page', note:'verify-specs 2026-11-15: sensor, dimensions, weight, monitor, viewfinder re-read', date:'2026-11-15' }, { url:'https://www.nikonusa.com/p/z6iii/1890/overview', tier:'T1', title:'Nikon USA specifications', note:'verify-specs 2026-11-15: Bluetooth version and battery life (Energy saving OFF figures, viewfinder / monitor) re-read', date:'2026-11-15' }],
     sensorMP:24.5, sensorType:'Full-frame Partially-Stacked BSI CMOS', processor:'EXPEED 7',
@@ -156,6 +163,9 @@ const CAMERAS = {
     imageCredit:{author:"TTTNIS", licence:"CC0", licenceUrl:"http://creativecommons.org/publicdomain/zero/1.0/deed.en", source:"https://commons.wikimedia.org/wiki/File:Nikon_Z5II_03.jpg"},
     asin:'B0F3HJD64Y',
     prices:{USD:1849,AUD:2499,EUR:1799,GBP:1399,JPY:250000,CAD:2099,SGD:2299},
+    priceSource: [
+      { url:'https://www.nikonusa.com/p/z5ii/1680/overview', tier:'T1', title:'Nikon USA product page', note:'USD 1850 confirmed: Nikon USA\'s own page data lists the body-only list (base) price 1849.95 (before any instant-savings discount) (read 2026-11-22)', date:'2026-11-22' },
+    ],
     specSources: [{ url:'https://imaging.nikon.com/imaging/lineup/mirrorless/z5_2/', tier:'T1', title:'Nikon global product page', note:'verify-specs 2026-11-15: sensor, dimensions, weight, monitor, viewfinder re-read', date:'2026-11-15' }, { url:'https://www.nikonusa.com/p/z5ii/1680/overview', tier:'T1', title:'Nikon USA specifications', note:'verify-specs 2026-11-15: Bluetooth version and battery life (Energy saving OFF figures, viewfinder / monitor) re-read', date:'2026-11-15' }],
     sensorMP:24.5, sensorType:'Full-frame BSI CMOS', processor:'EXPEED 7',
     width:134.0, height:100.5, depth:72.0, weight:700, weatherSealed:true,
@@ -187,6 +197,7 @@ const CAMERAS = {
     priceSource: [
       { url:'https://www.nikonusa.com/p/z5iic/2082/overview', tier:'T1', title:'Nikon USA Z5IIC product page', note:'"Starting at $1,399.95" body only (2026-10-11). 2026-10-21 official regional stores, body only: EUR 1549 (nikon.de JSON-LD offer), GBP 1349 (nikon.co.uk JSON-LD offer), CAD 1899 (store.nikon.ca), SGD 2199 (nikon.com.sg mirrorless listing, "Z5IIC BODY ONLY"). AUD and JPY still ratio-derived (no Nikon AU shop listing or Nikon Direct price found)', date:'2026-10-21' },
       { url:'https://thecamerastore.com/products/nikon-z5-iic-body', tier:'T3', title:'The Camera Store (Canada)', note:'CAD 1899 confirmed: The Camera Store (Canada) regular price 1899 for Nikon Z5IIC Body (read 2026-11-22)', date:'2026-11-22' },
+      { url:'https://www.nikonusa.com/p/z5iic/2082/overview', tier:'T1', title:'Nikon USA product page', note:'USD 1400 confirmed: Nikon USA\'s own page data lists the body-only list (base) price 1399.95 (read 2026-11-22)', date:'2026-11-22' },
     ],
     sensorMP:24.5, sensorType:'Full-frame BSI CMOS', processor:'EXPEED 7',
     width:134.0, height:80.5, depth:72.0, weight:620, weatherSealed:true,
@@ -289,7 +300,10 @@ const CAMERAS = {
   'z6-ii': {
     name:'Z6 II', series:'Z (Full-frame)', mount:'z', year:2020, discontinued:false,
     tagline:'Dual-Processor All-Rounder',
-    priceSource: { url:'https://store.nikon.ca/p/z-6ii/1659', tier:'T1', title:'Nikon Canada store - Z6 II (body only)', note:'CAD 1799 -> 2399: Nikon Canada regular (RRP) price for the Body Only option $2399.00; on instant-savings sale at $2049.00 (not used).', date:'2026-11-07' },
+    priceSource: [
+      { url:'https://store.nikon.ca/p/z-6ii/1659', tier:'T1', title:'Nikon Canada store - Z6 II (body only)', note:'CAD 1799 -> 2399: Nikon Canada regular (RRP) price for the Body Only option $2399.00; on instant-savings sale at $2049.00 (not used).', date:'2026-11-07' },
+      { url:'https://www.nikonusa.com/p/z-6ii/1659/overview', tier:'T1', title:'Nikon USA product page', note:'USD 1750 confirmed: Nikon USA\'s own page data lists the body-only list (base) price 1749.95 (before any instant-savings discount) (read 2026-11-22)', date:'2026-11-22' },
+    ],
     productUrl:'https://www.nikonusa.com/en/nikon-products/product/mirrorless-cameras/z-6ii.html',
     imageUrl:'https://upload.wikimedia.org/wikipedia/commons/thumb/2/26/Nikon_Z_6II_2.jpg/500px-Nikon_Z_6II_2.jpg',
     imageCredit:{author:"Thilo Parg", licence:"CC BY-SA 4.0", licenceUrl:"https://creativecommons.org/licenses/by-sa/4.0", source:"https://commons.wikimedia.org/wiki/File:Nikon_Z_6II_2.jpg"}, asin:'B08L5Z4355',
@@ -334,7 +348,10 @@ const CAMERAS = {
   'z5': {
     name:'Z5', series:'Z (Full-frame)', mount:'z', year:2020, discontinued:false,
     tagline:'Full-Frame Entry (Original)',
-    priceSource: { url:'https://store.nikon.ca/p/z-5/1649', tier:'T1', title:'Nikon Canada store - Z5 (body only)', note:'CAD 1499 -> 1799: Nikon Canada lists the Body Only option at $1,799.00 with no separate regular price.', date:'2026-11-07' },
+    priceSource: [
+      { url:'https://store.nikon.ca/p/z-5/1649', tier:'T1', title:'Nikon Canada store - Z5 (body only)', note:'CAD 1499 -> 1799: Nikon Canada lists the Body Only option at $1,799.00 with no separate regular price.', date:'2026-11-07' },
+      { url:'https://www.nikonusa.com/p/z-5/1649/overview', tier:'T1', title:'Nikon USA product page', note:'USD 1450 confirmed: Nikon USA\'s own page data lists the body-only list (base) price 1449.95 (before any instant-savings discount) (read 2026-11-22)', date:'2026-11-22' },
+    ],
     productUrl:'https://www.nikonusa.com/en/nikon-products/product/mirrorless-cameras/z-5.html',
     imageUrl:'https://upload.wikimedia.org/wikipedia/commons/thumb/b/ba/Nikon_Z_5_21_Oct_2020a.jpg/500px-Nikon_Z_5_21_Oct_2020a.jpg',
     imageCredit:{author:"昼落ち", licence:"CC BY-SA 4.0", licenceUrl:"https://creativecommons.org/licenses/by-sa/4.0", source:"https://commons.wikimedia.org/wiki/File:Nikon_Z_5_21_Oct_2020a.jpg"}, asin:'B08DCJNTBX',
@@ -364,7 +381,10 @@ const CAMERAS = {
     imageCredit:{author:"昼落ち", licence:"CC0", licenceUrl:"http://creativecommons.org/publicdomain/zero/1.0/deed.en", source:"https://commons.wikimedia.org/wiki/File:Nikon_Z50II_28_nov_2024a.jpg"},
     asin:'B0DMJBLQGP',
     prices:{USD:1010,AUD:1449,EUR:1049,GBP:849,JPY:150000,CAD:1249,SGD:1299},
-    priceSource: { url:'https://www.nikonusa.com/p/z50ii/1784/overview', tier:'T1', note:'"Starting at $1,009.95" body-only on nikonusa.com (Aug 2026); corrects the stale $1,007 figure previously stored here', date:'2026-08-23' },
+    priceSource: [
+      { url:'https://www.nikonusa.com/p/z50ii/1784/overview', tier:'T1', note:'"Starting at $1,009.95" body-only on nikonusa.com (Aug 2026); corrects the stale $1,007 figure previously stored here', date:'2026-08-23' },
+      { url:'https://www.nikonusa.com/p/z50ii/1784/overview', tier:'T1', title:'Nikon USA product page', note:'USD 1010 confirmed: Nikon USA\'s own page data lists the body-only list (base) price 1009.95 (before any instant-savings discount) (read 2026-11-22)', date:'2026-11-22' },
+    ],
     specSources: [{ url:'https://imaging.nikon.com/imaging/lineup/mirrorless/z50_2/', tier:'T1', title:'Nikon global product page', note:'verify-specs 2026-11-15: sensor, dimensions, weight, monitor, viewfinder re-read', date:'2026-11-15' }, { url:'https://www.nikonusa.com/p/z50ii/1784/overview', tier:'T1', title:'Nikon USA specifications', note:'verify-specs 2026-11-15: Bluetooth version and battery life (Energy saving OFF figures, viewfinder / monitor) re-read', date:'2026-11-15' }],
     sensorMP:20.9, sensorType:'APS-C (DX) CMOS', processor:'EXPEED 7',
     width:127.0, height:96.8, depth:66.5, weight:550, weatherSealed:false,
@@ -406,7 +426,10 @@ const CAMERAS = {
   'z30': {
     name:'Z30', series:'Z (APS-C)', mount:'z', year:2022, discontinued:false,
     tagline:'Vlogging DX, No Viewfinder',
-    priceSource: { url:'https://store.nikon.ca/p/z-30/1737', tier:'T1', title:'Nikon Canada store - Z30 (body only)', note:'CAD 799 -> 879: Nikon Canada regular (RRP) price for the Body Only option $879.00; on instant-savings sale at $779.00 (not used).', date:'2026-11-07' },
+    priceSource: [
+      { url:'https://store.nikon.ca/p/z-30/1737', tier:'T1', title:'Nikon Canada store - Z30 (body only)', note:'CAD 799 -> 879: Nikon Canada regular (RRP) price for the Body Only option $879.00; on instant-savings sale at $779.00 (not used).', date:'2026-11-07' },
+      { url:'https://www.nikonusa.com/p/z-30/1737/overview', tier:'T1', title:'Nikon USA product page', note:'USD 810 confirmed: Nikon USA\'s own page data lists the body-only list (base) price 809.95 (before any instant-savings discount) (read 2026-11-22)', date:'2026-11-22' },
+    ],
     productUrl:'https://www.nikonusa.com/p/z-30/1737/overview',
     imageUrl:'https://upload.wikimedia.org/wikipedia/commons/thumb/f/fe/Nikon_Z30.jpg/500px-Nikon_Z30.jpg',
     imageCredit:{author:"Phiarc", licence:"CC BY-SA 4.0", licenceUrl:"https://creativecommons.org/licenses/by-sa/4.0", source:"https://commons.wikimedia.org/wiki/File:Nikon_Z30.jpg"}, asin:'B0B527JD1C',
@@ -434,6 +457,9 @@ const CAMERAS = {
     imageUrl:'https://upload.wikimedia.org/wikipedia/commons/thumb/3/3e/Nikon_Z_f_8_nov_2023a.jpg/500px-Nikon_Z_f_8_nov_2023a.jpg',
     imageCredit:{author:"昼落ち", licence:"CC0", licenceUrl:"http://creativecommons.org/publicdomain/zero/1.0/deed.en", source:"https://commons.wikimedia.org/wiki/File:Nikon_Z_f_8_nov_2023a.jpg"}, asin:'B0CJDHSFTN',
     prices:{USD:2199,AUD:3199,EUR:2399,GBP:1799,JPY:320000,CAD:2699,SGD:2999},
+    priceSource: [
+      { url:'https://www.nikonusa.com/p/z-f/1761/overview', tier:'T1', title:'Nikon USA product page', note:'USD 2200 confirmed: Nikon USA\'s own page data lists the body-only list (base) price 2199.95 (before any instant-savings discount) (read 2026-11-22)', date:'2026-11-22' },
+    ],
     specSources: [{ url:'https://imaging.nikon.com/imaging/lineup/mirrorless/z_f/', tier:'T1', title:'Nikon global product page', note:'verify-specs 2026-11-15: sensor, dimensions, weight, monitor, viewfinder re-read', date:'2026-11-15' }, { url:'https://www.nikonusa.com/en/nikon-products/product/mirrorless-cameras/z-f.html', tier:'T1', title:'Nikon USA specifications', note:'verify-specs 2026-11-15: Bluetooth version re-read', date:'2026-11-15' }],
     sensorMP:24.5, sensorType:'Full-frame BSI CMOS', processor:'EXPEED 7',
     width:144.0, height:103.0, depth:49.0, weight:710, weatherSealed:true,
@@ -459,6 +485,7 @@ const CAMERAS = {
     prices:{USD:1059,AUD:1499,EUR:1099,GBP:899,JPY:150000,CAD:1199,SGD:1399},
     priceSource: [
       { url:'https://www.teds.com.au/products/nikon-z-fc-body-silver-black', tier:'T3', title:'Ted\'s Cameras (Australia)', note:'AUD 1499 confirmed: Ted\'s Cameras (Australia) regular price 1499.95 (compare-at; selling at 1124.96) for Nikon Z fc Body Silver (read 2026-11-22)', date:'2026-11-22' },
+      { url:'https://www.nikonusa.com/p/z-fc/1671/overview', tier:'T1', title:'Nikon USA product page', note:'USD 1060 confirmed: Nikon USA\'s own page data lists the body-only list (base) price 1059.95 (before any instant-savings discount) (read 2026-11-22)', date:'2026-11-22' },
     ],
     specSources: [{ url:'https://imaging.nikon.com/imaging/lineup/mirrorless/z_fc/', tier:'T1', title:'Nikon global product page', note:'verify-specs 2026-11-15: sensor, dimensions, weight, monitor, viewfinder re-read', date:'2026-11-15' }, { url:'https://www.nikonusa.com/en/nikon-products/product/mirrorless-cameras/z-fc.html', tier:'T1', title:'Nikon USA specifications', note:'verify-specs 2026-11-15: Bluetooth version re-read', date:'2026-11-15' }],
     sensorMP:20.9, sensorType:'APS-C (DX) CMOS', processor:'EXPEED 6',
