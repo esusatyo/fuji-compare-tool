@@ -113,7 +113,10 @@ so they stay in lockstep.
   and store the price they agree on. Never store a one-off or time-limited
   sale, an anomaly (one store far off the rest, a stale listing), or an
   inflated crossed-out "compare-at" nobody charges. Samyang/Rokinon store the
-  current selling price (their discount is near-permanent).
+  current selling price (their discount is near-permanent). 7Artisans UK
+  (7artisans.co.uk): when its compare-at is more than 15% above the selling
+  price, store the selling price (owner rule 2026-11-21; e.g. 9mm f/5.6
+  "compare at" £450, sold at £380).
 - **Canon Price Watch**: its price-change pages log the Canon USA store's own
   regular and sale prices, and usa.canon.com blocks us, so cite them as the
   Canon store's price. Its deal posts, like CamelCamelCamel figures, are

@@ -29,7 +29,9 @@ for (const brand of brandDirs()) {
     clickMode(window, 'lenses');
 
     // Find a lens that lacks a non-USD currency to exercise the `?? USD` path.
-    const entry = Object.entries(data.LENSES).find(([, l]) => l.prices && l.prices.EUR == null);
+    // It must have a USD price to fall back to: a pre-release lens with no
+    // announced price has every currency null and renders "Price not announced".
+    const entry = Object.entries(data.LENSES).find(([, l]) => l.prices && l.prices.EUR == null && l.prices.USD != null);
     setCurrency(window, 'EUR');
 
     if (entry) {
