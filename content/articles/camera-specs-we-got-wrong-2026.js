@@ -43,7 +43,7 @@ module.exports = {
   title: 'Camera Specs We Got Wrong in 2026, and Why',
   headline: 'The camera specs we got wrong (and why it happens)',
   dek: 'We checked our specs against the manufacturers. The manufacturers won. Often.',
-  published: '2026-11-21',
+  published: '2026-11-22',
   query: {
     text: 'camera specs wrong / which camera spec sites are accurate',
     evidence: 'Owner decision 2026-11-18: a trust and outreach piece, not chasing search volume. Built from the November 2026 verify-specs runs against manufacturers’ own spec pages.',
@@ -143,19 +143,19 @@ module.exports = {
 <p>That's what caught us. ${BEFORE.sigmaWrong} of the ${BEFORE.sigmaChecked} Sigma L-Mount lenses we checked were carrying their Sony E-mount dimensions, read from the wrong row of ${k.src(s.sigma.source, "Sigma's spec table")}. L-Mount sits ${FOUND.flangeL - FOUND.flangeE} mm further from the sensor than Sony E (${FOUND.flangeL} mm vs ${FOUND.flangeE} mm), so L-Mount barrels are usually about ${FOUND.flangeL - FOUND.flangeE} mm shorter. Browse the corrected ${k.a('mount/l-mount', 'L-Mount lenses')}, or ${k.a('mount/z-mount', 'every Nikon Z lens')}.</p>
 
 <h2>2. Wikipedia isn't the manufacturer</h2>
-<p>When we first added ${k.a('olympus/', 'Olympus')}, most of its cameras cited Wikipedia. Then we checked them against Olympus's own spec sheets.</p>
+<p>When we first added ${k.a('olympus/', 'Olympus')}, most of its cameras cited Wikipedia. Then we checked the ones we could against Olympus's own spec sheets. Some of the oldest still rely on Wikipedia.</p>
 <p>The E-M5 Mark II's battery life, as we'd taken it from Wikipedia, was ${BEFORE.em5iiBattery} shots. ${k.src(s.em5ii.source, 'Olympus says')} ${s.em5ii.batteryLife}, or ${FOUND.em5iiBatteryEco} in power-saving mode. ${BEFORE.em5iiBattery} matches neither. The PEN-F was ${BEFORE.penfWeight - s.penf.weight} g off and the E-M10 Mark II ${s.em10ii.weight - BEFORE.em10iiWeight} g.</p>
 <p>And the E-PL5's ${BEFORE.epl5Weight} g wasn't wrong, just body only. ${k.src(s.epl5.source, 'With battery and card')}, the way we list every camera, it's ${s.epl5.weight} g. Wikipedia is only as good as the reviews and spec sites it cites, and those often copy each other.</p>
 
 <h2>3. When the manufacturer's page disappears</h2>
 <p>Manufacturers quietly delete old spec pages. For ${FOUND.fujiGone} older Fujifilm cameras, including the original X100 and X-Pro1, the spec pages now redirect to Fujifilm's home page. Only the owner's manuals are left.</p>
-<p>Olympus is worse: ${FOUND.olyGone} older cameras have no manufacturer spec page left at all. For others, the archive is a picture of the old page, which we had to run through text recognition, in Japanese.</p>
-<p>${k.a('leica/', 'Leica')}'s PDFs vanish too: ${FOUND.leicaCameraPdfs} of the camera spec sheets we'd cited, and ${FOUND.leicaLensPdfs} of ${FOUND.leicaLensPdfsChecked} lens sheets, now return errors. Once the manufacturer's page is gone, the secondhand copies become the only record, mistakes and all.</p>
+<p>Olympus is worse: for ${FOUND.olyGone} older cameras we found no manufacturer spec page at all. For others, the archive is a picture of the old page, which we had to run through text recognition, in Japanese.</p>
+<p>${k.a('leica/', 'Leica')}'s PDFs vanish too: ${FOUND.leicaCameraPdfs} of the camera spec sheets we'd cited, and ${FOUND.leicaLensPdfs} of ${FOUND.leicaLensPdfsChecked} lens sheets, now return errors. Once the manufacturer's page is gone, secondhand copies are often the easiest record to find, mistakes and all.</p>
 
 <h2>4. The phantom 455 grams</h2>
 <p>We had Canon's flagship EOS R1 at ${g(BEFORE.r1Weight)}. ${k.src(s.r1.source, 'Canon says')} ${g(s.r1.weight)} with battery and card. The gap alone weighs more than an entire EOS R50.</p>
 <p>Where did ${g(BEFORE.r1Weight)} come from? We can't say. It arrived with our first batch of Canon data in June 2026, and back then we didn't save our citations while doing the research. The rest of that entry was off too: the size, the megapixels and the screen.</p>
-<p>That's the real lesson. A number without a source can't be checked, so nobody ever fixes it. Now every figure we check is saved with a link to where it came from. See the corrected figures in the ${k.a('canon/vs/eos-r1-vs-eos-r3', 'EOS R1 vs EOS R3 comparison')}.</p>
+<p>That's the real lesson. A number without a source can't be checked, so nobody ever fixes it. Now, when we check a camera or lens, we save links to the sources we used. See the corrected figures in the ${k.a('canon/vs/eos-r1-vs-eos-r3', 'EOS R1 vs EOS R3 comparison')}.</p>
 
 <h2>5. Hand-me-down specs</h2>
 <p>A classic: a new model carrying its predecessor's numbers. The EOS R50 V had the EOS R50's dimensions and weight. ${k.src(s.r50v.source, 'In reality')} it's ${mm(s.r50v.depth)} deep, not ${mm(s.r50.depth)}.</p>
@@ -188,6 +188,6 @@ module.exports = {
 </ul>
 
 <h2>What we do now</h2>
-<p>Every camera and lens we check now links to its manufacturer's own spec page, shown under References in the ${k.a('compare/', 'comparison tool')}. That's ${s.cited.toLocaleString('en-US')} so far, and counting. Which sources we trust, which number we store, and every rule change since June are in ${k.a('methodology', 'how we check camera specs')}.</p>`;
+<p>Most cameras and lenses we check now cite a manufacturer document, shown under References in the ${k.a('compare/', 'comparison tool')}. That's ${s.cited.toLocaleString('en-US')} so far. Some older entries still cite only reviews, stores or Wikipedia, and are still to be re-checked. Which sources we trust, which number we store, and the rule changes we could trace back to June are in ${k.a('methodology', 'how we check camera specs')}.</p>`;
   },
 };

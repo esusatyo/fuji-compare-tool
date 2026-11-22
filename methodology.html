@@ -111,7 +111,8 @@
   <a class="brand-home" href="./?brands" aria-label="Compare Camera Specs — choose a brand"><svg viewBox="0 0 64 64" width="24" height="24" aria-hidden="true" focusable="false"><path d="M4 16 V4 H16 M48 4 H60 V16 M60 48 V60 H48 M16 60 H4 V48" fill="none" stroke="#BFC6D4" stroke-width="3" stroke-linecap="round"></path><circle cx="24" cy="32" r="10" fill="#B48CE0"></circle><circle cx="40" cy="32" r="10" fill="#4FC7B0"></circle></svg><span class="brand-wordmark">Compare Camera Specs</span></a>
   <!-- identity:header:end -->
   <h1>How we check camera and lens specs</h1>
-  <p>Every spec on this site is checked against the camera or lens manufacturer's own published figures.
+  <p>We check specs against the camera or lens manufacturer's own published figures. Most of our
+     cameras and lenses cite one, and some older entries <a href="#limits">don't meet today's rules yet</a>.
      This page explains which sources we trust, which number we store when a manufacturer quotes several,
      and how a check works. When a rule changes, the old one stays in the
      <a href="#log">log at the bottom</a>.</p>
@@ -119,24 +120,24 @@
   <h2>The short version</h2>
   <ul>
     <li><strong>The manufacturer decides.</strong> Its own spec page, manual or press release is enough on its own.</li>
-    <li><strong>Retailers, Wikipedia, spec databases and AI summaries never set a number.</strong> They copy each other, errors included.</li>
+    <li><strong>Retailers, Wikipedia, spec databases and AI summaries can't set a spec.</strong> That has been our rule since November 2026. Some older entries still rely on them.</li>
     <li><strong>One rule per spec, for every brand.</strong> Manufacturers quote battery life, stabilization and
-        viewfinder size in different ways. We pick one way and convert everything to it, so a
+        viewfinder size in different ways. We pick one way and apply it as we check each item, so a
         comparison is fair.</li>
     <li><strong>Sources are shown.</strong> Each item we've checked lists its sources in the References
         section at the bottom of the comparison.</li>
-    <li><strong>No guessing.</strong> If we can't confirm a figure, we say so instead of filling the gap.</li>
+    <li><strong>No new guesses.</strong> We don't fill a spec from memory. Some older entries still hold estimates, mostly release years.</li>
   </ul>
 
   <h2>Which sources we trust</h2>
-  <p>Not every source gets a vote.</p>
+  <p>Not every source gets a vote. These are today's rules.</p>
   <div class="table-wrap"><table>
     <thead><tr><th scope="col">Source</th><th scope="col">Can it set a spec?</th><th scope="col">Why</th></tr></thead>
     <tbody>
       <tr><th scope="row">The manufacturer</th><td><strong>Yes, alone</strong></td><td>Its spec page for this exact mount, its regional sites (Canon Japan, Panasonic Japan…), spec PDFs, owner's manuals and press releases. Nobody knows the product better.</td></tr>
       <tr><th scope="row">Reviews that measure</th><td>Only as a backup</td><td>LensTip, Opticallimits, DPReview and similar weigh and measure the gear themselves. We use them only when the manufacturer's figure is missing, unclear, covers several mounts at once, or is physically impossible.</td></tr>
-      <tr><th scope="row">Retailers</th><td>Never for specs</td><td>Most stores copy the same distributor feed, mistakes and all. We use them for prices only.</td></tr>
-      <tr><th scope="row">Spec databases</th><td>Never</td><td>One we tested matched the manufacturers' numbers but had about 30% of its mount labels wrong.</td></tr>
+      <tr><th scope="row">Retailers</th><td>Never for specs</td><td>Stores often share one distributor feed, mistakes and all. For anything new, we use them for prices only.</td></tr>
+      <tr><th scope="row">Spec databases</th><td>Never</td><td>One we tested mostly matched the manufacturers where we spot-checked, but three of its ten Canon RF listings for one manufacturer were lenses not sold for RF.</td></tr>
       <tr><th scope="row">Wikipedia, rumor sites, AI summaries</th><td>Never</td><td>They are only as good as what they copy from, and they often copy each other.</td></tr>
     </tbody>
   </table></div>
@@ -148,7 +149,7 @@
         until we find one, the cautious value stays.</li>
     <li><strong>One table for many mounts is a trap.</strong> Lens manufacturers often print one set of figures
         for every mount, usually the original version's. Weight and length really do differ by mount
-        (L-Mount barrels run about 2 mm shorter than Sony E ones), so we use the per-mount page.</li>
+        (L-Mount barrels run about 2 mm shorter than Sony E ones), so we use the per-mount page. The exceptions are Laowa and SG-image, which publish one figure for all mounts: we use that.</li>
     <li><strong>A blocked page proves nothing.</strong> If a site refuses us, we try a browser, another
         regional site, then a measured review.</li>
     <li><strong>A new version is a new item.</strong> We never "correct" a lens to its Mark II's specs.</li>
@@ -184,7 +185,7 @@
       <tr><th scope="row">Aperture</th><td>Widest f-number at the wide end, never a T-stop. Smallest aperture on variable zooms: also the wide end</td><td>Both apertures are then read at the same focal length.</td></tr>
       <tr><th scope="row">Equivalent focal length</th><td>Focal length × crop: 1.5 (Fujifilm X, Sony APS-C, Nikon DX), 1.6 (Canon RF-S), 2.0 (Micro Four Thirds)</td><td>So a 23mm on APS-C and a 35mm on full frame show the same framing. Dual-fisheye VR lenses take no crop.</td></tr>
       <tr><th scope="row">Year</th><td>First year on sale in this mount</td><td>A lens can arrive on a new mount years after the original.</td></tr>
-      <tr><th scope="row">Same lens, several mounts</th><td>Each mount checked separately</td><td>Sigma's 56mm f/1.4 alone weighs from 256 g to 295 g across its seven mounts.</td></tr>
+      <tr><th scope="row">Same lens, several mounts</th><td>Each mount stored separately (Laowa and SG-image publish one figure for all)</td><td>Sigma's 56mm f/1.4 alone weighs from 256 g to 295 g across its seven mounts.</td></tr>
     </tbody>
   </table></div>
 
@@ -202,7 +203,7 @@
   <ol>
     <li>For each item, we read the manufacturer's spec and write down, field by field, our stored value, the
         manufacturer's value and a verdict.</li>
-    <li>Differences under 1 g or 0.5 mm count as rounding and are left alone.</li>
+    <li>Differences of up to 1 g or 0.5 mm count as rounding and are left alone.</li>
     <li>Before calling a number wrong, we check how similar items are stored. Sometimes it's the rule
         that differs, not the number.</li>
     <li>Clear mismatches with the manufacturer are fixed. New rules are decided by the site owner and added to
@@ -212,17 +213,22 @@
     <li>Numbers we rejected are recorded too, so the next check doesn't "fix" a right number to a wrong
         one. Manufacturers' own pages sometimes copy figures from one product to another.</li>
     <li>The same lens in two brand files must agree; an automated test enforces it.</li>
-    <li>Whenever we change a link, every product, image and source link on the site is re-checked.</li>
+    <li>When we change a link in the data, we are meant to re-run a check of every product, image and source link. It's a step we run by hand.</li>
     <li>A decision is reopened if a new manufacturer source contradicts it.</li>
   </ol>
 
-  <h2>Where we can still go wrong</h2>
+  <h2 id="limits">Where we can still go wrong</h2>
   <ul>
     <li><strong>Manufacturer pages disappear.</strong> Some older Fujifilm and Olympus cameras no longer have a
         spec page, so their figures can't be re-checked against the manufacturer until we find a manual or an archived spec sheet.</li>
     <li><strong>Some manufacturers publish specs only as images</strong>, or block automated reading.</li>
-    <li><strong>Not everything is checked yet.</strong> A small share of items still await a full check.</li>
-    <li><strong>Prices are list prices</strong> (RRP), re-audited periodically, not live deals.</li>
+    <li><strong>Not everything traces to the manufacturer.</strong> As of 22 November 2026, 108 of our 1,477
+        cameras and lenses cite no manufacturer document. A citation also doesn't mean every figure
+        on that item came from it.</li>
+    <li><strong>Older entries followed older rules.</strong> Some figures still come from retailers, Wikipedia
+        or spec databases, or are estimates. They are waiting to be re-checked.</li>
+    <li><strong>Prices are approximate.</strong> They aim at the regular price, not live deals, and some
+        regional prices are estimates worked out from the US price.</li>
   </ul>
   <p>We wrote up what our own checks found in
      <a href="./articles/camera-specs-we-got-wrong-2026">the camera specs we got wrong</a>,
@@ -232,23 +238,29 @@
      <a href="https://github.com/esusatyo/fuji-compare-tool" rel="noopener">GitHub repository</a>.</p>
 
   <h2 id="log">Rule changes</h2>
-  <p>Every change to how we source, store or scope the data, oldest first. Old rules are kept here, never deleted. Changes before 14 November 2026 were dated from our change history.</p>
+  <p>Every change to how we source, store or scope the data, oldest first. Old rules are kept here, never deleted. Changes before 14 November 2026 were pieced together from our change history and notes, so that part may be incomplete.</p>
   <div class="table-wrap"><table class="log">
     <thead><tr><th scope="col">Date</th><th scope="col">Change</th></tr></thead>
     <tbody>
-      <tr><td>22 Jun 2026</td><td>Prices are the manufacturer's list price (RRP) in each currency, labeled as such.</td></tr>
+      <tr><td>20 Jun 2026</td><td>Missing regional prices are estimated from the US price with a ratio per currency. (Replaced for new lenses on 24 October.)</td></tr>
+      <tr><td>22 Jun 2026</td><td>Prices are labeled as list prices (RRP). Some regional ones were estimates from the US price.</td></tr>
+      <tr><td>25 Jun 2026</td><td>Every figure needs two reputable sources, and a retailer can be one. (Replaced on 5 August and 15 November.)</td></tr>
       <tr><td>3 Jul 2026</td><td>Equivalent focal length uses one crop per format: 1.5 (Fujifilm X, Sony APS-C, Nikon DX), 1.6 (Canon RF-S), 2.0 (Micro Four Thirds).</td></tr>
       <tr><td>3 Jul 2026</td><td>A third-party lens is stored separately for each mount, with that mount's own weight and price.</td></tr>
       <tr><td>3 Jul 2026</td><td>A new item whose key specs can't be sourced is left out, not guessed.</td></tr>
+      <tr><td>31 Jul 2026</td><td>Retailer and spec-database figures are accepted where a lens manufacturer publishes too little. (Replaced on 15 November.)</td></tr>
       <tr><td>5 Aug 2026</td><td>Specs are never copied from one brand's listing to another's, and a manufacturer table that lumps several mounts together needs a second source.</td></tr>
+      <tr><td>5 Aug 2026</td><td>The manufacturer's own site is enough on its own.</td></tr>
       <tr><td>8 Aug 2026</td><td>A new version of a lens (a "II") is a new item; the old one is marked discontinued, never overwritten.</td></tr>
       <tr><td>8 Aug 2026</td><td>Dual-fisheye VR lenses take no crop factor.</td></tr>
+      <tr><td>8 Aug 2026</td><td>Wikipedia is for finding models, not for specs. (Not followed everywhere: some later entries still used it.)</td></tr>
       <tr><td>9 Aug 2026</td><td>Every lens and mount pairing is confirmed on the manufacturer's own site (after finding a lens listed for a mount it was never made for).</td></tr>
       <tr><td>16 Aug 2026</td><td>Each item records its sources, with the type of source and the date it was read.</td></tr>
-      <tr><td>7 Sep 2026</td><td>Mirrorless and fixed-lens cameras only: each brand starts at its first mirrorless system, no DSLRs.</td></tr>
+      <tr><td>7 Sep 2026</td><td>Scope confirmed as mirrorless and fixed-lens cameras only: each brand starts at its first mirrorless system, no DSLRs.</td></tr>
       <tr><td>9 Sep 2026</td><td>Lens dimensions are read for each mount separately (19 of 22 Sigma L-Mount lenses had been carrying Sony E figures).</td></tr>
       <tr><td>27 Sep 2026</td><td>Viewfinder magnification is stored as the full-frame equivalent.</td></tr>
-      <tr><td>24 Oct 2026</td><td>Prices: read several reputable stores and store the regular price they agree on, not a one-off sale. A missing local price stays empty rather than being converted.</td></tr>
+      <tr><td>22 Oct 2026</td><td>Samyang and Rokinon prices: the selling price, because their discounts are nearly permanent.</td></tr>
+      <tr><td>24 Oct 2026</td><td>Prices: read several reputable stores and store the regular price they agree on, not a one-off sale. For new lenses, a missing local price stays empty rather than being estimated. Current cameras can still get estimates.</td></tr>
       <tr><td>13 Nov 2026</td><td>Officially announced products are added before release, with no price unless the announcement gives one. Rumors don't count.</td></tr>
       <tr><td>13 Nov 2026</td><td>Cine lenses (rated in T-stops) are left out for now.</td></tr>
       <tr><td>13 Nov 2026</td><td>Weather sealing needs the manufacturer's own claim; reviews don't count (Fujifilm X-T50 corrected).</td></tr>
@@ -257,6 +269,8 @@
       <tr><td>14 Nov 2026</td><td>Burst split into mechanical and electronic rates.</td></tr>
       <tr><td>15 Nov 2026</td><td>Electronic first curtain counts as mechanical.</td></tr>
       <tr><td>15 Nov 2026</td><td>Battery life split into screen and viewfinder where the manufacturer gives both.</td></tr>
+      <tr><td>15 Nov 2026</td><td>Retailers and spec databases can no longer set a spec. Older entries are still to be re-checked.</td></tr>
+      <tr><td>15 Nov 2026</td><td>Laowa and SG-image publish one set of figures for all mounts, and we accept it.</td></tr>
       <tr><td>16 Nov 2026</td><td>Panasonic stabilization: the body figure (Lumix S9 6.5 → 5.0 stops).</td></tr>
       <tr><td>18 Nov 2026</td><td>Smallest aperture on variable zooms: the wide-end figure.</td></tr>
       <tr><td>18 Nov 2026</td><td>Close focus and magnification: the autofocus figure when autofocus and manual focus differ.</td></tr>
@@ -271,6 +285,8 @@
       <tr><td>18 Nov 2026</td><td>Two manufacturer pages disagree: a third manufacturer source decides (Canon RF 16-28mm, RF 75-300mm, EOS R8).</td></tr>
       <tr><td>18 Nov 2026</td><td>A manufacturer's current page beats an older stored figure, even when it looks odd.</td></tr>
       <tr><td>18 Nov 2026</td><td>Link checks fail on any error, not just "not found" (dead manufacturer PDFs had slipped through).</td></tr>
+      <tr><td>21 Nov 2026</td><td>Missing local prices are filled from the official regional store or, without one, a trusted local retailer, with the source cited.</td></tr>
+      <tr><td>21 Nov 2026</td><td>7Artisans UK: the selling price when the "compare at" price is more than 15% higher.</td></tr>
     </tbody>
   </table></div>
 

@@ -2476,7 +2476,7 @@ ${cluster}
   <footer>
     <p>${esc(site.siteName)} &mdash; For informational purposes only.</p>
     <p>Prices shown are approximate manufacturer list prices (RRP) and may differ from live retail prices. Use the Buy link for current pricing.</p>
-    <p>Specs sourced from manufacturer documentation (<a href="./methodology">how we check them</a>).</p>
+    <p>Most specs come from manufacturer documentation (<a href="./methodology">how we check them</a>).</p>
     <p>Specs &amp; prices last verified: ${esc(site.dataVerified)}</p>
     <div id="affiliate-disclosure"></div>
     <p>

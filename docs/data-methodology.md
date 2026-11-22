@@ -27,7 +27,7 @@ in `<brand>/data.js` (URL, tier, date, and a note saying what was read or change
 | **T1** | The maker's own spec page **for this mount**, an official regional site (canon.co.uk, personal.canon.jp, panasonic.jp, jp.omsystem.com, laowa.com.au, fujifilm-x.com/<region>), or the maker's spec PDF / press release / owner's manual | Yes, alone |
 | **T2** | Independent measurement: LensTip, Opticallimits, DPReview, ephotozine, Dustin Abbott, admiringlight | Only when T1 is missing, ambiguous, lumps mounts together, or looks physically wrong |
 | T3 | Retailers | Never for specs (one shared distributor feed); prices only |
-| T4 | Aggregator databases (lensfinder.org etc.) | Never. lensfinder matched T1 numbers exactly but had ~30% of mount attributions wrong |
+| T4 | Aggregator databases (lensfinder.org etc.) | Never. lensfinder mostly matched T1 in spot-checks (Tamron 8/8, Sigma 10-18 6/8 with a wrong weight) but 3 of its 10 TTArtisan RF listings aren't sold in RF |
 | — | Rumour sites, AI summaries, Wikipedia, **another brand file in this repo** | Never. Copied errors between brand files are exactly what verification hunts |
 
 Rules that follow from this:
@@ -52,6 +52,16 @@ Rules that follow from this:
   alone and listed. Never "verify" from memory.
 - **Revisions are separate items** ("II", "Mark II", redesigns). Never correct one
   model's specs to its successor's.
+
+**These are the current rules, not a description of every stored value.** Entries made
+under earlier rules still cite retailers, Wikipedia and aggregators, or hold estimates;
+clean them up with verify-specs. Never write public copy that says all the data already
+follows a rule without counting first.
+
+**Prices:** the regular price reputable stores agree on, each cited. Empty currencies are
+filled from the official regional store, else a trusted local retailer. New lenses get no
+ratio estimate; current cameras (all seven currencies required) and older entries may
+still hold `compute-prices.js` estimates.
 
 ## 2. Which number we store (normalisation conventions)
 
@@ -174,32 +184,40 @@ are in `.claude/skills/verify-specs/SKILL.md` → "Per-brand source recipes". No
 
 ## 6. Decision log (append only)
 
-Rows before 2026-11-14 were reconstructed on 2026-11-21 from git history and project notes
+Rows before 2026-11-14 were reconstructed on 2026-11-21 and 22 from git history and project notes
 (the commit or PR is in the Trigger column); the log was kept live from 2026-11-14.
 
 | Date | Decision | By | Trigger |
 |---|---|---|---|
-| 2026-06-22 | Prices = manufacturer RRP per currency, labeled RRP | convention | currency mislabeling fix (8c0af58) |
+| 2026-06-20 | Missing regional prices = USD × regional ratio. **Superseded for new lenses 2026-10-24** | convention | compute-prices.js (6b9824c) |
+| 2026-06-22 | Prices labeled RRP; regional gaps were ratio estimates from USD (row corrected 2026-11-22) | convention | currency mislabeling fix (8c0af58) |
+| 2026-06-25 | Two reputable sources per datum, retailers allowed. **Superseded 2026-08-05 / 2026-11-15** | convention | Sony onboarding (#2) |
 | 2026-07-03 | `focalLengthEquiv` crops: 1.5 X / Sony APS-C / DX, 1.6 RF-S, 2.0 MFT | convention | CLAUDE.md conventions (fc44c57) |
 | 2026-07-03 | Third-party lenses denormalized per brand file, per-mount weight/price | convention | CLAUDE.md conventions (fc44c57) |
 | 2026-07-03 | New item with an unsourceable non-nullable field → skip it | convention | CLAUDE.md conventions (fc44c57) |
+| 2026-07-31 | Retailer / aggregator spec figures accepted where the maker publishes too little. **Superseded 2026-11-15** | owner | Canon RF third-party lenses (archived research/lenses.md) |
 | 2026-08-05 | No copying between brand files; lumped-mount tables need a second source | convention | Canon third-party pass (#22) |
+| 2026-08-05 | T1 is sufficient on its own | convention | Canon third-party pass (#22) |
 | 2026-08-08 | Lens revisions are new coexisting entries; old one discontinued | owner | Nikon / Canon refresh |
 | 2026-08-08 | Dual-fisheye VR lenses: `focalLengthEquiv` = native | convention | Canon RF-S 3.9mm Dual Fisheye (#23) |
+| 2026-08-08 | Wikipedia for enumeration only, never specs (not followed for some later Olympus / Leica entries) | convention | refresh skill (#23) |
 | 2026-08-09 | Mount availability always confirmed against the maker | convention | fabricated Tamron Nikon Z entry removed (#25) |
 | 2026-08-16 | `specSources` / `priceSource` citations with tier and date | convention | durable provenance (#32) |
 | 2026-09-07 | Scope: mirrorless only, each brand from its mirrorless system | owner | scope pushback on a plan |
 | 2026-09-09 | Lens dimensions per mount; 19 Sigma L-Mount lenses fixed | convention | Sigma brand (#51) |
 | 2026-09-27 | `evfMag` = 35mm-equivalent | convention | Sept 2026 refresh follow-ups (#69) |
-| 2026-10-24 | Price = agreed regular price across stores; no exchange-rate estimates for missing currencies | owner | third-party price audit |
+| 2026-10-22 | Samyang / Rokinon store the current selling price | owner | third-party price audit |
+| 2026-10-24 | Price = agreed regular price across stores; new lenses get no ratio estimates, current cameras still may (row corrected 2026-11-22) | owner | third-party price audit |
 | 2026-11-13 | Announced items added as `preRelease`; price only if announced | owner | Sept–Nov releases (#87) |
 | 2026-11-13 | No cine lenses, for now | owner | Fujifilm GF19-35mm T3.5 |
-| 2026-11-13 | Sealing requires a maker claim; X-T50 → not sealed | owner | X-T50 (#92) |
+| 2026-11-13 | Sealing requires a maker claim; X-T50 → not sealed | convention | X-T50 (#92) |
 | 2026-11-14 | Fujifilm battery = Normal mode | owner | verify-specs Fujifilm |
 | 2026-11-14 | Sealing that needs an accessory = not sealed | owner | X100VI, GFX100RF |
 | 2026-11-14 | Burst split into mechanical / electronic (with crop) | owner | Fujifilm mixed conventions |
 | 2026-11-15 | Electronic first curtain counts as mechanical | owner | Canon, Sony |
 | 2026-11-15 | Battery split screen / viewfinder where both are published | owner | Canon, Sony, Nikon, Panasonic |
+| 2026-11-15 | T3 = prices only, T4 never, for specs; supersedes 2026-07-31. Existing entries still to be re-checked | convention | verify-specs skill (#96) |
+| 2026-11-15 | Laowa / SG-image one figure for all mounts accepted | owner | verify-specs recipes |
 | 2026-11-16 | Panasonic IBIS = body (B.I.S.) figure; S9 6.5 → 5.0 | verify-specs, owner later confirmed | S9 |
 | 2026-11-18 | Zoom `minAperture` = wide end | owner | Canon zooms stored tele end |
 | 2026-11-18 | Close focus / magnification = AF figure when AF and MF differ | owner | Canon RF-S zooms |
@@ -214,3 +232,5 @@ Rows before 2026-11-14 were reconstructed on 2026-11-21 from git history and pro
 | 2026-11-18 | Conflicting maker pages need a third maker source; Canon UK sealing field treated as unreliable | owner + Canon Japan evidence | RF 16-28, RF 75-300, EOS R8 |
 | 2026-11-18 | A maker page beats an older stored figure even when it looks odd (OM 40-150 f/4 PRO 19 elements; Laowa 15mm f/2 Ø77.2) | owner | Panasonic / Olympus / Leica runs |
 | 2026-11-18 | `test:links` fails on any persistent error status, not only 404/410 | owner asked for citation URLs to be checked | dead Leica PDFs (502) |
+| 2026-11-21 | Fill empty currencies from the official regional store, else a trusted local retailer, cited | owner | November price check (#106) |
+| 2026-11-21 | 7Artisans UK: selling price when compare-at is more than 15% above it | owner | November price check (#106) |
