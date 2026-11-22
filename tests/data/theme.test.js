@@ -41,7 +41,7 @@ test('#site-header uses a --header-bg token, not flat --bg-surface (one shared t
 });
 
 const pagesWithTheme = [
-  'index.html', 'about.html', 'privacy.html', 'compare/index.html',
+  'index.html', 'about.html', 'methodology.html', 'privacy.html', 'compare/index.html',
   ...brandDirs().map(b => `${b}/index.html`),
 ];
 

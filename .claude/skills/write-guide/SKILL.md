@@ -22,6 +22,22 @@ write generic posts that don't use our data (beginner tips, news rewrites).
 
 ---
 
+## Keep the methodology current
+
+If this work changes **how we collect, choose or verify data** (specs, prices, images, scope,
+a trusted or banned source, an exception, any owner decision), update these in the same commit:
+
+1. `docs/data-methodology.md`: the rule, plus a dated row in its decision log. Mark a replaced
+   rule superseded; never delete it.
+2. `methodology.html` (the public /methodology page): the rule in plain words, plus the matching
+   "Rule changes" row. Its test only compares row counts, so it won't catch stale wording: reread it.
+3. Every other skill, and `CLAUDE.md`, that restates the rule.
+4. `about.html` if it now says something untrue. Articles are frozen: tell the owner which
+   sentence is out of date and let them decide.
+
+A rule is not proof that the data follows it. Before public copy says "every", "never" or
+"always", count in the data, and state the gap if there is one.
+
 ## Step 0 — Guide or article?
 
 | | Guide | Article |
@@ -85,6 +101,7 @@ Body order (design G4):
 1. `<p class="guide-answer">` — the answer with its number in one or two sentences. This is what
    snippets and AI answers quote.
 2. H2 + **a one-line lead-in** + `kit.table(...)` — the ranked table; every name links to a page.
+   Cells don't wrap (names and numbers); pass `{ wrap: true }` for a table of sentences.
 3. H2 phrased as a question + **a one-line lead-in** + `kit.bars(...)` when there's a trend or
    comparison worth seeing.
 4. Two or three more H2s phrased the way people ask ("Which brand makes the lightest…?").

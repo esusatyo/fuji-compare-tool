@@ -18,12 +18,28 @@ brand changes except registration.
 
 ---
 
+## Keep the methodology current
+
+If this work changes **how we collect, choose or verify data** (specs, prices, images, scope,
+a trusted or banned source, an exception, any owner decision), update these in the same commit:
+
+1. `docs/data-methodology.md`: the rule, plus a dated row in its decision log. Mark a replaced
+   rule superseded; never delete it.
+2. `methodology.html` (the public /methodology page): the rule in plain words, plus the matching
+   "Rule changes" row. Its test only compares row counts, so it won't catch stale wording: reread it.
+3. Every other skill, and `CLAUDE.md`, that restates the rule.
+4. `about.html` if it now says something untrue. Articles are frozen: tell the owner which
+   sentence is out of date and let them decide.
+
+A rule is not proof that the data follows it. Before public copy says "every", "never" or
+"always", count in the data, and state the gap if there is one.
+
 ## Golden rules
 
-- **Accuracy first.** Verify every datum (RRP, spec, `productUrl`, `asin`,
-  `imageUrl`) against **≥2 reputable sources** (manufacturer official page,
-  DPReview, a major retailer, Amazon) before entry. Prefer the manufacturer +
-  DPReview for specs; a retailer + Amazon for price/ASIN.
+- **Accuracy first.** The manufacturer's own page, PDF or manual is enough on its own
+  for a spec; an independent measured review is the only backup. Retailers are for
+  prices and ASINs only, and Wikipedia and spec databases never set a spec
+  (`docs/data-methodology.md`, section 1).
 - **Work in small, test-checkpointed batches.** After every batch run
   `npm run test:data` (or `npm test`). A partial dataset stays green as long as
   every *entered* item is complete. This makes the work resumable across sessions.
@@ -184,9 +200,9 @@ group) and `npm run test:data`.
   - Do **not** rely on the older `scripts/fetch-images.js` (fuzzy name-match —
     returns wrong subjects). Lenses are rarely on Commons; expect most to stay on
     the placeholder card (allowlisted), which is fine.
-- **Pricing** — `scripts/compute-prices.js <brand> [cameras|lenses]` derives
-  missing regional RRPs from USD (approximate; skips discontinued and
-  `priceIncomplete` items). Put any confirmed regional figures in
+- **Pricing** — use cited local prices first. `scripts/compute-prices.js <brand> cameras`
+  estimates what is still missing for current cameras (approximate); never run its fill
+  mode on new lenses (owner 2026-10-24). Put any confirmed regional figures in
   `scripts/price-overrides/<brand>.json`. Flag unconfirmable lens regional prices
   `priceIncomplete: true`.
 - **ASINs** — fill missing `asin`s with the **check-prices-and-buy-links** skill

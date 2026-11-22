@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Small Site vs Big Spec Databases: Who Gets It Right?</title>
+  <meta name="description" content="93% of our 1,477 cameras and lenses cite a manufacturer document. Why a small site can out-check big spec databases, and where it still can't.">
+  <link rel="canonical" href="https://comparecameraspecs.com/articles/small-site-vs-spec-databases-2026">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="Compare Camera Specs">
+  <meta property="og:title" content="Why a small site can get camera specs more right than a big database">
+  <meta property="og:description" content="93% of our 1,477 cameras and lenses cite a manufacturer document. Why a small site can out-check big spec databases, and where it still can't.">
+  <meta property="og:url" content="https://comparecameraspecs.com/articles/small-site-vs-spec-databases-2026">
+  <meta property="article:published_time" content="2026-11-22">
+  <meta property="article:modified_time" content="2026-11-22">
+  <meta property="og:image" content="https://comparecameraspecs.com/og/articles/small-site-vs-spec-databases-2026.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Why a small site can get camera specs more right than a big database">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://comparecameraspecs.com/og/articles/small-site-vs-spec-databases-2026.png">
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Why a small site can get camera specs more right than a big database","description":"93% of our 1,477 cameras and lenses cite a manufacturer document. Why a small site can out-check big spec databases, and where it still can't.","datePublished":"2026-11-22","dateModified":"2026-11-22","author":{"@type":"Organization","name":"Compare Camera Specs","url":"https://comparecameraspecs.com/"},"publisher":{"@type":"Organization","name":"Compare Camera Specs","url":"https://comparecameraspecs.com/"},"mainEntityOfPage":"https://comparecameraspecs.com/articles/small-site-vs-spec-databases-2026","image":"https://comparecameraspecs.com/og/articles/small-site-vs-spec-databases-2026.png"}</script>
+  <script data-goatcounter="https://esusatyo.goatcounter.com/count" defer src="https://gc.zgo.at/count.js"></script>
+  <script defer src="../analytics.js"></script>
+  <script>
+  (function(){
+    try {
+      var p = localStorage.getItem('theme-pref');
+      if (p !== 'light' && p !== 'dark' && p !== 'system') p = 'system';
+      var eff = p === 'system'
+        ? (matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark')
+        : p;
+      document.documentElement.setAttribute('data-theme', eff);
+    } catch (e) { /* storage/matchMedia unavailable — dark default stands */ }
+  })();
+  </script>
+  <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+  <link rel="apple-touch-icon" href="../apple-touch-icon.png">
+  <meta name="theme-color" content="#131722">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap">
+  <script>
+  addEventListener('load', function () {
+    var css = document.querySelector('link[href$="engine.css"]');
+    var app = document.getElementById('app');
+    var broken = (css && !css.sheet) || (app && !app.children.length);
+    try {
+      if (broken && !sessionStorage.getItem('cc-selfheal')) {
+        sessionStorage.setItem('cc-selfheal', '1');
+        location.reload();
+      } else if (!broken) {
+        sessionStorage.removeItem('cc-selfheal');
+      }
+    } catch (e) { /* storage unavailable — never loop, so do nothing */ }
+  });
+  </script>
+  <link rel="stylesheet" href="../engine.css">
+  <style>
+    .header-back { font-size: 13px; color: var(--text-secondary); text-decoration: none; white-space: nowrap;
+                 overflow: hidden; text-overflow: ellipsis; }
+  .header-back:hover { color: var(--text-primary); }
+
+  .vs-main { max-width: 840px; margin: 0 auto; padding: 8px 20px 40px; }
+
+  .vs-products { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 24px 0 8px; }
+  .vs-product { background: var(--bg-surface); border: 1px solid var(--border); border-radius: var(--radius);
+                box-shadow: var(--shadow); padding: 18px; display: flex; flex-direction: column;
+                align-items: center; gap: 10px; text-align: center; }
+  .vs-photo { width: 100%; height: 160px; display: flex; align-items: center; justify-content: center;
+              background: var(--photo-chip); border-radius: 12px; padding: 8px; }
+  .vs-img { max-width: 100%; max-height: 144px; object-fit: contain; }
+  .vs-ph { width: 100%; height: 100%; border-radius: 8px; align-items: center; justify-content: center;
+           font-weight: 700; font-size: 14px; padding: 10px; text-align: center; }
+  .vs-pname { font-weight: 700; font-size: 16px; color: var(--text-primary); }
+  .vs-pprice { font-weight: 700; font-size: 18px; color: var(--text-primary); }
+  .vs-plinks { display: flex; gap: 8px; flex-wrap: wrap; justify-content: center; margin-top: 2px; }
+  .vs-view { font-size: 12px; font-weight: 600; color: var(--accent-primary); background: rgba(180,140,224,.18);
+             text-decoration: none; padding: 5px 14px; border-radius: 999px; transition: all .15s; }
+  .vs-view:hover { background: var(--accent-primary); color: var(--bg-deep); }
+  .vs-view.na { color: var(--text-secondary); background: rgba(156,163,181,.14); }
+  .vs-buy { font-size: 12px; font-weight: 600; color: var(--accent-secondary); background: rgba(79,199,176,.18);
+            text-decoration: none; padding: 5px 14px; border-radius: 999px; transition: all .15s; }
+  .vs-buy:hover { background: var(--accent-secondary); color: var(--bg-deep); }
+
+  .vs-summary { font-size: 14px; line-height: 1.5; color: var(--text-secondary); text-align: center;
+                max-width: 640px; margin: 4px auto 20px; }
+
+  .vs-cta { display: inline-flex; align-items: center; gap: 9px; background: var(--accent-primary); color: var(--bg-deep);
+            text-decoration: none; padding: 12px 22px; border-radius: 999px; font-weight: 600; font-size: 14px;
+            margin: 24px 0 20px; box-shadow: var(--shadow); transition: transform .12s ease, box-shadow .12s ease; }
+  .vs-cta:hover { transform: translateY(-1px); box-shadow: 0 6px 18px rgba(0,0,0,.4); }
+  .vs-cta .play { font-size: 11px; }
+
+  .vs-card { background: var(--bg-surface); border: 1px solid var(--border); border-radius: var(--radius);
+             box-shadow: var(--shadow); overflow: hidden; }
+  /* Fixed layout: value columns must have a bounded width for .vs-ref-link's
+     ellipsis to take effect (auto layout would just grow the column instead
+     of clipping). Existing spec rows wrap onto a 2nd line instead of
+     overflowing, which is fine — none of VS_ROWS' values are long. */
+  .vs-card table { border-collapse: collapse; width: 100%; table-layout: fixed; }
+  .vs-card thead th { background: var(--bg-surface-2); color: var(--text-primary); font-weight: 600; font-size: 14px;
+                      padding: 14px 12px; text-align: center; }
+  .vs-card thead th:first-child { text-align: left; font-weight: 500; color: var(--text-secondary); font-size: 12px; }
+  .vs-card th[scope="row"] { text-align: left; font-weight: 500; color: var(--text-secondary); font-size: 12px;
+                             padding: 11px 16px; width: 34%; }
+  .vs-card td { text-align: center; font-size: 13px; color: var(--text-primary); padding: 11px 12px; font-weight: 500; }
+  .vs-card tbody tr { border-top: 1px solid var(--border); }
+  .vs-card tbody tr:nth-child(odd) { background: rgba(255,255,255,.02); }
+
+  .vs-refs-heading th { background: var(--bg-surface-2); color: var(--text-secondary); font-size: 11px;
+                        font-weight: 700; text-transform: uppercase; letter-spacing: .08em;
+                        text-align: left; padding: 10px 16px; }
+  .vs-ref-cell { text-align: left; overflow: hidden; }
+  .vs-ref-link { display: block; max-width: 100%; overflow: hidden; text-overflow: ellipsis;
+                 white-space: nowrap; font-size: 12px; color: var(--accent-primary); text-decoration: none; }
+  .vs-ref-link:hover { text-decoration: underline; }
+  .vs-ref-link + .vs-ref-link { margin-top: 4px; }
+
+  .vs-note { color: var(--text-secondary); font-size: 12px; margin: 16px 2px 0; }
+
+  .vs-size { margin-top: 28px; background: var(--bg-surface); border: 1px solid var(--border);
+             border-radius: var(--radius); box-shadow: var(--shadow); }
+  .vs-size h2 { font-size: 15px; text-transform: uppercase; letter-spacing: .06em; color: var(--text-secondary);
+                font-weight: 700; padding: 16px 18px 0; }
+  .size-main .vs-card + .vs-card { margin-top: 20px; }
+  .size-links { display: flex; flex-wrap: wrap; align-items: center; gap: 4px 22px; }
+  .size-links a:not(.vs-cta) { color: var(--accent-primary); text-decoration: none; font-weight: 600; font-size: 14px; }
+  .size-links a:not(.vs-cta):hover { text-decoration: underline; }
+
+  .vs-related { margin-top: 36px; }
+  .vs-related h2 { font-size: 15px; text-transform: uppercase; letter-spacing: .06em; color: var(--text-secondary);
+                   margin-bottom: 14px; font-weight: 700; }
+  .vs-related ul { list-style: none; display: grid; gap: 8px 24px;
+                   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); }
+  .vs-related a { color: var(--text-secondary); text-decoration: none; font-size: 14px; display: inline-block;
+                  padding: 3px 0; border-bottom: 1px solid transparent; }
+  .vs-related a:hover { color: var(--accent-primary); border-bottom-color: var(--accent-primary); }
+  </style>
+</head>
+<body>
+  <header id="site-header">
+    <div class="header-brand">
+      <a class="brand-home" href="../?brands" aria-label="Compare Camera Specs — choose a brand"><svg viewBox="0 0 64 64" width="24" height="24" aria-hidden="true" focusable="false"><path d="M4 16 V4 H16 M48 4 H60 V16 M60 48 V60 H48 M16 60 H4 V48" fill="none" stroke="#BFC6D4" stroke-width="3" stroke-linecap="round"></path><circle cx="24" cy="32" r="10" fill="#B48CE0"></circle><circle cx="40" cy="32" r="10" fill="#4FC7B0"></circle></svg><span class="brand-wordmark">Compare Camera Specs</span></a>
+      <span class="header-sep">|</span>
+      <a class="header-back" href="./">All articles</a>
+    </div>
+  </header>
+  <main class="guide-main">
+    <article class="guide">
+      <h1>Why a small site can get camera specs more right than a big database</h1>
+      <p class="guide-dek">We can't out-list them. We can out-check them.</p>
+      <p class="guide-byline">By Compare Camera Specs &middot; Published <time datetime="2026-11-22">22 November 2026</time></p>
+<p class="guide-answer">A big spec database lists more cameras than anyone can easily check by hand. We list fewer, and <strong>93%</strong> of our 1,477 cameras and lenses cite a manufacturer document: a spec page, manual or press release. Being small makes that kind of checking possible.</p>
+
+<p>That's not a dig at the big sites. It's a trade-off: they win on coverage, we try to win on checking. And because a careful site can still be wrong, we publish <a href="../methodology" data-goatcounter-click="article-link:small-site-vs-spec-databases-2026:methodology" data-goatcounter-title="Article link: the rules we check by">the rules we check by</a>.</p>
+
+<h2>Why big spec databases drift</h2>
+<p>The problem is likely size, not care. Three things can go wrong at scale.</p>
+<p><strong>Copies of copies.</strong> Stores often list specs from the same distributor feed, and a database that fills its gaps from stores or other databases inherits their mistakes. One typo can end up on many pages that all "agree".</p>
+<p><strong>One entry for many mounts.</strong> A lens sold for five mounts can be five products, with different weights and lengths. When we tested one lens database this year, its spec tables mostly matched where we spot-checked, yet 3 of its 10 Canon RF listings for one manufacturer were lenses that manufacturer doesn't sell for RF.</p>
+<p><strong>Mixed rules.</strong> Manufacturers quote the same thing in different ways, and a database with one "battery life" box has to pick. Fujifilm <a href="https://www.fujifilm-x.com/global/products/cameras/x100vi/specifications/" target="_blank" rel="noopener" data-goatcounter-click="article-link:small-site-vs-spec-databases-2026:source:fujifilm-x.com" data-goatcounter-title="Article source: fujifilm-x.com">rates the X100VI</a> at 310 shots with the electronic viewfinder and 450 with the optical one. OM System <a href="https://explore.omsystem.com/us/en/om-5-mark-ii" target="_blank" rel="noopener" data-goatcounter-click="article-link:small-site-vs-spec-databases-2026:source:explore.omsystem.com" data-goatcounter-title="Article source: explore.omsystem.com">rates the OM-5 Mark II</a> at 6.5 stops of stabilization on its own and 7.5 with a matching lens. Neither number is wrong. Comparing one camera's best case with another's normal case is.</p>
+
+<h2>What a small site can do instead</h2>
+<p>We can't out-list the big databases, so we try to out-check them.</p>
+<div class="guide-table-wrap"><table class="guide-table guide-table-text">
+<thead><tr><th scope="col">What we do</th><th scope="col">What it stops</th></tr></thead>
+<tbody>
+<tr><th scope="row">Start from the manufacturer's own figures</th><td>Copied mistakes</td></tr>
+<tr><th scope="row">Store each mount on its own (<a href="../mount/l-mount" data-goatcounter-click="article-link:small-site-vs-spec-databases-2026:mount/l-mount" data-goatcounter-title="Article link: L-Mount lenses">L-Mount lenses</a> aren't Sony E lenses)</th><td>One mount's figures on another</td></tr>
+<tr><th scope="row">Use one rule per spec for every brand</th><td>Battery and stabilization figures that don't compare</td></tr>
+<tr><th scope="row">Link the source on every item we've checked</th><td>Numbers you have to take on trust</td></tr>
+<tr><th scope="row">Record the numbers we rejected, not just the ones we kept</th><td>The next check "fixing" a right number</td></tr>
+<tr><th scope="row">Let tests fail on drift: 248 lenses sit in more than one of our brand files, and every copy must agree</th><td>Two pages disagreeing about one lens</td></tr>
+<tr><th scope="row">Log rule changes in public (45 so far)</th><td>Rules changing quietly</td></tr>
+</tbody></table></div>
+
+<h2>How much of our data can you trace to the manufacturer?</h2>
+<p>Here's the share of each brand's cameras that cite at least one manufacturer document. Across cameras and lenses, those citations cover 20 manufacturers.</p>
+<figure class="gbar-chart">
+
+<div class="gbars">
+<div class="gbar-row" title="Canon: 18 of 18 cameras, 100 %">
+  <div class="gbar-label"><span>Canon</span><small>18 of 18 cameras</small></div>
+  <div class="gbar-track"><span class="gbar gbar-c1" style="width:100.0%"></span><span class="gbar-val" style="left:100.0%">100 %</span></div>
+</div>
+<div class="gbar-row" title="Nikon: 16 of 16 cameras, 100 %">
+  <div class="gbar-label"><span>Nikon</span><small>16 of 16 cameras</small></div>
+  <div class="gbar-track"><span class="gbar gbar-c1" style="width:100.0%"></span><span class="gbar-val" style="left:100.0%">100 %</span></div>
+</div>
+<div class="gbar-row" title="Panasonic: 24 of 24 cameras, 100 %">
+  <div class="gbar-label"><span>Panasonic</span><small>24 of 24 cameras</small></div>
+  <div class="gbar-track"><span class="gbar gbar-c1" style="width:100.0%"></span><span class="gbar-val" style="left:100.0%">100 %</span></div>
+</div>
+<div class="gbar-row" title="Sigma: 6 of 6 cameras, 100 %">
+  <div class="gbar-label"><span>Sigma</span><small>6 of 6 cameras</small></div>
+  <div class="gbar-track"><span class="gbar gbar-c1" style="width:100.0%"></span><span class="gbar-val" style="left:100.0%">100 %</span></div>
+</div>
+<div class="gbar-row" title="Sony: 36 of 36 cameras, 100 %">
+  <div class="gbar-label"><span>Sony</span><small>36 of 36 cameras</small></div>
+  <div class="gbar-track"><span class="gbar gbar-c1" style="width:100.0%"></span><span class="gbar-val" style="left:100.0%">100 %</span></div>
+</div>
+<div class="gbar-row" title="Leica: 38 of 49 cameras, 78 %">
+  <div class="gbar-label"><span>Leica</span><small>38 of 49 cameras</small></div>
+  <div class="gbar-track"><span class="gbar gbar-c1" style="width:78.0%"></span><span class="gbar-val" style="left:78.0%">78 %</span></div>
+</div>
+<div class="gbar-row" title="Olympus: 33 of 43 cameras, 77 %">
+  <div class="gbar-label"><span>Olympus</span><small>33 of 43 cameras</small></div>
+  <div class="gbar-track"><span class="gbar gbar-c1" style="width:77.0%"></span><span class="gbar-val" style="left:77.0%">77 %</span></div>
+</div>
+<div class="gbar-row" title="Fujifilm: 30 of 40 cameras, 75 %">
+  <div class="gbar-label"><span>Fujifilm</span><small>30 of 40 cameras</small></div>
+  <div class="gbar-track"><span class="gbar gbar-c1" style="width:75.0%"></span><span class="gbar-val" style="left:75.0%">75 %</span></div>
+</div>
+</div>
+<figcaption>Cameras citing a manufacturer document, by brand. Lenses: 94% of 1,245.</figcaption>
+<details><summary>Show as a table</summary><div class="guide-table-wrap"><table class="guide-table">
+<thead><tr><th scope="col">Brand</th><th scope="col">Cameras</th><th scope="col">With a manufacturer source</th><th scope="col">Share</th></tr></thead>
+<tbody>
+<tr><th scope="row">Canon</th><td>18</td><td>18</td><td>100%</td></tr>
+<tr><th scope="row">Nikon</th><td>16</td><td>16</td><td>100%</td></tr>
+<tr><th scope="row">Panasonic</th><td>24</td><td>24</td><td>100%</td></tr>
+<tr><th scope="row">Sigma</th><td>6</td><td>6</td><td>100%</td></tr>
+<tr><th scope="row">Sony</th><td>36</td><td>36</td><td>100%</td></tr>
+<tr><th scope="row">Leica</th><td>49</td><td>38</td><td>78%</td></tr>
+<tr><th scope="row">Olympus</th><td>43</td><td>33</td><td>77%</td></tr>
+<tr><th scope="row">Fujifilm</th><td>40</td><td>30</td><td>75%</td></tr>
+</tbody></table></div></details>
+</figure>
+<p>Every Canon, Nikon, Panasonic, Sigma and Sony camera cites one. Every camera that doesn't is discontinued, the newest from 2019. Old models are the hardest to find documents for, which is exactly where a secondhand number is most tempting.</p>
+
+<h2>Where we're still weaker</h2>
+<p><strong>We don't weigh anything.</strong> We have no lab, so when a manufacturer is wrong, we're wrong with it. Manufacturers' own pages sometimes copy a figure from one product to another.</p>
+<p><strong>Old cameras are hard.</strong> When a manufacturer deletes a page, we're left with manuals and archives, and some of those never made it online.</p>
+<p><strong>We don't yet meet all our own rules.</strong> 108 of our cameras and lenses cite no manufacturer document. Some older entries still rely on retailers, Wikipedia, spec databases or estimates, and some regional prices are worked out from the US price.</p>
+<p><strong>We've made our own mistakes.</strong> <a href="../articles/camera-specs-we-got-wrong-2026" data-goatcounter-click="article-link:small-site-vs-spec-databases-2026:articles/camera-specs-we-got-wrong-2026" data-goatcounter-title="Article link: We wrote up the specs we got wrong">We wrote up the specs we got wrong</a>, from a Canon flagship listed far too heavy to cameras missing their viewfinders.</p>
+<p><strong>Coverage.</strong> A big database will probably have the camera you're looking for. We might not: we cover mirrorless and fixed-lens cameras from 8 brands and their lenses.</p>
+
+<h2>Why we publish the rules</h2>
+<p>Checking is only half of it. If you can't see how a number was chosen, you can't tell a careful site from a confident one.</p>
+<p>So <a href="../methodology" data-goatcounter-click="article-link:small-site-vs-spec-databases-2026:methodology" data-goatcounter-title="Article link: our methodology">our methodology</a> lists which sources we trust, which number we store when manufacturers disagree, and the rule changes we could trace, with dates. A figure that breaks one of those rules is a bug, and you can <a href="https://github.com/esusatyo/fuji-compare-tool/issues" target="_blank" rel="noopener" data-goatcounter-click="article-link:small-site-vs-spec-databases-2026:source:github.com" data-goatcounter-title="Article source: github.com">report it on GitHub</a>.</p>
+
+<h2>Keep reading</h2>
+<ul>
+  <li><a href="../methodology" data-goatcounter-click="article-link:small-site-vs-spec-databases-2026:methodology" data-goatcounter-title="Article link: How we check camera and lens specs">How we check camera and lens specs</a></li>
+  <li><a href="../articles/camera-specs-we-got-wrong-2026" data-goatcounter-click="article-link:small-site-vs-spec-databases-2026:articles/camera-specs-we-got-wrong-2026" data-goatcounter-title="Article link: The camera specs we got wrong (and why it happens)">The camera specs we got wrong (and why it happens)</a></li>
+  <li><a href="../mount/" data-goatcounter-click="article-link:small-site-vs-spec-databases-2026:mount/" data-goatcounter-title="Article link: Every lens, by mount">Every lens, by mount</a></li>
+  <li><a href="../compare/" data-goatcounter-click="article-link:small-site-vs-spec-databases-2026:compare/" data-goatcounter-title="Article link: Compare any two cameras">Compare any two cameras</a></li>
+</ul>
+
+<h2>How we counted</h2>
+<p>Counts are from our data on the publish date, including discontinued models. A lens sold for one mount appears in several of our brand files (a Sigma L-Mount lens sits under Sigma, Panasonic and Leica), so it counts once per mount. A manufacturer document is its spec page, spec sheet, manual or press release, including archived or mirrored copies; reviews and stores don't count. Citing one doesn't mean every figure on that item came from it.</p>
+      <p class="guide-dated">Published <time datetime="2026-11-22">22 November 2026</time>. Specs and prices change; the <a href="../compare/">comparison tool</a> always shows today's numbers.</p>
+    </article>
+  </main>
+  <footer>
+    <p>Compare Camera Specs &mdash; For informational purposes only.</p>
+    <p>Prices shown are approximate manufacturer list prices (RRP) and may differ from live retail prices.</p>
+    <div id="affiliate-disclosure"></div>
+    <p>
+      <a href="../guides/">Guides</a>
+      &middot;
+      <a href="../size/">Camera size comparison</a>
+      &middot;
+      <a href="../kit/">Kit builder</a>
+      &middot;
+      <a href="../about">About</a>
+      &middot;
+      <a href="../privacy">Privacy</a>
+    </p>
+    <p>Created by <a href="https://esusatyo.net" target="_blank" rel="noopener">Enrico Susatyo</a> &middot; Assisted by <a href="https://claude.ai" target="_blank" rel="noopener">Claude</a></p>
+  </footer>
+</body>
+</html>

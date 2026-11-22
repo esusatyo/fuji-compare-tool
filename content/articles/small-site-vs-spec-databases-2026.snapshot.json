@@ -1,0 +1,81 @@
+{
+  "brands": [
+    {
+      "name": "Canon",
+      "cameras": 18,
+      "cited": 18,
+      "uncitedDiscontinued": true,
+      "uncitedNewest": null
+    },
+    {
+      "name": "Nikon",
+      "cameras": 16,
+      "cited": 16,
+      "uncitedDiscontinued": true,
+      "uncitedNewest": null
+    },
+    {
+      "name": "Panasonic",
+      "cameras": 24,
+      "cited": 24,
+      "uncitedDiscontinued": true,
+      "uncitedNewest": null
+    },
+    {
+      "name": "Sigma",
+      "cameras": 6,
+      "cited": 6,
+      "uncitedDiscontinued": true,
+      "uncitedNewest": null
+    },
+    {
+      "name": "Sony",
+      "cameras": 36,
+      "cited": 36,
+      "uncitedDiscontinued": true,
+      "uncitedNewest": null
+    },
+    {
+      "name": "Leica",
+      "cameras": 49,
+      "cited": 38,
+      "uncitedDiscontinued": true,
+      "uncitedNewest": 2019
+    },
+    {
+      "name": "Olympus",
+      "cameras": 43,
+      "cited": 33,
+      "uncitedDiscontinued": true,
+      "uncitedNewest": 2013
+    },
+    {
+      "name": "Fujifilm",
+      "cameras": 40,
+      "cited": 30,
+      "uncitedDiscontinued": true,
+      "uncitedNewest": 2016
+    }
+  ],
+  "cameras": 232,
+  "camerasCited": 201,
+  "lenses": 1245,
+  "lensesCited": 1168,
+  "items": 1477,
+  "itemsCited": 1369,
+  "manufacturers": 20,
+  "sharedLenses": 248,
+  "rules": 45,
+  "uncitedAllDiscontinued": true,
+  "uncitedNewest": 2019,
+  "x100vi": {
+    "evf": 310,
+    "ovf": 450,
+    "source": "https://www.fujifilm-x.com/global/products/cameras/x100vi/specifications/"
+  },
+  "om5ii": {
+    "ibis": 6.5,
+    "source": "https://explore.omsystem.com/us/en/om-5-mark-ii",
+    "cited": true
+  }
+}

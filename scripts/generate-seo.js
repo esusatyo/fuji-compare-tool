@@ -2476,7 +2476,7 @@ ${cluster}
   <footer>
     <p>${esc(site.siteName)} &mdash; For informational purposes only.</p>
     <p>Prices shown are approximate manufacturer list prices (RRP) and may differ from live retail prices. Use the Buy link for current pricing.</p>
-    <p>Specs sourced from manufacturer documentation.</p>
+    <p>Most specs come from manufacturer documentation (<a href="./methodology">how we check them</a>).</p>
     <p>Specs &amp; prices last verified: ${esc(site.dataVerified)}</p>
     <div id="affiliate-disclosure"></div>
     <p>
@@ -2506,7 +2506,7 @@ function withHeadBlock(html, block, file) {
 }
 
 // ─── Trust-page identity blocks ──────────────
-// about.html / privacy.html are hand-maintained prose, but their
+// about.html / methodology.html / privacy.html are hand-maintained prose, but their
 // identity — canonical, asset links, token styles, lockup header — is
 // generator-owned so a rebrand reaches them via regeneration. The
 // injected content is static HTML/CSS: the served pages stay
@@ -2555,7 +2555,7 @@ function identityHeadBlock(page, site, title, desc, card = null) {
     .brand-home svg { width: 24px; height: 24px; display: block; }
     .brand-wordmark { font-size: 15px; font-weight: 700; color: var(--text-primary); letter-spacing: -0.01em; }
     footer { margin-top: 32px; font-size: .85rem; color: var(--text-secondary); }
-    .theme-toggle { display: inline-flex; background: var(--overlay-weak); border-radius: 9px;
+    .theme-toggle { display: flex; width: max-content; background: var(--overlay-weak); border-radius: 9px;
                     overflow: hidden; border: 1px solid var(--border); margin-top: 16px; }
     .theme-btn { padding: 5px 14px; font-size: 12px; font-weight: 600; color: var(--text-secondary);
                  background: transparent; border: none; cursor: pointer; font-family: inherit; }
@@ -2855,11 +2855,13 @@ function buildSite({ today = new Date().toISOString().slice(0, 10) } = {}) {
   files.set(kitPage, kitHtml);
   const homeCard = addCard(homeShareCard(brandNames, totalCams, totalLenses));
 
-  sitemapPaths.push('about.html', 'privacy.html');
+  sitemapPaths.push('about.html', 'methodology.html', 'privacy.html');
   const ABOUT_DESC = `What ${site.siteName} is, how the spec and price data is sourced and verified, image credits, and who built it.`;
+  const METHODOLOGY_DESC = `How ${site.siteName} checks camera and lens specs: which sources we trust, which number we store when manufacturers differ, and every rule change.`;
   const PRIVACY_DESC = `${site.siteName} privacy policy: cookieless analytics, no accounts, no personal data collected.`;
   for (const [page, title, desc] of [
     ['about.html', `About — ${site.siteName}`, ABOUT_DESC],
+    ['methodology.html', `How We Check Camera Specs — ${site.siteName}`, METHODOLOGY_DESC],
     ['privacy.html', `Privacy — ${site.siteName}`, PRIVACY_DESC],
   ]) {
     let html = fs.readFileSync(path.join(ROOT, page), 'utf8');
