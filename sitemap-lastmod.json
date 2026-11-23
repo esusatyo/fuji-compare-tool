@@ -112,24 +112,24 @@
     "lastmod": "2026-11-13"
   },
   "fujifilm/": {
-    "hash": "6a51ec208badbc67",
-    "lastmod": "2026-11-22"
+    "hash": "bafab9c388695687",
+    "lastmod": "2026-11-23"
   },
   "fujifilm/size/x-t30iii-vs-x-t30ii": {
-    "hash": "e79a07c6d295eb83",
-    "lastmod": "2026-11-17"
+    "hash": "efc438294d4a007d",
+    "lastmod": "2026-11-23"
   },
   "fujifilm/size/x-t50-vs-x100v": {
-    "hash": "b39cf74fb4ca72ab",
-    "lastmod": "2026-11-17"
+    "hash": "50c42f35eef9e4a6",
+    "lastmod": "2026-11-23"
   },
   "fujifilm/vs/x-t30iii-vs-x-t30ii": {
-    "hash": "c309cb83e01fbe5f",
-    "lastmod": "2026-11-17"
+    "hash": "58481a1a5dca08f0",
+    "lastmod": "2026-11-23"
   },
   "fujifilm/vs/x-t50-vs-x100v": {
-    "hash": "e62ef3dbc2627d43",
-    "lastmod": "2026-11-18"
+    "hash": "7dd4c52d8c01988d",
+    "lastmod": "2026-11-23"
   },
   "guides/": {
     "hash": "e14937c15786d92c",
@@ -352,20 +352,20 @@
     "lastmod": "2026-11-23"
   },
   "size/fujifilm-x-m5-vs-canon-eos-r50": {
-    "hash": "09b6f748394fcfd3",
+    "hash": "0d059046fc04d3ad",
     "lastmod": "2026-11-23"
   },
   "size/fujifilm-x-t50-vs-nikon-zfc": {
-    "hash": "9ba66c0fc9b3d166",
-    "lastmod": "2026-11-22"
+    "hash": "e8b9cc35448bdc12",
+    "lastmod": "2026-11-23"
   },
   "size/nikon-z5-ii-vs-sony-a7c-ii": {
     "hash": "1d4edfc0867c7987",
     "lastmod": "2026-11-22"
   },
   "size/nikon-zf-vs-fujifilm-x-t5": {
-    "hash": "22c4f6d4aca4e0fd",
-    "lastmod": "2026-11-22"
+    "hash": "c1b323ff61ff2f70",
+    "lastmod": "2026-11-23"
   },
   "size/nikon-zr-vs-sony-zv-e1": {
     "hash": "6b4a896e78ea245a",
@@ -392,8 +392,8 @@
     "lastmod": "2026-11-23"
   },
   "size/sony-zv-e10-ii-vs-fujifilm-x-m5": {
-    "hash": "298308387e2fdac8",
-    "lastmod": "2026-11-17"
+    "hash": "9004caae293990da",
+    "lastmod": "2026-11-23"
   },
   "sony/": {
     "hash": "6c0973f4d92377fa",
@@ -444,20 +444,20 @@
     "lastmod": "2026-11-23"
   },
   "vs/fujifilm-x-m5-vs-canon-eos-r50": {
-    "hash": "c65da3a34e59ae3a",
+    "hash": "148faa19fcdf8247",
     "lastmod": "2026-11-23"
   },
   "vs/fujifilm-x-t50-vs-nikon-zfc": {
-    "hash": "8fe789fea915d959",
-    "lastmod": "2026-11-22"
+    "hash": "1080732949eefc63",
+    "lastmod": "2026-11-23"
   },
   "vs/nikon-z5-ii-vs-sony-a7c-ii": {
     "hash": "3e0897485e48eef2",
     "lastmod": "2026-11-22"
   },
   "vs/nikon-zf-vs-fujifilm-x-t5": {
-    "hash": "62a8903774b3eb7b",
-    "lastmod": "2026-11-22"
+    "hash": "a3d96dd29440fd77",
+    "lastmod": "2026-11-23"
   },
   "vs/nikon-zr-vs-sony-zv-e1": {
     "hash": "e40f5b57a4ad989f",
@@ -484,7 +484,7 @@
     "lastmod": "2026-11-23"
   },
   "vs/sony-zv-e10-ii-vs-fujifilm-x-m5": {
-    "hash": "642385fbfd8d1692",
-    "lastmod": "2026-11-17"
+    "hash": "c3be91117e17b5da",
+    "lastmod": "2026-11-23"
   }
 }
