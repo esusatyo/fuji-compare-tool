@@ -7898,7 +7898,7 @@ const LENSES = {
     imageUrl:'https://www.sigma-global.com/lenses/a019_14_24_28_product_img01.png',
     imageSource: { url:'https://www.sigma-global.com/en/lenses/a019_14_24_28/', tier:'T1', title:'Sigma global product page', note:'official Sigma product image (_product_img01); lens alone', date:'2026-10-19' },
     asin:null,
-    prices:{USD:1539,AUD:null,EUR:1499,GBP:1319,JPY:150975,CAD:1999,SGD:1988},
+    prices:{USD:1539,AUD:2147,EUR:1499,GBP:1319,JPY:150975,CAD:1999,SGD:1988},
     specSources: [{ url:'https://www.sigma-global.com/en/lenses/a019_14_24_28/', tier:'T1', title:'Sigma 14-24mm F2.8 DG DN official page', note:'spec table: 18 elements in 13 groups, 11 (Rounded diaphragm) blades, min F22, MFD 28cm / 11in., max mag 1:7.3, filter -; Sony E-mount：φ85.0mm × 133.0mm / φ3.3in. × 5.2in.; Sony E-mount：795g / 28.0oz. (E-mount figures, the L-Mount ones differ). Year from the edition code; AF motor Stepping Motor from the features text', date:'2026-10-19' }],
     priceSource: [
       { url:'https://www.sigmaphoto.com/14-24mm-f2-8-dg-dn-a', tier:'T1', title:'Sigma America official store', note:'Sony E variant regular price $1539 (on sale at $1439 at the time, not used)', date:'2026-10-19' },
@@ -7907,8 +7907,8 @@ const LENSES = {
       { url:'https://www.wexphotovideo.com/sigma-14-24mm-f2-8-dg-dn-lens-sony-e-fit-1709003/', tier:'T3', title:'Wex Photo Video (UK)', note:'GBP 1319: Wex Photo Video price, no sale shown (sigma-14-24mm-f2-8-dg-dn-lens-sony-e-fit)', date:'2026-11-21' },
       { url:'https://shop.kitamura.jp/ec/pd/0085126213657', tier:'T3', title:'Camera no Kitamura (Japan)', note:'JPY 150975 tax-included: Kitamura regular price for シグマ 14-24mm F2.8 DG DN Art ソニーE用; the maker sets no Japanese list price (open price)', date:'2026-11-21' },
       { url:'https://www.sigma-photo.com.sg/lenses', tier:'T1', title:'Sigma Marketing (Singapore) official site', note:'SGD 1988: Sigma Marketing (Singapore) official lens price list, "14-24mm F2.8 DG DN | A" (one price for all mounts); Cathay Photo and Alan Photo also list 1988', date:'2026-11-21' },
+      { url:'https://sigmaphoto.com.au/products/4213965/sigma-14-24mm-f-2-8-dg-dn-art-lens-for-sony-e-mount', tier:'T1', title:'Sigma Australia store', note:'AUD 2147: Sigma Australia (official distributor, C.R. Kennedy) store price, no sale shown (Sigma AF 14-24mm f/2.8 Art for Sony E-Mount)', date:'2026-11-23' },
     ],
-    priceIncomplete:true,
     productUrl:'https://www.sigma-global.com/en/lenses/a019_14_24_28/',
   },
 
