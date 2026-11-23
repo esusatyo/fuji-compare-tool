@@ -16,15 +16,15 @@
     "lastmod": "2026-11-20"
   },
   "canon/": {
-    "hash": "0f999177c856959f",
+    "hash": "b566cee3e14f6661",
     "lastmod": "2026-11-23"
   },
   "canon/size/eos-r1-vs-eos-r3": {
-    "hash": "6846fa6cf58f259b",
+    "hash": "54774b331becd474",
     "lastmod": "2026-11-23"
   },
   "canon/size/eos-r5-ii-vs-eos-r5": {
-    "hash": "072236ddd5a1e3ce",
+    "hash": "924527c452a77e0e",
     "lastmod": "2026-11-23"
   },
   "canon/size/eos-r50-vs-eos-r100": {
@@ -32,15 +32,15 @@
     "lastmod": "2026-11-23"
   },
   "canon/size/eos-r50v-vs-eos-r10": {
-    "hash": "18e1b783eb62f70e",
+    "hash": "98ab35cd6c4a4c16",
     "lastmod": "2026-11-23"
   },
   "canon/size/eos-r50v-vs-eos-r50": {
-    "hash": "121b18e1ac50527d",
+    "hash": "e2a091c1cccd4f4b",
     "lastmod": "2026-11-23"
   },
   "canon/size/eos-r6-iii-vs-eos-r5": {
-    "hash": "4ae17a623ca94aab",
+    "hash": "70159883b76e1d7f",
     "lastmod": "2026-11-23"
   },
   "canon/size/eos-r6-iii-vs-eos-r5c": {
@@ -48,7 +48,7 @@
     "lastmod": "2026-11-23"
   },
   "canon/size/eos-r6-iii-vs-eos-r6-ii": {
-    "hash": "0004e5b268e7bb9c",
+    "hash": "f2c9e4162bc45a81",
     "lastmod": "2026-11-23"
   },
   "canon/size/eos-r6-v-vs-eos-r6-iii": {
@@ -56,19 +56,19 @@
     "lastmod": "2026-11-23"
   },
   "canon/size/eos-r8-ii-vs-eos-r8": {
-    "hash": "97ca300a837e1160",
+    "hash": "c885e11ae43fe832",
     "lastmod": "2026-11-23"
   },
   "canon/size/eos-r8-vs-eos-r10": {
-    "hash": "7c62d14a14a780e8",
+    "hash": "9d01f5d76eb8c44b",
     "lastmod": "2026-11-23"
   },
   "canon/vs/eos-r1-vs-eos-r3": {
-    "hash": "95c97ef6af21cb78",
+    "hash": "98db30bde36d001e",
     "lastmod": "2026-11-23"
   },
   "canon/vs/eos-r5-ii-vs-eos-r5": {
-    "hash": "fd68089f27cdfc59",
+    "hash": "accfc53fc9737849",
     "lastmod": "2026-11-23"
   },
   "canon/vs/eos-r50-vs-eos-r100": {
@@ -76,15 +76,15 @@
     "lastmod": "2026-11-23"
   },
   "canon/vs/eos-r50v-vs-eos-r10": {
-    "hash": "c94857bb02bd99bc",
+    "hash": "0d12a816b9239ed0",
     "lastmod": "2026-11-23"
   },
   "canon/vs/eos-r50v-vs-eos-r50": {
-    "hash": "b12fa5646c3be92d",
+    "hash": "64dd5253f0a58e76",
     "lastmod": "2026-11-23"
   },
   "canon/vs/eos-r6-iii-vs-eos-r5": {
-    "hash": "9aca0d573001aeaf",
+    "hash": "43da37c18ae7c561",
     "lastmod": "2026-11-23"
   },
   "canon/vs/eos-r6-iii-vs-eos-r5c": {
@@ -92,7 +92,7 @@
     "lastmod": "2026-11-23"
   },
   "canon/vs/eos-r6-iii-vs-eos-r6-ii": {
-    "hash": "b2ee8777e2bc55b6",
+    "hash": "389774b14d07e514",
     "lastmod": "2026-11-23"
   },
   "canon/vs/eos-r6-v-vs-eos-r6-iii": {
@@ -100,11 +100,11 @@
     "lastmod": "2026-11-23"
   },
   "canon/vs/eos-r8-ii-vs-eos-r8": {
-    "hash": "598bfce90ae6023f",
+    "hash": "ebddb405367f557b",
     "lastmod": "2026-11-23"
   },
   "canon/vs/eos-r8-vs-eos-r10": {
-    "hash": "f9b2eb2bf5c85330",
+    "hash": "6daf2237244bd1cf",
     "lastmod": "2026-11-23"
   },
   "compare/": {
