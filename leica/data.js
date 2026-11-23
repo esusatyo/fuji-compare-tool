@@ -2963,6 +2963,9 @@ const LENSES = {
     imageUrl:'https://www.sigma-global.com/lenses/c022_20_2_product_img01.png',
     asin:'B09RR1GCJQ',
     prices:{USD:769,AUD:1199,EUR:899,GBP:699,JPY:108000,CAD:999,SGD:1099},
+    priceSource: [
+      { url:'https://www.sigmaphoto.com/20mm-f2-dg-dn-c', tier:'T1', title:'Sigma America store', note:'USD 769: Sigma America store price for the L-Mount option, no sale shown', date:'2026-11-23' },
+    ],
     productUrl:'https://www.sigma-global.com/en/lenses/c022_20_2/',
   },
 
@@ -3005,6 +3008,9 @@ const LENSES = {
     imageUrl:'https://www.sigma-global.com/lenses/c019_45_28_product_img01.png',
     asin:'B0FBXXP33H',
     prices:{USD:619,AUD:999,EUR:699,GBP:599,JPY:70000,CAD:799,SGD:899},
+    priceSource: [
+      { url:'https://www.sigmaphoto.com/45mm-f2-8-dg-dn-c', tier:'T1', title:'Sigma America store', note:'USD 619: Sigma America store price for the L-Mount option, no sale shown', date:'2026-11-23' },
+    ],
     productUrl:'https://www.sigma-global.com/en/lenses/c019_45_28/',
   },
 
@@ -3066,6 +3072,9 @@ const LENSES = {
     imageSource: { url:'https://www.sigma-global.com/en/lenses/c021_90_28/', tier:'T1', note:'official sigma-global.com product page; barrel reads "90mm 1:2.8 DG DN" and "SIGMA"', date:'2026-08-17' },
     asin:'B09FRL6FX2',
     prices:{USD:719,AUD:1099,EUR:799,GBP:599,JPY:92000,CAD:899,SGD:999},
+    priceSource: [
+      { url:'https://www.sigmaphoto.com/90mm-f2-8-dg-dn-c', tier:'T1', title:'Sigma America store', note:'USD 719: Sigma America store price for the L-Mount option, no sale shown', date:'2026-11-23' },
+    ],
     productUrl:'https://www.sigma-global.com/en/lenses/c021_90_28/',
   },
 

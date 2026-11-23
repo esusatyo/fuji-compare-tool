@@ -4305,6 +4305,9 @@ const LENSES = {
     ],
     asin:'B0GVSMN7HG',
     prices:{USD:148,AUD:199,EUR:199,GBP:99,JPY:23000,CAD:199,SGD:199},
+    priceSource: [
+      { url:'https://ttartisan.store/products/af-17mm-f1-8-air', tier:'T1', title:'TTArtisan official store', note:'USD 148 confirmed: TTArtisan store regular (compare-at) price for the Nikon Z variant; a holiday sale price of 118 is running, not used. B&H also lists 148 with a $30 Holiday Savings', date:'2026-11-23' },
+    ],
     productUrl:'https://ttartisan.store/products/af-17mm-f1-8-air',
     imageUrl:'https://ttartisan.store/cdn/shop/files/SKU-E_dc4080f7-361e-43f0-9a8c-ed8e4e03675e.jpg',
     imageSource: { url:'https://ttartisan.store/products/af-17mm-f1-8-air', tier:'T1', note:'official TTArtisan store product photo; the page\'s og:image reflects the default Sony E variant (filename "SKU-E_...") rather than the Z-selected one — the theme does not update the OG tag on a client-side mount-selector click. Same lens barrel is cosmetically identical across mounts in a front-on shot (confirmed against the Size-diagram screenshots, which differ only at the rear flange)', date:'2026-08-31' },
@@ -4373,6 +4376,10 @@ const LENSES = {
     ],
     asin:'B0H4G16VTV',
     prices:{USD:89,AUD:99,EUR:99,GBP:99,JPY:14000,CAD:99,SGD:99},
+    priceSource: [
+      { url:'https://ttartisan.store/products/ttartisan-af-50mm-f1-8-neo', tier:'T1', title:'TTArtisan official store', note:'USD 89 confirmed: TTArtisan store price, no sale shown (Nikon Z)', date:'2026-11-23' },
+      { url:'https://www.bhphotovideo.com/c/product/1968518-REG/ttartisan_af5018se_z_b_50mm_f_1_8_neo_lens.html', tier:'T3', title:'B&H listing', note:'USD 89 confirmed: B&H price for the Nikon Z (Black) version', date:'2026-11-23' },
+    ],
     productUrl:'https://ttartisan.store/products/ttartisan-af-50mm-f1-8-neo',
     imageUrl:'https://ttartisan.store/cdn/shop/files/SKU-E_15b3b488-3a04-4359-85aa-913a9c735cfb.jpg',
     imageSource: { url:'https://ttartisan.store/products/ttartisan-af-50mm-f1-8-neo', tier:'T1', note:'official TTArtisan store product photo; the page\'s og:image reflects the default Sony E variant (filename "SKU-E_...") rather than the Z-selected one — the theme does not update the OG tag on a client-side mount-selector click. Cosmetically identical across mounts in a front-on shot', date:'2026-08-31' },
@@ -5302,6 +5309,9 @@ const LENSES = {
     imageSource: { url:'https://meikeglobal.com/products/2414z', tier:'T1', note:'official Meike Global store, "24mm f1.4 MIX ... for Z Cameras" product page; barrel reads "24/1.4" with "MIX" branding; shared studio image, mount bayonet not distinctly visible', date:'2026-09-06' },
     asin:'B0FMDJYX5Z',
     prices:{USD:589,AUD:899,EUR:699,GBP:499,JPY:91000,CAD:799,SGD:899},
+    priceSource: [
+      { url:'https://meikeglobal.com/products/2414z', tier:'T1', title:'Meike official store', note:'USD 589 confirmed: Meike global store price for the Z-mount lens alone, no sale shown', date:'2026-11-23' },
+    ],
     productUrl:'https://meikeglobal.com/products/2414z',
   },
 
@@ -5358,6 +5368,9 @@ const LENSES = {
     imageSource: { url:'https://meikeglobal.com/products/8518proz', tier:'T1', note:'official Meike Global store, "85mm f1.8 Pro ... for Z Cameras" product page; barrel reads "MEIKE 85/1.8" with a "Pro" badge; shared studio image (Meike reuses one photoset across E/Z/L listings), mount bayonet not distinctly visible', date:'2026-09-06' },
     asin:'B0FX8FSZ33',
     prices:{USD:340,AUD:499,EUR:399,GBP:299,JPY:51000,CAD:399,SGD:499},
+    priceSource: [
+      { url:'https://meikeglobal.com/products/8518proz', tier:'T1', title:'Meike official store', note:'USD 340 confirmed: Meike global store price 339.99 for the Z-mount lens, no sale shown', date:'2026-11-23' },
+    ],
     productUrl:'https://meikeglobal.com/products/8518proz',
   },
 
