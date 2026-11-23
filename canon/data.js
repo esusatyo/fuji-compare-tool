@@ -75,7 +75,10 @@ const CAMERAS = {
     imageCredit:{author:"昼落ち", licence:"CC0", licenceUrl:"http://creativecommons.org/publicdomain/zero/1.0/deed.en", source:"https://commons.wikimedia.org/wiki/File:Canon_EOS_R1_12_apr_2025c.jpg"},
     asin:'B0D9KM72T9',
     prices:{USD:6799,AUD:9799,EUR:7199,GBP:5699,JPY:951000,CAD:8199,SGD:9099},
-    priceSource: { url:'https://www.cpricewatch.com/price-changes/?p=08200', tier:'T4', title:'Canon USA store price (via Canon Price Watch)', note:'Canon Store $6799.00 with no price changes logged since July. Canon Price Watch logs the Canon USA store price (usa.canon.com is geo-blocked from here)', date:'2026-10-19' },
+    priceSource: [
+      { url:'https://www.cpricewatch.com/price-changes/?p=08200', tier:'T4', title:'Canon USA store price (via Canon Price Watch)', note:'Canon Store $6799.00 with no price changes logged since July. Canon Price Watch logs the Canon USA store price (usa.canon.com is geo-blocked from here)', date:'2026-10-19' },
+      { url:'https://www.usa.canon.com/shop/p/eos-r1', tier:'T1', title:'Canon USA store product page', note:'USD 6799: Canon USA store product page lists 6799 (regular price)', date:'2026-11-23' },
+    ],
     specSources: [{ url:'https://www.canon.co.uk/cameras/eos-r1/specifications/', tier:'T1', title:'Canon UK official specifications', note:'verify-specs 2026-11-15: spec fields re-read; battery = Canon UK With LCD / With Viewfinder figures; mechanical burst includes electronic-1st-curtain rates (owner rule 2026-11-15)', date:'2026-11-15' }],
     sensorMP:24.2, sensorType:'Full-frame Stacked BSI CMOS', processor:'DIGIC X + Accelerator',
     width:157.6, height:149.5, depth:87.3, weight:1115, weatherSealed:true,
@@ -103,6 +106,9 @@ const CAMERAS = {
       { url:'https://www.cpricewatch.com/price-changes/?p=08243', tier:'T4', title:'Canon USA store price (via Canon Price Watch)', note:'Canon Store regular $4399.00 (its pre-sale "was" price on 2026-09-07); on sale at $4099.00 at the time (fall instant rebate), not used; agrees with the B&H regular price recorded 2026-10-11. Canon Price Watch logs the Canon USA store price (usa.canon.com is geo-blocked from here)', date:'2026-10-19' },
       { url:'https://www.canon.ca/en/product?name=EOS_R5_Mark_II', tier:'T1', title:'Canon Canada product page', note:'CAD 5899: Canon Canada lists MSRP $5899.99 (whole-dollar figure stored)', date:'2026-11-23' },
       { url:'https://store.canon.jp/online/g/g6536C001/', tier:'T1', title:'Canon Online Shop Japan (Canon Marketing Japan)', note:'JPY 654500: Canon Online Shop lists ¥595,000 excl. tax = ¥654,500 incl. 10% tax', date:'2026-11-23' },
+      { url:'https://www.usa.canon.com/shop/p/eos-r5-mark-ii', tier:'T1', title:'Canon USA store product page', note:'USD 4399: Canon USA store product page lists 4399 (regular price)', date:'2026-11-23' },
+      { url:'https://www.canon.com.au/cameras/eos-r5-mark-ii', tier:'T1', title:'Canon Australia product page', note:'AUD 6699: Canon Australia product page lists 6699 (RRP)', date:'2026-11-23' },
+      { url:'https://shop.sg.canon/products/eos-r5-mark-ii', tier:'T1', title:'Canon Singapore eShop', note:'SGD 6049: Canon Singapore eShop lists 6049 / 5499 (selling price 5499, compare-at 6049)', date:'2026-11-23' },
     ],
     specSources: [{ url:'https://www.canon.co.uk/cameras/eos-r5-mark-ii/specifications/', tier:'T1', title:'Canon UK official specifications', note:'verify-specs 2026-11-15: spec fields re-read; battery = Canon UK With LCD / With Viewfinder figures; mechanical burst includes electronic-1st-curtain rates (owner rule 2026-11-15)', date:'2026-11-15' }],
     sensorMP:45.0, sensorType:'Full-frame BSI CMOS', processor:'DIGIC X + Accelerator',
@@ -131,6 +137,7 @@ const CAMERAS = {
     priceSource: [
       { url:'https://www.cpricewatch.com/price-changes/?p=08495', tier:'T4', title:'Canon USA store price (via Canon Price Watch)', note:'Canon Store $2799.00 with no price changes logged since July. Canon Price Watch logs the Canon USA store price (usa.canon.com is geo-blocked from here)', date:'2026-10-19' },
       { url:'https://store.canon.jp/online/g/g7084C001/', tier:'T1', title:'Canon Online Shop Japan (Canon Marketing Japan)', note:'JPY 431000: Canon Online Shop lists ¥390,000 excl. tax = ¥429,000 incl. 10% tax', date:'2026-11-23' },
+      { url:'https://www.usa.canon.com/shop/p/eos-r6-mark-iii', tier:'T1', title:'Canon USA store product page', note:'USD 2799: Canon USA store product page lists 2799 (regular price)', date:'2026-11-23' },
     ],
     specSources: [{ url:'https://www.canon.co.uk/cameras/eos-r6-mark-iii/specifications/', tier:'T1', title:'Canon UK official specifications', note:'verify-specs 2026-11-15: spec fields re-read; battery = Canon UK With LCD / With Viewfinder figures; mechanical burst includes electronic-1st-curtain rates (owner rule 2026-11-15)', date:'2026-11-15' }],
     sensorMP:32.5, sensorType:'Full-frame CMOS', processor:'DIGIC X',
@@ -155,7 +162,11 @@ const CAMERAS = {
     imageCredit:{author:"TurnOnTheNight", licence:"CC BY-SA 4.0", licenceUrl:"https://creativecommons.org/licenses/by-sa/4.0", source:"https://commons.wikimedia.org/wiki/File:Canon_EOS_R6_V_with_RF_20-50mm_F4L_IS_USM_PZ_20260516100729.jpg"},
     asin:'B0H1F3N1H9',
     prices:{USD:2499,AUD:3599,EUR:2899,GBP:2199,JPY:375000,CAD:3199,SGD:3599},
-    priceSource: { url:'https://www.cpricewatch.com/price-changes/?p=08576', tier:'T4', title:'Canon USA store price (via Canon Price Watch)', note:'Canon Store $2499.00 with no price changes logged since July. Canon Price Watch logs the Canon USA store price (usa.canon.com is geo-blocked from here)', date:'2026-10-19' },
+    priceSource: [
+      { url:'https://www.cpricewatch.com/price-changes/?p=08576', tier:'T4', title:'Canon USA store price (via Canon Price Watch)', note:'Canon Store $2499.00 with no price changes logged since July. Canon Price Watch logs the Canon USA store price (usa.canon.com is geo-blocked from here)', date:'2026-10-19' },
+      { url:'https://www.usa.canon.com/shop/p/eos-r6-v-body', tier:'T1', title:'Canon USA store product page', note:'USD 2499: Canon USA store product page lists 2499 (regular price)', date:'2026-11-23' },
+      { url:'https://www.canon.com.au/cameras/eos-r6v', tier:'T1', title:'Canon Australia product page', note:'AUD 3599: Canon Australia product page lists 3599 (RRP)', date:'2026-11-23' },
+    ],
     specSources: [{ url:'https://www.canon.co.uk/cameras/eos-r6v/specifications/', tier:'T1', title:'Canon UK official specifications', note:'verify-specs 2026-11-15: spec fields re-read; battery = Canon UK With LCD / With Viewfinder figures; mechanical burst includes electronic-1st-curtain rates (owner rule 2026-11-15)', date:'2026-11-15' }],
     sensorMP:32.5, sensorType:'Full-frame CMOS', processor:'DIGIC X',
     width:141.8, height:83.3, depth:79.8, weight:688, weatherSealed:true,
@@ -211,6 +222,8 @@ const CAMERAS = {
       { url:'https://www.cpricewatch.com/price-changes/?p=07796', tier:'T4', title:'Canon USA store price (via Canon Price Watch)', note:'Canon Store regular $1649.00 (its pre-sale "was" price on 2026-09-07); on sale at $1399.00 at the time (fall instant rebate), not used; agrees with the B&H regular price recorded 2026-10-11. Canon Price Watch logs the Canon USA store price (usa.canon.com is geo-blocked from here)', date:'2026-10-19' },
       { url:'https://www.canon.ca/en/product?name=EOS_R8', tier:'T1', title:'Canon Canada product page', note:'CAD 2099: Canon Canada lists MSRP $2099.99 (whole-dollar figure stored)', date:'2026-11-23' },
       { url:'https://store.canon.jp/online/g/g5803C001/', tier:'T1', title:'Canon Online Shop Japan (Canon Marketing Japan)', note:'JPY 242000: Canon Online Shop lists ¥220,000 excl. tax = ¥242,000 incl. 10% tax', date:'2026-11-23' },
+      { url:'https://www.usa.canon.com/shop/p/eos-r8', tier:'T1', title:'Canon USA store product page', note:'USD 1649: Canon USA store product page lists 1649 (regular price)', date:'2026-11-23' },
+      { url:'https://shop.sg.canon/products/eos-r8', tier:'T1', title:'Canon Singapore eShop', note:'SGD 2349: Canon Singapore eShop lists 2349 / 1689 (selling price 1689, compare-at 2349)', date:'2026-11-23' },
     ],
     sensorMP:24.2, sensorType:'Full-frame BSI CMOS', processor:'DIGIC X',
     width:132.5, height:86.1, depth:70.0, weight:461, weatherSealed:false,
@@ -237,6 +250,8 @@ const CAMERAS = {
     priceSource: [
       { url:'https://www.cpricewatch.com/price-changes/?p=08207', tier:'T4', title:'Canon USA store price (via Canon Price Watch)', note:'Canon Store regular $779.99 (its pre-sale "was" price on 2026-09-07); on sale at $729.99 at the time (fall instant rebate), not used; agrees with the B&H regular price recorded 2026-10-11. Canon Price Watch logs the Canon USA store price (usa.canon.com is geo-blocked from here)', date:'2026-10-19' },
       { url:'https://store.canon.jp/online/g/g5811C001/', tier:'T1', title:'Canon Online Shop Japan (Canon Marketing Japan)', note:'JPY 111100: Canon Online Shop lists ¥101,000 excl. tax = ¥111,100 incl. 10% tax', date:'2026-11-23' },
+      { url:'https://www.usa.canon.com/shop/p/eos-r50', tier:'T1', title:'Canon USA store product page', note:'USD 779: Canon USA store product page lists 779.99 (regular price)', date:'2026-11-23' },
+      { url:'https://shop.sg.canon/products/eos-r50', tier:'T1', title:'Canon Singapore eShop', note:'SGD 1029: Canon Singapore eShop lists 1029 / 1029 (selling price 1029, compare-at 1029)', date:'2026-11-23' },
     ],
     specSources: [{ url:'https://www.canon.co.uk/cameras/eos-r50/specifications/', tier:'T1', title:'Canon UK official specifications', note:'verify-specs 2026-11-15: spec fields re-read; battery = Canon UK With LCD / With Viewfinder figures; mechanical burst includes electronic-1st-curtain rates (owner rule 2026-11-15)', date:'2026-11-15' }],
     sensorMP:24.2, sensorType:'APS-C CMOS', processor:'DIGIC X',
@@ -264,6 +279,7 @@ const CAMERAS = {
     priceSource: [
       { url:'https://www.cpricewatch.com/price-changes/?p=07858', tier:'T4', title:'Canon USA store price (via Canon Price Watch)', note:'Canon Store regular $559.99 (its pre-sale "was" price on 2026-09-07); on sale at $429.99 at the time (fall instant rebate), not used; agrees with the B&H regular price recorded 2026-10-11. Canon Price Watch logs the Canon USA store price (usa.canon.com is geo-blocked from here)', date:'2026-10-19' },
       { url:'https://store.canon.jp/online/g/g6052C001/', tier:'T1', title:'Canon Online Shop Japan (Canon Marketing Japan)', note:'JPY 88000: Canon Online Shop lists ¥80,000 excl. tax = ¥88,000 incl. 10% tax', date:'2026-11-23' },
+      { url:'https://www.usa.canon.com/shop/p/eos-r100', tier:'T1', title:'Canon USA store product page', note:'USD 559: Canon USA store product page lists 559.99 (regular price)', date:'2026-11-23' },
     ],
     specSources: [{ url:'https://www.canon.co.uk/cameras/eos-r100/specifications/', tier:'T1', title:'Canon UK official specifications', note:'verify-specs 2026-11-15: spec fields re-read; mechanical burst includes electronic-1st-curtain rates (owner rule 2026-11-15)', date:'2026-11-15' }],
     sensorMP:24.1, sensorType:'APS-C CMOS', processor:'DIGIC 8',
@@ -293,6 +309,8 @@ const CAMERAS = {
       { url:'https://www.cpricewatch.com/price-changes/?p=07756', tier:'T4', title:'Canon USA store price (via Canon Price Watch)', note:'Canon Store regular $2299.00 (its pre-sale "was" price on 2026-09-07); on sale at $1999.00 at the time (fall instant rebate), not used; agrees with the B&H regular price recorded 2026-10-11. Canon Price Watch logs the Canon USA store price (usa.canon.com is geo-blocked from here)', date:'2026-10-19' },
       { url:'https://www.canon.ca/en/product?name=EOS_R6_Mark_II', tier:'T1', title:'Canon Canada product page', note:'CAD 3199: Canon Canada lists MSRP $3199.99 (whole-dollar figure stored)', date:'2026-11-23' },
       { url:'https://store.canon.jp/online/g/g5666C001/', tier:'T1', title:'Canon Online Shop Japan (Canon Marketing Japan)', note:'JPY 319000: Canon Online Shop lists ¥290,000 excl. tax = ¥319,000 incl. 10% tax', date:'2026-11-23' },
+      { url:'https://www.usa.canon.com/shop/p/eos-r6-mark-ii', tier:'T1', title:'Canon USA store product page', note:'USD 2299: Canon USA store product page lists 2299 (regular price)', date:'2026-11-23' },
+      { url:'https://shop.sg.canon/products/eos-r6-mark-ii', tier:'T1', title:'Canon Singapore eShop', note:'SGD 3199: Canon Singapore eShop lists 3199 / 2499 (selling price 2499, compare-at 3199)', date:'2026-11-23' },
     ],
     specSources: [{ url:'https://www.canon.co.uk/cameras/eos-r6-mark-ii/specifications/', tier:'T1', title:'Canon UK official specifications', note:'verify-specs 2026-11-15: spec fields re-read; battery = Canon UK With LCD / With Viewfinder figures; mechanical burst includes electronic-1st-curtain rates (owner rule 2026-11-15)', date:'2026-11-15' }],
     sensorMP:24.2, sensorType:'Full-frame BSI CMOS', processor:'DIGIC X',
@@ -321,6 +339,8 @@ const CAMERAS = {
       { url:'https://www.cpricewatch.com/price-changes/?p=07649', tier:'T4', title:'Canon USA store price (via Canon Price Watch)', note:'Canon Store $1649.00 on 2026-10-12; agrees with the B&H regular price recorded 2026-10-11. Canon Price Watch logs the Canon USA store price (usa.canon.com is geo-blocked from here)', date:'2026-10-19' },
       { url:'https://www.canon.ca/en/product?name=EOS_R7', tier:'T1', title:'Canon Canada product page', note:'CAD 2099: Canon Canada lists MSRP $2099.99 (whole-dollar figure stored)', date:'2026-11-23' },
       { url:'https://store.canon.jp/online/g/g5137C001/', tier:'T1', title:'Canon Online Shop Japan (Canon Marketing Japan)', note:'JPY 220000: Canon Online Shop lists ¥200,000 excl. tax = ¥220,000 incl. 10% tax', date:'2026-11-23' },
+      { url:'https://www.usa.canon.com/shop/p/eos-r7', tier:'T1', title:'Canon USA store product page', note:'USD 1649: Canon USA store product page lists 1649 (regular price)', date:'2026-11-23' },
+      { url:'https://shop.sg.canon/products/eos-r7', tier:'T1', title:'Canon Singapore eShop', note:'SGD 1949: Canon Singapore eShop lists 1949 / 1799 (selling price 1799, compare-at 1949)', date:'2026-11-23' },
     ],
     specSources: [{ url:'https://www.canon.co.uk/cameras/eos-r7/specifications/', tier:'T1', title:'Canon UK official specifications', note:'verify-specs 2026-11-15: spec fields re-read; battery = Canon UK With LCD / With Viewfinder figures; mechanical burst includes electronic-1st-curtain rates (owner rule 2026-11-15)', date:'2026-11-15' }],
     sensorMP:32.5, sensorType:'APS-C CMOS', processor:'DIGIC X',
@@ -346,7 +366,10 @@ const CAMERAS = {
     imageCredit:{author:"昼落ち", licence:"CC BY-SA 4.0", licenceUrl:"https://creativecommons.org/licenses/by-sa/4.0", source:"https://commons.wikimedia.org/wiki/File:Canon_EOS_R10_22_nov_2022a.jpg"},
     asin:'B0B27NSHB4',
     prices:{USD:1099,AUD:1699,EUR:1299,GBP:999,JPY:171000,CAD:1399,SGD:1599},
-    priceSource: { url:'https://www.cpricewatch.com/price-changes/?p=07650', tier:'T4', title:'Canon USA store price (via Canon Price Watch)', note:'Canon Store $1099.00 on 2026-10-12. Canon Price Watch logs the Canon USA store price (usa.canon.com is geo-blocked from here)', date:'2026-10-19' },
+    priceSource: [
+      { url:'https://www.cpricewatch.com/price-changes/?p=07650', tier:'T4', title:'Canon USA store price (via Canon Price Watch)', note:'Canon Store $1099.00 on 2026-10-12. Canon Price Watch logs the Canon USA store price (usa.canon.com is geo-blocked from here)', date:'2026-10-19' },
+      { url:'https://www.usa.canon.com/shop/p/eos-r10', tier:'T1', title:'Canon USA store product page', note:'USD 1099: Canon USA store product page lists 1099 (regular price)', date:'2026-11-23' },
+    ],
     specSources: [{ url:'https://www.canon.co.uk/cameras/eos-r10/specifications/', tier:'T1', title:'Canon UK official specifications', note:'verify-specs 2026-11-15: spec fields re-read; battery = Canon UK With LCD / With Viewfinder figures; mechanical burst includes electronic-1st-curtain rates (owner rule 2026-11-15)', date:'2026-11-15' }],
     sensorMP:24.2, sensorType:'APS-C CMOS', processor:'DIGIC X',
     width:122.5, height:87.8, depth:83.4, weight:429, weatherSealed:false,
@@ -370,7 +393,11 @@ const CAMERAS = {
     imageCredit:{author:"Henry Söderlund", licence:"CC BY 2.0", licenceUrl:"https://creativecommons.org/licenses/by/2.0", source:"https://commons.wikimedia.org/wiki/File:Canon_EOS_R5C_(51973388828).jpg"},
     asin:'B0B1935YM9',
     prices:{USD:3899,AUD:5000,EUR:3699,GBP:3299,JPY:517000,CAD:4299,SGD:6399},
-    priceSource: { url:'https://www.cpricewatch.com/price-changes/?p=07597', tier:'T4', title:'Canon USA store price (via Canon Price Watch)', note:'Canon Store regular $3899.00 (its pre-sale "was" price on 2026-09-07); on sale at $3199.00 at the time (fall instant rebate), not used; agrees with the B&H regular price recorded 2026-10-11. Canon Price Watch logs the Canon USA store price (usa.canon.com is geo-blocked from here)', date:'2026-10-19' },
+    priceSource: [
+      { url:'https://www.cpricewatch.com/price-changes/?p=07597', tier:'T4', title:'Canon USA store price (via Canon Price Watch)', note:'Canon Store regular $3899.00 (its pre-sale "was" price on 2026-09-07); on sale at $3199.00 at the time (fall instant rebate), not used; agrees with the B&H regular price recorded 2026-10-11. Canon Price Watch logs the Canon USA store price (usa.canon.com is geo-blocked from here)', date:'2026-10-19' },
+      { url:'https://www.usa.canon.com/shop/p/eos-r5-c', tier:'T1', title:'Canon USA store product page', note:'USD 3899: Canon USA store product page lists 3899 (regular price)', date:'2026-11-23' },
+      { url:'https://www.canon.com.au/cameras/eos-r5c', tier:'T1', title:'Canon Australia product page', note:'AUD 5000: Canon Australia product page lists 5000 (RRP)', date:'2026-11-23' },
+    ],
     specSources: [{ url:'https://www.canon.co.uk/cameras/eos-r5c/specifications/', tier:'T1', title:'Canon UK official specifications', note:'verify-specs 2026-11-15: spec fields re-read; mechanical burst includes electronic-1st-curtain rates (owner rule 2026-11-15)', date:'2026-11-15' }],
     sensorMP:45.0, sensorType:'Full-frame BSI CMOS', processor:'DIGIC X',
     width:142, height:101, depth:111, weight:770, weatherSealed:true,
@@ -398,6 +425,8 @@ const CAMERAS = {
     priceSource: [
       { url:'https://www.cpricewatch.com/price-changes/?p=07437', tier:'T4', title:'Canon USA store price (via Canon Price Watch)', note:'Canon Store regular $5399.00 (its pre-sale "was" price on 2026-09-07); on sale at $4399.00 at the time (fall instant rebate), not used. Canon Price Watch logs the Canon USA store price (usa.canon.com is geo-blocked from here)', date:'2026-10-19' },
       { url:'https://www.canon.ca/en/product?name=EOS_R3', tier:'T1', title:'Canon Canada product page', note:'CAD 6999: Canon Canada lists MSRP $6999.99 (whole-dollar figure stored)', date:'2026-11-23' },
+      { url:'https://www.usa.canon.com/shop/p/eos-r3', tier:'T1', title:'Canon USA store product page', note:'USD 5399: Canon USA store product page lists 5399 (regular price)', date:'2026-11-23' },
+      { url:'https://www.canon.com.au/cameras/eos-r3', tier:'T1', title:'Canon Australia product page', note:'AUD 8199: Canon Australia product page lists 8199 (RRP)', date:'2026-11-23' },
     ],
     specSources: [{ url:'https://www.canon.co.uk/cameras/eos-r3/specifications/', tier:'T1', title:'Canon UK official specifications', note:'verify-specs 2026-11-15: spec fields re-read; battery = Canon UK With LCD / With Viewfinder figures; mechanical burst includes electronic-1st-curtain rates (owner rule 2026-11-15)', date:'2026-11-15' }],
     sensorMP:24.1, sensorType:'Full-frame Stacked BSI CMOS', processor:'DIGIC X',
@@ -423,7 +452,11 @@ const CAMERAS = {
     imageCredit:{author:"Harrison Jones", licence:"CC BY-SA 4.0", licenceUrl:"https://creativecommons.org/licenses/by-sa/4.0", source:"https://commons.wikimedia.org/wiki/File:Canon_EOS_R5.jpg"},
     asin:'B08C68F2DX',
     prices:{USD:3299,AUD:4799,EUR:3135,GBP:2839,JPY:468000,CAD:3899,SGD:5299},
-    priceSource: { url:'https://www.cpricewatch.com/price-changes/?p=07161', tier:'T4', title:'Canon USA store price (via Canon Price Watch)', note:'Canon Store regular $3299.00 (its pre-sale "was" price on 2026-09-07); on sale at $2999.00 at the time (fall instant rebate), not used; agrees with the B&H regular price recorded 2026-10-11. Canon Price Watch logs the Canon USA store price (usa.canon.com is geo-blocked from here)', date:'2026-10-19' },
+    priceSource: [
+      { url:'https://www.cpricewatch.com/price-changes/?p=07161', tier:'T4', title:'Canon USA store price (via Canon Price Watch)', note:'Canon Store regular $3299.00 (its pre-sale "was" price on 2026-09-07); on sale at $2999.00 at the time (fall instant rebate), not used; agrees with the B&H regular price recorded 2026-10-11. Canon Price Watch logs the Canon USA store price (usa.canon.com is geo-blocked from here)', date:'2026-10-19' },
+      { url:'https://www.usa.canon.com/shop/p/eos-r5', tier:'T1', title:'Canon USA store product page', note:'USD 3299: Canon USA store product page lists 3299 (regular price)', date:'2026-11-23' },
+      { url:'https://www.canon.com.au/cameras/eos-r5', tier:'T1', title:'Canon Australia product page', note:'AUD 4799: Canon Australia product page lists 4799 (RRP)', date:'2026-11-23' },
+    ],
     specSources: [{ url:'https://www.canon.co.uk/cameras/eos-r5/specifications/', tier:'T1', title:'Canon UK official specifications', note:'verify-specs 2026-11-15: spec fields re-read; battery = Canon UK With LCD / With Viewfinder figures; mechanical burst includes electronic-1st-curtain rates (owner rule 2026-11-15)', date:'2026-11-15' }],
     sensorMP:45.0, sensorType:'Full-frame BSI CMOS', processor:'DIGIC X',
     width:138.5, height:97.5, depth:88.0, weight:738, weatherSealed:true,
@@ -473,6 +506,7 @@ const CAMERAS = {
     priceSource: [
       { url:'https://www.cpricewatch.com/price-changes/?p=06833', tier:'T4', title:'Canon USA store price (via Canon Price Watch)', note:'Canon Store regular $1149.00 (its pre-sale "was" price on 2026-09-07); on sale at $899.00 at the time (fall instant rebate), not used; agrees with the B&H regular price recorded 2026-10-11. Canon Price Watch logs the Canon USA store price (usa.canon.com is geo-blocked from here)', date:'2026-10-19' },
       { url:'https://www.canon.ca/en/product?name=EOS_RP', tier:'T1', title:'Canon Canada product page', note:'CAD 1399: Canon Canada lists MSRP $1399.99 (whole-dollar figure stored)', date:'2026-11-23' },
+      { url:'https://www.usa.canon.com/shop/p/eos-rp', tier:'T1', title:'Canon USA store product page', note:'USD 1149: Canon USA store product page lists 1149 (regular price)', date:'2026-11-23' },
     ],
     specSources: [{ url:'https://www.canon.co.uk/cameras/eos-rp/specifications/', tier:'T1', title:'Canon UK official specifications', note:'verify-specs 2026-11-15: spec fields re-read; mechanical burst includes electronic-1st-curtain rates (owner rule 2026-11-15)', date:'2026-11-15' }],
     sensorMP:26.2, sensorType:'Full-frame CMOS', processor:'DIGIC 8',
@@ -523,6 +557,9 @@ const CAMERAS = {
     priceSource: [
       { url:'https://www.cpricewatch.com/price-changes/?p=08391', tier:'T4', title:'Canon USA store price (via Canon Price Watch)', note:'Canon Store regular $719.99 (its pre-sale "was" price on 2026-09-07); on sale at $619.99 at the time (fall instant rebate), not used; agrees with the B&H regular price recorded 2026-10-11. Canon Price Watch logs the Canon USA store price (usa.canon.com is geo-blocked from here)', date:'2026-10-19' },
       { url:'https://store.canon.jp/online/g/g6895C001/', tier:'T1', title:'Canon Online Shop Japan (Canon Marketing Japan)', note:'JPY 102300: Canon Online Shop lists ¥93,000 excl. tax = ¥102,300 incl. 10% tax', date:'2026-11-23' },
+      { url:'https://www.usa.canon.com/shop/p/eos-r50-v-body', tier:'T1', title:'Canon USA store product page', note:'USD 719: Canon USA store product page lists 719.99 (regular price)', date:'2026-11-23' },
+      { url:'https://www.canon.com.au/cameras/eos-r50v', tier:'T1', title:'Canon Australia product page', note:'AUD 1169: Canon Australia product page lists 1169 (RRP)', date:'2026-11-23' },
+      { url:'https://shop.sg.canon/products/eos-r50-v', tier:'T1', title:'Canon Singapore eShop', note:'SGD 899: Canon Singapore eShop lists 899 (selling price)', date:'2026-11-23' },
     ],
     specSources: [{ url:'https://www.canon.co.uk/cameras/eos-r50v/specifications/', tier:'T1', title:'Canon UK official specifications', note:'verify-specs 2026-11-15: spec fields re-read; battery = Canon UK With LCD / With Viewfinder figures; mechanical burst includes electronic-1st-curtain rates (owner rule 2026-11-15)', date:'2026-11-15' }],
     sensorMP:24.2, sensorType:'APS-C CMOS', processor:'DIGIC X',
@@ -584,6 +621,8 @@ const LENSES = {
     priceSource: [
       { url:'https://www.cpricewatch.com/price-changes/?p=08539', tier:'T4', title:'Canon USA store price (via Canon Price Watch)', note:'Canon Store $2599.00 with no price changes logged since July; agrees with the B&H regular price recorded 2026-10-11. Canon Price Watch logs the Canon USA store price (usa.canon.com is geo-blocked from here)', date:'2026-10-19' },
       { url:'https://www.canon.ca/en/product?name=RF14mm_F1.4_L_VCM', tier:'T1', title:'Canon Canada product page', note:'CAD 3200: Canon Canada lists MSRP $3199.99 (whole-dollar figure stored)', date:'2026-11-23' },
+      { url:'https://www.usa.canon.com/shop/p/rf14mm-f1-4-l-vcm', tier:'T1', title:'Canon USA store product page', note:'USD 2599: Canon USA store product page lists 2599 (regular price)', date:'2026-11-23' },
+      { url:'https://www.canon.com.au/camera-lenses/rf-14mm-f1-4l-vcm', tier:'T1', title:'Canon Australia product page', note:'AUD 3899: Canon Australia product page lists 3899 (RRP)', date:'2026-11-23' },
     ],
     productUrl:'https://www.usa.canon.com/shop/p/rf14mm-f1-4-l-vcm',
   },
@@ -603,6 +642,9 @@ const LENSES = {
       { url:'https://www.cpricewatch.com/price-changes/?p=08390', tier:'T4', title:'Canon USA store price (via Canon Price Watch)', note:'Canon Store regular $1899.00 (its pre-sale "was" price on 2026-09-07); on sale at $1799.00 at the time (fall instant rebate), not used; agrees with the B&H regular price recorded 2026-10-11. Canon Price Watch logs the Canon USA store price (usa.canon.com is geo-blocked from here)', date:'2026-10-19' },
       { url:'https://www.canon.ca/en/product?name=RF20mm_F1.4_L_VCM', tier:'T1', title:'Canon Canada product page', note:'CAD 2499: Canon Canada lists MSRP $2499.99 (whole-dollar figure stored)', date:'2026-11-23' },
       { url:'https://store.canon.jp/online/g/g7023C001/', tier:'T1', title:'Canon Online Shop Japan (Canon Marketing Japan)', note:'JPY 292600: Canon Online Shop lists ¥266,000 excl. tax = ¥292,600 incl. 10% tax', date:'2026-11-23' },
+      { url:'https://www.usa.canon.com/shop/p/rf20mm-f-1-4-l-vcm', tier:'T1', title:'Canon USA store product page', note:'USD 1899: Canon USA store product page lists 1899 (regular price)', date:'2026-11-23' },
+      { url:'https://www.canon.com.au/camera-lenses/rf-20mm-f1-4l-vcm', tier:'T1', title:'Canon Australia product page', note:'AUD 2999: Canon Australia product page lists 2999 (RRP)', date:'2026-11-23' },
+      { url:'https://shop.sg.canon/products/rf20mm-f-1-4l-vcm', tier:'T1', title:'Canon Singapore eShop', note:'SGD 2629: Canon Singapore eShop lists 2629 / 1999 (selling price 1999, compare-at 2629)', date:'2026-11-23' },
     ],
     productUrl:'https://www.usa.canon.com/shop/p/rf20mm-f-1-4-l-vcm',
   },
@@ -622,6 +664,9 @@ const LENSES = {
       { url:'https://www.cpricewatch.com/price-changes/?p=08499', tier:'T4', title:'Canon USA store price (via Canon Price Watch)', note:'Canon Store regular $469.99 (its pre-sale "was" price on 2026-09-07); on sale at $429.99 at the time (fall instant rebate), not used; agrees with the B&H regular price recorded 2026-10-11. Canon Price Watch logs the Canon USA store price (usa.canon.com is geo-blocked from here)', date:'2026-10-19' },
       { url:'https://www.canon.ca/en/product?name=RF45mm_F1.2_STM', tier:'T1', title:'Canon Canada product page', note:'CAD 569: Canon Canada lists MSRP $569.99 (whole-dollar figure stored)', date:'2026-11-23' },
       { url:'https://store.canon.jp/online/g/g7198C001/', tier:'T1', title:'Canon Online Shop Japan (Canon Marketing Japan)', note:'JPY 66000: Canon Online Shop lists ¥60,000 excl. tax = ¥66,000 incl. 10% tax', date:'2026-11-23' },
+      { url:'https://www.usa.canon.com/shop/p/rf45mm-f1-2-stm', tier:'T1', title:'Canon USA store product page', note:'USD 469: Canon USA store product page lists 469.99 (regular price)', date:'2026-11-23' },
+      { url:'https://www.canon.com.au/camera-lenses/rf-45mm-f1-2-stm', tier:'T1', title:'Canon Australia product page', note:'AUD 699: Canon Australia product page lists 699 (RRP)', date:'2026-11-23' },
+      { url:'https://shop.sg.canon/products/rf45mm-f-1-2-stm', tier:'T1', title:'Canon Singapore eShop', note:'SGD 599: Canon Singapore eShop lists 599 (selling price)', date:'2026-11-23' },
     ],
     productUrl:'https://www.usa.canon.com/shop/p/rf45mm-f1-2-stm',
   },
@@ -642,6 +687,9 @@ const LENSES = {
       { url:'https://www.cpricewatch.com/price-changes/?p=07508', tier:'T4', title:'Canon USA store price (via Canon Price Watch)', note:'Canon Store regular $349.99 (its pre-sale "was" price on 2026-09-07); on sale at $299.99 at the time (fall instant rebate), not used; agrees with the B&H regular price recorded 2026-10-11. Canon Price Watch logs the Canon USA store price (usa.canon.com is geo-blocked from here)', date:'2026-10-19' },
       { url:'https://www.canon.ca/en/product?name=RF16mm_F2.8_STM', tier:'T1', title:'Canon Canada product page', note:'CAD 429: Canon Canada lists MSRP $429.99 (whole-dollar figure stored)', date:'2026-11-23' },
       { url:'https://store.canon.jp/online/g/g5051C001/', tier:'T1', title:'Canon Online Shop Japan (Canon Marketing Japan)', note:'JPY 44550: Canon Online Shop lists ¥40,500 excl. tax = ¥44,550 incl. 10% tax', date:'2026-11-23' },
+      { url:'https://www.usa.canon.com/shop/p/rf16mm-f2-8-stm', tier:'T1', title:'Canon USA store product page', note:'USD 349: Canon USA store product page lists 349.99 (regular price)', date:'2026-11-23' },
+      { url:'https://www.canon.com.au/camera-lenses/rf-16mm-f2-8-stm', tier:'T1', title:'Canon Australia product page', note:'AUD 519: Canon Australia product page lists 519 (RRP)', date:'2026-11-23' },
+      { url:'https://shop.sg.canon/products/canon-rf16mm-f-2-8-stm', tier:'T1', title:'Canon Singapore eShop', note:'SGD 469: Canon Singapore eShop lists 469 (selling price)', date:'2026-11-23' },
     ],
     productUrl:'https://www.usa.canon.com/shop/p/rf16mmf28stm',
   },
@@ -662,6 +710,9 @@ const LENSES = {
       { url:'https://www.cpricewatch.com/price-changes/?p=07670', tier:'T4', title:'Canon USA store price (via Canon Price Watch)', note:'Canon Store regular $689.99 (its pre-sale "was" price on 2026-09-07); on sale at $639.99 at the time (fall instant rebate), not used; agrees with the B&H regular price recorded 2026-10-11. Canon Price Watch logs the Canon USA store price (usa.canon.com is geo-blocked from here)', date:'2026-10-19' },
       { url:'https://www.canon.ca/en/product?name=RF24mm_F1.8_MACRO_IS_STM', tier:'T1', title:'Canon Canada product page', note:'CAD 849: Canon Canada lists MSRP $849.99 (whole-dollar figure stored)', date:'2026-11-23' },
       { url:'https://store.canon.jp/online/g/g5668C001/', tier:'T1', title:'Canon Online Shop Japan (Canon Marketing Japan)', note:'JPY 103400: Canon Online Shop lists ¥94,000 excl. tax = ¥103,400 incl. 10% tax', date:'2026-11-23' },
+      { url:'https://www.usa.canon.com/shop/p/rf24mm-f1-8-macro-is-stm', tier:'T1', title:'Canon USA store product page', note:'USD 689: Canon USA store product page lists 689.99 (regular price)', date:'2026-11-23' },
+      { url:'https://www.canon.com.au/camera-lenses/rf-24mm-f1-8-macro-is-stm', tier:'T1', title:'Canon Australia product page', note:'AUD 1049: Canon Australia product page lists 1049 (RRP)', date:'2026-11-23' },
+      { url:'https://shop.sg.canon/products/rf24mmm-f-1-8-macro-is-stm', tier:'T1', title:'Canon Singapore eShop', note:'SGD 949: Canon Singapore eShop lists 949 (selling price)', date:'2026-11-23' },
     ],
     productUrl:'https://www.usa.canon.com/shop/p/rf24mmf18macroisstm',
   },
@@ -682,6 +733,9 @@ const LENSES = {
       { url:'https://www.cpricewatch.com/price-changes/?p=07861', tier:'T4', title:'Canon USA store price (via Canon Price Watch)', note:'Canon Store regular $349.99 (its pre-sale "was" price on 2026-09-07); on sale at $299.99 at the time (fall instant rebate), not used; agrees with the B&H regular price recorded 2026-10-11. Canon Price Watch logs the Canon USA store price (usa.canon.com is geo-blocked from here)', date:'2026-10-19' },
       { url:'https://www.canon.ca/en/product?name=RF28mm_F2.8_STM', tier:'T1', title:'Canon Canada product page', note:'CAD 429: Canon Canada lists MSRP $429.99 (whole-dollar figure stored)', date:'2026-11-23' },
       { url:'https://store.canon.jp/online/g/g6128C001/', tier:'T1', title:'Canon Online Shop Japan (Canon Marketing Japan)', note:'JPY 51700: Canon Online Shop lists ¥47,000 excl. tax = ¥51,700 incl. 10% tax', date:'2026-11-23' },
+      { url:'https://www.usa.canon.com/shop/p/rf28mm-f2-8-stm', tier:'T1', title:'Canon USA store product page', note:'USD 349: Canon USA store product page lists 349.99 (regular price)', date:'2026-11-23' },
+      { url:'https://www.canon.com.au/camera-lenses/rf-28mm-f2-8-stm', tier:'T1', title:'Canon Australia product page', note:'AUD 549: Canon Australia product page lists 549 (RRP)', date:'2026-11-23' },
+      { url:'https://shop.sg.canon/products/canon-rf28mm-f-2-8-stm', tier:'T1', title:'Canon Singapore eShop', note:'SGD 459: Canon Singapore eShop lists 459 (selling price)', date:'2026-11-23' },
     ],
     productUrl:'https://www.usa.canon.com/shop/p/rf28mmf28stm',
   },
@@ -702,6 +756,7 @@ const LENSES = {
       { url:'https://www.cpricewatch.com/price-changes/?p=06709', tier:'T4', title:'Canon USA store price (via Canon Price Watch)', note:'Canon Store regular $589.99 (its pre-sale "was" price on 2026-09-07); on sale at $539.99 at the time (fall instant rebate), not used; agrees with the B&H regular price recorded 2026-10-11. Canon Price Watch logs the Canon USA store price (usa.canon.com is geo-blocked from here)', date:'2026-10-19' },
       { url:'https://www.canon.ca/en/product?name=RF35mm_F1.8_Macro_IS_STM', tier:'T1', title:'Canon Canada product page', note:'CAD 699: Canon Canada lists MSRP $699.99 (whole-dollar figure stored)', date:'2026-11-23' },
       { url:'https://store.canon.jp/online/g/g2973C001/', tier:'T1', title:'Canon Online Shop Japan (Canon Marketing Japan)', note:'JPY 88000: Canon Online Shop lists ¥80,000 excl. tax = ¥88,000 incl. 10% tax', date:'2026-11-23' },
+      { url:'https://shop.sg.canon/products/rf35mm-f1-8-macro-is-stm', tier:'T1', title:'Canon Singapore eShop', note:'SGD 799: Canon Singapore eShop lists 799 / 779 (selling price 779, compare-at 799)', date:'2026-11-23' },
     ],
     productUrl:'https://www.usa.canon.com/shop/p/rf35mmf18macroisstm',
   },
@@ -721,6 +776,8 @@ const LENSES = {
     priceSource: [
       { url:'https://www.cpricewatch.com/price-changes/?p=06706', tier:'T4', title:'Canon USA store price (via Canon Price Watch)', note:'Canon Store regular $2599.00 (its pre-sale "was" price on 2026-09-07); on sale at $2499.00 at the time (fall instant rebate), not used; agrees with the B&H regular price recorded 2026-10-11. Canon Price Watch logs the Canon USA store price (usa.canon.com is geo-blocked from here)', date:'2026-10-19' },
       { url:'https://store.canon.jp/online/g/g2959C001/', tier:'T1', title:'Canon Online Shop Japan (Canon Marketing Japan)', note:'JPY 368500: Canon Online Shop lists ¥335,000 excl. tax = ¥368,500 incl. 10% tax', date:'2026-11-23' },
+      { url:'https://www.usa.canon.com/shop/p/rf50mm-f1-2-l-usm', tier:'T1', title:'Canon USA store product page', note:'USD 2599: Canon USA store product page lists 2599 (regular price)', date:'2026-11-23' },
+      { url:'https://www.canon.com.au/camera-lenses/rf-50mm-f1-2l-usm', tier:'T1', title:'Canon Australia product page', note:'AUD 4099: Canon Australia product page lists 4099 (RRP)', date:'2026-11-23' },
     ],
     productUrl:'https://www.usa.canon.com/shop/p/rf50mmf12lusm',
   },
@@ -741,6 +798,9 @@ const LENSES = {
       { url:'https://www.cpricewatch.com/price-changes/?p=07324', tier:'T4', title:'Canon USA store price (via Canon Price Watch)', note:'Canon Store regular $239.99 (its pre-sale "was" price on 2026-09-07); on sale at $199.99 at the time (fall instant rebate), not used. Canon Price Watch logs the Canon USA store price (usa.canon.com is geo-blocked from here)', date:'2026-10-19' },
       { url:'https://www.canon.ca/en/product?name=RF50mm_F1.8_STM', tier:'T1', title:'Canon Canada product page', note:'CAD 289: Canon Canada lists MSRP $289.99 (whole-dollar figure stored)', date:'2026-11-23' },
       { url:'https://store.canon.jp/online/g/g4515C001/', tier:'T1', title:'Canon Online Shop Japan (Canon Marketing Japan)', note:'JPY 32780: Canon Online Shop lists ¥29,800 excl. tax = ¥32,780 incl. 10% tax', date:'2026-11-23' },
+      { url:'https://www.usa.canon.com/shop/p/rf50mm-f1-8-stm', tier:'T1', title:'Canon USA store product page', note:'USD 239: Canon USA store product page lists 239.99 (regular price)', date:'2026-11-23' },
+      { url:'https://www.canon.com.au/camera-lenses/rf-50mm-f1-8-stm', tier:'T1', title:'Canon Australia product page', note:'AUD 389: Canon Australia product page lists 389 (RRP)', date:'2026-11-23' },
+      { url:'https://shop.sg.canon/products/rf50mm-f1-8-stm', tier:'T1', title:'Canon Singapore eShop', note:'SGD 319: Canon Singapore eShop lists 319 (selling price)', date:'2026-11-23' },
     ],
     productUrl:'https://www.usa.canon.com/shop/p/rf50mmf18stm',
   },
@@ -760,6 +820,9 @@ const LENSES = {
     priceSource: [
       { url:'https://www.cpricewatch.com/price-changes/?p=06900', tier:'T4', title:'Canon USA store price (via Canon Price Watch)', note:'Canon Store regular $3099.00 (its pre-sale "was" price on 2026-09-07); on sale at $2999.00 at the time (fall instant rebate), not used; agrees with the B&H regular price recorded 2026-10-11. Canon Price Watch logs the Canon USA store price (usa.canon.com is geo-blocked from here)', date:'2026-10-19' },
       { url:'https://store.canon.jp/online/g/g3447C001/', tier:'T1', title:'Canon Online Shop Japan (Canon Marketing Japan)', note:'JPY 424600: Canon Online Shop lists ¥386,000 excl. tax = ¥424,600 incl. 10% tax', date:'2026-11-23' },
+      { url:'https://www.usa.canon.com/shop/p/rf85mm-f1-2-l-usm', tier:'T1', title:'Canon USA store product page', note:'USD 3099: Canon USA store product page lists 3099 (regular price)', date:'2026-11-23' },
+      { url:'https://www.canon.com.au/camera-lenses/rf-85mm-f1-2l-usm', tier:'T1', title:'Canon Australia product page', note:'AUD 4829: Canon Australia product page lists 4829 (RRP)', date:'2026-11-23' },
+      { url:'https://shop.sg.canon/products/canon-rf85mm-f1-2l-usm', tier:'T1', title:'Canon Singapore eShop', note:'SGD 4509: Canon Singapore eShop lists 4509 (selling price)', date:'2026-11-23' },
     ],
     productUrl:'https://www.usa.canon.com/shop/p/rf85mmf12lusm',
   },
@@ -778,6 +841,7 @@ const LENSES = {
     priceSource: [
       { url:'https://www.cpricewatch.com/price-changes/?p=08479', tier:'T4', title:'Canon USA store price (via Canon Price Watch)', note:'Canon Store $1649.00 with no price changes logged since July. Canon Price Watch logs the Canon USA store price (usa.canon.com is geo-blocked from here)', date:'2026-10-19' },
       { url:'https://www.canon.ca/en/product?name=RF85mm_F1.4_L_VCM', tier:'T1', title:'Canon Canada product page', note:'CAD 2099: Canon Canada lists MSRP $2099.99 (whole-dollar figure stored)', date:'2026-11-23' },
+      { url:'https://www.usa.canon.com/shop/p/rf85mm-f1-4-l-vcm', tier:'T1', title:'Canon USA store product page', note:'USD 1649: Canon USA store product page lists 1649 (regular price)', date:'2026-11-23' },
     ],
     productUrl:'https://www.canon.com.au/camera-lenses/rf-85mm-f1-4l-vcm',
   },
@@ -794,7 +858,10 @@ const LENSES = {
     imageCredit:{author:"GodeNehler", licence:"CC BY-SA 4.0", licenceUrl:"https://creativecommons.org/licenses/by-sa/4.0", source:"https://commons.wikimedia.org/wiki/File:Canon_R6_und_RF_85_2,0-8067.jpg"},
     asin:'B08C6Y8KS3',
     prices:{USD:689,AUD:1099,EUR:799,GBP:599,JPY:107000,CAD:899,SGD:999},
-    priceSource: { url:'https://www.cpricewatch.com/price-changes/?p=07209', tier:'T4', title:'Canon USA store price (via Canon Price Watch)', note:'Canon Store regular $689.99 (its pre-sale "was" price on 2026-09-07); on sale at $639.99 at the time (fall instant rebate), not used. Canon Price Watch logs the Canon USA store price (usa.canon.com is geo-blocked from here)', date:'2026-10-19' },
+    priceSource: [
+      { url:'https://www.cpricewatch.com/price-changes/?p=07209', tier:'T4', title:'Canon USA store price (via Canon Price Watch)', note:'Canon Store regular $689.99 (its pre-sale "was" price on 2026-09-07); on sale at $639.99 at the time (fall instant rebate), not used. Canon Price Watch logs the Canon USA store price (usa.canon.com is geo-blocked from here)', date:'2026-10-19' },
+      { url:'https://www.usa.canon.com/shop/p/rf85mm-f2-macro-is-stm', tier:'T1', title:'Canon USA store product page', note:'USD 689: Canon USA store product page lists 689.99 (regular price)', date:'2026-11-23' },
+    ],
     productUrl:'https://www.usa.canon.com/shop/p/rf85mmf2macroisstm',
   },
 
@@ -813,6 +880,8 @@ const LENSES = {
     priceSource: [
       { url:'https://www.cpricewatch.com/price-changes/?p=07434', tier:'T4', title:'Canon USA store price (via Canon Price Watch)', note:'Canon Store $1349.00 with no price changes logged since July. Canon Price Watch logs the Canon USA store price (usa.canon.com is geo-blocked from here)', date:'2026-10-19' },
       { url:'https://www.canon.ca/en/product?name=RF100mm_F2.8_L_MACRO_IS_USM', tier:'T1', title:'Canon Canada product page', note:'CAD 1799: Canon Canada lists MSRP $1799.99 (whole-dollar figure stored)', date:'2026-11-23' },
+      { url:'https://www.usa.canon.com/shop/p/rf100mm-f2-8-l-macro-is-usm', tier:'T1', title:'Canon USA store product page', note:'USD 1349: Canon USA store product page lists 1349 (regular price)', date:'2026-11-23' },
+      { url:'https://www.canon.com.au/camera-lenses/rf-100mm-f-2-8l-macro-is-usm', tier:'T1', title:'Canon Australia product page', note:'AUD 2099: Canon Australia product page lists 2099 (RRP)', date:'2026-11-23' },
     ],
     productUrl:'https://www.usa.canon.com/shop/p/rf100mmf28lmacroisusm',
   },
@@ -832,6 +901,9 @@ const LENSES = {
     priceSource: [
       { url:'https://www.cpricewatch.com/price-changes/?p=07757', tier:'T4', title:'Canon USA store price (via Canon Price Watch)', note:'Canon Store regular $2399.00 (its pre-sale "was" price on 2026-09-07); on sale at $2099.00 at the time (fall instant rebate), not used; agrees with the B&H regular price recorded 2026-10-11. Canon Price Watch logs the Canon USA store price (usa.canon.com is geo-blocked from here)', date:'2026-10-19' },
       { url:'https://store.canon.jp/online/g/g5776C001/', tier:'T1', title:'Canon Online Shop Japan (Canon Marketing Japan)', note:'JPY 348700: Canon Online Shop lists ¥317,000 excl. tax = ¥348,700 incl. 10% tax', date:'2026-11-23' },
+      { url:'https://www.usa.canon.com/shop/p/rf135mm-f1-8-l-is-usm', tier:'T1', title:'Canon USA store product page', note:'USD 2399: Canon USA store product page lists 2399 (regular price)', date:'2026-11-23' },
+      { url:'https://www.canon.com.au/camera-lenses/rf-135mm-f1-8l-is-usm', tier:'T1', title:'Canon Australia product page', note:'AUD 3599: Canon Australia product page lists 3599 (RRP)', date:'2026-11-23' },
+      { url:'https://shop.sg.canon/products/rf135mm-f-1-8l-is-usm', tier:'T1', title:'Canon Singapore eShop', note:'SGD 3429: Canon Singapore eShop lists 3429 / 2699 (selling price 2699, compare-at 3429)', date:'2026-11-23' },
     ],
     productUrl:'https://www.usa.canon.com/shop/p/rf135mmf18lisusm',
   },
@@ -852,6 +924,8 @@ const LENSES = {
       { url:'https://www.cpricewatch.com/blog/2026/10/hot-canon-rf-rf-s-lenses-from-89-99-other-deals-at-woot/', tier:'T4', title:'Canon Price Watch (Canon Store instant savings)', note:'USD $999 -> $1199: Canon\'s own store lists it at a regular ("was") price of $1,199.00 during its instant-savings promotion, per Canon Price Watch (Oct 2026); B&H lists the RF 800mm f/11 IS STM at a regular (struck-through) price of $1,199, currently $899 with instant savings (2026-10-11). usa.canon.com is geo-blocked from the research environment, so Canon\'s own list price could not be read directly; the stored figure matched a rebate/street price. Regional prices from Canon\'s own regional sites/stores, read 2026-10-11 (body-only where a body is sold): EUR 999 (Canon Deutschland store), GBP 1099 (Canon UK store), JPY 152900 (Canon Online Shop Japan), SGD 1529 (sg.canon RRP). AUD/CAD not listed body-only on that region\'s Canon site, left as before.', date:'2026-10-11' },
       { url:'https://www.canon.ca/en/product?name=RF_800mm_F11_IS_STM', tier:'T1', title:'Canon Canada product page', note:'CAD 1400: Canon Canada lists MSRP $1399.99 (whole-dollar figure stored)', date:'2026-11-23' },
       { url:'https://store.canon.jp/online/g/g3987C001/', tier:'T1', title:'Canon Online Shop Japan (Canon Marketing Japan)', note:'JPY 152900: Canon Online Shop lists ¥139,000 excl. tax = ¥152,900 incl. 10% tax', date:'2026-11-23' },
+      { url:'https://www.usa.canon.com/shop/p/rf800mm-f11-is-stm', tier:'T1', title:'Canon USA store product page', note:'USD 1199: Canon USA store product page lists 1199 (regular price)', date:'2026-11-23' },
+      { url:'https://shop.sg.canon/products/rf800mm-f11-is-stm', tier:'T1', title:'Canon Singapore eShop', note:'SGD 1529: Canon Singapore eShop lists 1529 (selling price)', date:'2026-11-23' },
     ],
     productUrl:'https://www.usa.canon.com/shop/p/rf800mmf11isstm',
   },
@@ -872,6 +946,8 @@ const LENSES = {
       { url:'https://www.canon.ca/en/product?name=RF_600mm_F11_IS_STM', tier:'T1', title:'Canon Canada - RF 600mm F11 IS STM', note:'CAD 899 -> 1099: Canon Canada "MSRP: $1,099.99", item code 3986C002.', date:'2026-11-07' },
       { url:'https://www.cpricewatch.com/price-changes/?p=07205', tier:'T4', title:'Canon USA store price (via Canon Price Watch)', note:'Canon Store regular $929.99 (its pre-sale "was" price on 2026-09-07); on sale at $729.99 at the time (fall instant rebate), not used. Canon Price Watch logs the Canon USA store price (usa.canon.com is geo-blocked from here)', date:'2026-10-19' },
       { url:'https://store.canon.jp/online/g/g3986C001/', tier:'T1', title:'Canon Online Shop Japan (Canon Marketing Japan)', note:'JPY 123200: Canon Online Shop lists ¥112,000 excl. tax = ¥123,200 incl. 10% tax', date:'2026-11-23' },
+      { url:'https://www.usa.canon.com/shop/p/rf600mm-f11-is-stm', tier:'T1', title:'Canon USA store product page', note:'USD 929: Canon USA store product page lists 929.99 (regular price)', date:'2026-11-23' },
+      { url:'https://shop.sg.canon/products/canon-rf600mm-f11-is-stm', tier:'T1', title:'Canon Singapore eShop', note:'SGD 1299: Canon Singapore eShop lists 1299 (selling price)', date:'2026-11-23' },
     ],
     productUrl:'https://www.canon.com.au/camera-lenses/rf-600mm-f11-is-stm',
   },
@@ -891,6 +967,8 @@ const LENSES = {
     priceSource: [
       { url:'https://www.cpricewatch.com/price-changes/?p=07435', tier:'T4', title:'Canon USA store price (via Canon Price Watch)', note:'Canon Store $13399.00 with no price changes logged since July. Canon Price Watch logs the Canon USA store price (usa.canon.com is geo-blocked from here)', date:'2026-10-19' },
       { url:'https://www.canon.ca/en/product?name=RF400mm_F2.8_L_IS_USM', tier:'T1', title:'Canon Canada product page', note:'CAD 17399: Canon Canada lists MSRP $17499.99 (whole-dollar figure stored)', date:'2026-11-23' },
+      { url:'https://www.usa.canon.com/shop/p/rf400mm-f2-8-l-is-usm', tier:'T1', title:'Canon USA store product page', note:'USD 13399: Canon USA store product page lists 13399 (regular price)', date:'2026-11-23' },
+      { url:'https://www.canon.com.au/camera-lenses/rf-400mm-f2-8-l-is-usm', tier:'T1', title:'Canon Australia product page', note:'AUD 20999: Canon Australia product page lists 20999 (RRP)', date:'2026-11-23' },
     ],
     productUrl:'https://www.canon.com.au/camera-lenses/rf-400mm-f2-8-l-is-usm',
   },
@@ -910,6 +988,8 @@ const LENSES = {
     priceSource: [
       { url:'https://www.cpricewatch.com/price-changes/?p=07436', tier:'T4', title:'Canon USA store price (via Canon Price Watch)', note:'Canon Store $14499.00 with no price changes logged since July. Canon Price Watch logs the Canon USA store price (usa.canon.com is geo-blocked from here)', date:'2026-10-19' },
       { url:'https://www.canon.ca/en/product?name=RF600mm_F4_L_IS_USM', tier:'T1', title:'Canon Canada product page', note:'CAD 18799: Canon Canada lists MSRP $18999.99 (whole-dollar figure stored)', date:'2026-11-23' },
+      { url:'https://www.usa.canon.com/shop/p/rf600mm-f4-l-is-usm', tier:'T1', title:'Canon USA store product page', note:'USD 14499: Canon USA store product page lists 14499 (regular price)', date:'2026-11-23' },
+      { url:'https://www.canon.com.au/camera-lenses/rf-600mm-f4-l-is-usm', tier:'T1', title:'Canon Australia product page', note:'AUD 22799: Canon Australia product page lists 22799 (RRP)', date:'2026-11-23' },
     ],
     productUrl:'https://www.canon.com.au/camera-lenses/rf-600mm-f4-l-is-usm',
   },
@@ -926,7 +1006,11 @@ const LENSES = {
     imageSource: { url:'https://www.canon.com.au/camera-lenses/rf-85mm-f1-2l-usm-ds', tier:'T1', note:'official Canon Australia product page, barrel reads "CANON LENS RF-85mm F1.2 L" and "DEFOCUS SMOOTHING" — confirms the DS variant specifically', date:'2026-08-17' },
     asin:'B07Z5M2MDJ',
     prices:{USD:3399,AUD:5499,EUR:3899,GBP:3099,JPY:530000,CAD:4399,SGD:4899},
-    priceSource: { url:'https://www.cpricewatch.com/price-changes/?p=06983', tier:'T4', title:'Canon USA store price (via Canon Price Watch)', note:'Canon Store regular $3399.00 (its pre-sale "was" price on 2026-09-07); on sale at $3299.00 at the time (fall instant rebate), not used; agrees with the B&H regular price recorded 2026-10-11. Canon Price Watch logs the Canon USA store price (usa.canon.com is geo-blocked from here)', date:'2026-10-19' },
+    priceSource: [
+      { url:'https://www.cpricewatch.com/price-changes/?p=06983', tier:'T4', title:'Canon USA store price (via Canon Price Watch)', note:'Canon Store regular $3399.00 (its pre-sale "was" price on 2026-09-07); on sale at $3299.00 at the time (fall instant rebate), not used; agrees with the B&H regular price recorded 2026-10-11. Canon Price Watch logs the Canon USA store price (usa.canon.com is geo-blocked from here)', date:'2026-10-19' },
+      { url:'https://www.usa.canon.com/shop/p/rf85mm-f1-2-l-usm-ds', tier:'T1', title:'Canon USA store product page', note:'USD 3399: Canon USA store product page lists 3399 (regular price)', date:'2026-11-23' },
+      { url:'https://www.canon.com.au/camera-lenses/rf-85mm-f1-2l-usm-ds', tier:'T1', title:'Canon Australia product page', note:'AUD 5499: Canon Australia product page lists 5499 (RRP)', date:'2026-11-23' },
+    ],
     productUrl:'https://www.canon.com.au/camera-lenses/rf-85mm-f1-2l-usm-ds',
   },
 
@@ -942,7 +1026,11 @@ const LENSES = {
     imageCredit:{author:"Dinkun Chen", licence:"CC BY-SA 4.0", licenceUrl:"https://creativecommons.org/licenses/by-sa/4.0", source:"https://commons.wikimedia.org/wiki/File:Canon_RF_24mm_F1.4L_VCM.jpg"},
     asin:'B0DKZTZX3Q',
     prices:{USD:1649,AUD:2700,EUR:1799,GBP:1399,JPY:242000,CAD:1999,SGD:2199},
-    priceSource: { url:'https://www.cpricewatch.com/price-changes/?p=08288', tier:'T4', title:'Canon USA store price (via Canon Price Watch)', note:'Canon Store regular $1649.00 (its pre-sale "was" price on 2026-09-07); on sale at $1499.00 at the time (fall instant rebate), not used; agrees with the B&H regular price recorded 2026-10-11. Canon Price Watch logs the Canon USA store price (usa.canon.com is geo-blocked from here)', date:'2026-10-19' },
+    priceSource: [
+      { url:'https://www.cpricewatch.com/price-changes/?p=08288', tier:'T4', title:'Canon USA store price (via Canon Price Watch)', note:'Canon Store regular $1649.00 (its pre-sale "was" price on 2026-09-07); on sale at $1499.00 at the time (fall instant rebate), not used; agrees with the B&H regular price recorded 2026-10-11. Canon Price Watch logs the Canon USA store price (usa.canon.com is geo-blocked from here)', date:'2026-10-19' },
+      { url:'https://www.usa.canon.com/shop/p/rf24mm-f1-4-l-vcm', tier:'T1', title:'Canon USA store product page', note:'USD 1649: Canon USA store product page lists 1649 (regular price)', date:'2026-11-23' },
+      { url:'https://www.canon.com.au/camera-lenses/rf-24mm-f1-4l-vcm', tier:'T1', title:'Canon Australia product page', note:'AUD 2700: Canon Australia product page lists 2700 (RRP)', date:'2026-11-23' },
+    ],
     productUrl:'https://www.canon.com.au/camera-lenses/rf-24mm-f1-4l-vcm',
   },
 
@@ -961,6 +1049,8 @@ const LENSES = {
     priceSource: [
       { url:'https://www.cpricewatch.com/price-changes/?p=08209', tier:'T4', title:'Canon USA store price (via Canon Price Watch)', note:'Canon Store regular $1649.00 (its pre-sale "was" price on 2026-09-07); on sale at $1549.00 at the time (fall instant rebate), not used; agrees with the B&H regular price recorded 2026-10-11. Canon Price Watch logs the Canon USA store price (usa.canon.com is geo-blocked from here)', date:'2026-10-19' },
       { url:'https://www.canon.ca/en/product?name=RF35mm_F1.4_L_VCM', tier:'T1', title:'Canon Canada product page', note:'CAD 2099: Canon Canada lists MSRP $2099.99 (whole-dollar figure stored)', date:'2026-11-23' },
+      { url:'https://www.usa.canon.com/shop/p/rf35mm-f1-4-l-vcm', tier:'T1', title:'Canon USA store product page', note:'USD 1649: Canon USA store product page lists 1649 (regular price)', date:'2026-11-23' },
+      { url:'https://www.canon.com.au/camera-lenses/rf-35mm-f1-4-l-vcm', tier:'T1', title:'Canon Australia product page', note:'AUD 2699: Canon Australia product page lists 2699 (RRP)', date:'2026-11-23' },
     ],
     productUrl:'https://www.canon.com.au/camera-lenses/rf-35mm-f1-4-l-vcm',
   },
@@ -977,7 +1067,11 @@ const LENSES = {
     imageSource: { url:'https://www.canon.com.au/camera-lenses/rf-50mm-f1-4l-vcm', tier:'T1', note:'official Canon Australia product page, barrel reads "CANON LENS" with L-series red ring and "50" focal marking', date:'2026-08-17' },
     asin:'B0DKZMPS67',
     prices:{USD:1549,AUD:2429,EUR:1699,GBP:1299,JPY:234000,CAD:1899,SGD:2199},
-    priceSource: { url:'https://www.cpricewatch.com/price-changes/?p=08289', tier:'T4', title:'Canon USA store price (via Canon Price Watch)', note:'Canon Store regular $1549.00 (its pre-sale "was" price on 2026-09-07); on sale at $1449.00 at the time (fall instant rebate), not used; agrees with the B&H regular price recorded 2026-10-11. Canon Price Watch logs the Canon USA store price (usa.canon.com is geo-blocked from here)', date:'2026-10-19' },
+    priceSource: [
+      { url:'https://www.cpricewatch.com/price-changes/?p=08289', tier:'T4', title:'Canon USA store price (via Canon Price Watch)', note:'Canon Store regular $1549.00 (its pre-sale "was" price on 2026-09-07); on sale at $1449.00 at the time (fall instant rebate), not used; agrees with the B&H regular price recorded 2026-10-11. Canon Price Watch logs the Canon USA store price (usa.canon.com is geo-blocked from here)', date:'2026-10-19' },
+      { url:'https://www.usa.canon.com/shop/p/rf50mm-f1-4-l-vcm', tier:'T1', title:'Canon USA store product page', note:'USD 1549: Canon USA store product page lists 1549 (regular price)', date:'2026-11-23' },
+      { url:'https://www.canon.com.au/camera-lenses/rf-50mm-f1-4l-vcm', tier:'T1', title:'Canon Australia product page', note:'AUD 2429: Canon Australia product page lists 2429 (RRP)', date:'2026-11-23' },
+    ],
     productUrl:'https://www.canon.com.au/camera-lenses/rf-50mm-f1-4l-vcm',
   },
 
@@ -993,7 +1087,11 @@ const LENSES = {
     imageCredit:{author:"Dinkun Chen", licence:"CC BY-SA 4.0", licenceUrl:"https://creativecommons.org/licenses/by-sa/4.0", source:"https://commons.wikimedia.org/wiki/File:Canon_RF_800mm_f5.6L_IS_USM.jpg"},
     asin:'B09TL8224F',
     prices:{USD:18799,AUD:29799,EUR:21599,GBP:16899,JPY:2933000,CAD:24399,SGD:27299},
-    priceSource: { url:'https://www.cpricewatch.com/price-changes/?p=07613', tier:'T4', title:'Canon USA store price (via Canon Price Watch)', note:'Canon Store $18799.00 with no price changes logged since July. Canon Price Watch logs the Canon USA store price (usa.canon.com is geo-blocked from here)', date:'2026-10-19' },
+    priceSource: [
+      { url:'https://www.cpricewatch.com/price-changes/?p=07613', tier:'T4', title:'Canon USA store price (via Canon Price Watch)', note:'Canon Store $18799.00 with no price changes logged since July. Canon Price Watch logs the Canon USA store price (usa.canon.com is geo-blocked from here)', date:'2026-10-19' },
+      { url:'https://www.usa.canon.com/shop/p/rf800mm-f5-6-l-is-usm-lens', tier:'T1', title:'Canon USA store product page', note:'USD 18799: Canon USA store product page lists 18799 (regular price)', date:'2026-11-23' },
+      { url:'https://www.canon.com.au/camera-lenses/rf-800mm-f5-6-l-is-usm', tier:'T1', title:'Canon Australia product page', note:'AUD 29799: Canon Australia product page lists 29799 (RRP)', date:'2026-11-23' },
+    ],
     productUrl:'https://www.canon.com.au/camera-lenses/rf-800mm-f5-6-l-is-usm',
   },
 
@@ -1009,7 +1107,11 @@ const LENSES = {
     imageSource: { url:'https://www.canon.com.au/camera-lenses/rf-1200mm-f8-l-is-usm', tier:'T1', note:'official Canon Australia product page, dedicated profile shot for this exact model (not a generic supertele stock photo) — resolves the earlier Commons rejection for this lens (no legible barrel text there)', date:'2026-08-17' },
     asin:'B09TL71BNG',
     prices:{USD:22699,AUD:35099,EUR:26099,GBP:20399,JPY:3541000,CAD:29499,SGD:32899},
-    priceSource: { url:'https://www.cpricewatch.com/price-changes/?p=07614', tier:'T4', title:'Canon USA store price (via Canon Price Watch)', note:'Canon Store $22699.00 with no price changes logged since July. Canon Price Watch logs the Canon USA store price (usa.canon.com is geo-blocked from here)', date:'2026-10-19' },
+    priceSource: [
+      { url:'https://www.cpricewatch.com/price-changes/?p=07614', tier:'T4', title:'Canon USA store price (via Canon Price Watch)', note:'Canon Store $22699.00 with no price changes logged since July. Canon Price Watch logs the Canon USA store price (usa.canon.com is geo-blocked from here)', date:'2026-10-19' },
+      { url:'https://www.usa.canon.com/shop/p/rf1200mm-f8-l-is-usm-lens', tier:'T1', title:'Canon USA store product page', note:'USD 22699: Canon USA store product page lists 22699 (regular price)', date:'2026-11-23' },
+      { url:'https://www.canon.com.au/camera-lenses/rf-1200mm-f8-l-is-usm', tier:'T1', title:'Canon Australia product page', note:'AUD 35099: Canon Australia product page lists 35099 (RRP)', date:'2026-11-23' },
+    ],
     productUrl:'https://www.canon.com.au/camera-lenses/rf-1200mm-f8-l-is-usm',
   },
 
@@ -1025,7 +1127,10 @@ const LENSES = {
     imageCredit:{author:"Bernatargentona", licence:"CC0", licenceUrl:"http://creativecommons.org/publicdomain/zero/1.0/deed.en", source:"https://commons.wikimedia.org/wiki/File:Canon_RF_5,2mm_f2.8L_DUAL_FISHEYE.jpg"},
     asin:'B09HVBDKFY',
     prices:{USD:2299,AUD:3099,EUR:2299,GBP:1799,JPY:256000,CAD:2599,SGD:2899},
-    priceSource: { url:'https://www.cpricewatch.com/price-changes/?p=07528', tier:'T4', title:'Canon USA store price (via Canon Price Watch)', note:'Canon Store regular $2299.00 (its pre-sale "was" price on 2026-09-07); on sale at $1999.00 at the time (fall instant rebate), not used; agrees with the B&H regular price recorded 2026-10-11. Canon Price Watch logs the Canon USA store price (usa.canon.com is geo-blocked from here)', date:'2026-10-19' },
+    priceSource: [
+      { url:'https://www.cpricewatch.com/price-changes/?p=07528', tier:'T4', title:'Canon USA store price (via Canon Price Watch)', note:'Canon Store regular $2299.00 (its pre-sale "was" price on 2026-09-07); on sale at $1999.00 at the time (fall instant rebate), not used; agrees with the B&H regular price recorded 2026-10-11. Canon Price Watch logs the Canon USA store price (usa.canon.com is geo-blocked from here)', date:'2026-10-19' },
+      { url:'https://www.usa.canon.com/shop/p/rf5-2mm-f2-8-l-dual-fisheye', tier:'T1', title:'Canon USA store product page', note:'USD 2299: Canon USA store product page lists 2299 (regular price)', date:'2026-11-23' },
+    ],
     productUrl:'https://www.canon.com.au/camera-lenses/rf-5-2mm-f2-8-l-dual-fisheye',
   },
 
@@ -1044,6 +1149,8 @@ const LENSES = {
     priceSource: [
       { url:'https://www.canon.ca/en/product?name=RF-S3.9mm_F3.5_STM_DUAL_FISHEYE', tier:'T1', title:'Canon Canada - RF-S3.9mm F3.5 STM DUAL FISHEYE', note:'CAD 1399 -> 1599: Canon Canada "MSRP: $1,599.99", item code 6578C002.', date:'2026-11-07' },
       { url:'https://www.cpricewatch.com/price-changes/?p=08212', tier:'T4', title:'Canon USA store price (via Canon Price Watch)', note:'Canon Store regular $1299.00 (its pre-sale "was" price on 2026-09-07); on sale at $1099.00 at the time (fall instant rebate), not used; agrees with the B&H regular price recorded 2026-10-11. Canon Price Watch logs the Canon USA store price (usa.canon.com is geo-blocked from here)', date:'2026-10-19' },
+      { url:'https://www.usa.canon.com/shop/p/rf-s3-9mm-f3-5-stm-dual-fisheye', tier:'T1', title:'Canon USA store product page', note:'USD 1299: Canon USA store product page lists 1299 (regular price)', date:'2026-11-23' },
+      { url:'https://www.canon.com.au/camera-lenses/rf-s-3-9mm-f3-5-stm-dual-fisheye', tier:'T1', title:'Canon Australia product page', note:'AUD 1999: Canon Australia product page lists 1999 (RRP)', date:'2026-11-23' },
     ],
     productUrl:'https://www.canon.com.au/camera-lenses/rf-s-3-9mm-f3-5-stm-dual-fisheye',
   },
@@ -1063,6 +1170,8 @@ const LENSES = {
     priceSource: [
       { url:'https://www.canon.ca/en/product?name=RF-S7.8mm_F4_STM_DUAL', tier:'T1', title:'Canon Canada - RF-S7.8mm F4 STM DUAL', note:'CAD 499 -> 649: Canon Canada "MSRP: $649.99", item code 6795C002.', date:'2026-11-07' },
       { url:'https://www.cpricewatch.com/price-changes/?p=08290', tier:'T4', title:'Canon USA store price (via Canon Price Watch)', note:'Canon Store regular $509.99 (its pre-sale "was" price on 2026-09-07); on sale at $409.99 at the time (fall instant rebate), not used; agrees with the B&H regular price recorded 2026-10-11. Canon Price Watch logs the Canon USA store price (usa.canon.com is geo-blocked from here)', date:'2026-10-19' },
+      { url:'https://www.usa.canon.com/shop/p/rf-s7-8mm-f4-stm-dual', tier:'T1', title:'Canon USA store product page', note:'USD 509: Canon USA store product page lists 509.99 (regular price)', date:'2026-11-23' },
+      { url:'https://www.canon.com.au/camera-lenses/rf-s-7-8mm-f4-stm-dual', tier:'T1', title:'Canon Australia product page', note:'AUD 799: Canon Australia product page lists 799 (RRP)', date:'2026-11-23' },
     ],
     productUrl:'https://www.canon.com.au/camera-lenses/rf-s-7-8mm-f4-stm-dual',
   },
@@ -1082,6 +1191,7 @@ const LENSES = {
     priceSource: [
       { url:'https://www.cpricewatch.com/price-changes/?p=08577', tier:'T4', title:'Canon USA store price (via Canon Price Watch)', note:'Canon Store $1399.00 with no price changes logged since July. Canon Price Watch logs the Canon USA store price (usa.canon.com is geo-blocked from here)', date:'2026-10-19' },
       { url:'https://www.canon.ca/en/product?name=RF20-50mm_F4_L_IS_USM_PZ', tier:'T1', title:'Canon Canada product page', note:'CAD 1799: Canon Canada lists MSRP $1799.99 (whole-dollar figure stored)', date:'2026-11-23' },
+      { url:'https://www.usa.canon.com/shop/p/rf20-50mm-f4-l-is-usm-pz-lens', tier:'T1', title:'Canon USA store product page', note:'USD 1399: Canon USA store product page lists 1399 (regular price)', date:'2026-11-23' },
     ],
     productUrl:'https://www.usa.canon.com/shop/p/rf20-50mm-f4-l-is-usm-pz-lens',
   },
@@ -1100,6 +1210,8 @@ const LENSES = {
     priceSource: [
       { url:'https://www.cpricewatch.com/price-changes/?p=08540', tier:'T4', title:'Canon USA store price (via Canon Price Watch)', note:'Canon Store $1899.00 with no price changes logged since July. Canon Price Watch logs the Canon USA store price (usa.canon.com is geo-blocked from here)', date:'2026-10-19' },
       { url:'https://www.canon.ca/en/product?name=RF7-14mm_F2.8-3.5_L_Fisheye_STM', tier:'T1', title:'Canon Canada product page', note:'CAD 2300: Canon Canada lists MSRP $2299.99 (whole-dollar figure stored)', date:'2026-11-23' },
+      { url:'https://www.usa.canon.com/shop/p/rf7-14mm-f2-8-3-5-l-fisheye-stm', tier:'T1', title:'Canon USA store product page', note:'USD 1899: Canon USA store product page lists 1899 (regular price)', date:'2026-11-23' },
+      { url:'https://www.canon.com.au/camera-lenses/rf-7-14mm-f-2-8-3-5l-fisheye-stm', tier:'T1', title:'Canon Australia product page', note:'AUD 2799: Canon Australia product page lists 2799 (RRP)', date:'2026-11-23' },
     ],
     productUrl:'https://www.usa.canon.com/shop/p/rf7-14mm-f2-8-3-5-l-fisheye-stm',
   },
@@ -1115,7 +1227,10 @@ const LENSES = {
     imageUrl:'https://www.canon.com.au/-/media/images/canon/products/lenses/wide-angle-lenses/rf-16-28mm-f2-8-is-stm/carousel-1-rf1628mmf28isstm-1400x960.jpg',
     imageSource: { url:'https://www.canon.com.au/camera-lenses/rf-16-28mm-f2-8-is-stm', tier:'T1', note:'official Canon Australia product page, barrel reads "Canon 16-28"', date:'2026-08-17' },
     prices:{USD:1249,AUD:1599,EUR:1199,GBP:899,JPY:164000,CAD:1399,SGD:1499},
-    priceSource: { url:'https://www.cpricewatch.com/price-changes/?p=08362', tier:'T4', title:'Canon USA store price (via Canon Price Watch)', note:'Canon Store regular $1249.00 (its pre-sale "was" price on 2026-09-07); on sale at $999.00 at the time (fall instant rebate), not used; agrees with the B&H regular price recorded 2026-10-11. Canon Price Watch logs the Canon USA store price (usa.canon.com is geo-blocked from here)', date:'2026-10-19' },
+    priceSource: [
+      { url:'https://www.cpricewatch.com/price-changes/?p=08362', tier:'T4', title:'Canon USA store price (via Canon Price Watch)', note:'Canon Store regular $1249.00 (its pre-sale "was" price on 2026-09-07); on sale at $999.00 at the time (fall instant rebate), not used; agrees with the B&H regular price recorded 2026-10-11. Canon Price Watch logs the Canon USA store price (usa.canon.com is geo-blocked from here)', date:'2026-10-19' },
+      { url:'https://www.usa.canon.com/shop/p/rf16-28mm-f2-8-is-stm-lens', tier:'T1', title:'Canon USA store product page', note:'USD 1249: Canon USA store product page lists 1249 (regular price)', date:'2026-11-23' },
+    ],
     productUrl:'https://www.canon.com.au/camera-lenses/rf-16-28mm-f2-8-is-stm',
   },
 
@@ -1133,6 +1248,7 @@ const LENSES = {
     priceSource: [
       { url:'https://www.cpricewatch.com/price-changes/?p=08642', tier:'T4', title:'Canon USA store price (via Canon Price Watch)', note:'Canon Store regular $219.99 (its pre-sale "was" price on 2026-10-05); on sale at $199.99 at the time (fall instant rebate), not used; agrees with the B&H regular price recorded 2026-10-11. Canon Price Watch logs the Canon USA store price (usa.canon.com is geo-blocked from here)', date:'2026-10-19' },
       { url:'https://www.canon.ca/en/product?name=RF75-300mm_F4-5.6', tier:'T1', title:'Canon Canada product page', note:'CAD 310: Canon Canada lists MSRP $309.99 (whole-dollar figure stored)', date:'2026-11-23' },
+      { url:'https://www.canon.com.au/camera-lenses/rf-75-300mm-f4-5-6', tier:'T1', title:'Canon Australia product page', note:'AUD 399: Canon Australia product page lists 399 (RRP)', date:'2026-11-23' },
     ],
     productUrl:'https://www.usa.canon.com/shop/p/rf75-300mm-f4-5-6',
   },
@@ -1149,7 +1265,10 @@ const LENSES = {
     imageCredit:{author:"Henry Söderlund", licence:"CC BY 2.0", licenceUrl:"https://creativecommons.org/licenses/by/2.0", source:"https://commons.wikimedia.org/wiki/File:Canon_RF_14-35mm_F4L_IS_USM.jpg"},
     asin:'B097Z21LGH',
     prices:{USD:1499,AUD:2199,EUR:1599,GBP:1299,JPY:218000,CAD:1799,SGD:1999},
-    priceSource: { url:'https://www.cpricewatch.com/price-changes/?p=07478', tier:'T4', title:'Canon USA store price (via Canon Price Watch)', note:'Canon Store regular $1499.00 (its pre-sale "was" price on 2026-09-07); on sale at $1399.00 at the time (fall instant rebate), not used; agrees with the B&H regular price recorded 2026-10-11. Canon Price Watch logs the Canon USA store price (usa.canon.com is geo-blocked from here)', date:'2026-10-19' },
+    priceSource: [
+      { url:'https://www.cpricewatch.com/price-changes/?p=07478', tier:'T4', title:'Canon USA store price (via Canon Price Watch)', note:'Canon Store regular $1499.00 (its pre-sale "was" price on 2026-09-07); on sale at $1399.00 at the time (fall instant rebate), not used; agrees with the B&H regular price recorded 2026-10-11. Canon Price Watch logs the Canon USA store price (usa.canon.com is geo-blocked from here)', date:'2026-10-19' },
+      { url:'https://www.usa.canon.com/shop/p/rf14-35mm-f4-l-is-usm', tier:'T1', title:'Canon USA store product page', note:'USD 1499: Canon USA store product page lists 1499 (regular price)', date:'2026-11-23' },
+    ],
     productUrl:'https://www.usa.canon.com/shop/p/rf14-35mmf4lisusm',
   },
 
@@ -1165,7 +1284,10 @@ const LENSES = {
     imageCredit:{author:"Christoffer Hjeltnes Støle", licence:"CC BY-SA 4.0", licenceUrl:"https://creativecommons.org/licenses/by-sa/4.0", source:"https://commons.wikimedia.org/wiki/File:Canon_RF_15-35mm_F2.8L_IS_USM.jpg"},
     asin:'B07WFQYJYP',
     prices:{USD:2599,AUD:3699,EUR:2799,GBP:2199,JPY:374000,CAD:3099,SGD:3499},
-    priceSource: { url:'https://www.cpricewatch.com/price-changes/?p=06960', tier:'T4', title:'Canon USA store price (via Canon Price Watch)', note:'Canon Store regular $2599.00 (its pre-sale "was" price on 2026-09-07); on sale at $2399.00 at the time (fall instant rebate), not used; agrees with the B&H regular price recorded 2026-10-11. Canon Price Watch logs the Canon USA store price (usa.canon.com is geo-blocked from here)', date:'2026-10-19' },
+    priceSource: [
+      { url:'https://www.cpricewatch.com/price-changes/?p=06960', tier:'T4', title:'Canon USA store price (via Canon Price Watch)', note:'Canon Store regular $2599.00 (its pre-sale "was" price on 2026-09-07); on sale at $2399.00 at the time (fall instant rebate), not used; agrees with the B&H regular price recorded 2026-10-11. Canon Price Watch logs the Canon USA store price (usa.canon.com is geo-blocked from here)', date:'2026-10-19' },
+      { url:'https://www.usa.canon.com/shop/p/rf15-35mm-f2-8-l-is-usm', tier:'T1', title:'Canon USA store product page', note:'USD 2599: Canon USA store product page lists 2599 (regular price)', date:'2026-11-23' },
+    ],
     productUrl:'https://www.usa.canon.com/shop/p/rf15-35mmf28lisusm',
   },
 
@@ -1184,6 +1306,8 @@ const LENSES = {
     priceSource: [
       { url:'https://www.cpricewatch.com/price-changes/?p=07802', tier:'T4', title:'Canon USA store price (via Canon Price Watch)', note:'Canon Store $349.99 with no price changes logged since July. Canon Price Watch logs the Canon USA store price (usa.canon.com is geo-blocked from here)', date:'2026-10-19' },
       { url:'https://www.canon.ca/en/product?name=RF24-50mm_F4.5-6.3_IS_STM', tier:'T1', title:'Canon Canada product page', note:'CAD 420: Canon Canada lists MSRP $419.99 (whole-dollar figure stored)', date:'2026-11-23' },
+      { url:'https://www.usa.canon.com/shop/p/rf24-50mm-f4-5-6-3-is-stm', tier:'T1', title:'Canon USA store product page', note:'USD 349: Canon USA store product page lists 349.99 (regular price)', date:'2026-11-23' },
+      { url:'https://www.canon.com.au/camera-lenses/rf-24-50mm-f4-5-6-3-is-stm', tier:'T1', title:'Canon Australia product page', note:'AUD 549: Canon Australia product page lists 549 (RRP)', date:'2026-11-23' },
     ],
     productUrl:'https://www.usa.canon.com/shop/p/rf24-50mmf45-63isstm',
   },
@@ -1200,7 +1324,10 @@ const LENSES = {
     imageCredit:{author:"Henry Söderlund from Helsinki, Finland", licence:"CC BY 2.0", licenceUrl:"https://creativecommons.org/licenses/by/2.0", source:"https://commons.wikimedia.org/wiki/File:Canon_EOS_R5_with_Canon_RF_24-70mm_F2.8L_IS_USM_(50170662581).jpg"},
     asin:'B07WQ54BL8',
     prices:{USD:2599,AUD:3899,EUR:2899,GBP:2199,JPY:390000,CAD:3199,SGD:3599},
-    priceSource: { url:'https://www.cpricewatch.com/price-changes/?p=06961', tier:'T4', title:'Canon USA store price (via Canon Price Watch)', note:'Canon Store regular $2599.00 (its pre-sale "was" price on 2026-09-07); on sale at $2399.00 at the time (fall instant rebate), not used; agrees with the B&H regular price recorded 2026-10-11. Canon Price Watch logs the Canon USA store price (usa.canon.com is geo-blocked from here)', date:'2026-10-19' },
+    priceSource: [
+      { url:'https://www.cpricewatch.com/price-changes/?p=06961', tier:'T4', title:'Canon USA store price (via Canon Price Watch)', note:'Canon Store regular $2599.00 (its pre-sale "was" price on 2026-09-07); on sale at $2399.00 at the time (fall instant rebate), not used; agrees with the B&H regular price recorded 2026-10-11. Canon Price Watch logs the Canon USA store price (usa.canon.com is geo-blocked from here)', date:'2026-10-19' },
+      { url:'https://www.usa.canon.com/shop/p/rf24-70mm-f2-8l-is-usm', tier:'T1', title:'Canon USA store product page', note:'USD 2599: Canon USA store product page lists 2599 (regular price)', date:'2026-11-23' },
+    ],
     productUrl:'https://www.usa.canon.com/shop/p/rf24-70mmf28lisusm',
   },
 
@@ -1231,7 +1358,10 @@ const LENSES = {
     imageCredit:{author:"Bernatargentona", licence:"CC BY-SA 4.0", licenceUrl:"https://creativecommons.org/licenses/by-sa/4.0", source:"https://commons.wikimedia.org/wiki/File:Canon_RF_24-105mm_f4-7.1_IS_STM.jpg"},
     asin:'B084BKXDLD',
     prices:{USD:459,AUD:699,EUR:499,GBP:399,JPY:72000,CAD:599,SGD:699},
-    priceSource: { url:'https://www.cpricewatch.com/price-changes/?p=07084', tier:'T4', title:'Canon USA store price (via Canon Price Watch)', note:'Canon Store $459.99 with no price changes logged since July. Canon Price Watch logs the Canon USA store price (usa.canon.com is geo-blocked from here)', date:'2026-10-19' },
+    priceSource: [
+      { url:'https://www.cpricewatch.com/price-changes/?p=07084', tier:'T4', title:'Canon USA store price (via Canon Price Watch)', note:'Canon Store $459.99 with no price changes logged since July. Canon Price Watch logs the Canon USA store price (usa.canon.com is geo-blocked from here)', date:'2026-10-19' },
+      { url:'https://www.usa.canon.com/shop/p/rf24-105mm-f4-7-1-is-stm', tier:'T1', title:'Canon USA store product page', note:'USD 459: Canon USA store product page lists 459.99 (regular price)', date:'2026-11-23' },
+    ],
     productUrl:'https://www.usa.canon.com/shop/p/rf24-105mmf4-71isstm',
   },
 
@@ -1247,7 +1377,10 @@ const LENSES = {
     imageCredit:{author:"GodeNehler", licence:"CC BY-SA 4.0", licenceUrl:"https://creativecommons.org/licenses/by-sa/4.0", source:"https://commons.wikimedia.org/wiki/File:Canon_RF_70-200_2,8-8063.jpg"},
     asin:'B07Z5M9M7M',
     prices:{USD:2999,AUD:4399,EUR:3199,GBP:2499,JPY:437000,CAD:3599,SGD:4099},
-    priceSource: { url:'https://www.cpricewatch.com/price-changes/?p=06982', tier:'T4', title:'Canon USA store price (via Canon Price Watch)', note:'Canon Store regular $2999.00 (its pre-sale "was" price on 2026-09-07); on sale at $2799.00 at the time (fall instant rebate), not used; agrees with the B&H regular price recorded 2026-10-11. Canon Price Watch logs the Canon USA store price (usa.canon.com is geo-blocked from here)', date:'2026-10-19' },
+    priceSource: [
+      { url:'https://www.cpricewatch.com/price-changes/?p=06982', tier:'T4', title:'Canon USA store price (via Canon Price Watch)', note:'Canon Store regular $2999.00 (its pre-sale "was" price on 2026-09-07); on sale at $2799.00 at the time (fall instant rebate), not used; agrees with the B&H regular price recorded 2026-10-11. Canon Price Watch logs the Canon USA store price (usa.canon.com is geo-blocked from here)', date:'2026-10-19' },
+      { url:'https://www.usa.canon.com/shop/p/rf70-200mm-f2-8-l-is-usm', tier:'T1', title:'Canon USA store product page', note:'USD 2999: Canon USA store product page lists 2999 (regular price)', date:'2026-11-23' },
+    ],
     productUrl:'https://www.usa.canon.com/shop/p/rf70-200mmf28lisusm',
   },
 
@@ -1266,6 +1399,7 @@ const LENSES = {
     priceSource: [
       { url:'https://www.cpricewatch.com/price-changes/?p=07325', tier:'T4', title:'Canon USA store price (via Canon Price Watch)', note:'Canon Store regular $1699.00 (its pre-sale "was" price on 2026-09-07); on sale at $1599.00 at the time (fall instant rebate), not used; agrees with the B&H regular price recorded 2026-10-11. Canon Price Watch logs the Canon USA store price (usa.canon.com is geo-blocked from here)', date:'2026-10-19' },
       { url:'https://www.canon.ca/en/product?name=RF70-200mm_F4_L_IS_USM', tier:'T1', title:'Canon Canada product page', note:'CAD 2300: Canon Canada lists MSRP $2299.99 (whole-dollar figure stored)', date:'2026-11-23' },
+      { url:'https://www.usa.canon.com/shop/p/rf70-200mm-f4-l-is-usm', tier:'T1', title:'Canon USA store product page', note:'USD 1699: Canon USA store product page lists 1699 (regular price)', date:'2026-11-23' },
     ],
     productUrl:'https://www.usa.canon.com/shop/p/rf70-200mmf4lisusm',
   },
@@ -1282,7 +1416,10 @@ const LENSES = {
     imageCredit:{author:"TheFredST", licence:"CC BY-SA 4.0", licenceUrl:"https://creativecommons.org/licenses/by-sa/4.0", source:"https://commons.wikimedia.org/wiki/File:Canon_RF_100%E2%80%93400mm_F5.6%E2%80%938_IS_USM.jpg"},
     asin:'B09FFV6WF5',
     prices:{USD:749,AUD:1199,EUR:899,GBP:699,JPY:117000,CAD:999,SGD:1099},
-    priceSource: { url:'https://www.cpricewatch.com/price-changes/?p=07509', tier:'T4', title:'Canon USA store price (via Canon Price Watch)', note:'Canon Store $749.99 on 2026-09-21. Canon Price Watch logs the Canon USA store price (usa.canon.com is geo-blocked from here)', date:'2026-10-19' },
+    priceSource: [
+      { url:'https://www.cpricewatch.com/price-changes/?p=07509', tier:'T4', title:'Canon USA store price (via Canon Price Watch)', note:'Canon Store $749.99 on 2026-09-21. Canon Price Watch logs the Canon USA store price (usa.canon.com is geo-blocked from here)', date:'2026-10-19' },
+      { url:'https://www.usa.canon.com/shop/p/rf100-400mm-f5-6-8-is-usm', tier:'T1', title:'Canon USA store product page', note:'USD 749: Canon USA store product page lists 749.99 (regular price)', date:'2026-11-23' },
+    ],
     productUrl:'https://www.usa.canon.com/shop/p/rf100-400mmf56-8isusm',
   },
 
@@ -1301,6 +1438,9 @@ const LENSES = {
     priceSource: [
       { url:'https://www.cpricewatch.com/price-changes/?p=07204', tier:'T4', title:'Canon USA store price (via Canon Price Watch)', note:'Canon Store regular $3099.00 (its pre-sale "was" price on 2026-09-07); on sale at $2899.00 at the time (fall instant rebate), not used. Canon Price Watch logs the Canon USA store price (usa.canon.com is geo-blocked from here)', date:'2026-10-19' },
       { url:'https://store.canon.jp/online/g/g4112C001/', tier:'T1', title:'Canon Online Shop Japan (Canon Marketing Japan)', note:'JPY 427900: Canon Online Shop lists ¥389,000 excl. tax = ¥427,900 incl. 10% tax', date:'2026-11-23' },
+      { url:'https://www.usa.canon.com/shop/p/rf100-500mm-f4-5-7-1-l-is-usm', tier:'T1', title:'Canon USA store product page', note:'USD 3099: Canon USA store product page lists 3099 (regular price)', date:'2026-11-23' },
+      { url:'https://www.canon.com.au/camera-lenses/rf-100-500mm-f4-5-7-1-l-is-usm', tier:'T1', title:'Canon Australia product page', note:'AUD 4899: Canon Australia product page lists 4899 (RRP)', date:'2026-11-23' },
+      { url:'https://shop.sg.canon/products/rf100-500mm-f4-5-7-1l-is-usm', tier:'T1', title:'Canon Singapore eShop', note:'SGD 4659: Canon Singapore eShop lists 4659 / 3599 (selling price 3599, compare-at 4659)', date:'2026-11-23' },
     ],
     productUrl:'https://www.usa.canon.com/shop/p/rf100-500mmf45-71lisusm',
   },
@@ -1336,6 +1476,7 @@ const LENSES = {
     priceSource: [
       { url:'https://www.canon.ca/en/product?name=RF15-30mm_F4.5-6.3_IS_STM', tier:'T1', title:'Canon Canada - RF15-30mm F4.5-6.3 IS STM', note:'CAD 699 -> 799: Canon Canada "MSRP: $799.99", item code 5775C002.', date:'2026-11-07' },
       { url:'https://www.cpricewatch.com/price-changes/?p=07671', tier:'T4', title:'Canon USA store price (via Canon Price Watch)', note:'Canon Store regular $639.99 (its pre-sale "was" price on 2026-09-07); on sale at $539.99 at the time (fall instant rebate), not used; agrees with the B&H regular price recorded 2026-10-11. Canon Price Watch logs the Canon USA store price (usa.canon.com is geo-blocked from here)', date:'2026-10-19' },
+      { url:'https://www.usa.canon.com/shop/p/rf15-30mm-f4-5-6-3-is-stm', tier:'T1', title:'Canon USA store product page', note:'USD 639: Canon USA store product page lists 639.99 (regular price)', date:'2026-11-23' },
     ],
     productUrl:'https://www.canon.com.au/camera-lenses/rf-15-30mm-f4-5-6-3-is-stm',
   },
@@ -1355,6 +1496,8 @@ const LENSES = {
     priceSource: [
       { url:'https://www.cpricewatch.com/price-changes/?p=06707', tier:'T4', title:'Canon USA store price (via Canon Price Watch)', note:'Canon Store regular $3399.00 (its pre-sale "was" price on 2026-09-07); on sale at $3199.00 at the time (fall instant rebate), not used. Canon Price Watch logs the Canon USA store price (usa.canon.com is geo-blocked from here)', date:'2026-10-19' },
       { url:'https://www.canon.ca/en/product?name=RF28-70mm_F2_L_USM', tier:'T1', title:'Canon Canada product page', note:'CAD 4399: Canon Canada lists MSRP $4399.99 (whole-dollar figure stored)', date:'2026-11-23' },
+      { url:'https://www.usa.canon.com/shop/p/rf28-70mm-f2-l-usm', tier:'T1', title:'Canon USA store product page', note:'USD 3399: Canon USA store product page lists 3399 (regular price)', date:'2026-11-23' },
+      { url:'https://www.canon.com.au/camera-lenses/rf-28-70mm-f2l-usm', tier:'T1', title:'Canon Australia product page', note:'AUD 5299: Canon Australia product page lists 5249 (RRP)', date:'2026-11-23' },
     ],
     productUrl:'https://www.canon.com.au/camera-lenses/rf-28-70mm-f2l-usm',
   },
@@ -1371,7 +1514,12 @@ const LENSES = {
     imageCredit:{author:"GodeNehler", licence:"CC BY-SA 4.0", licenceUrl:"https://creativecommons.org/licenses/by-sa/4.0", source:"https://commons.wikimedia.org/wiki/File:Canon_RF_28%E2%80%9370mm_F2,8_IS_STM-.jpg"},
     asin:'B0DGQT91R8',
     prices:{USD:1249,AUD:1919,EUR:1299,GBP:999,JPY:179000,CAD:1499,SGD:1699},
-    priceSource: { url:'https://www.cpricewatch.com/price-changes/?p=08258', tier:'T4', title:'Canon USA store price (via Canon Price Watch)', note:'Canon Store regular $1249.00 (its pre-sale "was" price on 2026-09-07); on sale at $1049.00 at the time (fall instant rebate), not used; agrees with the B&H regular price recorded 2026-10-11. Canon Price Watch logs the Canon USA store price (usa.canon.com is geo-blocked from here)', date:'2026-10-19' },
+    priceSource: [
+      { url:'https://www.cpricewatch.com/price-changes/?p=08258', tier:'T4', title:'Canon USA store price (via Canon Price Watch)', note:'Canon Store regular $1249.00 (its pre-sale "was" price on 2026-09-07); on sale at $1049.00 at the time (fall instant rebate), not used; agrees with the B&H regular price recorded 2026-10-11. Canon Price Watch logs the Canon USA store price (usa.canon.com is geo-blocked from here)', date:'2026-10-19' },
+      { url:'https://www.usa.canon.com/shop/p/rf28-70mm-f2-8-is-stm', tier:'T1', title:'Canon USA store product page', note:'USD 1249: Canon USA store product page lists 1249 (regular price)', date:'2026-11-23' },
+      { url:'https://www.canon.com.au/camera-lenses/rf-28-70mm-f2-8-is-stm', tier:'T1', title:'Canon Australia product page', note:'AUD 1919: Canon Australia product page lists 1919 (RRP)', date:'2026-11-23' },
+      { url:'https://shop.sg.canon/products/rf28-70mm-f-2-8-is-stm', tier:'T1', title:'Canon Singapore eShop', note:'SGD 1699: Canon Singapore eShop lists 1699 / 1399 (selling price 1399, compare-at 1699)', date:'2026-11-23' },
+    ],
     productUrl:'https://www.canon.com.au/camera-lenses/rf-28-70mm-f2-8-is-stm',
   },
 
@@ -1391,6 +1539,8 @@ const LENSES = {
       { url:'https://www.cpricewatch.com/price-changes/?p=08048', tier:'T4', title:'Canon USA store price (via Canon Price Watch)', note:'Canon Store regular $3299.00 (its pre-sale "was" price on 2026-09-07); on sale at $3199.00 at the time (fall instant rebate), not used; agrees with the B&H regular price recorded 2026-10-11. Canon Price Watch logs the Canon USA store price (usa.canon.com is geo-blocked from here)', date:'2026-10-19' },
       { url:'https://www.canon.ca/en/product?name=RF24-105mm_F2.8_L_IS_USM_Z', tier:'T1', title:'Canon Canada product page', note:'CAD 4299: Canon Canada lists MSRP $4299.99 (whole-dollar figure stored)', date:'2026-11-23' },
       { url:'https://store.canon.jp/online/g/g6347C001/', tier:'T1', title:'Canon Online Shop Japan (Canon Marketing Japan)', note:'JPY 515000: Canon Online Shop lists ¥464,000 excl. tax = ¥510,400 incl. 10% tax', date:'2026-11-23' },
+      { url:'https://www.usa.canon.com/shop/p/rf24-105mm-f2-8-l-is-usm-z', tier:'T1', title:'Canon USA store product page', note:'USD 3299: Canon USA store product page lists 3299 (regular price)', date:'2026-11-23' },
+      { url:'https://www.canon.com.au/camera-lenses/rf-24-105mm-f2-8l-is-usm-z', tier:'T1', title:'Canon Australia product page', note:'AUD 5399: Canon Australia product page lists 5399 (RRP)', date:'2026-11-23' },
     ],
     productUrl:'https://www.canon.com.au/camera-lenses/rf-24-105mm-f2-8l-is-usm-z',
   },
@@ -1410,6 +1560,8 @@ const LENSES = {
     priceSource: [
       { url:'https://www.cpricewatch.com/price-changes/?p=06919', tier:'T4', title:'Canon USA store price (via Canon Price Watch)', note:'Canon Store regular $1049.00 (its pre-sale "was" price on 2026-09-07); on sale at $949.00 at the time (fall instant rebate), not used; agrees with the B&H regular price recorded 2026-10-11. Canon Price Watch logs the Canon USA store price (usa.canon.com is geo-blocked from here)', date:'2026-10-19' },
       { url:'https://www.canon.ca/en/product?name=RF_24-240mm_F4-6.3_IS_USM', tier:'T1', title:'Canon Canada product page', note:'CAD 1299: Canon Canada lists MSRP $1299.99 (whole-dollar figure stored)', date:'2026-11-23' },
+      { url:'https://www.usa.canon.com/shop/p/rf24-240mm-f4-6-3-is-usm', tier:'T1', title:'Canon USA store product page', note:'USD 1049: Canon USA store product page lists 1049 (regular price)', date:'2026-11-23' },
+      { url:'https://www.canon.com.au/camera-lenses/rf-24-240mm-f4-6-3-is-usm', tier:'T1', title:'Canon Australia product page', note:'AUD 1719: Canon Australia product page lists 1719 (RRP)', date:'2026-11-23' },
     ],
     productUrl:'https://www.canon.com.au/camera-lenses/rf-24-240mm-f4-6-3-is-usm',
   },
@@ -1429,6 +1581,8 @@ const LENSES = {
     priceSource: [
       { url:'https://www.cpricewatch.com/price-changes/?p=08286', tier:'T4', title:'Canon USA store price (via Canon Price Watch)', note:'Canon Store regular $3299.00 (its pre-sale "was" price on 2026-09-07); on sale at $3099.00 at the time (fall instant rebate), not used. Canon Price Watch logs the Canon USA store price (usa.canon.com is geo-blocked from here)', date:'2026-10-19' },
       { url:'https://www.canon.ca/en/product?name=RF70-200mm_F2.8_L_IS_USM_Z', tier:'T1', title:'Canon Canada product page', note:'CAD 4299: Canon Canada lists MSRP $4299.99 (whole-dollar figure stored)', date:'2026-11-23' },
+      { url:'https://www.usa.canon.com/shop/p/rf70-200mm-f2-8-l-is-usm-z', tier:'T1', title:'Canon USA store product page', note:'USD 3299: Canon USA store product page lists 3299 (regular price)', date:'2026-11-23' },
+      { url:'https://www.canon.com.au/camera-lenses/rf-70-200mm-f2-8l-is-usm-z', tier:'T1', title:'Canon Australia product page', note:'AUD 5399: Canon Australia product page lists 5399 (RRP)', date:'2026-11-23' },
     ],
     productUrl:'https://www.canon.com.au/camera-lenses/rf-70-200mm-f2-8l-is-usm-z',
   },
@@ -1445,7 +1599,10 @@ const LENSES = {
     imageSource: { url:'https://www.canon.com.au/camera-lenses/rf-100-300mm-f2-8l-is-usm', tier:'T1', note:'official Canon Australia product page, barrel legibly reads "CANON LENS RF100-300mm F2.8 L IS USM"', date:'2026-08-17' },
     asin:'B0C3498X6T',
     prices:{USD:10599,AUD:16499,EUR:12199,GBP:9499,JPY:1653000,CAD:13799,SGD:15399},
-    priceSource: { url:'https://www.cpricewatch.com/price-changes/?p=07834', tier:'T4', title:'Canon USA store price (via Canon Price Watch)', note:'Canon Store $10599.00 with no price changes logged since July. Canon Price Watch logs the Canon USA store price (usa.canon.com is geo-blocked from here)', date:'2026-10-19' },
+    priceSource: [
+      { url:'https://www.cpricewatch.com/price-changes/?p=07834', tier:'T4', title:'Canon USA store price (via Canon Price Watch)', note:'Canon Store $10599.00 with no price changes logged since July. Canon Price Watch logs the Canon USA store price (usa.canon.com is geo-blocked from here)', date:'2026-10-19' },
+      { url:'https://www.usa.canon.com/shop/p/rf100-300mm-f2-8-l-is-usm', tier:'T1', title:'Canon USA store product page', note:'USD 10599: Canon USA store product page lists 10599 (regular price)', date:'2026-11-23' },
+    ],
     productUrl:'https://www.canon.com.au/camera-lenses/rf-100-300mm-f2-8l-is-usm',
   },
 
@@ -1464,6 +1621,8 @@ const LENSES = {
     priceSource: [
       { url:'https://www.cpricewatch.com/price-changes/?p=08049', tier:'T4', title:'Canon USA store price (via Canon Price Watch)', note:'Canon Store regular $2249.00 (its pre-sale "was" price on 2026-09-07); on sale at $2049.00 at the time (fall instant rebate), not used; agrees with the B&H regular price recorded 2026-10-11. Canon Price Watch logs the Canon USA store price (usa.canon.com is geo-blocked from here)', date:'2026-10-19' },
       { url:'https://www.canon.ca/en/product?name=RF200-800mm_F6.3-9_IS_USM', tier:'T1', title:'Canon Canada product page', note:'CAD 2799: Canon Canada lists MSRP $2799.99 (whole-dollar figure stored)', date:'2026-11-23' },
+      { url:'https://www.usa.canon.com/shop/p/rf200-800mm-f6-3-9-is-usm', tier:'T1', title:'Canon USA store product page', note:'USD 2249: Canon USA store product page lists 2249 (regular price)', date:'2026-11-23' },
+      { url:'https://www.canon.com.au/camera-lenses/rf-200-800mm-f6-3-9-is-usm', tier:'T1', title:'Canon Australia product page', note:'AUD 3499: Canon Australia product page lists 3499 (RRP)', date:'2026-11-23' },
     ],
     productUrl:'https://www.canon.com.au/camera-lenses/rf-200-800mm-f6-3-9-is-usm',
   },
@@ -1483,6 +1642,7 @@ const LENSES = {
     priceSource: [
       { url:'https://www.cpricewatch.com/price-changes/?p=08394', tier:'T4', title:'Canon USA store price (via Canon Price Watch)', note:'Canon Store regular $369.99 (its pre-sale "was" price on 2026-09-07); on sale at $349.99 at the time (fall instant rebate), not used; agrees with the B&H regular price recorded 2026-10-11. Canon Price Watch logs the Canon USA store price (usa.canon.com is geo-blocked from here)', date:'2026-10-19' },
       { url:'https://www.canon.ca/en/product?name=RF-S14-30mm_F4-6.3_IS_STM_PZ', tier:'T1', title:'Canon Canada product page', note:'CAD 499: Canon Canada lists MSRP $499.99 (whole-dollar figure stored)', date:'2026-11-23' },
+      { url:'https://www.usa.canon.com/shop/p/rf-s14-30mm-f4-6-3-is-stm-pz', tier:'T1', title:'Canon USA store product page', note:'USD 369: Canon USA store product page lists 369.99 (regular price)', date:'2026-11-23' },
     ],
     productUrl:'https://www.usa.canon.com/shop/p/rf-s14-30mm-f4-6-3-is-stm-pz',
   },
@@ -1502,6 +1662,7 @@ const LENSES = {
     priceSource: [
       { url:'https://www.canon.ca/en/product?name=RF-S10-18mm_F4.5-6.3_IS_STM', tier:'T1', title:'Canon Canada - RF-S10-18mm F4.5-6.3 IS STM', note:'CAD 399 -> 479: Canon Canada "MSRP: $479.99", item code 6262C002.', date:'2026-11-07' },
       { url:'https://www.cpricewatch.com/price-changes/?p=08050', tier:'T4', title:'Canon USA store price (via Canon Price Watch)', note:'Canon Store regular $369.99 (its pre-sale "was" price on 2026-09-07); on sale at $319.99 at the time (fall instant rebate), not used; agrees with the B&H regular price recorded 2026-10-11. Canon Price Watch logs the Canon USA store price (usa.canon.com is geo-blocked from here)', date:'2026-10-19' },
+      { url:'https://www.usa.canon.com/shop/p/rf-s10-18mm-f4-5-6-3-is-stm', tier:'T1', title:'Canon USA store product page', note:'USD 369: Canon USA store product page lists 369.99 (regular price)', date:'2026-11-23' },
     ],
     productUrl:'https://www.usa.canon.com/shop/p/rfs10-18mmf45-63isstm',
   },
@@ -1518,7 +1679,10 @@ const LENSES = {
     imageCredit:{author:"Avalyn0x45", licence:"CC0", licenceUrl:"http://creativecommons.org/publicdomain/zero/1.0/deed.en", source:"https://commons.wikimedia.org/wiki/File:Canon_RF-S18-45mm_F4.5-6.3_IS_STM_Lens.jpg"},
     asin:'B0B2KTYBPM',
     prices:{USD:349,AUD:499,EUR:399,GBP:299,JPY:54000,CAD:499,SGD:499},
-    priceSource: { url:'https://www.cpricewatch.com/price-changes/?p=07652', tier:'T4', title:'Canon USA store price (via Canon Price Watch)', note:'Canon Store $349.99 with no price changes logged since July. Canon Price Watch logs the Canon USA store price (usa.canon.com is geo-blocked from here)', date:'2026-10-19' },
+    priceSource: [
+      { url:'https://www.cpricewatch.com/price-changes/?p=07652', tier:'T4', title:'Canon USA store price (via Canon Price Watch)', note:'Canon Store $349.99 with no price changes logged since July. Canon Price Watch logs the Canon USA store price (usa.canon.com is geo-blocked from here)', date:'2026-10-19' },
+      { url:'https://www.usa.canon.com/shop/p/rf-s18-45mm-f4-5-6-3-is-stm', tier:'T1', title:'Canon USA store product page', note:'USD 349: Canon USA store product page lists 349.99 (regular price)', date:'2026-11-23' },
+    ],
     productUrl:'https://www.usa.canon.com/shop/p/rfs18-45mmf45-63isstm',
   },
 
@@ -1537,6 +1701,8 @@ const LENSES = {
     priceSource: [
       { url:'https://www.cpricewatch.com/price-changes/?p=07651', tier:'T4', title:'Canon USA store price (via Canon Price Watch)', note:'Canon Store $569.99 with no price changes logged since July. Canon Price Watch logs the Canon USA store price (usa.canon.com is geo-blocked from here)', date:'2026-10-19' },
       { url:'https://www.canon.ca/en/product?name=RF-S18-150mm_F3.5-6.3_IS_STM', tier:'T1', title:'Canon Canada product page', note:'CAD 699: Canon Canada lists MSRP $699.99 (whole-dollar figure stored)', date:'2026-11-23' },
+      { url:'https://www.usa.canon.com/shop/p/rf-s18-150mm-f3-5-6-3-is-stm', tier:'T1', title:'Canon USA store product page', note:'USD 569: Canon USA store product page lists 569.99 (regular price)', date:'2026-11-23' },
+      { url:'https://www.canon.com.au/camera-lenses/rf-s-18-150mm-f3-5-6-3-is-stm', tier:'T1', title:'Canon Australia product page', note:'AUD 899: Canon Australia product page lists 899 (RRP)', date:'2026-11-23' },
     ],
     productUrl:'https://www.usa.canon.com/shop/p/rfs18-150mmf35-63isstm',
   },
@@ -1556,6 +1722,7 @@ const LENSES = {
     priceSource: [
       { url:'https://www.cpricewatch.com/price-changes/?p=07801', tier:'T4', title:'Canon USA store price (via Canon Price Watch)', note:'Canon Store regular $409.99 (its pre-sale "was" price on 2026-10-05); on sale at $379.99 at the time (fall instant rebate), not used. Canon Price Watch logs the Canon USA store price (usa.canon.com is geo-blocked from here)', date:'2026-10-19' },
       { url:'https://www.canon.ca/en/product?name=RF-S_55-210mm_F5-7.1_IS_STM', tier:'T1', title:'Canon Canada product page', note:'CAD 499: Canon Canada lists MSRP $499.99 (whole-dollar figure stored)', date:'2026-11-23' },
+      { url:'https://www.usa.canon.com/shop/p/rf-s55-210mm-f5-7-1-is-stm', tier:'T1', title:'Canon USA store product page', note:'USD 409: Canon USA store product page lists 409.99 (regular price)', date:'2026-11-23' },
     ],
     productUrl:'https://www.usa.canon.com/shop/p/rfs55-210mmf5-71isstm',
   },
