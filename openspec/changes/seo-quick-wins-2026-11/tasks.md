@@ -25,7 +25,7 @@
 
 ## 6. Experiments log
 
-- [ ] 6.1 `docs/seo-experiments.md` seeded with the homepage title, size pages, guides and this change
+- [x] 6.1 `docs/seo-experiments.md` seeded with the homepage title, size pages, guides and this change
 
 ## 7. Ship
 
