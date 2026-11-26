@@ -1,7 +1,7 @@
 ## 1. Vs-page lens mount row
 
-- [ ] 1.1 `generate-seo.js`: "Lens mount" shows the mount label (or "Fixed lens: <lensSpec>"); rows called with the brand config
-- [ ] 1.2 `tests/data/vs-lens-mount.test.js`: no vs-page shows the same cell for two different mounts; regenerate
+- [x] 1.1 `generate-seo.js`: "Lens mount" shows the mount label (or "Fixed lens: <lensSpec>"); rows called with the brand config
+- [x] 1.2 `tests/data/vs-lens-mount.test.js`: no vs-page shows the same cell for two different mounts; regenerate
 
 ## 2. Static `<h1>`
 

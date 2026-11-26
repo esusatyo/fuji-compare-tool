@@ -281,8 +281,20 @@ const VS_ROWS = [
     return c.batteryLife == null ? null : `${c.batteryLife} shots`;
   }],
   ['Card slots', c => c.cardSlots],
-  ['Lens mount', c => c.lensType],
+  ['Lens mount', (c, brandConfig) => lensMountText(c, brandConfig)],
 ];
+
+// The "Lens mount" cell: the mount's label from the brand's
+// BRAND_CONFIG.mounts, with its system when it declares one (Fujifilm
+// "G-Mount (GFX)", the name the mount pages use), so two bodies on different
+// mounts never read alike. A fixed-lens camera has no mount to name: it reads
+// "Fixed lens", plus its built-in lens when the data records one.
+function lensMountText(c, brandConfig) {
+  if (c.lensType === 'Fixed') return c.lensSpec ? `Fixed lens: ${c.lensSpec}` : 'Fixed lens';
+  const m = ((brandConfig && brandConfig.mounts) || []).find(x => x.id === c.mount);
+  if (!m) throw new Error(`${c.name}: mount '${c.mount}' is not declared in its brand's BRAND_CONFIG.mounts`);
+  return m.system ? `${m.label} (${m.system})` : m.label;
+}
 
 // The VS_ROWS formatter for a row label, so a brand page's at-a-glance table
 // and a vs-page can never word the same value differently.
@@ -1422,7 +1434,7 @@ function vsPageHTML(brand, data, site, aId, bId, allPairs, indexable = true, car
     itemListElement: [a, b].map((c, i) => ({ '@type': 'ListItem', position: i + 1, item: productLd(brandName, c) })),
   };
   const rows = VS_ROWS.map(([label, fn]) => {
-    const [va, vb] = [fn(a), fn(b)];
+    const [va, vb] = [fn(a, data.BRAND_CONFIG), fn(b, data.BRAND_CONFIG)];
     return `      <tr><th scope="row">${esc(label)}</th><td>${va == null ? '—' : esc(va)}</td><td>${vb == null ? '—' : esc(vb)}</td></tr>`;
   }).join('\n');
 
@@ -1715,7 +1727,7 @@ function crossVsPageHTML(site, m, all, indexable = true, card = null, sizeHref =
     itemListElement: [a, b].map((s, i) => ({ '@type': 'ListItem', position: i + 1, item: productLd(s.brandName, s.cam) })),
   };
   const rows = VS_ROWS.map(([label, fn]) => {
-    const [va, vb] = [fn(a.cam), fn(b.cam)];
+    const [va, vb] = [fn(a.cam, a.data.BRAND_CONFIG), fn(b.cam, b.data.BRAND_CONFIG)];
     return `      <tr><th scope="row">${esc(label)}</th><td>${va == null ? '—' : esc(va)}</td><td>${vb == null ? '—' : esc(vb)}</td></tr>`;
   }).join('\n');
   const fullName = s => `${s.brandName} ${s.cam.name}`;
@@ -2917,4 +2929,4 @@ if (require.main === module) {
   console.log(`generate-seo: ${files.size} artifacts (${written} written, ${removed} stale removed)`);
 }
 
-module.exports = { guidePageHTML, guideIndexHTML, guideShareCard, ROOT_TITLE, mountSlug, mountModel, mountPageHTML, mountIndexHTML, MOUNT_INDEX_TITLE, keySpecsHTML, sizeEntries, vsSizeSectionHTML, sizePageHTML, crossSizePageHTML, sizeHubHeadBlock, sizeHubBodyBlock, SIZE_HUB_TITLE, kitHeadBlock, kitBodyBlock, KIT_TITLE, cameraIndex, homeConfigScript, buildSite, GLANCE_COLS, sizeText, brandGlanceHTML, uniqueItemCount, cardHash, lastmodManifest, sitemapHashes, LASTMOD_MANIFEST, vsCardHTML, infoCardHTML, shareTags, CARD_W, CARD_H, LANDING_CARD_ORDER, ALL_BRANDS_MOSAIC, orderLandingBrands, allBrandsPhotoHTML, siteConfig, curatedPairs, successorPairKeys, resolvePins, withPins, PINNED_VS_PAIRS, SUCCESSOR_INDEX_SINCE, relatedPairs, vsPageHTML, vsSummary, vsSummaryFacts, resolveMatchups, crossVsPageHTML, crossTitle, CROSS_BRAND_MATCHUPS, compareHeadBlock, compareBodyBlock, brandHeadBlock, rootHeadBlock, brandBodyBlock, rootBodyBlock, withHeadBlock, withBodyBlock, sitemapXML, robotsTxt, buildAll, SEO_BEGIN, SEO_END, SEO_BODY_BEGIN, SEO_BODY_END, ID_HEAD_BEGIN, ID_HEAD_END, ID_HEADER_BEGIN, ID_HEADER_END, ID_FOOTER_BEGIN, ID_FOOTER_END, identityToken, logoMark, cleanUrl, cleanHref, themeToggleHTML, collectReferences, citationText, refHostname, REFERENCE_ROWS, referenceRowsHTML };
+module.exports = { lensMountText, VS_ROWS, guidePageHTML, guideIndexHTML, guideShareCard, ROOT_TITLE, mountSlug, mountModel, mountPageHTML, mountIndexHTML, MOUNT_INDEX_TITLE, keySpecsHTML, sizeEntries, vsSizeSectionHTML, sizePageHTML, crossSizePageHTML, sizeHubHeadBlock, sizeHubBodyBlock, SIZE_HUB_TITLE, kitHeadBlock, kitBodyBlock, KIT_TITLE, cameraIndex, homeConfigScript, buildSite, GLANCE_COLS, sizeText, brandGlanceHTML, uniqueItemCount, cardHash, lastmodManifest, sitemapHashes, LASTMOD_MANIFEST, vsCardHTML, infoCardHTML, shareTags, CARD_W, CARD_H, LANDING_CARD_ORDER, ALL_BRANDS_MOSAIC, orderLandingBrands, allBrandsPhotoHTML, siteConfig, curatedPairs, successorPairKeys, resolvePins, withPins, PINNED_VS_PAIRS, SUCCESSOR_INDEX_SINCE, relatedPairs, vsPageHTML, vsSummary, vsSummaryFacts, resolveMatchups, crossVsPageHTML, crossTitle, CROSS_BRAND_MATCHUPS, compareHeadBlock, compareBodyBlock, brandHeadBlock, rootHeadBlock, brandBodyBlock, rootBodyBlock, withHeadBlock, withBodyBlock, sitemapXML, robotsTxt, buildAll, SEO_BEGIN, SEO_END, SEO_BODY_BEGIN, SEO_BODY_END, ID_HEAD_BEGIN, ID_HEAD_END, ID_HEADER_BEGIN, ID_HEADER_END, ID_FOOTER_BEGIN, ID_FOOTER_END, identityToken, logoMark, cleanUrl, cleanHref, themeToggleHTML, collectReferences, citationText, refHostname, REFERENCE_ROWS, referenceRowsHTML };
