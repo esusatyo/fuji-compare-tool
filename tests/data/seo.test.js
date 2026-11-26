@@ -398,3 +398,36 @@ test('the landing page <title> (hand-written) matches its generated og:title', (
   assert.equal(unesc(html.match(/<meta property="og:title" content="([^"]*)">/)[1]), ROOT_TITLE);
   assert.ok(ROOT_TITLE.length <= 60, `title is ${ROOT_TITLE.length} chars; search results truncate past ~60`);
 });
+
+// The homepage title experiment (PR #81) runs until late January 2027: the
+// structured data added beside it must not move the title or description.
+test('the landing page declares WebSite + Organization JSON-LD, and only on the landing page', () => {
+  const site = siteConfig();
+  const home = generated.get('index.html');
+  const blocks = [...home.matchAll(/<script type="application\/ld\+json">([^<]*)<\/script>/g)].map(m => JSON.parse(m[1]));
+  assert.equal(blocks.length, 1, 'one JSON-LD block on /');
+  const graph = blocks[0]['@graph'];
+  assert.equal(blocks[0]['@context'], 'https://schema.org');
+  const website = graph.find(n => n['@type'] === 'WebSite');
+  const org = graph.find(n => n['@type'] === 'Organization');
+  assert.equal(website.name, site.siteName);
+  assert.equal(website.url, `${site.baseUrl}/`);
+  assert.equal(website.publisher['@id'], org['@id']);
+  assert.equal(org.name, site.siteName);
+  assert.equal(org.url, `${site.baseUrl}/`);
+  assert.equal(org.logo, `${site.baseUrl}/apple-touch-icon.png`);
+  assert.ok(fs.existsSync(path.join(ROOT, 'apple-touch-icon.png')), 'the logo file exists');
+  // No invented facts: no social profiles, no search box the site doesn't have.
+  assert.ok(!('sameAs' in org) && !('potentialAction' in website), 'no sameAs / SearchAction');
+  for (const [rel, html] of generated) {
+    if (rel !== 'index.html' && rel.endsWith('.html')) {
+      assert.ok(!/"@type":"WebSite"/.test(html), `${rel}: WebSite belongs on the homepage only`);
+    }
+  }
+});
+
+test('the landing page <title> and description are unchanged (title experiment until late Jan 2027)', () => {
+  const html = generated.get('index.html');
+  assert.equal(html.match(/<title>([^<]*)<\/title>/)[1], 'Compare Camera &amp; Lens Specs, Size &amp; Weight Side by Side');
+  assert.match(html, /<meta name="description" content="Compare cameras and lenses side by side: specs, size and weight, and prices in 7 currencies\. [^"]*">/);
+});

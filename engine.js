@@ -1012,12 +1012,29 @@ ${IS_KIT ? `<main id="kit-app" class="kit-app"></main>` : `<div id="compare-head
     <button class="theme-btn active" data-theme-pref="system">System</button>
   </div>
 </footer>`;
+  adoptStaticHero(mount);
   // The generator-owned static sections (crawlable specs, popular comparisons)
   // follow #app in the HTML, so the footer would render above them. Move it
   // below them so the page ends with it; the static HTML order is untouched.
   const statics = document.querySelectorAll('body > .seo-links');
   const footer = mount.querySelector('footer');
   if (statics.length && footer) statics[statics.length - 1].after(footer);
+}
+
+// The generator writes the page's <h1> into the static HTML
+// (<h1 data-static-hero>, below #app) so crawlers that don't run JavaScript
+// see a heading. Move that element into the hero in place of the one just
+// rendered: the page keeps exactly one <h1>, at the top, with the engine's id
+// and markup (so mode switches that rewrite #hero-title keep working).
+function adoptStaticHero(mount) {
+  const staticH1 = document.querySelector('h1[data-static-hero]');
+  const ownH1 = mount.querySelector('#hero-title');
+  if (!staticH1 || !ownH1) return;
+  staticH1.removeAttribute('data-static-hero');
+  staticH1.id = ownH1.id;
+  staticH1.className = ownH1.className;
+  staticH1.innerHTML = ownH1.innerHTML;
+  ownH1.replaceWith(staticH1);
 }
 
 // ─────────────────────────────────────────────

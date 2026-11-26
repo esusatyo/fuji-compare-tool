@@ -281,8 +281,20 @@ const VS_ROWS = [
     return c.batteryLife == null ? null : `${c.batteryLife} shots`;
   }],
   ['Card slots', c => c.cardSlots],
-  ['Lens mount', c => c.lensType],
+  ['Lens mount', (c, brandConfig) => lensMountText(c, brandConfig)],
 ];
+
+// The "Lens mount" cell: the mount's label from the brand's
+// BRAND_CONFIG.mounts, with its system when it declares one (Fujifilm
+// "G-Mount (GFX)", the name the mount pages use), so two bodies on different
+// mounts never read alike. A fixed-lens camera has no mount to name: it reads
+// "Fixed lens", plus its built-in lens when the data records one.
+function lensMountText(c, brandConfig) {
+  if (c.lensType === 'Fixed') return c.lensSpec ? `Fixed lens: ${c.lensSpec}` : 'Fixed lens';
+  const m = ((brandConfig && brandConfig.mounts) || []).find(x => x.id === c.mount);
+  if (!m) throw new Error(`${c.name}: mount '${c.mount}' is not declared in its brand's BRAND_CONFIG.mounts`);
+  return m.system ? `${m.label} (${m.system})` : m.label;
+}
 
 // The VS_ROWS formatter for a row label, so a brand page's at-a-glance table
 // and a vs-page can never word the same value differently.
@@ -834,6 +846,10 @@ ${k.lenses.map(({ lens: l, brand, slug }) => `          <tr><th scope="row"><a h
   <meta property="og:description" content="${esc(desc)}">
   <meta property="og:url" content="${url}">
   ${shareTags(site, card)}
+  ${ldScript(breadcrumbLd(site, [
+    { name: 'Lens mounts', url: `${site.baseUrl}/mount/` },
+    { name: `${m.name} cameras and lenses`, url },
+  ]))}
   <script data-goatcounter="https://esusatyo.goatcounter.com/count" defer src="https://gc.zgo.at/count.js"></script>
   <script defer src="${prefix}analytics.js"></script>
   ${assetLinks(prefix)}
@@ -1038,6 +1054,10 @@ function guidePageHTML(site, page, rendered, card = null) {
   <meta property="article:modified_time" content="${dateISO}">
   ${shareTags(site, card)}
   <script type="application/ld+json">${JSON.stringify(ld).replace(/</g, '\\u003c')}</script>
+  ${ldScript(breadcrumbLd(site, [
+    { name: page.plural, url: `${site.baseUrl}/${page.dir}/` },
+    { name: m.headline, url },
+  ]))}
   <script data-goatcounter="https://esusatyo.goatcounter.com/count" defer src="https://gc.zgo.at/count.js"></script>
   <script defer src="${prefix}analytics.js"></script>
   ${assetLinks(prefix)}
@@ -1223,6 +1243,7 @@ ${p.related.map(r => `        <li><a href="${r.href}" data-goatcounter-click="si
   <meta property="og:description" content="${esc(desc)}">
   <meta property="og:url" content="${p.url}">
   ${shareTags(site, p.card)}
+  ${ldScript(breadcrumbLd(site, [p.crumb, { name: `${p.h1} size comparison`, url: p.url }]))}
   <script data-goatcounter="https://esusatyo.goatcounter.com/count" defer src="https://gc.zgo.at/count.js"></script>
   <script defer src="${p.prefix}analytics.js"></script>
   ${assetLinks(p.prefix)}
@@ -1298,6 +1319,7 @@ function sizePageHTML(brand, data, site, aId, bId, allPairs, hasSizePage = () =>
     prefix: '../../',
     backHref: '../',
     backLabel: `All ${brandName} cameras`,
+    crumb: { name: `${brandName} cameras`, url: `${site.baseUrl}/${brand}/` },
     eyebrow: brandName,
     h1: `${a.name} vs ${b.name}`,
     entries: sizeEntries(a.name, a, b.name, b),
@@ -1325,6 +1347,7 @@ function crossSizePageHTML(site, m, all, hasSizePage = () => false, card = null)
     prefix: '../',
     backHref: './',
     backLabel: 'Camera size comparison',
+    crumb: { name: 'Camera size comparison', url: `${site.baseUrl}/size/` },
     eyebrow: `${a.brandName} vs ${b.brandName}`,
     h1: crossTitle(m),
     entries: sizeEntries(fullName(a), a.cam, fullName(b), b.cam),
@@ -1360,12 +1383,13 @@ function sizeHubHeadBlock(site, brandNames, nCams, card = null) {
 // Crawlable block for size/index.html: what the page is, and a link to every
 // dedicated size page (so none is an orphan). `groups` is
 // [{ heading, links: [{ href, label }] }].
-function sizeHubBodyBlock(groups, brandNames, guides = []) {
+function sizeHubBodyBlock(groups, brandNames, guides = [], heroTitle = null) {
   const lists = groups.filter(g => g.links.length).map(g => `    <h3>${esc(g.heading)}</h3>
     <ul>
 ${g.links.map(l => `      <li><a href="${l.href}">${esc(l.label)} size</a></li>`).join('\n')}
     </ul>`).join('\n');
-  return `${SEO_BODY_BEGIN}
+  return `${SEO_BODY_BEGIN}${heroTitle ? `
+  ${staticH1HTML(heroTitle)}` : ''}
   <section class="seo-links" aria-label="Camera size comparisons">
     <h2>Camera size comparisons</h2>
     <p>Pick any two to four cameras from ${esc(prose(brandNames))} above and see them drawn to scale from the front, the top and the side, with a credit card for reference. The outlines are each maker's stated outer dimensions, shown as rounded boxes; width, height, depth and weight are listed underneath. Popular size comparisons:</p>
@@ -1394,8 +1418,9 @@ function kitHeadBlock(site, brandNames, nCams, nLenses, card = null) {
 
 // Crawlable block for kit/index.html: what the page does, in words, and links
 // to each brand's own pages. `brands` is [{ slug, name }].
-function kitBodyBlock(brands) {
-  return `${SEO_BODY_BEGIN}
+function kitBodyBlock(brands, heroTitle = null) {
+  return `${SEO_BODY_BEGIN}${heroTitle ? `
+  ${staticH1HTML(heroTitle)}` : ''}
   <section class="seo-links" aria-label="About the kit builder">
     <h2>How the kit builder works</h2>
     <p>Choose a camera body from ${esc(prose(brands.map(b => b.name)))}, then add up to six lenses. Only lenses for that body's mount are offered, including third-party lenses and, on shared mounts such as L-Mount and Micro Four Thirds, lenses from the other brands that use it. The kit builder adds up the weight and the list price of the body and its lenses, shows the focal range they cover and the filter sizes they take, and can put a second kit beside the first to compare.</p>
@@ -1415,6 +1440,10 @@ function vsPageHTML(brand, data, site, aId, bId, allPairs, indexable = true, car
   const title = `${brandName} ${a.name} vs ${b.name}: Spec Comparison`;
   const desc = `Compare the ${brandName} ${a.name} (${a.year}) and ${b.name} (${b.year}) side by side — price, sensor, stabilization, video, weight and more.`;
   const url = `${site.baseUrl}/${brand}/vs/${aId}-vs-${bId}`;
+  const crumbs = breadcrumbLd(site, [
+    { name: `${brandName} cameras`, url: `${site.baseUrl}/${brand}/` },
+    { name: `${brandName} ${a.name} vs ${b.name}`, url },
+  ]);
   const ld = {
     '@context': 'https://schema.org',
     '@type': 'ItemList',
@@ -1422,7 +1451,7 @@ function vsPageHTML(brand, data, site, aId, bId, allPairs, indexable = true, car
     itemListElement: [a, b].map((c, i) => ({ '@type': 'ListItem', position: i + 1, item: productLd(brandName, c) })),
   };
   const rows = VS_ROWS.map(([label, fn]) => {
-    const [va, vb] = [fn(a), fn(b)];
+    const [va, vb] = [fn(a, data.BRAND_CONFIG), fn(b, data.BRAND_CONFIG)];
     return `      <tr><th scope="row">${esc(label)}</th><td>${va == null ? '—' : esc(va)}</td><td>${vb == null ? '—' : esc(vb)}</td></tr>`;
   }).join('\n');
 
@@ -1457,6 +1486,7 @@ ${related.map(([x, y]) =>
   <meta property="og:url" content="${url}">
   ${shareTags(site, card)}
   <script type="application/ld+json">${JSON.stringify(ld)}</script>
+  ${ldScript(crumbs)}
   <!-- Umami analytics — temporarily disabled, kept for re-enabling.
   <script defer src="https://cloud.umami.is/script.js" data-website-id="365e9ee6-1fb5-4a0d-9c74-f6255522a196"></script> -->
   <script data-goatcounter="https://esusatyo.goatcounter.com/count" defer src="https://gc.zgo.at/count.js"></script>
@@ -1708,6 +1738,10 @@ function crossVsPageHTML(site, m, all, indexable = true, card = null, sizeHref =
   const title = `${crossTitle(m)}: Spec Comparison`;
   const desc = `Compare the ${a.brandName} ${a.cam.name} (${a.cam.year}) and ${b.brandName} ${b.cam.name} (${b.cam.year}) side by side — price, sensor, stabilization, video, weight and more.`;
   const url = `${site.baseUrl}/${cleanUrl(m.file)}`;
+  const crumbs = breadcrumbLd(site, [
+    { name: 'Cross-brand compare', url: `${site.baseUrl}/compare/` },
+    { name: crossTitle(m), url },
+  ]);
   const ld = {
     '@context': 'https://schema.org',
     '@type': 'ItemList',
@@ -1715,7 +1749,7 @@ function crossVsPageHTML(site, m, all, indexable = true, card = null, sizeHref =
     itemListElement: [a, b].map((s, i) => ({ '@type': 'ListItem', position: i + 1, item: productLd(s.brandName, s.cam) })),
   };
   const rows = VS_ROWS.map(([label, fn]) => {
-    const [va, vb] = [fn(a.cam), fn(b.cam)];
+    const [va, vb] = [fn(a.cam, a.data.BRAND_CONFIG), fn(b.cam, b.data.BRAND_CONFIG)];
     return `      <tr><th scope="row">${esc(label)}</th><td>${va == null ? '—' : esc(va)}</td><td>${vb == null ? '—' : esc(vb)}</td></tr>`;
   }).join('\n');
   const fullName = s => `${s.brandName} ${s.cam.name}`;
@@ -1745,6 +1779,7 @@ ${related.map(x => `        <li><a href="${cleanHref(path.basename(x.file))}" da
   <meta property="og:url" content="${url}">
   ${shareTags(site, card)}
   <script type="application/ld+json">${JSON.stringify(ld)}</script>
+  ${ldScript(crumbs)}
   <!-- Umami analytics — temporarily disabled, kept for re-enabling.
   <script defer src="https://cloud.umami.is/script.js" data-website-id="365e9ee6-1fb5-4a0d-9c74-f6255522a196"></script> -->
   <script data-goatcounter="https://esusatyo.goatcounter.com/count" defer src="https://gc.zgo.at/count.js"></script>
@@ -1823,6 +1858,29 @@ function prose(names) {
   return `${names.slice(0, -1).join(', ')} and ${names[names.length - 1]}`;
 }
 
+// ─── Static <h1> for tool pages ──────────────
+// Brand pages, /compare/, /size/ and /kit/ render their hero (and its <h1>)
+// in the browser, so a crawler that doesn't run JavaScript would see a page
+// with no heading. Their body block therefore opens with the hero title as a
+// static <h1>; engine.js moves that element into its hero instead of rendering
+// a second one, so the rendered page still has exactly one <h1>, at the top.
+// The text is the hero title the engine shows, tags stripped.
+function heroText(heroTitle) {
+  return String(heroTitle).replace(/<[^>]*>/g, '').replace(/\s+/g, ' ').trim();
+}
+
+function staticH1HTML(heroTitle) {
+  return `<h1 class="seo-h1" data-static-hero>${esc(heroText(heroTitle))}</h1>`;
+}
+
+// The heroTitle of a page's hand-written inline window.COMPARE_CONFIG
+// (compare/, size/, kit/): the one place that page's hero title is written.
+function inlineHeroTitle(html, file) {
+  const m = html.match(/window\.COMPARE_CONFIG\s*=\s*\{[\s\S]*?\bheroTitle:\s*'([^']*)'/);
+  if (!m) throw new Error(`${file}: no heroTitle in its inline window.COMPARE_CONFIG — the static <h1> needs it`);
+  return m[1];
+}
+
 // ─── Compare-page blocks ─────────────────────
 function compareHeadBlock(site, brandNames, nCams, card = null) {
   return metaBlock(
@@ -1837,10 +1895,11 @@ function compareHeadBlock(site, brandNames, nCams, card = null) {
 
 // Crawlable block for compare/index.html linking every cross-brand
 // vs-page, so none of them is an orphan (mirrors the brand pages).
-function compareBodyBlock(matchups, brandNames) {
+function compareBodyBlock(matchups, brandNames, heroTitle = null) {
   const items = matchups.map(m =>
     `      <li><a href="../${cleanHref(m.file)}">${esc(crossTitle(m))}</a></li>`).join('\n');
-  return `${SEO_BODY_BEGIN}
+  return `${SEO_BODY_BEGIN}${heroTitle ? `
+  ${staticH1HTML(heroTitle)}` : ''}
   <section class="seo-links" aria-label="Popular cross-brand comparisons">
     <h2>Popular cross-brand camera comparisons</h2>
     <p>Pick any 2–4 cameras from ${esc(prose(brandNames))} and compare them side by side. Popular head-to-head matchups across brands:</p>
@@ -2128,7 +2187,7 @@ function aboutHeadBlock(site) {
 const ROOT_TITLE = 'Compare Camera & Lens Specs, Size & Weight Side by Side';
 
 function rootHeadBlock(site, brandNames, card = null) {
-  return metaBlock(
+  const block = metaBlock(
     site,
     `${site.baseUrl}/`,
     ROOT_TITLE,
@@ -2136,6 +2195,56 @@ function rootHeadBlock(site, brandNames, card = null) {
     './',
     card
   );
+  // The site's identity, homepage only (where Google reads WebSite for the
+  // site name shown in results). Inside the generated block, so <title> and
+  // the description above stay exactly as they are.
+  return block.replace(SEO_END, `${ldScript(siteLd(site))}\n  ${SEO_END}`);
+}
+
+// One JSON-LD <script>. "<" is escaped so no value can close the tag.
+function ldScript(obj) {
+  return `<script type="application/ld+json">${JSON.stringify(obj).replace(/</g, '\\u003c')}</script>`;
+}
+
+// BreadcrumbList for a content page: Home → section → page, where the section
+// is the page's visible back link and the last item its canonical URL. Google
+// shows the trail in place of the URL in results. `trail` is [{ name, url }]
+// after Home, absolute URLs.
+function breadcrumbLd(site, trail) {
+  const items = [{ name: site.siteName, url: `${site.baseUrl}/` }, ...trail];
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: items.map((c, i) => ({ '@type': 'ListItem', position: i + 1, name: c.name, item: c.url })),
+  };
+}
+
+// WebSite + Organization for the homepage. Only facts the site states about
+// itself: its name, address and logo (the 180×180 touch icon, a PNG Google
+// can read). No sameAs (no social profiles are on record — add one only once
+// the owner confirms it) and no SearchAction (the site has no search URL).
+function siteLd(site) {
+  const home = `${site.baseUrl}/`;
+  return {
+    '@context': 'https://schema.org',
+    '@graph': [
+      {
+        '@type': 'WebSite',
+        '@id': `${home}#website`,
+        name: site.siteName,
+        url: home,
+        inLanguage: 'en',
+        publisher: { '@id': `${home}#organization` },
+      },
+      {
+        '@type': 'Organization',
+        '@id': `${home}#organization`,
+        name: site.siteName,
+        url: home,
+        logo: `${site.baseUrl}/apple-touch-icon.png`,
+      },
+    ],
+  };
 }
 
 // Replace the content between a begin/end marker pair, preserving everything
@@ -2211,6 +2320,7 @@ function brandBodyBlock(brand, data, site, pairs, isIndexable = () => false, mou
     `      <li><a href="vs/${a}-vs-${b}">${esc(name)} ${esc(cams[a].name)} vs ${esc(cams[b].name)}</a></li>`
   ).join('\n');
   return `${SEO_BODY_BEGIN}
+  ${staticH1HTML(data.BRAND_CONFIG.cameras.heroTitle)}
   ${brandGlanceHTML(brand, data, isIndexable, pairs, mounts)}
   <section class="seo-links" aria-label="Popular ${esc(name)} comparisons">
     <h2>Popular ${esc(name)} camera comparisons</h2>
@@ -2808,7 +2918,7 @@ function buildSite({ today = new Date().toISOString().slice(0, 10) } = {}) {
   const totalCams = uniqueItemCount(brandData, 'CAMERAS');
   let cmpHtml = fs.readFileSync(path.join(ROOT, cmp), 'utf8');
   cmpHtml = withHeadBlock(cmpHtml, compareHeadBlock(site, brandNames, totalCams, addCard(compareShareCard(brandNames, totalCams))), cmp);
-  cmpHtml = withBodyBlock(cmpHtml, compareBodyBlock(matchups, brandNames), cmp);
+  cmpHtml = withBodyBlock(cmpHtml, compareBodyBlock(matchups, brandNames, inlineHeroTitle(cmpHtml, cmp)), cmp);
   files.set(cmp, cmpHtml);
 
   // The interactive size page: the compare tool, size section first. It shares
@@ -2816,7 +2926,7 @@ function buildSite({ today = new Date().toISOString().slice(0, 10) } = {}) {
   const hub = path.join('size', 'index.html');
   let hubHtml = fs.readFileSync(path.join(ROOT, hub), 'utf8');
   hubHtml = withHeadBlock(hubHtml, sizeHubHeadBlock(site, brandNames, totalCams, compareShareCard(brandNames, totalCams)), hub);
-  hubHtml = withBodyBlock(hubHtml, sizeHubBodyBlock(sizeGroups, brandNames, guides), hub);
+  hubHtml = withBodyBlock(hubHtml, sizeHubBodyBlock(sizeGroups, brandNames, guides, inlineHeroTitle(hubHtml, hub)), hub);
   files.set(hub, hubHtml);
 
   const totalLenses = uniqueItemCount(brandData, 'LENSES');
@@ -2851,7 +2961,7 @@ function buildSite({ today = new Date().toISOString().slice(0, 10) } = {}) {
   const kitPage = path.join('kit', 'index.html');
   let kitHtml = fs.readFileSync(path.join(ROOT, kitPage), 'utf8');
   kitHtml = withHeadBlock(kitHtml, kitHeadBlock(site, brandNames, totalCams, totalLenses, compareShareCard(brandNames, totalCams)), kitPage);
-  kitHtml = withBodyBlock(kitHtml, kitBodyBlock(brandInfo.map(b => ({ slug: b.slug, name: b.name }))), kitPage);
+  kitHtml = withBodyBlock(kitHtml, kitBodyBlock(brandInfo.map(b => ({ slug: b.slug, name: b.name })), inlineHeroTitle(kitHtml, kitPage)), kitPage);
   files.set(kitPage, kitHtml);
   const homeCard = addCard(homeShareCard(brandNames, totalCams, totalLenses));
 
@@ -2917,4 +3027,4 @@ if (require.main === module) {
   console.log(`generate-seo: ${files.size} artifacts (${written} written, ${removed} stale removed)`);
 }
 
-module.exports = { guidePageHTML, guideIndexHTML, guideShareCard, ROOT_TITLE, mountSlug, mountModel, mountPageHTML, mountIndexHTML, MOUNT_INDEX_TITLE, keySpecsHTML, sizeEntries, vsSizeSectionHTML, sizePageHTML, crossSizePageHTML, sizeHubHeadBlock, sizeHubBodyBlock, SIZE_HUB_TITLE, kitHeadBlock, kitBodyBlock, KIT_TITLE, cameraIndex, homeConfigScript, buildSite, GLANCE_COLS, sizeText, brandGlanceHTML, uniqueItemCount, cardHash, lastmodManifest, sitemapHashes, LASTMOD_MANIFEST, vsCardHTML, infoCardHTML, shareTags, CARD_W, CARD_H, LANDING_CARD_ORDER, ALL_BRANDS_MOSAIC, orderLandingBrands, allBrandsPhotoHTML, siteConfig, curatedPairs, successorPairKeys, resolvePins, withPins, PINNED_VS_PAIRS, SUCCESSOR_INDEX_SINCE, relatedPairs, vsPageHTML, vsSummary, vsSummaryFacts, resolveMatchups, crossVsPageHTML, crossTitle, CROSS_BRAND_MATCHUPS, compareHeadBlock, compareBodyBlock, brandHeadBlock, rootHeadBlock, brandBodyBlock, rootBodyBlock, withHeadBlock, withBodyBlock, sitemapXML, robotsTxt, buildAll, SEO_BEGIN, SEO_END, SEO_BODY_BEGIN, SEO_BODY_END, ID_HEAD_BEGIN, ID_HEAD_END, ID_HEADER_BEGIN, ID_HEADER_END, ID_FOOTER_BEGIN, ID_FOOTER_END, identityToken, logoMark, cleanUrl, cleanHref, themeToggleHTML, collectReferences, citationText, refHostname, REFERENCE_ROWS, referenceRowsHTML };
+module.exports = { breadcrumbLd, ldScript, siteLd, heroText, staticH1HTML, inlineHeroTitle, lensMountText, VS_ROWS, guidePageHTML, guideIndexHTML, guideShareCard, ROOT_TITLE, mountSlug, mountModel, mountPageHTML, mountIndexHTML, MOUNT_INDEX_TITLE, keySpecsHTML, sizeEntries, vsSizeSectionHTML, sizePageHTML, crossSizePageHTML, sizeHubHeadBlock, sizeHubBodyBlock, SIZE_HUB_TITLE, kitHeadBlock, kitBodyBlock, KIT_TITLE, cameraIndex, homeConfigScript, buildSite, GLANCE_COLS, sizeText, brandGlanceHTML, uniqueItemCount, cardHash, lastmodManifest, sitemapHashes, LASTMOD_MANIFEST, vsCardHTML, infoCardHTML, shareTags, CARD_W, CARD_H, LANDING_CARD_ORDER, ALL_BRANDS_MOSAIC, orderLandingBrands, allBrandsPhotoHTML, siteConfig, curatedPairs, successorPairKeys, resolvePins, withPins, PINNED_VS_PAIRS, SUCCESSOR_INDEX_SINCE, relatedPairs, vsPageHTML, vsSummary, vsSummaryFacts, resolveMatchups, crossVsPageHTML, crossTitle, CROSS_BRAND_MATCHUPS, compareHeadBlock, compareBodyBlock, brandHeadBlock, rootHeadBlock, brandBodyBlock, rootBodyBlock, withHeadBlock, withBodyBlock, sitemapXML, robotsTxt, buildAll, SEO_BEGIN, SEO_END, SEO_BODY_BEGIN, SEO_BODY_END, ID_HEAD_BEGIN, ID_HEAD_END, ID_HEADER_BEGIN, ID_HEADER_END, ID_FOOTER_BEGIN, ID_FOOTER_END, identityToken, logoMark, cleanUrl, cleanHref, themeToggleHTML, collectReferences, citationText, refHostname, REFERENCE_ROWS, referenceRowsHTML };

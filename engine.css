@@ -953,6 +953,11 @@ footer a:hover { text-decoration: underline; }
   padding: 8px 20px 40px;
 }
 .seo-links h2 { font-size: 16px; margin: 8px 0 6px; color: var(--text-primary); }
+/* The page's static <h1> (generator-owned, first in the seo:body block). The
+   engine moves it into its hero, so this only styles a page seen without
+   JavaScript. */
+.seo-h1 { max-width: 1100px; margin: 0 auto; padding: 24px 20px 0; font-size: 24px;
+          line-height: 1.2; color: var(--text-primary); }
 .seo-links p { color: var(--text-secondary); font-size: 13px; margin: 0 0 12px; }
 .seo-links ul {
   list-style: none;
