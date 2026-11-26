@@ -19,8 +19,9 @@
 
 ## 5. Structured-data validation
 
-- [ ] 5.1 `tests/data/structured-data.test.js`: every JSON-LD block parses, has `@context`, required fields per type, no ratings or reviews
-- [ ] 5.2 Rich Results Test on one live vs-page; result in the PR
+- [x] 5.1 `tests/data/structured-data.test.js`: every JSON-LD block parses, has `@context`, required fields per type, no ratings or reviews
+- [x] 5.2 Rich Results Test on one live vs-page; result in the PR
+  - 2026-11-26, `https://comparecameraspecs.com/vs/nikon-zf-vs-fujifilm-x-t5` (production, before this change deploys): crawled OK, 5 valid items (Product snippets 2, Merchant listings 2, Carousels 1), 0 errors. Non-critical only: `review` / `aggregateRating` (left out on purpose: no reviews exist), Offer `availability`, merchant `description` / `shippingDetails` / `hasMerchantReturnPolicy`, carousel item `url`. Breadcrumbs can only be checked after deploy.
 
 ## 6. Experiments log
 
