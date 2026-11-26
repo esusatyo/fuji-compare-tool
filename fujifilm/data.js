@@ -97,7 +97,10 @@ const CAMERAS = {
     imageUrl:'https://fujifilm-x.b-cdn.net/wp-content/uploads/2025/06/thum_X-E5-1.jpg?width=400',
     asin:'B0FBYQC481',
     prices:{USD:1699,AUD:2649,EUR:1649,GBP:1449,JPY:264000,CAD:2299,SGD:2299},
-    priceSource: { url:'https://www.adorama.com/fujifilm-x-e5-mirrorless-camera/p/ifjxe5b', tier:'T3', note:'USD $1,699 confirmed current at Adorama; EUR €1,649 already reflects Fujifilm\'s Aug–Sep 2026 EU price adjustment (from €1,549) per Imaging Resource/FujiAddict Jul 2026 reporting — no change needed, stored figure already matches JPY ¥264,000 (tax-included, body only) from Fujifilm\'s own Japan store https://mall-jp.fujifilm.com/shop/g/g16949313/ (2026-10-11), after Fujifilm\'s 2026-10-01 Japan-only price revision; previously ¥259,000.', date:'2026-08-23' },
+    priceSource: [
+      { url:'https://www.adorama.com/fujifilm-x-e5-mirrorless-camera/p/ifjxe5b', tier:'T3', note:'USD $1,699 confirmed current at Adorama; EUR €1,649 already reflects Fujifilm\'s Aug–Sep 2026 EU price adjustment (from €1,549) per Imaging Resource/FujiAddict Jul 2026 reporting — no change needed, stored figure already matches JPY ¥264,000 (tax-included, body only) from Fujifilm\'s own Japan store https://mall-jp.fujifilm.com/shop/g/g16949313/ (2026-10-11), after Fujifilm\'s 2026-10-01 Japan-only price revision; previously ¥259,000.', date:'2026-08-23' },
+      { url:'https://eshop.fujifilm-x.com/de/fujifilm-x-e5.html', tier:'T1', title:'Official FUJIFILM eShop Germany', note:'EUR 1649: Official FUJIFILM eShop Germany lists 1649', date:'2026-11-23' },
+    ],
     specSources: [{ url:'https://www.fujifilm-x.com/global/products/cameras/x-e5/specifications/', tier:'T1', title:'Fujifilm official specifications', note:'verify-specs 2026-11-14: all spec fields re-read; batteryLife = Normal-mode CIPA figure.', date:'2026-11-14' }],
     sensorMP:40.2, sensorType:'X-Trans CMOS 5 HR', processor:'X-Processor 5',
     width:124.9, height:72.9, depth:39.1, weight:445, weatherSealed:false,
@@ -212,7 +215,10 @@ const CAMERAS = {
     imageUrl:'https://fujifilm-x.b-cdn.net/wp-content/uploads/2024/02/stjw_x100vi_thum.jpg?width=400',
     asin:'B0CW1KVSVF',
     prices:{USD:1799,AUD:2499,EUR:1999,GBP:1349,JPY:315700,CAD:2199,SGD:2199},
-    priceSource: { url:'https://www.fuji-store.de/en/p/fujifilm-x100vi', tier:'T3', note:'EUR raised to €1,999 (from €1,799) per Fujifilm\'s Aug 1–Sep 1 2026 EU-wide price adjustment (FujiAddict/Imaging Resource, 2026-07-26), confirmed as the current UVP at Fuji-Store.de; USD $1,799 unchanged, confirmed current at B&H JPY ¥315,700 (tax-included, body only) from Fujifilm\'s own Japan store https://mall-jp.fujifilm.com/shop/g/g16941816/ (2026-10-11), after Fujifilm\'s 2026-10-01 Japan-only price revision; previously ¥229,000.', date:'2026-08-23' },
+    priceSource: [
+      { url:'https://www.fuji-store.de/en/p/fujifilm-x100vi', tier:'T3', note:'EUR raised to €1,999 (from €1,799) per Fujifilm\'s Aug 1–Sep 1 2026 EU-wide price adjustment (FujiAddict/Imaging Resource, 2026-07-26), confirmed as the current UVP at Fuji-Store.de; USD $1,799 unchanged, confirmed current at B&H JPY ¥315,700 (tax-included, body only) from Fujifilm\'s own Japan store https://mall-jp.fujifilm.com/shop/g/g16941816/ (2026-10-11), after Fujifilm\'s 2026-10-01 Japan-only price revision; previously ¥229,000.', date:'2026-08-23' },
+      { url:'https://eshop.fujifilm-x.com/de/fujifilm-x100vi.html', tier:'T1', title:'Official FUJIFILM eShop Germany', note:'EUR 1999: Official FUJIFILM eShop Germany lists 1999', date:'2026-11-23' },
+    ],
     specSources: [{ url:'https://www.fujifilm-x.com/global/products/cameras/x100vi/specifications/', tier:'T1', title:'Fujifilm official specifications', note:'verify-specs 2026-11-14: all spec fields re-read; batteryLife = Normal-mode CIPA figure. weatherSealed false: Fujifilm claims weather resistance only with AR-X100 adapter ring + PRF-49 filter attached (owner rule 2026-11-14). | 2026-11-18: hybrid viewfinder battery split (owner rule 2026-11-18): Normal mode: approx. 310 / 450 frames (EVF / OVF); no screen-only figure, so batteryLifeLcd null and batteryLife = EVF figure', date:'2026-11-14' }],
     sensorMP:40.2, sensorType:'X-Trans CMOS 5 HR', processor:'X-Processor 5',
     width:128, height:74.8, depth:55.3, weight:521, weatherSealed:false,
@@ -385,7 +391,11 @@ const CAMERAS = {
     imageUrl:'https://fujifilm-x.b-cdn.net/wp-content/uploads/2022/05/sgew_x-h2s_thum-1.png?width=400',
     asin:'B0B2F5VHLM',
     prices:{USD:2899,AUD:3849,EUR:2749,GBP:2149,JPY:349000,CAD:3399,SGD:3399},
-    priceSource: { url:'https://www.fuji-store.de/p/fujifilm-x-h2s-gehaeuse', tier:'T3', note:'EUR corrected to €2,749 (stored €2,499 was stale; not on the Aug–Sep 2026 leaked hike list but the current manufacturer UVP is confirmed €2,749, corroborated at x-kamera.de\'s €2,749 "Ursprünglicher Preis"); USD $2,899 unchanged, confirmed current at Best Buy', date:'2026-08-23' },
+    priceSource: [
+      { url:'https://www.fuji-store.de/p/fujifilm-x-h2s-gehaeuse', tier:'T3', note:'EUR corrected to €2,749 (stored €2,499 was stale; not on the Aug–Sep 2026 leaked hike list but the current manufacturer UVP is confirmed €2,749, corroborated at x-kamera.de\'s €2,749 "Ursprünglicher Preis"); USD $2,899 unchanged, confirmed current at Best Buy', date:'2026-08-23' },
+      { url:'https://eshop.fujifilm-x.com/de/fujifilm-x-h2s.html', tier:'T1', title:'Official FUJIFILM eShop Germany', note:'EUR 2749: Official FUJIFILM eShop Germany lists 2749', date:'2026-11-23' },
+      { url:'https://www.bhphotovideo.com/c/product/1708265-REG/', tier:'T3', title:'B&H Photo Video listing', note:'USD 2899: B&H Photo Video listing lists 2899', date:'2026-11-23' },
+    ],
     specSources: [{ url:'https://www.fujifilm-x.com/global/products/cameras/x-h2s/specifications/', tier:'T1', title:'Fujifilm official specifications', note:'verify-specs 2026-11-14: all spec fields re-read; batteryLife = Normal-mode CIPA figure.', date:'2026-11-14' }],
     sensorMP:26.1, sensorType:'X-Trans CMOS 5 HS (Stacked BSI)', processor:'X-Processor 5',
     width:136.3, height:92.9, depth:84.6, weight:660, weatherSealed:true,
@@ -406,7 +416,11 @@ const CAMERAS = {
     imageUrl:'https://fujifilm-x.b-cdn.net/wp-content/uploads/2022/09/ajgz_x-h2_thum.png?width=400',
     asin:'B0BCLYBK1F',
     prices:{USD:2299,AUD:3099,EUR:2249,GBP:1749,JPY:279000,CAD:2699,SGD:2699},
-    priceSource: { url:'https://x-kamera.de/product/fujifilm-x-h2/', tier:'T3', note:'EUR corrected to €2,249 (stored €1,999 was stale; not on the Aug–Sep 2026 leaked hike list but the current manufacturer UVP is confirmed €2,249, corroborated at Fuji-Store.de/Fotofranz-Online); USD $2,299 unchanged, confirmed current at Amazon', date:'2026-08-23' },
+    priceSource: [
+      { url:'https://x-kamera.de/product/fujifilm-x-h2/', tier:'T3', note:'EUR corrected to €2,249 (stored €1,999 was stale; not on the Aug–Sep 2026 leaked hike list but the current manufacturer UVP is confirmed €2,249, corroborated at Fuji-Store.de/Fotofranz-Online); USD $2,299 unchanged, confirmed current at Amazon', date:'2026-08-23' },
+      { url:'https://eshop.fujifilm-x.com/de/fujifilm-x-h2.html', tier:'T1', title:'Official FUJIFILM eShop Germany', note:'EUR 2249: Official FUJIFILM eShop Germany lists 2249', date:'2026-11-23' },
+      { url:'https://www.bhphotovideo.com/c/product/1726019-REG/', tier:'T3', title:'B&H Photo Video listing', note:'USD 2299: B&H Photo Video listing lists 2299', date:'2026-11-23' },
+    ],
     specSources: [{ url:'https://www.fujifilm-x.com/global/products/cameras/x-h2/specifications/', tier:'T1', title:'Fujifilm official specifications', note:'verify-specs 2026-11-14: all spec fields re-read; batteryLife = Normal-mode CIPA figure.', date:'2026-11-14' }],
     sensorMP:40.2, sensorType:'X-Trans CMOS 5 HR', processor:'X-Processor 5',
     width:136.3, height:92.9, depth:84.6, weight:660, weatherSealed:true,
@@ -447,7 +461,11 @@ const CAMERAS = {
     imageUrl:'https://fujifilm-x.b-cdn.net/wp-content/uploads/2022/10/koes_x-t5_thum.jpg?width=400',
     asin:'B0BK2P7DMG',
     prices:{USD:1999,AUD:2649,EUR:1999,GBP:1449,JPY:239000,CAD:2299,SGD:2299},
-    priceSource: { url:'https://www.fuji-store.de/p/fujifilm-x-t5-gehaeuse-schwarz', tier:'T3', note:'EUR corrected to €1,999 — stored €1,699 looked like a stale/miscopied figure (matches the USD number, not a EUR one) and wasn\'t part of the reported Aug–Sep 2026 hike; current manufacturer UVP of €1,999 confirmed here and corroborated at x-kamera.de; USD $1,999.95 unchanged, confirmed current at B&H', date:'2026-08-23' },
+    priceSource: [
+      { url:'https://www.fuji-store.de/p/fujifilm-x-t5-gehaeuse-schwarz', tier:'T3', note:'EUR corrected to €1,999 — stored €1,699 looked like a stale/miscopied figure (matches the USD number, not a EUR one) and wasn\'t part of the reported Aug–Sep 2026 hike; current manufacturer UVP of €1,999 confirmed here and corroborated at x-kamera.de; USD $1,999.95 unchanged, confirmed current at B&H', date:'2026-08-23' },
+      { url:'https://eshop.fujifilm-x.com/de/fujifilm-x-t5-gehaeuse.html', tier:'T1', title:'Official FUJIFILM eShop Germany', note:'EUR 1999: Official FUJIFILM eShop Germany lists 1999', date:'2026-11-23' },
+      { url:'https://www.bhphotovideo.com/c/product/1899774-REG/', tier:'T3', title:'B&H Photo Video listing', note:'USD 1999: B&H Photo Video listing lists 1999', date:'2026-11-23' },
+    ],
     specSources: [{ url:'https://www.fujifilm-x.com/global/products/cameras/x-t5/specifications/', tier:'T1', title:'Fujifilm official specifications', note:'verify-specs 2026-11-14: all spec fields re-read; batteryLife = Normal-mode CIPA figure.', date:'2026-11-14' }],
     sensorMP:40.2, sensorType:'X-Trans CMOS 5 HR', processor:'X-Processor 5',
     width:129.5, height:91.0, depth:63.8, weight:557, weatherSealed:true,
@@ -545,7 +563,10 @@ const CAMERAS = {
     imageUrl:'https://fujifilm-x.b-cdn.net/wp-content/uploads/2024/05/product-list_X-T50_front_16-50_silver.jpg?width=400',
     asin:'B0D3X8WZ7N',
     prices:{USD:1599,AUD:2199,EUR:1599,GBP:1199,JPY:264000,CAD:1899,SGD:1899},
-    priceSource: { url:'https://www.fuji-store.de/p/fujifilm-x-t50-gehaeuse-silber', tier:'T3', note:'EUR raised to €1,599 (from €1,499) per Fujifilm\'s Aug 1–Sep 1 2026 EU-wide price adjustment (FujiAddict/Imaging Resource, 2026-07-26), confirmed as the current UVP at Fuji-Store.de; USD $1,599 unchanged, confirmed current at Best Buy JPY ¥264,000 (tax-included, body only) from Fujifilm\'s own Japan store https://mall-jp.fujifilm.com/shop/g/g16945408/ (2026-10-11), after Fujifilm\'s 2026-10-01 Japan-only price revision; previously ¥199,000.', date:'2026-08-23' },
+    priceSource: [
+      { url:'https://www.fuji-store.de/p/fujifilm-x-t50-gehaeuse-silber', tier:'T3', note:'EUR raised to €1,599 (from €1,499) per Fujifilm\'s Aug 1–Sep 1 2026 EU-wide price adjustment (FujiAddict/Imaging Resource, 2026-07-26), confirmed as the current UVP at Fuji-Store.de; USD $1,599 unchanged, confirmed current at Best Buy JPY ¥264,000 (tax-included, body only) from Fujifilm\'s own Japan store https://mall-jp.fujifilm.com/shop/g/g16945408/ (2026-10-11), after Fujifilm\'s 2026-10-01 Japan-only price revision; previously ¥199,000.', date:'2026-08-23' },
+      { url:'https://eshop.fujifilm-x.com/de/fujifilm-x-t50-gehaeuse.html', tier:'T1', title:'Official FUJIFILM eShop Germany', note:'EUR 1599: Official FUJIFILM eShop Germany lists 1599', date:'2026-11-23' },
+    ],
     sensorMP:40.2, sensorType:'X-Trans CMOS 5 HR', processor:'X-Processor 5',
     specSources: [
       { url:'https://www.fujifilm-x.com/global/products/cameras/x-t50/specifications/', tier:'T1', title:'Fujifilm official specifications', note:'verify-specs 2026-11-14: all spec fields re-read; batteryLife = Normal-mode CIPA figure.', date:'2026-11-14' },
@@ -570,6 +591,10 @@ const CAMERAS = {
     imageUrl:'https://fujifilm-x.b-cdn.net/wp-content/uploads/2025/10/X-T30%E2%85%A2_front_XC13-33_black-2da29f28-scaled.jpg?width=400',
     asin:'B0FWTX8S9J',
     prices:{USD:999,AUD:1679,EUR:899,GBP:829,JPY:152900,CAD:1349,SGD:1349},
+    priceSource: [
+      { url:'https://eshop.fujifilm-x.com/uk/fujifilm-x-t30-iii-body.html', tier:'T1', title:'Official FUJIFILM eShop UK', note:'GBP 829: Official FUJIFILM eShop UK lists 829', date:'2026-11-23' },
+      { url:'https://www.bhphotovideo.com/c/product/1926407-REG/', tier:'T3', title:'B&H Photo Video listing', note:'USD 999: B&H Photo Video listing lists 999', date:'2026-11-23' },
+    ],
     specSources: [{ url:'https://www.fujifilm-x.com/global/products/cameras/x-t30-iii/specifications/', tier:'T1', title:'Fujifilm official specifications', note:'verify-specs 2026-11-14: all spec fields re-read; batteryLife = Normal-mode CIPA figure.', date:'2026-11-14' }],
     sensorMP:26.1, sensorType:'X-Trans CMOS 4', processor:'X-Processor 5',
     width:118.4, height:82.8, depth:46.8, weight:378, weatherSealed:false,
@@ -705,7 +730,10 @@ const CAMERAS = {
     imageUrl:'https://fujifilm-x.b-cdn.net/wp-content/uploads/2023/05/dwga_x-s20_thum.jpg?width=400',
     asin:'B0C5PHCFRQ',
     prices:{USD:1499,AUD:1999,EUR:1499,GBP:1099,JPY:179000,CAD:1749,SGD:1749},
-    priceSource: { url:'https://www.fuji-store.de/en/p/fujifilm-x-s20-body', tier:'T3', note:'EUR raised to €1,499 (from €1,399) per Fujifilm\'s Aug 1–Sep 1 2026 EU-wide price adjustment (FujiAddict/Imaging Resource, 2026-07-26), confirmed as the current RRP at Fuji-Store.de; USD $1,499 unchanged, confirmed current at Best Buy', date:'2026-08-23' },
+    priceSource: [
+      { url:'https://www.fuji-store.de/en/p/fujifilm-x-s20-body', tier:'T3', note:'EUR raised to €1,499 (from €1,399) per Fujifilm\'s Aug 1–Sep 1 2026 EU-wide price adjustment (FujiAddict/Imaging Resource, 2026-07-26), confirmed as the current RRP at Fuji-Store.de; USD $1,499 unchanged, confirmed current at Best Buy', date:'2026-08-23' },
+      { url:'https://eshop.fujifilm-x.com/de/fujifilm-x-s20-gehaeuse.html', tier:'T1', title:'Official FUJIFILM eShop Germany', note:'EUR 1499: Official FUJIFILM eShop Germany lists 1499', date:'2026-11-23' },
+    ],
     specSources: [{ url:'https://www.fujifilm-x.com/global/products/cameras/x-s20/specifications/', tier:'T1', title:'Fujifilm official specifications', note:'verify-specs 2026-11-14: all spec fields re-read; batteryLife = Normal-mode CIPA figure.', date:'2026-11-14' }],
     sensorMP:26.1, sensorType:'X-Trans CMOS 4', processor:'X-Processor 5',
     width:128.0, height:85.1, depth:65.5, weight:491, weatherSealed:false,
@@ -747,6 +775,9 @@ const CAMERAS = {
     imageUrl:'https://fujifilm-x.b-cdn.net/wp-content/uploads/2024/10/product_thumb_x-m5.jpg?width=400',
     asin:'B0DJQ192B5',
     prices:{USD:899,AUD:1299,EUR:799,GBP:699,JPY:119000,CAD:1099,SGD:1099},
+    priceSource: [
+      { url:'https://www.bhphotovideo.com/c/product/1899780-REG/', tier:'T3', title:'B&H Photo Video listing', note:'USD 899: B&H Photo Video listing lists 899', date:'2026-11-23' },
+    ],
     specSources: [{ url:'https://www.fujifilm-x.com/global/products/cameras/x-m5/specifications/', tier:'T1', title:'Fujifilm official specifications', note:'verify-specs 2026-11-14: all spec fields re-read; batteryLife = Normal-mode CIPA figure.', date:'2026-11-14' }],
     sensorMP:26.1, sensorType:'X-Trans CMOS 4', processor:'X-Processor 5',
     width:111.9, height:66.6, depth:38.0, weight:355, weatherSealed:false,
@@ -918,6 +949,9 @@ const LENSES = {
     imageUrl:'https://fujifilm-x.b-cdn.net/wp-content/uploads/2016/10/1_thum_xf14mmf2-8-r.jpg?width=400',
     asin:'B009L1HC2I',
     prices:{USD:999,AUD:1399,EUR:849,GBP:729,JPY:134900,CAD:1249,SGD:1249},
+    priceSource: [
+      { url:'https://www.teds.com.au/products/fujifilm-xf-14mm-f2-8-r', tier:'T3', title:'Ted\'s Cameras (Australia)', note:'AUD 1399 confirmed: Teds Cameras (Australia) regular price 1399.95 (compare-at; selling at 1189.96) for Fujifilm XF 14mm F2.8 R', date:'2026-11-22' },
+    ],
     productUrl:'https://www.fujifilm-x.com/global/products/lenses/xf14mmf28-r/',
   },
   'xf-16mm-f14': {
@@ -975,6 +1009,8 @@ const LENSES = {
       { url:'https://www.fujifilm-x.com/ja-jp/products/lenses/xf18mmf2-r/', tier:'T1', title:'Fujifilm Japan product page', note:'JPY 118800: 希望小売価格 (suggested retail price), tax included', date:'2026-11-21' },
       { url:'https://www.calumet.de/product/fujifilm-fujinon-xf-18mm-f2-r', tier:'T3', title:'Calumet Germany', note:'EUR 649: manufacturer UVP (JSON-LD priceSpecification MSRP) printed by Calumet for Fujifilm FUJINON XF 18mm F2 R; Calumet sells at 529, not used', date:'2026-11-21' },
       { url:'https://thecamerastore.com/products/fujifilm-xf-18mm-f2-r', tier:'T3', title:'The Camera Store (Calgary)', note:'CAD 799: The Camera Store regular price for FUJIFILM XF 18mm f2 R; no sale; Camera Canada lists the same 799', date:'2026-11-21' },
+      { url:'https://thecamerastore.com/products/fujifilm-xf-18mm-f2-r', tier:'T3', title:'The Camera Store (Canada)', note:'CAD 799 confirmed: The Camera Store (Canada) regular price 799 for FUJIFILM XF 18mm f2 R', date:'2026-11-22' },
+      { url:'https://eshop.fujifilm-x.com/de/fujinon-xf18mmf2-r.html', tier:'T1', title:'Official FUJIFILM eShop Germany', note:'EUR 649: Official FUJIFILM eShop Germany lists 649', date:'2026-11-23' },
     ],
     productUrl:'https://www.fujifilm-x.com/global/products/lenses/xf18mmf2-r/',
   },
@@ -1003,6 +1039,9 @@ const LENSES = {
     imageUrl:'https://fujifilm-x.b-cdn.net/wp-content/uploads/2017/04/5_thum_xf23mmf2-r-wr.jpg?width=400',
     asin:'B01KNXOCO8',
     prices:{USD:499,AUD:699,EUR:419,GBP:369,JPY:67400,CAD:629,SGD:629},
+    priceSource: [
+      { url:'https://www.teds.com.au/products/fujifilm-xf-23mm-f2-r-wr-lens', tier:'T3', title:'Ted\'s Cameras (Australia)', note:'AUD 699 confirmed: Teds Cameras (Australia) regular price 699.95 (compare-at; selling at 594.96) for Fujifilm XF 23mm F2 R WR Lens', date:'2026-11-22' },
+    ],
     productUrl:'https://www.fujifilm-x.com/global/products/lenses/xf23mmf2-r-wr/',
   },
   'xf-23mm-f28': {
@@ -1019,6 +1058,9 @@ const LENSES = {
     priceSource: [
       { url:'https://www.mapcamera.com/item/4547410554656', tier:'T3', title:'Map Camera (Tokyo)', note:'JPY 57420: Map Camera new-unit price, tax included; Fujifilm Japan lists this lens as open price and FUJIFILM MALL is not reachable from here', date:'2026-11-21' },
       { url:'https://www.cathayphoto.com.sg/cameras/lenses/fujifilm-xf-23f2-8r-b-wr', tier:'T3', title:'Cathay Photo (Singapore)', note:'SGD 599: Cathay Photo listed price for FUJIFILM XF 23mm f/2.8 R WR (Black; Silver also 599), no sale shown', date:'2026-11-21' },
+      { url:'https://thecamerastore.com/products/fujifilm-xf-23mm-f2-8-r-wr', tier:'T3', title:'The Camera Store (Canada)', note:'CAD 560 confirmed: The Camera Store (Canada) regular price 559 for FUJIFILM XF 23mm f2.8 R WR', date:'2026-11-22' },
+      { url:'https://eshop.fujifilm-x.com/uk/fujinon-xf23mm-f28-r-wr.html', tier:'T1', title:'Official FUJIFILM eShop UK', note:'GBP 399: Official FUJIFILM eShop UK lists 399', date:'2026-11-23' },
+      { url:'https://eshop.fujifilm-x.com/de/fujinon-xf23mm-f28-r-wr.html', tier:'T1', title:'Official FUJIFILM eShop Germany', note:'EUR 449: Official FUJIFILM eShop Germany lists 449', date:'2026-11-23' },
     ],
     productUrl:'https://www.fujifilm-x.com/global/products/lenses/xf23mmf28-r-wr/',
   },
@@ -1066,6 +1108,9 @@ const LENSES = {
       { url:'https://fujifilmacademy-ap.fujifilm.com/xf30mm-f2-8-r-wr-macro.html', tier:'T1', title:'Fujifilm Asia Pacific store (Singapore)', note:'SGD 989: Fujifilm Asia Pacific Pte. Ltd. online store listed price (shown out of stock)', date:'2026-11-21' },
       { url:'https://www.fujifilm-x.com/ja-jp/products/lenses/xf30mmf28-r-lm-wr-macro/', tier:'T1', title:'Fujifilm Japan product page', note:'JPY 105050: 希望小売価格 (suggested retail price), tax included', date:'2026-11-21' },
       { url:'https://www.calumet.de/product/fujifilm-fujinon-xf-30mm-f2-8-r-lm-wr-macro', tier:'T3', title:'Calumet Germany', note:'EUR 699: manufacturer UVP (JSON-LD priceSpecification MSRP) printed by Calumet for Fujifilm FUJINON XF 30mm F2.8 R LM WR Macro; Calumet sells at 565, not used', date:'2026-11-21' },
+      { url:'https://thecamerastore.com/products/fujifilm-xf-30mm-f2-8-r-lm-wr-macro', tier:'T3', title:'The Camera Store (Canada)', note:'CAD 810 confirmed: The Camera Store (Canada) regular price 809 for FUJIFILM XF 30mm f2.8 R LM WR Macro', date:'2026-11-22' },
+      { url:'https://eshop.fujifilm-x.com/uk/fujinon-xf30mmf2-8-r-lm-wr-macro.html', tier:'T1', title:'Official FUJIFILM eShop UK', note:'GBP 600: Official FUJIFILM eShop UK lists 599', date:'2026-11-23' },
+      { url:'https://eshop.fujifilm-x.com/de/fujinon-xf30mmf2-8-r-lm-wr-macro.html', tier:'T1', title:'Official FUJIFILM eShop Germany', note:'EUR 699: Official FUJIFILM eShop Germany lists 699', date:'2026-11-23' },
     ],
     productUrl:'https://www.fujifilm-x.com/global/products/lenses/xf30mmf28-r-lm-wr-macro/',
   },
@@ -1119,6 +1164,10 @@ const LENSES = {
     imageUrl:'https://fujifilm-x.b-cdn.net/wp-content/uploads/2020/09/xf50mmf1-r-wr_feature-ahaf.jpg?width=400',
     asin:'B08GX7RYD3',
     prices:{USD:1799,AUD:2499,EUR:1599,GBP:1499,JPY:261800,CAD:2000,SGD:2099},
+    priceSource: [
+      { url:'https://eshop.fujifilm-x.com/uk/fujinon-xf50mm-f1-0-r-wr.html', tier:'T1', title:'Official FUJIFILM eShop UK', note:'GBP 1499: Official FUJIFILM eShop UK lists 1499', date:'2026-11-23' },
+      { url:'https://eshop.fujifilm-x.com/de/fujinon-xf50mm-f1-0-r-wr.html', tier:'T1', title:'Official FUJIFILM eShop Germany', note:'EUR 1599: Official FUJIFILM eShop Germany lists 1599', date:'2026-11-23' },
+    ],
     productUrl:'https://www.fujifilm-x.com/global/products/lenses/xf50mmf1-r-wr/',
   },
   'xf-50mm-f2': {
@@ -1132,6 +1181,9 @@ const LENSES = {
     imageUrl:'https://fujifilm-x.b-cdn.net/wp-content/uploads/2017/04/9_thum_xf50mmf2-r-wr.jpg?width=400',
     asin:'B01MS6WINK',
     prices:{USD:499,AUD:699,EUR:419,GBP:369,JPY:67400,CAD:629,SGD:629},
+    priceSource: [
+      { url:'https://www.teds.com.au/products/fujifilm-xf-50mm-f2-r-wr-black', tier:'T3', title:'Ted\'s Cameras (Australia)', note:'AUD 699 confirmed: Teds Cameras (Australia) regular price 699.95 (compare-at; selling at 594.96) for Fujifilm XF 50mm F2 R WR Black', date:'2026-11-22' },
+    ],
     productUrl:'https://www.fujifilm-x.com/global/products/lenses/xf50mmf2-r-wr/',
   },
   'xf-56mm-f12-wr': {
@@ -1195,6 +1247,7 @@ const LENSES = {
       { url:'https://www.calumet.de/product/fujifilm-fujinon-xf-60mm-f2-4-r-macro', tier:'T3', title:'Calumet Germany', note:'EUR 699: manufacturer UVP (JSON-LD priceSpecification MSRP) printed by Calumet for Fujifilm FUJINON XF 60mm F2.4 R Macro; Calumet sells at 539.74, not used', date:'2026-11-21' },
       { url:'https://www.wexphotovideo.com/fuji-60mm-f24-r-macro-fujinon-black-lens-1528940/', tier:'T3', title:'Wex Photo Video (UK)', note:'GBP 569: Wex price for Fujifilm XF 60mm f2.4 R Macro Lens; no RRP or sale shown (not in Fujifilm UK store)', date:'2026-11-21' },
       { url:'https://thecamerastore.com/products/fujifilm-xf-60mm-f2-4-r-macro', tier:'T3', title:'The Camera Store (Calgary)', note:'CAD 869: The Camera Store regular price for FUJIFILM XF 60mm f2.4 R Macro; no sale; Camera Canada lists the same 869', date:'2026-11-21' },
+      { url:'https://thecamerastore.com/products/fujifilm-xf-60mm-f2-4-r-macro', tier:'T3', title:'The Camera Store (Canada)', note:'CAD 869 confirmed: The Camera Store (Canada) regular price 869 for FUJIFILM XF 60mm f2.4 R Macro', date:'2026-11-22' },
     ],
     productUrl:'https://www.fujifilm-x.com/global/products/lenses/xf60mmf24-r-macro/',
   },
@@ -1214,6 +1267,7 @@ const LENSES = {
       { url:'https://www.fujifilm-x.com/ja-jp/products/lenses/xf80mmf28-r-lm-ois-wr-macro/', tier:'T1', title:'Fujifilm Japan product page', note:'JPY 235400: 希望小売価格 (suggested retail price), tax included', date:'2026-11-21' },
       { url:'https://www.calumet.de/product/fujifilm-fujinon-xf-80mm-f2-8-r-lm-ois-wr-macro', tier:'T3', title:'Calumet Germany', note:'EUR 1299: manufacturer UVP (JSON-LD priceSpecification MSRP) printed by Calumet for Fujifilm FUJINON XF 80mm F2.8 R LM OIS WR Macro; Calumet sells at 1025, not used', date:'2026-11-21' },
       { url:'https://www.cameracanada.com/products/productDetail.aspx?pid=600019131', tier:'T3', title:'Camera Canada', note:'CAD 1619: Camera Canada price for Fujifilm FUJINON XF80mm F2.8 R LM OIS WR Macro, new, no sale; The Camera Store shows the same 1619 as regular on its open-box listing', date:'2026-11-21' },
+      { url:'https://eshop.fujifilm-x.com/de/fujinon-xf80mmf2-8-r-lm-ois-wr-makro.html', tier:'T1', title:'Official FUJIFILM eShop Germany', note:'EUR 1299: Official FUJIFILM eShop Germany lists 1299', date:'2026-11-23' },
     ],
     productUrl:'https://www.fujifilm-x.com/global/products/lenses/xf80mmf28-r-lm-ois-wr-macro/',
   },
@@ -1266,6 +1320,9 @@ const LENSES = {
     priceSource: [
       { url:'https://www.fujifilm.com/us/en/news/fujifilm-introduces-fujinon-xf400mm-lens', tier:'T1', note:'Announced 2026-09-04. Official US/CA launch price: USD $3,199.95, CAD $3,899.99, ships mid-Sept 2026. AUD $4,949 corroborated by cameraelectronic.com.au (direct) + photoreview.com.au (one AU retailer, Ted\'s Cameras, listed a lower $4,799.95 pre-order price — likely a promo, not used as RRP). EUR €2,899 per naturpixel.com reporting the EU-region announcement price. GBP £2,499 per UK press coverage (Wex Photo Video listing, Amateur Photographer). JPY ¥491,700 (tax-included), Fujifilm\'s own Japan mall (mall-jp.fujifilm.com), domestic release 2026-09-18. SGD not found anywhere — priceIncomplete.', date:'2026-09-05' },
       { url:'https://fujifilmacademy-ap.fujifilm.com/fujinon-xf400mm-f4-5-r-lm-ois-wr.html', tier:'T1', title:'Fujifilm Asia Pacific store (Singapore)', note:'SGD 4299: Fujifilm Asia Pacific Pte. Ltd. online store listed price (shown out of stock)', date:'2026-11-21' },
+      { url:'https://thecamerastore.com/products/fujifilm-xf-400mm-f4-5-r-lm-ois-wr', tier:'T3', title:'The Camera Store (Canada)', note:'CAD 3899 confirmed: The Camera Store (Canada) regular price 3899.99 for FUJIFILM XF 400mm f4.5 R LM OIS WR', date:'2026-11-22' },
+      { url:'https://eshop.fujifilm-x.com/uk/fujinon-xf400mmf4-5-r-lm-ois-wr.html', tier:'T1', title:'Official FUJIFILM eShop UK', note:'GBP 2499: Official FUJIFILM eShop UK lists 2499', date:'2026-11-23' },
+      { url:'https://eshop.fujifilm-x.com/de/fujinon-xf400mmf4-5-r-lm-ois-wr.html', tier:'T1', title:'Official FUJIFILM eShop Germany', note:'EUR 2899: Official FUJIFILM eShop Germany lists 2899', date:'2026-11-23' },
     ],
   },
   'xf-500mm-f56': {
@@ -1279,7 +1336,11 @@ const LENSES = {
     imageUrl:'https://fujifilm-x.b-cdn.net/wp-content/uploads/2024/10/product-thumb_xf500mmf56-1.jpg?width=400',
     asin:'B0DJQ1NB2H',
     prices:{USD:3599,AUD:4888,EUR:2799,GBP:2899,JPY:526900,CAD:4050,SGD:4149},
-    priceSource: { url:'https://mall-jp.fujifilm.com/shop/g/g16900408/', tier:'T1', title:'FUJIFILM MALL (Japan)', note:'JPY ¥526,900 (tax-included, body only) from Fujifilm\'s own Japan store https://mall-jp.fujifilm.com/shop/g/g16900408/ (2026-10-11), after Fujifilm\'s 2026-10-01 Japan-only price revision; previously ¥449,900.', date:'2026-10-11' },
+    priceSource: [
+      { url:'https://mall-jp.fujifilm.com/shop/g/g16900408/', tier:'T1', title:'FUJIFILM MALL (Japan)', note:'JPY ¥526,900 (tax-included, body only) from Fujifilm\'s own Japan store https://mall-jp.fujifilm.com/shop/g/g16900408/ (2026-10-11), after Fujifilm\'s 2026-10-01 Japan-only price revision; previously ¥449,900.', date:'2026-10-11' },
+      { url:'https://thecamerastore.com/products/fujifilm-xf-500mm-f5-6-r-lm-ois-wr', tier:'T3', title:'The Camera Store (Canada)', note:'CAD 4050 confirmed: The Camera Store (Canada) regular price 4049 for FUJIFILM XF 500mm f5.6 R LM OIS WR', date:'2026-11-22' },
+      { url:'https://eshop.fujifilm-x.com/uk/fujinon-xf500mmf5-6-r-lm-ois-wr.html', tier:'T1', title:'Official FUJIFILM eShop UK', note:'GBP 2899: Official FUJIFILM eShop UK lists 2899', date:'2026-11-23' },
+    ],
     productUrl:'https://www.fujifilm-x.com/global/products/lenses/xf500mmf56-r-lm-ois-wr/',
   },
 
@@ -1295,7 +1356,10 @@ const LENSES = {
     imageUrl:'https://fujifilm-x.b-cdn.net/wp-content/uploads/2018/07/1_thum_xf8-16mmf2_8-r-lm-wr.jpg?width=400',
     asin:'B07FQ83W5W',
     prices:{USD:1799,AUD:2999,EUR:1869,GBP:1599,JPY:299900,CAD:2749,SGD:2749},
-    priceSource: { url:'https://shopusa.fujifilm-x.com/xf8-16mmf2-8-xf8-16mmf2-8/', tier:'T1', title:'Fujifilm Shop USA', note:'new-unit price $1,799.95 ($1,499.95 is the refurbished option)', date:'2026-10-19' },
+    priceSource: [
+      { url:'https://shopusa.fujifilm-x.com/xf8-16mmf2-8-xf8-16mmf2-8/', tier:'T1', title:'Fujifilm Shop USA', note:'new-unit price $1,799.95 ($1,499.95 is the refurbished option)', date:'2026-10-19' },
+      { url:'https://www.teds.com.au/products/fujifilm-xf-8-16mm-f2-8-r-lm-wr-zoom', tier:'T3', title:'Ted\'s Cameras (Australia)', note:'AUD 2999 confirmed: Teds Cameras (Australia) regular price 2999.95 (compare-at; selling at 2549.96) for Fujifilm XF 8-16mm F2.8 R LM WR Zoom', date:'2026-11-22' },
+    ],
     productUrl:'https://www.fujifilm-x.com/global/products/lenses/xf8-16mmf28-r-lm-wr/',
   },
   'xf-10-24mm-f4': {
@@ -1313,6 +1377,7 @@ const LENSES = {
       { url:'https://www.adencamera.com/products/fujifilm-fujinon-xf10-24mm-f4-r-ois-wr-lens-bonus-600021990', tier:'T3', title:'Aden Camera (Toronto) - XF10-24mm F4 R OIS WR', note:'CAD 1249 -> 1349: $1,349.99 (compare-at the same, not on sale), Fujifilm Canada warranty, SKU 600021990. Fujifilm Canada\'s own site shows no price.', date:'2026-11-07' },
       { url:'https://www.bestbuy.ca/en-ca/search?search=fujifilm%20xf%2010-24mm%20f4%20r%20ois%20wr', tier:'T3', title:'Best Buy Canada - Fujinon XF 10-24mm f/4 R OIS WR', note:'$1,349.99 (search listing, 2026-11-07).', date:'2026-11-07' },
       { url:'https://shopusa.fujifilm-x.com/xf10-24mmf4-ii-xf10-24mmf4-ii/', tier:'T1', title:'Fujifilm Shop USA', note:'new-unit price $1,199.95 (the store calls it "XF10-24mmF4-II"; $999.95 is the refurbished option)', date:'2026-10-19' },
+      { url:'https://thecamerastore.com/products/fujifilm-xf-10-24mm-f4-r-ois-wr', tier:'T3', title:'The Camera Store (Canada)', note:'CAD 1349 confirmed: The Camera Store (Canada) regular price 1349 for FUJIFILM XF 10-24mm f4 R OIS WR', date:'2026-11-22' },
     ],
     productUrl:'https://www.fujifilm-x.com/global/products/lenses/xf10-24mmf4-r-ois-wr/',
   },
@@ -1327,6 +1392,10 @@ const LENSES = {
     imageUrl:'https://fujifilm-x.b-cdn.net/wp-content/uploads/2024/05/XF16-50mm_lens_feature-image-2.jpg?width=400',
     asin:'B0D3WSY8W9',
     prices:{USD:849,AUD:1099,EUR:649,GBP:700,JPY:104900,CAD:950,SGD:969},
+    priceSource: [
+      { url:'https://thecamerastore.com/products/fujifilm-xf-16-50mm-f2-8-48-r-lm-wr', tier:'T3', title:'The Camera Store (Canada)', note:'CAD 950 confirmed: The Camera Store (Canada) regular price 949.99 for FUJIFILM XF 16-50mm f2.8-4.8 R LM WR', date:'2026-11-22' },
+      { url:'https://eshop.fujifilm-x.com/uk/fujinon-xf16-50mmf2-8-4-8-r-lm-wr.html', tier:'T1', title:'Official FUJIFILM eShop UK', note:'GBP 700: Official FUJIFILM eShop UK lists 699', date:'2026-11-23' },
+    ],
     productUrl:'https://www.fujifilm-x.com/global/products/lenses/xf16-50mmf28-48-r-lm-wr/',
   },
   'xf-16-55mm-f28-ii': {
@@ -1347,6 +1416,7 @@ const LENSES = {
       { url:'https://eshop.fujifilm-x.com/uk/fujinon-xf16-55mmf2-8-r-lm-wr-ii.html', tier:'T1', title:'Fujifilm eShop UK', note:'GBP 1049 -> 1149 (£1,149.00, same as the Oct 2024 launch price)', date:'2026-11-13' },
       { url:'https://www.henrys.com/fujinon-xf-16-55mm-f-2-8-r-lm-wr-ii-lens-black/5637635841.p', tier:'T3', title:"Henry's", note:"CAD 1799 -> 1619 ($1,619.99 CAD, matching Fujifilm Canada's launch MSRP); Fujifilm Canada has no online store", date:'2026-11-13' },
       { url:'https://tkfoto.com.sg/products/fujifilm-xf-16-55mm-f2-8-r-lm-wr-ii', tier:'T3', title:'T K Foto Technic (Singapore)', note:'SGD 1799 -> 1849 (S$1,849 regular, no compare-at; out of stock). Only Singapore dealer found listing the Mark II; no official Fujifilm Singapore store price. JPY 194900 left unverified: mall-jp.fujifilm.com refused automated access', date:'2026-11-13' },
+      { url:'https://thecamerastore.com/products/fujifilm-xf-16-55mm-f2-8-r-lm-wr-ii', tier:'T3', title:'The Camera Store (Canada)', note:'CAD 1619 confirmed: The Camera Store (Canada) regular price 1619 (compare-at; selling at 1449) for FUJIFILM XF 16-55mm f2.8 R LM WR II', date:'2026-11-22' },
     ],
     specSources: [
       { url:'https://www.fujifilm-x.com/global/products/lenses/xf16-55mmf28-r-lm-wr-ii/specifications/', tier:'T1', title:'Fujifilm XF16-55mmF2.8 R LM WR II specifications', note:'16 elements in 11 groups (4 aspherical, 3 ED, 1 super ED); 11 rounded blades; F2.8-F22; MFD 0.3m; max magnification 0.21x (tele); φ78.3 x 95mm (wide); 410g; φ72mm filter. Corrected old -> new: weight 655 -> 410, length 106 -> 95, diameter 85 -> 78.3, filter 77 -> 72, magnification 0.16 -> 0.21, elements/groups 19/13 -> 16/11, blades 9 -> 11 (the old figures were mostly the 2015 original lens)', date:'2026-11-13' },
@@ -1369,6 +1439,7 @@ const LENSES = {
       { url:'https://fujifilmacademy-ap.fujifilm.com/xf16-80mm-f4-r-ois-wr.html', tier:'T1', title:'Fujifilm Asia Pacific store (Singapore)', note:'SGD 1229: Fujifilm Asia Pacific Pte. Ltd. online store listed price (shown out of stock)', date:'2026-11-21' },
       { url:'https://www.fujifilm-x.com/ja-jp/products/lenses/xf16-80mmf4-r-ois-wr/', tier:'T1', title:'Fujifilm Japan product page', note:'JPY 139150: 希望小売価格 (suggested retail price), tax included', date:'2026-11-21' },
       { url:'https://www.calumet.de/product/fujifilm-fujinon-xf-16-80mm-f4-r-ois-wr', tier:'T3', title:'Calumet Germany', note:'EUR 899: manufacturer UVP (JSON-LD priceSpecification MSRP) printed by Calumet for Fujifilm FUJINON XF 16-80mm F4 R OIS WR; Calumet sells at 749, not used', date:'2026-11-21' },
+      { url:'https://eshop.fujifilm-x.com/de/fujinon-xf16-80mmf4-r-ois-wr.html', tier:'T1', title:'Official FUJIFILM eShop Germany', note:'EUR 899: Official FUJIFILM eShop Germany lists 899', date:'2026-11-23' },
     ],
     productUrl:'https://www.fujifilm-x.com/global/products/lenses/xf16-80mmf4-r-ois-wr/',
   },
@@ -1396,7 +1467,10 @@ const LENSES = {
     imageUrl:'https://fujifilm-x.b-cdn.net/wp-content/uploads/2022/05/1_thum_xf18-120mmf4-lm-pz-wr_fgrt.jpg?width=400',
     asin:'B0B2HWW749',
     prices:{USD:999,AUD:1499,EUR:849,GBP:899,JPY:134900,CAD:1150,SGD:1249},
-    priceSource: { url:'https://shopusa.fujifilm-x.com/xf18-120mmf4-xf18-120mmf4/', tier:'T1', title:'Fujifilm Shop USA', note:'new-unit price $999.95 ($799.95 is the refurbished option)', date:'2026-10-19' },
+    priceSource: [
+      { url:'https://shopusa.fujifilm-x.com/xf18-120mmf4-xf18-120mmf4/', tier:'T1', title:'Fujifilm Shop USA', note:'new-unit price $999.95 ($799.95 is the refurbished option)', date:'2026-10-19' },
+      { url:'https://thecamerastore.com/products/fujifilm-xf-18-120mm-f4-lm-pz-wr', tier:'T3', title:'The Camera Store (Canada)', note:'CAD 1150 confirmed: The Camera Store (Canada) regular price 1149 for FUJIFILM XF 18-120mm f4 LM PZ WR', date:'2026-11-22' },
+    ],
     productUrl:'https://www.fujifilm-x.com/global/products/lenses/xf18-120mmf4-lm-pz-wr/',
   },
   'xf-18-135mm-f35-56': {
@@ -1436,7 +1510,9 @@ const LENSES = {
     imageUrl:'https://fujifilm-x.b-cdn.net/wp-content/uploads/2016/10/8_thum_xf55-200mmf3-5-4-8-r-lm-ois.jpg?width=400',
     asin:'B00CNZTPGA',
     prices:{USD:849,AUD:1089,EUR:649,GBP:549,JPY:104900,CAD:969,SGD:969},
-    priceSource: { url:'https://shopusa.fujifilm-x.com/xf55-200mmf3-5-4-8-xf55-200mmf3-5-4-8/', tier:'T1', title:'Fujifilm Shop USA', note:'new-unit price $849.95', date:'2026-10-19' },
+    priceSource: [
+      { url:'https://shopusa.fujifilm-x.com/xf55-200mmf3-5-4-8-xf55-200mmf3-5-4-8/', tier:'T1', title:'Fujifilm Shop USA', note:'new-unit price $849.95', date:'2026-10-19' },
+    ],
     productUrl:'https://www.fujifilm-x.com/global/products/lenses/xf55-200mmf35-48-r-lm-ois/',
   },
   'xf-70-300mm-f4-56': {
@@ -1544,6 +1620,9 @@ const LENSES = {
     imageUrl:'https://fujifilm-x.b-cdn.net/wp-content/uploads/2025/10/thumbnail_xc13-33mm-1.jpg?width=400',
     asin:'B0FZHD94P8',
     prices:{USD:400,AUD:649,EUR:316,GBP:329,JPY:65000,CAD:490,SGD:609},
+    priceSource: [
+      { url:'https://www.teds.com.au/products/fujifilm-xc-13-33mm-f3-5-6-3-ois', tier:'T3', title:'Ted\'s Cameras (Australia)', note:'AUD 649 confirmed: Teds Cameras (Australia) regular price 649.95 for Fujifilm XC 13-33mm F3.5-6.3 OIS', date:'2026-11-22' },
+    ],
     productUrl:'https://www.fujifilm-x.com/en-us/products/lenses/xc13-33mmf35-63-ois/',
   },
 
@@ -2073,11 +2152,13 @@ const LENSES = {
     imageUrl:'https://tamron-americas.com/wp-content/uploads/2026/09/b091-1200-x-1200-wht.webp',
     imageSource: { url:'https://tamron-americas.com/product/16-50mm-f-2-8-a/', tier:'T1', title:'Tamron Americas', note:'first product image from the Tamron Americas catalogue, the same shot the Sony E and Canon RF entries use; lens alone, mount not visible (Tamron shows one shot for all four mounts)', date:'2026-11-13' },
     asin:null,
-    prices:{USD:529,AUD:null,EUR:null,GBP:null,JPY:116600,CAD:729,SGD:null},
+    prices:{USD:529,AUD:699,EUR:null,GBP:null,JPY:116600,CAD:729,SGD:null},
     priceIncomplete:true,
     priceSource: [
       { url:'https://tamron-americas.com/product/16-50mm-f-2-8-a/', tier:'T1', title:'Tamron Americas store', note:'FUJIFILM X option (25111) data-us-price $529.00, data-ca-price CA $729.00', date:'2026-11-13' },
       { url:'https://www.tamron.com/jp/news/detail/b091_20261014.html', tier:'T1', title:'Tamron Japan release (2026-10-14)', note:'JPY: FUJIFILM X version 116,600 yen incl. tax. AUD/EUR/GBP/SGD: no official price published yet', date:'2026-11-13' },
+      { url:'https://www.teds.com.au/products/tamron-af-16-50mm-f2-8-fujifilm-x-mount', tier:'T3', title:'Ted\'s Cameras (Australia)', note:'AUD 699: Ted\'s regular price for Tamron AF 16-50mm F2.8 (Fujifilm X mount), no discount', date:'2026-11-22' },
+      { url:'https://www.digidirect.com.au/products/tamron-16-50mm-f2-8-a-for-fuji-x', tier:'T3', title:'digiDIRECT (Australia)', note:'AUD 699: digiDIRECT price for the Fuji X version, agrees with Ted\'s', date:'2026-11-22' },
     ],
     specSources: [{ url:'https://www.tamron.com/global/consumer/lenses/b091/spec.html', tier:'T1', title:'Tamron 16-50mm F2.8 A (B091) - Tamron global specifications', note:'FUJIFILM X column: φ64.4 x 79.9mm (front to mount face), 305g; 14 elements in 10 groups, MOD 0.15m (W) / 0.29m (T), 1:4.5 (W) / 1:4.8 (T), φ55mm filter, 7 circular blades, F16; no VC; VXD linear motor and moisture-resistant construction per the overview page. Release date (FUJIFILM X): December 17, 2026 - pre-release until then', date:'2026-11-13' }],
     productUrl:'https://www.tamron.com/global/consumer/lenses/b091/',

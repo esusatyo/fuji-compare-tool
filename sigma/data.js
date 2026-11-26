@@ -439,6 +439,9 @@ const LENSES = {
     imageUrl:'https://www.sigma-global.com/lenses/c022_20_2_product_img01.png',
     asin:'B09RR1GCJQ',
     prices:{USD:769,AUD:1199,EUR:899,GBP:699,JPY:108000,CAD:999,SGD:1099},
+    priceSource: [
+      { url:'https://www.sigmaphoto.com/20mm-f2-dg-dn-c', tier:'T1', title:'Sigma America store', note:'USD 769: Sigma America store price for the L-Mount option, no sale shown', date:'2026-11-23' },
+    ],
     productUrl:'https://www.sigma-global.com/en/lenses/c022_20_2/',
   },
   'sigma-24mm-f2-dg': {
@@ -478,6 +481,9 @@ const LENSES = {
     imageUrl:'https://www.sigma-global.com/lenses/c019_45_28_product_img01.png',
     asin:'B0FBXXP33H',
     prices:{USD:619,AUD:999,EUR:699,GBP:599,JPY:70000,CAD:799,SGD:899},
+    priceSource: [
+      { url:'https://www.sigmaphoto.com/45mm-f2-8-dg-dn-c', tier:'T1', title:'Sigma America store', note:'USD 619: Sigma America store price for the L-Mount option, no sale shown', date:'2026-11-23' },
+    ],
     productUrl:'https://www.sigma-global.com/en/lenses/c019_45_28/',
   },
   'sigma-50mm-f2-dg': {
@@ -536,6 +542,9 @@ const LENSES = {
     imageSource: { url:'https://www.sigma-global.com/en/lenses/c021_90_28/', tier:'T1', note:'official sigma-global.com product page; barrel reads "90mm 1:2.8 DG DN" and "SIGMA"', date:'2026-08-17' },
     asin:'B09FRL6FX2',
     prices:{USD:719,AUD:1099,EUR:799,GBP:599,JPY:92000,CAD:899,SGD:999},
+    priceSource: [
+      { url:'https://www.sigmaphoto.com/90mm-f2-8-dg-dn-c', tier:'T1', title:'Sigma America store', note:'USD 719: Sigma America store price for the L-Mount option, no sale shown', date:'2026-11-23' },
+    ],
     productUrl:'https://www.sigma-global.com/en/lenses/c021_90_28/',
   },
   'sigma-16-28mm-f28-dg': {
@@ -859,15 +868,15 @@ const LENSES = {
     weatherSealed:true, ois:false, oisStops:null, year:2019, discontinued:false,
     imageUrl:'https://www.sigma-global.com/lenses/a019_14_24_28_product_img01.png',
     asin:'B07V49L2XG',
-    prices:{USD:1539,AUD:null,EUR:1499,GBP:1319,JPY:150975,CAD:1999,SGD:1988},
+    prices:{USD:1539,AUD:2147,EUR:1499,GBP:1319,JPY:150975,CAD:1999,SGD:1988},
     priceSource: [
       { url:'https://www.sigmacanada.ca/products/14-24mm-f2-8-dg-dn-art', tier:'T1', title:'Sigma Canada store', note:'CAD 1999: Sigma Canada store regular price for the L-Mount variant (on sale at 1899.95, not used)', date:'2026-11-21' },
       { url:'https://www.sigma-foto.de/14-24mm-f2-8-dg-dn-a', tier:'T1', title:'Sigma Germany store', note:'EUR 1499: Sigma Germany official store regular price (L variant)', date:'2026-11-21' },
       { url:'https://www.wexphotovideo.com/sigma-14-24mm-f2-8-dg-dn-lens-l-mount-1709004/', tier:'T3', title:'Wex Photo Video (UK)', note:'GBP 1319: Wex Photo Video price, no sale shown (sigma-14-24mm-f2-8-dg-dn-lens-l-mount)', date:'2026-11-21' },
       { url:'https://shop.kitamura.jp/ec/pd/0085126213695', tier:'T3', title:'Camera no Kitamura (Japan)', note:'JPY 150975 tax-included: Kitamura regular price for シグマ 14-24mm F2.8 DG DN Art Lマウント用; the maker sets no Japanese list price (open price)', date:'2026-11-21' },
       { url:'https://www.sigma-photo.com.sg/lenses', tier:'T1', title:'Sigma Marketing (Singapore) official site', note:'SGD 1988: Sigma Marketing (Singapore) official lens price list, "14-24mm F2.8 DG DN | A" (one price for all mounts); Cathay Photo and Alan Photo also list 1988', date:'2026-11-21' },
+      { url:'https://sigmaphoto.com.au/products/4213969/sigma-14-24mm-f-2-8-dg-dn-art-lens-for-l-mount', tier:'T1', title:'Sigma Australia store', note:'AUD 2147: Sigma Australia (official distributor, C.R. Kennedy) store price, no sale shown (Sigma AF 14-24mm f/2.8 Art for L-Mount)', date:'2026-11-23' },
     ],
-    priceIncomplete:true,
     productUrl:'https://www.sigma-global.com/en/lenses/a019_14_24_28/',
   },
   'sigma-28-105mm-f28-dg': {
