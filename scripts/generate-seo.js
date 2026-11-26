@@ -846,6 +846,10 @@ ${k.lenses.map(({ lens: l, brand, slug }) => `          <tr><th scope="row"><a h
   <meta property="og:description" content="${esc(desc)}">
   <meta property="og:url" content="${url}">
   ${shareTags(site, card)}
+  ${ldScript(breadcrumbLd(site, [
+    { name: 'Lens mounts', url: `${site.baseUrl}/mount/` },
+    { name: `${m.name} cameras and lenses`, url },
+  ]))}
   <script data-goatcounter="https://esusatyo.goatcounter.com/count" defer src="https://gc.zgo.at/count.js"></script>
   <script defer src="${prefix}analytics.js"></script>
   ${assetLinks(prefix)}
@@ -1050,6 +1054,10 @@ function guidePageHTML(site, page, rendered, card = null) {
   <meta property="article:modified_time" content="${dateISO}">
   ${shareTags(site, card)}
   <script type="application/ld+json">${JSON.stringify(ld).replace(/</g, '\\u003c')}</script>
+  ${ldScript(breadcrumbLd(site, [
+    { name: page.plural, url: `${site.baseUrl}/${page.dir}/` },
+    { name: m.headline, url },
+  ]))}
   <script data-goatcounter="https://esusatyo.goatcounter.com/count" defer src="https://gc.zgo.at/count.js"></script>
   <script defer src="${prefix}analytics.js"></script>
   ${assetLinks(prefix)}
@@ -1235,6 +1243,7 @@ ${p.related.map(r => `        <li><a href="${r.href}" data-goatcounter-click="si
   <meta property="og:description" content="${esc(desc)}">
   <meta property="og:url" content="${p.url}">
   ${shareTags(site, p.card)}
+  ${ldScript(breadcrumbLd(site, [p.crumb, { name: `${p.h1} size comparison`, url: p.url }]))}
   <script data-goatcounter="https://esusatyo.goatcounter.com/count" defer src="https://gc.zgo.at/count.js"></script>
   <script defer src="${p.prefix}analytics.js"></script>
   ${assetLinks(p.prefix)}
@@ -1310,6 +1319,7 @@ function sizePageHTML(brand, data, site, aId, bId, allPairs, hasSizePage = () =>
     prefix: '../../',
     backHref: '../',
     backLabel: `All ${brandName} cameras`,
+    crumb: { name: `${brandName} cameras`, url: `${site.baseUrl}/${brand}/` },
     eyebrow: brandName,
     h1: `${a.name} vs ${b.name}`,
     entries: sizeEntries(a.name, a, b.name, b),
@@ -1337,6 +1347,7 @@ function crossSizePageHTML(site, m, all, hasSizePage = () => false, card = null)
     prefix: '../',
     backHref: './',
     backLabel: 'Camera size comparison',
+    crumb: { name: 'Camera size comparison', url: `${site.baseUrl}/size/` },
     eyebrow: `${a.brandName} vs ${b.brandName}`,
     h1: crossTitle(m),
     entries: sizeEntries(fullName(a), a.cam, fullName(b), b.cam),
@@ -1429,6 +1440,10 @@ function vsPageHTML(brand, data, site, aId, bId, allPairs, indexable = true, car
   const title = `${brandName} ${a.name} vs ${b.name}: Spec Comparison`;
   const desc = `Compare the ${brandName} ${a.name} (${a.year}) and ${b.name} (${b.year}) side by side — price, sensor, stabilization, video, weight and more.`;
   const url = `${site.baseUrl}/${brand}/vs/${aId}-vs-${bId}`;
+  const crumbs = breadcrumbLd(site, [
+    { name: `${brandName} cameras`, url: `${site.baseUrl}/${brand}/` },
+    { name: `${brandName} ${a.name} vs ${b.name}`, url },
+  ]);
   const ld = {
     '@context': 'https://schema.org',
     '@type': 'ItemList',
@@ -1471,6 +1486,7 @@ ${related.map(([x, y]) =>
   <meta property="og:url" content="${url}">
   ${shareTags(site, card)}
   <script type="application/ld+json">${JSON.stringify(ld)}</script>
+  ${ldScript(crumbs)}
   <!-- Umami analytics — temporarily disabled, kept for re-enabling.
   <script defer src="https://cloud.umami.is/script.js" data-website-id="365e9ee6-1fb5-4a0d-9c74-f6255522a196"></script> -->
   <script data-goatcounter="https://esusatyo.goatcounter.com/count" defer src="https://gc.zgo.at/count.js"></script>
@@ -1722,6 +1738,10 @@ function crossVsPageHTML(site, m, all, indexable = true, card = null, sizeHref =
   const title = `${crossTitle(m)}: Spec Comparison`;
   const desc = `Compare the ${a.brandName} ${a.cam.name} (${a.cam.year}) and ${b.brandName} ${b.cam.name} (${b.cam.year}) side by side — price, sensor, stabilization, video, weight and more.`;
   const url = `${site.baseUrl}/${cleanUrl(m.file)}`;
+  const crumbs = breadcrumbLd(site, [
+    { name: 'Cross-brand compare', url: `${site.baseUrl}/compare/` },
+    { name: crossTitle(m), url },
+  ]);
   const ld = {
     '@context': 'https://schema.org',
     '@type': 'ItemList',
@@ -1759,6 +1779,7 @@ ${related.map(x => `        <li><a href="${cleanHref(path.basename(x.file))}" da
   <meta property="og:url" content="${url}">
   ${shareTags(site, card)}
   <script type="application/ld+json">${JSON.stringify(ld)}</script>
+  ${ldScript(crumbs)}
   <!-- Umami analytics — temporarily disabled, kept for re-enabling.
   <script defer src="https://cloud.umami.is/script.js" data-website-id="365e9ee6-1fb5-4a0d-9c74-f6255522a196"></script> -->
   <script data-goatcounter="https://esusatyo.goatcounter.com/count" defer src="https://gc.zgo.at/count.js"></script>
@@ -2183,6 +2204,19 @@ function rootHeadBlock(site, brandNames, card = null) {
 // One JSON-LD <script>. "<" is escaped so no value can close the tag.
 function ldScript(obj) {
   return `<script type="application/ld+json">${JSON.stringify(obj).replace(/</g, '\\u003c')}</script>`;
+}
+
+// BreadcrumbList for a content page: Home → section → page, where the section
+// is the page's visible back link and the last item its canonical URL. Google
+// shows the trail in place of the URL in results. `trail` is [{ name, url }]
+// after Home, absolute URLs.
+function breadcrumbLd(site, trail) {
+  const items = [{ name: site.siteName, url: `${site.baseUrl}/` }, ...trail];
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: items.map((c, i) => ({ '@type': 'ListItem', position: i + 1, name: c.name, item: c.url })),
+  };
 }
 
 // WebSite + Organization for the homepage. Only facts the site states about
@@ -2993,4 +3027,4 @@ if (require.main === module) {
   console.log(`generate-seo: ${files.size} artifacts (${written} written, ${removed} stale removed)`);
 }
 
-module.exports = { ldScript, siteLd, heroText, staticH1HTML, inlineHeroTitle, lensMountText, VS_ROWS, guidePageHTML, guideIndexHTML, guideShareCard, ROOT_TITLE, mountSlug, mountModel, mountPageHTML, mountIndexHTML, MOUNT_INDEX_TITLE, keySpecsHTML, sizeEntries, vsSizeSectionHTML, sizePageHTML, crossSizePageHTML, sizeHubHeadBlock, sizeHubBodyBlock, SIZE_HUB_TITLE, kitHeadBlock, kitBodyBlock, KIT_TITLE, cameraIndex, homeConfigScript, buildSite, GLANCE_COLS, sizeText, brandGlanceHTML, uniqueItemCount, cardHash, lastmodManifest, sitemapHashes, LASTMOD_MANIFEST, vsCardHTML, infoCardHTML, shareTags, CARD_W, CARD_H, LANDING_CARD_ORDER, ALL_BRANDS_MOSAIC, orderLandingBrands, allBrandsPhotoHTML, siteConfig, curatedPairs, successorPairKeys, resolvePins, withPins, PINNED_VS_PAIRS, SUCCESSOR_INDEX_SINCE, relatedPairs, vsPageHTML, vsSummary, vsSummaryFacts, resolveMatchups, crossVsPageHTML, crossTitle, CROSS_BRAND_MATCHUPS, compareHeadBlock, compareBodyBlock, brandHeadBlock, rootHeadBlock, brandBodyBlock, rootBodyBlock, withHeadBlock, withBodyBlock, sitemapXML, robotsTxt, buildAll, SEO_BEGIN, SEO_END, SEO_BODY_BEGIN, SEO_BODY_END, ID_HEAD_BEGIN, ID_HEAD_END, ID_HEADER_BEGIN, ID_HEADER_END, ID_FOOTER_BEGIN, ID_FOOTER_END, identityToken, logoMark, cleanUrl, cleanHref, themeToggleHTML, collectReferences, citationText, refHostname, REFERENCE_ROWS, referenceRowsHTML };
+module.exports = { breadcrumbLd, ldScript, siteLd, heroText, staticH1HTML, inlineHeroTitle, lensMountText, VS_ROWS, guidePageHTML, guideIndexHTML, guideShareCard, ROOT_TITLE, mountSlug, mountModel, mountPageHTML, mountIndexHTML, MOUNT_INDEX_TITLE, keySpecsHTML, sizeEntries, vsSizeSectionHTML, sizePageHTML, crossSizePageHTML, sizeHubHeadBlock, sizeHubBodyBlock, SIZE_HUB_TITLE, kitHeadBlock, kitBodyBlock, KIT_TITLE, cameraIndex, homeConfigScript, buildSite, GLANCE_COLS, sizeText, brandGlanceHTML, uniqueItemCount, cardHash, lastmodManifest, sitemapHashes, LASTMOD_MANIFEST, vsCardHTML, infoCardHTML, shareTags, CARD_W, CARD_H, LANDING_CARD_ORDER, ALL_BRANDS_MOSAIC, orderLandingBrands, allBrandsPhotoHTML, siteConfig, curatedPairs, successorPairKeys, resolvePins, withPins, PINNED_VS_PAIRS, SUCCESSOR_INDEX_SINCE, relatedPairs, vsPageHTML, vsSummary, vsSummaryFacts, resolveMatchups, crossVsPageHTML, crossTitle, CROSS_BRAND_MATCHUPS, compareHeadBlock, compareBodyBlock, brandHeadBlock, rootHeadBlock, brandBodyBlock, rootBodyBlock, withHeadBlock, withBodyBlock, sitemapXML, robotsTxt, buildAll, SEO_BEGIN, SEO_END, SEO_BODY_BEGIN, SEO_BODY_END, ID_HEAD_BEGIN, ID_HEAD_END, ID_HEADER_BEGIN, ID_HEADER_END, ID_FOOTER_BEGIN, ID_FOOTER_END, identityToken, logoMark, cleanUrl, cleanHref, themeToggleHTML, collectReferences, citationText, refHostname, REFERENCE_ROWS, referenceRowsHTML };

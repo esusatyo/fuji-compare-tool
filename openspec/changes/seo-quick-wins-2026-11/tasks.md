@@ -15,7 +15,7 @@
 
 ## 4. Breadcrumbs
 
-- [ ] 4.1 `BreadcrumbList` JSON-LD on vs-pages, size pages, mount pages, guides and articles; test; regenerate
+- [x] 4.1 `BreadcrumbList` JSON-LD on vs-pages, size pages, mount pages, guides and articles; test; regenerate
 
 ## 5. Structured-data validation
 
