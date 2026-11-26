@@ -16,8 +16,8 @@
     "lastmod": "2026-11-20"
   },
   "canon/": {
-    "hash": "b566cee3e14f6661",
-    "lastmod": "2026-11-23"
+    "hash": "086b700c3d58664d",
+    "lastmod": "2026-11-26"
   },
   "canon/size/eos-r1-vs-eos-r3": {
     "hash": "54774b331becd474",
@@ -40,20 +40,20 @@
     "lastmod": "2026-11-23"
   },
   "canon/size/eos-r6-iii-vs-eos-r5": {
-    "hash": "70159883b76e1d7f",
-    "lastmod": "2026-11-23"
+    "hash": "3c9a792055861159",
+    "lastmod": "2026-11-26"
   },
   "canon/size/eos-r6-iii-vs-eos-r5c": {
-    "hash": "29371aeeb7013f1f",
-    "lastmod": "2026-11-23"
+    "hash": "9942cc67f64fb25d",
+    "lastmod": "2026-11-26"
   },
   "canon/size/eos-r6-iii-vs-eos-r6-ii": {
-    "hash": "f2c9e4162bc45a81",
-    "lastmod": "2026-11-23"
+    "hash": "6041d595b19d630e",
+    "lastmod": "2026-11-26"
   },
   "canon/size/eos-r6-v-vs-eos-r6-iii": {
-    "hash": "7d04a28ae8d917ec",
-    "lastmod": "2026-11-23"
+    "hash": "488235999b934995",
+    "lastmod": "2026-11-26"
   },
   "canon/size/eos-r8-ii-vs-eos-r8": {
     "hash": "c885e11ae43fe832",
@@ -84,20 +84,20 @@
     "lastmod": "2026-11-23"
   },
   "canon/vs/eos-r6-iii-vs-eos-r5": {
-    "hash": "43da37c18ae7c561",
-    "lastmod": "2026-11-23"
+    "hash": "8bbc717dfa48bb7b",
+    "lastmod": "2026-11-26"
   },
   "canon/vs/eos-r6-iii-vs-eos-r5c": {
-    "hash": "74533db13628db78",
-    "lastmod": "2026-11-23"
+    "hash": "3cc2a1ceabd8c9c2",
+    "lastmod": "2026-11-26"
   },
   "canon/vs/eos-r6-iii-vs-eos-r6-ii": {
-    "hash": "389774b14d07e514",
-    "lastmod": "2026-11-23"
+    "hash": "239f55464644ad79",
+    "lastmod": "2026-11-26"
   },
   "canon/vs/eos-r6-v-vs-eos-r6-iii": {
-    "hash": "5c2d4bdf4481a49a",
-    "lastmod": "2026-11-23"
+    "hash": "6b4f5d9ed774b627",
+    "lastmod": "2026-11-26"
   },
   "canon/vs/eos-r8-ii-vs-eos-r8": {
     "hash": "ebddb405367f557b",
@@ -112,8 +112,8 @@
     "lastmod": "2026-11-13"
   },
   "fujifilm/": {
-    "hash": "bafab9c388695687",
-    "lastmod": "2026-11-23"
+    "hash": "c231e0df6d732d9e",
+    "lastmod": "2026-11-26"
   },
   "fujifilm/size/x-t30iii-vs-x-t30ii": {
     "hash": "efc438294d4a007d",
@@ -148,8 +148,8 @@
     "lastmod": "2026-11-13"
   },
   "leica/": {
-    "hash": "c7ee0a3a517ea6ed",
-    "lastmod": "2026-11-23"
+    "hash": "5eb64874313ab018",
+    "lastmod": "2026-11-26"
   },
   "mount/": {
     "hash": "bd1eb10c4a7e22bb",
@@ -208,8 +208,8 @@
     "lastmod": "2026-11-22"
   },
   "olympus/": {
-    "hash": "0a483fdd6532a5fc",
-    "lastmod": "2026-11-22"
+    "hash": "84ea47c9933444ec",
+    "lastmod": "2026-11-26"
   },
   "olympus/size/om-3-vs-om-1": {
     "hash": "78c1d1ab31c8210f",

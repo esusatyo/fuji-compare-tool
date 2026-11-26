@@ -1512,7 +1512,6 @@ const LENSES = {
     prices:{USD:849,AUD:1089,EUR:649,GBP:549,JPY:104900,CAD:969,SGD:969},
     priceSource: [
       { url:'https://shopusa.fujifilm-x.com/xf55-200mmf3-5-4-8-xf55-200mmf3-5-4-8/', tier:'T1', title:'Fujifilm Shop USA', note:'new-unit price $849.95', date:'2026-10-19' },
-      { url:'https://www.teds.com.au/products/fujifilm-xf-55-200mm-f3-5-4-8-r-lm-ois', tier:'T3', title:'Ted\'s Cameras (Australia)', note:'AUD 1089 confirmed: Teds Cameras (Australia) regular price 1099.95 (compare-at; selling at 934.96) for Fujifilm XF 55-200mm F3.5-4.8 R LM OIS', date:'2026-11-22' },
     ],
     productUrl:'https://www.fujifilm-x.com/global/products/lenses/xf55-200mmf35-48-r-lm-ois/',
   },
