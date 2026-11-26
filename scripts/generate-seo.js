@@ -1372,12 +1372,13 @@ function sizeHubHeadBlock(site, brandNames, nCams, card = null) {
 // Crawlable block for size/index.html: what the page is, and a link to every
 // dedicated size page (so none is an orphan). `groups` is
 // [{ heading, links: [{ href, label }] }].
-function sizeHubBodyBlock(groups, brandNames, guides = []) {
+function sizeHubBodyBlock(groups, brandNames, guides = [], heroTitle = null) {
   const lists = groups.filter(g => g.links.length).map(g => `    <h3>${esc(g.heading)}</h3>
     <ul>
 ${g.links.map(l => `      <li><a href="${l.href}">${esc(l.label)} size</a></li>`).join('\n')}
     </ul>`).join('\n');
-  return `${SEO_BODY_BEGIN}
+  return `${SEO_BODY_BEGIN}${heroTitle ? `
+  ${staticH1HTML(heroTitle)}` : ''}
   <section class="seo-links" aria-label="Camera size comparisons">
     <h2>Camera size comparisons</h2>
     <p>Pick any two to four cameras from ${esc(prose(brandNames))} above and see them drawn to scale from the front, the top and the side, with a credit card for reference. The outlines are each maker's stated outer dimensions, shown as rounded boxes; width, height, depth and weight are listed underneath. Popular size comparisons:</p>
@@ -1406,8 +1407,9 @@ function kitHeadBlock(site, brandNames, nCams, nLenses, card = null) {
 
 // Crawlable block for kit/index.html: what the page does, in words, and links
 // to each brand's own pages. `brands` is [{ slug, name }].
-function kitBodyBlock(brands) {
-  return `${SEO_BODY_BEGIN}
+function kitBodyBlock(brands, heroTitle = null) {
+  return `${SEO_BODY_BEGIN}${heroTitle ? `
+  ${staticH1HTML(heroTitle)}` : ''}
   <section class="seo-links" aria-label="About the kit builder">
     <h2>How the kit builder works</h2>
     <p>Choose a camera body from ${esc(prose(brands.map(b => b.name)))}, then add up to six lenses. Only lenses for that body's mount are offered, including third-party lenses and, on shared mounts such as L-Mount and Micro Four Thirds, lenses from the other brands that use it. The kit builder adds up the weight and the list price of the body and its lenses, shows the focal range they cover and the filter sizes they take, and can put a second kit beside the first to compare.</p>
@@ -1835,6 +1837,29 @@ function prose(names) {
   return `${names.slice(0, -1).join(', ')} and ${names[names.length - 1]}`;
 }
 
+// ─── Static <h1> for tool pages ──────────────
+// Brand pages, /compare/, /size/ and /kit/ render their hero (and its <h1>)
+// in the browser, so a crawler that doesn't run JavaScript would see a page
+// with no heading. Their body block therefore opens with the hero title as a
+// static <h1>; engine.js moves that element into its hero instead of rendering
+// a second one, so the rendered page still has exactly one <h1>, at the top.
+// The text is the hero title the engine shows, tags stripped.
+function heroText(heroTitle) {
+  return String(heroTitle).replace(/<[^>]*>/g, '').replace(/\s+/g, ' ').trim();
+}
+
+function staticH1HTML(heroTitle) {
+  return `<h1 class="seo-h1" data-static-hero>${esc(heroText(heroTitle))}</h1>`;
+}
+
+// The heroTitle of a page's hand-written inline window.COMPARE_CONFIG
+// (compare/, size/, kit/): the one place that page's hero title is written.
+function inlineHeroTitle(html, file) {
+  const m = html.match(/window\.COMPARE_CONFIG\s*=\s*\{[\s\S]*?\bheroTitle:\s*'([^']*)'/);
+  if (!m) throw new Error(`${file}: no heroTitle in its inline window.COMPARE_CONFIG — the static <h1> needs it`);
+  return m[1];
+}
+
 // ─── Compare-page blocks ─────────────────────
 function compareHeadBlock(site, brandNames, nCams, card = null) {
   return metaBlock(
@@ -1849,10 +1874,11 @@ function compareHeadBlock(site, brandNames, nCams, card = null) {
 
 // Crawlable block for compare/index.html linking every cross-brand
 // vs-page, so none of them is an orphan (mirrors the brand pages).
-function compareBodyBlock(matchups, brandNames) {
+function compareBodyBlock(matchups, brandNames, heroTitle = null) {
   const items = matchups.map(m =>
     `      <li><a href="../${cleanHref(m.file)}">${esc(crossTitle(m))}</a></li>`).join('\n');
-  return `${SEO_BODY_BEGIN}
+  return `${SEO_BODY_BEGIN}${heroTitle ? `
+  ${staticH1HTML(heroTitle)}` : ''}
   <section class="seo-links" aria-label="Popular cross-brand comparisons">
     <h2>Popular cross-brand camera comparisons</h2>
     <p>Pick any 2–4 cameras from ${esc(prose(brandNames))} and compare them side by side. Popular head-to-head matchups across brands:</p>
@@ -2223,6 +2249,7 @@ function brandBodyBlock(brand, data, site, pairs, isIndexable = () => false, mou
     `      <li><a href="vs/${a}-vs-${b}">${esc(name)} ${esc(cams[a].name)} vs ${esc(cams[b].name)}</a></li>`
   ).join('\n');
   return `${SEO_BODY_BEGIN}
+  ${staticH1HTML(data.BRAND_CONFIG.cameras.heroTitle)}
   ${brandGlanceHTML(brand, data, isIndexable, pairs, mounts)}
   <section class="seo-links" aria-label="Popular ${esc(name)} comparisons">
     <h2>Popular ${esc(name)} camera comparisons</h2>
@@ -2820,7 +2847,7 @@ function buildSite({ today = new Date().toISOString().slice(0, 10) } = {}) {
   const totalCams = uniqueItemCount(brandData, 'CAMERAS');
   let cmpHtml = fs.readFileSync(path.join(ROOT, cmp), 'utf8');
   cmpHtml = withHeadBlock(cmpHtml, compareHeadBlock(site, brandNames, totalCams, addCard(compareShareCard(brandNames, totalCams))), cmp);
-  cmpHtml = withBodyBlock(cmpHtml, compareBodyBlock(matchups, brandNames), cmp);
+  cmpHtml = withBodyBlock(cmpHtml, compareBodyBlock(matchups, brandNames, inlineHeroTitle(cmpHtml, cmp)), cmp);
   files.set(cmp, cmpHtml);
 
   // The interactive size page: the compare tool, size section first. It shares
@@ -2828,7 +2855,7 @@ function buildSite({ today = new Date().toISOString().slice(0, 10) } = {}) {
   const hub = path.join('size', 'index.html');
   let hubHtml = fs.readFileSync(path.join(ROOT, hub), 'utf8');
   hubHtml = withHeadBlock(hubHtml, sizeHubHeadBlock(site, brandNames, totalCams, compareShareCard(brandNames, totalCams)), hub);
-  hubHtml = withBodyBlock(hubHtml, sizeHubBodyBlock(sizeGroups, brandNames, guides), hub);
+  hubHtml = withBodyBlock(hubHtml, sizeHubBodyBlock(sizeGroups, brandNames, guides, inlineHeroTitle(hubHtml, hub)), hub);
   files.set(hub, hubHtml);
 
   const totalLenses = uniqueItemCount(brandData, 'LENSES');
@@ -2863,7 +2890,7 @@ function buildSite({ today = new Date().toISOString().slice(0, 10) } = {}) {
   const kitPage = path.join('kit', 'index.html');
   let kitHtml = fs.readFileSync(path.join(ROOT, kitPage), 'utf8');
   kitHtml = withHeadBlock(kitHtml, kitHeadBlock(site, brandNames, totalCams, totalLenses, compareShareCard(brandNames, totalCams)), kitPage);
-  kitHtml = withBodyBlock(kitHtml, kitBodyBlock(brandInfo.map(b => ({ slug: b.slug, name: b.name }))), kitPage);
+  kitHtml = withBodyBlock(kitHtml, kitBodyBlock(brandInfo.map(b => ({ slug: b.slug, name: b.name })), inlineHeroTitle(kitHtml, kitPage)), kitPage);
   files.set(kitPage, kitHtml);
   const homeCard = addCard(homeShareCard(brandNames, totalCams, totalLenses));
 
@@ -2929,4 +2956,4 @@ if (require.main === module) {
   console.log(`generate-seo: ${files.size} artifacts (${written} written, ${removed} stale removed)`);
 }
 
-module.exports = { lensMountText, VS_ROWS, guidePageHTML, guideIndexHTML, guideShareCard, ROOT_TITLE, mountSlug, mountModel, mountPageHTML, mountIndexHTML, MOUNT_INDEX_TITLE, keySpecsHTML, sizeEntries, vsSizeSectionHTML, sizePageHTML, crossSizePageHTML, sizeHubHeadBlock, sizeHubBodyBlock, SIZE_HUB_TITLE, kitHeadBlock, kitBodyBlock, KIT_TITLE, cameraIndex, homeConfigScript, buildSite, GLANCE_COLS, sizeText, brandGlanceHTML, uniqueItemCount, cardHash, lastmodManifest, sitemapHashes, LASTMOD_MANIFEST, vsCardHTML, infoCardHTML, shareTags, CARD_W, CARD_H, LANDING_CARD_ORDER, ALL_BRANDS_MOSAIC, orderLandingBrands, allBrandsPhotoHTML, siteConfig, curatedPairs, successorPairKeys, resolvePins, withPins, PINNED_VS_PAIRS, SUCCESSOR_INDEX_SINCE, relatedPairs, vsPageHTML, vsSummary, vsSummaryFacts, resolveMatchups, crossVsPageHTML, crossTitle, CROSS_BRAND_MATCHUPS, compareHeadBlock, compareBodyBlock, brandHeadBlock, rootHeadBlock, brandBodyBlock, rootBodyBlock, withHeadBlock, withBodyBlock, sitemapXML, robotsTxt, buildAll, SEO_BEGIN, SEO_END, SEO_BODY_BEGIN, SEO_BODY_END, ID_HEAD_BEGIN, ID_HEAD_END, ID_HEADER_BEGIN, ID_HEADER_END, ID_FOOTER_BEGIN, ID_FOOTER_END, identityToken, logoMark, cleanUrl, cleanHref, themeToggleHTML, collectReferences, citationText, refHostname, REFERENCE_ROWS, referenceRowsHTML };
+module.exports = { heroText, staticH1HTML, inlineHeroTitle, lensMountText, VS_ROWS, guidePageHTML, guideIndexHTML, guideShareCard, ROOT_TITLE, mountSlug, mountModel, mountPageHTML, mountIndexHTML, MOUNT_INDEX_TITLE, keySpecsHTML, sizeEntries, vsSizeSectionHTML, sizePageHTML, crossSizePageHTML, sizeHubHeadBlock, sizeHubBodyBlock, SIZE_HUB_TITLE, kitHeadBlock, kitBodyBlock, KIT_TITLE, cameraIndex, homeConfigScript, buildSite, GLANCE_COLS, sizeText, brandGlanceHTML, uniqueItemCount, cardHash, lastmodManifest, sitemapHashes, LASTMOD_MANIFEST, vsCardHTML, infoCardHTML, shareTags, CARD_W, CARD_H, LANDING_CARD_ORDER, ALL_BRANDS_MOSAIC, orderLandingBrands, allBrandsPhotoHTML, siteConfig, curatedPairs, successorPairKeys, resolvePins, withPins, PINNED_VS_PAIRS, SUCCESSOR_INDEX_SINCE, relatedPairs, vsPageHTML, vsSummary, vsSummaryFacts, resolveMatchups, crossVsPageHTML, crossTitle, CROSS_BRAND_MATCHUPS, compareHeadBlock, compareBodyBlock, brandHeadBlock, rootHeadBlock, brandBodyBlock, rootBodyBlock, withHeadBlock, withBodyBlock, sitemapXML, robotsTxt, buildAll, SEO_BEGIN, SEO_END, SEO_BODY_BEGIN, SEO_BODY_END, ID_HEAD_BEGIN, ID_HEAD_END, ID_HEADER_BEGIN, ID_HEADER_END, ID_FOOTER_BEGIN, ID_FOOTER_END, identityToken, logoMark, cleanUrl, cleanHref, themeToggleHTML, collectReferences, citationText, refHostname, REFERENCE_ROWS, referenceRowsHTML };

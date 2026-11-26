@@ -5,9 +5,9 @@
 
 ## 2. Static `<h1>`
 
-- [ ] 2.1 `generate-seo.js`: static `<h1 data-static-hero>` in the body block of every brand page and `/compare/`, `/size/`, `/kit/`
-- [ ] 2.2 `engine.js`: adopt the static `<h1>` as the hero; `engine.css` `.seo-h1`
-- [ ] 2.3 Tests: one `<h1>` in every generated page's static HTML; one after a jsdom render; regenerate
+- [x] 2.1 `generate-seo.js`: static `<h1 data-static-hero>` in the body block of every brand page and `/compare/`, `/size/`, `/kit/`
+- [x] 2.2 `engine.js`: adopt the static `<h1>` as the hero; `engine.css` `.seo-h1`
+- [x] 2.3 Tests: one `<h1>` in every generated page's static HTML; one after a jsdom render; regenerate
 
 ## 3. Homepage structured data
 
