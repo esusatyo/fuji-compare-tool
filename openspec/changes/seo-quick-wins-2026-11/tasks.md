@@ -30,4 +30,4 @@
 ## 7. Ship
 
 - [x] 7.1 `add-camera-pages` OpenSpec proposal (Phase 2, proposal only)
-- [ ] 7.2 `npm test`, `openspec validate seo-quick-wins-2026-11 --strict`, PR
+- [x] 7.2 `npm test`, `openspec validate seo-quick-wins-2026-11 --strict`, PR
