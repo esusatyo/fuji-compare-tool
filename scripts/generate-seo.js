@@ -2166,7 +2166,7 @@ function aboutHeadBlock(site) {
 const ROOT_TITLE = 'Compare Camera & Lens Specs, Size & Weight Side by Side';
 
 function rootHeadBlock(site, brandNames, card = null) {
-  return metaBlock(
+  const block = metaBlock(
     site,
     `${site.baseUrl}/`,
     ROOT_TITLE,
@@ -2174,6 +2174,43 @@ function rootHeadBlock(site, brandNames, card = null) {
     './',
     card
   );
+  // The site's identity, homepage only (where Google reads WebSite for the
+  // site name shown in results). Inside the generated block, so <title> and
+  // the description above stay exactly as they are.
+  return block.replace(SEO_END, `${ldScript(siteLd(site))}\n  ${SEO_END}`);
+}
+
+// One JSON-LD <script>. "<" is escaped so no value can close the tag.
+function ldScript(obj) {
+  return `<script type="application/ld+json">${JSON.stringify(obj).replace(/</g, '\\u003c')}</script>`;
+}
+
+// WebSite + Organization for the homepage. Only facts the site states about
+// itself: its name, address and logo (the 180×180 touch icon, a PNG Google
+// can read). No sameAs (no social profiles are on record — add one only once
+// the owner confirms it) and no SearchAction (the site has no search URL).
+function siteLd(site) {
+  const home = `${site.baseUrl}/`;
+  return {
+    '@context': 'https://schema.org',
+    '@graph': [
+      {
+        '@type': 'WebSite',
+        '@id': `${home}#website`,
+        name: site.siteName,
+        url: home,
+        inLanguage: 'en',
+        publisher: { '@id': `${home}#organization` },
+      },
+      {
+        '@type': 'Organization',
+        '@id': `${home}#organization`,
+        name: site.siteName,
+        url: home,
+        logo: `${site.baseUrl}/apple-touch-icon.png`,
+      },
+    ],
+  };
 }
 
 // Replace the content between a begin/end marker pair, preserving everything
@@ -2956,4 +2993,4 @@ if (require.main === module) {
   console.log(`generate-seo: ${files.size} artifacts (${written} written, ${removed} stale removed)`);
 }
 
-module.exports = { heroText, staticH1HTML, inlineHeroTitle, lensMountText, VS_ROWS, guidePageHTML, guideIndexHTML, guideShareCard, ROOT_TITLE, mountSlug, mountModel, mountPageHTML, mountIndexHTML, MOUNT_INDEX_TITLE, keySpecsHTML, sizeEntries, vsSizeSectionHTML, sizePageHTML, crossSizePageHTML, sizeHubHeadBlock, sizeHubBodyBlock, SIZE_HUB_TITLE, kitHeadBlock, kitBodyBlock, KIT_TITLE, cameraIndex, homeConfigScript, buildSite, GLANCE_COLS, sizeText, brandGlanceHTML, uniqueItemCount, cardHash, lastmodManifest, sitemapHashes, LASTMOD_MANIFEST, vsCardHTML, infoCardHTML, shareTags, CARD_W, CARD_H, LANDING_CARD_ORDER, ALL_BRANDS_MOSAIC, orderLandingBrands, allBrandsPhotoHTML, siteConfig, curatedPairs, successorPairKeys, resolvePins, withPins, PINNED_VS_PAIRS, SUCCESSOR_INDEX_SINCE, relatedPairs, vsPageHTML, vsSummary, vsSummaryFacts, resolveMatchups, crossVsPageHTML, crossTitle, CROSS_BRAND_MATCHUPS, compareHeadBlock, compareBodyBlock, brandHeadBlock, rootHeadBlock, brandBodyBlock, rootBodyBlock, withHeadBlock, withBodyBlock, sitemapXML, robotsTxt, buildAll, SEO_BEGIN, SEO_END, SEO_BODY_BEGIN, SEO_BODY_END, ID_HEAD_BEGIN, ID_HEAD_END, ID_HEADER_BEGIN, ID_HEADER_END, ID_FOOTER_BEGIN, ID_FOOTER_END, identityToken, logoMark, cleanUrl, cleanHref, themeToggleHTML, collectReferences, citationText, refHostname, REFERENCE_ROWS, referenceRowsHTML };
+module.exports = { ldScript, siteLd, heroText, staticH1HTML, inlineHeroTitle, lensMountText, VS_ROWS, guidePageHTML, guideIndexHTML, guideShareCard, ROOT_TITLE, mountSlug, mountModel, mountPageHTML, mountIndexHTML, MOUNT_INDEX_TITLE, keySpecsHTML, sizeEntries, vsSizeSectionHTML, sizePageHTML, crossSizePageHTML, sizeHubHeadBlock, sizeHubBodyBlock, SIZE_HUB_TITLE, kitHeadBlock, kitBodyBlock, KIT_TITLE, cameraIndex, homeConfigScript, buildSite, GLANCE_COLS, sizeText, brandGlanceHTML, uniqueItemCount, cardHash, lastmodManifest, sitemapHashes, LASTMOD_MANIFEST, vsCardHTML, infoCardHTML, shareTags, CARD_W, CARD_H, LANDING_CARD_ORDER, ALL_BRANDS_MOSAIC, orderLandingBrands, allBrandsPhotoHTML, siteConfig, curatedPairs, successorPairKeys, resolvePins, withPins, PINNED_VS_PAIRS, SUCCESSOR_INDEX_SINCE, relatedPairs, vsPageHTML, vsSummary, vsSummaryFacts, resolveMatchups, crossVsPageHTML, crossTitle, CROSS_BRAND_MATCHUPS, compareHeadBlock, compareBodyBlock, brandHeadBlock, rootHeadBlock, brandBodyBlock, rootBodyBlock, withHeadBlock, withBodyBlock, sitemapXML, robotsTxt, buildAll, SEO_BEGIN, SEO_END, SEO_BODY_BEGIN, SEO_BODY_END, ID_HEAD_BEGIN, ID_HEAD_END, ID_HEADER_BEGIN, ID_HEADER_END, ID_FOOTER_BEGIN, ID_FOOTER_END, identityToken, logoMark, cleanUrl, cleanHref, themeToggleHTML, collectReferences, citationText, refHostname, REFERENCE_ROWS, referenceRowsHTML };

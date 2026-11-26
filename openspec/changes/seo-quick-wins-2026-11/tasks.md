@@ -11,7 +11,7 @@
 
 ## 3. Homepage structured data
 
-- [ ] 3.1 `WebSite` + `Organization` JSON-LD in the root head block; title and description unchanged; test; regenerate
+- [x] 3.1 `WebSite` + `Organization` JSON-LD in the root head block; title and description unchanged; test; regenerate
 
 ## 4. Breadcrumbs
 
